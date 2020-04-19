@@ -50,10 +50,9 @@ void* serializar_paquete(t_paquete* paquete, int *bytes)
 
 //crearPaquete: Crea una estructura de tipo t_paquete y le enchufa el buffer dentro.
 
-t_paquete* crearPaquete(t_buffer* buffer, t_log* logger){
+t_paquete* crearPaquete(t_buffer* buffer){
 	t_paquete* paquete = malloc(sizeof(paquete));
-	paquete->buffer=malloc(buffer->size + sizeof(buffer->size));
-	log_info(logger, "asignada memoria del paquete con %d bytes", sizeof(t_paquete));
+	paquete->buffer = malloc(buffer->size + sizeof(buffer->size));
 	memcpy (paquete->buffer,  buffer, buffer->size + sizeof(int));
 	return paquete;
 	// aca podemos liberar el buffer stream y buffer
@@ -70,23 +69,19 @@ void enviar_mensaje(char* mensaje, int socket_cliente, t_log* logger)
 	buffer->size = strlen(mensaje)+1;
 	buffer->stream = malloc(buffer->size);
 	memcpy (buffer->stream, mensaje, buffer->size);
-	log_info(logger, "buffer cargado");
 
 
-	t_paquete* paquete = crearPaquete(buffer, logger);   // CREAR PAQUETE
-	log_info(logger, "paquete creado");
+	t_paquete* paquete = crearPaquete(buffer);   // CREAR PAQUETE
 	paquete->codigo_operacion = MENSAJE;
 
 
 	log_info(logger, "la operacion a realizar es %i", paquete->codigo_operacion);
 	void* flujo = serializar_paquete(paquete,&bytes);                   //  SERIALIZAR PAQUETE
-	log_info(logger, "paquete serializado, los bytes son %i", bytes);
 
 	//    ENVIAR MENSAJE
 	if (send(socket_cliente, flujo, bytes, 0) == -1){
 		log_error(logger, "Error: No se pudo enviar el mensaje");
 	}
-	log_info(logger, "mensaje enviado correctamente");
 	free(flujo);
 	free(buffer->stream);
 	free(buffer);
@@ -118,13 +113,16 @@ char* recibir_mensaje(int socket_cliente, t_log* logger)
 		return "Error: No se pudo recibir el buffer";
 	}
 
-	log_info(logger, "asignado el stream: %s",paquete->buffer->stream);
+	char* mensaje = malloc(paquete->buffer->size);
 	switch(paquete->codigo_operacion){
 			case MENSAJE:
-		    return paquete->buffer->stream; // happy pass: Mensaje
-
+				memcpy(mensaje, paquete->buffer->stream,paquete->buffer->size);
+				free(paquete->buffer->stream);
+				free(paquete->buffer);
+				free(paquete);
+				return mensaje;
 		}
-			return "Me mandaron cualquier cosa"; // No entra por ningun codigo del enum.
+				return "Me mandaron cualquier cosa"; // No entra por ningun codigo del enum.
 }
 
 void liberar_conexion(int socket_cliente)

@@ -11,8 +11,10 @@
 int main(void){
 	/*---------------------------------------------------PARTE 2-------------------------------------------------------------*/
 	int conexion;
+	int conexion2;
 	char* ip = "127.0.0.1";
 	char* puerto = "4444";
+	char* puerto2 = "4445";
 
 	t_log* logger;
 	t_config* config;
@@ -31,11 +33,19 @@ int main(void){
 	/*---------------------------------------------------PARTE 3-------------------------------------------------------------*/
 
 	conexion = crear_conexion(ip, puerto);
-	enviar_mensaje("Hola que tal?", conexion,logger);
 
+	while (1)
+	{
+		conexion = crear_conexion(ip, puerto);
+		char* mensaje = malloc(1);
+		scanf("%s", mensaje);
+		enviar_mensaje(mensaje, conexion,logger);
+		char* mensajeRecibido = recibir_mensaje(conexion, logger);
+		log_info(logger,"el mensaje recibido es: %s" ,mensajeRecibido);
+		free (mensajeRecibido);
+		liberar_conexion(conexion);
+	}
 
-	char* mensajeRecibido = recibir_mensaje(conexion, logger);
-	log_info(logger,"el mensaje recibido es: %s" ,mensajeRecibido);
 	terminar_programa(conexion, logger, config);
 }
 

@@ -4667,3 +4667,694 @@
 [INFO] 13:52:19:744 Game-watch-client/(18045:18045): paquete creado
 [INFO] 13:52:19:744 Game-watch-client/(18045:18045): la operacion a realizar es 1
 [INFO] 13:52:19:746 Game-watch-client/(18045:18045): paquete serializado, los bytes son 22
+[INFO] 15:52:57:393 Game-watch-client/(3809:3809): logger iniciado.
+[INFO] 15:52:57:404 Game-watch-client/(3809:3809): config cargada.
+[INFO] 15:52:57:404 Game-watch-client/(3809:3809): La IP es: 127.0.0.1
+[INFO] 15:52:57:404 Game-watch-client/(3809:3809): El Puerto es: 4444
+[INFO] 15:52:57:405 Game-watch-client/(3809:3809): buffer cargado
+[INFO] 15:52:57:405 Game-watch-client/(3809:3809): asignada memoria del paquete con 8 bytes
+[INFO] 15:52:57:405 Game-watch-client/(3809:3809): paquete creado
+[INFO] 15:52:57:405 Game-watch-client/(3809:3809): la operacion a realizar es 1
+[INFO] 15:52:57:405 Game-watch-client/(3809:3809): paquete serializado, los bytes son 22
+[INFO] 15:53:27:739 Game-watch-client/(3823:3823): logger iniciado.
+[INFO] 15:53:27:739 Game-watch-client/(3823:3823): config cargada.
+[INFO] 15:53:27:739 Game-watch-client/(3823:3823): La IP es: 127.0.0.1
+[INFO] 15:53:27:739 Game-watch-client/(3823:3823): El Puerto es: 4444
+[INFO] 15:53:27:740 Game-watch-client/(3823:3823): buffer cargado
+[INFO] 15:53:27:740 Game-watch-client/(3823:3823): asignada memoria del paquete con 8 bytes
+[INFO] 15:53:27:740 Game-watch-client/(3823:3823): paquete creado
+[INFO] 15:53:27:740 Game-watch-client/(3823:3823): la operacion a realizar es 1
+[INFO] 15:53:27:741 Game-watch-client/(3823:3823): paquete serializado, los bytes son 22
+[INFO] 15:55:01:537 Game-watch-client/(4119:4119): logger iniciado.
+[INFO] 15:55:01:538 Game-watch-client/(4119:4119): config cargada.
+[INFO] 15:55:01:538 Game-watch-client/(4119:4119): La IP es: 127.0.0.1
+[INFO] 15:55:01:538 Game-watch-client/(4119:4119): El Puerto es: 4444
+[INFO] 15:55:01:538 Game-watch-client/(4119:4119): buffer cargado
+[INFO] 15:55:01:538 Game-watch-client/(4119:4119): asignada memoria del paquete con 8 bytes
+[INFO] 15:55:01:538 Game-watch-client/(4119:4119): paquete creado
+[INFO] 15:55:01:538 Game-watch-client/(4119:4119): la operacion a realizar es 1
+[INFO] 15:55:01:538 Game-watch-client/(4119:4119): paquete serializado, los bytes son 22
+[INFO] 15:55:01:538 Game-watch-client/(4119:4119): mensaje enviado correctamente
+[INFO] 15:55:01:548 Game-watch-client/(4119:4119): asignado el stream: Hola que tal?
+[INFO] 15:55:01:548 Game-watch-client/(4119:4119): el mensaje recibido es: Hola que tal?
+[INFO] 16:09:57:441 Game-watch-client/(16730:16730): logger iniciado.
+[INFO] 16:09:57:441 Game-watch-client/(16730:16730): config cargada.
+[INFO] 16:09:57:441 Game-watch-client/(16730:16730): La IP es: 127.0.0.1
+[INFO] 16:09:57:441 Game-watch-client/(16730:16730): El Puerto es: 4444
+[INFO] 16:09:57:442 Game-watch-client/(16730:16730): buffer cargado
+[INFO] 16:09:57:444 Game-watch-client/(16730:16730): asignada memoria del paquete con 8 bytes
+[INFO] 16:09:57:444 Game-watch-client/(16730:16730): paquete creado
+[INFO] 16:09:57:444 Game-watch-client/(16730:16730): la operacion a realizar es 1
+[INFO] 16:09:57:444 Game-watch-client/(16730:16730): paquete serializado, los bytes son 22
+[INFO] 16:09:57:446 Game-watch-client/(16730:16730): mensaje enviado correctamente
+[INFO] 16:09:57:446 Game-watch-client/(16730:16730): buffer stream es: Hola que tal?
+[INFO] 16:09:57:446 Game-watch-client/(16730:16730): el mensaje recibido es: Hola que tal?
+[INFO] 16:11:55:776 Game-watch-client/(16814:16814): logger iniciado.
+[INFO] 16:11:55:777 Game-watch-client/(16814:16814): config cargada.
+[INFO] 16:11:55:777 Game-watch-client/(16814:16814): La IP es: 127.0.0.1
+[INFO] 16:11:55:777 Game-watch-client/(16814:16814): El Puerto es: 4444
+[INFO] 16:11:55:778 Game-watch-client/(16814:16814): buffer cargado
+[INFO] 16:11:55:779 Game-watch-client/(16814:16814): asignada memoria del paquete con 8 bytes
+[INFO] 16:11:55:779 Game-watch-client/(16814:16814): paquete creado
+[INFO] 16:11:55:779 Game-watch-client/(16814:16814): la operacion a realizar es 1
+[INFO] 16:11:55:779 Game-watch-client/(16814:16814): paquete serializado, los bytes son 22
+[INFO] 16:11:55:780 Game-watch-client/(16814:16814): mensaje enviado correctamente
+[INFO] 16:11:55:781 Game-watch-client/(16814:16814): buffer stream es: Hola que tal?
+[INFO] 16:11:55:781 Game-watch-client/(16814:16814): el mensaje recibido es: Hola que tal?
+[INFO] 16:13:50:28 Game-watch-client/(16882:16882): logger iniciado.
+[INFO] 16:13:50:28 Game-watch-client/(16882:16882): config cargada.
+[INFO] 16:13:50:28 Game-watch-client/(16882:16882): La IP es: 127.0.0.1
+[INFO] 16:13:50:28 Game-watch-client/(16882:16882): El Puerto es: 4444
+[INFO] 16:13:50:28 Game-watch-client/(16882:16882): buffer cargado
+[INFO] 16:13:50:28 Game-watch-client/(16882:16882): asignada memoria del paquete con 8 bytes
+[INFO] 16:13:50:28 Game-watch-client/(16882:16882): paquete creado
+[INFO] 16:13:50:28 Game-watch-client/(16882:16882): la operacion a realizar es 1
+[INFO] 16:13:50:28 Game-watch-client/(16882:16882): paquete serializado, los bytes son 22
+[INFO] 16:13:50:29 Game-watch-client/(16882:16882): mensaje enviado correctamente
+[INFO] 16:13:50:29 Game-watch-client/(16882:16882): buffer stream es: Hola que tal?
+[INFO] 16:13:50:30 Game-watch-client/(16882:16882): el mensaje recibido es: Hola que tal?
+[INFO] 16:14:16:620 Game-watch-client/(16915:16915): logger iniciado.
+[INFO] 16:14:16:621 Game-watch-client/(16915:16915): config cargada.
+[INFO] 16:14:16:621 Game-watch-client/(16915:16915): La IP es: 127.0.0.1
+[INFO] 16:14:16:621 Game-watch-client/(16915:16915): El Puerto es: 4444
+[INFO] 16:14:16:622 Game-watch-client/(16915:16915): buffer cargado
+[INFO] 16:14:16:622 Game-watch-client/(16915:16915): asignada memoria del paquete con 8 bytes
+[INFO] 16:14:16:622 Game-watch-client/(16915:16915): paquete creado
+[INFO] 16:14:16:622 Game-watch-client/(16915:16915): la operacion a realizar es 1
+[INFO] 16:14:16:622 Game-watch-client/(16915:16915): paquete serializado, los bytes son 23
+[INFO] 16:14:16:623 Game-watch-client/(16915:16915): mensaje enviado correctamente
+[INFO] 16:14:16:623 Game-watch-client/(16915:16915): buffer stream es: Hola que tal ?
+[INFO] 16:14:16:623 Game-watch-client/(16915:16915): el mensaje recibido es: Hola que tal ?
+[INFO] 16:29:43:282 Game-watch-client/(17571:17571): logger iniciado.
+[INFO] 16:29:43:283 Game-watch-client/(17571:17571): config cargada.
+[INFO] 16:29:43:283 Game-watch-client/(17571:17571): La IP es: 127.0.0.1
+[INFO] 16:29:43:283 Game-watch-client/(17571:17571): El Puerto es: 4444
+[INFO] 16:29:43:283 Game-watch-client/(17571:17571): buffer cargado
+[INFO] 16:29:43:283 Game-watch-client/(17571:17571): asignada memoria del paquete con 8 bytes
+[INFO] 16:29:43:283 Game-watch-client/(17571:17571): paquete creado
+[INFO] 16:29:43:283 Game-watch-client/(17571:17571): la operacion a realizar es 1
+[INFO] 16:29:43:283 Game-watch-client/(17571:17571): paquete serializado, los bytes son 23
+[INFO] 16:29:43:283 Game-watch-client/(17571:17571): mensaje enviado correctamente
+[INFO] 16:29:43:284 Game-watch-client/(17571:17571): buffer stream es: Hola que tal ?
+[INFO] 16:29:43:284 Game-watch-client/(17571:17571): el mensaje recibido es: Hola que tal ?
+[INFO] 16:29:59:700 Game-watch-client/(17602:17602): logger iniciado.
+[INFO] 16:29:59:700 Game-watch-client/(17602:17602): config cargada.
+[INFO] 16:29:59:700 Game-watch-client/(17602:17602): La IP es: 127.0.0.1
+[INFO] 16:29:59:700 Game-watch-client/(17602:17602): El Puerto es: 4444
+[INFO] 16:29:59:700 Game-watch-client/(17602:17602): buffer cargado
+[INFO] 16:29:59:700 Game-watch-client/(17602:17602): asignada memoria del paquete con 8 bytes
+[INFO] 16:29:59:700 Game-watch-client/(17602:17602): paquete creado
+[INFO] 16:29:59:701 Game-watch-client/(17602:17602): la operacion a realizar es 1
+[INFO] 16:29:59:701 Game-watch-client/(17602:17602): paquete serializado, los bytes son 23
+[INFO] 16:29:59:701 Game-watch-client/(17602:17602): mensaje enviado correctamente
+[INFO] 16:29:59:701 Game-watch-client/(17602:17602): buffer stream es: Hola que tal ?
+[INFO] 16:29:59:701 Game-watch-client/(17602:17602): el mensaje recibido es: Hola que tal ?
+[INFO] 16:30:34:686 Game-watch-client/(17656:17656): logger iniciado.
+[INFO] 16:30:34:686 Game-watch-client/(17656:17656): config cargada.
+[INFO] 16:30:34:686 Game-watch-client/(17656:17656): La IP es: 127.0.0.1
+[INFO] 16:30:34:686 Game-watch-client/(17656:17656): El Puerto es: 4444
+[INFO] 16:30:34:686 Game-watch-client/(17656:17656): buffer cargado
+[INFO] 16:30:34:687 Game-watch-client/(17656:17656): asignada memoria del paquete con 8 bytes
+[INFO] 16:30:34:687 Game-watch-client/(17656:17656): paquete creado
+[INFO] 16:30:34:687 Game-watch-client/(17656:17656): la operacion a realizar es 1
+[INFO] 16:30:34:687 Game-watch-client/(17656:17656): paquete serializado, los bytes son 23
+[INFO] 16:30:34:687 Game-watch-client/(17656:17656): mensaje enviado correctamente
+[INFO] 16:30:34:691 Game-watch-client/(17656:17656): buffer stream es: Hola que tal ?
+[INFO] 16:30:34:691 Game-watch-client/(17656:17656): el mensaje recibido es:  ɗ	 que tal ?
+[INFO] 16:31:11:765 Game-watch-client/(17711:17711): logger iniciado.
+[INFO] 16:31:11:768 Game-watch-client/(17711:17711): config cargada.
+[INFO] 16:31:11:768 Game-watch-client/(17711:17711): La IP es: 127.0.0.1
+[INFO] 16:31:11:768 Game-watch-client/(17711:17711): El Puerto es: 4444
+[INFO] 16:31:11:769 Game-watch-client/(17711:17711): buffer cargado
+[INFO] 16:31:11:769 Game-watch-client/(17711:17711): asignada memoria del paquete con 8 bytes
+[INFO] 16:31:11:769 Game-watch-client/(17711:17711): paquete creado
+[INFO] 16:31:11:769 Game-watch-client/(17711:17711): la operacion a realizar es 1
+[INFO] 16:31:11:769 Game-watch-client/(17711:17711): paquete serializado, los bytes son 23
+[INFO] 16:31:11:769 Game-watch-client/(17711:17711): mensaje enviado correctamente
+[INFO] 16:31:11:774 Game-watch-client/(17711:17711): buffer stream es: Hola que tal ?
+[INFO] 16:33:16:379 Game-watch-client/(17770:17770): logger iniciado.
+[INFO] 16:33:16:461 Game-watch-client/(17770:17770): config cargada.
+[INFO] 16:33:16:480 Game-watch-client/(17770:17770): La IP es: 127.0.0.1
+[INFO] 16:33:16:482 Game-watch-client/(17770:17770): El Puerto es: 4444
+[INFO] 16:33:16:506 Game-watch-client/(17770:17770): buffer cargado
+[INFO] 16:33:16:506 Game-watch-client/(17770:17770): asignada memoria del paquete con 8 bytes
+[INFO] 16:33:16:510 Game-watch-client/(17770:17770): paquete creado
+[INFO] 16:33:16:510 Game-watch-client/(17770:17770): la operacion a realizar es 1
+[INFO] 16:33:16:513 Game-watch-client/(17770:17770): paquete serializado, los bytes son 23
+[INFO] 17:11:34:330 Game-watch-client/(18845:18845): logger iniciado.
+[INFO] 17:11:34:331 Game-watch-client/(18845:18845): config cargada.
+[INFO] 17:11:34:331 Game-watch-client/(18845:18845): La IP es: 127.0.0.1
+[INFO] 17:11:34:332 Game-watch-client/(18845:18845): El Puerto es: 4444
+[INFO] 17:11:34:332 Game-watch-client/(18845:18845): creadas conexiones con los sockets 4 y 5
+[INFO] 17:11:34:334 Game-watch-client/(18845:18845): buffer cargado
+[INFO] 17:11:34:335 Game-watch-client/(18845:18845): asignada memoria del paquete con 8 bytes
+[INFO] 17:11:34:337 Game-watch-client/(18845:18845): paquete creado
+[INFO] 17:11:34:342 Game-watch-client/(18845:18845): la operacion a realizar es 1
+[INFO] 17:11:34:342 Game-watch-client/(18845:18845): paquete serializado, los bytes son 23
+[INFO] 17:12:01:23 Game-watch-client/(18874:18874): logger iniciado.
+[INFO] 17:12:01:25 Game-watch-client/(18874:18874): config cargada.
+[INFO] 17:12:01:25 Game-watch-client/(18874:18874): La IP es: 127.0.0.1
+[INFO] 17:12:01:25 Game-watch-client/(18874:18874): El Puerto es: 4444
+[INFO] 17:12:01:25 Game-watch-client/(18874:18874): creadas conexiones con los sockets 4 y 5
+[INFO] 17:12:01:25 Game-watch-client/(18874:18874): buffer cargado
+[INFO] 17:12:01:25 Game-watch-client/(18874:18874): asignada memoria del paquete con 8 bytes
+[INFO] 17:12:01:25 Game-watch-client/(18874:18874): paquete creado
+[INFO] 17:12:01:25 Game-watch-client/(18874:18874): la operacion a realizar es 1
+[INFO] 17:12:01:25 Game-watch-client/(18874:18874): paquete serializado, los bytes son 23
+[INFO] 17:12:01:25 Game-watch-client/(18874:18874): mensaje enviado correctamente
+[INFO] 17:12:01:33 Game-watch-client/(18874:18874): buffer stream es: Hola que tal ?
+[INFO] 17:15:15:68 Game-watch-client/(18976:18976): logger iniciado.
+[INFO] 17:15:15:68 Game-watch-client/(18976:18976): config cargada.
+[INFO] 17:15:15:68 Game-watch-client/(18976:18976): La IP es: 127.0.0.1
+[INFO] 17:15:15:68 Game-watch-client/(18976:18976): El Puerto es: 4444
+[INFO] 17:15:15:68 Game-watch-client/(18976:18976): creadas conexiones con los sockets 4 y 5
+[INFO] 17:15:15:69 Game-watch-client/(18976:18976): buffer cargado
+[INFO] 17:15:15:69 Game-watch-client/(18976:18976): asignada memoria del paquete con 8 bytes
+[INFO] 17:15:15:69 Game-watch-client/(18976:18976): paquete creado
+[INFO] 17:15:15:69 Game-watch-client/(18976:18976): la operacion a realizar es 1
+[INFO] 17:15:15:69 Game-watch-client/(18976:18976): paquete serializado, los bytes son 23
+[INFO] 17:15:15:69 Game-watch-client/(18976:18976): mensaje enviado correctamente
+[INFO] 17:15:15:69 Game-watch-client/(18976:18976): buffer cargado
+[INFO] 17:15:15:69 Game-watch-client/(18976:18976): asignada memoria del paquete con 8 bytes
+[INFO] 17:15:15:69 Game-watch-client/(18976:18976): paquete creado
+[INFO] 17:15:15:69 Game-watch-client/(18976:18976): la operacion a realizar es 1
+[INFO] 17:15:15:69 Game-watch-client/(18976:18976): paquete serializado, los bytes son 23
+[INFO] 17:17:17:324 Game-watch-client/(19024:19024): logger iniciado.
+[INFO] 17:17:17:324 Game-watch-client/(19024:19024): config cargada.
+[INFO] 17:17:17:324 Game-watch-client/(19024:19024): La IP es: 127.0.0.1
+[INFO] 17:17:17:324 Game-watch-client/(19024:19024): El Puerto es: 4444
+[INFO] 17:17:17:325 Game-watch-client/(19024:19024): creadas conexiones con los sockets 4 y 5
+[INFO] 17:17:17:325 Game-watch-client/(19024:19024): buffer cargado
+[INFO] 17:17:17:325 Game-watch-client/(19024:19024): asignada memoria del paquete con 8 bytes
+[INFO] 17:17:17:325 Game-watch-client/(19024:19024): paquete creado
+[INFO] 17:17:17:325 Game-watch-client/(19024:19024): la operacion a realizar es 1
+[INFO] 17:17:17:325 Game-watch-client/(19024:19024): paquete serializado, los bytes son 23
+[INFO] 17:17:17:325 Game-watch-client/(19024:19024): mensaje enviado correctamente
+[INFO] 17:17:17:325 Game-watch-client/(19024:19024): buffer stream es: Hola que tal ?
+[INFO] 17:18:13:939 Game-watch-client/(19069:19069): logger iniciado.
+[INFO] 17:18:13:943 Game-watch-client/(19069:19069): config cargada.
+[INFO] 17:18:13:943 Game-watch-client/(19069:19069): La IP es: 127.0.0.1
+[INFO] 17:18:13:943 Game-watch-client/(19069:19069): El Puerto es: 4444
+[INFO] 17:18:13:945 Game-watch-client/(19069:19069): creadas conexiones con los sockets 4 y 5
+[INFO] 17:18:13:945 Game-watch-client/(19069:19069): buffer cargado
+[INFO] 17:18:13:945 Game-watch-client/(19069:19069): asignada memoria del paquete con 8 bytes
+[INFO] 17:18:13:945 Game-watch-client/(19069:19069): paquete creado
+[INFO] 17:18:13:945 Game-watch-client/(19069:19069): la operacion a realizar es 1
+[INFO] 17:18:13:946 Game-watch-client/(19069:19069): paquete serializado, los bytes son 23
+[INFO] 17:18:13:946 Game-watch-client/(19069:19069): mensaje enviado correctamente
+[INFO] 17:18:13:948 Game-watch-client/(19069:19069): buffer stream es: Hola que tal ?
+[INFO] 17:20:25:365 Game-watch-client/(19135:19135): logger iniciado.
+[INFO] 17:20:25:366 Game-watch-client/(19135:19135): config cargada.
+[INFO] 17:20:25:373 Game-watch-client/(19135:19135): La IP es: 127.0.0.1
+[INFO] 17:20:25:373 Game-watch-client/(19135:19135): El Puerto es: 4444
+[INFO] 17:20:25:373 Game-watch-client/(19135:19135): creadas conexiones con los sockets 4 y 5
+[INFO] 17:20:25:373 Game-watch-client/(19135:19135): buffer cargado
+[INFO] 17:20:25:373 Game-watch-client/(19135:19135): asignada memoria del paquete con 8 bytes
+[INFO] 17:20:25:373 Game-watch-client/(19135:19135): paquete creado
+[INFO] 17:20:25:373 Game-watch-client/(19135:19135): la operacion a realizar es 1
+[INFO] 17:20:25:373 Game-watch-client/(19135:19135): paquete serializado, los bytes son 23
+[INFO] 17:20:25:374 Game-watch-client/(19135:19135): mensaje enviado correctamente
+[INFO] 17:20:25:377 Game-watch-client/(19135:19135): buffer stream es: Hola que tal ?
+[INFO] 17:21:13:302 Game-watch-client/(19168:19168): logger iniciado.
+[INFO] 17:21:13:302 Game-watch-client/(19168:19168): config cargada.
+[INFO] 17:21:13:302 Game-watch-client/(19168:19168): La IP es: 127.0.0.1
+[INFO] 17:21:13:302 Game-watch-client/(19168:19168): El Puerto es: 4444
+[INFO] 17:21:13:307 Game-watch-client/(19168:19168): buffer cargado
+[INFO] 17:21:13:307 Game-watch-client/(19168:19168): asignada memoria del paquete con 8 bytes
+[INFO] 17:21:13:307 Game-watch-client/(19168:19168): paquete creado
+[INFO] 17:21:13:307 Game-watch-client/(19168:19168): la operacion a realizar es 1
+[INFO] 17:21:13:308 Game-watch-client/(19168:19168): paquete serializado, los bytes son 22
+[INFO] 17:21:13:308 Game-watch-client/(19168:19168): mensaje enviado correctamente
+[INFO] 17:21:13:311 Game-watch-client/(19168:19168): buffer stream es: Hola que tal?
+[INFO] 17:24:12:203 Game-watch-client/(19272:19272): logger iniciado.
+[INFO] 17:24:12:203 Game-watch-client/(19272:19272): config cargada.
+[INFO] 17:24:12:203 Game-watch-client/(19272:19272): La IP es: 127.0.0.1
+[INFO] 17:24:12:203 Game-watch-client/(19272:19272): El Puerto es: 4444
+[INFO] 17:24:12:203 Game-watch-client/(19272:19272): buffer cargado
+[INFO] 17:24:12:203 Game-watch-client/(19272:19272): asignada memoria del paquete con 8 bytes
+[INFO] 17:24:12:204 Game-watch-client/(19272:19272): paquete creado
+[INFO] 17:24:12:204 Game-watch-client/(19272:19272): la operacion a realizar es 1
+[INFO] 17:24:12:204 Game-watch-client/(19272:19272): paquete serializado, los bytes son 22
+[INFO] 17:24:12:204 Game-watch-client/(19272:19272): mensaje enviado correctamente
+[INFO] 17:24:12:204 Game-watch-client/(19272:19272): buffer stream es: Hola que tal?
+[INFO] 17:24:48:974 Game-watch-client/(19307:19307): logger iniciado.
+[INFO] 17:24:48:974 Game-watch-client/(19307:19307): config cargada.
+[INFO] 17:24:48:981 Game-watch-client/(19307:19307): La IP es: 127.0.0.1
+[INFO] 17:24:48:981 Game-watch-client/(19307:19307): El Puerto es: 4444
+[INFO] 17:24:48:981 Game-watch-client/(19307:19307): buffer cargado
+[INFO] 17:24:48:981 Game-watch-client/(19307:19307): asignada memoria del paquete con 8 bytes
+[INFO] 17:24:48:981 Game-watch-client/(19307:19307): paquete creado
+[INFO] 17:24:48:982 Game-watch-client/(19307:19307): la operacion a realizar es 1
+[INFO] 17:24:48:982 Game-watch-client/(19307:19307): paquete serializado, los bytes son 22
+[INFO] 17:24:48:982 Game-watch-client/(19307:19307): mensaje enviado correctamente
+[INFO] 17:24:48:982 Game-watch-client/(19307:19307): buffer stream es: Hola que tal?
+[INFO] 17:25:53:629 Game-watch-client/(19341:19341): logger iniciado.
+[INFO] 17:25:53:630 Game-watch-client/(19341:19341): config cargada.
+[INFO] 17:25:53:630 Game-watch-client/(19341:19341): La IP es: 127.0.0.1
+[INFO] 17:25:53:630 Game-watch-client/(19341:19341): El Puerto es: 4444
+[INFO] 17:25:53:630 Game-watch-client/(19341:19341): buffer cargado
+[INFO] 17:25:53:630 Game-watch-client/(19341:19341): asignada memoria del paquete con 8 bytes
+[INFO] 17:25:53:630 Game-watch-client/(19341:19341): paquete creado
+[INFO] 17:25:53:630 Game-watch-client/(19341:19341): la operacion a realizar es 1
+[INFO] 17:25:53:630 Game-watch-client/(19341:19341): paquete serializado, los bytes son 22
+[INFO] 17:25:53:630 Game-watch-client/(19341:19341): mensaje enviado correctamente
+[INFO] 17:25:53:631 Game-watch-client/(19341:19341): buffer stream es: Hola que tal?
+[INFO] 17:26:49:32 Game-watch-client/(19399:19399): logger iniciado.
+[INFO] 17:26:49:32 Game-watch-client/(19399:19399): config cargada.
+[INFO] 17:26:49:33 Game-watch-client/(19399:19399): La IP es: 127.0.0.1
+[INFO] 17:26:49:33 Game-watch-client/(19399:19399): El Puerto es: 4444
+[INFO] 17:26:49:33 Game-watch-client/(19399:19399): buffer cargado
+[INFO] 17:26:49:33 Game-watch-client/(19399:19399): asignada memoria del paquete con 8 bytes
+[INFO] 17:26:49:33 Game-watch-client/(19399:19399): paquete creado
+[INFO] 17:26:49:33 Game-watch-client/(19399:19399): la operacion a realizar es 1
+[INFO] 17:26:49:33 Game-watch-client/(19399:19399): paquete serializado, los bytes son 22
+[INFO] 17:26:49:33 Game-watch-client/(19399:19399): mensaje enviado correctamente
+[INFO] 17:26:49:33 Game-watch-client/(19399:19399): buffer stream es: Hola que tal?
+[INFO] 17:26:49:33 Game-watch-client/(19399:19399): el mensaje recibido es: Hola que tal?
+[INFO] 17:28:41:549 Game-watch-client/(19489:19489): logger iniciado.
+[INFO] 17:28:41:549 Game-watch-client/(19489:19489): config cargada.
+[INFO] 17:28:41:549 Game-watch-client/(19489:19489): La IP es: 127.0.0.1
+[INFO] 17:28:41:549 Game-watch-client/(19489:19489): El Puerto es: 4444
+[INFO] 17:28:41:550 Game-watch-client/(19489:19489): buffer cargado
+[INFO] 17:28:41:550 Game-watch-client/(19489:19489): asignada memoria del paquete con 8 bytes
+[INFO] 17:28:41:550 Game-watch-client/(19489:19489): paquete creado
+[INFO] 17:28:41:550 Game-watch-client/(19489:19489): la operacion a realizar es 1
+[INFO] 17:28:41:557 Game-watch-client/(19489:19489): paquete serializado, los bytes son 22
+[INFO] 17:28:41:561 Game-watch-client/(19489:19489): mensaje enviado correctamente
+[INFO] 17:28:41:562 Game-watch-client/(19489:19489): buffer cargado
+[INFO] 17:28:41:562 Game-watch-client/(19489:19489): asignada memoria del paquete con 8 bytes
+[INFO] 17:28:41:562 Game-watch-client/(19489:19489): paquete creado
+[INFO] 17:28:41:563 Game-watch-client/(19489:19489): la operacion a realizar es 1
+[INFO] 17:28:41:563 Game-watch-client/(19489:19489): paquete serializado, los bytes son 18
+[INFO] 17:28:41:563 Game-watch-client/(19489:19489): mensaje enviado correctamente
+[INFO] 17:28:41:564 Game-watch-client/(19489:19489): buffer stream es: Hola que tal?
+[INFO] 17:28:41:564 Game-watch-client/(19489:19489): el mensaje recibido es: Hola que tal?
+[INFO] 17:28:57:49 Game-watch-client/(19521:19521): logger iniciado.
+[INFO] 17:28:57:50 Game-watch-client/(19521:19521): config cargada.
+[INFO] 17:28:57:50 Game-watch-client/(19521:19521): La IP es: 127.0.0.1
+[INFO] 17:28:57:50 Game-watch-client/(19521:19521): El Puerto es: 4444
+[INFO] 17:28:57:50 Game-watch-client/(19521:19521): buffer cargado
+[INFO] 17:28:57:50 Game-watch-client/(19521:19521): asignada memoria del paquete con 8 bytes
+[INFO] 17:28:57:50 Game-watch-client/(19521:19521): paquete creado
+[INFO] 17:28:57:50 Game-watch-client/(19521:19521): la operacion a realizar es 1
+[INFO] 17:28:57:55 Game-watch-client/(19521:19521): paquete serializado, los bytes son 22
+[INFO] 17:28:57:56 Game-watch-client/(19521:19521): mensaje enviado correctamente
+[INFO] 17:28:57:57 Game-watch-client/(19521:19521): buffer stream es: Hola que tal?
+[INFO] 17:28:57:57 Game-watch-client/(19521:19521): el mensaje recibido es: Hola que tal?
+[INFO] 17:28:57:57 Game-watch-client/(19521:19521): buffer cargado
+[INFO] 17:28:57:57 Game-watch-client/(19521:19521): asignada memoria del paquete con 8 bytes
+[INFO] 17:28:57:57 Game-watch-client/(19521:19521): paquete creado
+[INFO] 17:28:57:57 Game-watch-client/(19521:19521): la operacion a realizar es 1
+[INFO] 17:28:57:57 Game-watch-client/(19521:19521): paquete serializado, los bytes son 18
+[INFO] 17:28:57:57 Game-watch-client/(19521:19521): mensaje enviado correctamente
+[INFO] 17:29:31:581 Game-watch-client/(19556:19556): logger iniciado.
+[INFO] 17:29:31:581 Game-watch-client/(19556:19556): config cargada.
+[INFO] 17:29:31:582 Game-watch-client/(19556:19556): La IP es: 127.0.0.1
+[INFO] 17:29:31:582 Game-watch-client/(19556:19556): El Puerto es: 4444
+[INFO] 17:29:31:582 Game-watch-client/(19556:19556): buffer cargado
+[INFO] 17:29:31:582 Game-watch-client/(19556:19556): asignada memoria del paquete con 8 bytes
+[INFO] 17:29:31:582 Game-watch-client/(19556:19556): paquete creado
+[INFO] 17:29:31:582 Game-watch-client/(19556:19556): la operacion a realizar es 1
+[INFO] 17:29:31:582 Game-watch-client/(19556:19556): paquete serializado, los bytes son 22
+[INFO] 17:29:31:582 Game-watch-client/(19556:19556): mensaje enviado correctamente
+[INFO] 17:29:31:584 Game-watch-client/(19556:19556): buffer stream es: Hola que tal?
+[INFO] 17:29:31:585 Game-watch-client/(19556:19556): el mensaje recibido es: Hola que tal?
+[INFO] 17:29:31:585 Game-watch-client/(19556:19556): buffer cargado
+[INFO] 17:29:31:585 Game-watch-client/(19556:19556): asignada memoria del paquete con 8 bytes
+[INFO] 17:29:31:585 Game-watch-client/(19556:19556): paquete creado
+[INFO] 17:29:31:585 Game-watch-client/(19556:19556): la operacion a realizar es 1
+[INFO] 17:29:31:586 Game-watch-client/(19556:19556): paquete serializado, los bytes son 18
+[INFO] 17:29:31:586 Game-watch-client/(19556:19556): mensaje enviado correctamente
+[INFO] 17:29:51:523 Game-watch-client/(19578:19578): logger iniciado.
+[INFO] 17:29:51:527 Game-watch-client/(19578:19578): config cargada.
+[INFO] 17:29:51:527 Game-watch-client/(19578:19578): La IP es: 127.0.0.1
+[INFO] 17:29:51:527 Game-watch-client/(19578:19578): El Puerto es: 4444
+[INFO] 17:29:51:528 Game-watch-client/(19578:19578): buffer cargado
+[INFO] 17:29:51:528 Game-watch-client/(19578:19578): asignada memoria del paquete con 8 bytes
+[INFO] 17:29:51:528 Game-watch-client/(19578:19578): paquete creado
+[INFO] 17:29:51:528 Game-watch-client/(19578:19578): la operacion a realizar es 1
+[INFO] 17:29:51:529 Game-watch-client/(19578:19578): paquete serializado, los bytes son 22
+[INFO] 17:29:51:529 Game-watch-client/(19578:19578): mensaje enviado correctamente
+[INFO] 17:29:51:530 Game-watch-client/(19578:19578): buffer stream es: Hola que tal?
+[INFO] 17:29:51:530 Game-watch-client/(19578:19578): el mensaje recibido es: Hola que tal?
+[INFO] 17:29:51:530 Game-watch-client/(19578:19578): buffer cargado
+[INFO] 17:29:51:531 Game-watch-client/(19578:19578): asignada memoria del paquete con 8 bytes
+[INFO] 17:29:51:531 Game-watch-client/(19578:19578): paquete creado
+[INFO] 17:29:51:531 Game-watch-client/(19578:19578): la operacion a realizar es 1
+[INFO] 17:29:51:531 Game-watch-client/(19578:19578): paquete serializado, los bytes son 18
+[INFO] 17:29:51:531 Game-watch-client/(19578:19578): mensaje enviado correctamente
+[INFO] 17:30:51:853 Game-watch-client/(19643:19643): logger iniciado.
+[INFO] 17:30:51:854 Game-watch-client/(19643:19643): config cargada.
+[INFO] 17:30:51:855 Game-watch-client/(19643:19643): La IP es: 127.0.0.1
+[INFO] 17:30:51:855 Game-watch-client/(19643:19643): El Puerto es: 4444
+[INFO] 17:30:51:856 Game-watch-client/(19643:19643): buffer cargado
+[INFO] 17:30:51:856 Game-watch-client/(19643:19643): asignada memoria del paquete con 8 bytes
+[INFO] 17:30:51:856 Game-watch-client/(19643:19643): paquete creado
+[INFO] 17:30:51:857 Game-watch-client/(19643:19643): la operacion a realizar es 1
+[INFO] 17:30:51:857 Game-watch-client/(19643:19643): paquete serializado, los bytes son 22
+[INFO] 17:30:51:857 Game-watch-client/(19643:19643): mensaje enviado correctamente
+[INFO] 17:30:51:857 Game-watch-client/(19643:19643): buffer stream es: Hola que tal?
+[INFO] 17:30:51:858 Game-watch-client/(19643:19643): el mensaje recibido es: Hola que tal?
+[INFO] 17:30:51:858 Game-watch-client/(19643:19643): buffer cargado
+[INFO] 17:30:51:858 Game-watch-client/(19643:19643): asignada memoria del paquete con 8 bytes
+[INFO] 17:30:51:859 Game-watch-client/(19643:19643): paquete creado
+[INFO] 17:30:51:860 Game-watch-client/(19643:19643): la operacion a realizar es 1
+[INFO] 17:30:51:860 Game-watch-client/(19643:19643): paquete serializado, los bytes son 18
+[INFO] 17:31:55:319 Game-watch-client/(19693:19693): logger iniciado.
+[INFO] 17:31:55:320 Game-watch-client/(19693:19693): config cargada.
+[INFO] 17:31:55:321 Game-watch-client/(19693:19693): La IP es: 127.0.0.1
+[INFO] 17:31:55:321 Game-watch-client/(19693:19693): El Puerto es: 4444
+[INFO] 17:31:55:321 Game-watch-client/(19693:19693): buffer cargado
+[INFO] 17:31:55:321 Game-watch-client/(19693:19693): asignada memoria del paquete con 8 bytes
+[INFO] 17:31:55:321 Game-watch-client/(19693:19693): paquete creado
+[INFO] 17:31:55:322 Game-watch-client/(19693:19693): la operacion a realizar es 1
+[INFO] 17:31:55:322 Game-watch-client/(19693:19693): paquete serializado, los bytes son 22
+[INFO] 17:31:55:322 Game-watch-client/(19693:19693): mensaje enviado correctamente
+[INFO] 17:31:55:322 Game-watch-client/(19693:19693): buffer stream es: Hola que tal?
+[INFO] 17:31:55:322 Game-watch-client/(19693:19693): el mensaje recibido es: Hola que tal?
+[INFO] 17:31:55:322 Game-watch-client/(19693:19693): buffer cargado
+[INFO] 17:31:55:322 Game-watch-client/(19693:19693): asignada memoria del paquete con 8 bytes
+[INFO] 17:31:55:323 Game-watch-client/(19693:19693): paquete creado
+[INFO] 17:31:55:323 Game-watch-client/(19693:19693): la operacion a realizar es 1
+[INFO] 17:31:55:323 Game-watch-client/(19693:19693): paquete serializado, los bytes son 18
+[INFO] 17:31:55:323 Game-watch-client/(19693:19693): mensaje enviado correctamente
+[INFO] 17:35:53:739 Game-watch-client/(19763:19763): logger iniciado.
+[INFO] 17:35:53:740 Game-watch-client/(19763:19763): config cargada.
+[INFO] 17:35:53:740 Game-watch-client/(19763:19763): La IP es: 127.0.0.1
+[INFO] 17:35:53:740 Game-watch-client/(19763:19763): El Puerto es: 4444
+[INFO] 17:35:53:740 Game-watch-client/(19763:19763): buffer cargado
+[INFO] 17:35:53:740 Game-watch-client/(19763:19763): asignada memoria del paquete con 8 bytes
+[INFO] 17:35:53:740 Game-watch-client/(19763:19763): paquete creado
+[INFO] 17:35:53:740 Game-watch-client/(19763:19763): la operacion a realizar es 1
+[INFO] 17:35:53:740 Game-watch-client/(19763:19763): paquete serializado, los bytes son 22
+[INFO] 17:35:53:740 Game-watch-client/(19763:19763): mensaje enviado correctamente
+[INFO] 17:35:53:741 Game-watch-client/(19763:19763): buffer stream es: Hola que tal?
+[INFO] 17:35:53:741 Game-watch-client/(19763:19763): el mensaje recibido es: Hola que tal?
+[INFO] 17:35:53:741 Game-watch-client/(19763:19763): buffer cargado
+[INFO] 17:35:53:741 Game-watch-client/(19763:19763): asignada memoria del paquete con 8 bytes
+[INFO] 17:35:53:741 Game-watch-client/(19763:19763): paquete creado
+[INFO] 17:35:53:741 Game-watch-client/(19763:19763): la operacion a realizar es 1
+[INFO] 17:35:53:741 Game-watch-client/(19763:19763): paquete serializado, los bytes son 18
+[INFO] 17:35:53:741 Game-watch-client/(19763:19763): mensaje enviado correctamente
+[ERROR] 17:37:56:491 Game-watch-client/(19556:19556): error: No se recibió el código de operación
+[ERROR] 17:37:56:491 Game-watch-client/(19763:19763): error: No se recibió el código de operación
+[INFO] 17:37:56:491 Game-watch-client/(19556:19556): el mensaje recibido es: Error: No se recibió el código de operación
+[ERROR] 17:37:56:491 Game-watch-client/(19693:19693): error: No se recibió el código de operación
+[ERROR] 17:37:56:491 Game-watch-client/(19578:19578): error: No se recibió el código de operación
+[ERROR] 17:37:56:491 Game-watch-client/(19521:19521): error: No se recibió el código de operación
+[ERROR] 17:37:56:491 Game-watch-client/(19489:19489): error: No se recibió el código de operación
+[INFO] 17:37:56:492 Game-watch-client/(19578:19578): el mensaje recibido es: Error: No se recibió el código de operación
+[INFO] 17:37:56:492 Game-watch-client/(19693:19693): el mensaje recibido es: Error: No se recibió el código de operación
+[INFO] 17:37:56:492 Game-watch-client/(19521:19521): el mensaje recibido es: X�8:57:57
+[INFO] 17:37:56:493 Game-watch-client/(19763:19763): el mensaje recibido es: Error: No se recibió el código de operación
+[INFO] 17:37:56:493 Game-watch-client/(19489:19489): el mensaje recibido es: ���	7:56:491
+[INFO] 17:38:34:96 Game-watch-client/(19856:19856): logger iniciado.
+[INFO] 17:38:34:96 Game-watch-client/(19856:19856): config cargada.
+[INFO] 17:38:34:96 Game-watch-client/(19856:19856): La IP es: 127.0.0.1
+[INFO] 17:38:34:96 Game-watch-client/(19856:19856): El Puerto es: 4444
+[INFO] 17:38:34:97 Game-watch-client/(19856:19856): buffer cargado
+[INFO] 17:38:34:97 Game-watch-client/(19856:19856): asignada memoria del paquete con 8 bytes
+[INFO] 17:38:34:97 Game-watch-client/(19856:19856): paquete creado
+[INFO] 17:38:34:97 Game-watch-client/(19856:19856): la operacion a realizar es 1
+[INFO] 17:38:34:97 Game-watch-client/(19856:19856): paquete serializado, los bytes son 22
+[INFO] 17:38:41:874 Game-watch-client/(19869:19869): logger iniciado.
+[INFO] 17:38:41:874 Game-watch-client/(19869:19869): config cargada.
+[INFO] 17:38:41:874 Game-watch-client/(19869:19869): La IP es: 127.0.0.1
+[INFO] 17:38:41:874 Game-watch-client/(19869:19869): El Puerto es: 4444
+[INFO] 17:38:41:875 Game-watch-client/(19869:19869): buffer cargado
+[INFO] 17:38:41:875 Game-watch-client/(19869:19869): asignada memoria del paquete con 8 bytes
+[INFO] 17:38:41:875 Game-watch-client/(19869:19869): paquete creado
+[INFO] 17:38:41:875 Game-watch-client/(19869:19869): la operacion a realizar es 1
+[INFO] 17:38:41:876 Game-watch-client/(19869:19869): paquete serializado, los bytes son 22
+[INFO] 17:38:41:876 Game-watch-client/(19869:19869): mensaje enviado correctamente
+[INFO] 17:38:41:876 Game-watch-client/(19869:19869): buffer stream es: Hola que tal?
+[INFO] 17:38:41:876 Game-watch-client/(19869:19869): el mensaje recibido es: Hola que tal?
+[INFO] 17:38:41:876 Game-watch-client/(19869:19869): buffer cargado
+[INFO] 17:38:41:876 Game-watch-client/(19869:19869): asignada memoria del paquete con 8 bytes
+[INFO] 17:38:41:876 Game-watch-client/(19869:19869): paquete creado
+[INFO] 17:38:41:877 Game-watch-client/(19869:19869): la operacion a realizar es 1
+[INFO] 17:38:41:877 Game-watch-client/(19869:19869): paquete serializado, los bytes son 18
+[INFO] 17:38:41:877 Game-watch-client/(19869:19869): mensaje enviado correctamente
+[ERROR] 17:43:33:538 Game-watch-client/(19869:19869): error: No se recibió el código de operación
+[INFO] 17:43:33:540 Game-watch-client/(19869:19869): el mensaje recibido es: Error: No se recibió el código de operación
+[INFO] 17:43:54:116 Game-watch-client/(20019:20019): logger iniciado.
+[INFO] 17:43:54:117 Game-watch-client/(20019:20019): config cargada.
+[INFO] 17:43:54:117 Game-watch-client/(20019:20019): La IP es: 127.0.0.1
+[INFO] 17:43:54:117 Game-watch-client/(20019:20019): El Puerto es: 4444
+[INFO] 17:43:54:117 Game-watch-client/(20019:20019): buffer cargado
+[INFO] 17:43:54:117 Game-watch-client/(20019:20019): asignada memoria del paquete con 8 bytes
+[INFO] 17:43:54:117 Game-watch-client/(20019:20019): paquete creado
+[INFO] 17:43:54:117 Game-watch-client/(20019:20019): la operacion a realizar es 1
+[INFO] 17:43:54:117 Game-watch-client/(20019:20019): paquete serializado, los bytes son 22
+[INFO] 17:43:54:117 Game-watch-client/(20019:20019): mensaje enviado correctamente
+[INFO] 17:43:54:118 Game-watch-client/(20019:20019): buffer stream es: Hola que tal?
+[INFO] 17:43:54:118 Game-watch-client/(20019:20019): el mensaje recibido es: Hola que tal?
+[INFO] 17:43:54:118 Game-watch-client/(20019:20019): buffer cargado
+[INFO] 17:43:54:118 Game-watch-client/(20019:20019): asignada memoria del paquete con 8 bytes
+[INFO] 17:43:54:118 Game-watch-client/(20019:20019): paquete creado
+[INFO] 17:43:54:118 Game-watch-client/(20019:20019): la operacion a realizar es 1
+[INFO] 17:43:54:118 Game-watch-client/(20019:20019): paquete serializado, los bytes son 18
+[INFO] 17:43:54:118 Game-watch-client/(20019:20019): mensaje enviado correctamente
+[INFO] 17:43:54:118 Game-watch-client/(20019:20019): buffer stream es: Como tas?
+[INFO] 17:43:54:118 Game-watch-client/(20019:20019): el mensaje recibido es: Como tas?
+[INFO] 17:49:07:705 Game-watch-client/(10686:10686): logger iniciado.
+[INFO] 17:49:07:705 Game-watch-client/(10686:10686): config cargada.
+[INFO] 17:49:07:705 Game-watch-client/(10686:10686): La IP es: 127.0.0.1
+[INFO] 17:49:07:705 Game-watch-client/(10686:10686): El Puerto es: 4444
+[INFO] 17:49:07:706 Game-watch-client/(10686:10686): buffer cargado
+[INFO] 17:49:07:706 Game-watch-client/(10686:10686): asignada memoria del paquete con 8 bytes
+[INFO] 17:49:07:706 Game-watch-client/(10686:10686): paquete creado
+[INFO] 17:49:07:706 Game-watch-client/(10686:10686): la operacion a realizar es 1
+[INFO] 17:49:07:706 Game-watch-client/(10686:10686): paquete serializado, los bytes son 22
+[INFO] 17:49:07:706 Game-watch-client/(10686:10686): mensaje enviado correctamente
+[INFO] 17:49:07:706 Game-watch-client/(10686:10686): buffer stream es: Hola que tal?
+[INFO] 17:49:07:706 Game-watch-client/(10686:10686): el mensaje recibido es: Hola que tal?
+[INFO] 17:49:07:706 Game-watch-client/(10686:10686): buffer cargado
+[INFO] 17:49:07:706 Game-watch-client/(10686:10686): asignada memoria del paquete con 8 bytes
+[INFO] 17:49:07:706 Game-watch-client/(10686:10686): paquete creado
+[INFO] 17:49:07:706 Game-watch-client/(10686:10686): la operacion a realizar es 1
+[INFO] 17:49:07:706 Game-watch-client/(10686:10686): paquete serializado, los bytes son 18
+[INFO] 17:49:07:706 Game-watch-client/(10686:10686): mensaje enviado correctamente
+[ERROR] 17:53:32:144 Game-watch-client/(10686:10686): error: No se recibió el código de operación
+[INFO] 17:53:32:144 Game-watch-client/(10686:10686): el mensaje recibido es: Error: No se recibió el código de operación
+[INFO] 17:53:44:782 Game-watch-client/(5235:5235): logger iniciado.
+[INFO] 17:53:44:783 Game-watch-client/(5235:5235): config cargada.
+[INFO] 17:53:44:783 Game-watch-client/(5235:5235): La IP es: 127.0.0.1
+[INFO] 17:53:44:783 Game-watch-client/(5235:5235): El Puerto es: 4444
+[INFO] 17:53:44:784 Game-watch-client/(5235:5235): buffer cargado
+[INFO] 17:53:44:784 Game-watch-client/(5235:5235): asignada memoria del paquete con 8 bytes
+[INFO] 17:53:44:784 Game-watch-client/(5235:5235): paquete creado
+[INFO] 17:53:44:784 Game-watch-client/(5235:5235): la operacion a realizar es 1
+[INFO] 17:53:44:785 Game-watch-client/(5235:5235): paquete serializado, los bytes son 22
+[INFO] 17:53:44:785 Game-watch-client/(5235:5235): mensaje enviado correctamente
+[INFO] 17:53:44:789 Game-watch-client/(5235:5235): buffer stream es: Hola que tal?
+[INFO] 17:53:44:789 Game-watch-client/(5235:5235): el mensaje recibido es: Hola que tal?
+[INFO] 17:53:44:789 Game-watch-client/(5235:5235): buffer cargado
+[INFO] 17:53:44:789 Game-watch-client/(5235:5235): asignada memoria del paquete con 8 bytes
+[INFO] 17:53:44:789 Game-watch-client/(5235:5235): paquete creado
+[INFO] 17:53:44:789 Game-watch-client/(5235:5235): la operacion a realizar es 1
+[INFO] 17:53:44:789 Game-watch-client/(5235:5235): paquete serializado, los bytes son 18
+[INFO] 17:53:44:789 Game-watch-client/(5235:5235): mensaje enviado correctamente
+[ERROR] 17:53:59:586 Game-watch-client/(5235:5235): error: No se recibió el código de operación
+[INFO] 17:53:59:587 Game-watch-client/(5235:5235): el mensaje recibido es: Error: No se recibió el código de operación
+[INFO] 17:56:08:494 Game-watch-client/(21351:21351): logger iniciado.
+[INFO] 17:56:08:497 Game-watch-client/(21351:21351): config cargada.
+[INFO] 17:56:08:497 Game-watch-client/(21351:21351): La IP es: 127.0.0.1
+[INFO] 17:56:08:497 Game-watch-client/(21351:21351): El Puerto es: 4444
+[INFO] 17:56:08:498 Game-watch-client/(21351:21351): buffer cargado
+[INFO] 17:56:08:498 Game-watch-client/(21351:21351): asignada memoria del paquete con 8 bytes
+[INFO] 17:56:08:498 Game-watch-client/(21351:21351): paquete creado
+[INFO] 17:56:08:498 Game-watch-client/(21351:21351): la operacion a realizar es 1
+[INFO] 17:56:08:501 Game-watch-client/(21351:21351): paquete serializado, los bytes son 22
+[INFO] 17:56:08:501 Game-watch-client/(21351:21351): mensaje enviado correctamente
+[INFO] 17:56:08:502 Game-watch-client/(21351:21351): buffer stream es: Hola que tal?
+[INFO] 17:56:08:502 Game-watch-client/(21351:21351): el mensaje recibido es: Hola que tal?
+[INFO] 17:56:08:502 Game-watch-client/(21351:21351): buffer cargado
+[INFO] 17:56:08:502 Game-watch-client/(21351:21351): asignada memoria del paquete con 8 bytes
+[INFO] 17:56:08:502 Game-watch-client/(21351:21351): paquete creado
+[INFO] 17:56:08:502 Game-watch-client/(21351:21351): la operacion a realizar es 1
+[INFO] 17:56:08:502 Game-watch-client/(21351:21351): paquete serializado, los bytes son 18
+[INFO] 17:56:08:502 Game-watch-client/(21351:21351): mensaje enviado correctamente
+[INFO] 17:56:08:502 Game-watch-client/(21351:21351): buffer stream es: Como tas?
+[INFO] 17:56:08:502 Game-watch-client/(21351:21351): el mensaje recibido es: Como tas?
+[INFO] 17:56:54:650 Game-watch-client/(7382:7382): logger iniciado.
+[INFO] 17:56:54:650 Game-watch-client/(7382:7382): config cargada.
+[INFO] 17:56:54:650 Game-watch-client/(7382:7382): La IP es: 127.0.0.1
+[INFO] 17:56:54:650 Game-watch-client/(7382:7382): El Puerto es: 4444
+[INFO] 17:56:54:650 Game-watch-client/(7382:7382): buffer cargado
+[INFO] 17:56:54:650 Game-watch-client/(7382:7382): asignada memoria del paquete con 8 bytes
+[INFO] 17:56:54:650 Game-watch-client/(7382:7382): paquete creado
+[INFO] 17:56:54:650 Game-watch-client/(7382:7382): la operacion a realizar es 1
+[INFO] 17:56:54:650 Game-watch-client/(7382:7382): paquete serializado, los bytes son 22
+[INFO] 17:56:54:650 Game-watch-client/(7382:7382): mensaje enviado correctamente
+[INFO] 17:56:54:650 Game-watch-client/(7382:7382): buffer stream es: Hola que tal?
+[INFO] 17:56:54:650 Game-watch-client/(7382:7382): el mensaje recibido es: Hola que tal?
+[INFO] 17:56:54:650 Game-watch-client/(7382:7382): buffer cargado
+[INFO] 17:56:54:650 Game-watch-client/(7382:7382): asignada memoria del paquete con 8 bytes
+[INFO] 17:56:54:650 Game-watch-client/(7382:7382): paquete creado
+[INFO] 17:56:54:651 Game-watch-client/(7382:7382): la operacion a realizar es 1
+[INFO] 17:56:54:651 Game-watch-client/(7382:7382): paquete serializado, los bytes son 18
+[INFO] 17:56:54:651 Game-watch-client/(7382:7382): mensaje enviado correctamente
+[INFO] 17:56:54:651 Game-watch-client/(7382:7382): buffer stream es: Como tas?
+[INFO] 17:56:54:651 Game-watch-client/(7382:7382): el mensaje recibido es: Como tas?
+[INFO] 17:56:54:651 Game-watch-client/(7382:7382): buffer cargado
+[INFO] 17:56:54:651 Game-watch-client/(7382:7382): asignada memoria del paquete con 8 bytes
+[INFO] 17:56:54:651 Game-watch-client/(7382:7382): paquete creado
+[INFO] 17:56:54:651 Game-watch-client/(7382:7382): la operacion a realizar es 1
+[INFO] 17:56:54:651 Game-watch-client/(7382:7382): paquete serializado, los bytes son 17
+[INFO] 17:56:54:651 Game-watch-client/(7382:7382): mensaje enviado correctamente
+[INFO] 17:57:59:76 Game-watch-client/(17215:17215): logger iniciado.
+[INFO] 17:57:59:77 Game-watch-client/(17215:17215): config cargada.
+[INFO] 17:57:59:77 Game-watch-client/(17215:17215): La IP es: 127.0.0.1
+[INFO] 17:57:59:77 Game-watch-client/(17215:17215): El Puerto es: 4444
+[INFO] 17:57:59:78 Game-watch-client/(17215:17215): buffer cargado
+[INFO] 17:57:59:78 Game-watch-client/(17215:17215): asignada memoria del paquete con 8 bytes
+[INFO] 17:57:59:78 Game-watch-client/(17215:17215): paquete creado
+[INFO] 17:57:59:78 Game-watch-client/(17215:17215): la operacion a realizar es 1
+[INFO] 17:57:59:78 Game-watch-client/(17215:17215): paquete serializado, los bytes son 22
+[INFO] 17:57:59:78 Game-watch-client/(17215:17215): mensaje enviado correctamente
+[INFO] 17:57:59:78 Game-watch-client/(17215:17215): buffer stream es: Hola que tal?
+[INFO] 17:57:59:78 Game-watch-client/(17215:17215): el mensaje recibido es: Hola que tal?
+[INFO] 17:57:59:78 Game-watch-client/(17215:17215): buffer cargado
+[INFO] 17:57:59:78 Game-watch-client/(17215:17215): asignada memoria del paquete con 8 bytes
+[INFO] 17:57:59:78 Game-watch-client/(17215:17215): paquete creado
+[INFO] 17:57:59:78 Game-watch-client/(17215:17215): la operacion a realizar es 1
+[INFO] 17:57:59:78 Game-watch-client/(17215:17215): paquete serializado, los bytes son 18
+[INFO] 17:57:59:78 Game-watch-client/(17215:17215): mensaje enviado correctamente
+[INFO] 17:57:59:79 Game-watch-client/(17215:17215): buffer stream es: Como tas?
+[INFO] 17:57:59:79 Game-watch-client/(17215:17215): el mensaje recibido es: Como tas?
+[INFO] 17:57:59:79 Game-watch-client/(17215:17215): buffer cargado
+[INFO] 17:57:59:79 Game-watch-client/(17215:17215): asignada memoria del paquete con 8 bytes
+[INFO] 17:57:59:79 Game-watch-client/(17215:17215): paquete creado
+[INFO] 17:57:59:79 Game-watch-client/(17215:17215): la operacion a realizar es 1
+[INFO] 17:57:59:79 Game-watch-client/(17215:17215): paquete serializado, los bytes son 17
+[INFO] 17:57:59:79 Game-watch-client/(17215:17215): mensaje enviado correctamente
+[INFO] 17:57:59:80 Game-watch-client/(17215:17215): buffer stream es: rE PIOLA
+[INFO] 17:57:59:80 Game-watch-client/(17215:17215): el mensaje recibido es: rE PIOLA
+[ERROR] 18:00:01:920 Game-watch-client/(7382:7382): error: No se recibió el código de operación
+[INFO] 18:00:01:921 Game-watch-client/(7382:7382): el mensaje recibido es: Error: No se recibió el código de operación
+[INFO] 18:00:12:225 Game-watch-client/(28862:28862): logger iniciado.
+[INFO] 18:00:12:225 Game-watch-client/(28862:28862): config cargada.
+[INFO] 18:00:12:225 Game-watch-client/(28862:28862): La IP es: 127.0.0.1
+[INFO] 18:00:12:225 Game-watch-client/(28862:28862): El Puerto es: 4444
+[INFO] 18:00:12:226 Game-watch-client/(28862:28862): buffer cargado
+[INFO] 18:00:12:226 Game-watch-client/(28862:28862): asignada memoria del paquete con 8 bytes
+[INFO] 18:00:12:226 Game-watch-client/(28862:28862): paquete creado
+[INFO] 18:00:12:226 Game-watch-client/(28862:28862): la operacion a realizar es 1
+[INFO] 18:00:12:226 Game-watch-client/(28862:28862): paquete serializado, los bytes son 22
+[INFO] 18:00:12:226 Game-watch-client/(28862:28862): mensaje enviado correctamente
+[INFO] 18:00:12:226 Game-watch-client/(28862:28862): buffer stream es: Hola que tal?
+[INFO] 18:00:12:226 Game-watch-client/(28862:28862): el mensaje recibido es: Hola que tal?
+[INFO] 18:00:12:226 Game-watch-client/(28862:28862): buffer cargado
+[INFO] 18:00:12:226 Game-watch-client/(28862:28862): asignada memoria del paquete con 8 bytes
+[INFO] 18:00:12:226 Game-watch-client/(28862:28862): paquete creado
+[INFO] 18:00:12:226 Game-watch-client/(28862:28862): la operacion a realizar es 1
+[INFO] 18:00:12:226 Game-watch-client/(28862:28862): paquete serializado, los bytes son 18
+[INFO] 18:00:12:226 Game-watch-client/(28862:28862): mensaje enviado correctamente
+[ERROR] 18:01:54:806 Game-watch-client/(28862:28862): error: No se recibió el código de operación
+[INFO] 18:01:54:806 Game-watch-client/(28862:28862): el mensaje recibido es: Error: No se recibió el código de operación
+[INFO] 18:02:01:535 Game-watch-client/(1847:1847): logger iniciado.
+[INFO] 18:02:01:536 Game-watch-client/(1847:1847): config cargada.
+[INFO] 18:02:01:536 Game-watch-client/(1847:1847): La IP es: 127.0.0.1
+[INFO] 18:02:01:536 Game-watch-client/(1847:1847): El Puerto es: 4444
+[INFO] 18:02:01:537 Game-watch-client/(1847:1847): buffer cargado
+[INFO] 18:02:01:537 Game-watch-client/(1847:1847): asignada memoria del paquete con 8 bytes
+[INFO] 18:02:01:537 Game-watch-client/(1847:1847): paquete creado
+[INFO] 18:02:01:537 Game-watch-client/(1847:1847): la operacion a realizar es 1
+[INFO] 18:02:01:537 Game-watch-client/(1847:1847): paquete serializado, los bytes son 22
+[INFO] 18:02:01:537 Game-watch-client/(1847:1847): mensaje enviado correctamente
+[INFO] 18:02:01:537 Game-watch-client/(1847:1847): buffer stream es: Hola que tal?
+[INFO] 18:02:01:537 Game-watch-client/(1847:1847): el mensaje recibido es: Hola que tal?
+[INFO] 18:02:01:537 Game-watch-client/(1847:1847): buffer cargado
+[INFO] 18:02:01:538 Game-watch-client/(1847:1847): asignada memoria del paquete con 8 bytes
+[INFO] 18:02:01:538 Game-watch-client/(1847:1847): paquete creado
+[INFO] 18:02:01:538 Game-watch-client/(1847:1847): la operacion a realizar es 1
+[INFO] 18:02:01:538 Game-watch-client/(1847:1847): paquete serializado, los bytes son 18
+[INFO] 18:02:01:538 Game-watch-client/(1847:1847): mensaje enviado correctamente
+[INFO] 18:02:31:519 Game-watch-client/(29795:29795): logger iniciado.
+[INFO] 18:02:31:531 Game-watch-client/(29795:29795): config cargada.
+[INFO] 18:02:31:531 Game-watch-client/(29795:29795): La IP es: 127.0.0.1
+[INFO] 18:02:31:532 Game-watch-client/(29795:29795): El Puerto es: 4444
+[INFO] 18:02:31:532 Game-watch-client/(29795:29795): buffer cargado
+[INFO] 18:02:31:532 Game-watch-client/(29795:29795): asignada memoria del paquete con 8 bytes
+[INFO] 18:02:31:533 Game-watch-client/(29795:29795): paquete creado
+[INFO] 18:02:31:533 Game-watch-client/(29795:29795): la operacion a realizar es 1
+[INFO] 18:02:31:533 Game-watch-client/(29795:29795): paquete serializado, los bytes son 22
+[INFO] 18:02:31:533 Game-watch-client/(29795:29795): mensaje enviado correctamente
+[INFO] 18:02:31:533 Game-watch-client/(29795:29795): buffer stream es: Hola que tal?
+[INFO] 18:02:31:534 Game-watch-client/(29795:29795): el mensaje recibido es: Hola que tal?
+[INFO] 18:02:31:534 Game-watch-client/(29795:29795): buffer cargado
+[INFO] 18:02:31:534 Game-watch-client/(29795:29795): asignada memoria del paquete con 8 bytes
+[INFO] 18:02:31:534 Game-watch-client/(29795:29795): paquete creado
+[INFO] 18:02:31:534 Game-watch-client/(29795:29795): la operacion a realizar es 1
+[INFO] 18:02:31:535 Game-watch-client/(29795:29795): paquete serializado, los bytes son 18
+[INFO] 18:02:31:535 Game-watch-client/(29795:29795): mensaje enviado correctamente
+[INFO] 18:02:31:536 Game-watch-client/(29795:29795): buffer stream es: Como tas?
+[INFO] 18:02:31:536 Game-watch-client/(29795:29795): el mensaje recibido es: Como tas?
+[INFO] 18:02:31:536 Game-watch-client/(29795:29795): buffer cargado
+[INFO] 18:02:31:536 Game-watch-client/(29795:29795): asignada memoria del paquete con 8 bytes
+[INFO] 18:02:31:537 Game-watch-client/(29795:29795): paquete creado
+[INFO] 18:02:31:537 Game-watch-client/(29795:29795): la operacion a realizar es 1
+[INFO] 18:02:31:537 Game-watch-client/(29795:29795): paquete serializado, los bytes son 17
+[INFO] 18:02:31:537 Game-watch-client/(29795:29795): mensaje enviado correctamente
+[INFO] 18:02:31:544 Game-watch-client/(29795:29795): buffer stream es: rE PIOLA
+[INFO] 18:02:31:545 Game-watch-client/(29795:29795): el mensaje recibido es: rE PIOLA
+[INFO] 18:04:21:503 Game-watch-client/(18548:18548): logger iniciado.
+[INFO] 18:04:21:504 Game-watch-client/(18548:18548): config cargada.
+[INFO] 18:04:21:505 Game-watch-client/(18548:18548): La IP es: 127.0.0.1
+[INFO] 18:04:21:505 Game-watch-client/(18548:18548): El Puerto es: 4444
+[INFO] 18:04:21:505 Game-watch-client/(18548:18548): la operacion a realizar es 1
+[INFO] 18:04:21:505 Game-watch-client/(18548:18548): el mensaje recibido es: Hola que tal?
+[INFO] 18:04:21:506 Game-watch-client/(18548:18548): la operacion a realizar es 1
+[INFO] 18:04:21:506 Game-watch-client/(18548:18548): el mensaje recibido es: Como tas?
+[INFO] 18:04:21:506 Game-watch-client/(18548:18548): la operacion a realizar es 1
+[INFO] 18:04:21:507 Game-watch-client/(18548:18548): el mensaje recibido es: rE PIOLA
+[ERROR] 18:04:50:356 Game-watch-client/(1847:1847): error: No se recibió el código de operación
+[INFO] 18:04:50:369 Game-watch-client/(1847:1847): el mensaje recibido es: Error: No se recibió el código de operación
+[INFO] 18:04:58:944 Game-watch-client/(10964:10964): logger iniciado.
+[INFO] 18:04:58:945 Game-watch-client/(10964:10964): config cargada.
+[INFO] 18:04:58:945 Game-watch-client/(10964:10964): La IP es: 127.0.0.1
+[INFO] 18:04:58:945 Game-watch-client/(10964:10964): El Puerto es: 4444
+[INFO] 18:04:58:946 Game-watch-client/(10964:10964): la operacion a realizar es 1
+[INFO] 18:04:58:946 Game-watch-client/(10964:10964): el mensaje recibido es: Hola que tal?
+[INFO] 18:04:58:946 Game-watch-client/(10964:10964): la operacion a realizar es 1
+[INFO] 18:04:58:947 Game-watch-client/(10964:10964): el mensaje recibido es: Como tas?
+[INFO] 18:04:58:947 Game-watch-client/(10964:10964): la operacion a realizar es 1
+[INFO] 18:04:58:947 Game-watch-client/(10964:10964): el mensaje recibido es: rE PIOLA
+[INFO] 18:06:20:427 Game-watch-client/(29559:29559): logger iniciado.
+[INFO] 18:06:20:427 Game-watch-client/(29559:29559): config cargada.
+[INFO] 18:06:20:428 Game-watch-client/(29559:29559): La IP es: 127.0.0.1
+[INFO] 18:06:20:428 Game-watch-client/(29559:29559): El Puerto es: 4444
+[INFO] 18:06:20:429 Game-watch-client/(29559:29559): la operacion a realizar es 1
+[INFO] 18:06:20:437 Game-watch-client/(29559:29559): el mensaje recibido es: Hola que tal?
+[INFO] 18:06:20:437 Game-watch-client/(29559:29559): la operacion a realizar es 1
+[INFO] 18:10:18:258 Game-watch-client/(5543:5543): logger iniciado.
+[INFO] 18:10:18:258 Game-watch-client/(5543:5543): config cargada.
+[INFO] 18:10:18:258 Game-watch-client/(5543:5543): La IP es: 127.0.0.1
+[INFO] 18:10:18:258 Game-watch-client/(5543:5543): El Puerto es: 4444
+[INFO] 18:10:18:259 Game-watch-client/(5543:5543): la operacion a realizar es 1
+[INFO] 18:10:18:260 Game-watch-client/(5543:5543): el mensaje recibido es: Hola que tal?
+[INFO] 18:10:18:260 Game-watch-client/(5543:5543): la operacion a realizar es 1
+[INFO] 18:11:47:20 Game-watch-client/(15110:15110): logger iniciado.
+[INFO] 18:11:47:21 Game-watch-client/(15110:15110): config cargada.
+[INFO] 18:11:47:22 Game-watch-client/(15110:15110): La IP es: 127.0.0.1
+[INFO] 18:11:47:22 Game-watch-client/(15110:15110): El Puerto es: 4444
+[INFO] 18:11:47:22 Game-watch-client/(15110:15110): la operacion a realizar es 1
+[INFO] 18:11:47:23 Game-watch-client/(15110:15110): el mensaje recibido es: Hola que tal?
+[INFO] 18:11:47:23 Game-watch-client/(15110:15110): la operacion a realizar es 1
+[INFO] 18:24:46:70 Game-watch-client/(1828:1828): logger iniciado.
+[INFO] 18:24:46:70 Game-watch-client/(1828:1828): config cargada.
+[INFO] 18:24:46:70 Game-watch-client/(1828:1828): La IP es: 127.0.0.1
+[INFO] 18:24:46:70 Game-watch-client/(1828:1828): El Puerto es: 4444
+[INFO] 18:24:51:761 Game-watch-client/(1828:1828): la operacion a realizar es 1
+[INFO] 18:24:51:761 Game-watch-client/(1828:1828): el mensaje recibido es: hola
+[INFO] 18:24:57:626 Game-watch-client/(1828:1828): la operacion a realizar es 1
+[INFO] 18:24:57:629 Game-watch-client/(1828:1828): el mensaje recibido es: que
+[INFO] 18:24:57:630 Game-watch-client/(1828:1828): la operacion a realizar es 1
+[INFO] 18:24:57:630 Game-watch-client/(1828:1828): el mensaje recibido es: tal
+[INFO] 18:25:08:898 Game-watch-client/(1828:1828): la operacion a realizar es 1
+[INFO] 18:25:08:900 Game-watch-client/(1828:1828): el mensaje recibido es: queTal
+[INFO] 18:27:18:123 Game-watch-client/(20990:20990): logger iniciado.
+[INFO] 18:27:18:123 Game-watch-client/(20990:20990): config cargada.
+[INFO] 18:27:18:124 Game-watch-client/(20990:20990): La IP es: 127.0.0.1
+[INFO] 18:27:18:124 Game-watch-client/(20990:20990): El Puerto es: 4444
