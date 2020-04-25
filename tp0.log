@@ -5358,3 +5358,69 @@
 [INFO] 18:27:18:123 Game-watch-client/(20990:20990): config cargada.
 [INFO] 18:27:18:124 Game-watch-client/(20990:20990): La IP es: 127.0.0.1
 [INFO] 18:27:18:124 Game-watch-client/(20990:20990): El Puerto es: 4444
+[INFO] 19:44:49:56 Game-watch-client/(6638:6638): logger iniciado.
+[INFO] 19:44:49:58 Game-watch-client/(6638:6638): config cargada.
+[INFO] 19:44:49:58 Game-watch-client/(6638:6638): La IP es: 127.0.0.1
+[INFO] 19:44:49:58 Game-watch-client/(6638:6638): El Puerto es: 4444
+[INFO] 19:45:22:617 Game-watch-client/(6725:6725): logger iniciado.
+[INFO] 19:45:22:618 Game-watch-client/(6725:6725): config cargada.
+[INFO] 19:45:22:618 Game-watch-client/(6725:6725): La IP es: 127.0.0.1
+[INFO] 19:45:22:621 Game-watch-client/(6725:6725): El Puerto es: 4444
+[INFO] 19:47:13:938 Game-watch-client/(6999:6999): logger iniciado.
+[INFO] 19:47:13:948 Game-watch-client/(6999:6999): config cargada.
+[INFO] 19:47:13:948 Game-watch-client/(6999:6999): La IP es: 127.0.0.1
+[INFO] 19:47:13:949 Game-watch-client/(6999:6999): El Puerto es: 4444
+[INFO] 19:48:23:792 Game-watch-client/(7157:7157): logger iniciado.
+[INFO] 19:48:23:804 Game-watch-client/(7157:7157): config cargada.
+[INFO] 19:48:23:805 Game-watch-client/(7157:7157): La IP es: 127.0.0.1
+[INFO] 19:48:23:805 Game-watch-client/(7157:7157): El Puerto es: 4444
+[INFO] 19:49:30:552 Game-watch-client/(7312:7312): logger iniciado.
+[INFO] 19:49:30:570 Game-watch-client/(7312:7312): config cargada.
+[INFO] 19:49:30:570 Game-watch-client/(7312:7312): La IP es: 127.0.0.1
+[INFO] 19:49:30:570 Game-watch-client/(7312:7312): El Puerto es: 4444
+[INFO] 19:49:30:570 Game-watch-client/(7312:7312): la operacion a realizar es 1
+[INFO] 19:49:30:577 Game-watch-client/(7312:7312): el mensaje recibido es: Hola
+[INFO] 19:51:50:778 Game-watch-client/(7614:7614): logger iniciado.
+[INFO] 19:51:50:786 Game-watch-client/(7614:7614): config cargada.
+[INFO] 19:51:50:786 Game-watch-client/(7614:7614): La IP es: 127.0.0.1
+[INFO] 19:51:50:786 Game-watch-client/(7614:7614): El Puerto es: 4444
+[INFO] 19:51:50:786 Game-watch-client/(7614:7614): la operacion a realizar es 1
+[INFO] 19:51:50:790 Game-watch-client/(7614:7614): el mensaje recibido es: Hola
+[INFO] 19:51:55:380 Game-watch-client/(7633:7633): logger iniciado.
+[INFO] 19:51:55:382 Game-watch-client/(7633:7633): config cargada.
+[INFO] 19:51:55:382 Game-watch-client/(7633:7633): La IP es: 127.0.0.1
+[INFO] 19:51:55:382 Game-watch-client/(7633:7633): El Puerto es: 4444
+[INFO] 19:51:55:385 Game-watch-client/(7633:7633): la operacion a realizar es 1
+[INFO] 19:51:55:385 Game-watch-client/(7633:7633): el mensaje recibido es: Hola
+[INFO] 19:52:28:727 Game-watch-client/(7739:7739): logger iniciado.
+[INFO] 19:52:28:727 Game-watch-client/(7739:7739): config cargada.
+[INFO] 19:52:28:728 Game-watch-client/(7739:7739): La IP es: 127.0.0.1
+[INFO] 19:52:28:728 Game-watch-client/(7739:7739): El Puerto es: 4444
+[INFO] 19:52:28:728 Game-watch-client/(7739:7739): la operacion a realizar es 1
+[INFO] 19:52:28:728 Game-watch-client/(7739:7739): el mensaje recibido es: Hola
+[INFO] 19:52:39:51 Game-watch-client/(7775:7775): logger iniciado.
+[INFO] 19:52:39:55 Game-watch-client/(7775:7775): config cargada.
+[INFO] 19:52:39:55 Game-watch-client/(7775:7775): La IP es: 127.0.0.1
+[INFO] 19:52:39:55 Game-watch-client/(7775:7775): El Puerto es: 4444
+[INFO] 19:52:39:55 Game-watch-client/(7775:7775): la operacion a realizar es 1
+[INFO] 19:52:39:55 Game-watch-client/(7775:7775): el mensaje recibido es: Hola
+[INFO] 19:52:52:401 Game-watch-client/(7817:7817): logger iniciado.
+[INFO] 19:52:52:407 Game-watch-client/(7817:7817): config cargada.
+[INFO] 19:52:52:407 Game-watch-client/(7817:7817): La IP es: 127.0.0.1
+[INFO] 19:52:52:407 Game-watch-client/(7817:7817): El Puerto es: 4444
+[INFO] 19:52:52:407 Game-watch-client/(7817:7817): la operacion a realizar es 1
+[INFO] 19:52:52:409 Game-watch-client/(7817:7817): el mensaje recibido es: Hola
+[INFO] 19:56:30:334 Game-watch-client/(8239:8239): logger iniciado.
+[INFO] 19:56:30:334 Game-watch-client/(8239:8239): config cargada.
+[INFO] 19:56:30:334 Game-watch-client/(8239:8239): La IP es: 127.0.0.1
+[INFO] 19:56:30:334 Game-watch-client/(8239:8239): El Puerto es: 4444
+[INFO] 19:56:30:337 Game-watch-client/(8239:8239): la operacion a realizar es 1
+[INFO] 19:56:30:337 Game-watch-client/(8239:8239): el mensaje recibido es: Hola
+[INFO] 19:57:34:455 Game-watch-client/(8374:8374): logger iniciado.
+[INFO] 19:57:34:461 Game-watch-client/(8374:8374): config cargada.
+[INFO] 19:57:34:461 Game-watch-client/(8374:8374): La IP es: 127.0.0.1
+[INFO] 19:57:34:461 Game-watch-client/(8374:8374): El Puerto es: 4444
+[INFO] 19:57:34:462 Game-watch-client/(8374:8374): la operacion a realizar es 1
+[INFO] 19:57:34:466 Game-watch-client/(8374:8374): el mensaje recibido es: Hola
+[INFO] 21:06:09:951 Game-watch-client/(7157:7157): la operacion a realizar es 1
+[INFO] 21:06:09:951 Game-watch-client/(7157:7157): el mensaje recibido es: Me mandaron cualquier cosa

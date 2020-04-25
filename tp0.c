@@ -11,10 +11,8 @@
 int main(void){
 	/*---------------------------------------------------PARTE 2-------------------------------------------------------------*/
 	int conexion;
-	int conexion2;
-	char* ip = "127.0.0.1";
-	char* puerto = "4444";
-	char* puerto2 = "4445";
+	char* ip;
+	char* puerto;
 
 	t_log* logger;
 	t_config* config;
@@ -25,8 +23,8 @@ int main(void){
 	config = leer_config();
 	log_info(logger, "config cargada.");
 
-	//ip 		= config_get_string_value(config, "IP");
-	//puerto 	= config_get_string_value(config, "PUERTO");
+	ip = config_get_string_value(config, "IP");
+	puerto = config_get_string_value(config, "PUERTO");
 	log_info(logger, "La IP es: %s", ip);
 	log_info(logger, "El Puerto es: %s", puerto);
 
@@ -34,18 +32,17 @@ int main(void){
 
 	conexion = crear_conexion(ip, puerto);
 
-	while (1)
-	{
-		conexion = crear_conexion(ip, puerto);
-		char* mensaje = malloc(1);
-		scanf("%s", mensaje);
-		enviar_mensaje(mensaje, conexion,logger);
-		char* mensajeRecibido = recibir_mensaje(conexion, logger);
-		log_info(logger,"el mensaje recibido es: %s" ,mensajeRecibido);
-		free (mensajeRecibido);
-		liberar_conexion(conexion);
-	}
+	char* mensaje = "Hola";
 
+	enviar_mensaje(mensaje, conexion,logger);
+
+	char* mensajeRecibido = recibir_mensaje(conexion, logger);
+
+	log_info(logger,"el mensaje recibido es: %s" ,mensajeRecibido);
+
+
+
+	free(mensajeRecibido);
 	terminar_programa(conexion, logger, config);
 }
 
