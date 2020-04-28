@@ -1,6 +1,6 @@
 #include "utilsBroker.h"
 
-void iniciar_servidor(void)
+int iniciar_servidor(char* IP, char* PUERTO)
 {
 	int socket_servidor;
 
@@ -29,8 +29,7 @@ void iniciar_servidor(void)
 
     freeaddrinfo(servinfo);
 
-    while(1)
-    	esperar_cliente(socket_servidor);
+    return socket_servidor;
 }
 
 void esperar_cliente(int socket_servidor)
@@ -43,7 +42,6 @@ void esperar_cliente(int socket_servidor)
 
 	pthread_create(&thread,NULL,(void*)serve_client,&socket_cliente);
 	pthread_detach(thread);
-
 }
 
 void serve_client(int* socket)
@@ -58,9 +56,10 @@ void process_request(int cod_op, int cliente_fd) {
 	int size;
 	void* msg;
 		switch (cod_op) {
-		case MENSAJE:
+		case 7:
 			msg = recibir_mensaje(cliente_fd, &size);
 			devolver_mensaje(msg, size, cliente_fd);
+			close(cliente_fd);
 			free(msg);
 			break;
 		case 0:
@@ -100,7 +99,7 @@ void devolver_mensaje(void* payload, int size, int socket_cliente)
 {
 	t_paquete* paquete = malloc(sizeof(t_paquete));
 
-	paquete->codigo_operacion = MENSAJE;
+	paquete->codigo_operacion = 7;
 	paquete->buffer = malloc(sizeof(t_buffer));
 	paquete->buffer->size = size;
 	paquete->buffer->stream = malloc(paquete->buffer->size);

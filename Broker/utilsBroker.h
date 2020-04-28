@@ -11,8 +11,8 @@
 #ifndef CONEXIONES_H_
 #define CONEXIONES_H_
 
-#define IP "127.0.0.1"
-#define PUERTO "4444"
+//#define IP "127.0.0.1"
+//#define PUERTO "4444"
 
 
 typedef enum
@@ -115,7 +115,7 @@ pthread_t thread;
 
 void* recibir_buffer(int*, int);
 
-void iniciar_servidor(void);
+int iniciar_servidor(void);
 void esperar_cliente(int);
 void* recibir_mensaje(int socket_cliente, int* size);
 int recibir_operacion(int);
