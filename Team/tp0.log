@@ -34361,3 +34361,491 @@
 [INFO] 21:21:31:397 Game-watch-client/(13170:13170): iterate nro 2: Squirtle|Bulbasaur
 [INFO] 21:21:31:397 Game-watch-client/(13170:13170): encontre 3
 [INFO] 21:21:31:398 Game-watch-client/(13170:13170): hay 3 objetivos
+[INFO] 20:37:32:298 Game-watch-client/(9183:9183): logger iniciado.
+[INFO] 20:37:32:313 Game-watch-client/(9183:9183): config cargada.
+[INFO] 20:37:32:313 Game-watch-client/(9183:9183): La IP es: 127.0.0.1
+[INFO] 20:37:32:313 Game-watch-client/(9183:9183): El Puerto es: 4444
+[INFO] 20:37:32:313 Game-watch-client/(9183:9183): La cantidad de entrenadores a cargar es de: 3
+[INFO] 20:37:32:313 Game-watch-client/(9183:9183): Se inicializó una lista de entrenadores con ids desde nro: 3
+[INFO] 20:39:23:723 Game-watch-client/(9260:9260): logger iniciado.
+[INFO] 20:39:23:723 Game-watch-client/(9260:9260): config cargada.
+[INFO] 20:39:23:723 Game-watch-client/(9260:9260): La IP es: 127.0.0.1
+[INFO] 20:39:23:723 Game-watch-client/(9260:9260): El Puerto es: 4444
+[INFO] 20:39:23:724 Game-watch-client/(9260:9260): La cantidad de entrenadores a cargar es de: 3
+[INFO] 20:39:23:724 Game-watch-client/(9260:9260): Se inicializó una lista de entrenadores con ids desde nro: 2
+[INFO] 20:40:17:881 Game-watch-client/(9463:9463): logger iniciado.
+[INFO] 20:40:17:882 Game-watch-client/(9463:9463): config cargada.
+[INFO] 20:40:17:882 Game-watch-client/(9463:9463): La IP es: 127.0.0.1
+[INFO] 20:40:17:882 Game-watch-client/(9463:9463): El Puerto es: 4444
+[INFO] 20:40:17:882 Game-watch-client/(9463:9463): La cantidad de entrenadores a cargar es de: 3
+[INFO] 20:40:17:882 Game-watch-client/(9463:9463): Se inicializó una lista de entrenadores con ids desde nro: 1
+[INFO] 20:41:15:963 Game-watch-client/(9517:9517): logger iniciado.
+[INFO] 20:41:15:963 Game-watch-client/(9517:9517): config cargada.
+[INFO] 20:41:15:963 Game-watch-client/(9517:9517): La IP es: 127.0.0.1
+[INFO] 20:41:15:963 Game-watch-client/(9517:9517): El Puerto es: 4444
+[INFO] 20:41:15:963 Game-watch-client/(9517:9517): La cantidad de entrenadores a cargar es de: 3
+[INFO] 20:41:15:964 Game-watch-client/(9517:9517): Se inicializó un entrenador con id nro: 1
+[INFO] 20:41:15:964 Game-watch-client/(9517:9517): Se inicializó un entrenador con id nro: 2
+[INFO] 20:41:15:964 Game-watch-client/(9517:9517): Se inicializó un entrenador con id nro: 3
+[INFO] 20:42:12:221 Game-watch-client/(9575:9575): logger iniciado.
+[INFO] 20:42:12:221 Game-watch-client/(9575:9575): config cargada.
+[INFO] 20:42:12:221 Game-watch-client/(9575:9575): La IP es: 127.0.0.1
+[INFO] 20:42:12:221 Game-watch-client/(9575:9575): El Puerto es: 4444
+[INFO] 20:42:12:222 Game-watch-client/(9575:9575): La cantidad de entrenadores a cargar es de: 3
+[INFO] 20:42:12:222 Game-watch-client/(9575:9575): Se inicializó un entrenador con id nro: 1
+[INFO] 20:42:12:222 Game-watch-client/(9575:9575): Se inicializó un entrenador con id nro: 2
+[INFO] 20:42:12:222 Game-watch-client/(9575:9575): Se inicializó un entrenador con id nro: 3
+[INFO] 20:42:12:222 Game-watch-client/(9575:9575): holis
+[INFO] 20:42:27:522 Game-watch-client/(9600:9600): logger iniciado.
+[INFO] 20:42:27:522 Game-watch-client/(9600:9600): config cargada.
+[INFO] 20:42:27:522 Game-watch-client/(9600:9600): La IP es: 127.0.0.1
+[INFO] 20:42:27:522 Game-watch-client/(9600:9600): El Puerto es: 4444
+[INFO] 20:42:27:531 Game-watch-client/(9600:9600): La cantidad de entrenadores a cargar es de: 3
+[INFO] 20:42:27:531 Game-watch-client/(9600:9600): Se inicializó un entrenador con id nro: 1
+[INFO] 20:42:27:531 Game-watch-client/(9600:9600): Se inicializó un entrenador con id nro: 2
+[INFO] 20:42:27:536 Game-watch-client/(9600:9600): Se inicializó un entrenador con id nro: 3
+[INFO] 20:42:37:418 Game-watch-client/(9626:9626): logger iniciado.
+[INFO] 20:42:37:418 Game-watch-client/(9626:9626): config cargada.
+[INFO] 20:42:37:418 Game-watch-client/(9626:9626): La IP es: 127.0.0.1
+[INFO] 20:42:37:419 Game-watch-client/(9626:9626): El Puerto es: 4444
+[INFO] 20:42:37:419 Game-watch-client/(9626:9626): La cantidad de entrenadores a cargar es de: 3
+[INFO] 20:42:37:419 Game-watch-client/(9626:9626): Se inicializó un entrenador con id nro: 1
+[INFO] 20:42:37:419 Game-watch-client/(9626:9626): Se inicializó un entrenador con id nro: 2
+[INFO] 20:42:37:419 Game-watch-client/(9626:9626): Se inicializó un entrenador con id nro: 3
+[INFO] 20:42:37:419 Game-watch-client/(9626:9626): holis
+[INFO] 20:45:24:315 Game-watch-client/(9725:9725): logger iniciado.
+[INFO] 20:45:24:315 Game-watch-client/(9725:9725): config cargada.
+[INFO] 20:45:24:315 Game-watch-client/(9725:9725): La IP es: 127.0.0.1
+[INFO] 20:45:24:315 Game-watch-client/(9725:9725): El Puerto es: 4444
+[INFO] 20:45:24:316 Game-watch-client/(9725:9725): La cantidad de entrenadores a cargar es de: 3
+[INFO] 20:45:24:316 Game-watch-client/(9725:9725): Se inicializó un entrenador con id nro: 1
+[INFO] 20:45:24:317 Game-watch-client/(9725:9725): Se inicializó un entrenador con id nro: 2
+[INFO] 20:45:24:317 Game-watch-client/(9725:9725): Se inicializó un entrenador con id nro: 3
+[INFO] 20:45:24:317 Game-watch-client/(9725:9725): holis
+[INFO] 20:46:12:111 Game-watch-client/(9930:9930): logger iniciado.
+[INFO] 20:46:12:111 Game-watch-client/(9930:9930): config cargada.
+[INFO] 20:46:12:111 Game-watch-client/(9930:9930): La IP es: 127.0.0.1
+[INFO] 20:46:12:111 Game-watch-client/(9930:9930): El Puerto es: 4444
+[INFO] 20:46:12:112 Game-watch-client/(9930:9930): La cantidad de entrenadores a cargar es de: 3
+[INFO] 20:46:12:112 Game-watch-client/(9930:9930): Se inicializó un entrenador con id nro: 1
+[INFO] 20:46:12:112 Game-watch-client/(9930:9930): Se inicializó un entrenador con id nro: 2
+[INFO] 20:46:12:112 Game-watch-client/(9930:9930): Se inicializó un entrenador con id nro: 3
+[INFO] 20:46:12:113 Game-watch-client/(9930:9930): holis
+[INFO] 20:46:38:767 Game-watch-client/(9960:9960): logger iniciado.
+[INFO] 20:46:38:769 Game-watch-client/(9960:9960): config cargada.
+[INFO] 20:46:38:769 Game-watch-client/(9960:9960): La IP es: 127.0.0.1
+[INFO] 20:46:38:769 Game-watch-client/(9960:9960): El Puerto es: 4444
+[INFO] 20:46:38:770 Game-watch-client/(9960:9960): La cantidad de entrenadores a cargar es de: 3
+[INFO] 20:46:38:770 Game-watch-client/(9960:9960): Se inicializó un entrenador con id nro: 1
+[INFO] 20:46:38:770 Game-watch-client/(9960:9960): Se inicializó un entrenador con id nro: 2
+[INFO] 20:46:38:770 Game-watch-client/(9960:9960): Se inicializó un entrenador con id nro: 3
+[INFO] 20:47:06:637 Game-watch-client/(9997:9997): logger iniciado.
+[INFO] 20:47:06:639 Game-watch-client/(9997:9997): config cargada.
+[INFO] 20:47:06:640 Game-watch-client/(9997:9997): La IP es: 127.0.0.1
+[INFO] 20:47:06:640 Game-watch-client/(9997:9997): El Puerto es: 4444
+[INFO] 20:47:06:641 Game-watch-client/(9997:9997): La cantidad de entrenadores a cargar es de: 3
+[INFO] 20:47:06:641 Game-watch-client/(9997:9997): Se inicializó un entrenador con id nro: 1
+[INFO] 20:47:06:642 Game-watch-client/(9997:9997): Se inicializó un entrenador con id nro: 2
+[INFO] 20:47:06:644 Game-watch-client/(9997:9997): Se inicializó un entrenador con id nro: 3
+[INFO] 20:47:06:645 Game-watch-client/(9997:9997): holis
+[INFO] 20:48:56:460 Game-watch-client/(10078:10078): logger iniciado.
+[INFO] 20:48:56:460 Game-watch-client/(10078:10078): config cargada.
+[INFO] 20:48:56:460 Game-watch-client/(10078:10078): La IP es: 127.0.0.1
+[INFO] 20:48:56:460 Game-watch-client/(10078:10078): El Puerto es: 4444
+[INFO] 20:48:56:461 Game-watch-client/(10078:10078): La cantidad de entrenadores a cargar es de: 3
+[INFO] 20:48:56:461 Game-watch-client/(10078:10078): Se inicializó un entrenador con id nro: 1
+[INFO] 20:48:56:461 Game-watch-client/(10078:10078): Se inicializó un entrenador con id nro: 2
+[INFO] 20:48:56:461 Game-watch-client/(10078:10078): Se inicializó un entrenador con id nro: 3
+[INFO] 20:48:56:461 Game-watch-client/(10078:10078): holis
+[INFO] 20:50:01:915 Game-watch-client/(10146:10146): logger iniciado.
+[INFO] 20:50:01:916 Game-watch-client/(10146:10146): config cargada.
+[INFO] 20:50:01:916 Game-watch-client/(10146:10146): La IP es: 127.0.0.1
+[INFO] 20:50:01:916 Game-watch-client/(10146:10146): El Puerto es: 4444
+[INFO] 20:50:01:916 Game-watch-client/(10146:10146): La cantidad de entrenadores a cargar es de: 3
+[INFO] 20:50:01:916 Game-watch-client/(10146:10146): Se inicializó un entrenador con id nro: 1
+[INFO] 20:50:01:916 Game-watch-client/(10146:10146): Se inicializó un entrenador con id nro: 2
+[INFO] 20:50:01:916 Game-watch-client/(10146:10146): Se inicializó un entrenador con id nro: 3
+[INFO] 20:50:01:916 Game-watch-client/(10146:10146): holis
+[INFO] 20:52:37:781 Game-watch-client/(10439:10439): logger iniciado.
+[INFO] 20:52:37:793 Game-watch-client/(10439:10439): config cargada.
+[INFO] 20:52:37:793 Game-watch-client/(10439:10439): La IP es: 127.0.0.1
+[INFO] 20:52:37:793 Game-watch-client/(10439:10439): El Puerto es: 4444
+[INFO] 20:52:37:794 Game-watch-client/(10439:10439): La cantidad de entrenadores a cargar es de: 3
+[INFO] 20:52:37:794 Game-watch-client/(10439:10439): Se inicializó un entrenador con id nro: 1
+[INFO] 20:52:37:794 Game-watch-client/(10439:10439): Se inicializó un entrenador con id nro: 2
+[INFO] 20:52:37:796 Game-watch-client/(10439:10439): Se inicializó un entrenador con id nro: 3
+[INFO] 20:52:37:797 Game-watch-client/(10439:10439): tengo esto Pikachu|Pikachu|Squirtle|Pidgey
+[INFO] 20:52:37:797 Game-watch-client/(10439:10439): holis
+[INFO] 20:55:43:814 Game-watch-client/(10513:10513): logger iniciado.
+[INFO] 20:55:43:814 Game-watch-client/(10513:10513): config cargada.
+[INFO] 20:55:43:817 Game-watch-client/(10513:10513): La IP es: 127.0.0.1
+[INFO] 20:55:43:817 Game-watch-client/(10513:10513): El Puerto es: 4444
+[INFO] 20:55:43:817 Game-watch-client/(10513:10513): La cantidad de entrenadores a cargar es de: 3
+[INFO] 20:55:43:818 Game-watch-client/(10513:10513): Se inicializó un entrenador con id nro: 1
+[INFO] 20:55:43:818 Game-watch-client/(10513:10513): Se inicializó un entrenador con id nro: 2
+[INFO] 20:55:43:818 Game-watch-client/(10513:10513): Se inicializó un entrenador con id nro: 3
+[INFO] 20:55:43:818 Game-watch-client/(10513:10513): tengo esto Pikachu|Pikachu|Squirtle|Pidgey
+[INFO] 20:55:43:818 Game-watch-client/(10513:10513): holis
+[INFO] 20:56:32:22 Game-watch-client/(10565:10565): logger iniciado.
+[INFO] 20:56:32:23 Game-watch-client/(10565:10565): config cargada.
+[INFO] 20:56:32:23 Game-watch-client/(10565:10565): La IP es: 127.0.0.1
+[INFO] 20:56:32:23 Game-watch-client/(10565:10565): El Puerto es: 4444
+[INFO] 20:56:32:30 Game-watch-client/(10565:10565): La cantidad de entrenadores a cargar es de: 3
+[INFO] 20:56:32:31 Game-watch-client/(10565:10565): Se inicializó un entrenador con id nro: 1
+[INFO] 20:56:32:31 Game-watch-client/(10565:10565): Se inicializó un entrenador con id nro: 2
+[INFO] 20:56:32:31 Game-watch-client/(10565:10565): Se inicializó un entrenador con id nro: 3
+[INFO] 20:56:32:31 Game-watch-client/(10565:10565): tengo esto Pikachu|Pikachu|Squirtle|Pidgey
+[INFO] 20:56:32:31 Game-watch-client/(10565:10565): holis
+[INFO] 20:57:14:804 Game-watch-client/(10607:10607): logger iniciado.
+[INFO] 20:57:14:804 Game-watch-client/(10607:10607): config cargada.
+[INFO] 20:57:14:804 Game-watch-client/(10607:10607): La IP es: 127.0.0.1
+[INFO] 20:57:14:804 Game-watch-client/(10607:10607): El Puerto es: 4444
+[INFO] 20:57:14:805 Game-watch-client/(10607:10607): La cantidad de entrenadores a cargar es de: 3
+[INFO] 20:57:14:805 Game-watch-client/(10607:10607): Se inicializó un entrenador con id nro: 1
+[INFO] 20:57:14:805 Game-watch-client/(10607:10607): Se inicializó un entrenador con id nro: 2
+[INFO] 20:57:14:805 Game-watch-client/(10607:10607): Se inicializó un entrenador con id nro: 3
+[INFO] 20:57:14:805 Game-watch-client/(10607:10607): tengo esto Pikachu|Pikachu|Squirtle|Pidgey
+[INFO] 20:57:14:805 Game-watch-client/(10607:10607): holis
+[INFO] 20:57:46:61 Game-watch-client/(10648:10648): logger iniciado.
+[INFO] 20:57:46:62 Game-watch-client/(10648:10648): config cargada.
+[INFO] 20:57:46:62 Game-watch-client/(10648:10648): La IP es: 127.0.0.1
+[INFO] 20:57:46:62 Game-watch-client/(10648:10648): El Puerto es: 4444
+[INFO] 20:57:46:63 Game-watch-client/(10648:10648): La cantidad de entrenadores a cargar es de: 3
+[INFO] 20:57:46:63 Game-watch-client/(10648:10648): Se inicializó un entrenador con id nro: 1
+[INFO] 20:57:46:63 Game-watch-client/(10648:10648): Se inicializó un entrenador con id nro: 2
+[INFO] 20:57:46:64 Game-watch-client/(10648:10648): Se inicializó un entrenador con id nro: 3
+[INFO] 20:57:46:64 Game-watch-client/(10648:10648): tengo esto Pikachu|Pikachu|Squirtle|Pidgey
+[INFO] 20:57:46:64 Game-watch-client/(10648:10648): holis
+[INFO] 20:58:02:272 Game-watch-client/(10682:10682): logger iniciado.
+[INFO] 20:58:02:272 Game-watch-client/(10682:10682): config cargada.
+[INFO] 20:58:02:272 Game-watch-client/(10682:10682): La IP es: 127.0.0.1
+[INFO] 20:58:02:272 Game-watch-client/(10682:10682): El Puerto es: 4444
+[INFO] 20:58:02:273 Game-watch-client/(10682:10682): La cantidad de entrenadores a cargar es de: 3
+[INFO] 20:58:02:273 Game-watch-client/(10682:10682): Se inicializó un entrenador con id nro: 1
+[INFO] 20:58:02:273 Game-watch-client/(10682:10682): Se inicializó un entrenador con id nro: 2
+[INFO] 20:58:02:273 Game-watch-client/(10682:10682): Se inicializó un entrenador con id nro: 3
+[INFO] 20:58:02:273 Game-watch-client/(10682:10682): tengo esto Pikachu|Pikachu|Squirtle|Pidgey
+[INFO] 20:58:02:273 Game-watch-client/(10682:10682): holis
+[INFO] 20:58:19:138 Game-watch-client/(10881:10881): logger iniciado.
+[INFO] 20:58:19:138 Game-watch-client/(10881:10881): config cargada.
+[INFO] 20:58:19:138 Game-watch-client/(10881:10881): La IP es: 127.0.0.1
+[INFO] 20:58:19:138 Game-watch-client/(10881:10881): El Puerto es: 4444
+[INFO] 20:58:19:139 Game-watch-client/(10881:10881): La cantidad de entrenadores a cargar es de: 3
+[INFO] 20:58:19:139 Game-watch-client/(10881:10881): Se inicializó un entrenador con id nro: 1
+[INFO] 20:58:19:139 Game-watch-client/(10881:10881): Se inicializó un entrenador con id nro: 2
+[INFO] 20:58:19:139 Game-watch-client/(10881:10881): Se inicializó un entrenador con id nro: 3
+[INFO] 20:58:19:139 Game-watch-client/(10881:10881): tengo esto Pikachu|Pikachu|Squirtle|Pidgey
+[INFO] 20:58:19:139 Game-watch-client/(10881:10881): holis
+[INFO] 20:59:52:398 Game-watch-client/(10968:10968): logger iniciado.
+[INFO] 20:59:52:404 Game-watch-client/(10968:10968): config cargada.
+[INFO] 20:59:52:404 Game-watch-client/(10968:10968): La IP es: 127.0.0.1
+[INFO] 20:59:52:404 Game-watch-client/(10968:10968): El Puerto es: 4444
+[INFO] 20:59:52:405 Game-watch-client/(10968:10968): La cantidad de entrenadores a cargar es de: 3
+[INFO] 20:59:52:405 Game-watch-client/(10968:10968): Se inicializó un entrenador con id nro: 1
+[INFO] 20:59:52:405 Game-watch-client/(10968:10968): Se inicializó un entrenador con id nro: 2
+[INFO] 20:59:52:405 Game-watch-client/(10968:10968): Se inicializó un entrenador con id nro: 3
+[INFO] 20:59:52:405 Game-watch-client/(10968:10968): tengo esto Pikachu|Pikachu|Squirtle|Pidgey
+[INFO] 20:59:52:409 Game-watch-client/(10968:10968): holis
+[INFO] 21:00:37:360 Game-watch-client/(11019:11019): logger iniciado.
+[INFO] 21:00:37:361 Game-watch-client/(11019:11019): config cargada.
+[INFO] 21:00:37:361 Game-watch-client/(11019:11019): La IP es: 127.0.0.1
+[INFO] 21:00:37:361 Game-watch-client/(11019:11019): El Puerto es: 4444
+[INFO] 21:00:37:361 Game-watch-client/(11019:11019): La cantidad de entrenadores a cargar es de: 3
+[INFO] 21:00:37:361 Game-watch-client/(11019:11019): Se inicializó un entrenador con id nro: 1
+[INFO] 21:00:37:361 Game-watch-client/(11019:11019): Se inicializó un entrenador con id nro: 2
+[INFO] 21:00:37:361 Game-watch-client/(11019:11019): Se inicializó un entrenador con id nro: 3
+[INFO] 21:00:37:361 Game-watch-client/(11019:11019): tengo esto Pikachu|Pikachu|Squirtle|Pidgey
+[INFO] 21:00:37:361 Game-watch-client/(11019:11019): holis
+[INFO] 21:00:44:612 Game-watch-client/(11049:11049): logger iniciado.
+[INFO] 21:00:44:612 Game-watch-client/(11049:11049): config cargada.
+[INFO] 21:00:44:612 Game-watch-client/(11049:11049): La IP es: 127.0.0.1
+[INFO] 21:00:44:613 Game-watch-client/(11049:11049): El Puerto es: 4444
+[INFO] 21:00:44:613 Game-watch-client/(11049:11049): La cantidad de entrenadores a cargar es de: 3
+[INFO] 21:00:44:613 Game-watch-client/(11049:11049): Se inicializó un entrenador con id nro: 1
+[INFO] 21:00:44:613 Game-watch-client/(11049:11049): Se inicializó un entrenador con id nro: 2
+[INFO] 21:00:44:613 Game-watch-client/(11049:11049): Se inicializó un entrenador con id nro: 3
+[INFO] 21:00:44:613 Game-watch-client/(11049:11049): tengo esto Pikachu|Pikachu|Squirtle|Pidgey
+[INFO] 21:00:44:613 Game-watch-client/(11049:11049): tiene un tamaño de: 32
+[INFO] 21:00:44:613 Game-watch-client/(11049:11049): holis
+[INFO] 21:02:02:866 Game-watch-client/(11107:11107): logger iniciado.
+[INFO] 21:02:02:866 Game-watch-client/(11107:11107): config cargada.
+[INFO] 21:02:02:867 Game-watch-client/(11107:11107): La IP es: 127.0.0.1
+[INFO] 21:02:02:867 Game-watch-client/(11107:11107): El Puerto es: 4444
+[INFO] 21:02:02:867 Game-watch-client/(11107:11107): La cantidad de entrenadores a cargar es de: 3
+[INFO] 21:02:02:867 Game-watch-client/(11107:11107): Se inicializó un entrenador con id nro: 1
+[INFO] 21:02:02:867 Game-watch-client/(11107:11107): Se inicializó un entrenador con id nro: 2
+[INFO] 21:02:02:867 Game-watch-client/(11107:11107): Se inicializó un entrenador con id nro: 3
+[INFO] 21:02:02:867 Game-watch-client/(11107:11107): tengo esto Pikachu|Pikachu|Squirtle|Pidgey
+[INFO] 21:02:02:867 Game-watch-client/(11107:11107): tiene un tamaño de: 32
+[INFO] 21:02:02:867 Game-watch-client/(11107:11107): holis
+[INFO] 21:02:14:602 Game-watch-client/(11135:11135): logger iniciado.
+[INFO] 21:02:14:602 Game-watch-client/(11135:11135): config cargada.
+[INFO] 21:02:14:612 Game-watch-client/(11135:11135): La IP es: 127.0.0.1
+[INFO] 21:02:14:615 Game-watch-client/(11135:11135): El Puerto es: 4444
+[INFO] 21:02:14:615 Game-watch-client/(11135:11135): La cantidad de entrenadores a cargar es de: 3
+[INFO] 21:02:14:615 Game-watch-client/(11135:11135): Se inicializó un entrenador con id nro: 1
+[INFO] 21:02:14:616 Game-watch-client/(11135:11135): Se inicializó un entrenador con id nro: 2
+[INFO] 21:02:14:616 Game-watch-client/(11135:11135): Se inicializó un entrenador con id nro: 3
+[INFO] 21:02:14:616 Game-watch-client/(11135:11135): tengo esto Pikachu|Pikachu|Squirtle|Pidgey
+[INFO] 21:02:14:616 Game-watch-client/(11135:11135): tiene un tamaño de: 32
+[INFO] 21:02:14:616 Game-watch-client/(11135:11135): holis
+[INFO] 21:03:33:881 Game-watch-client/(11213:11213): logger iniciado.
+[INFO] 21:03:33:883 Game-watch-client/(11213:11213): config cargada.
+[INFO] 21:03:33:883 Game-watch-client/(11213:11213): La IP es: 127.0.0.1
+[INFO] 21:03:33:883 Game-watch-client/(11213:11213): El Puerto es: 4444
+[INFO] 21:03:33:900 Game-watch-client/(11213:11213): La cantidad de entrenadores a cargar es de: 3
+[INFO] 21:03:33:900 Game-watch-client/(11213:11213): Se inicializó un entrenador con id nro: 1
+[INFO] 21:03:33:900 Game-watch-client/(11213:11213): Se inicializó un entrenador con id nro: 2
+[INFO] 21:03:33:900 Game-watch-client/(11213:11213): Se inicializó un entrenador con id nro: 3
+[INFO] 21:03:33:900 Game-watch-client/(11213:11213): tengo esto Pikachu|Pikachu|Squirtle|Pidgey
+[INFO] 21:03:33:900 Game-watch-client/(11213:11213): tiene un tamaño de: 32
+[INFO] 21:03:33:900 Game-watch-client/(11213:11213): holis
+[INFO] 21:04:01:900 Game-watch-client/(11248:11248): logger iniciado.
+[INFO] 21:04:01:900 Game-watch-client/(11248:11248): config cargada.
+[INFO] 21:04:01:900 Game-watch-client/(11248:11248): La IP es: 127.0.0.1
+[INFO] 21:04:01:900 Game-watch-client/(11248:11248): El Puerto es: 4444
+[INFO] 21:04:01:901 Game-watch-client/(11248:11248): La cantidad de entrenadores a cargar es de: 3
+[INFO] 21:04:01:901 Game-watch-client/(11248:11248): Se inicializó un entrenador con id nro: 1
+[INFO] 21:04:01:901 Game-watch-client/(11248:11248): Se inicializó un entrenador con id nro: 2
+[INFO] 21:04:01:901 Game-watch-client/(11248:11248): Se inicializó un entrenador con id nro: 3
+[INFO] 21:04:01:901 Game-watch-client/(11248:11248): tengo esto Pikachu|Pikachu|Squirtle|Pidgey
+[INFO] 21:04:01:901 Game-watch-client/(11248:11248): tiene un tamaño de: 32
+[INFO] 21:04:01:901 Game-watch-client/(11248:11248): holis
+[INFO] 21:04:26:875 Game-watch-client/(11291:11291): logger iniciado.
+[INFO] 21:04:26:875 Game-watch-client/(11291:11291): config cargada.
+[INFO] 21:04:26:875 Game-watch-client/(11291:11291): La IP es: 127.0.0.1
+[INFO] 21:04:26:875 Game-watch-client/(11291:11291): El Puerto es: 4444
+[INFO] 21:04:26:875 Game-watch-client/(11291:11291): La cantidad de entrenadores a cargar es de: 3
+[INFO] 21:04:26:875 Game-watch-client/(11291:11291): Se inicializó un entrenador con id nro: 1
+[INFO] 21:04:26:875 Game-watch-client/(11291:11291): Se inicializó un entrenador con id nro: 2
+[INFO] 21:04:26:875 Game-watch-client/(11291:11291): Se inicializó un entrenador con id nro: 3
+[INFO] 21:04:26:875 Game-watch-client/(11291:11291): tengo esto Pikachu|Pikachu|Squirtle|Pidgey
+[INFO] 21:04:26:875 Game-watch-client/(11291:11291): tiene un tamaño de: 32
+[INFO] 21:04:26:875 Game-watch-client/(11291:11291): holis
+[INFO] 10:45:19:275 Game-watch-client/(4356:4356): logger iniciado.
+[INFO] 10:45:19:311 Game-watch-client/(4356:4356): config cargada.
+[INFO] 10:45:19:311 Game-watch-client/(4356:4356): La IP es: 127.0.0.1
+[INFO] 10:45:19:311 Game-watch-client/(4356:4356): El Puerto es: 4444
+[INFO] 10:45:19:312 Game-watch-client/(4356:4356): La cantidad de entrenadores a cargar es de: 3
+[INFO] 10:45:19:312 Game-watch-client/(4356:4356): Se inicializó un entrenador con id nro: 1
+[INFO] 10:45:19:312 Game-watch-client/(4356:4356): Se inicializó un entrenador con id nro: 2
+[INFO] 10:45:19:312 Game-watch-client/(4356:4356): Se inicializó un entrenador con id nro: 3
+[INFO] 10:45:19:312 Game-watch-client/(4356:4356): tengo esto Pikachu|Pikachu|Squirtle|Pidgey
+[INFO] 10:45:19:312 Game-watch-client/(4356:4356): tiene un tamaño de: 32
+[INFO] 10:45:19:312 Game-watch-client/(4356:4356): holis
+[INFO] 10:49:34:219 Game-watch-client/(4850:4850): logger iniciado.
+[INFO] 10:49:34:219 Game-watch-client/(4850:4850): config cargada.
+[INFO] 10:49:34:219 Game-watch-client/(4850:4850): La IP es: 127.0.0.1
+[INFO] 10:49:34:219 Game-watch-client/(4850:4850): El Puerto es: 4444
+[INFO] 10:49:34:219 Game-watch-client/(4850:4850): La cantidad de entrenadores a cargar es de: 3
+[INFO] 10:49:34:219 Game-watch-client/(4850:4850): Se inicializó un entrenador con id nro: 1
+[INFO] 10:49:34:219 Game-watch-client/(4850:4850): Se inicializó un entrenador con id nro: 2
+[INFO] 10:49:34:219 Game-watch-client/(4850:4850): Se inicializó un entrenador con id nro: 3
+[INFO] 10:49:34:219 Game-watch-client/(4850:4850): tengo esto Pikachu|Pikachu|Squirtle|Pidgey
+[INFO] 10:49:47:137 Game-watch-client/(4850:4850): tiene un tamaño de: 32
+[INFO] 10:50:23:835 Game-watch-client/(4850:4850): holis
+[INFO] 10:51:24:52 Game-watch-client/(4953:4953): logger iniciado.
+[INFO] 10:51:24:53 Game-watch-client/(4953:4953): config cargada.
+[INFO] 10:51:24:53 Game-watch-client/(4953:4953): La IP es: 127.0.0.1
+[INFO] 10:51:24:53 Game-watch-client/(4953:4953): El Puerto es: 4444
+[INFO] 10:51:24:54 Game-watch-client/(4953:4953): La cantidad de entrenadores a cargar es de: 3
+[INFO] 10:51:24:54 Game-watch-client/(4953:4953): Se inicializó un entrenador con id nro: 1
+[INFO] 10:51:24:54 Game-watch-client/(4953:4953): Se inicializó un entrenador con id nro: 2
+[INFO] 10:51:24:55 Game-watch-client/(4953:4953): Se inicializó un entrenador con id nro: 3
+[INFO] 10:51:24:55 Game-watch-client/(4953:4953): tengo esto Pikachu|Pikachu|Squirtle|Pidgey
+[INFO] 10:51:24:55 Game-watch-client/(4953:4953): tiene un tamaño de: 32
+[INFO] 10:51:24:56 Game-watch-client/(4953:4953): holis
+[INFO] 10:51:24:56 Game-watch-client/(4953:4953): iterate nro 0:
+[INFO] 10:51:24:56 Game-watch-client/(4953:4953): holis
+[INFO] 10:51:24:57 Game-watch-client/(4953:4953): iterate nro 1:
+[INFO] 10:51:24:57 Game-watch-client/(4953:4953): holis
+[INFO] 10:51:24:57 Game-watch-client/(4953:4953): iterate nro 2:
+[INFO] 10:51:24:57 Game-watch-client/(4953:4953): encontre 3
+[INFO] 10:51:24:57 Game-watch-client/(4953:4953): hay 3 objetivos
+[INFO] 11:03:33:89 Game-watch-client/(5882:5882): logger iniciado.
+[INFO] 11:03:33:89 Game-watch-client/(5882:5882): config cargada.
+[INFO] 11:03:33:90 Game-watch-client/(5882:5882): La IP es: 127.0.0.1
+[INFO] 11:03:33:90 Game-watch-client/(5882:5882): El Puerto es: 4444
+[INFO] 11:03:33:91 Game-watch-client/(5882:5882): La cantidad de entrenadores a cargar es de: 3
+[INFO] 11:03:33:91 Game-watch-client/(5882:5882): Se inicializó un entrenador con id nro: 1
+[INFO] 11:03:33:91 Game-watch-client/(5882:5882): Se inicializó un entrenador con id nro: 2
+[INFO] 11:03:33:91 Game-watch-client/(5882:5882): Se inicializó un entrenador con id nro: 3
+[INFO] 11:03:33:91 Game-watch-client/(5882:5882): tengo esto Pikachu|Pikachu|Squirtle|Pidgey
+[INFO] 11:03:33:91 Game-watch-client/(5882:5882): tiene un tamaño de: 32
+[INFO] 11:03:33:91 Game-watch-client/(5882:5882): holis
+[INFO] 11:03:33:91 Game-watch-client/(5882:5882): asignado objetivo: Pikachu
+[INFO] 11:03:33:91 Game-watch-client/(5882:5882): asignado objetivo: Pikachu
+[INFO] 11:03:33:91 Game-watch-client/(5882:5882): asignado objetivo: Pikachu
+[INFO] 11:03:33:91 Game-watch-client/(5882:5882): asignado objetivo: Pikachu�1:03
+[INFO] 11:03:33:91 Game-watch-client/(5882:5882): iterate nro 0:
+[INFO] 11:03:33:92 Game-watch-client/(5882:5882): holis
+[INFO] 11:03:33:92 Game-watch-client/(5882:5882): asignado objetivo: Pikachu
+[INFO] 11:03:33:92 Game-watch-client/(5882:5882): asignado objetivo: Pikachu
+[INFO] 11:03:33:92 Game-watch-client/(5882:5882): asignado objetivo: Pikachu
+[INFO] 11:03:33:92 Game-watch-client/(5882:5882): iterate nro 1:
+[INFO] 11:03:33:92 Game-watch-client/(5882:5882): holis
+[INFO] 11:03:33:92 Game-watch-client/(5882:5882): asignado objetivo: Squirtle
+[INFO] 11:03:33:92 Game-watch-client/(5882:5882): asignado objetivo: Squirtle
+[INFO] 11:03:33:92 Game-watch-client/(5882:5882): iterate nro 2:
+[INFO] 11:03:33:92 Game-watch-client/(5882:5882): encontre 3
+[INFO] 11:03:33:92 Game-watch-client/(5882:5882): hay 3 objetivos
+[INFO] 11:04:47:328 Game-watch-client/(5922:5922): logger iniciado.
+[INFO] 11:04:47:328 Game-watch-client/(5922:5922): config cargada.
+[INFO] 11:04:47:328 Game-watch-client/(5922:5922): La IP es: 127.0.0.1
+[INFO] 11:04:47:328 Game-watch-client/(5922:5922): El Puerto es: 4444
+[INFO] 11:04:47:328 Game-watch-client/(5922:5922): La cantidad de entrenadores a cargar es de: 3
+[INFO] 11:04:47:328 Game-watch-client/(5922:5922): Se inicializó un entrenador con id nro: 1
+[INFO] 11:04:47:329 Game-watch-client/(5922:5922): Se inicializó un entrenador con id nro: 2
+[INFO] 11:04:47:329 Game-watch-client/(5922:5922): Se inicializó un entrenador con id nro: 3
+[INFO] 11:04:47:329 Game-watch-client/(5922:5922): tengo esto Pikachu|Pikachu|Squirtle|Pidgey
+[INFO] 11:04:47:329 Game-watch-client/(5922:5922): tiene un tamaño de: 32
+[INFO] 11:04:47:329 Game-watch-client/(5922:5922): holis
+[INFO] 11:04:47:329 Game-watch-client/(5922:5922): asignado objetivo: Pikachu
+[INFO] 11:04:47:329 Game-watch-client/(5922:5922): asignado objetivo: Pikachu
+[INFO] 11:04:47:329 Game-watch-client/(5922:5922): asignado objetivo: Squirtle
+[INFO] 11:04:47:330 Game-watch-client/(5922:5922): asignado objetivo: Pidgey
+[INFO] 11:04:47:330 Game-watch-client/(5922:5922): iterate nro 0:
+[INFO] 11:04:47:330 Game-watch-client/(5922:5922): holis
+[INFO] 11:04:47:342 Game-watch-client/(5922:5922): asignado objetivo: Pikachu
+[INFO] 11:04:47:343 Game-watch-client/(5922:5922): asignado objetivo: Charmander
+[INFO] 11:04:47:343 Game-watch-client/(5922:5922): asignado objetivo: Charmander
+[INFO] 11:04:47:343 Game-watch-client/(5922:5922): iterate nro 1:
+[INFO] 11:04:47:343 Game-watch-client/(5922:5922): holis
+[INFO] 11:04:47:343 Game-watch-client/(5922:5922): asignado objetivo: Squirtle
+[INFO] 11:04:47:344 Game-watch-client/(5922:5922): asignado objetivo: Bulbasaur
+[INFO] 11:04:47:344 Game-watch-client/(5922:5922): iterate nro 2:
+[INFO] 11:04:47:344 Game-watch-client/(5922:5922): encontre 3
+[INFO] 11:04:47:344 Game-watch-client/(5922:5922): hay 3 objetivos
+[INFO] 11:05:57:291 Game-watch-client/(5978:5978): logger iniciado.
+[INFO] 11:05:57:291 Game-watch-client/(5978:5978): config cargada.
+[INFO] 11:05:57:292 Game-watch-client/(5978:5978): La IP es: 127.0.0.1
+[INFO] 11:05:57:292 Game-watch-client/(5978:5978): El Puerto es: 4444
+[INFO] 11:05:57:292 Game-watch-client/(5978:5978): La cantidad de entrenadores a cargar es de: 3
+[INFO] 11:05:57:292 Game-watch-client/(5978:5978): Se inicializó un entrenador con id nro: 1
+[INFO] 11:05:57:293 Game-watch-client/(5978:5978): Se inicializó un entrenador con id nro: 2
+[INFO] 11:05:57:293 Game-watch-client/(5978:5978): Se inicializó un entrenador con id nro: 3
+[INFO] 11:05:57:293 Game-watch-client/(5978:5978): tengo esto Pikachu|Pikachu|Squirtle|Pidgey
+[INFO] 11:05:57:293 Game-watch-client/(5978:5978): tiene un tamaño de: 32
+[INFO] 11:05:57:293 Game-watch-client/(5978:5978): holis
+[INFO] 11:05:57:293 Game-watch-client/(5978:5978): asignado objetivo: Pikachu
+[INFO] 11:05:57:294 Game-watch-client/(5978:5978): asignado objetivo: Pikachu
+[INFO] 11:05:57:294 Game-watch-client/(5978:5978): asignado objetivo: Squirtle
+[INFO] 11:05:57:294 Game-watch-client/(5978:5978): asignado objetivo: Pidgey
+[INFO] 11:05:57:294 Game-watch-client/(5978:5978): terminado de cargar Objetivos de entrenador nro 1:
+[INFO] 11:05:57:294 Game-watch-client/(5978:5978): holis
+[INFO] 11:05:57:294 Game-watch-client/(5978:5978): asignado objetivo: Pikachu
+[INFO] 11:05:57:295 Game-watch-client/(5978:5978): asignado objetivo: Charmander
+[INFO] 11:05:57:295 Game-watch-client/(5978:5978): asignado objetivo: Charmander
+[INFO] 11:05:57:295 Game-watch-client/(5978:5978): terminado de cargar Objetivos de entrenador nro 2:
+[INFO] 11:05:57:295 Game-watch-client/(5978:5978): holis
+[INFO] 11:05:57:296 Game-watch-client/(5978:5978): asignado objetivo: Squirtle
+[INFO] 11:05:57:296 Game-watch-client/(5978:5978): asignado objetivo: Bulbasaur
+[INFO] 11:05:57:297 Game-watch-client/(5978:5978): terminado de cargar Objetivos de entrenador nro 3:
+[INFO] 11:05:57:297 Game-watch-client/(5978:5978): encontre 3
+[INFO] 11:05:57:297 Game-watch-client/(5978:5978): hay 3 objetivos
+[INFO] 11:07:10:26 Game-watch-client/(6029:6029): logger iniciado.
+[INFO] 11:07:10:28 Game-watch-client/(6029:6029): config cargada.
+[INFO] 11:07:10:28 Game-watch-client/(6029:6029): La IP es: 127.0.0.1
+[INFO] 11:07:10:28 Game-watch-client/(6029:6029): El Puerto es: 4444
+[INFO] 11:07:10:28 Game-watch-client/(6029:6029): La cantidad de entrenadores a cargar es de: 3
+[INFO] 11:07:10:28 Game-watch-client/(6029:6029): Se inicializó un entrenador con id nro: 1
+[INFO] 11:07:10:29 Game-watch-client/(6029:6029): Se inicializó un entrenador con id nro: 2
+[INFO] 11:07:10:29 Game-watch-client/(6029:6029): Se inicializó un entrenador con id nro: 3
+[INFO] 11:07:10:29 Game-watch-client/(6029:6029): el id 1 tiene los siguientes objetivos Pikachu|Pikachu|Squirtle|Pidgey
+[INFO] 11:07:10:29 Game-watch-client/(6029:6029): asignado objetivo: Pikachu
+[INFO] 11:07:10:29 Game-watch-client/(6029:6029): asignado objetivo: Pikachu
+[INFO] 11:07:10:30 Game-watch-client/(6029:6029): asignado objetivo: Squirtle
+[INFO] 11:07:10:30 Game-watch-client/(6029:6029): asignado objetivo: Pidgey
+[INFO] 11:07:10:30 Game-watch-client/(6029:6029): terminado de cargar Objetivos de entrenador nro 1:
+[INFO] 11:07:10:30 Game-watch-client/(6029:6029): el id 2 tiene los siguientes objetivos Pikachu|Charmander|Charmander
+[INFO] 11:07:10:30 Game-watch-client/(6029:6029): asignado objetivo: Pikachu
+[INFO] 11:07:10:30 Game-watch-client/(6029:6029): asignado objetivo: Charmander
+[INFO] 11:07:10:30 Game-watch-client/(6029:6029): asignado objetivo: Charmander
+[INFO] 11:07:10:30 Game-watch-client/(6029:6029): terminado de cargar Objetivos de entrenador nro 2:
+[INFO] 11:07:10:30 Game-watch-client/(6029:6029): el id 3 tiene los siguientes objetivos Squirtle|Bulbasaur
+[INFO] 11:07:10:31 Game-watch-client/(6029:6029): asignado objetivo: Squirtle
+[INFO] 11:07:10:31 Game-watch-client/(6029:6029): asignado objetivo: Bulbasaur
+[INFO] 11:07:10:31 Game-watch-client/(6029:6029): terminado de cargar Objetivos de entrenador nro 3:
+[INFO] 11:07:10:31 Game-watch-client/(6029:6029): encontre 3
+[INFO] 11:07:10:31 Game-watch-client/(6029:6029): hay 3 objetivos
+[INFO] 11:10:20:656 Game-watch-client/(6354:6354): logger iniciado.
+[INFO] 11:10:20:656 Game-watch-client/(6354:6354): config cargada.
+[INFO] 11:10:20:656 Game-watch-client/(6354:6354): La IP es: 127.0.0.1
+[INFO] 11:10:20:656 Game-watch-client/(6354:6354): El Puerto es: 4444
+[INFO] 11:10:20:656 Game-watch-client/(6354:6354): La cantidad de entrenadores a cargar es de: 3
+[INFO] 11:10:20:656 Game-watch-client/(6354:6354): Se inicializó un entrenador con id nro: 1
+[INFO] 11:10:20:656 Game-watch-client/(6354:6354): Se inicializó un entrenador con id nro: 2
+[INFO] 11:10:20:656 Game-watch-client/(6354:6354): Se inicializó un entrenador con id nro: 3
+[INFO] 11:10:20:656 Game-watch-client/(6354:6354): el id 1 tiene los siguientes objetivos Pikachu|Pikachu|Squirtle|Pidgey
+[INFO] 11:10:20:656 Game-watch-client/(6354:6354): asignado objetivo: Pikachu
+[INFO] 11:10:20:656 Game-watch-client/(6354:6354): asignado objetivo: Pikachu
+[INFO] 11:10:20:657 Game-watch-client/(6354:6354): asignado objetivo: Squirtle
+[INFO] 11:10:20:657 Game-watch-client/(6354:6354): asignado objetivo: Pidgey
+[INFO] 11:10:20:657 Game-watch-client/(6354:6354): terminado de cargar Objetivos de entrenador nro 1:
+[INFO] 11:10:20:657 Game-watch-client/(6354:6354): el id 2 tiene los siguientes objetivos Pikachu|Charmander|Charmander
+[INFO] 11:10:20:657 Game-watch-client/(6354:6354): asignado objetivo: Pikachu
+[INFO] 11:10:20:657 Game-watch-client/(6354:6354): asignado objetivo: Charmander
+[INFO] 11:10:20:657 Game-watch-client/(6354:6354): asignado objetivo: Charmander
+[INFO] 11:10:20:657 Game-watch-client/(6354:6354): terminado de cargar Objetivos de entrenador nro 2:
+[INFO] 11:10:20:657 Game-watch-client/(6354:6354): el id 3 tiene los siguientes objetivos Squirtle|Bulbasaur
+[INFO] 11:10:20:657 Game-watch-client/(6354:6354): asignado objetivo: Squirtle
+[INFO] 11:10:20:657 Game-watch-client/(6354:6354): asignado objetivo: Bulbasaur
+[INFO] 11:10:20:657 Game-watch-client/(6354:6354): terminado de cargar Objetivos de entrenador nro 3:
+[INFO] 11:10:20:657 Game-watch-client/(6354:6354): encontre 3
+[INFO] 11:10:20:657 Game-watch-client/(6354:6354): hay 3 objetivos
+[INFO] 11:13:56:934 Game-watch-client/(6517:6517): logger iniciado.
+[INFO] 11:13:56:938 Game-watch-client/(6517:6517): config cargada.
+[INFO] 11:13:56:940 Game-watch-client/(6517:6517): La IP es: 127.0.0.1
+[INFO] 11:13:56:940 Game-watch-client/(6517:6517): El Puerto es: 4444
+[INFO] 11:13:56:940 Game-watch-client/(6517:6517): La cantidad de entrenadores a cargar es de: 3
+[INFO] 11:13:56:940 Game-watch-client/(6517:6517): Se inicializó un entrenador con id nro: 1
+[INFO] 11:13:56:940 Game-watch-client/(6517:6517): Se inicializó un entrenador con id nro: 2
+[INFO] 11:13:56:940 Game-watch-client/(6517:6517): Se inicializó un entrenador con id nro: 3
+[INFO] 11:13:56:940 Game-watch-client/(6517:6517): el id 1 tiene los siguientes objetivos Pikachu|Pikachu|Squirtle|Pidgey
+[INFO] 11:13:56:941 Game-watch-client/(6517:6517): asignado objetivo: Pikachu
+[INFO] 11:13:56:941 Game-watch-client/(6517:6517): asignado objetivo: Pikachu
+[INFO] 11:13:56:941 Game-watch-client/(6517:6517): asignado objetivo: Squirtle
+[INFO] 11:13:56:941 Game-watch-client/(6517:6517): asignado objetivo: Pidgey
+[INFO] 11:13:56:941 Game-watch-client/(6517:6517): terminado de cargar objetivos. La canditdad de pokebolas de entrenador es de: 4
+[INFO] 11:13:56:941 Game-watch-client/(6517:6517): terminado de cargar Objetivos de entrenador nro 1:
+[INFO] 11:13:56:941 Game-watch-client/(6517:6517): el id 2 tiene los siguientes objetivos Pikachu|Charmander|Charmander
+[INFO] 11:13:56:941 Game-watch-client/(6517:6517): asignado objetivo: Pikachu
+[INFO] 11:13:56:941 Game-watch-client/(6517:6517): asignado objetivo: Charmander
+[INFO] 11:13:56:941 Game-watch-client/(6517:6517): asignado objetivo: Charmander
+[INFO] 11:13:56:941 Game-watch-client/(6517:6517): terminado de cargar objetivos. La canditdad de pokebolas de entrenador es de: 3
+[INFO] 11:13:56:941 Game-watch-client/(6517:6517): terminado de cargar Objetivos de entrenador nro 2:
+[INFO] 11:13:56:941 Game-watch-client/(6517:6517): el id 3 tiene los siguientes objetivos Squirtle|Bulbasaur
+[INFO] 11:13:56:941 Game-watch-client/(6517:6517): asignado objetivo: Squirtle
+[INFO] 11:13:56:941 Game-watch-client/(6517:6517): asignado objetivo: Bulbasaur
+[INFO] 11:13:56:941 Game-watch-client/(6517:6517): terminado de cargar objetivos. La canditdad de pokebolas de entrenador es de: 2
+[INFO] 11:13:56:941 Game-watch-client/(6517:6517): terminado de cargar Objetivos de entrenador nro 3:
+[INFO] 11:13:56:941 Game-watch-client/(6517:6517): encontre 3
+[INFO] 11:13:56:941 Game-watch-client/(6517:6517): hay 3 objetivos
+[INFO] 11:18:45:739 Game-watch-client/(6813:6813): logger iniciado.
+[INFO] 11:18:45:739 Game-watch-client/(6813:6813): config cargada.
+[INFO] 11:18:45:739 Game-watch-client/(6813:6813): La IP es: 127.0.0.1
+[INFO] 11:18:45:739 Game-watch-client/(6813:6813): El Puerto es: 4444
+[INFO] 11:18:45:740 Game-watch-client/(6813:6813): La cantidad de entrenadores a cargar es de: 3
+[INFO] 11:18:45:740 Game-watch-client/(6813:6813): Se inicializó un entrenador con id nro: 1
+[INFO] 11:18:45:740 Game-watch-client/(6813:6813): Se inicializó un entrenador con id nro: 2
+[INFO] 11:18:45:740 Game-watch-client/(6813:6813): Se inicializó un entrenador con id nro: 3
+[INFO] 11:18:45:740 Game-watch-client/(6813:6813): el id 1 tiene los siguientes objetivos Pikachu|Pikachu|Squirtle|Pidgey
+[INFO] 11:18:45:740 Game-watch-client/(6813:6813): asignado objetivo: Pikachu
+[INFO] 11:18:45:740 Game-watch-client/(6813:6813): asignado objetivo: Pikachu
+[INFO] 11:18:45:740 Game-watch-client/(6813:6813): asignado objetivo: Squirtle
+[INFO] 11:18:45:740 Game-watch-client/(6813:6813): asignado objetivo: Pidgey
+[INFO] 11:18:45:740 Game-watch-client/(6813:6813): terminado de cargar objetivos. La cantidad de pokebolas de entrenador es de: 4
+[INFO] 11:18:45:740 Game-watch-client/(6813:6813): terminado de cargar Objetivos de entrenador nro 1:
+[INFO] 11:18:45:740 Game-watch-client/(6813:6813): el id 2 tiene los siguientes objetivos Pikachu|Charmander|Charmander
+[INFO] 11:18:45:740 Game-watch-client/(6813:6813): asignado objetivo: Pikachu
+[INFO] 11:18:45:740 Game-watch-client/(6813:6813): asignado objetivo: Charmander
+[INFO] 11:18:45:740 Game-watch-client/(6813:6813): asignado objetivo: Charmander
+[INFO] 11:18:45:740 Game-watch-client/(6813:6813): terminado de cargar objetivos. La cantidad de pokebolas de entrenador es de: 3
+[INFO] 11:18:45:740 Game-watch-client/(6813:6813): terminado de cargar Objetivos de entrenador nro 2:
+[INFO] 11:18:45:740 Game-watch-client/(6813:6813): el id 3 tiene los siguientes objetivos Squirtle|Bulbasaur
+[INFO] 11:18:45:740 Game-watch-client/(6813:6813): asignado objetivo: Squirtle
+[INFO] 11:18:45:740 Game-watch-client/(6813:6813): asignado objetivo: Bulbasaur
+[INFO] 11:18:45:740 Game-watch-client/(6813:6813): terminado de cargar objetivos. La cantidad de pokebolas de entrenador es de: 2
+[INFO] 11:18:45:740 Game-watch-client/(6813:6813): terminado de cargar Objetivos de entrenador nro 3:
+[INFO] 11:18:45:740 Game-watch-client/(6813:6813): encontre 3
+[INFO] 11:18:45:740 Game-watch-client/(6813:6813): hay 3 objetivos

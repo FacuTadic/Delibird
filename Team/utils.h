@@ -54,9 +54,9 @@ typedef struct
 
 typedef struct
 {
-	char* nombre;
+	uint32_t id;
 	t_coord coord;
-	uint capacidad;
+	uint32_t capacidad;
 	t_objetivo* objetivo;
 	struct t_entrenador* sgte;
 } t_entrenador;
