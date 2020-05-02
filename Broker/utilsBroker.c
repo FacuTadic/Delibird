@@ -32,54 +32,6 @@ int iniciar_servidor(char* IP, char* PUERTO)
     return socket_servidor;
 }
 
-void esperar_cliente(int socket_servidor)
-{
-	struct sockaddr_in dir_cliente;
-
-	int tam_direccion = sizeof(struct sockaddr_in);
-
-	int socket_cliente = accept(socket_servidor, (void*) &dir_cliente, &tam_direccion);
-
-	pthread_create(&thread,NULL,(void*)serve_client,&socket_cliente);
-	pthread_detach(thread);
-}
-
-void serve_client(int* socket)
-{
-	int cod_op;
-	if(recv(*socket, &cod_op, sizeof(int), MSG_WAITALL) == -1)
-		cod_op = -1;
-	process_request(cod_op, *socket);
-}
-
-void process_request(int cod_op, int cliente_fd) {
-	int size;
-	void* msg;
-		switch (cod_op) {
-		case 7:
-			msg = recibir_mensaje(cliente_fd, &size);
-			devolver_mensaje(msg, size, cliente_fd);
-			close(cliente_fd);
-			free(msg);
-			break;
-		case 0:
-			pthread_exit(NULL);
-		case -1:
-			pthread_exit(NULL);
-		}
-}
-
-void* recibir_mensaje(int socket_cliente, int* size)
-{
-	void * buffer;
-
-	recv(socket_cliente, size, sizeof(int), MSG_WAITALL);
-	buffer = malloc(*size);
-	recv(socket_cliente, buffer, *size, MSG_WAITALL);
-
-	return buffer;
-}
-
 void* serializar_paquete(t_paquete* paquete, int bytes)
 {
 	void * magic = malloc(bytes);

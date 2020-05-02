@@ -8,7 +8,7 @@
 #include<string.h>
 #include<pthread.h>
 
-#ifndef CONEXIONES_H_
+//#ifndef CONEXIONES_H_
 #define CONEXIONES_H_
 
 //#define IP "127.0.0.1"
