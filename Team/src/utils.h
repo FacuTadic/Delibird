@@ -42,23 +42,11 @@ typedef struct
 
 typedef struct
 {
-	uint32_t coordX,
-			 coordY;
-} t_coord;
-
-typedef struct
-{
-	char* nombre;
-	struct t_objetivo* sgte;
-} t_objetivo;
-
-typedef struct
-{
-	char* nombre;
-	t_coord coord;
-	uint capacidad;
-	t_objetivo* objetivo;
-	struct t_entrenador* sgte;
+	uint32_t id;
+	uint32_t coordx;
+	uint32_t coordY;
+	uint32_t capacidad;
+	t_list objetivo;
 } t_entrenador;
 
 
