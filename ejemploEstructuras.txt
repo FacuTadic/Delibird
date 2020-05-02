@@ -24,7 +24,7 @@ typedef struct
 typedef struct
 {
     uint32_t coordenadaX,   // 4
-             coordenadaY,   // 4
+             coordenadaY;   // 4
     t_coord* sgte;          // 8*n    
 }t_coord;
 
@@ -34,13 +34,13 @@ typedef struct
 {
     t_buffer pokemon;       // 4 + nombre
     t_coord  coord;         // 8
-             cantidad;      // 4
+    int      cantidad;      // 4
 }t_new                      // 16 + nombre
 
 typedef struct
 {
     t_place place;         // 12 + nombre
-            cantidad;      // 4
+    int     cantidad;      // 4
 }t_new                     // 16 + nombre
 
 
