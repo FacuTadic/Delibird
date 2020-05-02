@@ -5,6 +5,9 @@
 #include "pthread.h"
 #include "semaphore.h"
 
+t_log* iniciar_logger(void);
+t_config* leer_config(void);
+t_config* leer_config(void);
 
 t_queue* NEW_POKEMON;
 t_queue* APPEARED_POKEMON;
@@ -35,11 +38,50 @@ sem_t get_mensajes;
 sem_t localized_mensajes;
 
 
+
+
+void* recibir_new(int socket_cliente, int* size) {
+
+}
+
+void* recibir_appeared(int socket_cliente, int* size) {
+
+}
+
+void* recibir_catch(int socket_cliente, int* size) {
+
+}
+
+void* recibir_caught(int socket_cliente, int* size) {
+
+}
+
+void* recibir_get(int socket_cliente, int* size) {
+
+}
+
+void* recibir_localized(int socket_cliente, int* size) {
+
+}
+
+
+
+
+
+
 void* esperar_clientes(void* socket_servidor) {
 	int socket = (int) socket_servidor;
 	while(1) {
 		esperar_cliente(socket);
 	}
+}
+
+void atender_cliente(int* socket)
+{
+	int cod_op;
+	if(recv(*socket, &cod_op, sizeof(int), MSG_WAITALL) == -1)
+		cod_op = -1;
+	procesar_request(cod_op, *socket);
 }
 
 void esperar_cliente(int socket_servidor)
@@ -52,14 +94,6 @@ void esperar_cliente(int socket_servidor)
 
 	pthread_create(&thread,NULL,(void*) atender_cliente, &socket_cliente);
 	pthread_detach(thread);
-}
-
-void atender_cliente(int* socket)
-{
-	int cod_op;
-	if(recv(*socket, &cod_op, sizeof(int), MSG_WAITALL) == -1)
-		cod_op = -1;
-	procesar_request(cod_op, *socket);
 }
 
 void procesar_request(int cod_op, int cliente_fd) {
@@ -221,29 +255,6 @@ void* recibir_mensaje(int socket_cliente, int* size)
 	return buffer;
 }
 
-void* recibir_new(int socket_cliente, int* size) {
-
-}
-
-void* recibir_appeared(int socket_cliente, int* size) {
-
-}
-
-void* recibir_catch(int socket_cliente, int* size) {
-
-}
-
-void* recibir_caught(int socket_cliente, int* size) {
-
-}
-
-void* recibir_get(int socket_cliente, int* size) {
-
-}
-
-void* recibir_localized(int socket_cliente, int* size) {
-
-}
 
 // Hay que ver si podemos hacer polimorfico esto
 // Seguramente con un struct que contenga al t_queue*
@@ -435,7 +446,7 @@ t_log* iniciar_logger(void){
 	return logger;
 }
 
-t_config* leer_config(){
+t_config* leer_config() {
 		t_config* config;
 		config = config_create("broker.config");
 		return config;
