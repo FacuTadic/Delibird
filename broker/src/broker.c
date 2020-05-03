@@ -1,13 +1,4 @@
-#include "utilsBroker.h"
-#include "commons/collections/queue.h"
-#include "commons/log.h"
-#include "commons/config.h"
-#include "pthread.h"
-#include "semaphore.h"
-
-t_log* iniciar_logger(void);
-t_config* leer_config(void);
-t_config* leer_config(void);
+#include "broker.h"
 
 t_queue* NEW_POKEMON;
 t_queue* APPEARED_POKEMON;
@@ -76,26 +67,6 @@ void* esperar_clientes(void* socket_servidor) {
 	}
 }
 
-void atender_cliente(int* socket)
-{
-	int cod_op;
-	if(recv(*socket, &cod_op, sizeof(int), MSG_WAITALL) == -1)
-		cod_op = -1;
-	procesar_request(cod_op, *socket);
-}
-
-void esperar_cliente(int socket_servidor)
-{
-	struct sockaddr_in dir_cliente;
-
-	int tam_direccion = sizeof(struct sockaddr_in);
-
-	int socket_cliente = accept(socket_servidor, (void*) &dir_cliente, &tam_direccion);
-
-	pthread_create(&thread,NULL,(void*) atender_cliente, &socket_cliente);
-	pthread_detach(thread);
-}
-
 void procesar_request(int cod_op, int cliente_fd) {
 	int size;
 
@@ -103,8 +74,7 @@ void procesar_request(int cod_op, int cliente_fd) {
 	void* msg;
 
 		switch (cod_op) {
-		case 1:
-			// NEW
+		case NEW:
 
 			// tipo_de_dato_new msg = recibir_new(cliente_fd, &size);
 			msg = recibir_new(cliente_fd, &size);
@@ -114,6 +84,7 @@ void procesar_request(int cod_op, int cliente_fd) {
 			pthread_mutex_lock(&new_lock);
 
 			// insertar en la cola new
+			queue_push(NEW_POKEMON, msg);
 
 			pthread_mutex_unlock(&new_lock);
 			sem_post(&new_mensajes);
@@ -123,8 +94,7 @@ void procesar_request(int cod_op, int cliente_fd) {
 			// tal vez ni se necesite hacer el free debido a que esa estructura se podria meter en la cola
 			free(msg);
 			break;
-		case 2:
-			// APPEARED
+		case APPEARED:
 
 			// tipo_de_dato_appeared msg = recibir_new(cliente_fd, &size);
 			msg = recibir_appeared(cliente_fd, &size);
@@ -143,8 +113,7 @@ void procesar_request(int cod_op, int cliente_fd) {
 			// tal vez ni se necesite hacer el free debido a que esa estructura se podria meter en la cola
 			free(msg);
 			break;
-		case 3:
-			// GET
+		case GET:
 
 			// tipo_de_dato_get msg = recibir_new(cliente_fd, &size);
 			msg = recibir_get(cliente_fd, &size);
@@ -163,8 +132,7 @@ void procesar_request(int cod_op, int cliente_fd) {
 			// tal vez ni se necesite hacer el free debido a que esa estructura se podria meter en la cola
 			free(msg);
 			break;
-		case 4:
-			// LOCALIZED
+		case LOCALIZED:
 
 			// tipo_de_dato_localized msg = recibir_new(cliente_fd, &size);
 			msg = recibir_localized(cliente_fd, &size);
@@ -183,8 +151,7 @@ void procesar_request(int cod_op, int cliente_fd) {
 			// tal vez ni se necesite hacer el free debido a que esa estructura se podria meter en la cola
 			free(msg);
 			break;
-		case 5:
-			// CATCH
+		case CATCH:
 
 			// tipo_de_dato_catch msg = recibir_new(cliente_fd, &size);
 			msg = recibir_catch(cliente_fd, &size);
@@ -203,8 +170,7 @@ void procesar_request(int cod_op, int cliente_fd) {
 			// tal vez ni se necesite hacer el free debido a que esa estructura se podria meter en la cola
 			free(msg);
 			break;
-		case 6:
-			// CAUGHT
+		case CAUGHT:
 
 			// tipo_de_dato_caught msg = recibir_new(cliente_fd, &size);
 			msg = recibir_caught(cliente_fd, &size);
@@ -223,8 +189,7 @@ void procesar_request(int cod_op, int cliente_fd) {
 			// tal vez ni se necesite hacer el free debido a que esa estructura se podria meter en la cola
 			free(msg);
 			break;
-		case 7:
-			// MENSAJE
+		case MENSAJE:
 			// se tiene que dejar ???
 
 			msg = recibir_mensaje(cliente_fd, &size);
@@ -242,6 +207,26 @@ void procesar_request(int cod_op, int cliente_fd) {
 		case -1:
 			pthread_exit(NULL);
 		}
+}
+
+void atender_cliente(int* socket)
+{
+	int cod_op;
+	if(recv(*socket, &cod_op, sizeof(int), MSG_WAITALL) == -1)
+		cod_op = -1;
+	procesar_request(cod_op, *socket);
+}
+
+void esperar_cliente(int socket_servidor)
+{
+	struct sockaddr_in dir_cliente;
+
+	int tam_direccion = sizeof(struct sockaddr_in);
+
+	int socket_cliente = accept(socket_servidor, (void*) &dir_cliente, &tam_direccion);
+
+	pthread_create(&thread,NULL,(void*) atender_cliente, &socket_cliente);
+	pthread_detach(thread);
 }
 
 void* recibir_mensaje(int socket_cliente, int* size)
@@ -264,8 +249,22 @@ void* atender_new(void* args) {
 	while (1) {
 		// Hacer algo con el ultimo elemento de la cola
 
+		// EL PRIMERO QUEDA COMO EJEMPLO
+
 		sem_wait(&new_mensajes);
 		pthread_mutex_lock(&new_lock);
+
+		// leer elemento de la cola
+
+		pthread_mutex_unlock(&new_lock);
+
+		// laburar
+
+		// una vez que este terminado
+
+		pthread_mutex_lock(&new_lock);
+
+		// eliminar de la cola
 
 		pthread_mutex_unlock(&new_lock);
 		sem_post(&new_limite);
@@ -280,6 +279,18 @@ void* atender_appeared(void* args) {
 		sem_wait(&appeared_mensajes);
 		pthread_mutex_lock(&appeared_lock);
 
+		// leer elemento de la cola
+
+		pthread_mutex_unlock(&appeared_lock);
+
+		// laburar
+
+		// una vez que este terminado
+
+		pthread_mutex_lock(&appeared_lock);
+
+		// eliminar de la cola
+
 		pthread_mutex_unlock(&appeared_lock);
 		sem_post(&appeared_limite);
 
@@ -292,6 +303,18 @@ void* atender_catch(void* args) {
 
 		sem_wait(&catch_mensajes);
 		pthread_mutex_lock(&catch_lock);
+
+		// leer elemento de la cola
+
+		pthread_mutex_unlock(&catch_lock);
+
+		// laburar
+
+		// una vez que este terminado
+
+		pthread_mutex_lock(&catch_lock);
+
+		// eliminar de la cola
 
 		pthread_mutex_unlock(&catch_lock);
 		sem_post(&catch_limite);
@@ -306,6 +329,18 @@ void* atender_caught(void* args) {
 		sem_wait(&caught_mensajes);
 		pthread_mutex_lock(&caught_lock);
 
+		// leer elemento de la cola
+
+		pthread_mutex_unlock(&caught_lock);
+
+		// laburar
+
+		// una vez que este terminado
+
+		pthread_mutex_lock(&caught_lock);
+
+		// eliminar de la cola
+
 		pthread_mutex_unlock(&caught_lock);
 		sem_post(&caught_limite);
 
@@ -319,6 +354,18 @@ void* atender_get(void* args) {
 		sem_wait(&get_mensajes);
 		pthread_mutex_lock(&get_lock);
 
+		// leer elemento de la cola
+
+		pthread_mutex_unlock(&get_lock);
+
+		// laburar
+
+		// una vez que este terminado
+
+		pthread_mutex_lock(&get_lock);
+
+		// eliminar de la cola
+
 		pthread_mutex_unlock(&get_lock);
 		sem_post(&get_limite);
 
@@ -331,6 +378,18 @@ void* atender_localized(void* args) {
 
 		sem_wait(&localized_mensajes);
 		pthread_mutex_lock(&localized_lock);
+
+		// leer elemento de la cola
+
+		pthread_mutex_unlock(&localized_lock);
+
+		// laburar
+
+		// una vez que este terminado
+
+		pthread_mutex_lock(&localized_lock);
+
+		// eliminar de la cola
 
 		pthread_mutex_unlock(&localized_lock);
 		sem_post(&localized_limite);
@@ -401,16 +460,16 @@ int main(void){
 	// Iniciamos un hilo para ir escuchando a los clientes
 	// Tiene que estar vivo mientras que el broker este funcionando. Entonces corresponde detach?
 
-	pthread_t* hilo_escucha_de_clientes;
-	pthread_create(&hilo_escucha_de_clientes, NULL, (void *) esperar_clientes, socket_servidor);
+	pthread_t hilo_escucha_de_clientes;
+	pthread_create(&hilo_escucha_de_clientes, NULL, (void *) esperar_clientes, (void*) socket_servidor);
 	pthread_join(hilo_escucha_de_clientes, NULL);
 
-	pthread_t* hilo_atencion_de_new;
-	pthread_t* hilo_atencion_de_appeared;
-	pthread_t* hilo_atencion_de_catch;
-	pthread_t* hilo_atencion_de_caught;
-	pthread_t* hilo_atencion_de_get;
-	pthread_t* hilo_atencion_de_localized;
+	pthread_t hilo_atencion_de_new;
+	pthread_t hilo_atencion_de_appeared;
+	pthread_t hilo_atencion_de_catch;
+	pthread_t hilo_atencion_de_caught;
+	pthread_t hilo_atencion_de_get;
+	pthread_t hilo_atencion_de_localized;
 
 	pthread_create(&hilo_atencion_de_new, NULL, (void *) atender_new, NULL);
 	pthread_join(hilo_atencion_de_new, NULL);
@@ -441,8 +500,8 @@ void inicializar_colas(void) {
 }
 
 
-t_log* iniciar_logger(void){
-	t_log* logger = log_create("broker.log", "Game-watch-client", 1, LOG_LEVEL_INFO);
+t_log* iniciar_logger(void) {
+	t_log* logger = log_create("broker.log", "Broker", 1, LOG_LEVEL_INFO);
 	return logger;
 }
 
@@ -452,21 +511,21 @@ t_config* leer_config() {
 		return config;
 }
 
-void terminar_programa(t_log* logger, t_config* config){
+void terminar_programa(t_log* logger, t_config* config) {
 	log_destroy(logger);
 	config_destroy(config);
-	queue_clean(&NEW_POKEMON);
-	queue_destroy(&NEW_POKEMON);
-	queue_clean(&APPEARED_POKEMON);
-	queue_destroy(&APPEARED_POKEMON);
-	queue_clean(&CATCH_POKEMON);
-	queue_destroy(&CATCH_POKEMON);
-	queue_clean(&CAUGHT_POKEMON);
-	queue_destroy(&CAUGHT_POKEMON);
-	queue_clean(&GET_POKEMON);
-	queue_destroy(&GET_POKEMON);
-	queue_clean(&LOCALIZED_POKEMON);
-	queue_destroy(&LOCALIZED_POKEMON);
+	queue_clean(NEW_POKEMON);
+	queue_destroy(NEW_POKEMON);
+	queue_clean(APPEARED_POKEMON);
+	queue_destroy(APPEARED_POKEMON);
+	queue_clean(CATCH_POKEMON);
+	queue_destroy(CATCH_POKEMON);
+	queue_clean(CAUGHT_POKEMON);
+	queue_destroy(CAUGHT_POKEMON);
+	queue_clean(GET_POKEMON);
+	queue_destroy(GET_POKEMON);
+	queue_clean(LOCALIZED_POKEMON);
+	queue_destroy(LOCALIZED_POKEMON);
 	sem_destroy(&new_limite);
 	sem_destroy(&appeared_limite);
 	sem_destroy(&catch_limite);
