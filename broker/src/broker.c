@@ -30,7 +30,6 @@ sem_t localized_mensajes;
 
 
 
-
 void* recibir_new(int socket_cliente, int* size) {
 
 	// nombre, posicion y cantidad
@@ -44,12 +43,19 @@ void* recibir_new(int socket_cliente, int* size) {
 
 void* recibir_appeared(int socket_cliente, int* size) {
 
-	t_appeared* appeared= malloc(sizeof(t_appeared));
+	// debemos chequear que nos mandan datos correctos?
+	// FALLAR O NO FALLAR? ESA ES LA CUESTION
 
-		recv(socket_cliente, size, sizeof(int), MSG_WAITALL);
-		recv(socket_cliente,appeared, sizeof(int), MSG_WAITALL);
+	t_appeared* appeared = malloc(sizeof(t_appeared));
 
-		return appeared; //le mando asi todo de una o le mando algo en particular
+	uint32_t tamanio_pokemon;
+
+	recv(socket_cliente, &tamanio_pokemon, sizeof(uint32_t), MSG_WAITALL);
+	recv(socket_cliente, appeared->pokemon, tamanio_pokemon, MSG_WAITALL);
+	recv(socket_cliente, appeared->pos_X, sizeof(uint32_t), MSG_WAITALL);
+	recv(socket_cliente, appeared->pos_Y, sizeof(uint32_t), MSG_WAITALL);
+
+	return appeared; //le mando asi todo de una o le mando algo en particular
 	// nombre y posicion
 	// pikachu en (1,5)
 	// 'pikachu' 1 5
@@ -74,7 +80,7 @@ void* recibir_caught(int socket_cliente, int* size) {
 
 	recv(socket_cliente, size, sizeof(uint32_t), MSG_WAITALL);    //el tamanio tal vez no se manda veremos como lo hace el resto
 
-	recv(socket_cliente,caught->flag_caught, sizeof(uint32_t), MSG_WAITALL);
+	recv(socket_cliente, &(caught->flag_caught), sizeof(uint32_t), MSG_WAITALL);
 
 	return caught;
 	// flag de atrapado
@@ -94,7 +100,10 @@ void* recibir_get(int socket_cliente, int* size) {
 	// y si hay que hacer alguna estructura mas grande para poner en la cola
 	// porque faltan cosas como el id a poner en el mensaje por ejemplo
 
+	// ver que onda el size
+
 	t_get* get = malloc(sizeof(t_get));
+
 	recv(socket_cliente, size, sizeof(uint32_t), MSG_WAITALL);
 	recv(socket_cliente, get->pokemon, *size, MSG_WAITALL);
 	return get;
@@ -272,17 +281,6 @@ void procesar_request(int cod_op, int cliente_fd) {
 		case -1:
 			pthread_exit(NULL);
 		}
-}
-
-void* recibir_mensaje(int socket_cliente, int* size)
-{
-	void * buffer;
-
-	recv(socket_cliente, size, sizeof(int), MSG_WAITALL);
-	buffer = malloc(*size);
-	recv(socket_cliente, buffer, *size, MSG_WAITALL);
-
-	return buffer;
 }
 
 void atender_cliente(int* socket)

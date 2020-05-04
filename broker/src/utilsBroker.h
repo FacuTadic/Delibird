@@ -84,8 +84,8 @@ typedef struct
 
 typedef struct
 {
-    t_buffer pokemon;
-    //t_coord    coord;
+	char* pokemon;
+    uint32_t pos_X, pos_Y;
 }t_appeared;
 
 //// Catch ‘Pikachu’ 1 5
