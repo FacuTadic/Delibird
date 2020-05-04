@@ -74,10 +74,10 @@ typedef struct
 //    t_coord* coord;          // 8*n
 //}t_localized;
 //
-//typedef struct
-//{
-//    t_buffer pokemon;
-//}t_get;
+typedef struct
+{
+    char* pokemon;
+}t_get;
 //
 //// Appeared ‘Pikachu’ 1 5
 //

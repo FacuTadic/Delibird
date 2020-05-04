@@ -33,30 +33,82 @@ sem_t localized_mensajes;
 
 void* recibir_new(int socket_cliente, int* size) {
 
+	// nombre, posicion y cantidad
+	// 2 pikachu en (5,10)
+	// 'pikachu' 5 10 2
+	// en la realidad:
+	// 7 pikachu 5 10 2
+
+
 }
 
 void* recibir_appeared(int socket_cliente, int* size) {
+
+	// nombre y posicion
+	// pikachu en (1,5)
+	// 'pikachu' 1 5
+	// en la realidad:
+	// 7 pikachu 1 5
 
 }
 
 void* recibir_catch(int socket_cliente, int* size) {
 
+	// nombre y posicion
+	// pikachu en (1,5)
+	// 'pikachu' 1 5
+	// en la realidad:
+	// 7 pikachu 1 5
+
 }
 
 void* recibir_caught(int socket_cliente, int* size) {
+
+	// flag de atrapado
+	// 0 -> se pudo atrapar
+	// 1 -> no se pudo atrapar
 
 }
 
 void* recibir_get(int socket_cliente, int* size) {
 
+	// nombre
+	// 'pikachu'
+	// en la realidad:
+	// 7 pikachu
+
+	// hay que ver como van a respetar el protocolo los demas
+	// y si hay que hacer alguna estructura mas grande para poner en la cola
+	// porque faltan cosas como el id a poner en el mensaje por ejemplo
+
+	t_get* get = malloc(sizeof(t_get));
+	recv(socket_cliente, size, sizeof(uint32_t), MSG_WAITALL);
+	recv(socket_cliente, get->pokemon, *size, MSG_WAITALL);
+	return get;
+
 }
 
 void* recibir_localized(int socket_cliente, int* size) {
 
+	// nombre, cantidad de posiciones y posiciones
+	// pikachu en 3 lugares: (4,5) (1,5) (9,3)
+	// 'pikachu' 3 4 5 1 5 9 3
+	// en la realidad:
+	// 7 'pikachu' 3 4 5 1 5 9 3
+
 }
 
 
-
+//void* recibir_mensaje(int socket_cliente, int* size)
+//{
+//	void * buffer;
+//
+//	recv(socket_cliente, size, sizeof(int), MSG_WAITALL);
+//	buffer = malloc(*size);
+//	recv(socket_cliente, buffer, *size, MSG_WAITALL);
+//
+//	return buffer;
+//}
 
 
 
@@ -209,6 +261,17 @@ void procesar_request(int cod_op, int cliente_fd) {
 		}
 }
 
+void* recibir_mensaje(int socket_cliente, int* size)
+{
+	void * buffer;
+
+	recv(socket_cliente, size, sizeof(int), MSG_WAITALL);
+	buffer = malloc(*size);
+	recv(socket_cliente, buffer, *size, MSG_WAITALL);
+
+	return buffer;
+}
+
 void atender_cliente(int* socket)
 {
 	int cod_op;
@@ -228,18 +291,6 @@ void esperar_cliente(int socket_servidor)
 	pthread_create(&thread,NULL,(void*) atender_cliente, &socket_cliente);
 	pthread_detach(thread);
 }
-
-void* recibir_mensaje(int socket_cliente, int* size)
-{
-	void * buffer;
-
-	recv(socket_cliente, size, sizeof(int), MSG_WAITALL);
-	buffer = malloc(*size);
-	recv(socket_cliente, buffer, *size, MSG_WAITALL);
-
-	return buffer;
-}
-
 
 // Hay que ver si podemos hacer polimorfico esto
 // Seguramente con un struct que contenga al t_queue*
@@ -400,6 +451,7 @@ void* atender_localized(void* args) {
 int main(void){
 	char* ip;
 	char* puerto;
+	char* log_file;
 	int limite_cola_new;
 	int limite_cola_appeared;
 	int limite_cola_catch;
@@ -410,20 +462,19 @@ int main(void){
 	t_log* logger;
 	t_config* config;
 
-	// Iniciamos logger, variables levantadas de config y colas globales
-
-	logger = iniciar_logger();
-	log_info(logger, "logger iniciado.");
+	// Iniciamos config, logger, variables levantadas de config y colas globales
 
 	config = leer_config();
-	log_info(logger, "config cargada.");
 
-	inicializar_colas();
-
+	log_file = config_get_string_value(config, "LOG_FILE");
 	ip = config_get_string_value(config, "IP");
 	puerto = config_get_string_value(config, "PUERTO");
+	logger = iniciar_logger(log_file);
+	log_info(logger, "logger iniciado.");
 	log_info(logger, "La IP es: %s", ip);
 	log_info(logger, "El Puerto es: %s", puerto);
+
+	inicializar_colas();
 
 	limite_cola_new = config_get_int_value(config, "LIMITE_COLA_NEW");
 	limite_cola_appeared = config_get_int_value(config, "LIMITE_COLA_APPEARED");
@@ -499,9 +550,8 @@ void inicializar_colas(void) {
 	LOCALIZED_POKEMON = queue_create();
 }
 
-
-t_log* iniciar_logger(void) {
-	t_log* logger = log_create("broker.log", "Broker", 1, LOG_LEVEL_INFO);
+t_log* iniciar_logger(char* log_file) {
+	t_log* logger = log_create(log_file, "Broker", 1, LOG_LEVEL_INFO);
 	return logger;
 }
 
