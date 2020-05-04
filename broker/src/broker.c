@@ -44,6 +44,12 @@ void* recibir_new(int socket_cliente, int* size) {
 
 void* recibir_appeared(int socket_cliente, int* size) {
 
+	t_appeared* appeared= malloc(sizeof(t_appeared));
+
+		recv(socket_cliente, size, sizeof(int), MSG_WAITALL);
+		recv(socket_cliente,appeared, sizeof(int), MSG_WAITALL);
+
+		return appeared; //le mando asi todo de una o le mando algo en particular
 	// nombre y posicion
 	// pikachu en (1,5)
 	// 'pikachu' 1 5
@@ -64,6 +70,13 @@ void* recibir_catch(int socket_cliente, int* size) {
 
 void* recibir_caught(int socket_cliente, int* size) {
 
+	t_caught* caught = malloc(sizeof(t_caught));
+
+	recv(socket_cliente, size, sizeof(uint32_t), MSG_WAITALL);    //el tamanio tal vez no se manda veremos como lo hace el resto
+
+	recv(socket_cliente,caught->flag_caught, sizeof(uint32_t), MSG_WAITALL);
+
+	return caught;
 	// flag de atrapado
 	// 0 -> se pudo atrapar
 	// 1 -> no se pudo atrapar

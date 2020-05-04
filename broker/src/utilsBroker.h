@@ -81,12 +81,13 @@ typedef struct
 //
 //// Appeared ‘Pikachu’ 1 5
 //
-//typedef struct
-//{
-//    t_buffer pokemon;
-//    t_coord    coord;
-//}t_appeared;
-//
+
+typedef struct
+{
+    t_buffer pokemon;
+    //t_coord    coord;
+}t_appeared;
+
 //// Catch ‘Pikachu’ 1 5
 //
 //typedef struct
@@ -102,12 +103,12 @@ typedef struct
 //}t_place;
 
 
-/*
- * Caught 0
-typedef caught{
-	uint32_t algo;
+// Caught 0
+
+typedef struct{
+	uint32_t flag_caught;
 } t_caught;
-*/
+
 
 
 
