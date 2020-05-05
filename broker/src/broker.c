@@ -38,7 +38,16 @@ void* recibir_new(int socket_cliente, int* size) {
 	// en la realidad:
 	// 7 pikachu 5 10 2
 
+	t_new* new = malloc(sizeof(t_new));
+	uint32_t tamanio_pokemon;
 
+	recv(socket_cliente, &(tamanio_pokemon), sizeof(uint32_t), MSG_WAITALL);
+	recv(socket_cliente, new->pokemon, tamanio_pokemon, MSG_WAITALL);
+	recv(socket_cliente, &(new->cantidad), sizeof(uint32_t), MSG_WAITALL);
+	recv(socket_cliente, &(new->pos_X), sizeof(uint32_t), MSG_WAITALL);
+	recv(socket_cliente, &(new->pos_Y), sizeof(uint32_t), MSG_WAITALL);
+
+	return new;
 }
 
 void* recibir_appeared(int socket_cliente, int* size) {
@@ -50,12 +59,12 @@ void* recibir_appeared(int socket_cliente, int* size) {
 
 	uint32_t tamanio_pokemon;
 
-	recv(socket_cliente, &tamanio_pokemon, sizeof(uint32_t), MSG_WAITALL);
+	recv(socket_cliente, &(tamanio_pokemon), sizeof(uint32_t), MSG_WAITALL);
 	recv(socket_cliente, appeared->pokemon, tamanio_pokemon, MSG_WAITALL);
-	recv(socket_cliente, appeared->pos_X, sizeof(uint32_t), MSG_WAITALL);
-	recv(socket_cliente, appeared->pos_Y, sizeof(uint32_t), MSG_WAITALL);
+	recv(socket_cliente, &(appeared->pos_X), sizeof(uint32_t), MSG_WAITALL);
+	recv(socket_cliente, &(appeared->pos_Y), sizeof(uint32_t), MSG_WAITALL);
 
-	return appeared; //le mando asi todo de una o le mando algo en particular
+	return appeared;
 	// nombre y posicion
 	// pikachu en (1,5)
 	// 'pikachu' 1 5
@@ -72,13 +81,24 @@ void* recibir_catch(int socket_cliente, int* size) {
 	// en la realidad:
 	// 7 pikachu 1 5
 
+	t_catch* catch = malloc(sizeof(t_catch));
+	uint32_t tamanio_pokemon;
+
+
+	recv(socket_cliente, &(tamanio_pokemon), sizeof(uint32_t), MSG_WAITALL);
+	recv(socket_cliente, catch->pokemon, tamanio_pokemon, MSG_WAITALL);
+	recv(socket_cliente, &(catch->pos_X), sizeof(uint32_t), MSG_WAITALL);
+	recv(socket_cliente, &(catch->pos_Y), sizeof(uint32_t), MSG_WAITALL);
+
+	return catch;
 }
 
 void* recibir_caught(int socket_cliente, int* size) {
 
 	t_caught* caught = malloc(sizeof(t_caught));
+	uint32_t tamanio;
 
-	recv(socket_cliente, size, sizeof(uint32_t), MSG_WAITALL);    //el tamanio tal vez no se manda veremos como lo hace el resto
+	recv(socket_cliente, caught, size, MSG_WAITALL);    //el tamanio tal vez no se manda veremos como lo hace el resto
 
 	recv(socket_cliente, &(caught->flag_caught), sizeof(uint32_t), MSG_WAITALL);
 
@@ -118,6 +138,15 @@ void* recibir_localized(int socket_cliente, int* size) {
 	// en la realidad:
 	// 7 'pikachu' 3 4 5 1 5 9 3
 
+	t_localized* localized = malloc(sizeof(t_localized));
+	uint32_t tamanio;
+
+	recv(socket_cliente, tamanio, sizeof(uint32_t), MSG_WAITALL);
+	recv(socket_cliente, localized->pokemon,tamanio, MSG_WAITALL);
+	recv(socket_cliente, localized->lugares,sizeof(uint32_t), MSG_WAITALL);
+	recv(socket_cliente, localized->l_coord,sizeof(t_coord), MSG_WAITALL);		//lista de coordenadas t_coord l_coord a defeinir con commons
+
+	return localized;
 }
 
 

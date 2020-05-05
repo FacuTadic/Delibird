@@ -50,12 +50,11 @@ typedef struct
 //
 //// New ‘Pikachu’ 5 10 2
 //
-//typedef struct
-//{
-//    t_buffer pokemon;       // 4 + nombre
-//    t_coord  coord;         // 8
-//    uint32_t cantidad;      // 4
-//}t_new;                   // 16 + nombre
+typedef struct
+{
+    char* pokemon;       // 4 + nombre
+    uint32_t pos_X, pos_Y, cantidad;
+}t_new;                   // 16 + nombre
 //
 //typedef struct
 //{
@@ -67,12 +66,12 @@ typedef struct
 //
 //// Localized ‘Pikachu’ 3 4 5 1 5 9 3
 //
-//typedef struct
-//{
-//    t_buffer pokemon;       // 16 + nombre
-//    uint32_t lugares;       // 4
-//    t_coord* coord;          // 8*n
-//}t_localized;
+typedef struct
+{
+    t_buffer pokemon;       // 16 + nombre
+    uint32_t lugares;       // 4
+    t_coord* coord;          // 8*n
+}t_localized;
 //
 typedef struct
 {
@@ -90,12 +89,14 @@ typedef struct
 
 //// Catch ‘Pikachu’ 1 5
 //
-//typedef struct
-//{
-//    t_buffer pokemon;
-//    t_coord    coord;
-//}t_catch;
-//
+
+typedef struct
+{
+    t_buffer pokemon;
+    uint32_t pos_X, pos_Y;
+}t_catch;
+
+
 //typedef struct
 //{
 //    t_buffer pokemon;
