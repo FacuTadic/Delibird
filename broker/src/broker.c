@@ -1,5 +1,8 @@
 #include "broker.h"
 
+t_log* logger;
+t_log* extense_logger;
+
 t_queue* NEW_POKEMON;
 t_queue* APPEARED_POKEMON;
 t_queue* CATCH_POKEMON;
@@ -28,282 +31,99 @@ sem_t caught_mensajes;
 sem_t get_mensajes;
 sem_t localized_mensajes;
 
-
-
-void* recibir_new(int socket_cliente, int* size) {
-
-	// nombre, posicion y cantidad
-	// 2 pikachu en (5,10)
-	// 'pikachu' 5 10 2
-	// en la realidad:
-	// 7 pikachu 5 10 2
-
-	t_new* new = malloc(sizeof(t_new));
-	uint32_t tamanio_pokemon;
-
-	recv(socket_cliente, &(tamanio_pokemon), sizeof(uint32_t), MSG_WAITALL);
-	recv(socket_cliente, new->pokemon, tamanio_pokemon, MSG_WAITALL);
-	recv(socket_cliente, &(new->cantidad), sizeof(uint32_t), MSG_WAITALL);
-	recv(socket_cliente, &(new->pos_X), sizeof(uint32_t), MSG_WAITALL);
-	recv(socket_cliente, &(new->pos_Y), sizeof(uint32_t), MSG_WAITALL);
-
-	return new;
-}
-
-void* recibir_appeared(int socket_cliente, int* size) {
-
-	// debemos chequear que nos mandan datos correctos?
-	// FALLAR O NO FALLAR? ESA ES LA CUESTION
-
-	t_appeared* appeared = malloc(sizeof(t_appeared));
-
-	uint32_t tamanio_pokemon;
-
-	recv(socket_cliente, &(tamanio_pokemon), sizeof(uint32_t), MSG_WAITALL);
-	recv(socket_cliente, appeared->pokemon, tamanio_pokemon, MSG_WAITALL);
-	recv(socket_cliente, &(appeared->pos_X), sizeof(uint32_t), MSG_WAITALL);
-	recv(socket_cliente, &(appeared->pos_Y), sizeof(uint32_t), MSG_WAITALL);
-
-	return appeared;
-	// nombre y posicion
-	// pikachu en (1,5)
-	// 'pikachu' 1 5
-	// en la realidad:
-	// 7 pikachu 1 5
-
-}
-
-void* recibir_catch(int socket_cliente, int* size) {
-
-	// nombre y posicion
-	// pikachu en (1,5)
-	// 'pikachu' 1 5
-	// en la realidad:
-	// 7 pikachu 1 5
-
-	t_catch* catch = malloc(sizeof(t_catch));
-	uint32_t tamanio_pokemon;
-
-
-	recv(socket_cliente, &(tamanio_pokemon), sizeof(uint32_t), MSG_WAITALL);
-	recv(socket_cliente, catch->pokemon, tamanio_pokemon, MSG_WAITALL);
-	recv(socket_cliente, &(catch->pos_X), sizeof(uint32_t), MSG_WAITALL);
-	recv(socket_cliente, &(catch->pos_Y), sizeof(uint32_t), MSG_WAITALL);
-
-	return catch;
-}
-
-void* recibir_caught(int socket_cliente, int* size) {
-
-	t_caught* caught = malloc(sizeof(t_caught));
-	uint32_t tamanio;
-
-	recv(socket_cliente, caught, size, MSG_WAITALL);    //el tamanio tal vez no se manda veremos como lo hace el resto
-
-	recv(socket_cliente, &(caught->flag_caught), sizeof(uint32_t), MSG_WAITALL);
-
-	return caught;
-	// flag de atrapado
-	// 0 -> se pudo atrapar
-	// 1 -> no se pudo atrapar
-
-}
-
-void* recibir_get(int socket_cliente, int* size) {
-
-	// nombre
-	// 'pikachu'
-	// en la realidad:
-	// 7 pikachu
-
-	// hay que ver como van a respetar el protocolo los demas
-	// y si hay que hacer alguna estructura mas grande para poner en la cola
-	// porque faltan cosas como el id a poner en el mensaje por ejemplo
-
-	// ver que onda el size
-
-	t_get* get = malloc(sizeof(t_get));
-
-	recv(socket_cliente, size, sizeof(uint32_t), MSG_WAITALL);
-	recv(socket_cliente, get->pokemon, *size, MSG_WAITALL);
-	return get;
-
-}
-
-void* recibir_localized(int socket_cliente, int* size) {
-
-	// nombre, cantidad de posiciones y posiciones
-	// pikachu en 3 lugares: (4,5) (1,5) (9,3)
-	// 'pikachu' 3 4 5 1 5 9 3
-	// en la realidad:
-	// 7 'pikachu' 3 4 5 1 5 9 3
-
-	t_localized* localized = malloc(sizeof(t_localized));
-	uint32_t tamanio;
-
-	recv(socket_cliente, tamanio, sizeof(uint32_t), MSG_WAITALL);
-	recv(socket_cliente, localized->pokemon,tamanio, MSG_WAITALL);
-	recv(socket_cliente, localized->lugares,sizeof(uint32_t), MSG_WAITALL);
-	recv(socket_cliente, localized->l_coord,sizeof(t_coord), MSG_WAITALL);		//lista de coordenadas t_coord l_coord a defeinir con commons
-
-	return localized;
-}
-
-
-//void* recibir_mensaje(int socket_cliente, int* size)
-//{
-//	void * buffer;
-//
-//	recv(socket_cliente, size, sizeof(int), MSG_WAITALL);
-//	buffer = malloc(*size);
-//	recv(socket_cliente, buffer, *size, MSG_WAITALL);
-//
-//	return buffer;
-//}
-
-
-
-void* esperar_clientes(void* socket_servidor) {
-	int socket = (int) socket_servidor;
-	while(1) {
-		esperar_cliente(socket);
-	}
-}
-
 void procesar_request(int cod_op, int cliente_fd) {
 	int size;
 
-	//borrar cuando tengamos los tipos de cada case
-	void* msg;
-
 		switch (cod_op) {
-		case NEW:
-
-			// tipo_de_dato_new msg = recibir_new(cliente_fd, &size);
-			msg = recibir_new(cliente_fd, &size);
-
-
+		case NEW: ;
+			t_new* new_msg = recibir_new(cliente_fd, &size);
 			sem_wait(&new_limite);
 			pthread_mutex_lock(&new_lock);
 
-			// insertar en la cola new
-			queue_push(NEW_POKEMON, msg);
+			queue_push(NEW_POKEMON, (void*) new_msg);
 
 			pthread_mutex_unlock(&new_lock);
 			sem_post(&new_mensajes);
 
 			close(cliente_fd);
-			// seguro en vez de msg sea una estructura mas compleja, cuidado con el free asi de una
-			// tal vez ni se necesite hacer el free debido a que esa estructura se podria meter en la cola
-			free(msg);
 			break;
-		case APPEARED:
-
-			// tipo_de_dato_appeared msg = recibir_new(cliente_fd, &size);
-			msg = recibir_appeared(cliente_fd, &size);
-
+		case APPEARED: ;
+			t_appeared* appeared_msg = recibir_appeared(cliente_fd, &size);
 
 			sem_wait(&appeared_limite);
 			pthread_mutex_lock(&appeared_lock);
 
-			// insertar en la cola appeared
+			queue_push(APPEARED_POKEMON, (void*) appeared_msg);
 
 			pthread_mutex_unlock(&appeared_lock);
 			sem_post(&appeared_mensajes);
 
 			close(cliente_fd);
-			// seguro en vez de msg sea una estructura mas compleja, cuidado con el free asi de una
-			// tal vez ni se necesite hacer el free debido a que esa estructura se podria meter en la cola
-			free(msg);
 			break;
-		case GET:
-
-			// tipo_de_dato_get msg = recibir_new(cliente_fd, &size);
-			msg = recibir_get(cliente_fd, &size);
-
+		case GET: ;
+			t_get* get_msg = recibir_get(cliente_fd, &size);
 
 			sem_wait(&get_limite);
 			pthread_mutex_lock(&get_lock);
 
-			// insertar en la cola get
+			queue_push(GET_POKEMON, (void*) get_msg);
 
 			pthread_mutex_unlock(&get_lock);
 			sem_post(&get_mensajes);
 
 			close(cliente_fd);
-			// seguro en vez de msg sea una estructura mas compleja, cuidado con el free asi de una
-			// tal vez ni se necesite hacer el free debido a que esa estructura se podria meter en la cola
-			free(msg);
 			break;
-		case LOCALIZED:
-
-			// tipo_de_dato_localized msg = recibir_new(cliente_fd, &size);
-			msg = recibir_localized(cliente_fd, &size);
-
+		case LOCALIZED: ;
+			t_localized* localized_msg = recibir_localized(cliente_fd, &size);
 
 			sem_wait(&localized_limite);
 			pthread_mutex_lock(&localized_lock);
 
-			// insertar en la cola appeared
+			queue_push(LOCALIZED_POKEMON, (void*) localized_msg);
 
 			pthread_mutex_unlock(&localized_lock);
 			sem_post(&localized_mensajes);
 
 			close(cliente_fd);
-			// seguro en vez de msg sea una estructura mas compleja, cuidado con el free asi de una
-			// tal vez ni se necesite hacer el free debido a que esa estructura se podria meter en la cola
-			free(msg);
 			break;
-		case CATCH:
-
-			// tipo_de_dato_catch msg = recibir_new(cliente_fd, &size);
-			msg = recibir_catch(cliente_fd, &size);
-
+		case CATCH: ;
+			t_catch* catch_msg = recibir_catch(cliente_fd, &size);
 
 			sem_wait(&catch_limite);
 			pthread_mutex_lock(&catch_lock);
 
-			// insertar en la cola catch
+			queue_push(CATCH_POKEMON, (void*) catch_msg);
 
 			pthread_mutex_unlock(&catch_lock);
 			sem_post(&catch_mensajes);
 
 			close(cliente_fd);
-			// seguro en vez de msg sea una estructura mas compleja, cuidado con el free asi de una
-			// tal vez ni se necesite hacer el free debido a que esa estructura se podria meter en la cola
-			free(msg);
 			break;
-		case CAUGHT:
-
-			// tipo_de_dato_caught msg = recibir_new(cliente_fd, &size);
-			msg = recibir_caught(cliente_fd, &size);
-
+		case CAUGHT: ;
+			t_caught* caught_msg = recibir_caught(cliente_fd, &size);
 
 			sem_wait(&caught_limite);
 			pthread_mutex_lock(&caught_lock);
 
-			// insertar en la cola caught
+			queue_push(CAUGHT_POKEMON, (void*) caught_msg);
 
 			pthread_mutex_unlock(&caught_lock);
 			sem_post(&caught_mensajes);
 
 			close(cliente_fd);
-			// seguro en vez de msg sea una estructura mas compleja, cuidado con el free asi de una
-			// tal vez ni se necesite hacer el free debido a que esa estructura se podria meter en la cola
-			free(msg);
 			break;
-		case MENSAJE:
+		case MENSAJE: ;
 			// se tiene que dejar ???
 
-			msg = recibir_mensaje(cliente_fd, &size);
+			//msg = recibir_mensaje(cliente_fd, &size);
 
-			devolver_mensaje(msg, size, cliente_fd);
+			//devolver_mensaje(msg, size, cliente_fd);
 
 
 			close(cliente_fd);
 			// seguro en vez de msg sea una estructura mas compleja, cuidado con el free asi de una
 			// tal vez ni se necesite hacer el free debido a que esa estructura se podria meter en la cola
-			free(msg);
+			//free(msg);
 			break;
 		case 0:
 			pthread_exit(NULL);
@@ -328,8 +148,17 @@ void esperar_cliente(int socket_servidor)
 
 	int socket_cliente = accept(socket_servidor, (void*) &dir_cliente, &tam_direccion);
 
-	pthread_create(&thread,NULL,(void*) atender_cliente, &socket_cliente);
+	pthread_t thread;
+
+	pthread_create(&thread, NULL, (void*) atender_cliente, &socket_cliente);
 	pthread_detach(thread);
+}
+
+void* esperar_clientes(void* socket_servidor) {
+	int socket = (int) socket_servidor;
+	while(1) {
+		esperar_cliente(socket);
+	}
 }
 
 // Hay que ver si podemos hacer polimorfico esto
@@ -492,6 +321,7 @@ int main(void){
 	char* ip;
 	char* puerto;
 	char* log_file;
+	char* extense_log_file;
 	int limite_cola_new;
 	int limite_cola_appeared;
 	int limite_cola_catch;
@@ -499,20 +329,21 @@ int main(void){
 	int limite_cola_get;
 	int limite_cola_localized;
 
-	t_log* logger;
 	t_config* config;
 
 	// Iniciamos config, logger, variables levantadas de config y colas globales
 
 	config = leer_config();
-
 	log_file = config_get_string_value(config, "LOG_FILE");
-	ip = config_get_string_value(config, "IP");
-	puerto = config_get_string_value(config, "PUERTO");
+	extense_log_file = config_get_string_value(config, "EXTENSE_LOG_FILE");
+	extense_logger = iniciar_logger(extense_log_file);
+	log_info(extense_logger, "logger extenso iniciado");
 	logger = iniciar_logger(log_file);
-	log_info(logger, "logger iniciado.");
-	log_info(logger, "La IP es: %s", ip);
-	log_info(logger, "El Puerto es: %s", puerto);
+	log_info(extense_logger, "logger de la catedra iniciado");
+	ip = config_get_string_value(config, "IP");
+	log_info(extense_logger, "La IP es: %s", ip);
+	puerto = config_get_string_value(config, "PUERTO");
+	log_info(extense_logger, "El puerto es: %s", puerto);
 
 	inicializar_colas();
 
@@ -577,7 +408,7 @@ int main(void){
 
 	// Terminamos el programa
 
-	terminar_programa(logger, config);
+	terminar_programa(config);
 	return EXIT_SUCCESS;
 }
 
@@ -588,11 +419,11 @@ void inicializar_colas(void) {
 	CAUGHT_POKEMON = queue_create();
 	GET_POKEMON = queue_create();
 	LOCALIZED_POKEMON = queue_create();
+	log_info(extense_logger, "Colas iniciadas");
 }
 
 t_log* iniciar_logger(char* log_file) {
-	t_log* logger = log_create(log_file, "Broker", 1, LOG_LEVEL_INFO);
-	return logger;
+	return log_create(log_file, "Broker", 1, LOG_LEVEL_INFO);
 }
 
 t_config* leer_config() {
@@ -601,8 +432,9 @@ t_config* leer_config() {
 		return config;
 }
 
-void terminar_programa(t_log* logger, t_config* config) {
+void terminar_programa(t_config* config) {
 	log_destroy(logger);
+	log_destroy(extense_logger);
 	config_destroy(config);
 	queue_clean(NEW_POKEMON);
 	queue_destroy(NEW_POKEMON);
