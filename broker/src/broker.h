@@ -7,6 +7,7 @@
 #include "commons/config.h"
 #include "pthread.h"
 #include "semaphore.h"
+#include "broker_msj_id.h"
 
 #endif /* BROKER_H_ */
 

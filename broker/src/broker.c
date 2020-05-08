@@ -1,5 +1,6 @@
 #include "broker.h"
 
+
 t_log* logger;
 t_log* extense_logger;
 
@@ -375,6 +376,8 @@ int main(void){
 	pthread_mutex_init(&get_lock, NULL);
 	pthread_mutex_init(&localized_lock, NULL);
 
+	crea_generador_id();
+
 	// Levantamos el servidor en la ip y el puerto definidos en config
 
 	int socket_servidor = iniciar_servidor(ip, puerto);
@@ -466,4 +469,7 @@ void terminar_programa(t_config* config) {
 	pthread_mutex_destroy(&caught_lock);
 	pthread_mutex_destroy(&get_lock);
 	pthread_mutex_destroy(&localized_lock);
+
+	destruir_generador_id();
+
 }
