@@ -3,109 +3,109 @@
 void procesar_request(int cod_op, int cliente_fd) {
 	int size;
 
-	mensaje_queue* mensaje_queue = malloc(sizeof(mensaje_queue));
-	mensaje_queue->id = generar_id();
+	mensaje_queue* mensaje_a_guardar = malloc(sizeof(mensaje_queue));
+	mensaje_a_guardar->id = generar_id();
 
 	switch (cod_op) {
 	case NEW: ;
 		t_new* new_msg = recibir_new(cliente_fd, &size);
 
-		mensaje_queue->mensaje = (void*) new_msg;
+		mensaje_a_guardar->mensaje = (void*) new_msg;
 
 		sem_wait(&new_limite);
 		pthread_mutex_lock(&new_lock);
 
-		queue_push(NEW_POKEMON, mensaje_queue);
+		queue_push(NEW_POKEMON, mensaje_a_guardar);
 
 		pthread_mutex_unlock(&new_lock);
 		sem_post(&new_mensajes);
 
-		devolver_id(cliente_fd, mensaje_queue->id);
+		devolver_id(cliente_fd, mensaje_a_guardar->id);
 
 		close(cliente_fd);
 		break;
 	case APPEARED: ;
 		t_appeared* appeared_msg = recibir_appeared(cliente_fd, &size);
 
-		mensaje_queue->mensaje = (void*) appeared_msg;
+		mensaje_a_guardar->mensaje = (void*) appeared_msg;
 
 		sem_wait(&appeared_limite);
 		pthread_mutex_lock(&appeared_lock);
 
-		queue_push(APPEARED_POKEMON, mensaje_queue);
+		queue_push(APPEARED_POKEMON, mensaje_a_guardar);
 
 		pthread_mutex_unlock(&appeared_lock);
 		sem_post(&appeared_mensajes);
 
-		devolver_id(cliente_fd, mensaje_queue->id);
+		devolver_id(cliente_fd, mensaje_a_guardar->id);
 
 		close(cliente_fd);
 		break;
 	case GET: ;
 		t_get* get_msg = recibir_get(cliente_fd, &size);
 
-		mensaje_queue->mensaje = (void*) get_msg;
+		mensaje_a_guardar->mensaje = (void*) get_msg;
 
 		sem_wait(&get_limite);
 		pthread_mutex_lock(&get_lock);
 
-		queue_push(GET_POKEMON, mensaje_queue);
+		queue_push(GET_POKEMON, mensaje_a_guardar);
 
 		pthread_mutex_unlock(&get_lock);
 		sem_post(&get_mensajes);
 
-		devolver_id(cliente_fd, mensaje_queue->id);
+		devolver_id(cliente_fd, mensaje_a_guardar->id);
 
 		close(cliente_fd);
 		break;
 	case LOCALIZED: ;
 		t_localized* localized_msg = recibir_localized(cliente_fd, &size);
 
-		mensaje_queue->mensaje = (void*) localized_msg;
+		mensaje_a_guardar->mensaje = (void*) localized_msg;
 
 		sem_wait(&localized_limite);
 		pthread_mutex_lock(&localized_lock);
 
-		queue_push(LOCALIZED_POKEMON, mensaje_queue);
+		queue_push(LOCALIZED_POKEMON, mensaje_a_guardar);
 
 		pthread_mutex_unlock(&localized_lock);
 		sem_post(&localized_mensajes);
 
-		devolver_id(cliente_fd, mensaje_queue->id);
+		devolver_id(cliente_fd, mensaje_a_guardar->id);
 
 		close(cliente_fd);
 		break;
 	case CATCH: ;
 		t_catch* catch_msg = recibir_catch(cliente_fd, &size);
 
-		mensaje_queue->mensaje = (void*) catch_msg;
+		mensaje_a_guardar->mensaje = (void*) catch_msg;
 
 		sem_wait(&catch_limite);
 		pthread_mutex_lock(&catch_lock);
 
-		queue_push(CATCH_POKEMON, mensaje_queue);
+		queue_push(CATCH_POKEMON, mensaje_a_guardar);
 
 		pthread_mutex_unlock(&catch_lock);
 		sem_post(&catch_mensajes);
 
-		devolver_id(cliente_fd, mensaje_queue->id);
+		devolver_id(cliente_fd, mensaje_a_guardar->id);
 
 		close(cliente_fd);
 		break;
 	case CAUGHT: ;
 		t_caught* caught_msg = recibir_caught(cliente_fd, &size);
 
-		mensaje_queue->mensaje = (void*) caught_msg;
+		mensaje_a_guardar->mensaje = (void*) caught_msg;
 
 		sem_wait(&caught_limite);
 		pthread_mutex_lock(&caught_lock);
 
-		queue_push(CAUGHT_POKEMON, mensaje_queue);
+		queue_push(CAUGHT_POKEMON, mensaje_a_guardar);
 
 		pthread_mutex_unlock(&caught_lock);
 		sem_post(&caught_mensajes);
 
-		devolver_id(cliente_fd, mensaje_queue->id);
+		devolver_id(cliente_fd, mensaje_a_guardar->id);
 
 		close(cliente_fd);
 		break;
@@ -165,10 +165,6 @@ void* esperar_clientes(void* socket_servidor) {
 		esperar_cliente(socket);
 	}
 }
-
-// Hay que ver si podemos hacer polimorfico esto
-// Seguramente con un struct que contenga al t_queue*
-// Si es asi hay que liberar bien la memoria al final
 
 void* atender_new(void* args) {
 	while (1) {
