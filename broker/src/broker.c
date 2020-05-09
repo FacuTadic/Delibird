@@ -1,43 +1,10 @@
 #include "broker.h"
 
-
-t_log* logger;
-t_log* extense_logger;
-
-t_queue* NEW_POKEMON;
-t_queue* APPEARED_POKEMON;
-t_queue* CATCH_POKEMON;
-t_queue* CAUGHT_POKEMON;
-t_queue* GET_POKEMON;
-t_queue* LOCALIZED_POKEMON;
-
-pthread_mutex_t new_lock;
-pthread_mutex_t appeared_lock;
-pthread_mutex_t catch_lock;
-pthread_mutex_t caught_lock;
-pthread_mutex_t get_lock;
-pthread_mutex_t localized_lock;
-
-sem_t new_limite;
-sem_t appeared_limite;
-sem_t catch_limite;
-sem_t caught_limite;
-sem_t get_limite;
-sem_t localized_limite;
-
-sem_t new_mensajes;
-sem_t appeared_mensajes;
-sem_t catch_mensajes;
-sem_t caught_mensajes;
-sem_t get_mensajes;
-sem_t localized_mensajes;
-
 void procesar_request(int cod_op, int cliente_fd) {
 	int size;
 
 	mensaje_queue* mensaje_queue = malloc(sizeof(mensaje_queue));
-	uint32_t id = generar_id();
-	mensaje_queue->id = id;
+	mensaje_queue->id = generar_id();
 
 	switch (cod_op) {
 	case NEW: ;
@@ -53,7 +20,7 @@ void procesar_request(int cod_op, int cliente_fd) {
 		pthread_mutex_unlock(&new_lock);
 		sem_post(&new_mensajes);
 
-		devolver_id(cliente_fd, id);
+		devolver_id(cliente_fd, mensaje_queue->id);
 
 		close(cliente_fd);
 		break;
@@ -70,7 +37,7 @@ void procesar_request(int cod_op, int cliente_fd) {
 		pthread_mutex_unlock(&appeared_lock);
 		sem_post(&appeared_mensajes);
 
-		devolver_id(cliente_fd, id);
+		devolver_id(cliente_fd, mensaje_queue->id);
 
 		close(cliente_fd);
 		break;
@@ -87,7 +54,7 @@ void procesar_request(int cod_op, int cliente_fd) {
 		pthread_mutex_unlock(&get_lock);
 		sem_post(&get_mensajes);
 
-		devolver_id(cliente_fd, id);
+		devolver_id(cliente_fd, mensaje_queue->id);
 
 		close(cliente_fd);
 		break;
@@ -104,7 +71,7 @@ void procesar_request(int cod_op, int cliente_fd) {
 		pthread_mutex_unlock(&localized_lock);
 		sem_post(&localized_mensajes);
 
-		devolver_id(cliente_fd, id);
+		devolver_id(cliente_fd, mensaje_queue->id);
 
 		close(cliente_fd);
 		break;
@@ -121,7 +88,7 @@ void procesar_request(int cod_op, int cliente_fd) {
 		pthread_mutex_unlock(&catch_lock);
 		sem_post(&catch_mensajes);
 
-		devolver_id(cliente_fd, id);
+		devolver_id(cliente_fd, mensaje_queue->id);
 
 		close(cliente_fd);
 		break;
@@ -138,7 +105,7 @@ void procesar_request(int cod_op, int cliente_fd) {
 		pthread_mutex_unlock(&caught_lock);
 		sem_post(&caught_mensajes);
 
-		devolver_id(cliente_fd, id);
+		devolver_id(cliente_fd, mensaje_queue->id);
 
 		close(cliente_fd);
 		break;
@@ -459,6 +426,12 @@ void inicializar_colas(void) {
 	CAUGHT_POKEMON = queue_create();
 	GET_POKEMON = queue_create();
 	LOCALIZED_POKEMON = queue_create();
+	new_suscriptores = list_create();
+	appeared_suscriptores = list_create();
+	catch_suscriptores = list_create();
+	caught_suscriptores = list_create();
+	get_suscriptores = list_create();
+	localized_suscriptores = list_create();
 	log_info(extense_logger, "Colas iniciadas");
 }
 
@@ -488,6 +461,18 @@ void terminar_programa(t_config* config) {
 	queue_destroy(GET_POKEMON);
 	queue_clean(LOCALIZED_POKEMON);
 	queue_destroy(LOCALIZED_POKEMON);
+	list_clean(new_suscriptores);
+	list_clean(appeared_suscriptores);
+	list_clean(catch_suscriptores);
+	list_clean(caught_suscriptores);
+	list_clean(get_suscriptores);
+	list_clean(localized_suscriptores);
+	list_destroy(new_suscriptores);
+	list_destroy(appeared_suscriptores);
+	list_destroy(catch_suscriptores);
+	list_destroy(caught_suscriptores);
+	list_destroy(get_suscriptores);
+	list_destroy(localized_suscriptores);
 	sem_destroy(&new_limite);
 	sem_destroy(&appeared_limite);
 	sem_destroy(&catch_limite);
