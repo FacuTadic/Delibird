@@ -11,6 +11,12 @@
 
 #endif /* BROKER_H_ */
 
+
+typedef struct {
+	void* mensaje;
+	uint32_t id;
+} mensaje_queue;
+
 t_log* iniciar_logger(char* log_file);
 t_config* leer_config(void);
 t_config* leer_config(void);

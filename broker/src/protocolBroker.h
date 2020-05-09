@@ -67,5 +67,6 @@ t_catch* recibir_catch(int socket_cliente, int* size);
 t_caught* recibir_caught(int socket_cliente, int* size);
 t_get* recibir_get(int socket_cliente, int* size);
 t_localized* recibir_localized(int socket_cliente, int* size);
+void devolver_id(int socket_cliente, uint32_t id);
 
 #endif /* PROTOCOLBROKER_H_ */

@@ -35,102 +35,125 @@ sem_t localized_mensajes;
 void procesar_request(int cod_op, int cliente_fd) {
 	int size;
 
-		switch (cod_op) {
-		case NEW: ;
-			t_new* new_msg = recibir_new(cliente_fd, &size);
-			sem_wait(&new_limite);
-			pthread_mutex_lock(&new_lock);
+	uint32_t id = generar_id();
 
-			queue_push(NEW_POKEMON, (void*) new_msg);
+	switch (cod_op) {
+	case NEW: ;
+		t_new* new_msg = recibir_new(cliente_fd, &size);
 
-			pthread_mutex_unlock(&new_lock);
-			sem_post(&new_mensajes);
+		sem_wait(&new_limite);
+		pthread_mutex_lock(&new_lock);
 
-			close(cliente_fd);
-			break;
-		case APPEARED: ;
-			t_appeared* appeared_msg = recibir_appeared(cliente_fd, &size);
+		queue_push(NEW_POKEMON, (void*) new_msg);
 
-			sem_wait(&appeared_limite);
-			pthread_mutex_lock(&appeared_lock);
+		pthread_mutex_unlock(&new_lock);
+		sem_post(&new_mensajes);
 
-			queue_push(APPEARED_POKEMON, (void*) appeared_msg);
+		devolver_id(cliente_fd, id);
 
-			pthread_mutex_unlock(&appeared_lock);
-			sem_post(&appeared_mensajes);
+		close(cliente_fd);
+		break;
+	case APPEARED: ;
+		t_appeared* appeared_msg = recibir_appeared(cliente_fd, &size);
 
-			close(cliente_fd);
-			break;
-		case GET: ;
-			t_get* get_msg = recibir_get(cliente_fd, &size);
+		sem_wait(&appeared_limite);
+		pthread_mutex_lock(&appeared_lock);
 
-			sem_wait(&get_limite);
-			pthread_mutex_lock(&get_lock);
+		queue_push(APPEARED_POKEMON, (void*) appeared_msg);
 
-			queue_push(GET_POKEMON, (void*) get_msg);
+		pthread_mutex_unlock(&appeared_lock);
+		sem_post(&appeared_mensajes);
 
-			pthread_mutex_unlock(&get_lock);
-			sem_post(&get_mensajes);
+		devolver_id(cliente_fd, id);
 
-			close(cliente_fd);
-			break;
-		case LOCALIZED: ;
-			t_localized* localized_msg = recibir_localized(cliente_fd, &size);
+		close(cliente_fd);
+		break;
+	case GET: ;
+		t_get* get_msg = recibir_get(cliente_fd, &size);
 
-			sem_wait(&localized_limite);
-			pthread_mutex_lock(&localized_lock);
+		sem_wait(&get_limite);
+		pthread_mutex_lock(&get_lock);
 
-			queue_push(LOCALIZED_POKEMON, (void*) localized_msg);
+		queue_push(GET_POKEMON, (void*) get_msg);
 
-			pthread_mutex_unlock(&localized_lock);
-			sem_post(&localized_mensajes);
+		pthread_mutex_unlock(&get_lock);
+		sem_post(&get_mensajes);
 
-			close(cliente_fd);
-			break;
-		case CATCH: ;
-			t_catch* catch_msg = recibir_catch(cliente_fd, &size);
+		devolver_id(cliente_fd, id);
 
-			sem_wait(&catch_limite);
-			pthread_mutex_lock(&catch_lock);
+		close(cliente_fd);
+		break;
+	case LOCALIZED: ;
+		t_localized* localized_msg = recibir_localized(cliente_fd, &size);
 
-			queue_push(CATCH_POKEMON, (void*) catch_msg);
+		sem_wait(&localized_limite);
+		pthread_mutex_lock(&localized_lock);
 
-			pthread_mutex_unlock(&catch_lock);
-			sem_post(&catch_mensajes);
+		queue_push(LOCALIZED_POKEMON, (void*) localized_msg);
 
-			close(cliente_fd);
-			break;
-		case CAUGHT: ;
-			t_caught* caught_msg = recibir_caught(cliente_fd, &size);
+		pthread_mutex_unlock(&localized_lock);
+		sem_post(&localized_mensajes);
 
-			sem_wait(&caught_limite);
-			pthread_mutex_lock(&caught_lock);
+		devolver_id(cliente_fd, id);
 
-			queue_push(CAUGHT_POKEMON, (void*) caught_msg);
+		close(cliente_fd);
+		break;
+	case CATCH: ;
+		t_catch* catch_msg = recibir_catch(cliente_fd, &size);
 
-			pthread_mutex_unlock(&caught_lock);
-			sem_post(&caught_mensajes);
+		sem_wait(&catch_limite);
+		pthread_mutex_lock(&catch_lock);
 
-			close(cliente_fd);
-			break;
-		case MENSAJE: ;
-			// se tiene que dejar ???
+		queue_push(CATCH_POKEMON, (void*) catch_msg);
 
-			//msg = recibir_mensaje(cliente_fd, &size);
+		pthread_mutex_unlock(&catch_lock);
+		sem_post(&catch_mensajes);
 
-			//devolver_mensaje(msg, size, cliente_fd);
+		devolver_id(cliente_fd, id);
+
+		close(cliente_fd);
+		break;
+	case CAUGHT: ;
+		t_caught* caught_msg = recibir_caught(cliente_fd, &size);
+
+		sem_wait(&caught_limite);
+		pthread_mutex_lock(&caught_lock);
+
+		queue_push(CAUGHT_POKEMON, (void*) caught_msg);
+
+		pthread_mutex_unlock(&caught_lock);
+		sem_post(&caught_mensajes);
+
+		devolver_id(cliente_fd, id);
+
+		close(cliente_fd);
+		break;
+	case MENSAJE: ;
+		// se tiene que dejar ???
+
+		//msg = recibir_mensaje(cliente_fd, &size);
+
+		//devolver_mensaje(msg, size, cliente_fd);
 
 
-			close(cliente_fd);
-			// seguro en vez de msg sea una estructura mas compleja, cuidado con el free asi de una
-			// tal vez ni se necesite hacer el free debido a que esa estructura se podria meter en la cola
-			//free(msg);
-			break;
-		case 0:
-			pthread_exit(NULL);
-		case -1:
-			pthread_exit(NULL);
-		}
+		close(cliente_fd);
+		// seguro en vez de msg sea una estructura mas compleja, cuidado con el free asi de una
+		// tal vez ni se necesite hacer el free debido a que esa estructura se podria meter en la cola
+		//free(msg);
+		break;
+	case 0:
+
+		// va aca tambien?
+		close(cliente_fd);
+
+		pthread_exit(NULL);
+	case -1:
+
+		// va aca tambien?
+		close(cliente_fd);
+
+		pthread_exit(NULL);
+	}
 }
 
 void atender_cliente(int* socket)
