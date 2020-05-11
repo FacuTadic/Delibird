@@ -1,7 +1,6 @@
 #include "utilsBroker.h"
 
-int iniciar_servidor(char* IP, char* PUERTO)
-{
+int iniciar_servidor(char* IP, char* PUERTO) {
 	int socket_servidor;
 
     struct addrinfo hints, *servinfo, *p;

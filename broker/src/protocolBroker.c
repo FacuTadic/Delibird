@@ -102,5 +102,5 @@ t_localized* recibir_localized(int socket_cliente, int* size) {
 
 
 void devolver_id(int socket_cliente, uint32_t id) {
-	send(socket_cliente, id, sizeof(uint32_t), 0);
+	send(socket_cliente, (void *) id, sizeof(uint32_t), 0);
 }

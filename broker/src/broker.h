@@ -14,6 +14,8 @@
 t_log* logger;
 t_log* extense_logger;
 
+t_config* config;
+
 t_queue* NEW_POKEMON;
 t_queue* APPEARED_POKEMON;
 t_queue* CATCH_POKEMON;
@@ -49,6 +51,29 @@ sem_t caught_mensajes;
 sem_t get_mensajes;
 sem_t localized_mensajes;
 
+typedef enum
+{
+	NEW_ID          = 11,
+    APPEARED_ID     = 12,
+	CATCH_ID        = 13,
+	CAUGHT_ID       = 14,
+	GET_ID          = 15,
+    LOCALIZED_ID    = 16
+} id_cola;
+
+typedef struct {
+	t_queue* cola;
+	t_list* suscriptores;
+	id_cola id;
+} cola_struct;
+
+cola_struct NEW_STRUCT;
+cola_struct APPEARED_STRUCT;
+cola_struct CATCH_STRUCT;
+cola_struct CAUGHT_STRUCT;
+cola_struct GET_STRUCT;
+cola_struct LOCALIZED_STRUCT;
+
 typedef struct {
 	void* mensaje;
 	uint32_t id;
@@ -57,5 +82,7 @@ typedef struct {
 t_log* iniciar_logger(char* log_file);
 t_config* leer_config(void);
 t_config* leer_config(void);
+void leer_info_modulos(void);
 void inicializar_colas(void);
-void terminar_programa(t_config* config);
+void inicializar_semaforos_colas(void);
+void terminar_programa(void);

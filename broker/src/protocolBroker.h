@@ -11,6 +11,11 @@
 #ifndef PROTOCOLBROKER_H_
 #define PROTOCOLBROKER_H_
 
+
+///////////
+// MENSAJES
+///////////
+
 typedef enum
 {
 	NEW          = 1,
@@ -18,8 +23,7 @@ typedef enum
     GET          = 3,
     LOCALIZED    = 4,
     CATCH        = 5,
-    CAUGHT       = 6,
-	MENSAJE 	 = 7
+    CAUGHT       = 6
 } op_code;
 
 typedef struct {
@@ -60,6 +64,20 @@ typedef struct {
 typedef struct {
 	uint32_t flag_caught;
 } t_caught;
+
+
+//////////
+// MODULOS
+//////////
+
+typedef struct {
+	char* ip;
+	char* puerto;
+} info_modulo;
+
+info_modulo INFO_TEAM;
+info_modulo INFO_GAME_BOY;
+info_modulo INFO_GAME_CARD;
 
 t_new* recibir_new(int socket_cliente, int* size);
 t_appeared* recibir_appeared(int socket_cliente, int* size);
