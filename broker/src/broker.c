@@ -124,8 +124,7 @@ void procesar_request(int cod_op, int cliente_fd) {
 	}
 }
 
-void atender_cliente(int* socket)
-{
+void atender_cliente(int* socket) {
 	int cod_op;
 	if(recv(*socket, &cod_op, sizeof(int), MSG_WAITALL) == -1)
 		cod_op = -1;
@@ -165,6 +164,8 @@ void* atender_new(void* args) {
 		t_new* primer_elemento = (t_new*) queue_peek(NEW_POKEMON);
 
 		pthread_mutex_unlock(&new_lock);
+
+		atender_mensaje_new(primer_elemento);
 
 		// laburar
 		// 1. crear un hilo por cada modulo a enviar el elemento
@@ -220,10 +221,13 @@ void* atender_appeared(void* args) {
 		pthread_mutex_lock(&appeared_lock);
 
 		// eliminar de la cola
+		t_appeared* elemento_a_eliminar = (t_appeared*) queue_pop(APPEARED_POKEMON);
 
 		pthread_mutex_unlock(&appeared_lock);
 		sem_post(&appeared_limite);
 
+		free(elemento_a_eliminar->pokemon);
+		free(elemento_a_eliminar);
 	}
 }
 
@@ -246,10 +250,13 @@ void* atender_catch(void* args) {
 		pthread_mutex_lock(&catch_lock);
 
 		// eliminar de la cola
+		t_catch* elemento_a_eliminar = (t_catch*) queue_pop(CATCH_POKEMON);
 
 		pthread_mutex_unlock(&catch_lock);
 		sem_post(&catch_limite);
 
+		free(elemento_a_eliminar->pokemon);
+		free(elemento_a_eliminar);
 	}
 }
 
@@ -272,10 +279,12 @@ void* atender_caught(void* args) {
 		pthread_mutex_lock(&caught_lock);
 
 		// eliminar de la cola
+		t_caught* elemento_a_eliminar = (t_caught*) queue_pop(CAUGHT_POKEMON);
 
 		pthread_mutex_unlock(&caught_lock);
 		sem_post(&caught_limite);
 
+		free(elemento_a_eliminar);
 	}
 }
 
@@ -298,10 +307,13 @@ void* atender_get(void* args) {
 		pthread_mutex_lock(&get_lock);
 
 		// eliminar de la cola
+		t_get* elemento_a_eliminar = (t_get*) queue_pop(GET_POKEMON);
 
 		pthread_mutex_unlock(&get_lock);
 		sem_post(&get_limite);
 
+		free(elemento_a_eliminar->pokemon);
+		free(elemento_a_eliminar);
 	}
 }
 
@@ -324,11 +336,50 @@ void* atender_localized(void* args) {
 		pthread_mutex_lock(&localized_lock);
 
 		// eliminar de la cola
+		t_localized* elemento_a_eliminar = (t_localized*) queue_pop(LOCALIZED_POKEMON);
 
 		pthread_mutex_unlock(&localized_lock);
 		sem_post(&localized_limite);
 
+		free(elemento_a_eliminar->pokemon);
+		list_destroy(elemento_a_eliminar->l_coordenadas);
+		free(elemento_a_eliminar->l_coordenadas);
+		free(elemento_a_eliminar);
 	}
+}
+
+void atender_mensaje_new(t_new* mensaje) {
+
+
+	// crear una copia de esta lista;
+	// NEW_STRUCT->suscriptores;
+
+	t_list* suscriptores_para_enviar = list_duplicate(NEW_STRUCT.suscriptores);
+
+	pthread_t* threads = malloc(sizeof(pthread_t) * suscriptores_para_enviar->elements_count);
+
+	for (int i = 0; i < suscriptores_para_enviar->elements_count; i++) {
+		pthread_create(&(threads[i]), NULL, (void*) atender_appeared, NULL);
+		pthread_join(threads[i], NULL);
+	}
+
+
+
+
+	// crear un hilo para cada suscriptor para enviar los mensajes
+
+	// chequear que ya volvieron todos
+	// no se como se hace esto
+
+
+
+
+
+
+
+
+
+
 }
 
 int main(void) {

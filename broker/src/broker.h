@@ -86,3 +86,4 @@ void leer_info_modulos(void);
 void inicializar_colas(void);
 void inicializar_semaforos_colas(void);
 void terminar_programa(void);
+void atender_mensaje_new(t_new*);

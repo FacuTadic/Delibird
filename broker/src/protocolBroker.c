@@ -1,13 +1,6 @@
 #include "protocolBroker.h"
 
 t_new* recibir_new(int socket_cliente, int* size) {
-
-	// nombre, posicion y cantidad
-	// 2 pikachu en (5,10)
-	// 'pikachu' 5 10 2
-	// en la realidad:
-	// 7 pikachu 5 10 2
-
 	t_new* new = malloc(sizeof(t_new));
 	uint32_t tamanio_pokemon;
 
@@ -24,10 +17,6 @@ t_new* recibir_new(int socket_cliente, int* size) {
 }
 
 t_appeared* recibir_appeared(int socket_cliente, int* size) {
-
-	// debemos chequear que nos mandan datos correctos?
-	// FALLAR O NO FALLAR? ESA ES LA CUESTION
-
 	t_appeared* appeared = malloc(sizeof(t_appeared));
 
 	uint32_t tamanio_pokemon;
