@@ -419,9 +419,8 @@ int main(void) {
 	// Iniciamos un hilo para ir escuchando a los clientes
 	// Tiene que estar vivo mientras que el broker este funcionando. Entonces corresponde detach?
 
+
 	pthread_t hilo_escucha_de_clientes;
-	pthread_create(&hilo_escucha_de_clientes, NULL, (void *) esperar_clientes, (void*) socket_servidor);
-	pthread_join(hilo_escucha_de_clientes, NULL);
 
 	pthread_t hilo_atencion_de_new;
 	pthread_t hilo_atencion_de_appeared;
@@ -430,17 +429,22 @@ int main(void) {
 	pthread_t hilo_atencion_de_get;
 	pthread_t hilo_atencion_de_localized;
 
+	pthread_create(&hilo_escucha_de_clientes, NULL, (void *) esperar_clientes, (void*) socket_servidor);
+
 	pthread_create(&hilo_atencion_de_new, NULL, (void *) atender_new, NULL);
-	pthread_join(hilo_atencion_de_new, NULL);
 	pthread_create(&hilo_atencion_de_appeared, NULL, (void *) atender_appeared, NULL);
-	pthread_join(hilo_atencion_de_appeared, NULL);
 	pthread_create(&hilo_atencion_de_catch, NULL, (void *) atender_catch, NULL);
-	pthread_join(hilo_atencion_de_catch, NULL);
 	pthread_create(&hilo_atencion_de_caught, NULL, (void *) atender_caught, NULL);
-	pthread_join(hilo_atencion_de_caught, NULL);
 	pthread_create(&hilo_atencion_de_get, NULL, (void *) atender_get, NULL);
-	pthread_join(hilo_atencion_de_get, NULL);
 	pthread_create(&hilo_atencion_de_localized, NULL, (void *) atender_localized, NULL);
+
+	pthread_join(hilo_escucha_de_clientes, NULL);
+
+	pthread_join(hilo_atencion_de_new, NULL);
+	pthread_join(hilo_atencion_de_appeared, NULL);
+	pthread_join(hilo_atencion_de_catch, NULL);
+	pthread_join(hilo_atencion_de_caught, NULL);
+	pthread_join(hilo_atencion_de_get, NULL);
 	pthread_join(hilo_atencion_de_localized, NULL);
 
 	// Terminamos el programa
