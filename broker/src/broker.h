@@ -79,6 +79,11 @@ typedef struct {
 	uint32_t id;
 } mensaje_queue;
 
+typedef struct {
+	t_new* new_mensaje;
+	info_modulo* info;
+} new_mandable_struct;
+
 t_log* iniciar_logger(char* log_file);
 t_config* leer_config(void);
 t_config* leer_config(void);
@@ -92,3 +97,4 @@ void atender_mensaje_catch(t_catch*);
 void atender_mensaje_caught(t_caught*);
 void atender_mensaje_get(t_get*);
 void atender_mensaje_localized(t_localized*);
+void mandar_new(void* new_mandable);

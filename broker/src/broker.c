@@ -216,6 +216,8 @@ void* atender_appeared(void* args) {
 
 		// laburar
 
+		atender_mensaje_appeared(primer_elemento);
+
 		// una vez que este terminado
 
 		pthread_mutex_lock(&appeared_lock);
@@ -244,6 +246,8 @@ void* atender_catch(void* args) {
 		pthread_mutex_unlock(&catch_lock);
 
 		// laburar
+
+		atender_mensaje_catch(primer_elemento);
 
 		// una vez que este terminado
 
@@ -274,6 +278,8 @@ void* atender_caught(void* args) {
 
 		// laburar
 
+		atender_mensaje_caught(primer_elemento);
+
 		// una vez que este terminado
 
 		pthread_mutex_lock(&caught_lock);
@@ -301,6 +307,8 @@ void* atender_get(void* args) {
 		pthread_mutex_unlock(&get_lock);
 
 		// laburar
+
+		atender_mensaje_get(primer_elemento);
 
 		// una vez que este terminado
 
@@ -331,6 +339,8 @@ void* atender_localized(void* args) {
 
 		// laburar
 
+		atender_mensaje_localized(primer_elemento);
+
 		// una vez que este terminado
 
 		pthread_mutex_lock(&localized_lock);
@@ -357,8 +367,10 @@ void atender_mensaje_new(t_new* mensaje) {
 	pthread_t* threads = malloc(sizeof(pthread_t) * suscriptores_para_enviar->elements_count);
 
 	for (int i = 0; i < suscriptores_para_enviar->elements_count; i++) {
-		// ACA NO VA ATENDER APPEARED
-		pthread_create(&(threads[i]), NULL, (void*) atender_appeared, NULL);
+		new_mandable_struct* struct_para_enviar = malloc(sizeof(new_mandable_struct));
+		struct_para_enviar->info = list_get(suscriptores_para_enviar, i);
+		struct_para_enviar->new_mensaje = mensaje;
+		pthread_create(&(threads[i]), NULL, (void*) mandar_new, (void *) struct_para_enviar);
 	}
 
 	for (int i = 0; i < suscriptores_para_enviar->elements_count; i++) {
@@ -502,6 +514,28 @@ void atender_mensaje_localized(t_localized* mensaje) {
 	// Elimino de la cola
 
 	queue_pop(LOCALIZED_POKEMON);
+}
+
+void mandar_new(void* new_mandable) {
+
+	new_mandable_struct* argumento_new = (new_mandable_struct*) new_mandable;
+
+	// conectarnos
+	// hablar con milton
+
+
+	// serializar paquete
+	// op_code [uint32_t] tamaño de todo lo que viene despues [uint32_t] gilada [extras]
+	// gilada tiene primero id y id correlativo
+
+	// enviar
+
+	// esperar respuesta
+
+	// cerrar conexion
+
+	// liberar memoria
+
 }
 
 int main(void) {
