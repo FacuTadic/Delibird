@@ -87,3 +87,8 @@ void inicializar_colas(void);
 void inicializar_semaforos_colas(void);
 void terminar_programa(void);
 void atender_mensaje_new(t_new*);
+void atender_mensaje_appeared(t_appeared*);
+void atender_mensaje_catch(t_catch*);
+void atender_mensaje_caught(t_caught*);
+void atender_mensaje_get(t_get*);
+void atender_mensaje_localized(t_localized*);

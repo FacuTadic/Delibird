@@ -349,8 +349,6 @@ void* atender_localized(void* args) {
 }
 
 void atender_mensaje_new(t_new* mensaje) {
-
-
 	// crear una copia de esta lista;
 	// NEW_STRUCT->suscriptores;
 
@@ -359,27 +357,151 @@ void atender_mensaje_new(t_new* mensaje) {
 	pthread_t* threads = malloc(sizeof(pthread_t) * suscriptores_para_enviar->elements_count);
 
 	for (int i = 0; i < suscriptores_para_enviar->elements_count; i++) {
+		// ACA NO VA ATENDER APPEARED
 		pthread_create(&(threads[i]), NULL, (void*) atender_appeared, NULL);
+	}
+
+	for (int i = 0; i < suscriptores_para_enviar->elements_count; i++) {
 		pthread_join(threads[i], NULL);
 	}
 
+	// POR AHORA CAMINO FELIZ
+	// COMO DIJO MACRI
+	// DESDE AHORA POR LEY SOMOS TODOS FELICES
 
+	// Elimino de la cola
 
+	queue_pop(NEW_POKEMON);
+}
 
-	// crear un hilo para cada suscriptor para enviar los mensajes
+void atender_mensaje_appeared(t_appeared* mensaje) {
+	// crear una copia de esta lista;
+	// NEW_STRUCT->suscriptores;
 
-	// chequear que ya volvieron todos
-	// no se como se hace esto
+	t_list* suscriptores_para_enviar = list_duplicate(NEW_STRUCT.suscriptores);
 
+	pthread_t* threads = malloc(sizeof(pthread_t) * suscriptores_para_enviar->elements_count);
 
+	for (int i = 0; i < suscriptores_para_enviar->elements_count; i++) {
+		// ACA NO VA ATENDER APPEARED
+		pthread_create(&(threads[i]), NULL, (void*) atender_appeared, NULL);
+	}
 
+	for (int i = 0; i < suscriptores_para_enviar->elements_count; i++) {
+		pthread_join(threads[i], NULL);
+	}
 
+	// POR AHORA CAMINO FELIZ
+	// COMO DIJO MACRI
+	// DESDE AHORA POR LEY SOMOS TODOS FELICES
 
+	// Elimino de la cola
 
+	queue_pop(APPEARED_POKEMON);
+}
 
+void atender_mensaje_catch(t_catch* mensaje) {
+	// crear una copia de esta lista;
+	// NEW_STRUCT->suscriptores;
 
+	t_list* suscriptores_para_enviar = list_duplicate(NEW_STRUCT.suscriptores);
 
+	pthread_t* threads = malloc(sizeof(pthread_t) * suscriptores_para_enviar->elements_count);
 
+	for (int i = 0; i < suscriptores_para_enviar->elements_count; i++) {
+		// ACA NO VA ATENDER APPEARED
+		pthread_create(&(threads[i]), NULL, (void*) atender_appeared, NULL);
+	}
+
+	for (int i = 0; i < suscriptores_para_enviar->elements_count; i++) {
+		pthread_join(threads[i], NULL);
+	}
+
+	// POR AHORA CAMINO FELIZ
+	// COMO DIJO MACRI
+	// DESDE AHORA POR LEY SOMOS TODOS FELICES
+
+	// Elimino de la cola
+
+	queue_pop(CATCH_POKEMON);
+}
+
+void atender_mensaje_caught(t_caught* mensaje) {
+	// crear una copia de esta lista;
+	// NEW_STRUCT->suscriptores;
+
+	t_list* suscriptores_para_enviar = list_duplicate(NEW_STRUCT.suscriptores);
+
+	pthread_t* threads = malloc(sizeof(pthread_t) * suscriptores_para_enviar->elements_count);
+
+	for (int i = 0; i < suscriptores_para_enviar->elements_count; i++) {
+		// ACA NO VA ATENDER APPEARED
+		pthread_create(&(threads[i]), NULL, (void*) atender_appeared, NULL);
+	}
+
+	for (int i = 0; i < suscriptores_para_enviar->elements_count; i++) {
+		pthread_join(threads[i], NULL);
+	}
+
+	// POR AHORA CAMINO FELIZ
+	// COMO DIJO MACRI
+	// DESDE AHORA POR LEY SOMOS TODOS FELICES
+
+	// Elimino de la cola
+
+	queue_pop(CAUGHT_POKEMON);
+}
+
+void atender_mensaje_get(t_get* mensaje) {
+	// crear una copia de esta lista;
+	// NEW_STRUCT->suscriptores;
+
+	t_list* suscriptores_para_enviar = list_duplicate(NEW_STRUCT.suscriptores);
+
+	pthread_t* threads = malloc(sizeof(pthread_t) * suscriptores_para_enviar->elements_count);
+
+	for (int i = 0; i < suscriptores_para_enviar->elements_count; i++) {
+		// ACA NO VA ATENDER APPEARED
+		pthread_create(&(threads[i]), NULL, (void*) atender_appeared, NULL);
+	}
+
+	for (int i = 0; i < suscriptores_para_enviar->elements_count; i++) {
+		pthread_join(threads[i], NULL);
+	}
+
+	// POR AHORA CAMINO FELIZ
+	// COMO DIJO MACRI
+	// DESDE AHORA POR LEY SOMOS TODOS FELICES
+
+	// Elimino de la cola
+
+	queue_pop(GET_POKEMON);
+}
+
+void atender_mensaje_localized(t_localized* mensaje) {
+	// crear una copia de esta lista;
+	// NEW_STRUCT->suscriptores;
+
+	t_list* suscriptores_para_enviar = list_duplicate(NEW_STRUCT.suscriptores);
+
+	pthread_t* threads = malloc(sizeof(pthread_t) * suscriptores_para_enviar->elements_count);
+
+	for (int i = 0; i < suscriptores_para_enviar->elements_count; i++) {
+		// ACA NO VA ATENDER APPEARED
+		pthread_create(&(threads[i]), NULL, (void*) atender_appeared, NULL);
+	}
+
+	for (int i = 0; i < suscriptores_para_enviar->elements_count; i++) {
+		pthread_join(threads[i], NULL);
+	}
+
+	// POR AHORA CAMINO FELIZ
+	// COMO DIJO MACRI
+	// DESDE AHORA POR LEY SOMOS TODOS FELICES
+
+	// Elimino de la cola
+
+	queue_pop(LOCALIZED_POKEMON);
 }
 
 int main(void) {
