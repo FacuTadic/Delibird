@@ -22,7 +22,7 @@
 typedef enum
 {
 	MENSAJE = 1,
-	GET = 2;
+	GET = 2
 }op_code;
 
 typedef struct
@@ -55,9 +55,10 @@ typedef struct
 
 typedef struct
 {
+	uint32_t size;
+	char* nombre;
 	uint32_t coordx;
 	uint32_t coordY;
-	char* nombre;
 }t_pokemon;
 
 
@@ -66,5 +67,9 @@ void enviar_mensaje(char* mensaje, int socket_cliente, t_log* logger);
 char* recibir_mensaje(int socket_cliente, t_log* logger);
 void eliminar_paquete(t_paquete* paquete);
 void liberar_conexion(int socket_cliente);
+void mainAppeared(int* conexion);
+void mainCatch(int* conexion);
+void mainLocalized(int* conexion);
+void mainGet(t_list* objetivos);
 
 #endif /* UTILS_H_ */

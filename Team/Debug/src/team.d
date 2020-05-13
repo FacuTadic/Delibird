@@ -1,5 +1,5 @@
-src/team.o: ../src/team.c ../src/tp0.h ../src/utils.h
+src/team.o: ../src/team.c ../src/team.h ../src/utils.h
 
-../src/tp0.h:
+../src/team.h:
 
 ../src/utils.h:

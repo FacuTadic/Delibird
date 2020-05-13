@@ -10,7 +10,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include "tp0.h"
+#include "team.h"
 #include <commons/string.h>
 #include <commons/collections/queue.h>
 #include <commons/collections/list.h>
@@ -30,11 +30,14 @@ t_list* entrenadores;
 t_list* objetivosTeam;
 t_list* pokemonesAtrapados;
 
+
 t_config* cargarConfigEntrenadores(){
 	t_config* entrenadores;
 	entrenadores = config_create("src/entrenadores.config");
 	return entrenadores;
 }
+
+
 t_list* retornarLista(char* listaCFG,t_log* logger)
 {
 	t_list* lista = list_create();
@@ -55,26 +58,31 @@ t_list* retornarLista(char* listaCFG,t_log* logger)
 
 	return lista;
 }
-uint32_t convertir(char posicion)
+
+
+uint32_t* convertir(char posicion)
 {
 	uint32_t  numero = posicion;
-	return numero - 48;
+	numero -= 48;
+	return (uint32_t*)numero;
 }
 
 
 t_entrenador* crearEntrenador(t_list* entrenadores,char* conjuntoObjetivos,char* posicion,char* conjuntoPokemon,t_list* objetivosTeam,t_log* logger)
 {
 	t_entrenador* entrenador= malloc(sizeof(t_entrenador));
-	t_list* pokemenes = retornarLista(conjuntoPokemon,logger);
+	t_list* pokemones = retornarLista(conjuntoPokemon,logger);
+	log_info(logger, "cargado entrenador");
 	t_list* objetivos = retornarLista(conjuntoObjetivos,logger);
 	list_add_all(objetivosTeam,objetivos);
 	entrenador->objetivo = list_create();
 	list_add_all(entrenador->objetivo,objetivos);
 	entrenador->pokemones = list_create();
-	list_add_all(entrenador->pokemones,pokemenes);
+	list_add_all(entrenador->pokemones,pokemones);
 	uint32_t* posicion1 = convertir(posicion[0]) ;
 	uint32_t* posicion2 = convertir(posicion[2]) ;
-	uint32_t* capacidad = list_size(objetivos);
+	uint32_t* capacidad = (uint32_t*)list_size(objetivos);
+	log_info (logger, "llegue2");
 	entrenador->coordx = posicion1;
 	log_info(logger, "%d",entrenador->coordx);
 	entrenador->coordY = posicion2;
@@ -86,7 +94,8 @@ t_entrenador* crearEntrenador(t_list* entrenadores,char* conjuntoObjetivos,char*
 
 }
 
-t_list* filtrarObjetivos(t_list* objetivos)
+
+t_list* filtrarObjetivos(t_list* objetivos, char* pokemon)
 {
 	t_list* objetivosFiltrados= list_create();
 	list_add(objetivosFiltrados,list_get(objetivos,0));
@@ -108,15 +117,16 @@ t_list* filtrarObjetivos(t_list* objetivos)
 
 	}
 
-
 	return objetivosFiltrados;
 }
 
 
+/******************************** Proceso GET  *******************************/
+
 void mainGet(t_list* objetivos){
 
-
-	t_list* objetivosEnviar = filtrarObjetivos(objetivos);
+	char* dummy;
+	t_list* objetivosEnviar = filtrarObjetivos(objetivos, dummy);
 	int cantidadMensajes= list_size(objetivosEnviar);
 	for(int i =0;cantidadMensajes>i;i++)
 	{
@@ -127,12 +137,12 @@ void mainGet(t_list* objetivos){
 		list_add(idsGet,idMensajeRecibido);
 		liberar_conexion(conexion);
 	}
-
 }
-
-void mainAppeared(int conexionAppeared)
+/******************************** End Proceso GET  **************************************/
+/******************************** Start Proceso Appeared  *******************************/
+void mainAppeared(int* conexionAppeared)
 {
-	 t_pokemon pokemonEncontrado = recibir_mensaje(socket,logger);
+	 t_pokemon* pokemonEncontrado = recibir_appeared(conexionAppeared,logger);
 	 t_list* objetivoEncontrado = list_create();
 	 t_list* objetivosExistentes = list_create();
 	 objetivoEncontrado = filtrarObjetivos(objetivosTeam,pokemonEncontrado->nombre);
@@ -143,46 +153,56 @@ void mainAppeared(int conexionAppeared)
 		 {
 
 		 }
-
 	 }
-
 }
+/******************************** End Proceso APPEARED  *********************************/
 
 
 int main(void){
+
+	/******************************** Variables Set  ************************************/
 	int conexion;
 	int conexionAppeared;
 	int conexionCatch;
 	int conexionLocalized;
-	pthread_t* appeared;
-	pthread_t* catch;
-	pthread_t* localized;
-	pthread_t* get;
+
+	pthread_t appeared;
+	pthread_t catch;
+	pthread_t localized;
+	pthread_t get;
+	/******************************** End Variables Set  ********************************/
 
 
+	/******************************** Configs and Logs **********************************/
 	logger = iniciar_logger();
 	config = leer_config();
-	log_info(logger, "probar logger");
+	entrenadoresCFG = cargarConfigEntrenadores();
+	/******************************** End Configs and Logs ******************************/
 
+
+	/******************************** Sockets Setup  ************************************/
 	ip 		= config_get_string_value(config, "IP");
-	log_info(logger, "probar logger definir puerto");
 	puerto 	= config_get_string_value(config, "PUERTO");
 	conexion = crear_conexion(ip, puerto);
 	conexionAppeared = crear_conexion(ip, puerto);
 	conexionCatch = crear_conexion(ip, puerto);
 	conexionLocalized = crear_conexion(ip, puerto);
+	/******************************** End Sockets Setup  ********************************/
+
+
+	/*******************************	 Setters  ***************************************/
 	idsGet = list_create();
-
-
 	entrenadores = list_create();
 	objetivosTeam = list_create();
-	int i = 0;
-	entrenadoresCFG = cargarConfigEntrenadores();
-	log_info(logger, "lista creada entrenadores");
-	char** objetivos = config_get_array_value(entrenadoresCFG, "OBJETIVOS_ENTRENADORES"); // obtenemos los objetivos
+
+	char** objetivos = config_get_array_value(entrenadoresCFG, "OBJETIVOS_ENTRENADORES");
 	char** posiciones = config_get_array_value(entrenadoresCFG,"POSICIONES_ENTRENADORES");
 	char** pokemones = config_get_array_value(entrenadoresCFG,"POKEMON_ENTRENADORES");
-	//log_info(logger, "obtenemos objetivos");
+	/******************************   End Setters  **************************************/
+
+
+	/***************************** Lógica para abstraer *************************************/
+	int i = 0;
 	while(objetivos[i] != NULL && posiciones[i] != NULL)
 	{
 		char* objetivoEntrenador = (char*) objetivos[i];
@@ -201,12 +221,16 @@ int main(void){
 	t_entrenador* primerEntrenador = list_get(entrenadores,0);
 	log_info(logger, "coordenada x %d",primerEntrenador->coordx);
 	log_info(logger, "coordenada y %d",primerEntrenador->coordY);
+	/***************************** End Lógica para abstraer *************************************/
+
+
 //	char* objetivoEntrenador= list_get(objetivosTeam,0);
 //	log_info(logger, "objetivo 0 %s",objetivoEntrenador);
 	char* pokemonObj= (char*)list_get(primerEntrenador->objetivo,1);
 	log_info(logger, "objetivo 0 %s",pokemonObj);
 	char* pokemon= (char*)list_get(primerEntrenador->pokemones,1);
 	log_info(logger, "objetivo 0 %s",pokemon);
+	log_info(logger, "despues de esto?");
 //	t_list* objetivosFiltrados = list_create();
 //	objetivosFiltrados = filtrarObjetivos(objetivosTeam);
 //	log_info(logger, "cantidad objetivos filtrados %d",list_size(objetivosFiltrados));
@@ -216,24 +240,25 @@ int main(void){
 //	log_info(logger, "objetivo  %s",list_get(objetivosFiltrados,3));
 //	log_info(logger, "objetivo  %s",list_get(objetivosFiltrados,4));
 
+void dummy(){
+	int i =0;
+	i++;
+}
 
-// crear conexiones
-//	 pthread_create (appeared,NULL,mainAppeared(),conexionAppeared);
-//	 pthread_create (catch,NULL,mainCatch(),conexionCatch);
-//	 pthread_create (localized,NULL,mainLocalized(),conexionLocalized);
-//	 pthread_create (get,NULL,mainGet(),objetivosTeam);
-//
-////void mainAppeared();
-////void mainCatch();
-////void mainLocalized();
-//
-//
-//	  pthread_join(appeared,0);
-//	  pthread_join(catch,0);
-//	  pthread_join(localized,0);
-//	  pthread_join(get,0);
+	/******************************** Start pthreads process *******************************/
+	 pthread_create (&appeared,	NULL,(void*)mainAppeared,	&conexionAppeared);
+	 pthread_create (&catch,	NULL,(void*)dummy,		&conexionCatch);
+	 pthread_create (&localized,NULL,(void*)dummy,	&conexionLocalized);
+	 pthread_create (&get,		NULL,(void*)mainGet,		&objetivosTeam);
 
 
+
+	  pthread_join(appeared,0);
+	  pthread_join(catch,0);
+	  pthread_join(localized,0);
+	  pthread_join(get,0);
+
+	 /******************************** End pthreads process ********************************/
 
 //      conexion = crear_conexion(ip, puerto);
 //		funciones del TP
@@ -255,7 +280,7 @@ void terminar_programa(int conexion, t_log* logger, t_config* config){
 
 t_log* iniciar_logger(void){
 	t_log* logger ;
-	logger= log_create("src/tp0.log", "tp0", 1, LOG_LEVEL_INFO);
+	logger= log_create("src/team.log", "team", 1, LOG_LEVEL_INFO);
 	return logger;
 }
 
