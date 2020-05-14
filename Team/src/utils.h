@@ -22,7 +22,11 @@
 typedef enum
 {
 	MENSAJE = 1,
-	GET = 2
+	GET = 2,
+	APPEARED = 3,
+	LOCALIZED = 4,
+	CATCH = 5,
+	CAUGHT = 6
 }op_code;
 
 typedef struct
@@ -60,6 +64,32 @@ typedef struct
 	uint32_t coordx;
 	uint32_t coordY;
 }t_pokemon;
+
+typedef struct
+{
+	uint32_t coordx;
+	uint32_t coordy;
+	struct t_coord* sgte;
+}t_coord;
+
+typedef struct
+{
+	uint32_t sizeTotal;
+	uint32_t size;
+	char* nombre;
+	uint32_t cantidad;
+	t_coord* coords;
+}t_localized;
+
+typedef struct
+{
+	uint32_t sizeTotal;
+	uint32_t size;
+	char* nombre;
+	uint32_t coordx;
+	uint32_t coordY;
+}t_appeared;
+
 
 
 int crear_conexion(char* ip, char* puerto);

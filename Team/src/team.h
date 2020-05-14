@@ -22,9 +22,9 @@
 
 t_log* iniciar_logger(void);
 t_config* leer_config(void);
-void terminar_programa(int, t_log*, t_config*);
-
-
+t_config* cargarConfigEntrenadores(void);
+t_config* leer_config_broker(void);
+void terminar_programa(int, t_log*, t_config*, t_config*);
 
 
 #endif /* TP0_H_ */

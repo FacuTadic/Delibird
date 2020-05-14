@@ -191,13 +191,17 @@ uint32_t recibir_get(int socket_cliente, t_log* logger)
 t_pokemon* recibir_appeared(int* socket_cliente, t_log* logger)
 {
 
-	uint32_t operacion;
-
+	op_code operacion;
+	uint32_t sizeTotal;
 	// cod op
 	t_pokemon* pokemon = malloc(sizeof(pokemon));
 	if (recv(*socket_cliente, &operacion ,sizeof(uint32_t),MSG_WAITALL) == -1){
 		log_error(logger, "error: No se recibió el código de operación");
 	}
+	// size total
+	if (recv(*socket_cliente, &sizeTotal, sizeof(uint32_t),MSG_WAITALL) == -1){
+				log_error(logger, "error: No se recibió el tamaño del size total");
+			}
 
 	// size nombre
 	if (recv(*socket_cliente, &pokemon->size, sizeof(uint32_t),MSG_WAITALL) == -1){
@@ -205,7 +209,7 @@ t_pokemon* recibir_appeared(int* socket_cliente, t_log* logger)
 		}
 	// nombre
 	pokemon->nombre = malloc (sizeof(pokemon->nombre));
-	if (recv(*socket_cliente, &pokemon->nombre, pokemon->size,MSG_WAITALL) == -1){
+	if (recv(*socket_cliente, pokemon->nombre, pokemon->size,MSG_WAITALL) == -1){
 		log_error(logger, "error: No se recibió el nombre del pokemon");
 	}
 
@@ -222,6 +226,61 @@ t_pokemon* recibir_appeared(int* socket_cliente, t_log* logger)
 	return pokemon;
 }
 
+t_localized* recibir_localized(int* socket_cliente, t_log* logger)
+{
+	t_localized* localized = malloc(sizeof(localized));
+	t_coord* aux = localized->coords;
+	op_code operacion;
+	uint32_t i;
+
+	// cod op
+	if (recv(*socket_cliente, &operacion ,sizeof(uint32_t),MSG_WAITALL) == -1){
+		log_error(logger, "error: No se recibió el código de operación");
+	}
+
+	// tamaño total
+	if (recv(*socket_cliente, &localized->sizeTotal, sizeof(uint32_t),MSG_WAITALL) == -1){
+		log_error(logger, "error: No se recibió el tamaño total del paquete");
+	}
+
+	// size nombre
+	if (recv(*socket_cliente, &localized->size, sizeof(uint32_t),MSG_WAITALL) == -1){
+		log_error(logger, "error: No se recibió el tamaño del pokemon");
+	}
+
+	// nombre
+	localized->nombre = malloc (sizeof(localized->nombre));
+	if (recv(*socket_cliente, localized->nombre, localized->size,MSG_WAITALL) == -1){
+		log_error(logger, "error: No se recibió el nombre del pokemon");
+	}
+
+	// cantidad
+	if (recv(*socket_cliente, &localized->cantidad, sizeof(uint32_t),MSG_WAITALL) == -1){
+		log_error(logger, "error: No se recibió la cantidad de localizeds");
+	}
+
+
+	// bucle coordenadas
+	for (i = 0; i < localized->cantidad; i++){
+
+		aux = malloc(sizeof(t_coord));
+
+		// coord X
+		if (recv(*socket_cliente, &aux->coordx , sizeof(uint32_t),MSG_WAITALL) == -1){
+			log_error(logger, "error: No se pudo recibir la coordenada X");
+		}
+
+		// coord Y
+		if (recv(*socket_cliente, &aux->coordy, sizeof(uint32_t),MSG_WAITALL) == -1){
+			log_error(logger, "error: No se pudo recibir la coordenada Y");
+		}
+
+		aux = aux->sgte;
+	}
+
+
+	return localized;
+}
 
 void liberar_conexion(int socket_cliente)
 {

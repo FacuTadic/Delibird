@@ -598,3 +598,264 @@
 [INFO] 13:54:22:629 team/(14534:14534): objetivo 0 Squirtle
 [INFO] 13:54:22:629 team/(14534:14534): despues de esto?
 [INFO] 13:54:22:629 team/(14534:14542): encontrado 167117552
+[INFO] 11:12:01:231 team/(5463:5463): obtenemos primer objetivo Pikachu|Pikachu|Squirtle|Pidgey
+[INFO] 11:12:01:236 team/(5463:5463): tengo elemento Pikachu
+[INFO] 11:12:01:237 team/(5463:5463): tengo elemento Squirtle
+[INFO] 11:12:01:237 team/(5463:5463): tengo elemento Pidgey
+[INFO] 11:12:01:237 team/(5463:5463): cargado entrenador
+[INFO] 11:12:01:237 team/(5463:5463): tengo elemento Pikachu
+[INFO] 11:12:01:237 team/(5463:5463): tengo elemento Pikachu
+[INFO] 11:12:01:237 team/(5463:5463): tengo elemento Squirtle
+[INFO] 11:12:01:237 team/(5463:5463): tengo elemento Pidgey
+[INFO] 11:12:01:238 team/(5463:5463): llegue2
+[INFO] 11:12:01:238 team/(5463:5463): 1
+[INFO] 11:12:01:239 team/(5463:5463): 2
+[INFO] 11:12:01:239 team/(5463:5463): 4
+[INFO] 11:12:01:239 team/(5463:5463): entrenador cargado completamente
+[INFO] 11:12:01:240 team/(5463:5463): obtenemos primer objetivo Charmander|Pikachu|Charmander
+[INFO] 11:12:01:245 team/(5463:5463): tengo elemento Squirtle
+[INFO] 11:12:01:245 team/(5463:5463): tengo elemento Charmander
+[INFO] 11:12:01:245 team/(5463:5463): cargado entrenador
+[INFO] 11:12:01:248 team/(5463:5463): tengo elemento Charmander
+[INFO] 11:12:01:248 team/(5463:5463): tengo elemento Pikachu
+[INFO] 11:12:01:249 team/(5463:5463): tengo elemento Charmander
+[INFO] 11:12:01:249 team/(5463:5463): llegue2
+[INFO] 11:12:01:249 team/(5463:5463): 3
+[INFO] 11:12:01:249 team/(5463:5463): 7
+[INFO] 11:12:01:249 team/(5463:5463): 3
+[INFO] 11:12:01:249 team/(5463:5463): entrenador cargado completamente
+[INFO] 11:12:01:249 team/(5463:5463): obtenemos primer objetivo Squirtle|Bulbasaur
+[INFO] 11:12:01:249 team/(5463:5463): tengo elemento Bulbasaur
+[INFO] 11:12:01:249 team/(5463:5463): cargado entrenador
+[INFO] 11:12:01:249 team/(5463:5463): tengo elemento Squirtle
+[INFO] 11:12:01:250 team/(5463:5463): tengo elemento Bulbasaur
+[INFO] 11:12:01:250 team/(5463:5463): llegue2
+[INFO] 11:12:01:250 team/(5463:5463): 5
+[INFO] 11:12:01:250 team/(5463:5463): 5
+[INFO] 11:12:01:250 team/(5463:5463): 2
+[INFO] 11:12:01:250 team/(5463:5463): entrenador cargado completamente
+[INFO] 11:12:01:250 team/(5463:5463): lista entrenadores completa
+[INFO] 11:12:01:250 team/(5463:5463): La cantidad de objetivos es 9
+[INFO] 11:12:01:250 team/(5463:5463): coordenada x 1
+[INFO] 11:12:01:251 team/(5463:5463): coordenada y 2
+[INFO] 11:12:01:252 team/(5463:5463): objetivo 0 Pikachu
+[INFO] 11:12:01:252 team/(5463:5463): objetivo 0 Squirtle
+[INFO] 11:12:01:252 team/(5463:5463): despues de esto?
+[INFO] 11:12:01:256 team/(5463:5471): encontrado 147575536
+[ERROR] 11:12:01:257 team/(5463:5470): error: No se recibió el código de operación
+[INFO] 11:14:57:139 team/(5582:5582): obtenemos primer objetivo Pikachu|Pikachu|Squirtle|Pidgey
+[INFO] 11:14:57:139 team/(5582:5582): tengo elemento Pikachu
+[INFO] 11:14:57:139 team/(5582:5582): tengo elemento Squirtle
+[INFO] 11:14:57:139 team/(5582:5582): tengo elemento Pidgey
+[INFO] 11:14:57:139 team/(5582:5582): cargado entrenador
+[INFO] 11:14:57:139 team/(5582:5582): tengo elemento Pikachu
+[INFO] 11:14:57:140 team/(5582:5582): tengo elemento Pikachu
+[INFO] 11:14:57:140 team/(5582:5582): tengo elemento Squirtle
+[INFO] 11:14:57:141 team/(5582:5582): tengo elemento Pidgey
+[INFO] 11:14:57:141 team/(5582:5582): llegue2
+[INFO] 11:14:57:141 team/(5582:5582): 1
+[INFO] 11:14:57:141 team/(5582:5582): 2
+[INFO] 11:14:57:142 team/(5582:5582): 4
+[INFO] 11:14:57:142 team/(5582:5582): entrenador cargado completamente
+[INFO] 11:14:57:142 team/(5582:5582): obtenemos primer objetivo Charmander|Pikachu|Charmander
+[INFO] 11:14:57:142 team/(5582:5582): tengo elemento Squirtle
+[INFO] 11:14:57:142 team/(5582:5582): tengo elemento Charmander
+[INFO] 11:14:57:143 team/(5582:5582): cargado entrenador
+[INFO] 11:14:57:143 team/(5582:5582): tengo elemento Charmander
+[INFO] 11:14:57:143 team/(5582:5582): tengo elemento Pikachu
+[INFO] 11:14:57:143 team/(5582:5582): tengo elemento Charmander
+[INFO] 11:14:57:143 team/(5582:5582): llegue2
+[INFO] 11:14:57:143 team/(5582:5582): 3
+[INFO] 11:14:57:144 team/(5582:5582): 7
+[INFO] 11:14:57:144 team/(5582:5582): 3
+[INFO] 11:14:57:152 team/(5582:5582): entrenador cargado completamente
+[INFO] 11:14:57:153 team/(5582:5582): obtenemos primer objetivo Squirtle|Bulbasaur
+[INFO] 11:14:57:155 team/(5582:5582): tengo elemento Bulbasaur
+[INFO] 11:14:57:155 team/(5582:5582): cargado entrenador
+[INFO] 11:14:57:160 team/(5582:5582): tengo elemento Squirtle
+[INFO] 11:14:57:160 team/(5582:5582): tengo elemento Bulbasaur
+[INFO] 11:14:57:160 team/(5582:5582): llegue2
+[INFO] 11:14:57:160 team/(5582:5582): 5
+[INFO] 11:14:57:160 team/(5582:5582): 5
+[INFO] 11:14:57:160 team/(5582:5582): 2
+[INFO] 11:14:57:160 team/(5582:5582): entrenador cargado completamente
+[INFO] 11:14:57:160 team/(5582:5582): lista entrenadores completa
+[INFO] 11:14:57:160 team/(5582:5582): La cantidad de objetivos es 9
+[INFO] 11:14:57:161 team/(5582:5582): coordenada x 1
+[INFO] 11:14:57:161 team/(5582:5582): coordenada y 2
+[INFO] 11:14:57:161 team/(5582:5582): objetivo 0 Pikachu
+[INFO] 11:14:57:161 team/(5582:5582): objetivo 0 Pikachu
+[INFO] 11:14:57:161 team/(5582:5582): objetivo 0 Squirtle
+[INFO] 11:14:57:161 team/(5582:5582): despues de esto?
+[INFO] 11:14:57:161 team/(5582:5582): encontrado 9
+[INFO] 11:14:57:162 team/(5582:5582): encontrado Pikachu
+[INFO] 11:14:57:162 team/(5582:5582): encontrado Squirtle
+[INFO] 11:14:57:162 team/(5582:5582): encontrado Pidgey
+[INFO] 11:14:57:172 team/(5582:5582): encontrado Charmander
+[INFO] 11:14:57:172 team/(5582:5582): encontrado Pikachu
+[INFO] 11:14:57:173 team/(5582:5582): encontrado Charmander
+[INFO] 11:14:57:173 team/(5582:5582): encontrado Squirtle
+[INFO] 11:14:57:173 team/(5582:5582): encontrado Bulbasaur
+[INFO] 11:14:57:173 team/(5582:5582): cantidad objetivos filtrados 5
+[INFO] 11:14:57:173 team/(5582:5582): objetivo  Pikachu
+[INFO] 11:14:57:173 team/(5582:5582): objetivo  Squirtle
+[INFO] 11:14:57:173 team/(5582:5582): objetivo  Pidgey
+[INFO] 11:14:57:173 team/(5582:5582): objetivo  Charmander
+[INFO] 11:14:57:174 team/(5582:5582): objetivo  Bulbasaur
+[ERROR] 11:14:57:174 team/(5582:5587): error: No se recibió el código de operación
+[ERROR] 11:14:57:174 team/(5582:5587): error: No se recibió el tamaño del size total
+[ERROR] 11:14:57:174 team/(5582:5587): error: No se recibió el tamaño del pokemon
+[ERROR] 11:14:57:174 team/(5582:5587): error: No se recibió el nombre del pokemon
+[ERROR] 11:14:57:174 team/(5582:5587): error: No se pudo recibir la coordenada X
+[ERROR] 11:14:57:174 team/(5582:5587): error: No se pudo recibir la coordenada Y
+[INFO] 11:14:57:174 team/(5582:5587): encontrado 9
+[INFO] 11:14:57:174 team/(5582:5587): encontrado Pikachu
+[INFO] 11:14:57:174 team/(5582:5587): encontrado Squirtle
+[INFO] 11:14:57:174 team/(5582:5587): encontrado Pidgey
+[INFO] 11:14:57:174 team/(5582:5587): encontrado Charmander
+[INFO] 11:14:57:174 team/(5582:5587): encontrado Pikachu
+[INFO] 11:14:57:174 team/(5582:5587): encontrado Charmander
+[INFO] 11:14:57:174 team/(5582:5587): encontrado Squirtle
+[INFO] 11:14:57:174 team/(5582:5587): encontrado Bulbasaur
+[INFO] 11:51:26:188 team/(6369:6369): obtenemos primer objetivo Pikachu|Pikachu|Squirtle|Pidgey
+[INFO] 11:51:26:190 team/(6369:6369): tengo elemento Pikachu
+[INFO] 11:51:26:190 team/(6369:6369): tengo elemento Squirtle
+[INFO] 11:51:26:190 team/(6369:6369): tengo elemento Pidgey
+[INFO] 11:51:26:191 team/(6369:6369): cargado entrenador
+[INFO] 11:51:26:191 team/(6369:6369): tengo elemento Pikachu
+[INFO] 11:51:26:191 team/(6369:6369): tengo elemento Pikachu
+[INFO] 11:51:26:191 team/(6369:6369): tengo elemento Squirtle
+[INFO] 11:51:26:192 team/(6369:6369): tengo elemento Pidgey
+[INFO] 11:51:26:192 team/(6369:6369): llegue2
+[INFO] 11:51:26:192 team/(6369:6369): 1
+[INFO] 11:51:26:192 team/(6369:6369): 2
+[INFO] 11:51:26:193 team/(6369:6369): 4
+[INFO] 11:51:26:200 team/(6369:6369): entrenador cargado completamente
+[INFO] 11:51:26:200 team/(6369:6369): obtenemos primer objetivo Charmander|Pikachu|Charmander
+[INFO] 11:51:26:200 team/(6369:6369): tengo elemento Squirtle
+[INFO] 11:51:26:200 team/(6369:6369): tengo elemento Charmander
+[INFO] 11:51:26:200 team/(6369:6369): cargado entrenador
+[INFO] 11:51:26:200 team/(6369:6369): tengo elemento Charmander
+[INFO] 11:51:26:201 team/(6369:6369): tengo elemento Pikachu
+[INFO] 11:51:26:201 team/(6369:6369): tengo elemento Charmander
+[INFO] 11:51:26:201 team/(6369:6369): llegue2
+[INFO] 11:51:26:201 team/(6369:6369): 3
+[INFO] 11:51:26:201 team/(6369:6369): 7
+[INFO] 11:51:26:201 team/(6369:6369): 3
+[INFO] 11:51:26:201 team/(6369:6369): entrenador cargado completamente
+[INFO] 11:51:26:201 team/(6369:6369): obtenemos primer objetivo Squirtle|Bulbasaur
+[INFO] 11:51:26:202 team/(6369:6369): tengo elemento Bulbasaur
+[INFO] 11:51:26:202 team/(6369:6369): cargado entrenador
+[INFO] 11:51:26:202 team/(6369:6369): tengo elemento Squirtle
+[INFO] 11:51:26:215 team/(6369:6369): tengo elemento Bulbasaur
+[INFO] 11:51:26:216 team/(6369:6369): llegue2
+[INFO] 11:51:26:216 team/(6369:6369): 5
+[INFO] 11:51:26:216 team/(6369:6369): 5
+[INFO] 11:51:26:216 team/(6369:6369): 2
+[INFO] 11:51:26:216 team/(6369:6369): entrenador cargado completamente
+[INFO] 11:51:26:216 team/(6369:6369): lista entrenadores completa
+[INFO] 11:51:26:217 team/(6369:6369): La cantidad de objetivos es 9
+[INFO] 11:51:26:217 team/(6369:6369): coordenada x 1
+[INFO] 11:51:26:217 team/(6369:6369): coordenada y 2
+[INFO] 11:51:26:217 team/(6369:6369): objetivo 0 Pikachu
+[INFO] 11:51:26:217 team/(6369:6369): objetivo 0 Pikachu
+[INFO] 11:51:26:217 team/(6369:6369): objetivo 0 Squirtle
+[INFO] 11:51:26:218 team/(6369:6369): despues de esto?
+[INFO] 11:51:26:218 team/(6369:6369): encontrado 9
+[INFO] 11:51:26:218 team/(6369:6369): encontrado Pikachu
+[INFO] 11:51:26:218 team/(6369:6369): encontrado Squirtle
+[INFO] 11:51:26:218 team/(6369:6369): encontrado Pidgey
+[INFO] 11:51:26:218 team/(6369:6369): encontrado Charmander
+[INFO] 11:51:26:218 team/(6369:6369): encontrado Pikachu
+[INFO] 11:51:26:219 team/(6369:6369): encontrado Charmander
+[INFO] 11:51:26:219 team/(6369:6369): encontrado Squirtle
+[INFO] 11:51:26:219 team/(6369:6369): encontrado Bulbasaur
+[INFO] 11:51:26:219 team/(6369:6369): cantidad objetivos filtrados 5
+[INFO] 11:51:26:219 team/(6369:6369): objetivo  Pikachu
+[INFO] 11:51:26:220 team/(6369:6369): objetivo  Squirtle
+[INFO] 11:51:26:220 team/(6369:6369): objetivo  Pidgey
+[INFO] 11:51:26:221 team/(6369:6369): objetivo  Charmander
+[INFO] 11:51:26:221 team/(6369:6369): objetivo  Bulbasaur
+[INFO] 11:51:26:223 team/(6369:6378): a ver (null)
+[INFO] 11:51:26:224 team/(6369:6377): encontrado 0
+[INFO] 12:17:50:558 team/(7115:7115): obtenemos primer objetivo Pikachu|Pikachu|Squirtle|Pidgey
+[INFO] 12:17:50:558 team/(7115:7115): tengo elemento Pikachu
+[INFO] 12:17:50:558 team/(7115:7115): tengo elemento Squirtle
+[INFO] 12:17:50:558 team/(7115:7115): tengo elemento Pidgey
+[INFO] 12:17:50:558 team/(7115:7115): cargado entrenador
+[INFO] 12:17:50:558 team/(7115:7115): tengo elemento Pikachu
+[INFO] 12:17:50:558 team/(7115:7115): tengo elemento Pikachu
+[INFO] 12:17:50:558 team/(7115:7115): tengo elemento Squirtle
+[INFO] 12:17:50:558 team/(7115:7115): tengo elemento Pidgey
+[INFO] 12:17:50:558 team/(7115:7115): llegue2
+[INFO] 12:17:50:558 team/(7115:7115): 1
+[INFO] 12:17:50:558 team/(7115:7115): 2
+[INFO] 12:17:50:559 team/(7115:7115): 4
+[INFO] 12:17:50:563 team/(7115:7115): entrenador cargado completamente
+[INFO] 12:17:50:563 team/(7115:7115): obtenemos primer objetivo Charmander|Pikachu|Charmander
+[INFO] 12:17:50:563 team/(7115:7115): tengo elemento Squirtle
+[INFO] 12:17:50:563 team/(7115:7115): tengo elemento Charmander
+[INFO] 12:17:50:563 team/(7115:7115): cargado entrenador
+[INFO] 12:17:50:563 team/(7115:7115): tengo elemento Charmander
+[INFO] 12:17:50:563 team/(7115:7115): tengo elemento Pikachu
+[INFO] 12:17:50:563 team/(7115:7115): tengo elemento Charmander
+[INFO] 12:17:50:563 team/(7115:7115): llegue2
+[INFO] 12:17:50:563 team/(7115:7115): 3
+[INFO] 12:17:50:563 team/(7115:7115): 7
+[INFO] 12:17:50:563 team/(7115:7115): 3
+[INFO] 12:17:50:563 team/(7115:7115): entrenador cargado completamente
+[INFO] 12:17:50:563 team/(7115:7115): obtenemos primer objetivo Squirtle|Bulbasaur
+[INFO] 12:17:50:563 team/(7115:7115): tengo elemento Bulbasaur
+[INFO] 12:17:50:563 team/(7115:7115): cargado entrenador
+[INFO] 12:17:50:563 team/(7115:7115): tengo elemento Squirtle
+[INFO] 12:17:50:563 team/(7115:7115): tengo elemento Bulbasaur
+[INFO] 12:17:50:563 team/(7115:7115): llegue2
+[INFO] 12:17:50:563 team/(7115:7115): 5
+[INFO] 12:17:50:563 team/(7115:7115): 5
+[INFO] 12:17:50:563 team/(7115:7115): 2
+[INFO] 12:17:50:563 team/(7115:7115): entrenador cargado completamente
+[INFO] 12:17:50:563 team/(7115:7115): lista entrenadores completa
+[INFO] 12:17:50:564 team/(7115:7115): La cantidad de objetivos es 9
+[INFO] 12:17:50:564 team/(7115:7115): coordenada x 1
+[INFO] 12:17:50:564 team/(7115:7115): coordenada y 2
+[INFO] 12:17:50:564 team/(7115:7115): objetivo 0 Pikachu
+[INFO] 12:17:50:564 team/(7115:7115): objetivo 0 Pikachu
+[INFO] 12:17:50:564 team/(7115:7115): objetivo 0 Squirtle
+[INFO] 12:17:50:564 team/(7115:7115): despues de esto?
+[INFO] 12:17:50:564 team/(7115:7115): encontrado 9
+[INFO] 12:17:50:564 team/(7115:7115): encontrado Pikachu
+[INFO] 12:17:50:564 team/(7115:7115): encontrado Squirtle
+[INFO] 12:17:50:564 team/(7115:7115): encontrado Pidgey
+[INFO] 12:17:50:564 team/(7115:7115): encontrado Charmander
+[INFO] 12:17:50:564 team/(7115:7115): encontrado Pikachu
+[INFO] 12:17:50:564 team/(7115:7115): encontrado Charmander
+[INFO] 12:17:50:564 team/(7115:7115): encontrado Squirtle
+[INFO] 12:17:50:564 team/(7115:7115): encontrado Bulbasaur
+[INFO] 12:17:50:564 team/(7115:7115): cantidad objetivos filtrados 5
+[INFO] 12:17:50:564 team/(7115:7115): objetivo  Pikachu
+[INFO] 12:17:50:564 team/(7115:7115): objetivo  Squirtle
+[INFO] 12:17:50:564 team/(7115:7115): objetivo  Pidgey
+[INFO] 12:17:50:564 team/(7115:7115): objetivo  Charmander
+[INFO] 12:17:50:565 team/(7115:7115): objetivo  Bulbasaur
+[INFO] 12:17:50:567 team/(7115:7124): a ver (null)
+[ERROR] 12:17:50:567 team/(7115:7122): error: No se recibió el código de operación
+[INFO] 12:17:50:567 team/(7115:7123): encontrado 0
+[ERROR] 12:17:50:567 team/(7115:7122): error: No se recibió el tamaño total del paquete
+[ERROR] 12:17:50:567 team/(7115:7122): error: No se recibió el tamaño del pokemon
+[ERROR] 12:17:50:567 team/(7115:7122): error: No se recibió el nombre del pokemon
+[ERROR] 12:17:50:567 team/(7115:7122): error: No se recibió la cantidad de localizeds
+[ERROR] 12:17:50:567 team/(7115:7122): error: No se pudo recibir la coordenada X
+[ERROR] 12:17:50:567 team/(7115:7122): error: No se pudo recibir la coordenada Y
+[ERROR] 12:17:50:567 team/(7115:7122): error: No se pudo recibir la coordenada X
+[ERROR] 12:17:50:567 team/(7115:7122): error: No se pudo recibir la coordenada Y
+[ERROR] 12:17:50:567 team/(7115:7122): error: No se pudo recibir la coordenada X
+[ERROR] 12:17:50:567 team/(7115:7122): error: No se pudo recibir la coordenada Y
+[ERROR] 12:17:50:567 team/(7115:7122): error: No se pudo recibir la coordenada X
+[ERROR] 12:17:50:567 team/(7115:7122): error: No se pudo recibir la coordenada Y
+[ERROR] 12:17:50:567 team/(7115:7122): error: No se pudo recibir la coordenada X
+[ERROR] 12:17:50:567 team/(7115:7122): error: No se pudo recibir la coordenada Y
+[ERROR] 12:17:50:567 team/(7115:7122): error: No se pudo recibir la coordenada X
+[ERROR] 12:17:50:567 team/(7115:7122): error: No se pudo recibir la coordenada Y
+[ERROR] 12:17:50:567 team/(7115:7122): error: No se pudo recibir la coordenada X
+[ERROR] 12:17:50:568 team/(7115:7122): error: No se pudo recibir la coordenada Y
+[ERROR] 12:17:50:568 team/(7115:7122): error: No se pudo recibir la coordenada X
