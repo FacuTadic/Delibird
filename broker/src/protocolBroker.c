@@ -23,6 +23,7 @@ t_appeared* recibir_appeared(int socket_cliente, int* size) {
 
 	recv(socket_cliente, size, sizeof(uint32_t), MSG_WAITALL);
 
+	recv(socket_cliente, &(appeared->id_correlativo), sizeof(uint32_t), MSG_WAITALL);
 	recv(socket_cliente, &(tamanio_pokemon), sizeof(uint32_t), MSG_WAITALL);
 	recv(socket_cliente, appeared->pokemon, tamanio_pokemon, MSG_WAITALL);
 	recv(socket_cliente, &(appeared->pos_X), sizeof(uint32_t), MSG_WAITALL);
@@ -50,6 +51,7 @@ t_caught* recibir_caught(int socket_cliente, int* size) {
 
 	recv(socket_cliente, size, sizeof(uint32_t), MSG_WAITALL);
 
+	recv(socket_cliente, &(caught->id_correlativo), sizeof(uint32_t), MSG_WAITALL);
 	recv(socket_cliente, &(caught->flag_caught), sizeof(uint32_t), MSG_WAITALL);
 
 	return caught;
@@ -72,6 +74,7 @@ t_localized* recibir_localized(int socket_cliente, int* size) {
 
 	recv(socket_cliente, size, sizeof(uint32_t), MSG_WAITALL);
 
+	recv(socket_cliente, &(localized->id_correlativo), sizeof(uint32_t), MSG_WAITALL);
 	recv(socket_cliente, &tamanio, sizeof(uint32_t), MSG_WAITALL);
 	recv(socket_cliente, localized->pokemon,tamanio, MSG_WAITALL);
 	recv(socket_cliente, &(localized->lugares), sizeof(uint32_t), MSG_WAITALL);
@@ -89,6 +92,11 @@ t_localized* recibir_localized(int socket_cliente, int* size) {
 	return localized;
 }
 
+uint32_t recibir_suscripcion(int socket_cliente) {
+	uint32_t id_cola;
+	recv(socket_cliente, &id_cola, sizeof(uint32_t), MSG_WAITALL);
+	return id_cola;
+}
 
 void devolver_id(int socket_cliente, uint32_t id) {
 	send(socket_cliente, (void *) id, sizeof(uint32_t), 0);

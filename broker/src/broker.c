@@ -12,13 +12,13 @@ void procesar_request(int cod_op, int cliente_fd) {
 
 		mensaje_a_guardar->mensaje = (void*) new_msg;
 
-		sem_wait(&new_limite);
-		pthread_mutex_lock(&new_lock);
+		sem_wait(&gl_new_limite);
+		pthread_mutex_lock(&gl_new_queue_lock);
 
-		queue_push(NEW_POKEMON, mensaje_a_guardar);
+		queue_push(gl_new_pokemon_queue, mensaje_a_guardar);
 
-		pthread_mutex_unlock(&new_lock);
-		sem_post(&new_mensajes);
+		pthread_mutex_unlock(&gl_new_queue_lock);
+		sem_post(&gl_new_mensajes);
 
 		devolver_id(cliente_fd, mensaje_a_guardar->id);
 
@@ -29,13 +29,13 @@ void procesar_request(int cod_op, int cliente_fd) {
 
 		mensaje_a_guardar->mensaje = (void*) appeared_msg;
 
-		sem_wait(&appeared_limite);
-		pthread_mutex_lock(&appeared_lock);
+		sem_wait(&gl_appeared_limite);
+		pthread_mutex_lock(&gl_appeared_queue_lock);
 
-		queue_push(APPEARED_POKEMON, mensaje_a_guardar);
+		queue_push(gl_appeared_pokemon_queue, mensaje_a_guardar);
 
-		pthread_mutex_unlock(&appeared_lock);
-		sem_post(&appeared_mensajes);
+		pthread_mutex_unlock(&gl_appeared_queue_lock);
+		sem_post(&gl_appeared_mensajes);
 
 		devolver_id(cliente_fd, mensaje_a_guardar->id);
 
@@ -46,13 +46,13 @@ void procesar_request(int cod_op, int cliente_fd) {
 
 		mensaje_a_guardar->mensaje = (void*) get_msg;
 
-		sem_wait(&get_limite);
-		pthread_mutex_lock(&get_lock);
+		sem_wait(&gl_get_limite);
+		pthread_mutex_lock(&gl_get_queue_lock);
 
-		queue_push(GET_POKEMON, mensaje_a_guardar);
+		queue_push(gl_get_pokemon_queue, mensaje_a_guardar);
 
-		pthread_mutex_unlock(&get_lock);
-		sem_post(&get_mensajes);
+		pthread_mutex_unlock(&gl_get_queue_lock);
+		sem_post(&gl_get_mensajes);
 
 		devolver_id(cliente_fd, mensaje_a_guardar->id);
 
@@ -63,13 +63,13 @@ void procesar_request(int cod_op, int cliente_fd) {
 
 		mensaje_a_guardar->mensaje = (void*) localized_msg;
 
-		sem_wait(&localized_limite);
-		pthread_mutex_lock(&localized_lock);
+		sem_wait(&gl_localized_limite);
+		pthread_mutex_lock(&gl_localized_queue_lock);
 
-		queue_push(LOCALIZED_POKEMON, mensaje_a_guardar);
+		queue_push(gl_localized_pokemon_queue, mensaje_a_guardar);
 
-		pthread_mutex_unlock(&localized_lock);
-		sem_post(&localized_mensajes);
+		pthread_mutex_unlock(&gl_localized_queue_lock);
+		sem_post(&gl_localized_mensajes);
 
 		devolver_id(cliente_fd, mensaje_a_guardar->id);
 
@@ -80,13 +80,13 @@ void procesar_request(int cod_op, int cliente_fd) {
 
 		mensaje_a_guardar->mensaje = (void*) catch_msg;
 
-		sem_wait(&catch_limite);
-		pthread_mutex_lock(&catch_lock);
+		sem_wait(&gl_catch_limite);
+		pthread_mutex_lock(&gl_catch_queue_lock);
 
-		queue_push(CATCH_POKEMON, mensaje_a_guardar);
+		queue_push(gl_catch_pokemon_queue, mensaje_a_guardar);
 
-		pthread_mutex_unlock(&catch_lock);
-		sem_post(&catch_mensajes);
+		pthread_mutex_unlock(&gl_catch_queue_lock);
+		sem_post(&gl_catch_mensajes);
 
 		devolver_id(cliente_fd, mensaje_a_guardar->id);
 
@@ -97,15 +97,53 @@ void procesar_request(int cod_op, int cliente_fd) {
 
 		mensaje_a_guardar->mensaje = (void*) caught_msg;
 
-		sem_wait(&caught_limite);
-		pthread_mutex_lock(&caught_lock);
+		sem_wait(&gl_caught_limite);
+		pthread_mutex_lock(&gl_caught_queue_lock);
 
-		queue_push(CAUGHT_POKEMON, mensaje_a_guardar);
+		queue_push(gl_caught_pokemon_queue, mensaje_a_guardar);
 
-		pthread_mutex_unlock(&caught_lock);
-		sem_post(&caught_mensajes);
+		pthread_mutex_unlock(&gl_caught_queue_lock);
+		sem_post(&gl_caught_mensajes);
 
 		devolver_id(cliente_fd, mensaje_a_guardar->id);
+
+		close(cliente_fd);
+		break;
+	case SUSCRIPCION: ;
+		uint32_t id_cola = recibir_suscripcion(cliente_fd);
+
+		switch(id_cola) {
+		case NEW_ID: ;
+			pthread_mutex_lock(&gl_new_list_lock);
+			list_add(gl_new_suscriptores, (void *) &INFO_GAME_BOY);
+			pthread_mutex_unlock(&gl_new_list_lock);
+			break;
+		case APPEARED_ID: ;
+			pthread_mutex_lock(&gl_appeared_list_lock);
+			list_add(gl_appeared_suscriptores, (void *) &INFO_GAME_BOY);
+			pthread_mutex_unlock(&gl_appeared_list_lock);
+			break;
+		case CATCH_ID: ;
+			pthread_mutex_lock(&gl_catch_list_lock);
+			list_add(gl_catch_suscriptores, (void *) &INFO_GAME_BOY);
+			pthread_mutex_unlock(&gl_catch_list_lock);
+			break;
+		case CAUGHT_ID: ;
+			pthread_mutex_lock(&gl_caught_list_lock);
+			list_add(gl_caught_suscriptores, (void *) &INFO_GAME_BOY);
+			pthread_mutex_unlock(&gl_caught_list_lock);
+			break;
+		case GET_ID: ;
+			pthread_mutex_lock(&gl_get_list_lock);
+			list_add(gl_get_suscriptores, (void *) &INFO_GAME_BOY);
+			pthread_mutex_unlock(&gl_get_list_lock);
+			break;
+		case LOCALIZED_ID: ;
+			pthread_mutex_lock(&gl_localized_list_lock);
+			list_add(gl_localized_suscriptores, (void *) &INFO_GAME_BOY);
+			pthread_mutex_unlock(&gl_localized_list_lock);
+			break;
+		}
 
 		close(cliente_fd);
 		break;
@@ -153,223 +191,172 @@ void* esperar_clientes(void* socket_servidor) {
 
 void* atender_new(void* args) {
 	while (1) {
-		// Hacer algo con el ultimo elemento de la cola
+		sem_wait(&gl_new_mensajes);
+		pthread_mutex_lock(&gl_new_queue_lock);
 
-		// EL PRIMERO QUEDA COMO EJEMPLO
+		mensaje_queue* primer_elemento = (mensaje_queue*) queue_peek(gl_new_pokemon_queue);
 
-		sem_wait(&new_mensajes);
-		pthread_mutex_lock(&new_lock);
-
-		// leer elemento de la cola
-		t_new* primer_elemento = (t_new*) queue_peek(NEW_POKEMON);
-
-		pthread_mutex_unlock(&new_lock);
+		pthread_mutex_unlock(&gl_new_queue_lock);
 
 		atender_mensaje_new(primer_elemento);
 
-		// laburar
-		// 1. crear un hilo por cada modulo a enviar el elemento
-		//      dentro del hilo
-		//      a. conectar con el modulo correspondiente
-		//      b. serializar el mensaje
-		//      c. enviar
-		//      d. esperar la respuesta
-		//      e. marcar que el mensaje fue enviado al modulo
-		//      f. matar conexion
-		// 2. dentro del hilo atender_new chequear cuando termino todo
-		//      maneras
-		//      a. chequear que todos los modulos respondieron y que no queda enviarle nada a nadie
-		//      b. chequear que ninguno de los tres hilos este levantado y corriendo, VER MANERAS
+		pthread_mutex_lock(&gl_new_queue_lock);
 
+		mensaje_queue* elemento_a_eliminar = queue_pop(gl_new_pokemon_queue);
 
-		// --------------------------------------------------------------------
-		//                        -------------
-		//                        -------------
-		//                        -------------
+		pthread_mutex_unlock(&gl_new_queue_lock);
+		sem_post(&gl_new_limite);
 
-		// una vez que este terminado
+		t_new* mensaje_a_eliminar = (t_new*) elemento_a_eliminar->mensaje;
 
-		pthread_mutex_lock(&new_lock);
-
-		// eliminar de la cola y liberar memoria
-		t_new* elemento_a_eliminar = queue_pop(NEW_POKEMON);
-
-		pthread_mutex_unlock(&new_lock);
-		sem_post(&new_limite);
-
-		free(elemento_a_eliminar->pokemon);
+		free(mensaje_a_eliminar->pokemon);
+		free(mensaje_a_eliminar);
 		free(elemento_a_eliminar);
 	}
 }
 
 void* atender_appeared(void* args) {
 	while (1) {
-		// Hacer algo con el ultimo elemento de la cola
+		sem_wait(&gl_appeared_mensajes);
+		pthread_mutex_lock(&gl_appeared_queue_lock);
 
-		sem_wait(&appeared_mensajes);
-		pthread_mutex_lock(&appeared_lock);
+		mensaje_queue* primer_elemento = (mensaje_queue*) queue_peek(gl_appeared_pokemon_queue);
 
-		// leer elemento de la cola
-		t_appeared* primer_elemento = (t_appeared*) queue_peek(APPEARED_POKEMON);
-
-		pthread_mutex_unlock(&appeared_lock);
-
-		// laburar
+		pthread_mutex_unlock(&gl_appeared_queue_lock);
 
 		atender_mensaje_appeared(primer_elemento);
 
-		// una vez que este terminado
+		pthread_mutex_lock(&gl_appeared_queue_lock);
 
-		pthread_mutex_lock(&appeared_lock);
+		mensaje_queue* elemento_a_eliminar = (mensaje_queue*) queue_pop(gl_appeared_pokemon_queue);
 
-		// eliminar de la cola
-		t_appeared* elemento_a_eliminar = (t_appeared*) queue_pop(APPEARED_POKEMON);
+		pthread_mutex_unlock(&gl_appeared_queue_lock);
+		sem_post(&gl_appeared_limite);
 
-		pthread_mutex_unlock(&appeared_lock);
-		sem_post(&appeared_limite);
+		t_appeared* mensaje_a_eliminar = (t_appeared*) elemento_a_eliminar->mensaje;
 
-		free(elemento_a_eliminar->pokemon);
+		free(mensaje_a_eliminar->pokemon);
+		free(mensaje_a_eliminar);
 		free(elemento_a_eliminar);
 	}
 }
 
 void* atender_catch(void* args) {
 	while (1) {
-		// Hacer algo con el ultimo elemento de la cola
+		sem_wait(&gl_catch_mensajes);
+		pthread_mutex_lock(&gl_catch_queue_lock);
 
-		sem_wait(&catch_mensajes);
-		pthread_mutex_lock(&catch_lock);
+		mensaje_queue* primer_elemento = (mensaje_queue*) queue_peek(gl_catch_pokemon_queue);
 
-		// leer elemento de la cola
-		t_catch* primer_elemento = (t_catch*) queue_peek(CATCH_POKEMON);
-
-		pthread_mutex_unlock(&catch_lock);
-
-		// laburar
+		pthread_mutex_unlock(&gl_catch_queue_lock);
 
 		atender_mensaje_catch(primer_elemento);
 
-		// una vez que este terminado
+		pthread_mutex_lock(&gl_catch_queue_lock);
 
-		pthread_mutex_lock(&catch_lock);
+		mensaje_queue* elemento_a_eliminar = (mensaje_queue*) queue_pop(gl_catch_pokemon_queue);
 
-		// eliminar de la cola
-		t_catch* elemento_a_eliminar = (t_catch*) queue_pop(CATCH_POKEMON);
+		pthread_mutex_unlock(&gl_catch_queue_lock);
+		sem_post(&gl_catch_limite);
 
-		pthread_mutex_unlock(&catch_lock);
-		sem_post(&catch_limite);
+		t_catch* mensaje_a_eliminar = (t_catch*) elemento_a_eliminar->mensaje;
 
-		free(elemento_a_eliminar->pokemon);
+		free(mensaje_a_eliminar->pokemon);
+		free(mensaje_a_eliminar);
 		free(elemento_a_eliminar);
 	}
 }
 
 void* atender_caught(void* args) {
 	while (1) {
-		// Hacer algo con el ultimo elemento de la cola
+		sem_wait(&gl_caught_mensajes);
+		pthread_mutex_lock(&gl_caught_queue_lock);
 
-		sem_wait(&caught_mensajes);
-		pthread_mutex_lock(&caught_lock);
+		mensaje_queue* primer_elemento = (mensaje_queue*) queue_peek(gl_caught_pokemon_queue);
 
-		// leer elemento de la cola
-		t_caught* primer_elemento = (t_caught*) queue_peek(CAUGHT_POKEMON);
-
-		pthread_mutex_unlock(&caught_lock);
-
-		// laburar
+		pthread_mutex_unlock(&gl_caught_queue_lock);
 
 		atender_mensaje_caught(primer_elemento);
 
-		// una vez que este terminado
+		pthread_mutex_lock(&gl_caught_queue_lock);
 
-		pthread_mutex_lock(&caught_lock);
+		mensaje_queue* elemento_a_eliminar = (mensaje_queue*) queue_pop(gl_caught_pokemon_queue);
 
-		// eliminar de la cola
-		t_caught* elemento_a_eliminar = (t_caught*) queue_pop(CAUGHT_POKEMON);
+		pthread_mutex_unlock(&gl_caught_queue_lock);
+		sem_post(&gl_caught_limite);
 
-		pthread_mutex_unlock(&caught_lock);
-		sem_post(&caught_limite);
+		t_caught* mensaje_a_eliminar = (t_caught*) elemento_a_eliminar->mensaje;
 
+		free(mensaje_a_eliminar);
 		free(elemento_a_eliminar);
 	}
 }
 
 void* atender_get(void* args) {
 	while (1) {
-		// Hacer algo con el ultimo elemento de la cola
+		sem_wait(&gl_get_mensajes);
+		pthread_mutex_lock(&gl_get_queue_lock);
 
-		sem_wait(&get_mensajes);
-		pthread_mutex_lock(&get_lock);
+		mensaje_queue* primer_elemento = (mensaje_queue*) queue_peek(gl_get_pokemon_queue);
 
-		// leer elemento de la cola
-		t_get* primer_elemento = (t_get*) queue_peek(GET_POKEMON);
-
-		pthread_mutex_unlock(&get_lock);
-
-		// laburar
+		pthread_mutex_unlock(&gl_get_queue_lock);
 
 		atender_mensaje_get(primer_elemento);
 
-		// una vez que este terminado
+		pthread_mutex_lock(&gl_get_queue_lock);
 
-		pthread_mutex_lock(&get_lock);
+		mensaje_queue* elemento_a_eliminar = (mensaje_queue*) queue_pop(gl_get_pokemon_queue);
 
-		// eliminar de la cola
-		t_get* elemento_a_eliminar = (t_get*) queue_pop(GET_POKEMON);
+		pthread_mutex_unlock(&gl_get_queue_lock);
+		sem_post(&gl_get_limite);
 
-		pthread_mutex_unlock(&get_lock);
-		sem_post(&get_limite);
+		t_get* mensaje_a_eliminar = (t_get*) elemento_a_eliminar->mensaje;
 
-		free(elemento_a_eliminar->pokemon);
+		free(mensaje_a_eliminar->pokemon);
+		free(mensaje_a_eliminar);
 		free(elemento_a_eliminar);
 	}
 }
 
 void* atender_localized(void* args) {
 	while (1) {
-		// Hacer algo con el ultimo elemento de la cola
+		sem_wait(&gl_localized_mensajes);
+		pthread_mutex_lock(&gl_localized_queue_lock);
 
-		sem_wait(&localized_mensajes);
-		pthread_mutex_lock(&localized_lock);
+		mensaje_queue* primer_elemento = (mensaje_queue*) queue_peek(gl_localized_pokemon_queue);
 
-		// leer elemento de la cola
-		t_localized* primer_elemento = (t_localized*) queue_peek(LOCALIZED_POKEMON);
-
-		pthread_mutex_unlock(&localized_lock);
-
-		// laburar
+		pthread_mutex_unlock(&gl_localized_queue_lock);
 
 		atender_mensaje_localized(primer_elemento);
 
-		// una vez que este terminado
+		pthread_mutex_lock(&gl_localized_queue_lock);
 
-		pthread_mutex_lock(&localized_lock);
+		mensaje_queue* elemento_a_eliminar = (mensaje_queue*) queue_pop(gl_localized_pokemon_queue);
 
-		// eliminar de la cola
-		t_localized* elemento_a_eliminar = (t_localized*) queue_pop(LOCALIZED_POKEMON);
+		pthread_mutex_unlock(&gl_localized_queue_lock);
+		sem_post(&gl_localized_limite);
 
-		pthread_mutex_unlock(&localized_lock);
-		sem_post(&localized_limite);
+		t_localized* mensaje_a_eliminar = (t_localized*) elemento_a_eliminar->mensaje;
 
-		free(elemento_a_eliminar->pokemon);
-		list_destroy(elemento_a_eliminar->l_coordenadas);
-		free(elemento_a_eliminar->l_coordenadas);
+		free(mensaje_a_eliminar->pokemon);
+		list_destroy(mensaje_a_eliminar->l_coordenadas);
+		free(mensaje_a_eliminar->l_coordenadas);
+		free(mensaje_a_eliminar);
 		free(elemento_a_eliminar);
 	}
 }
 
-void atender_mensaje_new(t_new* mensaje) {
-	// crear una copia de esta lista;
-	// NEW_STRUCT->suscriptores;
-
-	t_list* suscriptores_para_enviar = list_duplicate(NEW_STRUCT.suscriptores);
+void atender_mensaje_new(mensaje_queue* mensaje) {
+	pthread_mutex_lock(&gl_new_list_lock);
+	t_list* suscriptores_para_enviar = list_duplicate(gl_new_suscriptores);
+	pthread_mutex_unlock(&gl_new_list_lock);
 
 	pthread_t* threads = malloc(sizeof(pthread_t) * suscriptores_para_enviar->elements_count);
 
 	for (int i = 0; i < suscriptores_para_enviar->elements_count; i++) {
-		new_mandable_struct* struct_para_enviar = malloc(sizeof(new_mandable_struct));
+		mandable_struct* struct_para_enviar = malloc(sizeof(mandable_struct));
 		struct_para_enviar->info = list_get(suscriptores_para_enviar, i);
-		struct_para_enviar->new_mensaje = mensaje;
+		struct_para_enviar->mensaje_queue = mensaje;
 		pthread_create(&(threads[i]), NULL, (void*) mandar_new, (void *) struct_para_enviar);
 	}
 
@@ -383,14 +370,13 @@ void atender_mensaje_new(t_new* mensaje) {
 
 	// Elimino de la cola
 
-	queue_pop(NEW_POKEMON);
+	queue_pop(gl_new_pokemon_queue);
 }
 
-void atender_mensaje_appeared(t_appeared* mensaje) {
-	// crear una copia de esta lista;
-	// NEW_STRUCT->suscriptores;
-
-	t_list* suscriptores_para_enviar = list_duplicate(NEW_STRUCT.suscriptores);
+void atender_mensaje_appeared(mensaje_queue* mensaje) {
+	pthread_mutex_lock(&gl_appeared_list_lock);
+	t_list* suscriptores_para_enviar = list_duplicate(gl_appeared_suscriptores);
+	pthread_mutex_unlock(&gl_appeared_list_lock);
 
 	pthread_t* threads = malloc(sizeof(pthread_t) * suscriptores_para_enviar->elements_count);
 
@@ -409,14 +395,13 @@ void atender_mensaje_appeared(t_appeared* mensaje) {
 
 	// Elimino de la cola
 
-	queue_pop(APPEARED_POKEMON);
+	queue_pop(gl_appeared_pokemon_queue);
 }
 
-void atender_mensaje_catch(t_catch* mensaje) {
-	// crear una copia de esta lista;
-	// NEW_STRUCT->suscriptores;
-
-	t_list* suscriptores_para_enviar = list_duplicate(NEW_STRUCT.suscriptores);
+void atender_mensaje_catch(mensaje_queue* mensaje) {
+	pthread_mutex_lock(&gl_catch_list_lock);
+	t_list* suscriptores_para_enviar = list_duplicate(gl_catch_suscriptores);
+	pthread_mutex_unlock(&gl_catch_list_lock);
 
 	pthread_t* threads = malloc(sizeof(pthread_t) * suscriptores_para_enviar->elements_count);
 
@@ -435,14 +420,13 @@ void atender_mensaje_catch(t_catch* mensaje) {
 
 	// Elimino de la cola
 
-	queue_pop(CATCH_POKEMON);
+	queue_pop(gl_catch_pokemon_queue);
 }
 
-void atender_mensaje_caught(t_caught* mensaje) {
-	// crear una copia de esta lista;
-	// NEW_STRUCT->suscriptores;
-
-	t_list* suscriptores_para_enviar = list_duplicate(NEW_STRUCT.suscriptores);
+void atender_mensaje_caught(mensaje_queue* mensaje) {
+	pthread_mutex_lock(&gl_caught_list_lock);
+	t_list* suscriptores_para_enviar = list_duplicate(gl_caught_suscriptores);
+	pthread_mutex_unlock(&gl_caught_list_lock);
 
 	pthread_t* threads = malloc(sizeof(pthread_t) * suscriptores_para_enviar->elements_count);
 
@@ -461,14 +445,13 @@ void atender_mensaje_caught(t_caught* mensaje) {
 
 	// Elimino de la cola
 
-	queue_pop(CAUGHT_POKEMON);
+	queue_pop(gl_caught_pokemon_queue);
 }
 
-void atender_mensaje_get(t_get* mensaje) {
-	// crear una copia de esta lista;
-	// NEW_STRUCT->suscriptores;
-
-	t_list* suscriptores_para_enviar = list_duplicate(NEW_STRUCT.suscriptores);
+void atender_mensaje_get(mensaje_queue* mensaje) {
+	pthread_mutex_lock(&gl_get_list_lock);
+	t_list* suscriptores_para_enviar = list_duplicate(gl_get_suscriptores);
+	pthread_mutex_unlock(&gl_get_list_lock);
 
 	pthread_t* threads = malloc(sizeof(pthread_t) * suscriptores_para_enviar->elements_count);
 
@@ -487,14 +470,13 @@ void atender_mensaje_get(t_get* mensaje) {
 
 	// Elimino de la cola
 
-	queue_pop(GET_POKEMON);
+	queue_pop(gl_get_pokemon_queue);
 }
 
-void atender_mensaje_localized(t_localized* mensaje) {
-	// crear una copia de esta lista;
-	// NEW_STRUCT->suscriptores;
-
-	t_list* suscriptores_para_enviar = list_duplicate(NEW_STRUCT.suscriptores);
+void atender_mensaje_localized(mensaje_queue* mensaje) {
+	pthread_mutex_lock(&gl_localized_list_lock);
+	t_list* suscriptores_para_enviar = list_duplicate(gl_localized_suscriptores);
+	pthread_mutex_unlock(&gl_localized_list_lock);
 
 	pthread_t* threads = malloc(sizeof(pthread_t) * suscriptores_para_enviar->elements_count);
 
@@ -513,12 +495,14 @@ void atender_mensaje_localized(t_localized* mensaje) {
 
 	// Elimino de la cola
 
-	queue_pop(LOCALIZED_POKEMON);
+	queue_pop(gl_localized_pokemon_queue);
 }
 
 void mandar_new(void* new_mandable) {
 
-	new_mandable_struct* argumento_new = (new_mandable_struct*) new_mandable;
+	mandable_struct* argumento_new = (mandable_struct*) new_mandable;
+
+
 
 	// conectarnos
 	// hablar con milton
@@ -610,33 +594,33 @@ int main(void) {
 }
 
 void inicializar_colas(void) {
-	NEW_POKEMON = queue_create();
-	APPEARED_POKEMON = queue_create();
-	CATCH_POKEMON = queue_create();
-	CAUGHT_POKEMON = queue_create();
-	GET_POKEMON = queue_create();
-	LOCALIZED_POKEMON = queue_create();
+	gl_new_pokemon_queue = queue_create();
+	gl_appeared_pokemon_queue = queue_create();
+	gl_catch_pokemon_queue = queue_create();
+	gl_caught_pokemon_queue = queue_create();
+	gl_get_pokemon_queue = queue_create();
+	gl_localized_pokemon_queue = queue_create();
 
-	new_suscriptores = list_create();
-	appeared_suscriptores = list_create();
-	catch_suscriptores = list_create();
-	caught_suscriptores = list_create();
-	get_suscriptores = list_create();
-	localized_suscriptores = list_create();
+	gl_new_suscriptores = list_create();
+	gl_appeared_suscriptores = list_create();
+	gl_catch_suscriptores = list_create();
+	gl_caught_suscriptores = list_create();
+	gl_get_suscriptores = list_create();
+	gl_localized_suscriptores = list_create();
 
-	NEW_STRUCT.cola = NEW_POKEMON;
-	APPEARED_STRUCT.cola = APPEARED_POKEMON;
-	CATCH_STRUCT.cola = CATCH_POKEMON;
-	CAUGHT_STRUCT.cola = CAUGHT_POKEMON;
-	GET_STRUCT.cola = GET_POKEMON;
-	LOCALIZED_STRUCT.cola = LOCALIZED_POKEMON;
+	NEW_STRUCT.cola = gl_new_pokemon_queue;
+	APPEARED_STRUCT.cola = gl_appeared_pokemon_queue;
+	CATCH_STRUCT.cola = gl_catch_pokemon_queue;
+	CAUGHT_STRUCT.cola = gl_caught_pokemon_queue;
+	GET_STRUCT.cola = gl_get_pokemon_queue;
+	LOCALIZED_STRUCT.cola = gl_localized_pokemon_queue;
 
-	NEW_STRUCT.suscriptores = new_suscriptores;
-	APPEARED_STRUCT.suscriptores = appeared_suscriptores;
-	CATCH_STRUCT.suscriptores = catch_suscriptores;
-	CAUGHT_STRUCT.suscriptores = caught_suscriptores;
-	GET_STRUCT.suscriptores = get_suscriptores;
-	LOCALIZED_STRUCT.suscriptores = localized_suscriptores;
+	NEW_STRUCT.suscriptores = gl_new_suscriptores;
+	APPEARED_STRUCT.suscriptores = gl_appeared_suscriptores;
+	CATCH_STRUCT.suscriptores = gl_catch_suscriptores;
+	CAUGHT_STRUCT.suscriptores = gl_caught_suscriptores;
+	GET_STRUCT.suscriptores = gl_get_suscriptores;
+	LOCALIZED_STRUCT.suscriptores = gl_localized_suscriptores;
 
 	NEW_STRUCT.id = NEW_ID;
 	APPEARED_STRUCT.id = APPEARED_ID;
@@ -682,75 +666,87 @@ void inicializar_semaforos_colas(void) {
 	limite_cola_get = config_get_int_value(config, "LIMITE_COLA_GET");
 	limite_cola_localized = config_get_int_value(config, "LIMITE_COLA_LOCALIZED");
 
-	sem_init(&new_limite, 0, limite_cola_new);
-	sem_init(&appeared_limite, 0, limite_cola_appeared);
-	sem_init(&catch_limite, 0, limite_cola_catch);
-	sem_init(&caught_limite, 0, limite_cola_caught);
-	sem_init(&get_limite, 0, limite_cola_get);
-	sem_init(&localized_limite, 0, limite_cola_localized);
+	sem_init(&gl_new_limite, 0, limite_cola_new);
+	sem_init(&gl_appeared_limite, 0, limite_cola_appeared);
+	sem_init(&gl_catch_limite, 0, limite_cola_catch);
+	sem_init(&gl_caught_limite, 0, limite_cola_caught);
+	sem_init(&gl_get_limite, 0, limite_cola_get);
+	sem_init(&gl_localized_limite, 0, limite_cola_localized);
 
-	sem_init(&new_mensajes, 0, 0);
-	sem_init(&appeared_mensajes, 0, 0);
-	sem_init(&catch_mensajes, 0, 0);
-	sem_init(&caught_mensajes, 0, 0);
-	sem_init(&get_mensajes, 0, 0);
-	sem_init(&localized_mensajes, 0, 0);
+	sem_init(&gl_new_mensajes, 0, 0);
+	sem_init(&gl_appeared_mensajes, 0, 0);
+	sem_init(&gl_catch_mensajes, 0, 0);
+	sem_init(&gl_caught_mensajes, 0, 0);
+	sem_init(&gl_get_mensajes, 0, 0);
+	sem_init(&gl_localized_mensajes, 0, 0);
 
-	pthread_mutex_init(&new_lock, NULL);
-	pthread_mutex_init(&appeared_lock, NULL);
-	pthread_mutex_init(&catch_lock, NULL);
-	pthread_mutex_init(&caught_lock, NULL);
-	pthread_mutex_init(&get_lock, NULL);
-	pthread_mutex_init(&localized_lock, NULL);
+	pthread_mutex_init(&gl_new_queue_lock, NULL);
+	pthread_mutex_init(&gl_appeared_queue_lock, NULL);
+	pthread_mutex_init(&gl_catch_queue_lock, NULL);
+	pthread_mutex_init(&gl_caught_queue_lock, NULL);
+	pthread_mutex_init(&gl_get_queue_lock, NULL);
+	pthread_mutex_init(&gl_localized_queue_lock, NULL);
+
+	pthread_mutex_init(&gl_new_list_lock, NULL);
+	pthread_mutex_init(&gl_appeared_list_lock, NULL);
+	pthread_mutex_init(&gl_catch_list_lock, NULL);
+	pthread_mutex_init(&gl_caught_list_lock, NULL);
+	pthread_mutex_init(&gl_get_list_lock, NULL);
+	pthread_mutex_init(&gl_localized_list_lock, NULL);
 }
 
 void terminar_programa(void) {
 	log_destroy(logger);
 	log_destroy(extense_logger);
 	config_destroy(config);
-	queue_clean(NEW_POKEMON);
-	queue_destroy(NEW_POKEMON);
-	queue_clean(APPEARED_POKEMON);
-	queue_destroy(APPEARED_POKEMON);
-	queue_clean(CATCH_POKEMON);
-	queue_destroy(CATCH_POKEMON);
-	queue_clean(CAUGHT_POKEMON);
-	queue_destroy(CAUGHT_POKEMON);
-	queue_clean(GET_POKEMON);
-	queue_destroy(GET_POKEMON);
-	queue_clean(LOCALIZED_POKEMON);
-	queue_destroy(LOCALIZED_POKEMON);
-	list_clean(new_suscriptores);
-	list_clean(appeared_suscriptores);
-	list_clean(catch_suscriptores);
-	list_clean(caught_suscriptores);
-	list_clean(get_suscriptores);
-	list_clean(localized_suscriptores);
-	list_destroy(new_suscriptores);
-	list_destroy(appeared_suscriptores);
-	list_destroy(catch_suscriptores);
-	list_destroy(caught_suscriptores);
-	list_destroy(get_suscriptores);
-	list_destroy(localized_suscriptores);
-	sem_destroy(&new_limite);
-	sem_destroy(&appeared_limite);
-	sem_destroy(&catch_limite);
-	sem_destroy(&caught_limite);
-	sem_destroy(&get_limite);
-	sem_destroy(&localized_limite);
-	sem_destroy(&new_mensajes);
-	sem_destroy(&appeared_mensajes);
-	sem_destroy(&catch_mensajes);
-	sem_destroy(&caught_mensajes);
-	sem_destroy(&get_mensajes);
-	sem_destroy(&localized_mensajes);
-	pthread_mutex_destroy(&new_lock);
-	pthread_mutex_destroy(&appeared_lock);
-	pthread_mutex_destroy(&catch_lock);
-	pthread_mutex_destroy(&caught_lock);
-	pthread_mutex_destroy(&get_lock);
-	pthread_mutex_destroy(&localized_lock);
+	queue_clean(gl_new_pokemon_queue);
+	queue_destroy(gl_new_pokemon_queue);
+	queue_clean(gl_appeared_pokemon_queue);
+	queue_destroy(gl_appeared_pokemon_queue);
+	queue_clean(gl_catch_pokemon_queue);
+	queue_destroy(gl_catch_pokemon_queue);
+	queue_clean(gl_caught_pokemon_queue);
+	queue_destroy(gl_caught_pokemon_queue);
+	queue_clean(gl_get_pokemon_queue);
+	queue_destroy(gl_get_pokemon_queue);
+	queue_clean(gl_localized_pokemon_queue);
+	queue_destroy(gl_localized_pokemon_queue);
+	list_clean(gl_new_suscriptores);
+	list_clean(gl_appeared_suscriptores);
+	list_clean(gl_catch_suscriptores);
+	list_clean(gl_caught_suscriptores);
+	list_clean(gl_get_suscriptores);
+	list_clean(gl_localized_suscriptores);
+	list_destroy(gl_new_suscriptores);
+	list_destroy(gl_appeared_suscriptores);
+	list_destroy(gl_catch_suscriptores);
+	list_destroy(gl_caught_suscriptores);
+	list_destroy(gl_get_suscriptores);
+	list_destroy(gl_localized_suscriptores);
+	sem_destroy(&gl_new_limite);
+	sem_destroy(&gl_appeared_limite);
+	sem_destroy(&gl_catch_limite);
+	sem_destroy(&gl_caught_limite);
+	sem_destroy(&gl_get_limite);
+	sem_destroy(&gl_localized_limite);
+	sem_destroy(&gl_new_mensajes);
+	sem_destroy(&gl_appeared_mensajes);
+	sem_destroy(&gl_catch_mensajes);
+	sem_destroy(&gl_caught_mensajes);
+	sem_destroy(&gl_get_mensajes);
+	sem_destroy(&gl_localized_mensajes);
+	pthread_mutex_destroy(&gl_new_queue_lock);
+	pthread_mutex_destroy(&gl_appeared_queue_lock);
+	pthread_mutex_destroy(&gl_catch_queue_lock);
+	pthread_mutex_destroy(&gl_caught_queue_lock);
+	pthread_mutex_destroy(&gl_get_queue_lock);
+	pthread_mutex_destroy(&gl_localized_queue_lock);
+	pthread_mutex_destroy(&gl_new_list_lock);
+	pthread_mutex_destroy(&gl_appeared_list_lock);
+	pthread_mutex_destroy(&gl_catch_list_lock);
+	pthread_mutex_destroy(&gl_caught_list_lock);
+	pthread_mutex_destroy(&gl_get_list_lock);
+	pthread_mutex_destroy(&gl_localized_list_lock);
 
 	destruir_generador_id();
-
 }

@@ -1,5 +1,3 @@
-
-
 void crea_generador_id(void);
 
 void destruir_generador_id(void);

@@ -23,7 +23,8 @@ typedef enum
     GET          = 3,
     LOCALIZED    = 4,
     CATCH        = 5,
-    CAUGHT       = 6
+    CAUGHT       = 6,
+	SUSCRIPCION  = 7
 } op_code;
 
 typedef struct {
@@ -42,6 +43,7 @@ typedef struct {
 } t_new;
 
 typedef struct {
+	uint32_t id_correlativo;
     char* pokemon;
     uint32_t lugares;
     t_list* l_coordenadas;
@@ -52,6 +54,7 @@ typedef struct {
 } t_get;
 
 typedef struct {
+	uint32_t id_correlativo;
 	char* pokemon;
     uint32_t pos_X, pos_Y;
 } t_appeared;
@@ -62,6 +65,7 @@ typedef struct {
 } t_catch;
 
 typedef struct {
+	uint32_t id_correlativo;
 	uint32_t flag_caught;
 } t_caught;
 
@@ -85,6 +89,7 @@ t_catch* recibir_catch(int socket_cliente, int* size);
 t_caught* recibir_caught(int socket_cliente, int* size);
 t_get* recibir_get(int socket_cliente, int* size);
 t_localized* recibir_localized(int socket_cliente, int* size);
+uint32_t recibir_suscripcion(int socket_cliente);
 void devolver_id(int socket_cliente, uint32_t id);
 
 #endif /* PROTOCOLBROKER_H_ */

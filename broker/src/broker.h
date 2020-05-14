@@ -16,40 +16,47 @@ t_log* extense_logger;
 
 t_config* config;
 
-t_queue* NEW_POKEMON;
-t_queue* APPEARED_POKEMON;
-t_queue* CATCH_POKEMON;
-t_queue* CAUGHT_POKEMON;
-t_queue* GET_POKEMON;
-t_queue* LOCALIZED_POKEMON;
+t_queue* gl_new_pokemon_queue;
+t_queue* gl_appeared_pokemon_queue;
+t_queue* gl_catch_pokemon_queue;
+t_queue* gl_caught_pokemon_queue;
+t_queue* gl_get_pokemon_queue;
+t_queue* gl_localized_pokemon_queue;
 
-t_list* new_suscriptores;
-t_list* appeared_suscriptores;
-t_list* catch_suscriptores;
-t_list* caught_suscriptores;
-t_list* get_suscriptores;
-t_list* localized_suscriptores;
+t_list* gl_new_suscriptores;
+t_list* gl_appeared_suscriptores;
+t_list* gl_catch_suscriptores;
+t_list* gl_caught_suscriptores;
+t_list* gl_get_suscriptores;
+t_list* gl_localized_suscriptores;
 
-pthread_mutex_t new_lock;
-pthread_mutex_t appeared_lock;
-pthread_mutex_t catch_lock;
-pthread_mutex_t caught_lock;
-pthread_mutex_t get_lock;
-pthread_mutex_t localized_lock;
+pthread_mutex_t gl_new_queue_lock;
+pthread_mutex_t gl_appeared_queue_lock;
+pthread_mutex_t gl_catch_queue_lock;
+pthread_mutex_t gl_caught_queue_lock;
+pthread_mutex_t gl_get_queue_lock;
+pthread_mutex_t gl_localized_queue_lock;
 
-sem_t new_limite;
-sem_t appeared_limite;
-sem_t catch_limite;
-sem_t caught_limite;
-sem_t get_limite;
-sem_t localized_limite;
+pthread_mutex_t gl_new_list_lock;
+pthread_mutex_t gl_appeared_list_lock;
+pthread_mutex_t gl_catch_list_lock;
+pthread_mutex_t gl_caught_list_lock;
+pthread_mutex_t gl_get_list_lock;
+pthread_mutex_t gl_localized_list_lock;
 
-sem_t new_mensajes;
-sem_t appeared_mensajes;
-sem_t catch_mensajes;
-sem_t caught_mensajes;
-sem_t get_mensajes;
-sem_t localized_mensajes;
+sem_t gl_new_limite;
+sem_t gl_appeared_limite;
+sem_t gl_catch_limite;
+sem_t gl_caught_limite;
+sem_t gl_get_limite;
+sem_t gl_localized_limite;
+
+sem_t gl_new_mensajes;
+sem_t gl_appeared_mensajes;
+sem_t gl_catch_mensajes;
+sem_t gl_caught_mensajes;
+sem_t gl_get_mensajes;
+sem_t gl_localized_mensajes;
 
 typedef enum
 {
@@ -80,9 +87,9 @@ typedef struct {
 } mensaje_queue;
 
 typedef struct {
-	t_new* new_mensaje;
+	mensaje_queue* mensaje_queue;
 	info_modulo* info;
-} new_mandable_struct;
+} mandable_struct;
 
 t_log* iniciar_logger(char* log_file);
 t_config* leer_config(void);
@@ -91,10 +98,10 @@ void leer_info_modulos(void);
 void inicializar_colas(void);
 void inicializar_semaforos_colas(void);
 void terminar_programa(void);
-void atender_mensaje_new(t_new*);
-void atender_mensaje_appeared(t_appeared*);
-void atender_mensaje_catch(t_catch*);
-void atender_mensaje_caught(t_caught*);
-void atender_mensaje_get(t_get*);
-void atender_mensaje_localized(t_localized*);
+void atender_mensaje_new(mensaje_queue*);
+void atender_mensaje_appeared(mensaje_queue*);
+void atender_mensaje_catch(mensaje_queue*);
+void atender_mensaje_caught(mensaje_queue*);
+void atender_mensaje_get(mensaje_queue*);
+void atender_mensaje_localized(mensaje_queue*);
 void mandar_new(void* new_mandable);
