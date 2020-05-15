@@ -1,11 +1,17 @@
 #include"utilsGameBoy.h"
+#include<pthread.h>
 
 
 t_log* iniciar_logger(){
 	//t_log* logger = log_create("gameBoy.log", "Game-watch-client", 1, LOG_LEVEL_INFO);
-	return log_create("gameBoy.log", "Game-watch-client", 1, LOG_LEVEL_INFO);
+	return log_create("gameBoyDEV.log", "Game-watch-client", 1, LOG_LEVEL_INFO);
 }
 
+
+t_log* iniciar_loggerGameBoy(){
+	//t_log* logger = log_create("gameBoy.log", "Game-watch-client", 1, LOG_LEVEL_INFO);
+	return log_create("gameBoy.log", "Game-watch-client", 1, LOG_LEVEL_INFO);
+}
 
 t_config* leer_config(){
 		t_config* config;
@@ -14,7 +20,9 @@ t_config* leer_config(){
 }
 
 
-char* modulos[5]={"BROKER","TEAM","GAMECARD","SUSCRIPTOR","SERVER"};
+void terminar_programa(int conexion);
+
+
 
 
 int main(int argc,char*argv[]){
@@ -26,14 +34,14 @@ int main(int argc,char*argv[]){
 	char* puerto;
 
 
-	t_log* logger;
-	t_config* config;
+	loggerGameBoy = iniciar_loggerGameBoy();
+	log_info(loggerGameBoy, "logger iniciado.");
 
-	logger = iniciar_logger();
-	log_info(logger, "logger iniciado.");
+	loggerDev = iniciar_logger();
+	log_info(loggerDev, "logger iniciado.");
 
 	config = leer_config();
-	log_info(logger, "config cargada.");
+	log_info(loggerDev, "config cargada.");
 
 
 	printf("%s",argv[1]);
@@ -43,37 +51,54 @@ int main(int argc,char*argv[]){
 	string_append(&ipNombre, "IP_");
 	string_append(&ipNombre,argv[1]);
 
-	log_info(logger, "EL modulo array es: %s", argv[1]);
-	log_info(logger, "La IP es: %s", ipNombre);
+	log_info(loggerDev, "EL modulo array es: %s", argv[1]);
+	log_info(loggerDev, "La IP es: %s", ipNombre);
 
 
 	string_append(&puertoNombre, "PUERTO_");
 	string_append(&puertoNombre,argv[1]);
 
-	log_info(logger, "EL modulo array es: %s", argv[1]);
-	log_info(logger, "La IP es: %s", ipNombre);
+	log_info(loggerDev, "EL modulo array es: %s", argv[1]);
+	log_info(loggerDev, "La IP es: %s", ipNombre);
 
 
 
 	ip = config_get_string_value(config, ipNombre);
 	puerto = config_get_string_value(config, puertoNombre);
-	log_info(logger, "La IP es: %s", ip);
-	log_info(logger, "El Puerto es: %s", puerto);
+	log_info(loggerDev, "La IP es: %s", ip);
+	log_info(loggerDev, "El Puerto es: %s", puerto);
 
+//###################################################### PROCESO #####################################################################################
 
-
+	log_info(loggerGameBoy, "Iniciando conexion con el modulo %s", argv[1]);
 	conexion = crear_conexion(ip, puerto);
+	log_info(loggerGameBoy, "Conexion exitosa con %s IP: %s, PUERTO: %s", argv[1],ip,puerto);
 
+	enviar_mensaje(argv, conexion);
 
-	terminar_programa(conexion, logger, config);
+	if(strcmp(argv[2],"SUSCRIPTOR")){
+		log_info(loggerGameBoy, "Solicitando suscripcion a: %s", argv[2]);
+		pthread_t hiloEscucha;
+		int error = pthread_create(&hiloEscucha,NULL,recibirMensajesDeSuscripcion,conexion);
+
+		if(error != 0){
+			log_info(loggerDev, "Hubo un problema al crear el hilo");
+			return error;
+		}
+
+		int timpoSuscripcion = atoi(4);
+		sleep(timpoSuscripcion);
+		}
+
+	terminar_programa(conexion);
 
 }
 
 
 
-void terminar_programa(int conexion, t_log* logger, t_config* config){
-	log_destroy(logger);
+void terminar_programa(int conexion){
+	log_destroy(loggerDev);
+	log_destroy(loggerGameBoy);
 	config_destroy(config);
 	liberar_conexion(conexion);
-
 }
