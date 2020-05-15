@@ -547,6 +547,29 @@ void deserializarLocalized(void* streamLlegada){
 	log_error(loggerGameBoy, "Llego el pokemon: %s",mensajeLocalized->sizePokemon);
 
 
+	uint32_t cantidad;
+	memcpy(&(cantidad),streamLlegada, sizeof(uint32_t));
+	streamLlegada += sizeof(uint32_t);
+	log_error(loggerGameBoy, "Llegaron %i del pokemon del Broker",cantidad);
+
+	for(uint32_t i = 0; i<cantidad; i++){
+		uint32_t posX;
+		uint32_t posY;
+
+		memcpy(&(posX),streamLlegada, sizeof(uint32_t));
+		streamLlegada += sizeof(uint32_t);
+
+		memcpy(&(posY),streamLlegada, sizeof(uint32_t));
+		streamLlegada += sizeof(uint32_t);
+
+		log_error(loggerGameBoy, "Posicion X: %i",posX);
+		log_error(loggerGameBoy, "Posicion Y: %i",posY);
+	}
+
+
+
+
+	//
 /*/				#################		COORDENADAS		#####################
 	memcpy(&(mensajeLocalized->coordX), streamLlegada, sizeof(uint32_t));
 	streamLlegada += sizeof(uint32_t);
