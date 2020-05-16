@@ -364,11 +364,7 @@ void atender_mensaje_new(mensaje_queue* mensaje) {
 		pthread_join(threads[i], NULL);
 	}
 
-	// POR AHORA CAMINO FELIZ
-	// COMO DIJO MACRI
-	// DESDE AHORA POR LEY SOMOS TODOS FELICES
-
-	// Elimino de la cola
+	free(threads);
 
 	queue_pop(gl_new_pokemon_queue);
 }
@@ -381,19 +377,17 @@ void atender_mensaje_appeared(mensaje_queue* mensaje) {
 	pthread_t* threads = malloc(sizeof(pthread_t) * suscriptores_para_enviar->elements_count);
 
 	for (int i = 0; i < suscriptores_para_enviar->elements_count; i++) {
-		// ACA NO VA ATENDER APPEARED
-		pthread_create(&(threads[i]), NULL, (void*) atender_appeared, NULL);
+		mandable_struct* struct_para_enviar = malloc(sizeof(mandable_struct));
+		struct_para_enviar->info = list_get(suscriptores_para_enviar, i);
+		struct_para_enviar->mensaje_queue = mensaje;
+		pthread_create(&(threads[i]), NULL, (void*) mandar_appeared, (void *) struct_para_enviar);
 	}
 
 	for (int i = 0; i < suscriptores_para_enviar->elements_count; i++) {
 		pthread_join(threads[i], NULL);
 	}
 
-	// POR AHORA CAMINO FELIZ
-	// COMO DIJO MACRI
-	// DESDE AHORA POR LEY SOMOS TODOS FELICES
-
-	// Elimino de la cola
+	free(threads);
 
 	queue_pop(gl_appeared_pokemon_queue);
 }
@@ -406,19 +400,17 @@ void atender_mensaje_catch(mensaje_queue* mensaje) {
 	pthread_t* threads = malloc(sizeof(pthread_t) * suscriptores_para_enviar->elements_count);
 
 	for (int i = 0; i < suscriptores_para_enviar->elements_count; i++) {
-		// ACA NO VA ATENDER APPEARED
-		pthread_create(&(threads[i]), NULL, (void*) atender_appeared, NULL);
+		mandable_struct* struct_para_enviar = malloc(sizeof(mandable_struct));
+		struct_para_enviar->info = list_get(suscriptores_para_enviar, i);
+		struct_para_enviar->mensaje_queue = mensaje;
+		pthread_create(&(threads[i]), NULL, (void*) mandar_catch, (void *) struct_para_enviar);
 	}
 
 	for (int i = 0; i < suscriptores_para_enviar->elements_count; i++) {
 		pthread_join(threads[i], NULL);
 	}
 
-	// POR AHORA CAMINO FELIZ
-	// COMO DIJO MACRI
-	// DESDE AHORA POR LEY SOMOS TODOS FELICES
-
-	// Elimino de la cola
+	free(threads);
 
 	queue_pop(gl_catch_pokemon_queue);
 }
@@ -431,19 +423,17 @@ void atender_mensaje_caught(mensaje_queue* mensaje) {
 	pthread_t* threads = malloc(sizeof(pthread_t) * suscriptores_para_enviar->elements_count);
 
 	for (int i = 0; i < suscriptores_para_enviar->elements_count; i++) {
-		// ACA NO VA ATENDER APPEARED
-		pthread_create(&(threads[i]), NULL, (void*) atender_appeared, NULL);
+		mandable_struct* struct_para_enviar = malloc(sizeof(mandable_struct));
+		struct_para_enviar->info = list_get(suscriptores_para_enviar, i);
+		struct_para_enviar->mensaje_queue = mensaje;
+		pthread_create(&(threads[i]), NULL, (void*) mandar_caught, struct_para_enviar);
 	}
 
 	for (int i = 0; i < suscriptores_para_enviar->elements_count; i++) {
 		pthread_join(threads[i], NULL);
 	}
 
-	// POR AHORA CAMINO FELIZ
-	// COMO DIJO MACRI
-	// DESDE AHORA POR LEY SOMOS TODOS FELICES
-
-	// Elimino de la cola
+	free(threads);
 
 	queue_pop(gl_caught_pokemon_queue);
 }
@@ -456,19 +446,17 @@ void atender_mensaje_get(mensaje_queue* mensaje) {
 	pthread_t* threads = malloc(sizeof(pthread_t) * suscriptores_para_enviar->elements_count);
 
 	for (int i = 0; i < suscriptores_para_enviar->elements_count; i++) {
-		// ACA NO VA ATENDER APPEARED
-		pthread_create(&(threads[i]), NULL, (void*) atender_appeared, NULL);
+		mandable_struct* struct_para_enviar = malloc(sizeof(mandable_struct));
+		struct_para_enviar->info = list_get(suscriptores_para_enviar, i);
+		struct_para_enviar->mensaje_queue = mensaje;
+		pthread_create(&(threads[i]), NULL, (void*) atender_get, struct_para_enviar);
 	}
 
 	for (int i = 0; i < suscriptores_para_enviar->elements_count; i++) {
 		pthread_join(threads[i], NULL);
 	}
 
-	// POR AHORA CAMINO FELIZ
-	// COMO DIJO MACRI
-	// DESDE AHORA POR LEY SOMOS TODOS FELICES
-
-	// Elimino de la cola
+	free(threads);
 
 	queue_pop(gl_get_pokemon_queue);
 }
@@ -481,45 +469,358 @@ void atender_mensaje_localized(mensaje_queue* mensaje) {
 	pthread_t* threads = malloc(sizeof(pthread_t) * suscriptores_para_enviar->elements_count);
 
 	for (int i = 0; i < suscriptores_para_enviar->elements_count; i++) {
-		// ACA NO VA ATENDER APPEARED
-		pthread_create(&(threads[i]), NULL, (void*) atender_appeared, NULL);
+		mandable_struct* struct_para_enviar = malloc(sizeof(mandable_struct));
+		struct_para_enviar->info = list_get(suscriptores_para_enviar, i);
+		struct_para_enviar->mensaje_queue = mensaje;
+		pthread_create(&(threads[i]), NULL, (void*) mandar_localized, struct_para_enviar);
 	}
 
 	for (int i = 0; i < suscriptores_para_enviar->elements_count; i++) {
 		pthread_join(threads[i], NULL);
 	}
 
-	// POR AHORA CAMINO FELIZ
-	// COMO DIJO MACRI
-	// DESDE AHORA POR LEY SOMOS TODOS FELICES
-
-	// Elimino de la cola
+	free(threads);
 
 	queue_pop(gl_localized_pokemon_queue);
 }
 
 void mandar_new(void* new_mandable) {
-
 	mandable_struct* argumento_new = (mandable_struct*) new_mandable;
 
+	int socket_cliente = crear_conexion(argumento_new->info->ip, argumento_new->info->puerto);
 
+	uint32_t bytes;
+	void* flujo = serializar_new(argumento_new, &bytes);
 
-	// conectarnos
-	// hablar con milton
+	if (send(socket_cliente, flujo, bytes, 0) == -1){
+		// ver que onda el log
+		log_error(logger, "Error: No se pudo enviar el mensaje");
+	}
 
+	free(flujo);
 
-	// serializar paquete
-	// op_code [uint32_t] tamaño de todo lo que viene despues [uint32_t] gilada [extras]
-	// gilada tiene primero id y id correlativo
+//	uint32_t id;
+//	if (recv(socket_cliente,&id ,sizeof(uint32_t),MSG_WAITALL) == -1)
+//	{
+//		log_error(logger, "error: No se recibió el código de operación");
+//	}
 
-	// enviar
+	// que onda esto? tiene que ir o no?
+	close(socket_cliente);
 
-	// esperar respuesta
+	free(argumento_new);
+}
 
-	// cerrar conexion
+void mandar_appeared(void* appeared_mandable) {
+	mandable_struct* argumento_appeared = (mandable_struct*) appeared_mandable;
 
-	// liberar memoria
+	int socket_cliente = crear_conexion(argumento_appeared->info->ip, argumento_appeared->info->puerto);
 
+	uint32_t bytes;
+	void* flujo = serializar_appeared(argumento_appeared, &bytes);
+
+	if (send(socket_cliente, flujo, bytes, 0) == -1){
+		// ver que onda el log
+		log_error(logger, "Error: No se pudo enviar el mensaje");
+	}
+
+	free(flujo);
+
+//	uint32_t id;
+//	if (recv(socket_cliente,&id ,sizeof(uint32_t),MSG_WAITALL) == -1)
+//	{
+//		log_error(logger, "error: No se recibió el código de operación");
+//	}
+
+	// que onda esto? tiene que ir o no?
+	close(socket_cliente);
+
+	free(argumento_appeared);
+}
+
+void mandar_catch(void* catch_mandable) {
+	mandable_struct* argumento_catch = (mandable_struct*) catch_mandable;
+
+	int socket_cliente = crear_conexion(argumento_catch->info->ip, argumento_catch->info->puerto);
+
+	uint32_t bytes;
+	void* flujo = serializar_catch(argumento_catch, &bytes);
+
+	if (send(socket_cliente, flujo, bytes, 0) == -1){
+		// ver que onda el log
+		log_error(logger, "Error: No se pudo enviar el mensaje");
+	}
+
+	free(flujo);
+
+//	uint32_t id;
+//	if (recv(socket_cliente,&id ,sizeof(uint32_t),MSG_WAITALL) == -1)
+//	{
+//		log_error(logger, "error: No se recibió el código de operación");
+//	}
+
+	// que onda esto? tiene que ir o no?
+	close(socket_cliente);
+
+	free(argumento_catch);
+}
+
+void mandar_caught(void* caught_mandable) {
+	mandable_struct* argumento_caught = (mandable_struct*) caught_mandable;
+
+	int socket_cliente = crear_conexion(argumento_caught->info->ip, argumento_caught->info->puerto);
+
+	uint32_t bytes;
+	void* flujo = serializar_caught(argumento_caught, &bytes);
+
+	if (send(socket_cliente, flujo, bytes, 0) == -1){
+		// ver que onda el log
+		log_error(logger, "Error: No se pudo enviar el mensaje");
+	}
+
+	free(flujo);
+
+//	uint32_t id;
+//	if (recv(socket_cliente,&id ,sizeof(uint32_t),MSG_WAITALL) == -1)
+//	{
+//		log_error(logger, "error: No se recibió el código de operación");
+//	}
+
+	// que onda esto? tiene que ir o no?
+	close(socket_cliente);
+
+	free(argumento_caught);
+}
+
+void mandar_get(void* get_mandable) {
+	mandable_struct* argumento_get = (mandable_struct*) get_mandable;
+
+	int socket_cliente = crear_conexion(argumento_get->info->ip, argumento_get->info->puerto);
+
+	uint32_t bytes;
+	void* flujo = serializar_get(argumento_get, &bytes);
+
+	if (send(socket_cliente, flujo, bytes, 0) == -1){
+		// ver que onda el log
+		log_error(logger, "Error: No se pudo enviar el mensaje");
+	}
+
+	free(flujo);
+
+//	uint32_t id;
+//	if (recv(socket_cliente,&id ,sizeof(uint32_t),MSG_WAITALL) == -1)
+//	{
+//		log_error(logger, "error: No se recibió el código de operación");
+//	}
+
+	// que onda esto? tiene que ir o no?
+	close(socket_cliente);
+
+	free(argumento_get);
+}
+
+void mandar_localized(void* localized_mandable) {
+	mandable_struct* argumento_localized = (mandable_struct*) localized_mandable;
+
+	int socket_cliente = crear_conexion(argumento_localized->info->ip, argumento_localized->info->puerto);
+
+	uint32_t bytes;
+	void* flujo = serializar_localized(argumento_localized, &bytes);
+
+	if (send(socket_cliente, flujo, bytes, 0) == -1){
+		// ver que onda el log
+		log_error(logger, "Error: No se pudo enviar el mensaje");
+	}
+
+	free(flujo);
+
+//	uint32_t id;
+//	if (recv(socket_cliente,&id ,sizeof(uint32_t),MSG_WAITALL) == -1)
+//	{
+//		log_error(logger, "error: No se recibió el código de operación");
+//	}
+
+	// que onda esto? tiene que ir o no?
+	close(socket_cliente);
+
+	free(argumento_localized);
+}
+
+void* serializar_new(mandable_struct* new, uint32_t* bytes) {
+	uint32_t tamanio_pokemon = (strlen(((t_new*) new->mensaje_queue->mensaje)->pokemon) + 1) * sizeof(char);
+
+	*bytes = sizeof(uint32_t) + sizeof(uint32_t) + sizeof(uint32_t) + sizeof(uint32_t) + tamanio_pokemon  + sizeof(uint32_t) + sizeof(uint32_t) + sizeof(uint32_t);
+
+	uint32_t cod_op = 1;
+	void* flujo = malloc(*bytes);
+	int desplazamiento = 0;
+
+	memcpy(flujo + desplazamiento, &cod_op, sizeof(uint32_t));
+	desplazamiento += sizeof(uint32_t);
+	memcpy(flujo + desplazamiento, bytes, sizeof(uint32_t));
+	desplazamiento += sizeof(uint32_t);
+	memcpy(flujo + desplazamiento, &(new->mensaje_queue->id), sizeof(uint32_t));
+	desplazamiento += sizeof(uint32_t);
+	memcpy(flujo + desplazamiento, &tamanio_pokemon, sizeof(uint32_t));
+	desplazamiento += sizeof(uint32_t);
+	memcpy(flujo + desplazamiento, ((t_new*) new->mensaje_queue->mensaje)->pokemon, tamanio_pokemon);
+	desplazamiento += tamanio_pokemon;
+	memcpy(flujo + desplazamiento, &(((t_new*) new->mensaje_queue->mensaje)->pos_X), sizeof(uint32_t));
+	desplazamiento += sizeof(uint32_t);
+	memcpy(flujo + desplazamiento, &(((t_new*) new->mensaje_queue->mensaje)->pos_Y), sizeof(uint32_t));
+	desplazamiento += sizeof(uint32_t);
+	memcpy(flujo + desplazamiento, &(((t_new*) new->mensaje_queue->mensaje)->cantidad), sizeof(uint32_t));
+	desplazamiento += sizeof(uint32_t);
+
+	return flujo;
+}
+
+void* serializar_appeared(mandable_struct* appeared, uint32_t* bytes) {
+	uint32_t tamanio_pokemon = (strlen(((t_appeared*) appeared->mensaje_queue->mensaje)->pokemon) + 1) * sizeof(char);
+
+	*bytes = sizeof(uint32_t) + sizeof(uint32_t) +
+			sizeof(uint32_t) + sizeof(uint32_t) +
+			sizeof(uint32_t) + tamanio_pokemon +
+			sizeof(uint32_t) + sizeof(uint32_t);
+
+	uint32_t cod_op = 2;
+	void* flujo = malloc(*bytes);
+	int desplazamiento = 0;
+
+	memcpy(flujo + desplazamiento, &cod_op, sizeof(uint32_t));
+	desplazamiento += sizeof(uint32_t);
+	memcpy(flujo + desplazamiento, bytes, sizeof(uint32_t));
+	desplazamiento += sizeof(uint32_t);
+	memcpy(flujo + desplazamiento, &(appeared->mensaje_queue->id), sizeof(uint32_t));
+	desplazamiento += sizeof(uint32_t);
+	memcpy(flujo + desplazamiento, &(((t_appeared*) appeared->mensaje_queue->mensaje)->id_correlativo), sizeof(uint32_t));
+	desplazamiento += sizeof(uint32_t);
+	memcpy(flujo + desplazamiento, &tamanio_pokemon, sizeof(uint32_t));
+	desplazamiento += sizeof(uint32_t);
+	memcpy(flujo + desplazamiento, ((t_appeared*) appeared->mensaje_queue->mensaje)->pokemon, tamanio_pokemon);
+	desplazamiento += tamanio_pokemon;
+	memcpy(flujo + desplazamiento, &(((t_appeared*) appeared->mensaje_queue->mensaje)->pos_X), sizeof(uint32_t));
+	desplazamiento += sizeof(uint32_t);
+	memcpy(flujo + desplazamiento, &(((t_appeared*) appeared->mensaje_queue->mensaje)->pos_Y), sizeof(uint32_t));
+	desplazamiento += sizeof(uint32_t);
+
+	return flujo;
+}
+
+void* serializar_catch(mandable_struct* catch, uint32_t* bytes) {
+	uint32_t tamanio_pokemon = (strlen(((t_catch*) catch->mensaje_queue->mensaje)->pokemon) + 1) * sizeof(char);
+
+	*bytes = sizeof(uint32_t) + sizeof(uint32_t) +
+			sizeof(uint32_t) + sizeof(uint32_t) +
+			tamanio_pokemon + sizeof(uint32_t) +
+			sizeof(uint32_t);
+
+	uint32_t cod_op = 5;
+	void* flujo = malloc(*bytes);
+	int desplazamiento = 0;
+
+	memcpy(flujo + desplazamiento, &cod_op, sizeof(uint32_t));
+	desplazamiento += sizeof(uint32_t);
+	memcpy(flujo + desplazamiento, bytes, sizeof(uint32_t));
+	desplazamiento += sizeof(uint32_t);
+	memcpy(flujo + desplazamiento, &(catch->mensaje_queue->id), sizeof(uint32_t));
+	desplazamiento += sizeof(uint32_t);
+	memcpy(flujo + desplazamiento, &tamanio_pokemon, sizeof(uint32_t));
+	desplazamiento += sizeof(uint32_t);
+	memcpy(flujo + desplazamiento, ((t_catch*) catch->mensaje_queue->mensaje)->pokemon, tamanio_pokemon);
+	desplazamiento += tamanio_pokemon;
+	memcpy(flujo + desplazamiento, &(((t_catch*) catch->mensaje_queue->mensaje)->pos_X), sizeof(uint32_t));
+	desplazamiento += sizeof(uint32_t);
+	memcpy(flujo + desplazamiento, &(((t_catch*) catch->mensaje_queue->mensaje)->pos_Y), sizeof(uint32_t));
+	desplazamiento += sizeof(uint32_t);
+
+	return flujo;
+}
+
+void* serializar_caught(mandable_struct* caught, uint32_t* bytes) {
+	*bytes = sizeof(uint32_t) + sizeof(uint32_t) +
+			sizeof(uint32_t) + sizeof(uint32_t) +
+			sizeof(uint32_t);
+
+	uint32_t cod_op = 6;
+	void* flujo = malloc(*bytes);
+	int desplazamiento = 0;
+
+	memcpy(flujo + desplazamiento, &cod_op, sizeof(uint32_t));
+	desplazamiento += sizeof(uint32_t);
+	memcpy(flujo + desplazamiento, bytes, sizeof(uint32_t));
+	desplazamiento += sizeof(uint32_t);
+	memcpy(flujo + desplazamiento, &(caught->mensaje_queue->id), sizeof(uint32_t));
+	desplazamiento += sizeof(uint32_t);
+	memcpy(flujo + desplazamiento, &(((t_caught*) caught->mensaje_queue->mensaje)->id_correlativo), sizeof(uint32_t));
+	desplazamiento += sizeof(uint32_t);
+	memcpy(flujo + desplazamiento, &(((t_caught*) caught->mensaje_queue->mensaje)->flag_caught), sizeof(uint32_t));
+	desplazamiento += sizeof(uint32_t);
+
+	return flujo;
+}
+
+void* serializar_get(mandable_struct* get, uint32_t* bytes) {
+	uint32_t tamanio_pokemon = (strlen(((t_get*) get->mensaje_queue->mensaje)->pokemon) + 1) * sizeof(char);
+
+	*bytes = sizeof(uint32_t) + sizeof(uint32_t) +
+			sizeof(uint32_t) + sizeof(uint32_t) +
+			tamanio_pokemon;
+
+	uint32_t cod_op = 3;
+	void* flujo = malloc(*bytes);
+	int desplazamiento = 0;
+
+	memcpy(flujo + desplazamiento, &cod_op, sizeof(uint32_t));
+	desplazamiento += sizeof(uint32_t);
+	memcpy(flujo + desplazamiento, bytes, sizeof(uint32_t));
+	desplazamiento += sizeof(uint32_t);
+	memcpy(flujo + desplazamiento, &(get->mensaje_queue->id), sizeof(uint32_t));
+	desplazamiento += sizeof(uint32_t);
+	memcpy(flujo + desplazamiento, &tamanio_pokemon, sizeof(uint32_t));
+	desplazamiento += sizeof(uint32_t);
+	memcpy(flujo + desplazamiento, ((t_get*) get->mensaje_queue->mensaje)->pokemon, tamanio_pokemon);
+	desplazamiento += tamanio_pokemon;
+
+	return flujo;
+}
+
+void* serializar_localized(mandable_struct* localized, uint32_t* bytes) {
+	uint32_t tamanio_pokemon = (strlen(((t_localized*) localized->mensaje_queue->mensaje)->pokemon) + 1) * sizeof(char);
+	uint32_t elementos_lista = ((t_localized*) localized->mensaje_queue->mensaje)->l_coordenadas->elements_count;
+	uint32_t tamanio_lista = elementos_lista * sizeof(uint32_t);
+
+	*bytes = sizeof(uint32_t) + sizeof(uint32_t) +
+			sizeof(uint32_t) + sizeof(uint32_t) +
+			sizeof(uint32_t) + tamanio_pokemon +
+			sizeof(uint32_t) + tamanio_lista;
+
+	uint32_t cod_op = 4;
+	void* flujo = malloc(*bytes);
+	int desplazamiento = 0;
+
+	memcpy(flujo + desplazamiento, &cod_op, sizeof(uint32_t));
+	desplazamiento += sizeof(uint32_t);
+	memcpy(flujo + desplazamiento, bytes, sizeof(uint32_t));
+	desplazamiento += sizeof(uint32_t);
+	memcpy(flujo + desplazamiento, &(localized->mensaje_queue->id), sizeof(uint32_t));
+	desplazamiento += sizeof(uint32_t);
+	memcpy(flujo + desplazamiento, &(((t_localized*) localized->mensaje_queue->mensaje)->id_correlativo), sizeof(uint32_t));
+	desplazamiento += sizeof(uint32_t);
+	memcpy(flujo + desplazamiento, &tamanio_pokemon, sizeof(uint32_t));
+	desplazamiento += sizeof(uint32_t);
+	memcpy(flujo + desplazamiento, ((t_localized*) localized->mensaje_queue->mensaje)->pokemon, tamanio_pokemon);
+	desplazamiento += tamanio_pokemon;
+	memcpy(flujo + desplazamiento, &(((t_localized*) localized->mensaje_queue->mensaje)->lugares), sizeof(uint32_t));
+	desplazamiento += sizeof(uint32_t);
+
+	for (int i = 0; i < elementos_lista; i++) {
+		uint32_t* elemento_de_lista = (uint32_t*) list_get(((t_localized*) localized->mensaje_queue->mensaje)->l_coordenadas, i);
+		memcpy(flujo + desplazamiento, elemento_de_lista, sizeof(uint32_t));
+		desplazamiento += sizeof(uint32_t);
+	}
+
+	return flujo;
 }
 
 int main(void) {
@@ -546,7 +847,11 @@ int main(void) {
 
 	inicializar_semaforos_colas();
 
+	log_info(extense_logger, "Creando generador id");
+
 	crea_generador_id();
+
+	log_info(extense_logger, "Generador id creado");
 
 	// leemos de config ip y puerto de cada modulo
 
@@ -594,6 +899,8 @@ int main(void) {
 }
 
 void inicializar_colas(void) {
+	log_info(extense_logger, "Creando colas");
+
 	gl_new_pokemon_queue = queue_create();
 	gl_appeared_pokemon_queue = queue_create();
 	gl_catch_pokemon_queue = queue_create();
@@ -601,12 +908,18 @@ void inicializar_colas(void) {
 	gl_get_pokemon_queue = queue_create();
 	gl_localized_pokemon_queue = queue_create();
 
+	log_info(extense_logger, "Colas creadas");
+
+	log_info(extense_logger, "Creando listas de suscriptores");
+
 	gl_new_suscriptores = list_create();
 	gl_appeared_suscriptores = list_create();
 	gl_catch_suscriptores = list_create();
 	gl_caught_suscriptores = list_create();
 	gl_get_suscriptores = list_create();
 	gl_localized_suscriptores = list_create();
+
+	log_info(extense_logger, "Listas de suscriptores creadas");
 
 	NEW_STRUCT.cola = gl_new_pokemon_queue;
 	APPEARED_STRUCT.cola = gl_appeared_pokemon_queue;
@@ -629,7 +942,7 @@ void inicializar_colas(void) {
 	GET_STRUCT.id = GET_ID;
 	LOCALIZED_STRUCT.id = LOCALIZED_ID;
 
-	log_info(extense_logger, "Colas iniciadas");
+	log_info(extense_logger, "Estructuras de colas iniciadas");
 }
 
 t_log* iniciar_logger(char* log_file) {
@@ -643,12 +956,16 @@ t_config* leer_config() {
 }
 
 void leer_info_modulos(void) {
+	log_info(extense_logger, "Iniciando estructuras de modulos");
+
 	INFO_TEAM.ip = config_get_string_value(config, "TEAM_IP");
 	INFO_TEAM.puerto = config_get_string_value(config, "TEAM_PUERTO");
 	INFO_GAME_BOY.ip = config_get_string_value(config, "GAME_BOY_IP");
 	INFO_GAME_BOY.puerto = config_get_string_value(config, "GAME_BOY_PUERTO");
 	INFO_GAME_CARD.ip = config_get_string_value(config, "GAME_CARD_IP");
 	INFO_GAME_CARD.puerto = config_get_string_value(config, "GAME_CARD_PUERTO");
+
+	log_info(extense_logger, "Estructuras de modulos iniciadas");
 }
 
 void inicializar_semaforos_colas(void) {
@@ -659,12 +976,18 @@ void inicializar_semaforos_colas(void) {
 	int limite_cola_get;
 	int limite_cola_localized;
 
+	log_info(extense_logger, "Iniciando limites de colas");
+
 	limite_cola_new = config_get_int_value(config, "LIMITE_COLA_NEW");
 	limite_cola_appeared = config_get_int_value(config, "LIMITE_COLA_APPEARED");
 	limite_cola_catch = config_get_int_value(config, "LIMITE_COLA_CATCH");
 	limite_cola_caught = config_get_int_value(config, "LIMITE_COLA_CAUGHT");
 	limite_cola_get = config_get_int_value(config, "LIMITE_COLA_GET");
 	limite_cola_localized = config_get_int_value(config, "LIMITE_COLA_LOCALIZED");
+
+	log_info(extense_logger, "Limites de colas iniciadas");
+
+	log_info(extense_logger, "Iniciando semaforos de limite");
 
 	sem_init(&gl_new_limite, 0, limite_cola_new);
 	sem_init(&gl_appeared_limite, 0, limite_cola_appeared);
@@ -673,12 +996,20 @@ void inicializar_semaforos_colas(void) {
 	sem_init(&gl_get_limite, 0, limite_cola_get);
 	sem_init(&gl_localized_limite, 0, limite_cola_localized);
 
+	log_info(extense_logger, "Semaforos de limite iniciados");
+
+	log_info(extense_logger, "Iniciando semaforos de mensajes");
+
 	sem_init(&gl_new_mensajes, 0, 0);
 	sem_init(&gl_appeared_mensajes, 0, 0);
 	sem_init(&gl_catch_mensajes, 0, 0);
 	sem_init(&gl_caught_mensajes, 0, 0);
 	sem_init(&gl_get_mensajes, 0, 0);
 	sem_init(&gl_localized_mensajes, 0, 0);
+
+	log_info(extense_logger, "Semaforos de mensajes iniciados");
+
+	log_info(extense_logger, "Iniciando semaforos de colas");
 
 	pthread_mutex_init(&gl_new_queue_lock, NULL);
 	pthread_mutex_init(&gl_appeared_queue_lock, NULL);
@@ -687,12 +1018,18 @@ void inicializar_semaforos_colas(void) {
 	pthread_mutex_init(&gl_get_queue_lock, NULL);
 	pthread_mutex_init(&gl_localized_queue_lock, NULL);
 
+	log_info(extense_logger, "Semaforos de colas iniciados");
+
+	log_info(extense_logger, "Iniciando semaforos de listas");
+
 	pthread_mutex_init(&gl_new_list_lock, NULL);
 	pthread_mutex_init(&gl_appeared_list_lock, NULL);
 	pthread_mutex_init(&gl_catch_list_lock, NULL);
 	pthread_mutex_init(&gl_caught_list_lock, NULL);
 	pthread_mutex_init(&gl_get_list_lock, NULL);
 	pthread_mutex_init(&gl_localized_list_lock, NULL);
+
+	log_info(extense_logger, "Semaforos de listas iniciados");
 }
 
 void terminar_programa(void) {
