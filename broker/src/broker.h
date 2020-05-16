@@ -5,6 +5,7 @@
 #include "commons/collections/queue.h"
 #include "commons/log.h"
 #include "commons/config.h"
+#include "commons/process.h"
 #include "pthread.h"
 #include "semaphore.h"
 #include "broker_msj_id.h"

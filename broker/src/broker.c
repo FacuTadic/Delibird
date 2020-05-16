@@ -8,140 +8,177 @@ void procesar_request(int cod_op, int cliente_fd) {
 
 	switch (cod_op) {
 	case NEW: ;
-		t_new* new_msg = recibir_new(cliente_fd, &size);
+		log_info(extense_logger, "Codigo de operacion recibido de %i corresponde a un NEW", cliente_fd);
+		t_new* new_msg = recibir_new(cliente_fd, &size, extense_logger);
 
 		mensaje_a_guardar->mensaje = (void*) new_msg;
 
 		sem_wait(&gl_new_limite);
 		pthread_mutex_lock(&gl_new_queue_lock);
 
+		log_info(extense_logger, "Encolando el mensaje NEW");
 		queue_push(gl_new_pokemon_queue, mensaje_a_guardar);
+		log_info(extense_logger, "Mensaje NEW encolado");
 
 		pthread_mutex_unlock(&gl_new_queue_lock);
 		sem_post(&gl_new_mensajes);
 
-		devolver_id(cliente_fd, mensaje_a_guardar->id);
+		devolver_id(cliente_fd, mensaje_a_guardar->id, extense_logger);
 
 		close(cliente_fd);
 		break;
 	case APPEARED: ;
-		t_appeared* appeared_msg = recibir_appeared(cliente_fd, &size);
+		log_info(extense_logger, "Codigo de operacion recibido de %i corresponde a un APPEARED", cliente_fd);
+		t_appeared* appeared_msg = recibir_appeared(cliente_fd, &size, extense_logger);
 
 		mensaje_a_guardar->mensaje = (void*) appeared_msg;
 
 		sem_wait(&gl_appeared_limite);
 		pthread_mutex_lock(&gl_appeared_queue_lock);
 
+		log_info(extense_logger, "Encolando el mensaje APPEARED");
 		queue_push(gl_appeared_pokemon_queue, mensaje_a_guardar);
+		log_info(extense_logger, "Mensaje APPEARED encolado");
 
 		pthread_mutex_unlock(&gl_appeared_queue_lock);
 		sem_post(&gl_appeared_mensajes);
 
-		devolver_id(cliente_fd, mensaje_a_guardar->id);
+		devolver_id(cliente_fd, mensaje_a_guardar->id, extense_logger);
 
 		close(cliente_fd);
 		break;
 	case GET: ;
-		t_get* get_msg = recibir_get(cliente_fd, &size);
+		log_info(extense_logger, "Codigo de operacion recibido de %i corresponde a un GET", cliente_fd);
+		t_get* get_msg = recibir_get(cliente_fd, &size, extense_logger);
 
 		mensaje_a_guardar->mensaje = (void*) get_msg;
 
 		sem_wait(&gl_get_limite);
 		pthread_mutex_lock(&gl_get_queue_lock);
 
+		log_info(extense_logger, "Encolando el mensaje GET");
 		queue_push(gl_get_pokemon_queue, mensaje_a_guardar);
+		log_info(extense_logger, "Mensaje GET encolado");
 
 		pthread_mutex_unlock(&gl_get_queue_lock);
 		sem_post(&gl_get_mensajes);
 
-		devolver_id(cliente_fd, mensaje_a_guardar->id);
+		devolver_id(cliente_fd, mensaje_a_guardar->id, extense_logger);
 
 		close(cliente_fd);
 		break;
 	case LOCALIZED: ;
-		t_localized* localized_msg = recibir_localized(cliente_fd, &size);
+		log_info(extense_logger, "Codigo de operacion recibido de %i corresponde a un LOCALIZED", cliente_fd);
+		t_localized* localized_msg = recibir_localized(cliente_fd, &size, extense_logger);
 
 		mensaje_a_guardar->mensaje = (void*) localized_msg;
 
 		sem_wait(&gl_localized_limite);
 		pthread_mutex_lock(&gl_localized_queue_lock);
 
+		log_info(extense_logger, "Encolando el mensaje LOCALIZED");
 		queue_push(gl_localized_pokemon_queue, mensaje_a_guardar);
+		log_info(extense_logger, "Mensaje LOCALIZED encolado");
 
 		pthread_mutex_unlock(&gl_localized_queue_lock);
 		sem_post(&gl_localized_mensajes);
 
-		devolver_id(cliente_fd, mensaje_a_guardar->id);
+		devolver_id(cliente_fd, mensaje_a_guardar->id, extense_logger);
 
 		close(cliente_fd);
 		break;
 	case CATCH: ;
-		t_catch* catch_msg = recibir_catch(cliente_fd, &size);
+		log_info(extense_logger, "Codigo de operacion recibido de %i corresponde a un CATCH", cliente_fd);
+		t_catch* catch_msg = recibir_catch(cliente_fd, &size, extense_logger);
 
 		mensaje_a_guardar->mensaje = (void*) catch_msg;
 
 		sem_wait(&gl_catch_limite);
 		pthread_mutex_lock(&gl_catch_queue_lock);
 
+		log_info(extense_logger, "Encolando el mensaje CATCH");
 		queue_push(gl_catch_pokemon_queue, mensaje_a_guardar);
+		log_info(extense_logger, "Mensaje CATCH encolado");
 
 		pthread_mutex_unlock(&gl_catch_queue_lock);
 		sem_post(&gl_catch_mensajes);
 
-		devolver_id(cliente_fd, mensaje_a_guardar->id);
+		devolver_id(cliente_fd, mensaje_a_guardar->id, extense_logger);
 
 		close(cliente_fd);
 		break;
 	case CAUGHT: ;
-		t_caught* caught_msg = recibir_caught(cliente_fd, &size);
+		log_info(extense_logger, "Codigo de operacion recibido de %i corresponde a un CAUGHT", cliente_fd);
+		t_caught* caught_msg = recibir_caught(cliente_fd, &size, extense_logger);
 
 		mensaje_a_guardar->mensaje = (void*) caught_msg;
 
 		sem_wait(&gl_caught_limite);
 		pthread_mutex_lock(&gl_caught_queue_lock);
 
+		log_info(extense_logger, "Encolando el mensaje CAUGHT");
 		queue_push(gl_caught_pokemon_queue, mensaje_a_guardar);
+		log_info(extense_logger, "Mensaje CAUGHT encolado");
 
 		pthread_mutex_unlock(&gl_caught_queue_lock);
 		sem_post(&gl_caught_mensajes);
 
-		devolver_id(cliente_fd, mensaje_a_guardar->id);
+		devolver_id(cliente_fd, mensaje_a_guardar->id, extense_logger);
 
 		close(cliente_fd);
 		break;
 	case SUSCRIPCION: ;
-		uint32_t id_cola = recibir_suscripcion(cliente_fd);
+		log_info(extense_logger, "Codigo de operacion recibido de %i corresponse a un SUSCRIPCION", cliente_fd);
+		uint32_t id_cola = recibir_suscripcion(cliente_fd, extense_logger);
 
 		switch(id_cola) {
 		case NEW_ID: ;
+			log_info(extense_logger, "Id de cola recibido de %i corresponde a la cola de NEW", cliente_fd);
+			log_info(extense_logger, "Agregando en la lista de suscriptores de la cola de NEW al modulo GAME BOY");
 			pthread_mutex_lock(&gl_new_list_lock);
 			list_add(gl_new_suscriptores, (void *) &INFO_GAME_BOY);
 			pthread_mutex_unlock(&gl_new_list_lock);
+			log_info(extense_logger, "Modulo GAME BOY agregado correctamente en la loca de NEW");
 			break;
 		case APPEARED_ID: ;
+			log_info(extense_logger, "Id de cola recibido de %i corresponde a la cola de APPEARED", cliente_fd);
+			log_info(extense_logger, "Agregando en la lista de suscriptores de la cola de APPEARED al modulo GAME BOY");
 			pthread_mutex_lock(&gl_appeared_list_lock);
 			list_add(gl_appeared_suscriptores, (void *) &INFO_GAME_BOY);
 			pthread_mutex_unlock(&gl_appeared_list_lock);
+			log_info(extense_logger, "Modulo GAME BOY agregado correctamente en la loca de APPEARED");
 			break;
 		case CATCH_ID: ;
+			log_info(extense_logger, "Id de cola recibido de %i corresponde a la cola de CATCH", cliente_fd);
+			log_info(extense_logger, "Agregando en la lista de suscriptores de la cola de CATCH al modulo GAME BOY");
 			pthread_mutex_lock(&gl_catch_list_lock);
 			list_add(gl_catch_suscriptores, (void *) &INFO_GAME_BOY);
 			pthread_mutex_unlock(&gl_catch_list_lock);
+			log_info(extense_logger, "Modulo GAME BOY agregado correctamente en la loca de CATCH");
 			break;
 		case CAUGHT_ID: ;
+			log_info(extense_logger, "Id de cola recibido de %i corresponde a la cola de CAUGHT", cliente_fd);
+			log_info(extense_logger, "Agregando en la lista de suscriptores de la cola de CAUGHT al modulo GAME BOY");
 			pthread_mutex_lock(&gl_caught_list_lock);
 			list_add(gl_caught_suscriptores, (void *) &INFO_GAME_BOY);
 			pthread_mutex_unlock(&gl_caught_list_lock);
+			log_info(extense_logger, "Modulo GAME BOY agregado correctamente en la loca de CAUGHT");
 			break;
 		case GET_ID: ;
+			log_info(extense_logger, "Id de cola recibido de %i corresponde a la cola de GET", cliente_fd);
+			log_info(extense_logger, "Agregando en la lista de suscriptores de la cola de GET al modulo GAME BOY");
 			pthread_mutex_lock(&gl_get_list_lock);
 			list_add(gl_get_suscriptores, (void *) &INFO_GAME_BOY);
 			pthread_mutex_unlock(&gl_get_list_lock);
+			log_info(extense_logger, "Modulo GAME BOY agregado correctamente en la loca de GET");
 			break;
 		case LOCALIZED_ID: ;
+			log_info(extense_logger, "Id de cola recibido de %i corresponde a la cola de LOCALIZED", cliente_fd);
+			log_info(extense_logger, "Agregando en la lista de suscriptores de la cola de LOCALIZED al modulo GAME BOY");
 			pthread_mutex_lock(&gl_localized_list_lock);
 			list_add(gl_localized_suscriptores, (void *) &INFO_GAME_BOY);
 			pthread_mutex_unlock(&gl_localized_list_lock);
+			log_info(extense_logger, "Modulo GAME BOY agregado correctamente en la loca de LOCALIZED");
 			break;
 		}
 
@@ -164,8 +201,12 @@ void procesar_request(int cod_op, int cliente_fd) {
 
 void atender_cliente(int* socket) {
 	int cod_op;
-	if(recv(*socket, &cod_op, sizeof(int), MSG_WAITALL) == -1)
+	log_info(extense_logger, "Recibiendo codigo de operacion de socket %i", *socket);
+	if(recv(*socket, &cod_op, sizeof(int), MSG_WAITALL) == -1) {
 		cod_op = -1;
+		log_error(extense_logger, "Hubo un problema recibiendo codigo de operacion de socket %i", *socket);
+	}
+	log_info(extense_logger, "Codigo de operacion de socket %i recibido: %i", *socket, cod_op);
 	procesar_request(cod_op, *socket);
 }
 
@@ -176,6 +217,8 @@ void esperar_cliente(int socket_servidor) {
 
 	int socket_cliente = accept(socket_servidor, (void*) &dir_cliente, &tam_direccion);
 
+	log_info(extense_logger, "Socket cliente %i aceptado", socket_cliente);
+
 	pthread_t thread;
 
 	pthread_create(&thread, NULL, (void*) atender_cliente, &socket_cliente);
@@ -184,12 +227,14 @@ void esperar_cliente(int socket_servidor) {
 
 void* esperar_clientes(void* socket_servidor) {
 	int socket = (int) socket_servidor;
+	log_info(extense_logger, "Esperando clientes en socket %i", socket);
 	while(1) {
 		esperar_cliente(socket);
 	}
 }
 
 void* atender_new(void* args) {
+	log_info(extense_logger, "Atendiendo cola NEW");
 	while (1) {
 		sem_wait(&gl_new_mensajes);
 		pthread_mutex_lock(&gl_new_queue_lock);
@@ -198,7 +243,11 @@ void* atender_new(void* args) {
 
 		pthread_mutex_unlock(&gl_new_queue_lock);
 
+		log_info(extense_logger, "Atendiendo mensaje NEW con id %i", primer_elemento->id);
+
 		atender_mensaje_new(primer_elemento);
+
+		log_info(extense_logger, "Eliminando mensaje NEW con id %i", primer_elemento->id);
 
 		pthread_mutex_lock(&gl_new_queue_lock);
 
@@ -209,6 +258,8 @@ void* atender_new(void* args) {
 
 		t_new* mensaje_a_eliminar = (t_new*) elemento_a_eliminar->mensaje;
 
+		log_info(extense_logger, "Eliminado mensaje NEW con id %i", primer_elemento->id);
+
 		free(mensaje_a_eliminar->pokemon);
 		free(mensaje_a_eliminar);
 		free(elemento_a_eliminar);
@@ -216,6 +267,7 @@ void* atender_new(void* args) {
 }
 
 void* atender_appeared(void* args) {
+	log_info(extense_logger, "Atendiendo cola APPEARED");
 	while (1) {
 		sem_wait(&gl_appeared_mensajes);
 		pthread_mutex_lock(&gl_appeared_queue_lock);
@@ -224,7 +276,11 @@ void* atender_appeared(void* args) {
 
 		pthread_mutex_unlock(&gl_appeared_queue_lock);
 
+		log_info(extense_logger, "Atendiendo mensaje APPEARED con id %i", primer_elemento->id);
+
 		atender_mensaje_appeared(primer_elemento);
+
+		log_info(extense_logger, "Eliminando mensaje APPEARED con id %i", primer_elemento->id);
 
 		pthread_mutex_lock(&gl_appeared_queue_lock);
 
@@ -235,6 +291,8 @@ void* atender_appeared(void* args) {
 
 		t_appeared* mensaje_a_eliminar = (t_appeared*) elemento_a_eliminar->mensaje;
 
+		log_info(extense_logger, "Eliminado mensaje APPEARED con id %i", primer_elemento->id);
+
 		free(mensaje_a_eliminar->pokemon);
 		free(mensaje_a_eliminar);
 		free(elemento_a_eliminar);
@@ -242,6 +300,7 @@ void* atender_appeared(void* args) {
 }
 
 void* atender_catch(void* args) {
+	log_info(extense_logger, "Atendiendo cola CATCH");
 	while (1) {
 		sem_wait(&gl_catch_mensajes);
 		pthread_mutex_lock(&gl_catch_queue_lock);
@@ -250,7 +309,11 @@ void* atender_catch(void* args) {
 
 		pthread_mutex_unlock(&gl_catch_queue_lock);
 
+		log_info(extense_logger, "Atendiendo mensaje CATCH con id %i", primer_elemento->id);
+
 		atender_mensaje_catch(primer_elemento);
+
+		log_info(extense_logger, "Eliminando mensaje CATCH con id %i", primer_elemento->id);
 
 		pthread_mutex_lock(&gl_catch_queue_lock);
 
@@ -261,6 +324,8 @@ void* atender_catch(void* args) {
 
 		t_catch* mensaje_a_eliminar = (t_catch*) elemento_a_eliminar->mensaje;
 
+		log_info(extense_logger, "Eliminado mensaje CATCH con id %i", primer_elemento->id);
+
 		free(mensaje_a_eliminar->pokemon);
 		free(mensaje_a_eliminar);
 		free(elemento_a_eliminar);
@@ -268,6 +333,7 @@ void* atender_catch(void* args) {
 }
 
 void* atender_caught(void* args) {
+	log_info(extense_logger, "Atendiendo cola CAUGHT");
 	while (1) {
 		sem_wait(&gl_caught_mensajes);
 		pthread_mutex_lock(&gl_caught_queue_lock);
@@ -276,7 +342,11 @@ void* atender_caught(void* args) {
 
 		pthread_mutex_unlock(&gl_caught_queue_lock);
 
+		log_info(extense_logger, "Atendiendo mensaje CAUGHT con id %i", primer_elemento->id);
+
 		atender_mensaje_caught(primer_elemento);
+
+		log_info(extense_logger, "Eliminando mensaje CAUGHT con id %i", primer_elemento->id);
 
 		pthread_mutex_lock(&gl_caught_queue_lock);
 
@@ -287,12 +357,15 @@ void* atender_caught(void* args) {
 
 		t_caught* mensaje_a_eliminar = (t_caught*) elemento_a_eliminar->mensaje;
 
+		log_info(extense_logger, "Eliminado mensaje CAUGHT con id %i", primer_elemento->id);
+
 		free(mensaje_a_eliminar);
 		free(elemento_a_eliminar);
 	}
 }
 
 void* atender_get(void* args) {
+	log_info(extense_logger, "Atendiendo cola GET");
 	while (1) {
 		sem_wait(&gl_get_mensajes);
 		pthread_mutex_lock(&gl_get_queue_lock);
@@ -301,7 +374,11 @@ void* atender_get(void* args) {
 
 		pthread_mutex_unlock(&gl_get_queue_lock);
 
+		log_info(extense_logger, "Atendiendo mensaje GET con id %i", primer_elemento->id);
+
 		atender_mensaje_get(primer_elemento);
+
+		log_info(extense_logger, "Eliminando mensaje GET con id %i", primer_elemento->id);
 
 		pthread_mutex_lock(&gl_get_queue_lock);
 
@@ -312,6 +389,8 @@ void* atender_get(void* args) {
 
 		t_get* mensaje_a_eliminar = (t_get*) elemento_a_eliminar->mensaje;
 
+		log_info(extense_logger, "Eliminado mensaje GET con id %i", primer_elemento->id);
+
 		free(mensaje_a_eliminar->pokemon);
 		free(mensaje_a_eliminar);
 		free(elemento_a_eliminar);
@@ -319,6 +398,7 @@ void* atender_get(void* args) {
 }
 
 void* atender_localized(void* args) {
+	log_info(extense_logger, "Atendiendo cola LOCALIZED");
 	while (1) {
 		sem_wait(&gl_localized_mensajes);
 		pthread_mutex_lock(&gl_localized_queue_lock);
@@ -327,7 +407,11 @@ void* atender_localized(void* args) {
 
 		pthread_mutex_unlock(&gl_localized_queue_lock);
 
+		log_info(extense_logger, "Atendiendo mensaje LOCALIZED con id %i", primer_elemento->id);
+
 		atender_mensaje_localized(primer_elemento);
+
+		log_info(extense_logger, "Eliminando mensaje LOCALIZED con id %i", primer_elemento->id);
 
 		pthread_mutex_lock(&gl_localized_queue_lock);
 
@@ -337,6 +421,8 @@ void* atender_localized(void* args) {
 		sem_post(&gl_localized_limite);
 
 		t_localized* mensaje_a_eliminar = (t_localized*) elemento_a_eliminar->mensaje;
+
+		log_info(extense_logger, "Eliminado mensaje LOCALIZED con id %i", primer_elemento->id);
 
 		free(mensaje_a_eliminar->pokemon);
 		list_destroy(mensaje_a_eliminar->l_coordenadas);
@@ -568,10 +654,10 @@ void mandar_catch(void* catch_mandable) {
 void mandar_caught(void* caught_mandable) {
 	mandable_struct* argumento_caught = (mandable_struct*) caught_mandable;
 
-	int socket_cliente = crear_conexion(argumento_caught->info->ip, argumento_caught->info->puerto);
-
 	uint32_t bytes;
 	void* flujo = serializar_caught(argumento_caught, &bytes);
+
+	int socket_cliente = crear_conexion(argumento_caught->info->ip, argumento_caught->info->puerto);
 
 	if (send(socket_cliente, flujo, bytes, 0) == -1){
 		// ver que onda el log
@@ -843,6 +929,10 @@ int main(void) {
 	puerto = config_get_string_value(config, "PUERTO");
 	log_info(extense_logger, "El puerto es: %s", puerto);
 
+	// leemos de config ip y puerto de cada modulo
+
+	leer_info_modulos();
+
 	inicializar_colas();
 
 	inicializar_semaforos_colas();
@@ -853,13 +943,13 @@ int main(void) {
 
 	log_info(extense_logger, "Generador id creado");
 
-	// leemos de config ip y puerto de cada modulo
-
-	leer_info_modulos();
-
 	// Levantamos el servidor en la ip y el puerto definidos en config
 
+	log_info(extense_logger, "Levantando servidor");
+
 	int socket_servidor = iniciar_servidor(ip, puerto);
+
+	log_info(extense_logger, "Servidor levantado");
 
 	// Iniciamos un hilo para ir escuchando a los clientes
 	// Tiene que estar vivo mientras que el broker este funcionando. Entonces corresponde detach?
@@ -899,7 +989,7 @@ int main(void) {
 }
 
 void inicializar_colas(void) {
-	log_info(extense_logger, "Creando colas");
+	log_info(extense_logger, "Iniciando colas");
 
 	gl_new_pokemon_queue = queue_create();
 	gl_appeared_pokemon_queue = queue_create();
@@ -908,9 +998,9 @@ void inicializar_colas(void) {
 	gl_get_pokemon_queue = queue_create();
 	gl_localized_pokemon_queue = queue_create();
 
-	log_info(extense_logger, "Colas creadas");
+	log_info(extense_logger, "Colas iniciadas");
 
-	log_info(extense_logger, "Creando listas de suscriptores");
+	log_info(extense_logger, "Iniciando listas de suscriptores");
 
 	gl_new_suscriptores = list_create();
 	gl_appeared_suscriptores = list_create();
@@ -919,7 +1009,34 @@ void inicializar_colas(void) {
 	gl_get_suscriptores = list_create();
 	gl_localized_suscriptores = list_create();
 
-	log_info(extense_logger, "Listas de suscriptores creadas");
+	log_info(extense_logger, "Listas de suscriptores iniciadas");
+
+	// AGREGAR SUSCRIPTORES
+
+	log_info(extense_logger, "Llenando listas de suscriptores");
+
+	list_add(gl_new_suscriptores, (void *) &INFO_GAME_CARD);
+	log_info(extense_logger, "Lista de suscriptores de new");
+	log_info(extense_logger, "GAME CARD ip: %s puerto: %s", INFO_GAME_CARD.ip, INFO_GAME_CARD.puerto);
+	list_add(gl_appeared_suscriptores, (void *) &INFO_TEAM);
+	log_info(extense_logger, "Lista de suscriptores de appeared");
+	log_info(extense_logger, "TEAM ip: %s puerto: %s", INFO_TEAM.ip, INFO_TEAM.puerto);
+	list_add(gl_catch_suscriptores, (void *) &INFO_GAME_CARD);
+	log_info(extense_logger, "Lista de suscriptores de catch");
+	log_info(extense_logger, "GAME CARD ip: %s puerto: %s", INFO_GAME_CARD.ip, INFO_GAME_CARD.puerto);
+	list_add(gl_caught_suscriptores, (void *) &INFO_TEAM);
+	log_info(extense_logger, "Lista de suscriptores de caught");
+	log_info(extense_logger, "TEAM ip: %s puerto: %s", INFO_TEAM.ip, INFO_TEAM.puerto);
+	list_add(gl_get_suscriptores, (void *) &INFO_GAME_CARD);
+	log_info(extense_logger, "Lista de suscriptores de get");
+	log_info(extense_logger, "GAME CARD ip: %s puerto: %s", INFO_GAME_CARD.ip, INFO_GAME_CARD.puerto);
+	list_add(gl_localized_suscriptores, (void *) &INFO_TEAM);
+	log_info(extense_logger, "Lista de suscriptores de localized");
+	log_info(extense_logger, "TEAM ip: %s puerto: %s", INFO_TEAM.ip, INFO_TEAM.puerto);
+
+	log_info(extense_logger, "Listas de suscriptores llenas");
+
+	log_info(extense_logger, "Iniciando estructuras de colas");
 
 	NEW_STRUCT.cola = gl_new_pokemon_queue;
 	APPEARED_STRUCT.cola = gl_appeared_pokemon_queue;
