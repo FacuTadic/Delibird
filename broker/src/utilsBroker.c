@@ -26,7 +26,11 @@ int iniciar_servidor(char* IP, char* PUERTO) {
 
 	listen(socket_servidor, SOMAXCONN);
 
+	printf("1\n");
+
     freeaddrinfo(servinfo);
+
+    printf("1\n");
 
     return socket_servidor;
 }

@@ -847,7 +847,11 @@ int main(void) {
 
 	inicializar_semaforos_colas();
 
+	log_info(extense_logger, "Creando generador id");
+
 	crea_generador_id();
+
+	log_info(extense_logger, "Generador id creado");
 
 	// leemos de config ip y puerto de cada modulo
 
@@ -895,6 +899,8 @@ int main(void) {
 }
 
 void inicializar_colas(void) {
+	log_info(extense_logger, "Creando colas");
+
 	gl_new_pokemon_queue = queue_create();
 	gl_appeared_pokemon_queue = queue_create();
 	gl_catch_pokemon_queue = queue_create();
@@ -902,12 +908,18 @@ void inicializar_colas(void) {
 	gl_get_pokemon_queue = queue_create();
 	gl_localized_pokemon_queue = queue_create();
 
+	log_info(extense_logger, "Colas creadas");
+
+	log_info(extense_logger, "Creando listas de suscriptores");
+
 	gl_new_suscriptores = list_create();
 	gl_appeared_suscriptores = list_create();
 	gl_catch_suscriptores = list_create();
 	gl_caught_suscriptores = list_create();
 	gl_get_suscriptores = list_create();
 	gl_localized_suscriptores = list_create();
+
+	log_info(extense_logger, "Listas de suscriptores creadas");
 
 	NEW_STRUCT.cola = gl_new_pokemon_queue;
 	APPEARED_STRUCT.cola = gl_appeared_pokemon_queue;
@@ -930,7 +942,7 @@ void inicializar_colas(void) {
 	GET_STRUCT.id = GET_ID;
 	LOCALIZED_STRUCT.id = LOCALIZED_ID;
 
-	log_info(extense_logger, "Colas iniciadas");
+	log_info(extense_logger, "Estructuras de colas iniciadas");
 }
 
 t_log* iniciar_logger(char* log_file) {
@@ -944,12 +956,16 @@ t_config* leer_config() {
 }
 
 void leer_info_modulos(void) {
+	log_info(extense_logger, "Iniciando estructuras de modulos");
+
 	INFO_TEAM.ip = config_get_string_value(config, "TEAM_IP");
 	INFO_TEAM.puerto = config_get_string_value(config, "TEAM_PUERTO");
 	INFO_GAME_BOY.ip = config_get_string_value(config, "GAME_BOY_IP");
 	INFO_GAME_BOY.puerto = config_get_string_value(config, "GAME_BOY_PUERTO");
 	INFO_GAME_CARD.ip = config_get_string_value(config, "GAME_CARD_IP");
 	INFO_GAME_CARD.puerto = config_get_string_value(config, "GAME_CARD_PUERTO");
+
+	log_info(extense_logger, "Estructuras de modulos iniciadas");
 }
 
 void inicializar_semaforos_colas(void) {
@@ -960,12 +976,18 @@ void inicializar_semaforos_colas(void) {
 	int limite_cola_get;
 	int limite_cola_localized;
 
+	log_info(extense_logger, "Iniciando limites de colas");
+
 	limite_cola_new = config_get_int_value(config, "LIMITE_COLA_NEW");
 	limite_cola_appeared = config_get_int_value(config, "LIMITE_COLA_APPEARED");
 	limite_cola_catch = config_get_int_value(config, "LIMITE_COLA_CATCH");
 	limite_cola_caught = config_get_int_value(config, "LIMITE_COLA_CAUGHT");
 	limite_cola_get = config_get_int_value(config, "LIMITE_COLA_GET");
 	limite_cola_localized = config_get_int_value(config, "LIMITE_COLA_LOCALIZED");
+
+	log_info(extense_logger, "Limites de colas iniciadas");
+
+	log_info(extense_logger, "Iniciando semaforos de limite");
 
 	sem_init(&gl_new_limite, 0, limite_cola_new);
 	sem_init(&gl_appeared_limite, 0, limite_cola_appeared);
@@ -974,12 +996,20 @@ void inicializar_semaforos_colas(void) {
 	sem_init(&gl_get_limite, 0, limite_cola_get);
 	sem_init(&gl_localized_limite, 0, limite_cola_localized);
 
+	log_info(extense_logger, "Semaforos de limite iniciados");
+
+	log_info(extense_logger, "Iniciando semaforos de mensajes");
+
 	sem_init(&gl_new_mensajes, 0, 0);
 	sem_init(&gl_appeared_mensajes, 0, 0);
 	sem_init(&gl_catch_mensajes, 0, 0);
 	sem_init(&gl_caught_mensajes, 0, 0);
 	sem_init(&gl_get_mensajes, 0, 0);
 	sem_init(&gl_localized_mensajes, 0, 0);
+
+	log_info(extense_logger, "Semaforos de mensajes iniciados");
+
+	log_info(extense_logger, "Iniciando semaforos de colas");
 
 	pthread_mutex_init(&gl_new_queue_lock, NULL);
 	pthread_mutex_init(&gl_appeared_queue_lock, NULL);
@@ -988,12 +1018,18 @@ void inicializar_semaforos_colas(void) {
 	pthread_mutex_init(&gl_get_queue_lock, NULL);
 	pthread_mutex_init(&gl_localized_queue_lock, NULL);
 
+	log_info(extense_logger, "Semaforos de colas iniciados");
+
+	log_info(extense_logger, "Iniciando semaforos de listas");
+
 	pthread_mutex_init(&gl_new_list_lock, NULL);
 	pthread_mutex_init(&gl_appeared_list_lock, NULL);
 	pthread_mutex_init(&gl_catch_list_lock, NULL);
 	pthread_mutex_init(&gl_caught_list_lock, NULL);
 	pthread_mutex_init(&gl_get_list_lock, NULL);
 	pthread_mutex_init(&gl_localized_list_lock, NULL);
+
+	log_info(extense_logger, "Semaforos de listas iniciados");
 }
 
 void terminar_programa(void) {
