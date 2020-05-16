@@ -1,0 +1,325 @@
+[INFO] 12:33:37:860 Broker/(26638:26638): logger extenso iniciado
+[INFO] 12:33:37:860 Broker/(26638:26638): logger de la catedra iniciado
+[INFO] 12:33:37:860 Broker/(26638:26638): La IP es: 127.0.0.1
+[INFO] 12:33:37:860 Broker/(26638:26638): El puerto es: 4444
+[INFO] 12:33:37:860 Broker/(26638:26638): Creando colas
+[INFO] 12:33:37:860 Broker/(26638:26638): Colas creadas
+[INFO] 12:33:37:860 Broker/(26638:26638): Creando listas de suscriptores
+[INFO] 12:33:37:860 Broker/(26638:26638): Listas de suscriptores creadas
+[INFO] 12:33:37:860 Broker/(26638:26638): Estructuras de colas iniciadas
+[INFO] 12:33:37:860 Broker/(26638:26638): Iniciando limites de colas
+[INFO] 12:33:37:860 Broker/(26638:26638): Limites de colas iniciadas
+[INFO] 12:33:37:860 Broker/(26638:26638): Iniciando semaforos de limite
+[INFO] 12:33:37:860 Broker/(26638:26638): Semaforos de limite iniciados
+[INFO] 12:33:37:860 Broker/(26638:26638): Iniciando semaforos de mensajes
+[INFO] 12:33:37:860 Broker/(26638:26638): Semaforos de mensajes iniciados
+[INFO] 12:33:37:860 Broker/(26638:26638): Iniciando semaforos de colas
+[INFO] 12:33:37:860 Broker/(26638:26638): Semaforos de colas iniciados
+[INFO] 12:33:37:860 Broker/(26638:26638): Iniciando semaforos de listas
+[INFO] 12:33:37:860 Broker/(26638:26638): Semaforos de listas iniciados
+[INFO] 12:33:37:860 Broker/(26638:26638): Creando generador id
+[INFO] 12:33:37:860 Broker/(26638:26638): Generador id creado
+[INFO] 12:33:37:860 Broker/(26638:26638): Iniciando estructuras de modulos
+[INFO] 12:33:37:860 Broker/(26638:26638): Estructuras de modulos iniciadas
+[INFO] 12:33:53:76 Broker/(26663:26663): logger extenso iniciado
+[INFO] 12:33:53:77 Broker/(26663:26663): logger de la catedra iniciado
+[INFO] 12:33:53:77 Broker/(26663:26663): La IP es: 127.0.0.1
+[INFO] 12:33:53:77 Broker/(26663:26663): El puerto es: 4444
+[INFO] 12:33:53:77 Broker/(26663:26663): Creando colas
+[INFO] 12:33:53:77 Broker/(26663:26663): Colas creadas
+[INFO] 12:33:53:77 Broker/(26663:26663): Creando listas de suscriptores
+[INFO] 12:33:53:77 Broker/(26663:26663): Listas de suscriptores creadas
+[INFO] 12:33:53:77 Broker/(26663:26663): Estructuras de colas iniciadas
+[INFO] 12:33:53:77 Broker/(26663:26663): Iniciando limites de colas
+[INFO] 12:33:53:77 Broker/(26663:26663): Limites de colas iniciadas
+[INFO] 12:33:53:77 Broker/(26663:26663): Iniciando semaforos de limite
+[INFO] 12:33:53:77 Broker/(26663:26663): Semaforos de limite iniciados
+[INFO] 12:33:53:77 Broker/(26663:26663): Iniciando semaforos de mensajes
+[INFO] 12:33:53:77 Broker/(26663:26663): Semaforos de mensajes iniciados
+[INFO] 12:33:53:77 Broker/(26663:26663): Iniciando semaforos de colas
+[INFO] 12:33:53:77 Broker/(26663:26663): Semaforos de colas iniciados
+[INFO] 12:33:53:77 Broker/(26663:26663): Iniciando semaforos de listas
+[INFO] 12:33:53:77 Broker/(26663:26663): Semaforos de listas iniciados
+[INFO] 12:33:53:77 Broker/(26663:26663): Creando generador id
+[INFO] 12:33:53:77 Broker/(26663:26663): Generador id creado
+[INFO] 12:33:53:77 Broker/(26663:26663): Iniciando estructuras de modulos
+[INFO] 12:33:53:77 Broker/(26663:26663): Estructuras de modulos iniciadas
+[INFO] 12:42:51:142 Broker/(27004:27004): logger extenso iniciado
+[INFO] 12:42:51:143 Broker/(27004:27004): logger de la catedra iniciado
+[INFO] 12:42:51:143 Broker/(27004:27004): La IP es: 127.0.0.1
+[INFO] 12:42:51:143 Broker/(27004:27004): El puerto es: 4444
+[INFO] 12:42:51:143 Broker/(27004:27004): pruebita 10
+[INFO] 12:42:51:143 Broker/(27004:27004): Creando colas
+[INFO] 12:42:51:143 Broker/(27004:27004): Colas creadas
+[INFO] 12:42:51:143 Broker/(27004:27004): Creando listas de suscriptores
+[INFO] 12:42:51:143 Broker/(27004:27004): Listas de suscriptores creadas
+[INFO] 12:42:51:143 Broker/(27004:27004): Estructuras de colas iniciadas
+[INFO] 12:42:51:143 Broker/(27004:27004): Iniciando limites de colas
+[INFO] 12:42:51:143 Broker/(27004:27004): Limites de colas iniciadas
+[INFO] 12:42:51:143 Broker/(27004:27004): Iniciando semaforos de limite
+[INFO] 12:42:51:143 Broker/(27004:27004): Semaforos de limite iniciados
+[INFO] 12:42:51:143 Broker/(27004:27004): Iniciando semaforos de mensajes
+[INFO] 12:42:51:143 Broker/(27004:27004): Semaforos de mensajes iniciados
+[INFO] 12:42:51:143 Broker/(27004:27004): Iniciando semaforos de colas
+[INFO] 12:42:51:143 Broker/(27004:27004): Semaforos de colas iniciados
+[INFO] 12:42:51:143 Broker/(27004:27004): Iniciando semaforos de listas
+[INFO] 12:42:51:143 Broker/(27004:27004): Semaforos de listas iniciados
+[INFO] 12:42:51:143 Broker/(27004:27004): Creando generador id
+[INFO] 12:42:51:143 Broker/(27004:27004): Generador id creado
+[INFO] 12:42:51:143 Broker/(27004:27004): Iniciando estructuras de modulos
+[INFO] 12:42:51:143 Broker/(27004:27004): Estructuras de modulos iniciadas
+[INFO] 12:43:32:381 Broker/(27054:27054): logger extenso iniciado
+[INFO] 12:43:32:381 Broker/(27054:27054): logger de la catedra iniciado
+[INFO] 12:43:32:381 Broker/(27054:27054): La IP es: 127.0.0.1
+[INFO] 12:43:32:381 Broker/(27054:27054): El puerto es: 4444
+[INFO] 12:43:32:381 Broker/(27054:27054): pruebita 10
+[INFO] 12:43:32:381 Broker/(27054:27054): Creando colas
+[INFO] 12:43:32:381 Broker/(27054:27054): Colas creadas
+[INFO] 12:43:32:381 Broker/(27054:27054): Creando listas de suscriptores
+[INFO] 12:43:32:381 Broker/(27054:27054): Listas de suscriptores creadas
+[INFO] 12:43:32:382 Broker/(27054:27054): Estructuras de colas iniciadas
+[INFO] 12:43:32:382 Broker/(27054:27054): Iniciando limites de colas
+[INFO] 12:43:32:382 Broker/(27054:27054): Limites de colas iniciadas
+[INFO] 12:43:32:382 Broker/(27054:27054): Iniciando semaforos de limite
+[INFO] 12:43:32:382 Broker/(27054:27054): Semaforos de limite iniciados
+[INFO] 12:43:32:382 Broker/(27054:27054): Iniciando semaforos de mensajes
+[INFO] 12:43:32:382 Broker/(27054:27054): Semaforos de mensajes iniciados
+[INFO] 12:43:32:382 Broker/(27054:27054): Iniciando semaforos de colas
+[INFO] 12:43:32:382 Broker/(27054:27054): Semaforos de colas iniciados
+[INFO] 12:43:32:382 Broker/(27054:27054): Iniciando semaforos de listas
+[INFO] 12:43:32:382 Broker/(27054:27054): Semaforos de listas iniciados
+[INFO] 12:43:32:382 Broker/(27054:27054): Creando generador id
+[INFO] 12:43:32:388 Broker/(27054:27054): Generador id creado
+[INFO] 12:43:32:388 Broker/(27054:27054): Iniciando estructuras de modulos
+[INFO] 12:43:32:388 Broker/(27054:27054): Estructuras de modulos iniciadas
+[INFO] 12:44:29:236 Broker/(22669:22669): logger extenso iniciado
+[INFO] 12:44:29:238 Broker/(22669:22669): logger de la catedra iniciado
+[INFO] 12:44:29:238 Broker/(22669:22669): La IP es: 127.0.0.1
+[INFO] 12:44:29:238 Broker/(22669:22669): El puerto es: 4444
+[INFO] 12:44:29:238 Broker/(22669:22669): pruebita 10
+[INFO] 12:44:29:238 Broker/(22669:22669): pruebita bis 10 10
+[INFO] 12:44:29:238 Broker/(22669:22669): Creando colas
+[INFO] 12:44:29:241 Broker/(22669:22669): Colas creadas
+[INFO] 12:44:29:241 Broker/(22669:22669): Creando listas de suscriptores
+[INFO] 12:44:29:242 Broker/(22669:22669): Listas de suscriptores creadas
+[INFO] 12:44:29:242 Broker/(22669:22669): Estructuras de colas iniciadas
+[INFO] 12:44:29:242 Broker/(22669:22669): Iniciando limites de colas
+[INFO] 12:44:29:242 Broker/(22669:22669): Limites de colas iniciadas
+[INFO] 12:44:29:242 Broker/(22669:22669): Iniciando semaforos de limite
+[INFO] 12:44:29:242 Broker/(22669:22669): Semaforos de limite iniciados
+[INFO] 12:44:29:242 Broker/(22669:22669): Iniciando semaforos de mensajes
+[INFO] 12:44:29:243 Broker/(22669:22669): Semaforos de mensajes iniciados
+[INFO] 12:44:29:243 Broker/(22669:22669): Iniciando semaforos de colas
+[INFO] 12:44:29:243 Broker/(22669:22669): Semaforos de colas iniciados
+[INFO] 12:44:29:243 Broker/(22669:22669): Iniciando semaforos de listas
+[INFO] 12:44:29:246 Broker/(22669:22669): Semaforos de listas iniciados
+[INFO] 12:44:29:246 Broker/(22669:22669): Creando generador id
+[INFO] 12:44:29:246 Broker/(22669:22669): Generador id creado
+[INFO] 12:44:29:246 Broker/(22669:22669): Iniciando estructuras de modulos
+[INFO] 12:44:29:246 Broker/(22669:22669): Estructuras de modulos iniciadas
+[INFO] 13:49:45:766 Broker/(5586:5586): logger extenso iniciado
+[INFO] 13:49:45:766 Broker/(5586:5586): logger de la catedra iniciado
+[INFO] 13:49:45:766 Broker/(5586:5586): La IP es: 127.0.0.1
+[INFO] 13:49:45:767 Broker/(5586:5586): El puerto es: 4444
+[INFO] 13:49:45:767 Broker/(5586:5586): Iniciando estructuras de modulos
+[INFO] 13:49:45:767 Broker/(5586:5586): Estructuras de modulos iniciadas
+[INFO] 13:49:45:767 Broker/(5586:5586): Iniciando colas
+[INFO] 13:49:45:770 Broker/(5586:5586): Colas iniciadas
+[INFO] 13:49:45:770 Broker/(5586:5586): Iniciando listas de suscriptores
+[INFO] 13:49:45:770 Broker/(5586:5586): Listas de suscriptores iniciadas
+[INFO] 13:49:45:770 Broker/(5586:5586): Llenando listas de suscriptores
+[INFO] 13:49:45:770 Broker/(5586:5586): Lista de suscriptores de new
+[INFO] 13:49:45:770 Broker/(5586:5586): GAME CARD ip: 127.0.0.1 puerto: 4447
+[INFO] 13:49:45:770 Broker/(5586:5586): Lista de suscriptores de appeared
+[INFO] 13:49:45:770 Broker/(5586:5586): TEAM ip: 127.0.0.1 puerto: 4445
+[INFO] 13:49:45:770 Broker/(5586:5586): Lista de suscriptores de catch
+[INFO] 13:49:45:770 Broker/(5586:5586): GAME CARD ip: 127.0.0.1 puerto: 4447
+[INFO] 13:49:45:770 Broker/(5586:5586): Lista de suscriptores de caught
+[INFO] 13:49:45:770 Broker/(5586:5586): TEAM ip: 127.0.0.1 puerto: 4445
+[INFO] 13:49:45:770 Broker/(5586:5586): Lista de suscriptores de get
+[INFO] 13:49:45:770 Broker/(5586:5586): GAME CARD ip: 127.0.0.1 puerto: 4447
+[INFO] 13:49:45:770 Broker/(5586:5586): Lista de suscriptores de localized
+[INFO] 13:49:45:770 Broker/(5586:5586): TEAM ip: 127.0.0.1 puerto: 4445
+[INFO] 13:49:45:770 Broker/(5586:5586): Listas de suscriptores llenas
+[INFO] 13:49:45:770 Broker/(5586:5586): Iniciando estructuras de colas
+[INFO] 13:49:45:770 Broker/(5586:5586): Estructuras de colas iniciadas
+[INFO] 13:49:45:770 Broker/(5586:5586): Iniciando limites de colas
+[INFO] 13:49:45:770 Broker/(5586:5586): Limites de colas iniciadas
+[INFO] 13:49:45:770 Broker/(5586:5586): Iniciando semaforos de limite
+[INFO] 13:49:45:770 Broker/(5586:5586): Semaforos de limite iniciados
+[INFO] 13:49:45:770 Broker/(5586:5586): Iniciando semaforos de mensajes
+[INFO] 13:49:45:770 Broker/(5586:5586): Semaforos de mensajes iniciados
+[INFO] 13:49:45:770 Broker/(5586:5586): Iniciando semaforos de colas
+[INFO] 13:49:45:770 Broker/(5586:5586): Semaforos de colas iniciados
+[INFO] 13:49:45:770 Broker/(5586:5586): Iniciando semaforos de listas
+[INFO] 13:49:45:770 Broker/(5586:5586): Semaforos de listas iniciados
+[INFO] 13:49:45:770 Broker/(5586:5586): Creando generador id
+[INFO] 13:49:45:770 Broker/(5586:5586): Generador id creado
+[INFO] 13:49:45:770 Broker/(5586:5586): Levantando servidor
+[INFO] 13:49:45:772 Broker/(5586:5586): Servidor levantado
+[INFO] 13:49:45:776 Broker/(5586:5591): 5591
+[INFO] 13:49:58:885 Broker/(14634:14634): logger extenso iniciado
+[INFO] 13:49:58:898 Broker/(14634:14634): logger de la catedra iniciado
+[INFO] 13:49:58:898 Broker/(14634:14634): La IP es: 127.0.0.1
+[INFO] 13:49:58:898 Broker/(14634:14634): El puerto es: 4444
+[INFO] 13:49:58:899 Broker/(14634:14634): Iniciando estructuras de modulos
+[INFO] 13:49:58:899 Broker/(14634:14634): Estructuras de modulos iniciadas
+[INFO] 13:49:58:900 Broker/(14634:14634): Iniciando colas
+[INFO] 13:49:58:900 Broker/(14634:14634): Colas iniciadas
+[INFO] 13:49:58:900 Broker/(14634:14634): Iniciando listas de suscriptores
+[INFO] 13:49:58:900 Broker/(14634:14634): Listas de suscriptores iniciadas
+[INFO] 13:49:58:900 Broker/(14634:14634): Llenando listas de suscriptores
+[INFO] 13:49:58:900 Broker/(14634:14634): Lista de suscriptores de new
+[INFO] 13:49:58:900 Broker/(14634:14634): GAME CARD ip: 127.0.0.1 puerto: 4447
+[INFO] 13:49:58:900 Broker/(14634:14634): Lista de suscriptores de appeared
+[INFO] 13:49:58:900 Broker/(14634:14634): TEAM ip: 127.0.0.1 puerto: 4445
+[INFO] 13:49:58:900 Broker/(14634:14634): Lista de suscriptores de catch
+[INFO] 13:49:58:900 Broker/(14634:14634): GAME CARD ip: 127.0.0.1 puerto: 4447
+[INFO] 13:49:58:900 Broker/(14634:14634): Lista de suscriptores de caught
+[INFO] 13:49:58:900 Broker/(14634:14634): TEAM ip: 127.0.0.1 puerto: 4445
+[INFO] 13:49:58:900 Broker/(14634:14634): Lista de suscriptores de get
+[INFO] 13:49:58:900 Broker/(14634:14634): GAME CARD ip: 127.0.0.1 puerto: 4447
+[INFO] 13:49:58:900 Broker/(14634:14634): Lista de suscriptores de localized
+[INFO] 13:49:58:900 Broker/(14634:14634): TEAM ip: 127.0.0.1 puerto: 4445
+[INFO] 13:49:58:900 Broker/(14634:14634): Listas de suscriptores llenas
+[INFO] 13:49:58:901 Broker/(14634:14634): Iniciando estructuras de colas
+[INFO] 13:49:58:906 Broker/(14634:14634): Estructuras de colas iniciadas
+[INFO] 13:49:58:906 Broker/(14634:14634): Iniciando limites de colas
+[INFO] 13:49:58:906 Broker/(14634:14634): Limites de colas iniciadas
+[INFO] 13:49:58:906 Broker/(14634:14634): Iniciando semaforos de limite
+[INFO] 13:49:58:906 Broker/(14634:14634): Semaforos de limite iniciados
+[INFO] 13:49:58:906 Broker/(14634:14634): Iniciando semaforos de mensajes
+[INFO] 13:49:58:906 Broker/(14634:14634): Semaforos de mensajes iniciados
+[INFO] 13:49:58:906 Broker/(14634:14634): Iniciando semaforos de colas
+[INFO] 13:49:58:906 Broker/(14634:14634): Semaforos de colas iniciados
+[INFO] 13:49:58:906 Broker/(14634:14634): Iniciando semaforos de listas
+[INFO] 13:49:58:906 Broker/(14634:14634): Semaforos de listas iniciados
+[INFO] 13:49:58:906 Broker/(14634:14634): Creando generador id
+[INFO] 13:49:58:906 Broker/(14634:14634): Generador id creado
+[INFO] 13:49:58:906 Broker/(14634:14634): Levantando servidor
+[INFO] 13:49:58:906 Broker/(14634:14634): Servidor levantado
+[INFO] 13:49:58:909 Broker/(14634:14639): 14639
+[INFO] 13:50:06:279 Broker/(4559:4559): logger extenso iniciado
+[INFO] 13:50:06:284 Broker/(4559:4559): logger de la catedra iniciado
+[INFO] 13:50:06:284 Broker/(4559:4559): La IP es: 127.0.0.1
+[INFO] 13:50:06:284 Broker/(4559:4559): El puerto es: 4444
+[INFO] 13:50:06:285 Broker/(4559:4559): Iniciando estructuras de modulos
+[INFO] 13:50:06:285 Broker/(4559:4559): Estructuras de modulos iniciadas
+[INFO] 13:50:06:285 Broker/(4559:4559): Iniciando colas
+[INFO] 13:50:06:285 Broker/(4559:4559): Colas iniciadas
+[INFO] 13:50:06:285 Broker/(4559:4559): Iniciando listas de suscriptores
+[INFO] 13:50:06:285 Broker/(4559:4559): Listas de suscriptores iniciadas
+[INFO] 13:50:06:285 Broker/(4559:4559): Llenando listas de suscriptores
+[INFO] 13:50:06:285 Broker/(4559:4559): Lista de suscriptores de new
+[INFO] 13:50:06:285 Broker/(4559:4559): GAME CARD ip: 127.0.0.1 puerto: 4447
+[INFO] 13:50:06:285 Broker/(4559:4559): Lista de suscriptores de appeared
+[INFO] 13:50:06:285 Broker/(4559:4559): TEAM ip: 127.0.0.1 puerto: 4445
+[INFO] 13:50:06:285 Broker/(4559:4559): Lista de suscriptores de catch
+[INFO] 13:50:06:285 Broker/(4559:4559): GAME CARD ip: 127.0.0.1 puerto: 4447
+[INFO] 13:50:06:285 Broker/(4559:4559): Lista de suscriptores de caught
+[INFO] 13:50:06:285 Broker/(4559:4559): TEAM ip: 127.0.0.1 puerto: 4445
+[INFO] 13:50:06:285 Broker/(4559:4559): Lista de suscriptores de get
+[INFO] 13:50:06:285 Broker/(4559:4559): GAME CARD ip: 127.0.0.1 puerto: 4447
+[INFO] 13:50:06:286 Broker/(4559:4559): Lista de suscriptores de localized
+[INFO] 13:50:06:287 Broker/(4559:4559): TEAM ip: 127.0.0.1 puerto: 4445
+[INFO] 13:50:06:287 Broker/(4559:4559): Listas de suscriptores llenas
+[INFO] 13:50:06:287 Broker/(4559:4559): Iniciando estructuras de colas
+[INFO] 13:50:06:287 Broker/(4559:4559): Estructuras de colas iniciadas
+[INFO] 13:50:06:287 Broker/(4559:4559): Iniciando limites de colas
+[INFO] 13:50:06:287 Broker/(4559:4559): Limites de colas iniciadas
+[INFO] 13:50:06:288 Broker/(4559:4559): Iniciando semaforos de limite
+[INFO] 13:50:06:288 Broker/(4559:4559): Semaforos de limite iniciados
+[INFO] 13:50:06:288 Broker/(4559:4559): Iniciando semaforos de mensajes
+[INFO] 13:50:06:288 Broker/(4559:4559): Semaforos de mensajes iniciados
+[INFO] 13:50:06:288 Broker/(4559:4559): Iniciando semaforos de colas
+[INFO] 13:50:06:288 Broker/(4559:4559): Semaforos de colas iniciados
+[INFO] 13:50:06:288 Broker/(4559:4559): Iniciando semaforos de listas
+[INFO] 13:50:06:288 Broker/(4559:4559): Semaforos de listas iniciados
+[INFO] 13:50:06:288 Broker/(4559:4559): Creando generador id
+[INFO] 13:50:06:288 Broker/(4559:4559): Generador id creado
+[INFO] 13:50:06:288 Broker/(4559:4559): Levantando servidor
+[INFO] 13:50:06:288 Broker/(4559:4559): Servidor levantado
+[INFO] 13:50:06:292 Broker/(4559:4564): 4564
+[INFO] 13:50:28:127 Broker/(5622:5622): logger extenso iniciado
+[INFO] 13:50:28:134 Broker/(5622:5622): logger de la catedra iniciado
+[INFO] 13:50:28:134 Broker/(5622:5622): La IP es: 127.0.0.1
+[INFO] 13:50:28:134 Broker/(5622:5622): El puerto es: 4444
+[INFO] 13:50:28:134 Broker/(5622:5622): Iniciando estructuras de modulos
+[INFO] 13:50:28:134 Broker/(5622:5622): Estructuras de modulos iniciadas
+[INFO] 13:50:28:134 Broker/(5622:5622): Iniciando colas
+[INFO] 13:50:28:134 Broker/(5622:5622): Colas iniciadas
+[INFO] 13:50:28:135 Broker/(5622:5622): Iniciando listas de suscriptores
+[INFO] 13:50:28:135 Broker/(5622:5622): Listas de suscriptores iniciadas
+[INFO] 13:50:28:135 Broker/(5622:5622): Llenando listas de suscriptores
+[INFO] 13:50:28:135 Broker/(5622:5622): Lista de suscriptores de new
+[INFO] 13:50:28:139 Broker/(5622:5622): GAME CARD ip: 127.0.0.1 puerto: 4447
+[INFO] 13:50:28:139 Broker/(5622:5622): Lista de suscriptores de appeared
+[INFO] 13:50:28:139 Broker/(5622:5622): TEAM ip: 127.0.0.1 puerto: 4445
+[INFO] 13:50:28:139 Broker/(5622:5622): Lista de suscriptores de catch
+[INFO] 13:50:28:139 Broker/(5622:5622): GAME CARD ip: 127.0.0.1 puerto: 4447
+[INFO] 13:50:28:139 Broker/(5622:5622): Lista de suscriptores de caught
+[INFO] 13:50:28:139 Broker/(5622:5622): TEAM ip: 127.0.0.1 puerto: 4445
+[INFO] 13:50:28:139 Broker/(5622:5622): Lista de suscriptores de get
+[INFO] 13:50:28:139 Broker/(5622:5622): GAME CARD ip: 127.0.0.1 puerto: 4447
+[INFO] 13:50:28:139 Broker/(5622:5622): Lista de suscriptores de localized
+[INFO] 13:50:28:139 Broker/(5622:5622): TEAM ip: 127.0.0.1 puerto: 4445
+[INFO] 13:50:28:139 Broker/(5622:5622): Listas de suscriptores llenas
+[INFO] 13:50:28:140 Broker/(5622:5622): Iniciando estructuras de colas
+[INFO] 13:50:28:140 Broker/(5622:5622): Estructuras de colas iniciadas
+[INFO] 13:50:28:140 Broker/(5622:5622): Iniciando limites de colas
+[INFO] 13:50:28:140 Broker/(5622:5622): Limites de colas iniciadas
+[INFO] 13:50:28:140 Broker/(5622:5622): Iniciando semaforos de limite
+[INFO] 13:50:28:140 Broker/(5622:5622): Semaforos de limite iniciados
+[INFO] 13:50:28:140 Broker/(5622:5622): Iniciando semaforos de mensajes
+[INFO] 13:50:28:140 Broker/(5622:5622): Semaforos de mensajes iniciados
+[INFO] 13:50:28:140 Broker/(5622:5622): Iniciando semaforos de colas
+[INFO] 13:50:28:140 Broker/(5622:5622): Semaforos de colas iniciados
+[INFO] 13:50:28:140 Broker/(5622:5622): Iniciando semaforos de listas
+[INFO] 13:50:28:140 Broker/(5622:5622): Semaforos de listas iniciados
+[INFO] 13:50:28:140 Broker/(5622:5622): Creando generador id
+[INFO] 13:50:28:140 Broker/(5622:5622): Generador id creado
+[INFO] 13:50:28:141 Broker/(5622:5622): Levantando servidor
+[INFO] 13:50:28:141 Broker/(5622:5622): Servidor levantado
+[INFO] 13:50:28:141 Broker/(5622:5627): 5627
+[INFO] 13:50:28:144 Broker/(5622:5627): 5627
+[INFO] 14:04:05:805 Broker/(10281:10281): logger extenso iniciado
+[INFO] 14:04:05:806 Broker/(10281:10281): logger de la catedra iniciado
+[INFO] 14:04:05:806 Broker/(10281:10281): La IP es: 127.0.0.1
+[INFO] 14:04:05:806 Broker/(10281:10281): El puerto es: 4444
+[INFO] 14:04:05:806 Broker/(10281:10281): Iniciando estructuras de modulos
+[INFO] 14:04:05:807 Broker/(10281:10281): Estructuras de modulos iniciadas
+[INFO] 14:04:05:807 Broker/(10281:10281): Iniciando colas
+[INFO] 14:04:05:807 Broker/(10281:10281): Colas iniciadas
+[INFO] 14:04:05:807 Broker/(10281:10281): Iniciando listas de suscriptores
+[INFO] 14:04:05:807 Broker/(10281:10281): Listas de suscriptores iniciadas
+[INFO] 14:04:05:807 Broker/(10281:10281): Llenando listas de suscriptores
+[INFO] 14:04:05:807 Broker/(10281:10281): Lista de suscriptores de new
+[INFO] 14:04:05:807 Broker/(10281:10281): GAME CARD ip: 127.0.0.1 puerto: 4447
+[INFO] 14:04:05:807 Broker/(10281:10281): Lista de suscriptores de appeared
+[INFO] 14:04:05:807 Broker/(10281:10281): TEAM ip: 127.0.0.1 puerto: 4445
+[INFO] 14:04:05:807 Broker/(10281:10281): Lista de suscriptores de catch
+[INFO] 14:04:05:807 Broker/(10281:10281): GAME CARD ip: 127.0.0.1 puerto: 4447
+[INFO] 14:04:05:808 Broker/(10281:10281): Lista de suscriptores de caught
+[INFO] 14:04:05:808 Broker/(10281:10281): TEAM ip: 127.0.0.1 puerto: 4445
+[INFO] 14:04:05:808 Broker/(10281:10281): Lista de suscriptores de get
+[INFO] 14:04:05:808 Broker/(10281:10281): GAME CARD ip: 127.0.0.1 puerto: 4447
+[INFO] 14:04:05:808 Broker/(10281:10281): Lista de suscriptores de localized
+[INFO] 14:04:05:808 Broker/(10281:10281): TEAM ip: 127.0.0.1 puerto: 4445
+[INFO] 14:04:05:808 Broker/(10281:10281): Listas de suscriptores llenas
+[INFO] 14:04:05:808 Broker/(10281:10281): Iniciando estructuras de colas
+[INFO] 14:04:05:808 Broker/(10281:10281): Estructuras de colas iniciadas
+[INFO] 14:04:05:808 Broker/(10281:10281): Iniciando limites de colas
+[INFO] 14:04:05:808 Broker/(10281:10281): Limites de colas iniciadas
+[INFO] 14:04:05:808 Broker/(10281:10281): Iniciando semaforos de limite
+[INFO] 14:04:05:808 Broker/(10281:10281): Semaforos de limite iniciados
+[INFO] 14:04:05:808 Broker/(10281:10281): Iniciando semaforos de mensajes
+[INFO] 14:04:05:808 Broker/(10281:10281): Semaforos de mensajes iniciados
+[INFO] 14:04:05:809 Broker/(10281:10281): Iniciando semaforos de colas
+[INFO] 14:04:05:809 Broker/(10281:10281): Semaforos de colas iniciados
+[INFO] 14:04:05:809 Broker/(10281:10281): Iniciando semaforos de listas
+[INFO] 14:04:05:809 Broker/(10281:10281): Semaforos de listas iniciados
+[INFO] 14:04:05:809 Broker/(10281:10281): Creando generador id
+[INFO] 14:04:05:809 Broker/(10281:10281): Generador id creado
+[INFO] 14:04:05:809 Broker/(10281:10281): Levantando servidor
+[INFO] 14:04:05:809 Broker/(10281:10281): Servidor levantado
+[INFO] 14:04:05:818 Broker/(10281:15336): 15336
