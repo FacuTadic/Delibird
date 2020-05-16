@@ -4,7 +4,9 @@ void procesar_request(int cod_op, int cliente_fd) {
 	int size;
 
 	mensaje_queue* mensaje_a_guardar = malloc(sizeof(mensaje_queue));
+	log_info(extense_logger, "Generando id para el mensaje del socket %i", cliente_fd);
 	mensaje_a_guardar->id = generar_id();
+	log_info(extense_logger, "El id generado es %i", mensaje_a_guardar->id);
 
 	switch (cod_op) {
 	case NEW: ;
@@ -184,17 +186,10 @@ void procesar_request(int cod_op, int cliente_fd) {
 
 		close(cliente_fd);
 		break;
-	case 0:
-
-		// va aca tambien?
+	default:
+		// deberia romper?
+		log_warning(extense_logger, "El codigo de operacion %i no corresponde a ninguna operacion conocida");
 		close(cliente_fd);
-
-		pthread_exit(NULL);
-	case -1:
-
-		// va aca tambien?
-		close(cliente_fd);
-
 		pthread_exit(NULL);
 	}
 }
@@ -573,14 +568,21 @@ void atender_mensaje_localized(mensaje_queue* mensaje) {
 void mandar_new(void* new_mandable) {
 	mandable_struct* argumento_new = (mandable_struct*) new_mandable;
 
-	int socket_cliente = crear_conexion(argumento_new->info->ip, argumento_new->info->puerto);
+	log_info(extense_logger, "Preparandose para enviar mensaje NEW con id %i al modulo %s", argumento_new->mensaje_queue->id, argumento_new->info->nombre);
 
 	uint32_t bytes;
 	void* flujo = serializar_new(argumento_new, &bytes);
 
-	if (send(socket_cliente, flujo, bytes, 0) == -1){
+	int socket_cliente = crear_conexion(argumento_new->info->ip, argumento_new->info->puerto);
+
+	log_info(extense_logger, "Conexion creada para el modulo %s con socket %i", argumento_new->info->nombre, socket_cliente);
+	log_info(extense_logger, "Enviando mensaje NEW con id %i al modulo %s", argumento_new->mensaje_queue->id, argumento_new->info->nombre);
+
+	if (send(socket_cliente, flujo, bytes, 0) == -1) {
 		// ver que onda el log
 		log_error(logger, "Error: No se pudo enviar el mensaje");
+	} else {
+		log_info(extense_logger, "Mensaje NEW con id %i al modulo %s enviado correctamente", argumento_new->mensaje_queue->id, argumento_new->info->nombre);
 	}
 
 	free(flujo);
@@ -600,14 +602,21 @@ void mandar_new(void* new_mandable) {
 void mandar_appeared(void* appeared_mandable) {
 	mandable_struct* argumento_appeared = (mandable_struct*) appeared_mandable;
 
-	int socket_cliente = crear_conexion(argumento_appeared->info->ip, argumento_appeared->info->puerto);
+	log_info(extense_logger, "Preparandose para enviar mensaje APPEARED con id %i al modulo %s", argumento_appeared->mensaje_queue->id, argumento_appeared->info->nombre);
 
 	uint32_t bytes;
 	void* flujo = serializar_appeared(argumento_appeared, &bytes);
 
-	if (send(socket_cliente, flujo, bytes, 0) == -1){
+	int socket_cliente = crear_conexion(argumento_appeared->info->ip, argumento_appeared->info->puerto);
+
+	log_info(extense_logger, "Conexion creada para el modulo %s con socket %i", argumento_appeared->info->nombre, socket_cliente);
+	log_info(extense_logger, "Enviando mensaje APPEARED con id %i al modulo %s", argumento_appeared->mensaje_queue->id, argumento_appeared->info->nombre);
+
+	if (send(socket_cliente, flujo, bytes, 0) == -1) {
 		// ver que onda el log
 		log_error(logger, "Error: No se pudo enviar el mensaje");
+	} else {
+		log_info(extense_logger, "Mensaje APPEARED con id %i al modulo %s enviado correctamente", argumento_appeared->mensaje_queue->id, argumento_appeared->info->nombre);
 	}
 
 	free(flujo);
@@ -627,14 +636,21 @@ void mandar_appeared(void* appeared_mandable) {
 void mandar_catch(void* catch_mandable) {
 	mandable_struct* argumento_catch = (mandable_struct*) catch_mandable;
 
+	log_info(extense_logger, "Preparandose para enviar mensaje CATCH con id %i al modulo %s", argumento_catch->mensaje_queue->id, argumento_catch->info->nombre);
+
 	int socket_cliente = crear_conexion(argumento_catch->info->ip, argumento_catch->info->puerto);
 
 	uint32_t bytes;
 	void* flujo = serializar_catch(argumento_catch, &bytes);
 
-	if (send(socket_cliente, flujo, bytes, 0) == -1){
+	log_info(extense_logger, "Conexion creada para el modulo %s con socket %i", argumento_catch->info->nombre, socket_cliente);
+	log_info(extense_logger, "Enviando mensaje CATCH con id %i al modulo %s", argumento_catch->mensaje_queue->id, argumento_catch->info->nombre);
+
+	if (send(socket_cliente, flujo, bytes, 0) == -1) {
 		// ver que onda el log
 		log_error(logger, "Error: No se pudo enviar el mensaje");
+	} else {
+		log_info(extense_logger, "Mensaje CATCH con id %i al modulo %s enviado correctamente", argumento_catch->mensaje_queue->id, argumento_catch->info->nombre);
 	}
 
 	free(flujo);
@@ -654,14 +670,21 @@ void mandar_catch(void* catch_mandable) {
 void mandar_caught(void* caught_mandable) {
 	mandable_struct* argumento_caught = (mandable_struct*) caught_mandable;
 
+	log_info(extense_logger, "Preparandose para enviar mensaje CAUGHT con id %i al modulo %s", argumento_caught->mensaje_queue->id, argumento_caught->info->nombre);
+
 	uint32_t bytes;
 	void* flujo = serializar_caught(argumento_caught, &bytes);
 
 	int socket_cliente = crear_conexion(argumento_caught->info->ip, argumento_caught->info->puerto);
 
-	if (send(socket_cliente, flujo, bytes, 0) == -1){
+	log_info(extense_logger, "Conexion creada para el modulo %s con socket %i", argumento_caught->info->nombre, socket_cliente);
+	log_info(extense_logger, "Enviando mensaje CAUGHT con id %i al modulo %s", argumento_caught->mensaje_queue->id, argumento_caught->info->nombre);
+
+	if (send(socket_cliente, flujo, bytes, 0) == -1) {
 		// ver que onda el log
 		log_error(logger, "Error: No se pudo enviar el mensaje");
+	} else {
+		log_info(extense_logger, "Mensaje CAUGHT con id %i al modulo %s enviado correctamente", argumento_caught->mensaje_queue->id, argumento_caught->info->nombre);
 	}
 
 	free(flujo);
@@ -681,14 +704,21 @@ void mandar_caught(void* caught_mandable) {
 void mandar_get(void* get_mandable) {
 	mandable_struct* argumento_get = (mandable_struct*) get_mandable;
 
-	int socket_cliente = crear_conexion(argumento_get->info->ip, argumento_get->info->puerto);
+	log_info(extense_logger, "Preparandose para enviar mensaje GET con id %i al modulo %s", argumento_get->mensaje_queue->id, argumento_get->info->nombre);
 
 	uint32_t bytes;
 	void* flujo = serializar_get(argumento_get, &bytes);
 
-	if (send(socket_cliente, flujo, bytes, 0) == -1){
+	int socket_cliente = crear_conexion(argumento_get->info->ip, argumento_get->info->puerto);
+
+	log_info(extense_logger, "Conexion creada para el modulo %s con socket %i", argumento_get->info->nombre, socket_cliente);
+	log_info(extense_logger, "Enviando mensaje GET con id %i al modulo %s", argumento_get->mensaje_queue->id, argumento_get->info->nombre);
+
+	if (send(socket_cliente, flujo, bytes, 0) == -1) {
 		// ver que onda el log
 		log_error(logger, "Error: No se pudo enviar el mensaje");
+	} else {
+		log_info(extense_logger, "Mensaje GET con id %i al modulo %s enviado correctamente", argumento_get->mensaje_queue->id, argumento_get->info->nombre);
 	}
 
 	free(flujo);
@@ -708,14 +738,21 @@ void mandar_get(void* get_mandable) {
 void mandar_localized(void* localized_mandable) {
 	mandable_struct* argumento_localized = (mandable_struct*) localized_mandable;
 
-	int socket_cliente = crear_conexion(argumento_localized->info->ip, argumento_localized->info->puerto);
+	log_info(extense_logger, "Preparandose para enviar mensaje LOCALIZED con id %i al modulo %s", argumento_localized->mensaje_queue->id, argumento_localized->info->nombre);
 
 	uint32_t bytes;
 	void* flujo = serializar_localized(argumento_localized, &bytes);
 
-	if (send(socket_cliente, flujo, bytes, 0) == -1){
+	int socket_cliente = crear_conexion(argumento_localized->info->ip, argumento_localized->info->puerto);
+
+	log_info(extense_logger, "Conexion creada para el modulo %s con socket %i", argumento_localized->info->nombre, socket_cliente);
+	log_info(extense_logger, "Enviando mensaje LOCALIZED con id %i al modulo %s", argumento_localized->mensaje_queue->id, argumento_localized->info->nombre);
+
+	if (send(socket_cliente, flujo, bytes, 0) == -1) {
 		// ver que onda el log
 		log_error(logger, "Error: No se pudo enviar el mensaje");
+	} else {
+		log_info(extense_logger, "Mensaje LOCALIZED con id %i al modulo %s enviado correctamente", argumento_localized->mensaje_queue->id, argumento_localized->info->nombre);
 	}
 
 	free(flujo);
@@ -1077,10 +1114,13 @@ void leer_info_modulos(void) {
 
 	INFO_TEAM.ip = config_get_string_value(config, "TEAM_IP");
 	INFO_TEAM.puerto = config_get_string_value(config, "TEAM_PUERTO");
+	INFO_TEAM.nombre = "TEAM";
 	INFO_GAME_BOY.ip = config_get_string_value(config, "GAME_BOY_IP");
 	INFO_GAME_BOY.puerto = config_get_string_value(config, "GAME_BOY_PUERTO");
+	INFO_GAME_BOY.nombre = "GAME_BOY";
 	INFO_GAME_CARD.ip = config_get_string_value(config, "GAME_CARD_IP");
 	INFO_GAME_CARD.puerto = config_get_string_value(config, "GAME_CARD_PUERTO");
+	INFO_GAME_CARD.nombre = "GAME_CARD";
 
 	log_info(extense_logger, "Estructuras de modulos iniciadas");
 }

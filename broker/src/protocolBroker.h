@@ -77,6 +77,7 @@ typedef struct {
 typedef struct {
 	char* ip;
 	char* puerto;
+	char* nombre;
 } info_modulo;
 
 info_modulo INFO_TEAM;
