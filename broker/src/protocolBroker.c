@@ -294,8 +294,18 @@ t_localized* recibir_localized(int socket_cliente, int* size, t_log* logger) {
 	return localized;
 }
 
-uint32_t recibir_suscripcion(int socket_cliente, t_log* logger) {
+uint32_t recibir_suscripcion(int socket_cliente, int* size, t_log* logger) {
 	uint32_t id_cola;
+
+	log_info(logger, "Recibiendo tamanio total");
+
+	if (recv(socket_cliente, size, sizeof(uint32_t), MSG_WAITALL) == -1) {
+		close(socket_cliente);
+		log_error(logger, "Hubo un problema recibiendo el tamanio total");
+		pthread_exit(NULL);
+	}
+
+	log_info(logger, "Tamanio total recibido: %i", *size);
 
 	log_info(logger, "Recibiendo id de cola");
 

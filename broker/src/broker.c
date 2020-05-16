@@ -129,7 +129,7 @@ void procesar_request(int cod_op, int cliente_fd) {
 		break;
 	case SUSCRIPCION: ;
 		log_info(extense_logger, "Codigo de operacion recibido de %i corresponse a un SUSCRIPCION", cliente_fd);
-		uint32_t id_cola = recibir_suscripcion(cliente_fd, extense_logger);
+		uint32_t id_cola = recibir_suscripcion(cliente_fd, &size, extense_logger);
 
 		switch(id_cola) {
 		case NEW_ID: ;
