@@ -224,7 +224,7 @@ t_get* recibir_get(int socket_cliente, int* size, t_log* logger) {
 		pthread_exit(NULL);
 	}
 
-	log_info(logger, "Nombre del pokemon recibido: %i", get->pokemon);
+	log_info(logger, "Nombre del pokemon recibido: %s", get->pokemon);
 
 	return get;
 }
@@ -294,8 +294,10 @@ t_localized* recibir_localized(int socket_cliente, int* size, t_log* logger) {
 	return localized;
 }
 
-uint32_t recibir_suscripcion(int socket_cliente, int* size, t_log* logger) {
-	uint32_t id_cola;
+t_suscripcion* recibir_suscripcion(int socket_cliente, int* size, t_log* logger) {
+	t_suscripcion* suscripcion = malloc(sizeof(t_suscripcion*));
+	uint32_t tamanio_ip;
+	uint32_t tamanio_puerto;
 
 	log_info(logger, "Recibiendo tamanio total");
 
@@ -309,15 +311,55 @@ uint32_t recibir_suscripcion(int socket_cliente, int* size, t_log* logger) {
 
 	log_info(logger, "Recibiendo id de cola");
 
-	if (recv(socket_cliente, &id_cola, sizeof(uint32_t), MSG_WAITALL) == -1) {
+	if (recv(socket_cliente, &(suscripcion->id_cola), sizeof(uint32_t), MSG_WAITALL) == -1) {
 		close(socket_cliente);
 		log_error(logger, "Hubo un problema recibiendo el id de cola");
 		pthread_exit(NULL);
 	}
 
-	log_info(logger, "Id de cola recibido: %i", id_cola);
+	log_info(logger, "Id de cola recibido: %i", &(suscripcion->id_cola));
 
-	return id_cola;
+	log_info(logger, "Recibiendo tamanio de ip");
+
+	if (recv(socket_cliente, &tamanio_ip, sizeof(uint32_t), MSG_WAITALL) == -1) {
+		close(socket_cliente);
+		log_error(logger, "Hubo un problema recibiendo el tamanio de ip");
+		pthread_exit(NULL);
+	}
+
+	log_info(logger, "Tamanio de ip recibido: %i", tamanio_ip);
+
+	log_info(logger, "Recibiendo ip");
+
+	if (recv(socket_cliente, suscripcion->ip, tamanio_ip, MSG_WAITALL) == -1) {
+		close(socket_cliente);
+		log_error(logger, "Hubo un problema recibiendo el ip");
+		pthread_exit(NULL);
+	}
+
+	log_info(logger, "Ip recibido: %s", suscripcion->ip);
+
+	log_info(logger, "Recibiendo tamanio de puerto");
+
+	if (recv(socket_cliente, &tamanio_puerto, sizeof(uint32_t), MSG_WAITALL) == -1) {
+		close(socket_cliente);
+		log_error(logger, "Hubo un problema recibiendo el tamanio de puerto");
+		pthread_exit(NULL);
+	}
+
+	log_info(logger, "Tamanio de puerto recibido: %i", tamanio_puerto);
+
+	log_info(logger, "Recibiendo puerto");
+
+	if (recv(socket_cliente, suscripcion->puerto, tamanio_puerto, MSG_WAITALL) == -1) {
+		close(socket_cliente);
+		log_error(logger, "Hubo un problema recibiendo el puerto");
+		pthread_exit(NULL);
+	}
+
+	log_info(logger, "Puerto recibido: %i", suscripcion->puerto);
+
+	return suscripcion;
 }
 
 void devolver_id(int socket_cliente, uint32_t id, t_log* logger) {

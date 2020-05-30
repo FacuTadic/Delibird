@@ -7,6 +7,7 @@ void procesar_request(int cod_op, int cliente_fd) {
 	log_info(extense_logger, "Generando id para el mensaje del socket %i", cliente_fd);
 	mensaje_a_guardar->id = generar_id();
 	log_info(extense_logger, "El id generado es %i", mensaje_a_guardar->id);
+	mensaje_a_guardar->acks = list_create();
 
 	switch (cod_op) {
 	case NEW: ;
@@ -137,64 +138,64 @@ void procesar_request(int cod_op, int cliente_fd) {
 		break;
 	case SUSCRIPCION: ;
 		log_info(extense_logger, "Codigo de operacion recibido de %i corresponse a un SUSCRIPCION", cliente_fd);
-		uint32_t id_cola = recibir_suscripcion(cliente_fd, &size, extense_logger);
+		t_suscripcion* suscripcion = recibir_suscripcion(cliente_fd, &size, extense_logger);
+		info_modulo* info_modulo = malloc(sizeof(info_modulo));
+		info_modulo->ip = suscripcion->ip;
+		info_modulo->puerto = suscripcion->puerto;
 
-		switch(id_cola) {
+		switch(suscripcion->id_cola) {
 		case NEW_ID: ;
 			log_info(extense_logger, "Id de cola recibido de %i corresponde a la cola de NEW", cliente_fd);
-			log_info(extense_logger, "Agregando en la lista de suscriptores de la cola de NEW al modulo GAME BOY");
+
 			pthread_mutex_lock(&gl_new_list_lock);
-			list_add(gl_new_suscriptores, (void *) &INFO_GAME_BOY);
+			list_add(gl_new_suscriptores, (void *) &info_modulo);
 			pthread_mutex_unlock(&gl_new_list_lock);
 			log_info(extense_logger, "Modulo GAME BOY agregado correctamente en la cola de NEW");
 			log_info(logger, "Modulo GAME BOY agregado correctamente en la cola de NEW");
 			break;
 		case APPEARED_ID: ;
 			log_info(extense_logger, "Id de cola recibido de %i corresponde a la cola de APPEARED", cliente_fd);
-			log_info(extense_logger, "Agregando en la lista de suscriptores de la cola de APPEARED al modulo GAME BOY");
 			pthread_mutex_lock(&gl_appeared_list_lock);
-			list_add(gl_appeared_suscriptores, (void *) &INFO_GAME_BOY);
+			list_add(gl_appeared_suscriptores, (void *) &info_modulo);
 			pthread_mutex_unlock(&gl_appeared_list_lock);
 			log_info(extense_logger, "Modulo GAME BOY agregado correctamente en la cola de APPEARED");
 			log_info(logger, "Modulo GAME BOY agregado correctamente en la cola de APPEARED");
 			break;
 		case CATCH_ID: ;
 			log_info(extense_logger, "Id de cola recibido de %i corresponde a la cola de CATCH", cliente_fd);
-			log_info(extense_logger, "Agregando en la lista de suscriptores de la cola de CATCH al modulo GAME BOY");
 			pthread_mutex_lock(&gl_catch_list_lock);
-			list_add(gl_catch_suscriptores, (void *) &INFO_GAME_BOY);
+			list_add(gl_catch_suscriptores, (void *) &info_modulo);
 			pthread_mutex_unlock(&gl_catch_list_lock);
 			log_info(extense_logger, "Modulo GAME BOY agregado correctamente en la cola de CATCH");
 			log_info(logger, "Modulo GAME BOY agregado correctamente en la cola de CATCH");
 			break;
 		case CAUGHT_ID: ;
 			log_info(extense_logger, "Id de cola recibido de %i corresponde a la cola de CAUGHT", cliente_fd);
-			log_info(extense_logger, "Agregando en la lista de suscriptores de la cola de CAUGHT al modulo GAME BOY");
 			pthread_mutex_lock(&gl_caught_list_lock);
-			list_add(gl_caught_suscriptores, (void *) &INFO_GAME_BOY);
+			list_add(gl_caught_suscriptores, (void *) &info_modulo);
 			pthread_mutex_unlock(&gl_caught_list_lock);
 			log_info(extense_logger, "Modulo GAME BOY agregado correctamente en la cola de CAUGHT");
 			log_info(logger, "Modulo GAME BOY agregado correctamente en la cola de CAUGHT");
 			break;
 		case GET_ID: ;
 			log_info(extense_logger, "Id de cola recibido de %i corresponde a la cola de GET", cliente_fd);
-			log_info(extense_logger, "Agregando en la lista de suscriptores de la cola de GET al modulo GAME BOY");
 			pthread_mutex_lock(&gl_get_list_lock);
-			list_add(gl_get_suscriptores, (void *) &INFO_GAME_BOY);
+			list_add(gl_get_suscriptores, (void *) &info_modulo);
 			pthread_mutex_unlock(&gl_get_list_lock);
 			log_info(extense_logger, "Modulo GAME BOY agregado correctamente en la cola de GET");
 			log_info(logger, "Modulo GAME BOY agregado correctamente en la cola de GET");
 			break;
 		case LOCALIZED_ID: ;
 			log_info(extense_logger, "Id de cola recibido de %i corresponde a la cola de LOCALIZED", cliente_fd);
-			log_info(extense_logger, "Agregando en la lista de suscriptores de la cola de LOCALIZED al modulo GAME BOY");
 			pthread_mutex_lock(&gl_localized_list_lock);
-			list_add(gl_localized_suscriptores, (void *) &INFO_GAME_BOY);
+			list_add(gl_localized_suscriptores, (void *) &info_modulo);
 			pthread_mutex_unlock(&gl_localized_list_lock);
 			log_info(extense_logger, "Modulo GAME BOY agregado correctamente en la cola de LOCALIZED");
 			log_info(logger, "Modulo GAME BOY agregado correctamente en la cola de LOCALIZED");
 			break;
 		}
+
+		free(suscripcion);
 
 		close(cliente_fd);
 		break;
@@ -581,210 +582,210 @@ void atender_mensaje_localized(mensaje_queue* mensaje) {
 void mandar_new(void* new_mandable) {
 	mandable_struct* argumento_new = (mandable_struct*) new_mandable;
 
-	log_info(extense_logger, "Preparandose para enviar mensaje NEW con id %i al modulo %s", argumento_new->mensaje_queue->id, argumento_new->info->nombre);
+	log_info(extense_logger, "Preparandose para enviar mensaje NEW con id %i al ip %s puerto %s", argumento_new->mensaje_queue->id, argumento_new->info->ip, argumento_new->info->puerto);
 
 	uint32_t bytes;
 	void* flujo = serializar_new(argumento_new, &bytes);
 
 	int socket_cliente = crear_conexion(argumento_new->info->ip, argumento_new->info->puerto);
 
-	log_info(extense_logger, "Conexion creada para el modulo %s con socket %i", argumento_new->info->nombre, socket_cliente);
-	log_info(extense_logger, "Enviando mensaje NEW con id %i al modulo %s", argumento_new->mensaje_queue->id, argumento_new->info->nombre);
-	log_info(logger, "Enviando mensaje NEW con id %i al modulo %s", argumento_new->mensaje_queue->id, argumento_new->info->nombre);
+	log_info(extense_logger, "Conexion creada para el ip %s puerto %s con socket %i", argumento_new->info->ip, argumento_new->info->puerto, socket_cliente);
+	log_info(extense_logger, "Enviando mensaje NEW con id %i al ip %s puerto %s", argumento_new->mensaje_queue->id, argumento_new->info->ip, argumento_new->info->puerto);
 
 	if (send(socket_cliente, flujo, bytes, 0) == -1) {
-		// ver que onda el log
-		log_error(logger, "Error: No se pudo enviar el mensaje");
+		log_error(extense_logger, "Error: No se pudo enviar el mensaje");
 	} else {
-		log_info(extense_logger, "Mensaje NEW con id %i al modulo %s enviado correctamente", argumento_new->mensaje_queue->id, argumento_new->info->nombre);
+		log_info(extense_logger, "Mensaje NEW con id %i al ip %s puerto %s enviado correctamente", argumento_new->mensaje_queue->id, argumento_new->info->ip, argumento_new->info->puerto);
+		log_info(logger, "Mensaje NEW con id %i al ip %s puerto %s enviado correctamente", argumento_new->mensaje_queue->id, argumento_new->info->ip, argumento_new->info->puerto);
+		uint32_t id;
+		if (recv(socket_cliente,&id ,sizeof(uint32_t),MSG_WAITALL) == -1) {
+			log_error(extense_logger, "Error: No se recibió el ACK de ip %s puerto %s", argumento_new->info->ip, argumento_new->info->puerto);
+		} else {
+			log_info(extense_logger, "ACK de ip %s puerto %s recibido", argumento_new->info->ip, argumento_new->info->puerto);
+			log_info(logger, "ACK de ip %s puerto %s recibido", argumento_new->info->ip, argumento_new->info->puerto);
+			pthread_mutex_lock(&gl_new_ack_lock);
+			list_add(argumento_new->mensaje_queue->acks, argumento_new->info);
+			pthread_mutex_unlock(&gl_new_ack_lock);
+		}
 	}
 
-	free(flujo);
-
-//	uint32_t id;
-//	if (recv(socket_cliente,&id ,sizeof(uint32_t),MSG_WAITALL) == -1)
-//	{
-//		log_error(logger, "error: No se recibió el código de operación");
-//	}
-
-	// que onda esto? tiene que ir o no?
 	close(socket_cliente);
-
+	free(flujo);
 	free(argumento_new);
 }
 
 void mandar_appeared(void* appeared_mandable) {
 	mandable_struct* argumento_appeared = (mandable_struct*) appeared_mandable;
 
-	log_info(extense_logger, "Preparandose para enviar mensaje APPEARED con id %i al modulo %s", argumento_appeared->mensaje_queue->id, argumento_appeared->info->nombre);
+	log_info(extense_logger, "Preparandose para enviar mensaje APPEARED con id %i al ip %s puerto %s", argumento_appeared->mensaje_queue->id, argumento_appeared->info->ip, argumento_appeared->info->puerto);
 
 	uint32_t bytes;
 	void* flujo = serializar_appeared(argumento_appeared, &bytes);
 
 	int socket_cliente = crear_conexion(argumento_appeared->info->ip, argumento_appeared->info->puerto);
 
-	log_info(extense_logger, "Conexion creada para el modulo %s con socket %i", argumento_appeared->info->nombre, socket_cliente);
-	log_info(extense_logger, "Enviando mensaje APPEARED con id %i al modulo %s", argumento_appeared->mensaje_queue->id, argumento_appeared->info->nombre);
-	log_info(logger, "Enviando mensaje APPEARED con id %i al modulo %s", argumento_appeared->mensaje_queue->id, argumento_appeared->info->nombre);
+	log_info(extense_logger, "Conexion creada para el ip %s puerto %s con socket %i", argumento_appeared->info->ip, argumento_appeared->info->puerto, socket_cliente);
+	log_info(extense_logger, "Enviando mensaje APPEARED con id %i al ip %s puerto %s", argumento_appeared->mensaje_queue->id, argumento_appeared->info->ip, argumento_appeared->info->puerto);
 
 	if (send(socket_cliente, flujo, bytes, 0) == -1) {
-		// ver que onda el log
-		log_error(logger, "Error: No se pudo enviar el mensaje");
+		log_error(extense_logger, "Error: No se pudo enviar el mensaje");
 	} else {
-		log_info(extense_logger, "Mensaje APPEARED con id %i al modulo %s enviado correctamente", argumento_appeared->mensaje_queue->id, argumento_appeared->info->nombre);
+		log_info(extense_logger, "Mensaje APPEARED con id %i al ip %s puerto %s enviado correctamente", argumento_appeared->mensaje_queue->id, argumento_appeared->info->ip, argumento_appeared->info->puerto);
+		log_info(logger, "Mensaje APPEARED con id %i al ip %s puerto %s enviado correctamente", argumento_appeared->mensaje_queue->id, argumento_appeared->info->ip, argumento_appeared->info->puerto);
+		uint32_t id;
+		if (recv(socket_cliente,&id ,sizeof(uint32_t),MSG_WAITALL) == -1) {
+			log_error(extense_logger, "Error: No se recibió el ACK de ip %s puerto %s", argumento_appeared->info->ip, argumento_appeared->info->puerto);
+		} else {
+			log_info(extense_logger, "ACK de ip %s puerto %s recibido", argumento_appeared->info->ip, argumento_appeared->info->puerto);
+			log_info(logger, "ACK de ip %s puerto %s recibido", argumento_appeared->info->ip, argumento_appeared->info->puerto);
+			pthread_mutex_lock(&gl_appeared_ack_lock);
+			list_add(argumento_appeared->mensaje_queue->acks, argumento_appeared->info);
+			pthread_mutex_unlock(&gl_appeared_ack_lock);
+		}
 	}
 
-	free(flujo);
-
-//	uint32_t id;
-//	if (recv(socket_cliente,&id ,sizeof(uint32_t),MSG_WAITALL) == -1)
-//	{
-//		log_error(logger, "error: No se recibió el código de operación");
-//	}
-
-	// que onda esto? tiene que ir o no?
 	close(socket_cliente);
-
+	free(flujo);
 	free(argumento_appeared);
 }
 
 void mandar_catch(void* catch_mandable) {
 	mandable_struct* argumento_catch = (mandable_struct*) catch_mandable;
 
-	log_info(extense_logger, "Preparandose para enviar mensaje CATCH con id %i al modulo %s", argumento_catch->mensaje_queue->id, argumento_catch->info->nombre);
+	log_info(extense_logger, "Preparandose para enviar mensaje CATCH con id %i al ip %s puerto %s", argumento_catch->mensaje_queue->id, argumento_catch->info->ip, argumento_catch->info->puerto);
 
 	int socket_cliente = crear_conexion(argumento_catch->info->ip, argumento_catch->info->puerto);
 
 	uint32_t bytes;
 	void* flujo = serializar_catch(argumento_catch, &bytes);
 
-	log_info(extense_logger, "Conexion creada para el modulo %s con socket %i", argumento_catch->info->nombre, socket_cliente);
-	log_info(extense_logger, "Enviando mensaje CATCH con id %i al modulo %s", argumento_catch->mensaje_queue->id, argumento_catch->info->nombre);
-	log_info(logger, "Enviando mensaje CATCH con id %i al modulo %s", argumento_catch->mensaje_queue->id, argumento_catch->info->nombre);
+	log_info(extense_logger, "Conexion creada para el ip %s puerto %s con socket %i", argumento_catch->info->ip, argumento_catch->info->puerto, socket_cliente);
+	log_info(extense_logger, "Enviando mensaje CATCH con id %i al ip %s puerto %s", argumento_catch->mensaje_queue->id, argumento_catch->info->ip, argumento_catch->info->puerto);
 
 	if (send(socket_cliente, flujo, bytes, 0) == -1) {
-		// ver que onda el log
-		log_error(logger, "Error: No se pudo enviar el mensaje");
+		log_error(extense_logger, "Error: No se pudo enviar el mensaje");
 	} else {
-		log_info(extense_logger, "Mensaje CATCH con id %i al modulo %s enviado correctamente", argumento_catch->mensaje_queue->id, argumento_catch->info->nombre);
+		log_info(extense_logger, "Mensaje CATCH con id %i al ip %s puerto %s enviado correctamente", argumento_catch->mensaje_queue->id, argumento_catch->info->ip, argumento_catch->info->puerto);
+		log_info(logger, "Mensaje CATCH con id %i al ip %s puerto %s enviado correctamente", argumento_catch->mensaje_queue->id, argumento_catch->info->ip, argumento_catch->info->puerto);
+		uint32_t id;
+		if (recv(socket_cliente,&id ,sizeof(uint32_t),MSG_WAITALL) == -1) {
+			log_error(extense_logger, "Error: No se recibió el ACK de ip %s puerto %s", argumento_catch->info->ip, argumento_catch->info->puerto);
+		} else {
+			log_info(extense_logger, "ACK de ip %s puerto %s recibido", argumento_catch->info->ip, argumento_catch->info->puerto);
+			log_info(logger, "ACK de ip %s puerto %s recibido", argumento_catch->info->ip, argumento_catch->info->puerto);
+			pthread_mutex_lock(&gl_catch_ack_lock);
+			list_add(argumento_catch->mensaje_queue->acks, argumento_catch->info);
+			pthread_mutex_unlock(&gl_catch_ack_lock);
+		}
 	}
 
-	free(flujo);
-
-//	uint32_t id;
-//	if (recv(socket_cliente,&id ,sizeof(uint32_t),MSG_WAITALL) == -1)
-//	{
-//		log_error(logger, "error: No se recibió el código de operación");
-//	}
-
-	// que onda esto? tiene que ir o no?
 	close(socket_cliente);
-
+	free(flujo);
 	free(argumento_catch);
 }
 
 void mandar_caught(void* caught_mandable) {
 	mandable_struct* argumento_caught = (mandable_struct*) caught_mandable;
 
-	log_info(extense_logger, "Preparandose para enviar mensaje CAUGHT con id %i al modulo %s", argumento_caught->mensaje_queue->id, argumento_caught->info->nombre);
+	log_info(extense_logger, "Preparandose para enviar mensaje CAUGHT con id %i al ip %s puerto %s", argumento_caught->mensaje_queue->id, argumento_caught->info->ip, argumento_caught->info->puerto);
 
 	uint32_t bytes;
 	void* flujo = serializar_caught(argumento_caught, &bytes);
 
 	int socket_cliente = crear_conexion(argumento_caught->info->ip, argumento_caught->info->puerto);
 
-	log_info(extense_logger, "Conexion creada para el modulo %s con socket %i", argumento_caught->info->nombre, socket_cliente);
-	log_info(extense_logger, "Enviando mensaje CAUGHT con id %i al modulo %s", argumento_caught->mensaje_queue->id, argumento_caught->info->nombre);
-	log_info(logger, "Enviando mensaje CAUGHT con id %i al modulo %s", argumento_caught->mensaje_queue->id, argumento_caught->info->nombre);
+	log_info(extense_logger, "Conexion creada para el ip %s puerto %s con socket %i", argumento_caught->info->ip, argumento_caught->info->puerto, socket_cliente);
+	log_info(extense_logger, "Enviando mensaje CAUGHT con id %i al ip %s puerto %s", argumento_caught->mensaje_queue->id, argumento_caught->info->ip, argumento_caught->info->puerto);
 
 	if (send(socket_cliente, flujo, bytes, 0) == -1) {
-		// ver que onda el log
-		log_error(logger, "Error: No se pudo enviar el mensaje");
+		log_error(extense_logger, "Error: No se pudo enviar el mensaje");
 	} else {
-		log_info(extense_logger, "Mensaje CAUGHT con id %i al modulo %s enviado correctamente", argumento_caught->mensaje_queue->id, argumento_caught->info->nombre);
+		log_info(extense_logger, "Mensaje CAUGHT con id %i al ip %s puerto %s enviado correctamente", argumento_caught->mensaje_queue->id, argumento_caught->info->ip, argumento_caught->info->puerto);
+		log_info(logger, "Mensaje CAUGHT con id %i al ip %s puerto %s enviado correctamente", argumento_caught->mensaje_queue->id, argumento_caught->info->ip, argumento_caught->info->puerto);
+		uint32_t id;
+		if (recv(socket_cliente,&id ,sizeof(uint32_t),MSG_WAITALL) == -1) {
+			log_error(extense_logger, "Error: No se recibió el ACK de ip %s puerto %s", argumento_caught->info->ip, argumento_caught->info->puerto);
+		} else {
+			log_info(extense_logger, "ACK de ip %s puerto %s recibido", argumento_caught->info->ip, argumento_caught->info->puerto);
+			log_info(logger, "ACK de ip %s puerto %s recibido", argumento_caught->info->ip, argumento_caught->info->puerto);
+			pthread_mutex_lock(&gl_caught_ack_lock);
+			list_add(argumento_caught->mensaje_queue->acks, argumento_caught->info);
+			pthread_mutex_unlock(&gl_caught_ack_lock);
+		}
 	}
 
-	free(flujo);
-
-//	uint32_t id;
-//	if (recv(socket_cliente,&id ,sizeof(uint32_t),MSG_WAITALL) == -1)
-//	{
-//		log_error(logger, "error: No se recibió el código de operación");
-//	}
-
-	// que onda esto? tiene que ir o no?
 	close(socket_cliente);
-
+	free(flujo);
 	free(argumento_caught);
 }
 
 void mandar_get(void* get_mandable) {
 	mandable_struct* argumento_get = (mandable_struct*) get_mandable;
 
-	log_info(extense_logger, "Preparandose para enviar mensaje GET con id %i al modulo %s", argumento_get->mensaje_queue->id, argumento_get->info->nombre);
+	log_info(extense_logger, "Preparandose para enviar mensaje GET con id %i al ip %s puerto %s", argumento_get->mensaje_queue->id, argumento_get->info->ip, argumento_get->info->puerto);
 
 	uint32_t bytes;
 	void* flujo = serializar_get(argumento_get, &bytes);
 
 	int socket_cliente = crear_conexion(argumento_get->info->ip, argumento_get->info->puerto);
 
-	log_info(extense_logger, "Conexion creada para el modulo %s con socket %i", argumento_get->info->nombre, socket_cliente);
-	log_info(extense_logger, "Enviando mensaje GET con id %i al modulo %s", argumento_get->mensaje_queue->id, argumento_get->info->nombre);
-	log_info(logger, "Enviando mensaje GET con id %i al modulo %s", argumento_get->mensaje_queue->id, argumento_get->info->nombre);
+	log_info(extense_logger, "Conexion creada para el ip %s puerto %s con socket %i", argumento_get->info->ip, argumento_get->info->puerto, socket_cliente);
+	log_info(extense_logger, "Enviando mensaje GET con id %i al ip %s puerto %s", argumento_get->mensaje_queue->id, argumento_get->info->ip, argumento_get->info->puerto);
 
 	if (send(socket_cliente, flujo, bytes, 0) == -1) {
-		// ver que onda el log
-		log_error(logger, "Error: No se pudo enviar el mensaje");
+		log_error(extense_logger, "Error: No se pudo enviar el mensaje");
 	} else {
-		log_info(extense_logger, "Mensaje GET con id %i al modulo %s enviado correctamente", argumento_get->mensaje_queue->id, argumento_get->info->nombre);
+		log_info(extense_logger, "Mensaje GET con id %i al ip %s puerto %s enviado correctamente", argumento_get->mensaje_queue->id, argumento_get->info->ip, argumento_get->info->puerto);
+		log_info(logger, "Mensaje GET con id %i al ip %s puerto %s enviado correctamente", argumento_get->mensaje_queue->id, argumento_get->info->ip, argumento_get->info->puerto);
+		uint32_t id;
+		if (recv(socket_cliente,&id ,sizeof(uint32_t),MSG_WAITALL) == -1) {
+			log_error(extense_logger, "Error: No se recibió el ACK de ip %s puerto %s", argumento_get->info->ip, argumento_get->info->puerto);
+		} else {
+			log_info(extense_logger, "ACK de ip %s puerto %s recibido", argumento_get->info->ip, argumento_get->info->puerto);
+			log_info(logger, "ACK de ip %s puerto %s recibido", argumento_get->info->ip, argumento_get->info->puerto);
+			pthread_mutex_lock(&gl_get_ack_lock);
+			list_add(argumento_get->mensaje_queue->acks, argumento_get->info);
+			pthread_mutex_unlock(&gl_get_ack_lock);
+		}
 	}
 
-	free(flujo);
-
-//	uint32_t id;
-//	if (recv(socket_cliente,&id ,sizeof(uint32_t),MSG_WAITALL) == -1)
-//	{
-//		log_error(logger, "error: No se recibió el código de operación");
-//	}
-
-	// que onda esto? tiene que ir o no?
 	close(socket_cliente);
-
+	free(flujo);
 	free(argumento_get);
 }
 
 void mandar_localized(void* localized_mandable) {
 	mandable_struct* argumento_localized = (mandable_struct*) localized_mandable;
 
-	log_info(extense_logger, "Preparandose para enviar mensaje LOCALIZED con id %i al modulo %s", argumento_localized->mensaje_queue->id, argumento_localized->info->nombre);
+	log_info(extense_logger, "Preparandose para enviar mensaje LOCALIZED con id %i al ip %s puerto %s", argumento_localized->mensaje_queue->id, argumento_localized->info->ip, argumento_localized->info->puerto);
 
 	uint32_t bytes;
 	void* flujo = serializar_localized(argumento_localized, &bytes);
 
 	int socket_cliente = crear_conexion(argumento_localized->info->ip, argumento_localized->info->puerto);
 
-	log_info(extense_logger, "Conexion creada para el modulo %s con socket %i", argumento_localized->info->nombre, socket_cliente);
-	log_info(extense_logger, "Enviando mensaje LOCALIZED con id %i al modulo %s", argumento_localized->mensaje_queue->id, argumento_localized->info->nombre);
-	log_info(logger, "Enviando mensaje LOCALIZED con id %i al modulo %s", argumento_localized->mensaje_queue->id, argumento_localized->info->nombre);
+	log_info(extense_logger, "Conexion creada para el ip %s puerto %s con socket %i", argumento_localized->info->ip, argumento_localized->info->puerto, socket_cliente);
+	log_info(extense_logger, "Enviando mensaje LOCALIZED con id %i al ip %s puerto %s", argumento_localized->mensaje_queue->id, argumento_localized->info->ip, argumento_localized->info->puerto);
 
 	if (send(socket_cliente, flujo, bytes, 0) == -1) {
-		// ver que onda el log
-		log_error(logger, "Error: No se pudo enviar el mensaje");
+		log_error(extense_logger, "Error: No se pudo enviar el mensaje");
 	} else {
-		log_info(extense_logger, "Mensaje LOCALIZED con id %i al modulo %s enviado correctamente", argumento_localized->mensaje_queue->id, argumento_localized->info->nombre);
+		log_info(extense_logger, "Mensaje LOCALIZED con id %i al ip %s puerto %s enviado correctamente", argumento_localized->mensaje_queue->id, argumento_localized->info->ip, argumento_localized->info->puerto);
+		log_info(logger, "Mensaje LOCALIZED con id %i al ip %s puerto %s enviado correctamente", argumento_localized->mensaje_queue->id, argumento_localized->info->ip, argumento_localized->info->puerto);
+		uint32_t id;
+		if (recv(socket_cliente,&id ,sizeof(uint32_t),MSG_WAITALL) == -1) {
+			log_error(extense_logger, "Error: No se recibió el ACK de ip %s puerto %s", argumento_localized->info->ip, argumento_localized->info->puerto);
+		} else {
+			log_info(extense_logger, "ACK de ip %s puerto %s recibido", argumento_localized->info->ip, argumento_localized->info->puerto);
+			log_info(logger, "ACK de ip %s puerto %s recibido", argumento_localized->info->ip, argumento_localized->info->puerto);
+			pthread_mutex_lock(&gl_localized_ack_lock);
+			list_add(argumento_localized->mensaje_queue->acks, argumento_localized->info);
+			pthread_mutex_unlock(&gl_localized_ack_lock);
+		}
 	}
 
-	free(flujo);
-
-//	uint32_t id;
-//	if (recv(socket_cliente,&id ,sizeof(uint32_t),MSG_WAITALL) == -1)
-//	{
-//		log_error(logger, "error: No se recibió el código de operación");
-//	}
-
-	// que onda esto? tiene que ir o no?
 	close(socket_cliente);
-
+	free(flujo);
 	free(argumento_localized);
 }
 
@@ -985,10 +986,6 @@ int main(void) {
 	puerto = config_get_string_value(config, "PUERTO");
 	log_info(extense_logger, "El puerto es: %s", puerto);
 
-	// leemos de config ip y puerto de cada modulo
-
-	leer_info_modulos();
-
 	inicializar_colas();
 
 	inicializar_semaforos_colas();
@@ -1067,31 +1064,6 @@ void inicializar_colas(void) {
 
 	log_info(extense_logger, "Listas de suscriptores iniciadas");
 
-	// AGREGAR SUSCRIPTORES
-
-	log_info(extense_logger, "Llenando listas de suscriptores");
-
-	list_add(gl_new_suscriptores, (void *) &INFO_GAME_CARD);
-	log_info(extense_logger, "Lista de suscriptores de new");
-	log_info(extense_logger, "GAME CARD ip: %s puerto: %s", INFO_GAME_CARD.ip, INFO_GAME_CARD.puerto);
-	list_add(gl_appeared_suscriptores, (void *) &INFO_TEAM);
-	log_info(extense_logger, "Lista de suscriptores de appeared");
-	log_info(extense_logger, "TEAM ip: %s puerto: %s", INFO_TEAM.ip, INFO_TEAM.puerto);
-	list_add(gl_catch_suscriptores, (void *) &INFO_GAME_CARD);
-	log_info(extense_logger, "Lista de suscriptores de catch");
-	log_info(extense_logger, "GAME CARD ip: %s puerto: %s", INFO_GAME_CARD.ip, INFO_GAME_CARD.puerto);
-	list_add(gl_caught_suscriptores, (void *) &INFO_TEAM);
-	log_info(extense_logger, "Lista de suscriptores de caught");
-	log_info(extense_logger, "TEAM ip: %s puerto: %s", INFO_TEAM.ip, INFO_TEAM.puerto);
-	list_add(gl_get_suscriptores, (void *) &INFO_GAME_CARD);
-	log_info(extense_logger, "Lista de suscriptores de get");
-	log_info(extense_logger, "GAME CARD ip: %s puerto: %s", INFO_GAME_CARD.ip, INFO_GAME_CARD.puerto);
-	list_add(gl_localized_suscriptores, (void *) &INFO_TEAM);
-	log_info(extense_logger, "Lista de suscriptores de localized");
-	log_info(extense_logger, "TEAM ip: %s puerto: %s", INFO_TEAM.ip, INFO_TEAM.puerto);
-
-	log_info(extense_logger, "Listas de suscriptores llenas");
-
 	log_info(extense_logger, "Iniciando estructuras de colas");
 
 	NEW_STRUCT.cola = gl_new_pokemon_queue;
@@ -1126,22 +1098,6 @@ t_config* leer_config() {
 	t_config* config;
 	config = config_create("broker.config");
 	return config;
-}
-
-void leer_info_modulos(void) {
-	log_info(extense_logger, "Iniciando estructuras de modulos");
-
-	INFO_TEAM.ip = config_get_string_value(config, "TEAM_IP");
-	INFO_TEAM.puerto = config_get_string_value(config, "TEAM_PUERTO");
-	INFO_TEAM.nombre = "TEAM";
-	INFO_GAME_BOY.ip = config_get_string_value(config, "GAME_BOY_IP");
-	INFO_GAME_BOY.puerto = config_get_string_value(config, "GAME_BOY_PUERTO");
-	INFO_GAME_BOY.nombre = "GAME_BOY";
-	INFO_GAME_CARD.ip = config_get_string_value(config, "GAME_CARD_IP");
-	INFO_GAME_CARD.puerto = config_get_string_value(config, "GAME_CARD_PUERTO");
-	INFO_GAME_CARD.nombre = "GAME_CARD";
-
-	log_info(extense_logger, "Estructuras de modulos iniciadas");
 }
 
 void inicializar_semaforos_colas(void) {
@@ -1206,6 +1162,17 @@ void inicializar_semaforos_colas(void) {
 	pthread_mutex_init(&gl_localized_list_lock, NULL);
 
 	log_info(extense_logger, "Semaforos de listas iniciados");
+
+	log_info(extense_logger, "Iniciando semaforos de acks");
+
+	pthread_mutex_init(&gl_new_ack_lock, NULL);
+	pthread_mutex_init(&gl_appeared_ack_lock, NULL);
+	pthread_mutex_init(&gl_catch_ack_lock, NULL);
+	pthread_mutex_init(&gl_caught_ack_lock, NULL);
+	pthread_mutex_init(&gl_get_ack_lock, NULL);
+	pthread_mutex_init(&gl_localized_ack_lock, NULL);
+
+	log_info(extense_logger, "Semaforos de acks iniciados");
 }
 
 void terminar_programa(void) {
@@ -1260,6 +1227,12 @@ void terminar_programa(void) {
 	pthread_mutex_destroy(&gl_caught_list_lock);
 	pthread_mutex_destroy(&gl_get_list_lock);
 	pthread_mutex_destroy(&gl_localized_list_lock);
+	pthread_mutex_destroy(&gl_new_ack_lock);
+	pthread_mutex_destroy(&gl_appeared_ack_lock);
+	pthread_mutex_destroy(&gl_catch_ack_lock);
+	pthread_mutex_destroy(&gl_caught_ack_lock);
+	pthread_mutex_destroy(&gl_get_ack_lock);
+	pthread_mutex_destroy(&gl_localized_ack_lock);
 
 	destruir_generador_id();
 }

@@ -69,6 +69,12 @@ typedef struct {
 	uint32_t flag_caught;
 } t_caught;
 
+typedef struct {
+	uint32_t id_cola;
+	char* ip;
+	char* puerto;
+} t_suscripcion;
+
 
 //////////
 // MODULOS
@@ -77,12 +83,7 @@ typedef struct {
 typedef struct {
 	char* ip;
 	char* puerto;
-	char* nombre;
 } info_modulo;
-
-info_modulo INFO_TEAM;
-info_modulo INFO_GAME_BOY;
-info_modulo INFO_GAME_CARD;
 
 t_new* recibir_new(int socket_cliente, int* size, t_log* logger);
 t_appeared* recibir_appeared(int socket_cliente, int* size, t_log* logger);
@@ -90,7 +91,7 @@ t_catch* recibir_catch(int socket_cliente, int* size, t_log* logger);
 t_caught* recibir_caught(int socket_cliente, int* size, t_log* logger);
 t_get* recibir_get(int socket_cliente, int* size, t_log* logger);
 t_localized* recibir_localized(int socket_cliente, int* size, t_log* logger);
-uint32_t recibir_suscripcion(int socket_cliente, int* size, t_log* logger);
+t_suscripcion* recibir_suscripcion(int socket_cliente, int* size, t_log* logger);
 void devolver_id(int socket_cliente, uint32_t id, t_log* logger);
 
 #endif /* PROTOCOLBROKER_H_ */

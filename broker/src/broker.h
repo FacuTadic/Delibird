@@ -45,6 +45,13 @@ pthread_mutex_t gl_caught_list_lock;
 pthread_mutex_t gl_get_list_lock;
 pthread_mutex_t gl_localized_list_lock;
 
+pthread_mutex_t gl_new_ack_lock;
+pthread_mutex_t gl_appeared_ack_lock;
+pthread_mutex_t gl_catch_ack_lock;
+pthread_mutex_t gl_caught_ack_lock;
+pthread_mutex_t gl_get_ack_lock;
+pthread_mutex_t gl_localized_ack_lock;
+
 sem_t gl_new_limite;
 sem_t gl_appeared_limite;
 sem_t gl_catch_limite;
@@ -85,6 +92,7 @@ cola_struct LOCALIZED_STRUCT;
 typedef struct {
 	void* mensaje;
 	uint32_t id;
+	t_list* acks;
 } mensaje_queue;
 
 typedef struct {
