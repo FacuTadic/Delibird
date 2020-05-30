@@ -16,13 +16,14 @@ void procesar_request(int cod_op, int cliente_fd) {
 		mensaje_a_guardar->mensaje = (void*) new_msg;
 
 		sem_wait(&gl_new_limite);
+
+		log_info(extense_logger, "Encolando el mensaje NEW con id %i", mensaje_a_guardar->id);
 		pthread_mutex_lock(&gl_new_queue_lock);
-
-		log_info(extense_logger, "Encolando el mensaje NEW");
 		queue_push(gl_new_pokemon_queue, mensaje_a_guardar);
-		log_info(extense_logger, "Mensaje NEW encolado");
-
 		pthread_mutex_unlock(&gl_new_queue_lock);
+		log_info(extense_logger, "Mensaje NEW con id %i encolado", mensaje_a_guardar->id);
+		log_info(logger, "Mensaje NEW con id %i encolado", mensaje_a_guardar->id);
+
 		sem_post(&gl_new_mensajes);
 
 		devolver_id(cliente_fd, mensaje_a_guardar->id, extense_logger);
@@ -36,13 +37,14 @@ void procesar_request(int cod_op, int cliente_fd) {
 		mensaje_a_guardar->mensaje = (void*) appeared_msg;
 
 		sem_wait(&gl_appeared_limite);
+
+		log_info(extense_logger, "Encolando el mensaje APPEARED con id %i", mensaje_a_guardar->id);
 		pthread_mutex_lock(&gl_appeared_queue_lock);
-
-		log_info(extense_logger, "Encolando el mensaje APPEARED");
 		queue_push(gl_appeared_pokemon_queue, mensaje_a_guardar);
-		log_info(extense_logger, "Mensaje APPEARED encolado");
-
 		pthread_mutex_unlock(&gl_appeared_queue_lock);
+		log_info(extense_logger, "Mensaje APPEARED con id %i encolado", mensaje_a_guardar->id);
+		log_info(logger, "Mensaje APPEARED con id %i encolado", mensaje_a_guardar->id);
+
 		sem_post(&gl_appeared_mensajes);
 
 		devolver_id(cliente_fd, mensaje_a_guardar->id, extense_logger);
@@ -56,13 +58,14 @@ void procesar_request(int cod_op, int cliente_fd) {
 		mensaje_a_guardar->mensaje = (void*) get_msg;
 
 		sem_wait(&gl_get_limite);
+
+		log_info(extense_logger, "Encolando el mensaje GET con id %i", mensaje_a_guardar->id);
 		pthread_mutex_lock(&gl_get_queue_lock);
-
-		log_info(extense_logger, "Encolando el mensaje GET");
 		queue_push(gl_get_pokemon_queue, mensaje_a_guardar);
-		log_info(extense_logger, "Mensaje GET encolado");
-
 		pthread_mutex_unlock(&gl_get_queue_lock);
+		log_info(extense_logger, "Mensaje GET con id %i encolado", mensaje_a_guardar->id);
+		log_info(logger, "Mensaje GET con id %i encolado", mensaje_a_guardar->id);
+
 		sem_post(&gl_get_mensajes);
 
 		devolver_id(cliente_fd, mensaje_a_guardar->id, extense_logger);
@@ -76,13 +79,14 @@ void procesar_request(int cod_op, int cliente_fd) {
 		mensaje_a_guardar->mensaje = (void*) localized_msg;
 
 		sem_wait(&gl_localized_limite);
+
+		log_info(extense_logger, "Encolando el mensaje LOCALIZED con id %i", mensaje_a_guardar->id);
 		pthread_mutex_lock(&gl_localized_queue_lock);
-
-		log_info(extense_logger, "Encolando el mensaje LOCALIZED");
 		queue_push(gl_localized_pokemon_queue, mensaje_a_guardar);
-		log_info(extense_logger, "Mensaje LOCALIZED encolado");
-
 		pthread_mutex_unlock(&gl_localized_queue_lock);
+		log_info(extense_logger, "Mensaje LOCALIZED con id %i encolado", mensaje_a_guardar->id);
+		log_info(logger, "Mensaje LOCALIZED con id %i encolado", mensaje_a_guardar->id);
+
 		sem_post(&gl_localized_mensajes);
 
 		devolver_id(cliente_fd, mensaje_a_guardar->id, extense_logger);
@@ -96,13 +100,14 @@ void procesar_request(int cod_op, int cliente_fd) {
 		mensaje_a_guardar->mensaje = (void*) catch_msg;
 
 		sem_wait(&gl_catch_limite);
+
+		log_info(extense_logger, "Encolando el mensaje CATCH con id %i", mensaje_a_guardar->id);
 		pthread_mutex_lock(&gl_catch_queue_lock);
-
-		log_info(extense_logger, "Encolando el mensaje CATCH");
 		queue_push(gl_catch_pokemon_queue, mensaje_a_guardar);
-		log_info(extense_logger, "Mensaje CATCH encolado");
-
 		pthread_mutex_unlock(&gl_catch_queue_lock);
+		log_info(extense_logger, "Mensaje CATCH con id %i encolado", mensaje_a_guardar->id);
+		log_info(logger, "Mensaje CATCH con id %i encolado", mensaje_a_guardar->id);
+
 		sem_post(&gl_catch_mensajes);
 
 		devolver_id(cliente_fd, mensaje_a_guardar->id, extense_logger);
@@ -116,13 +121,14 @@ void procesar_request(int cod_op, int cliente_fd) {
 		mensaje_a_guardar->mensaje = (void*) caught_msg;
 
 		sem_wait(&gl_caught_limite);
+
+		log_info(extense_logger, "Encolando el mensaje CAUGHT con id %i", mensaje_a_guardar->id);
 		pthread_mutex_lock(&gl_caught_queue_lock);
-
-		log_info(extense_logger, "Encolando el mensaje CAUGHT");
 		queue_push(gl_caught_pokemon_queue, mensaje_a_guardar);
-		log_info(extense_logger, "Mensaje CAUGHT encolado");
-
 		pthread_mutex_unlock(&gl_caught_queue_lock);
+		log_info(extense_logger, "Mensaje CAUGHT con id %i encolado", mensaje_a_guardar->id);
+		log_info(logger, "Mensaje CAUGHT con id %i encolado", mensaje_a_guardar->id);
+
 		sem_post(&gl_caught_mensajes);
 
 		devolver_id(cliente_fd, mensaje_a_guardar->id, extense_logger);
@@ -140,7 +146,8 @@ void procesar_request(int cod_op, int cliente_fd) {
 			pthread_mutex_lock(&gl_new_list_lock);
 			list_add(gl_new_suscriptores, (void *) &INFO_GAME_BOY);
 			pthread_mutex_unlock(&gl_new_list_lock);
-			log_info(extense_logger, "Modulo GAME BOY agregado correctamente en la loca de NEW");
+			log_info(extense_logger, "Modulo GAME BOY agregado correctamente en la cola de NEW");
+			log_info(logger, "Modulo GAME BOY agregado correctamente en la cola de NEW");
 			break;
 		case APPEARED_ID: ;
 			log_info(extense_logger, "Id de cola recibido de %i corresponde a la cola de APPEARED", cliente_fd);
@@ -148,7 +155,8 @@ void procesar_request(int cod_op, int cliente_fd) {
 			pthread_mutex_lock(&gl_appeared_list_lock);
 			list_add(gl_appeared_suscriptores, (void *) &INFO_GAME_BOY);
 			pthread_mutex_unlock(&gl_appeared_list_lock);
-			log_info(extense_logger, "Modulo GAME BOY agregado correctamente en la loca de APPEARED");
+			log_info(extense_logger, "Modulo GAME BOY agregado correctamente en la cola de APPEARED");
+			log_info(logger, "Modulo GAME BOY agregado correctamente en la cola de APPEARED");
 			break;
 		case CATCH_ID: ;
 			log_info(extense_logger, "Id de cola recibido de %i corresponde a la cola de CATCH", cliente_fd);
@@ -156,7 +164,8 @@ void procesar_request(int cod_op, int cliente_fd) {
 			pthread_mutex_lock(&gl_catch_list_lock);
 			list_add(gl_catch_suscriptores, (void *) &INFO_GAME_BOY);
 			pthread_mutex_unlock(&gl_catch_list_lock);
-			log_info(extense_logger, "Modulo GAME BOY agregado correctamente en la loca de CATCH");
+			log_info(extense_logger, "Modulo GAME BOY agregado correctamente en la cola de CATCH");
+			log_info(logger, "Modulo GAME BOY agregado correctamente en la cola de CATCH");
 			break;
 		case CAUGHT_ID: ;
 			log_info(extense_logger, "Id de cola recibido de %i corresponde a la cola de CAUGHT", cliente_fd);
@@ -164,7 +173,8 @@ void procesar_request(int cod_op, int cliente_fd) {
 			pthread_mutex_lock(&gl_caught_list_lock);
 			list_add(gl_caught_suscriptores, (void *) &INFO_GAME_BOY);
 			pthread_mutex_unlock(&gl_caught_list_lock);
-			log_info(extense_logger, "Modulo GAME BOY agregado correctamente en la loca de CAUGHT");
+			log_info(extense_logger, "Modulo GAME BOY agregado correctamente en la cola de CAUGHT");
+			log_info(logger, "Modulo GAME BOY agregado correctamente en la cola de CAUGHT");
 			break;
 		case GET_ID: ;
 			log_info(extense_logger, "Id de cola recibido de %i corresponde a la cola de GET", cliente_fd);
@@ -172,7 +182,8 @@ void procesar_request(int cod_op, int cliente_fd) {
 			pthread_mutex_lock(&gl_get_list_lock);
 			list_add(gl_get_suscriptores, (void *) &INFO_GAME_BOY);
 			pthread_mutex_unlock(&gl_get_list_lock);
-			log_info(extense_logger, "Modulo GAME BOY agregado correctamente en la loca de GET");
+			log_info(extense_logger, "Modulo GAME BOY agregado correctamente en la cola de GET");
+			log_info(logger, "Modulo GAME BOY agregado correctamente en la cola de GET");
 			break;
 		case LOCALIZED_ID: ;
 			log_info(extense_logger, "Id de cola recibido de %i corresponde a la cola de LOCALIZED", cliente_fd);
@@ -180,7 +191,8 @@ void procesar_request(int cod_op, int cliente_fd) {
 			pthread_mutex_lock(&gl_localized_list_lock);
 			list_add(gl_localized_suscriptores, (void *) &INFO_GAME_BOY);
 			pthread_mutex_unlock(&gl_localized_list_lock);
-			log_info(extense_logger, "Modulo GAME BOY agregado correctamente en la loca de LOCALIZED");
+			log_info(extense_logger, "Modulo GAME BOY agregado correctamente en la cola de LOCALIZED");
+			log_info(logger, "Modulo GAME BOY agregado correctamente en la cola de LOCALIZED");
 			break;
 		}
 
@@ -213,6 +225,7 @@ void esperar_cliente(int socket_servidor) {
 	int socket_cliente = accept(socket_servidor, (void*) &dir_cliente, &tam_direccion);
 
 	log_info(extense_logger, "Socket cliente %i aceptado", socket_cliente);
+	log_info(logger, "Nueva conexion de un proceso con socket cliente %i", socket_cliente);
 
 	pthread_t thread;
 
@@ -577,6 +590,7 @@ void mandar_new(void* new_mandable) {
 
 	log_info(extense_logger, "Conexion creada para el modulo %s con socket %i", argumento_new->info->nombre, socket_cliente);
 	log_info(extense_logger, "Enviando mensaje NEW con id %i al modulo %s", argumento_new->mensaje_queue->id, argumento_new->info->nombre);
+	log_info(logger, "Enviando mensaje NEW con id %i al modulo %s", argumento_new->mensaje_queue->id, argumento_new->info->nombre);
 
 	if (send(socket_cliente, flujo, bytes, 0) == -1) {
 		// ver que onda el log
@@ -611,6 +625,7 @@ void mandar_appeared(void* appeared_mandable) {
 
 	log_info(extense_logger, "Conexion creada para el modulo %s con socket %i", argumento_appeared->info->nombre, socket_cliente);
 	log_info(extense_logger, "Enviando mensaje APPEARED con id %i al modulo %s", argumento_appeared->mensaje_queue->id, argumento_appeared->info->nombre);
+	log_info(logger, "Enviando mensaje APPEARED con id %i al modulo %s", argumento_appeared->mensaje_queue->id, argumento_appeared->info->nombre);
 
 	if (send(socket_cliente, flujo, bytes, 0) == -1) {
 		// ver que onda el log
@@ -645,6 +660,7 @@ void mandar_catch(void* catch_mandable) {
 
 	log_info(extense_logger, "Conexion creada para el modulo %s con socket %i", argumento_catch->info->nombre, socket_cliente);
 	log_info(extense_logger, "Enviando mensaje CATCH con id %i al modulo %s", argumento_catch->mensaje_queue->id, argumento_catch->info->nombre);
+	log_info(logger, "Enviando mensaje CATCH con id %i al modulo %s", argumento_catch->mensaje_queue->id, argumento_catch->info->nombre);
 
 	if (send(socket_cliente, flujo, bytes, 0) == -1) {
 		// ver que onda el log
@@ -679,6 +695,7 @@ void mandar_caught(void* caught_mandable) {
 
 	log_info(extense_logger, "Conexion creada para el modulo %s con socket %i", argumento_caught->info->nombre, socket_cliente);
 	log_info(extense_logger, "Enviando mensaje CAUGHT con id %i al modulo %s", argumento_caught->mensaje_queue->id, argumento_caught->info->nombre);
+	log_info(logger, "Enviando mensaje CAUGHT con id %i al modulo %s", argumento_caught->mensaje_queue->id, argumento_caught->info->nombre);
 
 	if (send(socket_cliente, flujo, bytes, 0) == -1) {
 		// ver que onda el log
@@ -713,6 +730,7 @@ void mandar_get(void* get_mandable) {
 
 	log_info(extense_logger, "Conexion creada para el modulo %s con socket %i", argumento_get->info->nombre, socket_cliente);
 	log_info(extense_logger, "Enviando mensaje GET con id %i al modulo %s", argumento_get->mensaje_queue->id, argumento_get->info->nombre);
+	log_info(logger, "Enviando mensaje GET con id %i al modulo %s", argumento_get->mensaje_queue->id, argumento_get->info->nombre);
 
 	if (send(socket_cliente, flujo, bytes, 0) == -1) {
 		// ver que onda el log
@@ -747,6 +765,7 @@ void mandar_localized(void* localized_mandable) {
 
 	log_info(extense_logger, "Conexion creada para el modulo %s con socket %i", argumento_localized->info->nombre, socket_cliente);
 	log_info(extense_logger, "Enviando mensaje LOCALIZED con id %i al modulo %s", argumento_localized->mensaje_queue->id, argumento_localized->info->nombre);
+	log_info(logger, "Enviando mensaje LOCALIZED con id %i al modulo %s", argumento_localized->mensaje_queue->id, argumento_localized->info->nombre);
 
 	if (send(socket_cliente, flujo, bytes, 0) == -1) {
 		// ver que onda el log
