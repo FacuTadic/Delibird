@@ -9,6 +9,7 @@
 #include "pthread.h"
 #include "semaphore.h"
 #include "broker_msj_id.h"
+#include "memoria_broker.h"
 
 #endif /* BROKER_H_ */
 
@@ -103,7 +104,7 @@ typedef struct {
 t_log* iniciar_logger(char* log_file);
 t_config* leer_config(void);
 t_config* leer_config(void);
-void leer_info_modulos(void);
+void inicializar_memoria(void);
 void inicializar_colas(void);
 void inicializar_semaforos_colas(void);
 void terminar_programa(void);

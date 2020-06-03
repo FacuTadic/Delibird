@@ -271,6 +271,8 @@ void* atender_new(void* args) {
 
 		free(mensaje_a_eliminar->pokemon);
 		free(mensaje_a_eliminar);
+		list_clean(elemento_a_eliminar->acks);
+		list_destroy(elemento_a_eliminar->acks);
 		free(elemento_a_eliminar);
 	}
 }
@@ -304,6 +306,8 @@ void* atender_appeared(void* args) {
 
 		free(mensaje_a_eliminar->pokemon);
 		free(mensaje_a_eliminar);
+		list_clean(elemento_a_eliminar->acks);
+		list_destroy(elemento_a_eliminar->acks);
 		free(elemento_a_eliminar);
 	}
 }
@@ -337,6 +341,8 @@ void* atender_catch(void* args) {
 
 		free(mensaje_a_eliminar->pokemon);
 		free(mensaje_a_eliminar);
+		list_clean(elemento_a_eliminar->acks);
+		list_destroy(elemento_a_eliminar->acks);
 		free(elemento_a_eliminar);
 	}
 }
@@ -369,6 +375,8 @@ void* atender_caught(void* args) {
 		log_info(extense_logger, "Eliminado mensaje CAUGHT con id %i", primer_elemento->id);
 
 		free(mensaje_a_eliminar);
+		list_clean(elemento_a_eliminar->acks);
+		list_destroy(elemento_a_eliminar->acks);
 		free(elemento_a_eliminar);
 	}
 }
@@ -402,6 +410,8 @@ void* atender_get(void* args) {
 
 		free(mensaje_a_eliminar->pokemon);
 		free(mensaje_a_eliminar);
+		list_clean(elemento_a_eliminar->acks);
+		list_destroy(elemento_a_eliminar->acks);
 		free(elemento_a_eliminar);
 	}
 }
@@ -437,6 +447,8 @@ void* atender_localized(void* args) {
 		list_destroy(mensaje_a_eliminar->l_coordenadas);
 		free(mensaje_a_eliminar->l_coordenadas);
 		free(mensaje_a_eliminar);
+		list_clean(elemento_a_eliminar->acks);
+		list_destroy(elemento_a_eliminar->acks);
 		free(elemento_a_eliminar);
 	}
 }
@@ -460,8 +472,8 @@ void atender_mensaje_new(mensaje_queue* mensaje) {
 	}
 
 	free(threads);
-
-	queue_pop(gl_new_pokemon_queue);
+	list_clean(suscriptores_para_enviar);
+	list_destroy(suscriptores_para_enviar);
 }
 
 void atender_mensaje_appeared(mensaje_queue* mensaje) {
@@ -483,8 +495,8 @@ void atender_mensaje_appeared(mensaje_queue* mensaje) {
 	}
 
 	free(threads);
-
-	queue_pop(gl_appeared_pokemon_queue);
+	list_clean(suscriptores_para_enviar);
+	list_destroy(suscriptores_para_enviar);
 }
 
 void atender_mensaje_catch(mensaje_queue* mensaje) {
@@ -506,8 +518,8 @@ void atender_mensaje_catch(mensaje_queue* mensaje) {
 	}
 
 	free(threads);
-
-	queue_pop(gl_catch_pokemon_queue);
+	list_clean(suscriptores_para_enviar);
+	list_destroy(suscriptores_para_enviar);
 }
 
 void atender_mensaje_caught(mensaje_queue* mensaje) {
@@ -529,8 +541,8 @@ void atender_mensaje_caught(mensaje_queue* mensaje) {
 	}
 
 	free(threads);
-
-	queue_pop(gl_caught_pokemon_queue);
+	list_clean(suscriptores_para_enviar);
+	list_destroy(suscriptores_para_enviar);
 }
 
 void atender_mensaje_get(mensaje_queue* mensaje) {
@@ -552,8 +564,8 @@ void atender_mensaje_get(mensaje_queue* mensaje) {
 	}
 
 	free(threads);
-
-	queue_pop(gl_get_pokemon_queue);
+	list_clean(suscriptores_para_enviar);
+	list_destroy(suscriptores_para_enviar);
 }
 
 void atender_mensaje_localized(mensaje_queue* mensaje) {
@@ -575,8 +587,8 @@ void atender_mensaje_localized(mensaje_queue* mensaje) {
 	}
 
 	free(threads);
-
-	queue_pop(gl_localized_pokemon_queue);
+	list_clean(suscriptores_para_enviar);
+	list_destroy(suscriptores_para_enviar);
 }
 
 void mandar_new(void* new_mandable) {
@@ -986,6 +998,8 @@ int main(void) {
 	puerto = config_get_string_value(config, "PUERTO");
 	log_info(extense_logger, "El puerto es: %s", puerto);
 
+	inicializar_memoria();
+
 	inicializar_colas();
 
 	inicializar_semaforos_colas();
@@ -1039,6 +1053,12 @@ int main(void) {
 
 	terminar_programa();
 	return EXIT_SUCCESS;
+}
+
+void inicializar_memoria() {
+	int tamanio_memoria = config_get_int_value(config, "TAMANIO_MEMORIA");
+	tamanio_minimo_particion = config_get_int_value(config, "TAMANIO_MINIMO_PARTICION");
+	memoria = malloc(tamanio_memoria);
 }
 
 void inicializar_colas(void) {
