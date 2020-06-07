@@ -458,7 +458,19 @@ void atender_mensaje_new(mensaje_queue* mensaje) {
 	t_list* suscriptores_para_enviar = list_duplicate(gl_new_suscriptores);
 	pthread_mutex_unlock(&gl_new_list_lock);
 
-	// guardar en memoria
+	data_tabla* registro = malloc(sizeof(data_tabla));
+
+	registro->id = mensaje->id;
+	registro->id_correlativo = ((t_localized*) mensaje->mensaje)->id_correlativo;
+	registro->tipo = NEW;
+
+	uint32_t bytes;
+
+	void* mensaje_memoria = serializar_new(mensaje, &bytes);
+
+	registro->limit = bytes;
+
+	guardar_mensaje_en_memoria(registro, mensaje_memoria);
 
 	pthread_t* threads = malloc(sizeof(pthread_t) * suscriptores_para_enviar->elements_count);
 
@@ -503,7 +515,19 @@ void atender_mensaje_appeared(mensaje_queue* mensaje) {
 	t_list* suscriptores_para_enviar = list_duplicate(gl_appeared_suscriptores);
 	pthread_mutex_unlock(&gl_appeared_list_lock);
 
-	// guardar en memoria
+	data_tabla* registro = malloc(sizeof(data_tabla));
+
+	registro->id = mensaje->id;
+	registro->id_correlativo = ((t_localized*) mensaje->mensaje)->id_correlativo;
+	registro->tipo = APPEARED;
+
+	uint32_t bytes;
+
+	void* mensaje_memoria = serializar_appeared(mensaje, &bytes);
+
+	registro->limit = bytes;
+
+	guardar_mensaje_en_memoria(registro, mensaje_memoria);
 
 	pthread_t* threads = malloc(sizeof(pthread_t) * suscriptores_para_enviar->elements_count);
 
@@ -548,7 +572,19 @@ void atender_mensaje_catch(mensaje_queue* mensaje) {
 	t_list* suscriptores_para_enviar = list_duplicate(gl_catch_suscriptores);
 	pthread_mutex_unlock(&gl_catch_list_lock);
 
-	// guardar en memoria
+	data_tabla* registro = malloc(sizeof(data_tabla));
+
+	registro->id = mensaje->id;
+	registro->id_correlativo = ((t_localized*) mensaje->mensaje)->id_correlativo;
+	registro->tipo = CATCH;
+
+	uint32_t bytes;
+
+	void* mensaje_memoria = serializar_catch(mensaje, &bytes);
+
+	registro->limit = bytes;
+
+	guardar_mensaje_en_memoria(registro, mensaje_memoria);
 
 	pthread_t* threads = malloc(sizeof(pthread_t) * suscriptores_para_enviar->elements_count);
 
@@ -593,7 +629,19 @@ void atender_mensaje_caught(mensaje_queue* mensaje) {
 	t_list* suscriptores_para_enviar = list_duplicate(gl_caught_suscriptores);
 	pthread_mutex_unlock(&gl_caught_list_lock);
 
-	// guardar en memoria
+	data_tabla* registro = malloc(sizeof(data_tabla));
+
+	registro->id = mensaje->id;
+	registro->id_correlativo = ((t_localized*) mensaje->mensaje)->id_correlativo;
+	registro->tipo = CAUGHT;
+
+	uint32_t bytes;
+
+	void* mensaje_memoria = serializar_caught(mensaje, &bytes);
+
+	registro->limit = bytes;
+
+	guardar_mensaje_en_memoria(registro, mensaje_memoria);
 
 	pthread_t* threads = malloc(sizeof(pthread_t) * suscriptores_para_enviar->elements_count);
 
@@ -638,7 +686,18 @@ void atender_mensaje_get(mensaje_queue* mensaje) {
 	t_list* suscriptores_para_enviar = list_duplicate(gl_get_suscriptores);
 	pthread_mutex_unlock(&gl_get_list_lock);
 
-	// guardar en memoria
+	data_tabla* registro = malloc(sizeof(data_tabla));
+
+	registro->id = mensaje->id;
+	registro->tipo = GET;
+
+	uint32_t bytes;
+
+	void* mensaje_memoria = serializar_get(mensaje, &bytes);
+
+	registro->limit = bytes;
+
+	guardar_mensaje_en_memoria(registro, mensaje_memoria);
 
 	pthread_t* threads = malloc(sizeof(pthread_t) * suscriptores_para_enviar->elements_count);
 
