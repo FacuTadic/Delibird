@@ -458,12 +458,15 @@ void atender_mensaje_new(mensaje_queue* mensaje) {
 	t_list* suscriptores_para_enviar = list_duplicate(gl_new_suscriptores);
 	pthread_mutex_unlock(&gl_new_list_lock);
 
+	// guardar en memoria
+
 	pthread_t* threads = malloc(sizeof(pthread_t) * suscriptores_para_enviar->elements_count);
 
+	mandable_struct* struct_para_enviar = malloc(sizeof(mandable_struct) * suscriptores_para_enviar->elements_count);
+
 	for (int i = 0; i < suscriptores_para_enviar->elements_count; i++) {
-		mandable_struct* struct_para_enviar = malloc(sizeof(mandable_struct));
-		struct_para_enviar->info = list_get(suscriptores_para_enviar, i);
-		struct_para_enviar->mensaje_queue = mensaje;
+		struct_para_enviar[i].info = list_get(suscriptores_para_enviar, i);
+		struct_para_enviar[i].mensaje_queue = mensaje;
 		pthread_create(&(threads[i]), NULL, (void*) mandar_new, (void *) struct_para_enviar);
 	}
 
@@ -471,7 +474,26 @@ void atender_mensaje_new(mensaje_queue* mensaje) {
 		pthread_join(threads[i], NULL);
 	}
 
+	t_list* mandados = list_create();
+
+	for (int i = 0; i < suscriptores_para_enviar->elements_count; i++) {
+		if (struct_para_enviar[i].status->envio_ok == 1) {
+			list_add(mandados, list_get(suscriptores_para_enviar, i));
+		}
+	}
+
+	t_list* acks = list_create();
+
+	for (int i = 0; i < suscriptores_para_enviar->elements_count; i++) {
+		if (struct_para_enviar[i].status->ack == 1) {
+			list_add(acks, list_get(suscriptores_para_enviar, i));
+		}
+	}
+
+	guardar_info_envios(mensaje->id, mandados, acks);
+
 	free(threads);
+	free(struct_para_enviar);
 	list_clean(suscriptores_para_enviar);
 	list_destroy(suscriptores_para_enviar);
 }
@@ -481,12 +503,15 @@ void atender_mensaje_appeared(mensaje_queue* mensaje) {
 	t_list* suscriptores_para_enviar = list_duplicate(gl_appeared_suscriptores);
 	pthread_mutex_unlock(&gl_appeared_list_lock);
 
+	// guardar en memoria
+
 	pthread_t* threads = malloc(sizeof(pthread_t) * suscriptores_para_enviar->elements_count);
 
+	mandable_struct* struct_para_enviar = malloc(sizeof(mandable_struct) * suscriptores_para_enviar->elements_count);
+
 	for (int i = 0; i < suscriptores_para_enviar->elements_count; i++) {
-		mandable_struct* struct_para_enviar = malloc(sizeof(mandable_struct));
-		struct_para_enviar->info = list_get(suscriptores_para_enviar, i);
-		struct_para_enviar->mensaje_queue = mensaje;
+		struct_para_enviar[i].info = list_get(suscriptores_para_enviar, i);
+		struct_para_enviar[i].mensaje_queue = mensaje;
 		pthread_create(&(threads[i]), NULL, (void*) mandar_appeared, (void *) struct_para_enviar);
 	}
 
@@ -494,7 +519,26 @@ void atender_mensaje_appeared(mensaje_queue* mensaje) {
 		pthread_join(threads[i], NULL);
 	}
 
+	t_list* mandados = list_create();
+
+	for (int i = 0; i < suscriptores_para_enviar->elements_count; i++) {
+		if (struct_para_enviar[i].status->envio_ok == 1) {
+			list_add(mandados, list_get(suscriptores_para_enviar, i));
+		}
+	}
+
+	t_list* acks = list_create();
+
+	for (int i = 0; i < suscriptores_para_enviar->elements_count; i++) {
+		if (struct_para_enviar[i].status->ack == 1) {
+			list_add(acks, list_get(suscriptores_para_enviar, i));
+		}
+	}
+
+	guardar_info_envios(mensaje->id, mandados, acks);
+
 	free(threads);
+	free(struct_para_enviar);
 	list_clean(suscriptores_para_enviar);
 	list_destroy(suscriptores_para_enviar);
 }
@@ -504,12 +548,15 @@ void atender_mensaje_catch(mensaje_queue* mensaje) {
 	t_list* suscriptores_para_enviar = list_duplicate(gl_catch_suscriptores);
 	pthread_mutex_unlock(&gl_catch_list_lock);
 
+	// guardar en memoria
+
 	pthread_t* threads = malloc(sizeof(pthread_t) * suscriptores_para_enviar->elements_count);
 
+	mandable_struct* struct_para_enviar = malloc(sizeof(mandable_struct) * suscriptores_para_enviar->elements_count);
+
 	for (int i = 0; i < suscriptores_para_enviar->elements_count; i++) {
-		mandable_struct* struct_para_enviar = malloc(sizeof(mandable_struct));
-		struct_para_enviar->info = list_get(suscriptores_para_enviar, i);
-		struct_para_enviar->mensaje_queue = mensaje;
+		struct_para_enviar[i].info = list_get(suscriptores_para_enviar, i);
+		struct_para_enviar[i].mensaje_queue = mensaje;
 		pthread_create(&(threads[i]), NULL, (void*) mandar_catch, (void *) struct_para_enviar);
 	}
 
@@ -517,7 +564,26 @@ void atender_mensaje_catch(mensaje_queue* mensaje) {
 		pthread_join(threads[i], NULL);
 	}
 
+	t_list* mandados = list_create();
+
+	for (int i = 0; i < suscriptores_para_enviar->elements_count; i++) {
+		if (struct_para_enviar[i].status->envio_ok == 1) {
+			list_add(mandados, list_get(suscriptores_para_enviar, i));
+		}
+	}
+
+	t_list* acks = list_create();
+
+	for (int i = 0; i < suscriptores_para_enviar->elements_count; i++) {
+		if (struct_para_enviar[i].status->ack == 1) {
+			list_add(acks, list_get(suscriptores_para_enviar, i));
+		}
+	}
+
+	guardar_info_envios(mensaje->id, mandados, acks);
+
 	free(threads);
+	free(struct_para_enviar);
 	list_clean(suscriptores_para_enviar);
 	list_destroy(suscriptores_para_enviar);
 }
@@ -527,12 +593,15 @@ void atender_mensaje_caught(mensaje_queue* mensaje) {
 	t_list* suscriptores_para_enviar = list_duplicate(gl_caught_suscriptores);
 	pthread_mutex_unlock(&gl_caught_list_lock);
 
+	// guardar en memoria
+
 	pthread_t* threads = malloc(sizeof(pthread_t) * suscriptores_para_enviar->elements_count);
 
+	mandable_struct* struct_para_enviar = malloc(sizeof(mandable_struct) * suscriptores_para_enviar->elements_count);
+
 	for (int i = 0; i < suscriptores_para_enviar->elements_count; i++) {
-		mandable_struct* struct_para_enviar = malloc(sizeof(mandable_struct));
-		struct_para_enviar->info = list_get(suscriptores_para_enviar, i);
-		struct_para_enviar->mensaje_queue = mensaje;
+		struct_para_enviar[i].info = list_get(suscriptores_para_enviar, i);
+		struct_para_enviar[i].mensaje_queue = mensaje;
 		pthread_create(&(threads[i]), NULL, (void*) mandar_caught, struct_para_enviar);
 	}
 
@@ -540,7 +609,26 @@ void atender_mensaje_caught(mensaje_queue* mensaje) {
 		pthread_join(threads[i], NULL);
 	}
 
+	t_list* mandados = list_create();
+
+	for (int i = 0; i < suscriptores_para_enviar->elements_count; i++) {
+		if (struct_para_enviar[i].status->envio_ok == 1) {
+			list_add(mandados, list_get(suscriptores_para_enviar, i));
+		}
+	}
+
+	t_list* acks = list_create();
+
+	for (int i = 0; i < suscriptores_para_enviar->elements_count; i++) {
+		if (struct_para_enviar[i].status->ack == 1) {
+			list_add(acks, list_get(suscriptores_para_enviar, i));
+		}
+	}
+
+	guardar_info_envios(mensaje->id, mandados, acks);
+
 	free(threads);
+	free(struct_para_enviar);
 	list_clean(suscriptores_para_enviar);
 	list_destroy(suscriptores_para_enviar);
 }
@@ -550,12 +638,15 @@ void atender_mensaje_get(mensaje_queue* mensaje) {
 	t_list* suscriptores_para_enviar = list_duplicate(gl_get_suscriptores);
 	pthread_mutex_unlock(&gl_get_list_lock);
 
+	// guardar en memoria
+
 	pthread_t* threads = malloc(sizeof(pthread_t) * suscriptores_para_enviar->elements_count);
 
+	mandable_struct* struct_para_enviar = malloc(sizeof(mandable_struct) * suscriptores_para_enviar->elements_count);
+
 	for (int i = 0; i < suscriptores_para_enviar->elements_count; i++) {
-		mandable_struct* struct_para_enviar = malloc(sizeof(mandable_struct));
-		struct_para_enviar->info = list_get(suscriptores_para_enviar, i);
-		struct_para_enviar->mensaje_queue = mensaje;
+		struct_para_enviar[i].info = list_get(suscriptores_para_enviar, i);
+		struct_para_enviar[i].mensaje_queue = mensaje;
 		pthread_create(&(threads[i]), NULL, (void*) atender_get, struct_para_enviar);
 	}
 
@@ -563,7 +654,26 @@ void atender_mensaje_get(mensaje_queue* mensaje) {
 		pthread_join(threads[i], NULL);
 	}
 
+	t_list* mandados = list_create();
+
+	for (int i = 0; i < suscriptores_para_enviar->elements_count; i++) {
+		if (struct_para_enviar[i].status->envio_ok == 1) {
+			list_add(mandados, list_get(suscriptores_para_enviar, i));
+		}
+	}
+
+	t_list* acks = list_create();
+
+	for (int i = 0; i < suscriptores_para_enviar->elements_count; i++) {
+		if (struct_para_enviar[i].status->ack == 1) {
+			list_add(acks, list_get(suscriptores_para_enviar, i));
+		}
+	}
+
+	guardar_info_envios(mensaje->id, mandados, acks);
+
 	free(threads);
+	free(struct_para_enviar);
 	list_clean(suscriptores_para_enviar);
 	list_destroy(suscriptores_para_enviar);
 }
@@ -573,12 +683,27 @@ void atender_mensaje_localized(mensaje_queue* mensaje) {
 	t_list* suscriptores_para_enviar = list_duplicate(gl_localized_suscriptores);
 	pthread_mutex_unlock(&gl_localized_list_lock);
 
+	data_tabla* registro = malloc(sizeof(data_tabla));
+
+	registro->id = mensaje->id;
+	registro->id_correlativo = ((t_localized*) mensaje->mensaje)->id_correlativo;
+	registro->tipo = LOCALIZED;
+
+	uint32_t bytes;
+
+	void* mensaje_memoria = serializar_localized(mensaje, &bytes);
+
+	registro->limit = bytes;
+
+	guardar_mensaje_en_memoria(registro, mensaje_memoria);
+
 	pthread_t* threads = malloc(sizeof(pthread_t) * suscriptores_para_enviar->elements_count);
 
+	mandable_struct* struct_para_enviar = malloc(sizeof(mandable_struct) * suscriptores_para_enviar->elements_count);
+
 	for (int i = 0; i < suscriptores_para_enviar->elements_count; i++) {
-		mandable_struct* struct_para_enviar = malloc(sizeof(mandable_struct));
-		struct_para_enviar->info = list_get(suscriptores_para_enviar, i);
-		struct_para_enviar->mensaje_queue = mensaje;
+		struct_para_enviar[i].info = list_get(suscriptores_para_enviar, i);
+		struct_para_enviar[i].mensaje_queue = mensaje;
 		pthread_create(&(threads[i]), NULL, (void*) mandar_localized, struct_para_enviar);
 	}
 
@@ -586,7 +711,26 @@ void atender_mensaje_localized(mensaje_queue* mensaje) {
 		pthread_join(threads[i], NULL);
 	}
 
+	t_list* mandados = list_create();
+
+	for (int i = 0; i < suscriptores_para_enviar->elements_count; i++) {
+		if (struct_para_enviar[i].status->envio_ok == 1) {
+			list_add(mandados, list_get(suscriptores_para_enviar, i));
+		}
+	}
+
+	t_list* acks = list_create();
+
+	for (int i = 0; i < suscriptores_para_enviar->elements_count; i++) {
+		if (struct_para_enviar[i].status->ack == 1) {
+			list_add(acks, list_get(suscriptores_para_enviar, i));
+		}
+	}
+
+	guardar_info_envios(mensaje->id, mandados, acks);
+
 	free(threads);
+	free(struct_para_enviar);
 	list_clean(suscriptores_para_enviar);
 	list_destroy(suscriptores_para_enviar);
 }
@@ -594,10 +738,15 @@ void atender_mensaje_localized(mensaje_queue* mensaje) {
 void mandar_new(void* new_mandable) {
 	mandable_struct* argumento_new = (mandable_struct*) new_mandable;
 
+	status_envio* status = malloc(sizeof(status_envio));
+
+	status->ip = argumento_new->info->ip;
+	status->puerto = argumento_new->info->puerto;
+
 	log_info(extense_logger, "Preparandose para enviar mensaje NEW con id %i al ip %s puerto %s", argumento_new->mensaje_queue->id, argumento_new->info->ip, argumento_new->info->puerto);
 
 	uint32_t bytes;
-	void* flujo = serializar_new(argumento_new, &bytes);
+	void* flujo = serializar_new(argumento_new->mensaje_queue, &bytes);
 
 	int socket_cliente = crear_conexion(argumento_new->info->ip, argumento_new->info->puerto);
 
@@ -606,13 +755,18 @@ void mandar_new(void* new_mandable) {
 
 	if (send(socket_cliente, flujo, bytes, 0) == -1) {
 		log_error(extense_logger, "Error: No se pudo enviar el mensaje");
+		status->envio_ok = 0;
+		status->ack = 0;
 	} else {
+		status->envio_ok = 1;
 		log_info(extense_logger, "Mensaje NEW con id %i al ip %s puerto %s enviado correctamente", argumento_new->mensaje_queue->id, argumento_new->info->ip, argumento_new->info->puerto);
 		log_info(logger, "Mensaje NEW con id %i al ip %s puerto %s enviado correctamente", argumento_new->mensaje_queue->id, argumento_new->info->ip, argumento_new->info->puerto);
 		uint32_t id;
 		if (recv(socket_cliente,&id ,sizeof(uint32_t),MSG_WAITALL) == -1) {
 			log_error(extense_logger, "Error: No se recibió el ACK de ip %s puerto %s", argumento_new->info->ip, argumento_new->info->puerto);
+			status->ack = 0;
 		} else {
+			status->ack = 1;
 			log_info(extense_logger, "ACK de ip %s puerto %s recibido", argumento_new->info->ip, argumento_new->info->puerto);
 			log_info(logger, "ACK de ip %s puerto %s recibido", argumento_new->info->ip, argumento_new->info->puerto);
 			pthread_mutex_lock(&gl_new_ack_lock);
@@ -623,16 +777,22 @@ void mandar_new(void* new_mandable) {
 
 	close(socket_cliente);
 	free(flujo);
-	free(argumento_new);
+
+	argumento_new->status = status;
 }
 
 void mandar_appeared(void* appeared_mandable) {
 	mandable_struct* argumento_appeared = (mandable_struct*) appeared_mandable;
 
+	status_envio* status = malloc(sizeof(status_envio));
+
+	status->ip = argumento_appeared->info->ip;
+	status->puerto = argumento_appeared->info->puerto;
+
 	log_info(extense_logger, "Preparandose para enviar mensaje APPEARED con id %i al ip %s puerto %s", argumento_appeared->mensaje_queue->id, argumento_appeared->info->ip, argumento_appeared->info->puerto);
 
 	uint32_t bytes;
-	void* flujo = serializar_appeared(argumento_appeared, &bytes);
+	void* flujo = serializar_appeared(argumento_appeared->mensaje_queue, &bytes);
 
 	int socket_cliente = crear_conexion(argumento_appeared->info->ip, argumento_appeared->info->puerto);
 
@@ -641,13 +801,18 @@ void mandar_appeared(void* appeared_mandable) {
 
 	if (send(socket_cliente, flujo, bytes, 0) == -1) {
 		log_error(extense_logger, "Error: No se pudo enviar el mensaje");
+		status->envio_ok = 0;
+		status->ack = 0;
 	} else {
+		status->envio_ok = 1;
 		log_info(extense_logger, "Mensaje APPEARED con id %i al ip %s puerto %s enviado correctamente", argumento_appeared->mensaje_queue->id, argumento_appeared->info->ip, argumento_appeared->info->puerto);
 		log_info(logger, "Mensaje APPEARED con id %i al ip %s puerto %s enviado correctamente", argumento_appeared->mensaje_queue->id, argumento_appeared->info->ip, argumento_appeared->info->puerto);
 		uint32_t id;
 		if (recv(socket_cliente,&id ,sizeof(uint32_t),MSG_WAITALL) == -1) {
 			log_error(extense_logger, "Error: No se recibió el ACK de ip %s puerto %s", argumento_appeared->info->ip, argumento_appeared->info->puerto);
+			status->ack = 0;
 		} else {
+			status->ack = 1;
 			log_info(extense_logger, "ACK de ip %s puerto %s recibido", argumento_appeared->info->ip, argumento_appeared->info->puerto);
 			log_info(logger, "ACK de ip %s puerto %s recibido", argumento_appeared->info->ip, argumento_appeared->info->puerto);
 			pthread_mutex_lock(&gl_appeared_ack_lock);
@@ -658,31 +823,42 @@ void mandar_appeared(void* appeared_mandable) {
 
 	close(socket_cliente);
 	free(flujo);
-	free(argumento_appeared);
+
+	argumento_appeared->status = status;
 }
 
 void mandar_catch(void* catch_mandable) {
 	mandable_struct* argumento_catch = (mandable_struct*) catch_mandable;
+
+	status_envio* status = malloc(sizeof(status_envio));
+
+	status->ip = argumento_catch->info->ip;
+	status->puerto = argumento_catch->info->puerto;
 
 	log_info(extense_logger, "Preparandose para enviar mensaje CATCH con id %i al ip %s puerto %s", argumento_catch->mensaje_queue->id, argumento_catch->info->ip, argumento_catch->info->puerto);
 
 	int socket_cliente = crear_conexion(argumento_catch->info->ip, argumento_catch->info->puerto);
 
 	uint32_t bytes;
-	void* flujo = serializar_catch(argumento_catch, &bytes);
+	void* flujo = serializar_catch(argumento_catch->mensaje_queue, &bytes);
 
 	log_info(extense_logger, "Conexion creada para el ip %s puerto %s con socket %i", argumento_catch->info->ip, argumento_catch->info->puerto, socket_cliente);
 	log_info(extense_logger, "Enviando mensaje CATCH con id %i al ip %s puerto %s", argumento_catch->mensaje_queue->id, argumento_catch->info->ip, argumento_catch->info->puerto);
 
 	if (send(socket_cliente, flujo, bytes, 0) == -1) {
 		log_error(extense_logger, "Error: No se pudo enviar el mensaje");
+		status->envio_ok = 0;
+		status->ack = 1;
 	} else {
+		status->envio_ok = 1;
 		log_info(extense_logger, "Mensaje CATCH con id %i al ip %s puerto %s enviado correctamente", argumento_catch->mensaje_queue->id, argumento_catch->info->ip, argumento_catch->info->puerto);
 		log_info(logger, "Mensaje CATCH con id %i al ip %s puerto %s enviado correctamente", argumento_catch->mensaje_queue->id, argumento_catch->info->ip, argumento_catch->info->puerto);
 		uint32_t id;
 		if (recv(socket_cliente,&id ,sizeof(uint32_t),MSG_WAITALL) == -1) {
 			log_error(extense_logger, "Error: No se recibió el ACK de ip %s puerto %s", argumento_catch->info->ip, argumento_catch->info->puerto);
+			status->ack = 0;
 		} else {
+			status->ack = 1;
 			log_info(extense_logger, "ACK de ip %s puerto %s recibido", argumento_catch->info->ip, argumento_catch->info->puerto);
 			log_info(logger, "ACK de ip %s puerto %s recibido", argumento_catch->info->ip, argumento_catch->info->puerto);
 			pthread_mutex_lock(&gl_catch_ack_lock);
@@ -693,16 +869,22 @@ void mandar_catch(void* catch_mandable) {
 
 	close(socket_cliente);
 	free(flujo);
-	free(argumento_catch);
+
+	argumento_catch->status = status;
 }
 
 void mandar_caught(void* caught_mandable) {
 	mandable_struct* argumento_caught = (mandable_struct*) caught_mandable;
 
+	status_envio* status = malloc(sizeof(status_envio));
+
+	status->ip = argumento_caught->info->ip;
+	status->puerto = argumento_caught->info->puerto;
+
 	log_info(extense_logger, "Preparandose para enviar mensaje CAUGHT con id %i al ip %s puerto %s", argumento_caught->mensaje_queue->id, argumento_caught->info->ip, argumento_caught->info->puerto);
 
 	uint32_t bytes;
-	void* flujo = serializar_caught(argumento_caught, &bytes);
+	void* flujo = serializar_caught(argumento_caught->mensaje_queue, &bytes);
 
 	int socket_cliente = crear_conexion(argumento_caught->info->ip, argumento_caught->info->puerto);
 
@@ -711,13 +893,18 @@ void mandar_caught(void* caught_mandable) {
 
 	if (send(socket_cliente, flujo, bytes, 0) == -1) {
 		log_error(extense_logger, "Error: No se pudo enviar el mensaje");
+		status->envio_ok = 0;
+		status->ack = 0;
 	} else {
+		status->envio_ok = 1;
 		log_info(extense_logger, "Mensaje CAUGHT con id %i al ip %s puerto %s enviado correctamente", argumento_caught->mensaje_queue->id, argumento_caught->info->ip, argumento_caught->info->puerto);
 		log_info(logger, "Mensaje CAUGHT con id %i al ip %s puerto %s enviado correctamente", argumento_caught->mensaje_queue->id, argumento_caught->info->ip, argumento_caught->info->puerto);
 		uint32_t id;
 		if (recv(socket_cliente,&id ,sizeof(uint32_t),MSG_WAITALL) == -1) {
 			log_error(extense_logger, "Error: No se recibió el ACK de ip %s puerto %s", argumento_caught->info->ip, argumento_caught->info->puerto);
+			status->ack = 0;
 		} else {
+			status->ack = 1;
 			log_info(extense_logger, "ACK de ip %s puerto %s recibido", argumento_caught->info->ip, argumento_caught->info->puerto);
 			log_info(logger, "ACK de ip %s puerto %s recibido", argumento_caught->info->ip, argumento_caught->info->puerto);
 			pthread_mutex_lock(&gl_caught_ack_lock);
@@ -728,16 +915,22 @@ void mandar_caught(void* caught_mandable) {
 
 	close(socket_cliente);
 	free(flujo);
-	free(argumento_caught);
+
+	argumento_caught->status = status;
 }
 
 void mandar_get(void* get_mandable) {
 	mandable_struct* argumento_get = (mandable_struct*) get_mandable;
 
+	status_envio* status = malloc(sizeof(status_envio));
+
+	status->ip = argumento_get->info->ip;
+	status->puerto = argumento_get->info->puerto;
+
 	log_info(extense_logger, "Preparandose para enviar mensaje GET con id %i al ip %s puerto %s", argumento_get->mensaje_queue->id, argumento_get->info->ip, argumento_get->info->puerto);
 
 	uint32_t bytes;
-	void* flujo = serializar_get(argumento_get, &bytes);
+	void* flujo = serializar_get(argumento_get->mensaje_queue, &bytes);
 
 	int socket_cliente = crear_conexion(argumento_get->info->ip, argumento_get->info->puerto);
 
@@ -746,13 +939,18 @@ void mandar_get(void* get_mandable) {
 
 	if (send(socket_cliente, flujo, bytes, 0) == -1) {
 		log_error(extense_logger, "Error: No se pudo enviar el mensaje");
+		status->envio_ok = 0;
+		status->ack = 0;
 	} else {
+		status->envio_ok = 1;
 		log_info(extense_logger, "Mensaje GET con id %i al ip %s puerto %s enviado correctamente", argumento_get->mensaje_queue->id, argumento_get->info->ip, argumento_get->info->puerto);
 		log_info(logger, "Mensaje GET con id %i al ip %s puerto %s enviado correctamente", argumento_get->mensaje_queue->id, argumento_get->info->ip, argumento_get->info->puerto);
 		uint32_t id;
 		if (recv(socket_cliente,&id ,sizeof(uint32_t),MSG_WAITALL) == -1) {
 			log_error(extense_logger, "Error: No se recibió el ACK de ip %s puerto %s", argumento_get->info->ip, argumento_get->info->puerto);
+			status->ack = 0;
 		} else {
+			status->ack = 1;
 			log_info(extense_logger, "ACK de ip %s puerto %s recibido", argumento_get->info->ip, argumento_get->info->puerto);
 			log_info(logger, "ACK de ip %s puerto %s recibido", argumento_get->info->ip, argumento_get->info->puerto);
 			pthread_mutex_lock(&gl_get_ack_lock);
@@ -763,16 +961,22 @@ void mandar_get(void* get_mandable) {
 
 	close(socket_cliente);
 	free(flujo);
-	free(argumento_get);
+
+	argumento_get->status = status;
 }
 
 void mandar_localized(void* localized_mandable) {
 	mandable_struct* argumento_localized = (mandable_struct*) localized_mandable;
 
+	status_envio* status = malloc(sizeof(status_envio));
+
+	status->ip = argumento_localized->info->ip;
+	status->puerto = argumento_localized->info->puerto;
+
 	log_info(extense_logger, "Preparandose para enviar mensaje LOCALIZED con id %i al ip %s puerto %s", argumento_localized->mensaje_queue->id, argumento_localized->info->ip, argumento_localized->info->puerto);
 
 	uint32_t bytes;
-	void* flujo = serializar_localized(argumento_localized, &bytes);
+	void* flujo = serializar_localized(argumento_localized->mensaje_queue, &bytes);
 
 	int socket_cliente = crear_conexion(argumento_localized->info->ip, argumento_localized->info->puerto);
 
@@ -781,13 +985,18 @@ void mandar_localized(void* localized_mandable) {
 
 	if (send(socket_cliente, flujo, bytes, 0) == -1) {
 		log_error(extense_logger, "Error: No se pudo enviar el mensaje");
+		status->envio_ok = 0;
+		status->ack = 0;
 	} else {
+		status->envio_ok = 1;
 		log_info(extense_logger, "Mensaje LOCALIZED con id %i al ip %s puerto %s enviado correctamente", argumento_localized->mensaje_queue->id, argumento_localized->info->ip, argumento_localized->info->puerto);
 		log_info(logger, "Mensaje LOCALIZED con id %i al ip %s puerto %s enviado correctamente", argumento_localized->mensaje_queue->id, argumento_localized->info->ip, argumento_localized->info->puerto);
 		uint32_t id;
 		if (recv(socket_cliente,&id ,sizeof(uint32_t),MSG_WAITALL) == -1) {
 			log_error(extense_logger, "Error: No se recibió el ACK de ip %s puerto %s", argumento_localized->info->ip, argumento_localized->info->puerto);
+			status->ack = 0;
 		} else {
+			status->ack = 1;
 			log_info(extense_logger, "ACK de ip %s puerto %s recibido", argumento_localized->info->ip, argumento_localized->info->puerto);
 			log_info(logger, "ACK de ip %s puerto %s recibido", argumento_localized->info->ip, argumento_localized->info->puerto);
 			pthread_mutex_lock(&gl_localized_ack_lock);
@@ -798,11 +1007,12 @@ void mandar_localized(void* localized_mandable) {
 
 	close(socket_cliente);
 	free(flujo);
-	free(argumento_localized);
+
+	argumento_localized->status = status;
 }
 
-void* serializar_new(mandable_struct* new, uint32_t* bytes) {
-	uint32_t tamanio_pokemon = (strlen(((t_new*) new->mensaje_queue->mensaje)->pokemon) + 1) * sizeof(char);
+void* serializar_new(mensaje_queue* new, uint32_t* bytes) {
+	uint32_t tamanio_pokemon = (strlen(((t_new*) new->mensaje)->pokemon) + 1) * sizeof(char);
 
 	*bytes = sizeof(uint32_t) + sizeof(uint32_t) + sizeof(uint32_t) + sizeof(uint32_t) + tamanio_pokemon  + sizeof(uint32_t) + sizeof(uint32_t) + sizeof(uint32_t);
 
@@ -814,24 +1024,24 @@ void* serializar_new(mandable_struct* new, uint32_t* bytes) {
 	desplazamiento += sizeof(uint32_t);
 	memcpy(flujo + desplazamiento, bytes, sizeof(uint32_t));
 	desplazamiento += sizeof(uint32_t);
-	memcpy(flujo + desplazamiento, &(new->mensaje_queue->id), sizeof(uint32_t));
+	memcpy(flujo + desplazamiento, &(new->id), sizeof(uint32_t));
 	desplazamiento += sizeof(uint32_t);
 	memcpy(flujo + desplazamiento, &tamanio_pokemon, sizeof(uint32_t));
 	desplazamiento += sizeof(uint32_t);
-	memcpy(flujo + desplazamiento, ((t_new*) new->mensaje_queue->mensaje)->pokemon, tamanio_pokemon);
+	memcpy(flujo + desplazamiento, ((t_new*) new->mensaje)->pokemon, tamanio_pokemon);
 	desplazamiento += tamanio_pokemon;
-	memcpy(flujo + desplazamiento, &(((t_new*) new->mensaje_queue->mensaje)->pos_X), sizeof(uint32_t));
+	memcpy(flujo + desplazamiento, &(((t_new*) new->mensaje)->pos_X), sizeof(uint32_t));
 	desplazamiento += sizeof(uint32_t);
-	memcpy(flujo + desplazamiento, &(((t_new*) new->mensaje_queue->mensaje)->pos_Y), sizeof(uint32_t));
+	memcpy(flujo + desplazamiento, &(((t_new*) new->mensaje)->pos_Y), sizeof(uint32_t));
 	desplazamiento += sizeof(uint32_t);
-	memcpy(flujo + desplazamiento, &(((t_new*) new->mensaje_queue->mensaje)->cantidad), sizeof(uint32_t));
+	memcpy(flujo + desplazamiento, &(((t_new*) new->mensaje)->cantidad), sizeof(uint32_t));
 	desplazamiento += sizeof(uint32_t);
 
 	return flujo;
 }
 
-void* serializar_appeared(mandable_struct* appeared, uint32_t* bytes) {
-	uint32_t tamanio_pokemon = (strlen(((t_appeared*) appeared->mensaje_queue->mensaje)->pokemon) + 1) * sizeof(char);
+void* serializar_appeared(mensaje_queue* appeared, uint32_t* bytes) {
+	uint32_t tamanio_pokemon = (strlen(((t_appeared*) appeared->mensaje)->pokemon) + 1) * sizeof(char);
 
 	*bytes = sizeof(uint32_t) + sizeof(uint32_t) +
 			sizeof(uint32_t) + sizeof(uint32_t) +
@@ -846,24 +1056,24 @@ void* serializar_appeared(mandable_struct* appeared, uint32_t* bytes) {
 	desplazamiento += sizeof(uint32_t);
 	memcpy(flujo + desplazamiento, bytes, sizeof(uint32_t));
 	desplazamiento += sizeof(uint32_t);
-	memcpy(flujo + desplazamiento, &(appeared->mensaje_queue->id), sizeof(uint32_t));
+	memcpy(flujo + desplazamiento, &(appeared->id), sizeof(uint32_t));
 	desplazamiento += sizeof(uint32_t);
-	memcpy(flujo + desplazamiento, &(((t_appeared*) appeared->mensaje_queue->mensaje)->id_correlativo), sizeof(uint32_t));
+	memcpy(flujo + desplazamiento, &(((t_appeared*) appeared->mensaje)->id_correlativo), sizeof(uint32_t));
 	desplazamiento += sizeof(uint32_t);
 	memcpy(flujo + desplazamiento, &tamanio_pokemon, sizeof(uint32_t));
 	desplazamiento += sizeof(uint32_t);
-	memcpy(flujo + desplazamiento, ((t_appeared*) appeared->mensaje_queue->mensaje)->pokemon, tamanio_pokemon);
+	memcpy(flujo + desplazamiento, ((t_appeared*) appeared->mensaje)->pokemon, tamanio_pokemon);
 	desplazamiento += tamanio_pokemon;
-	memcpy(flujo + desplazamiento, &(((t_appeared*) appeared->mensaje_queue->mensaje)->pos_X), sizeof(uint32_t));
+	memcpy(flujo + desplazamiento, &(((t_appeared*) appeared->mensaje)->pos_X), sizeof(uint32_t));
 	desplazamiento += sizeof(uint32_t);
-	memcpy(flujo + desplazamiento, &(((t_appeared*) appeared->mensaje_queue->mensaje)->pos_Y), sizeof(uint32_t));
+	memcpy(flujo + desplazamiento, &(((t_appeared*) appeared->mensaje)->pos_Y), sizeof(uint32_t));
 	desplazamiento += sizeof(uint32_t);
 
 	return flujo;
 }
 
-void* serializar_catch(mandable_struct* catch, uint32_t* bytes) {
-	uint32_t tamanio_pokemon = (strlen(((t_catch*) catch->mensaje_queue->mensaje)->pokemon) + 1) * sizeof(char);
+void* serializar_catch(mensaje_queue* catch, uint32_t* bytes) {
+	uint32_t tamanio_pokemon = (strlen(((t_catch*) catch->mensaje)->pokemon) + 1) * sizeof(char);
 
 	*bytes = sizeof(uint32_t) + sizeof(uint32_t) +
 			sizeof(uint32_t) + sizeof(uint32_t) +
@@ -878,21 +1088,21 @@ void* serializar_catch(mandable_struct* catch, uint32_t* bytes) {
 	desplazamiento += sizeof(uint32_t);
 	memcpy(flujo + desplazamiento, bytes, sizeof(uint32_t));
 	desplazamiento += sizeof(uint32_t);
-	memcpy(flujo + desplazamiento, &(catch->mensaje_queue->id), sizeof(uint32_t));
+	memcpy(flujo + desplazamiento, &(catch->id), sizeof(uint32_t));
 	desplazamiento += sizeof(uint32_t);
 	memcpy(flujo + desplazamiento, &tamanio_pokemon, sizeof(uint32_t));
 	desplazamiento += sizeof(uint32_t);
-	memcpy(flujo + desplazamiento, ((t_catch*) catch->mensaje_queue->mensaje)->pokemon, tamanio_pokemon);
+	memcpy(flujo + desplazamiento, ((t_catch*) catch->mensaje)->pokemon, tamanio_pokemon);
 	desplazamiento += tamanio_pokemon;
-	memcpy(flujo + desplazamiento, &(((t_catch*) catch->mensaje_queue->mensaje)->pos_X), sizeof(uint32_t));
+	memcpy(flujo + desplazamiento, &(((t_catch*) catch->mensaje)->pos_X), sizeof(uint32_t));
 	desplazamiento += sizeof(uint32_t);
-	memcpy(flujo + desplazamiento, &(((t_catch*) catch->mensaje_queue->mensaje)->pos_Y), sizeof(uint32_t));
+	memcpy(flujo + desplazamiento, &(((t_catch*) catch->mensaje)->pos_Y), sizeof(uint32_t));
 	desplazamiento += sizeof(uint32_t);
 
 	return flujo;
 }
 
-void* serializar_caught(mandable_struct* caught, uint32_t* bytes) {
+void* serializar_caught(mensaje_queue* caught, uint32_t* bytes) {
 	*bytes = sizeof(uint32_t) + sizeof(uint32_t) +
 			sizeof(uint32_t) + sizeof(uint32_t) +
 			sizeof(uint32_t);
@@ -905,18 +1115,18 @@ void* serializar_caught(mandable_struct* caught, uint32_t* bytes) {
 	desplazamiento += sizeof(uint32_t);
 	memcpy(flujo + desplazamiento, bytes, sizeof(uint32_t));
 	desplazamiento += sizeof(uint32_t);
-	memcpy(flujo + desplazamiento, &(caught->mensaje_queue->id), sizeof(uint32_t));
+	memcpy(flujo + desplazamiento, &(caught->id), sizeof(uint32_t));
 	desplazamiento += sizeof(uint32_t);
-	memcpy(flujo + desplazamiento, &(((t_caught*) caught->mensaje_queue->mensaje)->id_correlativo), sizeof(uint32_t));
+	memcpy(flujo + desplazamiento, &(((t_caught*) caught->mensaje)->id_correlativo), sizeof(uint32_t));
 	desplazamiento += sizeof(uint32_t);
-	memcpy(flujo + desplazamiento, &(((t_caught*) caught->mensaje_queue->mensaje)->flag_caught), sizeof(uint32_t));
+	memcpy(flujo + desplazamiento, &(((t_caught*) caught->mensaje)->flag_caught), sizeof(uint32_t));
 	desplazamiento += sizeof(uint32_t);
 
 	return flujo;
 }
 
-void* serializar_get(mandable_struct* get, uint32_t* bytes) {
-	uint32_t tamanio_pokemon = (strlen(((t_get*) get->mensaje_queue->mensaje)->pokemon) + 1) * sizeof(char);
+void* serializar_get(mensaje_queue* get, uint32_t* bytes) {
+	uint32_t tamanio_pokemon = (strlen(((t_get*) get->mensaje)->pokemon) + 1) * sizeof(char);
 
 	*bytes = sizeof(uint32_t) + sizeof(uint32_t) +
 			sizeof(uint32_t) + sizeof(uint32_t) +
@@ -930,19 +1140,19 @@ void* serializar_get(mandable_struct* get, uint32_t* bytes) {
 	desplazamiento += sizeof(uint32_t);
 	memcpy(flujo + desplazamiento, bytes, sizeof(uint32_t));
 	desplazamiento += sizeof(uint32_t);
-	memcpy(flujo + desplazamiento, &(get->mensaje_queue->id), sizeof(uint32_t));
+	memcpy(flujo + desplazamiento, &(get->id), sizeof(uint32_t));
 	desplazamiento += sizeof(uint32_t);
 	memcpy(flujo + desplazamiento, &tamanio_pokemon, sizeof(uint32_t));
 	desplazamiento += sizeof(uint32_t);
-	memcpy(flujo + desplazamiento, ((t_get*) get->mensaje_queue->mensaje)->pokemon, tamanio_pokemon);
+	memcpy(flujo + desplazamiento, ((t_get*) get->mensaje)->pokemon, tamanio_pokemon);
 	desplazamiento += tamanio_pokemon;
 
 	return flujo;
 }
 
-void* serializar_localized(mandable_struct* localized, uint32_t* bytes) {
-	uint32_t tamanio_pokemon = (strlen(((t_localized*) localized->mensaje_queue->mensaje)->pokemon) + 1) * sizeof(char);
-	uint32_t elementos_lista = ((t_localized*) localized->mensaje_queue->mensaje)->l_coordenadas->elements_count;
+void* serializar_localized(mensaje_queue* localized, uint32_t* bytes) {
+	uint32_t tamanio_pokemon = (strlen(((t_localized*) localized->mensaje)->pokemon) + 1) * sizeof(char);
+	uint32_t elementos_lista = ((t_localized*) localized->mensaje)->l_coordenadas->elements_count;
 	uint32_t tamanio_lista = elementos_lista * sizeof(uint32_t);
 
 	*bytes = sizeof(uint32_t) + sizeof(uint32_t) +
@@ -958,19 +1168,19 @@ void* serializar_localized(mandable_struct* localized, uint32_t* bytes) {
 	desplazamiento += sizeof(uint32_t);
 	memcpy(flujo + desplazamiento, bytes, sizeof(uint32_t));
 	desplazamiento += sizeof(uint32_t);
-	memcpy(flujo + desplazamiento, &(localized->mensaje_queue->id), sizeof(uint32_t));
+	memcpy(flujo + desplazamiento, &(localized->id), sizeof(uint32_t));
 	desplazamiento += sizeof(uint32_t);
-	memcpy(flujo + desplazamiento, &(((t_localized*) localized->mensaje_queue->mensaje)->id_correlativo), sizeof(uint32_t));
+	memcpy(flujo + desplazamiento, &(((t_localized*) localized->mensaje)->id_correlativo), sizeof(uint32_t));
 	desplazamiento += sizeof(uint32_t);
 	memcpy(flujo + desplazamiento, &tamanio_pokemon, sizeof(uint32_t));
 	desplazamiento += sizeof(uint32_t);
-	memcpy(flujo + desplazamiento, ((t_localized*) localized->mensaje_queue->mensaje)->pokemon, tamanio_pokemon);
+	memcpy(flujo + desplazamiento, ((t_localized*) localized->mensaje)->pokemon, tamanio_pokemon);
 	desplazamiento += tamanio_pokemon;
-	memcpy(flujo + desplazamiento, &(((t_localized*) localized->mensaje_queue->mensaje)->lugares), sizeof(uint32_t));
+	memcpy(flujo + desplazamiento, &(((t_localized*) localized->mensaje)->lugares), sizeof(uint32_t));
 	desplazamiento += sizeof(uint32_t);
 
 	for (int i = 0; i < elementos_lista; i++) {
-		uint32_t* elemento_de_lista = (uint32_t*) list_get(((t_localized*) localized->mensaje_queue->mensaje)->l_coordenadas, i);
+		uint32_t* elemento_de_lista = (uint32_t*) list_get(((t_localized*) localized->mensaje)->l_coordenadas, i);
 		memcpy(flujo + desplazamiento, elemento_de_lista, sizeof(uint32_t));
 		desplazamiento += sizeof(uint32_t);
 	}
@@ -1058,7 +1268,29 @@ int main(void) {
 void inicializar_memoria() {
 	int tamanio_memoria = config_get_int_value(config, "TAMANIO_MEMORIA");
 	tamanio_minimo_particion = config_get_int_value(config, "TAMANIO_MINIMO_PARTICION");
+	char* algoritmo_busqueda = config_get_string_value(config, "ALGORITMO_PARTICION_LIBRE");
+
+	char* ff = "FF";
+
+	int resultado = strcasecmp(ff, algoritmo_busqueda);
+
+	if (0 == resultado) {
+		algoritmo_particion_libre = 1;
+	} else {
+		algoritmo_particion_libre = 2;
+	}
+
 	memoria = malloc(tamanio_memoria);
+	tabla_segmentos = dictionary_create();
+	particiones_libres = list_create();
+
+	pthread_mutex_init(&mutex_memoria, NULL);
+
+	particion_libre* memoria_completa = malloc(sizeof(particion_libre));
+	memoria_completa->desde = memoria;
+	memoria_completa->hasta = memoria + tamanio_memoria;
+	list_add(particiones_libres, memoria_completa);
+
 }
 
 void inicializar_colas(void) {
