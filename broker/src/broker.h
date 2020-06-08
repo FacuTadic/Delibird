@@ -109,6 +109,12 @@ typedef struct {
 	status_envio* status;
 } mandable_struct;
 
+typedef struct {
+	segmento_memoria* segmento;
+	info_modulo* info_modulo;
+	status_envio* status;
+} mandable_memoria_struct;
+
 t_log* iniciar_logger(char* log_file);
 t_config* leer_config(void);
 t_config* leer_config(void);
@@ -134,3 +140,15 @@ void* serializar_catch(mensaje_queue* argumento_catch, uint32_t* bytes);
 void* serializar_caught(mensaje_queue* argumento_caught, uint32_t* bytes);
 void* serializar_get(mensaje_queue* argumento_get, uint32_t* bytes);
 void* serializar_localized(mensaje_queue* argumento_localized, uint32_t* bytes);
+void enviar_new_de_memoria(info_modulo* info_modulo);
+void enviar_appeared_de_memoria(info_modulo* info_modulo);
+void enviar_catch_de_memoria(info_modulo* info_modulo);
+void enviar_caught_de_memoria(info_modulo* info_modulo);
+void enviar_get_de_memoria(info_modulo* info_modulo);
+void enviar_localized_de_memoria(info_modulo* info_modulo);
+void enviar_mensaje_new_de_memoria(void* new_mandable_memoria);
+void enviar_mensaje_appeared_de_memoria(void* new_mandable_memoria);
+void enviar_mensaje_catch_de_memoria(void* new_mandable_memoria);
+void enviar_mensaje_caught_de_memoria(void* new_mandable_memoria);
+void enviar_mensaje_get_de_memoria(void* new_mandable_memoria);
+void enviar_mensaje_localized_de_memoria(void* new_mandable_memoria);

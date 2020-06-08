@@ -9,6 +9,7 @@
 #include<stdlib.h>
 #include<limits.h>
 #include "pthread.h"
+#include "broker_msj_id.h"
 
 #endif /* MEMORIA_BROKER_H_ */
 
@@ -62,13 +63,18 @@ typedef struct {
 	t_list* envios;
 	t_list* acknowledgements;
 	int limit; // para ver
-	int base; // para ver
+	void* base;
 } data_tabla;
 
 typedef struct {
 	void* desde;
 	void* hasta;
 } particion_libre;
+
+typedef struct {
+	data_tabla* registro;
+	void* mensaje;
+} segmento_memoria;
 
 void guardar_info_envios(uint32_t id, t_list* mandados, t_list* acks);
 void guardar_mensaje_en_memoria(data_tabla* registro, void* mensaje);
@@ -77,6 +83,14 @@ particion_libre* encontrar_lugar_con_bf(int limit);
 void* encontrar_lugar_en_memoria(int limit);
 int tamanio_particion_libre(particion_libre* particion);
 void ocupar_lugar_en_particiones_libres(particion_libre* particion, int limit);
+t_list* obtener_segmentos_new(); // lista de segmento_memoria
+t_list* obtener_segmentos_appeared(); // lista de segmento_memoria
+t_list* obtener_segmentos_get(); // lista de segmento_memoria
+t_list* obtener_segmentos_localized(); // lista de segmento_memoria
+t_list* obtener_segmentos_catch(); // lista de segmento_memoria
+t_list* obtener_segmentos_caught(); // lista de segmento_memoria
+
+
 
 
 
