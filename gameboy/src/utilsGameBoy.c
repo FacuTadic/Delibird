@@ -672,11 +672,15 @@ void recibir_mensaje(int socket_cliente)
 
 }
 
-
+void devolver_ack(int socket_cliente) {
+	uint32_t ack = 1;
+	send(socket_cliente, (void *) &ack, sizeof(uint32_t), 0);
+}
 
 void recibirMensajesDeSuscripcion(int socketCliente){
 	while(1){
 		recibir_mensaje(socketCliente);
+		devolver_ack(socketCliente);
 	}
 }
 
