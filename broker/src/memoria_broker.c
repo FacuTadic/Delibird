@@ -16,7 +16,7 @@ void guardar_info_envios(uint32_t id, t_list* mandados, t_list* acks) {
 	free(id_char);
 }
 
-void guardar_mensaje_en_memoria(data_tabla* registro, void* mensaje) {
+void guardar_mensaje_en_memoria(data_tabla* registro, void* mensaje, t_log* logger) {
 	pthread_mutex_lock(&mutex_memoria);
 
 	particion_libre* lugar_en_memoria = encontrar_lugar_en_memoria(registro->limit);
@@ -27,10 +27,10 @@ void guardar_mensaje_en_memoria(data_tabla* registro, void* mensaje) {
 		// y esta bien el chequeo == NULL ???
 		// y si es un error como hacemos ???
 	} else {
-
+		log_info(logger, "Guardando mensaje con id %i en particion %i", registro->id, (size_t) lugar_en_memoria->desde);
 		char* id_char = malloc(sizeof(char));
 		sprintf(id_char, "%u", registro->id);
-		registro->base;
+		registro->base = lugar_en_memoria->desde;
 		dictionary_put(tabla_segmentos, id_char, (void *) registro);
 		free(id_char);
 

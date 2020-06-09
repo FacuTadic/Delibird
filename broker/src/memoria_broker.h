@@ -3,6 +3,7 @@
 
 #include "commons/collections/dictionary.h"
 #include "commons/collections/list.h"
+#include "commons/log.h"
 #include<netdb.h>
 #include<stdio.h>
 #include<string.h>
@@ -11,7 +12,7 @@
 #include "pthread.h"
 #include "broker_msj_id.h"
 
-#endif /* MEMORIA_BROKER_H_ */
+#endif
 
 void* memoria;
 
@@ -28,56 +29,27 @@ pthread_mutex_t mutex_memoria;
 int tamanio_minimo_particion;
 
 typedef struct {
-    char* pokemon;
-    uint32_t pos_X, pos_Y, cantidad;
-} new_memoria;
-
-typedef struct {
-    char* pokemon;
-    uint32_t lugares;
-    t_list* l_coordenadas;
-} localized_memoria;
-
-typedef struct {
-    char* pokemon;
-} get_memoria;
-
-typedef struct {
-	char* pokemon;
-    uint32_t pos_X, pos_Y;
-} appeared_memoria;
-
-typedef struct {
-    char* pokemon;
-    uint32_t pos_X, pos_Y;
-} catch_memoria;
-
-typedef struct {
-	uint32_t flag_caught;
-} caught_memoria;
-
-typedef struct {
 	uint32_t id;
 	uint32_t id_correlativo;
 	int tipo;
 	t_list* envios;
 	t_list* acknowledgements;
-	int limit; // para ver
+	int limit;
 	void* base;
-} data_tabla;
+} data_tabla; // registro de la tabla
 
 typedef struct {
 	void* desde;
 	void* hasta;
-} particion_libre;
+} particion_libre; // elemento de la lista de particiones libres
 
 typedef struct {
 	data_tabla* registro;
 	void* mensaje;
-} segmento_memoria;
+} segmento_memoria; // elemento que agrupa todos los datos de un mensaje en memoria
 
 void guardar_info_envios(uint32_t id, t_list* mandados, t_list* acks);
-void guardar_mensaje_en_memoria(data_tabla* registro, void* mensaje);
+void guardar_mensaje_en_memoria(data_tabla* registro, void* mensaje, t_log* logger);
 particion_libre* encontrar_lugar_con_ff(int limit);
 particion_libre* encontrar_lugar_con_bf(int limit);
 void* encontrar_lugar_en_memoria(int limit);

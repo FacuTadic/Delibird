@@ -11,7 +11,7 @@
 #include "broker_msj_id.h"
 #include "memoria_broker.h"
 
-#endif /* BROKER_H_ */
+#endif
 
 t_log* logger;
 t_log* extense_logger;
@@ -45,13 +45,6 @@ pthread_mutex_t gl_catch_list_lock;
 pthread_mutex_t gl_caught_list_lock;
 pthread_mutex_t gl_get_list_lock;
 pthread_mutex_t gl_localized_list_lock;
-
-pthread_mutex_t gl_new_ack_lock;
-pthread_mutex_t gl_appeared_ack_lock;
-pthread_mutex_t gl_catch_ack_lock;
-pthread_mutex_t gl_caught_ack_lock;
-pthread_mutex_t gl_get_ack_lock;
-pthread_mutex_t gl_localized_ack_lock;
 
 sem_t gl_new_limite;
 sem_t gl_appeared_limite;
@@ -91,10 +84,9 @@ cola_struct GET_STRUCT;
 cola_struct LOCALIZED_STRUCT;
 
 typedef struct {
-	void* mensaje;
+	void* mensaje; // se mapea a t_new, t_appeared, etc
 	uint32_t id;
-	t_list* acks;
-} mensaje_queue;
+} mensaje_queue; // estructura que se mete en las colas
 
 typedef struct {
 	char* ip;
@@ -107,13 +99,13 @@ typedef struct {
 	mensaje_queue* mensaje_queue;
 	info_modulo* info;
 	status_envio* status;
-} mandable_struct;
+} mandable_struct; // estructura auxiliar para mandar a los hilos que mandan mensajes de cola
 
 typedef struct {
 	segmento_memoria* segmento;
 	info_modulo* info_modulo;
 	status_envio* status;
-} mandable_memoria_struct;
+} mandable_memoria_struct; // estructura auxiliar para mandar a los hilos que mandan mensajes de memoria
 
 t_log* iniciar_logger(char* log_file);
 t_config* leer_config(void);

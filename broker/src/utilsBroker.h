@@ -1,3 +1,6 @@
+#ifndef UTILSBROKER_H_
+#define UTILSBROKER_H_
+
 #include<stdio.h>
 #include<stdlib.h>
 #include<sys/socket.h>
@@ -9,8 +12,7 @@
 #include<pthread.h>
 #include "protocolBroker.h"
 
-//#ifndef CONEXIONES_H_
-#define CONEXIONES_H_
+#endif
 
 int iniciar_servidor(char* ip, char* puerto);
 int crear_conexion(char *ip, char* puerto);

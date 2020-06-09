@@ -1,3 +1,6 @@
+#ifndef PROTOCOLBROKER_H_
+#define PROTOCOLBROKER_H_
+
 #include<stdio.h>
 #include<stdlib.h>
 #include<sys/socket.h>
@@ -8,9 +11,7 @@
 #include<string.h>
 #include<pthread.h>
 
-#ifndef PROTOCOLBROKER_H_
-#define PROTOCOLBROKER_H_
-
+#endif
 
 ///////////
 // MENSAJES
@@ -26,16 +27,6 @@ typedef enum
     CAUGHT       = 6,
 	SUSCRIPCION  = 7
 } op_code;
-
-typedef struct {
-	int size;
-	void* stream;
-} t_buffer;
-
-typedef struct {
-	op_code codigo_operacion;
-	t_buffer* buffer;
-} t_paquete;
 
 typedef struct {
     char* pokemon;
@@ -85,13 +76,11 @@ typedef struct {
 	char* puerto;
 } info_modulo;
 
-t_new* recibir_new(int socket_cliente, int* size, t_log* logger);
-t_appeared* recibir_appeared(int socket_cliente, int* size, t_log* logger);
-t_catch* recibir_catch(int socket_cliente, int* size, t_log* logger);
-t_caught* recibir_caught(int socket_cliente, int* size, t_log* logger);
-t_get* recibir_get(int socket_cliente, int* size, t_log* logger);
-t_localized* recibir_localized(int socket_cliente, int* size, t_log* logger);
-t_suscripcion* recibir_suscripcion(int socket_cliente, int* size, t_log* logger);
+t_new* recibir_new(int socket_cliente, uint32_t* size, t_log* logger);
+t_appeared* recibir_appeared(int socket_cliente, uint32_t* size, t_log* logger);
+t_catch* recibir_catch(int socket_cliente, uint32_t* size, t_log* logger);
+t_caught* recibir_caught(int socket_cliente, uint32_t* size, t_log* logger);
+t_get* recibir_get(int socket_cliente, uint32_t* size, t_log* logger);
+t_localized* recibir_localized(int socket_cliente, uint32_t* size, t_log* logger);
+t_suscripcion* recibir_suscripcion(int socket_cliente, uint32_t* size, t_log* logger);
 void devolver_id(int socket_cliente, uint32_t id, t_log* logger);
-
-#endif /* PROTOCOLBROKER_H_ */
