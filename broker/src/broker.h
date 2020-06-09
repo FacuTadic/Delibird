@@ -9,6 +9,7 @@
 #include "pthread.h"
 #include "semaphore.h"
 #include "broker_msj_id.h"
+#include "memoria_broker.h"
 
 #endif /* BROKER_H_ */
 
@@ -44,6 +45,13 @@ pthread_mutex_t gl_catch_list_lock;
 pthread_mutex_t gl_caught_list_lock;
 pthread_mutex_t gl_get_list_lock;
 pthread_mutex_t gl_localized_list_lock;
+
+pthread_mutex_t gl_new_ack_lock;
+pthread_mutex_t gl_appeared_ack_lock;
+pthread_mutex_t gl_catch_ack_lock;
+pthread_mutex_t gl_caught_ack_lock;
+pthread_mutex_t gl_get_ack_lock;
+pthread_mutex_t gl_localized_ack_lock;
 
 sem_t gl_new_limite;
 sem_t gl_appeared_limite;
@@ -85,17 +93,32 @@ cola_struct LOCALIZED_STRUCT;
 typedef struct {
 	void* mensaje;
 	uint32_t id;
+	t_list* acks;
 } mensaje_queue;
+
+typedef struct {
+	char* ip;
+	char* puerto;
+	int envio_ok; // 1 OK 0 MAL
+	int ack; // 1 OK 0 MAL
+} status_envio;
 
 typedef struct {
 	mensaje_queue* mensaje_queue;
 	info_modulo* info;
+	status_envio* status;
 } mandable_struct;
+
+typedef struct {
+	segmento_memoria* segmento;
+	info_modulo* info_modulo;
+	status_envio* status;
+} mandable_memoria_struct;
 
 t_log* iniciar_logger(char* log_file);
 t_config* leer_config(void);
 t_config* leer_config(void);
-void leer_info_modulos(void);
+void inicializar_memoria(void);
 void inicializar_colas(void);
 void inicializar_semaforos_colas(void);
 void terminar_programa(void);
@@ -111,9 +134,21 @@ void mandar_catch(void* new_mandable);
 void mandar_caught(void* new_mandable);
 void mandar_get(void* new_mandable);
 void mandar_localized(void* new_mandable);
-void* serializar_new(mandable_struct* argumento_new, uint32_t* bytes);
-void* serializar_appeared(mandable_struct* argumento_appeared, uint32_t* bytes);
-void* serializar_catch(mandable_struct* argumento_catch, uint32_t* bytes);
-void* serializar_caught(mandable_struct* argumento_caught, uint32_t* bytes);
-void* serializar_get(mandable_struct* argumento_get, uint32_t* bytes);
-void* serializar_localized(mandable_struct* argumento_localized, uint32_t* bytes);
+void* serializar_new(mensaje_queue* argumento_new, uint32_t* bytes);
+void* serializar_appeared(mensaje_queue* argumento_appeared, uint32_t* bytes);
+void* serializar_catch(mensaje_queue* argumento_catch, uint32_t* bytes);
+void* serializar_caught(mensaje_queue* argumento_caught, uint32_t* bytes);
+void* serializar_get(mensaje_queue* argumento_get, uint32_t* bytes);
+void* serializar_localized(mensaje_queue* argumento_localized, uint32_t* bytes);
+void enviar_new_de_memoria(info_modulo* info_modulo);
+void enviar_appeared_de_memoria(info_modulo* info_modulo);
+void enviar_catch_de_memoria(info_modulo* info_modulo);
+void enviar_caught_de_memoria(info_modulo* info_modulo);
+void enviar_get_de_memoria(info_modulo* info_modulo);
+void enviar_localized_de_memoria(info_modulo* info_modulo);
+void enviar_mensaje_new_de_memoria(void* new_mandable_memoria);
+void enviar_mensaje_appeared_de_memoria(void* new_mandable_memoria);
+void enviar_mensaje_catch_de_memoria(void* new_mandable_memoria);
+void enviar_mensaje_caught_de_memoria(void* new_mandable_memoria);
+void enviar_mensaje_get_de_memoria(void* new_mandable_memoria);
+void enviar_mensaje_localized_de_memoria(void* new_mandable_memoria);

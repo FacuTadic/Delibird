@@ -26,3 +26,8 @@ uint32_t generar_id(void){
 	return id_aux;
 
 }
+
+uint32_t obtener_id_actual(void) {
+	return id;
+}
+

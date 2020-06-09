@@ -323,3 +323,69 @@
 [INFO] 14:04:05:809 Broker/(10281:10281): Levantando servidor
 [INFO] 14:04:05:809 Broker/(10281:10281): Servidor levantado
 [INFO] 14:04:05:818 Broker/(10281:15336): 15336
+[INFO] 19:42:45:55 Broker/(3039:3039): logger extenso iniciado
+[INFO] 19:42:45:104 Broker/(3039:3039): logger de la catedra iniciado
+[INFO] 19:42:45:105 Broker/(3039:3039): La IP es: 127.0.0.1
+[INFO] 19:42:45:106 Broker/(3039:3039): El puerto es: 4444
+[INFO] 19:42:45:106 Broker/(3039:3039): Iniciando colas
+[INFO] 19:42:45:107 Broker/(3039:3039): Colas iniciadas
+[INFO] 19:42:45:108 Broker/(3039:3039): Iniciando listas de suscriptores
+[INFO] 19:42:45:109 Broker/(3039:3039): Listas de suscriptores iniciadas
+[INFO] 19:42:45:110 Broker/(3039:3039): Iniciando estructuras de colas
+[INFO] 19:42:45:110 Broker/(3039:3039): Estructuras de colas iniciadas
+[INFO] 19:42:45:111 Broker/(3039:3039): Iniciando limites de colas
+[INFO] 19:42:45:114 Broker/(3039:3039): Limites de colas iniciadas
+[INFO] 19:42:45:115 Broker/(3039:3039): Iniciando semaforos de limite
+[INFO] 19:42:45:116 Broker/(3039:3039): Semaforos de limite iniciados
+[INFO] 19:42:45:116 Broker/(3039:3039): Iniciando semaforos de mensajes
+[INFO] 19:42:45:117 Broker/(3039:3039): Semaforos de mensajes iniciados
+[INFO] 19:42:45:119 Broker/(3039:3039): Iniciando semaforos de colas
+[INFO] 19:42:45:121 Broker/(3039:3039): Semaforos de colas iniciados
+[INFO] 19:42:45:121 Broker/(3039:3039): Iniciando semaforos de listas
+[INFO] 19:42:45:122 Broker/(3039:3039): Semaforos de listas iniciados
+[INFO] 19:42:45:122 Broker/(3039:3039): Iniciando semaforos de acks
+[INFO] 19:42:45:123 Broker/(3039:3039): Semaforos de acks iniciados
+[INFO] 19:42:45:123 Broker/(3039:3039): Creando generador id
+[INFO] 19:42:45:124 Broker/(3039:3039): Generador id creado
+[INFO] 19:42:45:124 Broker/(3039:3039): Levantando servidor
+[INFO] 19:42:45:134 Broker/(3039:3039): Servidor levantado
+[INFO] 19:42:45:146 Broker/(3039:3045): Esperando clientes en socket 6
+[INFO] 19:42:45:149 Broker/(3039:3048): Atendiendo cola CATCH
+[INFO] 19:42:45:150 Broker/(3039:3047): Atendiendo cola APPEARED
+[INFO] 19:42:45:150 Broker/(3039:3046): Atendiendo cola NEW
+[INFO] 19:42:45:165 Broker/(3039:3050): Atendiendo cola CAUGHT
+[INFO] 19:42:45:166 Broker/(3039:3051): Atendiendo cola GET
+[INFO] 19:42:45:168 Broker/(3039:3052): Atendiendo cola LOCALIZED
+[INFO] 19:53:34:753 Broker/(3743:3743): logger extenso iniciado
+[INFO] 19:53:34:768 Broker/(3743:3743): logger de la catedra iniciado
+[INFO] 19:53:34:769 Broker/(3743:3743): La IP es: 127.0.0.1
+[INFO] 19:53:34:770 Broker/(3743:3743): El puerto es: 4444
+[INFO] 19:53:34:770 Broker/(3743:3743): Iniciando colas
+[INFO] 19:53:34:771 Broker/(3743:3743): Colas iniciadas
+[INFO] 19:53:34:771 Broker/(3743:3743): Iniciando listas de suscriptores
+[INFO] 19:53:34:772 Broker/(3743:3743): Listas de suscriptores iniciadas
+[INFO] 19:53:34:772 Broker/(3743:3743): Iniciando estructuras de colas
+[INFO] 19:53:34:773 Broker/(3743:3743): Estructuras de colas iniciadas
+[INFO] 19:53:34:773 Broker/(3743:3743): Iniciando limites de colas
+[INFO] 19:53:34:775 Broker/(3743:3743): Limites de colas iniciadas
+[INFO] 19:53:34:775 Broker/(3743:3743): Iniciando semaforos de limite
+[INFO] 19:53:34:778 Broker/(3743:3743): Semaforos de limite iniciados
+[INFO] 19:53:34:779 Broker/(3743:3743): Iniciando semaforos de mensajes
+[INFO] 19:53:34:779 Broker/(3743:3743): Semaforos de mensajes iniciados
+[INFO] 19:53:34:780 Broker/(3743:3743): Iniciando semaforos de colas
+[INFO] 19:53:34:781 Broker/(3743:3743): Semaforos de colas iniciados
+[INFO] 19:53:34:782 Broker/(3743:3743): Iniciando semaforos de listas
+[INFO] 19:53:34:782 Broker/(3743:3743): Semaforos de listas iniciados
+[INFO] 19:53:34:783 Broker/(3743:3743): Iniciando semaforos de acks
+[INFO] 19:53:34:783 Broker/(3743:3743): Semaforos de acks iniciados
+[INFO] 19:53:34:784 Broker/(3743:3743): Creando generador id
+[INFO] 19:53:34:784 Broker/(3743:3743): Generador id creado
+[INFO] 19:53:34:785 Broker/(3743:3743): Levantando servidor
+[INFO] 19:53:34:790 Broker/(3743:3743): Servidor levantado
+[INFO] 19:53:34:806 Broker/(3743:3748): Esperando clientes en socket 6
+[INFO] 19:53:34:818 Broker/(3743:3749): Atendiendo cola NEW
+[INFO] 19:53:34:844 Broker/(3743:3750): Atendiendo cola APPEARED
+[INFO] 19:53:34:856 Broker/(3743:3751): Atendiendo cola CATCH
+[INFO] 19:53:34:867 Broker/(3743:3752): Atendiendo cola CAUGHT
+[INFO] 19:53:34:879 Broker/(3743:3753): Atendiendo cola GET
+[INFO] 19:53:34:890 Broker/(3743:3754): Atendiendo cola LOCALIZED

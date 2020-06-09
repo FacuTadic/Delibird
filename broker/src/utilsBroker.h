@@ -12,9 +12,5 @@
 //#ifndef CONEXIONES_H_
 #define CONEXIONES_H_
 
-void* recibir_buffer(int*, int);
-
 int iniciar_servidor(char* ip, char* puerto);
-void* serializar_paquete(t_paquete* paquete, int bytes);
-void devolver_mensaje(void* payload, int size, int socket_cliente);
 int crear_conexion(char *ip, char* puerto);
