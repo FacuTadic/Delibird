@@ -67,10 +67,11 @@ int main(void) {
 
 	puntoMontaje = config_get_string_value(config, "PUNTO_MONTAJE_TALLGRASS");
 	log_info(loggerDev, "El punto de montaje es: %s", puntoMontaje);
-	//crearPuntoMontaje(puntoMontaje);
-	//string_append(&puntoMontaje, "/");
 
 	levantarTallGrass(puntoMontaje);
+
+
+
 }
 
 

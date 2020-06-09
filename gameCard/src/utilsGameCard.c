@@ -26,57 +26,6 @@ int crear_conexion(char *ip, char* puerto)
 
 
 
-char* generadorDeRutaDeCreacionDeDirectorios(char* ruta, char* nombreDelDirectorio){
-	char* rutaDeCreacionDirectorio = string_new();
-	string_append(&rutaDeCreacionDirectorio, ruta);
-	string_append(&rutaDeCreacionDirectorio, "/");
-	string_append(&rutaDeCreacionDirectorio, nombreDelDirectorio);
-
-	log_info(loggerDev, "La ruta final es: %s",rutaDeCreacionDirectorio);
-	return rutaDeCreacionDirectorio;
-
-}
-
-
-char* generadorDeRutaDeCreacionDeArchivos(char* rutaDirectorio,char* nombreDelArchivo, char* tipoDeDato){
-
-	char* rutaDeCreacion = string_new();
-	string_append(&rutaDeCreacion, rutaDirectorio);
-	string_append(&rutaDeCreacion, "/");
-	string_append(&rutaDeCreacion, nombreDelArchivo);
-	string_append(&rutaDeCreacion, tipoDeDato);
-
-	log_info(loggerDev, "La ruta final es: %s",rutaDeCreacion);
-	return rutaDeCreacion;
-}
-
-bool noExisteDirectorio(char* ruta){
-	return stat(ruta, &st1) == -1;
-}
-
-bool existeBitMap(char* ruta){
-	return access(ruta, F_OK ) != -1;
-}
-
-void crearPuntoMontaje(char* puntoMontaje){
-	if(stat(puntoMontaje, &st1) == -1) {
-		mkdir(puntoMontaje, 0700);
-	}
-	log_info(loggerDev, "Se creo el punto de montaje");
-}
-
-
-
-void crearDirectorio(char* directorio, char* puntoMontaje){
-	char* rutaAbsoluta = generadorDeRutaDeCreacionDeDirectorios(puntoMontaje, directorio);
-
-	if (noExisteDirectorio(rutaAbsoluta)) {
-	    mkdir(rutaAbsoluta, 0700);
-	    log_info(loggerDev, "Se creo el directorio: %s", directorio);
-	}
-}
-
-
 void crearTemplateDeArchivoTipo(tipoArchivo tipo, char* nombreDelArchivo ,char* ruta){
 	FILE *archivo;
 
@@ -118,18 +67,6 @@ void crearTemplateDeArchivoTipo(tipoArchivo tipo, char* nombreDelArchivo ,char* 
 
 
 
-void crearArchivoEnDirectorio(char* nombreDelArchivo, char* directorio){
-	FILE *archivo;
-
-	char* rutaDeCreacion = generadorDeRutaDeCreacionDeArchivos(directorio, nombreDelArchivo, ".bin");
-	archivo = fopen(rutaDeCreacion,"w+");
-
-	if(archivo == NULL){
-	log_info(loggerDev, "No se pudo crear el archivo en el dicrectorio");
-	exit(1);
-	}
-	fclose(archivo);
-}
 
 
 void crearDirectorioFile(char* puntoMontaje){
@@ -148,13 +85,53 @@ void crearDirectorioFile(char* puntoMontaje){
 	log_info(loggerDev, "Se completo el tamplate de directorio File");
 }
 
+
 void crearDirectorioBlocks(char* puntoMontaje){
 	//Crear Directorio
 	crearDirectorio("Blocks",puntoMontaje);
 	//Seteo de variable global
 	rutaBlocks = generadorDeRutaDeCreacionDeDirectorios(puntoMontaje,"Blocks");
 	log_info(loggerDev, "Se creo el directorio Blocks ubicado en: %s",rutaBlocks);
+}
 
+
+char* puedeAbrirseArchivo(char* rutaArchivo){
+	log_error(loggerDev, "Se crea el archivo");
+	FILE* archivo;
+	archivo = fopen(rutaArchivo,"r+");
+	log_error(loggerDev, "Se abre el archivo");
+	//FORMA DE USAR ESTAS FUNCIONES DE CONFIG CON ARCHIVOS .TXT
+	log_error(loggerDev, "A punto de hacer el casteo");
+	char* estadoArchivo = config_get_string_value((t_config*)archivo, "OPEN");
+	log_error(loggerDev, "Si, exploto");
+	fclose(archivo);
+
+	log_error(loggerDev, "Deberia retornar: %s",estadoArchivo);
+	return estadoArchivo;
+}
+
+
+
+void levantarTallGrass(char* puntoMontaje){
+	log_info(loggerDev, "Lenavando el Tall");
+	//Seteo de variable global
+	log_info(loggerDev, "El punto de montaje es: %s", puntoMontaje);
+	rutaMetaData = generadorDeRutaDeCreacionDeDirectorios(puntoMontaje,"Metadata");
+	char* bitMap = generadorDeRutaDeCreacionDeArchivos(rutaMetaData,"BitMap",".bin");
+
+
+	if(existeArchivo(bitMap)){
+		log_error(loggerDev, "Ya existe el BitMap");
+	} else {
+		crearDirectorio("Metadata",puntoMontaje);
+		crearArchivoEnDirectorio("BitMap",rutaMetaData);
+		log_info(loggerDev, "Se creo el BitMap ubicado en: %s",rutaMetaData);
+		crearDirectorioFile(puntoMontaje);
+		crearDirectorioBlocks(puntoMontaje);
+		char* rutaMetaFile = generadorDeRutaDeCreacionDeArchivos(rutaFiles,"Metadata",".bin");
+		char* pruebaValue = puedeAbrirseArchivo(rutaMetaFile);
+		log_error(loggerDev, "EL valor OPEN del directorio File es: %s",pruebaValue);
+	}
 }
 
 
@@ -166,39 +143,7 @@ bool existenPosicionesEnArchivo(char* rutaArchivo){
 
 
 
-void levantarTallGrass(char* puntoMontaje){
-	log_info(loggerDev, "Lenavando el Tall");
-	//Seteo de variable global
-	log_info(loggerDev, "El punto de montaje es: %s", puntoMontaje);
-	rutaMetaData = generadorDeRutaDeCreacionDeDirectorios(puntoMontaje,"Metadata");
-	char* rutaBitMap = generadorDeRutaDeCreacionDeArchivos(rutaMetaData,"Bitmap",".bin");
 
-
-	if(existeBitMap(rutaBitMap)){
-		log_error(loggerDev, "Ya existe el BitMap");
-	} else {
-		crearDirectorio("Metadata",puntoMontaje);
-		crearArchivoEnDirectorio("Bitmap",rutaMetaData);
-		log_info(loggerDev, "Se creo el BitMap ubicado en: %s",rutaMetaData);
-		crearDirectorioFile(puntoMontaje);
-		crearDirectorioBlocks(puntoMontaje);
-	}
-}
-
-
-
-
-bool puedeAbrirseArchivo(char* rutaArchivo){
-	FILE* archivo;
-	archivo = fopen(rutaArchivo,"r+");
-
-	//FORMA DE USAR ESTAS FUNCIONES DE CONFIG CON ARCHIVOS .TXT
-	char* estadoArchivo = config_get_string_value(archivo, "OPEN");
-
-	fclose(archivo);
-
-	return estadoArchivo == "Y";
-}
 
 void leerArchivo(char* rutaArchivo){
 	FILE* archivo;
@@ -209,6 +154,10 @@ void leerArchivo(char* rutaArchivo){
 
 	fclose(archivo);
 }
+
+
+
+
 
 void validarPosicionesDeNew(char* rutaArchivo){
 
@@ -228,6 +177,14 @@ void validarPosicionesDeCatch(rutaDeArchivo){
 
 void validarPosicionesDeGet(rutaDeArchivo){
 
+}
+
+
+bool hayEspacioEnElBlock(char* rutaDelBlock, char* mensaje){
+	uint32_t tamanioBlock = tamanioDeUnArchivo(rutaDelBlock);
+	uint32_t tamanioMensaje = sizeof(mensaje);
+
+	return tamanioBlock+tamanioMensaje < blockSize;
 }
 
 
@@ -285,8 +242,6 @@ void catchPokemon(char* pokemon){
 	sleep(tiempoRetardoOperacion);
 
 }
-
-
 
 void getPokemon(char* pokemon){
 

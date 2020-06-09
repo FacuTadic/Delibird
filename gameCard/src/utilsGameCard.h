@@ -21,6 +21,7 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <unistd.h>
+#include "archivosYDirectorios.h"
 
 
 
@@ -30,6 +31,13 @@ char* puntoMontaje;
 uint32_t tiempoReintentoConexion;
 uint32_t tiempoReintentoOperacion;
 uint32_t tiempoRetardoOperacion;
+
+//SACAR DEL METADATA/METADATA.BIN
+uint32_t blockSize;
+uint32_t cantidadDeBloques;
+
+
+
 
 t_log* loggerDev;
 t_config* config;
