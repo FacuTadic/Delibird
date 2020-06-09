@@ -274,7 +274,7 @@ void esperar_cliente(int socket_servidor) {
 	pthread_detach(thread);
 }
 
-void* esperar_clientes(void* socket_servidor) {
+void esperar_clientes(void* socket_servidor) {
 	int socket = (int) socket_servidor;
 	log_info(extense_logger, "Esperando clientes en socket %i", socket);
 	while(1) {
