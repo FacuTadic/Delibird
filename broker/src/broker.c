@@ -241,7 +241,7 @@ void procesar_request(int cod_op, int cliente_fd) {
 		close(cliente_fd);
 		break;
 	default:
-		log_warning(extense_logger, "El codigo de operacion %i no corresponde a ninguna operacion conocida");
+		log_warning(extense_logger, "El codigo de operacion %i no corresponde a ninguna operacion conocida", cod_op);
 		close(cliente_fd);
 		pthread_exit(NULL);
 	}
