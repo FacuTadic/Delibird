@@ -30,8 +30,7 @@ int main(int argc,char*argv[]){
 	int conexion;
 	char* ipNombre = string_new();
 	char* puertoNombre = string_new();
-	char* ip;
-	char* puerto;
+
 
 
 	loggerGameBoy = iniciar_loggerGameBoy();

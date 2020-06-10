@@ -58,24 +58,23 @@ uint32_t numeroPorTipoDeMensaje(char* mensajeAEnviar){
 
 	uint32_t tipoDeMensaje;
 
-	if(strcmp(mensajeAEnviar,"NEW_POKEMON")){
+	if(!strcmp(mensajeAEnviar,"NEW_POKEMON")){
 		tipoDeMensaje=1;
-	}else if(strcmp(mensajeAEnviar,"APPEARED_POKEMON")){
+	}else if(!strcmp(mensajeAEnviar,"APPEARED_POKEMON")){
 		tipoDeMensaje=2;
-	} else if(strcmp(mensajeAEnviar,"CATCH_POKEMON")){
+	} else if(!strcmp(mensajeAEnviar,"CATCH_POKEMON")){
 		tipoDeMensaje=3;
-	}else if(strcmp(mensajeAEnviar,"CAUGHT_POKEMON")){
+	}else if(!strcmp(mensajeAEnviar,"CAUGHT_POKEMON")){
 		tipoDeMensaje=4;
-	}else if(strcmp(mensajeAEnviar,"GET_POKEMON")){
+	}else if(!strcmp(mensajeAEnviar,"GET_POKEMON")){
 		tipoDeMensaje=5;
-	}else if(strcmp(mensajeAEnviar,"LOCALIZED")){
+	}else if(!strcmp(mensajeAEnviar,"LOCALIZED")){
 		tipoDeMensaje=6;
-	}else if(strcmp(mensajeAEnviar,"SUSCRIPTOR")){
+	}else if(!strcmp(mensajeAEnviar,"SUSCRIPTOR")){
 		tipoDeMensaje=7;
-	}else if(strcmp(mensajeAEnviar,"MENSAJE")){
+	}else if(!strcmp(mensajeAEnviar,"MENSAJE")){
 		tipoDeMensaje=8;
 	}
-
 	return tipoDeMensaje;
 }
 
@@ -116,16 +115,26 @@ t_buffer* crearBufferPorTipoDeMensaje(char*argv[],t_log* loggerDev ){
 	uint32_t posY;
 	uint32_t cantidadPokemon;
 	uint32_t idMensaje;
+	uint32_t sizeIP = strlen(ip) + 1;
+	uint32_t sizePuerto = strlen(puerto) + 1;
 
 	//Variable para el switch
+	log_info(loggerDev, "MENSAJE; %s",argv[2]);
+
 	uint32_t nroMensaje = numeroPorTipoDeMensaje(argv[2]);
+
+
+	log_info(loggerDev, "MENSAJE; %i",nroMensaje);
+
+
+
 
 	switch(nroMensaje){
 
 		//Commons Dictionary Hash
 
 		case 1 : //NEW
-			bufferAux->size = 4*sizeof(uint32_t) + strlen(argv[3])+1; // sizeNombre, Cord X,Y , Cantidad + NOMBRE
+			bufferAux->size = 4*sizeof(uint32_t) + strlen(argv[3])+1 +strlen(ip)+1 + strlen(puerto)+1; // sizeNombre, Cord X,Y , Cantidad + NOMBRE
 
 			//CASO DE AGREGAR EL ID_MENSAJE
 			//Comparacion de strings commons
@@ -168,6 +177,19 @@ t_buffer* crearBufferPorTipoDeMensaje(char*argv[],t_log* loggerDev ){
 
 
 
+			memcpy (stream + offset, &sizeIP, sizeof(uint32_t));
+			offset += sizeof(uint32_t);
+
+			memcpy(stream + offset,ip,strlen(ip) + 1);
+			offset += sizeIP;
+
+			memcpy (stream + offset, &sizePuerto, sizeof(uint32_t));
+			offset += sizeof(uint32_t);
+
+			memcpy(stream + offset,puerto,strlen(puerto) + 1);
+			offset += sizePuerto;
+
+
 			bufferAux->stream = stream;
 
 			free(stream);
@@ -176,7 +198,7 @@ t_buffer* crearBufferPorTipoDeMensaje(char*argv[],t_log* loggerDev ){
 
 		case 2: //APPEARED
 
-			bufferAux->size = 3*sizeof(uint32_t) + strlen(argv[3])+1; // sizeNombre, Cord X,Y + NOMBRE
+			bufferAux->size = 3*sizeof(uint32_t) + strlen(argv[3])+1 +strlen(ip)+1 + strlen(puerto)+1; // sizeNombre, Cord X,Y + NOMBRE
 
 			//CASO DE AGREGAR EL ID_MENSAJE
 			if(strcmp(argv[1],"BROKER")){
@@ -212,6 +234,21 @@ t_buffer* crearBufferPorTipoDeMensaje(char*argv[],t_log* loggerDev ){
 
 
 
+			memcpy (stream + offset, &sizeIP, sizeof(uint32_t));
+			offset += sizeof(uint32_t);
+
+			memcpy(stream + offset,ip,strlen(ip) + 1);
+			offset += sizeIP;
+
+			memcpy (stream + offset, &sizePuerto, sizeof(uint32_t));
+			offset += sizeof(uint32_t);
+
+			memcpy(stream + offset,puerto,strlen(puerto) + 1);
+			offset += sizePuerto;
+
+
+
+
 			bufferAux->stream = stream;
 
 			free(stream);
@@ -221,7 +258,7 @@ t_buffer* crearBufferPorTipoDeMensaje(char*argv[],t_log* loggerDev ){
 
 		case 3: //CATCH
 
-			bufferAux->size = 3*sizeof(uint32_t) + strlen(argv[3])+1; // sizeNombre, Cord X,Y , Cantidad + NOMBRE
+			bufferAux->size = 3*sizeof(uint32_t) + strlen(argv[3])+1 +strlen(ip)+1 + strlen(puerto)+1;// sizeNombre, Cord X,Y , Cantidad + NOMBRE
 
 			//CASO DE AGREGAR EL ID_MENSAJE
 			if(strcmp(argv[1],"GAMECARD")){
@@ -256,6 +293,21 @@ t_buffer* crearBufferPorTipoDeMensaje(char*argv[],t_log* loggerDev ){
 			offset += sizeof(uint32_t);
 
 
+
+			memcpy (stream + offset, &sizeIP, sizeof(uint32_t));
+			offset += sizeof(uint32_t);
+
+			memcpy(stream + offset,ip,strlen(ip) + 1);
+			offset += sizeIP;
+
+			memcpy (stream + offset, &sizePuerto, sizeof(uint32_t));
+			offset += sizeof(uint32_t);
+
+			memcpy(stream + offset,puerto,strlen(puerto) + 1);
+			offset += sizePuerto;
+
+
+
 			bufferAux->stream = stream;
 
 			free(stream);
@@ -264,7 +316,7 @@ t_buffer* crearBufferPorTipoDeMensaje(char*argv[],t_log* loggerDev ){
 
 
 		case 4:  //CAUGHT
-			bufferAux->size = 2*sizeof(uint32_t); // sizeNombre, Cord X,Y + NOMBRE
+			bufferAux->size = 2*sizeof(uint32_t) +strlen(ip)+1 + strlen(puerto)+1; // sizeNombre, Cord X,Y + NOMBRE
 
 
 			bufferAux->stream = malloc(bufferAux->size);
@@ -282,6 +334,18 @@ t_buffer* crearBufferPorTipoDeMensaje(char*argv[],t_log* loggerDev ){
 			memcpy(stream + offset,&flag, sizeof(uint32_t));
 			offset += sizeof(uint32_t);
 
+			memcpy(stream + offset,ip,strlen(ip) + 1);
+			offset += sizeIP;
+
+			memcpy (stream + offset, &sizePuerto, sizeof(uint32_t));
+			offset += sizeof(uint32_t);
+
+			memcpy(stream + offset,puerto,strlen(puerto) + 1);
+			offset += sizePuerto;
+
+
+
+
 			bufferAux->stream = stream;
 
 			break;
@@ -289,33 +353,81 @@ t_buffer* crearBufferPorTipoDeMensaje(char*argv[],t_log* loggerDev ){
 
 		case 5:  //GET
 
-			bufferAux->size = strlen(argv[3])+1; // sizeNombre
+			bufferAux->size = 3*sizeof(uint32_t) + strlen(argv[3])+1 +strlen(ip)+1 + strlen(puerto)+1; // sizeNombre
 			bufferAux->stream = malloc(bufferAux->size);
-			memcpy (bufferAux->stream, argv[3], bufferAux->size);
+
+			uint32_t sizeVerga = strlen(argv[3])+1;
+
+
+			memcpy (stream + offset, &sizeVerga, sizeof(uint32_t));
+			offset += sizeof(uint32_t);
+
+			memcpy (stream + offset, argv[3], strlen(argv[3])+1);
+			offset += sizeVerga;
+
+
+			memcpy (stream + offset, &sizeIP, sizeof(uint32_t));
+			offset += sizeof(uint32_t);
+
+			memcpy(stream + offset, ip, strlen(ip) + 1);
+			offset += sizeIP;
+
+			memcpy (stream + offset, &sizePuerto, sizeof(uint32_t));
+			offset += sizeof(uint32_t);
+
+			memcpy(stream + offset, puerto, strlen(puerto) + 1);
+			offset += sizePuerto;
+
+			bufferAux->stream = stream;
+
 
 			break;
 
 
-		case 6: //SUSCRIPTOR
-
-			bufferAux->size = sizeof(uint32_t); // Cola de Mensajes (representada por protocolo)
+		case 7: //SUSCRIPTOR
 
 
+
+			bufferAux->size = 3*sizeof(uint32_t) +strlen(ip)+1 + strlen(puerto)+1; // Cola de Mensajes (representada por protocolo)
 			bufferAux->stream = malloc(bufferAux->size);
 
-			uint32_t colaDeMensajesSolicitada = numeroPorTipoDeMensaje(argv[2]) + 10;
 
-			memcpy (bufferAux->stream, &colaDeMensajesSolicitada, bufferAux->size);
+			log_info(loggerDev, "LA COLA DE MENSAJE ES: %s", argv[3]);
+
+			uint32_t colaDeMensajesSolicitada = numeroPorTipoDeMensaje(argv[3]) + 10;
+
+			log_info(loggerDev, "EL NUMERO DE LA COLA ES: %i", colaDeMensajesSolicitada);
 
 
-			break;
+
+			memcpy (stream + offset, &colaDeMensajesSolicitada,sizeof(uint32_t) );
+			offset += sizeof(uint32_t);
+
+			memcpy (stream + offset, &sizeIP, sizeof(uint32_t));
+			offset += sizeof(uint32_t);
+			log_info(loggerDev, "El peso de la IP es: %i",sizeIP);
 
 
-		case 7:  //MENSAJE
+			memcpy(stream + offset,ip, strlen(ip) + 1);
+			offset += sizeIP;
+			log_info(loggerDev, "Se mando la IP: %s", ip);
 
-			bufferAux->size = strlen(argv[3])+1; // sizeNombre
-			bufferAux->stream = malloc(bufferAux->size);
-			memcpy (bufferAux->stream, argv[3], bufferAux->size);
+
+			memcpy (stream + offset, &sizePuerto, sizeof(uint32_t));
+			offset += sizeof(uint32_t);
+
+			log_info(loggerDev, "El peso del Puerto es: %i",sizePuerto);
+
+			memcpy(stream + offset,puerto,strlen(puerto) + 1);
+			offset += sizePuerto;
+
+			log_info(loggerDev, "Se mando el Puerto: %s", puerto);
+
+			bufferAux->stream = stream;
+
+			log_info(loggerDev, "SE ENCHUFO BIEN EL BUFFER");
+
+
 
 			break;
 
@@ -357,36 +469,36 @@ op_code enumTipoMensaje(char* mensaje){
 		case 7:
 			tipoMensaje = SUSCRIPTOR;
 			break;
-		case 8:
-			tipoMensaje = MENSAJE;
-			break;
-
 	}
+	log_info(loggerDev, "Te mando el opcode: %i", tipoMensaje);
 
 	return tipoMensaje;
 
 }
 /**********************************       ENVIAR MENSAJE       *********************************************** */
-void enviar_mensaje(char* argv[], int socket_cliente)
-{
+void enviar_mensaje(char* argv[], int socket_cliente){
 	uint32_t bytes;
 
-	log_error(loggerDev, "Creando buffer");
+	log_info(loggerDev, "Creando buffer");
 	t_buffer* buffer = crearBufferPorTipoDeMensaje(argv,loggerDev);
-	log_error(loggerDev, "Buffer creado");
-	//	buffer->size = strlen(mensaje)+1;
-//	buffer->stream = malloc(buffer->size);
-//	memcpy (buffer->stream, mensaje, buffer->size);
+	log_info(loggerDev, "Buffer creado");
 
-	log_error(loggerDev, "Creando paquete");
+
+	log_info(loggerDev, "Creando paquete");
 	t_paquete* paquete = crearPaquete(buffer);   // CREAR PAQUETE
+
 	paquete->codigo_operacion = enumTipoMensaje(argv[2]);
-	log_error(loggerDev, "Paquete Creado");
+	log_info(loggerDev, "CODIGO DE OPERACION: %i", paquete->codigo_operacion);
+
+	log_info(loggerDev, "Paquete Creado");
 	log_info(loggerDev, "la operacion a realizar es %i", paquete->codigo_operacion);
 
 	log_error(loggerDev, "Serializando...");
 	void* flujo = serializar_paquete(paquete,&bytes);                   //  SERIALIZAR PAQUETE
 	log_error(loggerDev, "Serializacion completa");
+
+
+	log_info(loggerDev, "El peso total es: %i",paquete->buffer->size);
 
 	//    ENVIAR MENSAJE
 	if (send(socket_cliente, flujo, bytes, 0) == -1){
@@ -650,15 +762,6 @@ void recibir_mensaje(int socket_cliente)
 			case LOCALIZED:
 				log_error(loggerGameBoy, "Se recibio un mensaje de tipo %i",paquete->codigo_operacion);
 				deserializarLocalized(paquete->buffer->stream);
-				break;
-
-
-			case MENSAJE: ;
-				char* mensaje = malloc(paquete->buffer->size);
-				memcpy(mensaje, paquete->buffer->stream,paquete->buffer->size);
-				free(paquete->buffer->stream);
-				free(paquete->buffer);
-				free(paquete);
 				break;
 
 			default:

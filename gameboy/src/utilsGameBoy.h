@@ -18,6 +18,9 @@ t_config* config;
 t_log* loggerGameBoy;
 
 
+char* ip;
+char* puerto;
+
 
 typedef enum
 {
@@ -27,8 +30,7 @@ typedef enum
     CAUGHT       = 4,
 	GET          = 5,
 	LOCALIZED	 = 6,
-	SUSCRIPTOR 	 = 7,
-	MENSAJE 	 = 8//TEST
+	SUSCRIPTOR 	 = 7
 }op_code;
 
 
@@ -37,7 +39,6 @@ typedef enum
 	BROKER       = 0,
 	TEAM	     = 1,
 	GAMECARD     = 2,
-	SERVER		 = 3 //TEST
 }op_codeModulo;
 
 
