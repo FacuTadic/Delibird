@@ -64,8 +64,15 @@ int main(int argc,char*argv[]){
 
 	ip = config_get_string_value(config, ipNombre);
 	puerto = config_get_string_value(config, puertoNombre);
-	log_info(loggerDev, "La IP es: %s", ip);
-	log_info(loggerDev, "El Puerto es: %s", puerto);
+
+	log_info(loggerDev, "La IP externa es: %s", ip);
+	log_info(loggerDev, "El Puerto externo es: %s", puerto);
+
+	ip_game_boy = config_get_string_value(config, "IP_GAMEBOY");
+	puerto_game_boy = config_get_string_value(config, "PUERTO_GAMEBOY");
+
+	log_info(loggerDev, "La IP es: %s", ip_game_boy);
+	log_info(loggerDev, "El Puerto es: %s", puerto_game_boy);
 
 //###################################################### PROCESO #####################################################################################
 
@@ -75,19 +82,21 @@ int main(int argc,char*argv[]){
 
 	enviar_mensaje(argv, conexion);
 
-	if(strcmp(argv[2],"SUSCRIPTOR")){
+	if (!strcmp(argv[2],"SUSCRIPTOR")) {
 		log_info(loggerGameBoy, "Solicitando suscripcion a: %s", argv[2]);
 		pthread_t hiloEscucha;
-		int error = pthread_create(&hiloEscucha,NULL,recibirMensajesDeSuscripcion,conexion);
+		int error = pthread_create(&hiloEscucha,NULL, (void *) recibirMensajesDeSuscripcion, &conexion);
 
 		if(error != 0){
 			log_info(loggerDev, "Hubo un problema al crear el hilo");
 			return error;
+		} else {
+			pthread_detach(hiloEscucha);
 		}
 
-		int timpoSuscripcion = atoi(4);
-		sleep(timpoSuscripcion);
-		}
+		int tiempoSuscripcion = atoi(argv[4]);
+		sleep(tiempoSuscripcion);
+	}
 
 	terminar_programa(conexion);
 

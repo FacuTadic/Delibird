@@ -196,7 +196,7 @@ t_list* obtener_segmentos_get() {
 
 		data_tabla* registro = (data_tabla*) dictionary_get(tabla_segmentos, id_char);
 
-		if (3 == registro->tipo) {
+		if (5 == registro->tipo) {
 
 			segmento_memoria* segmento = malloc(sizeof(segmento_memoria));
 
@@ -226,7 +226,7 @@ t_list* obtener_segmentos_localized() {
 
 		data_tabla* registro = (data_tabla*) dictionary_get(tabla_segmentos, id_char);
 
-		if (4 == registro->tipo) {
+		if (6 == registro->tipo) {
 
 			segmento_memoria* segmento = malloc(sizeof(segmento_memoria));
 
@@ -256,7 +256,7 @@ t_list* obtener_segmentos_catch() {
 
 		data_tabla* registro = (data_tabla*) dictionary_get(tabla_segmentos, id_char);
 
-		if (5 == registro->tipo) {
+		if (3 == registro->tipo) {
 
 			segmento_memoria* segmento = malloc(sizeof(segmento_memoria));
 
@@ -286,7 +286,7 @@ t_list* obtener_segmentos_caught() {
 
 		data_tabla* registro = (data_tabla*) dictionary_get(tabla_segmentos, id_char);
 
-		if (6 == registro->tipo) {
+		if (4 == registro->tipo) {
 
 			segmento_memoria* segmento = malloc(sizeof(segmento_memoria));
 
@@ -304,10 +304,3 @@ t_list* obtener_segmentos_caught() {
 	return segmentos;
 
 }
-
-
-
-
-
-
-

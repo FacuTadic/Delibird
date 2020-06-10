@@ -22,6 +22,8 @@ t_new* recibir_new(int socket_cliente, uint32_t* size, t_log* logger) {
 		return NULL;
 	}
 
+	new->pokemon = malloc(tamanio_pokemon);
+
 	log_info(logger, "Tamanio del pokemon recibido: %i", tamanio_pokemon);
 
 	if (recv(socket_cliente, new->pokemon, tamanio_pokemon, MSG_WAITALL) == -1) {
@@ -99,6 +101,8 @@ t_appeared* recibir_appeared(int socket_cliente, uint32_t* size, t_log* logger) 
 		return NULL;
 	}
 
+	appeared->pokemon = malloc(tamanio_pokemon);
+
 	log_info(logger, "Tamanio del pokemon recibido: %i", tamanio_pokemon);
 
 	if (recv(socket_cliente, appeared->pokemon, tamanio_pokemon, MSG_WAITALL) == -1) {
@@ -155,6 +159,8 @@ t_catch* recibir_catch(int socket_cliente, uint32_t* size, t_log* logger) {
 		free(catch);
 		return NULL;
 	}
+
+	catch->pokemon = malloc(tamanio_pokemon);
 
 	log_info(logger, "Tamanio del pokemon: %i", tamanio_pokemon);
 
@@ -248,9 +254,11 @@ t_get* recibir_get(int socket_cliente, uint32_t* size, t_log* logger) {
 		return NULL;
 	}
 
+	get->pokemon = malloc(tamanio_pokemon);
+
 	log_info(logger, "Tamanio del pokemon recibido: %i", tamanio_pokemon);
 
-	if (recv(socket_cliente, get->pokemon, *size, MSG_WAITALL) == -1) {
+	if (recv(socket_cliente, get->pokemon, tamanio_pokemon, MSG_WAITALL) == -1) {
 		close(socket_cliente);
 		log_error(logger, "Hubo un problema recibiendo el nombre del pokemon");
 		free(get->pokemon);
@@ -293,6 +301,8 @@ t_localized* recibir_localized(int socket_cliente, uint32_t* size, t_log* logger
 		free(localized);
 		return NULL;
 	}
+
+	localized->pokemon = malloc(tamanio_pokemon);
 
 	log_info(logger, "Tamanio del pokemon recibido: %i", tamanio_pokemon);
 
@@ -364,7 +374,7 @@ t_suscripcion* recibir_suscripcion(int socket_cliente, uint32_t* size, t_log* lo
 		return NULL;
 	}
 
-	log_info(logger, "Id de cola recibido: %i", &(suscripcion->id_cola));
+	log_info(logger, "Id de cola recibido: %i", suscripcion->id_cola);
 
 	log_info(logger, "Recibiendo tamanio de ip");
 
@@ -376,6 +386,8 @@ t_suscripcion* recibir_suscripcion(int socket_cliente, uint32_t* size, t_log* lo
 	}
 
 	log_info(logger, "Tamanio de ip recibido: %i", tamanio_ip);
+
+	suscripcion->ip = malloc(tamanio_ip);
 
 	log_info(logger, "Recibiendo ip");
 
@@ -401,6 +413,8 @@ t_suscripcion* recibir_suscripcion(int socket_cliente, uint32_t* size, t_log* lo
 
 	log_info(logger, "Tamanio de puerto recibido: %i", tamanio_puerto);
 
+	suscripcion->puerto = malloc(tamanio_puerto);
+
 	log_info(logger, "Recibiendo puerto");
 
 	if (recv(socket_cliente, suscripcion->puerto, tamanio_puerto, MSG_WAITALL) == -1) {
@@ -412,7 +426,7 @@ t_suscripcion* recibir_suscripcion(int socket_cliente, uint32_t* size, t_log* lo
 		return NULL;
 	}
 
-	log_info(logger, "Puerto recibido: %i", suscripcion->puerto);
+	log_info(logger, "Puerto recibido: %s", suscripcion->puerto);
 
 	return suscripcion;
 }

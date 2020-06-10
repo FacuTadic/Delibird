@@ -61,58 +61,6 @@ void procesar_request(int cod_op, int cliente_fd) {
 			close(cliente_fd);
 		}
 		break;
-	case GET: ;
-		log_info(extense_logger, "Codigo de operacion recibido del socket cliente %i corresponde a un GET", cliente_fd);
-		t_get* get_msg = recibir_get(cliente_fd, &size, extense_logger);
-
-		if (NULL == get_msg) {
-			free(mensaje_a_guardar);
-			pthread_exit(NULL);
-		} else {
-			mensaje_a_guardar->mensaje = (void*) get_msg;
-
-			sem_wait(&gl_get_limite);
-
-			log_info(extense_logger, "Encolando el mensaje GET con id %i", mensaje_a_guardar->id);
-			pthread_mutex_lock(&gl_get_queue_lock);
-			queue_push(gl_get_pokemon_queue, mensaje_a_guardar);
-			pthread_mutex_unlock(&gl_get_queue_lock);
-			log_info(extense_logger, "Mensaje GET con id %i encolado", mensaje_a_guardar->id);
-			log_info(logger, "Mensaje GET con id %i encolado", mensaje_a_guardar->id);
-
-			sem_post(&gl_get_mensajes);
-
-			devolver_id(cliente_fd, mensaje_a_guardar->id, extense_logger);
-
-			close(cliente_fd);
-		}
-		break;
-	case LOCALIZED: ;
-		log_info(extense_logger, "Codigo de operacion recibido del socket cliente %i corresponde a un LOCALIZED", cliente_fd);
-		t_localized* localized_msg = recibir_localized(cliente_fd, &size, extense_logger);
-
-		if (NULL == localized_msg) {
-			free(mensaje_a_guardar);
-			pthread_exit(NULL);
-		} else {
-			mensaje_a_guardar->mensaje = (void*) localized_msg;
-
-			sem_wait(&gl_localized_limite);
-
-			log_info(extense_logger, "Encolando el mensaje LOCALIZED con id %i", mensaje_a_guardar->id);
-			pthread_mutex_lock(&gl_localized_queue_lock);
-			queue_push(gl_localized_pokemon_queue, mensaje_a_guardar);
-			pthread_mutex_unlock(&gl_localized_queue_lock);
-			log_info(extense_logger, "Mensaje LOCALIZED con id %i encolado", mensaje_a_guardar->id);
-			log_info(logger, "Mensaje LOCALIZED con id %i encolado", mensaje_a_guardar->id);
-
-			sem_post(&gl_localized_mensajes);
-
-			devolver_id(cliente_fd, mensaje_a_guardar->id, extense_logger);
-
-			close(cliente_fd);
-		}
-		break;
 	case CATCH: ;
 		log_info(extense_logger, "Codigo de operacion recibido del socket cliente %i corresponde a un CATCH", cliente_fd);
 		t_catch* catch_msg = recibir_catch(cliente_fd, &size, extense_logger);
@@ -165,8 +113,60 @@ void procesar_request(int cod_op, int cliente_fd) {
 			close(cliente_fd);
 		}
 		break;
+	case GET: ;
+		log_info(extense_logger, "Codigo de operacion recibido del socket cliente %i corresponde a un GET", cliente_fd);
+		t_get* get_msg = recibir_get(cliente_fd, &size, extense_logger);
+
+		if (NULL == get_msg) {
+			free(mensaje_a_guardar);
+			pthread_exit(NULL);
+		} else {
+			mensaje_a_guardar->mensaje = (void*) get_msg;
+
+			sem_wait(&gl_get_limite);
+
+			log_info(extense_logger, "Encolando el mensaje GET con id %i", mensaje_a_guardar->id);
+			pthread_mutex_lock(&gl_get_queue_lock);
+			queue_push(gl_get_pokemon_queue, mensaje_a_guardar);
+			pthread_mutex_unlock(&gl_get_queue_lock);
+			log_info(extense_logger, "Mensaje GET con id %i encolado", mensaje_a_guardar->id);
+			log_info(logger, "Mensaje GET con id %i encolado", mensaje_a_guardar->id);
+
+			sem_post(&gl_get_mensajes);
+
+			devolver_id(cliente_fd, mensaje_a_guardar->id, extense_logger);
+
+			close(cliente_fd);
+		}
+		break;
+	case LOCALIZED: ;
+		log_info(extense_logger, "Codigo de operacion recibido del socket cliente %i corresponde a un LOCALIZED", cliente_fd);
+		t_localized* localized_msg = recibir_localized(cliente_fd, &size, extense_logger);
+
+		if (NULL == localized_msg) {
+			free(mensaje_a_guardar);
+			pthread_exit(NULL);
+		} else {
+			mensaje_a_guardar->mensaje = (void*) localized_msg;
+
+			sem_wait(&gl_localized_limite);
+
+			log_info(extense_logger, "Encolando el mensaje LOCALIZED con id %i", mensaje_a_guardar->id);
+			pthread_mutex_lock(&gl_localized_queue_lock);
+			queue_push(gl_localized_pokemon_queue, mensaje_a_guardar);
+			pthread_mutex_unlock(&gl_localized_queue_lock);
+			log_info(extense_logger, "Mensaje LOCALIZED con id %i encolado", mensaje_a_guardar->id);
+			log_info(logger, "Mensaje LOCALIZED con id %i encolado", mensaje_a_guardar->id);
+
+			sem_post(&gl_localized_mensajes);
+
+			devolver_id(cliente_fd, mensaje_a_guardar->id, extense_logger);
+
+			close(cliente_fd);
+		}
+		break;
 	case SUSCRIPCION: ;
-		log_info(extense_logger, "Codigo de operacion recibido del socket cliente %i corresponse a un SUSCRIPCION", cliente_fd);
+		log_info(extense_logger, "Codigo de operacion recibido del socket cliente %i corresponde a un SUSCRIPCION", cliente_fd);
 		t_suscripcion* suscripcion = recibir_suscripcion(cliente_fd, &size, extense_logger);
 
 		if (NULL == suscripcion) {
@@ -248,7 +248,7 @@ void procesar_request(int cod_op, int cliente_fd) {
 }
 
 void atender_cliente(int* socket) {
-	int cod_op;
+	uint32_t cod_op;
 	log_info(extense_logger, "Recibiendo codigo de operacion de socket %i", *socket);
 	if(recv(*socket, &cod_op, sizeof(uint32_t), MSG_WAITALL) == -1) {
 		cod_op = -1;
@@ -1555,7 +1555,7 @@ void* serializar_catch(mensaje_queue* catch, uint32_t* bytes) {
 			tamanio_pokemon + sizeof(uint32_t) +
 			sizeof(uint32_t);
 
-	uint32_t cod_op = 5;
+	uint32_t cod_op = 3;
 	void* flujo = malloc(*bytes);
 	int desplazamiento = 0;
 
@@ -1582,7 +1582,7 @@ void* serializar_caught(mensaje_queue* caught, uint32_t* bytes) {
 			sizeof(uint32_t) + sizeof(uint32_t) +
 			sizeof(uint32_t);
 
-	uint32_t cod_op = 6;
+	uint32_t cod_op = 4;
 	void* flujo = malloc(*bytes);
 	int desplazamiento = 0;
 
@@ -1607,7 +1607,7 @@ void* serializar_get(mensaje_queue* get, uint32_t* bytes) {
 			sizeof(uint32_t) + sizeof(uint32_t) +
 			tamanio_pokemon;
 
-	uint32_t cod_op = 3;
+	uint32_t cod_op = 5;
 	void* flujo = malloc(*bytes);
 	int desplazamiento = 0;
 
@@ -1635,7 +1635,7 @@ void* serializar_localized(mensaje_queue* localized, uint32_t* bytes) {
 			sizeof(uint32_t) + tamanio_pokemon +
 			sizeof(uint32_t) + tamanio_lista;
 
-	uint32_t cod_op = 4;
+	uint32_t cod_op = 6;
 	void* flujo = malloc(*bytes);
 	int desplazamiento = 0;
 

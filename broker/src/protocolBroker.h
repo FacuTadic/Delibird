@@ -21,10 +21,10 @@ typedef enum
 {
 	NEW          = 1,
     APPEARED     = 2,
-    GET          = 3,
-    LOCALIZED    = 4,
-    CATCH        = 5,
-    CAUGHT       = 6,
+    CATCH        = 3,
+    CAUGHT       = 4,
+	GET          = 5,
+	LOCALIZED    = 6,
 	SUSCRIPCION  = 7
 } op_code;
 

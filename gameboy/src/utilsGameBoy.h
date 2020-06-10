@@ -11,6 +11,7 @@
 #include<string.h>
 #include<commons/log.h>
 #include<commons/config.h>
+#include<commons/string.h>
 
 
 t_log* loggerDev;
@@ -21,6 +22,8 @@ t_log* loggerGameBoy;
 char* ip;
 char* puerto;
 
+char* ip_game_boy;
+char* puerto_game_boy;
 
 typedef enum
 {

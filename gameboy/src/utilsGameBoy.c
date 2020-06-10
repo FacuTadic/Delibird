@@ -52,7 +52,25 @@ t_paquete* crearPaquete(t_buffer* buffer){
 }
 
 
+uint32_t idColaPorTipoDeMensaje(char* mensajeAEnviar){
 
+	uint32_t tipoDeMensaje;
+
+	if(!strcmp(mensajeAEnviar,"NEW_POKEMON")){
+		tipoDeMensaje=11;
+	}else if(!strcmp(mensajeAEnviar,"APPEARED_POKEMON")){
+		tipoDeMensaje=12;
+	} else if(!strcmp(mensajeAEnviar,"CATCH_POKEMON")){
+		tipoDeMensaje=13;
+	}else if(!strcmp(mensajeAEnviar,"CAUGHT_POKEMON")){
+		tipoDeMensaje=14;
+	}else if(!strcmp(mensajeAEnviar,"GET_POKEMON")){
+		tipoDeMensaje=15;
+	}else if(!strcmp(mensajeAEnviar,"LOCALIZED")){
+		tipoDeMensaje=16;
+	}
+	return tipoDeMensaje;
+}
 
 uint32_t numeroPorTipoDeMensaje(char* mensajeAEnviar){
 
@@ -89,9 +107,9 @@ int flagCaught(char* flag){
 
 	uint32_t flagCorrespondiente = -1;
 
-	if(strcmp(flag,"OK")){
+	if(!strcmp(flag,"OK")){
 		flagCorrespondiente = 1;
-	} else if(strcmp(flag,"FAIL")){
+	} else if(!strcmp(flag,"FAIL")){
 		flagCorrespondiente = 0;
 	}
 
@@ -115,8 +133,8 @@ t_buffer* crearBufferPorTipoDeMensaje(char*argv[],t_log* loggerDev ){
 	uint32_t posY;
 	uint32_t cantidadPokemon;
 	uint32_t idMensaje;
-	uint32_t sizeIP = strlen(ip) + 1;
-	uint32_t sizePuerto = strlen(puerto) + 1;
+	uint32_t sizeIP = strlen(ip_game_boy) + 1;
+	uint32_t sizePuerto = strlen(puerto_game_boy) + 1;
 
 	//Variable para el switch
 	log_info(loggerDev, "MENSAJE; %s",argv[2]);
@@ -134,82 +152,71 @@ t_buffer* crearBufferPorTipoDeMensaje(char*argv[],t_log* loggerDev ){
 		//Commons Dictionary Hash
 
 		case 1 : //NEW
-			bufferAux->size = 4*sizeof(uint32_t) + strlen(argv[3])+1 +strlen(ip)+1 + strlen(puerto)+1; // sizeNombre, Cord X,Y , Cantidad + NOMBRE
+
+			bufferAux->size = 4*sizeof(uint32_t) + strlen(argv[3])+1; // sizeNombre, Cord X,Y , Cantidad + NOMBRE
 
 			//CASO DE AGREGAR EL ID_MENSAJE
 			//Comparacion de strings commons
-			if(strcmp(argv[1],"GAMECARD")){
+			if(!strcmp(argv[1],"GAMECARD")){
 				bufferAux->size += sizeof(uint32_t);
 			}
 
-			bufferAux->stream = malloc(bufferAux->size);
 			stream = malloc(bufferAux->size);
 
-			if(strcmp(argv[1],"GAMECARD")){
+			if(!strcmp(argv[1],"GAMECARD")){
 				idMensaje = atoi(argv[7]);
 				agregarID(stream,idMensaje,&offset);
 			}
-
 
 			sizeNombrePokemon = strlen(argv[3]) + 1;
 			memcpy(stream + offset,&sizeNombrePokemon, sizeof(uint32_t));
 			offset += sizeof(uint32_t);
 
-			memcpy(stream + offset,argv[3],strlen(argv[3]) + 1);
+			log_info(loggerDev, "Tamanio nombre pokemon %i", sizeNombrePokemon);
+
+			memcpy(stream + offset,argv[3], sizeNombrePokemon);
 			offset += sizeNombrePokemon;
 
+			log_info(loggerDev, "Nombre pokemon %s", argv[3]);
 
 			posX = atoi(argv[4]);
 
 			memcpy(stream + offset,&posX, sizeof(uint32_t));
 			offset += sizeof(uint32_t);
 
+			log_info(loggerDev, "Posicion X %i", posX);
 
 			posY = atoi(argv[5]);
 
 			memcpy(stream + offset,&posY, sizeof(uint32_t));
 			offset += sizeof(uint32_t);
+
+			log_info(loggerDev, "Posicion Y %i", posY);
 
 			cantidadPokemon = atoi(argv[6]);
 
 			memcpy(stream + offset,&cantidadPokemon, sizeof(uint32_t));
 			offset += sizeof(uint32_t);
 
-
-
-			memcpy (stream + offset, &sizeIP, sizeof(uint32_t));
-			offset += sizeof(uint32_t);
-
-			memcpy(stream + offset,ip,strlen(ip) + 1);
-			offset += sizeIP;
-
-			memcpy (stream + offset, &sizePuerto, sizeof(uint32_t));
-			offset += sizeof(uint32_t);
-
-			memcpy(stream + offset,puerto,strlen(puerto) + 1);
-			offset += sizePuerto;
-
+			log_info(loggerDev, "Cantidad %i", cantidadPokemon);
 
 			bufferAux->stream = stream;
-
-			free(stream);
 
 			break;
 
 		case 2: //APPEARED
 
-			bufferAux->size = 3*sizeof(uint32_t) + strlen(argv[3])+1 +strlen(ip)+1 + strlen(puerto)+1; // sizeNombre, Cord X,Y + NOMBRE
+			bufferAux->size = 3*sizeof(uint32_t) + strlen(argv[3])+1; // sizeNombre, Cord X,Y + NOMBRE
 
 			//CASO DE AGREGAR EL ID_MENSAJE
-			if(strcmp(argv[1],"BROKER")){
+			if(!strcmp(argv[1],"BROKER")){
 			bufferAux->size += sizeof(uint32_t);						// +ID_MENSAJE
 			}
 
-			bufferAux->stream = malloc(bufferAux->size);
 			stream = malloc(bufferAux->size);
 
 
-			if(strcmp(argv[1],"BROKER")){
+			if(!strcmp(argv[1],"BROKER")){
 				idMensaje = atoi(argv[6]);
 				agregarID(stream,idMensaje,&offset);
 
@@ -232,46 +239,25 @@ t_buffer* crearBufferPorTipoDeMensaje(char*argv[],t_log* loggerDev ){
 			memcpy(stream + offset,&posY, sizeof(uint32_t));
 			offset += sizeof(uint32_t);
 
-
-
-			memcpy (stream + offset, &sizeIP, sizeof(uint32_t));
-			offset += sizeof(uint32_t);
-
-			memcpy(stream + offset,ip,strlen(ip) + 1);
-			offset += sizeIP;
-
-			memcpy (stream + offset, &sizePuerto, sizeof(uint32_t));
-			offset += sizeof(uint32_t);
-
-			memcpy(stream + offset,puerto,strlen(puerto) + 1);
-			offset += sizePuerto;
-
-
-
-
 			bufferAux->stream = stream;
 
-			free(stream);
 			break;
-
-
 
 		case 3: //CATCH
 
-			bufferAux->size = 3*sizeof(uint32_t) + strlen(argv[3])+1 +strlen(ip)+1 + strlen(puerto)+1;// sizeNombre, Cord X,Y , Cantidad + NOMBRE
+			bufferAux->size = 3*sizeof(uint32_t) + strlen(argv[3])+1;// sizeNombre, Cord X,Y , Cantidad + NOMBRE
 
 			//CASO DE AGREGAR EL ID_MENSAJE
-			if(strcmp(argv[1],"GAMECARD")){
-			bufferAux->size += sizeof(uint32_t);
+			if(!strcmp(argv[1],"GAMECARD")){
+				bufferAux->size += sizeof(uint32_t);
 			}
 
-			bufferAux->stream = malloc(bufferAux->size);
 			stream = malloc(bufferAux->size);
 
-			if(strcmp(argv[1],"GAMECARD")){
+			if(!strcmp(argv[1],"GAMECARD")){
 				idMensaje = atoi(argv[6]);
 				agregarID(stream,idMensaje,&offset);
-				}
+			}
 
 
 			sizeNombrePokemon = strlen(argv[3]) + 1;
@@ -292,34 +278,13 @@ t_buffer* crearBufferPorTipoDeMensaje(char*argv[],t_log* loggerDev ){
 			memcpy(stream + offset,&posY, sizeof(uint32_t));
 			offset += sizeof(uint32_t);
 
-
-
-			memcpy (stream + offset, &sizeIP, sizeof(uint32_t));
-			offset += sizeof(uint32_t);
-
-			memcpy(stream + offset,ip,strlen(ip) + 1);
-			offset += sizeIP;
-
-			memcpy (stream + offset, &sizePuerto, sizeof(uint32_t));
-			offset += sizeof(uint32_t);
-
-			memcpy(stream + offset,puerto,strlen(puerto) + 1);
-			offset += sizePuerto;
-
-
-
 			bufferAux->stream = stream;
 
-			free(stream);
 			break;
 
-
-
 		case 4:  //CAUGHT
-			bufferAux->size = 2*sizeof(uint32_t) +strlen(ip)+1 + strlen(puerto)+1; // sizeNombre, Cord X,Y + NOMBRE
+			bufferAux->size = 2*sizeof(uint32_t); // sizeNombre, Cord X,Y + NOMBRE
 
-
-			bufferAux->stream = malloc(bufferAux->size);
 			stream = malloc(bufferAux->size);
 
 			idMensaje = atoi(argv[3]);
@@ -334,18 +299,6 @@ t_buffer* crearBufferPorTipoDeMensaje(char*argv[],t_log* loggerDev ){
 			memcpy(stream + offset,&flag, sizeof(uint32_t));
 			offset += sizeof(uint32_t);
 
-			memcpy(stream + offset,ip,strlen(ip) + 1);
-			offset += sizeIP;
-
-			memcpy (stream + offset, &sizePuerto, sizeof(uint32_t));
-			offset += sizeof(uint32_t);
-
-			memcpy(stream + offset,puerto,strlen(puerto) + 1);
-			offset += sizePuerto;
-
-
-
-
 			bufferAux->stream = stream;
 
 			break;
@@ -353,8 +306,8 @@ t_buffer* crearBufferPorTipoDeMensaje(char*argv[],t_log* loggerDev ){
 
 		case 5:  //GET
 
-			bufferAux->size = 3*sizeof(uint32_t) + strlen(argv[3])+1 +strlen(ip)+1 + strlen(puerto)+1; // sizeNombre
-			bufferAux->stream = malloc(bufferAux->size);
+			bufferAux->size = 3*sizeof(uint32_t) + strlen(argv[3])+1; // sizeNombre
+			stream = malloc(bufferAux->size);
 
 			uint32_t sizeVerga = strlen(argv[3])+1;
 
@@ -365,69 +318,47 @@ t_buffer* crearBufferPorTipoDeMensaje(char*argv[],t_log* loggerDev ){
 			memcpy (stream + offset, argv[3], strlen(argv[3])+1);
 			offset += sizeVerga;
 
-
-			memcpy (stream + offset, &sizeIP, sizeof(uint32_t));
-			offset += sizeof(uint32_t);
-
-			memcpy(stream + offset, ip, strlen(ip) + 1);
-			offset += sizeIP;
-
-			memcpy (stream + offset, &sizePuerto, sizeof(uint32_t));
-			offset += sizeof(uint32_t);
-
-			memcpy(stream + offset, puerto, strlen(puerto) + 1);
-			offset += sizePuerto;
-
 			bufferAux->stream = stream;
-
 
 			break;
 
 
 		case 7: //SUSCRIPTOR
 
+			bufferAux->size = 3*sizeof(uint32_t) + sizeIP + sizePuerto; // Cola de Mensajes (representada por protocolo)
 
-
-			bufferAux->size = 3*sizeof(uint32_t) +strlen(ip)+1 + strlen(puerto)+1; // Cola de Mensajes (representada por protocolo)
-			bufferAux->stream = malloc(bufferAux->size);
-
+			stream = malloc(bufferAux->size);
 
 			log_info(loggerDev, "LA COLA DE MENSAJE ES: %s", argv[3]);
 
-			uint32_t colaDeMensajesSolicitada = numeroPorTipoDeMensaje(argv[3]) + 10;
+			uint32_t colaDeMensajesSolicitada = idColaPorTipoDeMensaje(argv[3]);
 
 			log_info(loggerDev, "EL NUMERO DE LA COLA ES: %i", colaDeMensajesSolicitada);
 
-
-
-			memcpy (stream + offset, &colaDeMensajesSolicitada,sizeof(uint32_t) );
+			memcpy(stream + offset, &colaDeMensajesSolicitada, sizeof(uint32_t));
 			offset += sizeof(uint32_t);
 
-			memcpy (stream + offset, &sizeIP, sizeof(uint32_t));
+			memcpy(stream + offset, &sizeIP, sizeof(uint32_t));
 			offset += sizeof(uint32_t);
-			log_info(loggerDev, "El peso de la IP es: %i",sizeIP);
+			log_info(loggerDev, "El peso de la IP es: %i", sizeIP);
 
 
-			memcpy(stream + offset,ip, strlen(ip) + 1);
+			memcpy(stream + offset, ip_game_boy, sizeIP);
 			offset += sizeIP;
-			log_info(loggerDev, "Se mando la IP: %s", ip);
+			log_info(loggerDev, "Se mando la IP: %s", ip_game_boy);
 
 
-			memcpy (stream + offset, &sizePuerto, sizeof(uint32_t));
+			memcpy(stream + offset, &sizePuerto, sizeof(uint32_t));
 			offset += sizeof(uint32_t);
-
 			log_info(loggerDev, "El peso del Puerto es: %i",sizePuerto);
 
-			memcpy(stream + offset,puerto,strlen(puerto) + 1);
+			memcpy(stream + offset, puerto_game_boy, sizePuerto);
 			offset += sizePuerto;
-
-			log_info(loggerDev, "Se mando el Puerto: %s", puerto);
+			log_info(loggerDev, "Se mando el Puerto: %s", puerto_game_boy);
 
 			bufferAux->stream = stream;
 
 			log_info(loggerDev, "SE ENCHUFO BIEN EL BUFFER");
-
-
 
 			break;
 
@@ -504,10 +435,10 @@ void enviar_mensaje(char* argv[], int socket_cliente){
 	if (send(socket_cliente, flujo, bytes, 0) == -1){
 		log_error(loggerDev, "Error: No se pudo enviar el mensaje");
 	}
+
 	free(flujo);
 	free(buffer->stream);
 	free(buffer);
-	free(paquete->buffer);
 	free(paquete);
 }
 
@@ -782,6 +713,7 @@ void devolver_ack(int socket_cliente) {
 
 void recibirMensajesDeSuscripcion(int socketCliente){
 	while(1){
+		sleep(1000);
 		recibir_mensaje(socketCliente);
 		devolver_ack(socketCliente);
 	}
