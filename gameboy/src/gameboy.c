@@ -71,6 +71,8 @@ int main(int argc,char*argv[]){
 	ip_game_boy = config_get_string_value(config, "IP_GAMEBOY");
 	puerto_game_boy = config_get_string_value(config, "PUERTO_GAMEBOY");
 
+	idGameBoy = config_get_int_value(config,"ID_GAMEBOY");
+
 	log_info(loggerDev, "La IP es: %s", ip_game_boy);
 	log_info(loggerDev, "El Puerto es: %s", puerto_game_boy);
 
@@ -97,7 +99,7 @@ int main(int argc,char*argv[]){
 		int tiempoSuscripcion = atoi(argv[4]);
 		sleep(tiempoSuscripcion);
 	}
-
+	close(conexion);
 	terminar_programa(conexion);
 
 }
