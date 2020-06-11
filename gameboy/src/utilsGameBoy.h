@@ -25,6 +25,9 @@ char* puerto;
 char* ip_game_boy;
 char* puerto_game_boy;
 
+uint32_t idGameBoy;
+
+
 typedef enum
 {
 	NEW          = 1,

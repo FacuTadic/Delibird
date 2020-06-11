@@ -97,9 +97,14 @@ uint32_t numeroPorTipoDeMensaje(char* mensajeAEnviar){
 }
 
 
-void agregarID(void* stream,uint32_t id, uint32_t* offset){
-	memcpy(stream,&id,sizeof(uint32_t));
+void agregarIDMensaje(void* stream,uint32_t id, uint32_t* offset){
+	memcpy(stream+*(offset),&id,sizeof(uint32_t));
 	*offset += sizeof(uint32_t);
+}
+
+void agregarIDModulo(void* stream, uint32_t* offset){
+	memcpy(stream,&idGameBoy, sizeof(uint32_t));
+	offset += sizeof(uint32_t);
 }
 
 
@@ -133,8 +138,7 @@ t_buffer* crearBufferPorTipoDeMensaje(char*argv[],t_log* loggerDev ){
 	uint32_t posY;
 	uint32_t cantidadPokemon;
 	uint32_t idMensaje;
-	uint32_t sizeIP = strlen(ip_game_boy) + 1;
-	uint32_t sizePuerto = strlen(puerto_game_boy) + 1;
+
 
 	//Variable para el switch
 	log_info(loggerDev, "MENSAJE; %s",argv[2]);
@@ -153,7 +157,7 @@ t_buffer* crearBufferPorTipoDeMensaje(char*argv[],t_log* loggerDev ){
 
 		case 1 : //NEW
 
-			bufferAux->size = 4*sizeof(uint32_t) + strlen(argv[3])+1; // sizeNombre, Cord X,Y , Cantidad + NOMBRE
+			bufferAux->size = 5*sizeof(uint32_t) + strlen(argv[3])+1; // ID GAMEBOY ,sizeNombre, Cord X,Y , Cantidad + NOMBRE
 
 			//CASO DE AGREGAR EL ID_MENSAJE
 			//Comparacion de strings commons
@@ -163,10 +167,15 @@ t_buffer* crearBufferPorTipoDeMensaje(char*argv[],t_log* loggerDev ){
 
 			stream = malloc(bufferAux->size);
 
+
+			agregarIDModulo(stream,&offset);
+
+
 			if(!strcmp(argv[1],"GAMECARD")){
 				idMensaje = atoi(argv[7]);
-				agregarID(stream,idMensaje,&offset);
+				agregarIDMensaje(stream,idMensaje,&offset);
 			}
+
 
 			sizeNombrePokemon = strlen(argv[3]) + 1;
 			memcpy(stream + offset,&sizeNombrePokemon, sizeof(uint32_t));
@@ -206,7 +215,7 @@ t_buffer* crearBufferPorTipoDeMensaje(char*argv[],t_log* loggerDev ){
 
 		case 2: //APPEARED
 
-			bufferAux->size = 3*sizeof(uint32_t) + strlen(argv[3])+1; // sizeNombre, Cord X,Y + NOMBRE
+			bufferAux->size = 4*sizeof(uint32_t) + strlen(argv[3])+1; // ID GAMEBOY, sizeNombre, Cord X,Y + NOMBRE
 
 			//CASO DE AGREGAR EL ID_MENSAJE
 			if(!strcmp(argv[1],"BROKER")){
@@ -215,11 +224,11 @@ t_buffer* crearBufferPorTipoDeMensaje(char*argv[],t_log* loggerDev ){
 
 			stream = malloc(bufferAux->size);
 
+			agregarIDModulo(stream,&offset);
 
 			if(!strcmp(argv[1],"BROKER")){
 				idMensaje = atoi(argv[6]);
-				agregarID(stream,idMensaje,&offset);
-
+				agregarIDMensaje(stream,idMensaje,&offset);
 			}
 
 			sizeNombrePokemon = strlen(argv[3]) + 1;
@@ -245,7 +254,7 @@ t_buffer* crearBufferPorTipoDeMensaje(char*argv[],t_log* loggerDev ){
 
 		case 3: //CATCH
 
-			bufferAux->size = 3*sizeof(uint32_t) + strlen(argv[3])+1;// sizeNombre, Cord X,Y , Cantidad + NOMBRE
+			bufferAux->size = 4*sizeof(uint32_t) + strlen(argv[3])+1;// ID GAMEBOY, sizeNombre, Cord X,Y + NOMBRE
 
 			//CASO DE AGREGAR EL ID_MENSAJE
 			if(!strcmp(argv[1],"GAMECARD")){
@@ -254,9 +263,13 @@ t_buffer* crearBufferPorTipoDeMensaje(char*argv[],t_log* loggerDev ){
 
 			stream = malloc(bufferAux->size);
 
+			agregarIDModulo(stream,&offset);
+
+
+
 			if(!strcmp(argv[1],"GAMECARD")){
 				idMensaje = atoi(argv[6]);
-				agregarID(stream,idMensaje,&offset);
+				agregarIDMensaje(stream,idMensaje,&offset);
 			}
 
 
@@ -283,12 +296,15 @@ t_buffer* crearBufferPorTipoDeMensaje(char*argv[],t_log* loggerDev ){
 			break;
 
 		case 4:  //CAUGHT
-			bufferAux->size = 2*sizeof(uint32_t); // sizeNombre, Cord X,Y + NOMBRE
+			bufferAux->size = 2*sizeof(uint32_t); // ID GAMEBOY + FLAG
 
 			stream = malloc(bufferAux->size);
 
+			agregarIDModulo(stream,&offset);
+
+
 			idMensaje = atoi(argv[3]);
-			agregarID(stream,idMensaje,&offset);
+			agregarIDMensaje(stream,idMensaje,&offset);
 
 			uint32_t flag = flagCaught(argv[4]);
 			if (flag == -1){
@@ -306,8 +322,24 @@ t_buffer* crearBufferPorTipoDeMensaje(char*argv[],t_log* loggerDev ){
 
 		case 5:  //GET
 
-			bufferAux->size = 3*sizeof(uint32_t) + strlen(argv[3])+1; // sizeNombre
+			bufferAux->size = 2*sizeof(uint32_t) + strlen(argv[3])+1; // sizeNombre
+
+
+			//CASO DE AGREGAR EL ID_MENSAJE
+			if(!strcmp(argv[1],"GAMECARD")){
+				bufferAux->size += sizeof(uint32_t);
+			}
+
 			stream = malloc(bufferAux->size);
+
+			agregarIDModulo(stream,&offset);
+
+
+			if(!strcmp(argv[1],"GAMECARD")){
+				idMensaje = atoi(argv[6]);
+				agregarIDMensaje(stream,idMensaje,&offset);
+			}
+
 
 			uint32_t sizeVerga = strlen(argv[3])+1;
 
@@ -325,9 +357,11 @@ t_buffer* crearBufferPorTipoDeMensaje(char*argv[],t_log* loggerDev ){
 
 		case 7: //SUSCRIPTOR
 
-			bufferAux->size = 3*sizeof(uint32_t) + sizeIP + sizePuerto; // Cola de Mensajes (representada por protocolo)
+			bufferAux->size = 2*sizeof(uint32_t); // Cola de Mensajes (representada por protocolo)
 
 			stream = malloc(bufferAux->size);
+
+			agregarIDModulo(stream,&offset);
 
 			log_info(loggerDev, "LA COLA DE MENSAJE ES: %s", argv[3]);
 
@@ -337,24 +371,6 @@ t_buffer* crearBufferPorTipoDeMensaje(char*argv[],t_log* loggerDev ){
 
 			memcpy(stream + offset, &colaDeMensajesSolicitada, sizeof(uint32_t));
 			offset += sizeof(uint32_t);
-
-			memcpy(stream + offset, &sizeIP, sizeof(uint32_t));
-			offset += sizeof(uint32_t);
-			log_info(loggerDev, "El peso de la IP es: %i", sizeIP);
-
-
-			memcpy(stream + offset, ip_game_boy, sizeIP);
-			offset += sizeIP;
-			log_info(loggerDev, "Se mando la IP: %s", ip_game_boy);
-
-
-			memcpy(stream + offset, &sizePuerto, sizeof(uint32_t));
-			offset += sizeof(uint32_t);
-			log_info(loggerDev, "El peso del Puerto es: %i",sizePuerto);
-
-			memcpy(stream + offset, puerto_game_boy, sizePuerto);
-			offset += sizePuerto;
-			log_info(loggerDev, "Se mando el Puerto: %s", puerto_game_boy);
 
 			bufferAux->stream = stream;
 
