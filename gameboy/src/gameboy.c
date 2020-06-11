@@ -99,7 +99,7 @@ int main(int argc,char*argv[]){
 		int tiempoSuscripcion = atoi(argv[4]);
 		sleep(tiempoSuscripcion);
 	}
-
+	close(conexion);
 	terminar_programa(conexion);
 
 }
