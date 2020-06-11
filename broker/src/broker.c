@@ -13,7 +13,7 @@ void procesar_request(int cod_op, int cliente_fd) {
 		log_info(extense_logger, "Codigo de operacion recibido del socket cliente %i corresponde a un NEW", cliente_fd);
 		t_new* new_msg = recibir_new(cliente_fd, &size, extense_logger);
 
-		if (NULL == new_msg) {
+		if (NULL == new_msg) { // pelotudo
 			free(mensaje_a_guardar);
 			pthread_exit(NULL);
 		} else {
@@ -31,8 +31,6 @@ void procesar_request(int cod_op, int cliente_fd) {
 			sem_post(&gl_new_mensajes);
 
 			devolver_id(cliente_fd, mensaje_a_guardar->id, extense_logger);
-
-			close(cliente_fd);
 		}
 		break;
 	case APPEARED: ;
@@ -57,8 +55,6 @@ void procesar_request(int cod_op, int cliente_fd) {
 			sem_post(&gl_appeared_mensajes);
 
 			devolver_id(cliente_fd, mensaje_a_guardar->id, extense_logger);
-
-			close(cliente_fd);
 		}
 		break;
 	case CATCH: ;
@@ -83,8 +79,6 @@ void procesar_request(int cod_op, int cliente_fd) {
 			sem_post(&gl_catch_mensajes);
 
 			devolver_id(cliente_fd, mensaje_a_guardar->id, extense_logger);
-
-			close(cliente_fd);
 		}
 		break;
 	case CAUGHT: ;
@@ -109,8 +103,6 @@ void procesar_request(int cod_op, int cliente_fd) {
 			sem_post(&gl_caught_mensajes);
 
 			devolver_id(cliente_fd, mensaje_a_guardar->id, extense_logger);
-
-			close(cliente_fd);
 		}
 		break;
 	case GET: ;
@@ -135,8 +127,6 @@ void procesar_request(int cod_op, int cliente_fd) {
 			sem_post(&gl_get_mensajes);
 
 			devolver_id(cliente_fd, mensaje_a_guardar->id, extense_logger);
-
-			close(cliente_fd);
 		}
 		break;
 	case LOCALIZED: ;
@@ -161,8 +151,6 @@ void procesar_request(int cod_op, int cliente_fd) {
 			sem_post(&gl_localized_mensajes);
 
 			devolver_id(cliente_fd, mensaje_a_guardar->id, extense_logger);
-
-			close(cliente_fd);
 		}
 		break;
 	case SUSCRIPCION: ;
@@ -238,7 +226,7 @@ void procesar_request(int cod_op, int cliente_fd) {
 
 		free(suscripcion);
 
-		close(cliente_fd);
+		close(cliente_fd); // no, GUARDARSE EL SOCKET
 		break;
 	default:
 		log_warning(extense_logger, "El codigo de operacion %i no corresponde a ninguna operacion conocida", cod_op);

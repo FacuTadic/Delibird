@@ -713,7 +713,6 @@ void devolver_ack(int socket_cliente) {
 
 void recibirMensajesDeSuscripcion(int socketCliente){
 	while(1){
-		sleep(1000);
 		recibir_mensaje(socketCliente);
 		devolver_ack(socketCliente);
 	}
