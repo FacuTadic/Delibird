@@ -18,7 +18,6 @@ int crear_conexion(char *ip, char* puerto)
 
 	if(connect(socket_cliente, server_info->ai_addr, server_info->ai_addrlen) == -1)
 		printf("error");
-
 	freeaddrinfo(server_info);
 
 	return socket_cliente;
@@ -235,15 +234,22 @@ t_buffer* crearBufferPorTipoDeMensaje(char*argv[],t_log* loggerDev ){
 			memcpy(stream + offset,&sizeNombrePokemon, sizeof(uint32_t));
 			offset += sizeof(uint32_t);
 
+			log_info(loggerDev, "pokemon: %s", argv[3]); // log
+			log_info(loggerDev, "Tamanio pokemon %d ",sizeNombrePokemon );  //a que log va
+
 			memcpy(stream + offset,argv[3],strlen(argv[3]) + 1);
 			offset += sizeNombrePokemon;
 
 			posX = atoi(argv[4]);
 
+			log_info(loggerGameBoy, "posX = %d ", posX);  //a que log va
+
 			memcpy(stream + offset,&posX, sizeof(uint32_t));
 			offset += sizeof(uint32_t);
 
 			posY = atoi(argv[5]);
+
+			log_info(loggerGameBoy, "posY = %d ", posY);  //a que log va
 
 			memcpy(stream + offset,&posY, sizeof(uint32_t));
 			offset += sizeof(uint32_t);
@@ -272,21 +278,27 @@ t_buffer* crearBufferPorTipoDeMensaje(char*argv[],t_log* loggerDev ){
 				agregarIDMensaje(stream,idMensaje,&offset);
 			}
 
+			log_info(loggerGameBoy, "id del mensaje = %d ", idMensaje);  //a que log va
 
 			sizeNombrePokemon = strlen(argv[3]) + 1;
 
 			memcpy(stream + offset,&sizeNombrePokemon, sizeof(uint32_t));
 			offset += sizeof(uint32_t);
 
+			log_info(loggerGameBoy, "pokemon: %s", argv[3]);  //a que log va
+			log_info(loggerGameBoy, "tamanio pokemon = %d ", sizeNombrePokemon);  //a que log va
+
 			memcpy(stream + offset,argv[3],strlen(argv[3]) + 1);
 			offset += sizeNombrePokemon;
 
 			posX = atoi(argv[4]);
+			log_info(loggerGameBoy, "posX = %d ", posX);  //a que log va
 
 			memcpy(stream + offset,&posX, sizeof(uint32_t));
 			offset += sizeof(uint32_t);
 
 			posY = atoi(argv[5]);
+			log_info(loggerGameBoy, "posY = %d ", posY);  //a que log va
 
 			memcpy(stream + offset,&posY, sizeof(uint32_t));
 			offset += sizeof(uint32_t);
@@ -305,6 +317,8 @@ t_buffer* crearBufferPorTipoDeMensaje(char*argv[],t_log* loggerDev ){
 
 			idMensaje = atoi(argv[3]);
 			agregarIDMensaje(stream,idMensaje,&offset);
+
+			log_info(loggerGameBoy, "id del mensaje = %d ", idMensaje);  //a que log va
 
 			uint32_t flag = flagCaught(argv[4]);
 			if (flag == -1){
@@ -339,16 +353,19 @@ t_buffer* crearBufferPorTipoDeMensaje(char*argv[],t_log* loggerDev ){
 				idMensaje = atoi(argv[6]);
 				agregarIDMensaje(stream,idMensaje,&offset);
 			}
+			log_info(loggerGameBoy, "id del mensaje = %d ", idMensaje);  //a que log va
 
 
-			uint32_t sizeVerga = strlen(argv[3])+1;
+			uint32_t sizeNombre = strlen(argv[3])+1;
 
+			log_info(loggerGameBoy, "pokemon: %s ", argv[3]);  //a que log va
+			log_info(loggerGameBoy, "tamanio del pokemon = %d ", sizeNombre);  //a que log va
 
-			memcpy (stream + offset, &sizeVerga, sizeof(uint32_t));
+			memcpy (stream + offset, &sizeNombre, sizeof(uint32_t));
 			offset += sizeof(uint32_t);
 
 			memcpy (stream + offset, argv[3], strlen(argv[3])+1);
-			offset += sizeVerga;
+			offset += sizeNombre;
 
 			bufferAux->stream = stream;
 
@@ -572,7 +589,7 @@ void deserializarCaught(void* streamLlegada){
 	log_error(loggerGameBoy, "Llego con el ID Correlativo del Broker: %i",idPropio);
 
 
-//	#################		FALG		##################
+//	#################		FLAG		##################
 	memcpy(&(mensajeCaught->flagCaught),streamLlegada, sizeof(uint32_t));
 	log_error(loggerGameBoy, "Llego con el Flag: %i",mensajeCaught->flagCaught);
 	streamLlegada += sizeof(uint32_t);
@@ -725,6 +742,8 @@ void recibir_mensaje(int socket_cliente)
 void devolver_ack(int socket_cliente) {
 	uint32_t ack = 1;
 	send(socket_cliente, (void *) &ack, sizeof(uint32_t), 0);
+	log_info(loggerGameBoy, "Devuelve acknowledgement ");  //a que log va
+
 }
 
 void recibirMensajesDeSuscripcion(int socketCliente){
@@ -738,4 +757,6 @@ void recibirMensajesDeSuscripcion(int socketCliente){
 void liberar_conexion(int socket_cliente)
 {
 	close(socket_cliente);
+	log_info(loggerGameBoy, "Cierra conexion ");  //a que log va
+
 }
