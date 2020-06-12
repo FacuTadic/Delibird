@@ -13,7 +13,7 @@ void procesar_request(int cod_op, int cliente_fd) {
 		log_info(extense_logger, "Codigo de operacion recibido del socket cliente %i corresponde a un NEW", cliente_fd);
 		t_new* new_msg = recibir_new(cliente_fd, &size, extense_logger);
 
-		if (NULL == new_msg) {
+		if (new_msg == NULL) {
 			free(mensaje_a_guardar);
 			pthread_exit(NULL);
 		} else {
@@ -31,15 +31,13 @@ void procesar_request(int cod_op, int cliente_fd) {
 			sem_post(&gl_new_mensajes);
 
 			devolver_id(cliente_fd, mensaje_a_guardar->id, extense_logger);
-
-			close(cliente_fd);
 		}
 		break;
 	case APPEARED: ;
 		log_info(extense_logger, "Codigo de operacion recibido del socket cliente %i corresponde a un APPEARED", cliente_fd);
 		t_appeared* appeared_msg = recibir_appeared(cliente_fd, &size, extense_logger);
 
-		if (NULL == appeared_msg) {
+		if (appeared_msg == NULL) {
 			free(mensaje_a_guardar);
 			pthread_exit(NULL);
 		} else {
@@ -57,15 +55,13 @@ void procesar_request(int cod_op, int cliente_fd) {
 			sem_post(&gl_appeared_mensajes);
 
 			devolver_id(cliente_fd, mensaje_a_guardar->id, extense_logger);
-
-			close(cliente_fd);
 		}
 		break;
 	case CATCH: ;
 		log_info(extense_logger, "Codigo de operacion recibido del socket cliente %i corresponde a un CATCH", cliente_fd);
 		t_catch* catch_msg = recibir_catch(cliente_fd, &size, extense_logger);
 
-		if (NULL == catch_msg) {
+		if (catch_msg == NULL) {
 			free(mensaje_a_guardar);
 			pthread_exit(NULL);
 		} else {
@@ -83,15 +79,13 @@ void procesar_request(int cod_op, int cliente_fd) {
 			sem_post(&gl_catch_mensajes);
 
 			devolver_id(cliente_fd, mensaje_a_guardar->id, extense_logger);
-
-			close(cliente_fd);
 		}
 		break;
 	case CAUGHT: ;
 		log_info(extense_logger, "Codigo de operacion recibido del socket cliente %i corresponde a un CAUGHT", cliente_fd);
 		t_caught* caught_msg = recibir_caught(cliente_fd, &size, extense_logger);
 
-		if (NULL == caught_msg) {
+		if (caught_msg == NULL) {
 			free(mensaje_a_guardar);
 			pthread_exit(NULL);
 		} else {
@@ -109,15 +103,13 @@ void procesar_request(int cod_op, int cliente_fd) {
 			sem_post(&gl_caught_mensajes);
 
 			devolver_id(cliente_fd, mensaje_a_guardar->id, extense_logger);
-
-			close(cliente_fd);
 		}
 		break;
 	case GET: ;
 		log_info(extense_logger, "Codigo de operacion recibido del socket cliente %i corresponde a un GET", cliente_fd);
 		t_get* get_msg = recibir_get(cliente_fd, &size, extense_logger);
 
-		if (NULL == get_msg) {
+		if (get_msg == NULL) {
 			free(mensaje_a_guardar);
 			pthread_exit(NULL);
 		} else {
@@ -135,15 +127,13 @@ void procesar_request(int cod_op, int cliente_fd) {
 			sem_post(&gl_get_mensajes);
 
 			devolver_id(cliente_fd, mensaje_a_guardar->id, extense_logger);
-
-			close(cliente_fd);
 		}
 		break;
 	case LOCALIZED: ;
 		log_info(extense_logger, "Codigo de operacion recibido del socket cliente %i corresponde a un LOCALIZED", cliente_fd);
 		t_localized* localized_msg = recibir_localized(cliente_fd, &size, extense_logger);
 
-		if (NULL == localized_msg) {
+		if (localized_msg == NULL) {
 			free(mensaje_a_guardar);
 			pthread_exit(NULL);
 		} else {
@@ -161,22 +151,20 @@ void procesar_request(int cod_op, int cliente_fd) {
 			sem_post(&gl_localized_mensajes);
 
 			devolver_id(cliente_fd, mensaje_a_guardar->id, extense_logger);
-
-			close(cliente_fd);
 		}
 		break;
 	case SUSCRIPCION: ;
 		log_info(extense_logger, "Codigo de operacion recibido del socket cliente %i corresponde a un SUSCRIPCION", cliente_fd);
 		t_suscripcion* suscripcion = recibir_suscripcion(cliente_fd, &size, extense_logger);
 
-		if (NULL == suscripcion) {
+		if (suscripcion == NULL) {
 			free(mensaje_a_guardar);
 			pthread_exit(NULL);
 		}
 
 		info_modulo* info_modulo = malloc(sizeof(info_modulo));
-		info_modulo->ip = suscripcion->ip;
-		info_modulo->puerto = suscripcion->puerto;
+		info_modulo->id_cliente = suscripcion->id_cliente;
+		info_modulo->socket_cliente = cliente_fd;
 
 		switch(suscripcion->id_cola) {
 		case NEW_ID: ;
@@ -186,8 +174,8 @@ void procesar_request(int cod_op, int cliente_fd) {
 			list_add(gl_new_suscriptores, (void *) &info_modulo);
 			pthread_mutex_unlock(&gl_new_list_lock);
 			enviar_new_de_memoria(info_modulo);
-			log_info(extense_logger, "Modulo con ip %s y puerto %s agregado correctamente en la cola de NEW", suscripcion->ip, suscripcion->puerto);
-			log_info(logger, "Modulo con ip %s y puerto %s agregado correctamente en la cola de NEW", suscripcion->ip, suscripcion->puerto);
+			log_info(extense_logger, "Modulo con id %s agregado correctamente en la cola de NEW", suscripcion->id_cliente);
+			log_info(logger, "Modulo con id %s agregado correctamente en la cola de NEW", suscripcion->id_cliente);
 			break;
 		case APPEARED_ID: ;
 			log_info(extense_logger, "Id de cola recibido del socket cliente %i corresponde a la cola de APPEARED", cliente_fd);
@@ -195,8 +183,8 @@ void procesar_request(int cod_op, int cliente_fd) {
 			list_add(gl_appeared_suscriptores, (void *) &info_modulo);
 			pthread_mutex_unlock(&gl_appeared_list_lock);
 			enviar_appeared_de_memoria(info_modulo);
-			log_info(extense_logger, "Modulo con ip %s y puerto %s agregado correctamente en la cola de APPEARED", suscripcion->ip, suscripcion->puerto);
-			log_info(logger, "Modulo con ip %s y puerto %s agregado correctamente en la cola de APPEARED", suscripcion->ip, suscripcion->puerto);
+			log_info(extense_logger, "Modulo con id %s agregado correctamente en la cola de APPEARED", suscripcion->id_cliente);
+			log_info(logger, "Modulo con id %s agregado correctamente en la cola de APPEARED", suscripcion->id_cliente);
 			break;
 		case CATCH_ID: ;
 			log_info(extense_logger, "Id de cola recibido del socket cliente %i corresponde a la cola de CATCH", cliente_fd);
@@ -204,8 +192,8 @@ void procesar_request(int cod_op, int cliente_fd) {
 			list_add(gl_catch_suscriptores, (void *) &info_modulo);
 			pthread_mutex_unlock(&gl_catch_list_lock);
 			enviar_catch_de_memoria(info_modulo);
-			log_info(extense_logger, "Modulo con ip %s y puerto %s agregado correctamente en la cola de CATCH", suscripcion->ip, suscripcion->puerto);
-			log_info(logger, "Modulo con ip %s y puerto %s agregado correctamente en la cola de CATCH", suscripcion->ip, suscripcion->puerto);
+			log_info(extense_logger, "Modulo con id %s agregado correctamente en la cola de CATCH", suscripcion->id_cliente);
+			log_info(logger, "Modulo con id %s agregado correctamente en la cola de CATCH", suscripcion->id_cliente);
 			break;
 		case CAUGHT_ID: ;
 			log_info(extense_logger, "Id de cola recibido del socket cliente %i corresponde a la cola de CAUGHT", cliente_fd);
@@ -213,8 +201,8 @@ void procesar_request(int cod_op, int cliente_fd) {
 			list_add(gl_caught_suscriptores, (void *) &info_modulo);
 			pthread_mutex_unlock(&gl_caught_list_lock);
 			enviar_caught_de_memoria(info_modulo);
-			log_info(extense_logger, "Modulo con ip %s y puerto %s agregado correctamente en la cola de CAUGHT", suscripcion->ip, suscripcion->puerto);
-			log_info(logger, "Modulo con ip %s y puerto %s agregado correctamente en la cola de CAUGHT", suscripcion->ip, suscripcion->puerto);
+			log_info(extense_logger, "Modulo con id %s agregado correctamente en la cola de CAUGHT", suscripcion->id_cliente);
+			log_info(logger, "Modulo con id %s agregado correctamente en la cola de CAUGHT", suscripcion->id_cliente);
 			break;
 		case GET_ID: ;
 			log_info(extense_logger, "Id de cola recibido del socket cliente %i corresponde a la cola de GET", cliente_fd);
@@ -222,8 +210,8 @@ void procesar_request(int cod_op, int cliente_fd) {
 			list_add(gl_get_suscriptores, (void *) &info_modulo);
 			pthread_mutex_unlock(&gl_get_list_lock);
 			enviar_get_de_memoria(info_modulo);
-			log_info(extense_logger, "Modulo con ip %s y puerto %s agregado correctamente en la cola de GET", suscripcion->ip, suscripcion->puerto);
-			log_info(logger, "Modulo con ip %s y puerto %s agregado correctamente en la cola de GET", suscripcion->ip, suscripcion->puerto);
+			log_info(extense_logger, "Modulo con id %s agregado correctamente en la cola de GET", suscripcion->id_cliente);
+			log_info(logger, "Modulo con id %s agregado correctamente en la cola de GET", suscripcion->id_cliente);
 			break;
 		case LOCALIZED_ID: ;
 			log_info(extense_logger, "Id de cola recibido del socket cliente %i corresponde a la cola de LOCALIZED", cliente_fd);
@@ -231,14 +219,12 @@ void procesar_request(int cod_op, int cliente_fd) {
 			list_add(gl_localized_suscriptores, (void *) &info_modulo);
 			pthread_mutex_unlock(&gl_localized_list_lock);
 			enviar_localized_de_memoria(info_modulo);
-			log_info(extense_logger, "Modulo con ip %s y puerto %s agregado correctamente en la cola de LOCALIZED", suscripcion->ip, suscripcion->puerto);
-			log_info(logger, "Modulo con ip %s y puerto %s agregado correctamente en la cola de LOCALIZED", suscripcion->ip, suscripcion->puerto);
+			log_info(extense_logger, "Modulo con id %s agregado correctamente en la cola de LOCALIZED", suscripcion->id_cliente);
+			log_info(logger, "Modulo con id %s agregado correctamente en la cola de LOCALIZED", suscripcion->id_cliente);
 			break;
 		}
 
 		free(suscripcion);
-
-		close(cliente_fd);
 		break;
 	default:
 		log_warning(extense_logger, "El codigo de operacion %i no corresponde a ninguna operacion conocida", cod_op);
@@ -517,7 +503,8 @@ void atender_mensaje_new(mensaje_queue* mensaje) {
 
 	for (int i = 0; i < suscriptores_para_enviar->elements_count; i++) {
 		if (struct_para_enviar[i].status->envio_ok == 1) {
-			list_add(mandados, list_get(suscriptores_para_enviar, i));
+			info_modulo* enviado = list_get(suscriptores_para_enviar, i);
+			list_add(mandados, &(enviado->id_cliente));
 		}
 	}
 
@@ -525,7 +512,8 @@ void atender_mensaje_new(mensaje_queue* mensaje) {
 
 	for (int i = 0; i < suscriptores_para_enviar->elements_count; i++) {
 		if (struct_para_enviar[i].status->ack == 1) {
-			list_add(acks, list_get(suscriptores_para_enviar, i));
+			info_modulo* enviado = list_get(suscriptores_para_enviar, i);
+			list_add(acks, &(enviado->id_cliente));
 		}
 	}
 
@@ -574,7 +562,8 @@ void atender_mensaje_appeared(mensaje_queue* mensaje) {
 
 	for (int i = 0; i < suscriptores_para_enviar->elements_count; i++) {
 		if (struct_para_enviar[i].status->envio_ok == 1) {
-			list_add(mandados, list_get(suscriptores_para_enviar, i));
+			info_modulo* enviado = list_get(suscriptores_para_enviar, i);
+			list_add(mandados, &(enviado->id_cliente));
 		}
 	}
 
@@ -582,7 +571,8 @@ void atender_mensaje_appeared(mensaje_queue* mensaje) {
 
 	for (int i = 0; i < suscriptores_para_enviar->elements_count; i++) {
 		if (struct_para_enviar[i].status->ack == 1) {
-			list_add(acks, list_get(suscriptores_para_enviar, i));
+			info_modulo* enviado = list_get(suscriptores_para_enviar, i);
+			list_add(acks, &(enviado->id_cliente));
 		}
 	}
 
@@ -630,7 +620,8 @@ void atender_mensaje_catch(mensaje_queue* mensaje) {
 
 	for (int i = 0; i < suscriptores_para_enviar->elements_count; i++) {
 		if (struct_para_enviar[i].status->envio_ok == 1) {
-			list_add(mandados, list_get(suscriptores_para_enviar, i));
+			info_modulo* enviado = list_get(suscriptores_para_enviar, i);
+			list_add(mandados, &(enviado->id_cliente));
 		}
 	}
 
@@ -638,7 +629,8 @@ void atender_mensaje_catch(mensaje_queue* mensaje) {
 
 	for (int i = 0; i < suscriptores_para_enviar->elements_count; i++) {
 		if (struct_para_enviar[i].status->ack == 1) {
-			list_add(acks, list_get(suscriptores_para_enviar, i));
+			info_modulo* enviado = list_get(suscriptores_para_enviar, i);
+			list_add(acks, &(enviado->id_cliente));
 		}
 	}
 
@@ -687,7 +679,8 @@ void atender_mensaje_caught(mensaje_queue* mensaje) {
 
 	for (int i = 0; i < suscriptores_para_enviar->elements_count; i++) {
 		if (struct_para_enviar[i].status->envio_ok == 1) {
-			list_add(mandados, list_get(suscriptores_para_enviar, i));
+			info_modulo* enviado = list_get(suscriptores_para_enviar, i);
+			list_add(mandados, &(enviado->id_cliente));
 		}
 	}
 
@@ -695,7 +688,8 @@ void atender_mensaje_caught(mensaje_queue* mensaje) {
 
 	for (int i = 0; i < suscriptores_para_enviar->elements_count; i++) {
 		if (struct_para_enviar[i].status->ack == 1) {
-			list_add(acks, list_get(suscriptores_para_enviar, i));
+			info_modulo* enviado = list_get(suscriptores_para_enviar, i);
+			list_add(acks, &(enviado->id_cliente));
 		}
 	}
 
@@ -743,7 +737,8 @@ void atender_mensaje_get(mensaje_queue* mensaje) {
 
 	for (int i = 0; i < suscriptores_para_enviar->elements_count; i++) {
 		if (struct_para_enviar[i].status->envio_ok == 1) {
-			list_add(mandados, list_get(suscriptores_para_enviar, i));
+			info_modulo* enviado = list_get(suscriptores_para_enviar, i);
+			list_add(mandados, &(enviado->id_cliente));
 		}
 	}
 
@@ -751,7 +746,8 @@ void atender_mensaje_get(mensaje_queue* mensaje) {
 
 	for (int i = 0; i < suscriptores_para_enviar->elements_count; i++) {
 		if (struct_para_enviar[i].status->ack == 1) {
-			list_add(acks, list_get(suscriptores_para_enviar, i));
+			info_modulo* enviado = list_get(suscriptores_para_enviar, i);
+			list_add(acks, &(enviado->id_cliente));
 		}
 	}
 
@@ -800,7 +796,8 @@ void atender_mensaje_localized(mensaje_queue* mensaje) {
 
 	for (int i = 0; i < suscriptores_para_enviar->elements_count; i++) {
 		if (struct_para_enviar[i].status->envio_ok == 1) {
-			list_add(mandados, list_get(suscriptores_para_enviar, i));
+			info_modulo* enviado = list_get(suscriptores_para_enviar, i);
+			list_add(mandados, &(enviado->id_cliente));
 		}
 	}
 
@@ -808,7 +805,8 @@ void atender_mensaje_localized(mensaje_queue* mensaje) {
 
 	for (int i = 0; i < suscriptores_para_enviar->elements_count; i++) {
 		if (struct_para_enviar[i].status->ack == 1) {
-			list_add(acks, list_get(suscriptores_para_enviar, i));
+			info_modulo* enviado = list_get(suscriptores_para_enviar, i);
+			list_add(acks, &(enviado->id_cliente));
 		}
 	}
 
@@ -825,39 +823,39 @@ void mandar_new(void* new_mandable) {
 
 	status_envio* status = malloc(sizeof(status_envio));
 
-	status->ip = argumento_new->info->ip;
-	status->puerto = argumento_new->info->puerto;
+	status->id_cliente = argumento_new->info->id_cliente;
+	status->socket_cliente = argumento_new->info->socket_cliente;
 
-	log_info(extense_logger, "Preparandose para enviar mensaje NEW con id %i al ip %s puerto %s", argumento_new->mensaje_queue->id, argumento_new->info->ip, argumento_new->info->puerto);
+	log_info(extense_logger, "Preparandose para enviar mensaje NEW con id %i al cliente %i socket %i", argumento_new->mensaje_queue->id, argumento_new->info->id_cliente, argumento_new->info->socket_cliente);
 
 	uint32_t bytes;
 	void* flujo = serializar_new(argumento_new->mensaje_queue, &bytes);
 
-	int socket_cliente = crear_conexion(argumento_new->info->ip, argumento_new->info->puerto);
+	log_info(extense_logger, "Enviando mensaje NEW con id %i al cliente %i socket %i", argumento_new->mensaje_queue->id, argumento_new->info->id_cliente, argumento_new->info->socket_cliente);
 
-	log_info(extense_logger, "Conexion creada para el ip %s puerto %s con socket %i", argumento_new->info->ip, argumento_new->info->puerto, socket_cliente);
-	log_info(extense_logger, "Enviando mensaje NEW con id %i al ip %s puerto %s", argumento_new->mensaje_queue->id, argumento_new->info->ip, argumento_new->info->puerto);
-
-	if (send(socket_cliente, flujo, bytes, 0) == -1) {
+	if (send(argumento_new->info->socket_cliente, flujo, bytes, 0) == -1) {
 		log_error(extense_logger, "Error: No se pudo enviar el mensaje");
 		status->envio_ok = 0;
 		status->ack = 0;
+		close(argumento_new->info->socket_cliente);
+		eliminar_suscriptor(gl_new_list_lock, gl_new_suscriptores, argumento_new->info);
 	} else {
 		status->envio_ok = 1;
-		log_info(extense_logger, "Mensaje NEW con id %i al ip %s puerto %s enviado correctamente", argumento_new->mensaje_queue->id, argumento_new->info->ip, argumento_new->info->puerto);
-		log_info(logger, "Mensaje NEW con id %i al ip %s puerto %s enviado correctamente", argumento_new->mensaje_queue->id, argumento_new->info->ip, argumento_new->info->puerto);
+		log_info(extense_logger, "Mensaje NEW con id %i al cliente %i socket %i enviado correctamente", argumento_new->mensaje_queue->id, argumento_new->info->id_cliente, argumento_new->info->socket_cliente);
+		log_info(logger, "Mensaje NEW con id %i al cliente %i socket %i enviado correctamente", argumento_new->mensaje_queue->id, argumento_new->info->id_cliente, argumento_new->info->socket_cliente);
 		uint32_t id;
-		if (recv(socket_cliente,&id ,sizeof(uint32_t),MSG_WAITALL) == -1) {
-			log_error(extense_logger, "Error: No se recibió el ACK de ip %s puerto %s", argumento_new->info->ip, argumento_new->info->puerto);
+		if (recv(argumento_new->info->socket_cliente, &id, sizeof(uint32_t),MSG_WAITALL) == -1) {
+			log_error(extense_logger, "Error: No se recibió el ACK de cliente %i socket %i", argumento_new->info->id_cliente, argumento_new->info->socket_cliente);
 			status->ack = 0;
+			close(argumento_new->info->socket_cliente);
+			eliminar_suscriptor(gl_new_list_lock, gl_new_suscriptores, argumento_new->info);
 		} else {
 			status->ack = 1;
-			log_info(extense_logger, "ACK de ip %s puerto %s recibido", argumento_new->info->ip, argumento_new->info->puerto);
-			log_info(logger, "ACK de ip %s puerto %s recibido", argumento_new->info->ip, argumento_new->info->puerto);
+			log_info(extense_logger, "ACK de cliente %i socket %i recibido", argumento_new->info->id_cliente, argumento_new->info->socket_cliente);
+			log_info(logger, "ACK de cliente %i socket %i recibido", argumento_new->info->id_cliente, argumento_new->info->socket_cliente);
 		}
 	}
 
-	close(socket_cliente);
 	free(flujo);
 
 	argumento_new->status = status;
@@ -868,39 +866,39 @@ void mandar_appeared(void* appeared_mandable) {
 
 	status_envio* status = malloc(sizeof(status_envio));
 
-	status->ip = argumento_appeared->info->ip;
-	status->puerto = argumento_appeared->info->puerto;
+	status->id_cliente = argumento_appeared->info->id_cliente;
+	status->socket_cliente = argumento_appeared->info->socket_cliente;
 
-	log_info(extense_logger, "Preparandose para enviar mensaje APPEARED con id %i al ip %s puerto %s", argumento_appeared->mensaje_queue->id, argumento_appeared->info->ip, argumento_appeared->info->puerto);
+	log_info(extense_logger, "Preparandose para enviar mensaje APPEARED con id %i al cliente %i socket %i", argumento_appeared->mensaje_queue->id, argumento_appeared->info->id_cliente, argumento_appeared->info->socket_cliente);
 
 	uint32_t bytes;
 	void* flujo = serializar_appeared(argumento_appeared->mensaje_queue, &bytes);
 
-	int socket_cliente = crear_conexion(argumento_appeared->info->ip, argumento_appeared->info->puerto);
+	log_info(extense_logger, "Enviando mensaje APPEARED con id %i al cliente %i socket %i", argumento_appeared->mensaje_queue->id, argumento_appeared->info->id_cliente, argumento_appeared->info->socket_cliente);
 
-	log_info(extense_logger, "Conexion creada para el ip %s puerto %s con socket %i", argumento_appeared->info->ip, argumento_appeared->info->puerto, socket_cliente);
-	log_info(extense_logger, "Enviando mensaje APPEARED con id %i al ip %s puerto %s", argumento_appeared->mensaje_queue->id, argumento_appeared->info->ip, argumento_appeared->info->puerto);
-
-	if (send(socket_cliente, flujo, bytes, 0) == -1) {
+	if (send(argumento_appeared->info->socket_cliente, flujo, bytes, 0) == -1) {
 		log_error(extense_logger, "Error: No se pudo enviar el mensaje");
 		status->envio_ok = 0;
 		status->ack = 0;
+		close(argumento_appeared->info->socket_cliente);
+		eliminar_suscriptor(gl_appeared_list_lock, gl_appeared_suscriptores, argumento_appeared->info);
 	} else {
 		status->envio_ok = 1;
-		log_info(extense_logger, "Mensaje APPEARED con id %i al ip %s puerto %s enviado correctamente", argumento_appeared->mensaje_queue->id, argumento_appeared->info->ip, argumento_appeared->info->puerto);
-		log_info(logger, "Mensaje APPEARED con id %i al ip %s puerto %s enviado correctamente", argumento_appeared->mensaje_queue->id, argumento_appeared->info->ip, argumento_appeared->info->puerto);
+		log_info(extense_logger, "Mensaje APPEARED con id %i al cliente %i socket %i enviado correctamente", argumento_appeared->mensaje_queue->id, argumento_appeared->info->id_cliente, argumento_appeared->info->socket_cliente);
+		log_info(logger, "Mensaje APPEARED con id %i al cliente %i socket %i enviado correctamente", argumento_appeared->mensaje_queue->id, argumento_appeared->info->id_cliente, argumento_appeared->info->socket_cliente);
 		uint32_t id;
-		if (recv(socket_cliente,&id ,sizeof(uint32_t),MSG_WAITALL) == -1) {
-			log_error(extense_logger, "Error: No se recibió el ACK de ip %s puerto %s", argumento_appeared->info->ip, argumento_appeared->info->puerto);
+		if (recv(argumento_appeared->info->socket_cliente,&id ,sizeof(uint32_t),MSG_WAITALL) == -1) {
+			log_error(extense_logger, "Error: No se recibió el ACK de cliente %i socket %i", argumento_appeared->info->id_cliente, argumento_appeared->info->socket_cliente);
 			status->ack = 0;
+			close(argumento_appeared->info->socket_cliente);
+			eliminar_suscriptor(gl_appeared_list_lock, gl_appeared_suscriptores, argumento_appeared->info);
 		} else {
 			status->ack = 1;
-			log_info(extense_logger, "ACK de ip %s puerto %s recibido", argumento_appeared->info->ip, argumento_appeared->info->puerto);
-			log_info(logger, "ACK de ip %s puerto %s recibido", argumento_appeared->info->ip, argumento_appeared->info->puerto);
+			log_info(extense_logger, "ACK de cliente %i socket %i recibido", argumento_appeared->info->id_cliente, argumento_appeared->info->socket_cliente);
+			log_info(logger, "ACK de cliente %i socket %i recibido", argumento_appeared->info->id_cliente, argumento_appeared->info->socket_cliente);
 		}
 	}
 
-	close(socket_cliente);
 	free(flujo);
 
 	argumento_appeared->status = status;
@@ -911,39 +909,39 @@ void mandar_catch(void* catch_mandable) {
 
 	status_envio* status = malloc(sizeof(status_envio));
 
-	status->ip = argumento_catch->info->ip;
-	status->puerto = argumento_catch->info->puerto;
+	status->id_cliente = argumento_catch->info->id_cliente;
+	status->socket_cliente = argumento_catch->info->socket_cliente;
 
-	log_info(extense_logger, "Preparandose para enviar mensaje CATCH con id %i al ip %s puerto %s", argumento_catch->mensaje_queue->id, argumento_catch->info->ip, argumento_catch->info->puerto);
-
-	int socket_cliente = crear_conexion(argumento_catch->info->ip, argumento_catch->info->puerto);
+	log_info(extense_logger, "Preparandose para enviar mensaje CATCH con id %i al cliente %i socket %i", argumento_catch->mensaje_queue->id, argumento_catch->info->id_cliente, argumento_catch->info->socket_cliente);
 
 	uint32_t bytes;
 	void* flujo = serializar_catch(argumento_catch->mensaje_queue, &bytes);
 
-	log_info(extense_logger, "Conexion creada para el ip %s puerto %s con socket %i", argumento_catch->info->ip, argumento_catch->info->puerto, socket_cliente);
-	log_info(extense_logger, "Enviando mensaje CATCH con id %i al ip %s puerto %s", argumento_catch->mensaje_queue->id, argumento_catch->info->ip, argumento_catch->info->puerto);
+	log_info(extense_logger, "Enviando mensaje CATCH con id %i al cliente %i socket %i", argumento_catch->mensaje_queue->id, argumento_catch->info->id_cliente, argumento_catch->info->socket_cliente);
 
-	if (send(socket_cliente, flujo, bytes, 0) == -1) {
+	if (send(argumento_catch->info->socket_cliente, flujo, bytes, 0) == -1) {
 		log_error(extense_logger, "Error: No se pudo enviar el mensaje");
 		status->envio_ok = 0;
 		status->ack = 1;
+		close(argumento_catch->info->socket_cliente);
+		eliminar_suscriptor(gl_catch_list_lock, gl_catch_suscriptores, argumento_catch->info);
 	} else {
 		status->envio_ok = 1;
-		log_info(extense_logger, "Mensaje CATCH con id %i al ip %s puerto %s enviado correctamente", argumento_catch->mensaje_queue->id, argumento_catch->info->ip, argumento_catch->info->puerto);
-		log_info(logger, "Mensaje CATCH con id %i al ip %s puerto %s enviado correctamente", argumento_catch->mensaje_queue->id, argumento_catch->info->ip, argumento_catch->info->puerto);
+		log_info(extense_logger, "Mensaje CATCH con id %i al cliente %i socket %i enviado correctamente", argumento_catch->mensaje_queue->id, argumento_catch->info->id_cliente, argumento_catch->info->socket_cliente);
+		log_info(logger, "Mensaje CATCH con id %i al cliente %i socket %i enviado correctamente", argumento_catch->mensaje_queue->id, argumento_catch->info->id_cliente, argumento_catch->info->socket_cliente);
 		uint32_t id;
-		if (recv(socket_cliente,&id ,sizeof(uint32_t),MSG_WAITALL) == -1) {
-			log_error(extense_logger, "Error: No se recibió el ACK de ip %s puerto %s", argumento_catch->info->ip, argumento_catch->info->puerto);
+		if (recv(argumento_catch->info->socket_cliente, &id, sizeof(uint32_t),MSG_WAITALL) == -1) {
+			log_error(extense_logger, "Error: No se recibió el ACK de cliente %i socket %i", argumento_catch->info->id_cliente, argumento_catch->info->socket_cliente);
 			status->ack = 0;
+			close(argumento_catch->info->socket_cliente);
+			eliminar_suscriptor(gl_catch_list_lock, gl_catch_suscriptores, argumento_catch->info);
 		} else {
 			status->ack = 1;
-			log_info(extense_logger, "ACK de ip %s puerto %s recibido", argumento_catch->info->ip, argumento_catch->info->puerto);
-			log_info(logger, "ACK de ip %s puerto %s recibido", argumento_catch->info->ip, argumento_catch->info->puerto);
+			log_info(extense_logger, "ACK de cliente %i socket %i recibido", argumento_catch->info->id_cliente, argumento_catch->info->socket_cliente);
+			log_info(logger, "ACK de cliente %i socket %i recibido", argumento_catch->info->id_cliente, argumento_catch->info->socket_cliente);
 		}
 	}
 
-	close(socket_cliente);
 	free(flujo);
 
 	argumento_catch->status = status;
@@ -954,39 +952,39 @@ void mandar_caught(void* caught_mandable) {
 
 	status_envio* status = malloc(sizeof(status_envio));
 
-	status->ip = argumento_caught->info->ip;
-	status->puerto = argumento_caught->info->puerto;
+	status->id_cliente = argumento_caught->info->id_cliente;
+	status->socket_cliente = argumento_caught->info->socket_cliente;
 
-	log_info(extense_logger, "Preparandose para enviar mensaje CAUGHT con id %i al ip %s puerto %s", argumento_caught->mensaje_queue->id, argumento_caught->info->ip, argumento_caught->info->puerto);
+	log_info(extense_logger, "Preparandose para enviar mensaje CAUGHT con id %i al cliente %i socket %i", argumento_caught->mensaje_queue->id, argumento_caught->info->id_cliente, argumento_caught->info->socket_cliente);
 
 	uint32_t bytes;
 	void* flujo = serializar_caught(argumento_caught->mensaje_queue, &bytes);
 
-	int socket_cliente = crear_conexion(argumento_caught->info->ip, argumento_caught->info->puerto);
+	log_info(extense_logger, "Enviando mensaje CAUGHT con id %i al cliente %i socket %i", argumento_caught->mensaje_queue->id, argumento_caught->info->id_cliente, argumento_caught->info->socket_cliente);
 
-	log_info(extense_logger, "Conexion creada para el ip %s puerto %s con socket %i", argumento_caught->info->ip, argumento_caught->info->puerto, socket_cliente);
-	log_info(extense_logger, "Enviando mensaje CAUGHT con id %i al ip %s puerto %s", argumento_caught->mensaje_queue->id, argumento_caught->info->ip, argumento_caught->info->puerto);
-
-	if (send(socket_cliente, flujo, bytes, 0) == -1) {
+	if (send(argumento_caught->info->socket_cliente, flujo, bytes, 0) == -1) {
 		log_error(extense_logger, "Error: No se pudo enviar el mensaje");
 		status->envio_ok = 0;
 		status->ack = 0;
+		close(argumento_caught->info->socket_cliente);
+		eliminar_suscriptor(gl_caught_list_lock, gl_caught_suscriptores, argumento_caught->info);
 	} else {
 		status->envio_ok = 1;
-		log_info(extense_logger, "Mensaje CAUGHT con id %i al ip %s puerto %s enviado correctamente", argumento_caught->mensaje_queue->id, argumento_caught->info->ip, argumento_caught->info->puerto);
-		log_info(logger, "Mensaje CAUGHT con id %i al ip %s puerto %s enviado correctamente", argumento_caught->mensaje_queue->id, argumento_caught->info->ip, argumento_caught->info->puerto);
+		log_info(extense_logger, "Mensaje CAUGHT con id %i al cliente %i socket %i enviado correctamente", argumento_caught->mensaje_queue->id, argumento_caught->info->id_cliente, argumento_caught->info->socket_cliente);
+		log_info(logger, "Mensaje CAUGHT con id %i al cliente %i socket %i enviado correctamente", argumento_caught->mensaje_queue->id, argumento_caught->info->id_cliente, argumento_caught->info->socket_cliente);
 		uint32_t id;
-		if (recv(socket_cliente,&id ,sizeof(uint32_t),MSG_WAITALL) == -1) {
-			log_error(extense_logger, "Error: No se recibió el ACK de ip %s puerto %s", argumento_caught->info->ip, argumento_caught->info->puerto);
+		if (recv(argumento_caught->info->socket_cliente, &id, sizeof(uint32_t),MSG_WAITALL) == -1) {
+			log_error(extense_logger, "Error: No se recibió el ACK de cliente %i socket %i", argumento_caught->info->id_cliente, argumento_caught->info->socket_cliente);
 			status->ack = 0;
+			close(argumento_caught->info->socket_cliente);
+			eliminar_suscriptor(gl_caught_list_lock, gl_caught_suscriptores, argumento_caught->info);
 		} else {
 			status->ack = 1;
-			log_info(extense_logger, "ACK de ip %s puerto %s recibido", argumento_caught->info->ip, argumento_caught->info->puerto);
-			log_info(logger, "ACK de ip %s puerto %s recibido", argumento_caught->info->ip, argumento_caught->info->puerto);
+			log_info(extense_logger, "ACK de cliente %i socket %i recibido", argumento_caught->info->id_cliente, argumento_caught->info->socket_cliente);
+			log_info(logger, "ACK de cliente %i socket %i recibido", argumento_caught->info->id_cliente, argumento_caught->info->socket_cliente);
 		}
 	}
 
-	close(socket_cliente);
 	free(flujo);
 
 	argumento_caught->status = status;
@@ -997,39 +995,39 @@ void mandar_get(void* get_mandable) {
 
 	status_envio* status = malloc(sizeof(status_envio));
 
-	status->ip = argumento_get->info->ip;
-	status->puerto = argumento_get->info->puerto;
+	status->id_cliente = argumento_get->info->id_cliente;
+	status->socket_cliente = argumento_get->info->socket_cliente;
 
-	log_info(extense_logger, "Preparandose para enviar mensaje GET con id %i al ip %s puerto %s", argumento_get->mensaje_queue->id, argumento_get->info->ip, argumento_get->info->puerto);
+	log_info(extense_logger, "Preparandose para enviar mensaje GET con id %i al cliente %i socket %i", argumento_get->mensaje_queue->id, argumento_get->info->id_cliente, argumento_get->info->socket_cliente);
 
 	uint32_t bytes;
 	void* flujo = serializar_get(argumento_get->mensaje_queue, &bytes);
 
-	int socket_cliente = crear_conexion(argumento_get->info->ip, argumento_get->info->puerto);
+	log_info(extense_logger, "Enviando mensaje GET con id %i al cliente %i socket %i", argumento_get->mensaje_queue->id, argumento_get->info->id_cliente, argumento_get->info->socket_cliente);
 
-	log_info(extense_logger, "Conexion creada para el ip %s puerto %s con socket %i", argumento_get->info->ip, argumento_get->info->puerto, socket_cliente);
-	log_info(extense_logger, "Enviando mensaje GET con id %i al ip %s puerto %s", argumento_get->mensaje_queue->id, argumento_get->info->ip, argumento_get->info->puerto);
-
-	if (send(socket_cliente, flujo, bytes, 0) == -1) {
+	if (send(argumento_get->info->socket_cliente, flujo, bytes, 0) == -1) {
 		log_error(extense_logger, "Error: No se pudo enviar el mensaje");
 		status->envio_ok = 0;
 		status->ack = 0;
+		close(argumento_get->info->socket_cliente);
+		eliminar_suscriptor(gl_get_list_lock, gl_get_suscriptores, argumento_get->info);
 	} else {
 		status->envio_ok = 1;
-		log_info(extense_logger, "Mensaje GET con id %i al ip %s puerto %s enviado correctamente", argumento_get->mensaje_queue->id, argumento_get->info->ip, argumento_get->info->puerto);
-		log_info(logger, "Mensaje GET con id %i al ip %s puerto %s enviado correctamente", argumento_get->mensaje_queue->id, argumento_get->info->ip, argumento_get->info->puerto);
+		log_info(extense_logger, "Mensaje GET con id %i al cliente %i socket %i enviado correctamente", argumento_get->mensaje_queue->id, argumento_get->info->id_cliente, argumento_get->info->socket_cliente);
+		log_info(logger, "Mensaje GET con id %i al cliente %i socket %i enviado correctamente", argumento_get->mensaje_queue->id, argumento_get->info->id_cliente, argumento_get->info->socket_cliente);
 		uint32_t id;
-		if (recv(socket_cliente,&id ,sizeof(uint32_t),MSG_WAITALL) == -1) {
-			log_error(extense_logger, "Error: No se recibió el ACK de ip %s puerto %s", argumento_get->info->ip, argumento_get->info->puerto);
+		if (recv(argumento_get->info->socket_cliente, &id, sizeof(uint32_t),MSG_WAITALL) == -1) {
+			log_error(extense_logger, "Error: No se recibió el ACK de cliente %i socket %i", argumento_get->info->id_cliente, argumento_get->info->socket_cliente);
 			status->ack = 0;
+			close(argumento_get->info->socket_cliente);
+			eliminar_suscriptor(gl_get_list_lock, gl_get_suscriptores, argumento_get->info);
 		} else {
 			status->ack = 1;
-			log_info(extense_logger, "ACK de ip %s puerto %s recibido", argumento_get->info->ip, argumento_get->info->puerto);
-			log_info(logger, "ACK de ip %s puerto %s recibido", argumento_get->info->ip, argumento_get->info->puerto);
+			log_info(extense_logger, "ACK de cliente %i socket %i recibido", argumento_get->info->id_cliente, argumento_get->info->socket_cliente);
+			log_info(logger, "ACK de cliente %i socket %i recibido", argumento_get->info->id_cliente, argumento_get->info->socket_cliente);
 		}
 	}
 
-	close(socket_cliente);
 	free(flujo);
 
 	argumento_get->status = status;
@@ -1040,46 +1038,46 @@ void mandar_localized(void* localized_mandable) {
 
 	status_envio* status = malloc(sizeof(status_envio));
 
-	status->ip = argumento_localized->info->ip;
-	status->puerto = argumento_localized->info->puerto;
+	status->id_cliente = argumento_localized->info->id_cliente;
+	status->socket_cliente = argumento_localized->info->socket_cliente;
 
-	log_info(extense_logger, "Preparandose para enviar mensaje LOCALIZED con id %i al ip %s puerto %s", argumento_localized->mensaje_queue->id, argumento_localized->info->ip, argumento_localized->info->puerto);
+	log_info(extense_logger, "Preparandose para enviar mensaje LOCALIZED con cliente %i socket %i puerto %s", argumento_localized->mensaje_queue->id, argumento_localized->info->id_cliente, argumento_localized->info->socket_cliente);
 
 	uint32_t bytes;
 	void* flujo = serializar_localized(argumento_localized->mensaje_queue, &bytes);
 
-	int socket_cliente = crear_conexion(argumento_localized->info->ip, argumento_localized->info->puerto);
+	log_info(extense_logger, "Enviando mensaje LOCALIZED con cliente %i socket %i puerto %s", argumento_localized->mensaje_queue->id, argumento_localized->info->id_cliente, argumento_localized->info->socket_cliente);
 
-	log_info(extense_logger, "Conexion creada para el ip %s puerto %s con socket %i", argumento_localized->info->ip, argumento_localized->info->puerto, socket_cliente);
-	log_info(extense_logger, "Enviando mensaje LOCALIZED con id %i al ip %s puerto %s", argumento_localized->mensaje_queue->id, argumento_localized->info->ip, argumento_localized->info->puerto);
-
-	if (send(socket_cliente, flujo, bytes, 0) == -1) {
+	if (send(argumento_localized->info->socket_cliente, flujo, bytes, 0) == -1) {
 		log_error(extense_logger, "Error: No se pudo enviar el mensaje");
 		status->envio_ok = 0;
 		status->ack = 0;
+		close(argumento_localized->info->socket_cliente);
+		eliminar_suscriptor(gl_localized_list_lock, gl_localized_suscriptores, argumento_localized->info);
 	} else {
 		status->envio_ok = 1;
-		log_info(extense_logger, "Mensaje LOCALIZED con id %i al ip %s puerto %s enviado correctamente", argumento_localized->mensaje_queue->id, argumento_localized->info->ip, argumento_localized->info->puerto);
-		log_info(logger, "Mensaje LOCALIZED con id %i al ip %s puerto %s enviado correctamente", argumento_localized->mensaje_queue->id, argumento_localized->info->ip, argumento_localized->info->puerto);
+		log_info(extense_logger, "Mensaje LOCALIZED con id %i al cliente %i socket %i enviado correctamente", argumento_localized->mensaje_queue->id, argumento_localized->info->id_cliente, argumento_localized->info->socket_cliente);
+		log_info(logger, "Mensaje LOCALIZED con id %i al cliente %i socket %i enviado correctamente", argumento_localized->mensaje_queue->id, argumento_localized->info->id_cliente, argumento_localized->info->socket_cliente);
 		uint32_t id;
-		if (recv(socket_cliente,&id ,sizeof(uint32_t),MSG_WAITALL) == -1) {
-			log_error(extense_logger, "Error: No se recibió el ACK de ip %s puerto %s", argumento_localized->info->ip, argumento_localized->info->puerto);
+		if (recv(argumento_localized->info->socket_cliente, &id, sizeof(uint32_t),MSG_WAITALL) == -1) {
+			log_error(extense_logger, "Error: No se recibió el ACK de cliente %i socket %i", argumento_localized->info->id_cliente, argumento_localized->info->socket_cliente);
 			status->ack = 0;
+			close(argumento_localized->info->socket_cliente);
+			eliminar_suscriptor(gl_localized_list_lock, gl_localized_suscriptores, argumento_localized->info);
 		} else {
 			status->ack = 1;
-			log_info(extense_logger, "ACK de ip %s puerto %s recibido", argumento_localized->info->ip, argumento_localized->info->puerto);
-			log_info(logger, "ACK de ip %s puerto %s recibido", argumento_localized->info->ip, argumento_localized->info->puerto);
+			log_info(extense_logger, "ACK de cliente %i socket %i recibido", argumento_localized->info->id_cliente, argumento_localized->info->socket_cliente);
+			log_info(logger, "ACK de cliente %i socket %i recibido", argumento_localized->info->id_cliente, argumento_localized->info->socket_cliente);
 		}
 	}
 
-	close(socket_cliente);
 	free(flujo);
 
 	argumento_localized->status = status;
 }
 
 void enviar_new_de_memoria(info_modulo* info_modulo) {
-	t_list* segmentos = obtener_segmentos_new();
+	t_list* segmentos = obtener_segmentos_new(info_modulo->id_cliente);
 
 	mandable_memoria_struct* struct_para_enviar = malloc(sizeof(mandable_struct) * segmentos->elements_count);
 
@@ -1100,7 +1098,7 @@ void enviar_new_de_memoria(info_modulo* info_modulo) {
 }
 
 void enviar_appeared_de_memoria(info_modulo* info_modulo) {
-	t_list* segmentos = obtener_segmentos_appeared();
+	t_list* segmentos = obtener_segmentos_appeared(info_modulo->id_cliente);
 
 	mandable_memoria_struct* struct_para_enviar = malloc(sizeof(mandable_struct) * segmentos->elements_count);
 
@@ -1121,7 +1119,7 @@ void enviar_appeared_de_memoria(info_modulo* info_modulo) {
 }
 
 void enviar_catch_de_memoria(info_modulo* info_modulo) {
-	t_list* segmentos = obtener_segmentos_catch();
+	t_list* segmentos = obtener_segmentos_catch(info_modulo->id_cliente);
 
 	mandable_memoria_struct* struct_para_enviar = malloc(sizeof(mandable_struct) * segmentos->elements_count);
 
@@ -1142,7 +1140,7 @@ void enviar_catch_de_memoria(info_modulo* info_modulo) {
 }
 
 void enviar_caught_de_memoria(info_modulo* info_modulo) {
-	t_list* segmentos = obtener_segmentos_caught();
+	t_list* segmentos = obtener_segmentos_caught(info_modulo->id_cliente);
 
 	mandable_memoria_struct* struct_para_enviar = malloc(sizeof(mandable_struct) * segmentos->elements_count);
 
@@ -1163,7 +1161,7 @@ void enviar_caught_de_memoria(info_modulo* info_modulo) {
 }
 
 void enviar_get_de_memoria(info_modulo* info_modulo) {
-	t_list* segmentos = obtener_segmentos_get();
+	t_list* segmentos = obtener_segmentos_get(info_modulo->id_cliente);
 
 	mandable_memoria_struct* struct_para_enviar = malloc(sizeof(mandable_struct) * segmentos->elements_count);
 
@@ -1184,7 +1182,7 @@ void enviar_get_de_memoria(info_modulo* info_modulo) {
 }
 
 void enviar_localized_de_memoria(info_modulo* info_modulo) {
-	t_list* segmentos = obtener_segmentos_localized();
+	t_list* segmentos = obtener_segmentos_localized(info_modulo->id_cliente);
 
 	mandable_memoria_struct* struct_para_enviar = malloc(sizeof(mandable_struct) * segmentos->elements_count);
 
@@ -1209,42 +1207,39 @@ void enviar_mensaje_new_de_memoria(void* new_mandable_memoria) {
 
 	status_envio* status = malloc(sizeof(status_envio));
 
-	log_info(extense_logger, "Preparandose para enviar mensaje NEW de memoria con id %i al ip %s puerto %s", argumento->segmento->registro->id, argumento->info_modulo->ip, argumento->info_modulo->puerto);
+	log_info(extense_logger, "Enviando mensaje NEW de memoria con id %i al cliente %i socket %i", argumento->segmento->registro->id, argumento->info_modulo->id_cliente, argumento->info_modulo->socket_cliente);
 
-	int socket_cliente = crear_conexion(argumento->info_modulo->ip, argumento->info_modulo->puerto);
-
-	log_info(extense_logger, "Conexion creada para el ip %s puerto %s con socket %i", argumento->info_modulo->ip, argumento->info_modulo->puerto, socket_cliente);
-	log_info(extense_logger, "Enviando mensaje NEW de memoria con id %i al ip %s puerto %s", argumento->segmento->registro->id, argumento->info_modulo->ip, argumento->info_modulo->puerto);
-
-	if (send(socket_cliente, argumento->segmento->mensaje, argumento->segmento->registro->limit, 0) == -1) {
+	if (send(argumento->info_modulo->socket_cliente, argumento->segmento->mensaje, argumento->segmento->registro->limit, 0) == -1) {
 		log_error(extense_logger, "Error: No se pudo enviar el mensaje");
 		status->envio_ok = 0;
 		status->ack = 0;
+		close(argumento->info_modulo->socket_cliente);
+		eliminar_suscriptor(gl_new_list_lock, gl_new_suscriptores, argumento->info_modulo);
 	} else {
 		status->envio_ok = 1;
-		log_info(extense_logger, "Mensaje NEW de memoria con id %i al ip %s puerto %s enviado correctamente", argumento->segmento->registro->id, argumento->info_modulo->ip, argumento->info_modulo->puerto);
-		log_info(logger, "Mensaje NEW de memoria con id %i al ip %s puerto %s enviado correctamente", argumento->segmento->registro->id, argumento->info_modulo->ip, argumento->info_modulo->puerto);
+		log_info(extense_logger, "Mensaje NEW de memoria con id %i al cliente %i socket %i enviado correctamente", argumento->segmento->registro->id, argumento->info_modulo->id_cliente, argumento->info_modulo->socket_cliente);
+		log_info(logger, "Mensaje NEW de memoria con id %i al cliente %i socket %i enviado correctamente", argumento->segmento->registro->id, argumento->info_modulo->id_cliente, argumento->info_modulo->socket_cliente);
 		uint32_t id;
-		if (recv(socket_cliente,&id ,sizeof(uint32_t),MSG_WAITALL) == -1) {
-			log_error(extense_logger, "Error: No se recibió el ACK de ip %s puerto %s", argumento->info_modulo->ip, argumento->info_modulo->puerto);
+		if (recv(argumento->info_modulo->socket_cliente, &id, sizeof(uint32_t),MSG_WAITALL) == -1) {
+			log_error(extense_logger, "Error: No se recibió el ACK de cliente %i socket %i", argumento->info_modulo->id_cliente, argumento->info_modulo->socket_cliente);
 			status->ack = 0;
+			close(argumento->info_modulo->socket_cliente);
+			eliminar_suscriptor(gl_new_list_lock, gl_new_suscriptores, argumento->info_modulo);
 		} else {
 			status->ack = 1;
-			log_info(extense_logger, "ACK de ip %s puerto %s recibido", argumento->info_modulo->ip, argumento->info_modulo->puerto);
-			log_info(logger, "ACK de ip %s puerto %s recibido", argumento->info_modulo->ip, argumento->info_modulo->puerto);
+			log_info(extense_logger, "ACK de cliente %i socket %i recibido", argumento->info_modulo->id_cliente, argumento->info_modulo->socket_cliente);
+			log_info(logger, "ACK de cliente %i socket %i recibido", argumento->info_modulo->id_cliente, argumento->info_modulo->socket_cliente);
 		}
 	}
 
-	close(socket_cliente);
-
 	if (1 == status->envio_ok) {
 		pthread_mutex_lock(&mutex_memoria);
-		list_add(argumento->segmento->registro->envios, argumento->info_modulo);
+		list_add(argumento->segmento->registro->envios, &(argumento->info_modulo->id_cliente));
 		pthread_mutex_unlock(&mutex_memoria);
 	}
 	if (1 == status->ack) {
 		pthread_mutex_lock(&mutex_memoria);
-		list_add(argumento->segmento->registro->acknowledgements, argumento->info_modulo);
+		list_add(argumento->segmento->registro->acknowledgements, &(argumento->info_modulo->id_cliente));
 		pthread_mutex_unlock(&mutex_memoria);
 	}
 
@@ -1256,42 +1251,39 @@ void enviar_mensaje_appeared_de_memoria(void* appeared_mandable_memoria) {
 
 	status_envio* status = malloc(sizeof(status_envio));
 
-	log_info(extense_logger, "Preparandose para enviar mensaje APPEARED de memoria con id %i al ip %s puerto %s", argumento->segmento->registro->id, argumento->info_modulo->ip, argumento->info_modulo->puerto);
+	log_info(extense_logger, "Enviando mensaje APPEARED de memoria con id %i al cliente %i socket %i", argumento->segmento->registro->id, argumento->info_modulo->id_cliente, argumento->info_modulo->socket_cliente);
 
-	int socket_cliente = crear_conexion(argumento->info_modulo->ip, argumento->info_modulo->puerto);
-
-	log_info(extense_logger, "Conexion creada para el ip %s puerto %s con socket %i", argumento->info_modulo->ip, argumento->info_modulo->puerto, socket_cliente);
-	log_info(extense_logger, "Enviando mensaje APPEARED de memoria con id %i al ip %s puerto %s", argumento->segmento->registro->id, argumento->info_modulo->ip, argumento->info_modulo->puerto);
-
-	if (send(socket_cliente, argumento->segmento->mensaje, argumento->segmento->registro->limit, 0) == -1) {
+	if (send(argumento->info_modulo->socket_cliente, argumento->segmento->mensaje, argumento->segmento->registro->limit, 0) == -1) {
 		log_error(extense_logger, "Error: No se pudo enviar el mensaje");
 		status->envio_ok = 0;
 		status->ack = 0;
+		close(argumento->info_modulo->socket_cliente);
+		eliminar_suscriptor(gl_appeared_list_lock, gl_appeared_suscriptores, argumento->info_modulo);
 	} else {
 		status->envio_ok = 1;
-		log_info(extense_logger, "Mensaje APPEARED de memoria con id %i al ip %s puerto %s enviado correctamente", argumento->segmento->registro->id, argumento->info_modulo->ip, argumento->info_modulo->puerto);
-		log_info(logger, "Mensaje APPEARED de memoria con id %i al ip %s puerto %s enviado correctamente", argumento->segmento->registro->id, argumento->info_modulo->ip, argumento->info_modulo->puerto);
+		log_info(extense_logger, "Mensaje APPEARED de memoria con id %i al cliente %i socket %i enviado correctamente", argumento->segmento->registro->id, argumento->info_modulo->id_cliente, argumento->info_modulo->socket_cliente);
+		log_info(logger, "Mensaje APPEARED de memoria con id %i al cliente %i socket %i enviado correctamente", argumento->segmento->registro->id, argumento->info_modulo->id_cliente, argumento->info_modulo->socket_cliente);
 		uint32_t id;
-		if (recv(socket_cliente,&id ,sizeof(uint32_t),MSG_WAITALL) == -1) {
-			log_error(extense_logger, "Error: No se recibió el ACK de ip %s puerto %s", argumento->info_modulo->ip, argumento->info_modulo->puerto);
+		if (recv(argumento->info_modulo->socket_cliente, &id, sizeof(uint32_t),MSG_WAITALL) == -1) {
+			log_error(extense_logger, "Error: No se recibió el ACK de cliente %i socket %i", argumento->info_modulo->id_cliente, argumento->info_modulo->socket_cliente);
 			status->ack = 0;
+			close(argumento->info_modulo->socket_cliente);
+			eliminar_suscriptor(gl_appeared_list_lock, gl_appeared_suscriptores, argumento->info_modulo);
 		} else {
 			status->ack = 1;
-			log_info(extense_logger, "ACK de ip %s puerto %s recibido", argumento->info_modulo->ip, argumento->info_modulo->puerto);
-			log_info(logger, "ACK de ip %s puerto %s recibido", argumento->info_modulo->ip, argumento->info_modulo->puerto);
+			log_info(extense_logger, "ACK de cliente %i socket %i recibido", argumento->info_modulo->id_cliente, argumento->info_modulo->socket_cliente);
+			log_info(logger, "ACK de cliente %i socket %i recibido", argumento->info_modulo->id_cliente, argumento->info_modulo->socket_cliente);
 		}
 	}
 
-	close(socket_cliente);
-
 	if (1 == status->envio_ok) {
 		pthread_mutex_lock(&mutex_memoria);
-		list_add(argumento->segmento->registro->envios, argumento->info_modulo);
+		list_add(argumento->segmento->registro->envios, &(argumento->info_modulo->id_cliente));
 		pthread_mutex_unlock(&mutex_memoria);
 	}
 	if (1 == status->ack) {
 		pthread_mutex_lock(&mutex_memoria);
-		list_add(argumento->segmento->registro->acknowledgements, argumento->info_modulo);
+		list_add(argumento->segmento->registro->acknowledgements, &(argumento->info_modulo->id_cliente));
 		pthread_mutex_unlock(&mutex_memoria);
 	}
 
@@ -1303,42 +1295,39 @@ void enviar_mensaje_catch_de_memoria(void* catch_mandable_memoria) {
 
 	status_envio* status = malloc(sizeof(status_envio));
 
-	log_info(extense_logger, "Preparandose para enviar mensaje CATCH de memoria con id %i al ip %s puerto %s", argumento->segmento->registro->id, argumento->info_modulo->ip, argumento->info_modulo->puerto);
+	log_info(extense_logger, "Enviando mensaje CATCH de memoria con id %i al cliente %i socket %i", argumento->segmento->registro->id, argumento->info_modulo->id_cliente, argumento->info_modulo->socket_cliente);
 
-	int socket_cliente = crear_conexion(argumento->info_modulo->ip, argumento->info_modulo->puerto);
-
-	log_info(extense_logger, "Conexion creada para el ip %s puerto %s con socket %i", argumento->info_modulo->ip, argumento->info_modulo->puerto, socket_cliente);
-	log_info(extense_logger, "Enviando mensaje CATCH de memoria con id %i al ip %s puerto %s", argumento->segmento->registro->id, argumento->info_modulo->ip, argumento->info_modulo->puerto);
-
-	if (send(socket_cliente, argumento->segmento->mensaje, argumento->segmento->registro->limit, 0) == -1) {
+	if (send(argumento->info_modulo->socket_cliente, argumento->segmento->mensaje, argumento->segmento->registro->limit, 0) == -1) {
 		log_error(extense_logger, "Error: No se pudo enviar el mensaje");
 		status->envio_ok = 0;
 		status->ack = 0;
+		close(argumento->info_modulo->socket_cliente);
+		eliminar_suscriptor(gl_catch_list_lock, gl_catch_suscriptores, argumento->info_modulo);
 	} else {
 		status->envio_ok = 1;
-		log_info(extense_logger, "Mensaje CATCH de memoria con id %i al ip %s puerto %s enviado correctamente", argumento->segmento->registro->id, argumento->info_modulo->ip, argumento->info_modulo->puerto);
-		log_info(logger, "Mensaje CATCH de memoria con id %i al ip %s puerto %s enviado correctamente", argumento->segmento->registro->id, argumento->info_modulo->ip, argumento->info_modulo->puerto);
+		log_info(extense_logger, "Mensaje CATCH de memoria con id %i al cliente %i socket %i enviado correctamente", argumento->segmento->registro->id, argumento->info_modulo->id_cliente, argumento->info_modulo->socket_cliente);
+		log_info(logger, "Mensaje CATCH de memoria con id %i al cliente %i socket %i enviado correctamente", argumento->segmento->registro->id, argumento->info_modulo->id_cliente, argumento->info_modulo->socket_cliente);
 		uint32_t id;
-		if (recv(socket_cliente,&id ,sizeof(uint32_t),MSG_WAITALL) == -1) {
-			log_error(extense_logger, "Error: No se recibió el ACK de ip %s puerto %s", argumento->info_modulo->ip, argumento->info_modulo->puerto);
+		if (recv(argumento->info_modulo->socket_cliente, &id, sizeof(uint32_t),MSG_WAITALL) == -1) {
+			log_error(extense_logger, "Error: No se recibió el ACK de cliente %i socket %i", argumento->info_modulo->id_cliente, argumento->info_modulo->socket_cliente);
 			status->ack = 0;
+			close(argumento->info_modulo->socket_cliente);
+			eliminar_suscriptor(gl_catch_list_lock, gl_catch_suscriptores, argumento->info_modulo);
 		} else {
 			status->ack = 1;
-			log_info(extense_logger, "ACK de ip %s puerto %s recibido", argumento->info_modulo->ip, argumento->info_modulo->puerto);
-			log_info(logger, "ACK de ip %s puerto %s recibido", argumento->info_modulo->ip, argumento->info_modulo->puerto);
+			log_info(extense_logger, "ACK de cliente %i socket %i recibido", argumento->info_modulo->id_cliente, argumento->info_modulo->socket_cliente);
+			log_info(logger, "ACK de cliente %i socket %i recibido", argumento->info_modulo->id_cliente, argumento->info_modulo->socket_cliente);
 		}
 	}
 
-	close(socket_cliente);
-
 	if (1 == status->envio_ok) {
 		pthread_mutex_lock(&mutex_memoria);
-		list_add(argumento->segmento->registro->envios, argumento->info_modulo);
+		list_add(argumento->segmento->registro->envios, &(argumento->info_modulo->id_cliente));
 		pthread_mutex_unlock(&mutex_memoria);
 	}
 	if (1 == status->ack) {
 		pthread_mutex_lock(&mutex_memoria);
-		list_add(argumento->segmento->registro->acknowledgements, argumento->info_modulo);
+		list_add(argumento->segmento->registro->acknowledgements, &(argumento->info_modulo->id_cliente));
 		pthread_mutex_unlock(&mutex_memoria);
 	}
 
@@ -1350,42 +1339,39 @@ void enviar_mensaje_caught_de_memoria(void* caught_mandable_memoria) {
 
 	status_envio* status = malloc(sizeof(status_envio));
 
-	log_info(extense_logger, "Preparandose para enviar mensaje CAUGHT de memoria con id %i al ip %s puerto %s", argumento->segmento->registro->id, argumento->info_modulo->ip, argumento->info_modulo->puerto);
+	log_info(extense_logger, "Enviando mensaje CAUGHT de memoria con cliente %i socket %i puerto %s", argumento->segmento->registro->id, argumento->info_modulo->id_cliente, argumento->info_modulo->socket_cliente);
 
-	int socket_cliente = crear_conexion(argumento->info_modulo->ip, argumento->info_modulo->puerto);
-
-	log_info(extense_logger, "Conexion creada para el ip %s puerto %s con socket %i", argumento->info_modulo->ip, argumento->info_modulo->puerto, socket_cliente);
-	log_info(extense_logger, "Enviando mensaje CAUGHT de memoria con id %i al ip %s puerto %s", argumento->segmento->registro->id, argumento->info_modulo->ip, argumento->info_modulo->puerto);
-
-	if (send(socket_cliente, argumento->segmento->mensaje, argumento->segmento->registro->limit, 0) == -1) {
+	if (send(argumento->info_modulo->socket_cliente, argumento->segmento->mensaje, argumento->segmento->registro->limit, 0) == -1) {
 		log_error(extense_logger, "Error: No se pudo enviar el mensaje");
 		status->envio_ok = 0;
 		status->ack = 0;
+		close(argumento->info_modulo->socket_cliente);
+		eliminar_suscriptor(gl_caught_list_lock, gl_caught_suscriptores, argumento->info_modulo);
 	} else {
 		status->envio_ok = 1;
-		log_info(extense_logger, "Mensaje CAUGHT de memoria con id %i al ip %s puerto %s enviado correctamente", argumento->segmento->registro->id, argumento->info_modulo->ip, argumento->info_modulo->puerto);
-		log_info(logger, "Mensaje CAUGHT de memoria con id %i al ip %s puerto %s enviado correctamente", argumento->segmento->registro->id, argumento->info_modulo->ip, argumento->info_modulo->puerto);
+		log_info(extense_logger, "Mensaje CAUGHT de memoria con id %i al cliente %i socket %i enviado correctamente", argumento->segmento->registro->id, argumento->info_modulo->id_cliente, argumento->info_modulo->socket_cliente);
+		log_info(logger, "Mensaje CAUGHT de memoria con id %i al cliente %i socket %i enviado correctamente", argumento->segmento->registro->id, argumento->info_modulo->id_cliente, argumento->info_modulo->socket_cliente);
 		uint32_t id;
-		if (recv(socket_cliente,&id ,sizeof(uint32_t),MSG_WAITALL) == -1) {
-			log_error(extense_logger, "Error: No se recibió el ACK de ip %s puerto %s", argumento->info_modulo->ip, argumento->info_modulo->puerto);
+		if (recv(argumento->info_modulo->socket_cliente, &id, sizeof(uint32_t),MSG_WAITALL) == -1) {
+			log_error(extense_logger, "Error: No se recibió el ACK de cliente %i socket %i", argumento->info_modulo->id_cliente, argumento->info_modulo->socket_cliente);
 			status->ack = 0;
+			close(argumento->info_modulo->socket_cliente);
+			eliminar_suscriptor(gl_caught_list_lock, gl_caught_suscriptores, argumento->info_modulo);
 		} else {
 			status->ack = 1;
-			log_info(extense_logger, "ACK de ip %s puerto %s recibido", argumento->info_modulo->ip, argumento->info_modulo->puerto);
-			log_info(logger, "ACK de ip %s puerto %s recibido", argumento->info_modulo->ip, argumento->info_modulo->puerto);
+			log_info(extense_logger, "ACK de cliente %i socket %i recibido", argumento->info_modulo->id_cliente, argumento->info_modulo->socket_cliente);
+			log_info(logger, "ACK de cliente %i socket %i recibido", argumento->info_modulo->id_cliente, argumento->info_modulo->socket_cliente);
 		}
 	}
 
-	close(socket_cliente);
-
 	if (1 == status->envio_ok) {
 		pthread_mutex_lock(&mutex_memoria);
-		list_add(argumento->segmento->registro->envios, argumento->info_modulo);
+		list_add(argumento->segmento->registro->envios, &(argumento->info_modulo->id_cliente));
 		pthread_mutex_unlock(&mutex_memoria);
 	}
 	if (1 == status->ack) {
 		pthread_mutex_lock(&mutex_memoria);
-		list_add(argumento->segmento->registro->acknowledgements, argumento->info_modulo);
+		list_add(argumento->segmento->registro->acknowledgements, &(argumento->info_modulo->id_cliente));
 		pthread_mutex_unlock(&mutex_memoria);
 	}
 
@@ -1397,42 +1383,39 @@ void enviar_mensaje_get_de_memoria(void* get_mandable_memoria) {
 
 	status_envio* status = malloc(sizeof(status_envio));
 
-	log_info(extense_logger, "Preparandose para enviar mensaje GET de memoria con id %i al ip %s puerto %s", argumento->segmento->registro->id, argumento->info_modulo->ip, argumento->info_modulo->puerto);
+	log_info(extense_logger, "Enviando mensaje GET de memoria con id %i al cliente %i socket %i", argumento->segmento->registro->id, argumento->info_modulo->id_cliente, argumento->info_modulo->socket_cliente);
 
-	int socket_cliente = crear_conexion(argumento->info_modulo->ip, argumento->info_modulo->puerto);
-
-	log_info(extense_logger, "Conexion creada para el ip %s puerto %s con socket %i", argumento->info_modulo->ip, argumento->info_modulo->puerto, socket_cliente);
-	log_info(extense_logger, "Enviando mensaje GET de memoria con id %i al ip %s puerto %s", argumento->segmento->registro->id, argumento->info_modulo->ip, argumento->info_modulo->puerto);
-
-	if (send(socket_cliente, argumento->segmento->mensaje, argumento->segmento->registro->limit, 0) == -1) {
+	if (send(argumento->info_modulo->socket_cliente, argumento->segmento->mensaje, argumento->segmento->registro->limit, 0) == -1) {
 		log_error(extense_logger, "Error: No se pudo enviar el mensaje");
 		status->envio_ok = 0;
 		status->ack = 0;
+		close(argumento->info_modulo->socket_cliente);
+		eliminar_suscriptor(gl_get_list_lock, gl_get_suscriptores, argumento->info_modulo);
 	} else {
 		status->envio_ok = 1;
-		log_info(extense_logger, "Mensaje GET de memoria con id %i al ip %s puerto %s enviado correctamente", argumento->segmento->registro->id, argumento->info_modulo->ip, argumento->info_modulo->puerto);
-		log_info(logger, "Mensaje GET de memoria con id %i al ip %s puerto %s enviado correctamente", argumento->segmento->registro->id, argumento->info_modulo->ip, argumento->info_modulo->puerto);
+		log_info(extense_logger, "Mensaje GET de memoria con id %i al cliente %i socket %i enviado correctamente", argumento->segmento->registro->id, argumento->info_modulo->id_cliente, argumento->info_modulo->socket_cliente);
+		log_info(logger, "Mensaje GET de memoria con id %i al cliente %i socket %i enviado correctamente", argumento->segmento->registro->id, argumento->info_modulo->id_cliente, argumento->info_modulo->socket_cliente);
 		uint32_t id;
-		if (recv(socket_cliente,&id ,sizeof(uint32_t),MSG_WAITALL) == -1) {
-			log_error(extense_logger, "Error: No se recibió el ACK de ip %s puerto %s", argumento->info_modulo->ip, argumento->info_modulo->puerto);
+		if (recv(argumento->info_modulo->socket_cliente, &id, sizeof(uint32_t),MSG_WAITALL) == -1) {
+			log_error(extense_logger, "Error: No se recibió el ACK de cliente %i socket %i", argumento->info_modulo->id_cliente, argumento->info_modulo->socket_cliente);
 			status->ack = 0;
+			close(argumento->info_modulo->socket_cliente);
+			eliminar_suscriptor(gl_get_list_lock, gl_get_suscriptores, argumento->info_modulo);
 		} else {
 			status->ack = 1;
-			log_info(extense_logger, "ACK de ip %s puerto %s recibido", argumento->info_modulo->ip, argumento->info_modulo->puerto);
-			log_info(logger, "ACK de ip %s puerto %s recibido", argumento->info_modulo->ip, argumento->info_modulo->puerto);
+			log_info(extense_logger, "ACK de cliente %i socket %i recibido", argumento->info_modulo->id_cliente, argumento->info_modulo->socket_cliente);
+			log_info(logger, "ACK de cliente %i socket %i recibido", argumento->info_modulo->id_cliente, argumento->info_modulo->socket_cliente);
 		}
 	}
 
-	close(socket_cliente);
-
 	if (1 == status->envio_ok) {
 		pthread_mutex_lock(&mutex_memoria);
-		list_add(argumento->segmento->registro->envios, argumento->info_modulo);
+		list_add(argumento->segmento->registro->envios, &(argumento->info_modulo->id_cliente));
 		pthread_mutex_unlock(&mutex_memoria);
 	}
 	if (1 == status->ack) {
 		pthread_mutex_lock(&mutex_memoria);
-		list_add(argumento->segmento->registro->acknowledgements, argumento->info_modulo);
+		list_add(argumento->segmento->registro->acknowledgements, &(argumento->info_modulo->id_cliente));
 		pthread_mutex_unlock(&mutex_memoria);
 	}
 
@@ -1444,42 +1427,39 @@ void enviar_mensaje_localized_de_memoria(void* localized_mandable_memoria) {
 
 	status_envio* status = malloc(sizeof(status_envio));
 
-	log_info(extense_logger, "Preparandose para enviar mensaje LOCALIZED de memoria con id %i al ip %s puerto %s", argumento->segmento->registro->id, argumento->info_modulo->ip, argumento->info_modulo->puerto);
+	log_info(extense_logger, "Enviando mensaje LOCALIZED de memoria con id %i al cliente %i socket %i", argumento->segmento->registro->id, argumento->info_modulo->id_cliente, argumento->info_modulo->socket_cliente);
 
-	int socket_cliente = crear_conexion(argumento->info_modulo->ip, argumento->info_modulo->puerto);
-
-	log_info(extense_logger, "Conexion creada para el ip %s puerto %s con socket %i", argumento->info_modulo->ip, argumento->info_modulo->puerto, socket_cliente);
-	log_info(extense_logger, "Enviando mensaje LOCALIZED de memoria con id %i al ip %s puerto %s", argumento->segmento->registro->id, argumento->info_modulo->ip, argumento->info_modulo->puerto);
-
-	if (send(socket_cliente, argumento->segmento->mensaje, argumento->segmento->registro->limit, 0) == -1) {
+	if (send(argumento->info_modulo->socket_cliente, argumento->segmento->mensaje, argumento->segmento->registro->limit, 0) == -1) {
 		log_error(extense_logger, "Error: No se pudo enviar el mensaje");
 		status->envio_ok = 0;
 		status->ack = 0;
+		eliminar_suscriptor(gl_localized_list_lock, gl_localized_suscriptores, argumento->info_modulo);
 	} else {
 		status->envio_ok = 1;
-		log_info(extense_logger, "Mensaje LOCALIZED de memoria con id %i al ip %s puerto %s enviado correctamente", argumento->segmento->registro->id, argumento->info_modulo->ip, argumento->info_modulo->puerto);
-		log_info(logger, "Mensaje LOCALIZED de memoria con id %i al ip %s puerto %s enviado correctamente", argumento->segmento->registro->id, argumento->info_modulo->ip, argumento->info_modulo->puerto);
+		log_info(extense_logger, "Mensaje LOCALIZED de memoria con id %i al cliente %i socket %i enviado correctamente", argumento->segmento->registro->id, argumento->info_modulo->id_cliente, argumento->info_modulo->socket_cliente);
+		log_info(logger, "Mensaje LOCALIZED de memoria con id %i al cliente %i socket %i enviado correctamente", argumento->segmento->registro->id, argumento->info_modulo->id_cliente, argumento->info_modulo->socket_cliente);
 		uint32_t id;
-		if (recv(socket_cliente,&id ,sizeof(uint32_t),MSG_WAITALL) == -1) {
-			log_error(extense_logger, "Error: No se recibió el ACK de ip %s puerto %s", argumento->info_modulo->ip, argumento->info_modulo->puerto);
+		if (recv(argumento->info_modulo->socket_cliente, &id, sizeof(uint32_t),MSG_WAITALL) == -1) {
+			log_error(extense_logger, "Error: No se recibió el ACK de cliente %i socket %i", argumento->info_modulo->id_cliente, argumento->info_modulo->socket_cliente);
 			status->ack = 0;
+			eliminar_suscriptor(gl_localized_list_lock, gl_localized_suscriptores, argumento->info_modulo);
 		} else {
 			status->ack = 1;
-			log_info(extense_logger, "ACK de ip %s puerto %s recibido", argumento->info_modulo->ip, argumento->info_modulo->puerto);
-			log_info(logger, "ACK de ip %s puerto %s recibido", argumento->info_modulo->ip, argumento->info_modulo->puerto);
+			log_info(extense_logger, "ACK de cliente %i socket %i recibido", argumento->info_modulo->id_cliente, argumento->info_modulo->socket_cliente);
+			log_info(logger, "ACK de cliente %i socket %i recibido", argumento->info_modulo->id_cliente, argumento->info_modulo->socket_cliente);
 		}
 	}
 
-	close(socket_cliente);
+	close(argumento->info_modulo->socket_cliente);
 
 	if (1 == status->envio_ok) {
 		pthread_mutex_lock(&mutex_memoria);
-		list_add(argumento->segmento->registro->envios, argumento->info_modulo);
+		list_add(argumento->segmento->registro->envios, &(argumento->info_modulo->id_cliente));
 		pthread_mutex_unlock(&mutex_memoria);
 	}
 	if (1 == status->ack) {
 		pthread_mutex_lock(&mutex_memoria);
-		list_add(argumento->segmento->registro->acknowledgements, argumento->info_modulo);
+		list_add(argumento->segmento->registro->acknowledgements, &(argumento->info_modulo->id_cliente));
 		pthread_mutex_unlock(&mutex_memoria);
 	}
 
@@ -1663,6 +1643,29 @@ void* serializar_localized(mensaje_queue* localized, uint32_t* bytes) {
 	return flujo;
 }
 
+void eliminar_suscriptor(pthread_mutex_t lock, t_list* lista_de_suscriptores, info_modulo* suscriptor) {
+	pthread_mutex_lock(&lock);
+
+	int posicion = -1;
+
+	for (int i = 0; i < lista_de_suscriptores->elements_count; i++) {
+		info_modulo* info = list_get(lista_de_suscriptores, i);
+		if (info->id_cliente == suscriptor->id_cliente) {
+			posicion = i;
+		}
+	}
+
+	if (posicion == -1) {
+		log_warning(extense_logger, "Suscriptor con id %i y socket %i no fue encontrado en la lista de suscriptores intentando ser eliminado", suscriptor->id_cliente, suscriptor->socket_cliente);
+	} else {
+		log_info(extense_logger, "Eliminando suscriptor con id %i y socket %i", suscriptor->id_cliente, suscriptor->socket_cliente);
+		info_modulo* a_remover = list_remove(lista_de_suscriptores, posicion);
+		free(a_remover);
+	}
+
+	pthread_mutex_unlock(&lock);
+}
+
 int main(void) {
 	char* ip;
 	char* puerto;
@@ -1703,10 +1706,6 @@ int main(void) {
 
 	log_info(extense_logger, "Servidor levantado");
 
-	// Iniciamos un hilo para ir escuchando a los clientes
-	// Tiene que estar vivo mientras que el broker este funcionando. Entonces corresponde detach?
-
-
 	pthread_t hilo_escucha_de_clientes;
 
 	pthread_t hilo_atencion_de_new;
@@ -1733,8 +1732,6 @@ int main(void) {
 	pthread_join(hilo_atencion_de_caught, NULL);
 	pthread_join(hilo_atencion_de_get, NULL);
 	pthread_join(hilo_atencion_de_localized, NULL);
-
-	// Terminamos el programa
 
 	terminar_programa();
 	return EXIT_SUCCESS;

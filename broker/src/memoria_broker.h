@@ -55,12 +55,12 @@ particion_libre* encontrar_lugar_con_bf(int limit);
 void* encontrar_lugar_en_memoria(int limit);
 int tamanio_particion_libre(particion_libre* particion);
 void ocupar_lugar_en_particiones_libres(particion_libre* particion, int limit);
-t_list* obtener_segmentos_new(); // lista de segmento_memoria
-t_list* obtener_segmentos_appeared(); // lista de segmento_memoria
-t_list* obtener_segmentos_get(); // lista de segmento_memoria
-t_list* obtener_segmentos_localized(); // lista de segmento_memoria
-t_list* obtener_segmentos_catch(); // lista de segmento_memoria
-t_list* obtener_segmentos_caught(); // lista de segmento_memoria
+t_list* obtener_segmentos_new(uint32_t id_cliente); // lista de segmento_memoria
+t_list* obtener_segmentos_appeared(uint32_t id_cliente); // lista de segmento_memoria
+t_list* obtener_segmentos_get(uint32_t id_cliente); // lista de segmento_memoria
+t_list* obtener_segmentos_localized(uint32_t id_cliente); // lista de segmento_memoria
+t_list* obtener_segmentos_catch(uint32_t id_cliente); // lista de segmento_memoria
+t_list* obtener_segmentos_caught(uint32_t id_cliente); // lista de segmento_memoria
 
 
 
