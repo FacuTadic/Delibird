@@ -23,8 +23,6 @@ t_config* leer_config(){
 void terminar_programa(int conexion);
 
 
-
-
 int main(int argc,char*argv[]){
 
 	int conexion;
@@ -32,50 +30,41 @@ int main(int argc,char*argv[]){
 	char* puertoNombre = string_new();
 
 
+	loggerDev = iniciar_logger();
+	log_info(loggerDev, "logger DEV iniciado.");
+
 
 	loggerGameBoy = iniciar_loggerGameBoy();
-	log_info(loggerGameBoy, "logger iniciado.");
-
-	loggerDev = iniciar_logger();
-	log_info(loggerDev, "logger iniciado.");
+	log_info(loggerDev, "logger GameBoy iniciado.");
 
 	config = leer_config();
-	log_info(loggerDev, "config cargada.");
+	log_info(loggerDev, "Config cargada.");
 
 
-	printf("%s",argv[1]);
-
-
+	log_info(loggerDev, "EL modulo solicitado para comunicacion es: %s", argv[1]);
 
 	string_append(&ipNombre, "IP_");
 	string_append(&ipNombre,argv[1]);
-
-	log_info(loggerDev, "EL modulo array es: %s", argv[1]);
-	log_info(loggerDev, "La IP es: %s", ipNombre);
 
 
 	string_append(&puertoNombre, "PUERTO_");
 	string_append(&puertoNombre,argv[1]);
 
-	log_info(loggerDev, "EL modulo array es: %s", argv[1]);
-	log_info(loggerDev, "La IP es: %s", ipNombre);
-
-
 
 	ip = config_get_string_value(config, ipNombre);
-	puerto = config_get_string_value(config, puertoNombre);
+	log_info(loggerDev, "La IP de %s es %s", argv[1],ipNombre);
 
-	log_info(loggerDev, "La IP externa es: %s", ip);
-	log_info(loggerDev, "El Puerto externo es: %s", puerto);
+
+	puerto = config_get_string_value(config, puertoNombre);
+	log_info(loggerDev, "El PUERTO de %s es %s", argv[1],ipNombre);
+
+
 
 	ip_game_boy = config_get_string_value(config, "IP_GAMEBOY");
 	puerto_game_boy = config_get_string_value(config, "PUERTO_GAMEBOY");
 
 	idGameBoy = config_get_int_value(config,"ID_GAMEBOY");
-
-	log_info(loggerDev, "La IP es: %s", ip_game_boy);
-	log_info(loggerDev, "El Puerto es: %s", puerto_game_boy);
-
+	log_info(loggerDev, "La ID del modulo GameBoy es: %i", idGameBoy);
 //###################################################### PROCESO #####################################################################################
 
 	log_info(loggerGameBoy, "Iniciando conexion con el modulo %s", argv[1]);
@@ -90,7 +79,7 @@ int main(int argc,char*argv[]){
 		int error = pthread_create(&hiloEscucha,NULL, (void *) recibirMensajesDeSuscripcion, &conexion);
 
 		if(error != 0){
-			log_info(loggerDev, "Hubo un problema al crear el hilo");
+			log_error(loggerDev, "Hubo un problema al crear el hilo");
 			return error;
 		} else {
 			pthread_detach(hiloEscucha);
