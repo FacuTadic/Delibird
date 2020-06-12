@@ -89,8 +89,8 @@ typedef struct {
 } mensaje_queue; // estructura que se mete en las colas
 
 typedef struct {
-	char* ip;
-	char* puerto;
+	uint32_t id_cliente;
+	int socket_cliente;
 	int envio_ok; // 1 OK 0 MAL
 	int ack; // 1 OK 0 MAL
 } status_envio;
@@ -144,3 +144,4 @@ void enviar_mensaje_catch_de_memoria(void* new_mandable_memoria);
 void enviar_mensaje_caught_de_memoria(void* new_mandable_memoria);
 void enviar_mensaje_get_de_memoria(void* new_mandable_memoria);
 void enviar_mensaje_localized_de_memoria(void* new_mandable_memoria);
+void eliminar_suscriptor(pthread_mutex_t lock, t_list* lista_de_suscriptores, info_modulo* suscriptor);

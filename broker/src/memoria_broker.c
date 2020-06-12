@@ -122,30 +122,35 @@ int tamanio_particion_libre(particion_libre* particion) {
 	size_t desde = (size_t) particion->desde;
 	size_t hasta = (size_t) particion->hasta;
 
-	return (int) hasta - desde; // esta bien esta cuenta? o hay que hacer /4 o *4 ???
+	return (int) hasta - desde;
 }
 
-t_list* obtener_segmentos_new() {
+t_list* obtener_segmentos_new(uint32_t id_cliente) {
 
 	t_list* segmentos = list_create();
 
 	for (uint32_t i = 0; i < tabla_segmentos->elements_amount; i++) {
 
-		char* id_char = malloc(sizeof(char));
+		char* id_char = malloc(sizeof(char*));
 		sprintf(id_char, "%u", i);
 
 		data_tabla* registro = (data_tabla*) dictionary_get(tabla_segmentos, id_char);
 
 		if (1 == registro->tipo) {
+			int has_to_send = 1;
+			for (int j = 0; j < registro->acknowledgements->elements_count; j++) {
+				uint32_t* id_ack = (uint32_t*) list_get(registro->acknowledgements, j);
+				if (*id_ack == id_cliente) {
+					has_to_send = 0;
+				}
+			}
 
-			segmento_memoria* segmento = malloc(sizeof(segmento_memoria));
-
-			segmento->registro = registro;
-
-			segmento->mensaje = registro->base;
-
-			list_add(segmentos, segmento);
-
+			if (1 == has_to_send) {
+				segmento_memoria* segmento = malloc(sizeof(segmento_memoria));
+				segmento->registro = registro;
+				segmento->mensaje = registro->base;
+				list_add(segmentos, segmento);
+			}
 		}
 
 		free(id_char);
@@ -155,27 +160,32 @@ t_list* obtener_segmentos_new() {
 
 }
 
-t_list* obtener_segmentos_appeared() {
+t_list* obtener_segmentos_appeared(uint32_t id_cliente) {
 
 	t_list* segmentos = list_create();
 
 	for (uint32_t i = 0; i < tabla_segmentos->elements_amount; i++) {
 
-		char* id_char = malloc(sizeof(char));
+		char* id_char = malloc(sizeof(char*));
 		sprintf(id_char, "%u", i);
 
 		data_tabla* registro = (data_tabla*) dictionary_get(tabla_segmentos, id_char);
 
 		if (2 == registro->tipo) {
+			int has_to_send = 1;
+			for (int j = 0; j < registro->acknowledgements->elements_count; j++) {
+				uint32_t* id_ack = (uint32_t*) list_get(registro->acknowledgements, j);
+				if (*id_ack == id_cliente) {
+					has_to_send = 0;
+				}
+			}
 
-			segmento_memoria* segmento = malloc(sizeof(segmento_memoria));
-
-			segmento->registro = registro;
-
-			segmento->mensaje = registro->base;
-
-			list_add(segmentos, segmento);
-
+			if (1 == has_to_send) {
+				segmento_memoria* segmento = malloc(sizeof(segmento_memoria));
+				segmento->registro = registro;
+				segmento->mensaje = registro->base;
+				list_add(segmentos, segmento);
+			}
 		}
 
 		free(id_char);
@@ -185,27 +195,32 @@ t_list* obtener_segmentos_appeared() {
 
 }
 
-t_list* obtener_segmentos_get() {
+t_list* obtener_segmentos_get(uint32_t id_cliente) {
 
 	t_list* segmentos = list_create();
 
 	for (uint32_t i = 0; i < tabla_segmentos->elements_amount; i++) {
 
-		char* id_char = malloc(sizeof(char));
+		char* id_char = malloc(sizeof(char*));
 		sprintf(id_char, "%u", i);
 
 		data_tabla* registro = (data_tabla*) dictionary_get(tabla_segmentos, id_char);
 
 		if (5 == registro->tipo) {
+			int has_to_send = 1;
+			for (int j = 0; j < registro->acknowledgements->elements_count; j++) {
+				uint32_t* id_ack = (uint32_t*) list_get(registro->acknowledgements, j);
+				if (*id_ack == id_cliente) {
+					has_to_send = 0;
+				}
+			}
 
-			segmento_memoria* segmento = malloc(sizeof(segmento_memoria));
-
-			segmento->registro = registro;
-
-			segmento->mensaje = registro->base;
-
-			list_add(segmentos, segmento);
-
+			if (1 == has_to_send) {
+				segmento_memoria* segmento = malloc(sizeof(segmento_memoria));
+				segmento->registro = registro;
+				segmento->mensaje = registro->base;
+				list_add(segmentos, segmento);
+			}
 		}
 
 		free(id_char);
@@ -215,27 +230,32 @@ t_list* obtener_segmentos_get() {
 
 }
 
-t_list* obtener_segmentos_localized() {
+t_list* obtener_segmentos_localized(uint32_t id_cliente) {
 
 	t_list* segmentos = list_create();
 
 	for (uint32_t i = 0; i < tabla_segmentos->elements_amount; i++) {
 
-		char* id_char = malloc(sizeof(char));
+		char* id_char = malloc(sizeof(char*));
 		sprintf(id_char, "%u", i);
 
 		data_tabla* registro = (data_tabla*) dictionary_get(tabla_segmentos, id_char);
 
 		if (6 == registro->tipo) {
+			int has_to_send = 1;
+			for (int j = 0; j < registro->acknowledgements->elements_count; j++) {
+				uint32_t* id_ack = (uint32_t*) list_get(registro->acknowledgements, j);
+				if (*id_ack == id_cliente) {
+					has_to_send = 0;
+				}
+			}
 
-			segmento_memoria* segmento = malloc(sizeof(segmento_memoria));
-
-			segmento->registro = registro;
-
-			segmento->mensaje = registro->base;
-
-			list_add(segmentos, segmento);
-
+			if (1 == has_to_send) {
+				segmento_memoria* segmento = malloc(sizeof(segmento_memoria));
+				segmento->registro = registro;
+				segmento->mensaje = registro->base;
+				list_add(segmentos, segmento);
+			}
 		}
 
 		free(id_char);
@@ -245,27 +265,32 @@ t_list* obtener_segmentos_localized() {
 
 }
 
-t_list* obtener_segmentos_catch() {
+t_list* obtener_segmentos_catch(uint32_t id_cliente) {
 
 	t_list* segmentos = list_create();
 
 	for (uint32_t i = 0; i < tabla_segmentos->elements_amount; i++) {
 
-		char* id_char = malloc(sizeof(char));
+		char* id_char = malloc(sizeof(char*));
 		sprintf(id_char, "%u", i);
 
 		data_tabla* registro = (data_tabla*) dictionary_get(tabla_segmentos, id_char);
 
 		if (3 == registro->tipo) {
+			int has_to_send = 1;
+			for (int j = 0; j < registro->acknowledgements->elements_count; j++) {
+				uint32_t* id_ack = (uint32_t*) list_get(registro->acknowledgements, j);
+				if (*id_ack == id_cliente) {
+					has_to_send = 0;
+				}
+			}
 
-			segmento_memoria* segmento = malloc(sizeof(segmento_memoria));
-
-			segmento->registro = registro;
-
-			segmento->mensaje = registro->base;
-
-			list_add(segmentos, segmento);
-
+			if (1 == has_to_send) {
+				segmento_memoria* segmento = malloc(sizeof(segmento_memoria));
+				segmento->registro = registro;
+				segmento->mensaje = registro->base;
+				list_add(segmentos, segmento);
+			}
 		}
 
 		free(id_char);
@@ -275,27 +300,32 @@ t_list* obtener_segmentos_catch() {
 
 }
 
-t_list* obtener_segmentos_caught() {
+t_list* obtener_segmentos_caught(uint32_t id_cliente) {
 
 	t_list* segmentos = list_create();
 
 	for (uint32_t i = 0; i < tabla_segmentos->elements_amount; i++) {
 
-		char* id_char = malloc(sizeof(char));
+		char* id_char = malloc(sizeof(char*));
 		sprintf(id_char, "%u", i);
 
 		data_tabla* registro = (data_tabla*) dictionary_get(tabla_segmentos, id_char);
 
 		if (4 == registro->tipo) {
+			int has_to_send = 1;
+			for (int j = 0; j < registro->acknowledgements->elements_count; j++) {
+				uint32_t* id_ack = (uint32_t*) list_get(registro->acknowledgements, j);
+				if (*id_ack == id_cliente) {
+					has_to_send = 0;
+				}
+			}
 
-			segmento_memoria* segmento = malloc(sizeof(segmento_memoria));
-
-			segmento->registro = registro;
-
-			segmento->mensaje = registro->base;
-
-			list_add(segmentos, segmento);
-
+			if (1 == has_to_send) {
+				segmento_memoria* segmento = malloc(sizeof(segmento_memoria));
+				segmento->registro = registro;
+				segmento->mensaje = registro->base;
+				list_add(segmentos, segmento);
+			}
 		}
 
 		free(id_char);

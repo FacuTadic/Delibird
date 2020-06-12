@@ -351,8 +351,6 @@ t_localized* recibir_localized(int socket_cliente, uint32_t* size, t_log* logger
 
 t_suscripcion* recibir_suscripcion(int socket_cliente, uint32_t* size, t_log* logger) {
 	t_suscripcion* suscripcion = malloc(sizeof(t_suscripcion*));
-	uint32_t tamanio_ip;
-	uint32_t tamanio_puerto;
 
 	log_info(logger, "Recibiendo tamanio total");
 
@@ -365,6 +363,17 @@ t_suscripcion* recibir_suscripcion(int socket_cliente, uint32_t* size, t_log* lo
 
 	log_info(logger, "Tamanio total recibido: %i", *size);
 
+	log_info(logger, "Recibiendo id de cliente");
+
+	if (recv(socket_cliente, &(suscripcion->id_cliente), sizeof(uint32_t), MSG_WAITALL) == -1) {
+		close(socket_cliente);
+		log_error(logger, "Hubo un problema recibiendo el id de cliente");
+		free(suscripcion);
+		return NULL;
+	}
+
+	log_info(logger, "Id de cliente recibido: %i", *size);
+
 	log_info(logger, "Recibiendo id de cola");
 
 	if (recv(socket_cliente, &(suscripcion->id_cola), sizeof(uint32_t), MSG_WAITALL) == -1) {
@@ -375,58 +384,6 @@ t_suscripcion* recibir_suscripcion(int socket_cliente, uint32_t* size, t_log* lo
 	}
 
 	log_info(logger, "Id de cola recibido: %i", suscripcion->id_cola);
-
-	log_info(logger, "Recibiendo tamanio de ip");
-
-	if (recv(socket_cliente, &tamanio_ip, sizeof(uint32_t), MSG_WAITALL) == -1) {
-		close(socket_cliente);
-		log_error(logger, "Hubo un problema recibiendo el tamanio de ip");
-		free(suscripcion);
-		return NULL;
-	}
-
-	log_info(logger, "Tamanio de ip recibido: %i", tamanio_ip);
-
-	suscripcion->ip = malloc(tamanio_ip);
-
-	log_info(logger, "Recibiendo ip");
-
-	if (recv(socket_cliente, suscripcion->ip, tamanio_ip, MSG_WAITALL) == -1) {
-		close(socket_cliente);
-		log_error(logger, "Hubo un problema recibiendo el ip");
-		free(suscripcion->ip);
-		free(suscripcion);
-		return NULL;
-	}
-
-	log_info(logger, "Ip recibido: %s", suscripcion->ip);
-
-	log_info(logger, "Recibiendo tamanio de puerto");
-
-	if (recv(socket_cliente, &tamanio_puerto, sizeof(uint32_t), MSG_WAITALL) == -1) {
-		close(socket_cliente);
-		log_error(logger, "Hubo un problema recibiendo el tamanio de puerto");
-		free(suscripcion->ip);
-		free(suscripcion);
-		return NULL;
-	}
-
-	log_info(logger, "Tamanio de puerto recibido: %i", tamanio_puerto);
-
-	suscripcion->puerto = malloc(tamanio_puerto);
-
-	log_info(logger, "Recibiendo puerto");
-
-	if (recv(socket_cliente, suscripcion->puerto, tamanio_puerto, MSG_WAITALL) == -1) {
-		close(socket_cliente);
-		log_error(logger, "Hubo un problema recibiendo el puerto");
-		free(suscripcion->ip);
-		free(suscripcion->puerto);
-		free(suscripcion);
-		return NULL;
-	}
-
-	log_info(logger, "Puerto recibido: %s", suscripcion->puerto);
 
 	return suscripcion;
 }

@@ -61,9 +61,8 @@ typedef struct {
 } t_caught;
 
 typedef struct {
+	uint32_t id_cliente;
 	uint32_t id_cola;
-	char* ip;
-	char* puerto;
 } t_suscripcion;
 
 
@@ -72,8 +71,8 @@ typedef struct {
 //////////
 
 typedef struct {
-	char* ip;
-	char* puerto;
+	uint32_t id_cliente;
+	int socket_cliente;
 } info_modulo;
 
 t_new* recibir_new(int socket_cliente, uint32_t* size, t_log* logger);
