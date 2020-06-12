@@ -224,3 +224,51 @@
 [INFO] 16:42:39:165 Game-watch-client/(10505:10505): Iniciando conexion con el modulo BROKER
 [INFO] 16:42:39:165 Game-watch-client/(10505:10505): Conexion exitosa con BROKER IP: 127.0.0.1, PUERTO: 4444
 [INFO] 16:42:39:167 Game-watch-client/(10505:10505): Solicitando suscripcion a: SUSCRIPTOR
+[INFO] 15:09:57:886 Game-watch-client/(4445:4445): logger iniciado.
+[INFO] 15:09:57:890 Game-watch-client/(4445:4445): Iniciando conexion con el modulo BROKER
+[INFO] 15:09:57:890 Game-watch-client/(4445:4445): Conexion exitosa con BROKER IP: 127.0.0.1, PUERTO: 4444
+[INFO] 15:11:10:277 Game-watch-client/(4570:4570): logger iniciado.
+[INFO] 15:11:10:278 Game-watch-client/(4570:4570): Iniciando conexion con el modulo BROKER
+[INFO] 15:11:10:278 Game-watch-client/(4570:4570): Conexion exitosa con BROKER IP: 127.0.0.1, PUERTO: 4444
+[INFO] 15:11:10:279 Game-watch-client/(4570:4570): Solicitando suscripcion a: SUSCRIPTOR
+[INFO] 15:12:50:698 Game-watch-client/(4755:4755): logger iniciado.
+[INFO] 15:12:50:699 Game-watch-client/(4755:4755): Iniciando conexion con el modulo BROKER
+[INFO] 15:12:50:699 Game-watch-client/(4755:4755): Conexion exitosa con BROKER IP: 127.0.0.1, PUERTO: 4444
+[INFO] 15:12:50:703 Game-watch-client/(4755:4755): Solicitando suscripcion a: SUSCRIPTOR
+[INFO] 15:34:25:204 Game-watch-client/(8338:8338): logger iniciado.
+[INFO] 15:34:25:205 Game-watch-client/(8338:8338): Iniciando conexion con el modulo BROKER
+[INFO] 15:34:25:205 Game-watch-client/(8338:8338): Conexion exitosa con BROKER IP: 127.0.0.1, PUERTO: 4444
+[INFO] 15:35:11:27 Game-watch-client/(8430:8430): logger iniciado.
+[INFO] 15:35:11:28 Game-watch-client/(8430:8430): Iniciando conexion con el modulo BROKER
+[INFO] 15:35:11:29 Game-watch-client/(8430:8430): Conexion exitosa con BROKER IP: 127.0.0.1, PUERTO: 4444
+[INFO] 15:36:21:657 Game-watch-client/(8557:8557): logger iniciado.
+[INFO] 15:36:21:658 Game-watch-client/(8557:8557): Iniciando conexion con el modulo BROKER
+[INFO] 15:36:21:658 Game-watch-client/(8557:8557): Conexion exitosa con BROKER IP: 127.0.0.1, PUERTO: 4444
+[INFO] 15:36:52:466 Game-watch-client/(8623:8623): logger iniciado.
+[INFO] 15:36:52:467 Game-watch-client/(8623:8623): Iniciando conexion con el modulo BROKER
+[INFO] 15:36:52:468 Game-watch-client/(8623:8623): Conexion exitosa con BROKER IP: 127.0.0.1, PUERTO: 4444
+[INFO] 15:38:38:38 Game-watch-client/(8862:8862): logger iniciado.
+[INFO] 15:38:38:39 Game-watch-client/(8862:8862): Iniciando conexion con el modulo BROKER
+[INFO] 15:38:38:39 Game-watch-client/(8862:8862): Conexion exitosa con BROKER IP: 127.0.0.1, PUERTO: 4444
+[INFO] 15:41:11:267 Game-watch-client/(9128:9128): logger iniciado.
+[INFO] 15:41:11:268 Game-watch-client/(9128:9128): Iniciando conexion con el modulo BROKER
+[INFO] 15:41:11:269 Game-watch-client/(9128:9128): Conexion exitosa con BROKER IP: 127.0.0.1, PUERTO: 4444
+[INFO] 15:42:24:143 Game-watch-client/(9259:9259): logger iniciado.
+[INFO] 15:42:24:144 Game-watch-client/(9259:9259): Iniciando conexion con el modulo BROKER
+[INFO] 15:42:24:145 Game-watch-client/(9259:9259): Conexion exitosa con BROKER IP: 127.0.0.1, PUERTO: 4444
+[INFO] 15:43:20:939 Game-watch-client/(9361:9361): logger iniciado.
+[INFO] 15:43:20:940 Game-watch-client/(9361:9361): Iniciando conexion con el modulo BROKER
+[INFO] 15:43:20:940 Game-watch-client/(9361:9361): Conexion exitosa con BROKER IP: 127.0.0.1, PUERTO: 4444
+[INFO] 15:44:08:737 Game-watch-client/(9461:9461): logger iniciado.
+[INFO] 15:44:08:738 Game-watch-client/(9461:9461): Iniciando conexion con el modulo BROKER
+[INFO] 15:44:08:739 Game-watch-client/(9461:9461): Conexion exitosa con BROKER IP: 127.0.0.1, PUERTO: 4444
+[INFO] 15:45:23:232 Game-watch-client/(9598:9598): logger iniciado.
+[INFO] 15:45:23:233 Game-watch-client/(9598:9598): Iniciando conexion con el modulo BROKER
+[INFO] 15:45:23:234 Game-watch-client/(9598:9598): Conexion exitosa con BROKER IP: 127.0.0.1, PUERTO: 4444
+[INFO] 15:46:33:149 Game-watch-client/(9724:9724): logger iniciado.
+[INFO] 15:46:33:150 Game-watch-client/(9724:9724): Iniciando conexion con el modulo BROKER
+[INFO] 15:46:33:151 Game-watch-client/(9724:9724): Conexion exitosa con BROKER IP: 127.0.0.1, PUERTO: 4444
+[INFO] 15:46:33:152 Game-watch-client/(9724:9724): Solicitando suscripcion a: SUSCRIPTOR
+[INFO] 15:49:25:509 Game-watch-client/(10019:10019): logger iniciado.
+[INFO] 15:49:25:510 Game-watch-client/(10019:10019): Iniciando conexion con el modulo BROKER
+[INFO] 15:49:25:511 Game-watch-client/(10019:10019): Conexion exitosa con BROKER IP: 127.0.0.1, PUERTO: 4444

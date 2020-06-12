@@ -99,7 +99,6 @@ int main(int argc,char*argv[]){
 		int tiempoSuscripcion = atoi(argv[4]);
 		sleep(tiempoSuscripcion);
 	}
-	close(conexion);
 	terminar_programa(conexion);
 
 }
@@ -107,8 +106,8 @@ int main(int argc,char*argv[]){
 
 
 void terminar_programa(int conexion){
+	liberar_conexion(conexion);
 	log_destroy(loggerDev);
 	log_destroy(loggerGameBoy);
 	config_destroy(config);
-	liberar_conexion(conexion);
 }

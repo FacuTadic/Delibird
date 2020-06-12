@@ -99,11 +99,13 @@ uint32_t numeroPorTipoDeMensaje(char* mensajeAEnviar){
 void agregarIDMensaje(void* stream,uint32_t id, uint32_t* offset){
 	memcpy(stream+*(offset),&id,sizeof(uint32_t));
 	*offset += sizeof(uint32_t);
+	log_info(loggerDev, "El ID de Mensaje copiado es %i", id);
 }
 
 void agregarIDModulo(void* stream, uint32_t* offset){
 	memcpy(stream,&idGameBoy, sizeof(uint32_t));
 	offset += sizeof(uint32_t);
+	log_info(loggerDev, "El ID de Modulo es %i", idGameBoy);
 }
 
 
@@ -140,12 +142,12 @@ t_buffer* crearBufferPorTipoDeMensaje(char*argv[],t_log* loggerDev ){
 
 
 	//Variable para el switch
-	log_info(loggerDev, "MENSAJE; %s",argv[2]);
+	log_info(loggerDev, "MENSAJE PARA ENVIAR ES: %s",argv[2]);
 
 	uint32_t nroMensaje = numeroPorTipoDeMensaje(argv[2]);
 
 
-	log_info(loggerDev, "MENSAJE; %i",nroMensaje);
+	log_info(loggerDev, "EL NUMERO DE MENSAJE ES: %i",nroMensaje);
 
 
 
@@ -169,7 +171,9 @@ t_buffer* crearBufferPorTipoDeMensaje(char*argv[],t_log* loggerDev ){
 
 			if(!strcmp(argv[1],"GAMECARD")){
 				idMensaje = atoi(argv[7]);
+				log_info(loggerDev, "El ID convertido es %i", idMensaje);
 				agregarIDMensaje(stream,idMensaje,&offset);
+				log_info(loggerDev, "EL offset quedo en: %i", offset);
 			}
 
 
@@ -215,7 +219,7 @@ t_buffer* crearBufferPorTipoDeMensaje(char*argv[],t_log* loggerDev ){
 
 			//CASO DE AGREGAR EL ID_MENSAJE
 			if(!strcmp(argv[1],"BROKER")){
-			bufferAux->size += sizeof(uint32_t);						// +ID_MENSAJE
+				bufferAux->size += sizeof(uint32_t);						// +ID_MENSAJE
 			}
 
 			stream = malloc(bufferAux->size);
@@ -223,32 +227,33 @@ t_buffer* crearBufferPorTipoDeMensaje(char*argv[],t_log* loggerDev ){
 
 			if(!strcmp(argv[1],"BROKER")){
 				idMensaje = atoi(argv[6]);
+				log_info(loggerDev, "El ID convertido es %i", idMensaje);
 				agregarIDMensaje(stream,idMensaje,&offset);
+				log_info(loggerDev, "EL offset quedo en: %i", offset);
 			}
 
 			sizeNombrePokemon = strlen(argv[3]) + 1;
 			memcpy(stream + offset,&sizeNombrePokemon, sizeof(uint32_t));
 			offset += sizeof(uint32_t);
+			log_info(loggerDev, "Tamanio nombre pokemon %i", sizeNombrePokemon);
 
-			log_info(loggerDev, "pokemon: %s", argv[3]); // log
-			log_info(loggerDev, "Tamanio pokemon %d ",sizeNombrePokemon );  //a que log va
 
 			memcpy(stream + offset,argv[3],strlen(argv[3]) + 1);
 			offset += sizeNombrePokemon;
+			log_info(loggerDev, "Nombre pokemon %s", argv[3]);
+
 
 			posX = atoi(argv[4]);
-
-			log_info(loggerGameBoy, "posX = %d ", posX);  //a que log va
-
 			memcpy(stream + offset,&posX, sizeof(uint32_t));
 			offset += sizeof(uint32_t);
+			log_info(loggerDev, "Posicion X %i", posX);
+
 
 			posY = atoi(argv[5]);
-
-			log_info(loggerGameBoy, "posY = %d ", posY);  //a que log va
-
 			memcpy(stream + offset,&posY, sizeof(uint32_t));
 			offset += sizeof(uint32_t);
+			log_info(loggerDev, "Posicion Y %i", posY);
+
 
 			bufferAux->stream = stream;
 
@@ -265,55 +270,56 @@ t_buffer* crearBufferPorTipoDeMensaje(char*argv[],t_log* loggerDev ){
 
 			stream = malloc(bufferAux->size);
 
-
-
 			if(!strcmp(argv[1],"GAMECARD")){
 				idMensaje = atoi(argv[6]);
+				log_info(loggerDev, "El ID convertido es %i", idMensaje);
 				agregarIDMensaje(stream,idMensaje,&offset);
+				log_info(loggerDev, "EL offset quedo en: %i", offset);
 			}
 
-			log_info(loggerGameBoy, "id del mensaje = %d ", idMensaje);  //a que log va
 
 			sizeNombrePokemon = strlen(argv[3]) + 1;
-
 			memcpy(stream + offset,&sizeNombrePokemon, sizeof(uint32_t));
 			offset += sizeof(uint32_t);
+			log_info(loggerDev, "Tamanio nombre pokemon %i", sizeNombrePokemon);
 
-			log_info(loggerGameBoy, "pokemon: %s", argv[3]);  //a que log va
-			log_info(loggerGameBoy, "tamanio pokemon = %d ", sizeNombrePokemon);  //a que log va
 
 			memcpy(stream + offset,argv[3],strlen(argv[3]) + 1);
 			offset += sizeNombrePokemon;
+			log_info(loggerDev, "Nombre pokemon %s", argv[3]);
+
+
 
 			posX = atoi(argv[4]);
-			log_info(loggerGameBoy, "posX = %d ", posX);  //a que log va
-
 			memcpy(stream + offset,&posX, sizeof(uint32_t));
 			offset += sizeof(uint32_t);
+			log_info(loggerDev, "Posicion X %i", posX);
+
+
 
 			posY = atoi(argv[5]);
-			log_info(loggerGameBoy, "posY = %d ", posY);  //a que log va
-
 			memcpy(stream + offset,&posY, sizeof(uint32_t));
 			offset += sizeof(uint32_t);
+			log_info(loggerDev, "Posicion Y %i", posY);
+
+
 
 			bufferAux->stream = stream;
 
 			break;
 
 		case 4:  //CAUGHT
-			bufferAux->size = sizeof(uint32_t); // FLAG
+			bufferAux->size = 2*sizeof(uint32_t); // ID_MENSAJE + FLAG
 
 			stream = malloc(bufferAux->size);
 
-
-
 			idMensaje = atoi(argv[3]);
+			log_info(loggerDev, "El ID convertido es %i", idMensaje);
 			agregarIDMensaje(stream,idMensaje,&offset);
-
-			log_info(loggerGameBoy, "id del mensaje = %d ", idMensaje);  //a que log va
+			log_info(loggerDev, "EL offset quedo en: %i", offset);
 
 			uint32_t flag = flagCaught(argv[4]);
+
 			if (flag == -1){
 				log_error(loggerDev, "NO existe el flag enviado");
 				exit(-1);
@@ -321,6 +327,8 @@ t_buffer* crearBufferPorTipoDeMensaje(char*argv[],t_log* loggerDev ){
 
 			memcpy(stream + offset,&flag, sizeof(uint32_t));
 			offset += sizeof(uint32_t);
+			log_info(loggerDev, "El FLAG copiado es %i", flag);
+
 
 			bufferAux->stream = stream;
 
@@ -342,21 +350,22 @@ t_buffer* crearBufferPorTipoDeMensaje(char*argv[],t_log* loggerDev ){
 
 			if(!strcmp(argv[1],"GAMECARD")){
 				idMensaje = atoi(argv[6]);
+				log_info(loggerDev, "El ID convertido es %i", idMensaje);
 				agregarIDMensaje(stream,idMensaje,&offset);
+				log_info(loggerDev, "EL offset quedo en: %i", offset);
 			}
-			log_info(loggerGameBoy, "id del mensaje = %d ", idMensaje);  //a que log va
 
 
 			uint32_t sizeNombre = strlen(argv[3])+1;
 
-			log_info(loggerGameBoy, "pokemon: %s ", argv[3]);  //a que log va
-			log_info(loggerGameBoy, "tamanio del pokemon = %d ", sizeNombre);  //a que log va
 
 			memcpy (stream + offset, &sizeNombre, sizeof(uint32_t));
 			offset += sizeof(uint32_t);
+			log_info(loggerDev, "Tamanio nombre pokemon %i", sizeNombrePokemon);
 
 			memcpy (stream + offset, argv[3], strlen(argv[3])+1);
 			offset += sizeNombre;
+			log_info(loggerDev, "Nombre pokemon %s", argv[3]);
 
 			bufferAux->stream = stream;
 
@@ -370,19 +379,18 @@ t_buffer* crearBufferPorTipoDeMensaje(char*argv[],t_log* loggerDev ){
 			stream = malloc(bufferAux->size);
 
 			agregarIDModulo(stream,&offset);
+			log_info(loggerDev, "EL offset quedo en: %i", offset);
 
 			log_info(loggerDev, "LA COLA DE MENSAJE ES: %s", argv[3]);
 
+
 			uint32_t colaDeMensajesSolicitada = idColaPorTipoDeMensaje(argv[3]);
-
-			log_info(loggerDev, "EL NUMERO DE LA COLA ES: %i", colaDeMensajesSolicitada);
-
 			memcpy(stream + offset, &colaDeMensajesSolicitada, sizeof(uint32_t));
 			offset += sizeof(uint32_t);
+			log_info(loggerDev, "EL NUMERO DE LA COLA ES: %i", colaDeMensajesSolicitada);
+
 
 			bufferAux->stream = stream;
-
-			log_info(loggerDev, "SE ENCHUFO BIEN EL BUFFER");
 
 			break;
 
@@ -448,9 +456,9 @@ void enviar_mensaje(char* argv[], int socket_cliente){
 	log_info(loggerDev, "Paquete Creado");
 	log_info(loggerDev, "la operacion a realizar es %i", paquete->codigo_operacion);
 
-	log_error(loggerDev, "Serializando...");
+	log_info(loggerDev, "Serializando...");
 	void* flujo = serializar_paquete(paquete,&bytes);                   //  SERIALIZAR PAQUETE
-	log_error(loggerDev, "Serializacion completa");
+	log_info(loggerDev, "Serializacion completa");
 
 
 	log_info(loggerDev, "El peso total es: %i",paquete->buffer->size);
@@ -632,20 +640,6 @@ void deserializarLocalized(void* streamLlegada){
 		log_error(loggerGameBoy, "Posicion X: %i",posX);
 		log_error(loggerGameBoy, "Posicion Y: %i",posY);
 	}
-
-
-
-
-	//
-/*/				#################		COORDENADAS		#####################
-	memcpy(&(mensajeLocalized->coordX), streamLlegada, sizeof(uint32_t));
-	streamLlegada += sizeof(uint32_t);
-	log_error(loggerGameBoy, "Coordenada X: %i",mensajeLocalized->coordX);
-
-	memcpy(&(mensajeLocalized->coordY), streamLlegada, sizeof(uint32_t));
-	streamLlegada += sizeof(uint32_t);
-	log_error(loggerGameBoy, "Coordenada Y: %i",mensajeLocalized->coordY);
-*/
 	free(mensajeLocalized);
 
 
@@ -733,7 +727,7 @@ void recibir_mensaje(int socket_cliente)
 void devolver_ack(int socket_cliente) {
 	uint32_t ack = 1;
 	send(socket_cliente, (void *) &ack, sizeof(uint32_t), 0);
-	log_info(loggerGameBoy, "Devuelve acknowledgement ");  //a que log va
+	log_info(loggerGameBoy, "Devuelve acknowledgement ");
 
 }
 
@@ -746,7 +740,8 @@ void recibirMensajesDeSuscripcion(int socketCliente){
 
 void liberar_conexion(int socket_cliente)
 {
+	log_info(loggerGameBoy, "Cerrando la conexion: %i",socket_cliente);
 	close(socket_cliente);
-	log_info(loggerGameBoy, "Cierra conexion ");  //a que log va
+	log_info(loggerGameBoy, "COnexion cerrada");
 
 }
