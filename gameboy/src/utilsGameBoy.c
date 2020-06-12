@@ -156,7 +156,7 @@ t_buffer* crearBufferPorTipoDeMensaje(char*argv[],t_log* loggerDev ){
 
 		case 1 : //NEW
 
-			bufferAux->size = 5*sizeof(uint32_t) + strlen(argv[3])+1; // ID GAMEBOY ,sizeNombre, Cord X,Y , Cantidad + NOMBRE
+			bufferAux->size = 4*sizeof(uint32_t) + strlen(argv[3])+1; // ,sizeNombre, Cord X,Y , Cantidad + NOMBRE
 
 			//CASO DE AGREGAR EL ID_MENSAJE
 			//Comparacion de strings commons
@@ -165,9 +165,6 @@ t_buffer* crearBufferPorTipoDeMensaje(char*argv[],t_log* loggerDev ){
 			}
 
 			stream = malloc(bufferAux->size);
-
-
-			agregarIDModulo(stream,&offset);
 
 
 			if(!strcmp(argv[1],"GAMECARD")){
@@ -214,7 +211,7 @@ t_buffer* crearBufferPorTipoDeMensaje(char*argv[],t_log* loggerDev ){
 
 		case 2: //APPEARED
 
-			bufferAux->size = 4*sizeof(uint32_t) + strlen(argv[3])+1; // ID GAMEBOY, sizeNombre, Cord X,Y + NOMBRE
+			bufferAux->size = 3*sizeof(uint32_t) + strlen(argv[3])+1; // sizeNombre, Cord X,Y + NOMBRE
 
 			//CASO DE AGREGAR EL ID_MENSAJE
 			if(!strcmp(argv[1],"BROKER")){
@@ -223,7 +220,6 @@ t_buffer* crearBufferPorTipoDeMensaje(char*argv[],t_log* loggerDev ){
 
 			stream = malloc(bufferAux->size);
 
-			agregarIDModulo(stream,&offset);
 
 			if(!strcmp(argv[1],"BROKER")){
 				idMensaje = atoi(argv[6]);
@@ -260,7 +256,7 @@ t_buffer* crearBufferPorTipoDeMensaje(char*argv[],t_log* loggerDev ){
 
 		case 3: //CATCH
 
-			bufferAux->size = 4*sizeof(uint32_t) + strlen(argv[3])+1;// ID GAMEBOY, sizeNombre, Cord X,Y + NOMBRE
+			bufferAux->size = 3*sizeof(uint32_t) + strlen(argv[3])+1;// sizeNombre, Cord X,Y + NOMBRE
 
 			//CASO DE AGREGAR EL ID_MENSAJE
 			if(!strcmp(argv[1],"GAMECARD")){
@@ -268,8 +264,6 @@ t_buffer* crearBufferPorTipoDeMensaje(char*argv[],t_log* loggerDev ){
 			}
 
 			stream = malloc(bufferAux->size);
-
-			agregarIDModulo(stream,&offset);
 
 
 
@@ -308,11 +302,10 @@ t_buffer* crearBufferPorTipoDeMensaje(char*argv[],t_log* loggerDev ){
 			break;
 
 		case 4:  //CAUGHT
-			bufferAux->size = 2*sizeof(uint32_t); // ID GAMEBOY + FLAG
+			bufferAux->size = sizeof(uint32_t); // FLAG
 
 			stream = malloc(bufferAux->size);
 
-			agregarIDModulo(stream,&offset);
 
 
 			idMensaje = atoi(argv[3]);
@@ -336,7 +329,7 @@ t_buffer* crearBufferPorTipoDeMensaje(char*argv[],t_log* loggerDev ){
 
 		case 5:  //GET
 
-			bufferAux->size = 2*sizeof(uint32_t) + strlen(argv[3])+1; // sizeNombre
+			bufferAux->size = sizeof(uint32_t) + strlen(argv[3])+1; // sizeNombre
 
 
 			//CASO DE AGREGAR EL ID_MENSAJE
@@ -345,8 +338,6 @@ t_buffer* crearBufferPorTipoDeMensaje(char*argv[],t_log* loggerDev ){
 			}
 
 			stream = malloc(bufferAux->size);
-
-			agregarIDModulo(stream,&offset);
 
 
 			if(!strcmp(argv[1],"GAMECARD")){
