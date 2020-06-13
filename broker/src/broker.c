@@ -922,7 +922,7 @@ void mandar_catch(void* catch_mandable) {
 	if (send(argumento_catch->info->socket_cliente, flujo, bytes, 0) == -1) {
 		log_error(extense_logger, "Error: No se pudo enviar el mensaje");
 		status->envio_ok = 0;
-		status->ack = 1;
+		status->ack = 0;
 		close(argumento_catch->info->socket_cliente);
 		eliminar_suscriptor(gl_catch_list_lock, gl_catch_suscriptores, argumento_catch->info);
 	} else {
@@ -1079,24 +1079,30 @@ void mandar_localized(void* localized_mandable) {
 void enviar_new_de_memoria(info_modulo* info_modulo) {
 	t_list* segmentos = obtener_segmentos_new(info_modulo->id_cliente);
 
-	log_info(extense_logger, "Segmentos NEW a enviar al cliente %i socket %i: %i", info_modulo->id_cliente, info_modulo->socket_cliente, segmentos->elements_count);
+	if (segmentos->elements_count == 0) {
+		log_info(extense_logger, "No existen segmentos NEW a enviar al cliente %i socket %i", info_modulo->id_cliente, info_modulo->socket_cliente);
+	} else {
+		log_info(extense_logger, "Segmentos NEW a enviar al cliente %i socket %i: %i", info_modulo->id_cliente, info_modulo->socket_cliente, segmentos->elements_count);
 
-	mandable_memoria_struct* struct_para_enviar = malloc(sizeof(mandable_struct) * segmentos->elements_count);
+		mandable_memoria_struct* struct_para_enviar = malloc(sizeof(mandable_struct) * segmentos->elements_count);
 
-	pthread_t* threads = malloc(sizeof(pthread_t) * segmentos->elements_count);
+		pthread_t* threads = malloc(sizeof(pthread_t) * segmentos->elements_count);
 
-	for (int i = 0; i < segmentos->elements_count; i++) {
-		struct_para_enviar[i].info_modulo = info_modulo;
-		struct_para_enviar[i].segmento = list_get(segmentos, i);
-		pthread_create(&(threads[i]), NULL, (void*) enviar_mensaje_new_de_memoria, &struct_para_enviar[i]);
+		for (int i = 0; i < segmentos->elements_count; i++) {
+			struct_para_enviar[i].info_modulo = info_modulo;
+			struct_para_enviar[i].segmento = list_get(segmentos, i);
+			pthread_create(&(threads[i]), NULL, (void*) enviar_mensaje_new_de_memoria, &struct_para_enviar[i]);
+		}
+
+		for (int i = 0; i < segmentos->elements_count; i++) {
+			pthread_join(threads[i], NULL);
+		}
+
+		free(threads);
+		free(struct_para_enviar);
 	}
 
-	for (int i = 0; i < segmentos->elements_count; i++) {
-		pthread_join(threads[i], NULL);
-	}
-
-	free(threads);
-	free(struct_para_enviar);
+	list_destroy(segmentos);
 }
 
 void enviar_appeared_de_memoria(info_modulo* info_modulo) {
@@ -1118,6 +1124,8 @@ void enviar_appeared_de_memoria(info_modulo* info_modulo) {
 
 	free(threads);
 	free(struct_para_enviar);
+
+	list_destroy(segmentos);
 }
 
 void enviar_catch_de_memoria(info_modulo* info_modulo) {
@@ -1139,6 +1147,8 @@ void enviar_catch_de_memoria(info_modulo* info_modulo) {
 
 	free(threads);
 	free(struct_para_enviar);
+
+	list_destroy(segmentos);
 }
 
 void enviar_caught_de_memoria(info_modulo* info_modulo) {
@@ -1160,6 +1170,8 @@ void enviar_caught_de_memoria(info_modulo* info_modulo) {
 
 	free(threads);
 	free(struct_para_enviar);
+
+	list_destroy(segmentos);
 }
 
 void enviar_get_de_memoria(info_modulo* info_modulo) {
@@ -1181,6 +1193,8 @@ void enviar_get_de_memoria(info_modulo* info_modulo) {
 
 	free(threads);
 	free(struct_para_enviar);
+
+	list_destroy(segmentos);
 }
 
 void enviar_localized_de_memoria(info_modulo* info_modulo) {
@@ -1202,6 +1216,8 @@ void enviar_localized_de_memoria(info_modulo* info_modulo) {
 
 	free(threads);
 	free(struct_para_enviar);
+
+	list_destroy(segmentos);
 }
 
 void enviar_mensaje_new_de_memoria(void* new_mandable_memoria) {
@@ -1433,6 +1449,7 @@ void enviar_mensaje_localized_de_memoria(void* localized_mandable_memoria) {
 
 	if (send(argumento->info_modulo->socket_cliente, argumento->segmento->mensaje, argumento->segmento->registro->limit, 0) == -1) {
 		log_error(extense_logger, "Error: No se pudo enviar el mensaje");
+		close(argumento->info_modulo->socket_cliente);
 		status->envio_ok = 0;
 		status->ack = 0;
 		eliminar_suscriptor(gl_localized_list_lock, gl_localized_suscriptores, argumento->info_modulo);
@@ -1443,6 +1460,7 @@ void enviar_mensaje_localized_de_memoria(void* localized_mandable_memoria) {
 		uint32_t id;
 		if (recv(argumento->info_modulo->socket_cliente, &id, sizeof(uint32_t),MSG_WAITALL) == -1) {
 			log_error(extense_logger, "Error: No se recibió el ACK de cliente %i socket %i", argumento->info_modulo->id_cliente, argumento->info_modulo->socket_cliente);
+			close(argumento->info_modulo->socket_cliente);
 			status->ack = 0;
 			eliminar_suscriptor(gl_localized_list_lock, gl_localized_suscriptores, argumento->info_modulo);
 		} else {
@@ -1451,8 +1469,6 @@ void enviar_mensaje_localized_de_memoria(void* localized_mandable_memoria) {
 			log_info(logger, "ACK de cliente %i socket %i recibido", argumento->info_modulo->id_cliente, argumento->info_modulo->socket_cliente);
 		}
 	}
-
-	close(argumento->info_modulo->socket_cliente);
 
 	if (1 == status->envio_ok) {
 		pthread_mutex_lock(&mutex_memoria);
@@ -1681,7 +1697,7 @@ int main(void) {
 	extense_log_file = config_get_string_value(config, "EXTENSE_LOG_FILE");
 	extense_logger = iniciar_logger(extense_log_file);
 	log_info(extense_logger, "logger extenso iniciado");
-	logger = iniciar_logger(log_file);
+	logger = iniciar_logger_sin_consola(log_file);
 	log_info(extense_logger, "logger de la catedra iniciado");
 	ip = config_get_string_value(config, "IP");
 	log_info(extense_logger, "La IP es: %s", ip);
@@ -1818,6 +1834,10 @@ void inicializar_colas(void) {
 
 t_log* iniciar_logger(char* log_file) {
 	return log_create(log_file, "Broker", 1, LOG_LEVEL_INFO);
+}
+
+t_log* iniciar_logger_sin_consola(char* log_file) {
+	return log_create(log_file, "Broker", 0, LOG_LEVEL_INFO);
 }
 
 t_config* leer_config() {

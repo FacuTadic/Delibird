@@ -108,6 +108,7 @@ typedef struct {
 } mandable_memoria_struct; // estructura auxiliar para mandar a los hilos que mandan mensajes de memoria
 
 t_log* iniciar_logger(char* log_file);
+t_log* iniciar_logger_sin_consola(char* log_file);
 t_config* leer_config(void);
 t_config* leer_config(void);
 void inicializar_memoria(void);
