@@ -173,6 +173,7 @@ void procesar_request(int cod_op, int cliente_fd) {
 			pthread_mutex_lock(&gl_new_list_lock);
 			list_add(gl_new_suscriptores, (void *) &info_modulo);
 			pthread_mutex_unlock(&gl_new_list_lock);
+			log_info(extense_logger, "gilada");
 			enviar_new_de_memoria(info_modulo);
 			log_info(extense_logger, "Modulo con id %s agregado correctamente en la cola de NEW", suscripcion->id_cliente);
 			log_info(logger, "Modulo con id %s agregado correctamente en la cola de NEW", suscripcion->id_cliente);
