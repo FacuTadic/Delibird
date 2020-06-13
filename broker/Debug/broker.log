@@ -4471,3 +4471,5 @@
 [INFO] 15:46:28:540 Broker/(24523:24524): Nueva conexion de un proceso con socket cliente 7
 [INFO] 15:47:54:857 Broker/(24704:24705): Nueva conexion de un proceso con socket cliente 7
 [INFO] 15:47:54:860 Broker/(24704:24715): Modulo con id 6 agregado correctamente en la cola de NEW
+[INFO] 16:14:54:411 Broker/(25225:25226): Nueva conexion de un proceso con socket cliente 7
+[INFO] 16:14:54:416 Broker/(25225:25234): Modulo con id 6 agregado correctamente en la cola de NEW

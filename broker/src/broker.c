@@ -160,76 +160,72 @@ void procesar_request(int cod_op, int cliente_fd) {
 	if (suscripcion == NULL) {
 		free(mensaje_a_guardar);
 		pthread_exit(NULL);
+	} else {
+
+		info_modulo* info_modulo = malloc(sizeof(info_modulo));
+		info_modulo->id_cliente = suscripcion->id_cliente;
+		info_modulo->socket_cliente = cliente_fd;
+
+		switch(suscripcion->id_cola) {
+		case NEW_ID: ;
+		log_info(extense_logger, "Id de cola recibido del socket cliente %i corresponde a la cola de NEW", cliente_fd);
+
+		pthread_mutex_lock(&gl_new_list_lock);
+		list_add(gl_new_suscriptores, (void *) info_modulo);
+		pthread_mutex_unlock(&gl_new_list_lock);
+		enviar_new_de_memoria(info_modulo);
+		log_info(extense_logger, "Modulo con id %i agregado correctamente en la cola de NEW", suscripcion->id_cliente);
+		log_info(logger, "Modulo con id %i agregado correctamente en la cola de NEW", suscripcion->id_cliente);
+		break;
+		case APPEARED_ID: ;
+		log_info(extense_logger, "Id de cola recibido del socket cliente %i corresponde a la cola de APPEARED", cliente_fd);
+		pthread_mutex_lock(&gl_appeared_list_lock);
+		list_add(gl_appeared_suscriptores, (void *) info_modulo);
+		pthread_mutex_unlock(&gl_appeared_list_lock);
+		enviar_appeared_de_memoria(info_modulo);
+		log_info(extense_logger, "Modulo con id %i agregado correctamente en la cola de APPEARED", suscripcion->id_cliente);
+		log_info(logger, "Modulo con id %i agregado correctamente en la cola de APPEARED", suscripcion->id_cliente);
+		break;
+		case CATCH_ID: ;
+		log_info(extense_logger, "Id de cola recibido del socket cliente %i corresponde a la cola de CATCH", cliente_fd);
+		pthread_mutex_lock(&gl_catch_list_lock);
+		list_add(gl_catch_suscriptores, (void *) info_modulo);
+		pthread_mutex_unlock(&gl_catch_list_lock);
+		enviar_catch_de_memoria(info_modulo);
+		log_info(extense_logger, "Modulo con id %i agregado correctamente en la cola de CATCH", suscripcion->id_cliente);
+		log_info(logger, "Modulo con id %i agregado correctamente en la cola de CATCH", suscripcion->id_cliente);
+		break;
+		case CAUGHT_ID: ;
+		log_info(extense_logger, "Id de cola recibido del socket cliente %i corresponde a la cola de CAUGHT", cliente_fd);
+		pthread_mutex_lock(&gl_caught_list_lock);
+		list_add(gl_caught_suscriptores, (void *) info_modulo);
+		pthread_mutex_unlock(&gl_caught_list_lock);
+		enviar_caught_de_memoria(info_modulo);
+		log_info(extense_logger, "Modulo con id %i agregado correctamente en la cola de CAUGHT", suscripcion->id_cliente);
+		log_info(logger, "Modulo con id %i agregado correctamente en la cola de CAUGHT", suscripcion->id_cliente);
+		break;
+		case GET_ID: ;
+		log_info(extense_logger, "Id de cola recibido del socket cliente %i corresponde a la cola de GET", cliente_fd);
+		pthread_mutex_lock(&gl_get_list_lock);
+		list_add(gl_get_suscriptores, (void *) info_modulo);
+		pthread_mutex_unlock(&gl_get_list_lock);
+		enviar_get_de_memoria(info_modulo);
+		log_info(extense_logger, "Modulo con id %i agregado correctamente en la cola de GET", suscripcion->id_cliente);
+		log_info(logger, "Modulo con id %i agregado correctamente en la cola de GET", suscripcion->id_cliente);
+		break;
+		case LOCALIZED_ID: ;
+		log_info(extense_logger, "Id de cola recibido del socket cliente %i corresponde a la cola de LOCALIZED", cliente_fd);
+		pthread_mutex_lock(&gl_localized_list_lock);
+		list_add(gl_localized_suscriptores, (void *) info_modulo);
+		pthread_mutex_unlock(&gl_localized_list_lock);
+		enviar_localized_de_memoria(info_modulo);
+		log_info(extense_logger, "Modulo con id %i agregado correctamente en la cola de LOCALIZED", suscripcion->id_cliente);
+		log_info(logger, "Modulo con id %i agregado correctamente en la cola de LOCALIZED", suscripcion->id_cliente);
+		break;
+		}
 	}
-
-	info_modulo* info_modulo = malloc(sizeof(info_modulo));
-	info_modulo->id_cliente = suscripcion->id_cliente;
-	info_modulo->socket_cliente = cliente_fd;
-
-	switch(suscripcion->id_cola) {
-	case NEW_ID: ;
-	log_info(extense_logger, "Id de cola recibido del socket cliente %i corresponde a la cola de NEW", cliente_fd);
-
-	pthread_mutex_lock(&gl_new_list_lock);
-	list_add(gl_new_suscriptores, (void *) info_modulo);
-	pthread_mutex_unlock(&gl_new_list_lock);
-	enviar_new_de_memoria(info_modulo);
-	log_info(extense_logger, "Modulo con id %i agregado correctamente en la cola de NEW", suscripcion->id_cliente);
-	log_info(logger, "Modulo con id %i agregado correctamente en la cola de NEW", suscripcion->id_cliente);
-	break;
-	case APPEARED_ID: ;
-	log_info(extense_logger, "Id de cola recibido del socket cliente %i corresponde a la cola de APPEARED", cliente_fd);
-	pthread_mutex_lock(&gl_appeared_list_lock);
-	list_add(gl_appeared_suscriptores, (void *) info_modulo);
-	pthread_mutex_unlock(&gl_appeared_list_lock);
-	enviar_appeared_de_memoria(info_modulo);
-	log_info(extense_logger, "Modulo con id %i agregado correctamente en la cola de APPEARED", suscripcion->id_cliente);
-	log_info(logger, "Modulo con id %i agregado correctamente en la cola de APPEARED", suscripcion->id_cliente);
-	break;
-	case CATCH_ID: ;
-	log_info(extense_logger, "Id de cola recibido del socket cliente %i corresponde a la cola de CATCH", cliente_fd);
-	pthread_mutex_lock(&gl_catch_list_lock);
-	list_add(gl_catch_suscriptores, (void *) info_modulo);
-	pthread_mutex_unlock(&gl_catch_list_lock);
-	enviar_catch_de_memoria(info_modulo);
-	log_info(extense_logger, "Modulo con id %i agregado correctamente en la cola de CATCH", suscripcion->id_cliente);
-	log_info(logger, "Modulo con id %i agregado correctamente en la cola de CATCH", suscripcion->id_cliente);
-	break;
-	case CAUGHT_ID: ;
-	log_info(extense_logger, "Id de cola recibido del socket cliente %i corresponde a la cola de CAUGHT", cliente_fd);
-	pthread_mutex_lock(&gl_caught_list_lock);
-	list_add(gl_caught_suscriptores, (void *) info_modulo);
-	pthread_mutex_unlock(&gl_caught_list_lock);
-	enviar_caught_de_memoria(info_modulo);
-	log_info(extense_logger, "Modulo con id %i agregado correctamente en la cola de CAUGHT", suscripcion->id_cliente);
-	log_info(logger, "Modulo con id %i agregado correctamente en la cola de CAUGHT", suscripcion->id_cliente);
-	break;
-	case GET_ID: ;
-	log_info(extense_logger, "Id de cola recibido del socket cliente %i corresponde a la cola de GET", cliente_fd);
-	pthread_mutex_lock(&gl_get_list_lock);
-	list_add(gl_get_suscriptores, (void *) info_modulo);
-	pthread_mutex_unlock(&gl_get_list_lock);
-	enviar_get_de_memoria(info_modulo);
-	log_info(extense_logger, "Modulo con id %i agregado correctamente en la cola de GET", suscripcion->id_cliente);
-	log_info(logger, "Modulo con id %i agregado correctamente en la cola de GET", suscripcion->id_cliente);
-	break;
-	case LOCALIZED_ID: ;
-	log_info(extense_logger, "Id de cola recibido del socket cliente %i corresponde a la cola de LOCALIZED", cliente_fd);
-	pthread_mutex_lock(&gl_localized_list_lock);
-	list_add(gl_localized_suscriptores, (void *) info_modulo);
-	pthread_mutex_unlock(&gl_localized_list_lock);
-	enviar_localized_de_memoria(info_modulo);
-	log_info(extense_logger, "Modulo con id %i agregado correctamente en la cola de LOCALIZED", suscripcion->id_cliente);
-	log_info(logger, "Modulo con id %i agregado correctamente en la cola de LOCALIZED", suscripcion->id_cliente);
-	break;
-	}
-
 	free(suscripcion);
 	break;
-	default:
-		log_warning(extense_logger, "El codigo de operacion %i no corresponde a ninguna operacion conocida", cod_op);
-		close(cliente_fd);
-		pthread_exit(NULL);
 	}
 }
 
@@ -237,8 +233,9 @@ void atender_cliente(int* socket) {
 	uint32_t cod_op;
 	log_info(extense_logger, "Recibiendo codigo de operacion de socket %i", *socket);
 	if(recv(*socket, &cod_op, sizeof(uint32_t), MSG_WAITALL) == -1) {
-		cod_op = -1;
+		close(*socket);
 		log_error(extense_logger, "Hubo un problema recibiendo codigo de operacion de socket %i", *socket);
+		pthread_exit(NULL);
 	}
 	log_info(extense_logger, "Codigo de operacion de socket %i recibido: %i", *socket, cod_op);
 	procesar_request(cod_op, *socket);
