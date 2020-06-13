@@ -10,222 +10,222 @@ void procesar_request(int cod_op, int cliente_fd) {
 
 	switch (cod_op) {
 	case NEW: ;
-		log_info(extense_logger, "Codigo de operacion recibido del socket cliente %i corresponde a un NEW", cliente_fd);
-		t_new* new_msg = recibir_new(cliente_fd, &size, extense_logger);
+	log_info(extense_logger, "Codigo de operacion recibido del socket cliente %i corresponde a un NEW", cliente_fd);
+	t_new* new_msg = recibir_new(cliente_fd, &size, extense_logger);
 
-		if (new_msg == NULL) {
-			free(mensaje_a_guardar);
-			pthread_exit(NULL);
-		} else {
-			mensaje_a_guardar->mensaje = (void*) new_msg;
+	if (new_msg == NULL) {
+		free(mensaje_a_guardar);
+		pthread_exit(NULL);
+	} else {
+		mensaje_a_guardar->mensaje = (void*) new_msg;
 
-			sem_wait(&gl_new_limite);
+		sem_wait(&gl_new_limite);
 
-			log_info(extense_logger, "Encolando el mensaje NEW con id %i", mensaje_a_guardar->id);
-			pthread_mutex_lock(&gl_new_queue_lock);
-			queue_push(gl_new_pokemon_queue, mensaje_a_guardar);
-			pthread_mutex_unlock(&gl_new_queue_lock);
-			log_info(extense_logger, "Mensaje NEW con id %i encolado", mensaje_a_guardar->id);
-			log_info(logger, "Mensaje NEW con id %i encolado", mensaje_a_guardar->id);
+		log_info(extense_logger, "Encolando el mensaje NEW con id %i", mensaje_a_guardar->id);
+		pthread_mutex_lock(&gl_new_queue_lock);
+		queue_push(gl_new_pokemon_queue, mensaje_a_guardar);
+		pthread_mutex_unlock(&gl_new_queue_lock);
+		log_info(extense_logger, "Mensaje NEW con id %i encolado", mensaje_a_guardar->id);
+		log_info(logger, "Mensaje NEW con id %i encolado", mensaje_a_guardar->id);
 
-			sem_post(&gl_new_mensajes);
+		sem_post(&gl_new_mensajes);
 
-			devolver_id(cliente_fd, mensaje_a_guardar->id, extense_logger);
-		}
-		break;
+		devolver_id(cliente_fd, mensaje_a_guardar->id, extense_logger);
+	}
+	break;
 	case APPEARED: ;
-		log_info(extense_logger, "Codigo de operacion recibido del socket cliente %i corresponde a un APPEARED", cliente_fd);
-		t_appeared* appeared_msg = recibir_appeared(cliente_fd, &size, extense_logger);
+	log_info(extense_logger, "Codigo de operacion recibido del socket cliente %i corresponde a un APPEARED", cliente_fd);
+	t_appeared* appeared_msg = recibir_appeared(cliente_fd, &size, extense_logger);
 
-		if (appeared_msg == NULL) {
-			free(mensaje_a_guardar);
-			pthread_exit(NULL);
-		} else {
-			mensaje_a_guardar->mensaje = (void*) appeared_msg;
+	if (appeared_msg == NULL) {
+		free(mensaje_a_guardar);
+		pthread_exit(NULL);
+	} else {
+		mensaje_a_guardar->mensaje = (void*) appeared_msg;
 
-			sem_wait(&gl_appeared_limite);
+		sem_wait(&gl_appeared_limite);
 
-			log_info(extense_logger, "Encolando el mensaje APPEARED con id %i", mensaje_a_guardar->id);
-			pthread_mutex_lock(&gl_appeared_queue_lock);
-			queue_push(gl_appeared_pokemon_queue, mensaje_a_guardar);
-			pthread_mutex_unlock(&gl_appeared_queue_lock);
-			log_info(extense_logger, "Mensaje APPEARED con id %i encolado", mensaje_a_guardar->id);
-			log_info(logger, "Mensaje APPEARED con id %i encolado", mensaje_a_guardar->id);
+		log_info(extense_logger, "Encolando el mensaje APPEARED con id %i", mensaje_a_guardar->id);
+		pthread_mutex_lock(&gl_appeared_queue_lock);
+		queue_push(gl_appeared_pokemon_queue, mensaje_a_guardar);
+		pthread_mutex_unlock(&gl_appeared_queue_lock);
+		log_info(extense_logger, "Mensaje APPEARED con id %i encolado", mensaje_a_guardar->id);
+		log_info(logger, "Mensaje APPEARED con id %i encolado", mensaje_a_guardar->id);
 
-			sem_post(&gl_appeared_mensajes);
+		sem_post(&gl_appeared_mensajes);
 
-			devolver_id(cliente_fd, mensaje_a_guardar->id, extense_logger);
-		}
-		break;
+		devolver_id(cliente_fd, mensaje_a_guardar->id, extense_logger);
+	}
+	break;
 	case CATCH: ;
-		log_info(extense_logger, "Codigo de operacion recibido del socket cliente %i corresponde a un CATCH", cliente_fd);
-		t_catch* catch_msg = recibir_catch(cliente_fd, &size, extense_logger);
+	log_info(extense_logger, "Codigo de operacion recibido del socket cliente %i corresponde a un CATCH", cliente_fd);
+	t_catch* catch_msg = recibir_catch(cliente_fd, &size, extense_logger);
 
-		if (catch_msg == NULL) {
-			free(mensaje_a_guardar);
-			pthread_exit(NULL);
-		} else {
-			mensaje_a_guardar->mensaje = (void*) catch_msg;
+	if (catch_msg == NULL) {
+		free(mensaje_a_guardar);
+		pthread_exit(NULL);
+	} else {
+		mensaje_a_guardar->mensaje = (void*) catch_msg;
 
-			sem_wait(&gl_catch_limite);
+		sem_wait(&gl_catch_limite);
 
-			log_info(extense_logger, "Encolando el mensaje CATCH con id %i", mensaje_a_guardar->id);
-			pthread_mutex_lock(&gl_catch_queue_lock);
-			queue_push(gl_catch_pokemon_queue, mensaje_a_guardar);
-			pthread_mutex_unlock(&gl_catch_queue_lock);
-			log_info(extense_logger, "Mensaje CATCH con id %i encolado", mensaje_a_guardar->id);
-			log_info(logger, "Mensaje CATCH con id %i encolado", mensaje_a_guardar->id);
+		log_info(extense_logger, "Encolando el mensaje CATCH con id %i", mensaje_a_guardar->id);
+		pthread_mutex_lock(&gl_catch_queue_lock);
+		queue_push(gl_catch_pokemon_queue, mensaje_a_guardar);
+		pthread_mutex_unlock(&gl_catch_queue_lock);
+		log_info(extense_logger, "Mensaje CATCH con id %i encolado", mensaje_a_guardar->id);
+		log_info(logger, "Mensaje CATCH con id %i encolado", mensaje_a_guardar->id);
 
-			sem_post(&gl_catch_mensajes);
+		sem_post(&gl_catch_mensajes);
 
-			devolver_id(cliente_fd, mensaje_a_guardar->id, extense_logger);
-		}
-		break;
+		devolver_id(cliente_fd, mensaje_a_guardar->id, extense_logger);
+	}
+	break;
 	case CAUGHT: ;
-		log_info(extense_logger, "Codigo de operacion recibido del socket cliente %i corresponde a un CAUGHT", cliente_fd);
-		t_caught* caught_msg = recibir_caught(cliente_fd, &size, extense_logger);
+	log_info(extense_logger, "Codigo de operacion recibido del socket cliente %i corresponde a un CAUGHT", cliente_fd);
+	t_caught* caught_msg = recibir_caught(cliente_fd, &size, extense_logger);
 
-		if (caught_msg == NULL) {
-			free(mensaje_a_guardar);
-			pthread_exit(NULL);
-		} else {
-			mensaje_a_guardar->mensaje = (void*) caught_msg;
+	if (caught_msg == NULL) {
+		free(mensaje_a_guardar);
+		pthread_exit(NULL);
+	} else {
+		mensaje_a_guardar->mensaje = (void*) caught_msg;
 
-			sem_wait(&gl_caught_limite);
+		sem_wait(&gl_caught_limite);
 
-			log_info(extense_logger, "Encolando el mensaje CAUGHT con id %i", mensaje_a_guardar->id);
-			pthread_mutex_lock(&gl_caught_queue_lock);
-			queue_push(gl_caught_pokemon_queue, mensaje_a_guardar);
-			pthread_mutex_unlock(&gl_caught_queue_lock);
-			log_info(extense_logger, "Mensaje CAUGHT con id %i encolado", mensaje_a_guardar->id);
-			log_info(logger, "Mensaje CAUGHT con id %i encolado", mensaje_a_guardar->id);
+		log_info(extense_logger, "Encolando el mensaje CAUGHT con id %i", mensaje_a_guardar->id);
+		pthread_mutex_lock(&gl_caught_queue_lock);
+		queue_push(gl_caught_pokemon_queue, mensaje_a_guardar);
+		pthread_mutex_unlock(&gl_caught_queue_lock);
+		log_info(extense_logger, "Mensaje CAUGHT con id %i encolado", mensaje_a_guardar->id);
+		log_info(logger, "Mensaje CAUGHT con id %i encolado", mensaje_a_guardar->id);
 
-			sem_post(&gl_caught_mensajes);
+		sem_post(&gl_caught_mensajes);
 
-			devolver_id(cliente_fd, mensaje_a_guardar->id, extense_logger);
-		}
-		break;
+		devolver_id(cliente_fd, mensaje_a_guardar->id, extense_logger);
+	}
+	break;
 	case GET: ;
-		log_info(extense_logger, "Codigo de operacion recibido del socket cliente %i corresponde a un GET", cliente_fd);
-		t_get* get_msg = recibir_get(cliente_fd, &size, extense_logger);
+	log_info(extense_logger, "Codigo de operacion recibido del socket cliente %i corresponde a un GET", cliente_fd);
+	t_get* get_msg = recibir_get(cliente_fd, &size, extense_logger);
 
-		if (get_msg == NULL) {
-			free(mensaje_a_guardar);
-			pthread_exit(NULL);
-		} else {
-			mensaje_a_guardar->mensaje = (void*) get_msg;
+	if (get_msg == NULL) {
+		free(mensaje_a_guardar);
+		pthread_exit(NULL);
+	} else {
+		mensaje_a_guardar->mensaje = (void*) get_msg;
 
-			sem_wait(&gl_get_limite);
+		sem_wait(&gl_get_limite);
 
-			log_info(extense_logger, "Encolando el mensaje GET con id %i", mensaje_a_guardar->id);
-			pthread_mutex_lock(&gl_get_queue_lock);
-			queue_push(gl_get_pokemon_queue, mensaje_a_guardar);
-			pthread_mutex_unlock(&gl_get_queue_lock);
-			log_info(extense_logger, "Mensaje GET con id %i encolado", mensaje_a_guardar->id);
-			log_info(logger, "Mensaje GET con id %i encolado", mensaje_a_guardar->id);
+		log_info(extense_logger, "Encolando el mensaje GET con id %i", mensaje_a_guardar->id);
+		pthread_mutex_lock(&gl_get_queue_lock);
+		queue_push(gl_get_pokemon_queue, mensaje_a_guardar);
+		pthread_mutex_unlock(&gl_get_queue_lock);
+		log_info(extense_logger, "Mensaje GET con id %i encolado", mensaje_a_guardar->id);
+		log_info(logger, "Mensaje GET con id %i encolado", mensaje_a_guardar->id);
 
-			sem_post(&gl_get_mensajes);
+		sem_post(&gl_get_mensajes);
 
-			devolver_id(cliente_fd, mensaje_a_guardar->id, extense_logger);
-		}
-		break;
+		devolver_id(cliente_fd, mensaje_a_guardar->id, extense_logger);
+	}
+	break;
 	case LOCALIZED: ;
-		log_info(extense_logger, "Codigo de operacion recibido del socket cliente %i corresponde a un LOCALIZED", cliente_fd);
-		t_localized* localized_msg = recibir_localized(cliente_fd, &size, extense_logger);
+	log_info(extense_logger, "Codigo de operacion recibido del socket cliente %i corresponde a un LOCALIZED", cliente_fd);
+	t_localized* localized_msg = recibir_localized(cliente_fd, &size, extense_logger);
 
-		if (localized_msg == NULL) {
-			free(mensaje_a_guardar);
-			pthread_exit(NULL);
-		} else {
-			mensaje_a_guardar->mensaje = (void*) localized_msg;
+	if (localized_msg == NULL) {
+		free(mensaje_a_guardar);
+		pthread_exit(NULL);
+	} else {
+		mensaje_a_guardar->mensaje = (void*) localized_msg;
 
-			sem_wait(&gl_localized_limite);
+		sem_wait(&gl_localized_limite);
 
-			log_info(extense_logger, "Encolando el mensaje LOCALIZED con id %i", mensaje_a_guardar->id);
-			pthread_mutex_lock(&gl_localized_queue_lock);
-			queue_push(gl_localized_pokemon_queue, mensaje_a_guardar);
-			pthread_mutex_unlock(&gl_localized_queue_lock);
-			log_info(extense_logger, "Mensaje LOCALIZED con id %i encolado", mensaje_a_guardar->id);
-			log_info(logger, "Mensaje LOCALIZED con id %i encolado", mensaje_a_guardar->id);
+		log_info(extense_logger, "Encolando el mensaje LOCALIZED con id %i", mensaje_a_guardar->id);
+		pthread_mutex_lock(&gl_localized_queue_lock);
+		queue_push(gl_localized_pokemon_queue, mensaje_a_guardar);
+		pthread_mutex_unlock(&gl_localized_queue_lock);
+		log_info(extense_logger, "Mensaje LOCALIZED con id %i encolado", mensaje_a_guardar->id);
+		log_info(logger, "Mensaje LOCALIZED con id %i encolado", mensaje_a_guardar->id);
 
-			sem_post(&gl_localized_mensajes);
+		sem_post(&gl_localized_mensajes);
 
-			devolver_id(cliente_fd, mensaje_a_guardar->id, extense_logger);
-		}
-		break;
+		devolver_id(cliente_fd, mensaje_a_guardar->id, extense_logger);
+	}
+	break;
 	case SUSCRIPCION: ;
-		log_info(extense_logger, "Codigo de operacion recibido del socket cliente %i corresponde a un SUSCRIPCION", cliente_fd);
-		t_suscripcion* suscripcion = recibir_suscripcion(cliente_fd, &size, extense_logger);
+	log_info(extense_logger, "Codigo de operacion recibido del socket cliente %i corresponde a un SUSCRIPCION", cliente_fd);
+	t_suscripcion* suscripcion = recibir_suscripcion(cliente_fd, &size, extense_logger);
 
-		if (suscripcion == NULL) {
-			free(mensaje_a_guardar);
-			pthread_exit(NULL);
-		}
+	if (suscripcion == NULL) {
+		free(mensaje_a_guardar);
+		pthread_exit(NULL);
+	}
 
-		info_modulo* info_modulo = malloc(sizeof(info_modulo));
-		info_modulo->id_cliente = suscripcion->id_cliente;
-		info_modulo->socket_cliente = cliente_fd;
+	info_modulo* info_modulo = malloc(sizeof(info_modulo));
+	info_modulo->id_cliente = suscripcion->id_cliente;
+	info_modulo->socket_cliente = cliente_fd;
 
-		switch(suscripcion->id_cola) {
-		case NEW_ID: ;
-			log_info(extense_logger, "Id de cola recibido del socket cliente %i corresponde a la cola de NEW", cliente_fd);
+	switch(suscripcion->id_cola) {
+	case NEW_ID: ;
+	log_info(extense_logger, "Id de cola recibido del socket cliente %i corresponde a la cola de NEW", cliente_fd);
 
-			pthread_mutex_lock(&gl_new_list_lock);
-			list_add(gl_new_suscriptores, (void *) &info_modulo);
-			pthread_mutex_unlock(&gl_new_list_lock);
-			enviar_new_de_memoria(info_modulo);
-			log_info(extense_logger, "Modulo con id %s agregado correctamente en la cola de NEW", suscripcion->id_cliente);
-			log_info(logger, "Modulo con id %s agregado correctamente en la cola de NEW", suscripcion->id_cliente);
-			break;
-		case APPEARED_ID: ;
-			log_info(extense_logger, "Id de cola recibido del socket cliente %i corresponde a la cola de APPEARED", cliente_fd);
-			pthread_mutex_lock(&gl_appeared_list_lock);
-			list_add(gl_appeared_suscriptores, (void *) &info_modulo);
-			pthread_mutex_unlock(&gl_appeared_list_lock);
-			enviar_appeared_de_memoria(info_modulo);
-			log_info(extense_logger, "Modulo con id %s agregado correctamente en la cola de APPEARED", suscripcion->id_cliente);
-			log_info(logger, "Modulo con id %s agregado correctamente en la cola de APPEARED", suscripcion->id_cliente);
-			break;
-		case CATCH_ID: ;
-			log_info(extense_logger, "Id de cola recibido del socket cliente %i corresponde a la cola de CATCH", cliente_fd);
-			pthread_mutex_lock(&gl_catch_list_lock);
-			list_add(gl_catch_suscriptores, (void *) &info_modulo);
-			pthread_mutex_unlock(&gl_catch_list_lock);
-			enviar_catch_de_memoria(info_modulo);
-			log_info(extense_logger, "Modulo con id %s agregado correctamente en la cola de CATCH", suscripcion->id_cliente);
-			log_info(logger, "Modulo con id %s agregado correctamente en la cola de CATCH", suscripcion->id_cliente);
-			break;
-		case CAUGHT_ID: ;
-			log_info(extense_logger, "Id de cola recibido del socket cliente %i corresponde a la cola de CAUGHT", cliente_fd);
-			pthread_mutex_lock(&gl_caught_list_lock);
-			list_add(gl_caught_suscriptores, (void *) &info_modulo);
-			pthread_mutex_unlock(&gl_caught_list_lock);
-			enviar_caught_de_memoria(info_modulo);
-			log_info(extense_logger, "Modulo con id %s agregado correctamente en la cola de CAUGHT", suscripcion->id_cliente);
-			log_info(logger, "Modulo con id %s agregado correctamente en la cola de CAUGHT", suscripcion->id_cliente);
-			break;
-		case GET_ID: ;
-			log_info(extense_logger, "Id de cola recibido del socket cliente %i corresponde a la cola de GET", cliente_fd);
-			pthread_mutex_lock(&gl_get_list_lock);
-			list_add(gl_get_suscriptores, (void *) &info_modulo);
-			pthread_mutex_unlock(&gl_get_list_lock);
-			enviar_get_de_memoria(info_modulo);
-			log_info(extense_logger, "Modulo con id %s agregado correctamente en la cola de GET", suscripcion->id_cliente);
-			log_info(logger, "Modulo con id %s agregado correctamente en la cola de GET", suscripcion->id_cliente);
-			break;
-		case LOCALIZED_ID: ;
-			log_info(extense_logger, "Id de cola recibido del socket cliente %i corresponde a la cola de LOCALIZED", cliente_fd);
-			pthread_mutex_lock(&gl_localized_list_lock);
-			list_add(gl_localized_suscriptores, (void *) &info_modulo);
-			pthread_mutex_unlock(&gl_localized_list_lock);
-			enviar_localized_de_memoria(info_modulo);
-			log_info(extense_logger, "Modulo con id %s agregado correctamente en la cola de LOCALIZED", suscripcion->id_cliente);
-			log_info(logger, "Modulo con id %s agregado correctamente en la cola de LOCALIZED", suscripcion->id_cliente);
-			break;
-		}
+	pthread_mutex_lock(&gl_new_list_lock);
+	list_add(gl_new_suscriptores, (void *) &info_modulo);
+	pthread_mutex_unlock(&gl_new_list_lock);
+	enviar_new_de_memoria(info_modulo);
+	log_info(extense_logger, "Modulo con id %s agregado correctamente en la cola de NEW", suscripcion->id_cliente);
+	log_info(logger, "Modulo con id %s agregado correctamente en la cola de NEW", suscripcion->id_cliente);
+	break;
+	case APPEARED_ID: ;
+	log_info(extense_logger, "Id de cola recibido del socket cliente %i corresponde a la cola de APPEARED", cliente_fd);
+	pthread_mutex_lock(&gl_appeared_list_lock);
+	list_add(gl_appeared_suscriptores, (void *) &info_modulo);
+	pthread_mutex_unlock(&gl_appeared_list_lock);
+	enviar_appeared_de_memoria(info_modulo);
+	log_info(extense_logger, "Modulo con id %s agregado correctamente en la cola de APPEARED", suscripcion->id_cliente);
+	log_info(logger, "Modulo con id %s agregado correctamente en la cola de APPEARED", suscripcion->id_cliente);
+	break;
+	case CATCH_ID: ;
+	log_info(extense_logger, "Id de cola recibido del socket cliente %i corresponde a la cola de CATCH", cliente_fd);
+	pthread_mutex_lock(&gl_catch_list_lock);
+	list_add(gl_catch_suscriptores, (void *) &info_modulo);
+	pthread_mutex_unlock(&gl_catch_list_lock);
+	enviar_catch_de_memoria(info_modulo);
+	log_info(extense_logger, "Modulo con id %s agregado correctamente en la cola de CATCH", suscripcion->id_cliente);
+	log_info(logger, "Modulo con id %s agregado correctamente en la cola de CATCH", suscripcion->id_cliente);
+	break;
+	case CAUGHT_ID: ;
+	log_info(extense_logger, "Id de cola recibido del socket cliente %i corresponde a la cola de CAUGHT", cliente_fd);
+	pthread_mutex_lock(&gl_caught_list_lock);
+	list_add(gl_caught_suscriptores, (void *) &info_modulo);
+	pthread_mutex_unlock(&gl_caught_list_lock);
+	enviar_caught_de_memoria(info_modulo);
+	log_info(extense_logger, "Modulo con id %s agregado correctamente en la cola de CAUGHT", suscripcion->id_cliente);
+	log_info(logger, "Modulo con id %s agregado correctamente en la cola de CAUGHT", suscripcion->id_cliente);
+	break;
+	case GET_ID: ;
+	log_info(extense_logger, "Id de cola recibido del socket cliente %i corresponde a la cola de GET", cliente_fd);
+	pthread_mutex_lock(&gl_get_list_lock);
+	list_add(gl_get_suscriptores, (void *) &info_modulo);
+	pthread_mutex_unlock(&gl_get_list_lock);
+	enviar_get_de_memoria(info_modulo);
+	log_info(extense_logger, "Modulo con id %s agregado correctamente en la cola de GET", suscripcion->id_cliente);
+	log_info(logger, "Modulo con id %s agregado correctamente en la cola de GET", suscripcion->id_cliente);
+	break;
+	case LOCALIZED_ID: ;
+	log_info(extense_logger, "Id de cola recibido del socket cliente %i corresponde a la cola de LOCALIZED", cliente_fd);
+	pthread_mutex_lock(&gl_localized_list_lock);
+	list_add(gl_localized_suscriptores, (void *) &info_modulo);
+	pthread_mutex_unlock(&gl_localized_list_lock);
+	enviar_localized_de_memoria(info_modulo);
+	log_info(extense_logger, "Modulo con id %s agregado correctamente en la cola de LOCALIZED", suscripcion->id_cliente);
+	log_info(logger, "Modulo con id %s agregado correctamente en la cola de LOCALIZED", suscripcion->id_cliente);
+	break;
+	}
 
-		free(suscripcion);
-		break;
+	free(suscripcion);
+	break;
 	default:
 		log_warning(extense_logger, "El codigo de operacion %i no corresponde a ninguna operacion conocida", cod_op);
 		close(cliente_fd);
@@ -1108,22 +1108,27 @@ void enviar_new_de_memoria(info_modulo* info_modulo) {
 void enviar_appeared_de_memoria(info_modulo* info_modulo) {
 	t_list* segmentos = obtener_segmentos_appeared(info_modulo->id_cliente);
 
-	mandable_memoria_struct* struct_para_enviar = malloc(sizeof(mandable_struct) * segmentos->elements_count);
+	if (segmentos->elements_count == 0) {
+		log_info(extense_logger, "No existen segmentos APPEARED a enviar al cliente %i socket %i", info_modulo->id_cliente, info_modulo->socket_cliente);
+	} else {
+		log_info(extense_logger, "Segmentos APPEARED a enviar al cliente %i socket %i: %i", info_modulo->id_cliente, info_modulo->socket_cliente, segmentos->elements_count);
+		mandable_memoria_struct* struct_para_enviar = malloc(sizeof(mandable_struct) * segmentos->elements_count);
 
-	pthread_t* threads = malloc(sizeof(pthread_t) * segmentos->elements_count);
+		pthread_t* threads = malloc(sizeof(pthread_t) * segmentos->elements_count);
 
-	for (int i = 0; i < segmentos->elements_count; i++) {
-		struct_para_enviar[i].info_modulo = info_modulo;
-		struct_para_enviar[i].segmento = list_get(segmentos, i);
-		pthread_create(&(threads[i]), NULL, (void*) enviar_mensaje_appeared_de_memoria, &struct_para_enviar[i]);
+		for (int i = 0; i < segmentos->elements_count; i++) {
+			struct_para_enviar[i].info_modulo = info_modulo;
+			struct_para_enviar[i].segmento = list_get(segmentos, i);
+			pthread_create(&(threads[i]), NULL, (void*) enviar_mensaje_appeared_de_memoria, &struct_para_enviar[i]);
+		}
+
+		for (int i = 0; i < segmentos->elements_count; i++) {
+			pthread_join(threads[i], NULL);
+		}
+
+		free(threads);
+		free(struct_para_enviar);
 	}
-
-	for (int i = 0; i < segmentos->elements_count; i++) {
-		pthread_join(threads[i], NULL);
-	}
-
-	free(threads);
-	free(struct_para_enviar);
 
 	list_destroy(segmentos);
 }
@@ -1131,22 +1136,27 @@ void enviar_appeared_de_memoria(info_modulo* info_modulo) {
 void enviar_catch_de_memoria(info_modulo* info_modulo) {
 	t_list* segmentos = obtener_segmentos_catch(info_modulo->id_cliente);
 
-	mandable_memoria_struct* struct_para_enviar = malloc(sizeof(mandable_struct) * segmentos->elements_count);
+	if (segmentos->elements_count == 0) {
+		log_info(extense_logger, "No existen segmentos CATCH a enviar al cliente %i socket %i", info_modulo->id_cliente, info_modulo->socket_cliente);
+	} else {
+		log_info(extense_logger, "Segmentos CATCH a enviar al cliente %i socket %i: %i", info_modulo->id_cliente, info_modulo->socket_cliente, segmentos->elements_count);
+		mandable_memoria_struct* struct_para_enviar = malloc(sizeof(mandable_struct) * segmentos->elements_count);
 
-	pthread_t* threads = malloc(sizeof(pthread_t) * segmentos->elements_count);
+		pthread_t* threads = malloc(sizeof(pthread_t) * segmentos->elements_count);
 
-	for (int i = 0; i < segmentos->elements_count; i++) {
-		struct_para_enviar[i].info_modulo = info_modulo;
-		struct_para_enviar[i].segmento = list_get(segmentos, i);
-		pthread_create(&(threads[i]), NULL, (void*) enviar_mensaje_catch_de_memoria, &struct_para_enviar[i]);
+		for (int i = 0; i < segmentos->elements_count; i++) {
+			struct_para_enviar[i].info_modulo = info_modulo;
+			struct_para_enviar[i].segmento = list_get(segmentos, i);
+			pthread_create(&(threads[i]), NULL, (void*) enviar_mensaje_catch_de_memoria, &struct_para_enviar[i]);
+		}
+
+		for (int i = 0; i < segmentos->elements_count; i++) {
+			pthread_join(threads[i], NULL);
+		}
+
+		free(threads);
+		free(struct_para_enviar);
 	}
-
-	for (int i = 0; i < segmentos->elements_count; i++) {
-		pthread_join(threads[i], NULL);
-	}
-
-	free(threads);
-	free(struct_para_enviar);
 
 	list_destroy(segmentos);
 }
@@ -1154,22 +1164,27 @@ void enviar_catch_de_memoria(info_modulo* info_modulo) {
 void enviar_caught_de_memoria(info_modulo* info_modulo) {
 	t_list* segmentos = obtener_segmentos_caught(info_modulo->id_cliente);
 
-	mandable_memoria_struct* struct_para_enviar = malloc(sizeof(mandable_struct) * segmentos->elements_count);
+	if (segmentos->elements_count == 0) {
+		log_info(extense_logger, "No existen segmentos CAUGHT a enviar al cliente %i socket %i", info_modulo->id_cliente, info_modulo->socket_cliente);
+	} else {
+		log_info(extense_logger, "Segmentos CAUGHT a enviar al cliente %i socket %i: %i", info_modulo->id_cliente, info_modulo->socket_cliente, segmentos->elements_count);
+		mandable_memoria_struct* struct_para_enviar = malloc(sizeof(mandable_struct) * segmentos->elements_count);
 
-	pthread_t* threads = malloc(sizeof(pthread_t) * segmentos->elements_count);
+		pthread_t* threads = malloc(sizeof(pthread_t) * segmentos->elements_count);
 
-	for (int i = 0; i < segmentos->elements_count; i++) {
-		struct_para_enviar[i].info_modulo = info_modulo;
-		struct_para_enviar[i].segmento = list_get(segmentos, i);
-		pthread_create(&(threads[i]), NULL, (void*) enviar_mensaje_caught_de_memoria, &struct_para_enviar[i]);
+		for (int i = 0; i < segmentos->elements_count; i++) {
+			struct_para_enviar[i].info_modulo = info_modulo;
+			struct_para_enviar[i].segmento = list_get(segmentos, i);
+			pthread_create(&(threads[i]), NULL, (void*) enviar_mensaje_caught_de_memoria, &struct_para_enviar[i]);
+		}
+
+		for (int i = 0; i < segmentos->elements_count; i++) {
+			pthread_join(threads[i], NULL);
+		}
+
+		free(threads);
+		free(struct_para_enviar);
 	}
-
-	for (int i = 0; i < segmentos->elements_count; i++) {
-		pthread_join(threads[i], NULL);
-	}
-
-	free(threads);
-	free(struct_para_enviar);
 
 	list_destroy(segmentos);
 }
@@ -1177,22 +1192,27 @@ void enviar_caught_de_memoria(info_modulo* info_modulo) {
 void enviar_get_de_memoria(info_modulo* info_modulo) {
 	t_list* segmentos = obtener_segmentos_get(info_modulo->id_cliente);
 
-	mandable_memoria_struct* struct_para_enviar = malloc(sizeof(mandable_struct) * segmentos->elements_count);
+	if (segmentos->elements_count == 0) {
+		log_info(extense_logger, "No existen segmentos GET a enviar al cliente %i socket %i", info_modulo->id_cliente, info_modulo->socket_cliente);
+	} else {
+		log_info(extense_logger, "Segmentos GET a enviar al cliente %i socket %i: %i", info_modulo->id_cliente, info_modulo->socket_cliente, segmentos->elements_count);
+		mandable_memoria_struct* struct_para_enviar = malloc(sizeof(mandable_struct) * segmentos->elements_count);
 
-	pthread_t* threads = malloc(sizeof(pthread_t) * segmentos->elements_count);
+		pthread_t* threads = malloc(sizeof(pthread_t) * segmentos->elements_count);
 
-	for (int i = 0; i < segmentos->elements_count; i++) {
-		struct_para_enviar[i].info_modulo = info_modulo;
-		struct_para_enviar[i].segmento = list_get(segmentos, i);
-		pthread_create(&(threads[i]), NULL, (void*) enviar_mensaje_get_de_memoria, &struct_para_enviar[i]);
+		for (int i = 0; i < segmentos->elements_count; i++) {
+			struct_para_enviar[i].info_modulo = info_modulo;
+			struct_para_enviar[i].segmento = list_get(segmentos, i);
+			pthread_create(&(threads[i]), NULL, (void*) enviar_mensaje_get_de_memoria, &struct_para_enviar[i]);
+		}
+
+		for (int i = 0; i < segmentos->elements_count; i++) {
+			pthread_join(threads[i], NULL);
+		}
+
+		free(threads);
+		free(struct_para_enviar);
 	}
-
-	for (int i = 0; i < segmentos->elements_count; i++) {
-		pthread_join(threads[i], NULL);
-	}
-
-	free(threads);
-	free(struct_para_enviar);
 
 	list_destroy(segmentos);
 }
@@ -1200,22 +1220,27 @@ void enviar_get_de_memoria(info_modulo* info_modulo) {
 void enviar_localized_de_memoria(info_modulo* info_modulo) {
 	t_list* segmentos = obtener_segmentos_localized(info_modulo->id_cliente);
 
-	mandable_memoria_struct* struct_para_enviar = malloc(sizeof(mandable_struct) * segmentos->elements_count);
+	if (segmentos->elements_count == 0) {
+		log_info(extense_logger, "No existen segmentos LOCALIZED a enviar al cliente %i socket %i", info_modulo->id_cliente, info_modulo->socket_cliente);
+	} else {
+		log_info(extense_logger, "Segmentos LOCALIZED a enviar al cliente %i socket %i: %i", info_modulo->id_cliente, info_modulo->socket_cliente, segmentos->elements_count);
+		mandable_memoria_struct* struct_para_enviar = malloc(sizeof(mandable_struct) * segmentos->elements_count);
 
-	pthread_t* threads = malloc(sizeof(pthread_t) * segmentos->elements_count);
+		pthread_t* threads = malloc(sizeof(pthread_t) * segmentos->elements_count);
 
-	for (int i = 0; i < segmentos->elements_count; i++) {
-		struct_para_enviar[i].info_modulo = info_modulo;
-		struct_para_enviar[i].segmento = list_get(segmentos, i);
-		pthread_create(&(threads[i]), NULL, (void*) enviar_mensaje_localized_de_memoria, &struct_para_enviar[i]);
+		for (int i = 0; i < segmentos->elements_count; i++) {
+			struct_para_enviar[i].info_modulo = info_modulo;
+			struct_para_enviar[i].segmento = list_get(segmentos, i);
+			pthread_create(&(threads[i]), NULL, (void*) enviar_mensaje_localized_de_memoria, &struct_para_enviar[i]);
+		}
+
+		for (int i = 0; i < segmentos->elements_count; i++) {
+			pthread_join(threads[i], NULL);
+		}
+
+		free(threads);
+		free(struct_para_enviar);
 	}
-
-	for (int i = 0; i < segmentos->elements_count; i++) {
-		pthread_join(threads[i], NULL);
-	}
-
-	free(threads);
-	free(struct_para_enviar);
 
 	list_destroy(segmentos);
 }
