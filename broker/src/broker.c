@@ -173,7 +173,6 @@ void procesar_request(int cod_op, int cliente_fd) {
 			pthread_mutex_lock(&gl_new_list_lock);
 			list_add(gl_new_suscriptores, (void *) &info_modulo);
 			pthread_mutex_unlock(&gl_new_list_lock);
-			log_info(extense_logger, "gilada");
 			enviar_new_de_memoria(info_modulo);
 			log_info(extense_logger, "Modulo con id %s agregado correctamente en la cola de NEW", suscripcion->id_cliente);
 			log_info(logger, "Modulo con id %s agregado correctamente en la cola de NEW", suscripcion->id_cliente);
@@ -1079,6 +1078,8 @@ void mandar_localized(void* localized_mandable) {
 
 void enviar_new_de_memoria(info_modulo* info_modulo) {
 	t_list* segmentos = obtener_segmentos_new(info_modulo->id_cliente);
+
+	log_info(extense_logger, "Segmentos NEW a enviar al cliente %i socket %i: %i", info_modulo->id_cliente, info_modulo->socket_cliente, segmentos->elements_count);
 
 	mandable_memoria_struct* struct_para_enviar = malloc(sizeof(mandable_struct) * segmentos->elements_count);
 
