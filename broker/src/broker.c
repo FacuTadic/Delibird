@@ -480,7 +480,7 @@ void atender_mensaje_new(mensaje_queue* mensaje) {
 
 	registro->limit = bytes;
 
-	guardar_mensaje_en_memoria(registro, mensaje_memoria, logger, extense_logger);
+	guardar_mensaje_en_memoria(registro, mensaje_memoria);
 
 	pthread_t* threads = malloc(sizeof(pthread_t) * suscriptores_para_enviar->elements_count);
 
@@ -539,7 +539,7 @@ void atender_mensaje_appeared(mensaje_queue* mensaje) {
 
 	registro->limit = bytes;
 
-	guardar_mensaje_en_memoria(registro, mensaje_memoria, logger, extense_logger);
+	guardar_mensaje_en_memoria(registro, mensaje_memoria);
 
 	pthread_t* threads = malloc(sizeof(pthread_t) * suscriptores_para_enviar->elements_count);
 
@@ -597,7 +597,7 @@ void atender_mensaje_catch(mensaje_queue* mensaje) {
 
 	registro->limit = bytes;
 
-	guardar_mensaje_en_memoria(registro, mensaje_memoria, logger, extense_logger);
+	guardar_mensaje_en_memoria(registro, mensaje_memoria);
 
 	pthread_t* threads = malloc(sizeof(pthread_t) * suscriptores_para_enviar->elements_count);
 
@@ -656,7 +656,7 @@ void atender_mensaje_caught(mensaje_queue* mensaje) {
 
 	registro->limit = bytes;
 
-	guardar_mensaje_en_memoria(registro, mensaje_memoria, logger, extense_logger);
+	guardar_mensaje_en_memoria(registro, mensaje_memoria);
 
 	pthread_t* threads = malloc(sizeof(pthread_t) * suscriptores_para_enviar->elements_count);
 
@@ -714,7 +714,7 @@ void atender_mensaje_get(mensaje_queue* mensaje) {
 
 	registro->limit = bytes;
 
-	guardar_mensaje_en_memoria(registro, mensaje_memoria, logger, extense_logger);
+	guardar_mensaje_en_memoria(registro, mensaje_memoria);
 
 	pthread_t* threads = malloc(sizeof(pthread_t) * suscriptores_para_enviar->elements_count);
 
@@ -773,7 +773,7 @@ void atender_mensaje_localized(mensaje_queue* mensaje) {
 
 	registro->limit = bytes;
 
-	guardar_mensaje_en_memoria(registro, mensaje_memoria, logger, extense_logger);
+	guardar_mensaje_en_memoria(registro, mensaje_memoria);
 
 	pthread_t* threads = malloc(sizeof(pthread_t) * suscriptores_para_enviar->elements_count);
 
@@ -1811,6 +1811,9 @@ void inicializar_memoria() {
 	int tamanio_memoria = config_get_int_value(config, "TAMANIO_MEMORIA");
 	tamanio_minimo_particion = config_get_int_value(config, "TAMANIO_MINIMO_PARTICION");
 	char* algoritmo_busqueda = config_get_string_value(config, "ALGORITMO_PARTICION_LIBRE");
+
+	logger_memoria = logger;
+	extense_logger_memoria = extense_logger;
 
 	char* ff = "FF";
 

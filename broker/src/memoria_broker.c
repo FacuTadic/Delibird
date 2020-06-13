@@ -16,7 +16,7 @@ void guardar_info_envios(uint32_t id, t_list* mandados, t_list* acks) {
 	free(id_char);
 }
 
-void guardar_mensaje_en_memoria(data_tabla* registro, void* mensaje, t_log* logger, t_log* extense_logger) {
+void guardar_mensaje_en_memoria(data_tabla* registro, void* mensaje) {
 	pthread_mutex_lock(&mutex_memoria);
 
 	particion_libre* lugar_en_memoria = encontrar_lugar_en_memoria(registro->limit);
@@ -27,8 +27,8 @@ void guardar_mensaje_en_memoria(data_tabla* registro, void* mensaje, t_log* logg
 		// y esta bien el chequeo == NULL ???
 		// y si es un error como hacemos ???
 	} else {
-		log_info(extense_logger, "Guardando mensaje con id %i en particion %i", registro->id, (size_t) lugar_en_memoria->desde);
-		log_info(logger, "Guardando mensaje con id %i en particion %i", registro->id, (size_t) lugar_en_memoria->desde);
+		log_info(extense_logger_memoria, "Guardando mensaje con id %i en particion %i", registro->id, (size_t) lugar_en_memoria->desde);
+		log_info(logger_memoria, "Guardando mensaje con id %i en particion %i", registro->id, (size_t) lugar_en_memoria->desde);
 		char* id_char = malloc(sizeof(char));
 		sprintf(id_char, "%u", registro->id);
 		registro->base = lugar_en_memoria->desde;
@@ -130,7 +130,11 @@ t_list* obtener_segmentos_new(uint32_t id_cliente) {
 
 	t_list* segmentos = list_create();
 
+	log_info(extense_logger_memoria, "Tamanio tabla de segmentos: %i", tabla_segmentos->elements_amount);
+
 	for (uint32_t i = 0; i < tabla_segmentos->elements_amount; i++) {
+
+		log_info(extense_logger_memoria, "LEYENDO REGISTRO");
 
 		char* id_char = malloc(sizeof(char*));
 		sprintf(id_char, "%u", i);
