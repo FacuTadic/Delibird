@@ -141,21 +141,27 @@ t_list* obtener_segmentos_new(uint32_t id_cliente) {
 
 		data_tabla* registro = (data_tabla*) dictionary_get(tabla_segmentos, id_char);
 
-		if (1 == registro->tipo) {
-			int has_to_send = 1;
-			for (int j = 0; j < registro->acknowledgements->elements_count; j++) {
-				uint32_t* id_ack = (uint32_t*) list_get(registro->acknowledgements, j);
-				if (*id_ack == id_cliente) {
-					has_to_send = 0;
+		if (registro->tipo == NULL) {
+			log_warning(extense_logger_memoria, "Registro de tabla de segmentos leido con tipo NULL");
+		} else {
+
+			if (1 == registro->tipo) {
+				int has_to_send = 1;
+				for (int j = 0; j < registro->acknowledgements->elements_count; j++) {
+					uint32_t* id_ack = (uint32_t*) list_get(registro->acknowledgements, j);
+					if (*id_ack == id_cliente) {
+						has_to_send = 0;
+					}
+				}
+
+				if (1 == has_to_send) {
+					segmento_memoria* segmento = malloc(sizeof(segmento_memoria));
+					segmento->registro = registro;
+					segmento->mensaje = registro->base;
+					list_add(segmentos, segmento);
 				}
 			}
 
-			if (1 == has_to_send) {
-				segmento_memoria* segmento = malloc(sizeof(segmento_memoria));
-				segmento->registro = registro;
-				segmento->mensaje = registro->base;
-				list_add(segmentos, segmento);
-			}
 		}
 
 		free(id_char);
@@ -176,21 +182,27 @@ t_list* obtener_segmentos_appeared(uint32_t id_cliente) {
 
 		data_tabla* registro = (data_tabla*) dictionary_get(tabla_segmentos, id_char);
 
-		if (2 == registro->tipo) {
-			int has_to_send = 1;
-			for (int j = 0; j < registro->acknowledgements->elements_count; j++) {
-				uint32_t* id_ack = (uint32_t*) list_get(registro->acknowledgements, j);
-				if (*id_ack == id_cliente) {
-					has_to_send = 0;
+		if (registro->tipo == NULL) {
+			log_warning(extense_logger_memoria, "Registro de tabla de segmentos leido con tipo NULL");
+		} else {
+
+			if (2 == registro->tipo) {
+				int has_to_send = 1;
+				for (int j = 0; j < registro->acknowledgements->elements_count; j++) {
+					uint32_t* id_ack = (uint32_t*) list_get(registro->acknowledgements, j);
+					if (*id_ack == id_cliente) {
+						has_to_send = 0;
+					}
+				}
+
+				if (1 == has_to_send) {
+					segmento_memoria* segmento = malloc(sizeof(segmento_memoria));
+					segmento->registro = registro;
+					segmento->mensaje = registro->base;
+					list_add(segmentos, segmento);
 				}
 			}
 
-			if (1 == has_to_send) {
-				segmento_memoria* segmento = malloc(sizeof(segmento_memoria));
-				segmento->registro = registro;
-				segmento->mensaje = registro->base;
-				list_add(segmentos, segmento);
-			}
 		}
 
 		free(id_char);
@@ -211,20 +223,25 @@ t_list* obtener_segmentos_get(uint32_t id_cliente) {
 
 		data_tabla* registro = (data_tabla*) dictionary_get(tabla_segmentos, id_char);
 
-		if (5 == registro->tipo) {
-			int has_to_send = 1;
-			for (int j = 0; j < registro->acknowledgements->elements_count; j++) {
-				uint32_t* id_ack = (uint32_t*) list_get(registro->acknowledgements, j);
-				if (*id_ack == id_cliente) {
-					has_to_send = 0;
-				}
-			}
+		if (registro->tipo == NULL) {
+			log_warning(extense_logger_memoria, "Registro de tabla de segmentos leido con tipo NULL");
+		} else {
 
-			if (1 == has_to_send) {
-				segmento_memoria* segmento = malloc(sizeof(segmento_memoria));
-				segmento->registro = registro;
-				segmento->mensaje = registro->base;
-				list_add(segmentos, segmento);
+			if (5 == registro->tipo) {
+				int has_to_send = 1;
+				for (int j = 0; j < registro->acknowledgements->elements_count; j++) {
+					uint32_t* id_ack = (uint32_t*) list_get(registro->acknowledgements, j);
+					if (*id_ack == id_cliente) {
+						has_to_send = 0;
+					}
+				}
+
+				if (1 == has_to_send) {
+					segmento_memoria* segmento = malloc(sizeof(segmento_memoria));
+					segmento->registro = registro;
+					segmento->mensaje = registro->base;
+					list_add(segmentos, segmento);
+				}
 			}
 		}
 
@@ -246,20 +263,25 @@ t_list* obtener_segmentos_localized(uint32_t id_cliente) {
 
 		data_tabla* registro = (data_tabla*) dictionary_get(tabla_segmentos, id_char);
 
-		if (6 == registro->tipo) {
-			int has_to_send = 1;
-			for (int j = 0; j < registro->acknowledgements->elements_count; j++) {
-				uint32_t* id_ack = (uint32_t*) list_get(registro->acknowledgements, j);
-				if (*id_ack == id_cliente) {
-					has_to_send = 0;
-				}
-			}
+		if (registro->tipo == NULL) {
+			log_warning(extense_logger_memoria, "Registro de tabla de segmentos leido con tipo NULL");
+		} else {
 
-			if (1 == has_to_send) {
-				segmento_memoria* segmento = malloc(sizeof(segmento_memoria));
-				segmento->registro = registro;
-				segmento->mensaje = registro->base;
-				list_add(segmentos, segmento);
+			if (6 == registro->tipo) {
+				int has_to_send = 1;
+				for (int j = 0; j < registro->acknowledgements->elements_count; j++) {
+					uint32_t* id_ack = (uint32_t*) list_get(registro->acknowledgements, j);
+					if (*id_ack == id_cliente) {
+						has_to_send = 0;
+					}
+				}
+
+				if (1 == has_to_send) {
+					segmento_memoria* segmento = malloc(sizeof(segmento_memoria));
+					segmento->registro = registro;
+					segmento->mensaje = registro->base;
+					list_add(segmentos, segmento);
+				}
 			}
 		}
 
@@ -281,20 +303,25 @@ t_list* obtener_segmentos_catch(uint32_t id_cliente) {
 
 		data_tabla* registro = (data_tabla*) dictionary_get(tabla_segmentos, id_char);
 
-		if (3 == registro->tipo) {
-			int has_to_send = 1;
-			for (int j = 0; j < registro->acknowledgements->elements_count; j++) {
-				uint32_t* id_ack = (uint32_t*) list_get(registro->acknowledgements, j);
-				if (*id_ack == id_cliente) {
-					has_to_send = 0;
-				}
-			}
+		if (registro->tipo == NULL) {
+			log_warning(extense_logger_memoria, "Registro de tabla de segmentos leido con tipo NULL");
+		} else {
 
-			if (1 == has_to_send) {
-				segmento_memoria* segmento = malloc(sizeof(segmento_memoria));
-				segmento->registro = registro;
-				segmento->mensaje = registro->base;
-				list_add(segmentos, segmento);
+			if (3 == registro->tipo) {
+				int has_to_send = 1;
+				for (int j = 0; j < registro->acknowledgements->elements_count; j++) {
+					uint32_t* id_ack = (uint32_t*) list_get(registro->acknowledgements, j);
+					if (*id_ack == id_cliente) {
+						has_to_send = 0;
+					}
+				}
+
+				if (1 == has_to_send) {
+					segmento_memoria* segmento = malloc(sizeof(segmento_memoria));
+					segmento->registro = registro;
+					segmento->mensaje = registro->base;
+					list_add(segmentos, segmento);
+				}
 			}
 		}
 
@@ -316,20 +343,25 @@ t_list* obtener_segmentos_caught(uint32_t id_cliente) {
 
 		data_tabla* registro = (data_tabla*) dictionary_get(tabla_segmentos, id_char);
 
-		if (4 == registro->tipo) {
-			int has_to_send = 1;
-			for (int j = 0; j < registro->acknowledgements->elements_count; j++) {
-				uint32_t* id_ack = (uint32_t*) list_get(registro->acknowledgements, j);
-				if (*id_ack == id_cliente) {
-					has_to_send = 0;
-				}
-			}
+		if (registro->tipo == NULL) {
+			log_warning(extense_logger_memoria, "Registro de tabla de segmentos leido con tipo NULL");
+		} else {
 
-			if (1 == has_to_send) {
-				segmento_memoria* segmento = malloc(sizeof(segmento_memoria));
-				segmento->registro = registro;
-				segmento->mensaje = registro->base;
-				list_add(segmentos, segmento);
+			if (4 == registro->tipo) {
+				int has_to_send = 1;
+				for (int j = 0; j < registro->acknowledgements->elements_count; j++) {
+					uint32_t* id_ack = (uint32_t*) list_get(registro->acknowledgements, j);
+					if (*id_ack == id_cliente) {
+						has_to_send = 0;
+					}
+				}
+
+				if (1 == has_to_send) {
+					segmento_memoria* segmento = malloc(sizeof(segmento_memoria));
+					segmento->registro = registro;
+					segmento->mensaje = registro->base;
+					list_add(segmentos, segmento);
+				}
 			}
 		}
 
