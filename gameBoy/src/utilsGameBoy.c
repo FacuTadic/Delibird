@@ -102,11 +102,7 @@ void agregarIDMensaje(void* stream,uint32_t id, uint32_t* offset){
 	log_info(loggerDev, "El ID de Mensaje copiado es %i", id);
 }
 
-void agregarIDModulo(void* stream, uint32_t* offset){
-	memcpy(stream,&idGameBoy, sizeof(uint32_t));
-	offset += sizeof(uint32_t);
-	log_info(loggerDev, "El ID de Modulo es %i", idGameBoy);
-}
+
 
 
 int flagCaught(char* flag){
@@ -361,7 +357,7 @@ t_buffer* crearBufferPorTipoDeMensaje(char*argv[],t_log* loggerDev ){
 
 			memcpy (stream + offset, &sizeNombre, sizeof(uint32_t));
 			offset += sizeof(uint32_t);
-			log_info(loggerDev, "Tamanio nombre pokemon %i", sizeNombrePokemon);
+			log_info(loggerDev, "Tamanio nombre pokemon %i", sizeNombre);
 
 			memcpy (stream + offset, argv[3], strlen(argv[3])+1);
 			offset += sizeNombre;
@@ -378,7 +374,10 @@ t_buffer* crearBufferPorTipoDeMensaje(char*argv[],t_log* loggerDev ){
 
 			stream = malloc(bufferAux->size);
 
-			agregarIDModulo(stream,&offset);
+			memcpy(stream,&idGameBoy, sizeof(uint32_t));
+			offset += sizeof(uint32_t);
+			log_info(loggerDev, "El ID de Modulo es %i", idGameBoy);
+
 			log_info(loggerDev, "EL offset quedo en: %i", offset);
 
 			log_info(loggerDev, "LA COLA DE MENSAJE ES: %s", argv[3]);

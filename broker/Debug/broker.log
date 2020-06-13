@@ -5521,3 +5521,30 @@
 [INFO] 15:49:25:510 Broker/(9995:9996): Nueva conexion de un proceso con socket cliente 7
 [INFO] 15:49:25:514 Broker/(9995:10020): Mensaje NEW con id 1 encolado
 [INFO] 15:49:25:514 Broker/(9995:9997): Guardando mensaje con id 1 en particion 153245928
+[INFO] 13:07:10:925 Broker/(3961:3962): Nueva conexion de un proceso con socket cliente 7
+[INFO] 13:07:10:932 Broker/(3961:6011): Mensaje APPEARED con id 1 encolado
+[INFO] 13:07:10:932 Broker/(3961:3964): Guardando mensaje con id 1 en particion 158767336
+[INFO] 13:18:35:415 Broker/(3961:3962): Nueva conexion de un proceso con socket cliente 8
+[INFO] 13:18:35:422 Broker/(3961:7466): Mensaje NEW con id 2 encolado
+[INFO] 13:18:35:422 Broker/(3961:3963): Guardando mensaje con id 2 en particion 158767372
+[INFO] 13:20:56:541 Broker/(3961:3962): Nueva conexion de un proceso con socket cliente 7
+[INFO] 13:20:56:548 Broker/(3961:7705): Mensaje CATCH con id 3 encolado
+[INFO] 13:20:56:548 Broker/(3961:3965): Guardando mensaje con id 3 en particion 158767408
+[INFO] 13:21:16:928 Broker/(3961:3962): Nueva conexion de un proceso con socket cliente 8
+[INFO] 13:21:16:932 Broker/(3961:7740): Mensaje CAUGHT con id 4 encolado
+[INFO] 13:21:16:933 Broker/(3961:3966): Guardando mensaje con id 4 en particion 158767440
+[INFO] 13:21:34:164 Broker/(3961:3962): Nueva conexion de un proceso con socket cliente 7
+[INFO] 13:23:24:238 Broker/(3961:3962): Nueva conexion de un proceso con socket cliente 8
+[INFO] 13:23:24:242 Broker/(3961:7975): Mensaje GET con id 6 encolado
+[INFO] 13:23:24:242 Broker/(3961:3967): Guardando mensaje con id 6 en particion 158767460
+[INFO] 13:24:41:613 Broker/(3961:3962): Nueva conexion de un proceso con socket cliente 7
+[INFO] 13:24:41:619 Broker/(3961:8104): Mensaje GET con id 7 encolado
+[INFO] 13:24:41:619 Broker/(3961:3967): Guardando mensaje con id 7 en particion 158767484
+[INFO] 13:25:02:351 Broker/(3961:3962): Nueva conexion de un proceso con socket cliente 8
+[INFO] 13:25:02:354 Broker/(3961:8162): Mensaje GET con id 8 encolado
+[INFO] 13:25:02:355 Broker/(3961:3967): Guardando mensaje con id 8 en particion 158767508
+[INFO] 13:25:31:98 Broker/(3961:3962): Nueva conexion de un proceso con socket cliente 7
+[INFO] 13:25:59:156 Broker/(3961:3962): Nueva conexion de un proceso con socket cliente 8
+[INFO] 13:26:10:418 Broker/(3961:3962): Nueva conexion de un proceso con socket cliente 9
+[INFO] 13:28:13:388 Broker/(3961:3962): Nueva conexion de un proceso con socket cliente 10
+[INFO] 13:31:39:481 Broker/(3961:3962): Nueva conexion de un proceso con socket cliente 11
