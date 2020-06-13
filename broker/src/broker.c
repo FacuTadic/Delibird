@@ -174,8 +174,8 @@ void procesar_request(int cod_op, int cliente_fd) {
 	list_add(gl_new_suscriptores, (void *) info_modulo);
 	pthread_mutex_unlock(&gl_new_list_lock);
 	enviar_new_de_memoria(info_modulo);
-	log_info(extense_logger, "Modulo con id %s agregado correctamente en la cola de NEW", suscripcion->id_cliente);
-	log_info(logger, "Modulo con id %s agregado correctamente en la cola de NEW", suscripcion->id_cliente);
+	log_info(extense_logger, "Modulo con id %i agregado correctamente en la cola de NEW", suscripcion->id_cliente);
+	log_info(logger, "Modulo con id %i agregado correctamente en la cola de NEW", suscripcion->id_cliente);
 	break;
 	case APPEARED_ID: ;
 	log_info(extense_logger, "Id de cola recibido del socket cliente %i corresponde a la cola de APPEARED", cliente_fd);
@@ -183,8 +183,8 @@ void procesar_request(int cod_op, int cliente_fd) {
 	list_add(gl_appeared_suscriptores, (void *) info_modulo);
 	pthread_mutex_unlock(&gl_appeared_list_lock);
 	enviar_appeared_de_memoria(info_modulo);
-	log_info(extense_logger, "Modulo con id %s agregado correctamente en la cola de APPEARED", suscripcion->id_cliente);
-	log_info(logger, "Modulo con id %s agregado correctamente en la cola de APPEARED", suscripcion->id_cliente);
+	log_info(extense_logger, "Modulo con id %i agregado correctamente en la cola de APPEARED", suscripcion->id_cliente);
+	log_info(logger, "Modulo con id %i agregado correctamente en la cola de APPEARED", suscripcion->id_cliente);
 	break;
 	case CATCH_ID: ;
 	log_info(extense_logger, "Id de cola recibido del socket cliente %i corresponde a la cola de CATCH", cliente_fd);
@@ -192,8 +192,8 @@ void procesar_request(int cod_op, int cliente_fd) {
 	list_add(gl_catch_suscriptores, (void *) info_modulo);
 	pthread_mutex_unlock(&gl_catch_list_lock);
 	enviar_catch_de_memoria(info_modulo);
-	log_info(extense_logger, "Modulo con id %s agregado correctamente en la cola de CATCH", suscripcion->id_cliente);
-	log_info(logger, "Modulo con id %s agregado correctamente en la cola de CATCH", suscripcion->id_cliente);
+	log_info(extense_logger, "Modulo con id %i agregado correctamente en la cola de CATCH", suscripcion->id_cliente);
+	log_info(logger, "Modulo con id %i agregado correctamente en la cola de CATCH", suscripcion->id_cliente);
 	break;
 	case CAUGHT_ID: ;
 	log_info(extense_logger, "Id de cola recibido del socket cliente %i corresponde a la cola de CAUGHT", cliente_fd);
@@ -201,8 +201,8 @@ void procesar_request(int cod_op, int cliente_fd) {
 	list_add(gl_caught_suscriptores, (void *) info_modulo);
 	pthread_mutex_unlock(&gl_caught_list_lock);
 	enviar_caught_de_memoria(info_modulo);
-	log_info(extense_logger, "Modulo con id %s agregado correctamente en la cola de CAUGHT", suscripcion->id_cliente);
-	log_info(logger, "Modulo con id %s agregado correctamente en la cola de CAUGHT", suscripcion->id_cliente);
+	log_info(extense_logger, "Modulo con id %i agregado correctamente en la cola de CAUGHT", suscripcion->id_cliente);
+	log_info(logger, "Modulo con id %i agregado correctamente en la cola de CAUGHT", suscripcion->id_cliente);
 	break;
 	case GET_ID: ;
 	log_info(extense_logger, "Id de cola recibido del socket cliente %i corresponde a la cola de GET", cliente_fd);
@@ -210,8 +210,8 @@ void procesar_request(int cod_op, int cliente_fd) {
 	list_add(gl_get_suscriptores, (void *) info_modulo);
 	pthread_mutex_unlock(&gl_get_list_lock);
 	enviar_get_de_memoria(info_modulo);
-	log_info(extense_logger, "Modulo con id %s agregado correctamente en la cola de GET", suscripcion->id_cliente);
-	log_info(logger, "Modulo con id %s agregado correctamente en la cola de GET", suscripcion->id_cliente);
+	log_info(extense_logger, "Modulo con id %i agregado correctamente en la cola de GET", suscripcion->id_cliente);
+	log_info(logger, "Modulo con id %i agregado correctamente en la cola de GET", suscripcion->id_cliente);
 	break;
 	case LOCALIZED_ID: ;
 	log_info(extense_logger, "Id de cola recibido del socket cliente %i corresponde a la cola de LOCALIZED", cliente_fd);
@@ -219,8 +219,8 @@ void procesar_request(int cod_op, int cliente_fd) {
 	list_add(gl_localized_suscriptores, (void *) info_modulo);
 	pthread_mutex_unlock(&gl_localized_list_lock);
 	enviar_localized_de_memoria(info_modulo);
-	log_info(extense_logger, "Modulo con id %s agregado correctamente en la cola de LOCALIZED", suscripcion->id_cliente);
-	log_info(logger, "Modulo con id %s agregado correctamente en la cola de LOCALIZED", suscripcion->id_cliente);
+	log_info(extense_logger, "Modulo con id %i agregado correctamente en la cola de LOCALIZED", suscripcion->id_cliente);
+	log_info(logger, "Modulo con id %i agregado correctamente en la cola de LOCALIZED", suscripcion->id_cliente);
 	break;
 	}
 
@@ -483,7 +483,7 @@ void atender_mensaje_new(mensaje_queue* mensaje) {
 
 	registro->limit = bytes;
 
-	guardar_mensaje_en_memoria(registro, mensaje_memoria, logger);
+	guardar_mensaje_en_memoria(registro, mensaje_memoria, logger, extense_logger);
 
 	pthread_t* threads = malloc(sizeof(pthread_t) * suscriptores_para_enviar->elements_count);
 
@@ -542,7 +542,7 @@ void atender_mensaje_appeared(mensaje_queue* mensaje) {
 
 	registro->limit = bytes;
 
-	guardar_mensaje_en_memoria(registro, mensaje_memoria, logger);
+	guardar_mensaje_en_memoria(registro, mensaje_memoria, logger, extense_logger);
 
 	pthread_t* threads = malloc(sizeof(pthread_t) * suscriptores_para_enviar->elements_count);
 
@@ -600,7 +600,7 @@ void atender_mensaje_catch(mensaje_queue* mensaje) {
 
 	registro->limit = bytes;
 
-	guardar_mensaje_en_memoria(registro, mensaje_memoria, logger);
+	guardar_mensaje_en_memoria(registro, mensaje_memoria, logger, extense_logger);
 
 	pthread_t* threads = malloc(sizeof(pthread_t) * suscriptores_para_enviar->elements_count);
 
@@ -659,7 +659,7 @@ void atender_mensaje_caught(mensaje_queue* mensaje) {
 
 	registro->limit = bytes;
 
-	guardar_mensaje_en_memoria(registro, mensaje_memoria, logger);
+	guardar_mensaje_en_memoria(registro, mensaje_memoria, logger, extense_logger);
 
 	pthread_t* threads = malloc(sizeof(pthread_t) * suscriptores_para_enviar->elements_count);
 
@@ -717,7 +717,7 @@ void atender_mensaje_get(mensaje_queue* mensaje) {
 
 	registro->limit = bytes;
 
-	guardar_mensaje_en_memoria(registro, mensaje_memoria, logger);
+	guardar_mensaje_en_memoria(registro, mensaje_memoria, logger, extense_logger);
 
 	pthread_t* threads = malloc(sizeof(pthread_t) * suscriptores_para_enviar->elements_count);
 
@@ -776,7 +776,7 @@ void atender_mensaje_localized(mensaje_queue* mensaje) {
 
 	registro->limit = bytes;
 
-	guardar_mensaje_en_memoria(registro, mensaje_memoria, logger);
+	guardar_mensaje_en_memoria(registro, mensaje_memoria, logger, extense_logger);
 
 	pthread_t* threads = malloc(sizeof(pthread_t) * suscriptores_para_enviar->elements_count);
 
@@ -1102,6 +1102,11 @@ void enviar_new_de_memoria(info_modulo* info_modulo) {
 		free(struct_para_enviar);
 	}
 
+	for (int i = 0; i < segmentos->elements_count; i++) {
+		segmento_memoria* seg = list_get(segmentos, i);
+		free(seg);
+	}
+
 	list_destroy(segmentos);
 }
 
@@ -1128,6 +1133,11 @@ void enviar_appeared_de_memoria(info_modulo* info_modulo) {
 
 		free(threads);
 		free(struct_para_enviar);
+	}
+
+	for (int i = 0; i < segmentos->elements_count; i++) {
+		segmento_memoria* seg = list_get(segmentos, i);
+		free(seg);
 	}
 
 	list_destroy(segmentos);
@@ -1158,6 +1168,11 @@ void enviar_catch_de_memoria(info_modulo* info_modulo) {
 		free(struct_para_enviar);
 	}
 
+	for (int i = 0; i < segmentos->elements_count; i++) {
+		segmento_memoria* seg = list_get(segmentos, i);
+		free(seg);
+	}
+
 	list_destroy(segmentos);
 }
 
@@ -1184,6 +1199,11 @@ void enviar_caught_de_memoria(info_modulo* info_modulo) {
 
 		free(threads);
 		free(struct_para_enviar);
+	}
+
+	for (int i = 0; i < segmentos->elements_count; i++) {
+		segmento_memoria* seg = list_get(segmentos, i);
+		free(seg);
 	}
 
 	list_destroy(segmentos);
@@ -1214,6 +1234,11 @@ void enviar_get_de_memoria(info_modulo* info_modulo) {
 		free(struct_para_enviar);
 	}
 
+	for (int i = 0; i < segmentos->elements_count; i++) {
+		segmento_memoria* seg = list_get(segmentos, i);
+		free(seg);
+	}
+
 	list_destroy(segmentos);
 }
 
@@ -1240,6 +1265,11 @@ void enviar_localized_de_memoria(info_modulo* info_modulo) {
 
 		free(threads);
 		free(struct_para_enviar);
+	}
+
+	for (int i = 0; i < segmentos->elements_count; i++) {
+		segmento_memoria* seg = list_get(segmentos, i);
+		free(seg);
 	}
 
 	list_destroy(segmentos);

@@ -49,7 +49,7 @@ typedef struct {
 } segmento_memoria; // elemento que agrupa todos los datos de un mensaje en memoria
 
 void guardar_info_envios(uint32_t id, t_list* mandados, t_list* acks);
-void guardar_mensaje_en_memoria(data_tabla* registro, void* mensaje, t_log* logger);
+void guardar_mensaje_en_memoria(data_tabla* registro, void* mensaje, t_log* logger, t_log* extense_logger);
 particion_libre* encontrar_lugar_con_ff(int limit);
 particion_libre* encontrar_lugar_con_bf(int limit);
 void* encontrar_lugar_en_memoria(int limit);
