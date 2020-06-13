@@ -5521,3 +5521,6 @@
 [INFO] 15:49:25:510 Broker/(9995:9996): Nueva conexion de un proceso con socket cliente 7
 [INFO] 15:49:25:514 Broker/(9995:10020): Mensaje NEW con id 1 encolado
 [INFO] 15:49:25:514 Broker/(9995:9997): Guardando mensaje con id 1 en particion 153245928
+[INFO] 13:07:10:925 Broker/(3961:3962): Nueva conexion de un proceso con socket cliente 7
+[INFO] 13:07:10:932 Broker/(3961:6011): Mensaje APPEARED con id 1 encolado
+[INFO] 13:07:10:932 Broker/(3961:3964): Guardando mensaje con id 1 en particion 158767336
