@@ -272,3 +272,18 @@
 [INFO] 15:49:25:509 Game-watch-client/(10019:10019): logger iniciado.
 [INFO] 15:49:25:510 Game-watch-client/(10019:10019): Iniciando conexion con el modulo BROKER
 [INFO] 15:49:25:511 Game-watch-client/(10019:10019): Conexion exitosa con BROKER IP: 127.0.0.1, PUERTO: 4444
+[INFO] 12:47:36:293 Game-watch-client/(4535:4535): logger iniciado.
+[INFO] 12:47:36:304 Game-watch-client/(4535:4535): Iniciando conexion con el modulo BROKER
+[INFO] 12:47:36:304 Game-watch-client/(4535:4535): Conexion exitosa con BROKER IP: 127.0.0.1, PUERTO: 4444
+[INFO] 12:48:47:334 Game-watch-client/(4674:4674): logger iniciado.
+[INFO] 12:48:47:336 Game-watch-client/(4674:4674): Iniciando conexion con el modulo BROKER
+[INFO] 12:48:47:336 Game-watch-client/(4674:4674): Conexion exitosa con BROKER IP: 127.0.0.1, PUERTO: 4444
+[INFO] 12:49:39:882 Game-watch-client/(4818:4818): logger iniciado.
+[INFO] 12:49:39:883 Game-watch-client/(4818:4818): Iniciando conexion con el modulo BROKER
+[INFO] 12:49:39:883 Game-watch-client/(4818:4818): Conexion exitosa con BROKER IP: 127.0.0.1, PUERTO: 4444
+[INFO] 12:50:12:292 Game-watch-client/(4831:4831): logger iniciado.
+[INFO] 12:50:12:293 Game-watch-client/(4831:4831): Iniciando conexion con el modulo BROKER
+[INFO] 12:50:12:293 Game-watch-client/(4831:4831): Conexion exitosa con BROKER IP: 127.0.0.1, PUERTO: 4444
+[INFO] 12:51:12:425 Game-watch-client/(4883:4883): logger iniciado.
+[INFO] 12:51:12:427 Game-watch-client/(4883:4883): Iniciando conexion con el modulo BROKER
+[INFO] 12:51:12:427 Game-watch-client/(4883:4883): Conexion exitosa con BROKER IP: 127.0.0.1, PUERTO: 4444

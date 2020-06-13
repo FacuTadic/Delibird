@@ -372,7 +372,7 @@ t_suscripcion* recibir_suscripcion(int socket_cliente, uint32_t* size, t_log* lo
 		return NULL;
 	}
 
-	log_info(logger, "Id de cliente recibido: %i", *size);
+	log_info(logger, "Id de cliente recibido: %i", suscripcion->id_cliente);
 
 	log_info(logger, "Recibiendo id de cola");
 
