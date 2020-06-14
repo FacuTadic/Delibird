@@ -43101,3 +43101,32 @@
 [INFO] 17:54:19:940 Broker/(2620:2753): Modulo con id 6 agregado correctamente en la cola de NEW
 [INFO] 17:56:04:35 Broker/(2928:2929): Nueva conexion de un proceso con socket cliente 7
 [INFO] 17:56:04:43 Broker/(2928:2937): Modulo con id 6 agregado correctamente en la cola de NEW
+[INFO] 17:14:29:812 Broker/(3552:3553): Nueva conexion de un proceso con socket cliente 7
+[INFO] 17:14:29:822 Broker/(3552:3561): Modulo con id 6 agregado correctamente en la cola de NEW
+[INFO] 17:14:49:438 Broker/(3552:3553): Nueva conexion de un proceso con socket cliente 8
+[INFO] 17:15:11:401 Broker/(3604:3605): Nueva conexion de un proceso con socket cliente 7
+[INFO] 17:15:11:407 Broker/(3604:3613): Mensaje NEW con id 1 encolado
+[INFO] 17:15:11:407 Broker/(3604:3606): Guardando mensaje con id 1 en particion 139151592
+[INFO] 17:15:19:672 Broker/(3604:3605): Nueva conexion de un proceso con socket cliente 8
+[INFO] 17:15:19:676 Broker/(3604:3615): Modulo con id 6 agregado correctamente en la cola de NEW
+[INFO] 17:19:10:672 Broker/(3804:3805): Nueva conexion de un proceso con socket cliente 7
+[INFO] 17:19:10:677 Broker/(3804:3813): Mensaje NEW con id 1 encolado
+[INFO] 17:19:10:677 Broker/(3804:3806): Guardando mensaje con id 1 en particion 149301480
+[INFO] 17:19:14:267 Broker/(3804:3805): Nueva conexion de un proceso con socket cliente 8
+[INFO] 17:19:14:283 Broker/(3804:3817): Mensaje NEW de memoria con id 1 al cliente 6 socket 8 enviado correctamente
+[INFO] 17:19:15:293 Broker/(3804:3815): Modulo con id 6 agregado correctamente en la cola de NEW
+[INFO] 17:42:23:362 Broker/(4261:4262): Nueva conexion de un proceso con socket cliente 7
+[INFO] 17:42:23:376 Broker/(4261:4270): Mensaje NEW con id 1 encolado
+[INFO] 17:42:23:376 Broker/(4261:4263): Guardando mensaje con id 1 en particion 150624488
+[INFO] 17:42:32:938 Broker/(4261:4262): Nueva conexion de un proceso con socket cliente 8
+[INFO] 17:42:32:957 Broker/(4261:4274): Mensaje NEW de memoria con id 1 al cliente 6 socket 8 enviado correctamente
+[INFO] 17:42:36:950 Broker/(4261:4272): Modulo con id 6 agregado correctamente en la cola de NEW
+[INFO] 18:08:50:918 Broker/(4946:4947): Nueva conexion de un proceso con socket cliente 7
+[INFO] 18:08:50:923 Broker/(4946:4955): Mensaje NEW con id 1 encolado
+[INFO] 18:08:50:923 Broker/(4946:4948): Guardando mensaje con id 1 en particion 164927720
+[INFO] 18:08:56:675 Broker/(4946:4947): Nueva conexion de un proceso con socket cliente 8
+[INFO] 18:08:56:680 Broker/(4946:4959): Mensaje NEW de memoria con id 1 al cliente 6 socket 8 enviado correctamente
+[INFO] 18:09:00:678 Broker/(4946:4957): Modulo con id 6 agregado correctamente en la cola de NEW
+[INFO] 18:11:46:146 Broker/(5025:5026): Nueva conexion de un proceso con socket cliente 7
+[INFO] 18:11:46:151 Broker/(5025:5034): Mensaje NEW con id 1 encolado
+[INFO] 18:11:46:151 Broker/(5025:5027): Guardando mensaje con id 1 en particion 159336680

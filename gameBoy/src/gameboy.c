@@ -1,6 +1,4 @@
 #include"utilsGameBoy.h"
-#include<pthread.h>
-
 
 t_log* iniciar_logger(){
 	//t_log* logger = log_create("gameBoy.log", "Game-watch-client", 1, LOG_LEVEL_INFO);

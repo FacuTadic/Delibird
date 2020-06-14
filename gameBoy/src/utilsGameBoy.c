@@ -660,17 +660,23 @@ void recibir_mensaje(int socket_cliente)
 	t_paquete* paquete = malloc(sizeof(paquete));
 	if (recv(socket_cliente, &paquete->codigo_operacion ,sizeof(uint32_t),MSG_WAITALL) == -1){
 		log_error(loggerDev, "error: No se recibió el código de operación");
+		liberar_conexion(socket_cliente);
+		pthread_exit(NULL);
 	}
 
 	paquete->buffer = malloc (sizeof(paquete->buffer));
 	if (recv(socket_cliente, &paquete->buffer->size, sizeof(uint32_t),MSG_WAITALL) == -1){
 		log_error(loggerDev, "error: No se recibió el tañaño del buffer");
+		liberar_conexion(socket_cliente);
+		pthread_exit(NULL);
 	}
 
 
 	paquete->buffer->stream = malloc(paquete->buffer->size);
 	if (recv(socket_cliente, paquete->buffer->stream, paquete->buffer->size,MSG_WAITALL) == -1){
 		log_error(loggerDev, "error: No se pudo recibir el buffer");
+		liberar_conexion(socket_cliente);
+		pthread_exit(NULL);
 	}
 
 	switch(paquete->codigo_operacion){
@@ -735,7 +741,11 @@ void recibir_mensaje(int socket_cliente)
 
 void devolver_ack(int socket_cliente) {
 	uint32_t ack = 1;
-	send(socket_cliente, (void *) &ack, sizeof(uint32_t), 0);
+	if (send(socket_cliente, (void *) &ack, sizeof(uint32_t), 0) == -1) {
+		log_error(loggerDev, "Quise mandar un ACK y no pude");
+		liberar_conexion(socket_cliente);
+		pthread_exit(NULL);
+	}
 	log_info(loggerGameBoy, "Devuelve acknowledgement ");
 
 }
@@ -751,6 +761,6 @@ void liberar_conexion(int socket_cliente)
 {
 	log_info(loggerGameBoy, "Cerrando la conexion: %i",socket_cliente);
 	close(socket_cliente);
-	log_info(loggerGameBoy, "COnexion cerrada");
+	log_info(loggerGameBoy, "Conexion cerrada");
 
 }

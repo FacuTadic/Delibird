@@ -1726,7 +1726,7 @@ void eliminar_suscriptor(pthread_mutex_t lock, t_list* lista_de_suscriptores, in
 	}
 
 	if (posicion == -1) {
-		log_warning(extense_logger, "Suscriptor con id %i y socket %i no fue encontrado en la lista de suscriptores intentando ser eliminado", suscriptor->id_cliente, suscriptor->socket_cliente);
+		log_info(extense_logger, "Suscriptor con id %i y socket %i no fue encontrado en la lista de suscriptores intentando ser eliminado, tal vez ya fue eliminado", suscriptor->id_cliente, suscriptor->socket_cliente);
 	} else {
 		log_info(extense_logger, "Eliminando suscriptor con id %i y socket %i", suscriptor->id_cliente, suscriptor->socket_cliente);
 		info_modulo* a_remover = list_remove(lista_de_suscriptores, posicion);

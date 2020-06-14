@@ -6,6 +6,7 @@
 #include<stdint.h>
 #include<signal.h>
 #include<unistd.h>
+#include<pthread.h>
 #include<sys/socket.h>
 #include<netdb.h>
 #include<string.h>
