@@ -658,8 +658,14 @@ void deserializarLocalized(void* streamLlegada){
 void recibir_mensaje(int socket_cliente)
 {
 	t_paquete* paquete = malloc(sizeof(paquete));
-	if (recv(socket_cliente, &paquete->codigo_operacion ,sizeof(uint32_t),MSG_WAITALL) == -1){
+	int status_recv = recv(socket_cliente, &paquete->codigo_operacion ,sizeof(uint32_t), MSG_WAITALL);
+	if (status_recv == -1){
 		log_error(loggerDev, "error: No se recibió el código de operación");
+		liberar_conexion(socket_cliente);
+		pthread_exit(NULL);
+	}
+	if (status_recv == 0){
+		log_warning(loggerDev, "EL BROKER MATO LA CONEXION CARAJO");
 		liberar_conexion(socket_cliente);
 		pthread_exit(NULL);
 	}
@@ -750,10 +756,10 @@ void devolver_ack(int socket_cliente) {
 
 }
 
-void recibirMensajesDeSuscripcion(int socketCliente){
+void recibirMensajesDeSuscripcion(int* socketCliente){
 	while(1){
-		recibir_mensaje(socketCliente);
-		devolver_ack(socketCliente);
+		recibir_mensaje(*socketCliente);
+		devolver_ack(*socketCliente);
 	}
 }
 

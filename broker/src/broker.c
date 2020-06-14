@@ -232,9 +232,15 @@ void procesar_request(int cod_op, int cliente_fd) {
 void atender_cliente(int* socket) {
 	uint32_t cod_op;
 	log_info(extense_logger, "Recibiendo codigo de operacion de socket %i", *socket);
-	if(recv(*socket, &cod_op, sizeof(uint32_t), MSG_WAITALL) == -1) {
+	int status_recv = recv(*socket, &cod_op, sizeof(uint32_t), MSG_WAITALL);
+	if (status_recv == -1) {
 		close(*socket);
 		log_error(extense_logger, "Hubo un problema recibiendo codigo de operacion de socket %i", *socket);
+		pthread_exit(NULL);
+	}
+	if (status_recv == 0) {
+		close(*socket);
+		log_warning(extense_logger, "El cliente acaba de cerrar la conexion correspondiente al socket %i", *socket);
 		pthread_exit(NULL);
 	}
 	log_info(extense_logger, "Codigo de operacion de socket %i recibido: %i", *socket, cod_op);
@@ -841,8 +847,14 @@ void mandar_new(void* new_mandable) {
 		log_info(extense_logger, "Mensaje NEW con id %i al cliente %i socket %i enviado correctamente", argumento_new->mensaje_queue->id, argumento_new->info->id_cliente, argumento_new->info->socket_cliente);
 		log_info(logger, "Mensaje NEW con id %i al cliente %i socket %i enviado correctamente", argumento_new->mensaje_queue->id, argumento_new->info->id_cliente, argumento_new->info->socket_cliente);
 		uint32_t id;
-		if (recv(argumento_new->info->socket_cliente, &id, sizeof(uint32_t),MSG_WAITALL) == -1) {
+		int status_recv = recv(argumento_new->info->socket_cliente, &id, sizeof(uint32_t), MSG_WAITALL);
+		if (status_recv == -1) {
 			log_error(extense_logger, "Error: No se recibió el ACK de cliente %i socket %i", argumento_new->info->id_cliente, argumento_new->info->socket_cliente);
+			status->ack = 0;
+			close(argumento_new->info->socket_cliente);
+			eliminar_suscriptor(gl_new_list_lock, gl_new_suscriptores, argumento_new->info);
+		} else if (status_recv == 0) {
+			log_warning(extense_logger, "El cliente %i acaba de cerrar la conexion correspondiente al socket %i", argumento_new->info->id_cliente, argumento_new->info->socket_cliente);
 			status->ack = 0;
 			close(argumento_new->info->socket_cliente);
 			eliminar_suscriptor(gl_new_list_lock, gl_new_suscriptores, argumento_new->info);
@@ -884,8 +896,14 @@ void mandar_appeared(void* appeared_mandable) {
 		log_info(extense_logger, "Mensaje APPEARED con id %i al cliente %i socket %i enviado correctamente", argumento_appeared->mensaje_queue->id, argumento_appeared->info->id_cliente, argumento_appeared->info->socket_cliente);
 		log_info(logger, "Mensaje APPEARED con id %i al cliente %i socket %i enviado correctamente", argumento_appeared->mensaje_queue->id, argumento_appeared->info->id_cliente, argumento_appeared->info->socket_cliente);
 		uint32_t id;
-		if (recv(argumento_appeared->info->socket_cliente,&id ,sizeof(uint32_t),MSG_WAITALL) == -1) {
+		int status_recv = recv(argumento_appeared->info->socket_cliente,&id ,sizeof(uint32_t), MSG_WAITALL);
+		if (status_recv == -1) {
 			log_error(extense_logger, "Error: No se recibió el ACK de cliente %i socket %i", argumento_appeared->info->id_cliente, argumento_appeared->info->socket_cliente);
+			status->ack = 0;
+			close(argumento_appeared->info->socket_cliente);
+			eliminar_suscriptor(gl_appeared_list_lock, gl_appeared_suscriptores, argumento_appeared->info);
+		} else if (status_recv == 0) {
+			log_error(extense_logger, "El cliente %i acaba de cerrar la conexion correspondiente al socket %i", argumento_appeared->info->id_cliente, argumento_appeared->info->socket_cliente);
 			status->ack = 0;
 			close(argumento_appeared->info->socket_cliente);
 			eliminar_suscriptor(gl_appeared_list_lock, gl_appeared_suscriptores, argumento_appeared->info);
@@ -927,8 +945,14 @@ void mandar_catch(void* catch_mandable) {
 		log_info(extense_logger, "Mensaje CATCH con id %i al cliente %i socket %i enviado correctamente", argumento_catch->mensaje_queue->id, argumento_catch->info->id_cliente, argumento_catch->info->socket_cliente);
 		log_info(logger, "Mensaje CATCH con id %i al cliente %i socket %i enviado correctamente", argumento_catch->mensaje_queue->id, argumento_catch->info->id_cliente, argumento_catch->info->socket_cliente);
 		uint32_t id;
-		if (recv(argumento_catch->info->socket_cliente, &id, sizeof(uint32_t),MSG_WAITALL) == -1) {
+		int status_recv = recv(argumento_catch->info->socket_cliente, &id, sizeof(uint32_t), MSG_WAITALL);
+		if (status_recv == -1) {
 			log_error(extense_logger, "Error: No se recibió el ACK de cliente %i socket %i", argumento_catch->info->id_cliente, argumento_catch->info->socket_cliente);
+			status->ack = 0;
+			close(argumento_catch->info->socket_cliente);
+			eliminar_suscriptor(gl_catch_list_lock, gl_catch_suscriptores, argumento_catch->info);
+		} else if (status_recv == 0) {
+			log_warning(extense_logger, "El cliente %i acaba de cerrar la conexion correspondiente al socket %i", argumento_catch->info->id_cliente, argumento_catch->info->socket_cliente);
 			status->ack = 0;
 			close(argumento_catch->info->socket_cliente);
 			eliminar_suscriptor(gl_catch_list_lock, gl_catch_suscriptores, argumento_catch->info);
@@ -970,11 +994,17 @@ void mandar_caught(void* caught_mandable) {
 		log_info(extense_logger, "Mensaje CAUGHT con id %i al cliente %i socket %i enviado correctamente", argumento_caught->mensaje_queue->id, argumento_caught->info->id_cliente, argumento_caught->info->socket_cliente);
 		log_info(logger, "Mensaje CAUGHT con id %i al cliente %i socket %i enviado correctamente", argumento_caught->mensaje_queue->id, argumento_caught->info->id_cliente, argumento_caught->info->socket_cliente);
 		uint32_t id;
-		if (recv(argumento_caught->info->socket_cliente, &id, sizeof(uint32_t),MSG_WAITALL) == -1) {
+		int status_recv = recv(argumento_caught->info->socket_cliente, &id, sizeof(uint32_t), MSG_WAITALL);
+		if (status_recv == -1) {
 			log_error(extense_logger, "Error: No se recibió el ACK de cliente %i socket %i", argumento_caught->info->id_cliente, argumento_caught->info->socket_cliente);
 			status->ack = 0;
 			close(argumento_caught->info->socket_cliente);
 			eliminar_suscriptor(gl_caught_list_lock, gl_caught_suscriptores, argumento_caught->info);
+		} else if (status_recv == 0) {
+			log_warning(extense_logger, "El cliente %i acaba de cerrar la conexion correspondiente al socket %i", argumento_caught->info->id_cliente, argumento_caught->info->socket_cliente);
+			status->ack = 0;
+			close(argumento_caught->info->socket_cliente);
+			eliminar_suscriptor(gl_catch_list_lock, gl_catch_suscriptores, argumento_caught->info);
 		} else {
 			status->ack = 1;
 			log_info(extense_logger, "ACK de cliente %i socket %i recibido", argumento_caught->info->id_cliente, argumento_caught->info->socket_cliente);
@@ -1013,8 +1043,14 @@ void mandar_get(void* get_mandable) {
 		log_info(extense_logger, "Mensaje GET con id %i al cliente %i socket %i enviado correctamente", argumento_get->mensaje_queue->id, argumento_get->info->id_cliente, argumento_get->info->socket_cliente);
 		log_info(logger, "Mensaje GET con id %i al cliente %i socket %i enviado correctamente", argumento_get->mensaje_queue->id, argumento_get->info->id_cliente, argumento_get->info->socket_cliente);
 		uint32_t id;
-		if (recv(argumento_get->info->socket_cliente, &id, sizeof(uint32_t),MSG_WAITALL) == -1) {
+		int status_recv = recv(argumento_get->info->socket_cliente, &id, sizeof(uint32_t), MSG_WAITALL);
+		if (status_recv == -1) {
 			log_error(extense_logger, "Error: No se recibió el ACK de cliente %i socket %i", argumento_get->info->id_cliente, argumento_get->info->socket_cliente);
+			status->ack = 0;
+			close(argumento_get->info->socket_cliente);
+			eliminar_suscriptor(gl_get_list_lock, gl_get_suscriptores, argumento_get->info);
+		} else if (status_recv == 0) {
+			log_warning(extense_logger, "El cliente %i acaba de cerrar la conexion correspondiente al socket %i", argumento_get->info->id_cliente, argumento_get->info->socket_cliente);
 			status->ack = 0;
 			close(argumento_get->info->socket_cliente);
 			eliminar_suscriptor(gl_get_list_lock, gl_get_suscriptores, argumento_get->info);
@@ -1056,8 +1092,14 @@ void mandar_localized(void* localized_mandable) {
 		log_info(extense_logger, "Mensaje LOCALIZED con id %i al cliente %i socket %i enviado correctamente", argumento_localized->mensaje_queue->id, argumento_localized->info->id_cliente, argumento_localized->info->socket_cliente);
 		log_info(logger, "Mensaje LOCALIZED con id %i al cliente %i socket %i enviado correctamente", argumento_localized->mensaje_queue->id, argumento_localized->info->id_cliente, argumento_localized->info->socket_cliente);
 		uint32_t id;
-		if (recv(argumento_localized->info->socket_cliente, &id, sizeof(uint32_t),MSG_WAITALL) == -1) {
+		int status_recv = recv(argumento_localized->info->socket_cliente, &id, sizeof(uint32_t), MSG_WAITALL);
+		if (status_recv == -1) {
 			log_error(extense_logger, "Error: No se recibió el ACK de cliente %i socket %i", argumento_localized->info->id_cliente, argumento_localized->info->socket_cliente);
+			status->ack = 0;
+			close(argumento_localized->info->socket_cliente);
+			eliminar_suscriptor(gl_localized_list_lock, gl_localized_suscriptores, argumento_localized->info);
+		} else if (status_recv == 0) {
+			log_warning(extense_logger, "El cliente %i acaba de cerrar la conexion correspondiente al socket %i", argumento_localized->info->id_cliente, argumento_localized->info->socket_cliente);
 			status->ack = 0;
 			close(argumento_localized->info->socket_cliente);
 			eliminar_suscriptor(gl_localized_list_lock, gl_localized_suscriptores, argumento_localized->info);
@@ -1290,8 +1332,14 @@ void enviar_mensaje_new_de_memoria(void* new_mandable_memoria) {
 		log_info(extense_logger, "Mensaje NEW de memoria con id %i al cliente %i socket %i enviado correctamente", argumento->segmento->registro->id, argumento->info_modulo->id_cliente, argumento->info_modulo->socket_cliente);
 		log_info(logger, "Mensaje NEW de memoria con id %i al cliente %i socket %i enviado correctamente", argumento->segmento->registro->id, argumento->info_modulo->id_cliente, argumento->info_modulo->socket_cliente);
 		uint32_t id;
-		if (recv(argumento->info_modulo->socket_cliente, &id, sizeof(uint32_t),MSG_WAITALL) == -1) {
+		int status_recv = recv(argumento->info_modulo->socket_cliente, &id, sizeof(uint32_t), MSG_WAITALL);
+		if (status_recv == -1) {
 			log_error(extense_logger, "Error: No se recibió el ACK de cliente %i socket %i", argumento->info_modulo->id_cliente, argumento->info_modulo->socket_cliente);
+			status->ack = 0;
+			close(argumento->info_modulo->socket_cliente);
+			eliminar_suscriptor(gl_new_list_lock, gl_new_suscriptores, argumento->info_modulo);
+		} else if (status_recv == 0) {
+			log_warning(extense_logger, "El cliente %i acaba de cerrar la conexion correspondiente al socket %i", argumento->info_modulo->id_cliente, argumento->info_modulo->socket_cliente);
 			status->ack = 0;
 			close(argumento->info_modulo->socket_cliente);
 			eliminar_suscriptor(gl_new_list_lock, gl_new_suscriptores, argumento->info_modulo);
@@ -1334,8 +1382,14 @@ void enviar_mensaje_appeared_de_memoria(void* appeared_mandable_memoria) {
 		log_info(extense_logger, "Mensaje APPEARED de memoria con id %i al cliente %i socket %i enviado correctamente", argumento->segmento->registro->id, argumento->info_modulo->id_cliente, argumento->info_modulo->socket_cliente);
 		log_info(logger, "Mensaje APPEARED de memoria con id %i al cliente %i socket %i enviado correctamente", argumento->segmento->registro->id, argumento->info_modulo->id_cliente, argumento->info_modulo->socket_cliente);
 		uint32_t id;
-		if (recv(argumento->info_modulo->socket_cliente, &id, sizeof(uint32_t),MSG_WAITALL) == -1) {
+		int status_recv = recv(argumento->info_modulo->socket_cliente, &id, sizeof(uint32_t), MSG_WAITALL);
+		if (status_recv == -1) {
 			log_error(extense_logger, "Error: No se recibió el ACK de cliente %i socket %i", argumento->info_modulo->id_cliente, argumento->info_modulo->socket_cliente);
+			status->ack = 0;
+			close(argumento->info_modulo->socket_cliente);
+			eliminar_suscriptor(gl_appeared_list_lock, gl_appeared_suscriptores, argumento->info_modulo);
+		} else if (status_recv == 0) {
+			log_warning(extense_logger, "El cliente %i acaba de cerrar la conexion correspondiente al socket %i", argumento->info_modulo->id_cliente, argumento->info_modulo->socket_cliente);
 			status->ack = 0;
 			close(argumento->info_modulo->socket_cliente);
 			eliminar_suscriptor(gl_appeared_list_lock, gl_appeared_suscriptores, argumento->info_modulo);
@@ -1378,8 +1432,14 @@ void enviar_mensaje_catch_de_memoria(void* catch_mandable_memoria) {
 		log_info(extense_logger, "Mensaje CATCH de memoria con id %i al cliente %i socket %i enviado correctamente", argumento->segmento->registro->id, argumento->info_modulo->id_cliente, argumento->info_modulo->socket_cliente);
 		log_info(logger, "Mensaje CATCH de memoria con id %i al cliente %i socket %i enviado correctamente", argumento->segmento->registro->id, argumento->info_modulo->id_cliente, argumento->info_modulo->socket_cliente);
 		uint32_t id;
-		if (recv(argumento->info_modulo->socket_cliente, &id, sizeof(uint32_t),MSG_WAITALL) == -1) {
+		int status_recv = recv(argumento->info_modulo->socket_cliente, &id, sizeof(uint32_t), MSG_WAITALL);
+		if (status_recv == -1) {
 			log_error(extense_logger, "Error: No se recibió el ACK de cliente %i socket %i", argumento->info_modulo->id_cliente, argumento->info_modulo->socket_cliente);
+			status->ack = 0;
+			close(argumento->info_modulo->socket_cliente);
+			eliminar_suscriptor(gl_catch_list_lock, gl_catch_suscriptores, argumento->info_modulo);
+		} else if (status_recv == 0) {
+			log_warning(extense_logger, "El cliente %i acaba de cerrar la conexion correspondiente al socket %i", argumento->info_modulo->id_cliente, argumento->info_modulo->socket_cliente);
 			status->ack = 0;
 			close(argumento->info_modulo->socket_cliente);
 			eliminar_suscriptor(gl_catch_list_lock, gl_catch_suscriptores, argumento->info_modulo);
@@ -1422,8 +1482,14 @@ void enviar_mensaje_caught_de_memoria(void* caught_mandable_memoria) {
 		log_info(extense_logger, "Mensaje CAUGHT de memoria con id %i al cliente %i socket %i enviado correctamente", argumento->segmento->registro->id, argumento->info_modulo->id_cliente, argumento->info_modulo->socket_cliente);
 		log_info(logger, "Mensaje CAUGHT de memoria con id %i al cliente %i socket %i enviado correctamente", argumento->segmento->registro->id, argumento->info_modulo->id_cliente, argumento->info_modulo->socket_cliente);
 		uint32_t id;
-		if (recv(argumento->info_modulo->socket_cliente, &id, sizeof(uint32_t),MSG_WAITALL) == -1) {
+		int status_recv = recv(argumento->info_modulo->socket_cliente, &id, sizeof(uint32_t), MSG_WAITALL);
+		if (status_recv == -1) {
 			log_error(extense_logger, "Error: No se recibió el ACK de cliente %i socket %i", argumento->info_modulo->id_cliente, argumento->info_modulo->socket_cliente);
+			status->ack = 0;
+			close(argumento->info_modulo->socket_cliente);
+			eliminar_suscriptor(gl_caught_list_lock, gl_caught_suscriptores, argumento->info_modulo);
+		} else if (status_recv == 0) {
+			log_warning(extense_logger, "El cliente %i acaba de cerrar la conexion correspondiente al socket %i", argumento->info_modulo->id_cliente, argumento->info_modulo->socket_cliente);
 			status->ack = 0;
 			close(argumento->info_modulo->socket_cliente);
 			eliminar_suscriptor(gl_caught_list_lock, gl_caught_suscriptores, argumento->info_modulo);
@@ -1466,8 +1532,14 @@ void enviar_mensaje_get_de_memoria(void* get_mandable_memoria) {
 		log_info(extense_logger, "Mensaje GET de memoria con id %i al cliente %i socket %i enviado correctamente", argumento->segmento->registro->id, argumento->info_modulo->id_cliente, argumento->info_modulo->socket_cliente);
 		log_info(logger, "Mensaje GET de memoria con id %i al cliente %i socket %i enviado correctamente", argumento->segmento->registro->id, argumento->info_modulo->id_cliente, argumento->info_modulo->socket_cliente);
 		uint32_t id;
-		if (recv(argumento->info_modulo->socket_cliente, &id, sizeof(uint32_t),MSG_WAITALL) == -1) {
+		int status_recv = recv(argumento->info_modulo->socket_cliente, &id, sizeof(uint32_t), MSG_WAITALL);
+		if (status_recv == -1) {
 			log_error(extense_logger, "Error: No se recibió el ACK de cliente %i socket %i", argumento->info_modulo->id_cliente, argumento->info_modulo->socket_cliente);
+			status->ack = 0;
+			close(argumento->info_modulo->socket_cliente);
+			eliminar_suscriptor(gl_get_list_lock, gl_get_suscriptores, argumento->info_modulo);
+		} else if (status_recv == 0) {
+			log_warning(extense_logger, "El cliente %i acaba de cerrar la conexion correspondiente al socket %i", argumento->info_modulo->id_cliente, argumento->info_modulo->socket_cliente);
 			status->ack = 0;
 			close(argumento->info_modulo->socket_cliente);
 			eliminar_suscriptor(gl_get_list_lock, gl_get_suscriptores, argumento->info_modulo);
@@ -1510,8 +1582,14 @@ void enviar_mensaje_localized_de_memoria(void* localized_mandable_memoria) {
 		log_info(extense_logger, "Mensaje LOCALIZED de memoria con id %i al cliente %i socket %i enviado correctamente", argumento->segmento->registro->id, argumento->info_modulo->id_cliente, argumento->info_modulo->socket_cliente);
 		log_info(logger, "Mensaje LOCALIZED de memoria con id %i al cliente %i socket %i enviado correctamente", argumento->segmento->registro->id, argumento->info_modulo->id_cliente, argumento->info_modulo->socket_cliente);
 		uint32_t id;
-		if (recv(argumento->info_modulo->socket_cliente, &id, sizeof(uint32_t),MSG_WAITALL) == -1) {
+		int status_recv = recv(argumento->info_modulo->socket_cliente, &id, sizeof(uint32_t), MSG_WAITALL);
+		if (status_recv == -1) {
 			log_error(extense_logger, "Error: No se recibió el ACK de cliente %i socket %i", argumento->info_modulo->id_cliente, argumento->info_modulo->socket_cliente);
+			close(argumento->info_modulo->socket_cliente);
+			status->ack = 0;
+			eliminar_suscriptor(gl_localized_list_lock, gl_localized_suscriptores, argumento->info_modulo);
+		} else if (status_recv == 0) {
+			log_warning(extense_logger, "El cliente %i acaba de cerrar la conexion correspondiente al socket %i", argumento->info_modulo->id_cliente, argumento->info_modulo->socket_cliente);
 			close(argumento->info_modulo->socket_cliente);
 			status->ack = 0;
 			eliminar_suscriptor(gl_localized_list_lock, gl_localized_suscriptores, argumento->info_modulo);
