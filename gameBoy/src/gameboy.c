@@ -1,14 +1,11 @@
 #include"utilsGameBoy.h"
 
-t_log* iniciar_logger(){
-	//t_log* logger = log_create("gameBoy.log", "Game-watch-client", 1, LOG_LEVEL_INFO);
+t_log* iniciar_logger() {
 	return log_create("gameBoyDEV.log", "Game-watch-client", 1, LOG_LEVEL_INFO);
 }
 
-
-t_log* iniciar_loggerGameBoy(){
-	//t_log* logger = log_create("gameBoy.log", "Game-watch-client", 1, LOG_LEVEL_INFO);
-	return log_create("gameBoy.log", "Game-watch-client", 1, LOG_LEVEL_INFO);
+t_log* iniciar_loggerGameBoy() {
+	return log_create("gameBoy.log", "Game-watch-client", 0, LOG_LEVEL_INFO);
 }
 
 t_config* leer_config(){
@@ -17,9 +14,7 @@ t_config* leer_config(){
 		return config;
 }
 
-
 void terminar_programa(int conexion);
-
 
 int main(int argc,char*argv[]){
 
