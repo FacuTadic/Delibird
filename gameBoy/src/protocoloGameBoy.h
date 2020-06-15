@@ -20,6 +20,7 @@
 typedef struct {
     char* pokemon;
     uint32_t pos_X, pos_Y, cantidad;
+    uint32_t id;
 } t_newLlegada;
 
 typedef struct {
@@ -27,26 +28,31 @@ typedef struct {
     char* pokemon;
     uint32_t lugares;
     t_list* l_coordenadas;
+    uint32_t id;
 } t_localizedLlegada;
 
 typedef struct {
     char* pokemon;
+    uint32_t id;
 } t_getLlegada;
 
 typedef struct {
 	uint32_t id_correlativo;
 	char* pokemon;
     uint32_t pos_X, pos_Y;
+    uint32_t id;
 } t_appearedLlegada;
 
 typedef struct {
     char* pokemon;
     uint32_t pos_X, pos_Y;
+    uint32_t id;
 } t_catchLlegada;
 
 typedef struct {
 	uint32_t id_correlativo;
 	uint32_t flag_caught;
+	uint32_t id;
 } t_caughtLlegada;
 
 
