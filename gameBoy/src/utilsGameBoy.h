@@ -13,7 +13,7 @@
 #include<commons/log.h>
 #include<commons/config.h>
 #include<commons/string.h>
-
+#include "protocoloGameBoy.h"
 
 t_log* loggerDev;
 t_config* config;

@@ -473,198 +473,6 @@ void enviar_mensaje(char* argv[], int socket_cliente){
 	free(paquete);
 }
 
-/**********************************       RECIBIR MENSAJE       *************************************************/
-
-
-void desserializarNew(void* streamLlegada){
-	t_new* mensajeNew = malloc(sizeof(t_new));
-	uint32_t idPropio;
-
-	log_info(loggerDev, "DESERIALIZANDO UN NEW");
-
-	memcpy(&(idPropio),streamLlegada, sizeof(uint32_t));
-	streamLlegada += sizeof(uint32_t);
-	log_info(loggerGameBoy, "Llego con el ID del Broker: %i",idPropio);
-	log_info(loggerDev, "Llego con el ID del Broker: %i",idPropio);
-
-
-//	#################		NOMBRE POKEMON		##################
-	memcpy(&(mensajeNew->sizePokemon),streamLlegada, sizeof(uint32_t));
-	streamLlegada += sizeof(uint32_t);
-	log_info(loggerDev, "El tamanio del pokemon es %i", mensajeNew->sizePokemon);
-	mensajeNew->pokemon = malloc(mensajeNew->sizePokemon);
-	memcpy(mensajeNew->pokemon, streamLlegada, sizeof(mensajeNew->sizePokemon));
-	streamLlegada += sizeof(mensajeNew->sizePokemon);
-	log_info(loggerGameBoy, "Llego el pokemon: %s",mensajeNew->pokemon);
-	log_info(loggerDev, "Llego el pokemon: %s",mensajeNew->pokemon);
-
-//	#################		COORDENADAS		#####################
-	memcpy(&(mensajeNew->coordX), streamLlegada, sizeof(uint32_t));
-	streamLlegada += sizeof(uint32_t);
-	log_info(loggerGameBoy, "Coordenada X: %i",mensajeNew->coordX);
-	log_info(loggerDev, "Coordenada X: %i",mensajeNew->coordX);
-
-	memcpy(&(mensajeNew->coordY), streamLlegada, sizeof(uint32_t));
-	streamLlegada += sizeof(uint32_t);
-	log_info(loggerGameBoy, "Coordenada Y: %i",mensajeNew->coordY);
-	log_info(loggerDev, "Coordenada Y: %i",mensajeNew->coordY);
-
-
-//	################		CANTIDAD		#####################
-	memcpy(&(mensajeNew->cantidad), streamLlegada, sizeof(uint32_t));
-	log_info(loggerGameBoy, "Cantidad: %i",mensajeNew->cantidad);
-	log_info(loggerDev, "Cantidad: %i",mensajeNew->cantidad);
-
-	free(mensajeNew->pokemon);
-	free(mensajeNew);
-}
-
-
-void deserializarAppeared(void* streamLlegada){
-	t_appeared* mensajeAppeared = malloc(sizeof(mensajeAppeared));
-	uint32_t idPropio;
-	uint32_t idCorrelativo;
-
-	log_info(loggerDev, "DESSERIALIZANDO UN APPEARED");
-
-	memcpy(&(idPropio),streamLlegada, sizeof(uint32_t));
-	streamLlegada += sizeof(uint32_t);
-	log_info(loggerGameBoy, "Llego con el ID del Broker: %i",idPropio);
-
-	memcpy(&(idCorrelativo),streamLlegada, sizeof(uint32_t));
-	streamLlegada += sizeof(uint32_t);
-	log_info(loggerGameBoy, "Llego con el ID Correlativo del Broker: %i",idPropio);
-
-
-
-//	#################		NOMBRE POKEMON		##################
-	memcpy(&(mensajeAppeared->sizePokemon),streamLlegada, sizeof(uint32_t));
-	streamLlegada += sizeof(uint32_t);
-	mensajeAppeared = malloc(mensajeAppeared->sizePokemon);
-	memcpy(&(mensajeAppeared->pokemon), streamLlegada, sizeof(mensajeAppeared->sizePokemon));
-	streamLlegada += sizeof(mensajeAppeared->sizePokemon);
-	log_info(loggerGameBoy, "Llego el pokemon: %s",mensajeAppeared->sizePokemon);
-
-//	#################		COORDENADAS		#####################
-	memcpy(&(mensajeAppeared->coordX), streamLlegada, sizeof(uint32_t));
-	streamLlegada += sizeof(uint32_t);
-	log_info(loggerGameBoy, "Coordenada X: %i",mensajeAppeared->coordX);
-
-	memcpy(&(mensajeAppeared->coordY), streamLlegada, sizeof(uint32_t));
-	streamLlegada += sizeof(uint32_t);
-	log_info(loggerGameBoy, "Coordenada Y: %i",mensajeAppeared->coordY);
-
-	free(mensajeAppeared->pokemon);
-	free(mensajeAppeared);
-}
-
-void deserializarCatch(void* streamLlegada){
-	t_catch* mensajeCatch = malloc(sizeof(mensajeCatch));
-	uint32_t idPropio;
-
-	log_info(loggerDev, "DESSERIALIZANDO UN CATCH");
-
-	memcpy(&(idPropio),streamLlegada, sizeof(uint32_t));
-	streamLlegada += sizeof(uint32_t);
-	log_info(loggerGameBoy, "Llego con el ID del Broker: %i",idPropio);
-
-
-//	#################		NOMBRE POKEMON		##################
-	memcpy(&(mensajeCatch->sizePokemon),streamLlegada, sizeof(uint32_t));
-	streamLlegada += sizeof(uint32_t);
-	mensajeCatch->pokemon = malloc(mensajeCatch->sizePokemon);
-	memcpy(&(mensajeCatch->pokemon), streamLlegada, sizeof(mensajeCatch->sizePokemon));
-	streamLlegada += sizeof(mensajeCatch->sizePokemon);
-	log_info(loggerGameBoy, "Llego el pokemon: %s",mensajeCatch->sizePokemon);
-
-//	#################		COORDENADAS		#####################
-	memcpy(&(mensajeCatch->coordX), streamLlegada, sizeof(uint32_t));
-	streamLlegada += sizeof(uint32_t);
-	log_info(loggerGameBoy, "Coordenada X: %i",mensajeCatch->coordX);
-
-	memcpy(&(mensajeCatch->coordY), streamLlegada, sizeof(uint32_t));
-	streamLlegada += sizeof(uint32_t);
-	log_info(loggerGameBoy, "Coordenada Y: %i",mensajeCatch->coordY);
-
-	free(mensajeCatch->pokemon);
-	free(mensajeCatch);
-}
-
-void deserializarCaught(void* streamLlegada){
-	t_caught* mensajeCaught = malloc(sizeof(mensajeCaught));
-	uint32_t idPropio;
-	uint32_t idCorrelativo;
-
-	log_info(loggerDev, "DESSERIALIZANDO UN CAUGHT");
-
-	memcpy(&(idPropio),streamLlegada, sizeof(uint32_t));
-	streamLlegada += sizeof(uint32_t);
-	log_info(loggerGameBoy, "Llego con el ID del Broker: %i",idPropio);
-
-	memcpy(&(idCorrelativo),streamLlegada, sizeof(uint32_t));
-	streamLlegada += sizeof(uint32_t);
-	log_info(loggerGameBoy, "Llego con el ID Correlativo del Broker: %i",idPropio);
-
-
-//	#################		FLAG		##################
-	memcpy(&(mensajeCaught->flagCaught),streamLlegada, sizeof(uint32_t));
-	log_info(loggerGameBoy, "Llego con el Flag: %i",mensajeCaught->flagCaught);
-	streamLlegada += sizeof(uint32_t);
-
-
-	free(mensajeCaught);
-}
-
-
-void deserializarLocalized(void* streamLlegada){
-
-	t_localized* mensajeLocalized = malloc(sizeof(mensajeLocalized));
-	uint32_t idPropio;
-	uint32_t idCorrelativo;
-
-	log_info(loggerDev, "DESSERIALIZANDO UN LOCALIZED?");
-
-	memcpy(&(idPropio),streamLlegada, sizeof(uint32_t));
-	streamLlegada += sizeof(uint32_t);
-	log_info(loggerGameBoy, "Llego con el ID del Broker: %i",idPropio);
-
-	memcpy(&(idCorrelativo),streamLlegada, sizeof(uint32_t));
-	streamLlegada += sizeof(uint32_t);
-	log_info(loggerGameBoy, "Llego con el ID Correlativo del Broker: %i",idPropio);
-
-
-
-//				#################		NOMBRE POKEMON		##################
-	memcpy(&(mensajeLocalized->sizePokemon),streamLlegada, sizeof(uint32_t));
-	streamLlegada += sizeof(uint32_t);
-	mensajeLocalized->pokemon = malloc(mensajeLocalized->sizePokemon);
-	memcpy(&(mensajeLocalized->pokemon), streamLlegada, sizeof(mensajeLocalized->sizePokemon));
-	streamLlegada += sizeof(mensajeLocalized->sizePokemon);
-	log_info(loggerGameBoy, "Llego el pokemon: %s",mensajeLocalized->sizePokemon);
-
-
-	uint32_t cantidad;
-	memcpy(&(cantidad),streamLlegada, sizeof(uint32_t));
-	streamLlegada += sizeof(uint32_t);
-	log_info(loggerGameBoy, "Llegaron %i del pokemon del Broker",cantidad);
-
-	for(uint32_t i = 0; i<cantidad; i++){
-		uint32_t posX;
-		uint32_t posY;
-
-		memcpy(&(posX),streamLlegada, sizeof(uint32_t));
-		streamLlegada += sizeof(uint32_t);
-
-		memcpy(&(posY),streamLlegada, sizeof(uint32_t));
-		streamLlegada += sizeof(uint32_t);
-
-		log_info(loggerGameBoy, "Posicion X: %i",posX);
-		log_info(loggerGameBoy, "Posicion Y: %i",posY);
-	}
-
-	free(mensajeLocalized->pokemon);
-	free(mensajeLocalized);
-}
 
 
 void recibir_mensaje(int socket_cliente)
@@ -702,50 +510,34 @@ void recibir_mensaje(int socket_cliente)
 	switch(paquete->codigo_operacion){
 			case NEW:
 				log_info(loggerGameBoy, "Se recibio un mensaje de tipo %i",paquete->codigo_operacion);
-				desserializarNew(paquete->buffer->stream);
+				recibir_new(socket_cliente,paquete->buffer->stream,loggerDev);
 				break;
 
 
 			case APPEARED:
 				log_info(loggerGameBoy, "Se recibio un mensaje de tipo %i",paquete->codigo_operacion);
-				deserializarAppeared(paquete->buffer->stream);
+				recibir_appeared(socket_cliente,paquete->buffer->stream,loggerDev);
 				break;
 
 			case CATCH:
 				log_info(loggerGameBoy, "Se recibio un mensaje de tipo %i",paquete->codigo_operacion);
-				deserializarCatch(paquete->buffer->stream);
+				recibir_catch(socket_cliente,paquete->buffer->stream,loggerDev);
 				break;
 
 			case CAUGHT:
 				log_info(loggerGameBoy, "Se recibio un mensaje de tipo %i",paquete->codigo_operacion);
-				deserializarCaught(paquete->buffer->stream);
+				recibir_caught(socket_cliente,paquete->buffer->stream,loggerDev);
 				break;
 
 			case GET:
 				log_info(loggerGameBoy, "Se recibio un mensaje de tipo %i",paquete->codigo_operacion);
-
-				t_get* mensajeGet = malloc(sizeof(mensajeGet));
-				uint32_t idPropio;
-
-				memcpy(&(idPropio),paquete->buffer->stream, sizeof(uint32_t));
-				paquete->buffer->stream += sizeof(uint32_t);
-				log_info(loggerGameBoy, "Llego con el ID del Broker: %i",idPropio);
-
-
-//				#################		NOMBRE POKEMON		##################
-				memcpy(&(mensajeGet->sizePokemon),paquete->buffer->stream, sizeof(uint32_t));
-				paquete->buffer->stream += sizeof(uint32_t);
-				memcpy(&(mensajeGet->pokemon), paquete->buffer->stream, sizeof(mensajeGet->sizePokemon));
-				log_info(loggerGameBoy, "Llego el pokemon: %s",mensajeGet->sizePokemon);
-
-				free(mensajeGet);
-
+				recibir_get(socket_cliente,paquete->buffer->stream,loggerDev);
 				break;
 
 
 			case LOCALIZED:
 				log_info(loggerGameBoy, "Se recibio un mensaje de tipo %i",paquete->codigo_operacion);
-				deserializarLocalized(paquete->buffer->stream);
+				recibir_localized(socket_cliente,paquete->buffer->stream,loggerDev);
 				break;
 
 			default:
