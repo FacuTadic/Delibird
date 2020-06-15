@@ -492,17 +492,10 @@ void recibir_mensaje(int socket_cliente)
 		pthread_exit(NULL);
 	}
 
-	paquete->buffer = malloc (sizeof(t_buffer));
-	if (recv(socket_cliente, &(paquete->buffer->size), sizeof(uint32_t),MSG_WAITALL) == -1){
+	uint32_t* size;
+
+	if (recv(socket_cliente, &(size), sizeof(uint32_t),MSG_WAITALL) == -1){
 		log_error(loggerDev, "error: No se recibió el tañaño del buffer");
-		liberar_conexion(socket_cliente);
-		pthread_exit(NULL);
-	}
-
-
-	paquete->buffer->stream = malloc(paquete->buffer->size);
-	if (recv(socket_cliente, paquete->buffer->stream, paquete->buffer->size,MSG_WAITALL) == -1){
-		log_error(loggerDev, "error: No se pudo recibir el buffer");
 		liberar_conexion(socket_cliente);
 		pthread_exit(NULL);
 	}
@@ -510,42 +503,40 @@ void recibir_mensaje(int socket_cliente)
 	switch(paquete->codigo_operacion){
 			case NEW:
 				log_info(loggerGameBoy, "Se recibio un mensaje de tipo %i",paquete->codigo_operacion);
-				recibir_new(socket_cliente,paquete->buffer->stream,loggerDev);
+				recibir_new(socket_cliente,size,loggerDev);
 				break;
 
 
 			case APPEARED:
 				log_info(loggerGameBoy, "Se recibio un mensaje de tipo %i",paquete->codigo_operacion);
-				recibir_appeared(socket_cliente,paquete->buffer->stream,loggerDev);
+				recibir_appeared(socket_cliente,size,loggerDev);
 				break;
 
 			case CATCH:
 				log_info(loggerGameBoy, "Se recibio un mensaje de tipo %i",paquete->codigo_operacion);
-				recibir_catch(socket_cliente,paquete->buffer->stream,loggerDev);
+				recibir_catch(socket_cliente,size,loggerDev);
 				break;
 
 			case CAUGHT:
 				log_info(loggerGameBoy, "Se recibio un mensaje de tipo %i",paquete->codigo_operacion);
-				recibir_caught(socket_cliente,paquete->buffer->stream,loggerDev);
+				recibir_caught(socket_cliente,size,loggerDev);
 				break;
 
 			case GET:
 				log_info(loggerGameBoy, "Se recibio un mensaje de tipo %i",paquete->codigo_operacion);
-				recibir_get(socket_cliente,paquete->buffer->stream,loggerDev);
+				recibir_get(socket_cliente,size,loggerDev);
 				break;
 
 
 			case LOCALIZED:
 				log_info(loggerGameBoy, "Se recibio un mensaje de tipo %i",paquete->codigo_operacion);
-				recibir_localized(socket_cliente,paquete->buffer->stream,loggerDev);
+				recibir_localized(socket_cliente,size,loggerDev);
 				break;
 
 			default:
 				log_error(loggerDev, "Me mandaron cualquier cosa");
 		}
 
-	free(paquete->buffer->stream);
-	free(paquete->buffer);
 	free(paquete);
 
 }
