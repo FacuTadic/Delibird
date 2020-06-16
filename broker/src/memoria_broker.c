@@ -19,7 +19,11 @@ void guardar_info_envios(uint32_t id, t_list* mandados, t_list* acks) {
 void guardar_mensaje_en_memoria(data_tabla* registro, void* mensaje) {
 	pthread_mutex_lock(&mutex_memoria);
 
-	particion_libre* lugar_en_memoria = encontrar_lugar_en_memoria(registro->limit);
+	int lugar_a_ubicar = encontrar_lugar_a_ubicar(registro->limit);
+
+	registro->tamanio_particion = lugar_a_ubicar;
+
+	particion_libre* lugar_en_memoria = encontrar_lugar_en_memoria(lugar_a_ubicar);
 
 	if (NULL == lugar_en_memoria) {
 		// no encontramos lugar en memoria
@@ -27,6 +31,7 @@ void guardar_mensaje_en_memoria(data_tabla* registro, void* mensaje) {
 		// y esta bien el chequeo == NULL ???
 		// y si es un error como hacemos ???
 	} else {
+
 		log_info(extense_logger_memoria, "Guardando mensaje con id %i en particion %i", registro->id, (size_t) lugar_en_memoria->desde);
 		log_info(logger_memoria, "Guardando mensaje con id %i en particion %i", registro->id, (size_t) lugar_en_memoria->desde);
 		char* id_char = malloc(sizeof(char));
@@ -37,15 +42,15 @@ void guardar_mensaje_en_memoria(data_tabla* registro, void* mensaje) {
 
 		memcpy(lugar_en_memoria->desde, mensaje, registro->limit);
 
-		ocupar_lugar_en_particiones_libres(lugar_en_memoria, registro->limit);
+		ocupar_lugar_en_particiones_libres(lugar_en_memoria, lugar_a_ubicar);
 
 	}
 
 	pthread_mutex_unlock(&mutex_memoria);
 }
 
-void ocupar_lugar_en_particiones_libres(particion_libre* lugar_en_memoria, int limit) {
-	lugar_en_memoria->desde = lugar_en_memoria->desde + limit;
+void ocupar_lugar_en_particiones_libres(particion_libre* lugar_en_memoria, int lugar_a_ubicar) {
+	lugar_en_memoria->desde = lugar_en_memoria->desde + lugar_a_ubicar;
 
 	int tamanio = tamanio_particion_libre(lugar_en_memoria);
 
@@ -76,37 +81,45 @@ void ocupar_lugar_en_particiones_libres(particion_libre* lugar_en_memoria, int l
 
 }
 
-void* encontrar_lugar_en_memoria(int limit) {
+void* encontrar_lugar_en_memoria(int lugar_a_ubicar) {
 	void* lugar;
 
-	if (1 == algoritmo_particion_libre) { // se puede poner polimosfirmo aca?
-		lugar = encontrar_lugar_con_ff(limit);
+	if (1 == algoritmo_particion_libre) {
+		lugar = encontrar_lugar_con_ff(lugar_a_ubicar);
 	} else {
-		lugar = encontrar_lugar_con_bf(limit);
+		lugar = encontrar_lugar_con_bf(lugar_a_ubicar);
 	}
 
 	return lugar;
 }
 
-particion_libre* encontrar_lugar_con_ff(int limit) {
+int encontrar_lugar_a_ubicar(int limit) {
+	if (limit > tamanio_minimo_particion) {
+		return limit;
+	} else {
+		return tamanio_minimo_particion;
+	}
+}
+
+particion_libre* encontrar_lugar_con_ff(int lugar_a_ubicar) {
 	for (int i = 0; i < particiones_libres->elements_count; i++) {
 		particion_libre* particion = list_get(particiones_libres, i);
-		if (tamanio_particion_libre(particion) > limit) {
+		if (tamanio_particion_libre(particion) > lugar_a_ubicar) {
 			return particion;
 		}
 	}
 
-	return NULL; // tal vez error, revisar
+	return NULL;
 }
 
-particion_libre* encontrar_lugar_con_bf(int limit) {
+particion_libre* encontrar_lugar_con_bf(int lugar_a_ubicar) {
 	int menor_tamanio_presente = INT_MAX;
 	particion_libre* menor_particion_presente;
 
 	for (int i = 0; i < particiones_libres->elements_count; i++) {
 		particion_libre* particion = list_get(particiones_libres, i);
 		int tamanio = tamanio_particion_libre(particion);
-		if (tamanio > limit && tamanio < menor_tamanio_presente) {
+		if (tamanio > lugar_a_ubicar && tamanio < menor_tamanio_presente) {
 			menor_tamanio_presente = tamanio;
 			menor_particion_presente = particion;
 		}
@@ -115,7 +128,7 @@ particion_libre* encontrar_lugar_con_bf(int limit) {
 	if (INT_MAX != menor_tamanio_presente) {
 		return menor_particion_presente;
 	} else {
-		return NULL; // tal vez error, revisar
+		return NULL;
 	}
 }
 
@@ -134,7 +147,7 @@ t_list* obtener_segmentos_new(uint32_t id_cliente) {
 
 	for (uint32_t i = 1; i <= tabla_segmentos->elements_amount; i++) {
 
-		char* id_char = malloc(sizeof(char*));
+		char* id_char = malloc(sizeof(char));
 		sprintf(id_char, "%u", i);
 
 		data_tabla* registro = (data_tabla*) dictionary_get(tabla_segmentos, id_char);
@@ -175,7 +188,7 @@ t_list* obtener_segmentos_appeared(uint32_t id_cliente) {
 
 	for (uint32_t i = 1; i <= tabla_segmentos->elements_amount; i++) {
 
-		char* id_char = malloc(sizeof(char*));
+		char* id_char = malloc(sizeof(char));
 		sprintf(id_char, "%u", i);
 
 		data_tabla* registro = (data_tabla*) dictionary_get(tabla_segmentos, id_char);
@@ -216,7 +229,7 @@ t_list* obtener_segmentos_get(uint32_t id_cliente) {
 
 	for (uint32_t i = 1; i <= tabla_segmentos->elements_amount; i++) {
 
-		char* id_char = malloc(sizeof(char*));
+		char* id_char = malloc(sizeof(char));
 		sprintf(id_char, "%u", i);
 
 		data_tabla* registro = (data_tabla*) dictionary_get(tabla_segmentos, id_char);
@@ -257,7 +270,7 @@ t_list* obtener_segmentos_localized(uint32_t id_cliente) {
 
 	for (uint32_t i = 1; i <= tabla_segmentos->elements_amount; i++) {
 
-		char* id_char = malloc(sizeof(char*));
+		char* id_char = malloc(sizeof(char));
 		sprintf(id_char, "%u", i);
 
 		data_tabla* registro = (data_tabla*) dictionary_get(tabla_segmentos, id_char);
@@ -298,7 +311,7 @@ t_list* obtener_segmentos_catch(uint32_t id_cliente) {
 
 	for (uint32_t i = 1; i <= tabla_segmentos->elements_amount; i++) {
 
-		char* id_char = malloc(sizeof(char*));
+		char* id_char = malloc(sizeof(char));
 		sprintf(id_char, "%u", i);
 
 		data_tabla* registro = (data_tabla*) dictionary_get(tabla_segmentos, id_char);
@@ -339,7 +352,7 @@ t_list* obtener_segmentos_caught(uint32_t id_cliente) {
 
 	for (uint32_t i = 1; i <= tabla_segmentos->elements_amount; i++) {
 
-		char* id_char = malloc(sizeof(char*));
+		char* id_char = malloc(sizeof(char));
 		sprintf(id_char, "%u", i);
 
 		data_tabla* registro = (data_tabla*) dictionary_get(tabla_segmentos, id_char);

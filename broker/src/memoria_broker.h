@@ -27,7 +27,13 @@ t_list* particiones_libres;
 // BF 2
 int algoritmo_particion_libre;
 
+// FIFO 1
+// LRU 2
+int algoritmo_reemplazo_particiones;
+
 pthread_mutex_t mutex_memoria;
+
+int frecuencia_compactacion;
 
 int tamanio_minimo_particion;
 
@@ -37,9 +43,10 @@ typedef struct {
 	int tipo;
 	t_list* envios;
 	t_list* acknowledgements;
-	int limit;
+	int limit;                     // tamanio del mensaje guardado en memoria
+	int tamanio_particion;         // tamanio de la particion
 	void* base;
-} data_tabla; // registro de la tabla
+} data_tabla;                      // registro de la tabla
 
 typedef struct {
 	void* desde;
@@ -53,28 +60,15 @@ typedef struct {
 
 void guardar_info_envios(uint32_t id, t_list* mandados, t_list* acks);
 void guardar_mensaje_en_memoria(data_tabla* registro, void* mensaje);
-particion_libre* encontrar_lugar_con_ff(int limit);
-particion_libre* encontrar_lugar_con_bf(int limit);
-void* encontrar_lugar_en_memoria(int limit);
+particion_libre* encontrar_lugar_con_ff(int lugar_a_ubicar);
+particion_libre* encontrar_lugar_con_bf(int lugar_a_ubicar);
+void* encontrar_lugar_en_memoria(int lugar_a_ubicar);
 int tamanio_particion_libre(particion_libre* particion);
-void ocupar_lugar_en_particiones_libres(particion_libre* particion, int limit);
+void ocupar_lugar_en_particiones_libres(particion_libre* particion, int lugar_a_ubicar);
 t_list* obtener_segmentos_new(uint32_t id_cliente); // lista de segmento_memoria
 t_list* obtener_segmentos_appeared(uint32_t id_cliente); // lista de segmento_memoria
 t_list* obtener_segmentos_get(uint32_t id_cliente); // lista de segmento_memoria
 t_list* obtener_segmentos_localized(uint32_t id_cliente); // lista de segmento_memoria
 t_list* obtener_segmentos_catch(uint32_t id_cliente); // lista de segmento_memoria
 t_list* obtener_segmentos_caught(uint32_t id_cliente); // lista de segmento_memoria
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+int encontrar_lugar_a_ubicar(int limit);

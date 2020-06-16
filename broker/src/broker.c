@@ -1886,21 +1886,33 @@ int main(void) {
 }
 
 void inicializar_memoria() {
-	int tamanio_memoria = config_get_int_value(config, "TAMANIO_MEMORIA");
-	tamanio_minimo_particion = config_get_int_value(config, "TAMANIO_MINIMO_PARTICION");
+	int tamanio_memoria = config_get_int_value(config, "TAMANO_MEMORIA");
+	frecuencia_compactacion = config_get_int_value(config, "FRECUENCIA_COMPACTACION");
+	tamanio_minimo_particion = config_get_int_value(config, "TAMANO_MINIMO_PARTICION");
 	char* algoritmo_busqueda = config_get_string_value(config, "ALGORITMO_PARTICION_LIBRE");
+	char* algoritmo_reemplazo = config_get_string_value(config, "ALGORITMO_REEMPLAZO");
 
 	logger_memoria = logger;
 	extense_logger_memoria = extense_logger;
 
 	char* ff = "FF";
 
-	int resultado = strcasecmp(ff, algoritmo_busqueda);
+	int resultado_busqueda = strcasecmp(ff, algoritmo_busqueda);
 
-	if (0 == resultado) {
-		algoritmo_particion_libre = 1;
+	if (0 == resultado_busqueda) {
+		algoritmo_particion_libre = 1; // FF First fit
 	} else {
-		algoritmo_particion_libre = 2;
+		algoritmo_particion_libre = 2; // BF Best fit
+	}
+
+	char* fifo = "FIFO";
+
+	int resultado_reemplazo = strcasecmp(fifo, algoritmo_reemplazo);
+
+	if (0 == resultado_reemplazo) {
+		algoritmo_reemplazo_particiones = 1; // FIFO First in first out
+	} else {
+		algoritmo_reemplazo_particiones = 2; // LRU Least recently used
 	}
 
 	memoria = malloc(tamanio_memoria);
