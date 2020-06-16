@@ -67,8 +67,6 @@ void crearTemplateDeArchivoTipo(tipoArchivo tipo, char* nombreDelArchivo ,char* 
 
 
 
-
-
 void crearDirectorioFile(char* puntoMontaje){
 	//Crear Directorio
 	crearDirectorio("Files",puntoMontaje);
@@ -95,28 +93,27 @@ void crearDirectorioBlocks(char* puntoMontaje){
 }
 
 
-char* puedeAbrirseArchivo(char* rutaArchivo){
-	log_error(loggerDev, "Se crea el archivo");
-	FILE* archivo;
-	archivo = fopen(rutaArchivo,"r+");
-	log_error(loggerDev, "Se abre el archivo");
-	//FORMA DE USAR ESTAS FUNCIONES DE CONFIG CON ARCHIVOS .TXT
-	log_error(loggerDev, "A punto de hacer el casteo");
-	char* estadoArchivo = config_get_string_value((t_config*)archivo, "OPEN");
-	log_error(loggerDev, "Si, exploto");
-	fclose(archivo);
+void cargarInfoDelMetadata(char* rutaMetadata){
 
-	log_error(loggerDev, "Deberia retornar: %s",estadoArchivo);
-	return estadoArchivo;
+	char* archivoMetaData = generadorDeRutaDeCreacionDeArchivos(rutaMetadata,"Metadata",".bin");
+	t_config* metaData=config_create(archivoMetaData);
+	log_info(loggerDev, "Se creo el config de MetaData");
+	blockSize = config_get_int_value(metaData,"BLOCK_SIZE");
+	log_info(loggerDev, "El Block Size es: %i", blockSize);
+	cantidadDeBloques = config_get_int_value(metaData,"BLOCKS");
+	log_info(loggerDev, "La cantidad de Bloques es: %i", cantidadDeBloques);
+	magicNumber = config_get_string_value(metaData, "MAGIC_NUMBER");
+	log_info(loggerDev, "El Magic Number es: %s", magicNumber);
 }
-
-
 
 void levantarTallGrass(char* puntoMontaje){
 	log_info(loggerDev, "Lenavando el Tall");
 	//Seteo de variable global
 	log_info(loggerDev, "El punto de montaje es: %s", puntoMontaje);
 	rutaMetaData = generadorDeRutaDeCreacionDeDirectorios(puntoMontaje,"Metadata");
+	cargarInfoDelMetadata(rutaMetaData);
+
+
 	char* bitMap = generadorDeRutaDeCreacionDeArchivos(rutaMetaData,"BitMap",".bin");
 
 
@@ -128,38 +125,62 @@ void levantarTallGrass(char* puntoMontaje){
 		log_info(loggerDev, "Se creo el BitMap ubicado en: %s",rutaMetaData);
 		crearDirectorioFile(puntoMontaje);
 		crearDirectorioBlocks(puntoMontaje);
-		char* rutaMetaFile = generadorDeRutaDeCreacionDeArchivos(rutaFiles,"Metadata",".bin");
-		char* pruebaValue = puedeAbrirseArchivo(rutaMetaFile);
-		log_error(loggerDev, "EL valor OPEN del directorio File es: %s",pruebaValue);
 	}
 }
 
 
 
-bool existenPosicionesEnArchivo(char* rutaArchivo){
+char* generadorDePosiciones(uint32_t posX, uint32_t posY){
+	char* coordenadas= string_new();
+	char* posXChar = string_itoa(posX);
+	char* posYChar = string_itoa(posY);
+
+	string_append(&coordenadas,posXChar);
+	string_append(&coordenadas,"-");
+	string_append(&coordenadas,posYChar);
+
+	return coordenadas;
+}
 
 
+
+bool existenPosicionesEnArchivo(char* posicion,char** blocks){
+	uint32_t i = 0;
+	while(blocks[i] != NULL){
+		log_info(loggerDev, "Se esta analizando el block: %s",blocks[i]);
+		char* rutaDeArchivo = generadorDeRutaDeCreacionDeArchivos(rutaBlocks,blocks[i],".bin");
+		t_config* archivoBlock = config_create(rutaDeArchivo);
+		if(config_has_property(archivoBlock,posicion)){
+			return true;
+		} else{
+			i++;
+		}
+	}
+	return false;
 }
 
 
 
 
+uint32_t calcularPesoTotalDeBlockEnMetadataPokemon(char** blocks){
+	uint32_t i = 0;
+	uint32_t pesoTotal = 0;
+	while(blocks[i] != NULL){
+		log_info(loggerDev, "Se esta analizando el block: %s",blocks[i]);
+		char* rutaDeArchivo = generadorDeRutaDeCreacionDeArchivos(rutaBlocks,blocks[i],".bin");
+		pesoTotal += tamanioDeUnArchivo(rutaDeArchivo);
+		log_info(loggerDev, "Tamanio total actual: %i",tamanioDeUnArchivo);
+		i++;
+	}
 
-void leerArchivo(char* rutaArchivo){
-	FILE* archivo;
-	archivo = fopen(rutaArchivo,"r+");
-
-	//FORMA DE USAR ESTAS FUNCIONES DE CONFIG CON ARCHIVOS .TXT
-	config_set_value(archivo, "OPEN", "F");
-
-	fclose(archivo);
+	log_info(loggerDev, "Tamanio total final: %i",tamanioDeUnArchivo);
+	return pesoTotal;
 }
-
-
 
 
 
 void validarPosicionesDeNew(char* rutaArchivo){
+
 
 }
 
@@ -204,8 +225,12 @@ void newPokemon(char* pokemon){
 	char* rutaDeArchivo = generadorDeRutaDeCreacionDeArchivos(generadorDeRutaDeCreacionDeDirectorios(rutaFiles,pokemon), pokemon, ".bin");
 	archivo = fopen(rutaDeArchivo,"w+");
 
-	if(puedeAbrirseArchivo(rutaDeArchivo)){
-		leerArchivo(rutaDeArchivo);
+	t_config* archivoMetadataPokemon = config_create(rutaDeArchivo);
+	char** blocksOcupados = config_get_array_value(archivoMetadataPokemon,"BLOCKS");
+
+
+	if(puedeAbrirseArchivo(archivoMetadataPokemon)){
+		activarFlagDeLectura(archivoMetadataPokemon);
 		validarPosicionesDeNew(rutaDeArchivo);
 	} else{
 		sleep(tiempoReintentoOperacion);
@@ -228,10 +253,13 @@ void catchPokemon(char* pokemon){
 	}
 
 
-	char* rutaDeArchivo = generadorDeRutaDeCreacionDeArchivos(generadorDeRutaDeCreacionDeDirectorios(rutaFiles,pokemon), pokemon, ".bin");
+	char* rutaDeArchivo = generadorDeRutaDeCreacionDeArchivos(rutaDeDirectorio, pokemon, ".bin");
+	t_config* archivoMetadataPokemon = config_create(rutaDeArchivo);
+	char** blocksOcupados = config_get_array_value(rutaDeArchivo,"BLOCKS");
 
-	if(puedeAbrirseArchivo(rutaDeArchivo)){
-		leerArchivo(rutaDeArchivo);
+
+	if(puedeAbrirseArchivo(archivoMetadataPokemon)){
+		activarFlagDeLectura(archivoMetadataPokemon);
 		validarPosicionesDeCatch(rutaDeArchivo);
 	}else{
 		sleep(tiempoReintentoOperacion);
@@ -252,10 +280,13 @@ void getPokemon(char* pokemon){
 		exit(0);
 	}
 
-	char* rutaDeArchivo = generadorDeRutaDeCreacionDeArchivos(generadorDeRutaDeCreacionDeDirectorios(rutaFiles,pokemon), pokemon, ".bin");
+	char* rutaDeArchivo = generadorDeRutaDeCreacionDeArchivos(rutaDeDirectorio, pokemon, ".bin");
+	t_config* archivoMetadataPokemon = config_create(rutaDeArchivo);
+	char** blocksOcupados = config_get_array_value(rutaDeArchivo,"BLOCKS");
 
-	if(puedeAbrirseArchivo(rutaDeArchivo)){
-		leerArchivo(rutaDeArchivo);
+
+	if(puedeAbrirseArchivo(archivoMetadataPokemon)){
+		activarFlagDeLectura(archivoMetadataPokemon);
 		validarPosicionesDeGet(rutaDeArchivo);
 	} else{
 		sleep(tiempoReintentoOperacion);

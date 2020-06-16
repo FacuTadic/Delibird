@@ -40,6 +40,9 @@ int main(void) {
 	ipBroker = string_new();
 	puertoBroker = string_new();
 
+
+// ################################################# 	SETTER Y SARAZA 	####################################################
+
 	loggerGameCard = iniciar_loggerGameCard();
 	log_info(loggerGameCard, "logger iniciado.");
 
@@ -68,7 +71,19 @@ int main(void) {
 	puntoMontaje = config_get_string_value(config, "PUNTO_MONTAJE_TALLGRASS");
 	log_info(loggerDev, "El punto de montaje es: %s", puntoMontaje);
 
+
+
+
+
+
 	levantarTallGrass(puntoMontaje);
+
+
+//################################################## 	CONEXION 	###############################################################################
+
+
+
+
 
 
 

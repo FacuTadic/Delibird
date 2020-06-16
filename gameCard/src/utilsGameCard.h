@@ -12,16 +12,19 @@
 #include<stdlib.h>
 #include<stdint.h>
 #include<signal.h>
+#include<string.h>
 #include<unistd.h>
 #include<sys/socket.h>
 #include<netdb.h>
 #include<string.h>
 #include<commons/log.h>
 #include<commons/config.h>
+#include<commons/string.h>
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <unistd.h>
 #include "archivosYDirectorios.h"
+
 
 
 
@@ -35,6 +38,7 @@ uint32_t tiempoRetardoOperacion;
 //SACAR DEL METADATA/METADATA.BIN
 uint32_t blockSize;
 uint32_t cantidadDeBloques;
+char* magicNumber;
 
 
 
@@ -46,6 +50,9 @@ t_log* loggerGameCard;
 char* rutaMetaData;
 char* rutaFiles;
 char* rutaBlocks;
+
+
+
 
 struct stat st1;
 
@@ -113,6 +120,7 @@ typedef struct
 // Appeared ‘Pikachu’ 1 5
 typedef struct
 {
+	uint32_t idMensaje;
 	uint32_t sizePokemon;
 	char*	 pokemon;
 	uint32_t  coordX;

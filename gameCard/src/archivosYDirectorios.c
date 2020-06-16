@@ -67,12 +67,40 @@ void crearArchivoEnDirectorio(char* nombreDelArchivo, char* directorio){
 	fclose(archivo);
 }
 
-char* devolverValueDeKey(char* key, char* rutaArchivo){
-	return "aa";
+
+bool puedeAbrirseArchivo(t_config* archivo){
+	log_info(loggerDev, "Se creo el falso config de la ruta");
+	char* estadoArchivo = config_get_string_value(archivo, "OPEN");
+	log_info(loggerDev, "Retorno el estado: %s", estadoArchivo);
+
+	return !strcmp(estadoArchivo,"N");
 }
 
-void modificarValueDeKey(char* key, char* value){
 
+
+void activarFlagDeLectura(t_config* archivo){
+	config_set_value(archivo, "OPEN", "F");
+	config_save(archivo);
+
+}
+
+
+void agregarCantidadSolicitadaAUnaKey(t_config* archivo,char* key, uint32_t cantidad){
+	uint32_t cantidadVieja=config_get_string_value(archivo,key);
+	cantidad+= cantidadVieja;
+	char* cantidadTotal = string_itoa(cantidad);
+
+	config_set_value(archivo,key, cantidadTotal);
+	config_save(archivo);
+}
+
+void decrementarEnUnoEnLaPosicion(t_config* archivo,char* key){
+	uint32_t cantidadVieja=config_get_string_value(archivo,key);
+	cantidadVieja -= 1;
+	char* cantidadTotal = string_itoa(cantidadVieja);
+
+	config_set_value(archivo,key, cantidadTotal);
+	config_save(archivo);
 }
 
 

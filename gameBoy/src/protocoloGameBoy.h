@@ -11,7 +11,8 @@
 #include<string.h>
 #include<pthread.h>
 
-#endif
+
+
 
 ///////////
 // MENSAJES
@@ -73,3 +74,4 @@ void recibir_caught(int socket_cliente, uint32_t* size, t_log* logger);
 void recibir_get(int socket_cliente, uint32_t* size, t_log* logger);
 void recibir_localized(int socket_cliente, uint32_t* size, t_log* logger);
 void devolver_id(int socket_cliente, uint32_t id, t_log* logger);
+#endif
