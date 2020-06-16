@@ -139,6 +139,7 @@ char* generadorDePosiciones(uint32_t posX, uint32_t posY){
 	string_append(&coordenadas,"-");
 	string_append(&coordenadas,posYChar);
 
+	log_info(loggerDev, "La coordenada generada es: %s", coordenadas);
 	return coordenadas;
 }
 
@@ -227,7 +228,7 @@ void newPokemon(char* pokemon){
 
 	t_config* archivoMetadataPokemon = config_create(rutaDeArchivo);
 	char** blocksOcupados = config_get_array_value(archivoMetadataPokemon,"BLOCKS");
-
+	log_info(loggerDev, "EL array de blocks es: %s", blocksOcupados);
 
 	if(puedeAbrirseArchivo(archivoMetadataPokemon)){
 		activarFlagDeLectura(archivoMetadataPokemon);
@@ -256,7 +257,7 @@ void catchPokemon(char* pokemon){
 	char* rutaDeArchivo = generadorDeRutaDeCreacionDeArchivos(rutaDeDirectorio, pokemon, ".bin");
 	t_config* archivoMetadataPokemon = config_create(rutaDeArchivo);
 	char** blocksOcupados = config_get_array_value(rutaDeArchivo,"BLOCKS");
-
+	log_info(loggerDev, "EL array de blocks es: %s", blocksOcupados);
 
 	if(puedeAbrirseArchivo(archivoMetadataPokemon)){
 		activarFlagDeLectura(archivoMetadataPokemon);
@@ -283,7 +284,7 @@ void getPokemon(char* pokemon){
 	char* rutaDeArchivo = generadorDeRutaDeCreacionDeArchivos(rutaDeDirectorio, pokemon, ".bin");
 	t_config* archivoMetadataPokemon = config_create(rutaDeArchivo);
 	char** blocksOcupados = config_get_array_value(rutaDeArchivo,"BLOCKS");
-
+	log_info(loggerDev, "EL array de blocks es: %s", blocksOcupados);
 
 	if(puedeAbrirseArchivo(archivoMetadataPokemon)){
 		activarFlagDeLectura(archivoMetadataPokemon);

@@ -41,6 +41,7 @@ uint32_t tamanioDeUnArchivo(char* rutaDelArchivo){
 	uint32_t tamanioArchivo = ftell(archivo);
 	fseek(archivo, 0, SEEK_SET);
 	fclose(archivo);
+	log_info(loggerDev, "EL tamanio calculado del archivo es: %i",tamanioArchivo);
 	return tamanioArchivo;
 }
 
@@ -87,8 +88,11 @@ void activarFlagDeLectura(t_config* archivo){
 
 void agregarCantidadSolicitadaAUnaKey(t_config* archivo,char* key, uint32_t cantidad){
 	uint32_t cantidadVieja=config_get_string_value(archivo,key);
+	log_info(loggerDev, "El size viejo del metadata es: %i", cantidadVieja);
 	cantidad+= cantidadVieja;
+	log_info(loggerDev, "El size nuevo del metadata es: %i", cantidad);
 	char* cantidadTotal = string_itoa(cantidad);
+	log_info(loggerDev, "La conversion de int->char es: %s", cantidadTotal);
 
 	config_set_value(archivo,key, cantidadTotal);
 	config_save(archivo);
@@ -97,7 +101,9 @@ void agregarCantidadSolicitadaAUnaKey(t_config* archivo,char* key, uint32_t cant
 void decrementarEnUnoEnLaPosicion(t_config* archivo,char* key){
 	uint32_t cantidadVieja=config_get_string_value(archivo,key);
 	cantidadVieja -= 1;
+	log_info(loggerDev, "El size viejo del metadata es: %i", cantidadVieja);
 	char* cantidadTotal = string_itoa(cantidadVieja);
+	log_info(loggerDev, "La conversion de int->char es: %s", cantidadTotal);
 
 	config_set_value(archivo,key, cantidadTotal);
 	config_save(archivo);
