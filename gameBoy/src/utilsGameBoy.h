@@ -10,10 +10,10 @@
 #include<sys/socket.h>
 #include<netdb.h>
 #include<string.h>
-#include<commons/log.h>
+
 #include<commons/config.h>
 #include<commons/string.h>
-
+#include "protocoloGameBoy.h"
 
 t_log* loggerDev;
 t_config* config;
@@ -83,6 +83,7 @@ typedef struct
     uint32_t  coordX;		// 4
     uint32_t  coordY;		// 4
     uint32_t cantidad;      // 4
+
 }t_new;                     // 16 + nombre
 
 // Localized ‘Pikachu’ 3 4 5 1 5 9 3
@@ -93,12 +94,14 @@ typedef struct
 	char*	 pokemon;
     uint32_t lugares;       // 4
     t_coord* coord;          // 8*n
+    uint32_t id;
 }t_localized;
 
 typedef struct
 {
 	uint32_t sizePokemon;
-	char*	 pokemon;;
+	char*	 pokemon;
+
 }t_get;
 
 // Appeared ‘Pikachu’ 1 5
@@ -109,6 +112,7 @@ typedef struct
 	char*	 pokemon;;
 	uint32_t  coordX;		// 4
 	uint32_t  coordY;
+
 }t_appeared;
 
 // Catch ‘Pikachu’ 1 5
@@ -119,6 +123,7 @@ typedef struct
 	char*	 pokemon;
     uint32_t  coordX;		// 4
     uint32_t  coordY;		// 4
+
 }t_catch;
 
 //Caught 0
