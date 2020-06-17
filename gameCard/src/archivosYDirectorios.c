@@ -86,6 +86,10 @@ void activarFlagDeLectura(t_config* archivo){
 }
 
 
+
+
+
+
 void agregarCantidadSolicitadaAUnaKey(t_config* archivo,char* key, uint32_t cantidad){
 	uint32_t cantidadVieja=config_get_string_value(archivo,key);
 	log_info(loggerDev, "El size viejo del metadata es: %i", cantidadVieja);
@@ -109,7 +113,11 @@ void decrementarEnUnoEnLaPosicion(t_config* archivo,char* key){
 	config_save(archivo);
 }
 
+uint32_t cantidadDePokemonEnUnaCoordenada(t_config* archivoBlock,char* posicion){
+	return config_get_int_value(archivoBlock,posicion);
 
+
+}
 
 
 

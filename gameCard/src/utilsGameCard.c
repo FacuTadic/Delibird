@@ -160,6 +160,19 @@ bool existenPosicionesEnArchivo(char* posicion,char** blocks){
 	return false;
 }
 
+char* blockDondeSeEncuentraLaPosicion(char* posicion, char** blocks){
+	uint32_t i = 0;
+	while(blocks[i] != NULL){
+		log_info(loggerDev, "Se esta analizando el block: %s",blocks[i]);
+		char* rutaDeArchivo = generadorDeRutaDeCreacionDeArchivos(rutaBlocks,blocks[i],".bin");
+		t_config* archivoBlock = config_create(rutaDeArchivo);
+		if(config_has_property(archivoBlock,posicion)){
+			return blocks[i];
+		} else{
+			i++;
+		}
+}
+
 
 
 
@@ -185,17 +198,28 @@ void validarPosicionesDeNew(char* rutaArchivo){
 
 }
 
-void validarPosicionesDeCatch(rutaDeArchivo){
-	if(existenPosicionesEnArchivo(rutaDeArchivo)){
-		/*
+void validarPosicionesDeCatch(char* rutaDeArchivo,char* posicion,char** blocksOcupados){
+	if(existenPosicionesEnArchivo(posicion,blocksOcupados)){
+		char* block = blockDondeSeEncuentraLaPosicion(posicion,blocksOcupados);
+		char* rutaDelBlock = generadorDeRutaDeCreacionDeArchivos(rutaBlocks,block,".bin");
+		t_config* archivoBlock = config_create(rutaDelBlock);
 
-		validar cantidad = 1 => elimino la linea
-		Sino decremento en -1
-		*/
+		uint32_t cantidadPokemon = cantidadDePokemonEnUnaCoordenada(archivoBlock,posicion);
+
+		if(cantidadPokemon == 1){
+			eliminarKeyValueDe(archivoBlock,posicion);
+		}else{
+			decrementarEnUnoEnLaPosicion(archivoBlock,posicion);
+		}
+
 	} else {
 		log_error(loggerGameCard, "No existen las posiciones en el archivo");
 	}
 }
+
+}
+
+
 
 void validarPosicionesDeGet(rutaDeArchivo){
 
@@ -261,7 +285,7 @@ void catchPokemon(char* pokemon){
 
 	if(puedeAbrirseArchivo(archivoMetadataPokemon)){
 		activarFlagDeLectura(archivoMetadataPokemon);
-		validarPosicionesDeCatch(rutaDeArchivo);
+		validarPosicionesDeCatch(rutaDeArchivo,archivoMetadataPokemon);
 	}else{
 		sleep(tiempoReintentoOperacion);
 		catchPokemon(pokemon);
