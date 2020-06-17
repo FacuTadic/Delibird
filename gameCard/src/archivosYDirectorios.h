@@ -14,4 +14,14 @@ uint32_t tamanioDeUnArchivo(char* rutaDelArchivo);
 void crearDirectorio(char* directorio, char* puntoMontaje);
 void crearArchivoEnDirectorio(char* nombreDelArchivo, char* directorio);
 
+
+bool puedeAbrirseArchivo(t_config* archivo);
+void activarFlagDeLectura(t_config* archivo);
+void eliminarKeyValueDe(t_config* archivoBlock,char* posicion);
+void agregarCantidadSolicitadaAUnaKey(t_config* archivo,char* key, uint32_t cantidad);
+void decrementarEnUnoEnLaPosicion(t_config* archivo,char* key);
+uint32_t cantidadDePokemonEnUnaCoordenada(t_config* archivoBlock,char* posicion);
+char* seleccionarBlockParaCargarPosiciones(char** blocksOcupados, char*posicion, uint32_t cantidad);
+void agregarNuevaPosicionA(char* block, char* posicion, uint32_t cantidad);
+
 #endif /* ARCHIVOSYDIRECTORIOS_H_ */
