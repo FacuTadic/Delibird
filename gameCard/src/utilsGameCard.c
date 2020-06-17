@@ -130,20 +130,6 @@ void levantarTallGrass(char* puntoMontaje){
 
 
 
-char* generadorDePosiciones(uint32_t posX, uint32_t posY){
-	char* coordenadas= string_new();
-	char* posXChar = string_itoa(posX);
-	char* posYChar = string_itoa(posY);
-
-	string_append(&coordenadas,posXChar);
-	string_append(&coordenadas,"-");
-	string_append(&coordenadas,posYChar);
-
-	log_info(loggerDev, "La coordenada generada es: %s", coordenadas);
-	return coordenadas;
-}
-
-
 
 bool existenPosicionesEnArchivo(char* posicion,char** blocks){
 	uint32_t i = 0;
@@ -193,12 +179,21 @@ uint32_t calcularPesoTotalDeBlockEnMetadataPokemon(char** blocks){
 
 
 
-void validarPosicionesDeNew(char* rutaArchivo){
+void validarPosicionesDeNew(char** blocksOcupados,char* posicion, uint32_t cantidad){
+	if(existenPosicionesEnArchivo(posicion,blocksOcupados)){
+			char* block = blockDondeSeEncuentraLaPosicion(posicion,blocksOcupados);
+			char* rutaDelBlock = generadorDeRutaDeCreacionDeArchivos(rutaBlocks,block,".bin");
+			t_config* archivoBlock = config_create(rutaDelBlock);
+			agregarCantidadSolicitadaAUnaKey(archivoBlock,posicion,cantidad);
+		} else {
+			char* blockOptimo = seleccionarBlockParaCargarPosiciones(blocksOcupados,posicion, cantidad);
+			agregarNuevaPosicionA(blockOptimo,posicion, cantidad);
 
+		}
 
 }
 
-void validarPosicionesDeCatch(char* rutaDeArchivo,char* posicion,char** blocksOcupados){
+void validarPosicionesDeCatch(char** blocksOcupados, char* posicion){
 	if(existenPosicionesEnArchivo(posicion,blocksOcupados)){
 		char* block = blockDondeSeEncuentraLaPosicion(posicion,blocksOcupados);
 		char* rutaDelBlock = generadorDeRutaDeCreacionDeArchivos(rutaBlocks,block,".bin");
@@ -216,7 +211,6 @@ void validarPosicionesDeCatch(char* rutaDeArchivo,char* posicion,char** blocksOc
 		log_error(loggerGameCard, "No existen las posiciones en el archivo");
 	}
 }
-
 }
 
 
@@ -226,18 +220,14 @@ void validarPosicionesDeGet(rutaDeArchivo){
 }
 
 
-bool hayEspacioEnElBlock(char* rutaDelBlock, char* mensaje){
-	uint32_t tamanioBlock = tamanioDeUnArchivo(rutaDelBlock);
-	uint32_t tamanioMensaje = sizeof(mensaje);
 
-	return tamanioBlock+tamanioMensaje < blockSize;
-}
 
 
 
 
 void newPokemon(char* pokemon){
 	char* rutaDeDirectorio = generadorDeRutaDeCreacionDeDirectorios(rutaFiles,pokemon);
+	char* posicion = generadorDePosiciones();
 
 	if(noExisteDirectorio(rutaDeDirectorio)){
 		crearDirectorio(pokemon,rutaFiles);
@@ -256,7 +246,7 @@ void newPokemon(char* pokemon){
 
 	if(puedeAbrirseArchivo(archivoMetadataPokemon)){
 		activarFlagDeLectura(archivoMetadataPokemon);
-		validarPosicionesDeNew(rutaDeArchivo);
+		validarPosicionesDeNew(blocksOcupados,posicion);
 	} else{
 		sleep(tiempoReintentoOperacion);
 		newPokemon(pokemon);
@@ -271,6 +261,7 @@ void newPokemon(char* pokemon){
 void catchPokemon(char* pokemon){
 
 	char* rutaDeDirectorio = generadorDeRutaDeCreacionDeDirectorios(rutaFiles,pokemon);
+	char* posicion = generadorDePosiciones();
 
 	if(noExisteDirectorio(rutaDeDirectorio)){
 		log_error(loggerGameCard, "No existe directorio dentro de Files para el pokemon: %s",pokemon);
@@ -285,7 +276,7 @@ void catchPokemon(char* pokemon){
 
 	if(puedeAbrirseArchivo(archivoMetadataPokemon)){
 		activarFlagDeLectura(archivoMetadataPokemon);
-		validarPosicionesDeCatch(rutaDeArchivo,archivoMetadataPokemon);
+		validarPosicionesDeCatch(blocksOcupados,posicion);
 	}else{
 		sleep(tiempoReintentoOperacion);
 		catchPokemon(pokemon);
@@ -352,103 +343,6 @@ t_paquete* crearPaquete(t_buffer* buffer){
 	memcpy (paquete->buffer,  buffer, buffer->size + sizeof(uint32_t));
 	return paquete;
 }
-
-
-
-
-
-
-
-
-/*
-void recibir_mensaje(int socket_cliente)
-{
-	t_paquete* paquete = malloc(sizeof(paquete));
-	if (recv(socket_cliente, &paquete->codigo_operacion ,sizeof(uint32_t),MSG_WAITALL) == -1){
-		log_error(loggerDev, "error: No se recibió el código de operación");
-	}
-
-	paquete->buffer = malloc (sizeof(paquete->buffer));
-	if (recv(socket_cliente, &paquete->buffer->size, sizeof(uint32_t),MSG_WAITALL) == -1){
-		log_error(loggerDev, "error: No se recibió el tañaño del buffer");
-	}
-
-
-	paquete->buffer->stream = malloc(paquete->buffer->size);
-	if (recv(socket_cliente, paquete->buffer->stream, paquete->buffer->size,MSG_WAITALL) == -1){
-		log_error(loggerDev, "error: No se pudo recibir el buffer");
-	}
-
-	switch(paquete->codigo_operacion){
-			case NEW:
-				log_error(loggerGameCard, "Se recibio un mensaje de tipo %i",paquete->codigo_operacion);
-				desserializarNew(paquete->buffer->stream);
-				break;
-
-
-			case APPEARED:
-				log_error(loggerGameCard, "Se recibio un mensaje de tipo %i",paquete->codigo_operacion);
-				deserializarAppeard(paquete->buffer->stream);
-				break;
-
-			case CATCH:
-				log_error(loggerGameCard, "Se recibio un mensaje de tipo %i",paquete->codigo_operacion);
-				deserializarCatch(paquete->buffer->stream);
-				break;
-
-			case CAUGHT:
-				log_error(loggerGameCard, "Se recibio un mensaje de tipo %i",paquete->codigo_operacion);
-				deserializarCaught(paquete->buffer->stream);
-				break;
-
-			case GET:
-				log_error(loggerGameCard, "Se recibio un mensaje de tipo %i",paquete->codigo_operacion);
-
-				t_get* mensajeGet = malloc(sizeof(mensajeGet));
-				uint32_t idPropio;
-
-				memcpy(&(idPropio),paquete->buffer->stream, sizeof(uint32_t));
-				paquete->buffer->stream += sizeof(uint32_t);
-				log_error(loggerGameCard, "Llego con el ID del Broker: %i",idPropio);
-
-
-//				#################		NOMBRE POKEMON		##################
-				memcpy(&(mensajeGet->sizePokemon),paquete->buffer->stream, sizeof(uint32_t));
-				paquete->buffer->stream += sizeof(uint32_t);
-				memcpy(&(mensajeGet->pokemon), paquete->buffer->stream, sizeof(mensajeGet->sizePokemon));
-				log_error(loggerGameCard, "Llego el pokemon: %s",mensajeGet->sizePokemon);
-
-				free(mensajeGet);
-
-				break;
-
-
-			case LOCALIZED:
-				log_error(loggerGameCard, "Se recibio un mensaje de tipo %i",paquete->codigo_operacion);
-				deserializarLocalized(paquete->buffer->stream);
-				break;
-
-
-			case MENSAJE: ;
-				char* mensaje = malloc(paquete->buffer->size);
-				memcpy(mensaje, paquete->buffer->stream,paquete->buffer->size);
-				free(paquete->buffer->stream);
-				free(paquete->buffer);
-				free(paquete);
-				break;
-
-			default:
-				log_error(loggerDev, "Me mandaron cualquier cosa");
-		}
-
-	free(paquete->buffer->stream);
-	free(paquete->buffer);
-	free(paquete);
-
-
-}
-
-*/
 
 
 void liberar_conexion(int socket_cliente)
