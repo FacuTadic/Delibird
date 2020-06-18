@@ -140,6 +140,7 @@ bool existenPosicionesEnArchivo(char* posicion,char** blocks){
 		if(config_has_property(archivoBlock,posicion)){
 			return true;
 		} else{
+			config_destroy(archivoBlock);
 			i++;
 		}
 	}
@@ -155,6 +156,7 @@ char* blockDondeSeEncuentraLaPosicion(char* posicion, char** blocks){
 		if(config_has_property(archivoBlock,posicion)){
 			return blocks[i];
 		} else{
+			config_destroy(archivoBlock);
 			i++;
 		}
 }
@@ -255,6 +257,7 @@ void newPokemon(char* pokemon){
 
 	sleep(tiempoRetardoOperacion);
 
+	config_destroy(archivoMetadataPokemon);
 	fclose(archivo);
 }
 
@@ -284,7 +287,7 @@ void catchPokemon(char* pokemon){
 	}
 
 	sleep(tiempoRetardoOperacion);
-
+	config_destroy(archivoMetadataPokemon);
 }
 
 void getPokemon(char* pokemon){
@@ -311,6 +314,7 @@ void getPokemon(char* pokemon){
 	}
 
 	sleep(tiempoRetardoOperacion);
+	config_destroy(archivoMetadataPokemon);
 }
 
 

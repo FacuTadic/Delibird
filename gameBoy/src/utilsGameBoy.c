@@ -502,6 +502,7 @@ void recibir_mensaje(int socket_cliente)
 
 	switch(paquete->codigo_operacion){
 			case NEW:
+				log_info(loggerDev, "Se recibio un mensaje de tipo %i",paquete->codigo_operacion);
 				log_info(loggerGameBoy, "Se recibio un mensaje de tipo %i",paquete->codigo_operacion);
 				recibir_new(socket_cliente,size,loggerDev);
 				break;

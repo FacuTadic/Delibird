@@ -182,13 +182,9 @@ void agregarNuevaPosicionA(char* block, char* posicion, uint32_t cantidad){
 	t_config* archivoBlock = config_create(rutaArchivo);
 
 	char* cantidadString = string_itoa(cantidad);
-	config_set_value(rutaArchivo,posicion,cantidadString);
+	config_set_value(archivoBlock,posicion,cantidadString);
 	config_save(archivoBlock);
+	config_destroy(archivoBlock);
 }
-
-
-
-
-
 
 
