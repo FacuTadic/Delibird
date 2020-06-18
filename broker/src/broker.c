@@ -1887,10 +1887,24 @@ int main(void) {
 
 void inicializar_memoria() {
 	int tamanio_memoria = config_get_int_value(config, "TAMANO_MEMORIA");
+
+	log_info(extense_logger, "El tamanio de la memoria es %i", tamanio_memoria);
+
 	frecuencia_compactacion = config_get_int_value(config, "FRECUENCIA_COMPACTACION");
+
+	log_info(extense_logger, "La frecuencia de la compactacion es %i", frecuencia_compactacion);
+
 	tamanio_minimo_particion = config_get_int_value(config, "TAMANO_MINIMO_PARTICION");
+
+	log_info(extense_logger, "El tamanio minimo de la particion es %i", tamanio_minimo_particion);
+
 	char* algoritmo_busqueda = config_get_string_value(config, "ALGORITMO_PARTICION_LIBRE");
+
+	log_info(extense_logger, "El algoritmo de busqueda de particiones libres es %s", algoritmo_busqueda);
+
 	char* algoritmo_reemplazo = config_get_string_value(config, "ALGORITMO_REEMPLAZO");
+
+	log_info(extense_logger, "El algoritmo de reemplazo de particiones es %s", algoritmo_reemplazo);
 
 	logger_memoria = logger;
 	extense_logger_memoria = extense_logger;
