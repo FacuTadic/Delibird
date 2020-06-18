@@ -187,6 +187,7 @@ void validarPosicionesDeNew(char** blocksOcupados,char* posicion, uint32_t canti
 			char* rutaDelBlock = generadorDeRutaDeCreacionDeArchivos(rutaBlocks,block,".bin");
 			t_config* archivoBlock = config_create(rutaDelBlock);
 			agregarCantidadSolicitadaAUnaKey(archivoBlock,posicion,cantidad);
+			config_destroy(archivoBlock);
 		} else {
 			char* blockOptimo = seleccionarBlockParaCargarPosiciones(blocksOcupados,posicion, cantidad);
 			agregarNuevaPosicionA(blockOptimo,posicion, cantidad);
@@ -208,6 +209,8 @@ void validarPosicionesDeCatch(char** blocksOcupados, char* posicion){
 		}else{
 			decrementarEnUnoEnLaPosicion(archivoBlock,posicion);
 		}
+
+		config_destroy(archivoBlock);
 
 	} else {
 		log_error(loggerGameCard, "No existen las posiciones en el archivo");
