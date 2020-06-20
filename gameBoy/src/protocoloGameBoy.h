@@ -1,5 +1,5 @@
-#ifndef PROTOCOLBROKER_H_
-#define PROTOCOLBROKER_H_
+#ifndef PROTOCOLGAMEBOY_H_
+#define PROTOCOLGAMEBOY_H_
 
 #include<stdio.h>
 #include<stdlib.h>
