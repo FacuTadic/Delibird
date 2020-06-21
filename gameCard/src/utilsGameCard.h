@@ -24,6 +24,7 @@
 #include <sys/stat.h>
 #include <unistd.h>
 #include "archivosYDirectorios.h"
+#include "protocoloGameCard.h"
 
 
 
@@ -59,27 +60,6 @@ struct stat st1;
 
 typedef enum
 {
-	NEW          = 1,
-    APPEARED     = 2,
-    CATCH        = 3,
-    CAUGHT       = 4,
-	GET          = 5,
-	LOCALIZED	 = 6,
-	SUSCRIPTOR 	 = 7,
-	MENSAJE 	 = 8//TEST
-}op_code;
-
-typedef enum
-{
-	BROKER       = 0,
-	TEAM	     = 1,
-	GAMECARD     = 2,
-	SERVER		 = 3 //TEST
-}op_codeModulo;
-
-
-typedef enum
-{
 	METADATA =1,
 	BITMAP = 2,
 	METADATA_FILE = 3,
@@ -89,101 +69,10 @@ typedef enum
 
 
 
-typedef struct
-{
-	int size;
-	void* stream;
-} t_buffer;
-
-typedef struct
-{
-	op_code codigo_operacion;
-	t_buffer* buffer;
-} t_paquete;
-
-
-
-//########################################################### MENSAJE NEW - APPEARED ###########################################################
-
-// New ‘Pikachu’ 5 10 2
-typedef struct
-{
-	uint32_t idMensaje;
-    uint32_t sizePokemon;
-	char*	 pokemon;
-    uint32_t  coordX;
-    uint32_t  coordY;
-    uint32_t cantidad;
-}t_new;
-
-
-// Appeared ‘Pikachu’ 1 5
-typedef struct
-{
-	uint32_t idMensaje;
-	uint32_t sizePokemon;
-	char*	 pokemon;
-	uint32_t  coordX;
-	uint32_t  coordY;
-}t_appeared;
-
-//###############################################################################################################################################
-
-
-
-
-//########################################################### MENSAJE GET - LOCALIZED ###########################################################
-
-typedef struct
-{
-	uint32_t sizePokemon;
-    uint32_t  coordX;
-    uint32_t  coordY;
-}t_get;
-
-
-// Localized ‘Pikachu’ 3 4 5 1 5 9 3
-typedef struct
-{
-	uint32_t sizePokemon;
-	char*	 pokemon;
-    uint32_t lugares;
-    uint32_t  coordX;
-    uint32_t  coordY;
-
-}t_localized;
-
-//##############################################################################################################################################
-
-
-
-
-//########################################################### MENSAJE CATCH - CAUGHT ###########################################################
-
-// Catch ‘Pikachu’ 1 5
-typedef struct
-{
-	uint32_t sizePokemon;
-	char*	 pokemon;
-    uint32_t  coordX;
-    uint32_t  coordY;
-}t_catch;
-
-typedef struct{
-
- uint32_t flagCaught;
-
- }t_caught;
-
-//##################################################################################################################################################
-
-
-
 int crear_conexion(char* ip, char* puerto);
 void enviar_mensaje(char*argv[], int socket_cliente);
 void recibir_mensaje(int socket_cliente);
 void crearDirectorio(char*, char*);
-void eliminar_paquete(t_paquete* paquete);
 void liberar_conexion(int socket_cliente);
 
 

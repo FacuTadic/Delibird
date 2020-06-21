@@ -196,7 +196,7 @@ void validarPosicionesDeNew(char** blocksOcupados,char* posicion, uint32_t canti
 
 }
 
-void validarPosicionesDeCatch(char** blocksOcupados, char* posicion){
+bool validarPosicionesDeCatch(char** blocksOcupados, char* posicion){
 	if(existenPosicionesEnArchivo(posicion,blocksOcupados)){
 		char* block = blockDondeSeEncuentraLaPosicion(posicion,blocksOcupados);
 		char* rutaDelBlock = generadorDeRutaDeCreacionDeArchivos(rutaBlocks,block,".bin");
@@ -206,16 +206,16 @@ void validarPosicionesDeCatch(char** blocksOcupados, char* posicion){
 
 		if(cantidadPokemon == 1){
 			eliminarKeyValueDe(archivoBlock,posicion);
+			return true;
 		}else{
 			decrementarEnUnoEnLaPosicion(archivoBlock,posicion);
+			return true;
 		}
-
 		config_destroy(archivoBlock);
-
 	} else {
 		log_error(loggerGameCard, "No existen las posiciones en el archivo");
+		return false;
 	}
-}
 }
 
 
@@ -228,11 +228,15 @@ void validarPosicionesDeGet(rutaDeArchivo){
 
 
 
+void newPokemon(int socketCliente,t_newLlegada* new){
 
+	char* pokemon = new->pokemon;
+	uint32_t posX = new->pos_X;
+	uint32_t posY = new->pos_Y;
+	uint32_t cantidad = new->cantidad;
 
-void newPokemon(char* pokemon){
 	char* rutaDeDirectorio = generadorDeRutaDeCreacionDeDirectorios(rutaFiles,pokemon);
-	char* posicion = generadorDePosiciones();
+	char* posicion = generadorDePosiciones(posX,posY);
 
 	if(noExisteDirectorio(rutaDeDirectorio)){
 		crearDirectorio(pokemon,rutaFiles);
@@ -240,10 +244,7 @@ void newPokemon(char* pokemon){
 		crearTemplateDeArchivoTipo(METADATA_POKEMON,pokemon,rutaDeDirectorio);
 	}
 
-	FILE *archivo;
-
 	char* rutaDeArchivo = generadorDeRutaDeCreacionDeArchivos(generadorDeRutaDeCreacionDeDirectorios(rutaFiles,pokemon), pokemon, ".bin");
-	archivo = fopen(rutaDeArchivo,"w+");
 
 	t_config* archivoMetadataPokemon = config_create(rutaDeArchivo);
 	char** blocksOcupados = config_get_array_value(archivoMetadataPokemon,"BLOCKS");
@@ -251,23 +252,33 @@ void newPokemon(char* pokemon){
 
 	if(puedeAbrirseArchivo(archivoMetadataPokemon)){
 		activarFlagDeLectura(archivoMetadataPokemon);
-		validarPosicionesDeNew(blocksOcupados,posicion);
+		validarPosicionesDeNew(blocksOcupados,posicion,cantidad);
 	} else{
 		sleep(tiempoReintentoOperacion);
-		newPokemon(pokemon);
+		newPokemon(socketCliente,new);
 		exit(0);
 	}
 
+	t_appeared* appearedGenerado = crearAppeared(new);
+	config_destroy(archivoMetadataPokemon);
+
 	sleep(tiempoRetardoOperacion);
 
-	config_destroy(archivoMetadataPokemon);
-	fclose(archivo);
+	enviar_appeared(socketCliente,appearedGenerado);
+
+
 }
 
-void catchPokemon(char* pokemon){
+void catchPokemon(int socketCliente,t_catchLlegada* catch){
+
+	uint32_t idMensaje = catch->id;
+	char* pokemon = catch->pokemon;
+	uint32_t posX = catch->pos_X;
+	uint32_t posY = catch->pos_Y;
+	bool validacion;
 
 	char* rutaDeDirectorio = generadorDeRutaDeCreacionDeDirectorios(rutaFiles,pokemon);
-	char* posicion = generadorDePosiciones();
+	char* posicion = generadorDePosiciones(posX, posY);
 
 	if(noExisteDirectorio(rutaDeDirectorio)){
 		log_error(loggerGameCard, "No existe directorio dentro de Files para el pokemon: %s",pokemon);
@@ -277,23 +288,27 @@ void catchPokemon(char* pokemon){
 
 	char* rutaDeArchivo = generadorDeRutaDeCreacionDeArchivos(rutaDeDirectorio, pokemon, ".bin");
 	t_config* archivoMetadataPokemon = config_create(rutaDeArchivo);
-	char** blocksOcupados = config_get_array_value(rutaDeArchivo,"BLOCKS");
+	char** blocksOcupados = config_get_array_value(archivoMetadataPokemon,"BLOCKS");
 	log_info(loggerDev, "EL array de blocks es: %s", blocksOcupados);
 
 	if(puedeAbrirseArchivo(archivoMetadataPokemon)){
 		activarFlagDeLectura(archivoMetadataPokemon);
-		validarPosicionesDeCatch(blocksOcupados,posicion);
+		validacion = validarPosicionesDeCatch(blocksOcupados,posicion);
 	}else{
 		sleep(tiempoReintentoOperacion);
-		catchPokemon(pokemon);
+		catchPokemon(socketCliente,catch);
 		exit(0);
 	}
 
-	sleep(tiempoRetardoOperacion);
+	t_caught* caughtAEnviar = crearCaught(idMensaje,validacion);
 	config_destroy(archivoMetadataPokemon);
+
+	sleep(tiempoRetardoOperacion);
+
+	enviar_caught(socketCliente,caughtAEnviar);
 }
 
-void getPokemon(char* pokemon){
+void getPokemon(int socketCliente,char* pokemon){
 
 	char* rutaDeDirectorio = generadorDeRutaDeCreacionDeDirectorios(rutaFiles,pokemon);
 
@@ -312,43 +327,13 @@ void getPokemon(char* pokemon){
 		validarPosicionesDeGet(rutaDeArchivo);
 	} else{
 		sleep(tiempoReintentoOperacion);
-		getPokemon(pokemon);
+		getPokemon(socketCliente,pokemon);
 		exit(0);
 	}
 
-	sleep(tiempoRetardoOperacion);
 	config_destroy(archivoMetadataPokemon);
-}
+	sleep(tiempoRetardoOperacion);
 
-
-
-
-
-void* serializar_paquete(t_paquete* paquete, uint32_t *bytes)
-{
-	*bytes = sizeof(uint32_t) *2 + paquete->buffer->size; // sizeof(int) *2  int del size del buffer y del opcode
-
-	void * flujo = malloc(*bytes);
-	uint32_t desplazamiento = 0;
-
-	memcpy(flujo + desplazamiento, &(paquete->codigo_operacion), sizeof(uint32_t));
-	desplazamiento+= sizeof(uint32_t);
-	memcpy(flujo + desplazamiento, &(paquete->buffer->size), sizeof(uint32_t));
-	desplazamiento+= sizeof(uint32_t);
-	memcpy(flujo + desplazamiento, paquete->buffer->stream, paquete->buffer->size);
-	desplazamiento+= paquete->buffer->size;
-
-	return flujo;
-}
-
-
-//crearPaquete: Crea una estructura de tipo t_paquete y le enchufa el buffer dentro.
-
-t_paquete* crearPaquete(t_buffer* buffer){
-	t_paquete* paquete = malloc(sizeof(paquete));
-	paquete->buffer = malloc(buffer->size + sizeof(buffer->size));
-	memcpy (paquete->buffer,  buffer, buffer->size + sizeof(uint32_t));
-	return paquete;
 }
 
 
