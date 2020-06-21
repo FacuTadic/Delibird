@@ -1,3 +1,4 @@
+
 #ifndef BROKER_H_
 #define BROKER_H_
 
@@ -8,7 +9,7 @@
 #include "commons/process.h"
 #include "pthread.h"
 #include "semaphore.h"
-#include "broker_msj_id.h"
+#include "broker_ids.h"
 #include "memoria_broker.h"
 
 #endif

@@ -10,6 +10,7 @@ void guardar_info_envios(uint32_t id, t_list* mandados, t_list* acks) {
 
 	registro_tabla->envios = mandados;
 	registro_tabla->acknowledgements = acks;
+	registro_tabla->id_modificacion = generar_id_modificacion();
 
 	pthread_mutex_unlock(&mutex_memoria);
 
@@ -26,10 +27,11 @@ void guardar_mensaje_en_memoria(data_tabla* registro, void* mensaje) {
 	particion_libre* lugar_en_memoria = encontrar_lugar_en_memoria(lugar_a_ubicar);
 
 	if (NULL == lugar_en_memoria) {
-		// no encontramos lugar en memoria
-		// keasemo?
-		// y esta bien el chequeo == NULL ???
-		// y si es un error como hacemos ???
+		hacer_lugar_en_memoria();
+
+		pthread_mutex_unlock(&mutex_memoria);
+
+		guardar_mensaje_en_memoria(registro, mensaje);
 	} else {
 
 		log_info(extense_logger_memoria, "Guardando mensaje con id %i en particion %i", registro->id, (size_t) lugar_en_memoria->desde);
@@ -44,10 +46,129 @@ void guardar_mensaje_en_memoria(data_tabla* registro, void* mensaje) {
 
 		ocupar_lugar_en_particiones_libres(lugar_en_memoria, lugar_a_ubicar);
 
+		pthread_mutex_unlock(&mutex_memoria);
 	}
 
-	pthread_mutex_unlock(&mutex_memoria);
 }
+
+void hacer_lugar_en_memoria() {
+
+	// F 5         C 0
+	// BUSCA Y NO ENCUENTRA
+	// INTENTA HACER LUGAR -> C != F -> ELIMINA
+	// F 5         C 1
+	// BUSCA Y NO ENCUENTRA
+	// INTENTA HACER LUGAR -> C != F -> ELIMINA
+	// F 5         C 2
+	// BUSCA Y NO ENCUENTRA
+	// INTENTA HACER LUGAR -> C != F -> ELIMINA
+	// F 5         C 3
+	// BUSCA Y NO ENCUENTRA
+	// INTENTA HACER LUGAR -> C != F -> ELIMINA
+	// F 5         C 4
+	// BUSCA Y NO ENCUENTRA
+	// INTENTA HACER LUGAR -> C != F -> ELIMINA
+	// F 5         C 5
+	// BUSCA Y NO ENCUENTRA
+	// INTENTA HACER LUGAR -> C == f -> COMPACTA Y PONE C = 0
+	// F 5         C 0
+
+	if (cantidad_eliminacion != frecuencia_compactacion) {
+		eliminar_particion();
+		cantidad_eliminacion++;
+	} else {
+		// COMPACTAR
+		cantidad_eliminacion = 0;
+	}
+
+}
+
+void eliminar_particion() {
+	data_tabla* registro = encontrar_particion_a_eliminar();
+	// eliminarla de la tabla de segmentos
+	// agregar el lugar libre en la lista de particiones libres
+}
+
+data_tabla* encontrar_particion_a_eliminar() {
+	void* lugar;
+
+	if (1 == algoritmo_reemplazo_particiones) {
+		return encontrar_particion_con_fifo();
+	} else {
+		return encontrar_particion_con_lru();
+	}
+
+	return lugar;
+}
+
+data_tabla* encontrar_particion_con_fifo() {
+	int menor_id_temporal = INT_MAX;
+	data_tabla* particion_mas_vieja;
+
+	int id_a_buscar = 1;
+	int cantidad_registros_leidos = 0;
+	while (cantidad_registros_leidos < tabla_segmentos->elements_amount) {
+		char* id_char = malloc(sizeof(char));
+		sprintf(id_char, "%u", id_a_buscar);
+
+		data_tabla* registro = (data_tabla*) dictionary_get(tabla_segmentos, id_char);
+
+		if (registro != NULL) {
+			if (registro->id_temporal < menor_id_temporal) {
+				menor_id_temporal = registro->id_temporal;
+				particion_mas_vieja = registro;
+			}
+			cantidad_registros_leidos++;
+		}
+
+		id_a_buscar++;
+
+		free(id_char);
+	}
+
+	if (INT_MAX != menor_id_temporal) {
+		return particion_mas_vieja;
+	} else {
+		return NULL;
+	}
+}
+
+data_tabla* encontrar_particion_con_lru() {
+	int menor_id_modificacion = INT_MAX;
+	data_tabla* particion_mas_vieja;
+
+	int id_a_buscar = 1;
+	int cantidad_registros_leidos = 0;
+	while (cantidad_registros_leidos < tabla_segmentos->elements_amount) {
+		char* id_char = malloc(sizeof(char));
+		sprintf(id_char, "%u", id_a_buscar);
+
+		data_tabla* registro = (data_tabla*) dictionary_get(tabla_segmentos, id_char);
+
+		if (registro != NULL) {
+			if (registro->id_modificacion < menor_id_modificacion) {
+				menor_id_modificacion = registro->id_modificacion;
+				particion_mas_vieja = registro;
+			}
+			cantidad_registros_leidos++;
+		}
+
+		id_a_buscar++;
+
+		free(id_char);
+	}
+
+	if (INT_MAX != menor_id_modificacion) {
+		return particion_mas_vieja;
+	} else {
+		return NULL;
+	}
+}
+
+void compactar_memoria() {
+
+}
+
 
 void ocupar_lugar_en_particiones_libres(particion_libre* lugar_en_memoria, int lugar_a_ubicar) {
 	lugar_en_memoria->desde = lugar_en_memoria->desde + lugar_a_ubicar;
@@ -384,3 +505,12 @@ t_list* obtener_segmentos_caught(uint32_t id_cliente) {
 	return segmentos;
 
 }
+
+
+
+
+
+
+
+
+

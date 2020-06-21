@@ -1,3 +1,4 @@
+
 #ifndef MEMORIA_BROKER_H_
 #define MEMORIA_BROKER_H_
 
@@ -10,7 +11,7 @@
 #include<stdlib.h>
 #include<limits.h>
 #include "pthread.h"
-#include "broker_msj_id.h"
+#include "broker_ids.h"
 
 #endif
 
@@ -35,6 +36,8 @@ pthread_mutex_t mutex_memoria;
 
 int frecuencia_compactacion;
 
+int cantidad_eliminacion;
+
 int tamanio_minimo_particion;
 
 typedef struct {
@@ -46,6 +49,8 @@ typedef struct {
 	int limit;                     // tamanio del mensaje guardado en memoria
 	int tamanio_particion;         // tamanio de la particion
 	void* base;
+	int id_temporal;
+	int id_modificacion;
 } data_tabla;                      // registro de la tabla
 
 typedef struct {
@@ -72,3 +77,9 @@ t_list* obtener_segmentos_localized(uint32_t id_cliente); // lista de segmento_m
 t_list* obtener_segmentos_catch(uint32_t id_cliente); // lista de segmento_memoria
 t_list* obtener_segmentos_caught(uint32_t id_cliente); // lista de segmento_memoria
 int encontrar_lugar_a_ubicar(int limit);
+void hacer_lugar_en_memoria();
+void eliminar_particion();
+void compactar_memoria();
+data_tabla* encontrar_particion_a_eliminar();
+data_tabla* encontrar_particion_con_fifo();
+data_tabla* encontrar_particion_con_lru();

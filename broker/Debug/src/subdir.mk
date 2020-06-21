@@ -5,21 +5,21 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
 ../src/broker.c \
-../src/broker_msj_id.c \
+../src/broker_ids.c \
 ../src/memoria_broker.c \
 ../src/protocolBroker.c \
 ../src/utilsBroker.c 
 
 OBJS += \
 ./src/broker.o \
-./src/broker_msj_id.o \
+./src/broker_ids.o \
 ./src/memoria_broker.o \
 ./src/protocolBroker.o \
 ./src/utilsBroker.o 
 
 C_DEPS += \
 ./src/broker.d \
-./src/broker_msj_id.d \
+./src/broker_ids.d \
 ./src/memoria_broker.d \
 ./src/protocolBroker.d \
 ./src/utilsBroker.d 
