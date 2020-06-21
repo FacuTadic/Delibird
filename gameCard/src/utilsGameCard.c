@@ -261,15 +261,19 @@ void newPokemon(t_newLlegada* new){
 	}
 
 	sleep(tiempoRetardoOperacion);
-
 	config_destroy(archivoMetadataPokemon);
 	fclose(archivo);
 }
 
-void catchPokemon(char* pokemon){
+void catchPokemon(t_catchLlegada* catch){
+
+	uint32_t idMensaje = catch->id;
+	char* pokemon = catch->pokemon;
+	uint32_t posX = catch->pos_X;
+	uint32_t posY = catch->pos_Y;
 
 	char* rutaDeDirectorio = generadorDeRutaDeCreacionDeDirectorios(rutaFiles,pokemon);
-	char* posicion = generadorDePosiciones();
+	char* posicion = generadorDePosiciones(posX, posY);
 
 	if(noExisteDirectorio(rutaDeDirectorio)){
 		log_error(loggerGameCard, "No existe directorio dentro de Files para el pokemon: %s",pokemon);
@@ -287,7 +291,7 @@ void catchPokemon(char* pokemon){
 		validarPosicionesDeCatch(blocksOcupados,posicion);
 	}else{
 		sleep(tiempoReintentoOperacion);
-		catchPokemon(pokemon);
+		catchPokemon(catch);
 		exit(0);
 	}
 
