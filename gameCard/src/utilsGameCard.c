@@ -209,13 +209,10 @@ void validarPosicionesDeCatch(char** blocksOcupados, char* posicion){
 		}else{
 			decrementarEnUnoEnLaPosicion(archivoBlock,posicion);
 		}
-
 		config_destroy(archivoBlock);
-
 	} else {
 		log_error(loggerGameCard, "No existen las posiciones en el archivo");
 	}
-}
 }
 
 
@@ -228,11 +225,16 @@ void validarPosicionesDeGet(rutaDeArchivo){
 
 
 
+void newPokemon(t_newLlegada* new){
 
+	uint32_t idMensaje= new->id;
+	char* pokemon = new->pokemon;
+	uint32_t posX = new->pos_X;
+	uint32_t posY = new->pos_Y;
+	uint32_t cantidad = new->cantidad;
 
-void newPokemon(char* pokemon){
 	char* rutaDeDirectorio = generadorDeRutaDeCreacionDeDirectorios(rutaFiles,pokemon);
-	char* posicion = generadorDePosiciones();
+	char* posicion = generadorDePosiciones(posX,posY);
 
 	if(noExisteDirectorio(rutaDeDirectorio)){
 		crearDirectorio(pokemon,rutaFiles);
@@ -251,10 +253,10 @@ void newPokemon(char* pokemon){
 
 	if(puedeAbrirseArchivo(archivoMetadataPokemon)){
 		activarFlagDeLectura(archivoMetadataPokemon);
-		validarPosicionesDeNew(blocksOcupados,posicion);
+		validarPosicionesDeNew(blocksOcupados,posicion,cantidad);
 	} else{
 		sleep(tiempoReintentoOperacion);
-		newPokemon(pokemon);
+		newPokemon(new);
 		exit(0);
 	}
 
@@ -318,37 +320,6 @@ void getPokemon(char* pokemon){
 
 	sleep(tiempoRetardoOperacion);
 	config_destroy(archivoMetadataPokemon);
-}
-
-
-
-
-
-void* serializar_paquete(t_paquete* paquete, uint32_t *bytes)
-{
-	*bytes = sizeof(uint32_t) *2 + paquete->buffer->size; // sizeof(int) *2  int del size del buffer y del opcode
-
-	void * flujo = malloc(*bytes);
-	uint32_t desplazamiento = 0;
-
-	memcpy(flujo + desplazamiento, &(paquete->codigo_operacion), sizeof(uint32_t));
-	desplazamiento+= sizeof(uint32_t);
-	memcpy(flujo + desplazamiento, &(paquete->buffer->size), sizeof(uint32_t));
-	desplazamiento+= sizeof(uint32_t);
-	memcpy(flujo + desplazamiento, paquete->buffer->stream, paquete->buffer->size);
-	desplazamiento+= paquete->buffer->size;
-
-	return flujo;
-}
-
-
-//crearPaquete: Crea una estructura de tipo t_paquete y le enchufa el buffer dentro.
-
-t_paquete* crearPaquete(t_buffer* buffer){
-	t_paquete* paquete = malloc(sizeof(paquete));
-	paquete->buffer = malloc(buffer->size + sizeof(buffer->size));
-	memcpy (paquete->buffer,  buffer, buffer->size + sizeof(uint32_t));
-	return paquete;
 }
 
 

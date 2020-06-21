@@ -1,5 +1,112 @@
 #include "protocoloGameCard.h"
-#include "utilsGameCard.h"
+#include "creacionDeEstructurasParaEnvio.h"
+
+
+//####################################################	ENVIAR MENSAJES	#########################################################################
+
+void enviar_appeared(int socket, t_appeared* appearedAEnviar){
+
+	t_buffer* bufferAppeared = crearBufferAppeared(appearedAEnviar);
+	uint32_t bytes;
+
+	log_info(loggerDev, "Creando paquete");
+	t_paquete* paquete = crearPaquete(bufferAppeared);   // CREAR PAQUETE
+
+	paquete->codigo_operacion = APPEARED;
+	log_info(loggerDev, "CODIGO DE OPERACION: %i", paquete->codigo_operacion);
+
+	log_info(loggerDev, "Paquete Creado");
+	log_info(loggerDev, "la operacion a realizar es %i", paquete->codigo_operacion);
+
+	log_info(loggerDev, "Serializando...");
+	void* flujo = serializar_paquete(paquete,&bytes);                   //  SERIALIZAR PAQUETE
+	log_info(loggerDev, "Serializacion completa");
+
+
+	log_info(loggerDev, "El peso total es: %i",paquete->buffer->size);
+
+	//    ENVIAR MENSAJE
+	if(send(socket, flujo, bytes, 0) == -1){
+		log_error(loggerDev, "Error: No se pudo enviar el mensaje");
+	}
+
+	free(flujo);
+	free(bufferAppeared->stream);
+	free(bufferAppeared);
+	free(paquete);
+
+
+}
+
+
+void enviar_caught(int socket, t_caught* caughtAEnviar){
+	t_buffer* bufferCaught = crearBufferCaught(caughtAEnviar);
+	uint32_t bytes;
+
+	log_info(loggerDev, "Creando paquete");
+	t_paquete* paquete = crearPaquete(bufferCaught);   // CREAR PAQUETE
+
+	paquete->codigo_operacion = CAUGHT;
+	log_info(loggerDev, "CODIGO DE OPERACION: %i", paquete->codigo_operacion);
+
+	log_info(loggerDev, "Paquete Creado");
+	log_info(loggerDev, "la operacion a realizar es %i", paquete->codigo_operacion);
+
+	log_info(loggerDev, "Serializando...");
+	void* flujo = serializar_paquete(paquete,&bytes);                   //  SERIALIZAR PAQUETE
+	log_info(loggerDev, "Serializacion completa");
+
+
+	log_info(loggerDev, "El peso total es: %i",paquete->buffer->size);
+
+	//    ENVIAR MENSAJE
+	if(send(socket, flujo, bytes, 0) == -1){
+		log_error(loggerDev, "Error: No se pudo enviar el mensaje");
+	}
+
+	free(flujo);
+	free(bufferCaught->stream);
+	free(bufferCaught);
+	free(paquete);
+
+}
+
+
+void enviar_localized(int socket, t_localized* localizedAEnviar){
+	t_buffer* bufferLocalized = crearBufferLocalized(localizedAEnviar);
+	uint32_t bytes;
+
+	log_info(loggerDev, "Creando paquete");
+	t_paquete* paquete = crearPaquete(bufferLocalized);   // CREAR PAQUETE
+
+	paquete->codigo_operacion = LOCALIZED;
+	log_info(loggerDev, "CODIGO DE OPERACION: %i", paquete->codigo_operacion);
+
+	log_info(loggerDev, "Paquete Creado");
+	log_info(loggerDev, "la operacion a realizar es %i", paquete->codigo_operacion);
+
+	log_info(loggerDev, "Serializando...");
+	void* flujo = serializar_paquete(paquete,&bytes);                   //  SERIALIZAR PAQUETE
+	log_info(loggerDev, "Serializacion completa");
+
+
+	log_info(loggerDev, "El peso total es: %i",paquete->buffer->size);
+
+	//    ENVIAR MENSAJE
+	if(send(socket, flujo, bytes, 0) == -1){
+		log_error(loggerDev, "Error: No se pudo enviar el mensaje");
+	}
+
+	free(flujo);
+	free(bufferLocalized->stream);
+	free(bufferLocalized);
+	free(paquete);
+
+}
+
+
+//#######################################################	RECIBIR MENSAJE	#################################################################
+
 
 void recibir_new(int socket_cliente, uint32_t* size, t_log* logger) {
 	t_newLlegada* new = malloc(sizeof(t_newLlegada));
