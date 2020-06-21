@@ -124,3 +124,43 @@ t_buffer* crearBufferLocalized(t_localized* localizedAEnviar){
 
 	return bufferLocalized;
 }
+
+
+t_appeared* crearAppeared(t_newLlegada* new){
+	uint32_t idMensaje= new->id;
+	char* pokemon = new->pokemon;
+	uint32_t tamanio = strlen(pokemon)+1;
+	uint32_t posX = new->pos_X;
+	uint32_t posY = new->pos_Y;
+	uint32_t cantidad = new->cantidad;
+
+	t_appeared* appearedAEnviar;
+
+	appearedAEnviar->idMensaje = idMensaje;
+	appearedAEnviar->sizePokemon = tamanio;
+	appearedAEnviar->pokemon = pokemon;
+	appearedAEnviar->coordX = posX;
+	appearedAEnviar->coordY = posY;
+
+	return appearedAEnviar;
+}
+
+
+uint32_t boolAInt(bool flag){
+	if(flag){
+		return 1;
+	}else{
+		return 0;
+	}
+}
+
+t_caught* crearCaught(uint32_t idMensaje, uint32_t flag){
+
+	t_caught* caughtAEnviar;
+
+	caughtAEnviar->idMensaje = idMensaje;
+	caughtAEnviar->flagCaught = boolAInt(flag);
+
+	return caughtAEnviar;
+}
+
