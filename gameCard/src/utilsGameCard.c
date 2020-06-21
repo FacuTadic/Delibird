@@ -288,7 +288,7 @@ void catchPokemon(int socketCliente,t_catchLlegada* catch){
 
 	char* rutaDeArchivo = generadorDeRutaDeCreacionDeArchivos(rutaDeDirectorio, pokemon, ".bin");
 	t_config* archivoMetadataPokemon = config_create(rutaDeArchivo);
-	char** blocksOcupados = config_get_array_value(rutaDeArchivo,"BLOCKS");
+	char** blocksOcupados = config_get_array_value(archivoMetadataPokemon,"BLOCKS");
 	log_info(loggerDev, "EL array de blocks es: %s", blocksOcupados);
 
 	if(puedeAbrirseArchivo(archivoMetadataPokemon)){
