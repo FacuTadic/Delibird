@@ -80,6 +80,21 @@ int main(void) {
 
 
 //################################################## 	CONEXION 	###############################################################################
+		do{
+
+			conexion = crear_conexion( ipBroker, puertoBroker);
+
+			if(!conexion){
+				log_error(loggerDev, "Error en conexion con BROKER, ip: %s puerto : %s, reintentando en %d segundo%s ", ipBroker, puertoBroker,tiempoReintentoConexion,tiempoReintentoConexion=1 ? "":"s");
+				sleep(tiempoReintentoConexion);
+			}
+		}while(!conexion );		//reintentar cada tiempoReintentoConexion
+		log_info(loggerDev, "conexion establecida con BROKER, ip: %s puerto : %s", tiempoRetardoOperacion);
+
+			// recibir msj hago funcion que lea? o mando recibir cada msj asi noma maniana lo vemo
+				//mandar dejame escuchar colas y atenderlas con espera activa bloqueante
+
+	}
 
 
 
@@ -87,7 +102,13 @@ int main(void) {
 
 
 
-}
+
+
+
+
+
+
+
 
 
 void terminar_programa(int conexion){

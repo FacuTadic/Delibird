@@ -92,7 +92,7 @@ void recibir_appeared(int socket_cliente, uint32_t* size, t_log* logger) {
 
 	log_info(logger, "Tamanio total recibido: %i", *size);
 
-	if (recv(socket_cliente, appeared->id , sizeof(uint32_t), MSG_WAITALL) == -1) { // lee id del mensaje ///
+	if (recv(socket_cliente, (uint32_t) appeared->id , sizeof(uint32_t), MSG_WAITALL) == -1) { // lee id del mensaje ///
 				close(socket_cliente);
 				log_error(logger, "Hubo un problema recibiendo el ID del mensaje");
 				free(appeared);
