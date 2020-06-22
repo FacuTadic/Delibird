@@ -1910,7 +1910,7 @@ int main(void) {
 }
 
 void inicializar_memoria() {
-	int tamanio_memoria = config_get_int_value(config, "TAMANO_MEMORIA");
+	tamanio_memoria = config_get_int_value(config, "TAMANO_MEMORIA");
 
 	log_info(extense_logger, "El tamanio de la memoria es %i", tamanio_memoria);
 

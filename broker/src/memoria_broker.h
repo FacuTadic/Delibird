@@ -20,6 +20,8 @@ t_log* logger_memoria;
 
 void* memoria;
 
+int tamanio_memoria;
+
 t_dictionary* tabla_segmentos;
 
 t_list* particiones_libres;
@@ -78,8 +80,11 @@ t_list* obtener_segmentos_catch(uint32_t id_cliente); // lista de segmento_memor
 t_list* obtener_segmentos_caught(uint32_t id_cliente); // lista de segmento_memoria
 int encontrar_lugar_a_ubicar(int limit);
 void hacer_lugar_en_memoria();
-void eliminar_particion();
+int eliminar_particion();
 void compactar_memoria();
 data_tabla* encontrar_particion_a_eliminar();
 data_tabla* encontrar_particion_con_fifo();
 data_tabla* encontrar_particion_con_lru();
+void liberar_registro_en_particiones_libres(data_tabla* registro);
+void corregir_particiones_libres();
+data_tabla* obtener_registro_proximo(particion_libre* particion_libre);

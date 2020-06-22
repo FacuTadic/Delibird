@@ -33,7 +33,6 @@ void guardar_mensaje_en_memoria(data_tabla* registro, void* mensaje) {
 
 		guardar_mensaje_en_memoria(registro, mensaje);
 	} else {
-
 		log_info(extense_logger_memoria, "Guardando mensaje con id %i en particion %i", registro->id, (size_t) lugar_en_memoria->desde);
 		log_info(logger_memoria, "Guardando mensaje con id %i en particion %i", registro->id, (size_t) lugar_en_memoria->desde);
 		char* id_char = malloc(sizeof(char));
@@ -74,19 +73,93 @@ void hacer_lugar_en_memoria() {
 	// F 5         C 0
 
 	if (cantidad_eliminacion != frecuencia_compactacion) {
-		eliminar_particion();
-		cantidad_eliminacion++;
+		if (eliminar_particion() != -1) {
+			cantidad_eliminacion++;
+		}
 	} else {
-		// COMPACTAR
+		compactar_memoria();
 		cantidad_eliminacion = 0;
 	}
 
 }
 
-void eliminar_particion() {
+int eliminar_particion() {
 	data_tabla* registro = encontrar_particion_a_eliminar();
-	// eliminarla de la tabla de segmentos
-	// agregar el lugar libre en la lista de particiones libres
+
+	char* id_char = malloc(sizeof(char));
+	sprintf(id_char, "%u", registro->id);
+
+	data_tabla* elemento_removido = dictionary_remove(tabla_segmentos, id_char);
+
+	if (elemento_removido == NULL) {
+		log_error(extense_logger_memoria, "No se ha podido eliminar el registro con id %s de la tabla de segmentos", id_char);
+		free(id_char);
+		return -1;
+	} else {
+		log_info(extense_logger_memoria, "Se ha eliminado el registro con id %s de la tabla de segmentos", id_char);
+		free(id_char);
+		liberar_registro_en_particiones_libres(registro);
+		return 1;
+	}
+
+}
+
+void liberar_registro_en_particiones_libres(data_tabla* registro) {
+
+	// hacer elemento para agregar
+
+	particion_libre* nueva_particion = malloc(sizeof(particion_libre));
+	nueva_particion->desde = registro->base;
+	nueva_particion->hasta = registro->base + registro->limit;
+
+	size_t desde_nuevo = (size_t) nueva_particion->desde;
+
+	// obtener donde agregar
+
+	int index_para_agregar = 0;
+
+	for (int i = 0; i < particiones_libres->elements_count; i++) {
+		particion_libre* particion_lista = list_get(particiones_libres, i);
+		size_t desde_lista = (size_t) particion_lista->desde;
+
+		if (desde_nuevo > desde_lista) {
+			index_para_agregar = i + 1;
+		} else {
+			i = particiones_libres->elements_count;
+		}
+	}
+
+	// agregar
+
+	list_add_in_index(particiones_libres, index_para_agregar, nueva_particion);
+
+	// limpiar lista
+
+	corregir_particiones_libres();
+
+}
+
+void corregir_particiones_libres() {
+	size_t final_anterior = 0;
+	size_t comienzo_actual;
+
+	int tamanio_lista = particiones_libres->elements_count;
+
+	for (int j = 0; j < tamanio_lista; j++) {
+		particion_libre* particion_lista = list_get(particiones_libres, j);
+		comienzo_actual = (size_t) particion_lista->desde;
+		if (j != 0 && comienzo_actual == final_anterior) {
+			particion_libre* particion_anterior = list_get(particiones_libres, j - 1);
+			particion_anterior->hasta = particion_lista->hasta;
+			list_remove(particiones_libres, j);
+			tamanio_lista--;
+			j--;
+			free(particion_lista);
+			final_anterior = (size_t) particion_anterior->hasta;
+		} else {
+			final_anterior = (size_t) particion_lista->hasta;
+		}
+	}
 }
 
 data_tabla* encontrar_particion_a_eliminar() {
@@ -137,7 +210,7 @@ data_tabla* encontrar_particion_con_lru() {
 	int menor_id_modificacion = INT_MAX;
 	data_tabla* particion_mas_vieja;
 
-	int id_a_buscar = 1;
+	uint32_t id_a_buscar = 1;
 	int cantidad_registros_leidos = 0;
 	while (cantidad_registros_leidos < tabla_segmentos->elements_amount) {
 		char* id_char = malloc(sizeof(char));
@@ -166,9 +239,55 @@ data_tabla* encontrar_particion_con_lru() {
 }
 
 void compactar_memoria() {
+	size_t final_memoria = (size_t) (memoria + tamanio_memoria);
+	particion_libre* primer_particion_libre = list_get(particiones_libres, 0);
+	size_t final_primer_particion = (size_t) primer_particion_libre->hasta;
+	while (final_memoria != final_primer_particion) {
+		primer_particion_libre = list_get(particiones_libres, 0);
+		final_primer_particion = (size_t) primer_particion_libre->hasta;
+		data_tabla* registro_proximo = obtener_registro_proximo(primer_particion_libre);
 
+		void* aux = malloc(registro_proximo->tamanio_particion);
+		memcpy(aux, registro_proximo->base, registro_proximo->tamanio_particion);
+		memcpy(primer_particion_libre->desde, aux, registro_proximo->tamanio_particion);
+
+		free(aux);
+
+		primer_particion_libre->desde = primer_particion_libre->desde + registro_proximo->tamanio_particion;
+		primer_particion_libre->hasta = primer_particion_libre->hasta + registro_proximo->tamanio_particion;
+
+		corregir_particiones_libres();
+	}
 }
 
+data_tabla* obtener_registro_proximo(particion_libre* particion_libre) {
+	size_t fin_particion_libre = (size_t) particion_libre->hasta;
+
+	uint32_t id_a_buscar = 1;
+	int cantidad_registros_leidos = 0;
+	while (cantidad_registros_leidos < tabla_segmentos->elements_amount) {
+		char* id_char = malloc(sizeof(char));
+		sprintf(id_char, "%u", id_a_buscar);
+
+		data_tabla* registro = (data_tabla*) dictionary_get(tabla_segmentos, id_char);
+
+		if (registro != NULL) {
+			size_t comienzo_registro = (size_t) registro->base;
+
+			if (comienzo_registro == fin_particion_libre) {
+				free(id_char);
+				return registro;
+			}
+			cantidad_registros_leidos++;
+		}
+
+		id_a_buscar++;
+		free(id_char);
+	}
+
+	log_warning(extense_logger_memoria, "No se ha encontrado ningun registro de memoria que comience en la direccion de memoria buscada");
+	return NULL;
+}
 
 void ocupar_lugar_en_particiones_libres(particion_libre* lugar_en_memoria, int lugar_a_ubicar) {
 	lugar_en_memoria->desde = lugar_en_memoria->desde + lugar_a_ubicar;
@@ -266,7 +385,9 @@ t_list* obtener_segmentos_new(uint32_t id_cliente) {
 
 	log_info(extense_logger_memoria, "Tamanio tabla de segmentos: %i", tabla_segmentos->elements_amount);
 
-	for (uint32_t i = 1; i <= tabla_segmentos->elements_amount; i++) {
+	int k = 0;
+
+	for (uint32_t i = 1; k < tabla_segmentos->elements_amount; i++) {
 
 		char* id_char = malloc(sizeof(char));
 		sprintf(id_char, "%u", i);
@@ -276,6 +397,7 @@ t_list* obtener_segmentos_new(uint32_t id_cliente) {
 		if (registro == NULL) {
 			log_warning(extense_logger_memoria, "Registro NULL leido");
 		} else {
+			k++;
 			if (1 == registro->tipo) {
 				int has_to_send = 1;
 				for (int j = 0; j < registro->acknowledgements->elements_count; j++) {
@@ -307,7 +429,9 @@ t_list* obtener_segmentos_appeared(uint32_t id_cliente) {
 
 	log_info(extense_logger_memoria, "Tamanio tabla de segmentos: %i", tabla_segmentos->elements_amount);
 
-	for (uint32_t i = 1; i <= tabla_segmentos->elements_amount; i++) {
+	int k = 0;
+
+	for (uint32_t i = 1; k < tabla_segmentos->elements_amount; i++) {
 
 		char* id_char = malloc(sizeof(char));
 		sprintf(id_char, "%u", i);
@@ -317,6 +441,7 @@ t_list* obtener_segmentos_appeared(uint32_t id_cliente) {
 		if (registro == NULL) {
 			log_warning(extense_logger_memoria, "Registro NULL leido");
 		} else {
+			k++;
 			if (2 == registro->tipo) {
 				int has_to_send = 1;
 				for (int j = 0; j < registro->acknowledgements->elements_count; j++) {
@@ -348,7 +473,9 @@ t_list* obtener_segmentos_get(uint32_t id_cliente) {
 
 	log_info(extense_logger_memoria, "Tamanio tabla de segmentos: %i", tabla_segmentos->elements_amount);
 
-	for (uint32_t i = 1; i <= tabla_segmentos->elements_amount; i++) {
+	int k = 0;
+
+	for (uint32_t i = 1; k < tabla_segmentos->elements_amount; i++) {
 
 		char* id_char = malloc(sizeof(char));
 		sprintf(id_char, "%u", i);
@@ -358,6 +485,7 @@ t_list* obtener_segmentos_get(uint32_t id_cliente) {
 		if (registro == NULL) {
 			log_warning(extense_logger_memoria, "Registro NULL leido");
 		} else {
+			k++;
 			if (5 == registro->tipo) {
 				int has_to_send = 1;
 				for (int j = 0; j < registro->acknowledgements->elements_count; j++) {
@@ -389,7 +517,9 @@ t_list* obtener_segmentos_localized(uint32_t id_cliente) {
 
 	log_info(extense_logger_memoria, "Tamanio tabla de segmentos: %i", tabla_segmentos->elements_amount);
 
-	for (uint32_t i = 1; i <= tabla_segmentos->elements_amount; i++) {
+	int k = 0;
+
+	for (uint32_t i = 1; k < tabla_segmentos->elements_amount; i++) {
 
 		char* id_char = malloc(sizeof(char));
 		sprintf(id_char, "%u", i);
@@ -399,6 +529,7 @@ t_list* obtener_segmentos_localized(uint32_t id_cliente) {
 		if (registro == NULL) {
 			log_warning(extense_logger_memoria, "Registro NULL leido");
 		} else {
+			k++;
 			if (6 == registro->tipo) {
 				int has_to_send = 1;
 				for (int j = 0; j < registro->acknowledgements->elements_count; j++) {
@@ -430,7 +561,9 @@ t_list* obtener_segmentos_catch(uint32_t id_cliente) {
 
 	log_info(extense_logger_memoria, "Tamanio tabla de segmentos: %i", tabla_segmentos->elements_amount);
 
-	for (uint32_t i = 1; i <= tabla_segmentos->elements_amount; i++) {
+	int k = 0;
+
+	for (uint32_t i = 1; k < tabla_segmentos->elements_amount; i++) {
 
 		char* id_char = malloc(sizeof(char));
 		sprintf(id_char, "%u", i);
@@ -440,6 +573,7 @@ t_list* obtener_segmentos_catch(uint32_t id_cliente) {
 		if (registro == NULL) {
 			log_warning(extense_logger_memoria, "Registro NULL leido");
 		} else {
+			k++;
 			if (3 == registro->tipo) {
 				int has_to_send = 1;
 				for (int j = 0; j < registro->acknowledgements->elements_count; j++) {
@@ -471,7 +605,9 @@ t_list* obtener_segmentos_caught(uint32_t id_cliente) {
 
 	log_info(extense_logger_memoria, "Tamanio tabla de segmentos: %i", tabla_segmentos->elements_amount);
 
-	for (uint32_t i = 1; i <= tabla_segmentos->elements_amount; i++) {
+	int k = 0;
+
+	for (uint32_t i = 1; k < tabla_segmentos->elements_amount; i++) {
 
 		char* id_char = malloc(sizeof(char));
 		sprintf(id_char, "%u", i);
@@ -481,6 +617,7 @@ t_list* obtener_segmentos_caught(uint32_t id_cliente) {
 		if (registro == NULL) {
 			log_warning(extense_logger_memoria, "Registro NULL leido");
 		} else {
+			k++;
 			if (4 == registro->tipo) {
 				int has_to_send = 1;
 				for (int j = 0; j < registro->acknowledgements->elements_count; j++) {
