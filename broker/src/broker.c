@@ -479,6 +479,8 @@ void atender_mensaje_new(mensaje_queue* mensaje) {
 
 	registro->id = mensaje->id;
 	registro->tipo = NEW;
+	registro->id_temporal = generar_id_temporal();
+	registro->id_modificacion = generar_id_modificacion();
 
 	uint32_t bytes;
 
@@ -538,6 +540,8 @@ void atender_mensaje_appeared(mensaje_queue* mensaje) {
 	registro->id = mensaje->id;
 	registro->id_correlativo = ((t_localized*) mensaje->mensaje)->id_correlativo;
 	registro->tipo = APPEARED;
+	registro->id_temporal = generar_id_temporal();
+	registro->id_modificacion = generar_id_modificacion();
 
 	uint32_t bytes;
 
@@ -596,6 +600,8 @@ void atender_mensaje_catch(mensaje_queue* mensaje) {
 
 	registro->id = mensaje->id;
 	registro->tipo = CATCH;
+	registro->id_temporal = generar_id_temporal();
+	registro->id_modificacion = generar_id_modificacion();
 
 	uint32_t bytes;
 
@@ -655,6 +661,8 @@ void atender_mensaje_caught(mensaje_queue* mensaje) {
 	registro->id = mensaje->id;
 	registro->id_correlativo = ((t_localized*) mensaje->mensaje)->id_correlativo;
 	registro->tipo = CAUGHT;
+	registro->id_temporal = generar_id_temporal();
+	registro->id_modificacion = generar_id_modificacion();
 
 	uint32_t bytes;
 
@@ -713,6 +721,8 @@ void atender_mensaje_get(mensaje_queue* mensaje) {
 
 	registro->id = mensaje->id;
 	registro->tipo = GET;
+	registro->id_temporal = generar_id_temporal();
+	registro->id_modificacion = generar_id_modificacion();
 
 	uint32_t bytes;
 
@@ -772,6 +782,8 @@ void atender_mensaje_localized(mensaje_queue* mensaje) {
 	registro->id = mensaje->id;
 	registro->id_correlativo = ((t_localized*) mensaje->mensaje)->id_correlativo;
 	registro->tipo = LOCALIZED;
+	registro->id_temporal = generar_id_temporal();
+	registro->id_modificacion = generar_id_modificacion();
 
 	uint32_t bytes;
 
@@ -1353,11 +1365,13 @@ void enviar_mensaje_new_de_memoria(void* new_mandable_memoria) {
 	if (1 == status->envio_ok) {
 		pthread_mutex_lock(&mutex_memoria);
 		list_add(argumento->segmento->registro->envios, &(argumento->info_modulo->id_cliente));
+		argumento->segmento->registro->id_modificacion = generar_id_modificacion();
 		pthread_mutex_unlock(&mutex_memoria);
 	}
 	if (1 == status->ack) {
 		pthread_mutex_lock(&mutex_memoria);
 		list_add(argumento->segmento->registro->acknowledgements, &(argumento->info_modulo->id_cliente));
+		argumento->segmento->registro->id_modificacion = generar_id_modificacion();
 		pthread_mutex_unlock(&mutex_memoria);
 	}
 
@@ -1403,11 +1417,13 @@ void enviar_mensaje_appeared_de_memoria(void* appeared_mandable_memoria) {
 	if (1 == status->envio_ok) {
 		pthread_mutex_lock(&mutex_memoria);
 		list_add(argumento->segmento->registro->envios, &(argumento->info_modulo->id_cliente));
+		argumento->segmento->registro->id_modificacion = generar_id_modificacion();
 		pthread_mutex_unlock(&mutex_memoria);
 	}
 	if (1 == status->ack) {
 		pthread_mutex_lock(&mutex_memoria);
 		list_add(argumento->segmento->registro->acknowledgements, &(argumento->info_modulo->id_cliente));
+		argumento->segmento->registro->id_modificacion = generar_id_modificacion();
 		pthread_mutex_unlock(&mutex_memoria);
 	}
 
@@ -1453,11 +1469,13 @@ void enviar_mensaje_catch_de_memoria(void* catch_mandable_memoria) {
 	if (1 == status->envio_ok) {
 		pthread_mutex_lock(&mutex_memoria);
 		list_add(argumento->segmento->registro->envios, &(argumento->info_modulo->id_cliente));
+		argumento->segmento->registro->id_modificacion = generar_id_modificacion();
 		pthread_mutex_unlock(&mutex_memoria);
 	}
 	if (1 == status->ack) {
 		pthread_mutex_lock(&mutex_memoria);
 		list_add(argumento->segmento->registro->acknowledgements, &(argumento->info_modulo->id_cliente));
+		argumento->segmento->registro->id_modificacion = generar_id_modificacion();
 		pthread_mutex_unlock(&mutex_memoria);
 	}
 
@@ -1503,11 +1521,13 @@ void enviar_mensaje_caught_de_memoria(void* caught_mandable_memoria) {
 	if (1 == status->envio_ok) {
 		pthread_mutex_lock(&mutex_memoria);
 		list_add(argumento->segmento->registro->envios, &(argumento->info_modulo->id_cliente));
+		argumento->segmento->registro->id_modificacion = generar_id_modificacion();
 		pthread_mutex_unlock(&mutex_memoria);
 	}
 	if (1 == status->ack) {
 		pthread_mutex_lock(&mutex_memoria);
 		list_add(argumento->segmento->registro->acknowledgements, &(argumento->info_modulo->id_cliente));
+		argumento->segmento->registro->id_modificacion = generar_id_modificacion();
 		pthread_mutex_unlock(&mutex_memoria);
 	}
 
@@ -1553,11 +1573,13 @@ void enviar_mensaje_get_de_memoria(void* get_mandable_memoria) {
 	if (1 == status->envio_ok) {
 		pthread_mutex_lock(&mutex_memoria);
 		list_add(argumento->segmento->registro->envios, &(argumento->info_modulo->id_cliente));
+		argumento->segmento->registro->id_modificacion = generar_id_modificacion();
 		pthread_mutex_unlock(&mutex_memoria);
 	}
 	if (1 == status->ack) {
 		pthread_mutex_lock(&mutex_memoria);
 		list_add(argumento->segmento->registro->acknowledgements, &(argumento->info_modulo->id_cliente));
+		argumento->segmento->registro->id_modificacion = generar_id_modificacion();
 		pthread_mutex_unlock(&mutex_memoria);
 	}
 
@@ -1603,11 +1625,13 @@ void enviar_mensaje_localized_de_memoria(void* localized_mandable_memoria) {
 	if (1 == status->envio_ok) {
 		pthread_mutex_lock(&mutex_memoria);
 		list_add(argumento->segmento->registro->envios, &(argumento->info_modulo->id_cliente));
+		argumento->segmento->registro->id_modificacion = generar_id_modificacion();
 		pthread_mutex_unlock(&mutex_memoria);
 	}
 	if (1 == status->ack) {
 		pthread_mutex_lock(&mutex_memoria);
 		list_add(argumento->segmento->registro->acknowledgements, &(argumento->info_modulo->id_cliente));
+		argumento->segmento->registro->id_modificacion = generar_id_modificacion();
 		pthread_mutex_unlock(&mutex_memoria);
 	}
 
@@ -1891,6 +1915,8 @@ void inicializar_memoria() {
 	log_info(extense_logger, "El tamanio de la memoria es %i", tamanio_memoria);
 
 	frecuencia_compactacion = config_get_int_value(config, "FRECUENCIA_COMPACTACION");
+
+	cantidad_eliminacion = 0;
 
 	log_info(extense_logger, "La frecuencia de la compactacion es %i", frecuencia_compactacion);
 

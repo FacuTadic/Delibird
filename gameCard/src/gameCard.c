@@ -89,10 +89,16 @@ int main(void) {
 				sleep(tiempoReintentoConexion);
 			}
 		}while(!conexion );		//reintentar cada tiempoReintentoConexion
-		log_info(loggerDev, "conexion establecida con BROKER, ip: %s puerto : %s", tiempoRetardoOperacion);
+		log_info(loggerDev, "conexion establecida con BROKER, ip: %s puerto : %s", ipBroker, puertoBroker);
 
-			// recibir msj hago funcion que lea? o mando recibir cada msj asi noma maniana lo vemo
+
 				//mandar dejame escuchar colas y atenderlas con espera activa bloqueante
+				//COPIO ATENDER DE BKR??
+
+
+
+
+
 
 	}
 

@@ -336,6 +336,41 @@ void getPokemon(int socketCliente,char* pokemon){
 
 }
 
+void enviar_mensaje(char* argv[], int socket_cliente){        // de GAMEBOY
+	uint32_t bytes;
+
+	log_info(loggerDev, "Creando buffer");
+	t_buffer* buffer = crearBufferPorTipoDeMensaje(argv,loggerDev);
+	log_info(loggerDev, "Buffer creado");
+
+
+	log_info(loggerDev, "Creando paquete");
+	t_paquete* paquete = crearPaquete(buffer);   // CREAR PAQUETE
+
+	paquete->codigo_operacion = enumTipoMensaje(argv[2]);
+	log_info(loggerDev, "CODIGO DE OPERACION: %i", paquete->codigo_operacion);
+
+	log_info(loggerDev, "Paquete Creado");
+	log_info(loggerDev, "la operacion a realizar es %i", paquete->codigo_operacion);
+
+	log_info(loggerDev, "Serializando...");
+	void* flujo = serializar_paquete(paquete,&bytes);                   //  SERIALIZAR PAQUETE
+	log_info(loggerDev, "Serializacion completa");
+
+
+	log_info(loggerDev, "El peso total es: %i",paquete->buffer->size);
+
+	//    ENVIAR MENSAJE
+	if (send(socket_cliente, flujo, bytes, 0) == -1){
+		log_error(loggerDev, "Error: No se pudo enviar el mensaje");
+	}
+
+	free(flujo);
+	free(buffer->stream);
+	free(buffer);
+	free(paquete);
+}
+
 
 void liberar_conexion(int socket_cliente)
 {
