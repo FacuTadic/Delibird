@@ -72,13 +72,17 @@ void hacer_lugar_en_memoria() {
 	// INTENTA HACER LUGAR -> C == f -> COMPACTA Y PONE C = 0
 	// F 5         C 0
 
-	if (cantidad_eliminacion != frecuencia_compactacion) {
-		if (eliminar_particion() != -1) {
-			cantidad_eliminacion++;
-		}
+	if (frecuencia_compactacion == -1) {
+		eliminar_particion();
 	} else {
-		compactar_memoria();
-		cantidad_eliminacion = 0;
+		if (cantidad_eliminacion != frecuencia_compactacion) {
+			if (eliminar_particion() != -1) {
+				cantidad_eliminacion++;
+			}
+		} else {
+			compactar_memoria();
+			cantidad_eliminacion = 0;
+		}
 	}
 
 }
