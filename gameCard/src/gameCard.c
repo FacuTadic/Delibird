@@ -81,7 +81,6 @@ int main(void) {
 
 //################################################## 	CONEXION 	###############################################################################
 		do{
-
 			conexion = crear_conexion( ipBroker, puertoBroker);
 
 			if(!conexion){
@@ -92,7 +91,8 @@ int main(void) {
 		log_info(loggerDev, "conexion establecida con BROKER, ip: %s puerto : %s", ipBroker, puertoBroker);
 
 
-		enviarMensaje(msaj_suscripcion,puertoBroker);//mandar dejame escuchar colas y atenderlas con espera activa bloqueante
+		enviarMensaje(msj_suscripcion,puertoBroker);//mandar dejame escuchar colas y atenderlas con espera activa bloqueante
+		                                            // chequear con facha funcionamiento suscribir
 
 		esperar_mensaje(puertoBroker); // choripasteado y adaptado de BKR
 

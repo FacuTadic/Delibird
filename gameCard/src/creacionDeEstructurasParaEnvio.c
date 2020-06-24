@@ -125,6 +125,28 @@ t_buffer* crearBufferLocalized(t_localized* localizedAEnviar){
 	return bufferLocalized;
 }
 
+t_buffer* crearBufferSuscriptor(t_suscripcion* suscriptorAEnviar){
+	t_buffer* bufferSuscriptor = malloc(sizeof(t_buffer));
+	uint32_t offset = 0;
+	uint32_t idCliente = suscriptorAEnviar->id_cliente;
+	uint32_t idCola = suscriptorAEnviar->id_cola;
+
+	bufferSuscriptor->size = 2*sizeof(uint32_t); // idCola y Id cliente
+	bufferSuscriptor->stream = malloc(bufferSuscriptor->size);
+
+	memcpy(bufferSuscriptor->stream + offset,&idCliente, sizeof(uint32_t));
+	offset += sizeof(uint32_t);
+	log_info(loggerDev, "El ID de GC cargado es %i", idCliente);
+
+
+	memcpy(bufferSuscriptor->stream + offset,&idCola, sizeof(uint32_t));
+	offset += sizeof(uint32_t);
+	log_info(loggerDev, "El ID de la cola que quiero escuchar es %i", idCliente);
+
+
+	return bufferSuscriptor;
+}
+
 
 t_appeared* crearAppeared(t_newLlegada* new){
 	uint32_t idMensaje= new->id;
