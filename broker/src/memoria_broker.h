@@ -4,7 +4,10 @@
 
 #include "commons/collections/dictionary.h"
 #include "commons/collections/list.h"
+#include "commons/string.h"
 #include "commons/log.h"
+#include "commons/txt.h"
+#include "commons/temporal.h"
 #include<netdb.h>
 #include<stdio.h>
 #include<string.h>
@@ -88,3 +91,6 @@ data_tabla* encontrar_particion_con_lru();
 void liberar_registro_en_particiones_libres(data_tabla* registro);
 void corregir_particiones_libres();
 data_tabla* obtener_registro_proximo(particion_libre* particion_libre);
+void dump_cache(int signal);
+char* obtener_dump_particion_libre(particion_libre* particion_libre, int numero_particion);
+char* obtener_dump_registro(data_tabla* registro, int numero_particion);

@@ -33,8 +33,8 @@ void guardar_mensaje_en_memoria(data_tabla* registro, void* mensaje) {
 
 		guardar_mensaje_en_memoria(registro, mensaje);
 	} else {
-		log_info(extense_logger_memoria, "Guardando mensaje con id %i en particion %i", registro->id, (size_t) lugar_en_memoria->desde);
-		log_info(logger_memoria, "Guardando mensaje con id %i en particion %i", registro->id, (size_t) lugar_en_memoria->desde);
+		log_info(extense_logger_memoria, "Guardando mensaje con id %i en particion %06p", registro->id, (size_t) lugar_en_memoria->desde);
+		log_info(logger_memoria, "Guardando mensaje con id %i en particion %06p", registro->id, (size_t) lugar_en_memoria->desde);
 		char* id_char = malloc(sizeof(char));
 		sprintf(id_char, "%u", registro->id);
 		registro->base = lugar_en_memoria->desde;
@@ -100,12 +100,18 @@ int eliminar_particion() {
 		free(id_char);
 		return -1;
 	} else {
-		log_info(extense_logger_memoria, "Se ha eliminado el registro con id %s de la tabla de segmentos", id_char);
+		log_info(extense_logger_memoria, "Se ha eliminado el registro con id %s ubicado en %06p de la tabla de segmentos", id_char, registro->base);
+		log_info(logger_memoria, "Se ha eliminado el registro con id %s ubicado en %06p de la tabla de segmentos", id_char, registro->base);
 		free(id_char);
 		liberar_registro_en_particiones_libres(registro);
 		return 1;
 	}
 
+	list_clean(registro->acknowledgements);
+	list_remove(registro->acknowledgements);
+	list_clean(registro->envios);
+	list_remove(registro->envios);
+	free(registro);
 }
 
 void liberar_registro_en_particiones_libres(data_tabla* registro) {
@@ -246,10 +252,14 @@ void compactar_memoria() {
 	size_t final_memoria = (size_t) (memoria + tamanio_memoria);
 	particion_libre* primer_particion_libre = list_get(particiones_libres, 0);
 	size_t final_primer_particion = (size_t) primer_particion_libre->hasta;
+	log_info(extense_logger_memoria, "Compactando memoria");
+	log_info(logger_memoria, "Compactando memoria");
 	while (final_memoria != final_primer_particion) {
 		primer_particion_libre = list_get(particiones_libres, 0);
 		final_primer_particion = (size_t) primer_particion_libre->hasta;
 		data_tabla* registro_proximo = obtener_registro_proximo(primer_particion_libre);
+
+		log_info(extense_logger_memoria, "Moviendo registro de %06p a %06p", registro_proximo->base, primer_particion_libre->desde);
 
 		void* aux = malloc(registro_proximo->tamanio_particion);
 		memcpy(aux, registro_proximo->base, registro_proximo->tamanio_particion);
@@ -646,6 +656,116 @@ t_list* obtener_segmentos_caught(uint32_t id_cliente) {
 	return segmentos;
 
 }
+
+void dump_cache(int signal) {
+	char* fileName = "dump_";
+	char* fecha = temporal_get_string_time();
+	string_append(&fileName, fecha);
+	string_append(&fileName, ".txt");
+
+	FILE* archivo_dump = txt_open_for_append(fileName);
+
+	if (archivo_dump == NULL) {
+		log_error(extense_logger_memoria, "No se ha podido hacer el dump de la memoria, ha ocurrido un problema al crear el archivo de dump");
+		free(fileName);
+		free(fecha);
+		txt_close_file(archivo_dump);
+	} else {
+		char* dump;
+		void* particion = memoria;
+		void* final_memoria = memoria + tamanio_memoria;
+		int numero_particion = 1;
+
+		while (particion != final_memoria) {
+			particion_libre* particion_para_dump = buscar_particion_libre(particion);
+			if (particion_para_dump == NULL) {
+				data_tabla* registro_para_dump = buscar_registro(particion);
+
+				if (registro_para_dump == NULL) {
+					// la cagamos
+					log_error(extense_logger_memoria, "El dump de la memoria se ha detenido abruptamente, no se ha encontrado la particion comenzada en %06p", particion);
+					free(dump);
+					free(fileName);
+					free(fecha);
+					txt_close_file(archivo_dump);
+				} else {
+					particion = registro_para_dump->base + registro_para_dump->tamanio_particion;
+					dump = obtener_dump_registro(registro_para_dump, numero_particion);
+				}
+			} else {
+				particion = particion_para_dump->hasta;
+				dump = obtener_dump_particion_libre(particion_para_dump, numero_particion);
+			}
+			numero_particion++;
+			txt_write_in_file(archivo_dump, dump);
+		}
+	}
+
+	txt_close_file(archivo_dump);
+}
+
+data_tabla* buscar_registro(void* particion) {
+	int id_a_buscar = 1;
+	int cantidad_registros_leidos = 0;
+	while (cantidad_registros_leidos < tabla_segmentos->elements_amount) {
+		char* id_char = malloc(sizeof(char));
+		sprintf(id_char, "%u", id_a_buscar);
+
+		data_tabla* registro = (data_tabla*) dictionary_get(tabla_segmentos, id_char);
+
+		if (registro != NULL) {
+			if (registro->base == particion) {
+				return registro;
+			}
+			cantidad_registros_leidos++;
+		}
+
+		id_a_buscar++;
+
+		free(id_char);
+	}
+
+	return NULL;
+}
+
+particion_libre* buscar_particion_libre(void* particion) {
+	for (int i = 0; i < particiones_libres->elements_count; i++) {
+		particion_libre* particion_libre = list_get(particiones_libres, i);
+		if (particion_libre->desde == particion) {
+			return particion_libre;
+		}
+	}
+	return NULL;
+}
+
+char* obtener_dump_particion_libre(particion_libre* particion_libre, int numero_particion) {
+	return string_from_format("Partición %i: %06p - %06p.      [L]      Size: %i b\n",
+			numero_particion,
+			particion_libre->desde,
+			particion_libre->hasta,
+			tamanio_particion_libre(particion_libre));
+}
+
+char* obtener_dump_registro(data_tabla* registro, int numero_particion) {
+	return string_from_format("Partición %i: %06p - %06p.      [X]      Size: %i b      LRU: %i      Cola: %i      ID: %i\n",
+			numero_particion,
+			registro->base,
+			registro->base + registro->tamanio_particion,
+			registro->tamanio_particion,
+			registro->id_modificacion,
+			registro->tipo,
+			registro->id);
+}
+
+
+
+
+
+
+
+
+
+
 
 
 

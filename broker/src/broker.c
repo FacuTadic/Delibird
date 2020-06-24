@@ -41,20 +41,30 @@ void procesar_request(int cod_op, int cliente_fd) {
 		free(mensaje_a_guardar);
 		pthread_exit(NULL);
 	} else {
-		mensaje_a_guardar->mensaje = (void*) appeared_msg;
+		int ya_fue_respondido = contiene_al_id_respondido(gl_appeared_ids_respondidos, appeared_msg->id_correlativo);
 
-		sem_wait(&gl_appeared_limite);
+		if (ya_fue_respondido == 0) {
+			mensaje_a_guardar->mensaje = (void*) appeared_msg;
 
-		log_info(extense_logger, "Encolando el mensaje APPEARED con id %i", mensaje_a_guardar->id);
-		pthread_mutex_lock(&gl_appeared_queue_lock);
-		queue_push(gl_appeared_pokemon_queue, mensaje_a_guardar);
-		pthread_mutex_unlock(&gl_appeared_queue_lock);
-		log_info(extense_logger, "Mensaje APPEARED con id %i encolado", mensaje_a_guardar->id);
-		log_info(logger, "Mensaje APPEARED con id %i encolado", mensaje_a_guardar->id);
+			sem_wait(&gl_appeared_limite);
 
-		sem_post(&gl_appeared_mensajes);
+			log_info(extense_logger, "Encolando el mensaje APPEARED con id %i", mensaje_a_guardar->id);
+			uint32_t id_respondido = appeared_msg->id_correlativo;
+			pthread_mutex_lock(&gl_appeared_ids_lock);
+			list_add(gl_appeared_ids_respondidos, (void*) &id_respondido);
+			pthread_mutex_unlock(&gl_appeared_ids_lock);
+			pthread_mutex_lock(&gl_appeared_queue_lock);
+			queue_push(gl_appeared_pokemon_queue, mensaje_a_guardar);
+			pthread_mutex_unlock(&gl_appeared_queue_lock);
+			log_info(extense_logger, "Mensaje APPEARED con id %i encolado", mensaje_a_guardar->id);
+			log_info(logger, "Mensaje APPEARED con id %i encolado", mensaje_a_guardar->id);
 
-		devolver_id(cliente_fd, mensaje_a_guardar->id, extense_logger);
+			sem_post(&gl_appeared_mensajes);
+
+			devolver_id(cliente_fd, mensaje_a_guardar->id, extense_logger);
+		} else {
+			log_info(extense_logger, "El mensaje con id %i ya obtuvo una respuesta, desestimando mensaje APPEARED con el mismo id correlativo", appeared_msg->id_correlativo);
+		}
 	}
 	break;
 	case CATCH: ;
@@ -89,20 +99,31 @@ void procesar_request(int cod_op, int cliente_fd) {
 		free(mensaje_a_guardar);
 		pthread_exit(NULL);
 	} else {
-		mensaje_a_guardar->mensaje = (void*) caught_msg;
+		int ya_fue_respondido = contiene_al_id_respondido(gl_caught_ids_respondidos, appeared_msg->id_correlativo);
 
-		sem_wait(&gl_caught_limite);
+		if (ya_fue_respondido == 0) {
+			mensaje_a_guardar->mensaje = (void*) caught_msg;
 
-		log_info(extense_logger, "Encolando el mensaje CAUGHT con id %i", mensaje_a_guardar->id);
-		pthread_mutex_lock(&gl_caught_queue_lock);
-		queue_push(gl_caught_pokemon_queue, mensaje_a_guardar);
-		pthread_mutex_unlock(&gl_caught_queue_lock);
-		log_info(extense_logger, "Mensaje CAUGHT con id %i encolado", mensaje_a_guardar->id);
-		log_info(logger, "Mensaje CAUGHT con id %i encolado", mensaje_a_guardar->id);
+			sem_wait(&gl_caught_limite);
 
-		sem_post(&gl_caught_mensajes);
+			log_info(extense_logger, "Encolando el mensaje CAUGHT con id %i", mensaje_a_guardar->id);
+			uint32_t id_respondido = caught_msg->id_correlativo;
+			pthread_mutex_lock(&gl_caught_ids_lock);
+			list_add(gl_caught_ids_respondidos, (void*) &id_respondido);
+			pthread_mutex_unlock(&gl_caught_ids_lock);
+			pthread_mutex_lock(&gl_caught_queue_lock);
+			queue_push(gl_caught_pokemon_queue, mensaje_a_guardar);
+			pthread_mutex_unlock(&gl_caught_queue_lock);
+			log_info(extense_logger, "Mensaje CAUGHT con id %i encolado", mensaje_a_guardar->id);
+			log_info(logger, "Mensaje CAUGHT con id %i encolado", mensaje_a_guardar->id);
 
-		devolver_id(cliente_fd, mensaje_a_guardar->id, extense_logger);
+			sem_post(&gl_caught_mensajes);
+
+			devolver_id(cliente_fd, mensaje_a_guardar->id, extense_logger);
+
+		} else {
+			log_info(extense_logger, "El mensaje con id %i ya obtuvo una respuesta, desestimando mensaje CAUGHT con el mismo id correlativo", caught_msg->id_correlativo);
+		}
 	}
 	break;
 	case GET: ;
@@ -137,20 +158,30 @@ void procesar_request(int cod_op, int cliente_fd) {
 		free(mensaje_a_guardar);
 		pthread_exit(NULL);
 	} else {
-		mensaje_a_guardar->mensaje = (void*) localized_msg;
+		int ya_fue_respondido = contiene_al_id_respondido(gl_localized_ids_respondidos, appeared_msg->id_correlativo);
 
-		sem_wait(&gl_localized_limite);
+		if (ya_fue_respondido == 0) {
+			mensaje_a_guardar->mensaje = (void*) localized_msg;
 
-		log_info(extense_logger, "Encolando el mensaje LOCALIZED con id %i", mensaje_a_guardar->id);
-		pthread_mutex_lock(&gl_localized_queue_lock);
-		queue_push(gl_localized_pokemon_queue, mensaje_a_guardar);
-		pthread_mutex_unlock(&gl_localized_queue_lock);
-		log_info(extense_logger, "Mensaje LOCALIZED con id %i encolado", mensaje_a_guardar->id);
-		log_info(logger, "Mensaje LOCALIZED con id %i encolado", mensaje_a_guardar->id);
+			sem_wait(&gl_localized_limite);
 
-		sem_post(&gl_localized_mensajes);
+			log_info(extense_logger, "Encolando el mensaje LOCALIZED con id %i", mensaje_a_guardar->id);
+			uint32_t id_respondido = localized_msg->id_correlativo;
+			pthread_mutex_lock(&gl_localized_ids_lock);
+			list_add(gl_localized_ids_respondidos, (void*) &id_respondido);
+			pthread_mutex_unlock(&gl_localized_ids_lock);
+			pthread_mutex_lock(&gl_localized_queue_lock);
+			queue_push(gl_localized_pokemon_queue, mensaje_a_guardar);
+			pthread_mutex_unlock(&gl_localized_queue_lock);
+			log_info(extense_logger, "Mensaje LOCALIZED con id %i encolado", mensaje_a_guardar->id);
+			log_info(logger, "Mensaje LOCALIZED con id %i encolado", mensaje_a_guardar->id);
 
-		devolver_id(cliente_fd, mensaje_a_guardar->id, extense_logger);
+			sem_post(&gl_localized_mensajes);
+
+			devolver_id(cliente_fd, mensaje_a_guardar->id, extense_logger);
+		} else {
+			log_info(extense_logger, "El mensaje con id %i ya obtuvo una respuesta, desestimando mensaje LOCALIZED con el mismo id correlativo", localized_msg->id_correlativo);
+		}
 	}
 	break;
 	case SUSCRIPCION: ;
@@ -269,6 +300,16 @@ void esperar_clientes(void* socket_servidor) {
 	while(1) {
 		esperar_cliente(socket);
 	}
+}
+
+int contiene_al_id_respondido(t_list* lista_de_ids_respondidos, uint32_t id_a_buscar) {
+	for (int i = 0; i < lista_de_ids_respondidos->elements_count; i++) {
+		uint32_t* id = (uint32_t*) list_get(lista_de_ids_respondidos, i);
+		if (id_a_buscar == *id) {
+			return 1;
+		}
+	}
+	return 0;
 }
 
 void* atender_new(void* args) {
@@ -1860,6 +1901,10 @@ int main(void) {
 
 	inicializar_memoria();
 
+	// me abro a la señal para hacer el dump de la cache
+
+	signal(SIGUSR1, dump_cache);
+
 	inicializar_colas();
 
 	inicializar_semaforos_colas();
@@ -1991,6 +2036,14 @@ void inicializar_colas(void) {
 
 	log_info(extense_logger, "Listas de suscriptores iniciadas");
 
+	log_info(extense_logger, "Iniciando listas de ids respondidos");
+
+	gl_appeared_ids_respondidos = list_create();
+	gl_caught_ids_respondidos = list_create();
+	gl_localized_ids_respondidos = list_create();
+
+	log_info(extense_logger, "Listas de ids respondidos iniciadas");
+
 	log_info(extense_logger, "Iniciando estructuras de colas");
 
 	NEW_STRUCT.cola = gl_new_pokemon_queue;
@@ -2093,6 +2146,14 @@ void inicializar_semaforos_colas(void) {
 	pthread_mutex_init(&gl_localized_list_lock, NULL);
 
 	log_info(extense_logger, "Semaforos de listas iniciados");
+
+	log_info(extense_logger, "Iniciando semaforos de ids respondidos");
+
+	pthread_mutex_init(&gl_appeared_ids_lock, NULL);
+	pthread_mutex_init(&gl_caught_ids_lock, NULL);
+	pthread_mutex_init(&gl_localized_ids_lock, NULL);
+
+	log_info(extense_logger, "Semaforos de ids respondidos iniciados");
 }
 
 void terminar_programa(void) {
@@ -2123,6 +2184,12 @@ void terminar_programa(void) {
 	list_destroy(gl_caught_suscriptores);
 	list_destroy(gl_get_suscriptores);
 	list_destroy(gl_localized_suscriptores);
+	list_clean(gl_appeared_ids_respondidos);
+	list_clean(gl_caught_ids_respondidos);
+	list_clean(gl_localized_ids_respondidos);
+	list_destroy(gl_appeared_ids_respondidos);
+	list_destroy(gl_caught_ids_respondidos);
+	list_destroy(gl_localized_ids_respondidos);
 	sem_destroy(&gl_new_limite);
 	sem_destroy(&gl_appeared_limite);
 	sem_destroy(&gl_catch_limite);
@@ -2147,6 +2214,9 @@ void terminar_programa(void) {
 	pthread_mutex_destroy(&gl_caught_list_lock);
 	pthread_mutex_destroy(&gl_get_list_lock);
 	pthread_mutex_destroy(&gl_localized_list_lock);
+	pthread_mutex_destroy(&gl_appeared_ids_lock);
+	pthread_mutex_destroy(&gl_caught_ids_lock);
+	pthread_mutex_destroy(&gl_localized_ids_lock);
 
 	destruir_generador_id();
 }
