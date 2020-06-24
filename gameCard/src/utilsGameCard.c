@@ -1,4 +1,6 @@
 #include "utilsGameCard.h"
+#include "protocoloGameCard.h"
+
 #include<string.h>
 #include <commons/log.h>
 
@@ -376,109 +378,77 @@ void enviar_mensaje(char* argv[], int socket_cliente){        // de GAMEBOY
 void procesar_request(int cod_op, int cliente_fd) {
 	uint32_t size;
 
-	mensaje_queue* mensaje_a_guardar = malloc(sizeof(mensaje_queue));
-	log_info(extense_logger, "Generando id para el mensaje del socket %i", cliente_fd);
-	mensaje_a_guardar->id = generar_id();
-	log_info(extense_logger, "El id generado es %i", mensaje_a_guardar->id);
+
+	log_info(loggerDev, "Generando id para el mensaje del socket %i", cliente_fd);  // cliente_fd es el socket (esta asi en BKR)
 
 	switch (cod_op) {
 	case NEW: ;
-	log_info(extense_logger, "Codigo de operacion recibido del socket cliente %i corresponde a un NEW", cliente_fd);
-	t_new* new_msg = recibir_new(cliente_fd, &size, extense_logger);
+	log_info(loggerDev, "Codigo de operacion recibido del socket cliente %i corresponde a un NEW", cliente_fd);
+	t_newLlegada* new_msg = recibir_new(cliente_fd, &size, loggerDev);
 
 	if (new_msg == NULL) {
-		free(mensaje_a_guardar);
-		pthread_exit(NULL);
-	} else {
-		mensaje_a_guardar->mensaje = (void*) new_msg;
+				pthread_exit(NULL);
+	} else { 										// mandar respuesta correspondiente a NEW (appeared)
+		t_appeared appearedAEnviar = crearAppeared(new_msg);
+		enviar_appeared(socket, appearedAEnviar);
+		}
+	free(new_msg);
 
-		sem_wait(&gl_new_limite);
-
-		log_info(extense_logger, "Encolando el mensaje NEW con id %i", mensaje_a_guardar->id);
-		pthread_mutex_lock(&gl_new_queue_lock);
-		queue_push(gl_new_pokemon_queue, mensaje_a_guardar);
-		pthread_mutex_unlock(&gl_new_queue_lock);
-		log_info(extense_logger, "Mensaje NEW con id %i encolado", mensaje_a_guardar->id);
-		log_info(logger, "Mensaje NEW con id %i encolado", mensaje_a_guardar->id);
-
-		sem_post(&gl_new_mensajes);
-
-		devolver_id(cliente_fd, mensaje_a_guardar->id, extense_logger);
-	}
 	break;
 
 	case CATCH: ;
-	log_info(extense_logger, "Codigo de operacion recibido del socket cliente %i corresponde a un CATCH", cliente_fd);
-	t_catch* catch_msg = recibir_catch(cliente_fd, &size, extense_logger);
+	log_info(loggerDev, "Codigo de operacion recibido del socket cliente %i corresponde a un CATCH", cliente_fd);
+	t_catchLlegada* catch_msg = recibir_catch(cliente_fd, &size, loggerDev);
 
 	if (catch_msg == NULL) {
-		free(mensaje_a_guardar);
 		pthread_exit(NULL);
 	} else {
-		mensaje_a_guardar->mensaje = (void*) catch_msg;
 
-		sem_wait(&gl_catch_limite);
+		t_caught caughtAEnviar = crearCaught(catch_msg);
+		enviar_caught(socket,caughtAEnviar);	// mandar respuesta correspondiente a CATCH (caught)
 
-		log_info(extense_logger, "Encolando el mensaje CATCH con id %i", mensaje_a_guardar->id);
-		pthread_mutex_lock(&gl_catch_queue_lock);
-		queue_push(gl_catch_pokemon_queue, mensaje_a_guardar);
-		pthread_mutex_unlock(&gl_catch_queue_lock);
-		log_info(extense_logger, "Mensaje CATCH con id %i encolado", mensaje_a_guardar->id);
-		log_info(logger, "Mensaje CATCH con id %i encolado", mensaje_a_guardar->id);
-
-		sem_post(&gl_catch_mensajes);
-
-		devolver_id(cliente_fd, mensaje_a_guardar->id, extense_logger);
 	}
+	free(catch_msg);
+
 	break;
 
 	case GET: ;
-	log_info(extense_logger, "Codigo de operacion recibido del socket cliente %i corresponde a un GET", cliente_fd);
-	t_get* get_msg = recibir_get(cliente_fd, &size, extense_logger);
+	log_info(loggerDev, "Codigo de operacion recibido del socket cliente %i corresponde a un GET", cliente_fd);
+
+	t_getLlegada* get_msg = recibir_get(cliente_fd, &size, loggerDev);
 
 	if (get_msg == NULL) {
-		free(mensaje_a_guardar);
 		pthread_exit(NULL);
 	} else {
-		mensaje_a_guardar->mensaje = (void*) get_msg;
 
-		sem_wait(&gl_get_limite);
+		t_localized localizedAEnviar = crearLocalized(get_msg);
+		enviar_localized(cliente_fd , localizedAEnviar);							// mandar respuesta correspondiente a GET (localized)
 
-		log_info(extense_logger, "Encolando el mensaje GET con id %i", mensaje_a_guardar->id);
-		pthread_mutex_lock(&gl_get_queue_lock);
-		queue_push(gl_get_pokemon_queue, mensaje_a_guardar);
-		pthread_mutex_unlock(&gl_get_queue_lock);
-		log_info(extense_logger, "Mensaje GET con id %i encolado", mensaje_a_guardar->id);
-		log_info(logger, "Mensaje GET con id %i encolado", mensaje_a_guardar->id);
-
-		sem_post(&gl_get_mensajes);
-
-		devolver_id(cliente_fd, mensaje_a_guardar->id, extense_logger);
 	}
+	free(get_msg);
+
 	break;
 
 
-	}
-	free(suscripcion);
-	break;
+
 	}
 }
 
 void atender_cliente(int* socket) {
 	uint32_t cod_op;
-	log_info(extense_logger, "Recibiendo codigo de operacion de socket %i", *socket);
+	log_info(loggerDev, "Recibiendo codigo de operacion de socket %i", *socket);
 	int status_recv = recv(*socket, &cod_op, sizeof(uint32_t), MSG_WAITALL);
 	if (status_recv == -1) {
 		close(*socket);
-		log_error(extense_logger, "Hubo un problema recibiendo codigo de operacion de socket %i", *socket);
+		log_error(loggerDev, "Hubo un problema recibiendo codigo de operacion de socket %i", *socket);
 		pthread_exit(NULL);
 	}
 	if (status_recv == 0) {
 		close(*socket);
-		log_warning(extense_logger, "El cliente acaba de cerrar la conexion correspondiente al socket %i", *socket);
+		log_warning(loggerDev, "El cliente acaba de cerrar la conexion correspondiente al socket %i", *socket);
 		pthread_exit(NULL);
 	}
-	log_info(extense_logger, "Codigo de operacion de socket %i recibido: %i", *socket, cod_op);
+	log_info(loggerDev, "Codigo de operacion de socket %i recibido: %i", *socket, cod_op);
 	procesar_request(cod_op, *socket);
 }
 
@@ -489,8 +459,8 @@ void esperar_cliente(int socket_servidor) {
 
 	int socket_cliente = accept(socket_servidor, (void*) &dir_cliente, &tam_direccion);
 
-	log_info(extense_logger, "Socket cliente %i aceptado", socket_cliente);
-	log_info(logger, "Nueva conexion de un proceso con socket cliente %i", socket_cliente);
+	log_info(loggerDev, "Socket cliente %i aceptado", socket_cliente);
+	log_info(loggerGameCard, "Nueva conexion de un proceso con socket cliente %i", socket_cliente);
 
 	pthread_t thread;
 
@@ -500,7 +470,7 @@ void esperar_cliente(int socket_servidor) {
 
 void esperar_clientes(void* socket_servidor) {
 	int socket = (int) socket_servidor;
-	log_info(extense_logger, "Esperando clientes en socket %i", socket);
+	log_info(loggerDev, "Esperando clientes en socket %i", socket);
 	while(1) {
 		esperar_cliente(socket);
 	}

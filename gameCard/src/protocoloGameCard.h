@@ -87,7 +87,10 @@ typedef struct{
 
  }t_caught;
 
-
+ typedef struct {          // adaptar
+ 	uint32_t id_cliente;
+ 	uint32_t id_cola;
+ } t_suscripcion;
 
 
 
@@ -98,14 +101,14 @@ typedef struct {
 	int socket_cliente;
 } info_modulo;
 
-void recibir_new(int socket_cliente, uint32_t* size, t_log* logger);
+t_newLlegada recibir_new(int socket_cliente, uint32_t* size, t_log* logger);
 void enviar_appeared(int socket, t_appeared* appearedAEnviar);
 
-void recibir_catch(int socket_cliente, uint32_t* size, t_log* logger);
+t_catchLlegada recibir_catch(int socket_cliente, uint32_t* size, t_log* logger);
 void enviar_caught(int socket, t_caught* caughtAEnviar);
 
-void recibir_get(int socket_cliente, uint32_t* size, t_log* logger);
-void enviar_localized(int socket, t_localized* appearedAEnviar);
+t_getLlegada recibir_get(int socket_cliente, uint32_t* size, t_log* logger);
+void enviar_localized(int socket, t_localized* localizedAEnviar);
 
 
 void devolver_id(int socket_cliente, uint32_t id, t_log* logger);
