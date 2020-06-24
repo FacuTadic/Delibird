@@ -92,8 +92,12 @@ int main(void) {
 		log_info(loggerDev, "conexion establecida con BROKER, ip: %s puerto : %s", ipBroker, puertoBroker);
 
 
-				//mandar dejame escuchar colas y atenderlas con espera activa bloqueante
-				//COPIO ATENDER DE BKR??
+		enviarMensaje(msaj_suscripcion,puertoBroker);//mandar dejame escuchar colas y atenderlas con espera activa bloqueante
+
+		esperar_mensaje(puertoBroker); // choripasteado y adaptado de BKR
+
+
+		//COPIO ATENDER DE BKR??
 
 
 
