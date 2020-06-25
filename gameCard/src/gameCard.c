@@ -126,4 +126,9 @@ void terminar_programa(int conexion){
 	log_destroy(loggerGameCard);
 	config_destroy(config);
 	liberar_conexion(conexion);
+	free(rutaMetaData);
+	free(rutaFiles);
+	free(rutaBlocks);
+	free(bitMap);
+	free(magicNumber);
 }

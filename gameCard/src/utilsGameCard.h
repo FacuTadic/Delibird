@@ -20,12 +20,13 @@
 #include<commons/log.h>
 #include<commons/config.h>
 #include<commons/string.h>
+#include <commons/bitarray.h>
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <unistd.h>
 #include "archivosYDirectorios.h"
 #include "protocoloGameCard.h"
-
+#include "bitArray.h"
 
 
 
@@ -39,6 +40,7 @@ uint32_t tiempoRetardoOperacion;
 //SACAR DEL METADATA/METADATA.BIN
 uint32_t blockSize;
 uint32_t cantidadDeBloques;
+t_bitarray *bitarray;
 char* magicNumber;
 
 
@@ -51,6 +53,7 @@ t_log* loggerGameCard;
 char* rutaMetaData;
 char* rutaFiles;
 char* rutaBlocks;
+char* bitMap;
 
 
 

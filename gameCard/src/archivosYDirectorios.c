@@ -153,10 +153,6 @@ uint32_t cantidadDePokemonEnUnaCoordenada(t_config* archivoBlock,char* posicion)
 }
 
 
-char* buscarPosicionDisponibleEnElBitMap(){
-
-}
-
 
 
 char* seleccionarBlockParaCargarPosiciones(char** blocksOcupados, char*posicion, uint32_t cantidad){

@@ -116,7 +116,7 @@ void levantarTallGrass(char* puntoMontaje){
 	cargarInfoDelMetadata(rutaMetaData);
 
 
-	char* bitMap = generadorDeRutaDeCreacionDeArchivos(rutaMetaData,"BitMap",".bin");
+	bitMap = generadorDeRutaDeCreacionDeArchivos(rutaMetaData,"BitMap",".bin");
 
 
 	if(existeArchivo(bitMap)){
@@ -124,6 +124,7 @@ void levantarTallGrass(char* puntoMontaje){
 	} else {
 		crearDirectorio("Metadata",puntoMontaje);
 		crearArchivoEnDirectorio("BitMap",rutaMetaData);
+		crear_bitarray();
 		log_info(loggerDev, "Se creo el BitMap ubicado en: %s",rutaMetaData);
 		crearDirectorioFile(puntoMontaje);
 		crearDirectorioBlocks(puntoMontaje);
