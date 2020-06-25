@@ -138,6 +138,7 @@ bool existenPosicionesEnArchivo(char* posicion,char** blocks){
 		char* rutaDeArchivo = generadorDeRutaDeCreacionDeArchivos(rutaBlocks,blocks[i],".bin");
 		t_config* archivoBlock = config_create(rutaDeArchivo);
 		if(config_has_property(archivoBlock,posicion)){
+			log_info(loggerDev, "Existe la posocion");
 			return true;
 		} else{
 			config_destroy(archivoBlock);
@@ -149,16 +150,20 @@ bool existenPosicionesEnArchivo(char* posicion,char** blocks){
 
 char* blockDondeSeEncuentraLaPosicion(char* posicion, char** blocks){
 	uint32_t i = 0;
+
 	while(blocks[i] != NULL){
 		log_info(loggerDev, "Se esta analizando el block: %s",blocks[i]);
 		char* rutaDeArchivo = generadorDeRutaDeCreacionDeArchivos(rutaBlocks,blocks[i],".bin");
 		t_config* archivoBlock = config_create(rutaDeArchivo);
 		if(config_has_property(archivoBlock,posicion)){
+			log_info(loggerDev, "Encontro el block donde esta la posicion: %s",blocks[i]);
 			return blocks[i];
 		} else{
 			config_destroy(archivoBlock);
 			i++;
 		}
+	}
+	log_info(loggerDev, "Yyyy mira, no tiro el return en el if, no encontro una mierda");
 }
 
 
