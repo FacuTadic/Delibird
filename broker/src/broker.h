@@ -1,3 +1,4 @@
+
 #ifndef BROKER_H_
 #define BROKER_H_
 
@@ -8,8 +9,9 @@
 #include "commons/process.h"
 #include "pthread.h"
 #include "semaphore.h"
-#include "broker_msj_id.h"
+#include "broker_ids.h"
 #include "memoria_broker.h"
+#include "signal.h"
 
 #endif
 
@@ -32,6 +34,10 @@ t_list* gl_caught_suscriptores;
 t_list* gl_get_suscriptores;
 t_list* gl_localized_suscriptores;
 
+t_list* gl_appeared_ids_respondidos;
+t_list* gl_caught_ids_respondidos;
+t_list* gl_localized_ids_respondidos;
+
 pthread_mutex_t gl_new_queue_lock;
 pthread_mutex_t gl_appeared_queue_lock;
 pthread_mutex_t gl_catch_queue_lock;
@@ -45,6 +51,10 @@ pthread_mutex_t gl_catch_list_lock;
 pthread_mutex_t gl_caught_list_lock;
 pthread_mutex_t gl_get_list_lock;
 pthread_mutex_t gl_localized_list_lock;
+
+pthread_mutex_t gl_appeared_ids_lock;
+pthread_mutex_t gl_caught_ids_lock;
+pthread_mutex_t gl_localized_ids_lock;
 
 sem_t gl_new_limite;
 sem_t gl_appeared_limite;
@@ -146,3 +156,4 @@ void enviar_mensaje_caught_de_memoria(void* new_mandable_memoria);
 void enviar_mensaje_get_de_memoria(void* new_mandable_memoria);
 void enviar_mensaje_localized_de_memoria(void* new_mandable_memoria);
 void eliminar_suscriptor(pthread_mutex_t lock, t_list* lista_de_suscriptores, info_modulo* suscriptor);
+int contiene_al_id_respondido(t_list* lista_de_ids_respondidos, uint32_t id_a_buscar);

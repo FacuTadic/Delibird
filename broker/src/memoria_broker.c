@@ -10,6 +10,7 @@ void guardar_info_envios(uint32_t id, t_list* mandados, t_list* acks) {
 
 	registro_tabla->envios = mandados;
 	registro_tabla->acknowledgements = acks;
+	registro_tabla->id_modificacion = generar_id_modificacion();
 
 	pthread_mutex_unlock(&mutex_memoria);
 
@@ -26,14 +27,14 @@ void guardar_mensaje_en_memoria(data_tabla* registro, void* mensaje) {
 	particion_libre* lugar_en_memoria = encontrar_lugar_en_memoria(lugar_a_ubicar);
 
 	if (NULL == lugar_en_memoria) {
-		// no encontramos lugar en memoria
-		// keasemo?
-		// y esta bien el chequeo == NULL ???
-		// y si es un error como hacemos ???
-	} else {
+		hacer_lugar_en_memoria();
 
-		log_info(extense_logger_memoria, "Guardando mensaje con id %i en particion %i", registro->id, (size_t) lugar_en_memoria->desde);
-		log_info(logger_memoria, "Guardando mensaje con id %i en particion %i", registro->id, (size_t) lugar_en_memoria->desde);
+		pthread_mutex_unlock(&mutex_memoria);
+
+		guardar_mensaje_en_memoria(registro, mensaje);
+	} else {
+		log_info(extense_logger_memoria, "Guardando mensaje con id %i en particion %06p", registro->id, (size_t) lugar_en_memoria->desde);
+		log_info(logger_memoria, "Guardando mensaje con id %i en particion %06p", registro->id, (size_t) lugar_en_memoria->desde);
 		char* id_char = malloc(sizeof(char));
 		sprintf(id_char, "%u", registro->id);
 		registro->base = lugar_en_memoria->desde;
@@ -44,9 +45,262 @@ void guardar_mensaje_en_memoria(data_tabla* registro, void* mensaje) {
 
 		ocupar_lugar_en_particiones_libres(lugar_en_memoria, lugar_a_ubicar);
 
+		pthread_mutex_unlock(&mutex_memoria);
 	}
 
-	pthread_mutex_unlock(&mutex_memoria);
+}
+
+void hacer_lugar_en_memoria() {
+
+	// F 5         C 0
+	// BUSCA Y NO ENCUENTRA
+	// INTENTA HACER LUGAR -> C != F -> ELIMINA
+	// F 5         C 1
+	// BUSCA Y NO ENCUENTRA
+	// INTENTA HACER LUGAR -> C != F -> ELIMINA
+	// F 5         C 2
+	// BUSCA Y NO ENCUENTRA
+	// INTENTA HACER LUGAR -> C != F -> ELIMINA
+	// F 5         C 3
+	// BUSCA Y NO ENCUENTRA
+	// INTENTA HACER LUGAR -> C != F -> ELIMINA
+	// F 5         C 4
+	// BUSCA Y NO ENCUENTRA
+	// INTENTA HACER LUGAR -> C != F -> ELIMINA
+	// F 5         C 5
+	// BUSCA Y NO ENCUENTRA
+	// INTENTA HACER LUGAR -> C == f -> COMPACTA Y PONE C = 0
+	// F 5         C 0
+
+	if (frecuencia_compactacion == -1) {
+		eliminar_particion();
+	} else {
+		if (cantidad_eliminacion != frecuencia_compactacion) {
+			if (eliminar_particion() != -1) {
+				cantidad_eliminacion++;
+			}
+		} else {
+			compactar_memoria();
+			cantidad_eliminacion = 0;
+		}
+	}
+
+}
+
+int eliminar_particion() {
+	data_tabla* registro = encontrar_particion_a_eliminar();
+
+	char* id_char = malloc(sizeof(char));
+	sprintf(id_char, "%u", registro->id);
+
+	data_tabla* elemento_removido = dictionary_remove(tabla_segmentos, id_char);
+
+	if (elemento_removido == NULL) {
+		log_error(extense_logger_memoria, "No se ha podido eliminar el registro con id %s de la tabla de segmentos", id_char);
+		free(id_char);
+		return -1;
+	} else {
+		log_info(extense_logger_memoria, "Se ha eliminado el registro con id %s ubicado en %06p de la tabla de segmentos", id_char, registro->base);
+		log_info(logger_memoria, "Se ha eliminado el registro con id %s ubicado en %06p de la tabla de segmentos", id_char, registro->base);
+		free(id_char);
+		liberar_registro_en_particiones_libres(registro);
+		return 1;
+	}
+
+	list_clean(registro->acknowledgements);
+	list_remove(registro->acknowledgements);
+	list_clean(registro->envios);
+	list_remove(registro->envios);
+	free(registro);
+}
+
+void liberar_registro_en_particiones_libres(data_tabla* registro) {
+
+	// hacer elemento para agregar
+
+	particion_libre* nueva_particion = malloc(sizeof(particion_libre));
+	nueva_particion->desde = registro->base;
+	nueva_particion->hasta = registro->base + registro->limit;
+
+	size_t desde_nuevo = (size_t) nueva_particion->desde;
+
+	// obtener donde agregar
+
+	int index_para_agregar = 0;
+
+	for (int i = 0; i < particiones_libres->elements_count; i++) {
+		particion_libre* particion_lista = list_get(particiones_libres, i);
+		size_t desde_lista = (size_t) particion_lista->desde;
+
+		if (desde_nuevo > desde_lista) {
+			index_para_agregar = i + 1;
+		} else {
+			i = particiones_libres->elements_count;
+		}
+	}
+
+	// agregar
+
+	list_add_in_index(particiones_libres, index_para_agregar, nueva_particion);
+
+	// limpiar lista
+
+	corregir_particiones_libres();
+
+}
+
+void corregir_particiones_libres() {
+	size_t final_anterior = 0;
+	size_t comienzo_actual;
+
+	int tamanio_lista = particiones_libres->elements_count;
+
+	for (int j = 0; j < tamanio_lista; j++) {
+		particion_libre* particion_lista = list_get(particiones_libres, j);
+		comienzo_actual = (size_t) particion_lista->desde;
+		if (j != 0 && comienzo_actual == final_anterior) {
+			particion_libre* particion_anterior = list_get(particiones_libres, j - 1);
+			particion_anterior->hasta = particion_lista->hasta;
+			list_remove(particiones_libres, j);
+			tamanio_lista--;
+			j--;
+			free(particion_lista);
+			final_anterior = (size_t) particion_anterior->hasta;
+		} else {
+			final_anterior = (size_t) particion_lista->hasta;
+		}
+	}
+}
+
+data_tabla* encontrar_particion_a_eliminar() {
+	void* lugar;
+
+	if (1 == algoritmo_reemplazo_particiones) {
+		return encontrar_particion_con_fifo();
+	} else {
+		return encontrar_particion_con_lru();
+	}
+
+	return lugar;
+}
+
+data_tabla* encontrar_particion_con_fifo() {
+	int menor_id_temporal = INT_MAX;
+	data_tabla* particion_mas_vieja;
+
+	int id_a_buscar = 1;
+	int cantidad_registros_leidos = 0;
+	while (cantidad_registros_leidos < tabla_segmentos->elements_amount) {
+		char* id_char = malloc(sizeof(char));
+		sprintf(id_char, "%u", id_a_buscar);
+
+		data_tabla* registro = (data_tabla*) dictionary_get(tabla_segmentos, id_char);
+
+		if (registro != NULL) {
+			if (registro->id_temporal < menor_id_temporal) {
+				menor_id_temporal = registro->id_temporal;
+				particion_mas_vieja = registro;
+			}
+			cantidad_registros_leidos++;
+		}
+
+		id_a_buscar++;
+
+		free(id_char);
+	}
+
+	if (INT_MAX != menor_id_temporal) {
+		return particion_mas_vieja;
+	} else {
+		return NULL;
+	}
+}
+
+data_tabla* encontrar_particion_con_lru() {
+	int menor_id_modificacion = INT_MAX;
+	data_tabla* particion_mas_vieja;
+
+	uint32_t id_a_buscar = 1;
+	int cantidad_registros_leidos = 0;
+	while (cantidad_registros_leidos < tabla_segmentos->elements_amount) {
+		char* id_char = malloc(sizeof(char));
+		sprintf(id_char, "%u", id_a_buscar);
+
+		data_tabla* registro = (data_tabla*) dictionary_get(tabla_segmentos, id_char);
+
+		if (registro != NULL) {
+			if (registro->id_modificacion < menor_id_modificacion) {
+				menor_id_modificacion = registro->id_modificacion;
+				particion_mas_vieja = registro;
+			}
+			cantidad_registros_leidos++;
+		}
+
+		id_a_buscar++;
+
+		free(id_char);
+	}
+
+	if (INT_MAX != menor_id_modificacion) {
+		return particion_mas_vieja;
+	} else {
+		return NULL;
+	}
+}
+
+void compactar_memoria() {
+	size_t final_memoria = (size_t) (memoria + tamanio_memoria);
+	particion_libre* primer_particion_libre = list_get(particiones_libres, 0);
+	size_t final_primer_particion = (size_t) primer_particion_libre->hasta;
+	log_info(extense_logger_memoria, "Compactando memoria");
+	log_info(logger_memoria, "Compactando memoria");
+	while (final_memoria != final_primer_particion) {
+		primer_particion_libre = list_get(particiones_libres, 0);
+		final_primer_particion = (size_t) primer_particion_libre->hasta;
+		data_tabla* registro_proximo = obtener_registro_proximo(primer_particion_libre);
+
+		log_info(extense_logger_memoria, "Moviendo registro de %06p a %06p", registro_proximo->base, primer_particion_libre->desde);
+
+		void* aux = malloc(registro_proximo->tamanio_particion);
+		memcpy(aux, registro_proximo->base, registro_proximo->tamanio_particion);
+		memcpy(primer_particion_libre->desde, aux, registro_proximo->tamanio_particion);
+
+		free(aux);
+
+		primer_particion_libre->desde = primer_particion_libre->desde + registro_proximo->tamanio_particion;
+		primer_particion_libre->hasta = primer_particion_libre->hasta + registro_proximo->tamanio_particion;
+
+		corregir_particiones_libres();
+	}
+}
+
+data_tabla* obtener_registro_proximo(particion_libre* particion_libre) {
+	size_t fin_particion_libre = (size_t) particion_libre->hasta;
+
+	uint32_t id_a_buscar = 1;
+	int cantidad_registros_leidos = 0;
+	while (cantidad_registros_leidos < tabla_segmentos->elements_amount) {
+		char* id_char = malloc(sizeof(char));
+		sprintf(id_char, "%u", id_a_buscar);
+
+		data_tabla* registro = (data_tabla*) dictionary_get(tabla_segmentos, id_char);
+
+		if (registro != NULL) {
+			size_t comienzo_registro = (size_t) registro->base;
+
+			if (comienzo_registro == fin_particion_libre) {
+				free(id_char);
+				return registro;
+			}
+			cantidad_registros_leidos++;
+		}
+
+		id_a_buscar++;
+		free(id_char);
+	}
+
+	log_warning(extense_logger_memoria, "No se ha encontrado ningun registro de memoria que comience en la direccion de memoria buscada");
+	return NULL;
 }
 
 void ocupar_lugar_en_particiones_libres(particion_libre* lugar_en_memoria, int lugar_a_ubicar) {
@@ -145,7 +399,9 @@ t_list* obtener_segmentos_new(uint32_t id_cliente) {
 
 	log_info(extense_logger_memoria, "Tamanio tabla de segmentos: %i", tabla_segmentos->elements_amount);
 
-	for (uint32_t i = 1; i <= tabla_segmentos->elements_amount; i++) {
+	int k = 0;
+
+	for (uint32_t i = 1; k < tabla_segmentos->elements_amount; i++) {
 
 		char* id_char = malloc(sizeof(char));
 		sprintf(id_char, "%u", i);
@@ -155,6 +411,7 @@ t_list* obtener_segmentos_new(uint32_t id_cliente) {
 		if (registro == NULL) {
 			log_warning(extense_logger_memoria, "Registro NULL leido");
 		} else {
+			k++;
 			if (1 == registro->tipo) {
 				int has_to_send = 1;
 				for (int j = 0; j < registro->acknowledgements->elements_count; j++) {
@@ -186,7 +443,9 @@ t_list* obtener_segmentos_appeared(uint32_t id_cliente) {
 
 	log_info(extense_logger_memoria, "Tamanio tabla de segmentos: %i", tabla_segmentos->elements_amount);
 
-	for (uint32_t i = 1; i <= tabla_segmentos->elements_amount; i++) {
+	int k = 0;
+
+	for (uint32_t i = 1; k < tabla_segmentos->elements_amount; i++) {
 
 		char* id_char = malloc(sizeof(char));
 		sprintf(id_char, "%u", i);
@@ -196,6 +455,7 @@ t_list* obtener_segmentos_appeared(uint32_t id_cliente) {
 		if (registro == NULL) {
 			log_warning(extense_logger_memoria, "Registro NULL leido");
 		} else {
+			k++;
 			if (2 == registro->tipo) {
 				int has_to_send = 1;
 				for (int j = 0; j < registro->acknowledgements->elements_count; j++) {
@@ -227,7 +487,9 @@ t_list* obtener_segmentos_get(uint32_t id_cliente) {
 
 	log_info(extense_logger_memoria, "Tamanio tabla de segmentos: %i", tabla_segmentos->elements_amount);
 
-	for (uint32_t i = 1; i <= tabla_segmentos->elements_amount; i++) {
+	int k = 0;
+
+	for (uint32_t i = 1; k < tabla_segmentos->elements_amount; i++) {
 
 		char* id_char = malloc(sizeof(char));
 		sprintf(id_char, "%u", i);
@@ -237,6 +499,7 @@ t_list* obtener_segmentos_get(uint32_t id_cliente) {
 		if (registro == NULL) {
 			log_warning(extense_logger_memoria, "Registro NULL leido");
 		} else {
+			k++;
 			if (5 == registro->tipo) {
 				int has_to_send = 1;
 				for (int j = 0; j < registro->acknowledgements->elements_count; j++) {
@@ -268,7 +531,9 @@ t_list* obtener_segmentos_localized(uint32_t id_cliente) {
 
 	log_info(extense_logger_memoria, "Tamanio tabla de segmentos: %i", tabla_segmentos->elements_amount);
 
-	for (uint32_t i = 1; i <= tabla_segmentos->elements_amount; i++) {
+	int k = 0;
+
+	for (uint32_t i = 1; k < tabla_segmentos->elements_amount; i++) {
 
 		char* id_char = malloc(sizeof(char));
 		sprintf(id_char, "%u", i);
@@ -278,6 +543,7 @@ t_list* obtener_segmentos_localized(uint32_t id_cliente) {
 		if (registro == NULL) {
 			log_warning(extense_logger_memoria, "Registro NULL leido");
 		} else {
+			k++;
 			if (6 == registro->tipo) {
 				int has_to_send = 1;
 				for (int j = 0; j < registro->acknowledgements->elements_count; j++) {
@@ -309,7 +575,9 @@ t_list* obtener_segmentos_catch(uint32_t id_cliente) {
 
 	log_info(extense_logger_memoria, "Tamanio tabla de segmentos: %i", tabla_segmentos->elements_amount);
 
-	for (uint32_t i = 1; i <= tabla_segmentos->elements_amount; i++) {
+	int k = 0;
+
+	for (uint32_t i = 1; k < tabla_segmentos->elements_amount; i++) {
 
 		char* id_char = malloc(sizeof(char));
 		sprintf(id_char, "%u", i);
@@ -319,6 +587,7 @@ t_list* obtener_segmentos_catch(uint32_t id_cliente) {
 		if (registro == NULL) {
 			log_warning(extense_logger_memoria, "Registro NULL leido");
 		} else {
+			k++;
 			if (3 == registro->tipo) {
 				int has_to_send = 1;
 				for (int j = 0; j < registro->acknowledgements->elements_count; j++) {
@@ -350,7 +619,9 @@ t_list* obtener_segmentos_caught(uint32_t id_cliente) {
 
 	log_info(extense_logger_memoria, "Tamanio tabla de segmentos: %i", tabla_segmentos->elements_amount);
 
-	for (uint32_t i = 1; i <= tabla_segmentos->elements_amount; i++) {
+	int k = 0;
+
+	for (uint32_t i = 1; k < tabla_segmentos->elements_amount; i++) {
 
 		char* id_char = malloc(sizeof(char));
 		sprintf(id_char, "%u", i);
@@ -360,6 +631,7 @@ t_list* obtener_segmentos_caught(uint32_t id_cliente) {
 		if (registro == NULL) {
 			log_warning(extense_logger_memoria, "Registro NULL leido");
 		} else {
+			k++;
 			if (4 == registro->tipo) {
 				int has_to_send = 1;
 				for (int j = 0; j < registro->acknowledgements->elements_count; j++) {
@@ -384,3 +656,122 @@ t_list* obtener_segmentos_caught(uint32_t id_cliente) {
 	return segmentos;
 
 }
+
+void dump_cache(int signal) {
+	char* fileName = "dump_";
+	char* fecha = temporal_get_string_time();
+	string_append(&fileName, fecha);
+	string_append(&fileName, ".txt");
+
+	FILE* archivo_dump = txt_open_for_append(fileName);
+
+	if (archivo_dump == NULL) {
+		log_error(extense_logger_memoria, "No se ha podido hacer el dump de la memoria, ha ocurrido un problema al crear el archivo de dump");
+		free(fileName);
+		free(fecha);
+		txt_close_file(archivo_dump);
+	} else {
+		char* dump;
+		void* particion = memoria;
+		void* final_memoria = memoria + tamanio_memoria;
+		int numero_particion = 1;
+
+		while (particion != final_memoria) {
+			particion_libre* particion_para_dump = buscar_particion_libre(particion);
+			if (particion_para_dump == NULL) {
+				data_tabla* registro_para_dump = buscar_registro(particion);
+
+				if (registro_para_dump == NULL) {
+					// la cagamos
+					log_error(extense_logger_memoria, "El dump de la memoria se ha detenido abruptamente, no se ha encontrado la particion comenzada en %06p", particion);
+					free(dump);
+					free(fileName);
+					free(fecha);
+					txt_close_file(archivo_dump);
+				} else {
+					particion = registro_para_dump->base + registro_para_dump->tamanio_particion;
+					dump = obtener_dump_registro(registro_para_dump, numero_particion);
+				}
+			} else {
+				particion = particion_para_dump->hasta;
+				dump = obtener_dump_particion_libre(particion_para_dump, numero_particion);
+			}
+			numero_particion++;
+			txt_write_in_file(archivo_dump, dump);
+		}
+	}
+
+	txt_close_file(archivo_dump);
+}
+
+data_tabla* buscar_registro(void* particion) {
+	int id_a_buscar = 1;
+	int cantidad_registros_leidos = 0;
+	while (cantidad_registros_leidos < tabla_segmentos->elements_amount) {
+		char* id_char = malloc(sizeof(char));
+		sprintf(id_char, "%u", id_a_buscar);
+
+		data_tabla* registro = (data_tabla*) dictionary_get(tabla_segmentos, id_char);
+
+		if (registro != NULL) {
+			if (registro->base == particion) {
+				return registro;
+			}
+			cantidad_registros_leidos++;
+		}
+
+		id_a_buscar++;
+
+		free(id_char);
+	}
+
+	return NULL;
+}
+
+particion_libre* buscar_particion_libre(void* particion) {
+	for (int i = 0; i < particiones_libres->elements_count; i++) {
+		particion_libre* particion_libre = list_get(particiones_libres, i);
+		if (particion_libre->desde == particion) {
+			return particion_libre;
+		}
+	}
+	return NULL;
+}
+
+char* obtener_dump_particion_libre(particion_libre* particion_libre, int numero_particion) {
+	return string_from_format("Partición %i: %06p - %06p.      [L]      Size: %i b\n",
+			numero_particion,
+			particion_libre->desde,
+			particion_libre->hasta,
+			tamanio_particion_libre(particion_libre));
+}
+
+char* obtener_dump_registro(data_tabla* registro, int numero_particion) {
+	return string_from_format("Partición %i: %06p - %06p.      [X]      Size: %i b      LRU: %i      Cola: %i      ID: %i\n",
+			numero_particion,
+			registro->base,
+			registro->base + registro->tamanio_particion,
+			registro->tamanio_particion,
+			registro->id_modificacion,
+			registro->tipo,
+			registro->id);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

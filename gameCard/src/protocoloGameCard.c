@@ -104,11 +104,45 @@ void enviar_localized(int socket, t_localized* localizedAEnviar){
 
 }
 
+void enviar_suscriptor(int socket, t_appeared* suscriptorAEnviar){
+
+	t_buffer* bufferSuscriptor = crearBufferSuscriptor(suscriptorAEnviar);
+	uint32_t bytes;
+
+	log_info(loggerDev, "Creando paquete");
+	t_paquete* paquete = crearPaquete(bufferSuscriptor);   // CREAR PAQUETE
+
+	paquete->codigo_operacion = SUSCRIPTOR;
+	log_info(loggerDev, "CODIGO DE OPERACION: %i", paquete->codigo_operacion);
+
+	log_info(loggerDev, "Paquete Creado");
+	log_info(loggerDev, "la operacion a realizar es %i", paquete->codigo_operacion);
+
+	log_info(loggerDev, "Serializando...");
+	void* flujo = serializar_paquete(paquete,&bytes);                   //  SERIALIZAR PAQUETE
+	log_info(loggerDev, "Serializacion completa");
+
+
+	log_info(loggerDev, "El peso total es: %i",paquete->buffer->size);
+
+	//    ENVIAR MENSAJE
+	if(send(socket, flujo, bytes, 0) == -1){
+		log_error(loggerDev, "Error: No se pudo enviar el mensaje");
+	}
+
+	free(flujo);
+	free(bufferSuscriptor->stream);
+	free(bufferSuscriptor);
+	free(paquete);
+
+
+}
+
 
 //#######################################################	RECIBIR MENSAJE	#################################################################
 
 
-void recibir_new(int socket_cliente, uint32_t* size, t_log* logger) {
+t_newLlegada recibir_new(int socket_cliente, uint32_t* size, t_log* logger) { // ahora retorna new
 	t_newLlegada* new = malloc(sizeof(t_newLlegada));
 	uint32_t tamanio_pokemon;
 
@@ -184,12 +218,11 @@ void recibir_new(int socket_cliente, uint32_t* size, t_log* logger) {
 		free(new);
 		exit(-1);
 	}
-
 	log_info(logger, "Cantidad recibida: %i", new->cantidad);
-
+	return new;
 }
 
-void recibir_catch(int socket_cliente, uint32_t* size, t_log* logger) {
+t_catchLlegada recibir_catch(int socket_cliente, uint32_t* size, t_log* logger) {
 	t_catchLlegada* catch = malloc(sizeof(t_catchLlegada));
 	uint32_t tamanio_pokemon;
 
@@ -255,10 +288,10 @@ void recibir_catch(int socket_cliente, uint32_t* size, t_log* logger) {
 	}
 
 	log_info(logger, "Posicion Y recibida: %i", catch->pos_Y);
-
+	return catch;
 }
 
-void recibir_get(int socket_cliente, uint32_t* size, t_log* logger) {
+t_getLlegada recibir_get(int socket_cliente, uint32_t* size, t_log* logger) {
 	t_getLlegada* get = malloc(sizeof(t_getLlegada));
 	uint32_t tamanio_pokemon;
 
@@ -302,4 +335,6 @@ void recibir_get(int socket_cliente, uint32_t* size, t_log* logger) {
 	}
 
 	log_info(logger, "Nombre del pokemon recibido: %s", get->pokemon);
+	return get;
 }
+

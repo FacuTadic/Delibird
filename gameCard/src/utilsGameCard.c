@@ -1,4 +1,6 @@
 #include "utilsGameCard.h"
+#include "protocoloGameCard.h"
+
 #include<string.h>
 #include <commons/log.h>
 
@@ -339,6 +341,144 @@ void getPokemon(int socketCliente,char* pokemon){
 	config_destroy(archivoMetadataPokemon);
 	sleep(tiempoRetardoOperacion);
 
+}
+
+void enviar_mensaje(char* argv[], int socket_cliente){        // de GAMEBOY
+	uint32_t bytes;
+
+	log_info(loggerDev, "Creando buffer");
+	t_buffer* buffer = crearBufferPorTipoDeMensaje(argv,loggerDev);
+	log_info(loggerDev, "Buffer creado");
+
+
+	log_info(loggerDev, "Creando paquete");
+	t_paquete* paquete = crearPaquete(buffer);   // CREAR PAQUETE
+
+	paquete->codigo_operacion = enumTipoMensaje(argv[2]);
+	log_info(loggerDev, "CODIGO DE OPERACION: %i", paquete->codigo_operacion);
+
+	log_info(loggerDev, "Paquete Creado");
+	log_info(loggerDev, "la operacion a realizar es %i", paquete->codigo_operacion);
+
+	log_info(loggerDev, "Serializando...");
+	void* flujo = serializar_paquete(paquete,&bytes);                   //  SERIALIZAR PAQUETE
+	log_info(loggerDev, "Serializacion completa");
+
+
+	log_info(loggerDev, "El peso total es: %i",paquete->buffer->size);
+
+	//    ENVIAR MENSAJE
+	if (send(socket_cliente, flujo, bytes, 0) == -1){
+		log_error(loggerDev, "Error: No se pudo enviar el mensaje");
+	}
+
+	free(flujo);
+	free(buffer->stream);
+	free(buffer);
+	free(paquete);
+}
+
+
+// atender cliente y procesar request choripasteados de BKR
+void procesar_request(int cod_op, int cliente_fd) {
+	uint32_t size;
+
+
+	log_info(loggerDev, "Generando id para el mensaje del socket %i", cliente_fd);  // cliente_fd es el socket (esta asi en BKR)
+
+	switch (cod_op) {
+	case NEW: ;
+	log_info(loggerDev, "Codigo de operacion recibido del socket cliente %i corresponde a un NEW", cliente_fd);
+	t_newLlegada* new_msg = recibir_new(cliente_fd, &size, loggerDev);
+
+	if (new_msg == NULL) {
+				pthread_exit(NULL);
+	} else { 										// mandar respuesta correspondiente a NEW (appeared)
+		t_appeared appearedAEnviar = crearAppeared(new_msg);
+		enviar_appeared(socket, appearedAEnviar);
+		}
+	free(new_msg);
+
+	break;
+
+	case CATCH: ;
+	log_info(loggerDev, "Codigo de operacion recibido del socket cliente %i corresponde a un CATCH", cliente_fd);
+	t_catchLlegada* catch_msg = recibir_catch(cliente_fd, &size, loggerDev);
+
+	if (catch_msg == NULL) {
+		pthread_exit(NULL);
+	} else {
+
+		t_caught caughtAEnviar = crearCaught(catch_msg);
+		enviar_caught(socket,caughtAEnviar);	// mandar respuesta correspondiente a CATCH (caught)
+
+	}
+	free(catch_msg);
+
+	break;
+
+	case GET: ;
+	log_info(loggerDev, "Codigo de operacion recibido del socket cliente %i corresponde a un GET", cliente_fd);
+
+	t_getLlegada* get_msg = recibir_get(cliente_fd, &size, loggerDev);
+
+	if (get_msg == NULL) {
+		pthread_exit(NULL);
+	} else {
+
+		t_localized localizedAEnviar = crearLocalized(get_msg);
+		enviar_localized(cliente_fd , localizedAEnviar);							// mandar respuesta correspondiente a GET (localized)
+
+	}
+	free(get_msg);
+
+	break;
+
+
+
+	}
+}
+
+void atender_cliente(int* socket) {
+	uint32_t cod_op;
+	log_info(loggerDev, "Recibiendo codigo de operacion de socket %i", *socket);
+	int status_recv = recv(*socket, &cod_op, sizeof(uint32_t), MSG_WAITALL);
+	if (status_recv == -1) {
+		close(*socket);
+		log_error(loggerDev, "Hubo un problema recibiendo codigo de operacion de socket %i", *socket);
+		pthread_exit(NULL);
+	}
+	if (status_recv == 0) {
+		close(*socket);
+		log_warning(loggerDev, "El cliente acaba de cerrar la conexion correspondiente al socket %i", *socket);
+		pthread_exit(NULL);
+	}
+	log_info(loggerDev, "Codigo de operacion de socket %i recibido: %i", *socket, cod_op);
+	procesar_request(cod_op, *socket);
+}
+
+void esperar_cliente(int socket_servidor) {
+	struct sockaddr_in dir_cliente;
+
+	int tam_direccion = sizeof(struct sockaddr_in);
+
+	int socket_cliente = accept(socket_servidor, (void*) &dir_cliente, &tam_direccion);
+
+	log_info(loggerDev, "Socket cliente %i aceptado", socket_cliente);
+	log_info(loggerGameCard, "Nueva conexion de un proceso con socket cliente %i", socket_cliente);
+
+	pthread_t thread;
+
+	pthread_create(&thread, NULL, (void*) atender_cliente, &socket_cliente);
+	pthread_detach(thread);
+}
+
+void esperar_clientes(void* socket_servidor) {
+	int socket = (int) socket_servidor;
+	log_info(loggerDev, "Esperando clientes en socket %i", socket);
+	while(1) {
+		esperar_cliente(socket);
+	}
 }
 
 
