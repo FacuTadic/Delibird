@@ -1,6 +1,6 @@
 #include"bitArray.h"
 
-void setear_bitarray(int nr_blocks) {
+void setearBitarray() {
 	uint32_t i = 0;
 	char c;
 
@@ -16,13 +16,13 @@ void setear_bitarray(int nr_blocks) {
 
 	if (file_size == 0) {	//Bitmap vacio
 		fseek(fp, 0L, SEEK_SET);
-		for (i = 0; i < nr_blocks; i++) {
+		for (i = 0; i < cantidadDeBloques; i++) {
 			bitarray_clean_bit(bitarray, i);
 			fprintf(fp, "%d", bitarray_test_bit(bitarray, i));
 		}
-		crear_bloques_FS(nr_blocks);
+		//crearTodosLosBloquesFS(cantidadDeBloques);	TENGO QUE CREAR TODOS LOS BLOQUES CUANDO LEVANTO EL FS?
 	} else {
-		printf("Bitmap ya seteado\n");
+		log_info(loggerDev,"Bitmap ya seteado");
 		fseek(fp, 0L, SEEK_SET);
 		while (!feof(fp)) {
 			c = fgetc(fp);
@@ -40,17 +40,27 @@ void setear_bitarray(int nr_blocks) {
 }
 
 
-void crear_bitarray() {
+void guardarBitarray(uint32_t index) {
+
+	FILE *fp = fopen(bitMap, "r+b");
+	fp->_offset = index;
+	fseek(fp, 0l, SEEK_CUR);
+	fprintf(fp, "%i", bitarray_test_bit(bitarray, index));
+	fclose(fp);
+}
+
+
+void crearBitarray() {
 	char *data;
 	data = malloc(cantidadDeBloques);
 	memset(data, '0', cantidadDeBloques);
 
 	bitarray = bitarray_create_with_mode(data, cantidadDeBloques, LSB_FIRST);
-	setear_bitarray(cantidadDeBloques);
+	setearBitarray(cantidadDeBloques);
 }
 
 
-int elegir_bloque_libre() {
+char* buscarPosicionDisponibleEnElBitMap() {
 	int free_block, i, flag_free_block = 0;
 
 	sem_wait(&bloques_bitmap);
@@ -60,19 +70,13 @@ int elegir_bloque_libre() {
 				flag_free_block = 1;
 				free_block = i;
 				bitarray_set_bit(bitarray, i);
-				guardar_bitarray(i);
+				guardarBitarray(i);
 				sem_post(&bloques_bitmap);
-				return free_block;
+				return string_itoa(free_block);
 			}
 		}
 	}
 	sem_post(&bloques_bitmap);
-	return -1;
+	return string_itoa(-1);
 }
 
-
-
-
-char* buscarPosicionDisponibleEnElBitMap(){
-
-}

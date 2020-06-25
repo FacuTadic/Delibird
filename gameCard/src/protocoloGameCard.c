@@ -1,7 +1,6 @@
 #include "protocoloGameCard.h"
 #include "creacionDeEstructurasParaEnvio.h"
 
-
 //####################################################	ENVIAR MENSAJES	#########################################################################
 
 void enviar_appeared(int socket, t_appeared* appearedAEnviar){

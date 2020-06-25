@@ -22,7 +22,7 @@
 sem_t bloques_bitmap;
 
 
-void crear_bitarray();
+void crearBitarray();
 
 
 
