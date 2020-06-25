@@ -165,6 +165,7 @@ char* seleccionarBlockParaCargarPosiciones(char** blocksOcupados, char*posicion,
 			log_info(loggerDev, "Se esta viendo su el el block %s cumple las condiciones",blocksOcupados[i]);
 			char* rutaDeArchivo = generadorDeRutaDeCreacionDeArchivos(rutaBlocks,blocksOcupados[i],".bin");
 			if(hayEspacioEnElBlock(rutaDeArchivo,posicion,cantidad)){
+				log_info(loggerDev, "Se encontro el block %s libre",blocksOcupados[i]);
 				return blocksOcupados[i];
 			} else{
 				i++;

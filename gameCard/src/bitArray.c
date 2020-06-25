@@ -72,11 +72,12 @@ char* buscarPosicionDisponibleEnElBitMap() {
 				bitarray_set_bit(bitarray, i);
 				guardarBitarray(i);
 				sem_post(&bloques_bitmap);
+				log_info(loggerDev, "EL block %s esta libre",string_itoa(free_block));
 				return string_itoa(free_block);
 			}
 		}
 	}
 	sem_post(&bloques_bitmap);
-	return string_itoa(-1);
+	log_error(loggerDev, "No hay bloques libres diponibles");
 }
 
