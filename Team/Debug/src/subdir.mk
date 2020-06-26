@@ -4,16 +4,19 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
+../src/protocol_team.c \
 ../src/team.c \
-../src/utils.c 
+../src/team_utils.c 
 
 OBJS += \
+./src/protocol_team.o \
 ./src/team.o \
-./src/utils.o 
+./src/team_utils.o 
 
 C_DEPS += \
+./src/protocol_team.d \
 ./src/team.d \
-./src/utils.d 
+./src/team_utils.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
