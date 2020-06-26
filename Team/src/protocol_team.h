@@ -14,13 +14,16 @@
 
 #endif
 
-typedef struct
-{
-	uint32_t sizeTotal;
-	uint32_t size;
-	char* nombre;
-	uint32_t coordx;
-	uint32_t coordY;
+typedef struct {
+	char* pokemon;
+	uint32_t pos_x;
+	uint32_t pos_y;
 } t_appeared;
 
-t_appeared* recibir_appeared_de_game_boy(int socket, uint32_t* size);
+typedef struct {
+	char* pokemon;
+	uint32_t pos_X;
+	uint32_t pos_Y;
+} t_appeared_gb;
+
+t_appeared_gb* recibir_appeared_de_game_boy(int socket, uint32_t* size, t_log* logger);

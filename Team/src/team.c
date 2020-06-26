@@ -4,9 +4,9 @@ void procesar_request_de_game_boy(int cod_op, int socket) {
 	uint32_t size;
 	if (cod_op == APPEARED) {
 		log_info(extense_logger, "Codigo de operacion recibido del socket cliente %i corresponde a un APPEARED", socket);
-		t_appeared* appeared_msg = recibir_appeared_de_game_boy(socket, &size);
+		t_appeared_gb* appeared_msg = recibir_appeared_de_game_boy(socket, &size, extense_logger);
 
-		// hacer algo
+		// hacer algo con ese appeared, no se que todavia
 
 	} else {
 		// log cualquiera pibe, no me mandaste un appeared
@@ -53,6 +53,18 @@ void escuchar_game_boy(void* socket_escucha_game_boy) {
 	}
 }
 
+void laburar(void* entrenador_param) {
+	t_entrenador* entrenador = (t_entrenador*) entrenador_param;
+
+	while (entrenador->estado != ESTADO_EXIT) {
+
+		// switch por tarea
+
+	}
+
+	pthread_exit(NULL);
+}
+
 int main(void) {
 	char* ip;
 	char* puerto;
@@ -73,14 +85,30 @@ int main(void) {
 	puerto = config_get_string_value(config, "PUERTO");
 	log_info(extense_logger, "El puerto es: %s", puerto);
 
+	entrenadores = list_create();
+
 	inicializar_entrenadores();
 
 	obtener_objetivo_global();
 
+	pthread_t* threads_entrenadores = malloc(sizeof(pthread_t) * entrenadores->elements_count);
+
+	for (int i = 0; i < entrenadores->elements_count; i++) {
+		pthread_create(&(threads_entrenadores[i]), NULL, (void *) laburar, list_get(entrenadores, i));
+	}
+
 	int socket_escucha_game_boy = iniciar_escucha_game_boy(ip, puerto);
 	pthread_t hilo_escucha_de_game_boy;
 	pthread_create(&hilo_escucha_de_game_boy, NULL, (void *) escuchar_game_boy, (void*) socket_escucha_game_boy);
-	pthread_detach(hilo_escucha_de_game_boy, NULL);
+	pthread_detach(hilo_escucha_de_game_boy);
+
+	// crear colas de appeared, caught y localized
+
+	// crear hilos que atiendan colas de appeared, caught y localized y tirar detach
+
+	// crear hilo planificador y tirarle detach
+
+	// crear hilos que se conecten al broker y que cada uno escuche una cola
 
 
 
@@ -88,8 +116,12 @@ int main(void) {
 
 
 
+	for (int i = 0; i < entrenadores->elements_count; i++) {
+		pthread_join(threads_entrenadores[i], NULL);
+	}
 
-
+	terminar_programa();
+	return EXIT_SUCCESS;
 }
 
 t_config* leer_config() {
@@ -166,17 +198,20 @@ void inicializar_entrenadores() {
 		for (int k = 0; k < pokemones->elements_count; k++) {
 			char* pokemon_de_lista = (char*) list_get(pokemones, k);
 			int hay_que_eliminar_de_objetivo_actual = 0;
+			int index_a_eliminar;
 			int j = 0;
 			char* objetivo_de_lista = (char*) list_get(objetivos_actuales, j);
 			while (objetivo_de_lista != NULL && hay_que_eliminar_de_objetivo_actual == 0) {
 				hay_que_eliminar_de_objetivo_actual = string_equals_ignore_case(objetivo_de_lista, pokemon_de_lista);
+				if (hay_que_eliminar_de_objetivo_actual == 1) {
+					index_a_eliminar = j;
+				}
 				j++;
 				objetivo_de_lista = (char*) list_get(objetivos_actuales, j);
 			}
 
 			if (hay_que_eliminar_de_objetivo_actual == 1) {
-				j--;
-				char* objetivo_actual_eliminado = (char*) list_remove(objetivos_actuales, j);
+				char* objetivo_actual_eliminado = (char*) list_remove(objetivos_actuales, index_a_eliminar);
 				free(objetivo_actual_eliminado);
 			}
 		}
@@ -188,17 +223,20 @@ void inicializar_entrenadores() {
 		for (int k = 0; k < objetivos->elements_count; k++) {
 			char* objetivo_de_lista = (char*) list_get(pokemones, k);
 			int hay_que_eliminar_de_pokemones_innecesarios = 0;
+			int index_a_eliminar;
 			int j = 0;
 			char* pokemon_de_lista = (char*) list_get(pokemones_innecesarios, j);
 			while (pokemon_de_lista != NULL && hay_que_eliminar_de_pokemones_innecesarios == 0) {
 				hay_que_eliminar_de_pokemones_innecesarios = string_equals_ignore_case(objetivo_de_lista, pokemon_de_lista);
+				if (hay_que_eliminar_de_pokemones_innecesarios == 1) {
+					index_a_eliminar = j;
+				}
 				j++;
 				pokemon_de_lista = (char*) list_get(pokemones_innecesarios, j);
 			}
 
 			if (hay_que_eliminar_de_pokemones_innecesarios == 1) {
-				j--;
-				char* pokemon_innecesario_eliminado = (char*) list_remove(pokemones_innecesarios, j);
+				char* pokemon_innecesario_eliminado = (char*) list_remove(pokemones_innecesarios, index_a_eliminar);
 				free(pokemon_innecesario_eliminado);
 			}
 		}
@@ -206,6 +244,15 @@ void inicializar_entrenadores() {
 		entrenador->pokemones_innecesarios = pokemones_innecesarios;
 
 		entrenador->pokebolas = objetivos->elements_count - pokemones->elements_count;
+
+		entrenador->estado = ESTADO_NEW;
+
+		t_tarea* tarea = malloc (sizeof(t_tarea));
+
+		tarea->id_tarea = NO_HACER_PINGO;
+		tarea->parametros = NULL;
+
+		entrenador->tarea_actual = tarea;
 
 		list_add(entrenadores, (void*) entrenador);
 
@@ -262,17 +309,27 @@ void obtener_objetivo_global() {
 }
 
 void obtener_pokemones_a_localizar() {
-
 	pokemones_a_localizar = list_create();
 
-
-
-
-
-
-
+	for (int i = 0; i < objetivo_global->elements_count; i++) {
+		char* objetivo = (char*) list_get(objetivo_global, i);
+		int hay_que_agregar = 1;
+		for (int j = 0; j < pokemones_a_localizar->elements_count; j++) {
+			char* pokemon = (char*) list_get(pokemones_a_localizar, j);
+			int aux = string_equals_ignore_case(pokemon, objetivo);
+			if (aux == 1) {
+				hay_que_agregar = 0;
+			}
+		}
+		if (hay_que_agregar == 1) {
+			list_add(pokemones_a_localizar, objetivo);
+		}
+	}
 }
 
+void terminar_programa() {
+	// destroy stuff
+}
 
 
 
