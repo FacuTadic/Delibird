@@ -5,7 +5,6 @@ void procesar_request_de_game_boy(int cod_op, int socket) {
 	if (cod_op == APPEARED) {
 		log_info(extense_logger, "Codigo de operacion recibido del socket cliente %i corresponde a un APPEARED", socket);
 		t_appeared* appeared_msg = recibir_appeared_de_game_boy(socket, &size, extense_logger);
-
 		t_mensaje_recibido* mensaje = malloc(sizeof(t_mensaje_recibido));
 
 		mensaje->tipo_mensaje = APPEARED;
@@ -15,7 +14,6 @@ void procesar_request_de_game_boy(int cod_op, int socket) {
 		queue_push(cola_mensajes_recibidos, (void*) mensaje);
 		pthread_mutex_unlock(&cola_mensajes_recibidos_mutex);
 		sem_post(&sem_cola_mensajes_nuevos);
-
 	} else {
 		// log cualquiera pibe, no me mandaste un appeared
 	}
