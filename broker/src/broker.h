@@ -121,7 +121,7 @@ t_log* iniciar_logger(char* log_file);
 t_log* iniciar_logger_sin_consola(char* log_file);
 t_config* leer_config(void);
 void inicializar_memoria(void);
-void inicializar_colas(void);
+void inicializar_cola(void);
 void inicializar_semaforos_colas(void);
 void terminar_programa(void);
 void atender_mensaje_new(mensaje_queue*);

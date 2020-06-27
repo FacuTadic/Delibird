@@ -1910,7 +1910,7 @@ int main(void) {
 
 	signal(SIGUSR1, dump_cache);
 
-	inicializar_colas();
+	inicializar_cola();
 
 	inicializar_semaforos_colas();
 
@@ -2018,7 +2018,7 @@ void inicializar_memoria() {
 
 }
 
-void inicializar_colas(void) {
+void inicializar_cola(void) {
 	log_info(extense_logger, "Iniciando colas");
 
 	gl_new_pokemon_queue = queue_create();

@@ -16,14 +16,8 @@
 
 typedef struct {
 	char* pokemon;
-	uint32_t pos_x;
-	uint32_t pos_y;
-} t_appeared;
-
-typedef struct {
-	char* pokemon;
 	uint32_t pos_X;
 	uint32_t pos_Y;
-} t_appeared_gb;
+} t_appeared;
 
-t_appeared_gb* recibir_appeared_de_game_boy(int socket, uint32_t* size, t_log* logger);
+t_appeared* recibir_appeared_de_game_boy(int socket, uint32_t* size, t_log* logger);

@@ -4,9 +4,17 @@ void procesar_request_de_game_boy(int cod_op, int socket) {
 	uint32_t size;
 	if (cod_op == APPEARED) {
 		log_info(extense_logger, "Codigo de operacion recibido del socket cliente %i corresponde a un APPEARED", socket);
-		t_appeared_gb* appeared_msg = recibir_appeared_de_game_boy(socket, &size, extense_logger);
+		t_appeared* appeared_msg = recibir_appeared_de_game_boy(socket, &size, extense_logger);
 
-		// hacer algo con ese appeared, no se que todavia
+		t_mensaje_recibido* mensaje = malloc(sizeof(t_mensaje_recibido));
+
+		mensaje->tipo_mensaje = APPEARED;
+		mensaje->mensaje = (void*) appeared_msg;
+
+		pthread_mutex_lock(&cola_mensajes_recibidos_mutex);
+		queue_push(cola_mensajes_recibidos, (void*) mensaje);
+		pthread_mutex_unlock(&cola_mensajes_recibidos_mutex);
+		sem_post(&sem_cola_mensajes_nuevos);
 
 	} else {
 		// log cualquiera pibe, no me mandaste un appeared
@@ -65,6 +73,10 @@ void laburar(void* entrenador_param) {
 	pthread_exit(NULL);
 }
 
+void planificar() {
+	// hacer cosas de planificador
+}
+
 int main(void) {
 	char* ip;
 	char* puerto;
@@ -91,6 +103,9 @@ int main(void) {
 
 	obtener_objetivo_global();
 
+	// crear cola de mensajes recibidos
+	inicializar_cola();
+
 	pthread_t* threads_entrenadores = malloc(sizeof(pthread_t) * entrenadores->elements_count);
 
 	for (int i = 0; i < entrenadores->elements_count; i++) {
@@ -102,13 +117,14 @@ int main(void) {
 	pthread_create(&hilo_escucha_de_game_boy, NULL, (void *) escuchar_game_boy, (void*) socket_escucha_game_boy);
 	pthread_detach(hilo_escucha_de_game_boy);
 
-	// crear colas de appeared, caught y localized
-
-	// crear hilos que atiendan colas de appeared, caught y localized y tirar detach
-
 	// crear hilo planificador y tirarle detach
 
-	// crear hilos que se conecten al broker y que cada uno escuche una cola
+	pthread_t hilo_planificador;
+	pthread_create(&hilo_planificador, NULL, (void *) planificar, NULL);
+	pthread_detach(hilo_planificador);
+
+	// crear hilos que se conecten al broker y que cada uno escuche una cola del broker
+	// cuando obtengan algo van a tener que mandar el mensaje a la cola del team correspondiente
 
 
 
@@ -120,7 +136,7 @@ int main(void) {
 		pthread_join(threads_entrenadores[i], NULL);
 	}
 
-	terminar_programa();
+	terminar_programa(socket_escucha_game_boy);
 	return EXIT_SUCCESS;
 }
 
@@ -134,6 +150,12 @@ t_log* iniciar_logger(char* log_file) {
 
 t_log* iniciar_logger_sin_consola(char* log_file) {
 	return log_create(log_file, "Team", 0, LOG_LEVEL_INFO);
+}
+
+void inicializar_cola() {
+	cola_mensajes_recibidos = queue_create();
+	pthread_mutex_init(&cola_mensajes_recibidos_mutex, NULL);
+	sem_init(&sem_cola_mensajes_nuevos, 0, 0);
 }
 
 void inicializar_entrenadores() {
@@ -327,7 +349,9 @@ void obtener_pokemones_a_localizar() {
 	}
 }
 
-void terminar_programa() {
+void terminar_programa(int socket_game_boy) {
+	close(socket_game_boy);
+
 	// destroy stuff
 }
 

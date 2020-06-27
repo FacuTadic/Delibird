@@ -9,6 +9,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <pthread.h>
+#include "semaphore.h"
 #include "team_utils.h"
 #include "protocol_team.h"
 
@@ -23,6 +24,12 @@ t_list* entrenadores; // t_entrenador
 
 t_list* objetivo_global; // nombres de pokemon
 t_list* pokemones_a_localizar; // nombres de pokemon
+
+t_queue* cola_mensajes_recibidos;
+
+pthread_mutex_t cola_mensajes_recibidos_mutex;
+
+sem_t sem_cola_mensajes_nuevos;
 
 // que se yo que va aca
 typedef enum
@@ -59,14 +66,21 @@ typedef struct {
 	t_tarea* tarea_actual;
 } t_entrenador;
 
+typedef struct {
+	op_code tipo_mensaje;
+	void* mensaje; // t_appeared, t_caught o t_localized
+} t_mensaje_recibido;
+
 
 
 
 t_log* iniciar_logger(char* log_file);
 t_log* iniciar_logger_sin_consola(char* log_file);
 t_config* leer_config(void);
-void terminar_programa(void);
+void terminar_programa(int socket_game_boy);
 void inicializar_entrenadores(void);
+void inicializar_cola(void);
 void obtener_objetivo_global(void);
 void obtener_pokemones_a_localizar(void);
 void laburar(void* entrenador);
+void planificar (void);

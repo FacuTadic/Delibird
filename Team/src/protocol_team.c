@@ -1,8 +1,8 @@
 #include "protocol_team.h"
 
-t_appeared_gb* recibir_appeared_de_game_boy(int socket, uint32_t* size, t_log* logger) {
+t_appeared* recibir_appeared_de_game_boy(int socket, uint32_t* size, t_log* logger) {
 
-	t_appeared_gb* appeared = malloc(sizeof(t_appeared_gb));
+	t_appeared* appeared = malloc(sizeof(t_appeared));
 
 	uint32_t tamanio_pokemon;
 
