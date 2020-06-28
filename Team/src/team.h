@@ -20,6 +20,11 @@ t_log* extense_logger;
 
 t_config* config;
 
+int socket_escucha_game_boy;
+int socket_escucha_appeared;
+int socket_escucha_caught;
+int socket_escucha_localized;
+
 t_list* entrenadores; // t_entrenador
 
 t_list* objetivo_global; // nombres de pokemon
@@ -77,10 +82,13 @@ typedef struct {
 t_log* iniciar_logger(char* log_file);
 t_log* iniciar_logger_sin_consola(char* log_file);
 t_config* leer_config(void);
-void terminar_programa(int socket_game_boy);
+void terminar_programa();
 void inicializar_entrenadores(void);
 void inicializar_cola(void);
 void obtener_objetivo_global(void);
 void obtener_pokemones_a_localizar(void);
 void laburar(void* entrenador);
 void planificar (void);
+void escuchar_appeared_de_broker(void);
+void escuchar_caught_de_broker(void);
+void escuchar_localized_de_broker(void);

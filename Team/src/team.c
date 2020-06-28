@@ -1,10 +1,10 @@
 #include "team.h"
 
-void procesar_request_de_game_boy(int cod_op, int socket) {
+void procesar_request_de_game_boy(int cod_op, int socket_game_boy) {
 	uint32_t size;
 	if (cod_op == APPEARED) {
-		log_info(extense_logger, "Codigo de operacion recibido del socket cliente %i corresponde a un APPEARED", socket);
-		t_appeared* appeared_msg = recibir_appeared_de_game_boy(socket, &size, extense_logger);
+		log_info(extense_logger, "Codigo de operacion recibido del socket cliente %i corresponde a un APPEARED", socket_game_boy);
+		t_appeared* appeared_msg = recibir_appeared_de_game_boy(socket_game_boy, &size, extense_logger);
 		t_mensaje_recibido* mensaje = malloc(sizeof(t_mensaje_recibido));
 
 		mensaje->tipo_mensaje = APPEARED;
@@ -17,7 +17,7 @@ void procesar_request_de_game_boy(int cod_op, int socket) {
 	} else {
 		// log cualquiera pibe, no me mandaste un appeared
 	}
-	close(socket);
+	close(socket_game_boy);
 }
 
 void atender_game_boy(int* socket) {
@@ -59,6 +59,64 @@ void escuchar_game_boy(void* socket_escucha_game_boy) {
 	}
 }
 
+void escuchar_appeared_de_broker(void) {
+	uint32_t id_cola = 11;
+	int status_envio = mandar_suscripcion(socket_escucha_appeared, id_cola);
+
+	if (status_envio == -1) {
+		log_error(logger, "Hubo un problema enviando la suscripcion a la cola APPEARED del broker");
+		// la cagamos ñeri
+	} else {
+
+		while (1) {
+			uint32_t size;
+			t_appeared* appeared_msg = recibir_appeared(socket_escucha_appeared, &size, extense_logger);
+			t_mensaje_recibido* mensaje = malloc(sizeof(t_mensaje_recibido));
+
+			mensaje->tipo_mensaje = APPEARED;
+			mensaje->mensaje = (void*) appeared_msg;
+
+			pthread_mutex_lock(&cola_mensajes_recibidos_mutex);
+			queue_push(cola_mensajes_recibidos, (void*) mensaje);
+			pthread_mutex_unlock(&cola_mensajes_recibidos_mutex);
+			sem_post(&sem_cola_mensajes_nuevos);
+
+
+
+		}
+
+	}
+
+	// while 1 -> recibir appeared, mandar ack y agregarlo a la cola
+
+}
+
+void escuchar_caught_de_broker(void) {
+	uint32_t id_cola = 14;
+	int status_envio = mandar_suscripcion(socket_escucha_caught, id_cola);
+
+	if (status_envio == -1) {
+		log_error(logger, "Hubo un problema enviando la suscripcion a la cola CAUGHT del broker");
+		// la cagamos ñeri
+	}
+
+	// while 1 -> recibir caught, mandar ack, chequear si importa o no y agregarlo a la cola
+
+}
+
+void escuchar_localized_de_broker(void) {
+	uint32_t id_cola = 16;
+	int status_envio = mandar_suscripcion(socket_escucha_localized, id_cola);
+
+	if (status_envio == -1) {
+		log_error(logger, "Hubo un problema enviando la suscripcion a la cola LOCALIZED del broker");
+		// la cagamos ñeri
+	}
+
+	// while 1 -> recibir localized, mandar ack y agregarlo a la cola
+
+}
+
 void laburar(void* entrenador_param) {
 	t_entrenador* entrenador = (t_entrenador*) entrenador_param;
 
@@ -78,6 +136,8 @@ void planificar() {
 int main(void) {
 	char* ip;
 	char* puerto;
+	char* ip_broker;
+	char* puerto_broker;
 	char* log_file;
 	char* extense_log_file;
 
@@ -94,6 +154,12 @@ int main(void) {
 	log_info(extense_logger, "La IP es: %s", ip);
 	puerto = config_get_string_value(config, "PUERTO");
 	log_info(extense_logger, "El puerto es: %s", puerto);
+	ip_broker = config_get_string_value(config, "IP_BROKER");
+	log_info(extense_logger, "La IP del Broker es: %s", ip_broker);
+	puerto_broker = config_get_string_value(config, "PUERTO_BROKER");
+	log_info(extense_logger, "El puerto del Broker es: %s", puerto_broker);
+	id_modulo = config_get_int_value(config, "ID_MODULO");
+	log_info(extense_logger, "El Id de Team es: %i", id_modulo);
 
 	entrenadores = list_create();
 
@@ -107,22 +173,34 @@ int main(void) {
 	pthread_t* threads_entrenadores = malloc(sizeof(pthread_t) * entrenadores->elements_count);
 
 	for (int i = 0; i < entrenadores->elements_count; i++) {
-		pthread_create(&(threads_entrenadores[i]), NULL, (void *) laburar, list_get(entrenadores, i));
+		pthread_create(&(threads_entrenadores[i]), NULL, (void*) laburar, list_get(entrenadores, i));
 	}
 
-	int socket_escucha_game_boy = iniciar_escucha_game_boy(ip, puerto);
+	socket_escucha_game_boy = iniciar_escucha_game_boy(ip, puerto);
 	pthread_t hilo_escucha_de_game_boy;
-	pthread_create(&hilo_escucha_de_game_boy, NULL, (void *) escuchar_game_boy, (void*) socket_escucha_game_boy);
+	pthread_create(&hilo_escucha_de_game_boy, NULL, (void*) escuchar_game_boy, (void*) socket_escucha_game_boy);
 	pthread_detach(hilo_escucha_de_game_boy);
 
 	// crear hilo planificador y tirarle detach
 
 	pthread_t hilo_planificador;
-	pthread_create(&hilo_planificador, NULL, (void *) planificar, NULL);
+	pthread_create(&hilo_planificador, NULL, (void*) planificar, NULL);
 	pthread_detach(hilo_planificador);
 
 	// crear hilos que se conecten al broker y que cada uno escuche una cola del broker
 	// cuando obtengan algo van a tener que mandar el mensaje a la cola del team correspondiente
+	socket_escucha_appeared = crear_conexion(ip_broker, puerto_broker);
+	socket_escucha_caught = crear_conexion(ip_broker, puerto_broker);
+	socket_escucha_localized = crear_conexion(ip_broker, puerto_broker);
+	pthread_t hilo_escucha_appeared;
+	pthread_t hilo_escucha_caught;
+	pthread_t hilo_escucha_localized;
+	pthread_create(&hilo_escucha_appeared, NULL, (void*) escuchar_appeared_de_broker, NULL);
+	pthread_create(&hilo_escucha_caught, NULL, (void*) escuchar_caught_de_broker, NULL);
+	pthread_create(&hilo_escucha_localized, NULL, (void*) escuchar_localized_de_broker, NULL);
+	pthread_detach(hilo_escucha_appeared);
+	pthread_detach(hilo_escucha_caught);
+	pthread_detach(hilo_escucha_localized);
 
 
 
@@ -134,7 +212,7 @@ int main(void) {
 		pthread_join(threads_entrenadores[i], NULL);
 	}
 
-	terminar_programa(socket_escucha_game_boy);
+	terminar_programa();
 	return EXIT_SUCCESS;
 }
 
@@ -347,40 +425,11 @@ void obtener_pokemones_a_localizar() {
 	}
 }
 
-void terminar_programa(int socket_game_boy) {
-	close(socket_game_boy);
+void terminar_programa() {
+	close(socket_escucha_game_boy);
+	close(socket_escucha_appeared);
+	close(socket_escucha_caught);
+	close(socket_escucha_localized);
 
 	// destroy stuff
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

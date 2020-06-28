@@ -14,17 +14,6 @@
 
 #endif
 
-typedef enum
-{
-	NEW          = 1,
-    APPEARED     = 2,
-    CATCH        = 3,
-    CAUGHT       = 4,
-	GET          = 5,
-	LOCALIZED    = 6,
-	SUSCRIPCION  = 7
-} op_code;
-
 typedef struct
 {
 	uint32_t size;
