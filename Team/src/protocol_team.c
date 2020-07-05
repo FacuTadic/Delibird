@@ -140,6 +140,9 @@ t_appeared* recibir_appeared(int socket_broker, uint32_t* size, t_log* logger) {
 
 	log_info(logger, "Posicion Y recibida: %i", appeared->pos_Y);
 
+
+	devolver_ack(socket_broker,logger);
+
 	return appeared;
 }
 
