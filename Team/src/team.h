@@ -115,3 +115,4 @@ t_deadlock* obtener_deadlock();
 void corregir_deadlock(t_deadlock* deadlock);
 void definir_primer_estado(t_entrenador* entrenador);
 t_list* obtener_entrenadores_bloqueados();
+void mandar_get();
