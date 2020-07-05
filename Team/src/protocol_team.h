@@ -27,6 +27,21 @@ typedef enum
 	SUSCRIPCION  = 7
 } op_code;
 
+
+typedef struct {
+	uint32_t idCorrelativo;
+	uint32_t flag;
+} t_caught;
+
+
+typedef struct {
+	uint32_t id_correlativo;
+    char* pokemon;
+    uint32_t lugares;
+    t_list* l_coordenadas;
+} t_localized;
+
+
 typedef struct {
 	char* pokemon;
 	uint32_t pos_X;
