@@ -84,10 +84,7 @@ void escuchar_appeared_de_broker(void) {
 
 
 		}
-
 	}
-
-	// while 1 -> recibir appeared, mandar ack y agregarlo a la cola
 
 }
 
@@ -98,9 +95,23 @@ void escuchar_caught_de_broker(void) {
 	if (status_envio == -1) {
 		log_error(logger, "Hubo un problema enviando la suscripcion a la cola CAUGHT del broker");
 		// la cagamos ñeri
-	}
+	}else {
 
-	// while 1 -> recibir caught, mandar ack, chequear si importa o no y agregarlo a la cola
+		while (1) {
+			uint32_t size;
+			t_caught* caught_msg = recibir_caught(socket_escucha_caught, &size, extense_logger);
+			t_mensaje_recibido* mensaje = malloc(sizeof(t_mensaje_recibido));
+
+			mensaje->tipo_mensaje = APPEARED;
+			mensaje->mensaje = (void*) caught_msg;
+
+			pthread_mutex_lock(&cola_mensajes_recibidos_mutex);
+			queue_push(cola_mensajes_recibidos, (void*) mensaje);
+			pthread_mutex_unlock(&cola_mensajes_recibidos_mutex);
+			sem_post(&sem_cola_mensajes_nuevos);
+
+		}
+	}
 
 }
 
@@ -111,9 +122,24 @@ void escuchar_localized_de_broker(void) {
 	if (status_envio == -1) {
 		log_error(logger, "Hubo un problema enviando la suscripcion a la cola LOCALIZED del broker");
 		// la cagamos ñeri
+	}else {
+
+		while (1) {
+			uint32_t size;
+			t_caught* localized_msg = recibir_localized(socket_escucha_localized, &size, extense_logger);
+			t_mensaje_recibido* mensaje = malloc(sizeof(t_mensaje_recibido));
+
+			mensaje->tipo_mensaje = APPEARED;
+			mensaje->mensaje = (void*) localized_msg;
+
+			pthread_mutex_lock(&cola_mensajes_recibidos_mutex);
+			queue_push(cola_mensajes_recibidos, (void*) mensaje);
+			pthread_mutex_unlock(&cola_mensajes_recibidos_mutex);
+			sem_post(&sem_cola_mensajes_nuevos);
+
+		}
 	}
 
-	// while 1 -> recibir localized, mandar ack y agregarlo a la cola
 
 }
 
