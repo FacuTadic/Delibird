@@ -133,6 +133,15 @@ void planificar() {
 	// hacer cosas de planificador
 }
 
+void buscar_deadlocks() {
+	while(1) {
+		sleep(tiempo_deadlock);
+
+		// buscar deadlocks
+
+	}
+}
+
 int main(void) {
 	char* ip;
 	char* puerto;
@@ -160,6 +169,8 @@ int main(void) {
 	log_info(extense_logger, "El puerto del Broker es: %s", puerto_broker);
 	id_modulo = config_get_int_value(config, "ID_MODULO");
 	log_info(extense_logger, "El Id de Team es: %i", id_modulo);
+	tiempo_deadlock = config_get_int_value(config, "TIEMPO_DEADLOCK");
+	log_info(extense_logger, "La busqueda de deadlocks se corre cada %i segundos", tiempo_deadlock);
 
 	entrenadores = list_create();
 
@@ -202,11 +213,10 @@ int main(void) {
 	pthread_detach(hilo_escucha_caught);
 	pthread_detach(hilo_escucha_localized);
 
-
-
-
-
-
+	// crear hilo que detecta deadlocks
+	pthread_t hilo_deteccion_deadlock;
+	pthread_create(&hilo_deteccion_deadlock, NULL, (void*) buscar_deadlocks, NULL);
+	pthread_detach(hilo_deteccion_deadlock);
 
 	for (int i = 0; i < entrenadores->elements_count; i++) {
 		pthread_join(threads_entrenadores[i], NULL);

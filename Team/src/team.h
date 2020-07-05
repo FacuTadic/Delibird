@@ -20,6 +20,8 @@ t_log* extense_logger;
 
 t_config* config;
 
+int tiempo_deadlock;
+
 int socket_escucha_game_boy;
 int socket_escucha_appeared;
 int socket_escucha_caught;
@@ -92,3 +94,4 @@ void planificar (void);
 void escuchar_appeared_de_broker(void);
 void escuchar_caught_de_broker(void);
 void escuchar_localized_de_broker(void);
+void buscar_deadlocks();
