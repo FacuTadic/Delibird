@@ -22,10 +22,15 @@ t_config* config;
 
 int tiempo_deadlock;
 
+int tiempo_reconexion;
+
 int socket_escucha_game_boy;
+
 int socket_escucha_appeared;
 int socket_escucha_caught;
 int socket_escucha_localized;
+
+int estoy_conectado_al_broker; // 1 true 0 false
 
 t_list* entrenadores; // t_entrenador
 
@@ -43,7 +48,7 @@ typedef enum
 {
 	ATRAPAR_POKEMON 		= 111,
 	INTERCAMBIAR_POKEMON 	= 112,
-	NO_HACER_PINGO 			= 113 		// NULL
+	NO_HACER_PINGO 			= 113, 		// NULL
 } id_tarea;
 
 typedef enum
@@ -54,6 +59,13 @@ typedef enum
 	ESTADO_BLOCKED 			= 1114,
 	ESTADO_EXIT 			= 1115
 } estado;
+
+typedef enum {
+	MENSAJE_APPEARED     = 2,
+	MENSAJE_CAUGHT       = 4,
+	MENSAJE_LOCALIZED    = 6,
+	MENSAJE_DEADLOCK	 = 8,
+} tipo_mensaje;
 
 typedef struct {
 	id_tarea id_tarea;
@@ -74,12 +86,14 @@ typedef struct {
 } t_entrenador;
 
 typedef struct {
-	op_code tipo_mensaje;
-	void* mensaje; // t_appeared, t_caught o t_localized
+	tipo_mensaje tipo_mensaje;
+	void* mensaje; // t_appeared, t_caught, t_localized o t_deadlock
 } t_mensaje_recibido;
 
-
-
+typedef struct {
+	t_list* entrenadores; // de t_entrenador
+	t_list* pokemones; // de pokemones char*
+} t_deadlock;
 
 t_log* iniciar_logger(char* log_file);
 t_log* iniciar_logger_sin_consola(char* log_file);
@@ -95,3 +109,9 @@ void escuchar_appeared_de_broker(void);
 void escuchar_caught_de_broker(void);
 void escuchar_localized_de_broker(void);
 void buscar_deadlocks();
+void verificar_conexion();
+void reconectar_al_broker();
+t_deadlock* obtener_deadlock();
+void corregir_deadlock(t_deadlock* deadlock);
+void definir_primer_estado(t_entrenador* entrenador);
+t_list* obtener_entrenadores_bloqueados();

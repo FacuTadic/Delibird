@@ -122,7 +122,36 @@ void laburar(void* entrenador_param) {
 
 	while (entrenador->estado != ESTADO_EXIT) {
 
-		// switch por tarea
+		switch(entrenador->tarea_actual->id_tarea) {
+		case ATRAPAR_POKEMON: ;
+
+		// ir al lugar en cuestion
+
+		// mandar catch NO SE REINTENTA, SI FALLA EL ENVIO LO ATRAPE RE CHETO
+
+		// bloquearme esperando a que el planificador me desbloquee
+
+		// ver que onda que hago con el caught
+
+		// cosas
+		break;
+		case INTERCAMBIAR_POKEMON: ;
+
+		// ir al lugar en cuestion
+
+		// intercambiar el pokemon correspondiente con el otro entrenador
+
+		// ver que onda cuando termino de intercambiar
+
+		// cosas
+		break;
+		case NO_HACER_PINGO: ;
+
+		// esto puede que no corresponda
+		break;
+		default:
+		// cualquiera pibe
+		}
 
 	}
 
@@ -130,16 +159,107 @@ void laburar(void* entrenador_param) {
 }
 
 void planificar() {
-	// hacer cosas de planificador
+	while(1) {
+		sem_wait(&sem_cola_mensajes_nuevos);
+		t_mensaje_recibido* mensaje_recibido = queue_pop(cola_mensajes_recibidos);
+
+		switch(mensaje_recibido->tipo_mensaje) {
+		case MENSAJE_APPEARED: ;
+
+		t_appeared* mensaje_appeared = (t_appeared*) mensaje_recibido->mensaje;
+
+
+		//cosas
+		break;
+		case MENSAJE_CAUGHT: ;
+
+		//t_caught* mensaje_caught = (t_caught*) mensaje_recibido->mensaje;
+
+
+		//cosas
+		break;
+		case MENSAJE_LOCALIZED: ;
+
+		//t_localized* mensaje_localized = (t_localized*) mensaje_recibido->mensaje;
+
+
+		//cosas
+		break;
+		case MENSAJE_DEADLOCK: ;
+
+		//t_deadlock* mensaje_deadlock = (t_deadlock*) mensaje_recibido->mensaje;
+
+		//el peligroso
+		//la papa caliente
+		//la mas zurda quiere bailar y viene hacia vos
+		//cosas
+		break;
+		default:
+
+			//ah re loco
+		}
+
+	}
 }
 
 void buscar_deadlocks() {
 	while(1) {
 		sleep(tiempo_deadlock);
 
-		// buscar deadlocks
+		t_deadlock* deadlock = obtener_deadlock();
+
+		if (deadlock != NULL) {
+			t_mensaje_recibido* mensaje = malloc(sizeof(t_mensaje_recibido));
+			mensaje->tipo_mensaje = MENSAJE_DEADLOCK;
+			mensaje->mensaje = (void*) deadlock;
+
+			pthread_mutex_lock(&cola_mensajes_recibidos_mutex);
+			queue_push(cola_mensajes_recibidos, (void*) mensaje);
+			pthread_mutex_unlock(&cola_mensajes_recibidos_mutex);
+			sem_post(&sem_cola_mensajes_nuevos);
+		}
 
 	}
+}
+
+t_deadlock* obtener_deadlock() {
+	t_list* entrenadores_bloqueados = obtener_entrenadores_bloqueados();
+
+	// encontrar deadlock
+	// papa caliente
+	// te encontraron macheteandote
+
+	// armar estructura t_deadlock
+
+	return NULL;
+}
+
+t_list* obtener_entrenadores_bloqueados() {
+
+	// busca los entrenadores bloqueados que no tienen ATRAPAR_POKEMON como tarea
+
+
+
+	return NULL;
+}
+
+void verificar_conexion() {
+	while(1) {
+		if (estoy_conectado_al_broker == 0) {
+			reconectar_al_broker();
+			sleep(tiempo_reconexion);
+		}
+	}
+}
+
+void reconectar_al_broker() {
+	// crear conexiones para cada cola del broker
+
+	// actualizar los sockets de team.h
+
+	// mandar suscripciones al broker
+
+	// modificar flag de conexion
 }
 
 int main(void) {
@@ -171,6 +291,8 @@ int main(void) {
 	log_info(extense_logger, "El Id de Team es: %i", id_modulo);
 	tiempo_deadlock = config_get_int_value(config, "TIEMPO_DEADLOCK");
 	log_info(extense_logger, "La busqueda de deadlocks se corre cada %i segundos", tiempo_deadlock);
+	tiempo_reconexion = config_get_int_value(config, "TIEMPO_RECONEXION");
+	log_info(extense_logger, "La conexion al Broker se verifica cada %i segundos", tiempo_reconexion);
 
 	entrenadores = list_create();
 
@@ -212,6 +334,10 @@ int main(void) {
 	pthread_detach(hilo_escucha_appeared);
 	pthread_detach(hilo_escucha_caught);
 	pthread_detach(hilo_escucha_localized);
+
+	pthread_t hilo_reconexion_broker;
+	pthread_create(&hilo_reconexion_broker, NULL, (void*) verificar_conexion, NULL);
+	pthread_detach(hilo_reconexion_broker);
 
 	// crear hilo que detecta deadlocks
 	pthread_t hilo_deteccion_deadlock;
@@ -353,14 +479,14 @@ void inicializar_entrenadores() {
 
 		entrenador->pokebolas = objetivos->elements_count - pokemones->elements_count;
 
-		entrenador->estado = ESTADO_NEW;
-
 		t_tarea* tarea = malloc (sizeof(t_tarea));
 
 		tarea->id_tarea = NO_HACER_PINGO;
 		tarea->parametros = NULL;
 
 		entrenador->tarea_actual = tarea;
+
+		definir_primer_estado(entrenador);
 
 		list_add(entrenadores, (void*) entrenador);
 
@@ -377,6 +503,19 @@ void inicializar_entrenadores() {
 	free(posiciones);
 	free(pokemones);
 	free(objetivos);
+}
+
+void definir_primer_estado(t_entrenador* entrenador) {
+	if (entrenador->pokebolas == 0) {
+		if (list_size(entrenador->pokemones_innecesarios) == 0) {
+			entrenador->estado = ESTADO_EXIT;
+		} else {
+			entrenador->estado = ESTADO_BLOCKED;
+		}
+
+	} else {
+		entrenador->estado = ESTADO_NEW;
+	}
 }
 
 void obtener_objetivo_global() {
