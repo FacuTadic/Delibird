@@ -176,7 +176,7 @@ void laburar(void* entrenador_param) {
 		// esto puede que no corresponda
 		break;
 		default:
-		// cualquiera pibe
+			// cualquiera pibe
 		}
 
 	}
@@ -370,9 +370,12 @@ int main(void) {
 	pthread_create(&hilo_deteccion_deadlock, NULL, (void*) buscar_deadlocks, NULL);
 	pthread_detach(hilo_deteccion_deadlock);
 
+	mandar_get();
+
 	for (int i = 0; i < entrenadores->elements_count; i++) {
 		pthread_join(threads_entrenadores[i], NULL);
 	}
+
 
 	terminar_programa();
 	return EXIT_SUCCESS;
@@ -599,6 +602,23 @@ void obtener_pokemones_a_localizar() {
 		}
 	}
 }
+
+void mandar_get(){
+
+	obtener_pokemones_a_localizar();
+
+	pthread_t* threads = malloc(sizeof(pthread_t) * pokemones_a_localizar->elements_count);
+
+	for(int i= 0; i< pokemones_a_localizar->elements_count; i++){
+		pthread_create(&(threads[i]), NULL, (void*) mandar_get, list_get(pokemones_a_localizar,i));
+		pthread_detach(threads[i]);
+	}
+
+}
+
+
+
+
 
 void terminar_programa() {
 	close(socket_escucha_game_boy);
