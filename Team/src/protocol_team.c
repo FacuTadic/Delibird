@@ -441,6 +441,12 @@ t_appeared* recibir_appeared_de_game_boy(int socket, uint32_t* size, t_log* logg
 	return appeared;
 }
 
+
+
+
+
+
+
 int devolver_ack(int socket_broker, t_log* logger) {
 	uint32_t ack = 1;
 	int status_send = send(socket_broker, (void *) &ack, sizeof(uint32_t), 0);

@@ -48,7 +48,15 @@ typedef struct {
 	uint32_t pos_Y;
 } t_appeared;
 
+
+typedef struct {
+    char* pokemon;
+    uint32_t id;
+} t_get;
+
+
 int mandar_suscripcion(int socket, uint32_t id_cola);
 t_appeared* recibir_appeared_de_game_boy(int socket, uint32_t* size, t_log* logger);
 t_appeared* recibir_appeared(int socket, uint32_t* size, t_log* logger);
 int devolver_ack(int socket_broker, t_log* logger);
+
