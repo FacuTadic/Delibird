@@ -610,13 +610,15 @@ void mandar_get(){
 	pthread_t* threads = malloc(sizeof(pthread_t) * pokemones_a_localizar->elements_count);
 
 	for(int i= 0; i< pokemones_a_localizar->elements_count; i++){
-		pthread_create(&(threads[i]), NULL, (void*) mandar_get, list_get(pokemones_a_localizar,i));
+		pthread_create(&(threads[i]), NULL, (void*) enviar_get_a_broker, list_get(pokemones_a_localizar,i));
 		pthread_detach(threads[i]);
 	}
 
 }
 
+void enviar_get_a_broker(void* nombre_pokemon){
 
+}
 
 
 
