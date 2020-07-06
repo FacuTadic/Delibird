@@ -20,6 +20,10 @@ t_log* extense_logger;
 
 t_config* config;
 
+char* ip_broker;
+char* puerto_broker;
+
+
 int tiempo_deadlock;
 
 int tiempo_reconexion;
@@ -116,4 +120,4 @@ void corregir_deadlock(t_deadlock* deadlock);
 void definir_primer_estado(t_entrenador* entrenador);
 t_list* obtener_entrenadores_bloqueados();
 void mandar_get();
-void enviar_get_a_broker(void* nombre_pokemon);
+void enviar_get_a_broker(char* nombre_pokemon);

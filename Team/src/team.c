@@ -291,8 +291,7 @@ void reconectar_al_broker() {
 int main(void) {
 	char* ip;
 	char* puerto;
-	char* ip_broker;
-	char* puerto_broker;
+
 	char* log_file;
 	char* extense_log_file;
 
@@ -616,9 +615,44 @@ void mandar_get(){
 
 }
 
-void enviar_get_a_broker(void* nombre_pokemon){
+
+void enviar_get_a_broker(char* nombre_pokemon){
+
+	uint32_t tamanio_pokemon = strlen(nombre_pokemon)+ 1;
+
+	uint32_t bytes = sizeof(uint32_t) + sizeof(uint32_t) + sizeof(uint32_t) + tamanio_pokemon;
+
+	uint32_t cod_op = 5;
+	void* flujo = malloc(bytes);
+	int desplazamiento = 0;
+
+	memcpy(flujo + desplazamiento, &cod_op, sizeof(uint32_t));
+	desplazamiento += sizeof(uint32_t);
+	memcpy(flujo + desplazamiento, bytes, sizeof(uint32_t));
+	desplazamiento += sizeof(uint32_t);
+	memcpy(flujo + desplazamiento, &(get->id), sizeof(uint32_t));
+	desplazamiento += sizeof(uint32_t);
+	memcpy(flujo + desplazamiento, &tamanio_pokemon, sizeof(uint32_t));
+	desplazamiento += sizeof(uint32_t);
+	memcpy(flujo + desplazamiento, nombre_pokemon, tamanio_pokemon);
+	desplazamiento += tamanio_pokemon;
+
+	if (send(puerto_broker, flujo, bytes, 0) == -1) {
+			log_error(extense_logger, "Error: No se pudo enviar el mensaje");
+			close(socket);
+			free(flujo);
+		} else {
+			log_info(extense_logger, "Mensaje GET con id %i y pokemon %s enviado correctamente al BROKER de socket %i", id, nombre_pokemon ,puerto_broker);
+			//log_info(logger, "Mensaje GET con id %i al BROKER de socket %i enviado correctamente", id, );
+		}
+
+		free(flujo);
 
 }
+
+
+
+
 
 
 
