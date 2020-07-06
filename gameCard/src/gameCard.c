@@ -24,9 +24,9 @@ t_log* iniciar_loggerGameCard(){
 }
 
 t_config* leer_config(){
-		t_config* config;
-		config = config_create("gameCard.config");
-		return config;
+	t_config* config;
+	config = config_create("gameCard.config");
+	return config;
 }
 
 
@@ -41,7 +41,7 @@ int main(void) {
 	puertoBroker = string_new();
 
 
-// ################################################# 	SETTER Y SARAZA 	####################################################
+	// ################################################# 	SETTER Y SARAZA 	####################################################
 
 	loggerGameCard = iniciar_loggerGameCard();
 	log_info(loggerGameCard, "logger iniciado.");
@@ -79,32 +79,32 @@ int main(void) {
 	levantarTallGrass(puntoMontaje);
 
 
-//################################################## 	CONEXION 	###############################################################################
-		do{
-			conexion = crear_conexion( ipBroker, puertoBroker);
+	//################################################## 	CONEXION 	###############################################################################
+	do{
+		conexion = crear_conexion( ipBroker, puertoBroker);
 
-			if(!conexion){
-				log_error(loggerDev, "Error en conexion con BROKER, ip: %s puerto : %s, reintentando en %d segundo%s ", ipBroker, puertoBroker,tiempoReintentoConexion,tiempoReintentoConexion=1 ? "":"s");
-				sleep(tiempoReintentoConexion);
-			}
-		}while(!conexion );		//reintentar cada tiempoReintentoConexion
-		log_info(loggerDev, "conexion establecida con BROKER, ip: %s puerto : %s", ipBroker, puertoBroker);
-
-
-		enviarMensaje(msj_suscripcion,puertoBroker);//mandar dejame escuchar colas y atenderlas con espera activa bloqueante
-		                                            // chequear con facha funcionamiento suscribir
-
-		esperar_mensaje(puertoBroker); // choripasteado y adaptado de BKR
+		if(!conexion){
+			log_error(loggerDev, "Error en conexion con BROKER, ip: %s puerto : %s, reintentando en %d segundo%s ", ipBroker, puertoBroker,tiempoReintentoConexion,tiempoReintentoConexion=1 ? "":"s");
+			sleep(tiempoReintentoConexion);
+		}
+	}while(!conexion );		//reintentar cada tiempoReintentoConexion
+	log_info(loggerDev, "conexion establecida con BROKER, ip: %s puerto : %s", ipBroker, puertoBroker);
 
 
-		//COPIO ATENDER DE BKR??
+	enviarMensaje(msj_suscripcion,puertoBroker);//mandar dejame escuchar colas y atenderlas con espera activa bloqueante
+	// chequear con facha funcionamiento suscribir
+
+	esperar_mensaje(puertoBroker); // choripasteado y adaptado de BKR
 
 
+	//COPIO ATENDER DE BKR??
 
 
 
 
-	}
+
+
+}
 
 
 

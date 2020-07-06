@@ -191,20 +191,20 @@ uint32_t calcularPesoTotalDeBlockEnMetadataPokemon(char** blocks){
 
 void validarPosicionesDeNew(char** blocksOcupados,char* posicion, uint32_t cantidad){
 	if(existenPosicionesEnArchivo(posicion,blocksOcupados)){
-			char* block = blockDondeSeEncuentraLaPosicion(posicion,blocksOcupados);
-			char* rutaDelBlock = generadorDeRutaDeCreacionDeArchivos(rutaBlocks,block,".bin");
-			t_config* archivoBlock = config_create(rutaDelBlock);
-			agregarCantidadSolicitadaAUnaKey(archivoBlock,posicion,cantidad);
-			config_destroy(archivoBlock);
-		} else {
-			char* blockOptimo = seleccionarBlockParaCargarPosiciones(blocksOcupados,posicion, cantidad);
-			agregarNuevaPosicionA(blockOptimo,posicion, cantidad);
+		char* block = blockDondeSeEncuentraLaPosicion(posicion,blocksOcupados);
+		char* rutaDelBlock = generadorDeRutaDeCreacionDeArchivos(rutaBlocks,block,".bin");
+		t_config* archivoBlock = config_create(rutaDelBlock);
+		agregarCantidadSolicitadaAUnaKey(archivoBlock,posicion,cantidad);
+		config_destroy(archivoBlock);
+	} else {
+		char* blockOptimo = seleccionarBlockParaCargarPosiciones(blocksOcupados,posicion, cantidad);
+		agregarNuevaPosicionA(blockOptimo,posicion, cantidad);
 
-		}
+	}
 
 }
 
-bool validarPosicionesDeCatch(char** blocksOcupados, char* posicion){
+bool validarPosicionesDeCatch(t_config* archivoMetadataPokemon, char** blocksOcupados, char* posicion){
 	if(existenPosicionesEnArchivo(posicion,blocksOcupados)){
 		char* block = blockDondeSeEncuentraLaPosicion(posicion,blocksOcupados);
 		char* rutaDelBlock = generadorDeRutaDeCreacionDeArchivos(rutaBlocks,block,".bin");
@@ -213,17 +213,32 @@ bool validarPosicionesDeCatch(char** blocksOcupados, char* posicion){
 		uint32_t cantidadPokemon = cantidadDePokemonEnUnaCoordenada(archivoBlock,posicion);
 
 		if(cantidadPokemon == 1){
-			eliminarKeyValueDe(archivoBlock,posicion);
+			log_info(loggerDev, "La cantidad de pokemons en esa posicion es 1");
+
+			if(config_keys_amount(archivoBlock) == 1){
+				desmarcarBloqueBitmap(block);
+				eliminarKeyValueDe(archivoBlock,block,posicion);
+				borrarBloqueDe(archivoMetadataPokemon);
+				log_info(loggerDev, "Dicha posicion es la ultima en el block por lo que se marco el block como libre y se elimino la linea");
+			}else{
+				eliminarKeyValueDe(archivoBlock,block,posicion);
+				log_info(loggerDev, "Se elimina la linea");
+			}
+
 			return true;
+
 		}else{
+			log_info(loggerDev, "Se decrementa en uno la posicion");
 			decrementarEnUnoEnLaPosicion(archivoBlock,posicion);
 			return true;
 		}
 		config_destroy(archivoBlock);
+
 	} else {
 		log_error(loggerGameCard, "No existen las posiciones en el archivo");
 		return false;
 	}
+
 }
 
 
@@ -301,7 +316,7 @@ void catchPokemon(int socketCliente,t_catchLlegada* catch){
 
 	if(puedeAbrirseArchivo(archivoMetadataPokemon)){
 		activarFlagDeLectura(archivoMetadataPokemon);
-		validacion = validarPosicionesDeCatch(blocksOcupados,posicion);
+		validacion = validarPosicionesDeCatch(archivoMetadataPokemon,blocksOcupados,posicion);
 	}else{
 		sleep(tiempoReintentoOperacion);
 		catchPokemon(socketCliente,catch);
@@ -393,11 +408,11 @@ void procesar_request(int cod_op, int cliente_fd) {
 	t_newLlegada* new_msg = recibir_new(cliente_fd, &size, loggerDev);
 
 	if (new_msg == NULL) {
-				pthread_exit(NULL);
+		pthread_exit(NULL);
 	} else { 										// mandar respuesta correspondiente a NEW (appeared)
 		t_appeared appearedAEnviar = crearAppeared(new_msg);
 		enviar_appeared(socket, appearedAEnviar);
-		}
+	}
 	free(new_msg);
 
 	break;

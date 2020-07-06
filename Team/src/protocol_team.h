@@ -58,6 +58,5 @@ typedef struct {
 int mandar_suscripcion(int socket, uint32_t id_cola);
 t_appeared* recibir_appeared_de_game_boy(int socket, uint32_t* size, t_log* logger);
 t_appeared* recibir_appeared(int socket, uint32_t* size, t_log* logger);
-void enviar_get_a_broker(void* nombre_pokemon);
 int devolver_ack(int socket_broker, t_log* logger);
 

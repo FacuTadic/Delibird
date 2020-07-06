@@ -120,6 +120,44 @@ void activarFlagDeLectura(t_config* archivo){
 }
 
 
+char** cargarVectorSinElValor(char** arrayViejo,char* block){
+	char** nuevoArrayDeBlock;
+	uint32_t i = 0;
+
+	while(arrayViejo[i] != NULL){
+			if(strcasecmp(arrayViejo[i],block)){
+				log_info(loggerDev, "Se asigno el block %s a la posicion %i",arrayViejo[i],i);
+				nuevoArrayDeBlock[i] = arrayViejo[i];
+				i++;
+			} else {
+				log_info(loggerDev, "Se macheo el block que hay que sacar");
+				i++;
+			}
+		}
+
+	return nuevoArrayDeBlock;
+}
+
+
+void borrarBloqueDe(t_config* archivoMetaData, char*block){
+	char** blocksOcupados = config_get_array_value(archivoMetaData,"BLOCKS");
+
+	char** nuevoArrayDeBlock = cargarVectorSinElValor(blocksOcupados,block);
+
+	config_set_value(archivoMetaData,"BLOCKS",nuevoArrayDeBlock)
+
+	log_info(loggerDev, "Se seteo el valor del nuevo array en el metadata del pokemon");
+
+	config_save(archivoMetaData);
+
+}
+
+
+void desmarcarBloqueBitmap(char* block){
+		bitarray_clean_bit(bitarray, block);
+}
+
+
 void eliminarKeyValueDe(t_config* archivoBlock,char* posicion){
 	config_remove_key(archivoBlock,posicion);
 	config_save(archivoBlock);
@@ -138,6 +176,7 @@ void agregarCantidadSolicitadaAUnaKey(t_config* archivo,char* key, uint32_t cant
 }
 
 void decrementarEnUnoEnLaPosicion(t_config* archivo,char* key){
+
 	uint32_t cantidadVieja= config_get_int_value(archivo,key);
 	cantidadVieja -= 1;
 	log_info(loggerDev, "El size viejo del metadata es: %i", cantidadVieja);
