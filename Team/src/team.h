@@ -76,6 +76,14 @@ typedef struct {
 	void* parametros; // cada tipo de tarea tiene una estructura de parametros
 } t_tarea;
 
+typedef struct{
+	char* nombre_pokemon;
+	uint32_t posX;
+	uint32_t posY;
+}t_pokemon;
+
+
+
 typedef struct {
 	uint32_t index;
 	uint32_t posX;
@@ -121,3 +129,5 @@ void definir_primer_estado(t_entrenador* entrenador);
 t_list* obtener_entrenadores_bloqueados();
 void mandar_get();
 void enviar_get_a_broker(char* nombre_pokemon);
+void enviar_catch_a_broker(t_pokemon* pokemon);
+void irA(uint32_t posX, uint32_t posY, t_entrenador* entrenador);

@@ -143,24 +143,31 @@ void escuchar_localized_de_broker(void) {
 
 }
 
-void laburar(void* entrenador_param) {
+void laburar(void* entrenador_param,t_pokemon* pokemon) {
 	t_entrenador* entrenador = (t_entrenador*) entrenador_param;
 
 	while (entrenador->estado != ESTADO_EXIT) {
 
 		switch(entrenador->tarea_actual->id_tarea) {
-		case ATRAPAR_POKEMON: ;
+		case ATRAPAR_POKEMON:
+			uint32_t posX_pokemon = pokemon->posX;
+			uint32_t posY_pokemon = pokemon->posY;
 
-		// ir al lugar en cuestion
+			// ir al lugar en cuestion
+			irA(posX_pokemon,posY_pokemon,entrenador);
 
-		// mandar catch NO SE REINTENTA, SI FALLA EL ENVIO LO ATRAPE RE CHETO
+			// mandar catch NO SE REINTENTA, SI FALLA EL ENVIO LO ATRAPE RE CHETO
+			enviar_catch_a_broker(pokemon);
 
-		// bloquearme esperando a que el planificador me desbloquee
+			// bloquearme esperando a que el planificador me desbloquee
+			entrenador->estado = ESTADO_BLOCKED;
 
-		// ver que onda que hago con el caught
 
-		// cosas
-		break;
+			// ver que onda que hago con el caught
+
+			// cosas
+			break;
+
 		case INTERCAMBIAR_POKEMON: ;
 
 		// ir al lugar en cuestion
@@ -636,17 +643,67 @@ void enviar_get_a_broker(char* nombre_pokemon){
 	desplazamiento += tamanio_pokemon;
 
 	if (send(puerto_broker, flujo, bytes, 0) == -1) {
-			log_error(extense_logger, "Error: No se pudo enviar el mensaje");
-			close(socket);
-			free(flujo);
-		} else {
-			log_info(extense_logger, "Mensaje GET con id %i y pokemon %s enviado correctamente al BROKER de socket %i", id, nombre_pokemon ,puerto_broker);
-			//log_info(logger, "Mensaje GET con id %i al BROKER de socket %i enviado correctamente", id, );
-		}
-
+		log_error(extense_logger, "Error: No se pudo enviar el mensaje");
+		close(socket);
 		free(flujo);
+	} else {
+		log_info(extense_logger, "Mensaje GET con el pokemon %s enviado correctamente al BROKER de socket %i", nombre_pokemon ,puerto_broker);
+		//log_info(logger, "Mensaje GET con id %i al BROKER de socket %i enviado correctamente", id, );
+	}
+
+	free(flujo);
 
 }
+
+
+void enviar_catch_a_broker(t_pokemon* pokemon){
+
+
+	char* nombre_pokemon = pokemon->nombre_pokemon;
+	uint32_t posX = pokemon->posX;
+	uint32_t posY = pokemon->posY;
+
+
+	uint32_t tamanio_pokemon = strlen(nombre_pokemon)+ 1;
+
+	uint32_t bytes = sizeof(uint32_t) + sizeof(uint32_t) + sizeof(uint32_t) + tamanio_pokemon + sizeof(uint32_t) + sizeof(uint32_t);
+
+	uint32_t cod_op = 3;
+	void* flujo = malloc(bytes);
+	int desplazamiento = 0;
+
+	memcpy(flujo + desplazamiento, &cod_op, sizeof(uint32_t));
+	desplazamiento += sizeof(uint32_t);
+	memcpy(flujo + desplazamiento, bytes, sizeof(uint32_t));
+	desplazamiento += sizeof(uint32_t);
+	memcpy(flujo + desplazamiento, &tamanio_pokemon, sizeof(uint32_t));
+	desplazamiento += sizeof(uint32_t);
+	memcpy(flujo + desplazamiento, nombre_pokemon, tamanio_pokemon);
+	desplazamiento += tamanio_pokemon;
+	memcpy(flujo + desplazamiento, posX, sizeof(uint32_t));
+	desplazamiento += sizeof(uint32_t);
+	memcpy(flujo + desplazamiento, posY, sizeof(uint32_t));
+	desplazamiento += sizeof(uint32_t);
+
+
+	if (send(puerto_broker, flujo, bytes, 0) == -1) {
+		log_error(extense_logger, "Error: No se pudo enviar el mensaje");
+		close(socket);
+		free(flujo);
+	} else {
+		log_info(extense_logger, "Mensaje Catch con el pokemon %s en la posicion (%i,%i)enviado correctamente al BROKER de socket %i", nombre_pokemon,posX, posY, puerto_broker);
+		//log_info(logger, "Mensaje GET con id %i al BROKER de socket %i enviado correctamente", id, );
+	}
+
+	free(flujo);
+
+}
+
+void irA(uint32_t posX, uint32_t posY, t_entrenador* entrenador){
+	//Movimientos por ciclos de CPU
+}
+
+
 
 
 
