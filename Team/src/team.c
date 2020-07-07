@@ -150,8 +150,8 @@ void laburar(void* entrenador_param,t_pokemon* pokemon) {
 
 		switch(entrenador->tarea_actual->id_tarea) {
 		case ATRAPAR_POKEMON:
-			uint32_t posX_pokemon = pokemon->posX;
-			uint32_t posY_pokemon = pokemon->posY;
+			uint32_t posX_pokemon = pokemon->coordx;
+			uint32_t posY_pokemon = pokemon->coordY;
 
 			// ir al lugar en cuestion
 			irA(posX_pokemon,posY_pokemon,entrenador);
@@ -683,9 +683,9 @@ void enviar_get_a_broker(char* nombre_pokemon){
 void enviar_catch_a_broker(t_pokemon* pokemon){
 
 
-	char* nombre_pokemon = pokemon->nombre_pokemon;
-	uint32_t posX = pokemon->posX;
-	uint32_t posY = pokemon->posY;
+	char* nombre_pokemon = pokemon->nombre;
+	uint32_t posX = pokemon->coordx;
+	uint32_t posY = pokemon->coordY;
 
 
 	uint32_t tamanio_pokemon = strlen(nombre_pokemon)+ 1;

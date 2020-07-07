@@ -76,13 +76,6 @@ typedef struct {
 	void* parametros; // cada tipo de tarea tiene una estructura de parametros
 } t_tarea;
 
-typedef struct{
-	char* nombre_pokemon;
-	uint32_t posX;
-	uint32_t posY;
-}t_pokemon;
-
-
 
 typedef struct {
 	uint32_t index;
