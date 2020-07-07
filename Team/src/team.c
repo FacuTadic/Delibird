@@ -170,9 +170,14 @@ void laburar(void* entrenador_param,t_pokemon* pokemon) {
 
 		case INTERCAMBIAR_POKEMON: ;
 
+		uint32_t posX_otro_entrenador;
+		uint32_t posY_otro_entrenador;
+
 		// ir al lugar en cuestion
+		irA(posX_pokemon,posY_pokemon,entrenador);
 
 		// intercambiar el pokemon correspondiente con el otro entrenador
+		intercambiar_pokemon_que_necesita(entrenador,otro_entrenador);
 
 		// ver que onda cuando termino de intercambiar
 
@@ -759,6 +764,13 @@ void irA(uint32_t posX, uint32_t posY, t_entrenador* entrenador){
 }
 
 
+
+
+void intercambiar_pokemon_que_necesita(t_entrenador* entrenadorQueNecesita, t_entrenador* entrenadorQueLosTiene){
+
+
+
+}
 
 
 
