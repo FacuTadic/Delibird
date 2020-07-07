@@ -699,6 +699,9 @@ void enviar_catch_a_broker(t_pokemon* pokemon){
 
 }
 
+void irA(uint32_t posX, uint32_t posY, t_entrenador* entrenador){
+	//Movimientos por ciclos de CPU
+}
 
 
 
