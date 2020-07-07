@@ -159,12 +159,15 @@ void laburar(void* entrenador_param,t_pokemon* pokemon) {
 			// mandar catch NO SE REINTENTA, SI FALLA EL ENVIO LO ATRAPE RE CHETO
 			enviar_catch_a_broker(pokemon);
 
-		// bloquearme esperando a que el planificador me desbloquee
+			// bloquearme esperando a que el planificador me desbloquee
+			entrenador->estado = ESTADO_BLOCKED;
 
-		// ver que onda que hago con el caught
 
-		// cosas
-		break;
+			// ver que onda que hago con el caught
+
+			// cosas
+			break;
+
 		case INTERCAMBIAR_POKEMON: ;
 
 		// ir al lugar en cuestion
@@ -640,15 +643,15 @@ void enviar_get_a_broker(char* nombre_pokemon){
 	desplazamiento += tamanio_pokemon;
 
 	if (send(puerto_broker, flujo, bytes, 0) == -1) {
-			log_error(extense_logger, "Error: No se pudo enviar el mensaje");
-			close(socket);
-			free(flujo);
-		} else {
-			log_info(extense_logger, "Mensaje GET con el pokemon %s enviado correctamente al BROKER de socket %i", nombre_pokemon ,puerto_broker);
-			//log_info(logger, "Mensaje GET con id %i al BROKER de socket %i enviado correctamente", id, );
-		}
-
+		log_error(extense_logger, "Error: No se pudo enviar el mensaje");
+		close(socket);
 		free(flujo);
+	} else {
+		log_info(extense_logger, "Mensaje GET con el pokemon %s enviado correctamente al BROKER de socket %i", nombre_pokemon ,puerto_broker);
+		//log_info(logger, "Mensaje GET con id %i al BROKER de socket %i enviado correctamente", id, );
+	}
+
+	free(flujo);
 
 }
 
@@ -684,15 +687,15 @@ void enviar_catch_a_broker(t_pokemon* pokemon){
 
 
 	if (send(puerto_broker, flujo, bytes, 0) == -1) {
-			log_error(extense_logger, "Error: No se pudo enviar el mensaje");
-			close(socket);
-			free(flujo);
-		} else {
-			log_info(extense_logger, "Mensaje Catch con el pokemon %s en la posicion (%i,%i)enviado correctamente al BROKER de socket %i", nombre_pokemon,posX, posY, puerto_broker);
-			//log_info(logger, "Mensaje GET con id %i al BROKER de socket %i enviado correctamente", id, );
-		}
-
+		log_error(extense_logger, "Error: No se pudo enviar el mensaje");
+		close(socket);
 		free(flujo);
+	} else {
+		log_info(extense_logger, "Mensaje Catch con el pokemon %s en la posicion (%i,%i)enviado correctamente al BROKER de socket %i", nombre_pokemon,posX, posY, puerto_broker);
+		//log_info(logger, "Mensaje GET con id %i al BROKER de socket %i enviado correctamente", id, );
+	}
+
+	free(flujo);
 
 }
 
