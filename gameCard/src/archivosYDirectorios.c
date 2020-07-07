@@ -144,7 +144,7 @@ void borrarBloqueDe(t_config* archivoMetaData, char*block){
 
 	char** nuevoArrayDeBlock = cargarVectorSinElValor(blocksOcupados,block);
 
-	config_set_value(archivoMetaData,"BLOCKS",nuevoArrayDeBlock)
+	config_set_value(archivoMetaData,"BLOCKS",nuevoArrayDeBlock);
 
 	log_info(loggerDev, "Se seteo el valor del nuevo array en el metadata del pokemon");
 

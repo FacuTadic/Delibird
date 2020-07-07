@@ -630,8 +630,6 @@ void enviar_get_a_broker(char* nombre_pokemon){
 	desplazamiento += sizeof(uint32_t);
 	memcpy(flujo + desplazamiento, bytes, sizeof(uint32_t));
 	desplazamiento += sizeof(uint32_t);
-	memcpy(flujo + desplazamiento, &(get->id), sizeof(uint32_t));
-	desplazamiento += sizeof(uint32_t);
 	memcpy(flujo + desplazamiento, &tamanio_pokemon, sizeof(uint32_t));
 	desplazamiento += sizeof(uint32_t);
 	memcpy(flujo + desplazamiento, nombre_pokemon, tamanio_pokemon);
