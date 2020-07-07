@@ -21,7 +21,6 @@ typedef enum
 	NEW          = 1,
     APPEARED     = 2,
     CATCH        = 3,
-    CAUGHT       = 4,
 	GET          = 5,
 	LOCALIZED    = 6,
 	SUSCRIPCION  = 7
@@ -51,5 +50,7 @@ typedef struct {
 int mandar_suscripcion(int socket, uint32_t id_cola);
 t_appeared* recibir_appeared_de_game_boy(int socket, uint32_t* size, t_log* logger);
 t_appeared* recibir_appeared(int socket, uint32_t* size, t_log* logger);
+t_caught* recibir_caught(int socket_broker, uint32_t* size, t_log* logger);
+t_localized* recibir_localized(int socket_broker, uint32_t* size, t_log* logger);
 int devolver_ack(int socket_broker, t_log* logger);
 
