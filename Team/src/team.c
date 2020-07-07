@@ -268,24 +268,44 @@ t_deadlock* obtener_deadlock() {
 }
 
 t_list* obtener_entrenadores_bloqueados() {
+t_list entrenadores_bloqueados;
 
-	// busca los entrenadores bloqueados que no tienen ATRAPAR_POKEMON como tarea
+while(entrenadores->head != NULL){				// busca los entrenadores bloqueados que no tienen ATRAPAR_POKEMON como tarea
+	if((entrenadores->head->estado == ESTADO_BLOCKED) && (entrenadores->head->tarea_actual != ATRAPAR_POKEMON)){
+		list_add(entrenadores_bloqueados,entrenadores->head);
+		log_info(logger, "entrenador %d agregado a la lista de bloqueados",entrenadores->head->index);
+		}
+	entrenadores->head = entrenadores->head->next;
+			// como garompa estaba definida la lista entrenadores????
+	}
 
 
-
-	return NULL;
+	return entrenadores_bloqueados;
 }
 
-void verificar_conexion() {
+void verificar_conexion(char *ip, char* puerto) {
 	while(1) {
 		if (estoy_conectado_al_broker == 0) {
-			reconectar_al_broker();
-			sleep(tiempo_reconexion);
+			estoy_conectado_al_broker = reconectar_al_broker(*estoy_conectado_al_broker);
+
+
+
 		}
 	}
 }
 
-void reconectar_al_broker() {
+int reconectar_al_broker(char *ip_broker, char* puerto_broker) {
+
+	while(!estoy_conectado_al_broker ){	//reintentar cada tiempoReintentoConexion
+		log_error(logger, "Error en conexion con BROKER, ip: %s puerto : %s, reintentando en %d segundo%s ", ip_broker, puerto_broker,tiempo_reconexion,tiempo_reconexion=1 ? "":"s");
+		estoy_conectado_al_broker = crear_conexion( ip_broker, puerto_broker);
+		sleep(tiempo_reconexion);
+	}
+log_info(logger, "conexion establecida con BROKER, ip: %s puerto : %s", ip_broker, puerto_broker);
+
+return estoy_conectado_al_broker;
+
+
 	// crear conexiones para cada cola del broker
 
 	// actualizar los sockets de team.h
