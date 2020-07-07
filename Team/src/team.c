@@ -345,6 +345,10 @@ int main(void) {
 	log_info(extense_logger, "La busqueda de deadlocks se corre cada %i segundos", tiempo_deadlock);
 	tiempo_reconexion = config_get_int_value(config, "TIEMPO_RECONEXION");
 	log_info(extense_logger, "La conexion al Broker se verifica cada %i segundos", tiempo_reconexion);
+	retardo_de_CPU = config_get_int_value(config, "RETARDO_CICLO_CPU");
+	log_info(extense_logger, "EL tiempo de retardo de CPU es cada %i segundos", retardoDeCPU);
+
+
 
 	entrenadores = list_create();
 
@@ -721,7 +725,39 @@ void enviar_catch_a_broker(t_pokemon* pokemon){
 
 void irA(uint32_t posX, uint32_t posY, t_entrenador* entrenador){
 	//Movimientos por ciclos de CPU
+
+	uint32_t entrenadorX = entrenador->posX;
+	uint32_t entrenadorY = entrenador->posY;
+
+
+	uint32_t coordX = abs(posX - entrenador->posX);
+	uint32_t coordY = abs(posX - entrenador->posY);
+
+	for(int x = 0; x<=coordX; x++){
+		for(int y = 0; y<= coordY; y++){
+			if(posY > entrenadorY){
+				entrenador->posY ++;
+				sleep(retardo_de_CPU);
+			}else{
+				entrenador->posY --;
+				sleep(retardo_de_CPU);
+			}
+		}
+
+		if(posX > entrenadorX){
+			entrenador->posX ++;
+			sleep(retardo_de_CPU);
+		}else{
+			entrenador->posX --;
+			sleep(retardo_de_CPU);
+		}
+
+	}
+
+	log_info(extense_logger, "EL pokemon esta en (%i,%i) y el entrenador esta en (%i,%i)",posX,posY,entrenador->posX,entrenador->posY);
+
 }
+
 
 
 
