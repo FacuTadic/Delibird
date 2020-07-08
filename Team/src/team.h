@@ -23,7 +23,6 @@ t_config* config;
 char* ip_broker;
 char* puerto_broker;
 
-
 int tiempo_deadlock;
 uint32_t retardo_de_CPU;
 int tiempo_reconexion;
@@ -47,16 +46,13 @@ pthread_mutex_t cola_mensajes_recibidos_mutex;
 
 sem_t sem_cola_mensajes_nuevos;
 
-// que se yo que va aca
-typedef enum
-{
-	ATRAPAR_POKEMON 		= 111,
-	INTERCAMBIAR_POKEMON 	= 112,
+typedef enum {
+	ATRAPAR_POKEMON 		= 111,		// t_pokemon*
+	INTERCAMBIAR_POKEMON 	= 112, 		// t_deadlock*
 	NO_HACER_PINGO 			= 113, 		// NULL
 } id_tarea;
 
-typedef enum
-{
+typedef enum {
 	ESTADO_NEW 				= 1111,
 	ESTADO_READY 			= 1112,
 	ESTADO_EXECUTING 		= 1113,
@@ -75,7 +71,6 @@ typedef struct {
 	id_tarea id_tarea;
 	void* parametros; // cada tipo de tarea tiene una estructura de parametros
 } t_tarea;
-
 
 typedef struct {
 	uint32_t index;
@@ -100,6 +95,12 @@ typedef struct {
 	t_list* pokemones; // de pokemones char*
 } t_deadlock;
 
+typedef struct {
+	char* nombre;
+	uint32_t pos_X;
+	uint32_t pos_Y;
+} t_pokemon;
+
 t_log* iniciar_logger(char* log_file);
 t_log* iniciar_logger_sin_consola(char* log_file);
 t_config* leer_config(void);
@@ -109,7 +110,7 @@ void inicializar_cola(void);
 void obtener_objetivo_global(void);
 void obtener_pokemones_a_localizar(void);
 void laburar(void* entrenador);
-void planificar (void);
+void planificar(void);
 void escuchar_appeared_de_broker(void);
 void escuchar_caught_de_broker(void);
 void escuchar_localized_de_broker(void);

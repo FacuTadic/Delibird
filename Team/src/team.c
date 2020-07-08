@@ -73,16 +73,13 @@ void escuchar_appeared_de_broker(void) {
 			t_appeared* appeared_msg = recibir_appeared(socket_escucha_appeared, &size, extense_logger);
 			t_mensaje_recibido* mensaje = malloc(sizeof(t_mensaje_recibido));
 
-			mensaje->tipo_mensaje = APPEARED;
+			mensaje->tipo_mensaje = MENSAJE_APPEARED;
 			mensaje->mensaje = (void*) appeared_msg;
 
 			pthread_mutex_lock(&cola_mensajes_recibidos_mutex);
 			queue_push(cola_mensajes_recibidos, (void*) mensaje);
 			pthread_mutex_unlock(&cola_mensajes_recibidos_mutex);
 			sem_post(&sem_cola_mensajes_nuevos);
-
-
-
 		}
 	}
 
@@ -102,14 +99,13 @@ void escuchar_caught_de_broker(void) {
 			t_caught* caught_msg = recibir_caught(socket_escucha_caught, &size, extense_logger);
 			t_mensaje_recibido* mensaje = malloc(sizeof(t_mensaje_recibido));
 
-			mensaje->tipo_mensaje = APPEARED;
+			mensaje->tipo_mensaje = MENSAJE_CAUGHT;
 			mensaje->mensaje = (void*) caught_msg;
 
 			pthread_mutex_lock(&cola_mensajes_recibidos_mutex);
 			queue_push(cola_mensajes_recibidos, (void*) mensaje);
 			pthread_mutex_unlock(&cola_mensajes_recibidos_mutex);
 			sem_post(&sem_cola_mensajes_nuevos);
-
 		}
 	}
 
@@ -129,57 +125,61 @@ void escuchar_localized_de_broker(void) {
 			t_caught* localized_msg = recibir_localized(socket_escucha_localized, &size, extense_logger);
 			t_mensaje_recibido* mensaje = malloc(sizeof(t_mensaje_recibido));
 
-			mensaje->tipo_mensaje = APPEARED;
+			mensaje->tipo_mensaje = MENSAJE_LOCALIZED;
 			mensaje->mensaje = (void*) localized_msg;
 
 			pthread_mutex_lock(&cola_mensajes_recibidos_mutex);
 			queue_push(cola_mensajes_recibidos, (void*) mensaje);
 			pthread_mutex_unlock(&cola_mensajes_recibidos_mutex);
 			sem_post(&sem_cola_mensajes_nuevos);
-
 		}
 	}
 
-
 }
 
-void laburar(void* entrenador_param,t_pokemon* pokemon) {
+void laburar(void* entrenador_param) {
 	t_entrenador* entrenador = (t_entrenador*) entrenador_param;
 
 	while (entrenador->estado != ESTADO_EXIT) {
 
 		switch(entrenador->tarea_actual->id_tarea) {
-		case ATRAPAR_POKEMON:
-			uint32_t posX_pokemon = pokemon->coordx;
-			uint32_t posY_pokemon = pokemon->coordY;
+		case ATRAPAR_POKEMON: ;
 
-			// ir al lugar en cuestion
-			irA(posX_pokemon,posY_pokemon,entrenador);
+		t_pokemon* parametros_atrapado = (t_pokemon*) entrenador->tarea_actual->parametros;
 
-			// mandar catch NO SE REINTENTA, SI FALLA EL ENVIO LO ATRAPE RE CHETO
-			enviar_catch_a_broker(pokemon);
+		// ir al lugar en cuestion
+		irA(parametros_atrapado->pos_X, parametros_atrapado->pos_Y, entrenador);
 
-			// bloquearme esperando a que el planificador me desbloquee
-			entrenador->estado = ESTADO_BLOCKED;
+		// mandar catch NO SE REINTENTA, SI FALLA EL ENVIO LO ATRAPE RE CHETO
+		enviar_catch_a_broker(parametros_atrapado->nombre);
+
+		// bloquearme esperando a que el planificador me desbloquee
+		entrenador->estado = ESTADO_BLOCKED; // esto requiere aparte un bloqueo en serio con semaforos, hay que ver como hacemos esto
+
+		// ver que onda que hago con el caught
+
+		// cosas
 
 
-			// ver que onda que hago con el caught
-
-			// cosas
-			break;
+		break;
 
 		case INTERCAMBIAR_POKEMON: ;
 
-		uint32_t posX_otro_entrenador;
-		uint32_t posY_otro_entrenador;
+		t_deadlock* parametros_intercambio = (t_deadlock*) entrenador->tarea_actual->parametros;
+
+		// segundo entrenador de la lista de entrenadores
+		// esto requiere que el planificador mande a intercambiar al primero de la lista
+		t_entrenador* otro_entrenador = list_get(parametros_intercambio->entrenadores, 1);
 
 		// ir al lugar en cuestion
-		irA(posX_pokemon,posY_pokemon,entrenador);
+		irA(otro_entrenador->posX, otro_entrenador->posY, entrenador);
 
 		// intercambiar el pokemon correspondiente con el otro entrenador
 		intercambiar_pokemon_que_necesita(entrenador,otro_entrenador);
 
 		// ver que onda cuando termino de intercambiar
+		// que pasa si habia mas entrenadores?
+		// es mi responsabilidad ver si hay mas entrenadores o es del planificador?
 
 		// cosas
 		break;
@@ -211,25 +211,26 @@ void planificar() {
 		break;
 		case MENSAJE_CAUGHT: ;
 
-		//t_caught* mensaje_caught = (t_caught*) mensaje_recibido->mensaje;
+		t_caught* mensaje_caught = (t_caught*) mensaje_recibido->mensaje;
 
 
 		//cosas
 		break;
 		case MENSAJE_LOCALIZED: ;
 
-		//t_localized* mensaje_localized = (t_localized*) mensaje_recibido->mensaje;
+		t_localized* mensaje_localized = (t_localized*) mensaje_recibido->mensaje;
 
 
 		//cosas
 		break;
 		case MENSAJE_DEADLOCK: ;
 
-		//t_deadlock* mensaje_deadlock = (t_deadlock*) mensaje_recibido->mensaje;
+		t_deadlock* mensaje_deadlock = (t_deadlock*) mensaje_recibido->mensaje;
 
 		//el peligroso
 		//la papa caliente
 		//la mas zurda quiere bailar y viene hacia vos
+		//tu presidente tiene una gripezinha y tus 100 metros nadando mariposa en alcantarillas no pueden hacer nada por el
 		//cosas
 		break;
 		default:
@@ -266,6 +267,7 @@ t_deadlock* obtener_deadlock() {
 	// encontrar deadlock
 	// papa caliente
 	// te encontraron macheteandote
+	// la piba te esta haciendo un boquete y te esta mordiendo, no sabes como decirle
 
 	// armar estructura t_deadlock
 
@@ -273,17 +275,15 @@ t_deadlock* obtener_deadlock() {
 }
 
 t_list* obtener_entrenadores_bloqueados() {
-t_list entrenadores_bloqueados;
+	t_list entrenadores_bloqueados;
 
-while(entrenadores->head != NULL){				// busca los entrenadores bloqueados que no tienen ATRAPAR_POKEMON como tarea
-	if((entrenadores->head->estado == ESTADO_BLOCKED) && (entrenadores->head->tarea_actual != ATRAPAR_POKEMON)){
-		list_add(entrenadores_bloqueados,entrenadores->head);
-		log_info(logger, "entrenador %d agregado a la lista de bloqueados",entrenadores->head->index);
+	for (int i = 0; i < entrenadores->elements_count; i++) {
+		t_entrenador* entrenador_de_lista = list_get(entrenadores, entrenador_de_lista);
+		if(entrenador_de_lista == ESTADO_BLOCKED && entrenador_de_lista->tarea_actual->id_tarea != ATRAPAR_POKEMON){
+			list_add(entrenadores_bloqueados, entrenador_de_lista);
+			log_info(logger, "entrenador %i agregado a la lista de bloqueados", i);
 		}
-	entrenadores->head = entrenadores->head->next;
-			// como garompa estaba definida la lista entrenadores????
 	}
-
 
 	return entrenadores_bloqueados;
 }
@@ -291,33 +291,22 @@ while(entrenadores->head != NULL){				// busca los entrenadores bloqueados que n
 void verificar_conexion(char *ip, char* puerto) {
 	while(1) {
 		if (estoy_conectado_al_broker == 0) {
-			estoy_conectado_al_broker = reconectar_al_broker(*estoy_conectado_al_broker);
-
-
-
+			log_error(logger, "Error en conexion con BROKER, ip: %s puerto: %s, reintentando en %i segundo%s", ip_broker, puerto_broker, tiempo_reconexion, tiempo_reconexion==1 ? "" : "s");
+			reconectar_al_broker();
+			sleep(tiempo_reconexion);
 		}
 	}
 }
 
-int reconectar_al_broker(char *ip_broker, char* puerto_broker) {
-
-	while(!estoy_conectado_al_broker ){	//reintentar cada tiempoReintentoConexion
-		log_error(logger, "Error en conexion con BROKER, ip: %s puerto : %s, reintentando en %d segundo%s ", ip_broker, puerto_broker,tiempo_reconexion,tiempo_reconexion=1 ? "":"s");
-		estoy_conectado_al_broker = crear_conexion( ip_broker, puerto_broker);
-		sleep(tiempo_reconexion);
+void reconectar_al_broker() {
+	int conexion_al_broker = crear_conexion(ip_broker, puerto_broker);
+	if (conexion_al_broker != -1) {
+		int socket_escucha_appeared = conexion_al_broker;
+		int socket_escucha_caught = crear_conexion(ip_broker, puerto_broker);
+		int socket_escucha_localized = crear_conexion(ip_broker, puerto_broker);
+		log_info(logger, "conexion establecida con BROKER, ip: %s puerto : %s", ip_broker, puerto_broker);
+		estoy_conectado_al_broker = 1;
 	}
-log_info(logger, "conexion establecida con BROKER, ip: %s puerto : %s", ip_broker, puerto_broker);
-
-return estoy_conectado_al_broker;
-
-
-	// crear conexiones para cada cola del broker
-
-	// actualizar los sockets de team.h
-
-	// mandar suscripciones al broker
-
-	// modificar flag de conexion
 }
 
 int main(void) {
@@ -352,8 +341,6 @@ int main(void) {
 	log_info(extense_logger, "La conexion al Broker se verifica cada %i segundos", tiempo_reconexion);
 	retardo_de_CPU = config_get_int_value(config, "RETARDO_CICLO_CPU");
 	log_info(extense_logger, "EL tiempo de retardo de CPU es cada %i segundos", retardo_de_CPU);
-
-
 
 	entrenadores = list_create();
 
@@ -410,7 +397,6 @@ int main(void) {
 	for (int i = 0; i < entrenadores->elements_count; i++) {
 		pthread_join(threads_entrenadores[i], NULL);
 	}
-
 
 	terminar_programa();
 	return EXIT_SUCCESS;
@@ -638,8 +624,7 @@ void obtener_pokemones_a_localizar() {
 	}
 }
 
-void mandar_get(){
-
+void mandar_get() {
 	obtener_pokemones_a_localizar();
 
 	pthread_t* threads = malloc(sizeof(pthread_t) * pokemones_a_localizar->elements_count);
@@ -648,13 +633,10 @@ void mandar_get(){
 		pthread_create(&(threads[i]), NULL, (void*) enviar_get_a_broker, list_get(pokemones_a_localizar,i));
 		pthread_detach(threads[i]);
 	}
-
 }
 
-
-void enviar_get_a_broker(char* nombre_pokemon){
-
-	uint32_t tamanio_pokemon = strlen(nombre_pokemon)+ 1;
+void enviar_get_a_broker(char* nombre_pokemon) {
+	uint32_t tamanio_pokemon = strlen(nombre_pokemon) + 1;
 
 	uint32_t bytes = sizeof(uint32_t) + sizeof(uint32_t) + sizeof(uint32_t) + tamanio_pokemon;
 
@@ -671,27 +653,26 @@ void enviar_get_a_broker(char* nombre_pokemon){
 	memcpy(flujo + desplazamiento, nombre_pokemon, tamanio_pokemon);
 	desplazamiento += tamanio_pokemon;
 
-	if (send(puerto_broker, flujo, bytes, 0) == -1) {
-		log_error(extense_logger, "Error: No se pudo enviar el mensaje");
-		close(socket);
-		free(flujo);
+	int socket_broker = crear_conexion(ip_broker, puerto_broker);
+
+	if (send(socket_broker, flujo, bytes, 0) == -1) {
+		log_error(extense_logger, "Error: No se pudo enviar el GET correspondiente al pokemon %s", nombre_pokemon);
+		// si no puedo enviarlo tengo que reintentar
 	} else {
-		log_info(extense_logger, "Mensaje GET con el pokemon %s enviado correctamente al BROKER de socket %i", nombre_pokemon ,puerto_broker);
-		//log_info(logger, "Mensaje GET con id %i al BROKER de socket %i enviado correctamente", id, );
+		log_info(extense_logger, "Mensaje GET con el pokemon %s enviado correctamente al BROKER a traves del socket %i", nombre_pokemon, puerto_broker);
+		// hacer recv del id si es que nos interesa
 	}
 
+	close(socket_broker);
 	free(flujo);
-
 }
 
 
 void enviar_catch_a_broker(t_pokemon* pokemon){
 
-
 	char* nombre_pokemon = pokemon->nombre;
-	uint32_t posX = pokemon->coordx;
-	uint32_t posY = pokemon->coordY;
-
+	uint32_t posX = pokemon->pos_X;
+	uint32_t posY = pokemon->pos_Y;
 
 	uint32_t tamanio_pokemon = strlen(nombre_pokemon)+ 1;
 
@@ -714,16 +695,25 @@ void enviar_catch_a_broker(t_pokemon* pokemon){
 	memcpy(flujo + desplazamiento, posY, sizeof(uint32_t));
 	desplazamiento += sizeof(uint32_t);
 
+	int socket_broker = crear_conexion(ip_broker, puerto_broker);
 
-	if (send(puerto_broker, flujo, bytes, 0) == -1) {
+	if (send(socket_broker, flujo, bytes, 0) == -1) {
 		log_error(extense_logger, "Error: No se pudo enviar el mensaje");
-		close(socket);
-		free(flujo);
+
+		// si falla entonces lo atrape, ya fue
+		// o no???
+
+
+
+
 	} else {
-		log_info(extense_logger, "Mensaje Catch con el pokemon %s en la posicion (%i,%i)enviado correctamente al BROKER de socket %i", nombre_pokemon,posX, posY, puerto_broker);
-		//log_info(logger, "Mensaje GET con id %i al BROKER de socket %i enviado correctamente", id, );
+		log_info(extense_logger, "Mensaje Catch con el pokemon %s en la posicion (%i,%i)enviado correctamente al BROKER de socket %i", nombre_pokemon, posX, posY, socket_broker);
+
+
+		// guardarse el id para cuando llega un caught
 	}
 
+	close(socket_broker);
 	free(flujo);
 
 }
@@ -733,7 +723,6 @@ void irA(uint32_t posX, uint32_t posY, t_entrenador* entrenador){
 
 	uint32_t entrenadorX = entrenador->posX;
 	uint32_t entrenadorY = entrenador->posY;
-
 
 	uint32_t coordX = abs(posX - entrenador->posX);
 	uint32_t coordY = abs(posX - entrenador->posY);
@@ -749,35 +738,25 @@ void irA(uint32_t posX, uint32_t posY, t_entrenador* entrenador){
 			}
 		}
 
-		if(posX > entrenadorX){
+		if(posX > entrenadorX) {
 			entrenador->posX ++;
 			sleep(retardo_de_CPU);
-		}else{
+		} else {
 			entrenador->posX --;
 			sleep(retardo_de_CPU);
 		}
 
 	}
 
-	log_info(extense_logger, "EL pokemon esta en (%i,%i) y el entrenador esta en (%i,%i)",posX,posY,entrenador->posX,entrenador->posY);
+	log_info(extense_logger, "EL pokemon esta en (%i,%i) y el entrenador esta en (%i,%i)", posX, posY, entrenador->posX, entrenador->posY);
 
 }
-
-
-
 
 void intercambiar_pokemon_que_necesita(t_entrenador* entrenadorQueNecesita, t_entrenador* entrenadorQueLosTiene){
 
 
 
 }
-
-
-
-
-
-
-
 
 void terminar_programa() {
 	close(socket_escucha_game_boy);
