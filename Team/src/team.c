@@ -142,6 +142,8 @@ void laburar(void* entrenador_param) {
 
 	while (entrenador->estado != ESTADO_EXIT) {
 
+		sem_wait(entrenador->semaforo);
+
 		switch(entrenador->tarea_actual->id_tarea) {
 		case ATRAPAR_POKEMON: ;
 
@@ -537,6 +539,8 @@ void inicializar_entrenadores() {
 		entrenador->tarea_actual = tarea;
 
 		definir_primer_estado(entrenador);
+
+		sem_init(entrenador->semaforo, 0, 0);
 
 		list_add(entrenadores, (void*) entrenador);
 

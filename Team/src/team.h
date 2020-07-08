@@ -83,6 +83,7 @@ typedef struct {
 	t_list* objetivos_actuales;
 	estado estado;
 	t_tarea* tarea_actual;
+	sem_t semaforo;
 } t_entrenador;
 
 typedef struct {
