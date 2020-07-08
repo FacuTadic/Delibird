@@ -643,10 +643,33 @@ void enviar_get_a_broker(void* nombre_pokemon){
 
 
 void terminar_programa() {
+
 	close(socket_escucha_game_boy);
 	close(socket_escucha_appeared);
 	close(socket_escucha_caught);
 	close(socket_escucha_localized);
+
+	list_clean(entrenadores);
+	list_clean(objetivo_global);
+	list_clean(pokemones_a_localizar);
+
+	list_destroy(entrenadores);
+	list_destroy(objetivo_global);
+	list_destroy(pokemones_a_localizar);
+
+	sem_destroy(sem_cola_mensajes_nuevos);
+
+	pthread_mutex_destroy(cola_mensajes_recibidos_mutex);
+
+	log_destroy(logger);
+	log_destroy(extense_logger);
+
+	queue_clean(cola_mensajes_recibidos);
+
+	queue_destroy(cola_mensajes_recibidos);
+
+	config_destroy(config);
+
 
 	// destroy stuff
 }
