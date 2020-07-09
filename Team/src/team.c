@@ -270,7 +270,7 @@ void planificar() {
 
 		// mandar la estructura t_deadlock al primer entrenador de la lista
 
-
+		sem_post(((t_entrenador*) list_get(mensaje_deadlock->entrenadores, 0))->semaforo);
 
 		//cosas
 		break;
