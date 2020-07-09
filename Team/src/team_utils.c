@@ -46,16 +46,15 @@ int iniciar_escucha_game_boy(char* IP, char* PUERTO) {
         break;
     }
 
-
-int cacluclar_posicion_entrenador(int posXEntrenador,int posYEntrenador,int posXPokemon,int posYPokemon){
-	return sqrt((posXEntrenador - posXPokemon)^2 + (posYEntrenador - posYPokemon)^2);
-}
-
-
-
 	listen(socket_servidor, SOMAXCONN);
 
     freeaddrinfo(servinfo);
 
     return socket_servidor;
 }
+
+int calcular_posicion_entrenador(int posXEntrenador,int posYEntrenador,int posXPokemon,int posYPokemon){
+	return sqrt((posXEntrenador - posXPokemon)^2 + (posYEntrenador - posYPokemon)^2);
+}
+
+

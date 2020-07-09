@@ -7,7 +7,7 @@ void procesar_request_de_game_boy(int cod_op, int socket_game_boy) {
 		t_appeared* appeared_msg = recibir_appeared_de_game_boy(socket_game_boy, &size, extense_logger);
 		t_mensaje_recibido* mensaje = malloc(sizeof(t_mensaje_recibido));
 
-		mensaje->tipo_mensaje = APPEARED;
+		mensaje->tipo_mensaje = MENSAJE_APPEARED;
 		mensaje->mensaje = (void*) appeared_msg;
 
 		pthread_mutex_lock(&cola_mensajes_recibidos_mutex);
@@ -162,7 +162,6 @@ void laburar(void* entrenador_param) {
 
 		// cosas
 
-
 		break;
 
 		case INTERCAMBIAR_POKEMON: ;
@@ -177,17 +176,29 @@ void laburar(void* entrenador_param) {
 		irA(otro_entrenador->posX, otro_entrenador->posY, entrenador);
 
 		// intercambiar el pokemon correspondiente con el otro entrenador
-		intercambiar_pokemon_que_necesita(entrenador,otro_entrenador);
+		intercambiar_pokemones(entrenador, otro_entrenador, (char*) list_get(parametros_intercambio->pokemones, 0), (char*) list_get(parametros_intercambio->pokemones, 1));
 
-		// ver que onda cuando termino de intercambiar
-		// que pasa si habia mas entrenadores?
-		// es mi responsabilidad ver si hay mas entrenadores o es del planificador?
+		// obtener deadlock nuevo si existe y agregarlo a la cola de mensajes del planificador
 
-		// cosas
-		break;
-		case NO_HACER_PINGO: ;
+		if (parametros_intercambio->entrenadores->elements_count > 2) {
+			list_remove(parametros_intercambio->entrenadores, 0); // se elimina al primer entrenador
+			list_remove(parametros_intercambio->pokemones, 1); // se elimina al segundo pokemon al pedo (seria el pokemon que el primer entrenador necesita)
 
-		// esto puede que no corresponda
+			t_mensaje_recibido* mensaje_deadlock = malloc(sizeof(t_mensaje_recibido));
+
+			mensaje_deadlock->tipo_mensaje = MENSAJE_DEADLOCK;
+			mensaje_deadlock->mensaje = (void*) parametros_intercambio;
+
+			pthread_mutex_lock(&cola_mensajes_recibidos_mutex);
+			queue_push(cola_mensajes_recibidos, (void*) mensaje_deadlock);
+			pthread_mutex_unlock(&cola_mensajes_recibidos_mutex);
+			sem_post(&sem_cola_mensajes_nuevos);
+		} else {
+			list_destroy(parametros_intercambio->entrenadores);
+			list_destroy(parametros_intercambio->pokemones);
+			free(parametros_intercambio);
+		}
+
 		break;
 		default:
 			// cualquiera pibe
@@ -208,6 +219,12 @@ void planificar() {
 
 		t_appeared* mensaje_appeared = (t_appeared*) mensaje_recibido->mensaje;
 
+		// requiero atraparlo?
+
+		// planifico entrenador para ir a atraparlo
+			// obtengo entrenador que va a ir
+			// le doy la t_tarea
+			// lo desbloqueo
 
 		//cosas
 		break;
@@ -215,6 +232,13 @@ void planificar() {
 
 		t_caught* mensaje_caught = (t_caught*) mensaje_recibido->mensaje;
 
+		// verificar id correlativo
+
+		// si es afirmativo
+			// dar pokemon al entrenador
+			// liberar para otras tareas
+		// si es negativo
+			// pa ke kieres saver eso jajaj salu2
 
 		//cosas
 		break;
@@ -222,6 +246,14 @@ void planificar() {
 
 		t_localized* mensaje_localized = (t_localized*) mensaje_recibido->mensaje;
 
+		// ya recibi un appeared o localized de este pokemon?
+
+		// requiero atraparlo?
+
+		// planifico entrenador para ir a atraparlo
+			// obtengo entrenador que va a ir
+			// le doy la t_tarea
+			// lo desbloqueo
 
 		//cosas
 		break;
@@ -229,10 +261,17 @@ void planificar() {
 
 		t_deadlock* mensaje_deadlock = (t_deadlock*) mensaje_recibido->mensaje;
 
-		//el peligroso
-		//la papa caliente
-		//la mas zurda quiere bailar y viene hacia vos
-		//tu presidente tiene una gripezinha y tus 100 metros nadando mariposa en alcantarillas no pueden hacer nada por el
+		t_tarea* tarea_deadlock = malloc(sizeof(t_tarea));
+
+		tarea_deadlock->id_tarea = INTERCAMBIAR_POKEMON;
+		tarea_deadlock->parametros = (void*) mensaje_deadlock;
+
+		((t_entrenador*) list_get(mensaje_deadlock->entrenadores, 0))->tarea_actual = tarea_deadlock;
+
+		// mandar la estructura t_deadlock al primer entrenador de la lista
+
+
+
 		//cosas
 		break;
 		default:
@@ -277,11 +316,11 @@ t_deadlock* obtener_deadlock() {
 }
 
 t_list* obtener_entrenadores_bloqueados() {
-	t_list entrenadores_bloqueados;
+	t_list* entrenadores_bloqueados;
 
 	for (int i = 0; i < entrenadores->elements_count; i++) {
 		t_entrenador* entrenador_de_lista = list_get(entrenadores, entrenador_de_lista);
-		if(entrenador_de_lista == ESTADO_BLOCKED && entrenador_de_lista->tarea_actual->id_tarea != ATRAPAR_POKEMON){
+		if (entrenador_de_lista == ESTADO_BLOCKED && entrenador_de_lista->tarea_actual->id_tarea != ATRAPAR_POKEMON) {
 			list_add(entrenadores_bloqueados, entrenador_de_lista);
 			log_info(logger, "entrenador %i agregado a la lista de bloqueados", i);
 		}
@@ -659,18 +698,23 @@ void enviar_get_a_broker(char* nombre_pokemon) {
 
 	int socket_broker = crear_conexion(ip_broker, puerto_broker);
 
-	if (send(socket_broker, flujo, bytes, 0) == -1) {
+	int status_send = send(socket_broker, flujo, bytes, 0);
+
+	while (status_send == -1 || status_send == 0) {
 		log_error(extense_logger, "Error: No se pudo enviar el GET correspondiente al pokemon %s", nombre_pokemon);
-		// si no puedo enviarlo tengo que reintentar
-	} else {
-		log_info(extense_logger, "Mensaje GET con el pokemon %s enviado correctamente al BROKER a traves del socket %i", nombre_pokemon, puerto_broker);
-		// hacer recv del id si es que nos interesa
+		estoy_conectado_al_broker = 0;
+		sleep(tiempo_reconexion);
+		status_send = send(socket_broker, flujo, bytes, 0);
 	}
+
+	log_info(extense_logger, "Mensaje GET con el pokemon %s enviado correctamente al BROKER a traves del socket %i", nombre_pokemon, puerto_broker);
+
+	// hacer recv del id si es que nos interesa
+	// medio como que no, o no?
 
 	close(socket_broker);
 	free(flujo);
 }
-
 
 void enviar_catch_a_broker(t_pokemon* pokemon){
 
@@ -731,18 +775,18 @@ void irA(uint32_t posX, uint32_t posY, t_entrenador* entrenador){
 	uint32_t coordX = abs(posX - entrenador->posX);
 	uint32_t coordY = abs(posX - entrenador->posY);
 
-	for(int x = 0; x<=coordX; x++){
-		for(int y = 0; y<= coordY; y++){
-			if(posY > entrenadorY){
+	for (int x = 0; x<=coordX; x++) {
+		for (int y = 0; y<= coordY; y++) {
+			if (posY > entrenadorY) {
 				entrenador->posY ++;
 				sleep(retardo_de_CPU);
-			}else{
+			} else {
 				entrenador->posY --;
 				sleep(retardo_de_CPU);
 			}
 		}
 
-		if(posX > entrenadorX) {
+		if (posX > entrenadorX) {
 			entrenador->posX ++;
 			sleep(retardo_de_CPU);
 		} else {
@@ -756,10 +800,52 @@ void irA(uint32_t posX, uint32_t posY, t_entrenador* entrenador){
 
 }
 
-void intercambiar_pokemon_que_necesita(t_entrenador* entrenadorQueNecesita, t_entrenador* entrenadorQueLosTiene){
+void intercambiar_pokemones(t_entrenador* entrenador1, t_entrenador* entrenador2, char* pokemon1, char* pokemon2) {
+	adquirir_pokemon(entrenador1, pokemon2);
+	adquirir_pokemon(entrenador2, pokemon1);
 
+	eliminar_pokemon(entrenador1, pokemon1);
+	eliminar_pokemon(entrenador2, pokemon2);
+}
 
+void eliminar_pokemon(t_entrenador* entrenador, char* pokemon) {
+	for (int i = 0; i < entrenador->pokemones->elements_count; i++) {
+		char* pokemon_lista = (char*) list_get(entrenador->pokemones, i);
+		int es_igual = string_equals_ignore_case(pokemon, pokemon_lista);
+		if (es_igual == 1) {
+			list_remove(entrenador->pokemones, i);
+			i = entrenador->pokemones->elements_count;
+		}
+	}
 
+	for (int i = 0; i < entrenador->pokemones_innecesarios->elements_count; i++) {
+		char* pokemon_lista = (char*) list_get(entrenador->pokemones_innecesarios, i);
+		int es_igual = string_equals_ignore_case(pokemon, pokemon_lista);
+		if (es_igual == 1) {
+			list_remove(entrenador->pokemones_innecesarios, i);
+			i = entrenador->pokemones_innecesarios->elements_count;
+		}
+	}
+}
+
+void adquirir_pokemon(t_entrenador* entrenador, char* pokemon) {
+	list_add(entrenador->pokemones, (void*) pokemon);
+
+	int presente_en_objetivo_actual = 0;
+
+	for (int i = 0; i < entrenador->objetivos_actuales->elements_count; i++) {
+		char* objetivo_actual_lista = (char*) list_get(entrenador->objetivos_actuales, i);
+		int es_igual = string_equals_ignore_case(pokemon, objetivo_actual_lista);
+		if (es_igual == 1) {
+			list_remove(entrenador->objetivos_actuales, i);
+			i = entrenador->objetivos_actuales->elements_count;
+			presente_en_objetivo_actual = 1;
+		}
+	}
+
+	if (presente_en_objetivo_actual == 0) {
+		list_add(entrenador->pokemones_innecesarios, pokemon);
+	}
 }
 
 void terminar_programa() {
@@ -770,3 +856,25 @@ void terminar_programa() {
 
 	// destroy stuff
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
