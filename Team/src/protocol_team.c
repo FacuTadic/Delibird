@@ -442,8 +442,10 @@ t_appeared* recibir_appeared_de_game_boy(int socket, uint32_t* size, t_log* logg
 }
 
 
-
-
+void generara_ID_Modulo(){
+	id_modulo = rand();
+	log_info(extense_logger, "El ID de este modulo es: %i", id_modulo);
+}
 
 
 
