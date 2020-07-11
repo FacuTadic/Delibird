@@ -242,69 +242,83 @@ void planificar() {
 		sem_wait(&sem_cola_mensajes_nuevos);
 		t_mensaje_recibido* mensaje_recibido = queue_pop(cola_mensajes_recibidos);
 
+		log_info(extense_logger, "Se espera la planificacion nro: %i",mensaje_recibido->tipo_mensaje);
 		switch(mensaje_recibido->tipo_mensaje) {
-		case MENSAJE_APPEARED: ;
 
-		t_appeared* mensaje_appeared = (t_appeared*) mensaje_recibido->mensaje;
+			case MENSAJE_APPEARED:
 
-		// requiero atraparlo?
+				log_info(extense_logger, "Entro por Mensaje Appeared");
 
-		// planifico entrenador para ir a atraparlo
-			// obtengo entrenador que va a ir
-			// le doy la t_tarea
-			// lo desbloqueo
+				t_appeared* mensaje_appeared = (t_appeared*) mensaje_recibido->mensaje;
 
-		//cosas
-		break;
-		case MENSAJE_CAUGHT: ;
+				// requiero atraparlo?
 
-		t_caught* mensaje_caught = (t_caught*) mensaje_recibido->mensaje;
+				// planifico entrenador para ir a atraparlo
+					// obtengo entrenador que va a ir
+					// le doy la t_tarea
+					// lo desbloqueo
 
-		// verificar id correlativo
+				//cosas
+				break;
 
-		// si es afirmativo
-			// dar pokemon al entrenador
-			// liberar para otras tareas
-		// si es negativo
-			// pa ke kieres saver eso jajaj salu2
+			case MENSAJE_CAUGHT:
 
-		//cosas
-		break;
-		case MENSAJE_LOCALIZED: ;
+				log_info(extense_logger, "Entro por Mensaje Caught");
 
-		t_localized* mensaje_localized = (t_localized*) mensaje_recibido->mensaje;
+				t_caught* mensaje_caught = (t_caught*) mensaje_recibido->mensaje;
 
-		// ya recibi un appeared o localized de este pokemon?
+				// verificar id correlativo
 
-		// requiero atraparlo?
+				// si es afirmativo
+					// dar pokemon al entrenador
+					// liberar para otras tareas
+				// si es negativo
+					// pa ke kieres saver eso jajaj salu2
 
-		// planifico entrenador para ir a atraparlo
-			// obtengo entrenador que va a ir
-			// le doy la t_tarea
-			// lo desbloqueo
+				//cosas
+				break;
 
-		//cosas
-		break;
-		case MENSAJE_DEADLOCK: ;
+			case MENSAJE_LOCALIZED:
 
-		t_deadlock* mensaje_deadlock = (t_deadlock*) mensaje_recibido->mensaje;
+				log_info(extense_logger, "Entro por Mensaje Localized");
 
-		t_tarea* tarea_deadlock = malloc(sizeof(t_tarea));
+				t_localized* mensaje_localized = (t_localized*) mensaje_recibido->mensaje;
 
-		tarea_deadlock->id_tarea = INTERCAMBIAR_POKEMON;
-		tarea_deadlock->parametros = (void*) mensaje_deadlock;
+				// ya recibi un appeared o localized de este pokemon?
 
-		((t_entrenador*) list_get(mensaje_deadlock->entrenadores, 0))->tarea_actual = tarea_deadlock;
+				// requiero atraparlo?
 
-		// mandar la estructura t_deadlock al primer entrenador de la lista
+				// planifico entrenador para ir a atraparlo
+					// obtengo entrenador que va a ir
+					// le doy la t_tarea
+					// lo desbloqueo
 
-		sem_post(((t_entrenador*) list_get(mensaje_deadlock->entrenadores, 0))->semaforo);
+				//cosas
+				break;
 
-		//cosas
-		break;
-		default:
+			case MENSAJE_DEADLOCK:
 
-			//ah re loco
+				log_info(extense_logger, "Entro por Mensaje Deadlock");
+
+				t_deadlock* mensaje_deadlock = (t_deadlock*) mensaje_recibido->mensaje;
+
+				t_tarea* tarea_deadlock = malloc(sizeof(t_tarea));
+
+				tarea_deadlock->id_tarea = INTERCAMBIAR_POKEMON;
+				tarea_deadlock->parametros = (void*) mensaje_deadlock;
+
+				((t_entrenador*) list_get(mensaje_deadlock->entrenadores, 0))->tarea_actual = tarea_deadlock;
+
+				// mandar la estructura t_deadlock al primer entrenador de la lista
+
+				sem_post(((t_entrenador*) list_get(mensaje_deadlock->entrenadores, 0))->semaforo);
+
+				//cosas
+				break;
+
+
+			default:
+				log_info(extense_logger, "Estas planificando cualquier cosa bro, que me mandas?");
 		}
 
 	}
