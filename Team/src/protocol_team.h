@@ -52,5 +52,6 @@ t_appeared* recibir_appeared(int socket, uint32_t* size, t_log* logger);
 t_caught* recibir_caught(int socket_broker, uint32_t* size, t_log* logger);
 t_localized* recibir_localized(int socket_broker, uint32_t* size, t_log* logger);
 void generara_ID_Modulo();
+uint32_t recibir_ID_Catch(int socket_broker,t_log* logger);
 int devolver_ack(int socket_broker, t_log* logger);
 
