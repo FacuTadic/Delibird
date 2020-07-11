@@ -124,4 +124,4 @@ void mandar_get();
 void enviar_get_a_broker(char* nombre_pokemon);
 void enviar_catch_a_broker(t_pokemon* pokemon);
 void irA(uint32_t posX, uint32_t posY, t_entrenador* entrenador);
-void intercambiar_pokemon_entre(t_entrenador* entrenador1, t_entrenador* entrenador2);
+void intercambiar_pokemon_que_necesita(t_entrenador* entrenadorQueNecesita, t_entrenador* entrenadorQueLosTiene);
