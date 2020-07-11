@@ -21,6 +21,7 @@ typedef enum
 	NEW          = 1,
     APPEARED     = 2,
     CATCH        = 3,
+	CAUGHT		 = 4,
 	GET          = 5,
 	LOCALIZED    = 6,
 	SUSCRIPCION  = 7
@@ -32,14 +33,12 @@ typedef struct {
 	uint32_t flag;
 } t_caught;
 
-
 typedef struct {
 	uint32_t id_correlativo;
     char* pokemon;
     uint32_t lugares;
     t_list* l_coordenadas;
 } t_localized;
-
 
 typedef struct {
 	char* pokemon;

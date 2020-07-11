@@ -23,7 +23,6 @@ t_config* config;
 char* ip_broker;
 char* puerto_broker;
 
-
 int tiempo_deadlock;
 uint32_t retardo_de_CPU;
 int tiempo_reconexion;
@@ -47,16 +46,13 @@ pthread_mutex_t cola_mensajes_recibidos_mutex;
 
 sem_t sem_cola_mensajes_nuevos;
 
-// que se yo que va aca
-typedef enum
-{
-	ATRAPAR_POKEMON 		= 111,
-	INTERCAMBIAR_POKEMON 	= 112,
+typedef enum {
+	ATRAPAR_POKEMON 		= 111,		// t_pokemon*
+	INTERCAMBIAR_POKEMON 	= 112, 		// t_deadlock*
 	NO_HACER_PINGO 			= 113, 		// NULL
 } id_tarea;
 
-typedef enum
-{
+typedef enum {
 	ESTADO_NEW 				= 1111,
 	ESTADO_READY 			= 1112,
 	ESTADO_EXECUTING 		= 1113,
@@ -76,7 +72,6 @@ typedef struct {
 	void* parametros; // cada tipo de tarea tiene una estructura de parametros
 } t_tarea;
 
-
 typedef struct {
 	uint32_t index;
 	uint32_t posX;
@@ -88,6 +83,7 @@ typedef struct {
 	t_list* objetivos_actuales;
 	estado estado;
 	t_tarea* tarea_actual;
+	sem_t semaforo;
 } t_entrenador;
 
 typedef struct {
@@ -97,8 +93,14 @@ typedef struct {
 
 typedef struct {
 	t_list* entrenadores; // de t_entrenador
-	t_list* pokemones; // de pokemones char*
+	t_list* pokemones; // de pokemones char*, son pokemones al pedo
 } t_deadlock;
+
+typedef struct {
+	char* nombre;
+	uint32_t pos_X;
+	uint32_t pos_Y;
+} t_pokemon;
 
 t_log* iniciar_logger(char* log_file);
 t_log* iniciar_logger_sin_consola(char* log_file);
@@ -109,7 +111,7 @@ void inicializar_cola(void);
 void obtener_objetivo_global(void);
 void obtener_pokemones_a_localizar(void);
 void laburar(void* entrenador);
-void planificar (void);
+void planificar(void);
 void escuchar_appeared_de_broker(void);
 void escuchar_caught_de_broker(void);
 void escuchar_localized_de_broker(void);
@@ -124,4 +126,10 @@ void mandar_get();
 void enviar_get_a_broker(char* nombre_pokemon);
 void enviar_catch_a_broker(t_pokemon* pokemon);
 void irA(uint32_t posX, uint32_t posY, t_entrenador* entrenador);
+<<<<<<< HEAD
 void intercambiar_pokemon_que_necesita(t_entrenador* entrenadorQueNecesita, t_entrenador* entrenadorQueLosTiene);
+=======
+void intercambiar_pokemones(t_entrenador* entrenador1, t_entrenador* entrenador2, char* pokemon1, char* pokemon2);
+void adquirir_pokemon(t_entrenador* entrenador, char* pokemon);
+void eliminar_pokemon(t_entrenador* entrenador, char* pokemon);
+>>>>>>> b1e953854bd12319f2f0a54ea29284c0cc13dbe5

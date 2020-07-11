@@ -14,37 +14,5 @@
 
 #endif
 
-typedef struct
-{
-	uint32_t size;
-	char* nombre;
-	uint32_t coordx;
-	uint32_t coordY;
-} t_pokemon;
-
-typedef struct
-{
-	uint32_t coordx;
-	uint32_t coordy;
-} t_coord;
-
-typedef struct
-{
-	uint32_t sizeTotal;
-	uint32_t size;
-	char* nombre;
-	uint32_t cantidad;
-	t_list* coords; //t_coord
-} t_localized;
-
-//typedef struct
-//{
-//	uint32_t sizeTotal;
-//	uint32_t size;
-//	char* nombre;
-//	uint32_t coordx;
-//	uint32_t coordY;
-//} t_appeared;
-
 int crear_conexion(char* ip, char* puerto);
 int iniciar_escucha_game_boy(char* ip, char* puerto);
