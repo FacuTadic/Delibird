@@ -16,4 +16,3 @@
 
 int crear_conexion(char* ip, char* puerto);
 int iniciar_escucha_game_boy(char* ip, char* puerto);
-void generara_ID_Modulo();

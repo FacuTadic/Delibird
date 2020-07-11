@@ -58,8 +58,4 @@ int calcular_posicion_entrenador(int posXEntrenador,int posYEntrenador,int posXP
 }
 
 
-void generara_ID_Modulo(){
-	id_modulo = rand();
-	log_info(extense_logger, "El ID de este modulo es: %i", id_modulo);
-}
 

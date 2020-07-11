@@ -383,6 +383,8 @@ int main(void) {
 	retardo_de_CPU = config_get_int_value(config, "RETARDO_CICLO_CPU");
 	log_info(extense_logger, "EL tiempo de retardo de CPU es cada %i segundos", retardo_de_CPU);
 
+	generara_ID_Modulo();
+
 	entrenadores = list_create();
 
 	inicializar_entrenadores();
