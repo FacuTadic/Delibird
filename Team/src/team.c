@@ -325,10 +325,13 @@ void planificar() {
 }
 
 void buscar_deadlocks() {
+
 	while(1) {
 		sleep(tiempo_deadlock);
 
+		log_info(extense_logger, "Se esta obteniendo el deadlock");
 		t_deadlock* deadlock = obtener_deadlock();
+		log_info(extense_logger, "Se obtuvo el deadlock");
 
 		if (deadlock != NULL) {
 			t_mensaje_recibido* mensaje = malloc(sizeof(t_mensaje_recibido));
