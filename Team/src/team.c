@@ -388,8 +388,14 @@ void reconectar_al_broker() {
 	int conexion_al_broker = crear_conexion(ip_broker, puerto_broker);
 	if (conexion_al_broker != -1) {
 		int socket_escucha_appeared = conexion_al_broker;
+		log_info(extense_logger, "Socket de reconexion appeared: %i",socket_escucha_appeared);
+
 		int socket_escucha_caught = crear_conexion(ip_broker, puerto_broker);
+		log_info(extense_logger, "Socket de reconexion appeared: %i",socket_escucha_caught);
+
 		int socket_escucha_localized = crear_conexion(ip_broker, puerto_broker);
+		log_info(extense_logger, "Socket de reconexion appeared: %i",socket_escucha_localized);
+
 		log_info(logger, "conexion establecida con BROKER, ip: %s puerto : %s", ip_broker, puerto_broker);
 		estoy_conectado_al_broker = 1;
 	}
