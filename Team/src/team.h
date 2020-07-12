@@ -75,7 +75,7 @@ typedef struct {
 } t_tarea;
 
 typedef struct {
-	uint32_t index;
+	int index;
 	uint32_t posX;
 	uint32_t posY;
 	int pokebolas;
@@ -104,6 +104,13 @@ typedef struct {
 	uint32_t pos_Y;
 } t_pokemon;
 
+typedef struct nodo_arbol {
+	t_entrenador* entrenador;
+	struct nodo_arbol* padre;
+	t_list* hijos; // nodo_arbol*
+	char* pokemon_faltante;
+} t_nodo_arbol;
+
 t_log* iniciar_logger(char* log_file);
 t_log* iniciar_logger_sin_consola(char* log_file);
 t_config* leer_config(void);
@@ -128,10 +135,15 @@ void mandar_get();
 void enviar_get_a_broker(char* nombre_pokemon);
 void enviar_catch_a_broker(t_pokemon* pokemon);
 void irA(uint32_t posX, uint32_t posY, t_entrenador* entrenador);
-//<<<<<<< HEAD
-void intercambiar_pokemon_que_necesita(t_entrenador* entrenadorQueNecesita, t_entrenador* entrenadorQueLosTiene);
-//=======
 void intercambiar_pokemones(t_entrenador* entrenador1, t_entrenador* entrenador2, char* pokemon1, char* pokemon2);
 void adquirir_pokemon(t_entrenador* entrenador, char* pokemon);
 void eliminar_pokemon(t_entrenador* entrenador, char* pokemon);
-//>>>>>>> b1e953854bd12319f2f0a54ea29284c0cc13dbe5
+t_deadlock* obtener_deadlock_por_arbol(t_list* entrenadores_bloqueados, int i);
+t_entrenador* obtener_entrenador(int id);
+t_deadlock* agregar_nivel_hasta_deadlock(t_nodo_arbol* raiz, int i);
+t_list* obtener_nivel_de_arbol(t_nodo_arbol* raiz, int i);
+int agregar_hijos(t_nodo_arbol* nodo, t_nodo_arbol* raiz);
+t_list* entrenadores_que_necesitan_pokemon(char* pokemon);
+t_deadlock* armar_deadlock(t_nodo_arbol* nodo_raiz);
+void liberar_arbol(t_nodo_arbol* raiz);
+int todavia_existe_deadlock(t_deadlock* mensaje_deadlock);
