@@ -155,81 +155,82 @@ void laburar(void* entrenador_param) {
 		log_info(extense_logger, "Se espera el laburo nro: %i",entrenador->tarea_actual->id_tarea);
 
 		switch(entrenador->tarea_actual->id_tarea) {
-			case ATRAPAR_POKEMON: ;
+		case ATRAPAR_POKEMON: ;
 
-			log_info(extense_logger, "Entro por Atrapar Pokemon");
+		log_info(extense_logger, "Entro por Atrapar Pokemon");
 
-			t_pokemon* parametros_atrapado = (t_pokemon*) entrenador->tarea_actual->parametros;
-			log_info(extense_logger, "Pokemon a atrapar: %s", parametros_atrapado->nombre);
+		t_pokemon* parametros_atrapado = (t_pokemon*) entrenador->tarea_actual->parametros;
+		log_info(extense_logger, "Pokemon a atrapar: %s", parametros_atrapado->nombre);
 
-			// ir al lugar en cuestion
-			log_info(extense_logger, "Moviendo al entrenador a la posicion X: %i y posicion Y: %i",parametros_atrapado->pos_X,parametros_atrapado->pos_Y);
-			irA(parametros_atrapado->pos_X, parametros_atrapado->pos_Y, entrenador);
-			log_info(extense_logger, "Llego el entrenador");
+		// ir al lugar en cuestion
+		log_info(extense_logger, "Moviendo al entrenador a la posicion X: %i y posicion Y: %i",parametros_atrapado->pos_X,parametros_atrapado->pos_Y);
+		irA(parametros_atrapado->pos_X, parametros_atrapado->pos_Y, entrenador);
+		log_info(extense_logger, "Llego el entrenador");
 
-			// mandar catch NO SE REINTENTA, SI FALLA EL ENVIO LO ATRAPE RE CHETO
-			log_info(extense_logger, "Se envia el catch");
-			enviar_catch_a_broker(parametros_atrapado->nombre);
-			log_info(extense_logger, "Se envio el catch");
+		// mandar catch NO SE REINTENTA, SI FALLA EL ENVIO LO ATRAPE RE CHETO
+		log_info(extense_logger, "Se envia el catch");
+		enviar_catch_a_broker(parametros_atrapado->nombre);
+		log_info(extense_logger, "Se envio el catch");
 
-			// bloquearme esperando a que el planificador me desbloquee
-			entrenador->estado = ESTADO_BLOCKED; // esto requiere aparte un bloqueo en serio con semaforos, hay que ver como hacemos esto
-			log_info(extense_logger, "Entrenador bloqueado");
+		// bloquearme esperando a que el planificador me desbloquee
+		entrenador->estado = ESTADO_BLOCKED; // esto requiere aparte un bloqueo en serio con semaforos, hay que ver como hacemos esto
+		log_info(extense_logger, "Entrenador bloqueado");
 
-			// ver que onda que hago con el caught
+		// ver que onda que hago con el caught
 
-			// cosas
+		// cosas
 
-			break;
+		break;
 
-			case INTERCAMBIAR_POKEMON: ;
+		case INTERCAMBIAR_POKEMON: ;
 
-      log_info(extense_logger, "Entro por Intercambiar Pokemon");
-		  // segundo entrenador de la lista de entrenadores
-		  // esto requiere que el planificador mande a intercambiar al primero de la lista
-		  t_entrenador* otro_entrenador = (t_entrenador*) list_get(parametros_intercambio->entrenadores, 1);
+		log_info(extense_logger, "Entro por Intercambiar Pokemon");
 
-			t_deadlock* parametros_intercambio = (t_deadlock*) entrenador->tarea_actual->parametros;
-			log_info(extense_logger, "Parametros del  deadlock cargados");
+		t_deadlock* parametros_intercambio = (t_deadlock*) entrenador->tarea_actual->parametros;
+		log_info(extense_logger, "Parametros del  deadlock cargados");
 
-			// segundo entrenador de la lista de entrenadores
-			// esto requiere que el planificador mande a intercambiar al primero de la lista
-			t_entrenador* otro_entrenador = list_get(parametros_intercambio->entrenadores, 1);
-			log_info(extense_logger, "Cargado el entrenador con el que intercambiar");
+		// segundo entrenador de la lista de entrenadores
+		// esto requiere que el planificador mande a intercambiar al primero de la lista
+		t_entrenador* otro_entrenador = (t_entrenador*) list_get(parametros_intercambio->entrenadores, 1);
 
-			// ir al lugar en cuestion
-			log_info(extense_logger, "Moviendo al entrenador a la posicion X: %i y posicion Y: %i",parametros_atrapado->pos_X,parametros_atrapado->pos_Y);
-			irA(otro_entrenador->posX, otro_entrenador->posY, entrenador);
-			log_info(extense_logger, "Llego el entrenador");
+		// segundo entrenador de la lista de entrenadores
+		// esto requiere que el planificador mande a intercambiar al primero de la lista
+		t_entrenador* otro_entrenador = list_get(parametros_intercambio->entrenadores, 1);
+		log_info(extense_logger, "Cargado el entrenador con el que intercambiar");
+
+		// ir al lugar en cuestion
+		log_info(extense_logger, "Moviendo al entrenador a la posicion X: %i y posicion Y: %i",parametros_atrapado->pos_X,parametros_atrapado->pos_Y);
+		irA(otro_entrenador->posX, otro_entrenador->posY, entrenador);
+		log_info(extense_logger, "Llego el entrenador");
 
 
-			// intercambiar el pokemon correspondiente con el otro entrenador
-			log_info(extense_logger, "Empezando el intercambio de pokemon");
-			intercambiar_pokemones(entrenador, otro_entrenador, (char*) list_get(parametros_intercambio->pokemones, 0), (char*) list_get(parametros_intercambio->pokemones, 1));
-			log_info(extense_logger, "Intercambio realizado");
+		// intercambiar el pokemon correspondiente con el otro entrenador
+		log_info(extense_logger, "Empezando el intercambio de pokemon");
+		intercambiar_pokemones(entrenador, otro_entrenador, (char*) list_get(parametros_intercambio->pokemones, 0), (char*) list_get(parametros_intercambio->pokemones, 1));
+		log_info(extense_logger, "Intercambio realizado");
 
-			// obtener deadlock nuevo si existe y agregarlo a la cola de mensajes del planificador
+		// obtener deadlock nuevo si existe y agregarlo a la cola de mensajes del planificador
 
-			if (parametros_intercambio->entrenadores->elements_count > 2) {
-				list_remove(parametros_intercambio->entrenadores, 0); // se elimina al primer entrenador
-				list_remove(parametros_intercambio->pokemones, 1); // se elimina al segundo pokemon al pedo (seria el pokemon que el primer entrenador necesita)
+		if (parametros_intercambio->entrenadores->elements_count > 2) {
+			list_remove(parametros_intercambio->entrenadores, 0); // se elimina al primer entrenador
+			list_remove(parametros_intercambio->pokemones, 1); // se elimina al segundo pokemon al pedo (seria el pokemon que el primer entrenador necesita)
 
-				t_mensaje_recibido* mensaje_deadlock = malloc(sizeof(t_mensaje_recibido));
+			t_mensaje_recibido* mensaje_deadlock = malloc(sizeof(t_mensaje_recibido));
 
-				mensaje_deadlock->tipo_mensaje = MENSAJE_DEADLOCK;
-				mensaje_deadlock->mensaje = (void*) parametros_intercambio;
+			mensaje_deadlock->tipo_mensaje = MENSAJE_DEADLOCK;
+			mensaje_deadlock->mensaje = (void*) parametros_intercambio;
 
-				pthread_mutex_lock(&cola_mensajes_recibidos_mutex);
-				queue_push(cola_mensajes_recibidos, (void*) mensaje_deadlock);
-				pthread_mutex_unlock(&cola_mensajes_recibidos_mutex);
-				sem_post(&sem_cola_mensajes_nuevos);
-			} else {
-				list_destroy(parametros_intercambio->entrenadores);
-				list_destroy(parametros_intercambio->pokemones);
-				free(parametros_intercambio);
-			}
+			pthread_mutex_lock(&cola_mensajes_recibidos_mutex);
+			queue_push(cola_mensajes_recibidos, (void*) mensaje_deadlock);
+			pthread_mutex_unlock(&cola_mensajes_recibidos_mutex);
+			sem_post(&sem_cola_mensajes_nuevos);
+		} else {
+			list_destroy(parametros_intercambio->entrenadores);
+			list_destroy(parametros_intercambio->pokemones);
+			free(parametros_intercambio);
+		}
 
-			break;
+		break;
 
 		default:
 			log_info(extense_logger, "Entro por cualquier lado bro");
@@ -248,80 +249,83 @@ void planificar() {
 		log_info(extense_logger, "Se espera la planificacion nro: %i",mensaje_recibido->tipo_mensaje);
 		switch(mensaje_recibido->tipo_mensaje) {
 
-			case MENSAJE_APPEARED:
+		case MENSAJE_APPEARED:
 
-				log_info(extense_logger, "Entro por Mensaje Appeared");
+			log_info(extense_logger, "Entro por Mensaje Appeared");
 
-				t_appeared* mensaje_appeared = (t_appeared*) mensaje_recibido->mensaje;
-				// requiero atraparlo?
+			t_appeared* mensaje_appeared = (t_appeared*) mensaje_recibido->mensaje;
+			// requiero atraparlo?
 
-				// planifico entrenador para ir a atraparlo
-					// obtengo entrenador que va a ir
-					// le doy la t_tarea
-					// lo desbloqueo
+			// planifico entrenador para ir a atraparlo
+			// obtengo entrenador que va a ir
+			// le doy la t_tarea
+			// lo desbloqueo
 
-				//cosas
-				break;
+			//cosas
+			break;
 
-			case MENSAJE_CAUGHT:
+		case MENSAJE_CAUGHT:
 
-				log_info(extense_logger, "Entro por Mensaje Caught");
-				t_caught* mensaje_caught = (t_caught*) mensaje_recibido->mensaje;
+			log_info(extense_logger, "Entro por Mensaje Caught");
+			t_caught* mensaje_caught = (t_caught*) mensaje_recibido->mensaje;
 
-				// verificar id correlativo
+			// verificar id correlativo
 
-				// si es afirmativo
-					// dar pokemon al entrenador
-					// liberar para otras tareas
-				// si es negativo
-					// pa ke kieres saver eso jajaj salu2
+			// si es afirmativo
+			// dar pokemon al entrenador
+			// liberar para otras tareas
+			// si es negativo
+			// pa ke kieres saver eso jajaj salu2
 
-				//cosas
-				break;
+			//cosas
+			break;
 
-			case MENSAJE_LOCALIZED:
+		case MENSAJE_LOCALIZED:
 
-				log_info(extense_logger, "Entro por Mensaje Localized");
-        
-        t_localized* mensaje_localized = (t_localized*) mensaje_recibido->mensaje;
-        
-				// ya recibi un appeared o localized de este pokemon?
+			log_info(extense_logger, "Entro por Mensaje Localized");
 
-				// requiero atraparlo?
+			t_localized* mensaje_localized = (t_localized*) mensaje_recibido->mensaje;
 
-				// planifico entrenador para ir a atraparlo
-					// obtengo entrenador que va a ir
-					// le doy la t_tarea
-					// lo desbloqueo
+			// ya recibi un appeared o localized de este pokemon?
 
-				//cosas
-				break;
+			// requiero atraparlo?
 
-			case MENSAJE_DEADLOCK:
+			// planifico entrenador para ir a atraparlo
+			// obtengo entrenador que va a ir
+			// le doy la t_tarea
+			// lo desbloqueo
 
-				if (todavia_existe_deadlock(mensaje_deadlock) == 1) {
-			t_tarea* tarea_deadlock = malloc(sizeof(t_tarea));
+			//cosas
+			break;
 
-			tarea_deadlock->id_tarea = INTERCAMBIAR_POKEMON;
-			tarea_deadlock->parametros = (void*) mensaje_deadlock;
+		case MENSAJE_DEADLOCK:
 
-			((t_entrenador*) list_get(mensaje_deadlock->entrenadores, 0))->tarea_actual = tarea_deadlock;
+			log_info(extense_logger, "Entro por Mensaje Deadlock");
+			t_deadlock* mensaje_deadlock = (t_deadlock*) mensaje_recibido->mensaje;
 
-			sem_post(((t_entrenador*) list_get(mensaje_deadlock->entrenadores, 0))->semaforo);
-		} else {
-			list_destroy(mensaje_deadlock->entrenadores);
-			list_destroy(mensaje_deadlock->pokemones);
-			free(mensaje_deadlock);
-		}
+			if (todavia_existe_deadlock(mensaje_deadlock) == 1) {
+				t_tarea* tarea_deadlock = malloc(sizeof(t_tarea));
 
-		free(mensaje_recibido);
+				tarea_deadlock->id_tarea = INTERCAMBIAR_POKEMON;
+				tarea_deadlock->parametros = (void*) mensaje_deadlock;
 
-				//cosas
-				break;
+				((t_entrenador*) list_get(mensaje_deadlock->entrenadores, 0))->tarea_actual = tarea_deadlock;
+
+				sem_post(((t_entrenador*) list_get(mensaje_deadlock->entrenadores, 0))->semaforo);
+			} else {
+				list_destroy(mensaje_deadlock->entrenadores);
+				list_destroy(mensaje_deadlock->pokemones);
+				free(mensaje_deadlock);
+			}
+
+			free(mensaje_recibido);
+
+			//cosas
+			break;
 
 
-			default:
-				log_info(extense_logger, "Estas planificando cualquier cosa bro, que me mandas?");
+		default:
+			log_info(extense_logger, "Estas planificando cualquier cosa bro, que me mandas?");
 		}
 
 	}
