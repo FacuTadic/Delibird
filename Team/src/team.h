@@ -40,7 +40,7 @@ t_list* entrenadores; // t_entrenador
 t_list* objetivo_global; // nombres de pokemon
 t_list* pokemones_a_localizar; // nombres de pokemon
 
-t_list* catch_IDs; // Lista de ID obtenidos tras enviar catch
+t_list* catch_IDs; // Lista de ID obtenidos tras enviar catch // uint32_t
 
 t_queue* cola_mensajes_recibidos;
 
@@ -102,6 +102,7 @@ typedef struct {
 	char* nombre;
 	uint32_t pos_X;
 	uint32_t pos_Y;
+	int lo_estan_atrapando; // 1 true 0 false
 } t_pokemon;
 
 typedef struct nodo_arbol {

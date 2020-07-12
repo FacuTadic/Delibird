@@ -53,5 +53,11 @@
 	<storageModule moduleId="org.eclipse.cdt.make.core.buildtargets"/>
 	<storageModule moduleId="scannerConfiguration">
 		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.exe.debug.178500986;cdt.managedbuild.config.gnu.exe.debug.178500986.;cdt.managedbuild.tool.gnu.c.compiler.exe.debug.1547687856;cdt.managedbuild.tool.gnu.c.compiler.input.1032754789">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.exe.release.894513379;cdt.managedbuild.config.gnu.exe.release.894513379.;cdt.managedbuild.tool.gnu.c.compiler.exe.release.181953537;cdt.managedbuild.tool.gnu.c.compiler.input.421423230">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
 	</storageModule>
 </cproject>

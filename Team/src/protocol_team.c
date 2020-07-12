@@ -187,7 +187,6 @@ t_caught* recibir_caught(int socket_broker, uint32_t* size, t_log* logger) {
 
 	log_info(logger, "Id correlativo recibido: %i", caught->idCorrelativo);
 
-
 	status_recv = recv(socket_broker, caught->flag, sizeof(uint32_t), MSG_WAITALL);
 	if (status_recv == -1) {
 		close(socket_broker);
@@ -339,9 +338,6 @@ t_localized* recibir_localized(int socket_broker, uint32_t* size, t_log* logger)
 	return localized;
 }
 
-
-
-
 t_appeared* recibir_appeared_de_game_boy(int socket, uint32_t* size, t_log* logger) {
 
 	t_appeared* appeared = malloc(sizeof(t_appeared));
@@ -441,12 +437,10 @@ t_appeared* recibir_appeared_de_game_boy(int socket, uint32_t* size, t_log* logg
 	return appeared;
 }
 
-
-void generara_ID_Modulo(){
+void generar_ID_Modulo(){
 	id_modulo = rand();
 	log_info(extense_logger, "El ID de este modulo es: %i", id_modulo);
 }
-
 
 uint32_t recibir_ID_Catch(int socket_broker, t_log* logger) {
 
@@ -468,10 +462,6 @@ uint32_t recibir_ID_Catch(int socket_broker, t_log* logger) {
 
 	return id_Catch;
 }
-
-
-
-
 
 int devolver_ack(int socket_broker, t_log* logger) {
 	uint32_t ack = 1;

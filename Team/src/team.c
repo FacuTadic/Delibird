@@ -129,9 +129,11 @@ void escuchar_localized_de_broker(void) {
 		while (1) {
 			uint32_t size;
 			log_info(extense_logger, "Recibiendo localized");
-			t_caught* localized_msg = recibir_localized(socket_escucha_localized, &size, extense_logger);
+			t_localized* localized_msg = recibir_localized(socket_escucha_localized, &size, extense_logger);
 			log_info(extense_logger, "Localized recibido");
 			t_mensaje_recibido* mensaje = malloc(sizeof(t_mensaje_recibido));
+
+			// ya me llego un appeared o un localized ???
 
 			mensaje->tipo_mensaje = MENSAJE_LOCALIZED;
 			mensaje->mensaje = (void*) localized_msg;
@@ -175,8 +177,6 @@ void laburar(void* entrenador_param) {
 		// bloquearme esperando a que el planificador me desbloquee
 		entrenador->estado = ESTADO_BLOCKED; // esto requiere aparte un bloqueo en serio con semaforos, hay que ver como hacemos esto
 		log_info(extense_logger, "Entrenador bloqueado");
-
-		// ver que onda que hago con el caught
 
 		// cosas
 
@@ -275,7 +275,8 @@ void planificar() {
 			// dar pokemon al entrenador
 			// liberar para otras tareas
 			// si es negativo
-			// pa ke kieres saver eso jajaj salu2
+			// planificar al entrenador para que reintente
+			// atrapar el pokemon en otro lugar del mapa
 
 			//cosas
 			break;
@@ -285,8 +286,6 @@ void planificar() {
 			log_info(extense_logger, "Entro por Mensaje Localized");
 
 			t_localized* mensaje_localized = (t_localized*) mensaje_recibido->mensaje;
-
-			// ya recibi un appeared o localized de este pokemon?
 
 			// requiero atraparlo?
 
@@ -596,7 +595,7 @@ int main(void) {
 	retardo_de_CPU = config_get_int_value(config, "RETARDO_CICLO_CPU");
 	log_info(extense_logger, "EL tiempo de retardo de CPU es cada %i segundos", retardo_de_CPU);
 
-	generara_ID_Modulo();
+	generar_ID_Modulo();
 
 	entrenadores = list_create();
 
@@ -971,7 +970,7 @@ void enviar_catch_a_broker(t_pokemon* pokemon){
 		log_info(extense_logger, "Mensaje Catch con el pokemon %s en la posicion (%i,%i)enviado correctamente al BROKER de socket %i", nombre_pokemon, posX, posY, socket_broker);
 
 		uint32_t id_Catch = recibir_ID_Catch(socket_broker,extense_logger);
-		list_add(catch_IDs,id_Catch);
+		list_add(catch_IDs, id_Catch);
 
 	}
 
@@ -1092,25 +1091,4 @@ void terminar_programa() {
 
 	// destroy stuff
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
