@@ -438,6 +438,8 @@ int main(void) {
 
 	entrenadores = list_create();
 
+	catch_IDs = list_create();
+
 	inicializar_entrenadores();
 
 	obtener_objetivo_global();
@@ -804,14 +806,12 @@ void enviar_catch_a_broker(t_pokemon* pokemon){
 		// si falla entonces lo atrape, ya fue
 		// o no???
 
-
-
-
 	} else {
 		log_info(extense_logger, "Mensaje Catch con el pokemon %s en la posicion (%i,%i)enviado correctamente al BROKER de socket %i", nombre_pokemon, posX, posY, socket_broker);
 
+		uint32_t id_Catch = recibir_ID_Catch(socket_broker,extense_logger);
+		list_add(catch_IDs,id_Catch);
 
-		// guardarse el id para cuando llega un caught
 	}
 
 	close(socket_broker);
