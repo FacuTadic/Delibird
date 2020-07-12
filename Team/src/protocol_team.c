@@ -442,6 +442,32 @@ t_appeared* recibir_appeared_de_game_boy(int socket, uint32_t* size, t_log* logg
 }
 
 
+void generara_ID_Modulo(){
+	id_modulo = rand();
+	log_info(extense_logger, "El ID de este modulo es: %i", id_modulo);
+}
+
+
+uint32_t recibir_ID_Catch(int socket_broker, t_log* logger) {
+
+	uint32_t id_Catch;
+
+	log_info(logger, "Recibiendo ID del CATCH enviado por el Broker");
+
+	int status_recv = recv(socket_broker, id_Catch, sizeof(uint32_t), MSG_WAITALL);
+	if (status_recv == -1) {
+		log_error(logger, "Hubo un problema recibiendo el tamanio total");
+		return NULL;
+	}
+	if (status_recv == 0) {
+		log_warning(logger, "El cliente con socket %i acaba de cerrar la conexion", socket_broker);
+		return NULL;
+	}
+
+	log_info(logger, "El id recibido es: %i", id_Catch);
+
+	return id_Catch;
+}
 
 
 

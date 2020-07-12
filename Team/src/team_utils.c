@@ -58,3 +58,4 @@ int calcular_posicion_entrenador(int posXEntrenador,int posYEntrenador,int posXP
 }
 
 
+
