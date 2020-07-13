@@ -77,6 +77,8 @@ void escuchar_appeared_de_broker(void) {
 			log_info(extense_logger, "Appeared recibido");
 			t_mensaje_recibido* mensaje = malloc(sizeof(t_mensaje_recibido));
 
+			list_add(pokemones_llegados, (void)appeared_msg->pokemon); // agrega pokemon aparecido a lista de llegados
+
 			mensaje->tipo_mensaje = MENSAJE_APPEARED;
 			mensaje->mensaje = (void*) appeared_msg;
 
@@ -134,6 +136,8 @@ void escuchar_localized_de_broker(void) {
 			t_mensaje_recibido* mensaje = malloc(sizeof(t_mensaje_recibido));
 
 			// ya me llego un appeared o un localized ???
+
+			list_add(pokemones_llegados, (void)localized_msg->pokemon); // agrego pokemon a llegados
 
 			mensaje->tipo_mensaje = MENSAJE_LOCALIZED;
 			mensaje->mensaje = (void*) localized_msg;
