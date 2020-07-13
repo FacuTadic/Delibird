@@ -1078,6 +1078,7 @@ void terminar_programa() {
 	list_destroy(entrenadores);
 	list_destroy(objetivo_global);
 	list_destroy(pokemones_a_localizar);
+	list_destroy(pokemones_llegados);
 
 	sem_destroy(sem_cola_mensajes_nuevos);
 
