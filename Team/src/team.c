@@ -137,6 +137,7 @@ void escuchar_localized_de_broker(void) {
 			log_info(extense_logger, "Recibiendo localized");
 			t_localized* localized_msg = recibir_localized(socket_escucha_localized, &size, extense_logger);
 			log_info(extense_logger, "Localized recibido");
+			t_mensaje_recibido* mensaje = malloc(sizeof(t_mensaje_recibido));
 
 			// ya me llego un appeared o un localized ???
 
@@ -190,6 +191,8 @@ void laburar(void* entrenador_param) {
 		switch(entrenador->tarea_actual->id_tarea) {
 		case ATRAPAR_POKEMON: ;
 
+		pthread_mutex_lock(&cola_mensajes_recibidos_mutex);
+
 		log_info(extense_logger, "Entro por Atrapar Pokemon");
 
 		t_pokemon* parametros_atrapado = (t_pokemon*) entrenador->tarea_actual->parametros;
@@ -209,11 +212,15 @@ void laburar(void* entrenador_param) {
 		entrenador->estado = ESTADO_BLOCKED; // esto requiere aparte un bloqueo en serio con semaforos, hay que ver como hacemos esto
 		log_info(extense_logger, "Entrenador bloqueado");
 
+		pthread_mutex_unlock(&cola_mensajes_recibidos_mutex);
+
 		// cosas
 
 		break;
 
 		case INTERCAMBIAR_POKEMON: ;
+
+		pthread_mutex_lock(&cola_mensajes_recibidos_mutex);
 
 		log_info(extense_logger, "Entro por Intercambiar Pokemon");
 
@@ -260,6 +267,8 @@ void laburar(void* entrenador_param) {
 			list_destroy(parametros_intercambio->pokemones);
 			free(parametros_intercambio);
 		}
+
+		pthread_mutex_unlock(&cola_mensajes_recibidos_mutex);
 
 		break;
 
@@ -640,6 +649,8 @@ int main(void) {
 
 	// crear cola de mensajes recibidos
 	inicializar_cola();
+
+	pthread_mutex_init(&planificacion_fifo, NULL);
 
 	pthread_t* threads_entrenadores = malloc(sizeof(pthread_t) * entrenadores->elements_count);
 
@@ -1111,6 +1122,7 @@ void terminar_programa() {
 	sem_destroy(sem_cola_mensajes_nuevos);
 
 	pthread_mutex_destroy(cola_mensajes_recibidos_mutex);
+	pthread_mutex_destroy(planificacion_fifo);
 
 	log_destroy(logger);
 	log_destroy(extense_logger);

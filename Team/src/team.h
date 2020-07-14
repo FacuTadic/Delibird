@@ -39,12 +39,15 @@ t_list* entrenadores; // t_entrenador
 
 t_list* objetivo_global; // nombres de pokemon
 t_list* pokemones_a_localizar; // nombres de pokemon
+t_list* pokemones_llegados;
 
 t_list* catch_IDs; // Lista de ID obtenidos tras enviar catch // uint32_t
 
 t_queue* cola_mensajes_recibidos;
 
 pthread_mutex_t cola_mensajes_recibidos_mutex;
+
+pthread_mutex_t planificacion_fifo;
 
 sem_t sem_cola_mensajes_nuevos;
 
