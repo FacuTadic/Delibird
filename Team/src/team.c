@@ -195,6 +195,8 @@ void laburar(void* entrenador_param) {
 
 		log_info(extense_logger, "Entro por Atrapar Pokemon");
 
+		entrenador->estado = ESTADO_EXECUTING;
+
 		t_pokemon* parametros_atrapado = (t_pokemon*) entrenador->tarea_actual->parametros;
 		log_info(extense_logger, "Pokemon a atrapar: %s", parametros_atrapado->nombre);
 
@@ -223,6 +225,8 @@ void laburar(void* entrenador_param) {
 		pthread_mutex_lock(&cola_mensajes_recibidos_mutex);
 
 		log_info(extense_logger, "Entro por Intercambiar Pokemon");
+
+		entrenador->estado = ESTADO_EXECUTING;
 
 		t_deadlock* parametros_intercambio = (t_deadlock*) entrenador->tarea_actual->parametros;
 		log_info(extense_logger, "Parametros del  deadlock cargados");
@@ -267,6 +271,8 @@ void laburar(void* entrenador_param) {
 			list_destroy(parametros_intercambio->pokemones);
 			free(parametros_intercambio);
 		}
+
+		entrenador->estado = ESTADO_BLOCKED;
 
 		pthread_mutex_unlock(&cola_mensajes_recibidos_mutex);
 
