@@ -150,3 +150,4 @@ t_list* entrenadores_que_necesitan_pokemon(char* pokemon);
 t_deadlock* armar_deadlock(t_nodo_arbol* nodo_raiz);
 void liberar_arbol(t_nodo_arbol* raiz);
 int todavia_existe_deadlock(t_deadlock* mensaje_deadlock);
+int pokemon_ya_fue_recibido(char* pokemon);
