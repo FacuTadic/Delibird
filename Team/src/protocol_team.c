@@ -172,6 +172,12 @@ t_caught* recibir_caught(int socket_broker, uint32_t* size, t_log* logger) {
 
 
 	status_recv = recv(socket_broker, caught->idCorrelativo, sizeof(uint32_t), MSG_WAITALL);
+
+	if (!list_find(catch_IDs ,caught->idCorrelativo)){    							 // si el id del caught no esta en la lista de catch recibidos, ignora el mensaje
+		log_info(logger, "el ID de caught no corresponde a ningun catch, mensaje ignorado");
+		free(caught);
+		return NULL;
+	}
 	if (status_recv == -1) {
 		close(socket_broker);
 		log_error(logger, "Hubo un problema recibiendo el id correlativo");

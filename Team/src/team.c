@@ -105,6 +105,7 @@ void escuchar_caught_de_broker(void) {
 			log_info(extense_logger, "Recibiendo caught");
 			t_caught* caught_msg = recibir_caught(socket_escucha_caught, &size, extense_logger);
 			log_info(extense_logger, "Caught recibido");
+
 			t_mensaje_recibido* mensaje = malloc(sizeof(t_mensaje_recibido));
 
 			mensaje->tipo_mensaje = MENSAJE_CAUGHT;
