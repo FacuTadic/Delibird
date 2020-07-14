@@ -77,8 +77,6 @@ void escuchar_appeared_de_broker(void) {
 			log_info(extense_logger, "Appeared recibido");
 			t_mensaje_recibido* mensaje = malloc(sizeof(t_mensaje_recibido));
 
-			list_add(pokemones_llegados, (void)appeared_msg->pokemon); // agrega pokemon aparecido a lista de llegados
-
 			mensaje->tipo_mensaje = MENSAJE_APPEARED;
 			mensaje->mensaje = (void*) appeared_msg;
 
@@ -105,7 +103,6 @@ void escuchar_caught_de_broker(void) {
 			log_info(extense_logger, "Recibiendo caught");
 			t_caught* caught_msg = recibir_caught(socket_escucha_caught, &size, extense_logger);
 			log_info(extense_logger, "Caught recibido");
-
 			t_mensaje_recibido* mensaje = malloc(sizeof(t_mensaje_recibido));
 
 			mensaje->tipo_mensaje = MENSAJE_CAUGHT;
@@ -137,8 +134,6 @@ void escuchar_localized_de_broker(void) {
 			t_mensaje_recibido* mensaje = malloc(sizeof(t_mensaje_recibido));
 
 			// ya me llego un appeared o un localized ???
-
-			list_add(pokemones_llegados, (void)localized_msg->pokemon); // agrego pokemon a llegados
 
 			mensaje->tipo_mensaje = MENSAJE_LOCALIZED;
 			mensaje->mensaje = (void*) localized_msg;
@@ -1079,7 +1074,6 @@ void terminar_programa() {
 	list_destroy(entrenadores);
 	list_destroy(objetivo_global);
 	list_destroy(pokemones_a_localizar);
-	list_destroy(pokemones_llegados);
 
 	sem_destroy(sem_cola_mensajes_nuevos);
 
