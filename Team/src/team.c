@@ -82,7 +82,7 @@ void escuchar_appeared_de_broker(void) {
 			if (pokemon_ya_fue_recibido(appeared_msg->pokemon) == 0) {
 				list_add(pokemones_llegados, (void*) appeared_msg->pokemon); // agrega pokemon aparecido a lista de llegados
 			}
-      
+
 			mensaje->tipo_mensaje = MENSAJE_APPEARED;
 			mensaje->mensaje = (void*) appeared_msg;
 
@@ -205,7 +205,7 @@ void laburar(void* entrenador_param) {
 
 		// mandar catch NO SE REINTENTA, SI FALLA EL ENVIO LO ATRAPE RE CHETO
 		log_info(extense_logger, "Se envia el catch");
-		enviar_catch_a_broker(parametros_atrapado->nombre);
+		enviar_catch_a_broker(parametros_atrapado->nombre, entrenador);
 		log_info(extense_logger, "Se envio el catch");
 
 		// bloquearme esperando a que el planificador me desbloquee
@@ -309,7 +309,43 @@ void planificar() {
 			log_info(extense_logger, "Entro por Mensaje Caught");
 			t_caught* mensaje_caught = (t_caught*) mensaje_recibido->mensaje;
 
-			// verificar id correlativo
+			t_catch_id* catch_id;
+			int index_catch;
+
+			for (int i = 0; i < catch_IDs->elements_count; i++) {
+				t_catch_id* catch_id_lista = list_get(catch_IDs, i);
+				if (catch_id_lista->id_catch == mensaje_caught->idCorrelativo) {
+					catch_id = catch_id_lista;
+					index_catch = i;
+					i = catch_IDs->elements_count;
+				}
+			}
+
+			if (catch_id != NULL) {
+				if (mensaje_caught->flag == 1) {
+					adquirir_pokemon(catch_id->entrenador, catch_id->pokemon->nombre);
+					if (catch_id->entrenador->pokebolas == 0) {
+						catch_id->entrenador->estado = ESTADO_EXIT;
+					} else {
+						catch_id->entrenador->estado = ESTADO_BLOCKED;
+					}
+				} else {
+					t_tarea* tarea_reatrapar = malloc(sizeof(t_tarea));
+					tarea_reatrapar->id_tarea = ATRAPAR_POKEMON;
+					tarea_reatrapar->parametros = catch_id->pokemon;
+					catch_id->entrenador->estado = ESTADO_READY;
+					sem_post(((t_entrenador*) catch_id->entrenador)->semaforo);
+				}
+				list_remove(catch_IDs, index_catch); // guarda con que haya cambiado de lugar, corresponderia bloquear la lista
+				free(catch_id->pokemon->nombre);
+				free(catch_id->pokemon);
+				free(catch_id);
+			} else {
+				// ???
+			}
+
+			free(mensaje_caught);
+			free(mensaje_recibido);
 
 			// si es afirmativo
 			// dar pokemon al entrenador
@@ -349,6 +385,7 @@ void planificar() {
 				tarea_deadlock->parametros = (void*) mensaje_deadlock;
 
 				((t_entrenador*) list_get(mensaje_deadlock->entrenadores, 0))->tarea_actual = tarea_deadlock;
+				((t_entrenador*) list_get(mensaje_deadlock->entrenadores, 0))->estado = ESTADO_READY;
 
 				sem_post(((t_entrenador*) list_get(mensaje_deadlock->entrenadores, 0))->semaforo);
 			} else {
@@ -642,6 +679,8 @@ int main(void) {
 	catch_IDs = list_create();
 
 	pokemones_llegados = list_create();
+
+	pokemones_conocidos_que_no_se_intentan_atrapar = list_create();
 
 	inicializar_entrenadores();
 
@@ -975,7 +1014,7 @@ void enviar_get_a_broker(char* nombre_pokemon) {
 	free(flujo);
 }
 
-void enviar_catch_a_broker(t_pokemon* pokemon){
+void enviar_catch_a_broker(t_pokemon* pokemon, t_entrenador* entrenador) {
 
 	char* nombre_pokemon = pokemon->nombre;
 	uint32_t posX = pokemon->pos_X;
@@ -1013,9 +1052,12 @@ void enviar_catch_a_broker(t_pokemon* pokemon){
 	} else {
 		log_info(extense_logger, "Mensaje Catch con el pokemon %s en la posicion (%i,%i)enviado correctamente al BROKER de socket %i", nombre_pokemon, posX, posY, socket_broker);
 
-		uint32_t id_Catch = recibir_ID_Catch(socket_broker,extense_logger);
-		list_add(catch_IDs, id_Catch);
-
+		uint32_t id_catch = recibir_ID_Catch(socket_broker,extense_logger);
+		t_catch_id* catch_id = malloc(sizeof(t_catch_id));
+		catch_id->id_catch = id_catch;
+		catch_id->entrenador = entrenador;
+		catch_id->pokemon = pokemon;
+		list_add(catch_IDs, (void*) id_catch);
 	}
 
 	close(socket_broker);
@@ -1058,11 +1100,11 @@ void irA(uint32_t posX, uint32_t posY, t_entrenador* entrenador){
 }
 
 void intercambiar_pokemones(t_entrenador* entrenador1, t_entrenador* entrenador2, char* pokemon1, char* pokemon2) {
-	adquirir_pokemon(entrenador1, pokemon2);
-	adquirir_pokemon(entrenador2, pokemon1);
-
 	eliminar_pokemon(entrenador1, pokemon1);
 	eliminar_pokemon(entrenador2, pokemon2);
+
+	adquirir_pokemon(entrenador1, pokemon2);
+	adquirir_pokemon(entrenador2, pokemon1);
 }
 
 void eliminar_pokemon(t_entrenador* entrenador, char* pokemon) {
@@ -1083,6 +1125,8 @@ void eliminar_pokemon(t_entrenador* entrenador, char* pokemon) {
 			i = entrenador->pokemones_innecesarios->elements_count;
 		}
 	}
+
+	entrenador->pokebolas++;
 }
 
 void adquirir_pokemon(t_entrenador* entrenador, char* pokemon) {
@@ -1103,6 +1147,8 @@ void adquirir_pokemon(t_entrenador* entrenador, char* pokemon) {
 	if (presente_en_objetivo_actual == 0) {
 		list_add(entrenador->pokemones_innecesarios, pokemon);
 	}
+
+	entrenador->pokebolas--;
 }
 
 void terminar_programa() {
@@ -1118,6 +1164,7 @@ void terminar_programa() {
 	list_destroy(entrenadores);
 	list_destroy(objetivo_global);
 	list_destroy(pokemones_a_localizar);
+	list_destroy(pokemones_conocidos_que_no_se_intentan_atrapar);
 
 	sem_destroy(sem_cola_mensajes_nuevos);
 

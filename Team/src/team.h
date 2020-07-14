@@ -41,7 +41,7 @@ t_list* objetivo_global; // nombres de pokemon
 t_list* pokemones_a_localizar; // nombres de pokemon
 t_list* pokemones_llegados;
 
-t_list* catch_IDs; // Lista de ID obtenidos tras enviar catch // uint32_t
+t_list* catch_IDs; // t_catch_id*
 
 t_queue* cola_mensajes_recibidos;
 
@@ -50,6 +50,8 @@ pthread_mutex_t cola_mensajes_recibidos_mutex;
 pthread_mutex_t planificacion_fifo;
 
 sem_t sem_cola_mensajes_nuevos;
+
+t_list* pokemones_conocidos_que_no_se_intentan_atrapar;
 
 typedef enum {
 	ATRAPAR_POKEMON 		= 111,		// t_pokemon*
@@ -115,6 +117,12 @@ typedef struct nodo_arbol {
 	char* pokemon_faltante;
 } t_nodo_arbol;
 
+typedef struct {
+	uint32_t id_catch;
+	t_entrenador* entrenador;
+	t_pokemon* pokemon;
+} t_catch_id;
+
 t_log* iniciar_logger(char* log_file);
 t_log* iniciar_logger_sin_consola(char* log_file);
 t_config* leer_config(void);
@@ -137,7 +145,7 @@ void definir_primer_estado(t_entrenador* entrenador);
 t_list* obtener_entrenadores_bloqueados();
 void mandar_get();
 void enviar_get_a_broker(char* nombre_pokemon);
-void enviar_catch_a_broker(t_pokemon* pokemon);
+void enviar_catch_a_broker(t_pokemon* pokemon, t_entrenador* entrenador);
 void irA(uint32_t posX, uint32_t posY, t_entrenador* entrenador);
 void intercambiar_pokemones(t_entrenador* entrenador1, t_entrenador* entrenador2, char* pokemon1, char* pokemon2);
 void adquirir_pokemon(t_entrenador* entrenador, char* pokemon);

@@ -199,8 +199,10 @@ t_caught* recibir_caught(int socket_broker, uint32_t* size, t_log* logger) {
 		return NULL;
 	}
 
+	log_info(logger, "Flag atrapado recibido: %i", caught->flag);
+
 	int es_el_id_buscado(void* id_lista) {
-		if (((uint32_t) id_lista) == caught->idCorrelativo) {
+		if (((t_catch_id*) id_lista)->id_catch == caught->idCorrelativo) {
 			return 1;
 		} else {
 			return 0;
@@ -215,14 +217,10 @@ t_caught* recibir_caught(int socket_broker, uint32_t* size, t_log* logger) {
 		return NULL;
 	}
 
-	log_info(logger, "Flag atrapado recibido: %i", caught->flag);
-
 	devolver_ack(socket_broker,logger);
 
 	return caught;
 }
-
-
 
 t_localized* recibir_localized(int socket_broker, uint32_t* size, t_log* logger) {
 	t_localized* localized = malloc(sizeof(t_localized));
