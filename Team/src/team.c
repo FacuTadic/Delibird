@@ -7,6 +7,8 @@ void procesar_request_de_game_boy(int cod_op, int socket_game_boy) {
 		t_appeared* appeared_msg = recibir_appeared_de_game_boy(socket_game_boy, &size, extense_logger);
 		t_mensaje_recibido* mensaje = malloc(sizeof(t_mensaje_recibido));
 
+		list_add(pokemones_llegados, (void*) appeared_msg->pokemon); // agrega pokemon aparecido a lista de llegados
+
 		mensaje->tipo_mensaje = MENSAJE_APPEARED;
 		mensaje->mensaje = (void*) appeared_msg;
 
@@ -77,6 +79,10 @@ void escuchar_appeared_de_broker(void) {
 			log_info(extense_logger, "Appeared recibido");
 			t_mensaje_recibido* mensaje = malloc(sizeof(t_mensaje_recibido));
 
+			if (pokemon_ya_fue_recibido(appeared_msg->pokemon) == 0) {
+				list_add(pokemones_llegados, (void*) appeared_msg->pokemon); // agrega pokemon aparecido a lista de llegados
+			}
+
 			mensaje->tipo_mensaje = MENSAJE_APPEARED;
 			mensaje->mensaje = (void*) appeared_msg;
 
@@ -124,27 +130,45 @@ void escuchar_localized_de_broker(void) {
 	if (status_envio == -1) {
 		log_error(logger, "Hubo un problema enviando la suscripcion a la cola LOCALIZED del broker");
 		// la cagamos ñeri
-	}else {
+	} else {
 
 		while (1) {
 			uint32_t size;
 			log_info(extense_logger, "Recibiendo localized");
 			t_localized* localized_msg = recibir_localized(socket_escucha_localized, &size, extense_logger);
 			log_info(extense_logger, "Localized recibido");
-			t_mensaje_recibido* mensaje = malloc(sizeof(t_mensaje_recibido));
 
 			// ya me llego un appeared o un localized ???
 
-			mensaje->tipo_mensaje = MENSAJE_LOCALIZED;
-			mensaje->mensaje = (void*) localized_msg;
+			if (pokemon_ya_fue_recibido(localized_msg->pokemon) == 0) {
+				list_add(pokemones_llegados, (void*) localized_msg->pokemon); // agrego pokemon a llegados
+				t_mensaje_recibido* mensaje = malloc(sizeof(t_mensaje_recibido));
+				mensaje->tipo_mensaje = MENSAJE_LOCALIZED;
+				mensaje->mensaje = (void*) localized_msg;
 
-			pthread_mutex_lock(&cola_mensajes_recibidos_mutex);
-			queue_push(cola_mensajes_recibidos, (void*) mensaje);
-			pthread_mutex_unlock(&cola_mensajes_recibidos_mutex);
-			sem_post(&sem_cola_mensajes_nuevos);
+				pthread_mutex_lock(&cola_mensajes_recibidos_mutex);
+				queue_push(cola_mensajes_recibidos, (void*) mensaje);
+				pthread_mutex_unlock(&cola_mensajes_recibidos_mutex);
+				sem_post(&sem_cola_mensajes_nuevos);
+			} else {
+				free(localized_msg->pokemon);
+				list_destroy(localized_msg->l_coordenadas);
+			}
 		}
 	}
 
+}
+
+int pokemon_ya_fue_recibido(char* pokemon) {
+	int ya_fue_recibido = 0;
+	for (int i = 0; i < pokemones_llegados->elements_count; i++) {
+		char* pokemon_lista = (char*) list_get(pokemones_llegados, i);
+		ya_fue_recibido = string_equals_ignore_case(pokemon, pokemon_lista);
+		if (ya_fue_recibido == 1) {
+			i = pokemones_llegados->elements_count;
+		}
+	}
+	return ya_fue_recibido;
 }
 
 void laburar(void* entrenador_param) {
@@ -600,6 +624,8 @@ int main(void) {
 	entrenadores = list_create();
 
 	catch_IDs = list_create();
+
+	pokemones_llegados = list_create();
 
 	inicializar_entrenadores();
 
@@ -1074,6 +1100,7 @@ void terminar_programa() {
 	list_destroy(entrenadores);
 	list_destroy(objetivo_global);
 	list_destroy(pokemones_a_localizar);
+	list_destroy(pokemones_llegados);
 
 	sem_destroy(sem_cola_mensajes_nuevos);
 

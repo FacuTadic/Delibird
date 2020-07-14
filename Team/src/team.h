@@ -40,6 +40,8 @@ t_list* entrenadores; // t_entrenador
 t_list* objetivo_global; // nombres de pokemon
 t_list* pokemones_a_localizar; // nombres de pokemon
 
+t_list* pokemones_llegados; // pokemones que llegaron con appeared o localized
+
 t_list* catch_IDs; // Lista de ID obtenidos tras enviar catch // uint32_t
 
 t_queue* cola_mensajes_recibidos;
@@ -148,3 +150,4 @@ t_list* entrenadores_que_necesitan_pokemon(char* pokemon);
 t_deadlock* armar_deadlock(t_nodo_arbol* nodo_raiz);
 void liberar_arbol(t_nodo_arbol* raiz);
 int todavia_existe_deadlock(t_deadlock* mensaje_deadlock);
+int pokemon_ya_fue_recibido(char* pokemon);
