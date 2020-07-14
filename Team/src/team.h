@@ -40,8 +40,6 @@ t_list* entrenadores; // t_entrenador
 t_list* objetivo_global; // nombres de pokemon
 t_list* pokemones_a_localizar; // nombres de pokemon
 
-t_list* pokemones_llegados; // pokemones que llegaron con appeared o localized
-
 t_list* catch_IDs; // Lista de ID obtenidos tras enviar catch // uint32_t
 
 t_queue* cola_mensajes_recibidos;

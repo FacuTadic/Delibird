@@ -82,7 +82,7 @@ void escuchar_appeared_de_broker(void) {
 			if (pokemon_ya_fue_recibido(appeared_msg->pokemon) == 0) {
 				list_add(pokemones_llegados, (void*) appeared_msg->pokemon); // agrega pokemon aparecido a lista de llegados
 			}
-
+      
 			mensaje->tipo_mensaje = MENSAJE_APPEARED;
 			mensaje->mensaje = (void*) appeared_msg;
 
@@ -140,6 +140,13 @@ void escuchar_localized_de_broker(void) {
 
 			// ya me llego un appeared o un localized ???
 
+			mensaje->tipo_mensaje = MENSAJE_LOCALIZED;
+			mensaje->mensaje = (void*) localized_msg;
+
+			pthread_mutex_lock(&cola_mensajes_recibidos_mutex);
+			queue_push(cola_mensajes_recibidos, (void*) mensaje);
+			pthread_mutex_unlock(&cola_mensajes_recibidos_mutex);
+			sem_post(&sem_cola_mensajes_nuevos);
 			if (pokemon_ya_fue_recibido(localized_msg->pokemon) == 0) {
 				list_add(pokemones_llegados, (void*) localized_msg->pokemon); // agrego pokemon a llegados
 				t_mensaje_recibido* mensaje = malloc(sizeof(t_mensaje_recibido));
@@ -1100,7 +1107,6 @@ void terminar_programa() {
 	list_destroy(entrenadores);
 	list_destroy(objetivo_global);
 	list_destroy(pokemones_a_localizar);
-	list_destroy(pokemones_llegados);
 
 	sem_destroy(sem_cola_mensajes_nuevos);
 

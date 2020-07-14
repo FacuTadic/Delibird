@@ -169,8 +169,6 @@ t_caught* recibir_caught(int socket_broker, uint32_t* size, t_log* logger) {
 
 	log_info(logger, "Tamanio total recibido: %i", *size);
 
-
-
 	status_recv = recv(socket_broker, caught->idCorrelativo, sizeof(uint32_t), MSG_WAITALL);
 	if (status_recv == -1) {
 		close(socket_broker);
@@ -198,6 +196,22 @@ t_caught* recibir_caught(int socket_broker, uint32_t* size, t_log* logger) {
 		close(socket_broker);
 		log_warning(logger, "El cliente con socket %i acaba de cerrar la conexion", socket_broker);
 		free(caught);
+		return NULL;
+	}
+
+	int es_el_id_buscado(void* id_lista) {
+		if (((uint32_t) id_lista) == caught->idCorrelativo) {
+			return 1;
+		} else {
+			return 0;
+		}
+	}
+
+	// si el id del caught no esta en la lista de catch recibidos, ignora el mensaje
+	if (list_find(catch_IDs, (void*) es_el_id_buscado) == NULL) {
+		log_info(logger, "el ID correlativo %i de caught no corresponde a ningun catch, mensaje ignorado", caught->idCorrelativo);
+		free(caught);
+		devolver_ack(socket_broker,logger);
 		return NULL;
 	}
 
