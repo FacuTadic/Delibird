@@ -205,7 +205,7 @@ void laburar(void* entrenador_param) {
 
 		// mandar catch NO SE REINTENTA, SI FALLA EL ENVIO LO ATRAPE RE CHETO
 		log_info(extense_logger, "Se envia el catch");
-		enviar_catch_a_broker(parametros_atrapado->nombre);
+		enviar_catch_a_broker(parametros_atrapado->nombre, entrenador);
 		log_info(extense_logger, "Se envio el catch");
 
 		// bloquearme esperando a que el planificador me desbloquee
@@ -651,6 +651,16 @@ int main(void) {
 	inicializar_cola();
 
 	pthread_mutex_init(&planificacion_fifo, NULL);
+	pthread_mutex_init(cola_mensajes_recibidos_mutex, NULL);
+	pthread_mutex_init(pokemones_a_localizar_mutex, NULL);
+	pthread_mutex_init(pokemones_llegados_mutex, NULL);
+	pthread_mutex_init(objetivo_global_mutex, NULL);
+	pthread_mutex_init(catch_IDs_mutex, NULL);
+	pthread_mutex_init(estoy_conectado_al_broker_mutex, NULL);
+	pthread_mutex_init(socket_escucha_appeared_mutex, NULL);
+	pthread_mutex_init(socket_escucha_caught_mutex, NULL);
+	pthread_mutex_init(socket_escucha_localized_mutex, NULL);
+
 
 	pthread_t* threads_entrenadores = malloc(sizeof(pthread_t) * entrenadores->elements_count);
 
@@ -975,7 +985,7 @@ void enviar_get_a_broker(char* nombre_pokemon) {
 	free(flujo);
 }
 
-void enviar_catch_a_broker(t_pokemon* pokemon){
+void enviar_catch_a_broker(t_pokemon* pokemon,t_entrenador* entrenador){
 
 	char* nombre_pokemon = pokemon->nombre;
 	uint32_t posX = pokemon->pos_X;
@@ -1006,7 +1016,8 @@ void enviar_catch_a_broker(t_pokemon* pokemon){
 
 	if (send(socket_broker, flujo, bytes, 0) == -1) {
 		log_error(extense_logger, "Error: No se pudo enviar el mensaje");
-
+		estoy_conectado_al_broker = 0;
+		adquirir_pokemon(entrenador, pokemon);
 		// si falla entonces lo atrape, ya fue
 		// o no???
 
@@ -1085,7 +1096,7 @@ void eliminar_pokemon(t_entrenador* entrenador, char* pokemon) {
 	}
 }
 
-void adquirir_pokemon(t_entrenador* entrenador, char* pokemon) {
+void adquirir_pokemon(t_entrenador* entrenador, char* pokemon) {        //entrenador atrapa pokemon
 	list_add(entrenador->pokemones, (void*) pokemon);
 
 	int presente_en_objetivo_actual = 0;
@@ -1123,6 +1134,14 @@ void terminar_programa() {
 
 	pthread_mutex_destroy(cola_mensajes_recibidos_mutex);
 	pthread_mutex_destroy(planificacion_fifo);
+	pthread_mutex_destroy(pokemones_a_localizar_mutex);
+	pthread_mutex_destroy(pokemones_llegados_mutex);
+	pthread_mutex_destroy(objetivo_global_mutex);
+	pthread_mutex_destroy(catch_IDs_mutex);
+	pthread_mutex_destroy(estoy_conectado_al_broker_mutex);
+	pthread_mutex_destroy(socket_escucha_appeared_mutex);
+	pthread_mutex_destroy(socket_escucha_caught_mutex);
+	pthread_mutex_destroy(socket_escucha_localized_mutex);
 
 	log_destroy(logger);
 	log_destroy(extense_logger);

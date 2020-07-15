@@ -46,7 +46,14 @@ t_list* catch_IDs; // Lista de ID obtenidos tras enviar catch // uint32_t
 t_queue* cola_mensajes_recibidos;
 
 pthread_mutex_t cola_mensajes_recibidos_mutex;
-
+pthread_mutex_t pokemones_a_localizar_mutex;
+pthread_mutex_t pokemones_llegados_mutex;
+pthread_mutex_t objetivo_global_mutex;
+pthread_mutex_t catch_IDs_mutex;
+pthread_mutex_t estoy_conectado_al_broker_mutex;
+pthread_mutex_t socket_escucha_appeared_mutex;
+pthread_mutex_t socket_escucha_caught_mutex;
+pthread_mutex_t socket_escucha_localized_mutex;
 pthread_mutex_t planificacion_fifo;
 
 sem_t sem_cola_mensajes_nuevos;
@@ -137,7 +144,7 @@ void definir_primer_estado(t_entrenador* entrenador);
 t_list* obtener_entrenadores_bloqueados();
 void mandar_get();
 void enviar_get_a_broker(char* nombre_pokemon);
-void enviar_catch_a_broker(t_pokemon* pokemon);
+void enviar_catch_a_broker(t_pokemon* pokemon,t_entrenador entrenador);
 void irA(uint32_t posX, uint32_t posY, t_entrenador* entrenador);
 void intercambiar_pokemones(t_entrenador* entrenador1, t_entrenador* entrenador2, char* pokemon1, char* pokemon2);
 void adquirir_pokemon(t_entrenador* entrenador, char* pokemon);
