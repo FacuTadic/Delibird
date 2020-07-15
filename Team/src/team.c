@@ -77,19 +77,31 @@ void escuchar_appeared_de_broker(void) {
 			log_info(extense_logger, "Recibiendo el Appeared");
 			t_appeared* appeared_msg = recibir_appeared(socket_escucha_appeared, &size, extense_logger);
 			log_info(extense_logger, "Appeared recibido");
-			t_mensaje_recibido* mensaje = malloc(sizeof(t_mensaje_recibido));
 
-			if (pokemon_ya_fue_recibido(appeared_msg->pokemon) == 0) {
-				list_add(pokemones_llegados, (void*) appeared_msg->pokemon); // agrega pokemon aparecido a lista de llegados
+			if(es_pokemon_global(appeared_msg->pokemon)){
+
+				t_mensaje_recibido* mensaje = malloc(sizeof(t_mensaje_recibido));
+
+				t_pokemon* pokemon_a_agregar = generar_pokemon_de_appeared(appeared_msg);
+
+				agrego_pokemon_a_dictionary(pokemon_a_agregar);
+
+				if (pokemon_ya_fue_recibido(appeared_msg->pokemon) == 0) {
+					list_add(pokemones_llegados, (void*) appeared_msg->pokemon); // agrega pokemon aparecido a lista de llegados
+				}
+
+				mensaje->tipo_mensaje = MENSAJE_APPEARED;
+				mensaje->mensaje = (void*) appeared_msg;
+
+				pthread_mutex_lock(&cola_mensajes_recibidos_mutex);
+				queue_push(cola_mensajes_recibidos, (void*) mensaje);
+				pthread_mutex_unlock(&cola_mensajes_recibidos_mutex);
+				sem_post(&sem_cola_mensajes_nuevos);
+
+			} else {
+				free(appeared_msg->pokemon);
+				free(appeared_msg);
 			}
-
-			mensaje->tipo_mensaje = MENSAJE_APPEARED;
-			mensaje->mensaje = (void*) appeared_msg;
-
-			pthread_mutex_lock(&cola_mensajes_recibidos_mutex);
-			queue_push(cola_mensajes_recibidos, (void*) mensaje);
-			pthread_mutex_unlock(&cola_mensajes_recibidos_mutex);
-			sem_post(&sem_cola_mensajes_nuevos);
 		}
 	}
 
@@ -290,6 +302,7 @@ void laburar(void* entrenador_param) {
 void planificar() {
 	while(1) {
 		sem_wait(&sem_cola_mensajes_nuevos);
+		//CHEQUEAR QUE HAY ENTRENADORES DISPONIBLES
 		t_mensaje_recibido* mensaje_recibido = queue_pop(cola_mensajes_recibidos);
 
 		log_info(extense_logger, "Se espera la planificacion nro: %i",mensaje_recibido->tipo_mensaje);
@@ -300,14 +313,28 @@ void planificar() {
 			log_info(extense_logger, "Entro por Mensaje Appeared");
 
 			t_appeared* mensaje_appeared = (t_appeared*) mensaje_recibido->mensaje;
-			// requiero atraparlo?
 
 			// planifico entrenador para ir a atraparlo
-			// obtengo entrenador que va a ir
-			// le doy la t_tarea
-			// lo desbloqueo
+			t_list* entrenador_disponible = entrenadores_que_pueden_ir_a_atraparn();
+			t_entrenador* entrenador_a_planificar;
 
-			//cosas
+			// obtengo entrenador que va a ir
+			for(int i = 0; i<entrenador_disponible->elements_count; i++){
+
+			}
+
+			//Liberar tarea anterior y le doy la t_tarea
+
+			t_tarea* tarea_appeared = malloc(sizeof(t_tarea));
+			tarea_appeared->id_tarea = ATRAPAR_POKEMON;
+			t_pokemon* pokemon_a_enviar = generar_pokemon_de_appeared(mensaje_appeared);
+			tarea_appeared->parametros = pokemon_a_enviar;
+
+			entrenador_a_planificar->tarea_actual = tarea_appeared;
+
+			// lo desbloqueo
+			sem_post(entrenador_a_planificar->semaforo);
+
 			break;
 
 		case MENSAJE_CAUGHT:
@@ -334,6 +361,9 @@ void planificar() {
 						catch_id->entrenador->estado = ESTADO_EXIT;
 					} else {
 						catch_id->entrenador->estado = ESTADO_BLOCKED;
+						t_tarea* tarea_pingo = malloc(sizeof(t_tarea));
+						tarea_pingo->id_tarea=NO_HACER_PINGO;
+						catch_id->entrenador->tarea_actual = tarea_pingo;
 					}
 				} else {
 					t_tarea* tarea_reatrapar = malloc(sizeof(t_tarea));
@@ -686,7 +716,7 @@ int main(void) {
 
 	pokemones_llegados = list_create();
 
-	pokemones_conocidos_que_no_se_intentan_atrapar = list_create();
+	pokemones_conocidos_que_no_se_intentan_atrapar = dictionary_create();
 
 	inicializar_entrenadores();
 
@@ -1157,6 +1187,75 @@ void adquirir_pokemon(t_entrenador* entrenador, char* pokemon) {
 	entrenador->pokebolas--;
 }
 
+bool es_pokemon_global(char* nombre_pokemon){
+	for(int i=0; i<= objetivo_global->elements_count; i++){
+		char* pokemon = (char*) list_get(objetivo_global,i);
+
+		if(!strcmp(pokemon,nombre_pokemon)){
+			return true;
+		}
+
+	}
+	return false;
+
+}
+
+
+t_list* entrenadores_que_pueden_ir_a_atraparn(){
+	t_list* entrenadores_disponibles = list_create();
+
+	for(int i = 0; i < entrenadores->elements_count; i++) {
+		t_entrenador* entrenador_lista = (t_entrenador*) list_get(entrenadores, i);
+
+		if(entrenador_lista->estado == ESTADO_NEW || entrenador_lista->tarea_actual->id_tarea == NO_HACER_PINGO){
+			list_add(entrenadores_disponibles, entrenador_lista);
+		}
+	}
+
+	if(list_is_empty(entrenadores_disponibles)){
+		log_warning(extense_logger, "NO HAY ENTRENADORES DISPONIBLES");
+	}
+
+	return entrenadores_que_necesitan_pokemon;
+}
+
+t_entrenador* entrenador_mas_cercano(t_list* entrenadores_disponibles_para_ir_a_atrapar, int posXPokemon,int posYPokemon){
+
+
+
+	calcular_posicion_entrenador();
+
+}
+
+
+
+void agrego_pokemon_a_dictionary(t_pokemon* pokemon_a_agregar){
+	if(dictionary_has_key(pokemones_conocidos_que_no_se_intentan_atrapar,pokemon_a_agregar->nombre)){
+		t_list* lista_pokemon = dictionary_get(pokemones_conocidos_que_no_se_intentan_atrapar,pokemon_a_agregar->nombre);
+		list_add(lista_pokemon,pokemon_a_agregar);
+	} else {
+		t_list* lista_pokemon_nuevo = list_create();
+		list_add(lista_pokemon_nuevo,pokemon_a_agregar);
+		dictionary_put(pokemones_conocidos_que_no_se_intentan_atrapar,pokemon_a_agregar->nombre,lista_pokemon_nuevo);
+	}
+}
+
+
+t_pokemon* generar_pokemon_de_appeared(t_appeared* mensaje_appeared){
+
+	// No libero nombre de pokemon de appeared porque ya esta dentro de t_appeared
+
+	t_pokemon* pokemon_a_retornar = malloc(sizeof(t_pokemon));
+
+	pokemon_a_retornar->nombre = mensaje_appeared->pokemon;
+	pokemon_a_retornar->pos_X = mensaje_appeared->pos_X;
+	pokemon_a_retornar->pos_Y = mensaje_appeared->pos_Y;
+
+	return pokemon_a_retornar;
+}
+
+
+
 void terminar_programa() {
 	close(socket_escucha_game_boy);
 	close(socket_escucha_appeared);
@@ -1170,7 +1269,7 @@ void terminar_programa() {
 	list_destroy(entrenadores);
 	list_destroy(objetivo_global);
 	list_destroy(pokemones_a_localizar);
-	list_destroy(pokemones_conocidos_que_no_se_intentan_atrapar);
+	dictionary_destroy(pokemones_conocidos_que_no_se_intentan_atrapar);
 
 	sem_destroy(sem_cola_mensajes_nuevos);
 
