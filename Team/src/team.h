@@ -46,7 +46,14 @@ t_list* catch_IDs; // t_catch_id*
 t_queue* cola_mensajes_recibidos;
 
 pthread_mutex_t cola_mensajes_recibidos_mutex;
-
+pthread_mutex_t pokemones_a_localizar_mutex;
+pthread_mutex_t pokemones_llegados_mutex;
+pthread_mutex_t objetivo_global_mutex;
+pthread_mutex_t catch_IDs_mutex;
+pthread_mutex_t estoy_conectado_al_broker_mutex;
+pthread_mutex_t socket_escucha_appeared_mutex;
+pthread_mutex_t socket_escucha_caught_mutex;
+pthread_mutex_t socket_escucha_localized_mutex;
 pthread_mutex_t planificacion_fifo;
 
 sem_t sem_cola_mensajes_nuevos;
