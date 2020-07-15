@@ -51,7 +51,11 @@ pthread_mutex_t planificacion_fifo;
 
 sem_t sem_cola_mensajes_nuevos;
 
-t_list* pokemones_conocidos_que_no_se_intentan_atrapar;
+// char* key
+// void* value
+// key: nombre de pokemon
+// value: lista de t_pokemon*
+t_dictionary* pokemones_conocidos_que_no_se_intentan_atrapar;
 
 typedef enum {
 	ATRAPAR_POKEMON 		= 111,		// t_pokemon*
