@@ -217,10 +217,10 @@ t_localized* crearLocalized(t_getLlegada* getLlegado, t_dataPokemon* dataPokemon
 	localizedAEnviar->pokemon = getLlegado->pokemon;
 	localizedAEnviar->lugares = dataPokemon->cantidadDeCoordenadas;
 
-	for(int i = 0; i<dataPokemon->cantidadDeCoordenadas;i++){
+	t_queue* coordenadas = malloc(sizeof(t_queue));
+	coordenadas = dataPokemon->listaDeCoordenadas;
 
-		t_queue* coordenadas = malloc(sizeof(t_queue));
-		coordenadas = dataPokemon->listaDeCoordenadas;
+	for(int i = 0; i<dataPokemon->cantidadDeCoordenadas;i++){
 
 		char* coordenada = queue_pop(coordenadas);
 		char** data = string_n_split(coordenada,2,"-");
@@ -231,6 +231,8 @@ t_localized* crearLocalized(t_getLlegada* getLlegado, t_dataPokemon* dataPokemon
 		list_add(localizedAEnviar->l_coordenadas,posY);
 
 	}
+
+	queue_destroy(coordenadas);
 
 	return localizedAEnviar;
 
