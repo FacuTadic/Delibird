@@ -246,12 +246,15 @@ bool validarPosicionesDeCatch(t_config* archivoMetadataPokemon, char** blocksOcu
 
 
 
-void validarPosicionesDeGet(char** blocksOcupados){
+t_dataPokemon* validarPosicionesDeGet(char** blocksOcupados){
 	t_queue* posicionesPokemon = queue_create();
-	uint32_t cantidadPokemones = 0;
-	obtenerTodasLasPosiciones(blocksOcupados, &posicionesPokemon, &cantidadPokemones);
+	obtenerTodasLasPosiciones(blocksOcupados, &posicionesPokemon);
 
+	t_dataPokemon* dataPokemon = malloc(sizeof(t_dataPokemon*));
+	dataPokemon->cantidadDeCoordenadas = queue_size(posicionesPokemon);
+	dataPokemon->listaDeCoordenadas = posicionesPokemon;
 
+	return dataPokemon;
 }
 
 
@@ -341,6 +344,7 @@ void catchPokemon(int socketCliente,t_catchLlegada* catch){
 void getPokemon(int socketCliente,t_getLlegada* getLlegada){
 
 	char* pokemon = getLlegada->pokemon;
+	t_dataPokemon* dataPokemon = malloc(sizeof(t_dataPokemon));
 
 	char* rutaDeDirectorio = generadorDeRutaDeCreacionDeDirectorios(rutaFiles,pokemon);
 
@@ -356,16 +360,22 @@ void getPokemon(int socketCliente,t_getLlegada* getLlegada){
 
 	if(puedeAbrirseArchivo(archivoMetadataPokemon)){
 		activarFlagDeLectura(archivoMetadataPokemon);
-		validarPosicionesDeGet(blocksOcupados);
+		dataPokemon = validarPosicionesDeGet(blocksOcupados);
 	} else{
 		sleep(tiempoReintentoOperacion);
 		getPokemon(socketCliente,pokemon);
 		exit(0);
 	}
 
+	t_localized* localizedAEnviar = crearLocalized(getLlegada, dataPokemon);
 	config_destroy(archivoMetadataPokemon);
+
 	sleep(tiempoRetardoOperacion);
 
+	enviar_localized(socketCliente,localizedAEnviar);
+
+	queue_destroy(dataPokemon->listaDeCoordenadas);
+	free(dataPokemon);
 }
 
 void enviar_mensaje(char* argv[], int socket_cliente){        // de GAMEBOY

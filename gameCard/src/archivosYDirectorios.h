@@ -6,6 +6,12 @@
 #include <commons/log.h>
 
 
+typedef struct{
+	uint32_t cantidadDeCoordenadas;
+	t_queue* listaDeCoordenadas;
+}t_dataPokemon;
+
+
 char* generadorDeRutaDeCreacionDeDirectorios(char* ruta, char* nombreDelDirectorio);
 char* generadorDeRutaDeCreacionDeArchivos(char* rutaDirectorio,char* nombreDelArchivo, char* tipoDeDato);
 bool noExisteDirectorio(char* ruta);
@@ -23,5 +29,6 @@ void decrementarEnUnoEnLaPosicion(t_config* archivo,char* key);
 uint32_t cantidadDePokemonEnUnaCoordenada(t_config* archivoBlock,char* posicion);
 char* seleccionarBlockParaCargarPosiciones(char** blocksOcupados, char*posicion, uint32_t cantidad);
 void agregarNuevaPosicionA(char* block, char* posicion, uint32_t cantidad);
+void obtenerTodasLasPosiciones(char** blocks, t_queue* posicionesPokemon);
 
 #endif /* ARCHIVOSYDIRECTORIOS_H_ */

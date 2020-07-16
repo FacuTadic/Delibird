@@ -92,8 +92,8 @@ t_buffer* crearBufferLocalized(t_localized* localizedAEnviar){
 	uint32_t idMensaje = localizedAEnviar->idMensaje;
 	uint32_t sizeNombrePokemon = localizedAEnviar->sizePokemon;
 	char* nombrePokemon = localizedAEnviar->pokemon;
-	uint32_t posX = localizedAEnviar->coordX;
-	uint32_t posY = localizedAEnviar->coordY;
+	uint32_t cantLugares = localizedAEnviar->lugares;
+	t_list* coordenadas = localizedAEnviar->l_coordenadas;
 
 	bufferLocalized->size = 4*sizeof(uint32_t) + strlen(nombrePokemon)+1; // sizeNombre, Cord X,Y + NOMBRE
 	bufferLocalized->stream = malloc(bufferLocalized->size);
@@ -112,15 +112,25 @@ t_buffer* crearBufferLocalized(t_localized* localizedAEnviar){
 	offset += sizeNombrePokemon;
 	log_info(loggerDev, "Nombre pokemon %s", nombrePokemon);
 
-
-	memcpy(bufferLocalized->stream + offset,&posX, sizeof(uint32_t));
+	memcpy(bufferLocalized->stream + offset,&cantLugares, sizeof(uint32_t));
 	offset += sizeof(uint32_t);
-	log_info(loggerDev, "Posicion X %i", posX);
+	log_info(loggerDev, "Cantidad de coordenadas donde aparece:  %i", cantLugares);
 
 
-	memcpy(bufferLocalized->stream + offset,&posY, sizeof(uint32_t));
-	offset += sizeof(uint32_t);
-	log_info(loggerDev, "Posicion Y %i", posY);
+	for(int i = 0; i<(cantLugares*2); i++){
+
+		uint32_t posX = list_get(coordenadas, i);
+		uint32_t posY = list_get(coordenadas, i+1);
+
+		memcpy(bufferLocalized->stream + offset,&posX, sizeof(uint32_t));
+		offset += sizeof(uint32_t);
+		log_info(loggerDev, "Posicion X %i", posX);
+
+		memcpy(bufferLocalized->stream + offset,&posY, sizeof(uint32_t));
+		offset += sizeof(uint32_t);
+		log_info(loggerDev, "Posicion Y %i", posY);
+	}
+
 
 	return bufferLocalized;
 }
@@ -192,8 +202,37 @@ t_localized* crearLocalizedDePokemonInexistente(t_getLlegada* getLlegado){
 	t_localized* localizedAEnviar = malloc(sizeof(t_localized));
 
 	localizedAEnviar->idMensaje = getLlegado->id;
+	localizedAEnviar->sizePokemon = strlen(getLlegado->pokemon);
 	localizedAEnviar->pokemon = getLlegado->pokemon;
 
 	return localizedAEnviar;
+}
+
+t_localized* crearLocalized(t_getLlegada* getLlegado, t_dataPokemon* dataPokemon){
+
+	t_localized* localizedAEnviar = malloc(sizeof(t_localized));
+
+	localizedAEnviar->idMensaje = getLlegado->id;
+	localizedAEnviar->sizePokemon = strlen(getLlegado->pokemon);
+	localizedAEnviar->pokemon = getLlegado->pokemon;
+	localizedAEnviar->lugares = dataPokemon->cantidadDeCoordenadas;
+
+	for(int i = 0; i<dataPokemon->cantidadDeCoordenadas;i++){
+
+		t_queue* coordenadas = malloc(sizeof(t_queue));
+		coordenadas = dataPokemon->listaDeCoordenadas;
+
+		char* coordenada = queue_pop(coordenadas);
+		char** data = string_n_split(coordenada,2,"-");
+		uint32_t posX = atoi(data[0]);
+		uint32_t posY = atoi(data[1]);
+
+		list_add(localizedAEnviar->l_coordenadas,posX);
+		list_add(localizedAEnviar->l_coordenadas,posY);
+
+	}
+
+	return localizedAEnviar;
+
 }
 

@@ -69,9 +69,7 @@ typedef struct
 	uint32_t sizePokemon;
 	char*	 pokemon;
     uint32_t lugares;
-    uint32_t  coordX;
-    uint32_t  coordY;
-
+    t_list* l_coordenadas;
 }t_localized;
 
 typedef struct {

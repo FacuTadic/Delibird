@@ -232,7 +232,7 @@ void agregarNuevaPosicionA(char* block, char* posicion, uint32_t cantidad){
 
 
 
-void obtenerTodasLasPosiciones(char** blocks, t_queue* posicionesPokemon, uint32_t cantidad){
+void obtenerTodasLasPosiciones(char** blocks, t_queue* posicionesPokemon){
 
 	uint32_t i = 0;
 
@@ -256,7 +256,6 @@ void obtenerTodasLasPosiciones(char** blocks, t_queue* posicionesPokemon, uint32
 			  char** data = string_n_split(line_size,2,"=");
 			  char* posicion = data[0];
 			  queue_push(posicionesPokemon, posicion);
-			  uint32_t cantidadEnPosicion =+ atoi(data[1]);
 
 			  /* Loop through until we are done with the file. */
 			  while (line_size >= 0)
@@ -273,11 +272,11 @@ void obtenerTodasLasPosiciones(char** blocks, t_queue* posicionesPokemon, uint32
 				char** data = string_n_split(line_size,2,"=");
 				char* posicion = data[0];
 				queue_push(posicionesPokemon, posicion);
-				uint32_t cantidadEnPosicion =+ atoi(data[1]);
 			  }
 
 			  /* Free the allocated line buffer */
 			  free(line_buf);
+			  free(data);
 			  line_buf = NULL;
 
 			  /* Close the file now that we are done with it */
