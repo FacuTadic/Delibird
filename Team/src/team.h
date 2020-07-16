@@ -46,12 +46,19 @@ t_list* catch_IDs; // t_catch_id*
 t_queue* cola_mensajes_recibidos;
 
 pthread_mutex_t cola_mensajes_recibidos_mutex;
-
+pthread_mutex_t pokemones_a_localizar_mutex;
+pthread_mutex_t pokemones_llegados_mutex;
+pthread_mutex_t objetivo_global_mutex;
+pthread_mutex_t catch_IDs_mutex;
+pthread_mutex_t estoy_conectado_al_broker_mutex;
+pthread_mutex_t socket_escucha_appeared_mutex;
+pthread_mutex_t socket_escucha_caught_mutex;
+pthread_mutex_t socket_escucha_localized_mutex;
 pthread_mutex_t planificacion_fifo;
 
 sem_t sem_cola_mensajes_nuevos;
 
-t_list* pokemones_conocidos_que_no_se_intentan_atrapar;
+t_dictionary* pokemones_conocidos_que_no_se_intentan_atrapar;
 
 typedef enum {
 	ATRAPAR_POKEMON 		= 111,		// t_pokemon*
@@ -72,6 +79,7 @@ typedef enum {
 	MENSAJE_CAUGHT       = 4,
 	MENSAJE_LOCALIZED    = 6,
 	MENSAJE_DEADLOCK	 = 8,
+	MENSAJE_POKEMON		 = 10
 } tipo_mensaje;
 
 typedef struct {
@@ -95,7 +103,7 @@ typedef struct {
 
 typedef struct {
 	tipo_mensaje tipo_mensaje;
-	void* mensaje; // t_appeared, t_caught, t_localized o t_deadlock
+	void* mensaje; // t_pokemon, t_caught o t_deadlock
 } t_mensaje_recibido;
 
 typedef struct {
@@ -160,3 +168,7 @@ t_deadlock* armar_deadlock(t_nodo_arbol* nodo_raiz);
 void liberar_arbol(t_nodo_arbol* raiz);
 int todavia_existe_deadlock(t_deadlock* mensaje_deadlock);
 int pokemon_ya_fue_recibido(char* pokemon);
+bool es_pokemon_global(char* nombre_pokemon);
+t_list* entrenadores_que_pueden_ir_a_atraparn();
+void agrego_pokemon_a_dictionary(t_pokemon* pokemon_a_agregar);
+t_pokemon* generar_pokemon_de_appeared(t_appeared* mensaje_appeared);
