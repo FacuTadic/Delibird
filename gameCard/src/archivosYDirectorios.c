@@ -210,6 +210,10 @@ char* seleccionarBlockParaCargarPosiciones(char** blocksOcupados, char*posicion,
 				i++;
 			}
 		}
+
+		log_info(loggerDev, "Che, no encontramos ningun bloque....");
+
+		return NULL;
 }
 
 void agregarNuevaPosicionA(char* block, char* posicion, uint32_t cantidad){

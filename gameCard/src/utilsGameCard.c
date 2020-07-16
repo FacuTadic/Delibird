@@ -167,6 +167,8 @@ char* blockDondeSeEncuentraLaPosicion(char* posicion, char** blocks){
 		}
 	}
 	log_info(loggerDev, "Yyyy mira, no tiro el return en el if, no encontro una mierda");
+
+	return NULL;
 }
 
 
@@ -331,12 +333,14 @@ void catchPokemon(int socketCliente,t_catchLlegada* catch){
 	enviar_caught(socketCliente,caughtAEnviar);
 }
 
-void getPokemon(int socketCliente,char* pokemon){
+void getPokemon(int socketCliente,t_getLlegada* getLlegada){
+
+	char* pokemon = getLlegada->pokemon;
 
 	char* rutaDeDirectorio = generadorDeRutaDeCreacionDeDirectorios(rutaFiles,pokemon);
 
 	if(noExisteDirectorio(rutaDeDirectorio)){
-
+		crearLocalizedDePokemonInexistente(getLlegada);
 		exit(0);
 	}
 

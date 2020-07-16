@@ -156,7 +156,7 @@ t_appeared* crearAppeared(t_newLlegada* new){
 	uint32_t posY = new->pos_Y;
 	uint32_t cantidad = new->cantidad;
 
-	t_appeared* appearedAEnviar;
+	t_appeared* appearedAEnviar = malloc(sizeof(t_appeared));
 
 	appearedAEnviar->idMensaje = idMensaje;
 	appearedAEnviar->sizePokemon = tamanio;
@@ -178,11 +178,22 @@ uint32_t boolAInt(bool flag){
 
 t_caught* crearCaught(uint32_t idMensaje, uint32_t flag){
 
-	t_caught* caughtAEnviar;
+	t_caught* caughtAEnviar = malloc(sizeof(t_caught));
 
 	caughtAEnviar->idMensaje = idMensaje;
 	caughtAEnviar->flagCaught = boolAInt(flag);
 
 	return caughtAEnviar;
+}
+
+
+t_localized* crearLocalizedDePokemonInexistente(t_getLlegada* getLlegado){
+
+	t_localized* localizedAEnviar = malloc(sizeof(t_localized));
+
+	localizedAEnviar->idMensaje = getLlegado->id;
+	localizedAEnviar->pokemon = getLlegado->pokemon;
+
+	return localizedAEnviar;
 }
 
