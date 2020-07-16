@@ -1221,10 +1221,23 @@ t_list* entrenadores_que_pueden_ir_a_atraparn(){
 
 t_entrenador* entrenador_mas_cercano(t_list* entrenadores_disponibles_para_ir_a_atrapar, int posXPokemon,int posYPokemon){
 
+	t_entrenador* entrenador_seleccionado = list_get(entrenadores_disponibles_para_ir_a_atrapar, 0);
+	uint32_t pos_base = calcular_posicion_entrenador(entrenador_seleccionado->posX,entrenador_seleccionado->posY,posXPokemon, posYPokemon);
 
+	if(entrenadores_disponibles_para_ir_a_atrapar->elements_count > 1){
 
-	calcular_posicion_entrenador();
+		for(int i = 1; i<=entrenadores_disponibles_para_ir_a_atrapar->elements_count; i++){
+			t_entrenador* entrenador_actual = list_get(entrenadores_disponibles_para_ir_a_atrapar, i);
+			uint32_t pos_base_otro_entrenador = calcular_posicion_entrenador(entrenador_actual->posX,entrenador_actual->posY,posXPokemon, posYPokemon);
 
+			if(pos_base_otro_entrenador < pos_base){
+				entrenador_seleccionado = entrenador_actual;
+			}
+
+		}
+	}
+
+	return entrenador_seleccionado;
 }
 
 
