@@ -315,11 +315,11 @@ void planificar() {
 			t_appeared* mensaje_appeared = (t_appeared*) mensaje_recibido->mensaje;
 
 			// planifico entrenador para ir a atraparlo
-			t_list* entrenador_disponible = entrenadores_que_pueden_ir_a_atraparn(entrenador_disponible, mensaje_appeared->pos_X, mensaje_appeared->pos_Y);
+			t_list* entrenador_disponible = entrenadores_que_pueden_ir_a_atraparn();
 
 			// obtengo entrenador que va a ir
 
-			t_entrenador* entrenador_a_planificar = entrenador_mas_cercano()
+			t_entrenador* entrenador_a_planificar = entrenador_mas_cercano(entrenador_disponible, mensaje_appeared->pos_X, mensaje_appeared->pos_Y);
 
 
 
