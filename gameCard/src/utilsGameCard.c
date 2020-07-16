@@ -4,6 +4,7 @@
 #include<string.h>
 #include <commons/log.h>
 
+
 int crear_conexion(char *ip, char* puerto)
 {
 	struct addrinfo hints;
@@ -246,6 +247,8 @@ bool validarPosicionesDeCatch(t_config* archivoMetadataPokemon, char** blocksOcu
 
 
 void validarPosicionesDeGet(rutaDeArchivo){
+
+
 
 }
 

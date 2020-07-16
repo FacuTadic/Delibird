@@ -228,3 +228,28 @@ void agregarNuevaPosicionA(char* block, char* posicion, uint32_t cantidad){
 }
 
 
+
+
+
+
+char** obtenerTodasLasPosiciones(char** blocks){
+
+	uint32_t i = 0;
+
+	char** posiciones = string_append_with_format()
+
+	while(blocks[i] != NULL){
+			log_info(loggerDev, "Se esta analizando el block: %s",blocks[i]);
+			char* rutaDeArchivo = generadorDeRutaDeCreacionDeArchivos(rutaBlocks,blocks[i],".bin");
+			t_config* archivoBlock = config_create(rutaDeArchivo);
+			if(config_has_property(archivoBlock,posicion)){
+				log_info(loggerDev, "Encontro el block donde esta la posicion: %s",blocks[i]);
+				return blocks[i];
+			} else{
+				config_destroy(archivoBlock);
+				i++;
+			}
+		}
+}
+
+
