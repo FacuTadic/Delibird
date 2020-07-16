@@ -1191,7 +1191,7 @@ bool es_pokemon_global(char* nombre_pokemon){
 	for(int i=0; i<= objetivo_global->elements_count; i++){
 		char* pokemon = (char*) list_get(objetivo_global,i);
 
-		if(!strcmp(pokemon,nombre_pokemon)){
+		if(string_equals_ignore_case(pokemon,nombre_pokemon)){
 			return true;
 		}
 
