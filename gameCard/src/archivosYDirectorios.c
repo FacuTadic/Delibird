@@ -232,24 +232,60 @@ void agregarNuevaPosicionA(char* block, char* posicion, uint32_t cantidad){
 
 
 
-char** obtenerTodasLasPosiciones(char** blocks){
+void obtenerTodasLasPosiciones(char** blocks, t_queue* posicionesPokemon, uint32_t cantidad){
 
 	uint32_t i = 0;
 
-	char** posiciones = string_append_with_format()
+	char** posiciones = malloc(sizeof(char**));
 
 	while(blocks[i] != NULL){
 			log_info(loggerDev, "Se esta analizando el block: %s",blocks[i]);
-			char* rutaDeArchivo = generadorDeRutaDeCreacionDeArchivos(rutaBlocks,blocks[i],".bin");
-			t_config* archivoBlock = config_create(rutaDeArchivo);
-			if(config_has_property(archivoBlock,posicion)){
-				log_info(loggerDev, "Encontro el block donde esta la posicion: %s",blocks[i]);
-				return blocks[i];
-			} else{
-				config_destroy(archivoBlock);
-				i++;
-			}
-		}
+			char* rutaDeArchivo = generadorDeRutaDeCreacionDeArchivos(rutaBlocks,blocks[i],".txt");
+
+			 char *line_buf = string_new();
+			 size_t line_buf_size = 0;
+			 int line_count = 0;
+			 ssize_t line_size;
+			 FILE *fp = fopen(rutaDeArchivo, "r");
+			 if (!fp){
+				 log_error(loggerDev, "Archivo vacio");
+			  }
+
+			  /* Get the first line of the file. */
+			  line_size = getline(&line_buf, &line_buf_size, fp);
+			  char** data = string_n_split(line_size,2,"=");
+			  char* posicion = data[0];
+			  queue_push(posicionesPokemon, posicion);
+			  uint32_t cantidadEnPosicion =+ atoi(data[1]);
+
+			  /* Loop through until we are done with the file. */
+			  while (line_size >= 0)
+			  {
+			    /* Increment our line count */
+			    line_count++;
+
+			    /* Show the line details */
+			    log_info("line[%06d]: chars=%06zd, buf size=%06zu, contents: %s", line_count,
+			        line_size, line_buf_size, line_buf);
+
+			    /* Get the next line */
+			    line_size = getline(&line_buf, &line_buf_size, fp);
+				char** data = string_n_split(line_size,2,"=");
+				char* posicion = data[0];
+				queue_push(posicionesPokemon, posicion);
+				uint32_t cantidadEnPosicion =+ atoi(data[1]);
+			  }
+
+			  /* Free the allocated line buffer */
+			  free(line_buf);
+			  line_buf = NULL;
+
+			  /* Close the file now that we are done with it */
+			  fclose(fp);
+
+			  i++;
+	}
+
 }
 
 

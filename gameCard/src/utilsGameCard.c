@@ -246,8 +246,10 @@ bool validarPosicionesDeCatch(t_config* archivoMetadataPokemon, char** blocksOcu
 
 
 
-void validarPosicionesDeGet(rutaDeArchivo){
-
+void validarPosicionesDeGet(char** blocksOcupados){
+	t_queue* posicionesPokemon = queue_create();
+	uint32_t cantidadPokemones = 0;
+	obtenerTodasLasPosiciones(blocksOcupados, &posicionesPokemon, &cantidadPokemones);
 
 
 }
@@ -354,7 +356,7 @@ void getPokemon(int socketCliente,t_getLlegada* getLlegada){
 
 	if(puedeAbrirseArchivo(archivoMetadataPokemon)){
 		activarFlagDeLectura(archivoMetadataPokemon);
-		validarPosicionesDeGet(rutaDeArchivo);
+		validarPosicionesDeGet(blocksOcupados);
 	} else{
 		sleep(tiempoReintentoOperacion);
 		getPokemon(socketCliente,pokemon);
