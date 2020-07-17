@@ -43,9 +43,13 @@ t_list* pokemones_llegados;
 
 t_list* catch_IDs; // t_catch_id*
 
-t_queue* cola_mensajes_recibidos;
+t_queue* cola_pokemones;
+t_queue* cola_caught;
+t_queue* cola_deadlock;
 
-pthread_mutex_t cola_mensajes_recibidos_mutex;
+pthread_mutex_t cola_pokemones_mutex;
+pthread_mutex_t cola_caught_mutex;
+pthread_mutex_t cola_deadlock_mutex;
 pthread_mutex_t pokemones_a_localizar_mutex;
 pthread_mutex_t pokemones_llegados_mutex;
 pthread_mutex_t objetivo_global_mutex;
@@ -56,7 +60,11 @@ pthread_mutex_t socket_escucha_caught_mutex;
 pthread_mutex_t socket_escucha_localized_mutex;
 pthread_mutex_t planificacion_fifo;
 
-sem_t sem_cola_mensajes_nuevos;
+sem_t sem_cola_pokemones;
+sem_t sem_cola_caught;
+sem_t sem_cola_deadlock;
+
+sem_t sem_entrenadores_disponibles;
 
 t_dictionary* pokemones_conocidos_que_no_se_intentan_atrapar;
 
@@ -142,7 +150,9 @@ void inicializar_cola(void);
 void obtener_objetivo_global(void);
 void obtener_pokemones_a_localizar(void);
 void laburar(void* entrenador);
-void planificar(void);
+void planificar_pokemon(void);
+void planificar_caught(void);
+void planificar_deadlock(void);
 void escuchar_appeared_de_broker(void);
 void escuchar_caught_de_broker(void);
 void escuchar_localized_de_broker(void);
@@ -171,7 +181,7 @@ void liberar_arbol(t_nodo_arbol* raiz);
 int todavia_existe_deadlock(t_deadlock* mensaje_deadlock);
 int pokemon_ya_fue_recibido(char* pokemon);
 bool es_pokemon_global(char* nombre_pokemon);
-t_list* entrenadores_que_pueden_ir_a_atraparn();
+t_list* entrenadores_que_pueden_ir_a_atrapar();
 void agrego_pokemon_a_dictionary(t_pokemon* pokemon_a_agregar);
 t_pokemon* generar_pokemon_de_appeared(t_appeared* mensaje_appeared);
 t_list* generar_pokemones_de_localized(t_localized* mensaje_localized);
