@@ -82,33 +82,36 @@ void escuchar_appeared_de_broker(void) {
 			uint32_t size;
 			log_info(extense_logger, "Recibiendo el Appeared");
 			t_appeared* appeared_msg = recibir_appeared(socket_escucha_appeared, &size, extense_logger);
-			log_info(extense_logger, "Appeared recibido");
+			if (appeared_msg == NULL) {
+				estoy_conectado_al_broker = 0;
+			} else {
+				log_info(extense_logger, "Appeared recibido");
 
-			if(es_pokemon_global(appeared_msg->pokemon)) {
-				t_mensaje_recibido* mensaje = malloc(sizeof(t_mensaje_recibido));
+				if(es_pokemon_global(appeared_msg->pokemon)) {
+					t_mensaje_recibido* mensaje = malloc(sizeof(t_mensaje_recibido));
 
-				t_pokemon* pokemon_a_agregar = generar_pokemon_de_appeared(appeared_msg);
+					t_pokemon* pokemon_a_agregar = generar_pokemon_de_appeared(appeared_msg);
 
-				agrego_pokemon_a_dictionary(pokemon_a_agregar);
+					agrego_pokemon_a_dictionary(pokemon_a_agregar);
 
-				if (pokemon_ya_fue_recibido(appeared_msg->pokemon) == 0) {
-					list_add(pokemones_llegados, (void*) appeared_msg->pokemon); // agrega pokemon aparecido a lista de llegados
+					if (pokemon_ya_fue_recibido(appeared_msg->pokemon) == 0) {
+						list_add(pokemones_llegados, (void*) appeared_msg->pokemon); // agrega pokemon aparecido a lista de llegados
+					}
+
+					mensaje->tipo_mensaje = MENSAJE_POKEMON;
+					mensaje->mensaje = (void*) pokemon_a_agregar;
+
+					pthread_mutex_lock(&cola_pokemones_mutex);
+					queue_push(cola_pokemones, (void*) mensaje);
+					pthread_mutex_unlock(&cola_pokemones_mutex);
+					sem_post(&sem_cola_pokemones);
 				}
 
-				mensaje->tipo_mensaje = MENSAJE_POKEMON;
-				mensaje->mensaje = (void*) pokemon_a_agregar;
-
-				pthread_mutex_lock(&cola_pokemones_mutex);
-				queue_push(cola_pokemones, (void*) mensaje);
-				pthread_mutex_unlock(&cola_pokemones_mutex);
-				sem_post(&sem_cola_pokemones);
+				free(appeared_msg->pokemon);
+				free(appeared_msg);
 			}
-
-			free(appeared_msg->pokemon);
-			free(appeared_msg);
 		}
 	}
-
 }
 
 void escuchar_caught_de_broker(void) {
@@ -124,16 +127,20 @@ void escuchar_caught_de_broker(void) {
 			uint32_t size;
 			log_info(extense_logger, "Recibiendo caught");
 			t_caught* caught_msg = recibir_caught(socket_escucha_caught, &size, extense_logger);
-			log_info(extense_logger, "Caught recibido");
-			t_mensaje_recibido* mensaje = malloc(sizeof(t_mensaje_recibido));
+			if (caught_msg == NULL) {
+				estoy_conectado_al_broker = 0;
+			} else {
+				log_info(extense_logger, "Caught recibido");
+				t_mensaje_recibido* mensaje = malloc(sizeof(t_mensaje_recibido));
 
-			mensaje->tipo_mensaje = MENSAJE_CAUGHT;
-			mensaje->mensaje = (void*) caught_msg;
+				mensaje->tipo_mensaje = MENSAJE_CAUGHT;
+				mensaje->mensaje = (void*) caught_msg;
 
-			pthread_mutex_lock(&cola_caught_mutex);
-			queue_push(cola_caught, (void*) mensaje);
-			pthread_mutex_unlock(&cola_caught_mutex);
-			sem_post(&sem_cola_caught);
+				pthread_mutex_lock(&cola_caught_mutex);
+				queue_push(cola_caught, (void*) mensaje);
+				pthread_mutex_unlock(&cola_caught_mutex);
+				sem_post(&sem_cola_caught);
+			}
 		}
 	}
 }
@@ -151,28 +158,32 @@ void escuchar_localized_de_broker(void) {
 			uint32_t size;
 			log_info(extense_logger, "Recibiendo localized");
 			t_localized* localized_msg = recibir_localized(socket_escucha_localized, &size, extense_logger);
-			log_info(extense_logger, "Localized recibido");
+			if (localized_msg == NULL) {
+				estoy_conectado_al_broker = 0;
+			} else {
+				log_info(extense_logger, "Localized recibido");
 
-			if (pokemon_ya_fue_recibido(localized_msg->pokemon) == 0) {
-				list_add(pokemones_llegados, (void*) localized_msg->pokemon);
-				t_list* pokemones = generar_pokemones_de_localized(localized_msg);
+				if (pokemon_ya_fue_recibido(localized_msg->pokemon) == 0) {
+					list_add(pokemones_llegados, (void*) localized_msg->pokemon);
+					t_list* pokemones = generar_pokemones_de_localized(localized_msg);
 
-				for (int i = 0; i < pokemones->elements_count; i++) {
-					t_mensaje_recibido* mensaje = malloc(sizeof(t_mensaje_recibido));
-					mensaje->tipo_mensaje = MENSAJE_POKEMON;
-					mensaje->mensaje = (void*) list_get(pokemones, i);
+					for (int i = 0; i < pokemones->elements_count; i++) {
+						t_mensaje_recibido* mensaje = malloc(sizeof(t_mensaje_recibido));
+						mensaje->tipo_mensaje = MENSAJE_POKEMON;
+						mensaje->mensaje = (void*) list_get(pokemones, i);
 
-					pthread_mutex_lock(&cola_pokemones_mutex);
-					queue_push(cola_pokemones, (void*) mensaje);
-					pthread_mutex_unlock(&cola_pokemones_mutex);
-					sem_post(&sem_cola_pokemones);
+						pthread_mutex_lock(&cola_pokemones_mutex);
+						queue_push(cola_pokemones, (void*) mensaje);
+						pthread_mutex_unlock(&cola_pokemones_mutex);
+						sem_post(&sem_cola_pokemones);
+					}
+
+					list_destroy(pokemones);
 				}
-
-				list_destroy(pokemones);
+				free(localized_msg->pokemon);
+				list_destroy(localized_msg->l_coordenadas);
+				free(localized_msg);
 			}
-			free(localized_msg->pokemon);
-			list_destroy(localized_msg->l_coordenadas);
-			free(localized_msg);
 		}
 	}
 }
