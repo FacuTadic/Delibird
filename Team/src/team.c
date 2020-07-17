@@ -17,7 +17,7 @@ void procesar_request_de_game_boy(int cod_op, int socket_game_boy) {
 		pthread_mutex_unlock(&cola_mensajes_recibidos_mutex);
 		sem_post(&sem_cola_mensajes_nuevos);
 	} else {
-		log_info(extense_logger, "No se recibio nada bro");
+		log_info(extense_logger, "No se recibio nada del socket %i",socket_game_boy);
 		// log cualquiera pibe, no me mandaste un appeared
 	}
 	close(socket_game_boy);
@@ -25,19 +25,19 @@ void procesar_request_de_game_boy(int cod_op, int socket_game_boy) {
 
 void atender_game_boy(int* socket) {
 	uint32_t cod_op;
-	log_info(extense_logger, "Recibiendo codigo de operacion de socket %i", *socket);
+	log_info(extense_logger, "Recibiendo codigo de operacion de GameBoy en socket %i", *socket);
 	int status_recv = recv(*socket, &cod_op, sizeof(uint32_t), MSG_WAITALL);
 	if (status_recv == -1) {
 		close(*socket);
-		log_error(extense_logger, "Hubo un problema recibiendo codigo de operacion de socket %i", *socket);
+		log_error(extense_logger, "Hubo un problema recibiendo codigo de operacion de GameBoy en socket %i", *socket);
 		pthread_exit(NULL);
 	}
 	if (status_recv == 0) {
 		close(*socket);
-		log_warning(extense_logger, "Game boy acaba de cerrar la conexion correspondiente al socket %i", *socket);
+		log_warning(extense_logger, "GameBoy acaba de cerrar la conexion correspondiente al socket %i", *socket);
 		pthread_exit(NULL);
 	}
-	log_info(extense_logger, "Codigo de operacion de socket %i recibido: %i", *socket, cod_op);
+	log_info(extense_logger, "Codigo de operacion de GameBoy en socket %i recibido: %i", *socket, cod_op);
 	procesar_request_de_game_boy(cod_op, *socket);
 }
 
@@ -47,7 +47,7 @@ void esperar_game_boy(int socket_escucha_game_boy) {
 	int tam_direccion = sizeof(struct sockaddr_in);
 
 	int socket_cliente = accept(socket_escucha_game_boy, (void*) &dir_cliente, &tam_direccion);
-	log_info(extense_logger, "Socket de game boy aceptado");
+	log_info(extense_logger, "Socket %i de gameBoy aceptado",socket_escucha_game_boy);
 
 	pthread_t thread;
 
@@ -74,11 +74,13 @@ void escuchar_appeared_de_broker(void) {
 
 		while (1) {
 			uint32_t size;
-			log_info(extense_logger, "Recibiendo el Appeared");
+			log_info(extense_logger, "Recibiendo el Appeared de BROKER");
 			t_appeared* appeared_msg = recibir_appeared(socket_escucha_appeared, &size, extense_logger);
-			log_info(extense_logger, "Appeared recibido");
+			log_info(extense_logger, "Appeared recibido de BROKER");
 
 			if(es_pokemon_global(appeared_msg->pokemon)){
+
+				log_info(extense_logger, "pokemon %s esta en el objetivo global");
 
 				t_mensaje_recibido* mensaje = malloc(sizeof(t_mensaje_recibido));
 
@@ -87,6 +89,7 @@ void escuchar_appeared_de_broker(void) {
 				agrego_pokemon_a_dictionary(pokemon_a_agregar);
 
 				if (pokemon_ya_fue_recibido(appeared_msg->pokemon) == 0) {
+					log_info(extense_logger, "pokemon %s llego por primera vez");
 					list_add(pokemones_llegados, (void*) appeared_msg->pokemon); // agrega pokemon aparecido a lista de llegados
 				}
 
@@ -118,9 +121,9 @@ void escuchar_caught_de_broker(void) {
 
 		while (1) {
 			uint32_t size;
-			log_info(extense_logger, "Recibiendo caught");
+			log_info(extense_logger, "Recibiendo caught del Broker en socket %i en cola %i",socket_escucha_caught, id_cola);
 			t_caught* caught_msg = recibir_caught(socket_escucha_caught, &size, extense_logger);
-			log_info(extense_logger, "Caught recibido");
+			log_info(extense_logger, "Caught recibido del Broker en socket %i, en cola %i",socket_escucha_caught,id_cola);
 			t_mensaje_recibido* mensaje = malloc(sizeof(t_mensaje_recibido));
 
 			mensaje->tipo_mensaje = MENSAJE_CAUGHT;
@@ -140,17 +143,19 @@ void escuchar_localized_de_broker(void) {
 	int status_envio = mandar_suscripcion(socket_escucha_localized, id_cola);
 
 	if (status_envio == -1) {
-		log_error(logger, "Hubo un problema enviando la suscripcion a la cola LOCALIZED del broker");
+		log_error(logger, "Hubo un problema enviando la suscripcion a la cola %i LOCALIZED del broker",id_cola);
 		// la cagamos ñeri
 	} else {
 
 		while (1) {
 			uint32_t size;
-			log_info(extense_logger, "Recibiendo localized");
+			log_info(extense_logger, "Recibiendo localized de Broker de socket %i",socket_escucha_localized);
 			t_localized* localized_msg = recibir_localized(socket_escucha_localized, &size, extense_logger);
-			log_info(extense_logger, "Localized recibido");
+			log_info(extense_logger, "Localized recibido de Broker de socket %i",socket_escucha_localized);
 
 			if (pokemon_ya_fue_recibido(localized_msg->pokemon) == 0) {
+				log_info(extense_logger, "pokemon %s llego por primera vez. en socket %i",localized_msg->pokemon,socket_escucha_localized);
+
 				list_add(pokemones_llegados, (void*) localized_msg->pokemon);
 				t_list* pokemones = generar_pokemones_de_localized(localized_msg);
 
@@ -194,33 +199,33 @@ void laburar(void* entrenador_param) {
 
 		sem_wait(entrenador->semaforo);
 
-		log_info(extense_logger, "Se espera el laburo nro: %i",entrenador->tarea_actual->id_tarea);
+		log_info(extense_logger, "entrenador %i, Se espera el laburo nro: %i",entrenador->index,entrenador->tarea_actual->id_tarea);
 
 		switch(entrenador->tarea_actual->id_tarea) {
 		case ATRAPAR_POKEMON: ;
 
 		pthread_mutex_lock(&cola_mensajes_recibidos_mutex);
 
-		log_info(extense_logger, "Entro por Atrapar Pokemon");
+		log_info(extense_logger, "entrenador %i, con estado %i, entro por Atrapar Pokemon",entrenador->index,entrenador->estado);
 
 		entrenador->estado = ESTADO_EXECUTING;
-
+		log_info(extense_logger, "entrenador %i, entro por Atrapar Pokemon, cambia su estado a %i",entrenador->index,entrenador->estado);
 		t_pokemon* parametros_atrapado = (t_pokemon*) entrenador->tarea_actual->parametros;
 		log_info(extense_logger, "Pokemon a atrapar: %s", parametros_atrapado->nombre);
 
 		// ir al lugar en cuestion
-		log_info(extense_logger, "Moviendo al entrenador a la posicion X: %i y posicion Y: %i",parametros_atrapado->pos_X,parametros_atrapado->pos_Y);
+		log_info(extense_logger, "Moviendo al entrenador %i a la posicion X: %i y posicion Y: %i",entrenador->index,parametros_atrapado->pos_X,parametros_atrapado->pos_Y);
 		irA(parametros_atrapado->pos_X, parametros_atrapado->pos_Y, entrenador);
-		log_info(extense_logger, "Llego el entrenador");
+		log_info(extense_logger, "entrenador %i llego",entrenador->index);
 
 		// mandar catch NO SE REINTENTA, SI FALLA EL ENVIO LO ATRAPE RE CHETO
-		log_info(extense_logger, "Se envia el catch");
+		log_info(extense_logger, "Se envia el catch a BROKER por socket %i",socket_);
 		enviar_catch_a_broker(parametros_atrapado, entrenador);
-		log_info(extense_logger, "Se envio el catch");
+		log_info(extense_logger, "Se envio el catch, a BROKER por socket %i",socket_);
 
 		// bloquearme esperando a que el planificador me desbloquee
 		entrenador->estado = ESTADO_BLOCKED; // esto requiere aparte un bloqueo en serio con semaforos, hay que ver como hacemos esto
-		log_info(extense_logger, "Entrenador bloqueado");
+		log_info(extense_logger, "entrenador %i cambia su estado a BLOQUEADO",entrenador->index);
 
 		pthread_mutex_unlock(&cola_mensajes_recibidos_mutex);
 
@@ -232,12 +237,12 @@ void laburar(void* entrenador_param) {
 
 		pthread_mutex_lock(&cola_mensajes_recibidos_mutex);
 
-		log_info(extense_logger, "Entro por Intercambiar Pokemon");
+		log_info(extense_logger, "Entrenador %i entro por Intercambiar Pokemon", entrenador->index);
 
 		entrenador->estado = ESTADO_EXECUTING;
-
+		og_info(extense_logger, "entrenador %i cambia su estado a EXECUTING",entrenador->index);
 		t_deadlock* parametros_intercambio = (t_deadlock*) entrenador->tarea_actual->parametros;
-		log_info(extense_logger, "Parametros del  deadlock cargados");
+		log_info(extense_logger, "Parametros del deadlock cargados");
 
 		// segundo entrenador de la lista de entrenadores
 		// esto requiere que el planificador mande a intercambiar al primero de la lista
@@ -246,16 +251,16 @@ void laburar(void* entrenador_param) {
 		// segundo entrenador de la lista de entrenadores
 		// esto requiere que el planificador mande a intercambiar al primero de la lista
 		t_entrenador* otro_entrenador = list_get(parametros_intercambio->entrenadores, 1);
-		log_info(extense_logger, "Cargado el entrenador con el que intercambiar");
+		log_info(extense_logger, "Cargado el entrenador %i con el que entrenador %i va a intercambiar pokemon ",entrenador->index,otro_entrenador->index);  // estaria cheto poner que pokemon???
 
 		// ir al lugar en cuestion
-		log_info(extense_logger, "Moviendo al entrenador a la posicion X: %i y posicion Y: %i",parametros_atrapado->pos_X,parametros_atrapado->pos_Y);
+		log_info(extense_logger, "Moviendo al entrenador %i a la posicion X: %i y posicion Y: %i",entrenador->index,parametros_atrapado->pos_X,parametros_atrapado->pos_Y);  // que entrenador tendria que ser? otro_ent.. o ent..?????
 		irA(otro_entrenador->posX, otro_entrenador->posY, entrenador);
-		log_info(extense_logger, "Llego el entrenador");
+		log_info(extense_logger, "Llego el entrenador %i a X:%i Y: %i",entrenador->index,parametros_atrapado->pos_X,parametros_atrapado->pos_Y); // mismo coment que el anterior cual entrenador ????
 
 
 		// intercambiar el pokemon correspondiente con el otro entrenador
-		log_info(extense_logger, "Empezando el intercambio de pokemon");
+		log_info(extense_logger, "Empezando el intercambio de pokemon %s y pokemon %s entre entrenador %i y entrenador %i",entrenador->index, otro_entrenador->index);
 		intercambiar_pokemones(entrenador, otro_entrenador, (char*) list_get(parametros_intercambio->pokemones, 0), (char*) list_get(parametros_intercambio->pokemones, 1));
 		log_info(extense_logger, "Intercambio realizado");
 
@@ -281,6 +286,7 @@ void laburar(void* entrenador_param) {
 		}
 
 		entrenador->estado = ESTADO_BLOCKED;
+		log_info(extense_logger, "entrenador %i cambia su estado a BLOQUEADO",entrenador->index);
 
 		pthread_mutex_unlock(&cola_mensajes_recibidos_mutex);
 
@@ -823,11 +829,12 @@ void inicializar_entrenadores() {
 		if (token_obj != NULL) {
 			while(token_obj != NULL) {
 				list_add(objetivos, token_obj);
-				// log_info me llego este token
+				log_info(extense_logger, "Llego token %s", token_obj);
 				token_obj = strtok(NULL, "|");
+
 			}
 		} else {
-			// log info no hay nada
+			log_info(extense_logger, "NO LLEGO NADA");
 		}
 
 		entrenador->objetivos = objetivos;
@@ -1153,6 +1160,8 @@ void intercambiar_pokemones(t_entrenador* entrenador1, t_entrenador* entrenador2
 
 	adquirir_pokemon(entrenador1, pokemon2);
 	adquirir_pokemon(entrenador2, pokemon1);
+
+	return;
 }
 
 void eliminar_pokemon(t_entrenador* entrenador, char* pokemon) {
