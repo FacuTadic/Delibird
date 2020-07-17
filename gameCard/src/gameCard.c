@@ -72,10 +72,6 @@ int main(void) {
 	log_info(loggerDev, "El punto de montaje es: %s", puntoMontaje);
 
 
-
-
-
-
 	levantarTallGrass(puntoMontaje);
 
 

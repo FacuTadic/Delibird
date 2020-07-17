@@ -6,11 +6,6 @@
 #include <commons/log.h>
 
 
-typedef struct{
-	uint32_t cantidadDeCoordenadas;
-	t_queue* listaDeCoordenadas;
-}t_dataPokemon;
-
 
 char* generadorDeRutaDeCreacionDeDirectorios(char* ruta, char* nombreDelDirectorio);
 char* generadorDeRutaDeCreacionDeArchivos(char* rutaDirectorio,char* nombreDelArchivo, char* tipoDeDato);

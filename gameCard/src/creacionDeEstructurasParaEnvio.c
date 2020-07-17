@@ -164,15 +164,23 @@ t_appeared* crearAppeared(t_newLlegada* new){
 	uint32_t tamanio = strlen(pokemon)+1;
 	uint32_t posX = new->pos_X;
 	uint32_t posY = new->pos_Y;
-	uint32_t cantidad = new->cantidad;
+
 
 	t_appeared* appearedAEnviar = malloc(sizeof(t_appeared));
 
 	appearedAEnviar->idMensaje = idMensaje;
+	log_info(loggerDev, "El ID de mensaje cargado en el appeared es: %i", appearedAEnviar->idMensaje);
+
 	appearedAEnviar->sizePokemon = tamanio;
 	appearedAEnviar->pokemon = pokemon;
+
+	log_info(loggerDev, "El pokemoncargado en el appeared es: %s", appearedAEnviar->pokemon);
+	log_info(loggerDev, "El tamanio del nombre del pokemon cargado en el appeared es: %i", appearedAEnviar->sizePokemon);
+
 	appearedAEnviar->coordX = posX;
 	appearedAEnviar->coordY = posY;
+
+	log_info(loggerDev, "La coordenada del pokemon cargado en el appeared es: %i - %i", appearedAEnviar->coordX, appearedAEnviar->coordY);
 
 	return appearedAEnviar;
 }
@@ -191,7 +199,9 @@ t_caught* crearCaught(uint32_t idMensaje, uint32_t flag){
 	t_caught* caughtAEnviar = malloc(sizeof(t_caught));
 
 	caughtAEnviar->idMensaje = idMensaje;
+	log_info(loggerDev, "El ID de mensaje cargado en el caught es: %i", caughtAEnviar->idMensaje);
 	caughtAEnviar->flagCaught = boolAInt(flag);
+	log_info(loggerDev, "El Flag cargado en el caught es: %i", caughtAEnviar->flagCaught);
 
 	return caughtAEnviar;
 }
@@ -208,19 +218,24 @@ t_localized* crearLocalizedDePokemonInexistente(t_getLlegada* getLlegado){
 	return localizedAEnviar;
 }
 
-t_localized* crearLocalized(t_getLlegada* getLlegado, t_dataPokemon* dataPokemon){
+t_localized* crearLocalized(t_getLlegada* getLlegado, t_queue* dataPokemon){
 
 	t_localized* localizedAEnviar = malloc(sizeof(t_localized));
 
 	localizedAEnviar->idMensaje = getLlegado->id;
+	log_info(loggerDev, "El ID mensaje cargado en el localized es: %i", localizedAEnviar->idMensaje);
 	localizedAEnviar->sizePokemon = strlen(getLlegado->pokemon);
 	localizedAEnviar->pokemon = getLlegado->pokemon;
-	localizedAEnviar->lugares = dataPokemon->cantidadDeCoordenadas;
+	log_info(loggerDev, "El Pokemon cargado en el localized es: %i", localizedAEnviar->pokemon);
+	log_info(loggerDev, "El tamanio del nombre del pokemon cargado en el localized es: %i", localizedAEnviar->sizePokemon);
+	localizedAEnviar->lugares = queue_size(dataPokemon);
+	log_info(loggerDev, "La cantidad de lugares donde apareche el pokemon cargado en el localized es: %i", localizedAEnviar->lugares);
 
 	t_queue* coordenadas = malloc(sizeof(t_queue));
-	coordenadas = dataPokemon->listaDeCoordenadas;
+	coordenadas = dataPokemon;
 
-	for(int i = 0; i<dataPokemon->cantidadDeCoordenadas;i++){
+
+	for(int i = 0; i<localizedAEnviar->lugares ;i++){
 
 		char* coordenada = queue_pop(coordenadas);
 		char** data = string_n_split(coordenada,2,"-");
@@ -229,6 +244,8 @@ t_localized* crearLocalized(t_getLlegada* getLlegado, t_dataPokemon* dataPokemon
 
 		list_add(localizedAEnviar->l_coordenadas,posX);
 		list_add(localizedAEnviar->l_coordenadas,posY);
+
+		log_info(loggerDev, "La coordenada cargada es (%i ; %i)", posX, posY);
 
 	}
 

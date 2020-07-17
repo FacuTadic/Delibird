@@ -115,7 +115,7 @@ bool puedeAbrirseArchivo(t_config* archivo){
 
 
 void activarFlagDeLectura(t_config* archivo){
-	config_set_value(archivo, "OPEN", "F");
+	config_set_value(archivo, "OPEN", "Y");
 	config_save(archivo);
 }
 
@@ -178,8 +178,9 @@ void agregarCantidadSolicitadaAUnaKey(t_config* archivo,char* key, uint32_t cant
 void decrementarEnUnoEnLaPosicion(t_config* archivo,char* key){
 
 	uint32_t cantidadVieja= config_get_int_value(archivo,key);
-	cantidadVieja -= 1;
 	log_info(loggerDev, "El size viejo del metadata es: %i", cantidadVieja);
+	cantidadVieja -= 1;
+	log_info(loggerDev, "El size nuevo del metadata es: %i", cantidadVieja);
 	char* cantidadTotal = string_itoa(cantidadVieja);
 	log_info(loggerDev, "La conversion de int->char es: %s", cantidadTotal);
 
@@ -213,7 +214,7 @@ char* seleccionarBlockParaCargarPosiciones(char** blocksOcupados, char*posicion,
 
 		log_info(loggerDev, "Che, no encontramos ningun bloque....");
 
-		return NULL;
+		return buscarPosicionDisponibleEnElBitMap();
 }
 
 void agregarNuevaPosicionA(char* block, char* posicion, uint32_t cantidad){

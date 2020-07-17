@@ -107,6 +107,7 @@ void cargarInfoDelMetadata(char* rutaMetadata){
 	log_info(loggerDev, "La cantidad de Bloques es: %i", cantidadDeBloques);
 	magicNumber = config_get_string_value(metaData, "MAGIC_NUMBER");
 	log_info(loggerDev, "El Magic Number es: %s", magicNumber);
+	config_destroy(metaData);
 }
 
 void levantarTallGrass(char* puntoMontaje){
@@ -143,6 +144,7 @@ bool existenPosicionesEnArchivo(char* posicion,char** blocks){
 		t_config* archivoBlock = config_create(rutaDeArchivo);
 		if(config_has_property(archivoBlock,posicion)){
 			log_info(loggerDev, "Existe la posocion");
+			config_destroy(archivoBlock);
 			return true;
 		} else{
 			config_destroy(archivoBlock);
@@ -195,12 +197,15 @@ uint32_t calcularPesoTotalDeBlockEnMetadataPokemon(char** blocks){
 void validarPosicionesDeNew(char** blocksOcupados,char* posicion, uint32_t cantidad){
 	if(existenPosicionesEnArchivo(posicion,blocksOcupados)){
 		char* block = blockDondeSeEncuentraLaPosicion(posicion,blocksOcupados);
+		log_info(loggerDev, "El bloque en el que se encuentra es: %s",block);
 		char* rutaDelBlock = generadorDeRutaDeCreacionDeArchivos(rutaBlocks,block,".bin");
+		log_info(loggerDev, "La ruta del block es: %s",rutaDelBlock);
 		t_config* archivoBlock = config_create(rutaDelBlock);
 		agregarCantidadSolicitadaAUnaKey(archivoBlock,posicion,cantidad);
 		config_destroy(archivoBlock);
 	} else {
 		char* blockOptimo = seleccionarBlockParaCargarPosiciones(blocksOcupados,posicion, cantidad);
+		log_info(loggerDev, "El bloque disponible seleccionado es: %s",blockOptimo);
 		agregarNuevaPosicionA(blockOptimo,posicion, cantidad);
 
 	}
@@ -210,10 +215,14 @@ void validarPosicionesDeNew(char** blocksOcupados,char* posicion, uint32_t canti
 bool validarPosicionesDeCatch(t_config* archivoMetadataPokemon, char** blocksOcupados, char* posicion){
 	if(existenPosicionesEnArchivo(posicion,blocksOcupados)){
 		char* block = blockDondeSeEncuentraLaPosicion(posicion,blocksOcupados);
+		log_info(loggerDev, "El bloque en el que se encuentra es: %s",block);
 		char* rutaDelBlock = generadorDeRutaDeCreacionDeArchivos(rutaBlocks,block,".bin");
+		log_info(loggerDev, "La ruta del block es: %s",rutaDelBlock);
 		t_config* archivoBlock = config_create(rutaDelBlock);
 
 		uint32_t cantidadPokemon = cantidadDePokemonEnUnaCoordenada(archivoBlock,posicion);
+
+		log_info(loggerDev, "La cantidad de pokemons en el la posicion %s es: %i",posicion, cantidadPokemon);
 
 		if(cantidadPokemon == 1){
 			log_info(loggerDev, "La cantidad de pokemons en esa posicion es 1");
@@ -227,15 +236,15 @@ bool validarPosicionesDeCatch(t_config* archivoMetadataPokemon, char** blocksOcu
 				eliminarKeyValueDe(archivoBlock,block,posicion);
 				log_info(loggerDev, "Se elimina la linea");
 			}
-
+			config_destroy(archivoBlock);
 			return true;
 
 		}else{
 			log_info(loggerDev, "Se decrementa en uno la posicion");
 			decrementarEnUnoEnLaPosicion(archivoBlock,posicion);
+			config_destroy(archivoBlock);
 			return true;
 		}
-		config_destroy(archivoBlock);
 
 	} else {
 		log_error(loggerGameCard, "No existen las posiciones en el archivo");
@@ -246,15 +255,11 @@ bool validarPosicionesDeCatch(t_config* archivoMetadataPokemon, char** blocksOcu
 
 
 
-t_dataPokemon* validarPosicionesDeGet(char** blocksOcupados){
+t_queue* validarPosicionesDeGet(char** blocksOcupados){
 	t_queue* posicionesPokemon = queue_create();
 	obtenerTodasLasPosiciones(blocksOcupados, &posicionesPokemon);
 
-	t_dataPokemon* dataPokemon = malloc(sizeof(t_dataPokemon*));
-	dataPokemon->cantidadDeCoordenadas = queue_size(posicionesPokemon);
-	dataPokemon->listaDeCoordenadas = posicionesPokemon;
-
-	return dataPokemon;
+	return posicionesPokemon;
 }
 
 
@@ -283,10 +288,13 @@ void newPokemon(int socketCliente,t_newLlegada* new){
 	char** blocksOcupados = config_get_array_value(archivoMetadataPokemon,"BLOCKS");
 	log_info(loggerDev, "EL array de blocks es: %s", blocksOcupados);
 
+	//Mutex
 	if(puedeAbrirseArchivo(archivoMetadataPokemon)){
 		activarFlagDeLectura(archivoMetadataPokemon);
+		//Des Mutex :v
 		validarPosicionesDeNew(blocksOcupados,posicion,cantidad);
 	} else{
+		//Des Mutex :v
 		sleep(tiempoReintentoOperacion);
 		newPokemon(socketCliente,new);
 		exit(0);
@@ -298,6 +306,8 @@ void newPokemon(int socketCliente,t_newLlegada* new){
 	sleep(tiempoRetardoOperacion);
 
 	enviar_appeared(socketCliente,appearedGenerado);
+
+	//free de las cosas?
 
 
 }
@@ -324,10 +334,13 @@ void catchPokemon(int socketCliente,t_catchLlegada* catch){
 	char** blocksOcupados = config_get_array_value(archivoMetadataPokemon,"BLOCKS");
 	log_info(loggerDev, "EL array de blocks es: %s", blocksOcupados);
 
+	//Mutex
 	if(puedeAbrirseArchivo(archivoMetadataPokemon)){
 		activarFlagDeLectura(archivoMetadataPokemon);
+		//Des Mutex :v
 		validacion = validarPosicionesDeCatch(archivoMetadataPokemon,blocksOcupados,posicion);
 	}else{
+		//Des Mutex :v
 		sleep(tiempoReintentoOperacion);
 		catchPokemon(socketCliente,catch);
 		exit(0);
@@ -339,13 +352,14 @@ void catchPokemon(int socketCliente,t_catchLlegada* catch){
 	sleep(tiempoRetardoOperacion);
 
 	enviar_caught(socketCliente,caughtAEnviar);
+
+	//free de las cosas?
 }
 
 void getPokemon(int socketCliente,t_getLlegada* getLlegada){
 
 	char* pokemon = getLlegada->pokemon;
-	t_dataPokemon* dataPokemon = malloc(sizeof(t_dataPokemon));
-
+	t_queue* coordenadas = queue_create();
 	char* rutaDeDirectorio = generadorDeRutaDeCreacionDeDirectorios(rutaFiles,pokemon);
 
 	if(noExisteDirectorio(rutaDeDirectorio)){
@@ -358,24 +372,26 @@ void getPokemon(int socketCliente,t_getLlegada* getLlegada){
 	char** blocksOcupados = config_get_array_value(rutaDeArchivo,"BLOCKS");
 	log_info(loggerDev, "EL array de blocks es: %s", blocksOcupados);
 
+	//Mutex
 	if(puedeAbrirseArchivo(archivoMetadataPokemon)){
 		activarFlagDeLectura(archivoMetadataPokemon);
-		dataPokemon = validarPosicionesDeGet(blocksOcupados);
+		//Des Mutex :v
+		coordenadas = validarPosicionesDeGet(blocksOcupados);
 	} else{
+		//Des Mutex :v
 		sleep(tiempoReintentoOperacion);
 		getPokemon(socketCliente,pokemon);
 		exit(0);
 	}
 
-	t_localized* localizedAEnviar = crearLocalized(getLlegada, dataPokemon);
+	t_localized* localizedAEnviar = crearLocalized(getLlegada, coordenadas);
 	config_destroy(archivoMetadataPokemon);
 
 	sleep(tiempoRetardoOperacion);
 
 	enviar_localized(socketCliente,localizedAEnviar);
 
-	queue_destroy(dataPokemon->listaDeCoordenadas);
-	free(dataPokemon);
+	queue_destroy(coordenadas);
 }
 
 void enviar_mensaje(char* argv[], int socket_cliente){        // de GAMEBOY

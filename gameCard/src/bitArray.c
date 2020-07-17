@@ -79,5 +79,7 @@ char* buscarPosicionDisponibleEnElBitMap() {
 	}
 	sem_post(&bloques_bitmap);
 	log_error(loggerDev, "No hay bloques libres diponibles");
+
+	return NULL;
 }
 
