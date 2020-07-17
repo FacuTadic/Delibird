@@ -74,11 +74,11 @@ void escuchar_appeared_de_broker(void) {
 	int status_envio = mandar_suscripcion(socket_escucha_appeared, id_cola);
 
 	if (status_envio == -1) {
+		estoy_conectado_al_broker = 0;
 		log_error(logger, "Hubo un problema enviando la suscripcion a la cola APPEARED del broker");
-		// la cagamos ñeri
-	} else {
-
-		while (1) {
+	}
+	while (1) {
+		if (estoy_conectado_al_broker == 1) {
 			uint32_t size;
 			log_info(extense_logger, "Recibiendo el Appeared");
 			t_appeared* appeared_msg = recibir_appeared(socket_escucha_appeared, &size, extense_logger);
@@ -116,11 +116,11 @@ void escuchar_caught_de_broker(void) {
 	int status_envio = mandar_suscripcion(socket_escucha_caught, id_cola);
 
 	if (status_envio == -1) {
+		estoy_conectado_al_broker = 0;
 		log_error(logger, "Hubo un problema enviando la suscripcion a la cola CAUGHT del broker");
-		// la cagamos ñeri
-	}else {
-
-		while (1) {
+	}
+	while (1) {
+		if (estoy_conectado_al_broker == 1) {
 			uint32_t size;
 			log_info(extense_logger, "Recibiendo caught");
 			t_caught* caught_msg = recibir_caught(socket_escucha_caught, &size, extense_logger);
@@ -136,7 +136,6 @@ void escuchar_caught_de_broker(void) {
 			sem_post(&sem_cola_caught);
 		}
 	}
-
 }
 
 void escuchar_localized_de_broker(void) {
@@ -144,11 +143,11 @@ void escuchar_localized_de_broker(void) {
 	int status_envio = mandar_suscripcion(socket_escucha_localized, id_cola);
 
 	if (status_envio == -1) {
+		estoy_conectado_al_broker = 0;
 		log_error(logger, "Hubo un problema enviando la suscripcion a la cola LOCALIZED del broker");
-		// la cagamos ñeri
-	} else {
-
-		while (1) {
+	}
+	while (1) {
+		if (estoy_conectado_al_broker == 1) {
 			uint32_t size;
 			log_info(extense_logger, "Recibiendo localized");
 			t_localized* localized_msg = recibir_localized(socket_escucha_localized, &size, extense_logger);
@@ -176,7 +175,6 @@ void escuchar_localized_de_broker(void) {
 			free(localized_msg);
 		}
 	}
-
 }
 
 int pokemon_ya_fue_recibido(char* pokemon) {
