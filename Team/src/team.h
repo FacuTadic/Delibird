@@ -60,6 +60,8 @@ sem_t sem_cola_mensajes_nuevos;
 
 t_dictionary* pokemones_conocidos_que_no_se_intentan_atrapar;
 
+t_dictionary* cantidad_de_pokemones_que_puedo_planificar;
+
 typedef enum {
 	ATRAPAR_POKEMON 		= 111,		// t_pokemon*
 	INTERCAMBIAR_POKEMON 	= 112, 		// t_deadlock*
@@ -172,3 +174,11 @@ bool es_pokemon_global(char* nombre_pokemon);
 t_list* entrenadores_que_pueden_ir_a_atraparn();
 void agrego_pokemon_a_dictionary(t_pokemon* pokemon_a_agregar);
 t_pokemon* generar_pokemon_de_appeared(t_appeared* mensaje_appeared);
+t_list* generar_pokemones_de_localized(t_localized* mensaje_localized);
+void obtener_cantidad_de_cada_pokemon_a_planificar();
+int tengo_que_planificar_pokemon(t_pokemon* mensaje_pokemon);
+void contar_planificacion(t_pokemon* pokemon);
+void liberar_planificacion(t_pokemon* pokemon);
+int tengo_en_el_mapa(char* pokemon);
+void borrar_pokemon_del_mapa(t_pokemon* pokemon);
+t_pokemon* mejor_pokemon_para_reintentar(t_entrenador* entrenador, char* pokemon);

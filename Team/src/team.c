@@ -91,17 +91,17 @@ void escuchar_appeared_de_broker(void) {
 				}
 
 				mensaje->tipo_mensaje = MENSAJE_APPEARED;
-				mensaje->mensaje = (void*) appeared_msg;
+				mensaje->mensaje = (void*) pokemon_a_agregar;
 
 				pthread_mutex_lock(&cola_mensajes_recibidos_mutex);
 				queue_push(cola_mensajes_recibidos, (void*) mensaje);
 				pthread_mutex_unlock(&cola_mensajes_recibidos_mutex);
 				sem_post(&sem_cola_mensajes_nuevos);
 
-			} else {
-				free(appeared_msg->pokemon);
-				free(appeared_msg);
 			}
+
+			free(appeared_msg->pokemon);
+			free(appeared_msg);
 		}
 	}
 
@@ -149,31 +149,27 @@ void escuchar_localized_de_broker(void) {
 			log_info(extense_logger, "Recibiendo localized");
 			t_localized* localized_msg = recibir_localized(socket_escucha_localized, &size, extense_logger);
 			log_info(extense_logger, "Localized recibido");
-			t_mensaje_recibido* mensaje = malloc(sizeof(t_mensaje_recibido));
 
-			// ya me llego un appeared o un localized ???
-
-			mensaje->tipo_mensaje = MENSAJE_LOCALIZED;
-			mensaje->mensaje = (void*) localized_msg;
-
-			pthread_mutex_lock(&cola_mensajes_recibidos_mutex);
-			queue_push(cola_mensajes_recibidos, (void*) mensaje);
-			pthread_mutex_unlock(&cola_mensajes_recibidos_mutex);
-			sem_post(&sem_cola_mensajes_nuevos);
 			if (pokemon_ya_fue_recibido(localized_msg->pokemon) == 0) {
-				list_add(pokemones_llegados, (void*) localized_msg->pokemon); // agrego pokemon a llegados
-				t_mensaje_recibido* mensaje = malloc(sizeof(t_mensaje_recibido));
-				mensaje->tipo_mensaje = MENSAJE_LOCALIZED;
-				mensaje->mensaje = (void*) localized_msg;
+				list_add(pokemones_llegados, (void*) localized_msg->pokemon);
+				t_list* pokemones = generar_pokemones_de_localized(localized_msg);
 
-				pthread_mutex_lock(&cola_mensajes_recibidos_mutex);
-				queue_push(cola_mensajes_recibidos, (void*) mensaje);
-				pthread_mutex_unlock(&cola_mensajes_recibidos_mutex);
-				sem_post(&sem_cola_mensajes_nuevos);
-			} else {
-				free(localized_msg->pokemon);
-				list_destroy(localized_msg->l_coordenadas);
+				for (int i = 0; i < pokemones->elements_count; i++) {
+					t_mensaje_recibido* mensaje = malloc(sizeof(t_mensaje_recibido));
+					mensaje->tipo_mensaje = MENSAJE_LOCALIZED;
+					mensaje->mensaje = (void*) list_get(pokemones, i);
+
+					pthread_mutex_lock(&cola_mensajes_recibidos_mutex);
+					queue_push(cola_mensajes_recibidos, (void*) mensaje);
+					pthread_mutex_unlock(&cola_mensajes_recibidos_mutex);
+					sem_post(&sem_cola_mensajes_nuevos);
+				}
+
+				list_destroy(pokemones);
 			}
+			free(localized_msg->pokemon);
+			list_destroy(localized_msg->l_coordenadas);
+			free(localized_msg);
 		}
 	}
 
@@ -308,32 +304,43 @@ void planificar() {
 		log_info(extense_logger, "Se espera la planificacion nro: %i",mensaje_recibido->tipo_mensaje);
 		switch(mensaje_recibido->tipo_mensaje) {
 
-		case MENSAJE_APPEARED:
+		case MENSAJE_POKEMON:
 
-			log_info(extense_logger, "Entro por Mensaje Appeared");
+			log_info(extense_logger, "Planificando un nuevo pokemon");
 
-			t_appeared* mensaje_appeared = (t_appeared*) mensaje_recibido->mensaje;
+			t_pokemon* mensaje_pokemon = (t_pokemon*) mensaje_recibido->mensaje;
 
-			// planifico entrenador para ir a atraparlo
-			t_list* entrenador_disponible = entrenadores_que_pueden_ir_a_atraparn();
+			if (tengo_que_planificar_pokemon(mensaje_pokemon) == 1) {
 
-			// obtengo entrenador que va a ir
+				// bajo el contador de pokemones que puedo planificar
 
-			t_entrenador* entrenador_a_planificar = entrenador_mas_cercano(entrenador_disponible, mensaje_appeared->pos_X, mensaje_appeared->pos_Y);
+				contar_planificacion(mensaje_pokemon);
 
+				// borro el pokemon de la lista del mapa
 
+				borrar_pokemon_del_mapa(mensaje_pokemon);
 
-			//Liberar tarea anterior y le doy la t_tarea
+				// planifico entrenador para ir a atraparlo
+				t_list* entrenador_disponible = entrenadores_que_pueden_ir_a_atraparn();
 
-			t_tarea* tarea_appeared = malloc(sizeof(t_tarea));
-			tarea_appeared->id_tarea = ATRAPAR_POKEMON;
-			t_pokemon* pokemon_a_enviar = generar_pokemon_de_appeared(mensaje_appeared);
-			tarea_appeared->parametros = pokemon_a_enviar;
+				// obtengo entrenador que va a ir
 
-			entrenador_a_planificar->tarea_actual = tarea_appeared;
+				t_entrenador* entrenador_a_planificar = entrenador_mas_cercano(entrenador_disponible, mensaje_pokemon->pos_X, mensaje_pokemon->pos_Y);
 
-			// lo desbloqueo
-			sem_post(entrenador_a_planificar->semaforo);
+				//Liberar tarea anterior y le doy la t_tarea
+
+				t_tarea* tarea_pokemon = malloc(sizeof(t_tarea));
+				tarea_pokemon->id_tarea = ATRAPAR_POKEMON;
+				t_pokemon* pokemon_a_enviar = generar_pokemon_de_appeared(mensaje_pokemon);
+				tarea_pokemon->parametros = pokemon_a_enviar;
+
+				entrenador_a_planificar->tarea_actual = tarea_pokemon;
+
+				// lo desbloqueo
+				sem_post(entrenador_a_planificar->semaforo);
+			} else {
+
+			}
 
 			break;
 
@@ -366,11 +373,16 @@ void planificar() {
 						catch_id->entrenador->tarea_actual = tarea_pingo;
 					}
 				} else {
-					t_tarea* tarea_reatrapar = malloc(sizeof(t_tarea));
-					tarea_reatrapar->id_tarea = ATRAPAR_POKEMON;
-					tarea_reatrapar->parametros = catch_id->pokemon;
-					catch_id->entrenador->estado = ESTADO_READY;
-					sem_post(((t_entrenador*) catch_id->entrenador)->semaforo);
+					if (tengo_en_el_mapa(catch_id->pokemon->nombre) == 1) {
+						t_pokemon* mejor_pokemon_para_reintentar = mejor_pokemon_para_reintentar(catch_id->entrenador, catch_id->pokemon->nombre);
+						t_tarea* tarea_reatrapar = malloc(sizeof(t_tarea));
+						tarea_reatrapar->id_tarea = ATRAPAR_POKEMON;
+						tarea_reatrapar->parametros = mejor_pokemon_para_reintentar;
+						catch_id->entrenador->estado = ESTADO_READY;
+						sem_post(((t_entrenador*) catch_id->entrenador)->semaforo);
+					} else {
+						liberar_planificacion(mensaje_pokemon);
+					}
 				}
 				list_remove(catch_IDs, index_catch); // guarda con que haya cambiado de lugar, corresponderia bloquear la lista
 				free(catch_id->pokemon->nombre);
@@ -382,29 +394,6 @@ void planificar() {
 
 			free(mensaje_caught);
 			free(mensaje_recibido);
-
-			// si es afirmativo
-			// dar pokemon al entrenador
-			// liberar para otras tareas
-			// si es negativo
-			// planificar al entrenador para que reintente
-			// atrapar el pokemon en otro lugar del mapa
-
-			//cosas
-			break;
-
-		case MENSAJE_LOCALIZED:
-
-			log_info(extense_logger, "Entro por Mensaje Localized");
-
-			t_localized* mensaje_localized = (t_localized*) mensaje_recibido->mensaje;
-
-			// requiero atraparlo?
-
-			// planifico entrenador para ir a atraparlo
-			// obtengo entrenador que va a ir
-			// le doy la t_tarea
-			// lo desbloqueo
 
 			//cosas
 			break;
@@ -722,6 +711,8 @@ int main(void) {
 
 	obtener_objetivo_global();
 
+	obtener_cantidad_de_cada_pokemon_a_planificar();
+
 	// crear cola de mensajes recibidos
 	inicializar_cola();
 
@@ -992,6 +983,18 @@ void obtener_objetivo_global() {
 	list_destroy(pokemones_innecesarios);
 }
 
+void obtener_cantidad_de_cada_pokemon_a_planificar() {
+	cantidad_de_pokemones_que_puedo_planificar = dictionary_create();
+	for (int i = 0; i < objetivo_global->elements_count; i++) {
+		char* objetivo_lista = list_get(objetivo_global, i);
+		if (dictionary_has_key(cantidad_de_pokemones_que_puedo_planificar, objetivo_lista) == 1) {
+			((int) dictionary_get(cantidad_de_pokemones_que_puedo_planificar, objetivo_lista))++;
+		} else {
+			dictionary_put(cantidad_de_pokemones_que_puedo_planificar, objetivo_lista, 1);
+		}
+	}
+}
+
 void obtener_pokemones_a_localizar() {
 	pokemones_a_localizar = list_create();
 
@@ -1143,6 +1146,8 @@ void irA(uint32_t posX, uint32_t posY, t_entrenador* entrenador){
 }
 
 void intercambiar_pokemones(t_entrenador* entrenador1, t_entrenador* entrenador2, char* pokemon1, char* pokemon2) {
+	sleep(retardo_de_CPU * 5);
+
 	eliminar_pokemon(entrenador1, pokemon1);
 	eliminar_pokemon(entrenador2, pokemon2);
 
@@ -1261,7 +1266,7 @@ void agrego_pokemon_a_dictionary(t_pokemon* pokemon_a_agregar){
 }
 
 
-t_pokemon* generar_pokemon_de_appeared(t_appeared* mensaje_appeared){
+t_pokemon* generar_pokemon_de_appeared(t_appeared* mensaje_appeared) {
 
 	// No libero nombre de pokemon de appeared porque ya esta dentro de t_appeared
 
@@ -1274,7 +1279,86 @@ t_pokemon* generar_pokemon_de_appeared(t_appeared* mensaje_appeared){
 	return pokemon_a_retornar;
 }
 
+t_list* generar_pokemones_de_localized(t_localized* mensaje_localized) {
 
+	t_list* pokemones_a_retornizar = list_create();
+
+	int j = 0;
+
+	for (int i = 0; i < mensaje_localized->lugares; i++) {
+		t_pokemon* pokemon = malloc(sizeof(t_pokemon));
+		memcpy(pokemon->nombre, mensaje_localized->pokemon, strlen(mensaje_localized->pokemon) + 1);
+		pokemon->pos_X = list_get(mensaje_localized->l_coordenadas, j);
+		j++;
+		pokemon->pos_Y = list_get(mensaje_localized->l_coordenadas, j);
+		j++;
+		list_add(pokemones_a_retornizar, pokemon);
+	}
+
+	return pokemones_a_retornizar;
+}
+
+int tengo_que_planificar_pokemon(t_pokemon* pokemon) {
+	int cantidad_disponible_para_atrapar = (int) dictionary_get(cantidad_de_pokemones_que_puedo_planificar, pokemon->nombre);
+	if (cantidad_disponible_para_atrapar > 0) {
+		return 1;
+	} else {
+		return 0;
+	}
+}
+
+void contar_planificacion(t_pokemon* pokemon) {
+	int cantidad_disponible_para_atrapar = (int) dictionary_get(cantidad_de_pokemones_que_puedo_planificar, pokemon->nombre);
+	cantidad_disponible_para_atrapar--;
+	dictionary_put(cantidad_de_pokemones_que_puedo_planificar, pokemon->nombre, cantidad_disponible_para_atrapar);
+}
+
+int tengo_en_el_mapa(char* pokemon) {
+	t_list* pokemones_en_el_mapa = (t_list*) dictionary_get(pokemones_conocidos_que_no_se_intentan_atrapar, pokemon);
+
+	// si ya se, es horrible esto
+	// pero no confio en los frue y false de c
+	// entonces prefiero comparar numeros
+	if (list_is_empty(pokemones_en_el_mapa) == 1) {
+		return 1;
+	} else {
+		return 0;
+	}
+}
+
+void liberar_planificacion(t_pokemon* pokemon) {
+	int cantidad_disponible_para_atrapar = (int) dictionary_get(cantidad_de_pokemones_que_puedo_planificar, pokemon->nombre);
+	cantidad_disponible_para_atrapar++;
+	dictionary_put(cantidad_de_pokemones_que_puedo_planificar, pokemon->nombre, cantidad_disponible_para_atrapar);
+}
+
+void borrar_pokemon_del_mapa(t_pokemon* pokemon) {
+	t_list* pokemones = dictionary_get(pokemones_conocidos_que_no_se_intentan_atrapar, pokemon->nombre);
+	for (int i = 0; i < pokemones->elements_count; i++) {
+		t_pokemon* pokemon_lista = list_get(pokemones, i);
+		if (pokemon_lista->pos_X == pokemon->pos_X && pokemon_lista->pos_Y == pokemon->pos_Y) {
+			list_remove(pokemon_lista, i);
+			i = pokemones->elements_count;
+		}
+	}
+}
+
+t_pokemon* mejor_pokemon_para_reintentar(t_entrenador* entrenador, char* pokemon) {
+	t_list* pokemones = dictionary_get(pokemones_conocidos_que_no_se_intentan_atrapar, pokemon);
+
+	int distancia_minima = 500000;
+	t_pokemon* pokemon_a_retornizar;
+	for (int i = 0; i < pokemones->elements_count; i++) {
+		t_pokemon* pokemon_lista = list_get(pokemones, i);
+		int distancia = calcular_posicion_entrenador(entrenador->posX, entrenador->posY, pokemon_lista->pos_X, pokemon_lista->pos_Y);
+		if (distancia < distancia_minima) {
+			distancia_minima = distancia;
+			pokemon_a_retornizar = pokemon_lista;
+		}
+	}
+
+	return pokemon_a_retornizar;
+}
 
 void terminar_programa() {
 	close(socket_escucha_game_boy);
