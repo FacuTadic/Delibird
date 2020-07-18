@@ -1142,6 +1142,8 @@ void enviar_catch_a_broker(t_pokemon* pokemon, t_entrenador* entrenador) {
 
 	entrenador->estado = ESTADO_BLOCKED;
 
+	sleep(retardo_de_CPU);
+
 	if (send(socket_broker, flujo, bytes, 0) == -1) {
 		log_error(extense_logger, "Error: No se pudo enviar el mensaje catch del entrenador %i para el pokemon %s ubicado en %i %i, obteniendo pokemon por comportamiento default", entrenador->index, pokemon->nombre, pokemon->pos_X, pokemon->pos_Y);
 		adquirir_pokemon(entrenador, pokemon->nombre);
