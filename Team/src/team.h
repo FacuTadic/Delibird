@@ -36,6 +36,7 @@ int socket_escucha_localized;
 int estoy_conectado_al_broker; // 1 true 0 false
 
 t_list* entrenadores; // t_entrenador
+t_list* entrenadores_mutex; // pthread_mutex_t*
 
 t_list* objetivo_global; // nombres de pokemon
 t_list* pokemones_a_localizar; // nombres de pokemon

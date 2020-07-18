@@ -82,24 +82,24 @@ void escuchar_appeared_de_broker(void) {
 			uint32_t size;
 			log_info(extense_logger, "Recibiendo el Appeared de BROKER");
 			t_appeared* appeared_msg = recibir_appeared(socket_escucha_appeared, &size, extense_logger);
-  log_info(extense_logger, "Appeared recibido de BROKER");
+			log_info(extense_logger, "Appeared recibido de BROKER");
 			if (appeared_msg == NULL) {
 				estoy_conectado_al_broker = 0;
 			} else {
 				log_info(extense_logger, "Appeared recibido");
 
 				if(es_pokemon_global(appeared_msg->pokemon)) {
-          log_info(extense_logger, "pokemon %s esta en el objetivo global");
+					log_info(extense_logger, "pokemon %s esta en el objetivo global");
 					t_mensaje_recibido* mensaje = malloc(sizeof(t_mensaje_recibido));
 
 					t_pokemon* pokemon_a_agregar = generar_pokemon_de_appeared(appeared_msg);
 
 					agrego_pokemon_a_dictionary(pokemon_a_agregar);
 
-				if (pokemon_ya_fue_recibido(appeared_msg->pokemon) == 0) {
-					log_info(extense_logger, "pokemon %s llego por primera vez");
-					list_add(pokemones_llegados, (void*) appeared_msg->pokemon); // agrega pokemon aparecido a lista de llegados
-				}
+					if (pokemon_ya_fue_recibido(appeared_msg->pokemon) == 0) {
+						log_info(extense_logger, "pokemon %s llego por primera vez");
+						list_add(pokemones_llegados, (void*) appeared_msg->pokemon); // agrega pokemon aparecido a lista de llegados
+					}
 
 					mensaje->tipo_mensaje = MENSAJE_POKEMON;
 					mensaje->mensaje = (void*) pokemon_a_agregar;
@@ -169,7 +169,7 @@ void escuchar_localized_de_broker(void) {
 				log_info(extense_logger, "Localized recibido");
 
 				if (pokemon_ya_fue_recibido(localized_msg->pokemon) == 0) {
-          log_info(extense_logger, "pokemon %s llego por primera vez. en socket %i",localized_msg->pokemon,socket_escucha_localized);
+					log_info(extense_logger, "pokemon %s llego por primera vez. en socket %i",localized_msg->pokemon,socket_escucha_localized);
 					list_add(pokemones_llegados, (void*) localized_msg->pokemon);
 					t_list* pokemones = generar_pokemones_de_localized(localized_msg);
 
@@ -219,7 +219,7 @@ void laburar(void* entrenador_param) {
 
 		log_info(extense_logger, "entrenador %i, con estado %i, entro por Atrapar Pokemon",entrenador->index,entrenador->estado);
 
-		entrenador->estado = ESTADO_EXECUTING;
+		cambiar_estado_de_entrenador(entrenador, ESTADO_EXECUTING);
 		log_info(extense_logger, "entrenador %i, entro por Atrapar Pokemon, cambia su estado a %i",entrenador->index,entrenador->estado);
 		t_pokemon* parametros_atrapado = (t_pokemon*) entrenador->tarea_actual->parametros;
 		log_info(extense_logger, "Pokemon a atrapar: %s", parametros_atrapado->nombre);
@@ -634,6 +634,8 @@ t_list* entrenadores_que_necesitan_pokemon(char* pokemon) {
 	t_list* entrenadores_que_necesitan_pokemon = list_create();
 	for(int i = 0; i < entrenadores->elements_count; i++) {
 		t_entrenador* entrenador_lista = (t_entrenador*) list_get(entrenadores, i);
+		pthread_mutex_t* mutex_entrenador = list_get(entrenadores_mutex, i);
+		pthread_mutex_lock(mutex_entrenador);
 		int ya_fue_agregado = 0;
 		for(int j = 0; j < entrenador_lista->objetivos_actuales->elements_count; j++) {
 			if (ya_fue_agregado == 0) {
@@ -645,6 +647,7 @@ t_list* entrenadores_que_necesitan_pokemon(char* pokemon) {
 				}
 			}
 		}
+		pthread_mutex_unlock(mutex_entrenador);
 	}
 	return entrenadores_que_necesitan_pokemon;
 }
@@ -654,10 +657,13 @@ t_list* obtener_entrenadores_bloqueados() {
 
 	for (int i = 0; i < entrenadores->elements_count; i++) {
 		t_entrenador* entrenador_de_lista = (t_entrenador*) list_get(entrenadores, entrenador_de_lista);
+		pthread_mutex_t* mutex_entrenador = list_get(entrenadores_mutex, i);
+		pthread_mutex_lock(mutex_entrenador);
 		if (entrenador_de_lista == ESTADO_BLOCKED && entrenador_de_lista->pokebolas == 0) {
 			list_add(entrenadores_bloqueados, entrenador_de_lista);
 			log_info(logger, "entrenador %i agregado a la lista de bloqueados", i);
 		}
+		pthread_mutex_unlock(mutex_entrenador);
 	}
 
 	return entrenadores_bloqueados;
@@ -740,6 +746,8 @@ int main(void) {
 	catch_IDs = list_create();
 
 	pokemones_llegados = list_create();
+
+	entrenadores_mutex = list_create();
 
 	pokemones_conocidos_que_no_se_intentan_atrapar = dictionary_create();
 
@@ -981,6 +989,11 @@ void inicializar_entrenadores() {
 
 		list_add(entrenadores, (void*) entrenador);
 
+		pthread_mutex_t mutex_entrenador;
+		pthread_mutex_init(&mutex_entrenador, NULL);
+
+		list_add(entrenadores_mutex, (void*) &mutex_entrenador);
+
 		free(objetivo_entrenador);
 		free(posicion);
 		free(conjunto_pokemon);
@@ -999,9 +1012,9 @@ void inicializar_entrenadores() {
 void definir_primer_estado(t_entrenador* entrenador) {
 	if (entrenador->pokebolas == 0) {
 		if (list_size(entrenador->pokemones_innecesarios) == 0) {
-			entrenador->estado = ESTADO_EXIT;
+			cambiar_estado_de_entrenador(entrenador, ESTADO_EXIT);
 		} else {
-			entrenador->estado = ESTADO_BLOCKED;
+			cambiar_estado_de_entrenador(entrenador, ESTADO_BLOCKED);
 		}
 
 	} else {
@@ -1146,7 +1159,10 @@ void enviar_catch_a_broker(t_pokemon* pokemon, t_entrenador* entrenador) {
 
 	int socket_broker = crear_conexion(ip_broker, puerto_broker);
 
-	entrenador->estado = ESTADO_BLOCKED;
+	cambiar_estado_de_entrenador(entrenador, ESTADO_BLOCKED);
+
+	pthread_mutex_t* mutex_entrenador = list_get(entrenadores_mutex, entrenador->index);
+	pthread_mutex_lock(mutex_entrenador);
 
 	entrenador->contador_ciclos_CPU++;
 	ciclos_CPU++;
@@ -1154,14 +1170,16 @@ void enviar_catch_a_broker(t_pokemon* pokemon, t_entrenador* entrenador) {
 
 	if (send(socket_broker, flujo, bytes, 0) == -1) {
 		log_error(extense_logger, "Error: No se pudo enviar el mensaje catch del entrenador %i para el pokemon %s ubicado en %i %i, obteniendo pokemon por comportamiento default", entrenador->index, pokemon->nombre, pokemon->pos_X, pokemon->pos_Y);
+		pthread_mutex_unlock(mutex_entrenador);
 		adquirir_pokemon(entrenador, pokemon->nombre);
 		if (entrenador->pokebolas == 0) {
-			entrenador->estado = ESTADO_EXIT;
+			cambiar_estado_de_entrenador(entrenador, ESTADO_EXIT);
 		} else {
-			entrenador->estado = ESTADO_BLOCKED;
+			cambiar_estado_de_entrenador(entrenador, ESTADO_BLOCKED);
 		}
 		estoy_conectado_al_broker = 0;
 	} else {
+		pthread_mutex_unlock(mutex_entrenador);
 		log_info(extense_logger, "Mensaje Catch con el pokemon %s en la posicion (%i,%i)enviado correctamente al BROKER con socket %i", pokemon->nombre, pokemon->pos_X, pokemon->pos_Y, socket_broker);
 		uint32_t id_catch = recibir_ID_Catch(socket_broker,extense_logger);
 		t_catch_id* catch_id = malloc(sizeof(t_catch_id));
@@ -1179,6 +1197,9 @@ void enviar_catch_a_broker(t_pokemon* pokemon, t_entrenador* entrenador) {
 void irA(uint32_t posX, uint32_t posY, t_entrenador* entrenador) {
 	//Movimientos por ciclos de CPU
 
+	pthread_mutex_t* mutex_entrenador = list_get(entrenadores_mutex, entrenador->index);
+	pthread_mutex_lock(mutex_entrenador);
+
 	uint32_t entrenadorX = entrenador->posX;
 	uint32_t entrenadorY = entrenador->posY;
 
@@ -1188,12 +1209,12 @@ void irA(uint32_t posX, uint32_t posY, t_entrenador* entrenador) {
 	for (int x = 0; x<=coordX; x++) {
 		for (int y = 0; y<= coordY; y++) {
 			if (posY > entrenadorY) {
-				entrenador->posY ++;
+				entrenador->posY++;
 				entrenador->contador_ciclos_CPU++;
 				ciclos_CPU++;
 				sleep(retardo_de_CPU);
 			} else {
-				entrenador->posY --;
+				entrenador->posY--;
 				entrenador->contador_ciclos_CPU++;
 				ciclos_CPU++;
 				sleep(retardo_de_CPU);
@@ -1201,12 +1222,12 @@ void irA(uint32_t posX, uint32_t posY, t_entrenador* entrenador) {
 		}
 
 		if (posX > entrenadorX) {
-			entrenador->posX ++;
+			entrenador->posX++;
 			entrenador->contador_ciclos_CPU++;
 			ciclos_CPU++;
 			sleep(retardo_de_CPU);
 		} else {
-			entrenador->posX --;
+			entrenador->posX--;
 			entrenador->contador_ciclos_CPU++;
 			ciclos_CPU++;
 			sleep(retardo_de_CPU);
@@ -1216,11 +1237,15 @@ void irA(uint32_t posX, uint32_t posY, t_entrenador* entrenador) {
 
 	log_info(extense_logger, "EL pokemon esta en (%i,%i) y el entrenador esta en (%i,%i)", posX, posY, entrenador->posX, entrenador->posY);
 
+	pthread_mutex_unlock(mutex_entrenador);
 }
 
 void intercambiar_pokemones(t_entrenador* entrenador1, t_entrenador* entrenador2, char* pokemon1, char* pokemon2) {
 	sleep(retardo_de_CPU * 5);
+	pthread_mutex_t* mutex_entrenador1 = list_get(entrenadores_mutex, entrenador1->index);
+	pthread_mutex_lock(mutex_entrenador1);
 	entrenador1->contador_ciclos_CPU = entrenador1->contador_ciclos_CPU + 5;
+	pthread_mutex_unlock(mutex_entrenador1);
 	ciclos_CPU = ciclos_CPU + 5;
 
 	eliminar_pokemon(entrenador1, pokemon1);
@@ -1233,6 +1258,8 @@ void intercambiar_pokemones(t_entrenador* entrenador1, t_entrenador* entrenador2
 }
 
 void eliminar_pokemon(t_entrenador* entrenador, char* pokemon) {
+	pthread_mutex_t* mutex_entrenador = list_get(entrenadores_mutex, entrenador->index);
+	pthread_mutex_lock(mutex_entrenador);
 	for (int i = 0; i < entrenador->pokemones->elements_count; i++) {
 		char* pokemon_lista = (char*) list_get(entrenador->pokemones, i);
 		int es_igual = string_equals_ignore_case(pokemon, pokemon_lista);
@@ -1252,9 +1279,12 @@ void eliminar_pokemon(t_entrenador* entrenador, char* pokemon) {
 	}
 
 	entrenador->pokebolas++;
+	pthread_mutex_unlock(mutex_entrenador);
 }
 
 void adquirir_pokemon(t_entrenador* entrenador, char* pokemon) {
+	pthread_mutex_t* mutex_entrenador = list_get(entrenadores_mutex, entrenador->index);
+	pthread_mutex_lock(mutex_entrenador);
 	list_add(entrenador->pokemones, (void*) pokemon);
 
 	int presente_en_objetivo_actual = 0;
@@ -1274,6 +1304,8 @@ void adquirir_pokemon(t_entrenador* entrenador, char* pokemon) {
 	}
 
 	entrenador->pokebolas--;
+
+	pthread_mutex_unlock(mutex_entrenador);
 }
 
 bool es_pokemon_global(char* nombre_pokemon){
@@ -1293,10 +1325,13 @@ t_list* entrenadores_que_pueden_ir_a_atrapar() {
 
 	for(int i = 0; i < entrenadores->elements_count; i++) {
 		t_entrenador* entrenador_lista = (t_entrenador*) list_get(entrenadores, i);
+		pthread_mutex_t* mutex_entrenador = list_get(entrenadores_mutex, i);
+		pthread_mutex_lock(mutex_entrenador);
 
 		if(entrenador_lista->estado == ESTADO_NEW || entrenador_lista->tarea_actual->id_tarea == NO_HACER_PINGO){
 			list_add(entrenadores_disponibles, entrenador_lista);
 		}
+		pthread_mutex_unlock(mutex_entrenador);
 	}
 
 	if(list_is_empty(entrenadores_disponibles)){
@@ -1306,16 +1341,21 @@ t_list* entrenadores_que_pueden_ir_a_atrapar() {
 	return entrenadores_que_necesitan_pokemon;
 }
 
-t_entrenador* entrenador_mas_cercano(t_list* entrenadores_disponibles_para_ir_a_atrapar, int posXPokemon,int posYPokemon){
-
+t_entrenador* entrenador_mas_cercano(t_list* entrenadores_disponibles_para_ir_a_atrapar, int posXPokemon, int posYPokemon) {
 	t_entrenador* entrenador_seleccionado = list_get(entrenadores_disponibles_para_ir_a_atrapar, 0);
+	pthread_mutex_t* mutex_entrenador = list_get(entrenadores_mutex, 0);
+	pthread_mutex_lock(mutex_entrenador);
 	uint32_t pos_base = calcular_posicion_entrenador(entrenador_seleccionado->posX,entrenador_seleccionado->posY,posXPokemon, posYPokemon);
+	pthread_mutex_unlock(mutex_entrenador);
 
 	if(entrenadores_disponibles_para_ir_a_atrapar->elements_count > 1){
 
-		for(int i = 1; i<=entrenadores_disponibles_para_ir_a_atrapar->elements_count; i++){
+		for(int i = 1; i < entrenadores_disponibles_para_ir_a_atrapar->elements_count; i++){
 			t_entrenador* entrenador_actual = list_get(entrenadores_disponibles_para_ir_a_atrapar, i);
+			mutex_entrenador = list_get(entrenadores_mutex, i);
+			pthread_mutex_lock(mutex_entrenador);
 			uint32_t pos_base_otro_entrenador = calcular_posicion_entrenador(entrenador_actual->posX,entrenador_actual->posY,posXPokemon, posYPokemon);
+			pthread_mutex_unlock(mutex_entrenador);
 
 			if(pos_base_otro_entrenador < pos_base){
 				entrenador_seleccionado = entrenador_actual;
@@ -1433,10 +1473,14 @@ t_pokemon* mejor_pokemon_para_reintentar(t_entrenador* entrenador, char* pokemon
 }
 
 void cambiar_estado_de_entrenador(t_entrenador* entrenador, estado estado_nuevo) {
+	pthread_mutex_t* mutex_entrenador = list_get(entrenadores_mutex, entrenador->index);
+
+	pthread_mutex_lock(mutex_entrenador);
 	if (entrenador->estado != estado_nuevo) {
 		entrenador->estado = estado_nuevo;
 		cambios_contexto++;
 	}
+	pthread_mutex_unlock(mutex_entrenador);
 }
 
 void terminar_programa() {
@@ -1482,6 +1526,8 @@ void terminar_programa() {
 	queue_destroy(cola_pokemones);
 
 	config_destroy(config);
+
+	list_destroy(entrenadores_mutex); // por cada elemento tirar destroy
 
 	// destroy stuff
 }
