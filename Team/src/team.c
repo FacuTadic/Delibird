@@ -230,9 +230,9 @@ void laburar(void* entrenador_param) {
 		log_info(extense_logger, "entrenador %i llego",entrenador->index);
 
 		// mandar catch NO SE REINTENTA, SI FALLA EL ENVIO LO ATRAPE RE CHETO
-		log_info(extense_logger, "Se envia el catch a BROKER por socket %i",socket_);
+		log_info(extense_logger, "Se envia el catch a BROKER");
 		enviar_catch_a_broker(parametros_atrapado, entrenador);
-		log_info(extense_logger, "Se envio el catch, a BROKER por socket %i",socket_);
+		log_info(extense_logger, "Se envio el catch, a BROKER");
 
 		// bloquearme esperando a que el planificador me desbloquee
 		entrenador->estado = ESTADO_BLOCKED; // esto requiere aparte un bloqueo en serio con semaforos, hay que ver como hacemos esto
@@ -291,22 +291,32 @@ void laburar(void* entrenador_param) {
 			pthread_mutex_unlock(&cola_pokemones_mutex);
 			sem_post(&sem_cola_deadlock);
 		} else {
-			t_tarea* otra_tarea_pingo = malloc(sizeof(t_tarea));
-			otra_tarea_pingo->id_tarea = NO_HACER_PINGO;
-			otro_entrenador->tarea_actual = otra_tarea_pingo;
-			sem_post(&sem_entrenadores_disponibles);
-			list_destroy(parametros_intercambio->entrenadores);
-			list_destroy(parametros_intercambio->pokemones);
-			free(parametros_intercambio);
+
+			if (otro_entrenador->pokemones_innecesarios->elements_count == 0) {
+				otro_entrenador->estado = ESTADO_EXIT;
+			} else {
+				t_tarea* otra_tarea_pingo = malloc(sizeof(t_tarea));
+				otra_tarea_pingo->id_tarea = NO_HACER_PINGO;
+				otro_entrenador->tarea_actual = otra_tarea_pingo;
+				list_destroy(parametros_intercambio->entrenadores);
+				list_destroy(parametros_intercambio->pokemones);
+				free(parametros_intercambio);
+			}
+
 		}
 
-		t_tarea* tarea_pingo = malloc(sizeof(t_tarea));
-		tarea_pingo->id_tarea = NO_HACER_PINGO;
-		entrenador->tarea_actual = tarea_pingo;
-		entrenador->estado = ESTADO_BLOCKED;
-		log_info(extense_logger, "entrenador %i cambia su estado a BLOQUEADO",entrenador->index);
+		if (entrenador->pokemones_innecesarios->elements_count == 0) {
+			entrenador->estado = ESTADO_EXIT;
+		} else {
+			t_tarea* tarea_pingo = malloc(sizeof(t_tarea));
+			tarea_pingo->id_tarea = NO_HACER_PINGO;
+			entrenador->tarea_actual = tarea_pingo;
+			entrenador->estado = ESTADO_BLOCKED;
+			log_info(extense_logger, "entrenador %i cambia su estado a BLOQUEADO",entrenador->index);
+		}
 
-		sem_post(&sem_entrenadores_disponibles);
+
+
 		pthread_mutex_unlock(&planificacion_fifo);
 		break;
 
