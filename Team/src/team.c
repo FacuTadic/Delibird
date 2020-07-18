@@ -230,9 +230,9 @@ void laburar(void* entrenador_param) {
 		log_info(extense_logger, "entrenador %i llego",entrenador->index);
 
 		// mandar catch NO SE REINTENTA, SI FALLA EL ENVIO LO ATRAPE RE CHETO
-		log_info(extense_logger, "Se envia el catch a BROKER por socket %i",socket_);
+		log_info(extense_logger, "Se envia el catch a BROKER ");
 		enviar_catch_a_broker(parametros_atrapado, entrenador);
-		log_info(extense_logger, "Se envio el catch, a BROKER por socket %i",socket_);
+		log_info(extense_logger, "Se envio el catch, a BROKER");
 
 		// bloquearme esperando a que el planificador me desbloquee
 		entrenador->estado = ESTADO_BLOCKED; // esto requiere aparte un bloqueo en serio con semaforos, hay que ver como hacemos esto
