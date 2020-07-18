@@ -146,7 +146,7 @@ t_appeared* recibir_appeared(int socket_broker, uint32_t* size, t_log* logger) {
 	return appeared;
 }
 
-t_caught* recibir_caught(int socket_broker, uint32_t* size, t_log* logger) {
+t_caught* recibir_caught(int socket_broker, uint32_t* size, t_log* logger, t_list* catch_ids, pthread_mutex_t* mutex_catch_ids) {
 	t_caught* caught = malloc(sizeof(t_caught));
 
 	uint32_t id_correlativo;
@@ -169,7 +169,7 @@ t_caught* recibir_caught(int socket_broker, uint32_t* size, t_log* logger) {
 
 	log_info(logger, "Tamanio total recibido: %i", *size);
 
-	status_recv = recv(socket_broker, caught->idCorrelativo, sizeof(uint32_t), MSG_WAITALL);
+	status_recv = recv(socket_broker, &(caught->idCorrelativo), sizeof(uint32_t), MSG_WAITALL);
 	if (status_recv == -1) {
 		close(socket_broker);
 		log_error(logger, "Hubo un problema recibiendo el id correlativo");
@@ -185,7 +185,7 @@ t_caught* recibir_caught(int socket_broker, uint32_t* size, t_log* logger) {
 
 	log_info(logger, "Id correlativo recibido: %i", caught->idCorrelativo);
 
-	status_recv = recv(socket_broker, caught->flag, sizeof(uint32_t), MSG_WAITALL);
+	status_recv = recv(socket_broker, &(caught->flag), sizeof(uint32_t), MSG_WAITALL);
 	if (status_recv == -1) {
 		close(socket_broker);
 		log_error(logger, "Hubo un problema recibiendo el flag de atrapado");
@@ -209,13 +209,15 @@ t_caught* recibir_caught(int socket_broker, uint32_t* size, t_log* logger) {
 		}
 	}
 
+	pthread_mutex_lock(mutex_catch_ids);
 	// si el id del caught no esta en la lista de catch recibidos, ignora el mensaje
-	if (list_find(catch_IDs, (void*) es_el_id_buscado) == NULL) {
+	if (list_find(catch_ids, (void*) es_el_id_buscado) == NULL) {
 		log_info(logger, "el ID correlativo %i de caught no corresponde a ningun catch, mensaje ignorado", caught->idCorrelativo);
 		free(caught);
 		devolver_ack(socket_broker,logger);
 		return NULL;
 	}
+	pthread_mutex_unlock(mutex_catch_ids);
 
 	devolver_ack(socket_broker,logger);
 
@@ -460,7 +462,7 @@ uint32_t recibir_ID_Catch(int socket_broker, t_log* logger) {
 
 	log_info(logger, "Recibiendo ID del CATCH enviado al Broker");
 
-	int status_recv = recv(socket_broker, id_Catch, sizeof(uint32_t), MSG_WAITALL);
+	int status_recv = recv(socket_broker, &id_Catch, sizeof(uint32_t), MSG_WAITALL);
 	if (status_recv == -1) {
 		log_error(logger, "Hubo un problema recibiendo el id del catch");
 		return NULL;
@@ -481,7 +483,7 @@ uint32_t recibir_ID_get(int socket_broker, t_log* logger) {
 
 	log_info(logger, "Recibiendo ID del GET enviado por el Broker");
 
-	int status_recv = recv(socket_broker, id_get, sizeof(uint32_t), MSG_WAITALL);
+	int status_recv = recv(socket_broker, &id_get, sizeof(uint32_t), MSG_WAITALL);
 	if (status_recv == -1) {
 		log_error(logger, "Hubo un problema recibiendo el id del get");
 		return NULL;

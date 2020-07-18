@@ -51,9 +51,7 @@ t_queue* cola_deadlock;
 pthread_mutex_t cola_pokemones_mutex;
 pthread_mutex_t cola_caught_mutex;
 pthread_mutex_t cola_deadlock_mutex;
-pthread_mutex_t pokemones_a_localizar_mutex;
 pthread_mutex_t pokemones_llegados_mutex;
-pthread_mutex_t objetivo_global_mutex;
 pthread_mutex_t catch_IDs_mutex;
 pthread_mutex_t estoy_conectado_al_broker_mutex;
 pthread_mutex_t socket_escucha_appeared_mutex;
@@ -73,9 +71,11 @@ t_dictionary* cantidad_de_pokemones_que_puedo_planificar;
 
 int ciclos_CPU;
 int cambios_contexto;
+int cantidad_deadlocks;
 
 pthread_mutex_t ciclos_CPU_mutex;
 pthread_mutex_t cambios_contexto_mutex;
+pthread_mutex_t cantidad_deadlocks_mutex;
 
 typedef enum {
 	ATRAPAR_POKEMON 		= 111,		// t_pokemon*
@@ -201,3 +201,5 @@ int tengo_en_el_mapa(char* pokemon);
 void borrar_pokemon_del_mapa(t_pokemon* pokemon);
 t_pokemon* mejor_pokemon_para_reintentar(t_entrenador* entrenador, char* pokemon);
 void cambiar_estado_de_entrenador(t_entrenador* entrenador, estado estado_nuevo);
+void cambiar_tarea_de_entrenador(t_entrenador* entrenador, t_tarea* tarea_nueva);
+void mostrar_metricas();
