@@ -749,6 +749,9 @@ int main(void) {
 
 	obtener_cantidad_de_cada_pokemon_a_planificar();
 
+	ciclos_CPU = 0;
+	cambios_contexto = 0;
+
 	// crear cola de mensajes recibidos
 	inicializar_cola();
 
@@ -764,7 +767,8 @@ int main(void) {
 	pthread_mutex_init(socket_escucha_appeared_mutex, NULL);
 	pthread_mutex_init(socket_escucha_caught_mutex, NULL);
 	pthread_mutex_init(socket_escucha_localized_mutex, NULL);
-
+	pthread_mutex_init(ciclos_CPU_mutex, NULL);
+	pthread_mutex_init(cambios_contexto_mutex, NULL);
 
 	pthread_t* threads_entrenadores = malloc(sizeof(pthread_t) * entrenadores->elements_count);
 
@@ -973,6 +977,8 @@ void inicializar_entrenadores() {
 
 		sem_init(entrenador->semaforo, 0, 0);
 
+		entrenador->contador_ciclos_CPU = 0;
+
 		list_add(entrenadores, (void*) entrenador);
 
 		free(objetivo_entrenador);
@@ -1142,6 +1148,8 @@ void enviar_catch_a_broker(t_pokemon* pokemon, t_entrenador* entrenador) {
 
 	entrenador->estado = ESTADO_BLOCKED;
 
+	entrenador->contador_ciclos_CPU++;
+	ciclos_CPU++;
 	sleep(retardo_de_CPU);
 
 	if (send(socket_broker, flujo, bytes, 0) == -1) {
@@ -1168,7 +1176,7 @@ void enviar_catch_a_broker(t_pokemon* pokemon, t_entrenador* entrenador) {
 
 }
 
-void irA(uint32_t posX, uint32_t posY, t_entrenador* entrenador){
+void irA(uint32_t posX, uint32_t posY, t_entrenador* entrenador) {
 	//Movimientos por ciclos de CPU
 
 	uint32_t entrenadorX = entrenador->posX;
@@ -1181,18 +1189,26 @@ void irA(uint32_t posX, uint32_t posY, t_entrenador* entrenador){
 		for (int y = 0; y<= coordY; y++) {
 			if (posY > entrenadorY) {
 				entrenador->posY ++;
+				entrenador->contador_ciclos_CPU++;
+				ciclos_CPU++;
 				sleep(retardo_de_CPU);
 			} else {
 				entrenador->posY --;
+				entrenador->contador_ciclos_CPU++;
+				ciclos_CPU++;
 				sleep(retardo_de_CPU);
 			}
 		}
 
 		if (posX > entrenadorX) {
 			entrenador->posX ++;
+			entrenador->contador_ciclos_CPU++;
+			ciclos_CPU++;
 			sleep(retardo_de_CPU);
 		} else {
 			entrenador->posX --;
+			entrenador->contador_ciclos_CPU++;
+			ciclos_CPU++;
 			sleep(retardo_de_CPU);
 		}
 
@@ -1204,6 +1220,8 @@ void irA(uint32_t posX, uint32_t posY, t_entrenador* entrenador){
 
 void intercambiar_pokemones(t_entrenador* entrenador1, t_entrenador* entrenador2, char* pokemon1, char* pokemon2) {
 	sleep(retardo_de_CPU * 5);
+	entrenador1->contador_ciclos_CPU = entrenador1->contador_ciclos_CPU + 5;
+	ciclos_CPU = ciclos_CPU + 5;
 
 	eliminar_pokemon(entrenador1, pokemon1);
 	eliminar_pokemon(entrenador2, pokemon2);
@@ -1414,6 +1432,13 @@ t_pokemon* mejor_pokemon_para_reintentar(t_entrenador* entrenador, char* pokemon
 	return pokemon_a_retornizar;
 }
 
+void cambiar_estado_de_entrenador(t_entrenador* entrenador, estado estado_nuevo) {
+	if (entrenador->estado != estado_nuevo) {
+		entrenador->estado = estado_nuevo;
+		cambios_contexto++;
+	}
+}
+
 void terminar_programa() {
 	close(socket_escucha_game_boy);
 	close(socket_escucha_appeared);
@@ -1428,6 +1453,7 @@ void terminar_programa() {
 	list_destroy(objetivo_global);
 	list_destroy(pokemones_a_localizar);
 	dictionary_destroy(pokemones_conocidos_que_no_se_intentan_atrapar);
+	dictionary_destroy(cantidad_de_pokemones_que_puedo_planificar);
 
 	sem_destroy(sem_cola_pokemones);
 	sem_destroy(sem_cola_caught);
@@ -1445,6 +1471,8 @@ void terminar_programa() {
 	pthread_mutex_destroy(socket_escucha_appeared_mutex);
 	pthread_mutex_destroy(socket_escucha_caught_mutex);
 	pthread_mutex_destroy(socket_escucha_localized_mutex);
+	pthread_mutex_destroy(ciclos_CPU_mutex);
+	pthread_mutex_destroy(cambios_contexto_mutex);
 
 	log_destroy(logger);
 	log_destroy(extense_logger);

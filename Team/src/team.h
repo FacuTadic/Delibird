@@ -70,6 +70,12 @@ t_dictionary* pokemones_conocidos_que_no_se_intentan_atrapar;
 
 t_dictionary* cantidad_de_pokemones_que_puedo_planificar;
 
+int ciclos_CPU;
+int cambios_contexto;
+
+pthread_mutex_t ciclos_CPU_mutex;
+pthread_mutex_t cambios_contexto_mutex;
+
 typedef enum {
 	ATRAPAR_POKEMON 		= 111,		// t_pokemon*
 	INTERCAMBIAR_POKEMON 	= 112, 		// t_deadlock*
@@ -109,6 +115,7 @@ typedef struct {
 	estado estado;
 	t_tarea* tarea_actual;
 	sem_t semaforo;
+	int contador_ciclos_CPU;
 } t_entrenador;
 
 typedef struct {
@@ -192,3 +199,4 @@ void liberar_planificacion(t_pokemon* pokemon);
 int tengo_en_el_mapa(char* pokemon);
 void borrar_pokemon_del_mapa(t_pokemon* pokemon);
 t_pokemon* mejor_pokemon_para_reintentar(t_entrenador* entrenador, char* pokemon);
+void cambiar_estado_de_entrenador(t_entrenador* entrenador, estado estado_nuevo);
