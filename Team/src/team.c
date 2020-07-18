@@ -5,17 +5,23 @@ void procesar_request_de_game_boy(int cod_op, int socket_game_boy) {
 	if (cod_op == APPEARED) {
 		log_info(extense_logger, "Codigo de operacion recibido del socket cliente %i corresponde a un APPEARED", socket_game_boy);
 		t_appeared* appeared_msg = recibir_appeared_de_game_boy(socket_game_boy, &size, extense_logger);
-		t_mensaje_recibido* mensaje = malloc(sizeof(t_mensaje_recibido));
-
-		list_add(pokemones_llegados, (void*) appeared_msg->pokemon); // agrega pokemon aparecido a lista de llegados
-
-		mensaje->tipo_mensaje = MENSAJE_APPEARED;
-		mensaje->mensaje = (void*) appeared_msg;
-
-		pthread_mutex_lock(&cola_mensajes_recibidos_mutex);
-		queue_push(cola_mensajes_recibidos, (void*) mensaje);
-		pthread_mutex_unlock(&cola_mensajes_recibidos_mutex);
-		sem_post(&sem_cola_mensajes_nuevos);
+		log_info(extense_logger, "Appeared recibido del modulo Game Boy socket %i", socket_game_boy);
+		if (es_pokemon_global(appeared_msg->pokemon)) {
+			t_mensaje_recibido* mensaje = malloc(sizeof(t_mensaje_recibido));
+			t_pokemon* pokemon_a_agregar = generar_pokemon_de_appeared(appeared_msg);
+			agrego_pokemon_a_dictionary(pokemon_a_agregar);
+			if (pokemon_ya_fue_recibido(appeared_msg->pokemon) == 0) {
+				list_add(pokemones_llegados, (void*) appeared_msg->pokemon); // agrega pokemon aparecido a lista de llegados
+			}
+			mensaje->tipo_mensaje = MENSAJE_POKEMON;
+			mensaje->mensaje = (void*) pokemon_a_agregar;
+			pthread_mutex_lock(&cola_pokemones_mutex);
+			queue_push(cola_pokemones, (void*) mensaje);
+			pthread_mutex_unlock(&cola_pokemones_mutex);
+			sem_post(&sem_cola_pokemones);
+		}
+		free(appeared_msg->pokemon);
+		free(appeared_msg);
 	} else {
 		log_info(extense_logger, "No se recibio nada del socket %i",socket_game_boy);
 		// log cualquiera pibe, no me mandaste un appeared
@@ -23,22 +29,22 @@ void procesar_request_de_game_boy(int cod_op, int socket_game_boy) {
 	close(socket_game_boy);
 }
 
-void atender_game_boy(int* socket) {
+void atender_game_boy(int* socket_game_boy) {
 	uint32_t cod_op;
-	log_info(extense_logger, "Recibiendo codigo de operacion de GameBoy en socket %i", *socket);
-	int status_recv = recv(*socket, &cod_op, sizeof(uint32_t), MSG_WAITALL);
+	log_info(extense_logger, "Recibiendo codigo de operacion de GameBoy en socket %i", *socket_game_boy);
+	int status_recv = recv(*socket_game_boy, &cod_op, sizeof(uint32_t), MSG_WAITALL);
 	if (status_recv == -1) {
-		close(*socket);
-		log_error(extense_logger, "Hubo un problema recibiendo codigo de operacion de GameBoy en socket %i", *socket);
+		close(*socket_game_boy);
+		log_error(extense_logger, "Hubo un problema recibiendo codigo de operacion de GameBoy en socket %i", *socket_game_boy);
 		pthread_exit(NULL);
 	}
 	if (status_recv == 0) {
-		close(*socket);
-		log_warning(extense_logger, "GameBoy acaba de cerrar la conexion correspondiente al socket %i", *socket);
+		close(*socket_game_boy);
+		log_warning(extense_logger, "Game boy acaba de cerrar la conexion correspondiente al socket %i", *socket_game_boy);
 		pthread_exit(NULL);
 	}
-	log_info(extense_logger, "Codigo de operacion de GameBoy en socket %i recibido: %i", *socket, cod_op);
-	procesar_request_de_game_boy(cod_op, *socket);
+	log_info(extense_logger, "Codigo de operacion de socket %i recibido: %i", *socket_game_boy, cod_op);
+	procesar_request_de_game_boy(cod_op, *socket_game_boy);
 }
 
 void esperar_game_boy(int socket_escucha_game_boy) {
@@ -68,46 +74,47 @@ void escuchar_appeared_de_broker(void) {
 	int status_envio = mandar_suscripcion(socket_escucha_appeared, id_cola);
 
 	if (status_envio == -1) {
+		estoy_conectado_al_broker = 0;
 		log_error(logger, "Hubo un problema enviando la suscripcion a la cola APPEARED del broker");
-		// la cagamos ñeri
-	} else {
-
-		while (1) {
+	}
+	while (1) {
+		if (estoy_conectado_al_broker == 1) {
 			uint32_t size;
 			log_info(extense_logger, "Recibiendo el Appeared de BROKER");
 			t_appeared* appeared_msg = recibir_appeared(socket_escucha_appeared, &size, extense_logger);
-			log_info(extense_logger, "Appeared recibido de BROKER");
+  log_info(extense_logger, "Appeared recibido de BROKER");
+			if (appeared_msg == NULL) {
+				estoy_conectado_al_broker = 0;
+			} else {
+				log_info(extense_logger, "Appeared recibido");
 
-			if(es_pokemon_global(appeared_msg->pokemon)){
+				if(es_pokemon_global(appeared_msg->pokemon)) {
+          log_info(extense_logger, "pokemon %s esta en el objetivo global");
+					t_mensaje_recibido* mensaje = malloc(sizeof(t_mensaje_recibido));
 
-				log_info(extense_logger, "pokemon %s esta en el objetivo global");
+					t_pokemon* pokemon_a_agregar = generar_pokemon_de_appeared(appeared_msg);
 
-				t_mensaje_recibido* mensaje = malloc(sizeof(t_mensaje_recibido));
-
-				t_pokemon* pokemon_a_agregar = generar_pokemon_de_appeared(appeared_msg);
-
-				agrego_pokemon_a_dictionary(pokemon_a_agregar);
+					agrego_pokemon_a_dictionary(pokemon_a_agregar);
 
 				if (pokemon_ya_fue_recibido(appeared_msg->pokemon) == 0) {
 					log_info(extense_logger, "pokemon %s llego por primera vez");
 					list_add(pokemones_llegados, (void*) appeared_msg->pokemon); // agrega pokemon aparecido a lista de llegados
 				}
 
-				mensaje->tipo_mensaje = MENSAJE_APPEARED;
-				mensaje->mensaje = (void*) pokemon_a_agregar;
+					mensaje->tipo_mensaje = MENSAJE_POKEMON;
+					mensaje->mensaje = (void*) pokemon_a_agregar;
 
-				pthread_mutex_lock(&cola_mensajes_recibidos_mutex);
-				queue_push(cola_mensajes_recibidos, (void*) mensaje);
-				pthread_mutex_unlock(&cola_mensajes_recibidos_mutex);
-				sem_post(&sem_cola_mensajes_nuevos);
+					pthread_mutex_lock(&cola_pokemones_mutex);
+					queue_push(cola_pokemones, (void*) mensaje);
+					pthread_mutex_unlock(&cola_pokemones_mutex);
+					sem_post(&sem_cola_pokemones);
+				}
 
+				free(appeared_msg->pokemon);
+				free(appeared_msg);
 			}
-
-			free(appeared_msg->pokemon);
-			free(appeared_msg);
 		}
 	}
-
 }
 
 void escuchar_caught_de_broker(void) {
@@ -115,27 +122,31 @@ void escuchar_caught_de_broker(void) {
 	int status_envio = mandar_suscripcion(socket_escucha_caught, id_cola);
 
 	if (status_envio == -1) {
+		estoy_conectado_al_broker = 0;
 		log_error(logger, "Hubo un problema enviando la suscripcion a la cola CAUGHT del broker");
-		// la cagamos ñeri
-	}else {
-
-		while (1) {
+	}
+	while (1) {
+		if (estoy_conectado_al_broker == 1) {
 			uint32_t size;
-			log_info(extense_logger, "Recibiendo caught del Broker en socket %i en cola %i",socket_escucha_caught, id_cola);
+			log_info(extense_logger, "Recibiendo caught del Broker en socket %i",socket_escucha_caught);
 			t_caught* caught_msg = recibir_caught(socket_escucha_caught, &size, extense_logger);
-			log_info(extense_logger, "Caught recibido del Broker en socket %i, en cola %i",socket_escucha_caught,id_cola);
-			t_mensaje_recibido* mensaje = malloc(sizeof(t_mensaje_recibido));
+			log_info(extense_logger, "Caught recibido del Broker en socket %i",socket_escucha_caught);
+			if (caught_msg == NULL) {
+				estoy_conectado_al_broker = 0;
+			} else {
+				log_info(extense_logger, "Caught recibido");
+				t_mensaje_recibido* mensaje = malloc(sizeof(t_mensaje_recibido));
 
-			mensaje->tipo_mensaje = MENSAJE_CAUGHT;
-			mensaje->mensaje = (void*) caught_msg;
+				mensaje->tipo_mensaje = MENSAJE_CAUGHT;
+				mensaje->mensaje = (void*) caught_msg;
 
-			pthread_mutex_lock(&cola_mensajes_recibidos_mutex);
-			queue_push(cola_mensajes_recibidos, (void*) mensaje);
-			pthread_mutex_unlock(&cola_mensajes_recibidos_mutex);
-			sem_post(&sem_cola_mensajes_nuevos);
+				pthread_mutex_lock(&cola_caught_mutex);
+				queue_push(cola_caught, (void*) mensaje);
+				pthread_mutex_unlock(&cola_caught_mutex);
+				sem_post(&sem_cola_caught);
+			}
 		}
 	}
-
 }
 
 void escuchar_localized_de_broker(void) {
@@ -143,41 +154,44 @@ void escuchar_localized_de_broker(void) {
 	int status_envio = mandar_suscripcion(socket_escucha_localized, id_cola);
 
 	if (status_envio == -1) {
-		log_error(logger, "Hubo un problema enviando la suscripcion a la cola %i LOCALIZED del broker",id_cola);
-		// la cagamos ñeri
-	} else {
-
-		while (1) {
+		estoy_conectado_al_broker = 0;
+		log_error(logger, "Hubo un problema enviando la suscripcion a la cola LOCALIZED del broker");
+	}
+	while (1) {
+		if (estoy_conectado_al_broker == 1) {
 			uint32_t size;
 			log_info(extense_logger, "Recibiendo localized de Broker de socket %i",socket_escucha_localized);
 			t_localized* localized_msg = recibir_localized(socket_escucha_localized, &size, extense_logger);
 			log_info(extense_logger, "Localized recibido de Broker de socket %i",socket_escucha_localized);
+			if (localized_msg == NULL) {
+				estoy_conectado_al_broker = 0;
+			} else {
+				log_info(extense_logger, "Localized recibido");
 
-			if (pokemon_ya_fue_recibido(localized_msg->pokemon) == 0) {
-				log_info(extense_logger, "pokemon %s llego por primera vez. en socket %i",localized_msg->pokemon,socket_escucha_localized);
+				if (pokemon_ya_fue_recibido(localized_msg->pokemon) == 0) {
+          log_info(extense_logger, "pokemon %s llego por primera vez. en socket %i",localized_msg->pokemon,socket_escucha_localized);
+					list_add(pokemones_llegados, (void*) localized_msg->pokemon);
+					t_list* pokemones = generar_pokemones_de_localized(localized_msg);
 
-				list_add(pokemones_llegados, (void*) localized_msg->pokemon);
-				t_list* pokemones = generar_pokemones_de_localized(localized_msg);
+					for (int i = 0; i < pokemones->elements_count; i++) {
+						t_mensaje_recibido* mensaje = malloc(sizeof(t_mensaje_recibido));
+						mensaje->tipo_mensaje = MENSAJE_POKEMON;
+						mensaje->mensaje = (void*) list_get(pokemones, i);
 
-				for (int i = 0; i < pokemones->elements_count; i++) {
-					t_mensaje_recibido* mensaje = malloc(sizeof(t_mensaje_recibido));
-					mensaje->tipo_mensaje = MENSAJE_LOCALIZED;
-					mensaje->mensaje = (void*) list_get(pokemones, i);
+						pthread_mutex_lock(&cola_pokemones_mutex);
+						queue_push(cola_pokemones, (void*) mensaje);
+						pthread_mutex_unlock(&cola_pokemones_mutex);
+						sem_post(&sem_cola_pokemones);
+					}
 
-					pthread_mutex_lock(&cola_mensajes_recibidos_mutex);
-					queue_push(cola_mensajes_recibidos, (void*) mensaje);
-					pthread_mutex_unlock(&cola_mensajes_recibidos_mutex);
-					sem_post(&sem_cola_mensajes_nuevos);
+					list_destroy(pokemones);
 				}
-
-				list_destroy(pokemones);
+				free(localized_msg->pokemon);
+				list_destroy(localized_msg->l_coordenadas);
+				free(localized_msg);
 			}
-			free(localized_msg->pokemon);
-			list_destroy(localized_msg->l_coordenadas);
-			free(localized_msg);
 		}
 	}
-
 }
 
 int pokemon_ya_fue_recibido(char* pokemon) {
@@ -198,13 +212,10 @@ void laburar(void* entrenador_param) {
 	while (entrenador->estado != ESTADO_EXIT) {
 
 		sem_wait(entrenador->semaforo);
-
-		log_info(extense_logger, "entrenador %i, Se espera el laburo nro: %i",entrenador->index,entrenador->tarea_actual->id_tarea);
-
 		switch(entrenador->tarea_actual->id_tarea) {
 		case ATRAPAR_POKEMON: ;
 
-		pthread_mutex_lock(&cola_mensajes_recibidos_mutex);
+		pthread_mutex_lock(&planificacion_fifo);
 
 		log_info(extense_logger, "entrenador %i, con estado %i, entro por Atrapar Pokemon",entrenador->index,entrenador->estado);
 
@@ -227,7 +238,7 @@ void laburar(void* entrenador_param) {
 		entrenador->estado = ESTADO_BLOCKED; // esto requiere aparte un bloqueo en serio con semaforos, hay que ver como hacemos esto
 		log_info(extense_logger, "entrenador %i cambia su estado a BLOQUEADO",entrenador->index);
 
-		pthread_mutex_unlock(&cola_mensajes_recibidos_mutex);
+		pthread_mutex_unlock(&planificacion_fifo);
 
 		// cosas
 
@@ -235,7 +246,7 @@ void laburar(void* entrenador_param) {
 
 		case INTERCAMBIAR_POKEMON: ;
 
-		pthread_mutex_lock(&cola_mensajes_recibidos_mutex);
+		pthread_mutex_lock(&planificacion_fifo);
 
 		log_info(extense_logger, "Entrenador %i entro por Intercambiar Pokemon", entrenador->index);
 
@@ -275,21 +286,28 @@ void laburar(void* entrenador_param) {
 			mensaje_deadlock->tipo_mensaje = MENSAJE_DEADLOCK;
 			mensaje_deadlock->mensaje = (void*) parametros_intercambio;
 
-			pthread_mutex_lock(&cola_mensajes_recibidos_mutex);
-			queue_push(cola_mensajes_recibidos, (void*) mensaje_deadlock);
-			pthread_mutex_unlock(&cola_mensajes_recibidos_mutex);
-			sem_post(&sem_cola_mensajes_nuevos);
+			pthread_mutex_lock(&cola_pokemones_mutex);
+			queue_push(cola_pokemones, (void*) mensaje_deadlock);
+			pthread_mutex_unlock(&cola_pokemones_mutex);
+			sem_post(&sem_cola_deadlock);
 		} else {
+			t_tarea* otra_tarea_pingo = malloc(sizeof(t_tarea));
+			otra_tarea_pingo->id_tarea = NO_HACER_PINGO;
+			otro_entrenador->tarea_actual = otra_tarea_pingo;
+			sem_post(&sem_entrenadores_disponibles);
 			list_destroy(parametros_intercambio->entrenadores);
 			list_destroy(parametros_intercambio->pokemones);
 			free(parametros_intercambio);
 		}
 
+		t_tarea* tarea_pingo = malloc(sizeof(t_tarea));
+		tarea_pingo->id_tarea = NO_HACER_PINGO;
+		entrenador->tarea_actual = tarea_pingo;
 		entrenador->estado = ESTADO_BLOCKED;
 		log_info(extense_logger, "entrenador %i cambia su estado a BLOQUEADO",entrenador->index);
 
-		pthread_mutex_unlock(&cola_mensajes_recibidos_mutex);
-
+		sem_post(&sem_entrenadores_disponibles);
+		pthread_mutex_unlock(&planificacion_fifo);
 		break;
 
 		default:
@@ -301,140 +319,144 @@ void laburar(void* entrenador_param) {
 	pthread_exit(NULL);
 }
 
-void planificar() {
+void planificar_pokemon() {
 	while(1) {
-		sem_wait(&sem_cola_mensajes_nuevos);
+		sem_wait(&sem_cola_pokemones);
+		sem_wait(&sem_entrenadores_disponibles);
 		//CHEQUEAR QUE HAY ENTRENADORES DISPONIBLES
-		t_mensaje_recibido* mensaje_recibido = queue_pop(cola_mensajes_recibidos);
+		t_mensaje_recibido* mensaje_recibido = queue_pop(cola_pokemones);
 
-		log_info(extense_logger, "Se espera la planificacion nro: %i",mensaje_recibido->tipo_mensaje);
-		switch(mensaje_recibido->tipo_mensaje) {
+		log_info(extense_logger, "Planificando un nuevo pokemon");
 
-		case MENSAJE_POKEMON:
+		t_pokemon* mensaje_pokemon = (t_pokemon*) mensaje_recibido->mensaje;
 
-			log_info(extense_logger, "Planificando un nuevo pokemon");
+		if (tengo_que_planificar_pokemon(mensaje_pokemon) == 1) {
 
-			t_pokemon* mensaje_pokemon = (t_pokemon*) mensaje_recibido->mensaje;
+			// bajo el contador de pokemones que puedo planificar
 
-			if (tengo_que_planificar_pokemon(mensaje_pokemon) == 1) {
+			contar_planificacion(mensaje_pokemon);
 
-				// bajo el contador de pokemones que puedo planificar
+			// borro el pokemon de la lista del mapa
 
-				contar_planificacion(mensaje_pokemon);
+			borrar_pokemon_del_mapa(mensaje_pokemon);
 
-				// borro el pokemon de la lista del mapa
+			// planifico entrenador para ir a atraparlo
+			t_list* entrenador_disponible = entrenadores_que_pueden_ir_a_atrapar();
 
-				borrar_pokemon_del_mapa(mensaje_pokemon);
+			// obtengo entrenador que va a ir
 
-				// planifico entrenador para ir a atraparlo
-				t_list* entrenador_disponible = entrenadores_que_pueden_ir_a_atraparn();
+			t_entrenador* entrenador_a_planificar = entrenador_mas_cercano(entrenador_disponible, mensaje_pokemon->pos_X, mensaje_pokemon->pos_Y);
 
-				// obtengo entrenador que va a ir
+			//Liberar tarea anterior y le doy la t_tarea
 
-				t_entrenador* entrenador_a_planificar = entrenador_mas_cercano(entrenador_disponible, mensaje_pokemon->pos_X, mensaje_pokemon->pos_Y);
+			t_tarea* tarea_pokemon = malloc(sizeof(t_tarea));
+			tarea_pokemon->id_tarea = ATRAPAR_POKEMON;
+			t_pokemon* pokemon_a_enviar = generar_pokemon_de_appeared(mensaje_pokemon);
+			tarea_pokemon->parametros = pokemon_a_enviar;
 
-				//Liberar tarea anterior y le doy la t_tarea
+			entrenador_a_planificar->tarea_actual = tarea_pokemon;
 
-				t_tarea* tarea_pokemon = malloc(sizeof(t_tarea));
-				tarea_pokemon->id_tarea = ATRAPAR_POKEMON;
-				t_pokemon* pokemon_a_enviar = generar_pokemon_de_appeared(mensaje_pokemon);
-				tarea_pokemon->parametros = pokemon_a_enviar;
+			// lo desbloqueo
+			sem_post(entrenador_a_planificar->semaforo);
+		} else {
+			sem_post(&sem_entrenadores_disponibles);
+		}
+		break;
 
-				entrenador_a_planificar->tarea_actual = tarea_pokemon;
+	}
+}
 
-				// lo desbloqueo
-				sem_post(entrenador_a_planificar->semaforo);
-			} else {
+void planificar_caught() {
+	while(1) {
+		sem_wait(&sem_cola_caught);
 
+		t_mensaje_recibido* mensaje_recibido = queue_pop(cola_caught);
+
+		log_info(extense_logger, "Entro por Mensaje Caught");
+		t_caught* mensaje_caught = (t_caught*) mensaje_recibido->mensaje;
+
+		t_catch_id* catch_id;
+		int index_catch;
+
+		for (int i = 0; i < catch_IDs->elements_count; i++) {
+			t_catch_id* catch_id_lista = list_get(catch_IDs, i);
+			if (catch_id_lista->id_catch == mensaje_caught->idCorrelativo) {
+				catch_id = catch_id_lista;
+				index_catch = i;
+				i = catch_IDs->elements_count;
 			}
+		}
 
-			break;
-
-		case MENSAJE_CAUGHT:
-
-			log_info(extense_logger, "Entro por Mensaje Caught");
-			t_caught* mensaje_caught = (t_caught*) mensaje_recibido->mensaje;
-
-			t_catch_id* catch_id;
-			int index_catch;
-
-			for (int i = 0; i < catch_IDs->elements_count; i++) {
-				t_catch_id* catch_id_lista = list_get(catch_IDs, i);
-				if (catch_id_lista->id_catch == mensaje_caught->idCorrelativo) {
-					catch_id = catch_id_lista;
-					index_catch = i;
-					i = catch_IDs->elements_count;
-				}
-			}
-
-			if (catch_id != NULL) {
-				if (mensaje_caught->flag == 1) {
-					adquirir_pokemon(catch_id->entrenador, catch_id->pokemon->nombre);
-					if (catch_id->entrenador->pokebolas == 0) {
+		if (catch_id != NULL) {
+			if (mensaje_caught->flag == 1) {
+				adquirir_pokemon(catch_id->entrenador, catch_id->pokemon->nombre);
+				if (catch_id->entrenador->pokebolas == 0) {
+					if (list_size(catch_id->entrenador->objetivos_actuales) == 0) {
 						catch_id->entrenador->estado = ESTADO_EXIT;
 					} else {
 						catch_id->entrenador->estado = ESTADO_BLOCKED;
 						t_tarea* tarea_pingo = malloc(sizeof(t_tarea));
-						tarea_pingo->id_tarea=NO_HACER_PINGO;
+						tarea_pingo->id_tarea = NO_HACER_PINGO;
 						catch_id->entrenador->tarea_actual = tarea_pingo;
 					}
 				} else {
-					if (tengo_en_el_mapa(catch_id->pokemon->nombre) == 1) {
-						t_pokemon* mejor_pokemon_para_reintentar = mejor_pokemon_para_reintentar(catch_id->entrenador, catch_id->pokemon->nombre);
-						t_tarea* tarea_reatrapar = malloc(sizeof(t_tarea));
-						tarea_reatrapar->id_tarea = ATRAPAR_POKEMON;
-						tarea_reatrapar->parametros = mejor_pokemon_para_reintentar;
-						catch_id->entrenador->estado = ESTADO_READY;
-						sem_post(((t_entrenador*) catch_id->entrenador)->semaforo);
-					} else {
-						liberar_planificacion(mensaje_pokemon);
-					}
+					catch_id->entrenador->estado = ESTADO_BLOCKED;
+					t_tarea* tarea_pingo = malloc(sizeof(t_tarea));
+					tarea_pingo->id_tarea = NO_HACER_PINGO;
+					catch_id->entrenador->tarea_actual = tarea_pingo;
+					sem_post(&sem_entrenadores_disponibles);
 				}
-				list_remove(catch_IDs, index_catch); // guarda con que haya cambiado de lugar, corresponderia bloquear la lista
-				free(catch_id->pokemon->nombre);
-				free(catch_id->pokemon);
-				free(catch_id);
 			} else {
-				// ???
+				if (tengo_en_el_mapa(catch_id->pokemon->nombre) == 1) {
+					t_pokemon* mejor_pokemon_para_reintentar = mejor_pokemon_para_reintentar(catch_id->entrenador, catch_id->pokemon->nombre);
+					t_tarea* tarea_reatrapar = malloc(sizeof(t_tarea));
+					tarea_reatrapar->id_tarea = ATRAPAR_POKEMON;
+					tarea_reatrapar->parametros = mejor_pokemon_para_reintentar;
+					catch_id->entrenador->estado = ESTADO_READY;
+					sem_post(((t_entrenador*) catch_id->entrenador)->semaforo);
+				} else {
+					liberar_planificacion(catch_id->pokemon);
+					sem_post(&sem_entrenadores_disponibles);
+				}
 			}
-
-			free(mensaje_caught);
-			free(mensaje_recibido);
-
-			//cosas
-			break;
-
-		case MENSAJE_DEADLOCK:
-
-			log_info(extense_logger, "Entro por Mensaje Deadlock");
-			t_deadlock* mensaje_deadlock = (t_deadlock*) mensaje_recibido->mensaje;
-
-			if (todavia_existe_deadlock(mensaje_deadlock) == 1) {
-				t_tarea* tarea_deadlock = malloc(sizeof(t_tarea));
-
-				tarea_deadlock->id_tarea = INTERCAMBIAR_POKEMON;
-				tarea_deadlock->parametros = (void*) mensaje_deadlock;
-
-				((t_entrenador*) list_get(mensaje_deadlock->entrenadores, 0))->tarea_actual = tarea_deadlock;
-				((t_entrenador*) list_get(mensaje_deadlock->entrenadores, 0))->estado = ESTADO_READY;
-
-				sem_post(((t_entrenador*) list_get(mensaje_deadlock->entrenadores, 0))->semaforo);
-			} else {
-				list_destroy(mensaje_deadlock->entrenadores);
-				list_destroy(mensaje_deadlock->pokemones);
-				free(mensaje_deadlock);
-			}
-
-			free(mensaje_recibido);
-
-			//cosas
-			break;
-
-
-		default:
-			log_info(extense_logger, "Estas planificando cualquier cosa bro, que me mandas?");
+			list_remove(catch_IDs, index_catch); // guarda con que haya cambiado de lugar, corresponderia bloquear la lista
+			free(catch_id->pokemon->nombre);
+			free(catch_id->pokemon);
+			free(catch_id);
+		} else {
+			// ???
 		}
 
+		free(mensaje_caught);
+		free(mensaje_recibido);
+	}
+}
+
+void planificar_deadlock() {
+	while(1) {
+		sem_wait(&sem_cola_deadlock);
+		t_mensaje_recibido* mensaje_recibido = queue_pop(cola_deadlock);
+
+		log_info(extense_logger, "Entro por Mensaje Deadlock");
+		t_deadlock* mensaje_deadlock = (t_deadlock*) mensaje_recibido->mensaje;
+
+		if (todavia_existe_deadlock(mensaje_deadlock) == 1) {
+			t_tarea* tarea_deadlock = malloc(sizeof(t_tarea));
+
+			tarea_deadlock->id_tarea = INTERCAMBIAR_POKEMON;
+			tarea_deadlock->parametros = (void*) mensaje_deadlock;
+
+			((t_entrenador*) list_get(mensaje_deadlock->entrenadores, 0))->tarea_actual = tarea_deadlock;
+			((t_entrenador*) list_get(mensaje_deadlock->entrenadores, 0))->estado = ESTADO_READY;
+
+			sem_post(((t_entrenador*) list_get(mensaje_deadlock->entrenadores, 0))->semaforo);
+		} else {
+			list_destroy(mensaje_deadlock->entrenadores);
+			list_destroy(mensaje_deadlock->pokemones);
+			free(mensaje_deadlock);
+		}
+
+		free(mensaje_recibido);
 	}
 }
 
@@ -461,7 +483,6 @@ int todavia_existe_deadlock(t_deadlock* deadlock) {
 }
 
 void buscar_deadlocks() {
-
 	while(1) {
 		sleep(tiempo_deadlock);
 
@@ -474,12 +495,11 @@ void buscar_deadlocks() {
 			mensaje->tipo_mensaje = MENSAJE_DEADLOCK;
 			mensaje->mensaje = (void*) deadlock;
 
-			pthread_mutex_lock(&cola_mensajes_recibidos_mutex);
-			queue_push(cola_mensajes_recibidos, (void*) mensaje);
-			pthread_mutex_unlock(&cola_mensajes_recibidos_mutex);
-			sem_post(&sem_cola_mensajes_nuevos);
+			pthread_mutex_lock(&cola_deadlock_mutex);
+			queue_push(cola_deadlock, (void*) mensaje);
+			pthread_mutex_unlock(&cola_deadlock_mutex);
+			sem_post(&sem_cola_deadlock);
 		}
-
 	}
 }
 
@@ -723,7 +743,9 @@ int main(void) {
 	inicializar_cola();
 
 	pthread_mutex_init(&planificacion_fifo, NULL);
-	pthread_mutex_init(cola_mensajes_recibidos_mutex, NULL);
+	pthread_mutex_init(cola_pokemones_mutex, NULL);
+	pthread_mutex_init(cola_caught_mutex, NULL);
+	pthread_mutex_init(cola_deadlock_mutex, NULL);
 	pthread_mutex_init(pokemones_a_localizar_mutex, NULL);
 	pthread_mutex_init(pokemones_llegados_mutex, NULL);
 	pthread_mutex_init(objetivo_global_mutex, NULL);
@@ -745,11 +767,17 @@ int main(void) {
 	pthread_create(&hilo_escucha_de_game_boy, NULL, (void*) escuchar_game_boy, (void*) socket_escucha_game_boy);
 	pthread_detach(hilo_escucha_de_game_boy);
 
-	// crear hilo planificador y tirarle detach
+	// crear hilos planificadores y tirarles detach
 
-	pthread_t hilo_planificador;
-	pthread_create(&hilo_planificador, NULL, (void*) planificar, NULL);
-	pthread_detach(hilo_planificador);
+	pthread_t hilo_planificador_pokemon;
+	pthread_t hilo_planificador_caught;
+	pthread_t hilo_planificador_deadlock;
+	pthread_create(&hilo_planificador_pokemon, NULL, (void*) planificar_pokemon, NULL);
+	pthread_create(&hilo_planificador_caught, NULL, (void*) planificar_caught, NULL);
+	pthread_create(&hilo_planificador_deadlock, NULL, (void*) planificar_deadlock, NULL);
+	pthread_detach(hilo_planificador_pokemon);
+	pthread_detach(hilo_planificador_caught);
+	pthread_detach(hilo_planificador_deadlock);
 
 	// crear hilos que se conecten al broker y que cada uno escuche una cola del broker
 	// cuando obtengan algo van a tener que mandar el mensaje a la cola del team correspondiente
@@ -798,9 +826,21 @@ t_log* iniciar_logger_sin_consola(char* log_file) {
 }
 
 void inicializar_cola() {
-	cola_mensajes_recibidos = queue_create();
-	pthread_mutex_init(&cola_mensajes_recibidos_mutex, NULL);
-	sem_init(&sem_cola_mensajes_nuevos, 0, 0);
+	cola_pokemones = queue_create();
+	cola_caught = queue_create();
+	cola_deadlock = queue_create();
+	pthread_mutex_init(&cola_pokemones_mutex, NULL);
+	pthread_mutex_init(&cola_caught_mutex, NULL);
+	pthread_mutex_init(&cola_deadlock_mutex, NULL);
+	sem_init(&sem_cola_pokemones, 0, 0);
+	sem_init(&sem_cola_caught, 0, 0);
+	sem_init(&sem_cola_deadlock, 0, 0);
+
+	t_list* entrenadores_libres = entrenadores_que_pueden_ir_a_atrapar();
+
+	sem_init(&sem_entrenadores_disponibles, 0, entrenadores_libres->elements_count);
+
+	list_destroy(entrenadores_libres);
 }
 
 void inicializar_entrenadores() {
@@ -1186,7 +1226,7 @@ void eliminar_pokemon(t_entrenador* entrenador, char* pokemon) {
 	entrenador->pokebolas++;
 }
 
-void adquirir_pokemon(t_entrenador* entrenador, char* pokemon) {        //entrenador atrapa pokemon
+void adquirir_pokemon(t_entrenador* entrenador, char* pokemon) {
 	list_add(entrenador->pokemones, (void*) pokemon);
 
 	int presente_en_objetivo_actual = 0;
@@ -1218,11 +1258,9 @@ bool es_pokemon_global(char* nombre_pokemon){
 
 	}
 	return false;
-
 }
 
-
-t_list* entrenadores_que_pueden_ir_a_atraparn(){
+t_list* entrenadores_que_pueden_ir_a_atrapar() {
 	t_list* entrenadores_disponibles = list_create();
 
 	for(int i = 0; i < entrenadores->elements_count; i++) {
@@ -1261,8 +1299,6 @@ t_entrenador* entrenador_mas_cercano(t_list* entrenadores_disponibles_para_ir_a_
 	return entrenador_seleccionado;
 }
 
-
-
 void agrego_pokemon_a_dictionary(t_pokemon* pokemon_a_agregar){
 	if(dictionary_has_key(pokemones_conocidos_que_no_se_intentan_atrapar,pokemon_a_agregar->nombre)){
 		t_list* lista_pokemon = dictionary_get(pokemones_conocidos_que_no_se_intentan_atrapar,pokemon_a_agregar->nombre);
@@ -1273,7 +1309,6 @@ void agrego_pokemon_a_dictionary(t_pokemon* pokemon_a_agregar){
 		dictionary_put(pokemones_conocidos_que_no_se_intentan_atrapar,pokemon_a_agregar->nombre,lista_pokemon_nuevo);
 	}
 }
-
 
 t_pokemon* generar_pokemon_de_appeared(t_appeared* mensaje_appeared) {
 
@@ -1384,9 +1419,13 @@ void terminar_programa() {
 	list_destroy(pokemones_a_localizar);
 	dictionary_destroy(pokemones_conocidos_que_no_se_intentan_atrapar);
 
-	sem_destroy(sem_cola_mensajes_nuevos);
+	sem_destroy(sem_cola_pokemones);
+	sem_destroy(sem_cola_caught);
+	sem_destroy(sem_cola_deadlock);
 
-	pthread_mutex_destroy(cola_mensajes_recibidos_mutex);
+	pthread_mutex_destroy(cola_pokemones_mutex);
+	pthread_mutex_destroy(cola_caught_mutex);
+	pthread_mutex_destroy(cola_deadlock_mutex);
 	pthread_mutex_destroy(planificacion_fifo);
 	pthread_mutex_destroy(pokemones_a_localizar_mutex);
 	pthread_mutex_destroy(pokemones_llegados_mutex);
@@ -1400,12 +1439,11 @@ void terminar_programa() {
 	log_destroy(logger);
 	log_destroy(extense_logger);
 
-	queue_clean(cola_mensajes_recibidos);
+	queue_clean(cola_pokemones);
 
-	queue_destroy(cola_mensajes_recibidos);
+	queue_destroy(cola_pokemones);
 
 	config_destroy(config);
-
 
 	// destroy stuff
 }
