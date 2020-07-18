@@ -1104,17 +1104,13 @@ void enviar_get_a_broker(char* nombre_pokemon) {
 
 	int status_send = send(socket_broker, flujo, bytes, 0);
 
-	while (status_send == -1 || status_send == 0) {
+	if (status_send == -1 || status_send == 0) {
 		log_error(extense_logger, "Error: No se pudo enviar el GET correspondiente al pokemon %s", nombre_pokemon);
 		estoy_conectado_al_broker = 0;
-		sleep(tiempo_reconexion);
-		status_send = send(socket_broker, flujo, bytes, 0);
+	} else {
+		log_info(extense_logger, "Mensaje GET con el pokemon %s enviado correctamente al BROKER a traves del socket %i", nombre_pokemon, puerto_broker);
+		uint32_t id_get = recibir_ID_get(socket_broker, extense_logger);
 	}
-
-	log_info(extense_logger, "Mensaje GET con el pokemon %s enviado correctamente al BROKER a traves del socket %i", nombre_pokemon, puerto_broker);
-
-	// hacer recv del id si es que nos interesa
-	// medio como que no, o no?
 
 	close(socket_broker);
 	free(flujo);
@@ -1143,6 +1139,8 @@ void enviar_catch_a_broker(t_pokemon* pokemon, t_entrenador* entrenador) {
 	desplazamiento += sizeof(uint32_t);
 
 	int socket_broker = crear_conexion(ip_broker, puerto_broker);
+
+	entrenador->estado = ESTADO_BLOCKED;
 
 	if (send(socket_broker, flujo, bytes, 0) == -1) {
 		log_error(extense_logger, "Error: No se pudo enviar el mensaje catch del entrenador %i para el pokemon %s ubicado en %i %i, obteniendo pokemon por comportamiento default", entrenador->index, pokemon->nombre, pokemon->pos_X, pokemon->pos_Y);

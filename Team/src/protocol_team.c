@@ -458,11 +458,11 @@ uint32_t recibir_ID_Catch(int socket_broker, t_log* logger) {
 
 	uint32_t id_Catch;
 
-	log_info(logger, "Recibiendo ID del CATCH enviado por el Broker");
+	log_info(logger, "Recibiendo ID del CATCH enviado al Broker");
 
 	int status_recv = recv(socket_broker, id_Catch, sizeof(uint32_t), MSG_WAITALL);
 	if (status_recv == -1) {
-		log_error(logger, "Hubo un problema recibiendo el tamanio total");
+		log_error(logger, "Hubo un problema recibiendo el id del catch");
 		return NULL;
 	}
 	if (status_recv == 0) {
@@ -473,6 +473,27 @@ uint32_t recibir_ID_Catch(int socket_broker, t_log* logger) {
 	log_info(logger, "El id recibido es: %i", id_Catch);
 
 	return id_Catch;
+}
+
+uint32_t recibir_ID_get(int socket_broker, t_log* logger) {
+
+	uint32_t id_get;
+
+	log_info(logger, "Recibiendo ID del GET enviado por el Broker");
+
+	int status_recv = recv(socket_broker, id_get, sizeof(uint32_t), MSG_WAITALL);
+	if (status_recv == -1) {
+		log_error(logger, "Hubo un problema recibiendo el id del get");
+		return NULL;
+	}
+	if (status_recv == 0) {
+		log_warning(logger, "El cliente con socket %i acaba de cerrar la conexion", socket_broker);
+		return NULL;
+	}
+
+	log_info(logger, "El id recibido es: %i", id_get);
+
+	return id_get;
 }
 
 int devolver_ack(int socket_broker, t_log* logger) {
