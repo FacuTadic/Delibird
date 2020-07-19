@@ -1209,7 +1209,11 @@ void enviar_get_a_broker(char* nombre_pokemon) {
 	} else {
 		log_info(extense_logger, "Mensaje GET con el pokemon %s enviado correctamente al BROKER a traves del socket %i", nombre_pokemon, puerto_broker);
 		uint32_t id_get = recibir_ID_get(socket_broker, extense_logger);
-		log_info(extense_logger, "Id correspondiente al mensaje GET con el pokemon %s es %i", nombre_pokemon, id_get);
+		if (id_get == 0) {
+			log_warning(extense_logger, "Hubo un problema al recibir el id correspondiente al mensaje GET con el pokemon %s", nombre_pokemon);
+		} else {
+			log_info(extense_logger, "Id correspondiente al mensaje GET con el pokemon %s es %i", nombre_pokemon, id_get);
+		}
 	}
 
 	close(socket_broker);

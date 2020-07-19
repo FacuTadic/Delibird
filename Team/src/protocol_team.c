@@ -465,11 +465,11 @@ uint32_t recibir_ID_get(int socket_broker, t_log* logger) {
 	int status_recv = recv(socket_broker, &id_get, sizeof(uint32_t), MSG_WAITALL);
 	if (status_recv == -1) {
 		log_error(logger, "Hubo un problema recibiendo el id del get");
-		return NULL;
+		return 0;
 	}
 	if (status_recv == 0) {
 		log_warning(logger, "El cliente con socket %i acaba de cerrar la conexion", socket_broker);
-		return NULL;
+		return 0;
 	}
 
 	log_info(logger, "El id recibido es: %i", id_get);
