@@ -108,9 +108,9 @@ int eliminar_particion() {
 	}
 
 	list_clean(registro->acknowledgements);
-	list_remove(registro->acknowledgements);
+	list_destroy(registro->acknowledgements);
 	list_clean(registro->envios);
-	list_remove(registro->envios);
+	list_destroy(registro->envios);
 	free(registro);
 }
 
