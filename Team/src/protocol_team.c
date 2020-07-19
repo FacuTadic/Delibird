@@ -146,12 +146,8 @@ t_appeared* recibir_appeared(int socket_broker, uint32_t* size, t_log* logger) {
 	return appeared;
 }
 
-t_caught* recibir_caught(int socket_broker, uint32_t* size, t_log* logger, t_list* catch_ids, pthread_mutex_t* mutex_catch_ids, int* era_caught_innecesario) {
+t_caught* recibir_caught(int socket_broker, uint32_t* size, t_log* logger) {
 	t_caught* caught = malloc(sizeof(t_caught));
-
-	uint32_t id_correlativo;
-
-	*era_caught_innecesario = 0;
 
 	log_info(logger, "Recibiendo tamanio total");
 
@@ -202,25 +198,6 @@ t_caught* recibir_caught(int socket_broker, uint32_t* size, t_log* logger, t_lis
 	}
 
 	log_info(logger, "Flag atrapado recibido: %i", caught->flag);
-
-	int es_el_id_buscado(void* id_lista) {
-		if (((t_catch_id*) id_lista)->id_catch == caught->idCorrelativo) {
-			return 1;
-		} else {
-			return 0;
-		}
-	}
-
-	pthread_mutex_lock(mutex_catch_ids);
-	// si el id del caught no esta en la lista de catch recibidos, ignora el mensaje
-	if (list_find(catch_ids, (void*) es_el_id_buscado) == NULL) {
-		log_info(logger, "el ID correlativo %i de caught no corresponde a ningun catch, mensaje ignorado", caught->idCorrelativo);
-		free(caught);
-		devolver_ack(socket_broker,logger);
-		era_caught_innecesario = 1;
-		return NULL;
-	}
-	pthread_mutex_unlock(mutex_catch_ids);
 
 	devolver_ack(socket_broker,logger);
 
@@ -456,7 +433,6 @@ t_appeared* recibir_appeared_de_game_boy(int socket, uint32_t* size, t_log* logg
 
 void generar_ID_Modulo(){
 	id_modulo = rand();
-	log_info(extense_logger, "El ID de este modulo es: %i", id_modulo);
 }
 
 uint32_t recibir_ID_Catch(int socket_broker, t_log* logger) {
@@ -468,11 +444,11 @@ uint32_t recibir_ID_Catch(int socket_broker, t_log* logger) {
 	int status_recv = recv(socket_broker, &id_Catch, sizeof(uint32_t), MSG_WAITALL);
 	if (status_recv == -1) {
 		log_error(logger, "Hubo un problema recibiendo el id del catch");
-		return NULL;
+		return 0;
 	}
 	if (status_recv == 0) {
 		log_warning(logger, "El cliente con socket %i acaba de cerrar la conexion", socket_broker);
-		return NULL;
+		return 0;
 	}
 
 	log_info(logger, "El id recibido es: %i", id_Catch);

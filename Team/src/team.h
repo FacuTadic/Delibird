@@ -8,6 +8,7 @@
 #include <commons/log.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 #include <pthread.h>
 #include "semaphore.h"
 #include "team_utils.h"
@@ -59,11 +60,11 @@ pthread_mutex_t socket_escucha_caught_mutex;
 pthread_mutex_t socket_escucha_localized_mutex;
 pthread_mutex_t planificacion_fifo;
 
-sem_t sem_cola_pokemones;
-sem_t sem_cola_caught;
-sem_t sem_cola_deadlock;
+sem_t* sem_cola_pokemones;
+sem_t* sem_cola_caught;
+sem_t* sem_cola_deadlock;
 
-sem_t sem_entrenadores_disponibles;
+sem_t* sem_entrenadores_disponibles;
 
 t_dictionary* pokemones_conocidos_que_no_se_intentan_atrapar;
 
@@ -115,7 +116,7 @@ typedef struct {
 	t_list* objetivos_actuales;
 	estado estado;
 	t_tarea* tarea_actual;
-	sem_t semaforo;
+	sem_t* semaforo;
 	int contador_ciclos_CPU;
 } t_entrenador;
 
@@ -195,6 +196,7 @@ t_pokemon* generar_pokemon_de_appeared(t_appeared* mensaje_appeared);
 t_list* generar_pokemones_de_localized(t_localized* mensaje_localized);
 void obtener_cantidad_de_cada_pokemon_a_planificar();
 int tengo_que_planificar_pokemon(t_pokemon* mensaje_pokemon);
+t_entrenador* entrenador_mas_cercano(t_list* entrenadores_disponibles_para_ir_a_atrapar, int posXPokemon, int posYPokemon);
 void contar_planificacion(t_pokemon* pokemon);
 void liberar_planificacion(t_pokemon* pokemon);
 int tengo_en_el_mapa(char* pokemon);
@@ -203,3 +205,5 @@ t_pokemon* mejor_pokemon_para_reintentar(t_entrenador* entrenador, char* pokemon
 void cambiar_estado_de_entrenador(t_entrenador* entrenador, estado estado_nuevo);
 void cambiar_tarea_de_entrenador(t_entrenador* entrenador, t_tarea* tarea_nueva);
 void mostrar_metricas();
+int es_id_catch(uint32_t id);
+int calcular_posicion_entrenador(int posXEntrenador, int posYEntrenador, int posXPokemon, int posYPokemon);
