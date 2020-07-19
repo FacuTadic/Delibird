@@ -12,7 +12,7 @@ void procesar_request_de_game_boy(int cod_op, int socket_game_boy) {
 			agrego_pokemon_a_dictionary(pokemon_a_agregar);
 			if (pokemon_ya_fue_recibido(appeared_msg->pokemon) == 0) {
 				pthread_mutex_lock(&pokemones_llegados_mutex);
-				list_add(pokemones_llegados, (void*) appeared_msg->pokemon); // agrega pokemon aparecido a lista de llegados
+				list_add(pokemones_llegados, (void*) appeared_msg->pokemon);
 				pthread_mutex_unlock(&pokemones_llegados_mutex);
 			}
 			mensaje->tipo_mensaje = MENSAJE_POKEMON;
@@ -54,7 +54,7 @@ void esperar_game_boy(int socket_escucha_game_boy) {
 	int tam_direccion = sizeof(struct sockaddr_in);
 
 	int socket_cliente = accept(socket_escucha_game_boy, (void*) &dir_cliente, &tam_direccion);
-	log_info(extense_logger, "Socket %i de gameBoy aceptado",socket_escucha_game_boy);
+	log_info(extense_logger, "Socket %i de gameBoy aceptado", socket_escucha_game_boy);
 
 	pthread_t thread;
 
@@ -108,7 +108,7 @@ void escuchar_appeared_de_broker(void) {
 					if (pokemon_ya_fue_recibido(appeared_msg->pokemon) == 0) {
 						log_info(extense_logger, "pokemon %s llego por primera vez");
 						pthread_mutex_lock(&pokemones_llegados_mutex);
-						list_add(pokemones_llegados, (void*) appeared_msg->pokemon); // agrega pokemon aparecido a lista de llegados
+						list_add(pokemones_llegados, (void*) appeared_msg->pokemon);
 						pthread_mutex_unlock(&pokemones_llegados_mutex);
 					}
 
@@ -1670,18 +1670,16 @@ int calcular_posicion_entrenador(int posXEntrenador, int posYEntrenador, int pos
 }
 
 void terminar_programa() {
+
+	free(ip_broker);
+	free(puerto_broker);
+
 	close(socket_escucha_game_boy);
 	close(socket_escucha_appeared);
 	close(socket_escucha_caught);
 	close(socket_escucha_localized);
 
-	list_clean(entrenadores);
-	list_clean(objetivo_global);
-	list_clean(pokemones_a_localizar);
-
 	list_destroy(entrenadores);
-	list_destroy(objetivo_global);
-	list_destroy(pokemones_a_localizar);
 	dictionary_destroy(pokemones_conocidos_que_no_se_intentan_atrapar);
 	dictionary_destroy(cantidad_de_pokemones_que_puedo_planificar);
 
@@ -1712,7 +1710,23 @@ void terminar_programa() {
 
 	config_destroy(config);
 
-	list_destroy(entrenadores_mutex); // por cada elemento tirar destroy
+	for (int i = 0; i < entrenadores_mutex->elements_count; i++) {
+		pthread_mutex_destroy((pthread_mutex_t*) list_get(entrenadores_mutex, i));
+	}
 
-	// destroy stuff
+	list_destroy(entrenadores_mutex);
+
+	for (int i = 0; i < objetivo_global->elements_count; i++) {
+		free((char*) list_get(objetivo_global, i));
+	}
+
+	list_destroy(objetivo_global);
+
+	list_destroy(pokemones_a_localizar);
+
+	for (int i = 0; i < pokemones_llegados->elements_count; i++) {
+		free((char*) list_get(pokemones_llegados, i));
+	}
+
+	list_destroy(pokemones_llegados);
 }
