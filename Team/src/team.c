@@ -1,6 +1,7 @@
 #include "team.h"
 
 void procesar_request_de_game_boy(int cod_op, int socket_game_boy) {
+	log_info(extense_logger, "procesando request de GameBoy" );
 	uint32_t size;
 	if (cod_op == APPEARED) {
 		log_info(extense_logger, "Codigo de operacion recibido del socket cliente %i corresponde a un APPEARED", socket_game_boy);
@@ -27,7 +28,9 @@ void procesar_request_de_game_boy(int cod_op, int socket_game_boy) {
 		log_info(extense_logger, "No se recibio nada del socket %i",socket_game_boy);
 		// log cualquiera pibe, no me mandaste un appeared
 	}
+	log_info(extense_logger, "request de GameBoy procesado" );
 	close(socket_game_boy);
+
 }
 
 void atender_game_boy(int* socket_game_boy) {
@@ -72,6 +75,9 @@ void escuchar_game_boy(void* socket_escucha_game_boy) {
 
 void escuchar_appeared_de_broker(void) {
 	uint32_t id_cola = 11;
+
+	log_info(extense_logger, "escuchando appeared de BROKER" );
+
 	pthread_mutex_lock(&socket_escucha_appeared_mutex);
 	int status_envio = mandar_suscripcion(socket_escucha_appeared, id_cola);
 	pthread_mutex_unlock(&socket_escucha_appeared_mutex);
@@ -128,6 +134,9 @@ void escuchar_appeared_de_broker(void) {
 
 void escuchar_caught_de_broker(void) {
 	uint32_t id_cola = 14;
+
+	log_info(extense_logger, "escucho caught de BROKER" );
+
 	pthread_mutex_lock(&socket_escucha_caught_mutex);
 	int status_envio = mandar_suscripcion(socket_escucha_caught, id_cola);
 	pthread_mutex_unlock(&socket_escucha_caught_mutex);
@@ -172,6 +181,7 @@ void escuchar_caught_de_broker(void) {
 
 void escuchar_localized_de_broker(void) {
 	uint32_t id_cola = 16;
+	log_info(extense_logger, "escucho localized de BROKER" );
 	pthread_mutex_lock(&socket_escucha_localized_mutex);
 	int status_envio = mandar_suscripcion(socket_escucha_localized, id_cola);
 	pthread_mutex_unlock(&socket_escucha_localized_mutex);
@@ -420,7 +430,7 @@ void planificar_pokemon() {
 void planificar_caught() {
 	while(1) {
 		sem_wait(&sem_cola_caught);
-
+		log_info(extense_logger, "arranco a planificar caught" );
 		pthread_mutex_lock(&cola_caught_mutex);
 		t_mensaje_recibido* mensaje_recibido = queue_pop(cola_caught);
 		pthread_mutex_unlock(&cola_caught_mutex);
@@ -446,11 +456,13 @@ void planificar_caught() {
 				if (catch_id->entrenador->pokebolas == 0) {
 					if (list_size(catch_id->entrenador->objetivos_actuales) == 0) {
 						cambiar_estado_de_entrenador(catch_id->entrenador, ESTADO_EXIT);
+						log_info(extense_logger, "no hago nada porque el entrenador %i cumplio sus objetivos y no tiene pokebolas",catch_id->entrenador->index );
 						t_tarea* tarea_pingo = malloc(sizeof(t_tarea));
 						tarea_pingo->id_tarea = NO_HACER_PINGO;
 						cambiar_tarea_de_entrenador(catch_id->entrenador, tarea_pingo);
 						sem_post(&(catch_id->entrenador->semaforo));
 					} else {
+						log_info(extense_logger, "no hago nada porque el entrenador tiene objetivos pero no pokebolas");
 						cambiar_estado_de_entrenador(catch_id->entrenador, ESTADO_BLOCKED);
 						t_tarea* tarea_pingo = malloc(sizeof(t_tarea));
 						tarea_pingo->id_tarea = NO_HACER_PINGO;
@@ -458,6 +470,7 @@ void planificar_caught() {
 					}
 				} else {
 					cambiar_estado_de_entrenador(catch_id->entrenador, ESTADO_BLOCKED);
+					log_info(extense_logger, ""); // que onda aca??
 					t_tarea* tarea_pingo = malloc(sizeof(t_tarea));
 					tarea_pingo->id_tarea = NO_HACER_PINGO;
 					cambiar_tarea_de_entrenador(catch_id->entrenador, tarea_pingo);
@@ -465,6 +478,7 @@ void planificar_caught() {
 				}
 			} else {
 				if (tengo_en_el_mapa(catch_id->pokemon->nombre) == 1) {
+					log_info(extense_logger, "entrenador %i va a atrapar pokemon %s",catch_id->entrenador->index,catch_id->pokemon->nombre);
 					t_pokemon* pokemon_para_reintentar = mejor_pokemon_para_reintentar(catch_id->entrenador, catch_id->pokemon->nombre);
 					t_tarea* tarea_reatrapar = malloc(sizeof(t_tarea));
 					tarea_reatrapar->id_tarea = ATRAPAR_POKEMON;
@@ -496,6 +510,7 @@ void planificar_caught() {
 }
 
 void planificar_deadlock() {
+	log_info(extense_logger, "arranco a planificar deadlock");
 	while(1) {
 		sem_wait(&sem_cola_deadlock);
 
@@ -507,6 +522,7 @@ void planificar_deadlock() {
 		t_deadlock* mensaje_deadlock = (t_deadlock*) mensaje_recibido->mensaje;
 
 		if (todavia_existe_deadlock(mensaje_deadlock) == 1) {
+
 			t_tarea* tarea_deadlock = malloc(sizeof(t_tarea));
 
 			tarea_deadlock->id_tarea = INTERCAMBIAR_POKEMON;
@@ -557,6 +573,7 @@ int todavia_existe_deadlock(t_deadlock* deadlock) {
 }
 
 void buscar_deadlocks() {
+	log_info(extense_logger, "busco deadlock");
 	while(1) {
 		sleep(tiempo_deadlock);
 
@@ -565,6 +582,7 @@ void buscar_deadlocks() {
 		log_info(extense_logger, "Se obtuvo el deadlock");
 
 		if (deadlock != NULL) {
+
 			t_mensaje_recibido* mensaje = malloc(sizeof(t_mensaje_recibido));
 			mensaje->tipo_mensaje = MENSAJE_DEADLOCK;
 			mensaje->mensaje = (void*) deadlock;
@@ -725,7 +743,7 @@ t_list* entrenadores_que_necesitan_pokemon(char* pokemon) {
 
 t_list* obtener_entrenadores_bloqueados() {
 	t_list* entrenadores_bloqueados = list_create();
-
+	log_info(extense_logger, "obtengo entrenadores bloqueados");
 	for (int i = 0; i < entrenadores->elements_count; i++) {
 		t_entrenador* entrenador_de_lista = (t_entrenador*) list_get(entrenadores, i);
 		pthread_mutex_t* mutex_entrenador = list_get(entrenadores_mutex, i);
@@ -736,7 +754,7 @@ t_list* obtener_entrenadores_bloqueados() {
 		}
 		pthread_mutex_unlock(mutex_entrenador);
 	}
-
+	log_info(extense_logger, "entrenadores bloqueados obtenidos");
 	return entrenadores_bloqueados;
 }
 
@@ -751,6 +769,7 @@ t_entrenador* obtener_entrenador(int id) {
 }
 
 void verificar_conexion(char *ip, char* puerto) {
+	log_info(extense_logger, "verifico conexion con BROKER");
 	while(1) {
 		if (estoy_conectado_al_broker == 0) {
 			log_error(logger, "Error en conexion con BROKER, ip: %s puerto: %s, reintentando en %i segundo%s", ip_broker, puerto_broker, tiempo_reconexion, tiempo_reconexion==1 ? "" : "s");
