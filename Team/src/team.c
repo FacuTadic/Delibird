@@ -22,7 +22,6 @@ void procesar_request_de_game_boy(int cod_op, int socket_game_boy) {
 			pthread_mutex_unlock(&cola_pokemones_mutex);
 			sem_post(&sem_cola_pokemones);
 		}
-		free(appeared_msg->pokemon);
 		free(appeared_msg);
 	} else {
 		log_info(extense_logger, "No se recibio nada del socket %i",socket_game_boy);
@@ -121,8 +120,6 @@ void escuchar_appeared_de_broker(void) {
 					pthread_mutex_unlock(&cola_pokemones_mutex);
 					sem_post(&sem_cola_pokemones);
 				}
-
-				free(appeared_msg->pokemon);
 				free(appeared_msg);
 			}
 		}
@@ -145,14 +142,19 @@ void escuchar_caught_de_broker(void) {
 		if (estoy_conectado_al_broker == 1) {
 			uint32_t size;
 			pthread_mutex_lock(&socket_escucha_caught_mutex);
+			int era_caught_innecesario;
 			log_info(extense_logger, "Recibiendo caught del Broker en socket %i",socket_escucha_caught);
-			t_caught* caught_msg = recibir_caught(socket_escucha_caught, &size, extense_logger, catch_IDs);
+			t_caught* caught_msg = recibir_caught(socket_escucha_caught, &size, extense_logger, catch_IDs, catch_IDs_mutex, &era_caught_innecesario);
 			log_info(extense_logger, "Caught recibido del Broker en socket %i",socket_escucha_caught);
 			pthread_mutex_unlock(&socket_escucha_caught_mutex);
 			if (caught_msg == NULL) {
-				pthread_mutex_lock(&estoy_conectado_al_broker_mutex);
-				estoy_conectado_al_broker = 0;
-				pthread_mutex_unlock(&estoy_conectado_al_broker_mutex);
+				if (era_caught_innecesario == 0) {
+					pthread_mutex_lock(&estoy_conectado_al_broker_mutex);
+					estoy_conectado_al_broker = 0;
+					pthread_mutex_unlock(&estoy_conectado_al_broker_mutex);
+				} else {
+					// me llego un caught que no responde a un catch mio
+				}
 			} else {
 				log_info(extense_logger, "Caught recibido");
 				t_mensaje_recibido* mensaje = malloc(sizeof(t_mensaje_recibido));

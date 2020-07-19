@@ -146,10 +146,12 @@ t_appeared* recibir_appeared(int socket_broker, uint32_t* size, t_log* logger) {
 	return appeared;
 }
 
-t_caught* recibir_caught(int socket_broker, uint32_t* size, t_log* logger, t_list* catch_ids, pthread_mutex_t* mutex_catch_ids) {
+t_caught* recibir_caught(int socket_broker, uint32_t* size, t_log* logger, t_list* catch_ids, pthread_mutex_t* mutex_catch_ids, int* era_caught_innecesario) {
 	t_caught* caught = malloc(sizeof(t_caught));
 
 	uint32_t id_correlativo;
+
+	*era_caught_innecesario = 0;
 
 	log_info(logger, "Recibiendo tamanio total");
 
@@ -215,6 +217,7 @@ t_caught* recibir_caught(int socket_broker, uint32_t* size, t_log* logger, t_lis
 		log_info(logger, "el ID correlativo %i de caught no corresponde a ningun catch, mensaje ignorado", caught->idCorrelativo);
 		free(caught);
 		devolver_ack(socket_broker,logger);
+		era_caught_innecesario = 1;
 		return NULL;
 	}
 	pthread_mutex_unlock(mutex_catch_ids);

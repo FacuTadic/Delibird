@@ -49,7 +49,7 @@ typedef struct {
 int mandar_suscripcion(int socket, uint32_t id_cola);
 t_appeared* recibir_appeared_de_game_boy(int socket, uint32_t* size, t_log* logger);
 t_appeared* recibir_appeared(int socket, uint32_t* size, t_log* logger);
-t_caught* recibir_caught(int socket_broker, uint32_t* size, t_log* logger, t_list* catch_ids, pthread_mutex_t* mutex_catch_ids);
+t_caught* recibir_caught(int socket_broker, uint32_t* size, t_log* logger, t_list* catch_ids, pthread_mutex_t* mutex_catch_ids, int* era_caught_innecesario);
 t_localized* recibir_localized(int socket_broker, uint32_t* size, t_log* logger);
 void generar_ID_Modulo();
 uint32_t recibir_ID_Catch(int socket_broker,t_log* logger);
