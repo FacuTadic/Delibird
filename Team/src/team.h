@@ -60,11 +60,11 @@ pthread_mutex_t socket_escucha_caught_mutex;
 pthread_mutex_t socket_escucha_localized_mutex;
 pthread_mutex_t planificacion_fifo;
 
-sem_t* sem_cola_pokemones;
-sem_t* sem_cola_caught;
-sem_t* sem_cola_deadlock;
+sem_t sem_cola_pokemones;
+sem_t sem_cola_caught;
+sem_t sem_cola_deadlock;
 
-sem_t* sem_entrenadores_disponibles;
+sem_t sem_entrenadores_disponibles;
 
 t_dictionary* pokemones_conocidos_que_no_se_intentan_atrapar;
 
@@ -116,7 +116,7 @@ typedef struct {
 	t_list* objetivos_actuales;
 	estado estado;
 	t_tarea* tarea_actual;
-	sem_t* semaforo;
+	sem_t semaforo;
 	int contador_ciclos_CPU;
 } t_entrenador;
 
