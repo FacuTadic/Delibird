@@ -274,8 +274,6 @@ void laburar(void* entrenador_param) {
 
 		pthread_mutex_unlock(&planificacion_fifo);
 
-		// cosas
-
 		break;
 
 		case INTERCAMBIAR_POKEMON: ;
@@ -285,24 +283,19 @@ void laburar(void* entrenador_param) {
 		log_info(extense_logger, "Entrenador %i entro por Intercambiar Pokemon", entrenador->index);
 
 		cambiar_estado_de_entrenador(entrenador, ESTADO_EXECUTING);
-		og_info(extense_logger, "entrenador %i cambia su estado a EXECUTING",entrenador->index);
+		log_info(extense_logger, "entrenador %i cambia su estado a EXECUTING",entrenador->index);
 		t_deadlock* parametros_intercambio = (t_deadlock*) entrenador->tarea_actual->parametros;
 		log_info(extense_logger, "Parametros del deadlock cargados");
 
 		// segundo entrenador de la lista de entrenadores
-		// esto requiere que el planificador mande a intercambiar al primero de la lista
 		t_entrenador* otro_entrenador = (t_entrenador*) list_get(parametros_intercambio->entrenadores, 1);
 
-		// segundo entrenador de la lista de entrenadores
-		// esto requiere que el planificador mande a intercambiar al primero de la lista
-		t_entrenador* otro_entrenador = list_get(parametros_intercambio->entrenadores, 1);
-		log_info(extense_logger, "Cargado el entrenador %i con el que entrenador %i va a intercambiar pokemon ",entrenador->index,otro_entrenador->index);  // estaria cheto poner que pokemon???
+		log_info(extense_logger, "Cargado el entrenador %i con el que entrenador %i va a intercambiar pokemon", entrenador->index, otro_entrenador->index);
 
 		// ir al lugar en cuestion
-		log_info(extense_logger, "Moviendo al entrenador %i a la posicion X: %i y posicion Y: %i",entrenador->index,parametros_atrapado->pos_X,parametros_atrapado->pos_Y);  // que entrenador tendria que ser? otro_ent.. o ent..?????
+		log_info(extense_logger, "Moviendo al entrenador %i a la posicion X: %i y posicion Y: %i",entrenador->index,parametros_atrapado->pos_X,parametros_atrapado->pos_Y);
 		irA(otro_entrenador->posX, otro_entrenador->posY, entrenador);
-		log_info(extense_logger, "Llego el entrenador %i a X:%i Y: %i",entrenador->index,parametros_atrapado->pos_X,parametros_atrapado->pos_Y); // mismo coment que el anterior cual entrenador ????
-
+		log_info(extense_logger, "Llego el entrenador %i a X:%i Y: %i",entrenador->index,parametros_atrapado->pos_X,parametros_atrapado->pos_Y);
 
 		// intercambiar el pokemon correspondiente con el otro entrenador
 		log_info(extense_logger, "Empezando el intercambio de pokemon %s y pokemon %s entre entrenador %i y entrenador %i",entrenador->index, otro_entrenador->index);
@@ -399,17 +392,15 @@ void planificar_pokemon() {
 			t_list* entrenador_disponible = entrenadores_que_pueden_ir_a_atrapar();
 
 			// obtengo entrenador que va a ir
-
 			t_entrenador* entrenador_a_planificar = entrenador_mas_cercano(entrenador_disponible, mensaje_pokemon->pos_X, mensaje_pokemon->pos_Y);
 
-			//Liberar tarea anterior y le doy la t_tarea
-
+			// le doy la tarea
 			t_tarea* tarea_pokemon = malloc(sizeof(t_tarea));
 			tarea_pokemon->id_tarea = ATRAPAR_POKEMON;
 			t_pokemon* pokemon_a_enviar = generar_pokemon_de_appeared(mensaje_pokemon);
 			tarea_pokemon->parametros = pokemon_a_enviar;
-
 			cambiar_tarea_de_entrenador(entrenador_a_planificar, tarea_pokemon);
+
 			cambiar_estado_de_entrenador(entrenador_a_planificar, ESTADO_READY);
 
 			pthread_mutex_t* mutex_entrenador = list_get(entrenadores_mutex, entrenador_a_planificar->index);
@@ -420,8 +411,7 @@ void planificar_pokemon() {
 		} else {
 			sem_post(&sem_entrenadores_disponibles);
 		}
-		break;
-
+		free(mensaje_recibido);
 	}
 }
 
@@ -432,8 +422,6 @@ void planificar_caught() {
 		pthread_mutex_lock(&cola_caught_mutex);
 		t_mensaje_recibido* mensaje_recibido = queue_pop(cola_caught);
 		pthread_mutex_unlock(&cola_caught_mutex);
-
-		log_info(extense_logger, "Entro por Mensaje Caught");
 		t_caught* mensaje_caught = (t_caught*) mensaje_recibido->mensaje;
 
 		t_catch_id* catch_id;
