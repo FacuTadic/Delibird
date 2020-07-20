@@ -1,6 +1,6 @@
 #include "protocol_team.h"
 
-int mandar_suscripcion(int socket, uint32_t id_cola) {
+int mandar_suscripcion(int socket_mandado, uint32_t id_cola) {
 	uint32_t bytes = sizeof(uint32_t) + sizeof(uint32_t) + sizeof(uint32_t) + sizeof(uint32_t);
 
 	uint32_t cod_op = 7;
@@ -16,9 +16,10 @@ int mandar_suscripcion(int socket, uint32_t id_cola) {
 	memcpy(flujo + desplazamiento, &id_cola, sizeof(uint32_t));
 	desplazamiento += sizeof(uint32_t);
 
-	int status_send = send(socket, flujo, bytes, 0);
+	int status_send = send(socket_mandado, flujo, bytes, 0);
+
 	if (status_send == -1) {
-		close(socket);
+		close(socket_mandado);
 		free(flujo);
 		return -1;
 	}

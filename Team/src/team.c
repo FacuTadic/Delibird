@@ -74,7 +74,7 @@ void escuchar_game_boy(void* socket_escucha_game_boy) {
 void escuchar_appeared_de_broker(void) {
 	uint32_t id_cola = 11;
 
-	log_info(extense_logger, "escuchando appeared de BROKER" );
+	log_info(extense_logger, "Escucho appeared de BROKER");
 
 	pthread_mutex_lock(&socket_escucha_appeared_mutex);
 	int status_envio = mandar_suscripcion(socket_escucha_appeared, id_cola);
@@ -133,7 +133,7 @@ void escuchar_appeared_de_broker(void) {
 void escuchar_caught_de_broker(void) {
 	uint32_t id_cola = 14;
 
-	log_info(extense_logger, "escucho caught de BROKER" );
+	log_info(extense_logger, "Escucho caught de BROKER");
 
 	pthread_mutex_lock(&socket_escucha_caught_mutex);
 	int status_envio = mandar_suscripcion(socket_escucha_caught, id_cola);
@@ -179,7 +179,9 @@ void escuchar_caught_de_broker(void) {
 
 void escuchar_localized_de_broker(void) {
 	uint32_t id_cola = 16;
-	log_info(extense_logger, "escucho localized de BROKER" );
+
+	log_info(extense_logger, "Escucho localized de BROKER");
+
 	pthread_mutex_lock(&socket_escucha_localized_mutex);
 	int status_envio = mandar_suscripcion(socket_escucha_localized, id_cola);
 	pthread_mutex_unlock(&socket_escucha_localized_mutex);
@@ -821,6 +823,7 @@ int main(void) {
 	log_file = config_get_string_value(config, "LOG_FILE");
 	extense_log_file = config_get_string_value(config, "EXTENSE_LOG_FILE");
 	extense_logger = iniciar_logger(extense_log_file);
+	extense_logger_protocol = extense_logger;
 	log_info(extense_logger, "logger extenso iniciado");
 	logger = iniciar_logger_sin_consola(log_file);
 	log_info(extense_logger, "logger de la catedra iniciado");
@@ -1265,7 +1268,7 @@ void enviar_get_a_broker(char* nombre_pokemon) {
 		estoy_conectado_al_broker = 0;
 		pthread_mutex_unlock(&estoy_conectado_al_broker_mutex);
 	} else {
-		log_info(extense_logger, "Mensaje GET correspondiente al pokemon %s enviado correctamente al BROKER a traves del socket %i", nombre_pokemon, puerto_broker);
+		log_info(extense_logger, "Mensaje GET correspondiente al pokemon %s enviado correctamente al BROKER a traves del socket %i", nombre_pokemon, socket_broker);
 		uint32_t id_get = recibir_ID_get(socket_broker, extense_logger);
 		if (id_get == 0) {
 			log_warning(extense_logger, "Hubo un problema al recibir el id correspondiente al mensaje GET con el pokemon %s", nombre_pokemon);
@@ -1515,15 +1518,10 @@ t_list* entrenadores_que_pueden_ir_a_atrapar() {
 
 	for(int i = 0; i < entrenadores->elements_count; i++) {
 		t_entrenador* entrenador_lista = (t_entrenador*) list_get(entrenadores, i);
-		pthread_mutex_t* mutex_entrenador = list_get(entrenadores_mutex, i);
-		pthread_mutex_lock(mutex_entrenador);
-
 		if(entrenador_lista->estado == ESTADO_NEW || entrenador_lista->tarea_actual->id_tarea == NO_HACER_PINGO){
 			list_add(entrenadores_disponibles, entrenador_lista);
 		}
-		pthread_mutex_unlock(mutex_entrenador);
 	}
-
 	if (list_is_empty(entrenadores_disponibles)) {
 		log_warning(extense_logger, "NO HAY ENTRENADORES DISPONIBLES");
 	}

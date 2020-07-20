@@ -17,6 +17,8 @@
 
 uint32_t id_modulo;
 
+t_log* extense_logger_protocol;
+
 typedef enum
 {
 	NEW          = 1,
