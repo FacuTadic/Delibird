@@ -29,7 +29,6 @@ void procesar_request_de_game_boy(int cod_op, int socket_game_boy) {
 	}
 	log_info(extense_logger, "request de GameBoy procesado" );
 	close(socket_game_boy);
-
 }
 
 void atender_game_boy(int* socket_game_boy) {
@@ -1043,24 +1042,13 @@ void inicializar_entrenadores() {
 			list_add(objetivos_actuales, objetivo_actual);
 		}
 
-		for (int k = 0; k < pokemones->elements_count; k++) {
-			char* pokemon_de_lista = (char*) list_get(pokemones, k);
-			int hay_que_eliminar_de_objetivo_actual = 0;
-			int index_a_eliminar;
-			int j = 0;
-			char* objetivo_de_lista = (char*) list_get(objetivos_actuales, j);
-			while (objetivo_de_lista != NULL && hay_que_eliminar_de_objetivo_actual == 0) {
-				hay_que_eliminar_de_objetivo_actual = string_equals_ignore_case(objetivo_de_lista, pokemon_de_lista);
-				if (hay_que_eliminar_de_objetivo_actual == 1) {
-					index_a_eliminar = j;
-				}
-				j++;
-				objetivo_de_lista = (char*) list_get(objetivos_actuales, j);
-			}
-			if (hay_que_eliminar_de_objetivo_actual == 1) {
-				char* objetivo_actual_eliminado = (char*) list_remove(objetivos_actuales, index_a_eliminar);
-				if (objetivo_actual_eliminado != NULL) {
-					free(objetivo_actual_eliminado);
+		for (int k = 0; k < entrenador->pokemones->elements_count; k++) {
+			char* pokemon_lista = list_get(entrenador->pokemones, k);
+			for (int h = 0; h < objetivos_actuales->elements_count; h++) {
+				char* objetivo_actual_lista = list_get(objetivos_actuales, h);
+				if (string_equals_ignore_case(objetivo_actual_lista, pokemon_lista) == 1) {
+					list_remove(objetivos_actuales, h);
+					h = objetivos_actuales->elements_count;
 				}
 			}
 		}
@@ -1069,32 +1057,20 @@ void inicializar_entrenadores() {
 
 		t_list* pokemones_innecesarios = list_create();
 
-		for (int p = 0; p < pokemones->elements_count; p++) {
-			char* pokemon_lista = list_get(pokemones, p);
+		for (int d = 0; d < pokemones->elements_count; d++) {
+			char* pokemon_lista = list_get(pokemones, d);
 			char* pokemon_innecesario_actual = malloc(strlen(pokemon_lista) + 1);
 			memcpy(pokemon_innecesario_actual, pokemon_lista, strlen(pokemon_lista) + 1);
-			list_add(objetivos_actuales, pokemon_innecesario_actual);
+			list_add(pokemones_innecesarios, pokemon_innecesario_actual);
 		}
 
-		for (int k = 0; k < objetivos->elements_count; k++) {
-			char* objetivo_de_lista = (char*) list_get(pokemones, k);
-			int hay_que_eliminar_de_pokemones_innecesarios = 0;
-			int index_a_eliminar;
-			int j = 0;
-			char* pokemon_de_lista = (char*) list_get(pokemones_innecesarios, j);
-			while (pokemon_de_lista != NULL && hay_que_eliminar_de_pokemones_innecesarios == 0) {
-				hay_que_eliminar_de_pokemones_innecesarios = string_equals_ignore_case(objetivo_de_lista, pokemon_de_lista);
-				if (hay_que_eliminar_de_pokemones_innecesarios == 1) {
-					index_a_eliminar = j;
-				}
-				j++;
-				pokemon_de_lista = (char*) list_get(pokemones_innecesarios, j);
-			}
-
-			if (hay_que_eliminar_de_pokemones_innecesarios == 1) {
-				char* pokemon_innecesario_eliminado = (char*) list_remove(pokemones_innecesarios, index_a_eliminar);
-				if (pokemon_innecesario_eliminado != NULL) {
-					free(pokemon_innecesario_eliminado);
+		for (int f = 0; f < entrenador->objetivos->elements_count; f++) {
+			char* objetivo_lista = (char*) list_get(entrenador->objetivos, f);
+			for (int c = 0; c < pokemones_innecesarios->elements_count; c++) {
+				char* pokemon_innecesario_lista = (char*) list_get(pokemones_innecesarios, c);
+				if (string_equals_ignore_case(pokemon_innecesario_lista, objetivo_lista) == 1) {
+					list_remove(pokemones_innecesarios, c);
+					c = pokemones_innecesarios->elements_count;
 				}
 			}
 		}
@@ -1114,6 +1090,24 @@ void inicializar_entrenadores() {
 		sem_init(&(entrenador->semaforo), 0, 0);
 
 		entrenador->contador_ciclos_CPU = 0;
+
+		log_info(extense_logger, "Estado del entrenador %i: %i", entrenador->index, entrenador->estado);
+
+		for (int l = 0; l < entrenador->objetivos->elements_count; l++) {
+			log_info(extense_logger, "Objetivo del entrenador %i: %s", entrenador->index, (char*) list_get(entrenador->objetivos, l));
+		}
+
+		for (int y = 0; y < entrenador->objetivos_actuales->elements_count; y++) {
+			log_info(extense_logger, "Objetivo actual del entrenador %i: %s", entrenador->index, (char*) list_get(entrenador->objetivos_actuales, y));
+		}
+
+		for (int w = 0; w < entrenador->pokemones->elements_count; w++) {
+			log_info(extense_logger, "Pokemon del entrenador %i: %s", entrenador->index, (char*) list_get(entrenador->pokemones, w));
+		}
+
+		for (int q = 0; q < entrenador->pokemones_innecesarios->elements_count; q++) {
+			log_info(extense_logger, "Pokemon innecesario del entrenador %i: %s", entrenador->index, (char*) list_get(entrenador->pokemones_innecesarios, q));
+		}
 
 		list_add(entrenadores, (void*) entrenador);
 
