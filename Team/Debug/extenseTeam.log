@@ -2715,3 +2715,80 @@
 [INFO] 00:57:06:179 Team/(3544:3549): Recibiendo tamanio total
 [INFO] 00:57:16:158 Team/(3544:3553): Se esta obteniendo el deadlock
 [INFO] 00:57:16:158 Team/(3544:3553): obtengo entrenadores bloqueados
+[INFO] 12:59:29:715 Team/(3428:3428): logger extenso iniciado
+[INFO] 12:59:29:717 Team/(3428:3428): logger de la catedra iniciado
+[INFO] 12:59:29:717 Team/(3428:3428): La IP es: 127.0.0.1
+[INFO] 12:59:29:718 Team/(3428:3428): El puerto es: 4445
+[INFO] 12:59:29:718 Team/(3428:3428): La IP del Broker es: 127.0.0.1
+[INFO] 12:59:29:718 Team/(3428:3428): El puerto del Broker es: 4444
+[INFO] 12:59:29:719 Team/(3428:3428): El Id de Team es: 5
+[INFO] 12:59:29:719 Team/(3428:3428): La busqueda de deadlocks se corre cada 10 segundos
+[INFO] 12:59:29:719 Team/(3428:3428): La conexion al Broker se verifica cada 10 segundos
+[INFO] 12:59:29:720 Team/(3428:3428): EL tiempo de retardo de CPU es cada 2 segundos
+[INFO] 12:59:29:720 Team/(3428:3428): Objetivos para el entrenador 0: Pikachu|Pikachu|Squirtle|Pidgey
+[INFO] 12:59:29:720 Team/(3428:3428): Posiciones para el entrenador 0: 1|2
+[INFO] 12:59:29:721 Team/(3428:3428): Pokemones para el entrenador 0: Pikachu|Squirtle|Pidgey
+[INFO] 12:59:29:721 Team/(3428:3428): Llego token Pikachu
+[INFO] 12:59:29:722 Team/(3428:3428): Llego token Pikachu
+[INFO] 12:59:29:722 Team/(3428:3428): Llego token Squirtle
+[INFO] 12:59:29:722 Team/(3428:3428): Llego token Pidgey
+[INFO] 12:59:29:722 Team/(3428:3428): Llego token Pikachu
+[INFO] 12:59:29:723 Team/(3428:3428): Llego token Squirtle
+[INFO] 12:59:29:723 Team/(3428:3428): Llego token Pidgey
+[INFO] 12:59:29:723 Team/(3428:3428): Posicion X: 1
+[INFO] 12:59:29:724 Team/(3428:3428): Posicion Y: 2
+[INFO] 12:59:29:724 Team/(3428:3428): Estado del entrenador 0: 1111
+[INFO] 12:59:29:724 Team/(3428:3428): Objetivo del entrenador 0: Pikachu
+[INFO] 12:59:29:724 Team/(3428:3428): Objetivo del entrenador 0: Pikachu
+[INFO] 12:59:29:725 Team/(3428:3428): Objetivo del entrenador 0: Squirtle
+[INFO] 12:59:29:725 Team/(3428:3428): Objetivo del entrenador 0: Pidgey
+[INFO] 12:59:29:725 Team/(3428:3428): Objetivo actual del entrenador 0: Pikachu
+[INFO] 12:59:29:725 Team/(3428:3428): Pokemon del entrenador 0: Pikachu
+[INFO] 12:59:29:725 Team/(3428:3428): Pokemon del entrenador 0: Squirtle
+[INFO] 12:59:29:725 Team/(3428:3428): Pokemon del entrenador 0: Pidgey
+[INFO] 12:59:29:725 Team/(3428:3428): Objetivos para el entrenador 1: Charmander|Pikachu|Charmander
+[INFO] 12:59:29:725 Team/(3428:3428): Posiciones para el entrenador 1: 3|7
+[INFO] 12:59:29:726 Team/(3428:3428): Pokemones para el entrenador 1: Squirtle|Charmander
+[INFO] 12:59:29:726 Team/(3428:3428): Llego token Charmander
+[INFO] 12:59:29:726 Team/(3428:3428): Llego token Pikachu
+[INFO] 12:59:29:726 Team/(3428:3428): Llego token Charmander
+[INFO] 12:59:29:726 Team/(3428:3428): Llego token Squirtle
+[INFO] 12:59:29:726 Team/(3428:3428): Llego token Charmander
+[INFO] 12:59:29:726 Team/(3428:3428): Posicion X: 3
+[INFO] 12:59:29:726 Team/(3428:3428): Posicion Y: 7
+[INFO] 12:59:29:726 Team/(3428:3428): Estado del entrenador 1: 1111
+[INFO] 12:59:29:727 Team/(3428:3428): Objetivo del entrenador 1: Charmander
+[INFO] 12:59:29:727 Team/(3428:3428): Objetivo del entrenador 1: Pikachu
+[INFO] 12:59:29:727 Team/(3428:3428): Objetivo del entrenador 1: Charmander
+[INFO] 12:59:29:727 Team/(3428:3428): Objetivo actual del entrenador 1: Pikachu
+[INFO] 12:59:29:727 Team/(3428:3428): Objetivo actual del entrenador 1: Charmander
+[INFO] 12:59:29:727 Team/(3428:3428): Pokemon del entrenador 1: Squirtle
+[INFO] 12:59:29:727 Team/(3428:3428): Pokemon del entrenador 1: Charmander
+[INFO] 12:59:29:727 Team/(3428:3428): Pokemon innecesario del entrenador 1: Squirtle
+[INFO] 12:59:29:727 Team/(3428:3428): Objetivos para el entrenador 2: Squirtle|Bulbasaur
+[INFO] 12:59:29:727 Team/(3428:3428): Posiciones para el entrenador 2: 5|5
+[INFO] 12:59:29:728 Team/(3428:3428): Pokemones para el entrenador 2: Bulbasaur
+[INFO] 12:59:29:728 Team/(3428:3428): Llego token Squirtle
+[INFO] 12:59:29:728 Team/(3428:3428): Llego token Bulbasaur
+[INFO] 12:59:29:728 Team/(3428:3428): Llego token Bulbasaur
+[INFO] 12:59:29:728 Team/(3428:3428): Posicion X: 5
+[INFO] 12:59:29:728 Team/(3428:3428): Posicion Y: 5
+[INFO] 12:59:29:728 Team/(3428:3428): Estado del entrenador 2: 1111
+[INFO] 12:59:29:728 Team/(3428:3428): Objetivo del entrenador 2: Squirtle
+[INFO] 12:59:29:728 Team/(3428:3428): Objetivo del entrenador 2: Bulbasaur
+[INFO] 12:59:29:729 Team/(3428:3428): Objetivo actual del entrenador 2: Squirtle
+[INFO] 12:59:29:729 Team/(3428:3428): Pokemon del entrenador 2: Bulbasaur
+[INFO] 12:59:29:729 Team/(3428:3428): Obteniendo objetivo global
+[INFO] 12:59:29:729 Team/(3428:3428): Objetivo global obtenido
+[INFO] 12:59:29:729 Team/(3428:3428): Obteniendo cantidad de cada pokemon a planificar
+[INFO] 12:59:29:729 Team/(3428:3428): Cantidad de cada pokemon a planificar obtenida
+[INFO] 12:59:29:729 Team/(3428:3428): Inicializando colas
+[INFO] 12:59:29:729 Team/(3428:3428): Colas inicializadas
+[INFO] 12:59:29:730 Team/(3428:3428): Mandando gets
+[INFO] 12:59:29:730 Team/(3428:3428): Gets mandados
+[INFO] 12:59:29:730 Team/(3428:3435): Escucho localized de BROKER
+[INFO] 12:59:29:730 Team/(3428:3436): verifico conexion con BROKER
+[INFO] 12:59:29:730 Team/(3428:3437): busco deadlock
+[INFO] 12:59:29:730 Team/(3428:3438): Trabajo de entrenador 0 comenzado
+[INFO] 12:59:29:730 Team/(3428:3434): Escucho caught de BROKER
+[INFO] 12:59:29:730 Team/(3428:3439): Trabajo de entrenador 1 comenzado

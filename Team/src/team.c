@@ -777,10 +777,10 @@ t_entrenador* obtener_entrenador(int id) {
 void verificar_conexion(char *ip, char* puerto) {
 	log_info(extense_logger, "verifico conexion con BROKER");
 	while(1) {
+		sleep(tiempo_reconexion);
 		if (estoy_conectado_al_broker == 0) {
 			log_error(logger, "Error en conexion con BROKER, ip: %s puerto: %s, reintentando en %i segundo%s", ip_broker, puerto_broker, tiempo_reconexion, tiempo_reconexion==1 ? "" : "s");
 			reconectar_al_broker();
-			sleep(tiempo_reconexion);
 		}
 	}
 }
