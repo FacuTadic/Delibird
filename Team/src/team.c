@@ -72,7 +72,7 @@ void escuchar_game_boy(void* socket_escucha_game_boy) {
 }
 
 void escuchar_appeared_de_broker(void) {
-	uint32_t id_cola = 11;
+	uint32_t id_cola = 12;
 
 	log_info(extense_logger, "Escucho appeared de BROKER");
 
