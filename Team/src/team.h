@@ -28,7 +28,7 @@ int tiempo_deadlock;
 uint32_t retardo_de_CPU;
 int tiempo_reconexion;
 
-int socket_escucha_game_boy;
+int socketEscuchaGameBoy;
 
 int socket_escucha_appeared;
 int socket_escucha_caught;

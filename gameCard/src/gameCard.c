@@ -1,13 +1,3 @@
-/*
- ============================================================================
- Name        : gameCard.c
- Author      : 
- Version     :
- Copyright   : Your copyright notice
- Description : Hello World in C, Ansi-style
- ============================================================================
- */
-
 #include <stdio.h>
 #include <stdlib.h>
 #include "utilsGameCard.h"
@@ -30,16 +20,17 @@ t_config* leer_config(){
 }
 
 
-void terminar_programa(int conexion);
+void terminar_programa();
 
 
 
 int main(void) {
 
-	int conexion;
 	ipBroker = string_new();
 	puertoBroker = string_new();
 
+
+	generar_ID_Modulo();
 
 	// ################################################# 	SETTER Y SARAZA 	####################################################
 
@@ -51,6 +42,12 @@ int main(void) {
 
 	config = leer_config();
 	log_info(loggerDev, "Config cargada.");
+
+	ip = config_get_string_value(config, "IP");
+	log_info(loggerDev, "La IP es: %s", ip);
+
+	puerto = config_get_string_value(config, "PUERTO");
+	log_info(loggerDev, "El puerto es: %s", puerto);
 
 	ipBroker = config_get_string_value(config, "IP_BROKER");
 	log_info(loggerDev, "La IP del Broker: %s", ipBroker);
@@ -75,53 +72,62 @@ int main(void) {
 	levantarTallGrass(puntoMontaje);
 
 
+	//SETEO DE VARIABLES PARA ARCHIVOSYDIRECTORIOS.H
+	loggerDevArchDir=loggerDev;
+	rutaBlocksArchDir=rutaBlocks;
+	blockSizeArchDir=blockSize;
+
+	//SETEO DE VARIABLES PARA CREACIONDEESTRUCTURASPARAENVIAR.H
+	loggerDevEstructuras = loggerDev;
+
+	//SETEO DE VARIABLES PARA PROTOCOLOGC.H
+	id_modulo = id_moduloGC;
+	loggerDevProtocolo = loggerDev;
+
+	pthread_mutex_init(&estoy_conectado_al_broker_mutex, NULL);
+	pthread_mutex_init(&estoy_leyendo_metadata_mutex,NULL);
+
+
 	//################################################## 	CONEXION 	###############################################################################
-	do{
-		conexion = crear_conexion( ipBroker, puertoBroker);
-
-		if(!conexion){
-			log_error(loggerDev, "Error en conexion con BROKER, ip: %s puerto : %s, reintentando en %d segundo%s ", ipBroker, puertoBroker,tiempoReintentoConexion,tiempoReintentoConexion=1 ? "":"s");
-			sleep(tiempoReintentoConexion);
-		}
-	}while(!conexion );		//reintentar cada tiempoReintentoConexion
-	log_info(loggerDev, "conexion establecida con BROKER, ip: %s puerto : %s", ipBroker, puertoBroker);
 
 
-	enviarMensaje(msj_suscripcion,puertoBroker);//mandar dejame escuchar colas y atenderlas con espera activa bloqueante
-	// chequear con facha funcionamiento suscribir
-
-	esperar_mensaje(puertoBroker); // choripasteado y adaptado de BKR
-
-
-	//COPIO ATENDER DE BKR??
+	socketEscuchaGameBoy = iniciarEscuchaGameBoy(ip, puerto);
+	pthread_t hilo_escucha_de_game_boy;
+	pthread_create(&hilo_escucha_de_game_boy, NULL, (void*) escucharGameBoy, (void*) socketEscuchaGameBoy);
+	pthread_detach(hilo_escucha_de_game_boy);
 
 
+	socketEscuchaNew = crear_conexion(ipBroker, puertoBroker);
+	socketEscuchaCatch = crear_conexion(ipBroker, puertoBroker);
+	socketEscuchaGet = crear_conexion(ipBroker, puertoBroker);
+	pthread_t hiloEscuchaNew;
+	pthread_t hiloEscuchaCatch;
+	pthread_t hiloEscuchaGet;
+	pthread_create(&hiloEscuchaNew, NULL, (void*) escucharNewDeBroker, NULL);
+	pthread_create(&hiloEscuchaCatch, NULL, (void*) escucharCatchDeBroker, NULL);
+	pthread_create(&hiloEscuchaGet, NULL, (void*) escucharGetDeBroker, NULL);
+	pthread_detach(hiloEscuchaNew);
+	pthread_detach(hiloEscuchaCatch);
+	pthread_detach(hiloEscuchaGet);
 
 
+	pthread_t hiloReconexionBroker;
+	pthread_create(&hiloReconexionBroker, NULL, (void*) verificarConexion, NULL);
+	pthread_detach(hiloReconexionBroker);
 
-
+	terminar_programa();
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-void terminar_programa(int conexion){
+void terminar_programa(){
 	log_destroy(loggerDev);
 	log_destroy(loggerGameCard);
 	config_destroy(config);
-	liberar_conexion(conexion);
+	liberar_conexion(socketEscuchaNew);
+	liberar_conexion(socketEscuchaCatch);
+	liberar_conexion(socketEscuchaGet);
+	liberar_conexion(socketEscuchaGameBoy);
+	pthread_mutex_destroy(&estoy_conectado_al_broker_mutex);
 	free(rutaMetaData);
 	free(rutaFiles);
 	free(rutaBlocks);

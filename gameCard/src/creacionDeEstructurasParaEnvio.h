@@ -10,20 +10,24 @@
 #include<sys/socket.h>
 #include<netdb.h>
 #include<string.h>
-#include "utilsGameCard.h"
 #include<commons/config.h>
 #include<commons/string.h>
+#include<commons/collections/queue.h>
+#include "protocoloGameCard.h"
+
+
+t_log* loggerDevEstructuras;
 
 t_paquete* crearPaquete(t_buffer* buffer);
 void* serializar_paquete(t_paquete* paquete, uint32_t *bytes);
+t_buffer* crearBufferSuscriptor(t_suscripcion* suscriptorAEnviar);
 t_buffer* crearBufferAppeared(t_appeared* appearedAEnviar);
 t_buffer* crearBufferCaught(t_caught* caughtAEnviar);
 t_buffer* crearBufferLocalized(t_localized* localizedAEnviar);
 t_localized* crearLocalizedDePokemonInexistente(t_getLlegada* getLlegado);
-t_caught* crearCaught(uint32_t idMensaje, uint32_t flag);
 t_appeared* crearAppeared(t_newLlegada* new);
-t_caught* crearCaught(uint32_t idMensaje, uint32_t flag);
+t_caught* crearCaught(uint32_t idMensaje, bool flag);
 t_localized* crearLocalizedDePokemonInexistente(t_getLlegada* getLlegado);
-t_localized* crearLocalized(t_getLlegada* getLlegado, t_dataPokemon* dataPokemon);
+t_localized* crearLocalized(t_getLlegada* getLlegado,t_queue* dataPokemon);
 
 #endif /* CREACIONDEESTRUCTURASPARAENVIO_H_ */

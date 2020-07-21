@@ -8,7 +8,7 @@ char* generadorDeRutaDeCreacionDeDirectorios(char* ruta, char* nombreDelDirector
 	string_append(&rutaDeCreacionDirectorio, "/");
 	string_append(&rutaDeCreacionDirectorio, nombreDelDirectorio);
 
-	log_info(loggerDev, "La ruta final es: %s",rutaDeCreacionDirectorio);
+	log_info(loggerDevArchDir, "La ruta final es: %s",rutaDeCreacionDirectorio);
 	return rutaDeCreacionDirectorio;
 
 }
@@ -22,7 +22,7 @@ char* generadorDeRutaDeCreacionDeArchivos(char* rutaDirectorio,char* nombreDelAr
 	string_append(&rutaDeCreacion, nombreDelArchivo);
 	string_append(&rutaDeCreacion, tipoDeDato);
 
-	log_info(loggerDev, "La ruta final es: %s",rutaDeCreacion);
+	log_info(loggerDevArchDir, "La ruta final es: %s",rutaDeCreacion);
 	return rutaDeCreacion;
 }
 
@@ -36,16 +36,13 @@ char* generadorDePosiciones(uint32_t posX, uint32_t posY){
 	string_append(&coordenadas,"-");
 	string_append(&coordenadas,posYChar);
 
-	log_info(loggerDev, "La coordenada generada es: %s", coordenadas);
+	log_info(loggerDevArchDir, "La coordenada generada es: %s", coordenadas);
 	return coordenadas;
 }
 
 
 
 
-bool noExisteDirectorio(char* ruta){
-	return stat(ruta, &st1) == -1;
-}
 
 bool existeArchivo(char* ruta){
 	return access(ruta, F_OK ) != -1;
@@ -61,7 +58,7 @@ uint32_t tamanioDeUnArchivo(char* rutaDelArchivo){
 	uint32_t tamanioArchivo = ftell(archivo);
 	fseek(archivo, 0, SEEK_SET);
 	fclose(archivo);
-	log_info(loggerDev, "EL tamanio calculado del archivo es: %i",tamanioArchivo);
+	log_info(loggerDevArchDir, "EL tamanio calculado del archivo es: %i",tamanioArchivo);
 	return tamanioArchivo;
 }
 
@@ -75,7 +72,7 @@ bool hayEspacioEnElBlock(char* rutaDelBlock, char* posicion, uint32_t cantidad){
 	uint32_t tamanioBlock = tamanioDeUnArchivo(rutaDelBlock);
 	uint32_t tamanioKeyValue = sizeof(keyValue);
 
-	return tamanioBlock+tamanioKeyValue+sizeof(cantidad) < blockSize;
+	return tamanioBlock+tamanioKeyValue+sizeof(cantidad) < blockSizeArchDir;
 }
 
 
@@ -86,7 +83,7 @@ void crearDirectorio(char* directorio, char* puntoMontaje){
 
 	if (noExisteDirectorio(rutaAbsoluta)) {
 	    mkdir(rutaAbsoluta, 0700);
-	    log_info(loggerDev, "Se creo el directorio: %s", directorio);
+	    log_info(loggerDevArchDir, "Se creo el directorio: %s", directorio);
 	}
 }
 
@@ -97,7 +94,7 @@ void crearArchivoEnDirectorio(char* nombreDelArchivo, char* directorio){
 	archivo = fopen(rutaDeCreacion,"w+");
 
 	if(archivo == NULL){
-	log_info(loggerDev, "No se pudo crear el archivo en el dicrectorio");
+	log_info(loggerDevArchDir, "No se pudo crear el archivo en el dicrectorio");
 	exit(1);
 	}
 	fclose(archivo);
@@ -105,9 +102,9 @@ void crearArchivoEnDirectorio(char* nombreDelArchivo, char* directorio){
 
 
 bool puedeAbrirseArchivo(t_config* archivo){
-	log_info(loggerDev, "Se creo el falso config de la ruta");
+	log_info(loggerDevArchDir, "Se creo el falso config de la ruta");
 	char* estadoArchivo = config_get_string_value(archivo, "OPEN");
-	log_info(loggerDev, "Retorno el estado: %s", estadoArchivo);
+	log_info(loggerDevArchDir, "Retorno el estado: %s", estadoArchivo);
 
 	return !strcmp(estadoArchivo,"N");
 }
@@ -119,6 +116,11 @@ void activarFlagDeLectura(t_config* archivo){
 	config_save(archivo);
 }
 
+void desactivarFlagDeLectura(t_config* archivo){
+	config_set_value(archivo, "OPEN", "N");
+	config_save(archivo);
+}
+
 
 char** cargarVectorSinElValor(char** arrayViejo,char* block){
 	char** nuevoArrayDeBlock;
@@ -126,11 +128,11 @@ char** cargarVectorSinElValor(char** arrayViejo,char* block){
 
 	while(arrayViejo[i] != NULL){
 			if(strcasecmp(arrayViejo[i],block)){
-				log_info(loggerDev, "Se asigno el block %s a la posicion %i",arrayViejo[i],i);
+				log_info(loggerDevArchDir, "Se asigno el block %s a la posicion %i",arrayViejo[i],i);
 				nuevoArrayDeBlock[i] = arrayViejo[i];
 				i++;
 			} else {
-				log_info(loggerDev, "Se macheo el block que hay que sacar");
+				log_info(loggerDevArchDir, "Se macheo el block que hay que sacar");
 				i++;
 			}
 		}
@@ -144,17 +146,30 @@ void borrarBloqueDe(t_config* archivoMetaData, char*block){
 
 	char** nuevoArrayDeBlock = cargarVectorSinElValor(blocksOcupados,block);
 
-	config_set_value(archivoMetaData,"BLOCKS",nuevoArrayDeBlock);
+	//Rutina de char** a char*
 
-	log_info(loggerDev, "Se seteo el valor del nuevo array en el metadata del pokemon");
+	char* arrayPlano = string_new();
+	string_append(&arrayPlano,"[");
+	uint32_t indexArray = 0;
+
+	while(nuevoArrayDeBlock[indexArray] != NULL){
+
+		if(nuevoArrayDeBlock[indexArray+1]==NULL){
+			string_append(&arrayPlano,nuevoArrayDeBlock[indexArray]);
+			string_append(&arrayPlano,"]");
+		}
+
+		string_append(&arrayPlano,nuevoArrayDeBlock[indexArray]);
+		string_append(&arrayPlano,",");
+	}
+
+
+	config_set_value(archivoMetaData,"BLOCKS",arrayPlano);
+
+	log_info(loggerDevArchDir, "Se seteo el valor del nuevo array en el metadata del pokemon");
 
 	config_save(archivoMetaData);
 
-}
-
-
-void desmarcarBloqueBitmap(char* block){
-		bitarray_clean_bit(bitarray, block);
 }
 
 
@@ -165,11 +180,11 @@ void eliminarKeyValueDe(t_config* archivoBlock,char* posicion){
 
 void agregarCantidadSolicitadaAUnaKey(t_config* archivo,char* key, uint32_t cantidad){
 	uint32_t cantidadVieja= config_get_int_value(archivo,key);
-	log_info(loggerDev, "El size viejo del metadata es: %i", cantidadVieja);
+	log_info(loggerDevArchDir, "El size viejo del metadata es: %i", cantidadVieja);
 	cantidad+= cantidadVieja;
-	log_info(loggerDev, "El size nuevo del metadata es: %i", cantidad);
+	log_info(loggerDevArchDir, "El size nuevo del metadata es: %i", cantidad);
 	char* cantidadTotal = string_itoa(cantidad);
-	log_info(loggerDev, "La conversion de int->char es: %s", cantidadTotal);
+	log_info(loggerDevArchDir, "La conversion de int->char es: %s", cantidadTotal);
 
 	config_set_value(archivo,key, cantidadTotal);
 	config_save(archivo);
@@ -178,11 +193,11 @@ void agregarCantidadSolicitadaAUnaKey(t_config* archivo,char* key, uint32_t cant
 void decrementarEnUnoEnLaPosicion(t_config* archivo,char* key){
 
 	uint32_t cantidadVieja= config_get_int_value(archivo,key);
-	log_info(loggerDev, "El size viejo del metadata es: %i", cantidadVieja);
+	log_info(loggerDevArchDir, "El size viejo del metadata es: %i", cantidadVieja);
 	cantidadVieja -= 1;
-	log_info(loggerDev, "El size nuevo del metadata es: %i", cantidadVieja);
+	log_info(loggerDevArchDir, "El size nuevo del metadata es: %i", cantidadVieja);
 	char* cantidadTotal = string_itoa(cantidadVieja);
-	log_info(loggerDev, "La conversion de int->char es: %s", cantidadTotal);
+	log_info(loggerDevArchDir, "La conversion de int->char es: %s", cantidadTotal);
 
 	config_set_value(archivo,key, cantidadTotal);
 	config_save(archivo);
@@ -202,24 +217,24 @@ char* seleccionarBlockParaCargarPosiciones(char** blocksOcupados, char*posicion,
 
 	uint32_t i = 0;
 		while(blocksOcupados[i] != NULL){
-			log_info(loggerDev, "Se esta viendo su el el block %s cumple las condiciones",blocksOcupados[i]);
-			char* rutaDeArchivo = generadorDeRutaDeCreacionDeArchivos(rutaBlocks,blocksOcupados[i],".bin");
+			log_info(loggerDevArchDir, "Se esta viendo su el el block %s cumple las condiciones",blocksOcupados[i]);
+			char* rutaDeArchivo = generadorDeRutaDeCreacionDeArchivos(rutaBlocksArchDir,blocksOcupados[i],".bin");
 			if(hayEspacioEnElBlock(rutaDeArchivo,posicion,cantidad)){
-				log_info(loggerDev, "Se encontro el block %s libre",blocksOcupados[i]);
+				log_info(loggerDevArchDir, "Se encontro el block %s libre",blocksOcupados[i]);
 				return blocksOcupados[i];
 			} else{
 				i++;
 			}
 		}
 
-		log_info(loggerDev, "Che, no encontramos ningun bloque....");
+		log_info(loggerDevArchDir, "Che, no encontramos ningun bloque....");
 
 		return buscarPosicionDisponibleEnElBitMap();
 }
 
 void agregarNuevaPosicionA(char* block, char* posicion, uint32_t cantidad){
 
-	char* rutaArchivo = generadorDeRutaDeCreacionDeArchivos(rutaBlocks,block,".bin");
+	char* rutaArchivo = generadorDeRutaDeCreacionDeArchivos(rutaBlocksArchDir,block,".bin");
 	t_config* archivoBlock = config_create(rutaArchivo);
 
 	char* cantidadString = string_itoa(cantidad);
@@ -233,59 +248,40 @@ void agregarNuevaPosicionA(char* block, char* posicion, uint32_t cantidad){
 
 
 
-void obtenerTodasLasPosiciones(char** blocks, t_queue* posicionesPokemon){
+void obtenerTodasLasPosiciones(char** blocks, t_queue** posicionesPokemon){
 
 	uint32_t i = 0;
 
-	char** posiciones = malloc(sizeof(char**));
-
 	while(blocks[i] != NULL){
-			log_info(loggerDev, "Se esta analizando el block: %s",blocks[i]);
-			char* rutaDeArchivo = generadorDeRutaDeCreacionDeArchivos(rutaBlocks,blocks[i],".txt");
 
-			 char *line_buf = string_new();
-			 size_t line_buf_size = 0;
-			 int line_count = 0;
-			 ssize_t line_size;
-			 FILE *fp = fopen(rutaDeArchivo, "r");
-			 if (!fp){
-				 log_error(loggerDev, "Archivo vacio");
-			  }
+			log_info(loggerDevArchDir, "Se esta analizando el block: %s",blocks[i]);
+			char* rutaDeArchivo = generadorDeRutaDeCreacionDeArchivos(rutaBlocksArchDir,blocks[i],".txt");
 
-			  /* Get the first line of the file. */
-			  line_size = getline(&line_buf, &line_buf_size, fp);
-			  char** data = string_n_split(line_size,2,"=");
-			  char* posicion = data[0];
-			  queue_push(posicionesPokemon, posicion);
+			FILE *fp;
+			char *line = NULL;
+			size_t len = 0;
+			ssize_t read;
 
-			  /* Loop through until we are done with the file. */
-			  while (line_size >= 0)
-			  {
-			    /* Increment our line count */
-			    line_count++;
+			fp = fopen(rutaDeArchivo, "r");
 
-			    /* Show the line details */
-			    log_info("line[%06d]: chars=%06zd, buf size=%06zu, contents: %s", line_count,
-			        line_size, line_buf_size, line_buf);
+			if (fp == NULL){
+				log_error(loggerDevArchDir, "Archivo vacio");
+				exit(EXIT_FAILURE);
+			}
 
-			    /* Get the next line */
-			    line_size = getline(&line_buf, &line_buf_size, fp);
-				char** data = string_n_split(line_size,2,"=");
+			while ((read = getline(&line, &len, fp)) != -1) {
+				log_info(loggerDevArchDir, "Se esta leyendo la linea: %s",line);
+				char** data = string_n_split(line,2,"=");
+				log_info(loggerDevArchDir, "La coordenada de la linea es: %s",data[0]);
 				char* posicion = data[0];
 				queue_push(posicionesPokemon, posicion);
-			  }
+			}
 
-			  /* Free the allocated line buffer */
-			  free(line_buf);
-			  free(data);
-			  line_buf = NULL;
+			free(line);
+			fclose(fp);
 
-			  /* Close the file now that we are done with it */
-			  fclose(fp);
-
-			  i++;
-	}
-
+			i++;
+		}
 }
 
 
