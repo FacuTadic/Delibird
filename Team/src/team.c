@@ -985,11 +985,11 @@ void inicializar_entrenadores() {
 		if (token_obj != NULL) {
 			while(token_obj != NULL) {
 				list_add(objetivos, token_obj);
-				log_info(extense_logger, "Llego token %s", token_obj);
+				log_info(extense_logger, "Llego token objetivo %s para el entrenador %i", token_obj, i);
 				token_obj = strtok(NULL, "|");
 			}
 		} else {
-			log_info(extense_logger, "NO LLEGO NADA");
+			log_info(extense_logger, "No existen objetivos para el entrenador %i", i);
 		}
 
 		entrenador->objetivos = objetivos;
@@ -1001,11 +1001,11 @@ void inicializar_entrenadores() {
 		if (token_pok != NULL) {
 			while(token_pok != NULL) {
 				list_add(pokemones, token_pok);
-				log_info(extense_logger, "Llego token %s", token_pok);
+				log_info(extense_logger, "Llego token pokemon %s", token_pok);
 				token_pok = strtok(NULL, "|");
 			}
 		} else {
-			// log info no hay nada
+			log_info(extense_logger, "No existen pokemones para el entrenador %i", i);
 		}
 
 		entrenador->pokemones = pokemones;
@@ -1013,9 +1013,9 @@ void inicializar_entrenadores() {
 		char** posiciones = string_split(posicion, "|");
 
 		entrenador->posX = (uint32_t) atoi(posiciones[0]);
-		log_info(extense_logger, "Posicion X: %i", entrenador->posX);
+		log_info(extense_logger, "Posicion X del entrenador %i: %i", i, entrenador->posX);
 		entrenador->posY = (uint32_t) atoi(posiciones[1]);
-		log_info(extense_logger, "Posicion Y: %i", entrenador->posY);
+		log_info(extense_logger, "Posicion Y del entrenador %i: %i", i, entrenador->posY);
 
 		t_list* objetivos_actuales = list_create();
 
