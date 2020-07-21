@@ -864,9 +864,9 @@ int main(void) {
 	pthread_mutex_init(&cambios_contexto_mutex, NULL);
 	pthread_mutex_init(&cantidad_deadlocks_mutex, NULL);
 
-	socketEscuchaGameBoy = iniciar_escucha_game_boy(ip, puerto);
+	socket_escucha_game_boy = iniciar_escucha_game_boy(ip, puerto);
 	pthread_t hilo_escucha_de_game_boy;
-	pthread_create(&hilo_escucha_de_game_boy, NULL, (void*) escuchar_game_boy, (void*) socketEscuchaGameBoy);
+	pthread_create(&hilo_escucha_de_game_boy, NULL, (void*) escuchar_game_boy, (void*) socket_escucha_game_boy);
 	pthread_detach(hilo_escucha_de_game_boy);
 
 	// crear hilos planificadores y tirarles detach
@@ -1733,7 +1733,7 @@ void terminar_programa() {
 	free(ip_broker);
 	free(puerto_broker);
 
-	close(socketEscuchaGameBoy);
+	close(socket_escucha_game_boy);
 	close(socket_escucha_appeared);
 	close(socket_escucha_caught);
 	close(socket_escucha_localized);
