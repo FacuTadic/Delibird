@@ -17,6 +17,8 @@
 
 uint32_t id_modulo;
 
+t_log* extense_logger_protocol;
+
 typedef enum
 {
 	NEW          = 1,
@@ -48,11 +50,11 @@ typedef struct {
 } t_appeared;
 
 int mandar_suscripcion(int socket, uint32_t id_cola);
-t_appeared* recibir_appeared_de_game_boy(int socket, uint32_t* size, t_log* logger);
-t_appeared* recibir_appeared(int socket, uint32_t* size, t_log* logger);
-t_caught* recibir_caught(int socket_broker, uint32_t* size, t_log* logger);
-t_localized* recibir_localized(int socket_broker, uint32_t* size, t_log* logger);
+t_appeared* recibir_appeared_de_game_boy(int socket, uint32_t* size);
+t_appeared* recibir_appeared(int socket, uint32_t* size);
+t_caught* recibir_caught(int socket_broker, uint32_t* size);
+t_localized* recibir_localized(int socket_broker, uint32_t* size);
 void generar_ID_Modulo();
-uint32_t recibir_ID_Catch(int socket_broker,t_log* logger);
-uint32_t recibir_ID_get(int socket_broker, t_log* logger);
-int devolver_ack(int socket_broker, t_log* logger);
+uint32_t recibir_ID_Catch(int socket_broker);
+uint32_t recibir_ID_get(int socket_broker);
+int devolver_ack(int socket_broker);

@@ -1,1 +1,4 @@
 [ERROR] 23:24:41:899 Team/(3405:3413): Error en conexion con BROKER, ip: 127.0.0.1 puerto: 4444, reintentando en 10 segundos
+[ERROR] 00:53:48:298 Team/(3160:3166): Hubo un problema enviando la suscripcion a la cola CAUGHT del broker
+[ERROR] 00:57:06:167 Team/(3544:3552): Error en conexion con BROKER, ip: 127.0.0.1 puerto: 4444, reintentando en 10 segundos
+[INFO] 00:57:06:177 Team/(3544:3552): conexion establecida con BROKER, ip: 127.0.0.1 puerto : 4444

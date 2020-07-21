@@ -5,7 +5,7 @@ void procesar_request_de_game_boy(int cod_op, int socket_game_boy) {
 	uint32_t size;
 	if (cod_op == APPEARED) {
 		log_info(extense_logger, "Codigo de operacion recibido del socket cliente %i corresponde a un APPEARED", socket_game_boy);
-		t_appeared* appeared_msg = recibir_appeared_de_game_boy(socket_game_boy, &size, extense_logger);
+		t_appeared* appeared_msg = recibir_appeared_de_game_boy(socket_game_boy, &size);
 		log_info(extense_logger, "Appeared recibido del modulo Game Boy socket %i", socket_game_boy);
 		if (es_pokemon_global(appeared_msg->pokemon)) {
 			t_mensaje_recibido* mensaje = malloc(sizeof(t_mensaje_recibido));
@@ -72,13 +72,11 @@ void escuchar_game_boy(void* socket_escucha_game_boy) {
 }
 
 void escuchar_appeared_de_broker(void) {
-	uint32_t id_cola = 11;
+	uint32_t id_cola = 12;
 
-	log_info(extense_logger, "escuchando appeared de BROKER" );
+	log_info(extense_logger, "Escucho appeared de BROKER");
 
-	pthread_mutex_lock(&socket_escucha_appeared_mutex);
 	int status_envio = mandar_suscripcion(socket_escucha_appeared, id_cola);
-	pthread_mutex_unlock(&socket_escucha_appeared_mutex);
 
 	if (status_envio == -1) {
 		pthread_mutex_lock(&estoy_conectado_al_broker_mutex);
@@ -90,9 +88,7 @@ void escuchar_appeared_de_broker(void) {
 		if (estoy_conectado_al_broker == 1) {
 			uint32_t size;
 			log_info(extense_logger, "Recibiendo el Appeared de BROKER");
-			pthread_mutex_lock(&socket_escucha_appeared_mutex);
-			t_appeared* appeared_msg = recibir_appeared(socket_escucha_appeared, &size, extense_logger);
-			pthread_mutex_unlock(&socket_escucha_appeared_mutex);
+			t_appeared* appeared_msg = recibir_appeared(socket_escucha_appeared, &size);
 			log_info(extense_logger, "Appeared recibido de BROKER");
 			if (appeared_msg == NULL) {
 				pthread_mutex_lock(&estoy_conectado_al_broker_mutex);
@@ -133,11 +129,9 @@ void escuchar_appeared_de_broker(void) {
 void escuchar_caught_de_broker(void) {
 	uint32_t id_cola = 14;
 
-	log_info(extense_logger, "escucho caught de BROKER" );
+	log_info(extense_logger, "Escucho caught de BROKER");
 
-	pthread_mutex_lock(&socket_escucha_caught_mutex);
 	int status_envio = mandar_suscripcion(socket_escucha_caught, id_cola);
-	pthread_mutex_unlock(&socket_escucha_caught_mutex);
 
 	if (status_envio == -1) {
 		pthread_mutex_lock(&estoy_conectado_al_broker_mutex);
@@ -148,11 +142,9 @@ void escuchar_caught_de_broker(void) {
 	while (1) {
 		if (estoy_conectado_al_broker == 1) {
 			uint32_t size;
-			pthread_mutex_lock(&socket_escucha_caught_mutex);
 			log_info(extense_logger, "Recibiendo caught del Broker en socket %i",socket_escucha_caught);
-			t_caught* caught_msg = recibir_caught(socket_escucha_caught, &size, extense_logger);
+			t_caught* caught_msg = recibir_caught(socket_escucha_caught, &size);
 			log_info(extense_logger, "Caught recibido del Broker en socket %i",socket_escucha_caught);
-			pthread_mutex_unlock(&socket_escucha_caught_mutex);
 
 			if (caught_msg == NULL) {
 				pthread_mutex_lock(&estoy_conectado_al_broker_mutex);
@@ -179,10 +171,10 @@ void escuchar_caught_de_broker(void) {
 
 void escuchar_localized_de_broker(void) {
 	uint32_t id_cola = 16;
-	log_info(extense_logger, "escucho localized de BROKER" );
-	pthread_mutex_lock(&socket_escucha_localized_mutex);
+
+	log_info(extense_logger, "Escucho localized de BROKER");
+
 	int status_envio = mandar_suscripcion(socket_escucha_localized, id_cola);
-	pthread_mutex_unlock(&socket_escucha_localized_mutex);
 
 	if (status_envio == -1) {
 		pthread_mutex_lock(&estoy_conectado_al_broker_mutex);
@@ -193,11 +185,9 @@ void escuchar_localized_de_broker(void) {
 	while (1) {
 		if (estoy_conectado_al_broker == 1) {
 			uint32_t size;
-			pthread_mutex_lock(&socket_escucha_localized_mutex);
 			log_info(extense_logger, "Recibiendo localized de Broker de socket %i",socket_escucha_localized);
-			t_localized* localized_msg = recibir_localized(socket_escucha_localized, &size, extense_logger);
+			t_localized* localized_msg = recibir_localized(socket_escucha_localized, &size);
 			log_info(extense_logger, "Localized recibido de Broker de socket %i",socket_escucha_localized);
-			pthread_mutex_unlock(&socket_escucha_localized_mutex);
 			if (localized_msg == NULL) {
 				pthread_mutex_lock(&estoy_conectado_al_broker_mutex);
 				estoy_conectado_al_broker = 0;
@@ -260,26 +250,16 @@ void laburar(void* entrenador_param) {
 
 		pthread_mutex_lock(&planificacion_fifo);
 
-		log_info(extense_logger, "entrenador %i, con estado %i, entro por Atrapar Pokemon",entrenador->index,entrenador->estado);
-
-		cambiar_estado_de_entrenador(entrenador, ESTADO_EXECUTING);
-		log_info(extense_logger, "entrenador %i, entro por Atrapar Pokemon, cambia su estado a %i",entrenador->index,entrenador->estado);
+		cambiar_estado_de_entrenador(entrenador, ESTADO_EXECUTING, "Ha comenzado a ejecutar la tarea de atrapar pokemon");
 		t_pokemon* parametros_atrapado = (t_pokemon*) entrenador->tarea_actual->parametros;
-		log_info(extense_logger, "Pokemon a atrapar: %s", parametros_atrapado->nombre);
+		log_info(extense_logger, "Entrenador %i esta atrapando pokemon %s ubicado en (%i,%i)",entrenador->index, parametros_atrapado->nombre, parametros_atrapado->pos_X, parametros_atrapado->pos_Y);
+		log_info(logger, "Entrenador %i esta atrapando pokemon %s ubicado en (%i,%i)",entrenador->index, parametros_atrapado->nombre, parametros_atrapado->pos_X, parametros_atrapado->pos_Y);
 
-		// ir al lugar en cuestion
-		log_info(extense_logger, "Moviendo al entrenador %i a la posicion X: %i y posicion Y: %i",entrenador->index,parametros_atrapado->pos_X,parametros_atrapado->pos_Y);
 		irA(parametros_atrapado->pos_X, parametros_atrapado->pos_Y, entrenador);
-		log_info(extense_logger, "entrenador %i llego",entrenador->index);
 
-		// mandar catch NO SE REINTENTA, SI FALLA EL ENVIO LO ATRAPE RE CHETO
-		log_info(extense_logger, "Se envia el catch a BROKER");
+		cambiar_estado_de_entrenador(entrenador, ESTADO_BLOCKED, "Se ha enviado un catch");
+
 		enviar_catch_a_broker(parametros_atrapado, entrenador);
-		log_info(extense_logger, "Se envio el catch, a BROKER");
-
-		// bloquearme esperando a que el planificador me desbloquee
-		cambiar_estado_de_entrenador(entrenador, ESTADO_BLOCKED);
-		log_info(extense_logger, "entrenador %i cambia su estado a BLOQUEADO",entrenador->index);
 
 		pthread_mutex_unlock(&planificacion_fifo);
 
@@ -291,7 +271,7 @@ void laburar(void* entrenador_param) {
 
 		log_info(extense_logger, "Entrenador %i entro por Intercambiar Pokemon", entrenador->index);
 
-		cambiar_estado_de_entrenador(entrenador, ESTADO_EXECUTING);
+		cambiar_estado_de_entrenador(entrenador, ESTADO_EXECUTING, "Ha comenzado a ejecutar la tarea de intercambiar pokemon");
 		log_info(extense_logger, "entrenador %i cambia su estado a EXECUTING",entrenador->index);
 		t_deadlock* parametros_intercambio = (t_deadlock*) entrenador->tarea_actual->parametros;
 		log_info(extense_logger, "Parametros del deadlock cargados");
@@ -331,7 +311,7 @@ void laburar(void* entrenador_param) {
 			cantidad_deadlocks++;
 			pthread_mutex_unlock(&cantidad_deadlocks_mutex);
 			if (otro_entrenador->pokemones_innecesarios->elements_count == 0) {
-				cambiar_estado_de_entrenador(otro_entrenador, ESTADO_EXIT);
+				cambiar_estado_de_entrenador(otro_entrenador, ESTADO_EXIT, "Ha terminado su objetivo");
 				t_tarea* otra_tarea_pingo = malloc(sizeof(t_tarea));
 				otra_tarea_pingo->id_tarea = NO_HACER_PINGO;
 				cambiar_tarea_de_entrenador(otro_entrenador, otra_tarea_pingo);
@@ -347,7 +327,7 @@ void laburar(void* entrenador_param) {
 		}
 
 		if (entrenador->pokemones_innecesarios->elements_count == 0) {
-			cambiar_estado_de_entrenador(entrenador, ESTADO_EXIT);
+			cambiar_estado_de_entrenador(entrenador, ESTADO_EXIT, "Ha terminado su objetivo");
 			t_tarea* tarea_pingo = malloc(sizeof(t_tarea));
 			tarea_pingo->id_tarea = NO_HACER_PINGO;
 			cambiar_tarea_de_entrenador(entrenador, tarea_pingo);
@@ -356,7 +336,7 @@ void laburar(void* entrenador_param) {
 			t_tarea* tarea_pingo = malloc(sizeof(t_tarea));
 			tarea_pingo->id_tarea = NO_HACER_PINGO;
 			cambiar_tarea_de_entrenador(entrenador, tarea_pingo);
-			cambiar_estado_de_entrenador(entrenador, ESTADO_BLOCKED);
+			cambiar_estado_de_entrenador(entrenador, ESTADO_BLOCKED, "Se ha terminado de intercambiar pokemones y sigue sin cumplirse el objetivo");
 			log_info(extense_logger, "entrenador %i cambia su estado a BLOQUEADO",entrenador->index);
 		}
 
@@ -376,7 +356,7 @@ void laburar(void* entrenador_param) {
 	pthread_exit(NULL);
 }
 
-void planificar_pokemon() {
+void planificar_pokemon(void) {
 	log_info(extense_logger, "Hilo planificador de pokemones iniciado");
 
 	while(1) {
@@ -413,7 +393,7 @@ void planificar_pokemon() {
 			tarea_pokemon->parametros = mensaje_pokemon;
 			cambiar_tarea_de_entrenador(entrenador_a_planificar, tarea_pokemon);
 
-			cambiar_estado_de_entrenador(entrenador_a_planificar, ESTADO_READY);
+			cambiar_estado_de_entrenador(entrenador_a_planificar, ESTADO_READY, "Entrenador planificado para ir a atrapar pokemon");
 
 			pthread_mutex_t* mutex_entrenador = list_get(entrenadores_mutex, entrenador_a_planificar->index);
 			pthread_mutex_lock(mutex_entrenador);
@@ -427,7 +407,7 @@ void planificar_pokemon() {
 	}
 }
 
-void planificar_caught() {
+void planificar_caught(void) {
 	log_info(extense_logger, "Hilo planificador de mensajes caught iniciado");
 
 	while(1) {
@@ -458,7 +438,7 @@ void planificar_caught() {
 				adquirir_pokemon(catch_id->entrenador, catch_id->pokemon->nombre);
 				if (catch_id->entrenador->pokebolas == 0) {
 					if (list_size(catch_id->entrenador->objetivos_actuales) == 0) {
-						cambiar_estado_de_entrenador(catch_id->entrenador, ESTADO_EXIT);
+						cambiar_estado_de_entrenador(catch_id->entrenador, ESTADO_EXIT, "Ha terminado su objetivo");
 						log_info(extense_logger, "no hago nada porque el entrenador %i cumplio sus objetivos y no tiene pokebolas",catch_id->entrenador->index );
 						t_tarea* tarea_pingo = malloc(sizeof(t_tarea));
 						tarea_pingo->id_tarea = NO_HACER_PINGO;
@@ -466,14 +446,12 @@ void planificar_caught() {
 						sem_post(&(catch_id->entrenador->semaforo));
 					} else {
 						log_info(extense_logger, "no hago nada porque el entrenador tiene objetivos pero no pokebolas");
-						cambiar_estado_de_entrenador(catch_id->entrenador, ESTADO_BLOCKED);
 						t_tarea* tarea_pingo = malloc(sizeof(t_tarea));
 						tarea_pingo->id_tarea = NO_HACER_PINGO;
 						cambiar_tarea_de_entrenador(catch_id->entrenador, tarea_pingo);
 					}
 				} else {
-					cambiar_estado_de_entrenador(catch_id->entrenador, ESTADO_BLOCKED);
-					log_info(extense_logger, ""); // que onda aca??
+					log_info(extense_logger, "Entrenador %i ha obtenido el pokemon %s", catch_id->entrenador->index, catch_id->pokemon->nombre);
 					t_tarea* tarea_pingo = malloc(sizeof(t_tarea));
 					tarea_pingo->id_tarea = NO_HACER_PINGO;
 					cambiar_tarea_de_entrenador(catch_id->entrenador, tarea_pingo);
@@ -487,7 +465,7 @@ void planificar_caught() {
 					tarea_reatrapar->id_tarea = ATRAPAR_POKEMON;
 					tarea_reatrapar->parametros = pokemon_para_reintentar;
 					cambiar_tarea_de_entrenador(catch_id->entrenador, tarea_reatrapar);
-					cambiar_estado_de_entrenador(catch_id->entrenador, ESTADO_READY);
+					cambiar_estado_de_entrenador(catch_id->entrenador, ESTADO_READY, "Entrenador planificado para atrapar pokemon");
 					pthread_mutex_t* mutex_entrenador = list_get(entrenadores_mutex, catch_id->entrenador->index);
 					pthread_mutex_lock(mutex_entrenador);
 					sem_post(&(((t_entrenador*) catch_id->entrenador)->semaforo));
@@ -512,7 +490,7 @@ void planificar_caught() {
 	}
 }
 
-void planificar_deadlock() {
+void planificar_deadlock(void) {
 	log_info(extense_logger, "Hilo planificador de tratamiento de deadlocks iniciado");
 
 	while(1) {
@@ -535,7 +513,7 @@ void planificar_deadlock() {
 			t_entrenador* primer_entrenador = (t_entrenador*) list_get(mensaje_deadlock->entrenadores, 0);
 
 			cambiar_tarea_de_entrenador(primer_entrenador, tarea_deadlock);
-			cambiar_estado_de_entrenador(primer_entrenador, ESTADO_READY);
+			cambiar_estado_de_entrenador(primer_entrenador, ESTADO_READY, "Entrenador planificado para intercambiar pokemones");
 
 			pthread_mutex_t* mutex_entrenador = list_get(entrenadores_mutex, primer_entrenador->index);
 			pthread_mutex_lock(mutex_entrenador);
@@ -576,16 +554,19 @@ int todavia_existe_deadlock(t_deadlock* deadlock) {
 	return hay_deadlock;
 }
 
-void buscar_deadlocks() {
-	log_info(extense_logger, "busco deadlock");
+void buscar_deadlocks(void) {
+	log_info(extense_logger, "Hilo de busqueda de deadlocks iniciado");
 	while(1) {
 		sleep(tiempo_deadlock);
 
-		log_info(extense_logger, "Se esta obteniendo el deadlock");
+		log_info(extense_logger, "Buscando deadlock...");
+		log_info(logger, "Buscando deadlock...");
 		t_deadlock* deadlock = obtener_deadlock();
-		log_info(extense_logger, "Se obtuvo el deadlock");
 
 		if (deadlock != NULL) {
+
+			log_info(extense_logger, "Deadlock obtenido involucrando a %i entrenadores", deadlock->entrenadores->elements_count);
+			log_info(logger, "Deadlock obtenido involucrando a %i entrenadores", deadlock->entrenadores->elements_count);
 
 			t_mensaje_recibido* mensaje = malloc(sizeof(t_mensaje_recibido));
 			mensaje->tipo_mensaje = MENSAJE_DEADLOCK;
@@ -595,6 +576,9 @@ void buscar_deadlocks() {
 			queue_push(cola_deadlock, (void*) mensaje);
 			pthread_mutex_unlock(&cola_deadlock_mutex);
 			sem_post(&sem_cola_deadlock);
+		} else {
+			log_info(extense_logger, "No se han encontrado deadlocks");
+			log_info(logger, "No se han encontrado deadlocks");
 		}
 	}
 }
@@ -772,39 +756,41 @@ t_entrenador* obtener_entrenador(int id) {
 	return NULL;
 }
 
-void verificar_conexion(char *ip, char* puerto) {
-	log_info(extense_logger, "verifico conexion con BROKER");
+void verificar_conexion(void) {
+	log_info(extense_logger, "Hilo de verificacion periodica de conexion con Broker iniciado");
 	while(1) {
+		sleep(tiempo_reconexion);
+		log_info(extense_logger, "Iniciando verificacion de conexion con Broker...");
+		log_info(logger, "Iniciando verificacion de conexion con Broker...");
 		if (estoy_conectado_al_broker == 0) {
-			log_error(logger, "Error en conexion con BROKER, ip: %s puerto: %s, reintentando en %i segundo%s", ip_broker, puerto_broker, tiempo_reconexion, tiempo_reconexion==1 ? "" : "s");
 			reconectar_al_broker();
-			sleep(tiempo_reconexion);
+		} else {
+			log_info(extense_logger, "Conexion con Broker en buen estado, verificando nuevamente en %i segundos", tiempo_reconexion);
 		}
 	}
 }
 
 void reconectar_al_broker() {
+	log_info(extense_logger, "Intentando reconectar con Broker");
 	int conexion_al_broker = crear_conexion(ip_broker, puerto_broker);
 	if (conexion_al_broker != -1) {
-		pthread_mutex_lock(&socket_escucha_appeared_mutex);
-		int socket_escucha_appeared = conexion_al_broker;
+		socket_escucha_appeared = conexion_al_broker;
 		log_info(extense_logger, "Socket de reconexion appeared: %i",socket_escucha_appeared);
-		pthread_mutex_unlock(&socket_escucha_appeared_mutex);
 
-		pthread_mutex_lock(&socket_escucha_caught_mutex);
-		int socket_escucha_caught = crear_conexion(ip_broker, puerto_broker);
+		socket_escucha_caught = crear_conexion(ip_broker, puerto_broker);
 		log_info(extense_logger, "Socket de reconexion appeared: %i",socket_escucha_caught);
-		pthread_mutex_unlock(&socket_escucha_caught_mutex);
 
-		pthread_mutex_lock(&socket_escucha_localized_mutex);
-		int socket_escucha_localized = crear_conexion(ip_broker, puerto_broker);
+		socket_escucha_localized = crear_conexion(ip_broker, puerto_broker);
 		log_info(extense_logger, "Socket de reconexion appeared: %i",socket_escucha_localized);
-		pthread_mutex_unlock(&socket_escucha_localized_mutex);
 
 		log_info(logger, "conexion establecida con BROKER, ip: %s puerto : %s", ip_broker, puerto_broker);
-		pthread_mutex_lock(&estoy_conectado_al_broker_mutex);
 		estoy_conectado_al_broker = 1;
-		pthread_mutex_unlock(&estoy_conectado_al_broker_mutex);
+
+		log_info(extense_logger, "Reconexion con Broker exitosa, verificando nuevamente en %i segundos", tiempo_reconexion);
+		log_info(logger, "Reconexion con Broker exitosa, verificando nuevamente en %i segundos", tiempo_reconexion);
+	} else {
+		log_error(extense_logger, "Reconexion con Broker fallida, intentando nuevamente en %i segundos", tiempo_reconexion);
+		log_error(logger, "Reconexion con Broker fallida, intentando nuevamente en %i segundos", tiempo_reconexion);
 	}
 }
 
@@ -821,6 +807,7 @@ int main(void) {
 	log_file = config_get_string_value(config, "LOG_FILE");
 	extense_log_file = config_get_string_value(config, "EXTENSE_LOG_FILE");
 	extense_logger = iniciar_logger(extense_log_file);
+	extense_logger_protocol = extense_logger;
 	log_info(extense_logger, "logger extenso iniciado");
 	logger = iniciar_logger_sin_consola(log_file);
 	log_info(extense_logger, "logger de la catedra iniciado");
@@ -873,9 +860,6 @@ int main(void) {
 	pthread_mutex_init(&pokemones_llegados_mutex, NULL);
 	pthread_mutex_init(&catch_IDs_mutex, NULL);
 	pthread_mutex_init(&estoy_conectado_al_broker_mutex, NULL);
-	pthread_mutex_init(&socket_escucha_appeared_mutex, NULL);
-	pthread_mutex_init(&socket_escucha_caught_mutex, NULL);
-	pthread_mutex_init(&socket_escucha_localized_mutex, NULL);
 	pthread_mutex_init(&ciclos_CPU_mutex, NULL);
 	pthread_mutex_init(&cambios_contexto_mutex, NULL);
 	pthread_mutex_init(&cantidad_deadlocks_mutex, NULL);
@@ -1260,13 +1244,14 @@ void enviar_get_a_broker(char* nombre_pokemon) {
 	int status_send = send(socket_broker, flujo, bytes, 0);
 
 	if (status_send == -1 || status_send == 0) {
-		log_error(extense_logger, "Error: No se pudo enviar el GET correspondiente al pokemon %s", nombre_pokemon);
+		log_error(extense_logger, "Error: No se pudo enviar el GET correspondiente al pokemon %s, iniciando el comportamiento default", nombre_pokemon);
+		log_error(logger, "Error: No se pudo enviar el GET correspondiente al pokemon %s, iniciando el comportamiento default", nombre_pokemon);
 		pthread_mutex_lock(&estoy_conectado_al_broker_mutex);
 		estoy_conectado_al_broker = 0;
 		pthread_mutex_unlock(&estoy_conectado_al_broker_mutex);
 	} else {
-		log_info(extense_logger, "Mensaje GET correspondiente al pokemon %s enviado correctamente al BROKER a traves del socket %i", nombre_pokemon, puerto_broker);
-		uint32_t id_get = recibir_ID_get(socket_broker, extense_logger);
+		log_info(extense_logger, "Mensaje GET correspondiente al pokemon %s enviado correctamente al BROKER a traves del socket %i", nombre_pokemon, socket_broker);
+		uint32_t id_get = recibir_ID_get(socket_broker);
 		if (id_get == 0) {
 			log_warning(extense_logger, "Hubo un problema al recibir el id correspondiente al mensaje GET con el pokemon %s", nombre_pokemon);
 		} else {
@@ -1301,7 +1286,6 @@ void enviar_catch_a_broker(t_pokemon* pokemon, t_entrenador* entrenador) {
 	desplazamiento += sizeof(uint32_t);
 
 	int socket_broker = crear_conexion(ip_broker, puerto_broker);
-	cambiar_estado_de_entrenador(entrenador, ESTADO_BLOCKED);
 
 	pthread_mutex_t* mutex_entrenador = list_get(entrenadores_mutex, entrenador->index);
 	pthread_mutex_lock(mutex_entrenador);
@@ -1314,16 +1298,15 @@ void enviar_catch_a_broker(t_pokemon* pokemon, t_entrenador* entrenador) {
 
 	if (send(socket_broker, flujo, bytes, 0) == -1) {
 		log_error(extense_logger, "Error: No se pudo enviar el mensaje catch del entrenador %i para el pokemon %s en (%i,%i), obteniendo pokemon por comportamiento default", entrenador->index, pokemon->nombre, pokemon->pos_X, pokemon->pos_Y);
+		log_error(logger, "Error: No se pudo enviar el mensaje catch del entrenador %i para el pokemon %s en (%i,%i), obteniendo pokemon por comportamiento default", entrenador->index, pokemon->nombre, pokemon->pos_X, pokemon->pos_Y);
 		pthread_mutex_unlock(mutex_entrenador);
 		adquirir_pokemon(entrenador, pokemon->nombre);
 		if (entrenador->pokebolas == 0) {
-			cambiar_estado_de_entrenador(entrenador, ESTADO_EXIT);
+			cambiar_estado_de_entrenador(entrenador, ESTADO_EXIT, "Ha completado su objetivo");
 			t_tarea* tarea_pingo = malloc(sizeof(t_tarea));
 			tarea_pingo->id_tarea = NO_HACER_PINGO;
 			cambiar_tarea_de_entrenador(entrenador, tarea_pingo);
 			sem_post(&(entrenador->semaforo));
-		} else {
-			cambiar_estado_de_entrenador(entrenador, ESTADO_BLOCKED);
 		}
 		pthread_mutex_lock(&estoy_conectado_al_broker_mutex);
 		estoy_conectado_al_broker = 0;
@@ -1331,19 +1314,17 @@ void enviar_catch_a_broker(t_pokemon* pokemon, t_entrenador* entrenador) {
 	} else {
 		pthread_mutex_unlock(mutex_entrenador);
 		log_info(extense_logger, "El entrenador %i ha enviado el catch para el pokemon %s en (%i,%i) correctamente por el socket %i", entrenador->index, pokemon->nombre, pokemon->pos_X, pokemon->pos_Y, socket_broker);
-		uint32_t id_catch = recibir_ID_Catch(socket_broker,extense_logger);
+		uint32_t id_catch = recibir_ID_Catch(socket_broker);
 		if (id_catch == 0) {
 			log_error(extense_logger, "Error: Se pudo enviar el mensaje catch del entrenador %i para el pokemon %s en (%i,%i) pero no se ha podido obtener la respuesta del broker con el id, obteniendo pokemon por comportamiento default", entrenador->index, pokemon->nombre, pokemon->pos_X, pokemon->pos_Y);
 			pthread_mutex_unlock(mutex_entrenador);
 			adquirir_pokemon(entrenador, pokemon->nombre);
 			if (entrenador->pokebolas == 0) {
-				cambiar_estado_de_entrenador(entrenador, ESTADO_EXIT);
+				cambiar_estado_de_entrenador(entrenador, ESTADO_EXIT, "Ha completado su objetivo");
 				t_tarea* tarea_pingo = malloc(sizeof(t_tarea));
 				tarea_pingo->id_tarea = NO_HACER_PINGO;
 				cambiar_tarea_de_entrenador(entrenador, tarea_pingo);
 				sem_post(&(entrenador->semaforo));
-			} else {
-				cambiar_estado_de_entrenador(entrenador, ESTADO_BLOCKED);
 			}
 			pthread_mutex_lock(&estoy_conectado_al_broker_mutex);
 			estoy_conectado_al_broker = 0;
@@ -1366,6 +1347,7 @@ void enviar_catch_a_broker(t_pokemon* pokemon, t_entrenador* entrenador) {
 
 void irA(uint32_t posX, uint32_t posY, t_entrenador* entrenador) {
 	log_info(extense_logger, "El entrenador %i se esta moviendo de (%i,%i) a (%i,%i)", entrenador->index, entrenador->posX, entrenador->posY, posX, posY);
+	log_info(logger, "El entrenador %i se esta moviendo de (%i,%i) a (%i,%i)", entrenador->index, entrenador->posX, entrenador->posY, posX, posY);
 
 	pthread_mutex_t* mutex_entrenador = list_get(entrenadores_mutex, entrenador->index);
 	pthread_mutex_lock(mutex_entrenador);
@@ -1384,6 +1366,7 @@ void irA(uint32_t posX, uint32_t posY, t_entrenador* entrenador) {
 			ciclos_CPU++;
 			pthread_mutex_unlock(&ciclos_CPU_mutex);
 			log_info(extense_logger, "El entrenador %i se encuentra en (%i,%i)", entrenador->index, entrenador->posX, entrenador->posY);
+			log_info(logger, "El entrenador %i se encuentra en (%i,%i)", entrenador->index, entrenador->posX, entrenador->posY);
 			sleep(retardo_de_CPU);
 		} else {
 			entrenador->posY--;
@@ -1392,6 +1375,7 @@ void irA(uint32_t posX, uint32_t posY, t_entrenador* entrenador) {
 			ciclos_CPU++;
 			pthread_mutex_unlock(&ciclos_CPU_mutex);
 			log_info(extense_logger, "El entrenador %i se encuentra en (%i,%i)", entrenador->index, entrenador->posX, entrenador->posY);
+			log_info(logger, "El entrenador %i se encuentra en (%i,%i)", entrenador->index, entrenador->posX, entrenador->posY);
 			sleep(retardo_de_CPU);
 		}
 	}
@@ -1404,6 +1388,7 @@ void irA(uint32_t posX, uint32_t posY, t_entrenador* entrenador) {
 			ciclos_CPU++;
 			pthread_mutex_unlock(&ciclos_CPU_mutex);
 			log_info(extense_logger, "El entrenador %i se encuentra en (%i,%i)", entrenador->index, entrenador->posX, entrenador->posY);
+			log_info(logger, "El entrenador %i se encuentra en (%i,%i)", entrenador->index, entrenador->posX, entrenador->posY);
 			sleep(retardo_de_CPU);
 		} else {
 			entrenador->posX--;
@@ -1412,6 +1397,7 @@ void irA(uint32_t posX, uint32_t posY, t_entrenador* entrenador) {
 			ciclos_CPU++;
 			pthread_mutex_unlock(&ciclos_CPU_mutex);
 			log_info(extense_logger, "El entrenador %i se encuentra en (%i,%i)", entrenador->index, entrenador->posX, entrenador->posY);
+			log_info(logger, "El entrenador %i se encuentra en (%i,%i)", entrenador->index, entrenador->posX, entrenador->posY);
 			sleep(retardo_de_CPU);
 		}
 
@@ -1423,6 +1409,7 @@ void irA(uint32_t posX, uint32_t posY, t_entrenador* entrenador) {
 
 void intercambiar_pokemones(t_entrenador* entrenador1, t_entrenador* entrenador2, char* pokemon1, char* pokemon2) {
 	log_info(extense_logger, "Entrenadores %i y %i intercambiando pokemones %s y %s", entrenador1->index, entrenador2->index, pokemon1, pokemon2);
+	log_info(logger, "Entrenadores %i y %i intercambiando pokemones %s y %s", entrenador1->index, entrenador2->index, pokemon1, pokemon2);
 	sleep(retardo_de_CPU * 5);
 	pthread_mutex_t* mutex_entrenador1 = list_get(entrenadores_mutex, entrenador1->index);
 	pthread_mutex_lock(mutex_entrenador1);
@@ -1515,15 +1502,10 @@ t_list* entrenadores_que_pueden_ir_a_atrapar() {
 
 	for(int i = 0; i < entrenadores->elements_count; i++) {
 		t_entrenador* entrenador_lista = (t_entrenador*) list_get(entrenadores, i);
-		pthread_mutex_t* mutex_entrenador = list_get(entrenadores_mutex, i);
-		pthread_mutex_lock(mutex_entrenador);
-
 		if(entrenador_lista->estado == ESTADO_NEW || entrenador_lista->tarea_actual->id_tarea == NO_HACER_PINGO){
 			list_add(entrenadores_disponibles, entrenador_lista);
 		}
-		pthread_mutex_unlock(mutex_entrenador);
 	}
-
 	if (list_is_empty(entrenadores_disponibles)) {
 		log_warning(extense_logger, "NO HAY ENTRENADORES DISPONIBLES");
 	}
@@ -1620,7 +1602,8 @@ int tengo_en_el_mapa(char* pokemon) {
 	t_list* pokemones_en_el_mapa = (t_list*) dictionary_get(pokemones_conocidos_que_no_se_intentan_atrapar, pokemon);
 
 	// si ya se, es horrible esto
-	// pero no confio en los frue y false de c
+	// pero no confio en los true y false de c
+	// y no es momento de investigar
 	// entonces prefiero comparar numeros
 	if (list_is_empty(pokemones_en_el_mapa) == 1) {
 		return 1;
@@ -1665,7 +1648,7 @@ t_pokemon* mejor_pokemon_para_reintentar(t_entrenador* entrenador, char* pokemon
 	return pokemon_a_retornizar;
 }
 
-void cambiar_estado_de_entrenador(t_entrenador* entrenador, estado estado_nuevo) {
+void cambiar_estado_de_entrenador(t_entrenador* entrenador, estado estado_nuevo, char* razon) {
 	log_info(extense_logger, "Cambiando estado de entrenador %i a %i", entrenador->index, estado_nuevo);
 	pthread_mutex_t* mutex_entrenador = list_get(entrenadores_mutex, entrenador->index);
 	pthread_mutex_lock(mutex_entrenador);
@@ -1676,7 +1659,8 @@ void cambiar_estado_de_entrenador(t_entrenador* entrenador, estado estado_nuevo)
 		pthread_mutex_unlock(&cambios_contexto_mutex);
 	}
 	pthread_mutex_unlock(mutex_entrenador);
-	log_info(extense_logger, "Estado de entrenador %i cambiado a %i", entrenador->index, estado_nuevo);
+	log_info(extense_logger, "Estado de entrenador %i cambiado a %i. Razon del cambio: %s", entrenador->index, estado_nuevo, razon);
+	log_info(logger, "Estado de entrenador %i cambiado a %i. Razon del cambio: %s", entrenador->index, estado_nuevo, razon);
 }
 
 void cambiar_tarea_de_entrenador(t_entrenador* entrenador, t_tarea* tarea_nueva) {
@@ -1702,17 +1686,19 @@ void cambiar_tarea_de_entrenador(t_entrenador* entrenador, t_tarea* tarea_nueva)
 }
 
 void mostrar_metricas() {
-	log_info(extense_logger, "Terminando proceso Team");
-	log_info(extense_logger, "Metricas del proceso");
-	log_info(extense_logger, "Cantidad de ciclos de CPU totales: %i", ciclos_CPU);
+	log_info(extense_logger, "Proceso Team terminado. Cantidad de ciclos de CPU totales: %i", ciclos_CPU);
+	log_info(logger, "Proceso Team terminado. Cantidad de ciclos de CPU totales: %i", ciclos_CPU);
 
 	for (int i = 0; i < entrenadores->elements_count; i++) {
 		t_entrenador* entrenador_lista = list_get(entrenadores, i);
-		log_info(extense_logger, "Cantidad de diclod de CPU del entrenador %i: %i", entrenador_lista->index, entrenador_lista->contador_ciclos_CPU);
+		log_info(extense_logger, "Proceso Team terminado. Cantidad de ciclos de CPU del entrenador %i: %i", entrenador_lista->index, entrenador_lista->contador_ciclos_CPU);
+		log_info(logger, "Cantidad de ciclos de CPU del entrenador %i: %i", entrenador_lista->index, entrenador_lista->contador_ciclos_CPU);
 	}
 
-	log_info(extense_logger, "Cantidad de cambios de contexto realizados: %i", cambios_contexto);
-	log_info(extense_logger, "Cantidad de deadlocks encontrados y tratados: %i", cantidad_deadlocks);
+	log_info(extense_logger, "Proceso Team terminado. Cantidad de cambios de contexto realizados: %i", cambios_contexto);
+	log_info(logger, "Proceso Team terminado. Cantidad de cambios de contexto realizados: %i", cambios_contexto);
+	log_info(extense_logger, "Proceso Team terminado. Cantidad de deadlocks encontrados y tratados: %i", cantidad_deadlocks);
+	log_info(logger, "Proceso Team terminado. Cantidad de deadlocks encontrados y tratados: %i", cantidad_deadlocks);
 }
 
 int es_id_catch(uint32_t id) {
@@ -1767,9 +1753,6 @@ void terminar_programa() {
 	pthread_mutex_destroy(&pokemones_llegados_mutex);
 	pthread_mutex_destroy(&catch_IDs_mutex);
 	pthread_mutex_destroy(&estoy_conectado_al_broker_mutex);
-	pthread_mutex_destroy(&socket_escucha_appeared_mutex);
-	pthread_mutex_destroy(&socket_escucha_caught_mutex);
-	pthread_mutex_destroy(&socket_escucha_localized_mutex);
 	pthread_mutex_destroy(&ciclos_CPU_mutex);
 	pthread_mutex_destroy(&cambios_contexto_mutex);
 	pthread_mutex_destroy(&cantidad_deadlocks_mutex);
