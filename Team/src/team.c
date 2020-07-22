@@ -1598,7 +1598,8 @@ t_list* generar_pokemones_de_localized(t_localized* mensaje_localized) {
 
 int tengo_que_planificar_pokemon(t_pokemon* pokemon) {
 	int* cantidad_disponible_para_atrapar = (int*) dictionary_get(cantidad_de_pokemones_que_puedo_planificar, pokemon->nombre);
-	log_info(extense_logger, "MMM");
+	log_info(extense_logger, "%i", cantidad_disponible_para_atrapar);
+	log_info(extense_logger, "%i", *cantidad_disponible_para_atrapar);
 	if (*cantidad_disponible_para_atrapar > 0) {
 		log_info(extense_logger, "CUANTA DUDA");
 		return 1;
