@@ -1185,11 +1185,13 @@ void obtener_cantidad_de_cada_pokemon_a_planificar() {
 	for (int i = 0; i < objetivo_global->elements_count; i++) {
 		char* objetivo_lista = list_get(objetivo_global, i);
 		if (dictionary_has_key(cantidad_de_pokemones_que_puedo_planificar, objetivo_lista) == 1) {
-			int* cantidad = ((int*) dictionary_get(cantidad_de_pokemones_que_puedo_planificar, objetivo_lista));
-			(*cantidad)++;
+			t_pokemon_planificables* cantidad = (t_pokemon_planificables*) dictionary_get(cantidad_de_pokemones_que_puedo_planificar, objetivo_lista);
+			cantidad->cantidad++;
 		} else {
-			int cant = 1;
-			dictionary_put(cantidad_de_pokemones_que_puedo_planificar, objetivo_lista, &cant);
+			t_pokemon_planificables* nuevo_pokemon = malloc(sizeof(t_pokemon_planificables));
+			nuevo_pokemon->nombre = objetivo_lista;
+			nuevo_pokemon->cantidad = 1;
+			dictionary_put(cantidad_de_pokemones_que_puedo_planificar, objetivo_lista, nuevo_pokemon);
 		}
 	}
 
@@ -1597,23 +1599,18 @@ t_list* generar_pokemones_de_localized(t_localized* mensaje_localized) {
 }
 
 int tengo_que_planificar_pokemon(t_pokemon* pokemon) {
-	int* cantidad_disponible_para_atrapar = (int*) dictionary_get(cantidad_de_pokemones_que_puedo_planificar, pokemon->nombre);
-	log_info(extense_logger, "%i", cantidad_disponible_para_atrapar);
-	log_info(extense_logger, "%i", *cantidad_disponible_para_atrapar);
-	if (*cantidad_disponible_para_atrapar > 0) {
-		log_info(extense_logger, "CUANTA DUDA");
+	t_pokemon_planificables* cantidad_disponible_para_atrapar = (t_pokemon_planificables*) dictionary_get(cantidad_de_pokemones_que_puedo_planificar, pokemon->nombre);
+	if (cantidad_disponible_para_atrapar->cantidad > 0) {
 		return 1;
 	} else {
-		log_info(extense_logger, "CUANTA DUUUDA");
 		return 0;
 	}
 }
 
 void contar_planificacion(t_pokemon* pokemon) {
-	int* cantidad_disponible_para_atrapar = (int*) dictionary_get(cantidad_de_pokemones_que_puedo_planificar, pokemon->nombre);
-	(*cantidad_disponible_para_atrapar)--;
-	dictionary_put(cantidad_de_pokemones_que_puedo_planificar, pokemon->nombre, cantidad_disponible_para_atrapar);
-	log_info(extense_logger, "Nueva cantidad de planificaciones disponibles para pokemon %s: %i", pokemon->nombre, *cantidad_disponible_para_atrapar);
+	t_pokemon_planificables* cantidad_disponible_para_atrapar = (t_pokemon_planificables*) dictionary_get(cantidad_de_pokemones_que_puedo_planificar, pokemon->nombre);
+	cantidad_disponible_para_atrapar->cantidad--;
+	log_info(extense_logger, "Nueva cantidad de planificaciones disponibles para pokemon %s: %i", pokemon->nombre, cantidad_disponible_para_atrapar->cantidad);
 }
 
 int tengo_en_el_mapa(char* pokemon) {
@@ -1631,10 +1628,9 @@ int tengo_en_el_mapa(char* pokemon) {
 }
 
 void liberar_planificacion(t_pokemon* pokemon) {
-	int* cantidad_disponible_para_atrapar = (int*) dictionary_get(cantidad_de_pokemones_que_puedo_planificar, pokemon->nombre);
-	(*cantidad_disponible_para_atrapar)++;
-	dictionary_put(cantidad_de_pokemones_que_puedo_planificar, pokemon->nombre, cantidad_disponible_para_atrapar);
-	log_info(extense_logger, "Nueva cantidad de planificaciones disponibles para pokemon %s: %i", pokemon->nombre, *cantidad_disponible_para_atrapar);
+	t_pokemon_planificables* cantidad_disponible_para_atrapar = (t_pokemon_planificables*) dictionary_get(cantidad_de_pokemones_que_puedo_planificar, pokemon->nombre);
+	cantidad_disponible_para_atrapar->cantidad++;
+	log_info(extense_logger, "Nueva cantidad de planificaciones disponibles para pokemon %s: %i", pokemon->nombre, cantidad_disponible_para_atrapar->cantidad);
 }
 
 void borrar_pokemon_del_mapa(t_pokemon* pokemon) {
