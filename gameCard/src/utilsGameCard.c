@@ -106,6 +106,7 @@ char* buscarPosicionDisponibleEnElBitMap() {
 				guardarBitarray(i);
 				sem_post(&bloques_bitmap);
 				log_info(loggerDev, "EL block %s esta libre",string_itoa(free_block));
+				log_info(loggerGameCard, "El bloque seleccionado para cargar es: %i",free_block);
 				return string_itoa(free_block);
 			}
 		}
@@ -119,13 +120,19 @@ char* buscarPosicionDisponibleEnElBitMap() {
 
 void desmarcarBloqueBitmap(char* block){
 		uint32_t index = atoi(block);
+		uint32_t estadoBloque =bitarray_test_bit(bitarray, index);
+		log_info(loggerDev, "El valor del block es de: %i",estadoBloque);
 		bitarray_clean_bit(bitarray, index);
+		estadoBloque =bitarray_test_bit(bitarray, index);
+		log_info(loggerDev, "El block fue desmarcado con el valor de: %i",estadoBloque);
 }
 
 
 
 char* seleccionarBlockParaCargarPosiciones(char** blocksOcupados, char*posicion, uint32_t cantidad){
 	if(blocksOcupados[0] == NULL){
+		log_info(loggerGameCard, "El pokemon actual no tiene ningun bloque");
+		log_info(loggerGameCard, "Se busca en el bitmap bloques disponibles");
 		return buscarPosicionDisponibleEnElBitMap();
 	}
 
@@ -133,15 +140,19 @@ char* seleccionarBlockParaCargarPosiciones(char** blocksOcupados, char*posicion,
 		while(blocksOcupados[i] != NULL){
 			log_info(loggerDevArchDir, "Se esta viendo su el el block %s cumple las condiciones",blocksOcupados[i]);
 			char* rutaDeArchivo = generadorDeRutaDeCreacionDeArchivos(rutaBlocksArchDir,blocksOcupados[i],".bin");
+
+			log_info(loggerGameCard, "Calculando el peso de: %s",blocksOcupados[i]);
 			if(hayEspacioEnElBlock(rutaDeArchivo,posicion,cantidad)){
-				log_info(loggerDevArchDir, "Se encontro el block %s libre",blocksOcupados[i]);
+				log_info(loggerDev, "Se encontro el block %s libre",blocksOcupados[i]);
+				log_info(loggerGameCard, "El bloque seleccionado para cargar es: %s",blocksOcupados[i]);
 				return blocksOcupados[i];
 			} else{
 				i++;
 			}
 		}
 
-		log_info(loggerDevArchDir, "Che, no encontramos ningun bloque....");
+		log_info(loggerGameCard, "Ningun bloque actual puede cargar la posicion");
+		log_info(loggerGameCard, "Buscando nuevo bloque");
 
 		return buscarPosicionDisponibleEnElBitMap();
 }
@@ -471,7 +482,7 @@ void cargarInfoDelMetadata(char* rutaMetadata){
 }
 
 void levantarTallGrass(char* puntoMontaje){
-	log_info(loggerDev, "Lenavando el Tall Grass");
+	log_info(loggerGameCard, "Lenavando el Tall Grass");
 	//Seteo de variable global
 	log_info(loggerDev, "El punto de montaje es: %s", puntoMontaje);
 	rutaMetaData = generadorDeRutaDeCreacionDeDirectorios(puntoMontaje,"Metadata");
@@ -494,6 +505,10 @@ void levantarTallGrass(char* puntoMontaje){
 		crearDirectorioFile(puntoMontaje);
 		crearDirectorioBlocks(puntoMontaje);
 	}
+	log_info(loggerGameCard, "Punto de montaje del directorio Metadata es: %s",rutaMetaData);
+	log_info(loggerGameCard, "Punto de montaje del directorio Files es: %s",rutaFiles);
+	log_info(loggerGameCard, "Punto de montaje del directorio Blocks es: %s",rutaBlocks);
+
 }
 
 
@@ -506,7 +521,7 @@ bool existenPosicionesEnArchivo(char* posicion,char** blocks){
 		char* rutaDeArchivo = generadorDeRutaDeCreacionDeArchivos(rutaBlocks,blocks[i],".bin");
 		t_config* archivoBlock = config_create(rutaDeArchivo);
 		if(config_has_property(archivoBlock,posicion)){
-			log_info(loggerDev, "Existe la posocion");
+			log_error(loggerGameCard, "La posicion %s se encuentra en el block %s",posicion,blocks[i]);
 			config_destroy(archivoBlock);
 			return true;
 		} else{
@@ -567,9 +582,13 @@ void validarPosicionesDeNew(char** blocksOcupados,char* posicion, uint32_t canti
 		agregarCantidadSolicitadaAUnaKey(archivoBlock,posicion,cantidad);
 		config_destroy(archivoBlock);
 	} else {
+		log_info(loggerGameCard, "La posicion %s no se encuentra en ningun bloque actual",posicion);
+
 		char* blockOptimo = seleccionarBlockParaCargarPosiciones(blocksOcupados,posicion, cantidad);
+		log_info(loggerGameCard, "Se selecciono el bloque %s para cargar la posicion",blockOptimo);
 		log_info(loggerDev, "El bloque disponible seleccionado es: %s",blockOptimo);
 		agregarNuevaPosicionA(blockOptimo,posicion, cantidad);
+		log_info(loggerGameCard, "Posicion agregada en el block %s",blockOptimo);
 
 	}
 
@@ -586,11 +605,13 @@ bool validarPosicionesDeCatch(t_config* archivoMetadataPokemon, char** blocksOcu
 		uint32_t cantidadPokemon = cantidadDePokemonEnUnaCoordenada(archivoBlock,posicion);
 
 		log_info(loggerDev, "La cantidad de pokemons en el la posicion %s es: %i",posicion, cantidadPokemon);
+		log_info(loggerGameCard, "La cantidad de pokemons en el la posicion %s es de %i",posicion, cantidadPokemon);
 
 		if(cantidadPokemon == 1){
 			log_info(loggerDev, "La cantidad de pokemons en esa posicion es 1");
 
 			if(config_keys_amount(archivoBlock) == 1){
+				log_info(loggerGameCard, "La posicion %s es la unica en el block %s. Se procede a eliminarlo",posicion, block);
 				desmarcarBloqueBitmap(block);
 				eliminarKeyValueDe(archivoBlock,posicion);
 				borrarBloqueDe(archivoMetadataPokemon,block);
@@ -620,6 +641,7 @@ bool validarPosicionesDeCatch(t_config* archivoMetadataPokemon, char** blocksOcu
 
 t_queue* validarPosicionesDeGet(char** blocksOcupados){
 	t_queue* posicionesPokemon = queue_create();
+	log_info(loggerGameCard, "Obteniendo las posiciones en las que se encuentra el pokemon");
 	obtenerTodasLasPosiciones(blocksOcupados, posicionesPokemon);
 
 	return posicionesPokemon;
@@ -635,6 +657,7 @@ void newPokemon(int socketCliente,t_newLlegada* new){
 	uint32_t posX = new->pos_X;
 	uint32_t posY = new->pos_Y;
 	uint32_t cantidad = new->cantidad;
+	string_to_lower(pokemon);
 
 	char* rutaDeDirectorio = generadorDeRutaDeCreacionDeDirectorios(rutaFiles,pokemon);
 	char* posicion = generadorDePosiciones(posX,posY);
@@ -684,6 +707,7 @@ void catchPokemon(int socketCliente,t_catchLlegada* catch){
 	uint32_t posX = catch->pos_X;
 	uint32_t posY = catch->pos_Y;
 	bool validacion = false;
+	string_to_lower(pokemon);
 
 	char* rutaDeDirectorio = generadorDeRutaDeCreacionDeDirectorios(rutaFiles,pokemon);
 	char* posicion = generadorDePosiciones(posX, posY);
@@ -727,6 +751,8 @@ void getPokemon(int socketCliente,t_getLlegada* getLlegada){
 
 	char* pokemon = getLlegada->pokemon;
 	t_queue* coordenadas = queue_create();
+	string_to_lower(pokemon);
+
 	char* rutaDeDirectorio = generadorDeRutaDeCreacionDeDirectorios(rutaFiles,pokemon);
 
 	if(noExisteDirectorio(rutaDeDirectorio)){

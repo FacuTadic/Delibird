@@ -68,6 +68,7 @@ int main(void) {
 
 	//SETEO DE VARIABLES PARA ARCHIVOSYDIRECTORIOS.H
 	loggerDevArchDir=loggerDev;
+	loggerGameCardArchDir = loggerGameCard;
 
 	//SETEO DE VARIABLES PARA CREACIONDEESTRUCTURASPARAENVIAR.H
 	loggerDevEstructuras = loggerDev;

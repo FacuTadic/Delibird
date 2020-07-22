@@ -13,8 +13,11 @@
 #include <commons/bitarray.h>
 
 t_log* loggerDevArchDir;
+t_log* loggerGameCardArchDir;
 char* rutaBlocksArchDir;
 uint32_t blockSizeArchDir;
+
+
 
 char* generadorDeRutaDeCreacionDeDirectorios(char* ruta, char* nombreDelDirectorio);
 char* generadorDeRutaDeCreacionDeArchivos(char* rutaDirectorio,char* nombreDelArchivo, char* tipoDeDato);

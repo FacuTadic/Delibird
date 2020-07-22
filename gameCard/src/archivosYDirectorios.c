@@ -8,7 +8,7 @@ char* generadorDeRutaDeCreacionDeDirectorios(char* ruta, char* nombreDelDirector
 	string_append(&rutaDeCreacionDirectorio, "/");
 	string_append(&rutaDeCreacionDirectorio, nombreDelDirectorio);
 
-	log_info(loggerDevArchDir, "La ruta final es: %s",rutaDeCreacionDirectorio);
+
 	return rutaDeCreacionDirectorio;
 
 }
@@ -22,7 +22,6 @@ char* generadorDeRutaDeCreacionDeArchivos(char* rutaDirectorio,char* nombreDelAr
 	string_append(&rutaDeCreacion, nombreDelArchivo);
 	string_append(&rutaDeCreacion, tipoDeDato);
 
-	log_info(loggerDevArchDir, "La ruta final es: %s",rutaDeCreacion);
 	return rutaDeCreacion;
 }
 
@@ -66,13 +65,25 @@ uint32_t tamanioDeUnArchivo(char* rutaDelArchivo){
 
 bool hayEspacioEnElBlock(char* rutaDelBlock, char* posicion, uint32_t cantidad){
 	char* keyValue = string_new();
+	char* value = string_itoa(cantidad);
+
 	string_append(&keyValue, posicion);
 	string_append(&keyValue, "=");
+	string_append(&keyValue, value);
 
 	uint32_t tamanioBlock = tamanioDeUnArchivo(rutaDelBlock);
+	log_info(loggerGameCardArchDir, "El archivo block pesa", tamanioBlock);
 	uint32_t tamanioKeyValue = sizeof(keyValue);
+	log_info(loggerGameCardArchDir, "El key value para agregar pesa", tamanioKeyValue);
 
-	return tamanioBlock+tamanioKeyValue+sizeof(cantidad) < blockSizeArchDir;
+	if(tamanioBlock+tamanioKeyValue <= blockSizeArchDir){
+		log_info(loggerGameCardArchDir, "Puede cargarse en el bloque");
+		return true;
+	}else{
+		log_info(loggerGameCardArchDir, "No puede cargarse en el bloque");
+		return false;
+	}
+
 }
 
 
@@ -192,10 +203,16 @@ void eliminarKeyValueDe(t_config* archivoBlock,char* posicion){
 }
 
 void agregarCantidadSolicitadaAUnaKey(t_config* archivo,char* key, uint32_t cantidad){
+	log_info(loggerGameCardArchDir, "Agregando %i pokemons a la posicion %i", key);
+
 	uint32_t cantidadVieja= config_get_int_value(archivo,key);
-	log_info(loggerDevArchDir, "El size viejo del metadata es: %i", cantidadVieja);
+	log_info(loggerDevArchDir, "La cantidad vieja de la posicion %s dentro del metadata es de %i", key, cantidadVieja);
+	log_info(loggerGameCardArchDir, "La cantidad vieja de la posicion %s dentro del metadata es de %i", key, cantidadVieja);
+
 	cantidad+= cantidadVieja;
-	log_info(loggerDevArchDir, "El size nuevo del metadata es: %i", cantidad);
+	log_info(loggerDevArchDir, "La cantidad nueva de la posicion %s dentro del metadata es de %i", key, cantidad);
+	log_info(loggerGameCardArchDir, "La cantidad nueva de la posicion %s dentro del metadata es de %i", key, cantidad);
+
 	char* cantidadTotal = string_itoa(cantidad);
 	log_info(loggerDevArchDir, "La conversion de int->char es: %s", cantidadTotal);
 
@@ -206,9 +223,11 @@ void agregarCantidadSolicitadaAUnaKey(t_config* archivo,char* key, uint32_t cant
 void decrementarEnUnoEnLaPosicion(t_config* archivo,char* key){
 
 	uint32_t cantidadVieja= config_get_int_value(archivo,key);
-	log_info(loggerDevArchDir, "El size viejo del metadata es: %i", cantidadVieja);
+	log_info(loggerDevArchDir, "La cantidad vieja en la posicion %s en el metadata es de: %i", key, cantidadVieja);
+	log_info(loggerGameCardArchDir, "La cantidad vieja en la posicion %s en el metadata es de: %i", key, cantidadVieja);
 	cantidadVieja -= 1;
-	log_info(loggerDevArchDir, "El size nuevo del metadata es: %i", cantidadVieja);
+	log_info(loggerDevArchDir, "La cantidad nueva en la posicion %s en el metadata es de: %i", key, cantidadVieja);
+	log_info(loggerGameCardArchDir, "La cantidad nueva en la posicion %s en el metadata es de: %i", key, cantidadVieja);
 	char* cantidadTotal = string_itoa(cantidadVieja);
 	log_info(loggerDevArchDir, "La conversion de int->char es: %s", cantidadTotal);
 
@@ -264,8 +283,12 @@ void obtenerTodasLasPosiciones(char** blocks, t_queue* posicionesPokemon){
 				log_info(loggerDevArchDir, "Se esta leyendo la linea: %s",line);
 				char** data = string_split(line,"=");
 				log_info(loggerDevArchDir, "La coordenada de la linea es: %s",data[0]);
-				char* posicion = data[0];
+				char* posicion = string_new();
+				string_append(&posicion,data[0]);
+				log_info(loggerGameCardArchDir, "Posicion: %s",posicion);
 				queue_push(posicionesPokemon, posicion);
+				//free(data);
+				//free(posicion);
 			}
 
 			free(line);
