@@ -150,14 +150,6 @@ t_newLlegada* recibir_new(int socket_cliente, uint32_t* size, t_log* logger) {
 
 	log_info(logger, "Tamanio total recibido: %i", *size);
 
-	if (recv(socket_cliente, &(tamanio_pokemon), sizeof(uint32_t), MSG_WAITALL) == -1) {
-		liberar_conexion(socket_cliente);
-		log_error(logger, "Hubo un problema recibiendo el tamanio del pokemon");
-		free(new);
-		exit(-1);
-	}
-
-
 
 	if (recv(socket_cliente, &new->id , sizeof(uint32_t), MSG_WAITALL) == -1) {
 		liberar_conexion(socket_cliente);
@@ -167,6 +159,14 @@ t_newLlegada* recibir_new(int socket_cliente, uint32_t* size, t_log* logger) {
 	}
 
 	log_info(logger, "EL ID recibido: %i", new->id);
+
+	if (recv(socket_cliente, &(tamanio_pokemon), sizeof(uint32_t), MSG_WAITALL) == -1) {
+		liberar_conexion(socket_cliente);
+		log_error(logger, "Hubo un problema recibiendo el tamanio del pokemon");
+		free(new);
+		exit(-1);
+	}
+
 
 
 

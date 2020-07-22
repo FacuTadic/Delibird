@@ -287,8 +287,7 @@ void obtenerTodasLasPosiciones(char** blocks, t_queue* posicionesPokemon){
 				string_append(&posicion,data[0]);
 				log_info(loggerGameCardArchDir, "Posicion: %s",posicion);
 				queue_push(posicionesPokemon, posicion);
-				//free(data);
-				//free(posicion);
+				free(data);
 			}
 
 			free(line);
