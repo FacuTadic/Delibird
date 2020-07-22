@@ -117,7 +117,6 @@ int main(void) {
 	pthread_join(hiloEscuchaNew, NULL);
 	pthread_join(hiloEscuchaCatch, NULL);
 	pthread_join(hiloEscuchaGet, NULL);
-
 	pthread_join(hiloReconexionBroker,NULL);
 
 
