@@ -116,7 +116,7 @@ void liberar_conexion(int socket_cliente);
 
 void devolver_id(int socket_cliente, uint32_t id, t_log* logger);
 
-int devolver_ack(int socket_broker, t_log* logger);
+int devolver_ack(int socket_broker);
 
 
 #endif /* PROTOCOLOGAMECARD_H_ */

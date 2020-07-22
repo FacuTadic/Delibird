@@ -349,13 +349,13 @@ void liberar_conexion(int socket_cliente){
 }
 
 
-int devolver_ack(int socket_broker, t_log* logger) {
+int devolver_ack(int socket_broker) {
 	uint32_t ack = 1;
 	int status_send = send(socket_broker, (void *) &ack, sizeof(uint32_t), 0);
 	if (status_send == -1) {
-		log_error(logger, "Error: no se pudo enviar el ACK al socket %i", socket_broker);
+		log_error(loggerDevProtocolo, "Error: no se pudo enviar el ACK al socket %i", socket_broker);
 		return -1;
 	}
-	log_info(logger, "Acknowledgement enviado al modulo Broker");
+	log_info(loggerDevProtocolo, "Acknowledgement enviado al modulo Broker");
 	return 1;
 }
