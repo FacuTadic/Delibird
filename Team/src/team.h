@@ -11,7 +11,6 @@
 #include <math.h>
 #include <pthread.h>
 #include "semaphore.h"
-#include "team_utils.h"
 #include "protocol_team.h"
 
 #endif

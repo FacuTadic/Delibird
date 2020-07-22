@@ -9,6 +9,7 @@
 #include<netdb.h>
 #include<string.h>
 #include<commons/log.h>
+#include<commons/string.h>
 #include <commons/collections/queue.h>
 #include <commons/collections/list.h>
 
@@ -16,3 +17,4 @@
 
 int crear_conexion(char* ip, char* puerto);
 int iniciar_escucha_game_boy(char* ip, char* puerto);
+void cerrar_conexion(int socket_a_cerrar);
