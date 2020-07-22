@@ -84,6 +84,8 @@ void crearDirectorio(char* directorio, char* puntoMontaje){
 	if (noExisteDirectorio(rutaAbsoluta)) {
 	    mkdir(rutaAbsoluta, 0700);
 	    log_info(loggerDevArchDir, "Se creo el directorio: %s", directorio);
+	}else{
+		log_info(loggerDevArchDir, "Ya existe el directorioo: %s", rutaAbsoluta);
 	}
 }
 

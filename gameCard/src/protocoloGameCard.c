@@ -19,7 +19,9 @@ int mandar_suscripcion(int socket_broker, uint32_t id_cola) {
 	memcpy(flujo + desplazamiento, &id_cola, sizeof(uint32_t));
 	desplazamiento += sizeof(uint32_t);
 
+	log_info(loggerDevProtocolo, "A");
 	int status_send = send(socket_broker, flujo, bytes, 0);
+	log_info(loggerDevProtocolo, "B");
 	if (status_send == -1) {
 		close(socket_broker);
 		free(flujo);

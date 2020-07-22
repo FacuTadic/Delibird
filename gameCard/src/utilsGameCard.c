@@ -19,15 +19,14 @@ int crear_conexion(char *ip, char* puerto)
 
 	int socket_cliente = socket(server_info->ai_family, server_info->ai_socktype, server_info->ai_protocol);
 
-	if(connect(socket_cliente, server_info->ai_addr, server_info->ai_addrlen) == -1)
-		printf("error");
+	if(connect(socket_cliente, server_info->ai_addr, server_info->ai_addrlen) == -1){
+		return -1;
+	}
 
 	freeaddrinfo(server_info);
 
 	return socket_cliente;
 }
-
-
 
 
 //#######################################################################			BITARRAY			###########################################################################
@@ -315,6 +314,7 @@ void escucharGetDeBroker(void) {
 void reconectarAlBroker() {
 	int conexion_al_broker = crear_conexion(ipBroker, puertoBroker);
 	if (conexion_al_broker != -1) {
+
 		socketEscuchaNew = conexion_al_broker;
 		log_info(loggerDev, "Socket de reconexion appeared: %i",socketEscuchaNew);
 
@@ -392,7 +392,9 @@ void crearTemplateDeArchivoTipo(tipoArchivo tipo, char* nombreDelArchivo ,char* 
 
 void crearDirectorioFile(char* puntoMontaje){
 	//Crear Directorio
+	log_info(loggerDev, "Creando directorio FILES");
 	crearDirectorio("Files",puntoMontaje);
+
 	//Seteo de variable global
 	rutaFiles = generadorDeRutaDeCreacionDeDirectorios(puntoMontaje,"Files");
 	log_info(loggerDev, "Se creo el directorio Files ubicado en: %s",rutaFiles);
@@ -431,10 +433,13 @@ void cargarInfoDelMetadata(char* rutaMetadata){
 }
 
 void levantarTallGrass(char* puntoMontaje){
-	log_info(loggerDev, "Lenavando el Tall");
+	log_info(loggerDev, "Lenavando el Tall Grass");
 	//Seteo de variable global
 	log_info(loggerDev, "El punto de montaje es: %s", puntoMontaje);
 	rutaMetaData = generadorDeRutaDeCreacionDeDirectorios(puntoMontaje,"Metadata");
+	log_info(loggerDev, "La ruta del metadataes: %s", rutaMetaData);
+
+
 	cargarInfoDelMetadata(rutaMetaData);
 
 

@@ -43,12 +43,6 @@ int main(void) {
 	config = leer_config();
 	log_info(loggerDev, "Config cargada.");
 
-	ip = config_get_string_value(config, "IP");
-	log_info(loggerDev, "La IP es: %s", ip);
-
-	puerto = config_get_string_value(config, "PUERTO");
-	log_info(loggerDev, "El puerto es: %s", puerto);
-
 	ipBroker = config_get_string_value(config, "IP_BROKER");
 	log_info(loggerDev, "La IP del Broker: %s", ipBroker);
 
@@ -69,43 +63,70 @@ int main(void) {
 	log_info(loggerDev, "El punto de montaje es: %s", puntoMontaje);
 
 
-	levantarTallGrass(puntoMontaje);
+	ip = config_get_string_value(config, "IP");
+	log_info(loggerDev, "La IP es: %s", ip);
+
+	puerto = config_get_string_value(config, "PUERTO");
+	log_info(loggerDev, "El puerto es: %s", puerto);
 
 
 	//SETEO DE VARIABLES PARA ARCHIVOSYDIRECTORIOS.H
 	loggerDevArchDir=loggerDev;
-	rutaBlocksArchDir=rutaBlocks;
-	blockSizeArchDir=blockSize;
 
 	//SETEO DE VARIABLES PARA CREACIONDEESTRUCTURASPARAENVIAR.H
 	loggerDevEstructuras = loggerDev;
 
 	//SETEO DE VARIABLES PARA PROTOCOLOGC.H
-	id_modulo = id_moduloGC;
 	loggerDevProtocolo = loggerDev;
+
+
+	levantarTallGrass(puntoMontaje);
+
+
+	//SETEO DE VARIABLES PARA ARCHIVOSYDIRECTORIOS.H
+	log_info(loggerDev, "SETEO DE VARIABLES PARA ARCHIVOSYDIRECTORIOS.H");
+	rutaBlocksArchDir=rutaBlocks;
+	blockSizeArchDir=blockSize;
+
+	id_modulo = id_moduloGC;
+	log_info(loggerDev, "El ID de modulo es: %i",id_moduloGC);
 
 	pthread_mutex_init(&estoy_conectado_al_broker_mutex, NULL);
 	pthread_mutex_init(&estoy_leyendo_metadata_mutex,NULL);
 
 
 	//################################################## 	CONEXION 	###############################################################################
-
-
+	log_info(loggerDev, "Iniciando escucha de GameBoy");
 	socketEscuchaGameBoy = iniciarEscuchaGameBoy(ip, puerto);
+	log_info(loggerDev, "Socket de Gamboy: %i", socketEscuchaGameBoy);
+
+	log_info(loggerDev, "Creando hilo de GameBoy");
 	pthread_t hilo_escucha_de_game_boy;
+
+	log_info(loggerDev, "Mando al hilo a laburar");
 	pthread_create(&hilo_escucha_de_game_boy, NULL, (void*) escucharGameBoy, (void*) socketEscuchaGameBoy);
 	pthread_detach(hilo_escucha_de_game_boy);
 
-
+	log_info(loggerDev, "Iniciando escucha de NEW");
 	socketEscuchaNew = crear_conexion(ipBroker, puertoBroker);
+	log_info(loggerDev, "Socket de NEW: %i", socketEscuchaNew);
+
+	log_info(loggerDev, "Iniciando escucha de CATCH");
 	socketEscuchaCatch = crear_conexion(ipBroker, puertoBroker);
+	log_info(loggerDev, "Socket de CATCH: %i", socketEscuchaCatch);
+
+	log_info(loggerDev, "Iniciando escucha de GET");
 	socketEscuchaGet = crear_conexion(ipBroker, puertoBroker);
+	log_info(loggerDev, "Socket de GET: %i", socketEscuchaGet);
+
 	pthread_t hiloEscuchaNew;
 	pthread_t hiloEscuchaCatch;
 	pthread_t hiloEscuchaGet;
+
 	pthread_create(&hiloEscuchaNew, NULL, (void*) escucharNewDeBroker, NULL);
 	pthread_create(&hiloEscuchaCatch, NULL, (void*) escucharCatchDeBroker, NULL);
 	pthread_create(&hiloEscuchaGet, NULL, (void*) escucharGetDeBroker, NULL);
+
 	pthread_detach(hiloEscuchaNew);
 	pthread_detach(hiloEscuchaCatch);
 	pthread_detach(hiloEscuchaGet);
@@ -114,6 +135,7 @@ int main(void) {
 	pthread_t hiloReconexionBroker;
 	pthread_create(&hiloReconexionBroker, NULL, (void*) verificarConexion, NULL);
 	pthread_detach(hiloReconexionBroker);
+
 
 	terminar_programa();
 }
