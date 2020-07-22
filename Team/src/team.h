@@ -146,6 +146,11 @@ typedef struct {
 	t_pokemon* pokemon;
 } t_catch_id;
 
+typedef struct {
+	char* nombre;
+	int cantidad;
+} t_pokemon_planificables;
+
 t_log* iniciar_logger(char* log_file);
 t_log* iniciar_logger_sin_consola(char* log_file);
 t_config* leer_config(void);
