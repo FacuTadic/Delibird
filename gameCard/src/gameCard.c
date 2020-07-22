@@ -98,20 +98,17 @@ int main(void) {
 	socketEscuchaCatch = crear_conexion(ipBroker, puertoBroker);
 	socketEscuchaGet = crear_conexion(ipBroker, puertoBroker);
 
-
 	pthread_t hilo_escucha_de_game_boy;
 	pthread_t hiloEscuchaNew;
 	pthread_t hiloEscuchaCatch;
 	pthread_t hiloEscuchaGet;
 	pthread_t hiloReconexionBroker;
 
-
+	pthread_create(&hilo_escucha_de_game_boy, NULL, (void*) escucharGameBoy, (void*) socketEscuchaGameBoy);
 	pthread_create(&hiloEscuchaNew, NULL, (void*) escucharNewDeBroker, NULL);
 	pthread_create(&hiloEscuchaCatch, NULL, (void*) escucharCatchDeBroker, NULL);
 	pthread_create(&hiloEscuchaGet, NULL, (void*) escucharGetDeBroker, NULL);
 	pthread_create(&hiloReconexionBroker, NULL, (void*) verificarConexion, NULL);
-	pthread_create(&hilo_escucha_de_game_boy, NULL, (void*) escucharGameBoy, (void*) socketEscuchaGameBoy);
-
 
 	pthread_join(hilo_escucha_de_game_boy, NULL);
 	pthread_join(hiloEscuchaNew, NULL);
