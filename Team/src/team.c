@@ -1154,22 +1154,19 @@ void obtener_objetivo_global() {
 		list_add_all(pokemones_innecesarios, entrenador->pokemones_innecesarios);
 	}
 
-	for (int k = 0; k < pokemones_innecesarios->elements_count; k++) {
-		char* pokemon_de_la_lista = (char*) list_get(pokemones_innecesarios, k);
-		int hay_que_eliminar_de_objetivo_global = 0;
-		int j = 0;
-		char* objetivo = (char*) list_get(objetivo_global, j);
-		while (objetivo != NULL && hay_que_eliminar_de_objetivo_global == 0) {
-			hay_que_eliminar_de_objetivo_global = string_equals_ignore_case(objetivo, pokemon_de_la_lista);
-			j++;
-			objetivo = (char*) list_get(objetivo_global, j);
+	for (int i = 0; i < pokemones_innecesarios->elements_count; i++) {
+		char* pokemon_innecesario_lista = (char*) list_get(pokemones_innecesarios, i);
+		for (int j = 0; j < objetivo_global->elements_count; j++) {
+			char* objetivo_lista = (char*) list_get(objetivo_global, j);
+			if (string_equals_ignore_case(objetivo_lista, pokemon_innecesario_lista) == 1) {
+				list_remove(objetivo_global, j);
+				j = objetivo_global->elements_count;
+			}
 		}
+	}
 
-		if (hay_que_eliminar_de_objetivo_global == 1) {
-			j--;
-			char* objetivo_global_eliminado = (char*) list_remove(objetivo_global, j);
-			free(objetivo_global_eliminado);
-		}
+	for (int i = 0; i < objetivo_global->elements_count; i++) {
+		log_info(extense_logger, "Objetivo global: %s", (char*) list_get(objetivo_global, i));
 	}
 
 	list_clean(pokemones_innecesarios);
@@ -1187,11 +1184,13 @@ void obtener_cantidad_de_cada_pokemon_a_planificar() {
 		if (dictionary_has_key(cantidad_de_pokemones_que_puedo_planificar, objetivo_lista) == 1) {
 			t_pokemon_planificables* cantidad = (t_pokemon_planificables*) dictionary_get(cantidad_de_pokemones_que_puedo_planificar, objetivo_lista);
 			cantidad->cantidad++;
+			log_info(extense_logger, "Cantidad a planificar de %s: %i", objetivo_lista, cantidad->cantidad);
 		} else {
 			t_pokemon_planificables* nuevo_pokemon = malloc(sizeof(t_pokemon_planificables));
 			nuevo_pokemon->nombre = objetivo_lista;
 			nuevo_pokemon->cantidad = 1;
 			dictionary_put(cantidad_de_pokemones_que_puedo_planificar, objetivo_lista, nuevo_pokemon);
+			log_info(extense_logger, "Cantidad a planificar de %s: %i", objetivo_lista, nuevo_pokemon->cantidad);
 		}
 	}
 
@@ -1600,15 +1599,10 @@ t_list* generar_pokemones_de_localized(t_localized* mensaje_localized) {
 
 int tengo_que_planificar_pokemon(t_pokemon* pokemon) {
 	t_pokemon_planificables* cantidad_disponible_para_atrapar = (t_pokemon_planificables*) dictionary_get(cantidad_de_pokemones_que_puedo_planificar, pokemon->nombre);
-	log_info(extense_logger, "A");
-	if (cantidad_disponible_para_atrapar == NULL) {
-		log_info(extense_logger, "Te trajiste un NULL de dictionary mi rey");
-	}
-	log_info(extense_logger, "%i", cantidad_disponible_para_atrapar->cantidad);
-	if (cantidad_disponible_para_atrapar->cantidad > 0) {
-		return 1;
-	} else {
+	if (cantidad_disponible_para_atrapar == NULL || cantidad_disponible_para_atrapar->cantidad < 1) {
 		return 0;
+	} else {
+		return 1;
 	}
 }
 
