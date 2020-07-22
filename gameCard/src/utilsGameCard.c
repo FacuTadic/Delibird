@@ -260,6 +260,7 @@ void escucharNewDeBroker(void) {
 			uint32_t size;
 			log_info(loggerDev, "Codigo de operacion recibido del socket cliente %i corresponde a un NEW", socketEscuchaNew);
 			t_newLlegada* newBroker = recibir_new(socketEscuchaNew,&size,loggerDev);
+			devolver_ack(socketEscuchaNew);
 			log_info(loggerDev, "NEW recibido del modulo Game Boy socket %i", socketEscuchaNew);
 
 			if (newBroker == NULL) {
@@ -295,6 +296,7 @@ void escucharCatchDeBroker(void) {
 			uint32_t size;
 			log_info(loggerDev, "Codigo de operacion recibido del socket cliente %i corresponde a un CATCH", socketEscuchaCatch);
 			t_catchLlegada* catchGameBoy = recibir_catch(socketEscuchaCatch,&size,loggerDev);
+			devolver_ack(socketEscuchaCatch);
 			log_info(loggerDev, "CATCH recibido del modulo Game Boy socket %i", socketEscuchaCatch);
 
 			if (catchGameBoy == NULL) {
@@ -330,6 +332,7 @@ void escucharGetDeBroker(void) {
 			uint32_t size;
 			log_info(loggerDev, "Codigo de operacion recibido del socket cliente %i corresponde a un GET", socketEscuchaGet);
 			t_getLlegada* getGameBoy = recibir_get(socketEscuchaGet,&size,loggerDev);
+			devolver_ack(socketEscuchaGet);
 			log_info(loggerDev, "GET recibido del modulo Game Boy socket %i", socketEscuchaGet);
 
 			if (getGameBoy == NULL) {

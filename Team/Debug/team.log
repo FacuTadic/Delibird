@@ -228,3 +228,8 @@
 [ERROR] 19:56:21:242 Team/(7627:7641): Error: No se pudo enviar el GET correspondiente al pokemon Charmander, iniciando el comportamiento default
 [ERROR] 19:56:21:242 Team/(7627:7640): Error: No se pudo enviar el GET correspondiente al pokemon Pikachu, iniciando el comportamiento default
 [ERROR] 19:56:21:242 Team/(7627:7632): Hubo un problema enviando la suscripcion a la cola APPEARED del broker
+[ERROR] 20:12:25:365 Team/(8895:8902): Hubo un problema enviando la suscripcion a la cola LOCALIZED del broker
+[ERROR] 20:12:25:369 Team/(8895:8901): Hubo un problema enviando la suscripcion a la cola CAUGHT del broker
+[ERROR] 20:12:25:373 Team/(8895:8908): Error: No se pudo enviar el GET correspondiente al pokemon Pikachu, iniciando el comportamiento default
+[ERROR] 20:12:25:373 Team/(8895:8909): Error: No se pudo enviar el GET correspondiente al pokemon Charmander, iniciando el comportamiento default
+[ERROR] 20:12:25:376 Team/(8895:8900): Hubo un problema enviando la suscripcion a la cola APPEARED del broker
