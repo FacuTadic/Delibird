@@ -10,7 +10,7 @@
 #include<commons/collections/list.h>
 #include<string.h>
 #include<pthread.h>
-//#include "utilsGameCard.h"
+
 
 uint32_t id_modulo;
 t_log* loggerDevProtocolo;
@@ -112,6 +112,7 @@ void enviar_caught(int socket, t_caught* caughtAEnviar);
 t_getLlegada* recibir_get(int socket_cliente, uint32_t* size, t_log* logger);
 void enviar_localized(int socket, t_localized* localizedAEnviar);
 
+void liberar_conexion(int socket_cliente);
 
 void devolver_id(int socket_cliente, uint32_t id, t_log* logger);
 

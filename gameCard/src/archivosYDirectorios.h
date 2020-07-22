@@ -26,6 +26,7 @@ void crearDirectorio(char* directorio, char* puntoMontaje);
 void crearArchivoEnDirectorio(char* nombreDelArchivo, char* directorio);
 void borrarBloqueDe(t_config* archivoMetaData, char*block);
 bool puedeAbrirseArchivo(t_config* archivo);
+bool hayEspacioEnElBlock(char* rutaDelBlock, char* posicion, uint32_t cantidad);
 void activarFlagDeLectura(t_config* archivo);
 void desactivarFlagDeLectura(t_config* archivo);
 void eliminarKeyValueDe(t_config* archivoBlock,char* posicion);
@@ -34,6 +35,6 @@ void decrementarEnUnoEnLaPosicion(t_config* archivo,char* key);
 uint32_t cantidadDePokemonEnUnaCoordenada(t_config* archivoBlock,char* posicion);
 char* seleccionarBlockParaCargarPosiciones(char** blocksOcupados, char*posicion, uint32_t cantidad);
 void agregarNuevaPosicionA(char* block, char* posicion, uint32_t cantidad);
-void obtenerTodasLasPosiciones(char** blocks, t_queue** posicionesPokemon);
+void obtenerTodasLasPosiciones(char** blocks, t_queue* posicionesPokemon);
 
 #endif /* ARCHIVOSYDIRECTORIOS_H_ */

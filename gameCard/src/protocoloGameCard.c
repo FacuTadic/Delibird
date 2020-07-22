@@ -3,7 +3,7 @@
 
 //####################################################	ENVIAR MENSAJES	#########################################################################
 
-int mandar_suscripcion(int socket_broker, uint32_t id_cola) {
+int mandar_suscripcion(int socket_mandado, uint32_t id_cola) {
 	uint32_t bytes = sizeof(uint32_t) + sizeof(uint32_t) + sizeof(uint32_t) + sizeof(uint32_t);
 
 	uint32_t cod_op = 7;
@@ -19,11 +19,9 @@ int mandar_suscripcion(int socket_broker, uint32_t id_cola) {
 	memcpy(flujo + desplazamiento, &id_cola, sizeof(uint32_t));
 	desplazamiento += sizeof(uint32_t);
 
-	log_info(loggerDevProtocolo, "A");
-	int status_send = send(socket_broker, flujo, bytes, 0);
-	log_info(loggerDevProtocolo, "B");
-	if (status_send == -1) {
-		close(socket_broker);
+	int status_send = send(socket_mandado, flujo, bytes, 0);
+	if (status_send == -1 || status_send == 0) {
+		liberar_conexion(socket_mandado);
 		free(flujo);
 		return -1;
 	}
@@ -144,7 +142,7 @@ t_newLlegada* recibir_new(int socket_cliente, uint32_t* size, t_log* logger) {
 	log_info(logger, "Recibiendo tamanio total");
 
 	if (recv(socket_cliente, size, sizeof(uint32_t), MSG_WAITALL) == -1) {
-		close(socket_cliente);
+		liberar_conexion(socket_cliente);
 		log_error(logger, "Hubo un problema recibiendo el tamanio total");
 		free(new);
 		exit(-1);
@@ -153,7 +151,7 @@ t_newLlegada* recibir_new(int socket_cliente, uint32_t* size, t_log* logger) {
 	log_info(logger, "Tamanio total recibido: %i", *size);
 
 	if (recv(socket_cliente, &(tamanio_pokemon), sizeof(uint32_t), MSG_WAITALL) == -1) {
-		close(socket_cliente);
+		liberar_conexion(socket_cliente);
 		log_error(logger, "Hubo un problema recibiendo el tamanio del pokemon");
 		free(new);
 		exit(-1);
@@ -162,7 +160,7 @@ t_newLlegada* recibir_new(int socket_cliente, uint32_t* size, t_log* logger) {
 
 
 	if (recv(socket_cliente, &new->id , sizeof(uint32_t), MSG_WAITALL) == -1) {
-			close(socket_cliente);
+		liberar_conexion(socket_cliente);
 			log_error(logger, "Hubo un problema recibiendo el ID del mensaje");
 			free(new);
 			exit(-1);
@@ -177,7 +175,7 @@ t_newLlegada* recibir_new(int socket_cliente, uint32_t* size, t_log* logger) {
 	log_info(logger, "Tamanio del pokemon recibido: %i", tamanio_pokemon);
 
 	if (recv(socket_cliente, new->pokemon, tamanio_pokemon, MSG_WAITALL) == -1) {
-		close(socket_cliente);
+		liberar_conexion(socket_cliente);
 		log_error(logger, "Hubo un problema recibiendo el nombre del pokemon");
 		free(new->pokemon);
 		free(new);
@@ -187,7 +185,7 @@ t_newLlegada* recibir_new(int socket_cliente, uint32_t* size, t_log* logger) {
 	log_info(logger, "Nombre del pokemon recibido: %s", new->pokemon);
 
 	if (recv(socket_cliente, &(new->pos_X), sizeof(uint32_t), MSG_WAITALL) == -1) {
-		close(socket_cliente);
+		liberar_conexion(socket_cliente);
 		log_error(logger, "Hubo un problema recibiendo la posicion X");
 		free(new->pokemon);
 		free(new);
@@ -197,7 +195,7 @@ t_newLlegada* recibir_new(int socket_cliente, uint32_t* size, t_log* logger) {
 	log_info(logger, "Posicion X recibida: %i", new->pos_X);
 
 	if (recv(socket_cliente, &(new->pos_Y), sizeof(uint32_t), MSG_WAITALL) == -1) {
-		close(socket_cliente);
+		liberar_conexion(socket_cliente);
 		log_error(logger, "Hubo un problema recibiendo la posicion Y");
 		free(new->pokemon);
 		free(new);
@@ -207,7 +205,7 @@ t_newLlegada* recibir_new(int socket_cliente, uint32_t* size, t_log* logger) {
 	log_info(logger, "Posicion Y recibida: %i", new->pos_Y);
 
 	if (recv(socket_cliente, &(new->cantidad), sizeof(uint32_t), MSG_WAITALL) == -1) {
-		close(socket_cliente);
+		liberar_conexion(socket_cliente);
 		log_error(logger, "Hubo un problema recibiendo la cantidad");
 		free(new->pokemon);
 		free(new);
@@ -227,7 +225,7 @@ t_catchLlegada* recibir_catch(int socket_cliente, uint32_t* size, t_log* logger)
 	log_info(logger, "Recibiendo tamanio total");
 
 	if (recv(socket_cliente, size, sizeof(uint32_t), MSG_WAITALL) == -1) {
-		close(socket_cliente);
+		liberar_conexion(socket_cliente);
 		log_error(logger, "Hubo un problema recibiendo el tamanio total");
 		free(catch);
 		exit(-1);
@@ -237,7 +235,7 @@ t_catchLlegada* recibir_catch(int socket_cliente, uint32_t* size, t_log* logger)
 
 
 	if (recv(socket_cliente, &(tamanio_pokemon), sizeof(uint32_t), MSG_WAITALL) == -1) {
-		close(socket_cliente);
+		liberar_conexion(socket_cliente);
 		log_error(logger, "Hubo un problema recibiendo el tamanio del pokemon");
 		free(catch);
 		exit(-1);
@@ -245,7 +243,7 @@ t_catchLlegada* recibir_catch(int socket_cliente, uint32_t* size, t_log* logger)
 
 
 	if (recv(socket_cliente, &catch->id , sizeof(uint32_t), MSG_WAITALL) == -1) { // lee id del mensaje ///
-		close(socket_cliente);
+		liberar_conexion(socket_cliente);
 		log_error(logger, "Hubo un problema recibiendo el ID del mensaje");
 		free(catch);
 		exit(-1);
@@ -258,7 +256,7 @@ t_catchLlegada* recibir_catch(int socket_cliente, uint32_t* size, t_log* logger)
 	log_info(logger, "Tamanio del pokemon: %i", tamanio_pokemon);
 
 	if (recv(socket_cliente, catch->pokemon, tamanio_pokemon, MSG_WAITALL) == -1) {
-		close(socket_cliente);
+		liberar_conexion(socket_cliente);
 		log_error(logger, "Hubo un problema recibiendo el nombre del pokemon");
 		free(catch->pokemon);
 		free(catch);
@@ -268,7 +266,7 @@ t_catchLlegada* recibir_catch(int socket_cliente, uint32_t* size, t_log* logger)
 	log_info(logger, "Nombre del pokemon recibido: %s", catch->pokemon);
 
 	if (recv(socket_cliente, &(catch->pos_X), sizeof(uint32_t), MSG_WAITALL) == -1) {
-		close(socket_cliente);
+		liberar_conexion(socket_cliente);
 		log_error(logger, "Hubo un problema recibiendo la posicion X");
 		free(catch->pokemon);
 		free(catch);
@@ -278,7 +276,7 @@ t_catchLlegada* recibir_catch(int socket_cliente, uint32_t* size, t_log* logger)
 	log_info(logger, "Posicion X recibida: %i", catch->pos_X);
 
 	if (recv(socket_cliente, &(catch->pos_Y), sizeof(uint32_t), MSG_WAITALL) == -1) {
-		close(socket_cliente);
+		liberar_conexion(socket_cliente);
 		log_error(logger, "Hubo un problema recibiendo la posicion Y");
 		free(catch->pokemon);
 		free(catch);
@@ -299,7 +297,7 @@ t_getLlegada* recibir_get(int socket_cliente, uint32_t* size, t_log* logger) {
 	log_info(logger, "Recibiendo tamanio total");
 
 	if (recv(socket_cliente, size, sizeof(uint32_t), MSG_WAITALL) == -1) {
-		close(socket_cliente);
+		liberar_conexion(socket_cliente);
 		log_error(logger, "Hubo un problema recibiendo el tamanio total");
 		free(get);
 		exit(-1);
@@ -308,16 +306,16 @@ t_getLlegada* recibir_get(int socket_cliente, uint32_t* size, t_log* logger) {
 	log_info(logger, "Tamanio total recibido: %i", *size);
 
 	if (recv(socket_cliente, &get->id , sizeof(uint32_t), MSG_WAITALL) == -1) { // lee id del mensaje ///
-		close(socket_cliente);
-					log_error(logger, "Hubo un problema recibiendo el ID del mensaje");
-					free(get);
-					exit(-1);
+		liberar_conexion(socket_cliente);
+		log_error(logger, "Hubo un problema recibiendo el ID del mensaje");
+		free(get);
+		exit(-1);
 	}
 
 	log_info(logger, "EL ID recibido: %i", get->id);
 
 	if (recv(socket_cliente, &tamanio_pokemon, sizeof(uint32_t), MSG_WAITALL) == -1) {
-		close(socket_cliente);
+		liberar_conexion(socket_cliente);
 		log_error(logger, "Hubo un problema recibiendo el tamanio del pokemon");
 		free(get);
 		exit(-1);
@@ -328,7 +326,7 @@ t_getLlegada* recibir_get(int socket_cliente, uint32_t* size, t_log* logger) {
 	log_info(logger, "Tamanio del pokemon recibido: %i", tamanio_pokemon);
 
 	if (recv(socket_cliente, get->pokemon, tamanio_pokemon, MSG_WAITALL) == -1) {
-		close(socket_cliente);
+		liberar_conexion(socket_cliente);
 		log_error(logger, "Hubo un problema recibiendo el nombre del pokemon");
 		free(get->pokemon);
 		free(get);
@@ -342,6 +340,13 @@ t_getLlegada* recibir_get(int socket_cliente, uint32_t* size, t_log* logger) {
 	return get;
 }
 
+
+
+void liberar_conexion(int socket_cliente){
+	if (socket_cliente != 1) {
+		close(socket_cliente);
+	}
+}
 
 
 int devolver_ack(int socket_broker, t_log* logger) {

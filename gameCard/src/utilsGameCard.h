@@ -91,6 +91,7 @@ typedef enum
 
 
 int crear_conexion(char* ip, char* puerto);
+char* seleccionarBlockParaCargarPosiciones(char** blocksOcupados, char*posicion, uint32_t cantidad);
 void escucharGameBoy(void* socket_escucha_game_boy);
 void escucharNewDeBroker(void);
 void escucharCatchDeBroker(void);

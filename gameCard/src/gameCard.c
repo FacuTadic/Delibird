@@ -96,45 +96,33 @@ int main(void) {
 
 
 	//################################################## 	CONEXION 	###############################################################################
-	log_info(loggerDev, "Iniciando escucha de GameBoy");
+
 	socketEscuchaGameBoy = iniciarEscuchaGameBoy(ip, puerto);
-	log_info(loggerDev, "Socket de Gamboy: %i", socketEscuchaGameBoy);
-
-	log_info(loggerDev, "Creando hilo de GameBoy");
-	pthread_t hilo_escucha_de_game_boy;
-
-	log_info(loggerDev, "Mando al hilo a laburar");
-	pthread_create(&hilo_escucha_de_game_boy, NULL, (void*) escucharGameBoy, (void*) socketEscuchaGameBoy);
-	pthread_detach(hilo_escucha_de_game_boy);
-
-	log_info(loggerDev, "Iniciando escucha de NEW");
 	socketEscuchaNew = crear_conexion(ipBroker, puertoBroker);
-	log_info(loggerDev, "Socket de NEW: %i", socketEscuchaNew);
-
-	log_info(loggerDev, "Iniciando escucha de CATCH");
 	socketEscuchaCatch = crear_conexion(ipBroker, puertoBroker);
-	log_info(loggerDev, "Socket de CATCH: %i", socketEscuchaCatch);
-
-	log_info(loggerDev, "Iniciando escucha de GET");
 	socketEscuchaGet = crear_conexion(ipBroker, puertoBroker);
-	log_info(loggerDev, "Socket de GET: %i", socketEscuchaGet);
 
+
+	pthread_t hilo_escucha_de_game_boy;
 	pthread_t hiloEscuchaNew;
 	pthread_t hiloEscuchaCatch;
 	pthread_t hiloEscuchaGet;
+	pthread_t hiloReconexionBroker;
+
 
 	pthread_create(&hiloEscuchaNew, NULL, (void*) escucharNewDeBroker, NULL);
 	pthread_create(&hiloEscuchaCatch, NULL, (void*) escucharCatchDeBroker, NULL);
 	pthread_create(&hiloEscuchaGet, NULL, (void*) escucharGetDeBroker, NULL);
-
-	pthread_detach(hiloEscuchaNew);
-	pthread_detach(hiloEscuchaCatch);
-	pthread_detach(hiloEscuchaGet);
-
-
-	pthread_t hiloReconexionBroker;
 	pthread_create(&hiloReconexionBroker, NULL, (void*) verificarConexion, NULL);
-	pthread_detach(hiloReconexionBroker);
+	pthread_create(&hilo_escucha_de_game_boy, NULL, (void*) escucharGameBoy, (void*) socketEscuchaGameBoy);
+
+
+	pthread_join(hilo_escucha_de_game_boy, NULL);
+	pthread_join(hiloEscuchaNew, NULL);
+	pthread_join(hiloEscuchaCatch, NULL);
+	pthread_join(hiloEscuchaGet, NULL);
+
+	pthread_join(hiloReconexionBroker,NULL);
 
 
 	terminar_programa();
@@ -154,5 +142,4 @@ void terminar_programa(){
 	free(rutaFiles);
 	free(rutaBlocks);
 	free(bitMap);
-	free(magicNumber);
 }

@@ -127,17 +127,28 @@ void desactivarFlagDeLectura(t_config* archivo){
 char** cargarVectorSinElValor(char** arrayViejo,char* block){
 	char** nuevoArrayDeBlock;
 	uint32_t i = 0;
+	char* nada = string_new();
+
 
 	while(arrayViejo[i] != NULL){
 			if(strcasecmp(arrayViejo[i],block)){
 				log_info(loggerDevArchDir, "Se asigno el block %s a la posicion %i",arrayViejo[i],i);
-				nuevoArrayDeBlock[i] = arrayViejo[i];
+
+				string_append(&nada,arrayViejo[i]);
+				string_append(&nada,"|");
 				i++;
 			} else {
 				log_info(loggerDevArchDir, "Se macheo el block que hay que sacar");
 				i++;
 			}
 		}
+
+	char* nadaNueva = string_substring(nada,0,string_length(nada)-1);
+	free(nada);
+
+	nuevoArrayDeBlock = string_split(nadaNueva,"|");
+
+	free(nadaNueva);
 
 	return nuevoArrayDeBlock;
 }
@@ -212,28 +223,6 @@ uint32_t cantidadDePokemonEnUnaCoordenada(t_config* archivoBlock,char* posicion)
 
 
 
-char* seleccionarBlockParaCargarPosiciones(char** blocksOcupados, char*posicion, uint32_t cantidad){
-	if(blocksOcupados[0] == NULL){
-		return buscarPosicionDisponibleEnElBitMap();
-	}
-
-	uint32_t i = 0;
-		while(blocksOcupados[i] != NULL){
-			log_info(loggerDevArchDir, "Se esta viendo su el el block %s cumple las condiciones",blocksOcupados[i]);
-			char* rutaDeArchivo = generadorDeRutaDeCreacionDeArchivos(rutaBlocksArchDir,blocksOcupados[i],".bin");
-			if(hayEspacioEnElBlock(rutaDeArchivo,posicion,cantidad)){
-				log_info(loggerDevArchDir, "Se encontro el block %s libre",blocksOcupados[i]);
-				return blocksOcupados[i];
-			} else{
-				i++;
-			}
-		}
-
-		log_info(loggerDevArchDir, "Che, no encontramos ningun bloque....");
-
-		return buscarPosicionDisponibleEnElBitMap();
-}
-
 void agregarNuevaPosicionA(char* block, char* posicion, uint32_t cantidad){
 
 	char* rutaArchivo = generadorDeRutaDeCreacionDeArchivos(rutaBlocksArchDir,block,".bin");
@@ -250,7 +239,7 @@ void agregarNuevaPosicionA(char* block, char* posicion, uint32_t cantidad){
 
 
 
-void obtenerTodasLasPosiciones(char** blocks, t_queue** posicionesPokemon){
+void obtenerTodasLasPosiciones(char** blocks, t_queue* posicionesPokemon){
 
 	uint32_t i = 0;
 
@@ -273,7 +262,7 @@ void obtenerTodasLasPosiciones(char** blocks, t_queue** posicionesPokemon){
 
 			while ((read = getline(&line, &len, fp)) != -1) {
 				log_info(loggerDevArchDir, "Se esta leyendo la linea: %s",line);
-				char** data = string_n_split(line,2,"=");
+				char** data = string_split(line,"=");
 				log_info(loggerDevArchDir, "La coordenada de la linea es: %s",data[0]);
 				char* posicion = data[0];
 				queue_push(posicionesPokemon, posicion);

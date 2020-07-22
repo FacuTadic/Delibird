@@ -19,7 +19,9 @@ int crear_conexion(char *ip, char* puerto)
 
 	int socket_cliente = socket(server_info->ai_family, server_info->ai_socktype, server_info->ai_protocol);
 
-	if(connect(socket_cliente, server_info->ai_addr, server_info->ai_addrlen) == -1){
+	if (connect(socket_cliente, server_info->ai_addr, server_info->ai_addrlen) == -1) {
+		liberar_conexion(socket_cliente);
+		freeaddrinfo(server_info);
 		return -1;
 	}
 
@@ -122,6 +124,29 @@ void desmarcarBloqueBitmap(char* block){
 
 
 
+char* seleccionarBlockParaCargarPosiciones(char** blocksOcupados, char*posicion, uint32_t cantidad){
+	if(blocksOcupados[0] == NULL){
+		return buscarPosicionDisponibleEnElBitMap();
+	}
+
+	uint32_t i = 0;
+		while(blocksOcupados[i] != NULL){
+			log_info(loggerDevArchDir, "Se esta viendo su el el block %s cumple las condiciones",blocksOcupados[i]);
+			char* rutaDeArchivo = generadorDeRutaDeCreacionDeArchivos(rutaBlocksArchDir,blocksOcupados[i],".bin");
+			if(hayEspacioEnElBlock(rutaDeArchivo,posicion,cantidad)){
+				log_info(loggerDevArchDir, "Se encontro el block %s libre",blocksOcupados[i]);
+				return blocksOcupados[i];
+			} else{
+				i++;
+			}
+		}
+
+		log_info(loggerDevArchDir, "Che, no encontramos ningun bloque....");
+
+		return buscarPosicionDisponibleEnElBitMap();
+}
+
+
 
 //############################################################################################################################################
 
@@ -161,7 +186,7 @@ void procesarRequestDeGameBoy(int cod_op, int socketGameBoy) {
 			log_error(loggerDev, "NO SE RECONOCE EL TIPO DE MENSAJE");
 	}
 
-	close(socketGameBoy);
+	liberar_conexion(socketGameBoy);;
 }
 
 void atenderGameBoy(int* socketGameBoy) {
@@ -169,12 +194,12 @@ void atenderGameBoy(int* socketGameBoy) {
 	log_info(loggerDev, "Recibiendo codigo de operacion de GameBoy en socket %i", *socketGameBoy);
 	int status_recv = recv(*socketGameBoy, &cod_op, sizeof(uint32_t), MSG_WAITALL);
 	if (status_recv == -1) {
-		close(*socketGameBoy);
+		liberar_conexion(*socketGameBoy);
 		log_error(loggerDev, "Hubo un problema recibiendo codigo de operacion de GameBoy en socket %i", *socketGameBoy);
 		pthread_exit(NULL);
 	}
 	if (status_recv == 0) {
-		close(*socketGameBoy);
+		liberar_conexion(*socketGameBoy);
 		log_warning(loggerDev, "Game boy acaba de cerrar la conexion correspondiente al socket %i", *socketGameBoy);
 		pthread_exit(NULL);
 	}
@@ -325,20 +350,24 @@ void reconectarAlBroker() {
 		log_info(loggerDev, "Socket de reconexion appeared: %i",socketEscuchaGet);
 
 		log_info(loggerDev, "conexion establecida con BROKER, ip: %s puerto : %s", ipBroker, puertoBroker);
-		pthread_mutex_lock(&estoy_conectado_al_broker_mutex);
 		estoy_conectado_al_broker = 1;
-		pthread_mutex_unlock(&estoy_conectado_al_broker_mutex);
+		log_info(loggerDev, "Reconexion con Broker exitosa, verificando nuevamente en %i segundos", tiempoReintentoConexion);
+	}else{
+		log_error(loggerDev, "Reconexion con Broker fallida, intentando nuevamente en %i segundos", tiempoReintentoConexion);
+
 	}
 }
 
 
 void verificarConexion(void) {
-	log_info(loggerDev, "verifico conexion con BROKER");
+	log_info(loggerDev, "Hilo de verificacion periodica de conexion con Broker iniciado");
 	while(1) {
+		sleep(tiempoReintentoConexion);
+		log_info(loggerDev, "Iniciando verificacion de conexion con Broker...");
 		if (estoy_conectado_al_broker == 0) {
-			log_error(loggerDev, "Error en conexion con BROKER, ip: %s puerto: %s, reintentando en %i segundo%s", ipBroker, puertoBroker, tiempoReintentoConexion, tiempoReintentoConexion==1 ? "" : "s");
 			reconectarAlBroker();
-			sleep(tiempoReintentoConexion);
+		} else {
+			log_info(loggerDev, "Conexion con Broker en buen estado, verificando nuevamente en %i segundos", tiempoReintentoConexion);
 		}
 	}
 }
@@ -582,7 +611,7 @@ bool validarPosicionesDeCatch(t_config* archivoMetadataPokemon, char** blocksOcu
 
 t_queue* validarPosicionesDeGet(char** blocksOcupados){
 	t_queue* posicionesPokemon = queue_create();
-	obtenerTodasLasPosiciones(blocksOcupados, &posicionesPokemon);
+	obtenerTodasLasPosiciones(blocksOcupados, posicionesPokemon);
 
 	return posicionesPokemon;
 }
@@ -698,7 +727,7 @@ void getPokemon(int socketCliente,t_getLlegada* getLlegada){
 
 	char* rutaDeArchivo = generadorDeRutaDeCreacionDeArchivos(rutaDeDirectorio, pokemon, ".bin");
 	t_config* archivoMetadataPokemon = config_create(rutaDeArchivo);
-	char** blocksOcupados = config_get_array_value(rutaDeArchivo,"BLOCKS");
+	char** blocksOcupados = config_get_array_value(archivoMetadataPokemon,"BLOCKS");
 	log_info(loggerDev, "EL array de blocks es: %s", blocksOcupados);
 
 	pthread_mutex_lock(&estoy_leyendo_metadata_mutex);
@@ -767,11 +796,4 @@ int iniciarEscuchaGameBoy(char* IP, char* PUERTO) {
 
 bool noExisteDirectorio(char* ruta){
 	return stat(ruta, &st1) == -1;
-}
-
-
-
-void liberar_conexion(int socket_cliente)
-{
-	close(socket_cliente);
 }
