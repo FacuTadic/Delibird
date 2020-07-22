@@ -39,27 +39,27 @@ t_buffer* crearBufferAppeared(t_appeared* appearedAEnviar){
 
 	memcpy(bufferAppeared->stream + offset,&idMensaje, sizeof(uint32_t));
 	offset += sizeof(uint32_t);
-	log_info(loggerDev, "El ID cargado es %i", idMensaje);
+	log_info(loggerDevEstructuras, "El ID cargado es %i", idMensaje);
 
 
 	memcpy(bufferAppeared->stream + offset,&sizeNombrePokemon, sizeof(uint32_t));
 	offset += sizeof(uint32_t);
-	log_info(loggerDev, "Tamanio nombre pokemon %i", sizeNombrePokemon);
+	log_info(loggerDevEstructuras, "Tamanio nombre pokemon %i", sizeNombrePokemon);
 
 
 	memcpy(bufferAppeared->stream + offset,nombrePokemon,strlen(nombrePokemon) + 1);
 	offset += sizeNombrePokemon;
-	log_info(loggerDev, "Nombre pokemon %s", nombrePokemon);
+	log_info(loggerDevEstructuras, "Nombre pokemon %s", nombrePokemon);
 
 
 	memcpy(bufferAppeared->stream + offset,&posX, sizeof(uint32_t));
 	offset += sizeof(uint32_t);
-	log_info(loggerDev, "Posicion X %i", posX);
+	log_info(loggerDevEstructuras, "Posicion X %i", posX);
 
 
 	memcpy(bufferAppeared->stream + offset,&posY, sizeof(uint32_t));
 	offset += sizeof(uint32_t);
-	log_info(loggerDev, "Posicion Y %i", posY);
+	log_info(loggerDevEstructuras, "Posicion Y %i", posY);
 
 	return bufferAppeared;
 }
@@ -76,12 +76,12 @@ t_buffer* crearBufferCaught(t_caught* caughtAEnviar){
 
 	memcpy(bufferCaught->stream + offset,&idMensaje, sizeof(uint32_t));
 	offset += sizeof(uint32_t);
-	log_info(loggerDev, "El ID cargado es %i", idMensaje);
+	log_info(loggerDevEstructuras, "El ID cargado es %i", idMensaje);
 
 
 	memcpy(bufferCaught->stream + offset,&flag, sizeof(uint32_t));
 	offset += sizeof(uint32_t);
-	log_info(loggerDev, "El flag cargado es %i", flag);
+	log_info(loggerDevEstructuras, "El flag cargado es %i", flag);
 
 	return bufferCaught;
 }
@@ -100,35 +100,35 @@ t_buffer* crearBufferLocalized(t_localized* localizedAEnviar){
 
 	memcpy(bufferLocalized->stream + offset,&idMensaje, sizeof(uint32_t));
 	offset += sizeof(uint32_t);
-	log_info(loggerDev, "El ID cargado es %i", idMensaje);
+	log_info(loggerDevEstructuras, "El ID cargado es %i", idMensaje);
 
 
 	memcpy(bufferLocalized->stream + offset,&sizeNombrePokemon, sizeof(uint32_t));
 	offset += sizeof(uint32_t);
-	log_info(loggerDev, "Tamanio nombre pokemon %i", sizeNombrePokemon);
+	log_info(loggerDevEstructuras, "Tamanio nombre pokemon %i", sizeNombrePokemon);
 
 
 	memcpy(bufferLocalized->stream + offset,nombrePokemon,strlen(nombrePokemon) + 1);
 	offset += sizeNombrePokemon;
-	log_info(loggerDev, "Nombre pokemon %s", nombrePokemon);
+	log_info(loggerDevEstructuras, "Nombre pokemon %s", nombrePokemon);
 
 	memcpy(bufferLocalized->stream + offset,&cantLugares, sizeof(uint32_t));
 	offset += sizeof(uint32_t);
-	log_info(loggerDev, "Cantidad de coordenadas donde aparece:  %i", cantLugares);
+	log_info(loggerDevEstructuras, "Cantidad de coordenadas donde aparece:  %i", cantLugares);
 
 
 	for(int i = 0; i<(cantLugares*2); i++){
 
-		uint32_t posX = list_get(coordenadas, i);
-		uint32_t posY = list_get(coordenadas, i+1);
+		uint32_t posX = *((uint32_t*) list_get(coordenadas, i));
+		uint32_t posY = *((uint32_t*) list_get(coordenadas, i+1));
 
 		memcpy(bufferLocalized->stream + offset,&posX, sizeof(uint32_t));
 		offset += sizeof(uint32_t);
-		log_info(loggerDev, "Posicion X %i", posX);
+		log_info(loggerDevEstructuras, "Posicion X %i", posX);
 
 		memcpy(bufferLocalized->stream + offset,&posY, sizeof(uint32_t));
 		offset += sizeof(uint32_t);
-		log_info(loggerDev, "Posicion Y %i", posY);
+		log_info(loggerDevEstructuras, "Posicion Y %i", posY);
 	}
 
 
@@ -146,12 +146,12 @@ t_buffer* crearBufferSuscriptor(t_suscripcion* suscriptorAEnviar){
 
 	memcpy(bufferSuscriptor->stream + offset,&idCliente, sizeof(uint32_t));
 	offset += sizeof(uint32_t);
-	log_info(loggerDev, "El ID de GC cargado es %i", idCliente);
+	log_info(loggerDevEstructuras, "El ID de GC cargado es %i", idCliente);
 
 
 	memcpy(bufferSuscriptor->stream + offset,&idCola, sizeof(uint32_t));
 	offset += sizeof(uint32_t);
-	log_info(loggerDev, "El ID de la cola que quiero escuchar es %i", idCliente);
+	log_info(loggerDevEstructuras, "El ID de la cola que quiero escuchar es %i", idCliente);
 
 
 	return bufferSuscriptor;
@@ -169,18 +169,18 @@ t_appeared* crearAppeared(t_newLlegada* new){
 	t_appeared* appearedAEnviar = malloc(sizeof(t_appeared));
 
 	appearedAEnviar->idMensaje = idMensaje;
-	log_info(loggerDev, "El ID de mensaje cargado en el appeared es: %i", appearedAEnviar->idMensaje);
+	log_info(loggerDevEstructuras, "El ID de mensaje cargado en el appeared es: %i", appearedAEnviar->idMensaje);
 
 	appearedAEnviar->sizePokemon = tamanio;
 	appearedAEnviar->pokemon = pokemon;
 
-	log_info(loggerDev, "El pokemoncargado en el appeared es: %s", appearedAEnviar->pokemon);
-	log_info(loggerDev, "El tamanio del nombre del pokemon cargado en el appeared es: %i", appearedAEnviar->sizePokemon);
+	log_info(loggerDevEstructuras, "El pokemoncargado en el appeared es: %s", appearedAEnviar->pokemon);
+	log_info(loggerDevEstructuras, "El tamanio del nombre del pokemon cargado en el appeared es: %i", appearedAEnviar->sizePokemon);
 
 	appearedAEnviar->coordX = posX;
 	appearedAEnviar->coordY = posY;
 
-	log_info(loggerDev, "La coordenada del pokemon cargado en el appeared es: %i - %i", appearedAEnviar->coordX, appearedAEnviar->coordY);
+	log_info(loggerDevEstructuras, "La coordenada del pokemon cargado en el appeared es: %i - %i", appearedAEnviar->coordX, appearedAEnviar->coordY);
 
 	return appearedAEnviar;
 }
@@ -194,14 +194,14 @@ uint32_t boolAInt(bool flag){
 	}
 }
 
-t_caught* crearCaught(uint32_t idMensaje, uint32_t flag){
+t_caught* crearCaught(uint32_t idMensaje, bool flag){
 
 	t_caught* caughtAEnviar = malloc(sizeof(t_caught));
 
 	caughtAEnviar->idMensaje = idMensaje;
-	log_info(loggerDev, "El ID de mensaje cargado en el caught es: %i", caughtAEnviar->idMensaje);
+	log_info(loggerDevEstructuras, "El ID de mensaje cargado en el caught es: %i", caughtAEnviar->idMensaje);
 	caughtAEnviar->flagCaught = boolAInt(flag);
-	log_info(loggerDev, "El Flag cargado en el caught es: %i", caughtAEnviar->flagCaught);
+	log_info(loggerDevEstructuras, "El Flag cargado en el caught es: %i", caughtAEnviar->flagCaught);
 
 	return caughtAEnviar;
 }
@@ -223,13 +223,13 @@ t_localized* crearLocalized(t_getLlegada* getLlegado, t_queue* dataPokemon){
 	t_localized* localizedAEnviar = malloc(sizeof(t_localized));
 
 	localizedAEnviar->idMensaje = getLlegado->id;
-	log_info(loggerDev, "El ID mensaje cargado en el localized es: %i", localizedAEnviar->idMensaje);
+	log_info(loggerDevEstructuras, "El ID mensaje cargado en el localized es: %i", localizedAEnviar->idMensaje);
 	localizedAEnviar->sizePokemon = strlen(getLlegado->pokemon);
 	localizedAEnviar->pokemon = getLlegado->pokemon;
-	log_info(loggerDev, "El Pokemon cargado en el localized es: %i", localizedAEnviar->pokemon);
-	log_info(loggerDev, "El tamanio del nombre del pokemon cargado en el localized es: %i", localizedAEnviar->sizePokemon);
+	log_info(loggerDevEstructuras, "El Pokemon cargado en el localized es: %i", localizedAEnviar->pokemon);
+	log_info(loggerDevEstructuras, "El tamanio del nombre del pokemon cargado en el localized es: %i", localizedAEnviar->sizePokemon);
 	localizedAEnviar->lugares = queue_size(dataPokemon);
-	log_info(loggerDev, "La cantidad de lugares donde apareche el pokemon cargado en el localized es: %i", localizedAEnviar->lugares);
+	log_info(loggerDevEstructuras, "La cantidad de lugares donde apareche el pokemon cargado en el localized es: %i", localizedAEnviar->lugares);
 
 	t_queue* coordenadas = malloc(sizeof(t_queue));
 	coordenadas = dataPokemon;
@@ -242,10 +242,10 @@ t_localized* crearLocalized(t_getLlegada* getLlegado, t_queue* dataPokemon){
 		uint32_t posX = atoi(data[0]);
 		uint32_t posY = atoi(data[1]);
 
-		list_add(localizedAEnviar->l_coordenadas,posX);
-		list_add(localizedAEnviar->l_coordenadas,posY);
+		list_add(localizedAEnviar->l_coordenadas,&posX);
+		list_add(localizedAEnviar->l_coordenadas,&posY);
 
-		log_info(loggerDev, "La coordenada cargada es (%i ; %i)", posX, posY);
+		log_info(loggerDevEstructuras, "La coordenada cargada es (%i ; %i)", posX, posY);
 
 	}
 

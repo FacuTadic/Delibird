@@ -10,8 +10,10 @@
 #include<commons/collections/list.h>
 #include<string.h>
 #include<pthread.h>
-#include "utilsGameCard.h"
 
+
+uint32_t id_modulo;
+t_log* loggerDevProtocolo;
 
 
 typedef enum
@@ -81,7 +83,7 @@ typedef struct {
 typedef struct{
 
 	uint32_t idMensaje;
-	uint32_t flagCaught;
+	bool flagCaught;
 
  }t_caught;
 
@@ -99,17 +101,22 @@ typedef struct {
 	int socket_cliente;
 } info_modulo;
 
-t_newLlegada recibir_new(int socket_cliente, uint32_t* size, t_log* logger);
+int mandar_suscripcion(int socket_broker, uint32_t id_cola);
+
+t_newLlegada* recibir_new(int socket_cliente, uint32_t* size, t_log* logger);
 void enviar_appeared(int socket, t_appeared* appearedAEnviar);
 
-t_catchLlegada recibir_catch(int socket_cliente, uint32_t* size, t_log* logger);
+t_catchLlegada* recibir_catch(int socket_cliente, uint32_t* size, t_log* logger);
 void enviar_caught(int socket, t_caught* caughtAEnviar);
 
-t_getLlegada recibir_get(int socket_cliente, uint32_t* size, t_log* logger);
+t_getLlegada* recibir_get(int socket_cliente, uint32_t* size, t_log* logger);
 void enviar_localized(int socket, t_localized* localizedAEnviar);
 
+void liberar_conexion(int socket_cliente);
 
 void devolver_id(int socket_cliente, uint32_t id, t_log* logger);
+
+int devolver_ack(int socket_broker, t_log* logger);
 
 
 #endif /* PROTOCOLOGAMECARD_H_ */

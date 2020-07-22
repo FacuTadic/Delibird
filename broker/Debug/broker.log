@@ -16,3 +16,14 @@
 [INFO] 21:28:33:619 Broker/(3774:3775): Nueva conexion de un proceso con socket cliente 8
 [INFO] 21:28:33:626 Broker/(3774:5422): Mensaje NEW de memoria con id 2 al cliente 6 socket 8 enviado correctamente
 [INFO] 21:28:33:626 Broker/(3774:5419): Modulo con id 6 agregado correctamente en la cola de NEW
+[INFO] 00:57:06:153 Broker/(3536:3537): Nueva conexion de un proceso con socket cliente 7
+[INFO] 00:57:06:154 Broker/(3536:3537): Nueva conexion de un proceso con socket cliente 8
+[INFO] 00:57:06:154 Broker/(3536:3537): Nueva conexion de un proceso con socket cliente 9
+[INFO] 00:57:06:169 Broker/(3536:3537): Nueva conexion de un proceso con socket cliente 10
+[INFO] 00:57:06:169 Broker/(3536:3537): Nueva conexion de un proceso con socket cliente 11
+[INFO] 00:57:06:177 Broker/(3536:3537): Nueva conexion de un proceso con socket cliente 12
+[INFO] 00:57:06:177 Broker/(3536:3537): Nueva conexion de un proceso con socket cliente 13
+[INFO] 00:57:06:177 Broker/(3536:3537): Nueva conexion de un proceso con socket cliente 14
+[INFO] 21:04:43:405 Broker/(11410:11411): Nueva conexion de un proceso con socket cliente 7
+[INFO] 21:04:43:405 Broker/(11410:11411): Nueva conexion de un proceso con socket cliente 8
+[INFO] 21:04:43:406 Broker/(11410:11411): Nueva conexion de un proceso con socket cliente 9

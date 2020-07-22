@@ -1,13 +1,3 @@
-/*
- ============================================================================
- Name        : gameCard.c
- Author      : 
- Version     :
- Copyright   : Your copyright notice
- Description : Hello World in C, Ansi-style
- ============================================================================
- */
-
 #include <stdio.h>
 #include <stdlib.h>
 #include "utilsGameCard.h"
@@ -30,16 +20,13 @@ t_config* leer_config(){
 }
 
 
-void terminar_programa(int conexion);
+void terminar_programa();
 
 
 
 int main(void) {
 
-	int conexion;
-	ipBroker = string_new();
-	puertoBroker = string_new();
-
+	generar_ID_Modulo();
 
 	// ################################################# 	SETTER Y SARAZA 	####################################################
 
@@ -72,59 +59,83 @@ int main(void) {
 	log_info(loggerDev, "El punto de montaje es: %s", puntoMontaje);
 
 
+	ip = config_get_string_value(config, "IP");
+	log_info(loggerDev, "La IP es: %s", ip);
+
+	puerto = config_get_string_value(config, "PUERTO");
+	log_info(loggerDev, "El puerto es: %s", puerto);
+
+
+	//SETEO DE VARIABLES PARA ARCHIVOSYDIRECTORIOS.H
+	loggerDevArchDir=loggerDev;
+
+	//SETEO DE VARIABLES PARA CREACIONDEESTRUCTURASPARAENVIAR.H
+	loggerDevEstructuras = loggerDev;
+
+	//SETEO DE VARIABLES PARA PROTOCOLOGC.H
+	loggerDevProtocolo = loggerDev;
+
+
 	levantarTallGrass(puntoMontaje);
 
 
+	//SETEO DE VARIABLES PARA ARCHIVOSYDIRECTORIOS.H
+	log_info(loggerDev, "SETEO DE VARIABLES PARA ARCHIVOSYDIRECTORIOS.H");
+	rutaBlocksArchDir=rutaBlocks;
+	blockSizeArchDir=blockSize;
+
+	id_modulo = id_moduloGC;
+	log_info(loggerDev, "El ID de modulo es: %i",id_moduloGC);
+
+	pthread_mutex_init(&estoy_conectado_al_broker_mutex, NULL);
+	pthread_mutex_init(&estoy_leyendo_metadata_mutex,NULL);
+
+
 	//################################################## 	CONEXION 	###############################################################################
-	do{
-		conexion = crear_conexion( ipBroker, puertoBroker);
 
-		if(!conexion){
-			log_error(loggerDev, "Error en conexion con BROKER, ip: %s puerto : %s, reintentando en %d segundo%s ", ipBroker, puertoBroker,tiempoReintentoConexion,tiempoReintentoConexion=1 ? "":"s");
-			sleep(tiempoReintentoConexion);
-		}
-	}while(!conexion );		//reintentar cada tiempoReintentoConexion
-	log_info(loggerDev, "conexion establecida con BROKER, ip: %s puerto : %s", ipBroker, puertoBroker);
+	socketEscuchaGameBoy = iniciarEscuchaGameBoy(ip, puerto);
+	socketEscuchaNew = crear_conexion(ipBroker, puertoBroker);
+	socketEscuchaCatch = crear_conexion(ipBroker, puertoBroker);
+	socketEscuchaGet = crear_conexion(ipBroker, puertoBroker);
 
 
-	enviarMensaje(msj_suscripcion,puertoBroker);//mandar dejame escuchar colas y atenderlas con espera activa bloqueante
-	// chequear con facha funcionamiento suscribir
-
-	esperar_mensaje(puertoBroker); // choripasteado y adaptado de BKR
-
-
-	//COPIO ATENDER DE BKR??
+	pthread_t hilo_escucha_de_game_boy;
+	pthread_t hiloEscuchaNew;
+	pthread_t hiloEscuchaCatch;
+	pthread_t hiloEscuchaGet;
+	pthread_t hiloReconexionBroker;
 
 
+	pthread_create(&hiloEscuchaNew, NULL, (void*) escucharNewDeBroker, NULL);
+	pthread_create(&hiloEscuchaCatch, NULL, (void*) escucharCatchDeBroker, NULL);
+	pthread_create(&hiloEscuchaGet, NULL, (void*) escucharGetDeBroker, NULL);
+	pthread_create(&hiloReconexionBroker, NULL, (void*) verificarConexion, NULL);
+	pthread_create(&hilo_escucha_de_game_boy, NULL, (void*) escucharGameBoy, (void*) socketEscuchaGameBoy);
 
 
+	pthread_join(hilo_escucha_de_game_boy, NULL);
+	pthread_join(hiloEscuchaNew, NULL);
+	pthread_join(hiloEscuchaCatch, NULL);
+	pthread_join(hiloEscuchaGet, NULL);
+
+	pthread_join(hiloReconexionBroker,NULL);
 
 
+	terminar_programa();
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-void terminar_programa(int conexion){
+void terminar_programa(){
 	log_destroy(loggerDev);
 	log_destroy(loggerGameCard);
 	config_destroy(config);
-	liberar_conexion(conexion);
+	liberar_conexion(socketEscuchaNew);
+	liberar_conexion(socketEscuchaCatch);
+	liberar_conexion(socketEscuchaGet);
+	liberar_conexion(socketEscuchaGameBoy);
+	pthread_mutex_destroy(&estoy_conectado_al_broker_mutex);
 	free(rutaMetaData);
 	free(rutaFiles);
 	free(rutaBlocks);
 	free(bitMap);
-	free(magicNumber);
 }

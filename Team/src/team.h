@@ -8,9 +8,9 @@
 #include <commons/log.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 #include <pthread.h>
 #include "semaphore.h"
-#include "team_utils.h"
 #include "protocol_team.h"
 
 #endif
@@ -54,9 +54,6 @@ pthread_mutex_t cola_deadlock_mutex;
 pthread_mutex_t pokemones_llegados_mutex;
 pthread_mutex_t catch_IDs_mutex;
 pthread_mutex_t estoy_conectado_al_broker_mutex;
-pthread_mutex_t socket_escucha_appeared_mutex;
-pthread_mutex_t socket_escucha_caught_mutex;
-pthread_mutex_t socket_escucha_localized_mutex;
 pthread_mutex_t planificacion_fifo;
 
 sem_t sem_cola_pokemones;
@@ -164,8 +161,8 @@ void planificar_deadlock(void);
 void escuchar_appeared_de_broker(void);
 void escuchar_caught_de_broker(void);
 void escuchar_localized_de_broker(void);
-void buscar_deadlocks();
-void verificar_conexion();
+void buscar_deadlocks(void);
+void verificar_conexion(void);
 void reconectar_al_broker();
 t_deadlock* obtener_deadlock();
 void corregir_deadlock(t_deadlock* deadlock);
@@ -195,11 +192,14 @@ t_pokemon* generar_pokemon_de_appeared(t_appeared* mensaje_appeared);
 t_list* generar_pokemones_de_localized(t_localized* mensaje_localized);
 void obtener_cantidad_de_cada_pokemon_a_planificar();
 int tengo_que_planificar_pokemon(t_pokemon* mensaje_pokemon);
+t_entrenador* entrenador_mas_cercano(t_list* entrenadores_disponibles_para_ir_a_atrapar, int posXPokemon, int posYPokemon);
 void contar_planificacion(t_pokemon* pokemon);
 void liberar_planificacion(t_pokemon* pokemon);
 int tengo_en_el_mapa(char* pokemon);
 void borrar_pokemon_del_mapa(t_pokemon* pokemon);
 t_pokemon* mejor_pokemon_para_reintentar(t_entrenador* entrenador, char* pokemon);
-void cambiar_estado_de_entrenador(t_entrenador* entrenador, estado estado_nuevo);
+void cambiar_estado_de_entrenador(t_entrenador* entrenador, estado estado_nuevo, char* razon);
 void cambiar_tarea_de_entrenador(t_entrenador* entrenador, t_tarea* tarea_nueva);
 void mostrar_metricas();
+int es_id_catch(uint32_t id);
+int calcular_posicion_entrenador(int posXEntrenador, int posYEntrenador, int posXPokemon, int posYPokemon);

@@ -17,6 +17,7 @@
 #include<sys/socket.h>
 #include<netdb.h>
 #include<string.h>
+#include<semaphore.h>
 #include<commons/log.h>
 #include<commons/config.h>
 #include<commons/string.h>
@@ -27,10 +28,23 @@
 #include <unistd.h>
 #include "archivosYDirectorios.h"
 #include "protocoloGameCard.h"
-#include "bitArray.h"
+#include "creacionDeEstructurasParaEnvio.h"
 
 
 
+
+int id_moduloGC;
+
+
+int socketEscuchaGameBoy;
+
+int socketEscuchaNew;
+int socketEscuchaCatch;
+int socketEscuchaGet;
+
+
+char* ip;
+char* puerto;
 char* ipBroker;
 char* puertoBroker;
 char* puntoMontaje;
@@ -44,7 +58,7 @@ uint32_t cantidadDeBloques;
 t_bitarray *bitarray;
 char* magicNumber;
 
-
+int estoy_conectado_al_broker; // 1 true 0 false
 
 
 t_log* loggerDev;
@@ -57,6 +71,9 @@ char* rutaBlocks;
 char* bitMap;
 
 
+pthread_mutex_t estoy_conectado_al_broker_mutex;
+pthread_mutex_t estoy_leyendo_metadata_mutex;
+sem_t bloques_bitmap;
 
 
 struct stat st1;
@@ -74,9 +91,18 @@ typedef enum
 
 
 int crear_conexion(char* ip, char* puerto);
-void enviar_mensaje(char*argv[], int socket_cliente);
-void recibir_mensaje(int socket_cliente);
-void crearDirectorio(char*, char*);
+char* seleccionarBlockParaCargarPosiciones(char** blocksOcupados, char*posicion, uint32_t cantidad);
+void escucharGameBoy(void* socket_escucha_game_boy);
+void escucharNewDeBroker(void);
+void escucharCatchDeBroker(void);
+void escucharGetDeBroker(void);
+void levantarTallGrass(char* puntoMontaje);
+void newPokemon(int socketCliente,t_newLlegada* new);
+void catchPokemon(int socketCliente,t_catchLlegada* catch);
+void getPokemon(int socketCliente,t_getLlegada* getLlegada);
+int iniciarEscuchaGameBoy(char* IP, char* PUERTO);
+void verificarConexion(void);
+void generar_ID_Modulo();
 void liberar_conexion(int socket_cliente);
 
 

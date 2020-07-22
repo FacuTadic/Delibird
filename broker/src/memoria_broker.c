@@ -18,6 +18,11 @@ void guardar_info_envios(uint32_t id, t_list* mandados, t_list* acks) {
 }
 
 void guardar_mensaje_en_memoria(data_tabla* registro, void* mensaje) {
+	if (registro->limit > tamanio_memoria) {
+		log_error(extense_logger_memoria, "No se ha podido guardar el mensaje, es mayor al tamanio maximo permitido. Tamanio del mensaje: %i. Tamanio maximo permitido: %i", registro->limit, tamanio_memoria);
+		return;
+	}
+
 	pthread_mutex_lock(&mutex_memoria);
 
 	int lugar_a_ubicar = encontrar_lugar_a_ubicar(registro->limit);
@@ -108,9 +113,9 @@ int eliminar_particion() {
 	}
 
 	list_clean(registro->acknowledgements);
-	list_remove(registro->acknowledgements);
+	list_destroy(registro->acknowledgements);
 	list_clean(registro->envios);
-	list_remove(registro->envios);
+	list_destroy(registro->envios);
 	free(registro);
 }
 
@@ -756,22 +761,4 @@ char* obtener_dump_registro(data_tabla* registro, int numero_particion) {
 			registro->tipo,
 			registro->id);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
