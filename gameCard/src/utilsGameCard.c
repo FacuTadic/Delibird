@@ -449,16 +449,25 @@ void crearDirectorioBlocks(char* puntoMontaje){
 
 void cargarInfoDelMetadata(char* rutaMetadata){
 
-	char* archivoMetaData = generadorDeRutaDeCreacionDeArchivos(rutaMetadata,"Metadata",".bin");
+	char* metadata = "Metadata";
+	char* bin = ".bin";
+
+	char* archivoMetaData = generadorDeRutaDeCreacionDeArchivos(rutaMetadata,metadata,bin);
 	t_config* metaData=config_create(archivoMetaData);
+
 	log_info(loggerDev, "Se creo el config de MetaData");
 	blockSize = config_get_int_value(metaData,"BLOCK_SIZE");
+
 	log_info(loggerDev, "El Block Size es: %i", blockSize);
 	cantidadDeBloques = config_get_int_value(metaData,"BLOCKS");
+
 	log_info(loggerDev, "La cantidad de Bloques es: %i", cantidadDeBloques);
 	magicNumber = config_get_string_value(metaData, "MAGIC_NUMBER");
+
 	log_info(loggerDev, "El Magic Number es: %s", magicNumber);
 	config_destroy(metaData);
+
+	free(archivoMetaData);
 }
 
 void levantarTallGrass(char* puntoMontaje){

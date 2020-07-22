@@ -26,10 +26,6 @@ void terminar_programa();
 
 int main(void) {
 
-	ipBroker = string_new();
-	puertoBroker = string_new();
-
-
 	generar_ID_Modulo();
 
 	// ################################################# 	SETTER Y SARAZA 	####################################################
