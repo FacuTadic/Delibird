@@ -18,8 +18,8 @@ int mandar_suscripcion(int socket_mandado, uint32_t id_cola) {
 
 	int status_send = send(socket_mandado, flujo, bytes, 0);
 
-	if (status_send == -1) {
-		close(socket_mandado);
+	if (status_send == -1 || status_send == 0) {
+		cerrar_conexion(socket_mandado);
 		free(flujo);
 		return -1;
 	}
@@ -39,13 +39,13 @@ t_appeared* recibir_appeared(int socket_broker, uint32_t* size) {
 
 	int status_recv = recv(socket_broker, size, sizeof(uint32_t), MSG_WAITALL);
 	if (status_recv == -1) {
-		close(socket_broker);
+		cerrar_conexion(socket_broker);
 		log_error(extense_logger_protocol, "Hubo un problema recibiendo el tamanio total");
 		free(appeared);
 		return NULL;
 	}
 	if (status_recv == 0) {
-		close(socket_broker);
+		cerrar_conexion(socket_broker);
 		log_warning(extense_logger_protocol, "El cliente con socket %i acaba de cerrar la conexion", socket_broker);
 		free(appeared);
 		return NULL;
@@ -55,13 +55,13 @@ t_appeared* recibir_appeared(int socket_broker, uint32_t* size) {
 
 	status_recv = recv(socket_broker, &id_correlativo, sizeof(uint32_t), MSG_WAITALL);
 	if (status_recv == -1) {
-		close(socket_broker);
+		cerrar_conexion(socket_broker);
 		log_error(extense_logger_protocol, "Hubo un problema recibiendo el id correlativo");
 		free(appeared);
 		return NULL;
 	}
 	if (status_recv == 0) {
-		close(socket_broker);
+		cerrar_conexion(socket_broker);
 		log_warning(extense_logger_protocol, "El cliente con socket %i acaba de cerrar la conexion", socket_broker);
 		free(appeared);
 		return NULL;
@@ -71,13 +71,13 @@ t_appeared* recibir_appeared(int socket_broker, uint32_t* size) {
 
 	status_recv = recv(socket_broker, &(tamanio_pokemon), sizeof(uint32_t), MSG_WAITALL);
 	if (status_recv == -1) {
-		close(socket_broker);
+		cerrar_conexion(socket_broker);
 		log_error(extense_logger_protocol, "Hubo un problema recibiendo el tamanio del pokemon");
 		free(appeared);
 		return NULL;
 	}
 	if (status_recv == 0) {
-		close(socket_broker);
+		cerrar_conexion(socket_broker);
 		log_warning(extense_logger_protocol, "El cliente con socket_broker %i acaba de cerrar la conexion", socket);
 		free(appeared);
 		return NULL;
@@ -89,14 +89,14 @@ t_appeared* recibir_appeared(int socket_broker, uint32_t* size) {
 
 	status_recv = recv(socket_broker, appeared->pokemon, tamanio_pokemon, MSG_WAITALL);
 	if (status_recv == -1) {
-		close(socket_broker);
+		cerrar_conexion(socket_broker);
 		log_error(extense_logger_protocol, "Hubo un problema recibiendo el nombre del pokemon");
 		free(appeared->pokemon);
 		free(appeared);
 		return NULL;
 	}
 	if (status_recv == 0) {
-		close(socket_broker);
+		cerrar_conexion(socket_broker);
 		log_warning(extense_logger_protocol, "El cliente con socket %i acaba de cerrar la conexion", socket_broker);
 		free(appeared->pokemon);
 		free(appeared);
@@ -107,14 +107,14 @@ t_appeared* recibir_appeared(int socket_broker, uint32_t* size) {
 
 	status_recv = recv(socket_broker, &(appeared->pos_X), sizeof(uint32_t), MSG_WAITALL);
 	if (status_recv == -1) {
-		close(socket_broker);
+		cerrar_conexion(socket_broker);
 		log_error(extense_logger_protocol, "Hubo un problema recibiendo la posicion X");
 		free(appeared->pokemon);
 		free(appeared);
 		return NULL;
 	}
 	if (status_recv == 0) {
-		close(socket_broker);
+		cerrar_conexion(socket_broker);
 		log_warning(extense_logger_protocol, "El cliente con socket %i acaba de cerrar la conexion", socket_broker);
 		free(appeared->pokemon);
 		free(appeared);
@@ -125,14 +125,14 @@ t_appeared* recibir_appeared(int socket_broker, uint32_t* size) {
 
 	status_recv = recv(socket_broker, &(appeared->pos_Y), sizeof(uint32_t), MSG_WAITALL);
 	if (status_recv == -1) {
-		close(socket_broker);
+		cerrar_conexion(socket_broker);
 		log_error(extense_logger_protocol, "Hubo un problema recibiendo la posicion Y");
 		free(appeared->pokemon);
 		free(appeared);
 		return NULL;
 	}
 	if (status_recv == 0) {
-		close(socket_broker);
+		cerrar_conexion(socket_broker);
 		log_warning(extense_logger_protocol, "El cliente con socket_broker %i acaba de cerrar la conexion", socket);
 		free(appeared->pokemon);
 		free(appeared);
@@ -154,13 +154,13 @@ t_caught* recibir_caught(int socket_broker, uint32_t* size) {
 
 	int status_recv = recv(socket_broker, size, sizeof(uint32_t), MSG_WAITALL);
 	if (status_recv == -1) {
-		close(socket_broker);
+		cerrar_conexion(socket_broker);
 		log_error(extense_logger_protocol, "Hubo un problema recibiendo el tamanio total");
 		free(caught);
 		return NULL;
 	}
 	if (status_recv == 0) {
-		close(socket_broker);
+		cerrar_conexion(socket_broker);
 		log_warning(extense_logger_protocol, "El cliente con socket %i acaba de cerrar la conexion", socket_broker);
 		free(caught);
 		return NULL;
@@ -170,13 +170,13 @@ t_caught* recibir_caught(int socket_broker, uint32_t* size) {
 
 	status_recv = recv(socket_broker, &(caught->idCorrelativo), sizeof(uint32_t), MSG_WAITALL);
 	if (status_recv == -1) {
-		close(socket_broker);
+		cerrar_conexion(socket_broker);
 		log_error(extense_logger_protocol, "Hubo un problema recibiendo el id correlativo");
 		free(caught);
 		return NULL;
 	}
 	if (status_recv == 0) {
-		close(socket_broker);
+		cerrar_conexion(socket_broker);
 		log_warning(extense_logger_protocol, "El cliente con socket %i acaba de cerrar la conexion", socket_broker);
 		free(caught);
 		return NULL;
@@ -186,13 +186,13 @@ t_caught* recibir_caught(int socket_broker, uint32_t* size) {
 
 	status_recv = recv(socket_broker, &(caught->flag), sizeof(uint32_t), MSG_WAITALL);
 	if (status_recv == -1) {
-		close(socket_broker);
+		cerrar_conexion(socket_broker);
 		log_error(extense_logger_protocol, "Hubo un problema recibiendo el flag de atrapado");
 		free(caught);
 		return NULL;
 	}
 	if (status_recv == 0) {
-		close(socket_broker);
+		cerrar_conexion(socket_broker);
 		log_warning(extense_logger_protocol, "El cliente con socket %i acaba de cerrar la conexion", socket_broker);
 		free(caught);
 		return NULL;
@@ -213,13 +213,13 @@ t_localized* recibir_localized(int socket_broker, uint32_t* size) {
 
 	int status_recv = recv(socket_broker, size, sizeof(uint32_t), MSG_WAITALL);
 	if (status_recv == -1) {
-		close(socket_broker);
+		cerrar_conexion(socket_broker);
 		log_error(extense_logger_protocol, "Hubo un problema recibiendo el tamanio total");
 		free(localized);
 		return NULL;
 	}
 	if (status_recv == 0) {
-		close(socket_broker);
+		cerrar_conexion(socket_broker);
 		log_warning(extense_logger_protocol, "El cliente con socket %i acaba de cerrar la conexion", socket_broker);
 		free(localized);
 		return NULL;
@@ -229,13 +229,13 @@ t_localized* recibir_localized(int socket_broker, uint32_t* size) {
 
 	status_recv = recv(socket_broker, &(localized->id_correlativo), sizeof(uint32_t), MSG_WAITALL);
 	if (status_recv == -1) {
-		close(socket_broker);
+		cerrar_conexion(socket_broker);
 		log_error(extense_logger_protocol, "Hubo un problema recibiendo el id correlativo");
 		free(localized);
 		return NULL;
 	}
 	if (status_recv == 0) {
-		close(socket_broker);
+		cerrar_conexion(socket_broker);
 		log_warning(extense_logger_protocol, "El cliente con socket %i acaba de cerrar la conexion", socket_broker);
 		free(localized);
 		return NULL;
@@ -245,13 +245,13 @@ t_localized* recibir_localized(int socket_broker, uint32_t* size) {
 
 	status_recv = recv(socket_broker, &tamanio_pokemon, sizeof(uint32_t), MSG_WAITALL);
 	if (status_recv == -1) {
-		close(socket_broker);
+		cerrar_conexion(socket_broker);
 		log_error(extense_logger_protocol, "Hubo un problema recibiendo el tamanio del pokemon");
 		free(localized);
 		return NULL;
 	}
 	if (status_recv == 0) {
-		close(socket_broker);
+		cerrar_conexion(socket_broker);
 		log_warning(extense_logger_protocol, "El cliente con socket %i acaba de cerrar la conexion", socket_broker);
 		free(localized);
 		return NULL;
@@ -263,14 +263,14 @@ t_localized* recibir_localized(int socket_broker, uint32_t* size) {
 
 	status_recv = recv(socket_broker, localized->pokemon,tamanio_pokemon, MSG_WAITALL);
 	if (status_recv == -1) {
-		close(socket_broker);
+		cerrar_conexion(socket_broker);
 		log_error(extense_logger_protocol, "Hubo un problema recibiendo el nombre del pokemon");
 		free(localized->pokemon);
 		free(localized);
 		return NULL;
 	}
 	if (status_recv == 0) {
-		close(socket_broker);
+		cerrar_conexion(socket_broker);
 		log_warning(extense_logger_protocol, "El cliente con socket %i acaba de cerrar la conexion", socket_broker);
 		free(localized->pokemon);
 		free(localized);
@@ -281,14 +281,14 @@ t_localized* recibir_localized(int socket_broker, uint32_t* size) {
 
 	status_recv = recv(socket_broker, &(localized->lugares), sizeof(uint32_t), MSG_WAITALL);
 	if (status_recv == -1) {
-		close(socket_broker);
+		cerrar_conexion(socket_broker);
 		log_error(extense_logger_protocol, "Hubo un problema recibiendo la cantidad de coordenadas");
 		free(localized->pokemon);
 		free(localized);
 		return NULL;
 	}
 	if (status_recv == 0) {
-		close(socket_broker);
+		cerrar_conexion(socket_broker);
 		log_warning(extense_logger_protocol, "El cliente con socket %i acaba de cerrar la conexion", socket_broker);
 		free(localized->pokemon);
 		free(localized);
@@ -304,7 +304,7 @@ t_localized* recibir_localized(int socket_broker, uint32_t* size) {
 
 		status_recv = recv(socket_broker, &unidad_coord, sizeof(uint32_t), MSG_WAITALL);
 		if (status_recv == -1) {
-			close(socket_broker);
+			cerrar_conexion(socket_broker);
 			log_error(extense_logger_protocol, "Hubo un problema recibiendo la unidad de coordenada");
 			free(localized->pokemon);
 			list_clean(localized->l_coordenadas);
@@ -313,7 +313,7 @@ t_localized* recibir_localized(int socket_broker, uint32_t* size) {
 			return NULL;
 		}
 		if (status_recv == 0) {
-			close(socket_broker);
+			cerrar_conexion(socket_broker);
 			log_warning(extense_logger_protocol, "El cliente con socket %i acaba de cerrar la conexion", socket_broker);
 			free(localized->pokemon);
 			list_clean(localized->l_coordenadas);
@@ -343,13 +343,13 @@ t_appeared* recibir_appeared_de_game_boy(int socket, uint32_t* size) {
 
 	int status_recv = recv(socket, size, sizeof(uint32_t), MSG_WAITALL);
 	if (status_recv == -1) {
-		close(socket);
+		cerrar_conexion(socket);
 		log_error(extense_logger_protocol, "Hubo un problema recibiendo el tamanio total");
 		free(appeared);
 		return NULL;
 	}
 	if (status_recv == 0) {
-		close(socket);
+		cerrar_conexion(socket);
 		log_warning(extense_logger_protocol, "El cliente con socket %i acaba de cerrar la conexion", socket);
 		free(appeared);
 		return NULL;
@@ -359,13 +359,13 @@ t_appeared* recibir_appeared_de_game_boy(int socket, uint32_t* size) {
 
 	status_recv = recv(socket, &(tamanio_pokemon), sizeof(uint32_t), MSG_WAITALL);
 	if (status_recv == -1) {
-		close(socket);
+		cerrar_conexion(socket);
 		log_error(extense_logger_protocol, "Hubo un problema recibiendo el tamanio del pokemon");
 		free(appeared);
 		return NULL;
 	}
 	if (status_recv == 0) {
-		close(socket);
+		cerrar_conexion(socket);
 		log_warning(extense_logger_protocol, "El cliente con socket %i acaba de cerrar la conexion", socket);
 		free(appeared);
 		return NULL;
@@ -377,14 +377,14 @@ t_appeared* recibir_appeared_de_game_boy(int socket, uint32_t* size) {
 
 	status_recv = recv(socket, appeared->pokemon, tamanio_pokemon, MSG_WAITALL);
 	if (status_recv == -1) {
-		close(socket);
+		cerrar_conexion(socket);
 		log_error(extense_logger_protocol, "Hubo un problema recibiendo el nombre del pokemon");
 		free(appeared->pokemon);
 		free(appeared);
 		return NULL;
 	}
 	if (status_recv == 0) {
-		close(socket);
+		cerrar_conexion(socket);
 		log_warning(extense_logger_protocol, "El cliente con socket %i acaba de cerrar la conexion", socket);
 		free(appeared->pokemon);
 		free(appeared);
@@ -395,14 +395,14 @@ t_appeared* recibir_appeared_de_game_boy(int socket, uint32_t* size) {
 
 	status_recv = recv(socket, &(appeared->pos_X), sizeof(uint32_t), MSG_WAITALL);
 	if (status_recv == -1) {
-		close(socket);
+		cerrar_conexion(socket);
 		log_error(extense_logger_protocol, "Hubo un problema recibiendo la posicion X");
 		free(appeared->pokemon);
 		free(appeared);
 		return NULL;
 	}
 	if (status_recv == 0) {
-		close(socket);
+		cerrar_conexion(socket);
 		log_warning(extense_logger_protocol, "El cliente con socket %i acaba de cerrar la conexion", socket);
 		free(appeared->pokemon);
 		free(appeared);
@@ -413,14 +413,14 @@ t_appeared* recibir_appeared_de_game_boy(int socket, uint32_t* size) {
 
 	status_recv = recv(socket, &(appeared->pos_Y), sizeof(uint32_t), MSG_WAITALL);
 	if (status_recv == -1) {
-		close(socket);
+		cerrar_conexion(socket);
 		log_error(extense_logger_protocol, "Hubo un problema recibiendo la posicion Y");
 		free(appeared->pokemon);
 		free(appeared);
 		return NULL;
 	}
 	if (status_recv == 0) {
-		close(socket);
+		cerrar_conexion(socket);
 		log_warning(extense_logger_protocol, "El cliente con socket %i acaba de cerrar la conexion", socket);
 		free(appeared->pokemon);
 		free(appeared);
