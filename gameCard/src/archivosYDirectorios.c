@@ -176,8 +176,8 @@ void actualizarBlockMetadata(t_config* archivoMetadata, char*blockAAgregar){
 	config_set_value(archivoMetadata,"BLOCKS",listaNueva);
 	config_save(archivoMetadata);
 
-	//free(blocksActuales);
-	//free(listaNueva);
+	free(blocksActuales);
+	free(listaNueva);
 
 }
 
