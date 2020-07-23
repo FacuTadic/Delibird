@@ -40,4 +40,6 @@ char* seleccionarBlockParaCargarPosiciones(char** blocksOcupados, char*posicion,
 void agregarNuevaPosicionA(char* block, char* posicion, uint32_t cantidad);
 void obtenerTodasLasPosiciones(char** blocks, t_queue* posicionesPokemon);
 
+void crearDirectorioV2(char* ruta);
+
 #endif /* ARCHIVOSYDIRECTORIOS_H_ */

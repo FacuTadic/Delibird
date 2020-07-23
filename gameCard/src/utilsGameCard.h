@@ -14,18 +14,17 @@
 #include<signal.h>
 #include<string.h>
 #include<unistd.h>
-#include<sys/socket.h>
 #include<netdb.h>
 #include<string.h>
 #include<semaphore.h>
+#include<unistd.h>
+#include<sys/socket.h>
+#include<sys/types.h>
 #include<commons/log.h>
 #include<commons/config.h>
 #include<commons/string.h>
 #include<commons/collections/queue.h>
-#include <commons/bitarray.h>
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <unistd.h>
+#include<commons/bitarray.h>
 #include "archivosYDirectorios.h"
 #include "protocoloGameCard.h"
 #include "creacionDeEstructurasParaEnvio.h"

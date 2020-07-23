@@ -434,17 +434,18 @@ void crearTemplateDeArchivoTipo(tipoArchivo tipo, char* nombreDelArchivo ,char* 
 
 
 void crearDirectorioFile(char* puntoMontaje){
-	//Crear Directorio
-	log_info(loggerDev, "Creando directorio FILES");
-	crearDirectorio("Files",puntoMontaje);
 
 	//Seteo de variable global
 	rutaFiles = generadorDeRutaDeCreacionDeDirectorios(puntoMontaje,"Files");
 	log_info(loggerDev, "Se creo el directorio Files ubicado en: %s",rutaFiles);
 
+	//Crear Directorio
+	log_info(loggerDev, "Creando directorio FILES");
+	crearDirectorio("Files",puntoMontaje);
+
 	//Crear Archivo Metadata
 	crearArchivoEnDirectorio("Metadata",rutaFiles);
-	log_info(loggerDev, "Se crel el archivo Metadata de Files");
+	log_info(loggerDev, "Se creo el archivo METADATA de Files");
 
 	//Escribir Archivo con el template
 	crearTemplateDeArchivoTipo(METADATA_FILE,"Metadata",rutaFiles);
@@ -504,11 +505,11 @@ void levantarTallGrass(char* puntoMontaje){
 		crearDirectorio("Metadata",puntoMontaje);
 		crearArchivoEnDirectorio("BitMap",rutaMetaData);
 		crearBitarray();
-		log_info(loggerDev, "Se creo el BitMap ubicado en: %s",rutaMetaData);
 		crearDirectorioFile(puntoMontaje);
 		crearDirectorioBlocks(puntoMontaje);
 	}
 	log_info(loggerGameCard, "Punto de montaje del directorio Metadata es: %s",rutaMetaData);
+	log_info(loggerGameCard, "El BitMap se encuentra en: %s",bitMap);
 	log_info(loggerGameCard, "Punto de montaje del directorio Files es: %s",rutaFiles);
 	log_info(loggerGameCard, "Punto de montaje del directorio Blocks es: %s",rutaBlocks);
 
@@ -656,16 +657,28 @@ t_queue* validarPosicionesDeGet(char** blocksOcupados){
 
 void newPokemon(int socketCliente,t_newLlegada* new){
 
+	log_info(loggerDev,"Llegamo");
+
 	char* pokemon = new->pokemon;
 	uint32_t posX = new->pos_X;
 	uint32_t posY = new->pos_Y;
 	uint32_t cantidad = new->cantidad;
 	string_to_lower(pokemon);
 
+	log_info(loggerDev,"Pokemon: %s",pokemon);
+	log_info(loggerDev,"PosX: %i",posX);
+	log_info(loggerDev,"PosY: %i",posY);
+	log_info(loggerDev,"Cantidad: %i",cantidad);
+
+
 	char* rutaDeDirectorio = generadorDeRutaDeCreacionDeDirectorios(rutaFiles,pokemon);
+	log_info(loggerDev,"Ruta de Directorio: %s",rutaDeDirectorio);
 	char* posicion = generadorDePosiciones(posX,posY);
+	log_info(loggerDev,"Posiciongenerada: %s",posicion);
+
 
 	if(noExisteDirectorio(rutaDeDirectorio)){
+		log_info(loggerGameCard,"El pokemon %s no existe en el FS, se pasa a crear su directorio", pokemon);
 		crearDirectorio(pokemon,rutaFiles);
 		crearArchivoEnDirectorio(pokemon,rutaDeDirectorio);
 		crearTemplateDeArchivoTipo(METADATA_POKEMON,pokemon,rutaDeDirectorio);

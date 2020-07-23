@@ -213,8 +213,6 @@ t_newLlegada* recibir_new(int socket_cliente, uint32_t* size, t_log* logger) {
 	}
 	log_info(logger, "Cantidad recibida: %i", new->cantidad);
 
-	devolver_ack(socket_cliente, logger);
-
 	return new;
 }
 
@@ -285,8 +283,6 @@ t_catchLlegada* recibir_catch(int socket_cliente, uint32_t* size, t_log* logger)
 
 	log_info(logger, "Posicion Y recibida: %i", catch->pos_Y);
 
-	devolver_ack(socket_cliente, logger);
-
 	return catch;
 }
 
@@ -334,8 +330,6 @@ t_getLlegada* recibir_get(int socket_cliente, uint32_t* size, t_log* logger) {
 	}
 
 	log_info(logger, "Nombre del pokemon recibido: %s", get->pokemon);
-
-	devolver_ack(socket_cliente, logger);
 
 	return get;
 }

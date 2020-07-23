@@ -86,7 +86,15 @@ bool hayEspacioEnElBlock(char* rutaDelBlock, char* posicion, uint32_t cantidad){
 
 }
 
+void crearDirectorioV2(char* ruta){
 
+	if (noExisteDirectorio(ruta)) {
+	    mkdir(ruta, 0700);
+	    log_info(loggerDevArchDir, "Se creo el directorio");
+	}else{
+		log_info(loggerDevArchDir, "Ya existe el directorio");
+	}
+}
 
 
 void crearDirectorio(char* directorio, char* puntoMontaje){
