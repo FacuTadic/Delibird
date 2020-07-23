@@ -124,11 +124,10 @@ void enviar_localized(int socket, t_localized* localizedAEnviar){
 		log_error(loggerDevProtocolo, "Error: No se pudo enviar el mensaje");
 	}
 
-	free(flujo);
 	free(bufferLocalized->stream);
 	free(bufferLocalized);
 	free(paquete);
-
+	free(flujo);
 }
 
 

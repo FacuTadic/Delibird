@@ -795,7 +795,7 @@ void getPokemon(int socketCliente,t_getLlegada* getLlegada){
 	char* rutaDeArchivo = generadorDeRutaDeCreacionDeArchivos(rutaDeDirectorio, pokemon, ".bin");
 	t_config* archivoMetadataPokemon = config_create(rutaDeArchivo);
 	char** blocksOcupados = config_get_array_value(archivoMetadataPokemon,"BLOCKS");
-	log_info(loggerDev, "EL array de blocks es: %s", blocksOcupados);
+	log_info(loggerDev, "EL array de blocks es: %s", blocksOcupados[0]);
 
 	pthread_mutex_lock(&estoy_leyendo_metadata_mutex);
 	if(puedeAbrirseArchivo(archivoMetadataPokemon)){

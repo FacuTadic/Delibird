@@ -429,7 +429,8 @@ void obtenerTodasLasPosiciones(char** blocks, t_queue* posicionesPokemon){
 	while(blocks[i] != NULL){
 
 			log_info(loggerDevArchDir, "Se esta analizando el block: %s",blocks[i]);
-			char* rutaDeArchivo = generadorDeRutaDeCreacionDeArchivos(rutaBlocksArchDir,blocks[i],".txt");
+			char* rutaDeArchivo = generadorDeRutaDeCreacionDeArchivos(rutaBlocksArchDir,blocks[i],".bin");
+			log_info(loggerDevArchDir, "La ruta del archivo es: %s",rutaDeArchivo);
 
 			FILE *fp;
 			char *line = NULL;
