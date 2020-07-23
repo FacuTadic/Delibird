@@ -10,6 +10,7 @@
 #include<string.h>
 #include <pthread.h>
 #include<commons/log.h>
+#include<commons/string.h>
 #include <commons/collections/queue.h>
 #include <commons/collections/list.h>
 #include "team_utils.h"

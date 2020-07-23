@@ -103,6 +103,8 @@ t_appeared* recibir_appeared(int socket_broker, uint32_t* size) {
 		return NULL;
 	}
 
+	string_to_lower(appeared->pokemon);
+
 	log_info(extense_logger_protocol, "Nombre del pokemon recibido: %s", appeared->pokemon);
 
 	status_recv = recv(socket_broker, &(appeared->pos_X), sizeof(uint32_t), MSG_WAITALL);
@@ -277,6 +279,8 @@ t_localized* recibir_localized(int socket_broker, uint32_t* size) {
 		return NULL;
 	}
 
+	string_to_lower(localized->pokemon);
+
 	log_info(extense_logger_protocol, "Nombre del pokemon recibido: %s", localized->pokemon);
 
 	status_recv = recv(socket_broker, &(localized->lugares), sizeof(uint32_t), MSG_WAITALL);
@@ -326,7 +330,6 @@ t_localized* recibir_localized(int socket_broker, uint32_t* size) {
 
 		list_add(localized->l_coordenadas, &unidad_coord);
 	}
-
 
 	devolver_ack(socket_broker);
 
@@ -390,6 +393,8 @@ t_appeared* recibir_appeared_de_game_boy(int socket, uint32_t* size) {
 		free(appeared);
 		return NULL;
 	}
+
+	string_to_lower(appeared->pokemon);
 
 	log_info(extense_logger_protocol, "Nombre del pokemon recibido: %s", appeared->pokemon);
 

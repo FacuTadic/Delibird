@@ -375,27 +375,19 @@ void planificar_pokemon(void) {
 
 			// bajo el contador de pokemones que puedo planificar
 
-			log_info(extense_logger, "A");
-
 			contar_planificacion(mensaje_pokemon);
-
-			log_info(extense_logger, "B");
 
 			// borro el pokemon de la lista del mapa
 
 			borrar_pokemon_del_mapa(mensaje_pokemon);
 
-			log_info(extense_logger, "C");
-
 			// planifico entrenador para ir a atraparlo
 			t_list* entrenador_disponible = entrenadores_que_pueden_ir_a_atrapar();
 
-			log_info(extense_logger, "D");
+			// LLEGA HASTA ACA
 
 			// obtengo entrenador que va a ir
 			t_entrenador* entrenador_a_planificar = entrenador_mas_cercano(entrenador_disponible, mensaje_pokemon->pos_X, mensaje_pokemon->pos_Y);
-
-			log_info(extense_logger, "E");
 
 			// le doy la tarea
 			t_tarea* tarea_pokemon = malloc(sizeof(t_tarea));
@@ -403,11 +395,7 @@ void planificar_pokemon(void) {
 			tarea_pokemon->parametros = mensaje_pokemon;
 			cambiar_tarea_de_entrenador(entrenador_a_planificar, tarea_pokemon);
 
-			log_info(extense_logger, "F");
-
 			cambiar_estado_de_entrenador(entrenador_a_planificar, ESTADO_READY, "Entrenador planificado para ir a atrapar pokemon");
-
-			log_info(extense_logger, "G");
 
 			pthread_mutex_t* mutex_entrenador = list_get(entrenadores_mutex, entrenador_a_planificar->index);
 			pthread_mutex_lock(mutex_entrenador);
@@ -984,6 +972,9 @@ void inicializar_entrenadores() {
 		log_info(extense_logger, "Posiciones para el entrenador %i: %s", i, posiciones[i]);
 		char* conjunto_pokemon = pokemones[i];
 		log_info(extense_logger, "Pokemones para el entrenador %i: %s", i, pokemones[i]);
+
+		string_to_lower(objetivo_entrenador);
+		string_to_lower(conjunto_pokemon);
 
 		t_entrenador* entrenador = malloc(sizeof(t_entrenador));
 
@@ -1600,8 +1591,10 @@ t_list* generar_pokemones_de_localized(t_localized* mensaje_localized) {
 int tengo_que_planificar_pokemon(t_pokemon* pokemon) {
 	t_pokemon_planificables* cantidad_disponible_para_atrapar = (t_pokemon_planificables*) dictionary_get(cantidad_de_pokemones_que_puedo_planificar, pokemon->nombre);
 	if (cantidad_disponible_para_atrapar == NULL || cantidad_disponible_para_atrapar->cantidad < 1) {
+		log_info(extense_logger, "El pokemon %s ubicado en (%i,%i) no se puede planificar", pokemon->nombre, pokemon->pos_X, pokemon->pos_Y);
 		return 0;
 	} else {
+		log_info(extense_logger, "El pokemon %s ubicado en (%i,%i) se puede planificar", pokemon->nombre, pokemon->pos_X, pokemon->pos_Y);
 		return 1;
 	}
 }
