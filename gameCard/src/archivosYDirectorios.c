@@ -62,6 +62,24 @@ uint32_t tamanioDeUnArchivo(char* rutaDelArchivo){
 }
 
 
+void actualizarSizeMetadataPokemon(t_config* archivoMetadata){
+	char** blocksOcupados = config_get_array_value(archivoMetadata,"BLOCKS");
+	uint32_t i = 0;
+	uint32_t cantidad = 0;
+
+	while(blocksOcupados[i] != NULL){
+		char* rutaDelBlock = generadorDeRutaDeCreacionDeArchivos(rutaBlocksArchDir,blocksOcupados[i],".bin");
+		uint32_t peso = tamanioDeUnArchivo(rutaDelBlock);
+		cantidad += peso;
+		i++;
+	}
+
+	config_set_value(archivoMetadata,"SIZE",cantidad);
+	config_save(archivoMetadata);
+
+}
+
+
 
 bool hayEspacioEnElBlock(char* rutaDelBlock, char* posicion, uint32_t cantidad){
 	char* keyValue = string_new();

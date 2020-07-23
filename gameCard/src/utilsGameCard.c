@@ -396,7 +396,9 @@ void crearTemplateDeArchivoTipo(tipoArchivo tipo, char* nombreDelArchivo ,char* 
 	FILE *archivo;
 
 	char* rutaDeCreacion = generadorDeRutaDeCreacionDeArchivos(ruta, nombreDelArchivo, ".bin");
+
 	archivo = fopen(rutaDeCreacion,"w+");
+	t_config* archivoMetadata = config_create(rutaDeCreacion);
 
 	switch(tipo){
 	case METADATA:
@@ -407,16 +409,28 @@ void crearTemplateDeArchivoTipo(tipoArchivo tipo, char* nombreDelArchivo ,char* 
 		break;
 
 	case METADATA_FILE:
-		fprintf(archivo	,"DIRECTORY" "=" "Y" "\n");
-		fprintf(archivo	,"OPEN" "=" "N" "\n");
+
+		config_set_value(archivoMetadata,"DIRECTORY","Y");
+		config_save(archivoMetadata);
+		config_destroy(archivoMetadata);
+//		fprintf(archivo	,"DIRECTORY" "=" "Y" "\n");
+//		fprintf(archivo	,"OPEN" "=" "N" "\n");
 
 		break;
 
 	case METADATA_POKEMON:
-		fprintf(archivo	,"OPEN" "=" "N \n");
-		fprintf(archivo	,"DIRECTORY" "=" "N \n");
-		fprintf(archivo	,"SIZE" "=" " \n");
-		fprintf(archivo	,"BLOCKS" "=" " \n");
+
+		config_set_value(archivoMetadata,"OPEN","N");
+		config_set_value(archivoMetadata,"DIRECTORY","N");
+		config_set_value(archivoMetadata,"BLOCKS","[]");
+		config_set_value(archivoMetadata,"SIZE","0");
+
+		config_save(archivoMetadata);
+		config_destroy(archivoMetadata);
+//		fprintf(archivo	,"OPEN" "=" "N \n");
+//		fprintf(archivo	,"DIRECTORY" "=" "N \n");
+//		fprintf(archivo	,"SIZE" "=" " \n");
+//		fprintf(archivo	,"BLOCKS" "=" " \n");
 
 		break;
 
@@ -520,6 +534,11 @@ void levantarTallGrass(char* puntoMontaje){
 
 bool existenPosicionesEnArchivo(char* posicion,char** blocks){
 	uint32_t i = 0;
+
+	if(!strcmp(blocks[0],"[]")){
+		return false;
+	}
+
 	while(blocks[i] != NULL){
 		log_info(loggerDev, "Se esta analizando el block: %s",blocks[i]);
 		char* rutaDeArchivo = generadorDeRutaDeCreacionDeArchivos(rutaBlocks,blocks[i],".bin");
@@ -577,6 +596,9 @@ uint32_t calcularPesoTotalDeBlockEnMetadataPokemon(char** blocks){
 
 
 void validarPosicionesDeNew(char** blocksOcupados,char* posicion, uint32_t cantidad){
+
+	log_info(loggerDev, "Validando Posiciones de New");
+
 	if(existenPosicionesEnArchivo(posicion,blocksOcupados)){
 		char* block = blockDondeSeEncuentraLaPosicion(posicion,blocksOcupados);
 		log_info(loggerDev, "El bloque en el que se encuentra es: %s",block);
@@ -587,13 +609,12 @@ void validarPosicionesDeNew(char** blocksOcupados,char* posicion, uint32_t canti
 		config_destroy(archivoBlock);
 	} else {
 		log_info(loggerGameCard, "La posicion %s no se encuentra en ningun bloque actual",posicion);
-
 		char* blockOptimo = seleccionarBlockParaCargarPosiciones(blocksOcupados,posicion, cantidad);
 		log_info(loggerGameCard, "Se selecciono el bloque %s para cargar la posicion",blockOptimo);
 		log_info(loggerDev, "El bloque disponible seleccionado es: %s",blockOptimo);
 		agregarNuevaPosicionA(blockOptimo,posicion, cantidad);
 		log_info(loggerGameCard, "Posicion agregada en el block %s",blockOptimo);
-
+		//HAY QUE ACTUALIZAR LOS BLOCKS DEL METADATA DEL POKEMON
 	}
 
 }
@@ -673,8 +694,9 @@ void newPokemon(int socketCliente,t_newLlegada* new){
 
 	char* rutaDeDirectorio = generadorDeRutaDeCreacionDeDirectorios(rutaFiles,pokemon);
 	log_info(loggerDev,"Ruta de Directorio: %s",rutaDeDirectorio);
+
 	char* posicion = generadorDePosiciones(posX,posY);
-	log_info(loggerDev,"Posiciongenerada: %s",posicion);
+	log_info(loggerDev,"Posicion generada: %s",posicion);
 
 
 	if(noExisteDirectorio(rutaDeDirectorio)){
@@ -684,17 +706,28 @@ void newPokemon(int socketCliente,t_newLlegada* new){
 		crearTemplateDeArchivoTipo(METADATA_POKEMON,pokemon,rutaDeDirectorio);
 	}
 
-	char* rutaDeArchivo = generadorDeRutaDeCreacionDeArchivos(generadorDeRutaDeCreacionDeDirectorios(rutaFiles,pokemon), pokemon, ".bin");
+	char* directorioPokemon = generadorDeRutaDeCreacionDeDirectorios(rutaFiles,pokemon);
+	log_info(loggerDev,"Ruta del directorio pokemon %s es: %s",pokemon, directorioPokemon);
+
+	char* rutaDeArchivo = generadorDeRutaDeCreacionDeArchivos(directorioPokemon, pokemon, ".bin");
+	log_info(loggerDev,"Ruta del Archivo: %s",rutaDeArchivo);
+
 
 	t_config* archivoMetadataPokemon = config_create(rutaDeArchivo);
+	log_info(loggerDev,"Se creo el archivo config");
+
 	char** blocksOcupados = config_get_array_value(archivoMetadataPokemon,"BLOCKS");
-	log_info(loggerDev, "EL array de blocks es: %s", blocksOcupados);
+	log_info(loggerDev, "EL array de blocks es: %s", blocksOcupados[0]);
 
 	pthread_mutex_lock(&estoy_leyendo_metadata_mutex);
 	if(puedeAbrirseArchivo(archivoMetadataPokemon)){
 		activarFlagDeLectura(archivoMetadataPokemon);
 		pthread_mutex_unlock(&estoy_leyendo_metadata_mutex);
+
+		log_info(loggerDev,"Paso el mutex");
+
 		validarPosicionesDeNew(blocksOcupados,posicion,cantidad);
+		actualizarSizeMetadataPokemon(archivoMetadataPokemon);
 	} else{
 		pthread_mutex_unlock(&estoy_leyendo_metadata_mutex);
 		log_error(loggerGameCard, "Ya existe un proceso utilizando el archivo Metadata de %s",pokemon);
@@ -744,6 +777,7 @@ void catchPokemon(int socketCliente,t_catchLlegada* catch){
 		activarFlagDeLectura(archivoMetadataPokemon);
 		pthread_mutex_unlock(&estoy_leyendo_metadata_mutex);
 		validacion = validarPosicionesDeCatch(archivoMetadataPokemon,blocksOcupados,posicion);
+		actualizarSizeMetadataPokemon(archivoMetadataPokemon);
 	}else{
 		pthread_mutex_unlock(&estoy_leyendo_metadata_mutex);
 		log_error(loggerGameCard, "Ya existe un proceso utilizando el archivo Metadata de %s",pokemon);
@@ -786,6 +820,7 @@ void getPokemon(int socketCliente,t_getLlegada* getLlegada){
 		activarFlagDeLectura(archivoMetadataPokemon);
 		pthread_mutex_unlock(&estoy_leyendo_metadata_mutex);
 		coordenadas = validarPosicionesDeGet(blocksOcupados);
+		actualizarSizeMetadataPokemon(archivoMetadataPokemon);
 	} else{
 		pthread_mutex_unlock(&estoy_leyendo_metadata_mutex);
 		log_error(loggerGameCard, "Ya existe un proceso utilizando el archivo Metadata de %s",pokemon);

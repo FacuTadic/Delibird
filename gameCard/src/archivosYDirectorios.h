@@ -39,7 +39,7 @@ uint32_t cantidadDePokemonEnUnaCoordenada(t_config* archivoBlock,char* posicion)
 char* seleccionarBlockParaCargarPosiciones(char** blocksOcupados, char*posicion, uint32_t cantidad);
 void agregarNuevaPosicionA(char* block, char* posicion, uint32_t cantidad);
 void obtenerTodasLasPosiciones(char** blocks, t_queue* posicionesPokemon);
-
+void actualizarSizeMetadataPokemon(t_config* archivoMetadata);
 void crearDirectorioV2(char* ruta);
 
 #endif /* ARCHIVOSYDIRECTORIOS_H_ */

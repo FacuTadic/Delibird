@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [ERROR] 23:24:41:899 Team/(3405:3413): Error en conexion con BROKER, ip: 127.0.0.1 puerto: 4444, reintentando en 10 segundos
 [ERROR] 00:53:48:298 Team/(3160:3166): Hubo un problema enviando la suscripcion a la cola CAUGHT del broker
 [ERROR] 00:57:06:167 Team/(3544:3552): Error en conexion con BROKER, ip: 127.0.0.1 puerto: 4444, reintentando en 10 segundos
@@ -243,3 +244,37 @@
 [ERROR] 21:25:38:70 Team/(14554:14567): Error: No se pudo enviar el GET correspondiente al pokemon Pikachu, iniciando el comportamiento default
 [ERROR] 21:25:38:70 Team/(14554:14568): Error: No se pudo enviar el GET correspondiente al pokemon Charmander, iniciando el comportamiento default
 [ERROR] 21:25:38:76 Team/(14554:14559): Hubo un problema enviando la suscripcion a la cola APPEARED del broker
+=======
+>>>>>>> fdc114c5aba4895699a33ca8f3bfdccd1c6140bb
+[ERROR] 21:27:57:708 Team/(14891:14898): Hubo un problema enviando la suscripcion a la cola LOCALIZED del broker
+[ERROR] 21:27:57:708 Team/(14891:14897): Hubo un problema enviando la suscripcion a la cola CAUGHT del broker
+[ERROR] 21:27:57:716 Team/(14891:14905): Error: No se pudo enviar el GET correspondiente al pokemon Charmander, iniciando el comportamiento default
+[ERROR] 21:27:57:716 Team/(14891:14904): Error: No se pudo enviar el GET correspondiente al pokemon Pikachu, iniciando el comportamiento default
+[ERROR] 21:27:57:717 Team/(14891:14896): Hubo un problema enviando la suscripcion a la cola APPEARED del broker
+[INFO] 21:28:07:709 Team/(14891:14899): Iniciando verificacion de conexion con Broker...
+[INFO] 21:28:07:709 Team/(14891:14900): Buscando deadlock...
+[INFO] 21:28:07:709 Team/(14891:14900): No se han encontrado deadlocks
+[ERROR] 21:28:07:709 Team/(14891:14899): Reconexion con Broker fallida, intentando nuevamente en 10 segundos
+[ERROR] 22:07:43:20 Team/(17562:17569): Hubo un problema enviando la suscripcion a la cola LOCALIZED del broker
+[ERROR] 22:07:43:27 Team/(17562:17568): Hubo un problema enviando la suscripcion a la cola CAUGHT del broker
+[ERROR] 22:07:43:28 Team/(17562:17575): Error: No se pudo enviar el GET correspondiente al pokemon Pikachu, iniciando el comportamiento default
+[ERROR] 22:07:43:28 Team/(17562:17576): Error: No se pudo enviar el GET correspondiente al pokemon Charmander, iniciando el comportamiento default
+[ERROR] 22:07:43:28 Team/(17562:17567): Hubo un problema enviando la suscripcion a la cola APPEARED del broker
+[ERROR] 22:08:00:239 Team/(17590:17597): Hubo un problema enviando la suscripcion a la cola LOCALIZED del broker
+[ERROR] 22:08:00:241 Team/(17590:17596): Hubo un problema enviando la suscripcion a la cola CAUGHT del broker
+[ERROR] 22:08:00:245 Team/(17590:17603): Error: No se pudo enviar el GET correspondiente al pokemon Pikachu, iniciando el comportamiento default
+[ERROR] 22:08:00:245 Team/(17590:17604): Error: No se pudo enviar el GET correspondiente al pokemon Charmander, iniciando el comportamiento default
+[ERROR] 22:08:00:245 Team/(17590:17595): Hubo un problema enviando la suscripcion a la cola APPEARED del broker
+[INFO] 22:08:10:241 Team/(17590:17598): Iniciando verificacion de conexion con Broker...
+[INFO] 22:08:10:241 Team/(17590:17599): Buscando deadlock...
+[INFO] 22:08:10:241 Team/(17590:17599): No se han encontrado deadlocks
+[ERROR] 22:08:10:242 Team/(17590:17598): Reconexion con Broker fallida, intentando nuevamente en 10 segundos
+[ERROR] 22:08:16:798 Team/(17627:17634): Hubo un problema enviando la suscripcion a la cola LOCALIZED del broker
+[ERROR] 22:08:16:800 Team/(17627:17633): Hubo un problema enviando la suscripcion a la cola CAUGHT del broker
+[ERROR] 22:08:16:800 Team/(17627:17640): Error: No se pudo enviar el GET correspondiente al pokemon Pikachu, iniciando el comportamiento default
+[ERROR] 22:08:16:801 Team/(17627:17641): Error: No se pudo enviar el GET correspondiente al pokemon Charmander, iniciando el comportamiento default
+[ERROR] 22:08:16:801 Team/(17627:17632): Hubo un problema enviando la suscripcion a la cola APPEARED del broker
+[INFO] 22:08:26:801 Team/(17627:17635): Iniciando verificacion de conexion con Broker...
+[INFO] 22:08:26:801 Team/(17627:17636): Buscando deadlock...
+[INFO] 22:08:26:801 Team/(17627:17636): No se han encontrado deadlocks
+[ERROR] 22:08:26:801 Team/(17627:17635): Reconexion con Broker fallida, intentando nuevamente en 10 segundos
