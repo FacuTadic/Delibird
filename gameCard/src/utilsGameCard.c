@@ -5,8 +5,7 @@
 #include <commons/log.h>
 
 
-int crear_conexion(char *ip, char* puerto)
-{
+int crear_conexion(char *ip, char* puerto){
 	struct addrinfo hints;
 	struct addrinfo *server_info;
 
@@ -75,11 +74,15 @@ void setearBitarray() {
 
 void guardarBitarray(uint32_t index) {
 
+	log_info(loggerDev, "Guardando el bitarray");
+
 	FILE *fp = fopen(bitMap, "r+b");
 	fp->_offset = index;
 	fseek(fp, 0l, SEEK_CUR);
 	fprintf(fp, "%i", bitarray_test_bit(bitarray, index));
 	fclose(fp);
+
+	log_info(loggerDev, "Termino el guardado");
 }
 
 
@@ -94,17 +97,36 @@ void crearBitarray() {
 
 
 char* buscarPosicionDisponibleEnElBitMap() {
-	int free_block, i, flag_free_block = 0;
+	int free_block=0;
+	int i = 0;
+	int flag_free_block = 0;
 
-	sem_wait(&bloques_bitmap);
+	log_info(loggerDev, "Entro a buscar posiciones");
+
+	//sem_wait(&bloques_bitmap);
+	log_info(loggerDev, "Bloqueo");
+
+	log_info(loggerDev, "Valor del i: %i",i);
 	for (i = 0; i < cantidadDeBloques; i++) {
+		log_info(loggerDev, "Primer FOR");
+		log_info(loggerDev, "Valor del i: %i",i);
+
 		if (flag_free_block == 0) {
+			log_info(loggerDev, "El primer IF");
+
+			bool noSe= bitarray_test_bit(bitarray, i);
+
+			log_info(loggerDev, "El valor %i tiene la marca en %i",i,noSe);
+
+
 			if (bitarray_test_bit(bitarray, i) == 0) {
+				log_info(loggerDev, "El segundo IF");
 				flag_free_block = 1;
 				free_block = i;
 				bitarray_set_bit(bitarray, i);
+				log_info(loggerDev, "Seteo de bit array");
 				guardarBitarray(i);
-				sem_post(&bloques_bitmap);
+				//sem_post(&bloques_bitmap);
 				log_info(loggerDev, "EL block %s esta libre",string_itoa(free_block));
 				log_info(loggerGameCard, "El bloque seleccionado para cargar es: %i",free_block);
 				return string_itoa(free_block);
@@ -392,60 +414,6 @@ void verificarConexion(void) {
 
 //#############################################################################################################################################################3
 
-void crearTemplateDeArchivoTipo(tipoArchivo tipo, char* nombreDelArchivo ,char* ruta){
-	FILE *archivo;
-
-	char* rutaDeCreacion = generadorDeRutaDeCreacionDeArchivos(ruta, nombreDelArchivo, ".bin");
-
-	archivo = fopen(rutaDeCreacion,"w+");
-	t_config* archivoMetadata = config_create(rutaDeCreacion);
-
-	switch(tipo){
-	case METADATA:
-		log_info(loggerDev, "Se intento entrar por METADATA");
-		break;
-
-	case BITMAP:
-		break;
-
-	case METADATA_FILE:
-
-		config_set_value(archivoMetadata,"DIRECTORY","Y");
-		config_save(archivoMetadata);
-		config_destroy(archivoMetadata);
-//		fprintf(archivo	,"DIRECTORY" "=" "Y" "\n");
-//		fprintf(archivo	,"OPEN" "=" "N" "\n");
-
-		break;
-
-	case METADATA_POKEMON:
-
-		config_set_value(archivoMetadata,"OPEN","N");
-		config_set_value(archivoMetadata,"DIRECTORY","N");
-		config_set_value(archivoMetadata,"BLOCKS","[]");
-		config_set_value(archivoMetadata,"SIZE","0");
-
-		config_save(archivoMetadata);
-		config_destroy(archivoMetadata);
-//		fprintf(archivo	,"OPEN" "=" "N \n");
-//		fprintf(archivo	,"DIRECTORY" "=" "N \n");
-//		fprintf(archivo	,"SIZE" "=" " \n");
-//		fprintf(archivo	,"BLOCKS" "=" " \n");
-
-		break;
-
-	case BLOCK:
-		break;
-
-	default:
-		log_info(loggerDev, "No se pudo reconocer el tipo de Archivo");
-		break;
-	}
-
-	fclose(archivo);
-}
-
-
 
 void crearDirectorioFile(char* puntoMontaje){
 
@@ -514,7 +482,12 @@ void levantarTallGrass(char* puntoMontaje){
 
 
 	if(existeArchivo(bitMap)){
+		crearBitarray();
+		rutaFiles = generadorDeRutaDeCreacionDeDirectorios(puntoMontaje,"Files");
+		rutaBlocks = generadorDeRutaDeCreacionDeDirectorios(puntoMontaje,"Blocks");
+
 		log_error(loggerDev, "Ya existe el BitMap");
+
 	} else {
 		crearDirectorio("Metadata",puntoMontaje);
 		crearArchivoEnDirectorio("BitMap",rutaMetaData);
@@ -535,7 +508,12 @@ void levantarTallGrass(char* puntoMontaje){
 bool existenPosicionesEnArchivo(char* posicion,char** blocks){
 	uint32_t i = 0;
 
-	if(!strcmp(blocks[0],"[]")){
+	log_info(loggerDev, "Valido posicion");
+	log_info(loggerDev, "EL array de blocks es: %s", blocks[0]);
+
+
+	if(blocks[0] == NULL){
+		log_info(loggerDev, "Entro por NULL");
 		return false;
 	}
 
@@ -595,7 +573,7 @@ uint32_t calcularPesoTotalDeBlockEnMetadataPokemon(char** blocks){
 
 
 
-void validarPosicionesDeNew(char** blocksOcupados,char* posicion, uint32_t cantidad){
+void validarPosicionesDeNew(t_config* archivoMetadataPokemon, char** blocksOcupados,char* posicion, uint32_t cantidad){
 
 	log_info(loggerDev, "Validando Posiciones de New");
 
@@ -614,8 +592,11 @@ void validarPosicionesDeNew(char** blocksOcupados,char* posicion, uint32_t canti
 		log_info(loggerDev, "El bloque disponible seleccionado es: %s",blockOptimo);
 		agregarNuevaPosicionA(blockOptimo,posicion, cantidad);
 		log_info(loggerGameCard, "Posicion agregada en el block %s",blockOptimo);
-		//HAY QUE ACTUALIZAR LOS BLOCKS DEL METADATA DEL POKEMON
+		log_info(loggerDev, "Actualizo Metadata");
+		actualizarBlockMetadata(archivoMetadataPokemon,blockOptimo);
 	}
+
+
 
 }
 
@@ -726,8 +707,9 @@ void newPokemon(int socketCliente,t_newLlegada* new){
 
 		log_info(loggerDev,"Paso el mutex");
 
-		validarPosicionesDeNew(blocksOcupados,posicion,cantidad);
+		validarPosicionesDeNew(archivoMetadataPokemon, blocksOcupados,posicion,cantidad);
 		actualizarSizeMetadataPokemon(archivoMetadataPokemon);
+
 	} else{
 		pthread_mutex_unlock(&estoy_leyendo_metadata_mutex);
 		log_error(loggerGameCard, "Ya existe un proceso utilizando el archivo Metadata de %s",pokemon);
@@ -880,6 +862,3 @@ int iniciarEscuchaGameBoy(char* IP, char* PUERTO) {
 }
 
 
-bool noExisteDirectorio(char* ruta){
-	return stat(ruta, &st1) == -1;
-}

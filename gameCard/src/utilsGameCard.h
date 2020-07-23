@@ -75,19 +75,6 @@ pthread_mutex_t estoy_leyendo_metadata_mutex;
 sem_t bloques_bitmap;
 
 
-struct stat st1;
-
-
-typedef enum
-{
-	METADATA =1,
-	BITMAP = 2,
-	METADATA_FILE = 3,
-	METADATA_POKEMON = 4,
-	BLOCK = 5
-}tipoArchivo;
-
-
 
 int crear_conexion(char* ip, char* puerto);
 char* seleccionarBlockParaCargarPosiciones(char** blocksOcupados, char*posicion, uint32_t cantidad);
@@ -102,6 +89,7 @@ void getPokemon(int socketCliente,t_getLlegada* getLlegada);
 int iniciarEscuchaGameBoy(char* IP, char* PUERTO);
 void verificarConexion(void);
 void generar_ID_Modulo();
+bool noExisteDirectorio(char* ruta);
 void liberar_conexion(int socket_cliente);
 
 
