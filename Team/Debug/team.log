@@ -428,3 +428,148 @@
 [INFO] 14:00:32:824 Team/(6630:6639): No se han encontrado deadlocks
 [INFO] 14:00:32:824 Team/(6630:6638): Iniciando verificacion de conexion con Broker...
 [ERROR] 14:00:32:824 Team/(6630:6638): Reconexion con Broker fallida, intentando nuevamente en 10 segundos
+[ERROR] 15:13:19:795 Team/(8046:8051): Hubo un problema enviando la suscripcion a la cola APPEARED del broker
+[ERROR] 15:13:19:798 Team/(8046:8052): Hubo un problema enviando la suscripcion a la cola CAUGHT del broker
+[ERROR] 15:13:19:799 Team/(8046:8053): Hubo un problema enviando la suscripcion a la cola LOCALIZED del broker
+[ERROR] 15:13:20:153 Team/(8046:8060): Error: No se pudo enviar el GET correspondiente al pokemon charmander, iniciando el comportamiento default
+[ERROR] 15:13:20:166 Team/(8046:8059): Error: No se pudo enviar el GET correspondiente al pokemon pikachu, iniciando el comportamiento default
+[INFO] 15:13:30:511 Team/(8046:8055): Buscando deadlock...
+[INFO] 15:13:38:562 Team/(8046:8055): No se han encontrado deadlocks
+[INFO] 15:14:07:999 Team/(8046:8054): Iniciando verificacion de conexion con Broker...
+[INFO] 15:14:07:0 Team/(8046:8055): Buscando deadlock...
+[INFO] 15:14:07:1 Team/(8046:8055): No se han encontrado deadlocks
+[ERROR] 15:14:07:2 Team/(8046:8054): Reconexion con Broker fallida, intentando nuevamente en 10 segundos
+[INFO] 15:14:08:249 Team/(8046:8048): Estado de entrenador 2 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 15:14:08:263 Team/(8046:8058): Estado de entrenador 2 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de atrapar pokemon
+[INFO] 15:14:08:268 Team/(8046:8058): Entrenador 2 esta atrapando pokemon pikachu ubicado en (3,4)
+[INFO] 15:14:08:279 Team/(8046:8058): El entrenador 2 se esta moviendo de (5,5) a (3,4)
+[INFO] 15:14:08:283 Team/(8046:8058): El entrenador 2 se encuentra en (5,4)
+[INFO] 15:14:10:603 Team/(8046:8058): El entrenador 2 se encuentra en (4,4)
+[INFO] 15:14:12:613 Team/(8046:8058): El entrenador 2 se encuentra en (3,4)
+[INFO] 15:14:15:63 Team/(8046:8058): Estado de entrenador 2 cambiado a EStado blocked. Razon del cambio: Se ha enviado un catch
+[INFO] 15:14:20:778 Team/(8046:8054): Iniciando verificacion de conexion con Broker...
+[INFO] 15:14:20:782 Team/(8046:8055): Buscando deadlock...
+[INFO] 15:14:20:783 Team/(8046:8055): No se han encontrado deadlocks
+[ERROR] 15:14:20:784 Team/(8046:8054): Reconexion con Broker fallida, intentando nuevamente en 10 segundos
+[ERROR] 15:14:20:784 Team/(8046:8058): Error: No se pudo enviar el mensaje catch del entrenador 2 para el pokemon pikachu en (3,4), obteniendo pokemon por comportamiento default
+[INFO] 15:14:24:952 Team/(8046:8058): Estado de entrenador 2 cambiado a Estado exit. Razon del cambio: Ha completado su objetivo
+[INFO] 15:14:50:702 Team/(8046:8055): Buscando deadlock...
+[INFO] 15:14:50:705 Team/(8046:8054): Iniciando verificacion de conexion con Broker...
+[ERROR] 15:14:50:707 Team/(8046:8054): Reconexion con Broker fallida, intentando nuevamente en 10 segundos
+[INFO] 15:14:50:708 Team/(8046:8055): No se han encontrado deadlocks
+[INFO] 15:15:05:315 Team/(8046:8055): Buscando deadlock...
+[INFO] 15:15:10:774 Team/(8046:8054): Iniciando verificacion de conexion con Broker...
+[INFO] 15:15:10:775 Team/(8046:8055): No se han encontrado deadlocks
+[ERROR] 15:15:10:775 Team/(8046:8054): Reconexion con Broker fallida, intentando nuevamente en 10 segundos
+[INFO] 15:15:26:723 Team/(8046:8054): Iniciando verificacion de conexion con Broker...
+[ERROR] 15:19:23:774 Team/(8225:8230): Hubo un problema enviando la suscripcion a la cola APPEARED del broker
+[ERROR] 15:19:23:777 Team/(8225:8232): Hubo un problema enviando la suscripcion a la cola LOCALIZED del broker
+[ERROR] 15:19:23:778 Team/(8225:8231): Hubo un problema enviando la suscripcion a la cola CAUGHT del broker
+[ERROR] 15:19:23:998 Team/(8225:8239): Error: No se pudo enviar el GET correspondiente al pokemon charmander, iniciando el comportamiento default
+[ERROR] 15:19:24:65 Team/(8225:8238): Error: No se pudo enviar el GET correspondiente al pokemon pikachu, iniciando el comportamiento default
+[INFO] 15:19:36:563 Team/(8225:8234): Buscando deadlock...
+[INFO] 15:19:36:564 Team/(8225:8233): Iniciando verificacion de conexion con Broker...
+[INFO] 15:19:36:674 Team/(8225:8234): No se han encontrado deadlocks
+[INFO] 15:19:41:721 Team/(8225:8227): Estado de entrenador 2 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[ERROR] 15:19:41:721 Team/(8225:8233): Reconexion con Broker fallida, intentando nuevamente en 10 segundos
+[INFO] 15:19:41:724 Team/(8225:8237): Estado de entrenador 2 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de atrapar pokemon
+[INFO] 15:19:41:725 Team/(8225:8237): Entrenador 2 esta atrapando pokemon pikachu ubicado en (3,4)
+[INFO] 15:19:42:227 Team/(8225:8237): El entrenador 2 se esta moviendo de (5,5) a (3,4)
+[INFO] 15:19:43:244 Team/(8225:8237): El entrenador 2 se encuentra en (5,4)
+[INFO] 15:19:45:294 Team/(8225:8237): El entrenador 2 se encuentra en (4,4)
+[INFO] 15:19:48:785 Team/(8225:8234): Buscando deadlock...
+[INFO] 15:19:48:960 Team/(8225:8234): No se han encontrado deadlocks
+[INFO] 15:19:48:961 Team/(8225:8237): El entrenador 2 se encuentra en (3,4)
+[INFO] 15:19:52:382 Team/(8225:8237): Estado de entrenador 2 cambiado a EStado blocked. Razon del cambio: Se ha enviado un catch
+[INFO] 15:19:52:383 Team/(8225:8233): Iniciando verificacion de conexion con Broker...
+[ERROR] 15:19:52:384 Team/(8225:8233): Reconexion con Broker fallida, intentando nuevamente en 10 segundos
+[ERROR] 15:19:54:493 Team/(8225:8237): Error: No se pudo enviar el mensaje catch del entrenador 2 para el pokemon pikachu en (3,4), obteniendo pokemon por comportamiento default
+[INFO] 15:19:54:525 Team/(8225:8237): Estado de entrenador 2 cambiado a Estado exit. Razon del cambio: Ha completado su objetivo
+[INFO] 15:20:00:374 Team/(8225:8234): Buscando deadlock...
+[INFO] 15:20:01:229 Team/(8225:8234): No se han encontrado deadlocks
+[INFO] 15:20:02:723 Team/(8225:8233): Iniciando verificacion de conexion con Broker...
+[ERROR] 15:20:02:724 Team/(8225:8233): Reconexion con Broker fallida, intentando nuevamente en 10 segundos
+[ERROR] 15:20:33:911 Team/(8272:8277): Hubo un problema enviando la suscripcion a la cola APPEARED del broker
+[ERROR] 15:20:33:924 Team/(8272:8279): Hubo un problema enviando la suscripcion a la cola LOCALIZED del broker
+[ERROR] 15:20:33:978 Team/(8272:8278): Hubo un problema enviando la suscripcion a la cola CAUGHT del broker
+[ERROR] 15:20:34:78 Team/(8272:8286): Error: No se pudo enviar el GET correspondiente al pokemon charmander, iniciando el comportamiento default
+[ERROR] 15:20:34:105 Team/(8272:8285): Error: No se pudo enviar el GET correspondiente al pokemon pikachu, iniciando el comportamiento default
+[INFO] 15:20:50:91 Team/(8272:8281): Buscando deadlock...
+[INFO] 15:20:50:92 Team/(8272:8280): Iniciando verificacion de conexion con Broker...
+[ERROR] 15:20:50:93 Team/(8272:8280): Reconexion con Broker fallida, intentando nuevamente en 10 segundos
+[INFO] 15:20:51:555 Team/(8272:8281): No se han encontrado deadlocks
+[INFO] 15:21:12:784 Team/(8272:8280): Iniciando verificacion de conexion con Broker...
+[INFO] 15:21:20:149 Team/(8272:8281): Buscando deadlock...
+[INFO] 15:21:20:169 Team/(8272:8281): No se han encontrado deadlocks
+[ERROR] 15:21:20:174 Team/(8272:8280): Reconexion con Broker fallida, intentando nuevamente en 10 segundos
+[ERROR] 15:29:29:542 Team/(8487:8493): Hubo un problema enviando la suscripcion a la cola CAUGHT del broker
+[ERROR] 15:29:29:545 Team/(8487:8494): Hubo un problema enviando la suscripcion a la cola LOCALIZED del broker
+[ERROR] 15:29:29:546 Team/(8487:8492): Hubo un problema enviando la suscripcion a la cola APPEARED del broker
+[ERROR] 15:29:29:633 Team/(8487:8501): Error: No se pudo enviar el GET correspondiente al pokemon charmander, iniciando el comportamiento default
+[ERROR] 15:29:29:645 Team/(8487:8500): Error: No se pudo enviar el GET correspondiente al pokemon pikachu, iniciando el comportamiento default
+[INFO] 15:29:40:790 Team/(8487:8496): Buscando deadlock...
+[INFO] 15:29:40:791 Team/(8487:8495): Iniciando verificacion de conexion con Broker...
+[ERROR] 15:29:40:793 Team/(8487:8495): Reconexion con Broker fallida, intentando nuevamente en 10 segundos
+[INFO] 15:29:42:580 Team/(8487:8489): Estado de entrenador 2 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 15:29:43:716 Team/(8487:8499): Estado de entrenador 2 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de atrapar pokemon
+[INFO] 15:29:45:697 Team/(8487:8499): Entrenador 2 esta atrapando pokemon pikachu ubicado en (3,4)
+[INFO] 15:29:46:897 Team/(8487:8499): El entrenador 2 se esta moviendo de (5,5) a (3,4)
+[INFO] 15:29:47:136 Team/(8487:8499): El entrenador 2 se encuentra en (5,4)
+[INFO] 15:29:47:435 Team/(8487:8496): No se han encontrado deadlocks
+[INFO] 15:29:49:385 Team/(8487:8499): El entrenador 2 se encuentra en (4,4)
+[INFO] 15:29:51:118 Team/(8487:8495): Iniciando verificacion de conexion con Broker...
+[ERROR] 15:29:51:118 Team/(8487:8495): Reconexion con Broker fallida, intentando nuevamente en 10 segundos
+[INFO] 15:29:53:437 Team/(8487:8499): El entrenador 2 se encuentra en (3,4)
+[INFO] 15:29:56:737 Team/(8487:8499): Estado de entrenador 2 cambiado a EStado blocked. Razon del cambio: Se ha enviado un catch
+[INFO] 15:29:58:494 Team/(8487:8496): Buscando deadlock...
+[INFO] 15:30:00:287 Team/(8487:8496): No se han encontrado deadlocks
+[ERROR] 15:30:00:288 Team/(8487:8499): Error: No se pudo enviar el mensaje catch del entrenador 2 para el pokemon pikachu en (3,4), obteniendo pokemon por comportamiento default
+[INFO] 15:30:00:965 Team/(8487:8499): Estado de entrenador 2 cambiado a Estado exit. Razon del cambio: Ha completado su objetivo
+[INFO] 15:30:01:261 Team/(8487:8495): Iniciando verificacion de conexion con Broker...
+[ERROR] 15:30:01:264 Team/(8487:8495): Reconexion con Broker fallida, intentando nuevamente en 10 segundos
+[ERROR] 15:32:26:433 Team/(8599:8605): Hubo un problema enviando la suscripcion a la cola CAUGHT del broker
+[ERROR] 15:32:26:437 Team/(8599:8606): Hubo un problema enviando la suscripcion a la cola LOCALIZED del broker
+[ERROR] 15:32:26:437 Team/(8599:8604): Hubo un problema enviando la suscripcion a la cola APPEARED del broker
+[ERROR] 15:32:27:920 Team/(8599:8612): Error: No se pudo enviar el GET correspondiente al pokemon pikachu, iniciando el comportamiento default
+[ERROR] 15:32:27:968 Team/(8599:8613): Error: No se pudo enviar el GET correspondiente al pokemon charmander, iniciando el comportamiento default
+[INFO] 15:32:38:444 Team/(8599:8607): Iniciando verificacion de conexion con Broker...
+[INFO] 15:32:38:445 Team/(8599:8608): Buscando deadlock...
+[INFO] 15:32:40:784 Team/(8599:8608): No se han encontrado deadlocks
+[ERROR] 15:32:43:304 Team/(8599:8607): Reconexion con Broker fallida, intentando nuevamente en 10 segundos
+[INFO] 15:32:47:808 Team/(8599:8601): Estado de entrenador 2 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 15:32:47:810 Team/(8599:8611): Estado de entrenador 2 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de atrapar pokemon
+[INFO] 15:32:47:810 Team/(8599:8611): Entrenador 2 esta atrapando pokemon pikachu ubicado en (3,4)
+[INFO] 15:32:47:811 Team/(8599:8611): El entrenador 2 se esta moviendo de (5,5) a (3,4)
+[INFO] 15:32:47:852 Team/(8599:8611): El entrenador 2 se encuentra en (5,4)
+[INFO] 15:32:50:824 Team/(8599:8611): El entrenador 2 se encuentra en (4,4)
+[INFO] 15:32:51:67 Team/(8599:8608): Buscando deadlock...
+[INFO] 15:32:51:68 Team/(8599:8608): No se han encontrado deadlocks
+[INFO] 15:32:53:115 Team/(8599:8611): El entrenador 2 se encuentra en (3,4)
+[INFO] 15:32:53:424 Team/(8599:8607): Iniciando verificacion de conexion con Broker...
+[ERROR] 15:32:53:424 Team/(8599:8607): Reconexion con Broker fallida, intentando nuevamente en 10 segundos
+[INFO] 15:32:59:197 Team/(8599:8611): Estado de entrenador 2 cambiado a EStado blocked. Razon del cambio: Se ha enviado un catch
+[INFO] 15:33:01:624 Team/(8599:8608): Buscando deadlock...
+[INFO] 15:33:01:625 Team/(8599:8608): No se han encontrado deadlocks
+[ERROR] 15:33:03:277 Team/(8599:8611): Error: No se pudo enviar el mensaje catch del entrenador 2 para el pokemon pikachu en (3,4), obteniendo pokemon por comportamiento default
+[INFO] 15:33:06:125 Team/(8599:8611): Estado de entrenador 2 cambiado a Estado exit. Razon del cambio: Ha completado su objetivo
+[INFO] 15:33:07:785 Team/(8599:8607): Iniciando verificacion de conexion con Broker...
+[ERROR] 15:33:07:786 Team/(8599:8607): Reconexion con Broker fallida, intentando nuevamente en 10 segundos
+[ERROR] 15:33:45:120 Team/(8633:8638): Hubo un problema enviando la suscripcion a la cola APPEARED del broker
+[ERROR] 15:33:45:123 Team/(8633:8640): Hubo un problema enviando la suscripcion a la cola LOCALIZED del broker
+[ERROR] 15:33:45:123 Team/(8633:8639): Hubo un problema enviando la suscripcion a la cola CAUGHT del broker
+[ERROR] 15:33:45:220 Team/(8633:8646): Error: No se pudo enviar el GET correspondiente al pokemon pikachu, iniciando el comportamiento default
+[ERROR] 15:33:45:272 Team/(8633:8647): Error: No se pudo enviar el GET correspondiente al pokemon charmander, iniciando el comportamiento default
+[INFO] 15:33:58:605 Team/(8633:8642): Buscando deadlock...
+[INFO] 15:34:03:87 Team/(8633:8642): No se han encontrado deadlocks
+[INFO] 15:34:05:304 Team/(8633:8641): Iniciando verificacion de conexion con Broker...
+[ERROR] 15:34:13:231 Team/(8633:8641): Reconexion con Broker fallida, intentando nuevamente en 10 segundos
+[INFO] 15:34:13:237 Team/(8633:8642): Buscando deadlock...
+[INFO] 15:34:13:237 Team/(8633:8642): No se han encontrado deadlocks
+[INFO] 15:34:27:854 Team/(8633:8642): Buscando deadlock...
+[INFO] 15:34:27:855 Team/(8633:8642): No se han encontrado deadlocks
+[INFO] 15:34:27:855 Team/(8633:8641): Iniciando verificacion de conexion con Broker...
+[ERROR] 15:34:27:857 Team/(8633:8641): Reconexion con Broker fallida, intentando nuevamente en 10 segundos
+[INFO] 15:34:41:813 Team/(8633:8642): Buscando deadlock...
+[INFO] 15:34:41:814 Team/(8633:8642): No se han encontrado deadlocks
+[INFO] 15:34:41:814 Team/(8633:8641): Iniciando verificacion de conexion con Broker...
+[ERROR] 15:34:41:815 Team/(8633:8641): Reconexion con Broker fallida, intentando nuevamente en 10 segundos
