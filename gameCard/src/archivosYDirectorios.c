@@ -122,11 +122,18 @@ uint32_t tamanioDeUnArchivo(char* rutaDelArchivo){
 bool existeBlockEnMetadata(char** blocksActuales, char* block){
 	uint32_t indexBlock=0;
 
+	log_info(loggerDevArchDir, "Previo while");
+
 	while(blocksActuales[indexBlock] != NULL){
+		log_info(loggerDevArchDir, "Comparo el block: %s con el block: %s",blocksActuales[indexBlock],block);
 		if(string_equals_ignore_case(blocksActuales[indexBlock],block)){
+			log_info(loggerDevArchDir, "Igual");
 			return true;
 		}
+		indexBlock++;
 	}
+
+	log_info(loggerDevArchDir, "No pertenece a los blocks actuales");
 
 	return false;
 }
@@ -135,10 +142,12 @@ bool existeBlockEnMetadata(char** blocksActuales, char* block){
 void actualizarBlockMetadata(t_config* archivoMetadata, char*blockAAgregar){
 	log_info(loggerDevArchDir, "Saco los blocks actuales");
 	char** blocksActuales = config_get_array_value(archivoMetadata,"BLOCKS");
+	log_info(loggerDevArchDir, "Primera posicion %s", blocksActuales[0]);
 	char* listaNueva = string_new();
 	uint32_t indexBlock=0;
 
 	log_info(loggerDevArchDir, "Pregunto por el index 0");
+
 	if(blocksActuales[0] == NULL){
 		log_info(loggerDevArchDir, "Entro por NULL");
 		string_append(&listaNueva,"[");
@@ -146,6 +155,7 @@ void actualizarBlockMetadata(t_config* archivoMetadata, char*blockAAgregar){
 		string_append(&listaNueva,"]");
 
 	} else {
+		log_info(loggerDevArchDir, "Entro por distinto de NULL");
 
 		if(existeBlockEnMetadata(blocksActuales,blockAAgregar)){
 			log_info(loggerDevArchDir, "El bloque ya pertenece a la lista. No se agrega nada");
@@ -153,15 +163,19 @@ void actualizarBlockMetadata(t_config* archivoMetadata, char*blockAAgregar){
 
 		} else {
 
+			log_info(loggerDevArchDir, "El bloque no existe en la lista actual");
+
 			string_append(&listaNueva,"[");
 			log_info(loggerDevArchDir, "Se hizo append de [, la variable quedo como: %s",listaNueva);
 
 			while(blocksActuales[indexBlock] != NULL){
+				log_info(loggerDevArchDir, "Entro al while");
 				string_append(&listaNueva,blocksActuales[indexBlock]);
 				log_info(loggerDevArchDir, "Se hizo append de %s, la variable quedo como: %s",blocksActuales[indexBlock],listaNueva);
 
 				string_append(&listaNueva,",");
 				log_info(loggerDevArchDir, "Se hizo append de ' , ', la variable quedo como: %s",listaNueva);
+				indexBlock++;
 			}
 
 			log_info(loggerDevArchDir, "Agregamos el ultimo block");
