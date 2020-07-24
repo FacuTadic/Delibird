@@ -58,8 +58,7 @@ void enviar_appeared(int socket, t_appeared* appearedAEnviar){
 	}
 
 	free(flujo);
-	free(bufferAppeared->stream);
-	free(bufferAppeared);
+	free(paquete->buffer);
 	free(paquete);
 
 

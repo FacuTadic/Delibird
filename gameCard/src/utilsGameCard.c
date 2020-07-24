@@ -39,7 +39,7 @@ void setearBitarray() {
 	FILE *fp;
 	fp = fopen(bitMap, "r+b");
 	if (fp == NULL) {
-		log_error(loggerDev, "Hubo un error abriendo el bitmap.");
+		log_error(loggerDev, "Hubo un error abriendo el BITMAP");
 		return;
 	}
 
@@ -106,34 +106,25 @@ char* buscarPosicionDisponibleEnElBitMap() {
 	//sem_wait(&bloques_bitmap);
 	log_info(loggerDev, "Bloqueo");
 
-	log_info(loggerDev, "Valor del i: %i",i);
 	for (i = 0; i < cantidadDeBloques; i++) {
-		log_info(loggerDev, "Primer FOR");
-		log_info(loggerDev, "Valor del i: %i",i);
 
 		if (flag_free_block == 0) {
-			log_info(loggerDev, "El primer IF");
-
-			bool noSe= bitarray_test_bit(bitarray, i);
-
-			log_info(loggerDev, "El valor %i tiene la marca en %i",i,noSe);
-
 
 			if (bitarray_test_bit(bitarray, i) == 0) {
-				log_info(loggerDev, "El segundo IF");
 				flag_free_block = 1;
 				free_block = i;
 				bitarray_set_bit(bitarray, i);
-				log_info(loggerDev, "Seteo de bit array");
 				guardarBitarray(i);
 				//sem_post(&bloques_bitmap);
-				log_info(loggerDev, "EL block %s esta libre",string_itoa(free_block));
+				char* block = string_itoa(free_block);
+				log_info(loggerDev, "EL block %s esta libre",block);
 				log_info(loggerGameCard, "El bloque seleccionado para cargar es: %i",free_block);
-				return string_itoa(free_block);
+				return block;
 			}
 		}
 	}
 	sem_post(&bloques_bitmap);
+
 	log_error(loggerDev, "No hay bloques libres diponibles");
 
 	return NULL;
@@ -410,8 +401,6 @@ void verificarConexion(void) {
 
 
 
-
-
 //#############################################################################################################################################################3
 
 
@@ -465,6 +454,7 @@ void cargarInfoDelMetadata(char* rutaMetadata){
 	config_destroy(metaData);
 
 	free(archivoMetaData);
+
 }
 
 void levantarTallGrass(char* puntoMontaje){
@@ -594,6 +584,8 @@ void validarPosicionesDeNew(t_config* archivoMetadataPokemon, char** blocksOcupa
 		log_info(loggerGameCard, "Posicion agregada en el block %s",blockOptimo);
 		log_info(loggerDev, "Actualizo Metadata");
 		actualizarBlockMetadata(archivoMetadataPokemon,blockOptimo);
+
+		free(blockOptimo);
 	}
 
 
@@ -725,9 +717,22 @@ void newPokemon(int socketCliente,t_newLlegada* new){
 
 	enviar_appeared(socketCliente,appearedGenerado);
 
-	//free de las cosas?
 	config_destroy(archivoMetadataPokemon);
 
+	free(appearedGenerado->pokemon);
+	free(appearedGenerado);
+
+
+	free(rutaDeDirectorio);
+	free(rutaDeArchivo);
+	free(posicion);
+	free(directorioPokemon);
+	uint32_t indexParaBorrar = 0;
+	while(blocksOcupados[indexParaBorrar] != NULL){
+		free(blocksOcupados[indexParaBorrar]);
+		indexParaBorrar++;
+	}
+	free(blocksOcupados);
 
 }
 
@@ -776,7 +781,19 @@ void catchPokemon(int socketCliente,t_catchLlegada* catch){
 	enviar_caught(socketCliente,caughtAEnviar);
 
 	config_destroy(archivoMetadataPokemon);
-	//free de las cosas?
+
+
+	free(caughtAEnviar);
+	free(rutaDeDirectorio);
+	free(rutaDeArchivo);
+	free(posicion);
+	uint32_t indexParaBorrar = 0;
+	while(blocksOcupados[indexParaBorrar] != NULL){
+		free(blocksOcupados[indexParaBorrar]);
+		indexParaBorrar++;
+	}
+	free(blocksOcupados);
+
 }
 
 void getPokemon(int socketCliente,t_getLlegada* getLlegada){
@@ -822,6 +839,19 @@ void getPokemon(int socketCliente,t_getLlegada* getLlegada){
 	config_destroy(archivoMetadataPokemon);
 	queue_clean(coordenadas);
 	queue_destroy(coordenadas);
+
+	free(rutaDeDirectorio);
+	free(rutaDeArchivo);
+	uint32_t indexParaBorrar = 0;
+	while(blocksOcupados[indexParaBorrar] != NULL){
+		free(blocksOcupados[indexParaBorrar]);
+		indexParaBorrar++;
+	}
+	free(blocksOcupados);
+	free(localizedAEnviar->pokemon);
+	list_destroy(localizedAEnviar->l_coordenadas);
+	free(localizedAEnviar);
+
 }
 
 

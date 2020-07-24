@@ -3,14 +3,12 @@
 #include "utilsGameCard.h"
 
 t_log* iniciar_loggerDEV(){
-	//t_log* logger = log_create("gameBoy.log", "Game-watch-client", 1, LOG_LEVEL_INFO);
-	return log_create("gameCardDEV.log", "Game-watch-client", 1, LOG_LEVEL_INFO);
+	return log_create("gameCardDEV.log", "GameCard PAPAA", 1, LOG_LEVEL_INFO);
 }
 
 
 t_log* iniciar_loggerGameCard(){
-	//t_log* logger = log_create("gameBoy.log", "Game-watch-client", 1, LOG_LEVEL_INFO);
-	return log_create("gameCard.log", "Game-watch-client", 1, LOG_LEVEL_INFO);
+	return log_create("gameCard.log", "GameCard", 1, LOG_LEVEL_INFO);
 }
 
 t_config* leer_config(){
