@@ -386,3 +386,45 @@
 [INFO] 13:27:30:335 Team/(5236:5245): No se han encontrado deadlocks
 [INFO] 13:27:30:335 Team/(5236:5244): Iniciando verificacion de conexion con Broker...
 [ERROR] 13:27:30:335 Team/(5236:5244): Reconexion con Broker fallida, intentando nuevamente en 10 segundos
+[ERROR] 13:42:35:0 Team/(5864:5871): Hubo un problema enviando la suscripcion a la cola LOCALIZED del broker
+[ERROR] 13:42:35:0 Team/(5864:5870): Hubo un problema enviando la suscripcion a la cola CAUGHT del broker
+[ERROR] 13:42:35:0 Team/(5864:5878): Error: No se pudo enviar el GET correspondiente al pokemon charmander, iniciando el comportamiento default
+[ERROR] 13:42:35:6 Team/(5864:5877): Error: No se pudo enviar el GET correspondiente al pokemon pikachu, iniciando el comportamiento default
+[ERROR] 13:42:35:6 Team/(5864:5869): Hubo un problema enviando la suscripcion a la cola APPEARED del broker
+[INFO] 13:42:42:189 Team/(5864:5866): Estado de entrenador 2 cambiado a 1112. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 13:42:42:189 Team/(5864:5876): Estado de entrenador 2 cambiado a 1113. Razon del cambio: Ha comenzado a ejecutar la tarea de atrapar pokemon
+[INFO] 13:42:42:189 Team/(5864:5876): Entrenador 2 esta atrapando pokemon pikachu ubicado en (3,4)
+[INFO] 13:42:42:189 Team/(5864:5876): El entrenador 2 se esta moviendo de (5,5) a (3,4)
+[INFO] 13:42:42:189 Team/(5864:5876): El entrenador 2 se encuentra en (5,4)
+[INFO] 13:42:44:190 Team/(5864:5876): El entrenador 2 se encuentra en (4,4)
+[INFO] 13:42:45:1 Team/(5864:5873): Buscando deadlock...
+[INFO] 13:42:45:2 Team/(5864:5873): No se han encontrado deadlocks
+[INFO] 13:42:45:2 Team/(5864:5872): Iniciando verificacion de conexion con Broker...
+[ERROR] 13:42:45:2 Team/(5864:5872): Reconexion con Broker fallida, intentando nuevamente en 10 segundos
+[INFO] 13:42:46:200 Team/(5864:5876): El entrenador 2 se encuentra en (3,4)
+[INFO] 13:42:48:210 Team/(5864:5876): Estado de entrenador 2 cambiado a 1114. Razon del cambio: Se ha enviado un catch
+[ERROR] 13:42:50:220 Team/(5864:5876): Error: No se pudo enviar el mensaje catch del entrenador 2 para el pokemon pikachu en (3,4), obteniendo pokemon por comportamiento default
+[INFO] 13:42:50:220 Team/(5864:5876): Estado de entrenador 2 cambiado a 1115. Razon del cambio: Ha completado su objetivo
+[ERROR] 14:00:12:808 Team/(6630:6637): Hubo un problema enviando la suscripcion a la cola LOCALIZED del broker
+[ERROR] 14:00:12:808 Team/(6630:6636): Hubo un problema enviando la suscripcion a la cola CAUGHT del broker
+[ERROR] 14:00:12:826 Team/(6630:6644): Error: No se pudo enviar el GET correspondiente al pokemon charmander, iniciando el comportamiento default
+[ERROR] 14:00:12:826 Team/(6630:6643): Error: No se pudo enviar el GET correspondiente al pokemon pikachu, iniciando el comportamiento default
+[ERROR] 14:00:12:826 Team/(6630:6635): Hubo un problema enviando la suscripcion a la cola APPEARED del broker
+[INFO] 14:00:17:35 Team/(6630:6632): Estado de entrenador 2 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 14:00:17:35 Team/(6630:6642): Estado de entrenador 2 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de atrapar pokemon
+[INFO] 14:00:17:35 Team/(6630:6642): Entrenador 2 esta atrapando pokemon pikachu ubicado en (3,4)
+[INFO] 14:00:17:35 Team/(6630:6642): El entrenador 2 se esta moviendo de (5,5) a (3,4)
+[INFO] 14:00:17:35 Team/(6630:6642): El entrenador 2 se encuentra en (5,4)
+[INFO] 14:00:19:36 Team/(6630:6642): El entrenador 2 se encuentra en (4,4)
+[INFO] 14:00:21:45 Team/(6630:6642): El entrenador 2 se encuentra en (3,4)
+[INFO] 14:00:22:815 Team/(6630:6638): Iniciando verificacion de conexion con Broker...
+[INFO] 14:00:22:815 Team/(6630:6639): Buscando deadlock...
+[INFO] 14:00:22:815 Team/(6630:6639): No se han encontrado deadlocks
+[ERROR] 14:00:22:815 Team/(6630:6638): Reconexion con Broker fallida, intentando nuevamente en 10 segundos
+[INFO] 14:00:23:54 Team/(6630:6642): Estado de entrenador 2 cambiado a EStado blocked. Razon del cambio: Se ha enviado un catch
+[ERROR] 14:00:25:55 Team/(6630:6642): Error: No se pudo enviar el mensaje catch del entrenador 2 para el pokemon pikachu en (3,4), obteniendo pokemon por comportamiento default
+[INFO] 14:00:25:55 Team/(6630:6642): Estado de entrenador 2 cambiado a Estado exit. Razon del cambio: Ha completado su objetivo
+[INFO] 14:00:32:824 Team/(6630:6639): Buscando deadlock...
+[INFO] 14:00:32:824 Team/(6630:6639): No se han encontrado deadlocks
+[INFO] 14:00:32:824 Team/(6630:6638): Iniciando verificacion de conexion con Broker...
+[ERROR] 14:00:32:824 Team/(6630:6638): Reconexion con Broker fallida, intentando nuevamente en 10 segundos

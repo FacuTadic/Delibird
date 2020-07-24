@@ -6881,3 +6881,296 @@
 [INFO] 13:27:30:335 Team/(5236:5245): No se han encontrado deadlocks
 [INFO] 13:27:30:335 Team/(5236:5244): Intentando reconectar con Broker
 [ERROR] 13:27:30:335 Team/(5236:5244): Reconexion con Broker fallida, intentando nuevamente en 10 segundos
+[INFO] 13:42:35:995 Team/(5864:5864): logger extenso iniciado
+[INFO] 13:42:35:995 Team/(5864:5864): logger de la catedra iniciado
+[INFO] 13:42:35:995 Team/(5864:5864): La IP es: 127.0.0.1
+[INFO] 13:42:35:995 Team/(5864:5864): El puerto es: 4445
+[INFO] 13:42:35:995 Team/(5864:5864): La IP del Broker es: 127.0.0.1
+[INFO] 13:42:35:996 Team/(5864:5864): El puerto del Broker es: 4444
+[INFO] 13:42:35:996 Team/(5864:5864): El Id de Team es: 5
+[INFO] 13:42:35:996 Team/(5864:5864): La busqueda de deadlocks se corre cada 10 segundos
+[INFO] 13:42:35:996 Team/(5864:5864): La conexion al Broker se verifica cada 10 segundos
+[INFO] 13:42:35:996 Team/(5864:5864): EL tiempo de retardo de CPU es cada 2 segundos
+[INFO] 13:42:35:996 Team/(5864:5864): Objetivos para el entrenador 0: Pikachu|Pikachu|Squirtle|Pidgey
+[INFO] 13:42:35:996 Team/(5864:5864): Posiciones para el entrenador 0: 1|2
+[INFO] 13:42:35:996 Team/(5864:5864): Pokemones para el entrenador 0: Pikachu|Squirtle|Pidgey
+[INFO] 13:42:35:996 Team/(5864:5864): Llego token objetivo pikachu para el entrenador 0
+[INFO] 13:42:35:996 Team/(5864:5864): Llego token objetivo pikachu para el entrenador 0
+[INFO] 13:42:35:996 Team/(5864:5864): Llego token objetivo squirtle para el entrenador 0
+[INFO] 13:42:35:996 Team/(5864:5864): Llego token objetivo pidgey para el entrenador 0
+[INFO] 13:42:35:996 Team/(5864:5864): Llego token pokemon pikachu
+[INFO] 13:42:35:996 Team/(5864:5864): Llego token pokemon squirtle
+[INFO] 13:42:35:997 Team/(5864:5864): Llego token pokemon pidgey
+[INFO] 13:42:35:997 Team/(5864:5864): Posicion X del entrenador 0: 1
+[INFO] 13:42:35:997 Team/(5864:5864): Posicion Y del entrenador 0: 2
+[INFO] 13:42:35:997 Team/(5864:5864): Estado del entrenador 0: 1111
+[INFO] 13:42:35:997 Team/(5864:5864): Objetivo del entrenador 0: pikachu
+[INFO] 13:42:35:997 Team/(5864:5864): Objetivo del entrenador 0: pikachu
+[INFO] 13:42:35:997 Team/(5864:5864): Objetivo del entrenador 0: squirtle
+[INFO] 13:42:35:997 Team/(5864:5864): Objetivo del entrenador 0: pidgey
+[INFO] 13:42:35:997 Team/(5864:5864): Objetivo actual del entrenador 0: pikachu
+[INFO] 13:42:35:997 Team/(5864:5864): Pokemon del entrenador 0: pikachu
+[INFO] 13:42:35:997 Team/(5864:5864): Pokemon del entrenador 0: squirtle
+[INFO] 13:42:35:997 Team/(5864:5864): Pokemon del entrenador 0: pidgey
+[INFO] 13:42:35:997 Team/(5864:5864): Objetivos para el entrenador 1: Charmander|Pikachu|Charmander
+[INFO] 13:42:35:997 Team/(5864:5864): Posiciones para el entrenador 1: 3|7
+[INFO] 13:42:35:998 Team/(5864:5864): Pokemones para el entrenador 1: Squirtle|Charmander
+[INFO] 13:42:35:998 Team/(5864:5864): Llego token objetivo charmander para el entrenador 1
+[INFO] 13:42:35:998 Team/(5864:5864): Llego token objetivo pikachu para el entrenador 1
+[INFO] 13:42:35:998 Team/(5864:5864): Llego token objetivo charmander para el entrenador 1
+[INFO] 13:42:35:998 Team/(5864:5864): Llego token pokemon squirtle
+[INFO] 13:42:35:998 Team/(5864:5864): Llego token pokemon charmander
+[INFO] 13:42:35:998 Team/(5864:5864): Posicion X del entrenador 1: 3
+[INFO] 13:42:35:998 Team/(5864:5864): Posicion Y del entrenador 1: 7
+[INFO] 13:42:35:998 Team/(5864:5864): Estado del entrenador 1: 1111
+[INFO] 13:42:35:998 Team/(5864:5864): Objetivo del entrenador 1: charmander
+[INFO] 13:42:35:998 Team/(5864:5864): Objetivo del entrenador 1: pikachu
+[INFO] 13:42:35:999 Team/(5864:5864): Objetivo del entrenador 1: charmander
+[INFO] 13:42:35:999 Team/(5864:5864): Objetivo actual del entrenador 1: pikachu
+[INFO] 13:42:35:999 Team/(5864:5864): Objetivo actual del entrenador 1: charmander
+[INFO] 13:42:35:999 Team/(5864:5864): Pokemon del entrenador 1: squirtle
+[INFO] 13:42:35:999 Team/(5864:5864): Pokemon del entrenador 1: charmander
+[INFO] 13:42:35:999 Team/(5864:5864): Pokemon innecesario del entrenador 1: squirtle
+[INFO] 13:42:35:999 Team/(5864:5864): Objetivos para el entrenador 2: Squirtle|Bulbasaur
+[INFO] 13:42:35:999 Team/(5864:5864): Posiciones para el entrenador 2: 5|5
+[INFO] 13:42:35:999 Team/(5864:5864): Pokemones para el entrenador 2: Bulbasaur
+[INFO] 13:42:35:999 Team/(5864:5864): Llego token objetivo squirtle para el entrenador 2
+[INFO] 13:42:35:999 Team/(5864:5864): Llego token objetivo bulbasaur para el entrenador 2
+[INFO] 13:42:35:999 Team/(5864:5864): Llego token pokemon bulbasaur
+[INFO] 13:42:35:999 Team/(5864:5864): Posicion X del entrenador 2: 5
+[INFO] 13:42:35:999 Team/(5864:5864): Posicion Y del entrenador 2: 5
+[INFO] 13:42:35:999 Team/(5864:5864): Estado del entrenador 2: 1111
+[INFO] 13:42:35:999 Team/(5864:5864): Objetivo del entrenador 2: squirtle
+[INFO] 13:42:35:999 Team/(5864:5864): Objetivo del entrenador 2: bulbasaur
+[INFO] 13:42:35:999 Team/(5864:5864): Objetivo actual del entrenador 2: squirtle
+[INFO] 13:42:35:999 Team/(5864:5864): Pokemon del entrenador 2: bulbasaur
+[INFO] 13:42:35:999 Team/(5864:5864): Obteniendo objetivo global
+[INFO] 13:42:35:999 Team/(5864:5864): Objetivo global: pikachu
+[INFO] 13:42:35:999 Team/(5864:5864): Objetivo global: pikachu
+[INFO] 13:42:35:999 Team/(5864:5864): Objetivo global: charmander
+[INFO] 13:42:35:999 Team/(5864:5864): Objetivo global obtenido
+[INFO] 13:42:35:999 Team/(5864:5864): Obteniendo cantidad de cada pokemon a planificar
+[INFO] 13:42:35:999 Team/(5864:5864): Cantidad a planificar de pikachu: 1
+[INFO] 13:42:35:999 Team/(5864:5864): Cantidad a planificar de pikachu: 2
+[INFO] 13:42:35:999 Team/(5864:5864): Cantidad a planificar de charmander: 1
+[INFO] 13:42:35:999 Team/(5864:5864): Cantidad de cada pokemon a planificar obtenida
+[INFO] 13:42:35:999 Team/(5864:5864): Inicializando colas
+[INFO] 13:42:35:999 Team/(5864:5864): Iniciando semaforo de entrenadores libres en 3
+[INFO] 13:42:35:999 Team/(5864:5864): Colas inicializadas
+[INFO] 13:42:35:0 Team/(5864:5864): Mandando gets
+[INFO] 13:42:35:0 Team/(5864:5871): Escucho localized de BROKER
+[INFO] 13:42:35:0 Team/(5864:5872): Hilo de verificacion periodica de conexion con Broker iniciado
+[INFO] 13:42:35:0 Team/(5864:5873): Hilo de busqueda de deadlocks iniciado
+[INFO] 13:42:35:0 Team/(5864:5874): Trabajo de entrenador 0 comenzado
+[INFO] 13:42:35:0 Team/(5864:5875): Trabajo de entrenador 1 comenzado
+[INFO] 13:42:35:0 Team/(5864:5876): Trabajo de entrenador 2 comenzado
+[INFO] 13:42:35:0 Team/(5864:5877): Enviando get correspondiente al pokemon pikachu
+[INFO] 13:42:35:0 Team/(5864:5878): Enviando get correspondiente al pokemon charmander
+[INFO] 13:42:35:0 Team/(5864:5870): Escucho caught de BROKER
+[ERROR] 13:42:35:0 Team/(5864:5878): Error: No se pudo enviar el GET correspondiente al pokemon charmander, iniciando el comportamiento default
+[ERROR] 13:42:35:0 Team/(5864:5877): Error: No se pudo enviar el GET correspondiente al pokemon pikachu, iniciando el comportamiento default
+[INFO] 13:42:35:6 Team/(5864:5864): Gets mandados
+[INFO] 13:42:35:6 Team/(5864:5869): Escucho appeared de BROKER
+[INFO] 13:42:36:7 Team/(5864:5868): Hilo planificador de tratamiento de deadlocks iniciado
+[INFO] 13:42:36:8 Team/(5864:5867): Hilo planificador de mensajes caught iniciado
+[INFO] 13:42:36:8 Team/(5864:5866): Hilo planificador de pokemones iniciado
+[INFO] 13:42:36:16 Team/(5864:5865): Esperando mensajes de game boy en socket 5
+[INFO] 13:42:42:164 Team/(5864:5865): Socket 5 de Game boy aceptado
+[INFO] 13:42:42:187 Team/(5864:5880): Recibiendo codigo de operacion de Game boy en socket 7
+[INFO] 13:42:42:188 Team/(5864:5880): Codigo de operacion de socket 7 recibido: 2
+[INFO] 13:42:42:188 Team/(5864:5880): procesando request de Game boy
+[INFO] 13:42:42:188 Team/(5864:5880): Codigo de operacion recibido del socket cliente 7 corresponde a un APPEARED
+[INFO] 13:42:42:188 Team/(5864:5880): Recibiendo tamanio total
+[INFO] 13:42:42:188 Team/(5864:5880): Tamanio total recibido: 20
+[INFO] 13:42:42:188 Team/(5864:5880): Tamanio del pokemon recibido: 8
+[INFO] 13:42:42:188 Team/(5864:5880): Nombre del pokemon recibido: pikachu
+[INFO] 13:42:42:188 Team/(5864:5880): Posicion X recibida: 3
+[INFO] 13:42:42:188 Team/(5864:5880): Posicion Y recibida: 4
+[INFO] 13:42:42:188 Team/(5864:5880): Appeared recibido del modulo Game Boy socket 7
+[INFO] 13:42:42:188 Team/(5864:5880): Agregando pokemon pikachu en (3,4) a los pokemones del mapa
+[INFO] 13:42:42:188 Team/(5864:5880): Pokemon pikachu en (3,4) agregado a los pokemones del mapa
+[INFO] 13:42:42:188 Team/(5864:5866): Planificando un nuevo pokemon
+[INFO] 13:42:42:188 Team/(5864:5866): El pokemon pikachu ubicado en (3,4) se puede planificar
+[INFO] 13:42:42:189 Team/(5864:5866): Nueva cantidad de planificaciones disponibles para pokemon pikachu: 1
+[INFO] 13:42:42:189 Team/(5864:5866): Eliminando pokemon pikachu en (3,4) del mapa
+[INFO] 13:42:42:189 Team/(5864:5866): Cambiando tarea de entrenador 2 a 111
+[INFO] 13:42:42:189 Team/(5864:5866): Tarea de entrenador 2 cambiada a 111
+[INFO] 13:42:42:189 Team/(5864:5866): Cambiando estado de entrenador 2 a 1112
+[INFO] 13:42:42:189 Team/(5864:5866): Estado de entrenador 2 cambiado a 1112. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 13:42:42:189 Team/(5864:5876): Cambiando estado de entrenador 2 a 1113
+[INFO] 13:42:42:189 Team/(5864:5876): Estado de entrenador 2 cambiado a 1113. Razon del cambio: Ha comenzado a ejecutar la tarea de atrapar pokemon
+[INFO] 13:42:42:189 Team/(5864:5876): Entrenador 2 esta atrapando pokemon pikachu ubicado en (3,4)
+[INFO] 13:42:42:189 Team/(5864:5876): El entrenador 2 se esta moviendo de (5,5) a (3,4)
+[INFO] 13:42:42:189 Team/(5864:5876): El entrenador 2 se encuentra en (5,4)
+[INFO] 13:42:42:189 Team/(5864:5880): Mensaje de Game boy procesado
+[INFO] 13:42:44:190 Team/(5864:5876): El entrenador 2 se encuentra en (4,4)
+[INFO] 13:42:45:1 Team/(5864:5873): Buscando deadlock...
+[INFO] 13:42:45:1 Team/(5864:5872): Iniciando verificacion de conexion con Broker...
+[INFO] 13:42:45:2 Team/(5864:5873): obtengo entrenadores bloqueados
+[INFO] 13:42:45:2 Team/(5864:5873): entrenadores bloqueados obtenidos
+[INFO] 13:42:45:2 Team/(5864:5873): No se han encontrado deadlocks
+[INFO] 13:42:45:2 Team/(5864:5872): Intentando reconectar con Broker
+[ERROR] 13:42:45:2 Team/(5864:5872): Reconexion con Broker fallida, intentando nuevamente en 10 segundos
+[INFO] 13:42:46:200 Team/(5864:5876): El entrenador 2 se encuentra en (3,4)
+[INFO] 13:42:48:210 Team/(5864:5876): El entrenador 2 ha llegado a (3,4)
+[INFO] 13:42:48:210 Team/(5864:5876): Cambiando estado de entrenador 2 a 1114
+[INFO] 13:42:48:210 Team/(5864:5876): Estado de entrenador 2 cambiado a 1114. Razon del cambio: Se ha enviado un catch
+[INFO] 13:42:48:210 Team/(5864:5876): Entrenador 2 enviando catch para el pokemon pikachu en (3,4)
+[ERROR] 13:42:50:220 Team/(5864:5876): Error: No se pudo enviar el mensaje catch del entrenador 2 para el pokemon pikachu en (3,4), obteniendo pokemon por comportamiento default
+[INFO] 13:42:50:220 Team/(5864:5876): Entrenador 2 adquiriendo pokemon pikachu
+[INFO] 13:42:50:220 Team/(5864:5876): El entrenador 2 ha adquirido al pokemon pikachu
+[INFO] 13:42:50:220 Team/(5864:5876): Cambiando estado de entrenador 2 a 1115
+[INFO] 13:42:50:220 Team/(5864:5876): Estado de entrenador 2 cambiado a 1115. Razon del cambio: Ha completado su objetivo
+[INFO] 13:42:50:220 Team/(5864:5876): Cambiando tarea de entrenador 2 a 113
+[INFO] 13:42:50:220 Team/(5864:5876): Tarea de entrenador 2 cambiada a 113
+[INFO] 13:42:50:220 Team/(5864:5876): Entrenador 2 ha terminado
+[INFO] 14:00:12:803 Team/(6630:6630): logger extenso iniciado
+[INFO] 14:00:12:803 Team/(6630:6630): logger de la catedra iniciado
+[INFO] 14:00:12:804 Team/(6630:6630): La IP es: 127.0.0.1
+[INFO] 14:00:12:804 Team/(6630:6630): El puerto es: 4445
+[INFO] 14:00:12:804 Team/(6630:6630): La IP del Broker es: 127.0.0.1
+[INFO] 14:00:12:804 Team/(6630:6630): El puerto del Broker es: 4444
+[INFO] 14:00:12:804 Team/(6630:6630): El Id de Team es: 5
+[INFO] 14:00:12:804 Team/(6630:6630): La busqueda de deadlocks se corre cada 10 segundos
+[INFO] 14:00:12:804 Team/(6630:6630): La conexion al Broker se verifica cada 10 segundos
+[INFO] 14:00:12:804 Team/(6630:6630): EL tiempo de retardo de CPU es cada 2 segundos
+[INFO] 14:00:12:804 Team/(6630:6630): Objetivos para el entrenador 0: Pikachu|Pikachu|Squirtle|Pidgey
+[INFO] 14:00:12:804 Team/(6630:6630): Posiciones para el entrenador 0: 1|2
+[INFO] 14:00:12:804 Team/(6630:6630): Pokemones para el entrenador 0: Pikachu|Squirtle|Pidgey
+[INFO] 14:00:12:804 Team/(6630:6630): Llego token objetivo pikachu para el entrenador 0
+[INFO] 14:00:12:804 Team/(6630:6630): Llego token objetivo pikachu para el entrenador 0
+[INFO] 14:00:12:804 Team/(6630:6630): Llego token objetivo squirtle para el entrenador 0
+[INFO] 14:00:12:805 Team/(6630:6630): Llego token objetivo pidgey para el entrenador 0
+[INFO] 14:00:12:805 Team/(6630:6630): Llego token pokemon pikachu
+[INFO] 14:00:12:805 Team/(6630:6630): Llego token pokemon squirtle
+[INFO] 14:00:12:805 Team/(6630:6630): Llego token pokemon pidgey
+[INFO] 14:00:12:805 Team/(6630:6630): Posicion X del entrenador 0: 1
+[INFO] 14:00:12:805 Team/(6630:6630): Posicion Y del entrenador 0: 2
+[INFO] 14:00:12:805 Team/(6630:6630): Estado del entrenador 0: 1111
+[INFO] 14:00:12:805 Team/(6630:6630): Objetivo del entrenador 0: pikachu
+[INFO] 14:00:12:805 Team/(6630:6630): Objetivo del entrenador 0: pikachu
+[INFO] 14:00:12:805 Team/(6630:6630): Objetivo del entrenador 0: squirtle
+[INFO] 14:00:12:805 Team/(6630:6630): Objetivo del entrenador 0: pidgey
+[INFO] 14:00:12:805 Team/(6630:6630): Objetivo actual del entrenador 0: pikachu
+[INFO] 14:00:12:805 Team/(6630:6630): Pokemon del entrenador 0: pikachu
+[INFO] 14:00:12:805 Team/(6630:6630): Pokemon del entrenador 0: squirtle
+[INFO] 14:00:12:805 Team/(6630:6630): Pokemon del entrenador 0: pidgey
+[INFO] 14:00:12:806 Team/(6630:6630): Objetivos para el entrenador 1: Charmander|Pikachu|Charmander
+[INFO] 14:00:12:806 Team/(6630:6630): Posiciones para el entrenador 1: 3|7
+[INFO] 14:00:12:806 Team/(6630:6630): Pokemones para el entrenador 1: Squirtle|Charmander
+[INFO] 14:00:12:806 Team/(6630:6630): Llego token objetivo charmander para el entrenador 1
+[INFO] 14:00:12:806 Team/(6630:6630): Llego token objetivo pikachu para el entrenador 1
+[INFO] 14:00:12:806 Team/(6630:6630): Llego token objetivo charmander para el entrenador 1
+[INFO] 14:00:12:806 Team/(6630:6630): Llego token pokemon squirtle
+[INFO] 14:00:12:806 Team/(6630:6630): Llego token pokemon charmander
+[INFO] 14:00:12:806 Team/(6630:6630): Posicion X del entrenador 1: 3
+[INFO] 14:00:12:806 Team/(6630:6630): Posicion Y del entrenador 1: 7
+[INFO] 14:00:12:806 Team/(6630:6630): Estado del entrenador 1: 1111
+[INFO] 14:00:12:806 Team/(6630:6630): Objetivo del entrenador 1: charmander
+[INFO] 14:00:12:806 Team/(6630:6630): Objetivo del entrenador 1: pikachu
+[INFO] 14:00:12:806 Team/(6630:6630): Objetivo del entrenador 1: charmander
+[INFO] 14:00:12:806 Team/(6630:6630): Objetivo actual del entrenador 1: pikachu
+[INFO] 14:00:12:807 Team/(6630:6630): Objetivo actual del entrenador 1: charmander
+[INFO] 14:00:12:807 Team/(6630:6630): Pokemon del entrenador 1: squirtle
+[INFO] 14:00:12:807 Team/(6630:6630): Pokemon del entrenador 1: charmander
+[INFO] 14:00:12:807 Team/(6630:6630): Pokemon innecesario del entrenador 1: squirtle
+[INFO] 14:00:12:807 Team/(6630:6630): Objetivos para el entrenador 2: Squirtle|Bulbasaur
+[INFO] 14:00:12:807 Team/(6630:6630): Posiciones para el entrenador 2: 5|5
+[INFO] 14:00:12:807 Team/(6630:6630): Pokemones para el entrenador 2: Bulbasaur
+[INFO] 14:00:12:807 Team/(6630:6630): Llego token objetivo squirtle para el entrenador 2
+[INFO] 14:00:12:807 Team/(6630:6630): Llego token objetivo bulbasaur para el entrenador 2
+[INFO] 14:00:12:807 Team/(6630:6630): Llego token pokemon bulbasaur
+[INFO] 14:00:12:807 Team/(6630:6630): Posicion X del entrenador 2: 5
+[INFO] 14:00:12:807 Team/(6630:6630): Posicion Y del entrenador 2: 5
+[INFO] 14:00:12:807 Team/(6630:6630): Estado del entrenador 2: 1111
+[INFO] 14:00:12:807 Team/(6630:6630): Objetivo del entrenador 2: squirtle
+[INFO] 14:00:12:807 Team/(6630:6630): Objetivo del entrenador 2: bulbasaur
+[INFO] 14:00:12:807 Team/(6630:6630): Objetivo actual del entrenador 2: squirtle
+[INFO] 14:00:12:807 Team/(6630:6630): Pokemon del entrenador 2: bulbasaur
+[INFO] 14:00:12:807 Team/(6630:6630): Obteniendo objetivo global
+[INFO] 14:00:12:807 Team/(6630:6630): Objetivo global: pikachu
+[INFO] 14:00:12:807 Team/(6630:6630): Objetivo global: pikachu
+[INFO] 14:00:12:807 Team/(6630:6630): Objetivo global: charmander
+[INFO] 14:00:12:807 Team/(6630:6630): Objetivo global obtenido
+[INFO] 14:00:12:807 Team/(6630:6630): Obteniendo cantidad de cada pokemon a planificar
+[INFO] 14:00:12:807 Team/(6630:6630): Cantidad a planificar de pikachu: 1
+[INFO] 14:00:12:807 Team/(6630:6630): Cantidad a planificar de pikachu: 2
+[INFO] 14:00:12:807 Team/(6630:6630): Cantidad a planificar de charmander: 1
+[INFO] 14:00:12:807 Team/(6630:6630): Cantidad de cada pokemon a planificar obtenida
+[INFO] 14:00:12:807 Team/(6630:6630): Inicializando colas
+[INFO] 14:00:12:807 Team/(6630:6630): Iniciando semaforo de entrenadores libres en 3
+[INFO] 14:00:12:807 Team/(6630:6630): Colas inicializadas
+[INFO] 14:00:12:807 Team/(6630:6630): Mandando gets
+[INFO] 14:00:12:807 Team/(6630:6637): Escucho localized de BROKER
+[INFO] 14:00:12:808 Team/(6630:6638): Hilo de verificacion periodica de conexion con Broker iniciado
+[INFO] 14:00:12:808 Team/(6630:6639): Hilo de busqueda de deadlocks iniciado
+[INFO] 14:00:12:808 Team/(6630:6640): Trabajo de entrenador 0 comenzado
+[INFO] 14:00:12:808 Team/(6630:6641): Trabajo de entrenador 1 comenzado
+[INFO] 14:00:12:808 Team/(6630:6642): Trabajo de entrenador 2 comenzado
+[INFO] 14:00:12:808 Team/(6630:6643): Enviando get correspondiente al pokemon pikachu
+[INFO] 14:00:12:808 Team/(6630:6644): Enviando get correspondiente al pokemon charmander
+[INFO] 14:00:12:808 Team/(6630:6636): Escucho caught de BROKER
+[ERROR] 14:00:12:808 Team/(6630:6644): Error: No se pudo enviar el GET correspondiente al pokemon charmander, iniciando el comportamiento default
+[ERROR] 14:00:12:808 Team/(6630:6643): Error: No se pudo enviar el GET correspondiente al pokemon pikachu, iniciando el comportamiento default
+[INFO] 14:00:12:826 Team/(6630:6630): Gets mandados
+[INFO] 14:00:12:826 Team/(6630:6635): Escucho appeared de BROKER
+[INFO] 14:00:12:835 Team/(6630:6634): Hilo planificador de tratamiento de deadlocks iniciado
+[INFO] 14:00:12:835 Team/(6630:6633): Hilo planificador de mensajes caught iniciado
+[INFO] 14:00:12:835 Team/(6630:6632): Hilo planificador de pokemones iniciado
+[INFO] 14:00:12:835 Team/(6630:6631): Esperando mensajes de game boy en socket 5
+[INFO] 14:00:17:9 Team/(6630:6631): Socket 5 de Game boy aceptado
+[INFO] 14:00:17:34 Team/(6630:6648): Recibiendo codigo de operacion de Game boy en socket 7
+[INFO] 14:00:17:34 Team/(6630:6648): Codigo de operacion de socket 7 recibido: 2
+[INFO] 14:00:17:34 Team/(6630:6648): procesando request de Game boy
+[INFO] 14:00:17:34 Team/(6630:6648): Codigo de operacion recibido del socket cliente 7 corresponde a un APPEARED
+[INFO] 14:00:17:34 Team/(6630:6648): Recibiendo tamanio total
+[INFO] 14:00:17:34 Team/(6630:6648): Tamanio total recibido: 20
+[INFO] 14:00:17:34 Team/(6630:6648): Tamanio del pokemon recibido: 8
+[INFO] 14:00:17:34 Team/(6630:6648): Nombre del pokemon recibido: pikachu
+[INFO] 14:00:17:34 Team/(6630:6648): Posicion X recibida: 3
+[INFO] 14:00:17:35 Team/(6630:6648): Posicion Y recibida: 4
+[INFO] 14:00:17:35 Team/(6630:6648): Appeared recibido del modulo Game Boy socket 7
+[INFO] 14:00:17:35 Team/(6630:6648): Agregando pokemon pikachu en (3,4) a los pokemones del mapa
+[INFO] 14:00:17:35 Team/(6630:6648): Pokemon pikachu en (3,4) agregado a los pokemones del mapa
+[INFO] 14:00:17:35 Team/(6630:6632): Planificando un nuevo pokemon
+[INFO] 14:00:17:35 Team/(6630:6632): El pokemon pikachu ubicado en (3,4) se puede planificar
+[INFO] 14:00:17:35 Team/(6630:6632): Nueva cantidad de planificaciones disponibles para pokemon pikachu: 1
+[INFO] 14:00:17:35 Team/(6630:6632): Eliminando pokemon pikachu en (3,4) del mapa
+[INFO] 14:00:17:35 Team/(6630:6632): Cambiando tarea de entrenador 2 a Atrapar pokemon
+[INFO] 14:00:17:35 Team/(6630:6632): Tarea de entrenador 2 cambiada a Atrapar pokemon
+[INFO] 14:00:17:35 Team/(6630:6632): Cambiando estado de entrenador 2 a Estado ready
+[INFO] 14:00:17:35 Team/(6630:6632): Estado de entrenador 2 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 14:00:17:35 Team/(6630:6642): Cambiando estado de entrenador 2 a Estado executing
+[INFO] 14:00:17:35 Team/(6630:6642): Estado de entrenador 2 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de atrapar pokemon
+[INFO] 14:00:17:35 Team/(6630:6642): Entrenador 2 esta atrapando pokemon pikachu ubicado en (3,4)
+[INFO] 14:00:17:35 Team/(6630:6642): El entrenador 2 se esta moviendo de (5,5) a (3,4)
+[INFO] 14:00:17:35 Team/(6630:6642): El entrenador 2 se encuentra en (5,4)
+[INFO] 14:00:17:35 Team/(6630:6648): Mensaje de Game boy procesado
+[INFO] 14:00:19:35 Team/(6630:6642): El entrenador 2 se encuentra en (4,4)
+[INFO] 14:00:21:45 Team/(6630:6642): El entrenador 2 se encuentra en (3,4)
+[INFO] 14:00:22:815 Team/(6630:6638): Iniciando verificacion de conexion con Broker...
+[INFO] 14:00:22:815 Team/(6630:6639): Buscando deadlock...
+[INFO] 14:00:22:815 Team/(6630:6638): Intentando reconectar con Broker
+[INFO] 14:00:22:815 Team/(6630:6639): obtengo entrenadores bloqueados
+[INFO] 14:00:22:815 Team/(6630:6639): entrenadores bloqueados obtenidos
+[INFO] 14:00:22:815 Team/(6630:6639): No se han encontrado deadlocks
+[ERROR] 14:00:22:815 Team/(6630:6638): Reconexion con Broker fallida, intentando nuevamente en 10 segundos
+[INFO] 14:00:23:54 Team/(6630:6642): El entrenador 2 ha llegado a (3,4)
+[INFO] 14:00:23:54 Team/(6630:6642): Cambiando estado de entrenador 2 a EStado blocked
+[INFO] 14:00:23:54 Team/(6630:6642): Estado de entrenador 2 cambiado a EStado blocked. Razon del cambio: Se ha enviado un catch
+[INFO] 14:00:23:54 Team/(6630:6642): Entrenador 2 enviando catch para el pokemon pikachu en (3,4)
+[ERROR] 14:00:25:55 Team/(6630:6642): Error: No se pudo enviar el mensaje catch del entrenador 2 para el pokemon pikachu en (3,4), obteniendo pokemon por comportamiento default
+[INFO] 14:00:25:55 Team/(6630:6642): Entrenador 2 adquiriendo pokemon pikachu
+[INFO] 14:00:25:55 Team/(6630:6642): El entrenador 2 ha adquirido al pokemon pikachu
+[INFO] 14:00:25:55 Team/(6630:6642): Cambiando estado de entrenador 2 a Estado exit
+[INFO] 14:00:25:55 Team/(6630:6642): Estado de entrenador 2 cambiado a Estado exit. Razon del cambio: Ha completado su objetivo
+[INFO] 14:00:25:55 Team/(6630:6642): Cambiando tarea de entrenador 2 a No hacer nada
+[INFO] 14:00:25:55 Team/(6630:6642): Tarea de entrenador 2 cambiada a No hacer nada
+[INFO] 14:00:25:55 Team/(6630:6642): Entrenador 2 ha terminado
+[INFO] 14:00:32:824 Team/(6630:6639): Buscando deadlock...
+[INFO] 14:00:32:824 Team/(6630:6638): Iniciando verificacion de conexion con Broker...
+[INFO] 14:00:32:824 Team/(6630:6639): obtengo entrenadores bloqueados
+[INFO] 14:00:32:824 Team/(6630:6639): entrenadores bloqueados obtenidos
+[INFO] 14:00:32:824 Team/(6630:6639): No se han encontrado deadlocks
+[INFO] 14:00:32:824 Team/(6630:6638): Intentando reconectar con Broker
+[ERROR] 14:00:32:824 Team/(6630:6638): Reconexion con Broker fallida, intentando nuevamente en 10 segundos
