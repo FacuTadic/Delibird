@@ -376,23 +376,14 @@ void planificar_pokemon(void) {
 
 		if (tengo_que_planificar_pokemon(mensaje_pokemon) == 1) {
 
-			// bajo el contador de pokemones que puedo planificar
-
 			contar_planificacion(mensaje_pokemon);
-
-			// borro el pokemon de la lista del mapa
 
 			borrar_pokemon_del_mapa(mensaje_pokemon);
 
-			// planifico entrenador para ir a atraparlo
 			t_list* entrenador_disponible = entrenadores_que_pueden_ir_a_atrapar();
 
-			// LLEGA HASTA ACA
-
-			// obtengo entrenador que va a ir
 			t_entrenador* entrenador_a_planificar = entrenador_mas_cercano(entrenador_disponible, mensaje_pokemon->pos_X, mensaje_pokemon->pos_Y);
 
-			// le doy la tarea
 			t_tarea* tarea_pokemon = malloc(sizeof(t_tarea));
 			tarea_pokemon->id_tarea = ATRAPAR_POKEMON;
 			tarea_pokemon->parametros = mensaje_pokemon;
