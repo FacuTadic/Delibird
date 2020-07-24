@@ -990,6 +990,10 @@ void inicializar_entrenadores() {
 		entrenador->posY = (uint32_t) atoi(posiciones[1]);
 		log_info(extense_logger, "Posicion Y del entrenador %i: %i", i, entrenador->posY);
 
+		free(posiciones[0]);
+		free(posiciones[1]);
+		free(posiciones);
+
 		t_list* objetivos_actuales = list_create();
 
 		for (int p = 0; p < objetivos->elements_count; p++) {
@@ -1003,7 +1007,8 @@ void inicializar_entrenadores() {
 			for (int h = 0; h < objetivos_actuales->elements_count; h++) {
 				char* objetivo_actual_lista = list_get(objetivos_actuales, h);
 				if (string_equals_ignore_case(objetivo_actual_lista, pokemon_lista) == 1) {
-					list_remove(objetivos_actuales, h);
+					char* objetivo_removido = list_remove(objetivos_actuales, h);
+					free(objetivo_removido);
 					h = objetivos_actuales->elements_count;
 				}
 			}
@@ -1024,7 +1029,8 @@ void inicializar_entrenadores() {
 			for (int c = 0; c < pokemones_innecesarios->elements_count; c++) {
 				char* pokemon_innecesario_lista = (char*) list_get(pokemones_innecesarios, c);
 				if (string_equals_ignore_case(pokemon_innecesario_lista, objetivo_lista) == 1) {
-					list_remove(pokemones_innecesarios, c);
+					char* pokemon_eliminado = list_remove(pokemones_innecesarios, c);
+					free(pokemon_eliminado);
 					c = pokemones_innecesarios->elements_count;
 				}
 			}
