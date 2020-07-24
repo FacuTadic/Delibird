@@ -1594,19 +1594,19 @@ t_pokemon* mejor_pokemon_para_reintentar(t_entrenador* entrenador, char* pokemon
 }
 
 void cambiar_estado_de_entrenador(t_entrenador* entrenador, estado estado_nuevo, char* razon) {
-	log_info(extense_logger, "Cambiando estado de entrenador %i a %i", entrenador->index, estado_nuevo);
+	log_info(extense_logger, "Cambiando estado de entrenador %i a %s", entrenador->index, obtener_nombre_de_estado(estado_nuevo));
 	if (entrenador->estado != estado_nuevo) {
 		entrenador->estado = estado_nuevo;
 		pthread_mutex_lock(&cambios_contexto_mutex);
 		cambios_contexto++;
 		pthread_mutex_unlock(&cambios_contexto_mutex);
 	}
-	log_info(extense_logger, "Estado de entrenador %i cambiado a %i. Razon del cambio: %s", entrenador->index, estado_nuevo, razon);
-	log_info(logger, "Estado de entrenador %i cambiado a %i. Razon del cambio: %s", entrenador->index, estado_nuevo, razon);
+	log_info(extense_logger, "Estado de entrenador %i cambiado a %s. Razon del cambio: %s", entrenador->index, obtener_nombre_de_estado(estado_nuevo), razon);
+	log_info(logger, "Estado de entrenador %i cambiado a %s. Razon del cambio: %s", entrenador->index, obtener_nombre_de_estado(estado_nuevo), razon);
 }
 
 void cambiar_tarea_de_entrenador(t_entrenador* entrenador, t_tarea* tarea_nueva) {
-	log_info(extense_logger, "Cambiando tarea de entrenador %i a %i", entrenador->index, tarea_nueva->id_tarea);
+	log_info(extense_logger, "Cambiando tarea de entrenador %i a %s", entrenador->index, obtener_nombre_de_tarea(tarea_nueva->id_tarea));
 	switch(entrenador->tarea_actual->id_tarea) {
 	case NO_HACER_PINGO:
 		free(entrenador->tarea_actual);
@@ -1621,7 +1621,7 @@ void cambiar_tarea_de_entrenador(t_entrenador* entrenador, t_tarea* tarea_nueva)
 		break;
 	}
 	entrenador->tarea_actual = tarea_nueva;
-	log_info(extense_logger, "Tarea de entrenador %i cambiada a %i", entrenador->index, tarea_nueva->id_tarea);
+	log_info(extense_logger, "Tarea de entrenador %i cambiada a %s", entrenador->index, obtener_nombre_de_tarea(tarea_nueva->id_tarea));
 }
 
 void mostrar_metricas() {
@@ -1666,6 +1666,36 @@ int es_id_catch(uint32_t id) {
 
 int calcular_posicion_entrenador(int posXEntrenador, int posYEntrenador, int posXPokemon, int posYPokemon) {
 	return abs(posXEntrenador - posXPokemon) + abs(posYEntrenador - posYPokemon);
+}
+
+char* obtener_nombre_de_tarea(id_tarea id) {
+	switch(id) {
+	case ATRAPAR_POKEMON:
+		return "Atrapar pokemon";
+	case INTERCAMBIAR_POKEMON:
+		return "Intercambiar pokemon";
+	case NO_HACER_PINGO:
+		return "No hacer nada";
+	default:
+		return "";
+	}
+}
+
+char* obtener_nombre_de_estado(estado id) {
+	switch(id) {
+	case ESTADO_NEW:
+		return "Estado new";
+	case ESTADO_READY:
+		return "Estado ready";
+	case ESTADO_EXECUTING:
+		return "Estado executing";
+	case ESTADO_BLOCKED:
+		return "EStado blocked";
+	case ESTADO_EXIT:
+		return "Estado exit";
+	default:
+		return "";
+	}
 }
 
 void terminar_programa() {

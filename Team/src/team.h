@@ -207,3 +207,5 @@ void cambiar_tarea_de_entrenador(t_entrenador* entrenador, t_tarea* tarea_nueva)
 void mostrar_metricas();
 int es_id_catch(uint32_t id);
 int calcular_posicion_entrenador(int posXEntrenador, int posYEntrenador, int posXPokemon, int posYPokemon);
+char* obtener_nombre_de_tarea(id_tarea id);
+char* obtener_nombre_de_estado(estado id);
