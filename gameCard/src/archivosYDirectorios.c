@@ -1,8 +1,5 @@
 #include "archivosYDirectorios.h"
 
-
-
-
 void crearTemplateDeArchivoTipo(tipoArchivo tipo, char* nombreDelArchivo ,char* ruta){
 	FILE *archivo;
 
@@ -23,7 +20,7 @@ void crearTemplateDeArchivoTipo(tipoArchivo tipo, char* nombreDelArchivo ,char* 
 
 		config_set_value(archivoMetadata,"DIRECTORY","Y");
 		config_save(archivoMetadata);
-		config_destroy(archivoMetadata);
+
 //		fprintf(archivo	,"DIRECTORY" "=" "Y" "\n");
 //		fprintf(archivo	,"OPEN" "=" "N" "\n");
 
@@ -37,7 +34,7 @@ void crearTemplateDeArchivoTipo(tipoArchivo tipo, char* nombreDelArchivo ,char* 
 		config_set_value(archivoMetadata,"SIZE","0");
 
 		config_save(archivoMetadata);
-		config_destroy(archivoMetadata);
+
 //		fprintf(archivo	,"OPEN" "=" "N \n");
 //		fprintf(archivo	,"DIRECTORY" "=" "N \n");
 //		fprintf(archivo	,"SIZE" "=" " \n");
@@ -53,7 +50,10 @@ void crearTemplateDeArchivoTipo(tipoArchivo tipo, char* nombreDelArchivo ,char* 
 		break;
 	}
 
+	config_destroy(archivoMetadata);
 	fclose(archivo);
+
+	free(rutaDeCreacion);
 }
 
 
@@ -93,18 +93,16 @@ char* generadorDePosiciones(uint32_t posX, uint32_t posY){
 	string_append(&coordenadas,posYChar);
 
 	log_info(loggerDevArchDir, "La coordenada generada es: %s", coordenadas);
+	free(posXChar);
+	free(posYChar);
 	return coordenadas;
 }
-
-
 
 
 
 bool existeArchivo(char* ruta){
 	return access(ruta, F_OK ) != -1;
 }
-
-
 
 
 uint32_t tamanioDeUnArchivo(char* rutaDelArchivo){
@@ -123,22 +121,25 @@ bool existeBlockEnMetadata(char** blocksActuales, char* block){
 	uint32_t indexBlock=0;
 
 	while(blocksActuales[indexBlock] != NULL){
+		log_info(loggerDevArchDir, "Comparo el block: %s con el block: %s",blocksActuales[indexBlock],block);
 		if(string_equals_ignore_case(blocksActuales[indexBlock],block)){
+			log_info(loggerDevArchDir, "Igual");
 			return true;
 		}
+		indexBlock++;
 	}
+
+	log_info(loggerDevArchDir, "No pertenece a los blocks actuales");
 
 	return false;
 }
 
 
 void actualizarBlockMetadata(t_config* archivoMetadata, char*blockAAgregar){
-	log_info(loggerDevArchDir, "Saco los blocks actuales");
 	char** blocksActuales = config_get_array_value(archivoMetadata,"BLOCKS");
 	char* listaNueva = string_new();
 	uint32_t indexBlock=0;
 
-	log_info(loggerDevArchDir, "Pregunto por el index 0");
 	if(blocksActuales[0] == NULL){
 		log_info(loggerDevArchDir, "Entro por NULL");
 		string_append(&listaNueva,"[");
@@ -146,6 +147,7 @@ void actualizarBlockMetadata(t_config* archivoMetadata, char*blockAAgregar){
 		string_append(&listaNueva,"]");
 
 	} else {
+		log_info(loggerDevArchDir, "Entro por distinto de NULL");
 
 		if(existeBlockEnMetadata(blocksActuales,blockAAgregar)){
 			log_info(loggerDevArchDir, "El bloque ya pertenece a la lista. No se agrega nada");
@@ -153,22 +155,17 @@ void actualizarBlockMetadata(t_config* archivoMetadata, char*blockAAgregar){
 
 		} else {
 
+			log_info(loggerDevArchDir, "El bloque no existe en la lista actual");
+
 			string_append(&listaNueva,"[");
-			log_info(loggerDevArchDir, "Se hizo append de [, la variable quedo como: %s",listaNueva);
 
 			while(blocksActuales[indexBlock] != NULL){
 				string_append(&listaNueva,blocksActuales[indexBlock]);
-				log_info(loggerDevArchDir, "Se hizo append de %s, la variable quedo como: %s",blocksActuales[indexBlock],listaNueva);
-
 				string_append(&listaNueva,",");
-				log_info(loggerDevArchDir, "Se hizo append de ' , ', la variable quedo como: %s",listaNueva);
+				indexBlock++;
 			}
-
-			log_info(loggerDevArchDir, "Agregamos el ultimo block");
 			string_append(&listaNueva,blockAAgregar);
-			log_info(loggerDevArchDir, "Se hizo append de %s, la variable quedo como: %s",blockAAgregar,listaNueva);
 			string_append(&listaNueva,"]");
-			log_info(loggerDevArchDir, "Se hizo append de ], la variable quedo como: %s",listaNueva);
 		}
 
 	}
@@ -190,8 +187,10 @@ void actualizarSizeMetadataPokemon(t_config* archivoMetadata){
 	while(blocksOcupados[i] != NULL){
 		char* rutaDelBlock = generadorDeRutaDeCreacionDeArchivos(rutaBlocksArchDir,blocksOcupados[i],".bin");
 		uint32_t peso = tamanioDeUnArchivo(rutaDelBlock);
+		log_info(loggerGameCardArchDir, "El archivo %s pesa: %i",blocksOcupados[i], peso);
 		cantidad += peso;
 		i++;
+		free(rutaDelBlock);
 	}
 
 	char* posicionEnChar = string_itoa(cantidad);
@@ -199,8 +198,17 @@ void actualizarSizeMetadataPokemon(t_config* archivoMetadata){
 	config_set_value(archivoMetadata,"SIZE",posicionEnChar);
 	config_save(archivoMetadata);
 
+	log_info(loggerGameCardArchDir, "El peso total de los blocks es de: %s", posicionEnChar);
+
 	free(posicionEnChar);
 
+	uint32_t indexParaBorrar = 0;
+	while(blocksOcupados[indexParaBorrar] != NULL){
+		free(blocksOcupados[indexParaBorrar]);
+		indexParaBorrar++;
+	}
+
+	free(blocksOcupados);
 }
 
 
@@ -215,14 +223,19 @@ bool hayEspacioEnElBlock(char* rutaDelBlock, char* posicion, uint32_t cantidad){
 
 	uint32_t tamanioBlock = tamanioDeUnArchivo(rutaDelBlock);
 	log_info(loggerGameCardArchDir, "El archivo block pesa: %i", tamanioBlock);
+
 	uint32_t tamanioKeyValue = sizeof(keyValue);
-	log_info(loggerGameCardArchDir, "El key value para agregar pesa: %i", tamanioKeyValue);
+	log_info(loggerGameCardArchDir, "El KEY-VALUE para agregar pesa: %i", tamanioKeyValue);
 
 	if(tamanioBlock+tamanioKeyValue <= blockSizeArchDir){
 		log_info(loggerGameCardArchDir, "Puede cargarse en el bloque");
+		free(keyValue);
+		free(value);
 		return true;
 	}else{
 		log_info(loggerGameCardArchDir, "No puede cargarse en el bloque");
+		free(keyValue);
+		free(value);
 		return false;
 	}
 
@@ -239,6 +252,8 @@ void crearDirectorio(char* directorio, char* puntoMontaje){
 	}else{
 		log_info(loggerDevArchDir, "Ya existe el directorioo: %s", rutaAbsoluta);
 	}
+
+	free(rutaAbsoluta);
 }
 
 void crearArchivoEnDirectorio(char* nombreDelArchivo, char* directorio){
@@ -252,6 +267,7 @@ void crearArchivoEnDirectorio(char* nombreDelArchivo, char* directorio){
 	exit(1);
 	}
 	fclose(archivo);
+	free(rutaDeCreacion);
 }
 
 
@@ -328,10 +344,7 @@ char* cargarArrayEnChar(char** arrayViejo){
 
 void borrarBloqueDe(t_config* archivoMetaData, char*block){
 	char** blocksOcupados = config_get_array_value(archivoMetaData,"BLOCKS");
-
 	char** nuevoArrayDeBlock = cargarVectorSinElValor(blocksOcupados,block);
-
-	//Rutina de char** a char*
 
 	char* arrayPlano = cargarArrayEnChar(nuevoArrayDeBlock);
 
@@ -361,10 +374,11 @@ void agregarCantidadSolicitadaAUnaKey(t_config* archivo,char* key, uint32_t cant
 	log_info(loggerGameCardArchDir, "La cantidad nueva de la posicion %s dentro del metadata es de %i", key, cantidad);
 
 	char* cantidadTotal = string_itoa(cantidad);
-	log_info(loggerDevArchDir, "La conversion de int->char es: %s", cantidadTotal);
 
 	config_set_value(archivo,key, cantidadTotal);
 	config_save(archivo);
+
+	free(cantidadTotal);
 }
 
 void decrementarEnUnoEnLaPosicion(t_config* archivo,char* key){
@@ -376,10 +390,12 @@ void decrementarEnUnoEnLaPosicion(t_config* archivo,char* key){
 	log_info(loggerDevArchDir, "La cantidad nueva en la posicion %s en el metadata es de: %i", key, cantidadVieja);
 	log_info(loggerGameCardArchDir, "La cantidad nueva en la posicion %s en el metadata es de: %i", key, cantidadVieja);
 	char* cantidadTotal = string_itoa(cantidadVieja);
-	log_info(loggerDevArchDir, "La conversion de int->char es: %s", cantidadTotal);
+
 
 	config_set_value(archivo,key, cantidadTotal);
 	config_save(archivo);
+
+	free(cantidadTotal);
 }
 
 uint32_t cantidadDePokemonEnUnaCoordenada(t_config* archivoBlock,char* posicion){
@@ -387,12 +403,9 @@ uint32_t cantidadDePokemonEnUnaCoordenada(t_config* archivoBlock,char* posicion)
 }
 
 
-
-
 void agregarNuevaPosicionA(char* block, char* posicion, uint32_t cantidad){
-	log_info(loggerDevArchDir, "Agregamos nueva posicion");
 	char* rutaArchivo = generadorDeRutaDeCreacionDeArchivos(rutaBlocksArchDir,block,".bin");
-	log_info(loggerDevArchDir, "La direccion del archivo es: %s",rutaArchivo);
+	log_info(loggerDevArchDir, "Agregamos nueva posicion con direccion del archivo: %s",rutaArchivo);
 
 	if(noExisteDirectorio(rutaArchivo)){
 		log_info(loggerDevArchDir, "Creamos el archivo");
@@ -411,15 +424,11 @@ void agregarNuevaPosicionA(char* block, char* posicion, uint32_t cantidad){
 	config_save(archivoBlock);
 
 	log_info(loggerDevArchDir, "ACTUALIZACION : Actualmente hay %i de posiciones en el archivo",cantidadPos);
-
-
 	config_destroy(archivoBlock);
 
+	free(rutaArchivo);
+	free(cantidadString);
 }
-
-
-
-
 
 
 void obtenerTodasLasPosiciones(char** blocks, t_queue* posicionesPokemon){
@@ -467,5 +476,3 @@ void obtenerTodasLasPosiciones(char** blocks, t_queue* posicionesPokemon){
 bool noExisteDirectorio(char* ruta){
 	return stat(ruta, &st1) == -1;
 }
-
-
