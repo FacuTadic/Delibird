@@ -6,27 +6,29 @@ void procesar_request_de_game_boy(int cod_op, int socket_game_boy) {
 	if (cod_op == APPEARED) {
 		log_info(extense_logger, "Codigo de operacion recibido del socket cliente %i corresponde a un APPEARED", socket_game_boy);
 		t_appeared* appeared_msg = recibir_appeared_de_game_boy(socket_game_boy, &size);
-		log_info(extense_logger, "Appeared recibido del modulo Game Boy socket %i", socket_game_boy);
-		if (es_pokemon_global(appeared_msg->pokemon)) {
-			t_mensaje_recibido* mensaje = malloc(sizeof(t_mensaje_recibido));
-			t_pokemon* pokemon_a_agregar = generar_pokemon_de_appeared(appeared_msg);
-			agrego_pokemon_a_dictionary(pokemon_a_agregar);
-			if (pokemon_ya_fue_recibido(appeared_msg->pokemon) == 0) {
-				pthread_mutex_lock(&pokemones_llegados_mutex);
-				list_add(pokemones_llegados, (void*) appeared_msg->pokemon);
-				pthread_mutex_unlock(&pokemones_llegados_mutex);
+		if (appeared_msg != NULL) {
+			log_info(extense_logger, "Appeared recibido del modulo Game Boy socket %i", socket_game_boy);
+			if (es_pokemon_global(appeared_msg->pokemon)) {
+				t_mensaje_recibido* mensaje = malloc(sizeof(t_mensaje_recibido));
+				t_pokemon* pokemon_a_agregar = generar_pokemon_de_appeared(appeared_msg);
+				agrego_pokemon_a_dictionary(pokemon_a_agregar);
+				if (pokemon_ya_fue_recibido(appeared_msg->pokemon) == 0) {
+					pthread_mutex_lock(&pokemones_llegados_mutex);
+					list_add(pokemones_llegados, (void*) appeared_msg->pokemon);
+					pthread_mutex_unlock(&pokemones_llegados_mutex);
+				}
+				mensaje->tipo_mensaje = MENSAJE_POKEMON;
+				mensaje->mensaje = (void*) pokemon_a_agregar;
+				pthread_mutex_lock(&cola_pokemones_mutex);
+				queue_push(cola_pokemones, (void*) mensaje);
+				pthread_mutex_unlock(&cola_pokemones_mutex);
+				sem_post(&sem_cola_pokemones);
+			} else {
+				log_info(extense_logger, "El pokemon recibido %s no forma parte del objetivo global, se desestima el mensaje", appeared_msg->pokemon);
+				free(appeared_msg->pokemon);
 			}
-			mensaje->tipo_mensaje = MENSAJE_POKEMON;
-			mensaje->mensaje = (void*) pokemon_a_agregar;
-			pthread_mutex_lock(&cola_pokemones_mutex);
-			queue_push(cola_pokemones, (void*) mensaje);
-			pthread_mutex_unlock(&cola_pokemones_mutex);
-			sem_post(&sem_cola_pokemones);
-		} else {
-			log_info(extense_logger, "El pokemon recibido %s no forma parte del objetivo global, se desestima el mensaje", appeared_msg->pokemon);
-			free(appeared_msg->pokemon);
+			free(appeared_msg);
 		}
-		free(appeared_msg);
 	} else {
 		log_info(extense_logger, "Mensaje recibido de Game boy a traves del socket %i no corresponde a un APPEARED", socket_game_boy);
 	}
@@ -265,7 +267,7 @@ void laburar(void* entrenador_param) {
 
 		irA(parametros_atrapado->pos_X, parametros_atrapado->pos_Y, entrenador);
 
-			cambiar_estado_de_entrenador(entrenador, ESTADO_BLOCKED, "Se ha enviado un catch");
+		cambiar_estado_de_entrenador(entrenador, ESTADO_BLOCKED, "Se ha enviado un catch");
 
 		enviar_catch_a_broker(parametros_atrapado, entrenador);
 
