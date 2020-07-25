@@ -103,7 +103,7 @@ char* buscarPosicionDisponibleEnElBitMap() {
 
 	log_info(loggerDev, "Entro a buscar posiciones");
 
-	sem_wait(&bloques_bitmap);
+	//sem_wait(&bloques_bitmap);
 	log_info(loggerDev, "Bloqueo");
 
 	for (i = 0; i < cantidadDeBloques; i++) {
@@ -116,7 +116,7 @@ char* buscarPosicionDisponibleEnElBitMap() {
 				free_block = i;
 				bitarray_set_bit(bitarray, i);
 				guardarBitarray(i);
-				sem_post(&bloques_bitmap);
+				//sem_post(&bloques_bitmap);
 				char* block = string_itoa(free_block);
 				log_info(loggerDev, "EL block %s esta libre",block);
 				log_info(loggerGameCard, "El bloque seleccionado para cargar es: %i",free_block);
@@ -132,6 +132,7 @@ char* buscarPosicionDisponibleEnElBitMap() {
 }
 
 
+
 void desmarcarBloqueBitmap(char* block){
 		uint32_t index = atoi(block);
 		uint32_t estadoBloque =bitarray_test_bit(bitarray, index);
@@ -139,6 +140,7 @@ void desmarcarBloqueBitmap(char* block){
 		bitarray_clean_bit(bitarray, index);
 		estadoBloque =bitarray_test_bit(bitarray, index);
 		log_info(loggerDev, "El block fue desmarcado con el valor de: %i",estadoBloque);
+		guardarBitarray(index);
 }
 
 
@@ -159,6 +161,7 @@ char* seleccionarBlockParaCargarPosiciones(char** blocksOcupados, char*posicion,
 			if(hayEspacioEnElBlock(rutaDeArchivo,posicion,cantidad)){
 				log_info(loggerDev, "Se encontro el block %s libre",blocksOcupados[i]);
 				log_info(loggerGameCard, "El bloque seleccionado para cargar es: %s",blocksOcupados[i]);
+				free(rutaDeArchivo);
 				return blocksOcupados[i];
 			} else{
 				i++;
@@ -515,9 +518,11 @@ bool existenPosicionesEnArchivo(char* posicion,char** blocks){
 		if(config_has_property(archivoBlock,posicion)){
 			log_error(loggerGameCard, "La posicion %s se encuentra en el block %s",posicion,blocks[i]);
 			config_destroy(archivoBlock);
+			free(rutaDeArchivo);
 			return true;
 		} else{
 			config_destroy(archivoBlock);
+			free(rutaDeArchivo);
 			i++;
 		}
 	}
@@ -533,9 +538,12 @@ char* blockDondeSeEncuentraLaPosicion(char* posicion, char** blocks){
 		t_config* archivoBlock = config_create(rutaDeArchivo);
 		if(config_has_property(archivoBlock,posicion)){
 			log_info(loggerDev, "Encontro el block donde esta la posicion: %s",blocks[i]);
+			config_destroy(archivoBlock);
+			free(rutaDeArchivo);
 			return blocks[i];
 		} else{
 			config_destroy(archivoBlock);
+			free(rutaDeArchivo);
 			i++;
 		}
 	}
@@ -576,6 +584,8 @@ void validarPosicionesDeNew(t_config* archivoMetadataPokemon, char** blocksOcupa
 		t_config* archivoBlock = config_create(rutaDelBlock);
 		agregarCantidadSolicitadaAUnaKey(archivoBlock,posicion,cantidad);
 		config_destroy(archivoBlock);
+		free(block);
+		free(rutaDelBlock);
 	} else {
 		log_info(loggerGameCard, "La posicion %s no se encuentra en ningun bloque actual",posicion);
 		char* blockOptimo = seleccionarBlockParaCargarPosiciones(blocksOcupados,posicion, cantidad);
@@ -619,13 +629,18 @@ bool validarPosicionesDeCatch(t_config* archivoMetadataPokemon, char** blocksOcu
 				eliminarKeyValueDe(archivoBlock,posicion);
 				log_info(loggerDev, "Se elimina la linea");
 			}
+
 			config_destroy(archivoBlock);
+			free(block);
+			free(rutaDelBlock);
 			return true;
 
 		}else{
 			log_info(loggerDev, "Se decrementa en uno la posicion");
 			decrementarEnUnoEnLaPosicion(archivoBlock,posicion);
 			config_destroy(archivoBlock);
+			free(block);
+			free(rutaDelBlock);
 			return true;
 		}
 
