@@ -103,11 +103,12 @@ char* buscarPosicionDisponibleEnElBitMap() {
 
 	log_info(loggerDev, "Entro a buscar posiciones");
 
-	//sem_wait(&bloques_bitmap);
+	sem_wait(&bloques_bitmap);
 	log_info(loggerDev, "Bloqueo");
 
 	for (i = 0; i < cantidadDeBloques; i++) {
 
+		log_info(loggerDev, "A");
 		if (flag_free_block == 0) {
 
 			if (bitarray_test_bit(bitarray, i) == 0) {
@@ -115,7 +116,7 @@ char* buscarPosicionDisponibleEnElBitMap() {
 				free_block = i;
 				bitarray_set_bit(bitarray, i);
 				guardarBitarray(i);
-				//sem_post(&bloques_bitmap);
+				sem_post(&bloques_bitmap);
 				char* block = string_itoa(free_block);
 				log_info(loggerDev, "EL block %s esta libre",block);
 				log_info(loggerGameCard, "El bloque seleccionado para cargar es: %i",free_block);

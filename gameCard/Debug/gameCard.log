@@ -20,3 +20,31 @@
 [INFO] 22:59:08:341 GameCard/(3665:3686): Posicion agregada en el block 6
 [INFO] 22:59:08:341 GameCard/(3665:3686): El archivo 6 pesa: 15
 [INFO] 22:59:08:341 GameCard/(3665:3686): El peso total de los blocks es de: 15
+[INFO] 23:20:26:257 GameCard/(6746:6746): logger iniciado.
+[INFO] 23:20:26:325 GameCard/(6746:6746): Lenavando el Tall Grass
+[INFO] 23:20:26:378 GameCard/(6746:6746): Punto de montaje del directorio Metadata es: /home/utnso/Escritorio/tall-grass/Metadata
+[INFO] 23:20:26:378 GameCard/(6746:6746): El BitMap se encuentra en: /home/utnso/Escritorio/tall-grass/Metadata/BitMap.bin
+[INFO] 23:20:26:379 GameCard/(6746:6746): Punto de montaje del directorio Files es: /home/utnso/Escritorio/tall-grass/Files
+[INFO] 23:20:26:379 GameCard/(6746:6746): Punto de montaje del directorio Blocks es: /home/utnso/Escritorio/tall-grass/Blocks
+[INFO] 23:23:16:631 GameCard/(7100:7100): logger iniciado.
+[INFO] 23:23:16:705 GameCard/(7100:7100): Lenavando el Tall Grass
+[INFO] 23:23:16:767 GameCard/(7100:7100): Punto de montaje del directorio Metadata es: /home/utnso/Escritorio/tall-grass/Metadata
+[INFO] 23:23:16:768 GameCard/(7100:7100): El BitMap se encuentra en: /home/utnso/Escritorio/tall-grass/Metadata/BitMap.bin
+[INFO] 23:23:16:769 GameCard/(7100:7100): Punto de montaje del directorio Files es: /home/utnso/Escritorio/tall-grass/Files
+[INFO] 23:23:16:770 GameCard/(7100:7100): Punto de montaje del directorio Blocks es: /home/utnso/Escritorio/tall-grass/Blocks
+[INFO] 23:24:22:59 GameCard/(7296:7296): logger iniciado.
+[INFO] 23:24:23:129 GameCard/(7296:7296): Lenavando el Tall Grass
+[INFO] 23:24:23:184 GameCard/(7296:7296): Punto de montaje del directorio Metadata es: /home/utnso/Escritorio/tall-grass/Metadata
+[INFO] 23:24:23:185 GameCard/(7296:7296): El BitMap se encuentra en: /home/utnso/Escritorio/tall-grass/Metadata/BitMap.bin
+[INFO] 23:24:23:185 GameCard/(7296:7296): Punto de montaje del directorio Files es: /home/utnso/Escritorio/tall-grass/Files
+[INFO] 23:24:23:186 GameCard/(7296:7296): Punto de montaje del directorio Blocks es: /home/utnso/Escritorio/tall-grass/Blocks
+[INFO] 23:24:29:459 GameCard/(7296:7315): La posicion 57-71 no se encuentra en ningun bloque actual
+[INFO] 23:24:29:488 GameCard/(7296:7315): Calculando el peso de: 6
+[INFO] 23:24:29:503 GameCard/(7296:7315): El archivo block pesa: 15
+[INFO] 23:24:29:523 GameCard/(7296:7315): El KEY-VALUE para agregar pesa: 4
+[INFO] 23:24:29:524 GameCard/(7296:7315): Puede cargarse en el bloque
+[INFO] 23:24:29:530 GameCard/(7296:7315): El bloque seleccionado para cargar es: 6
+[INFO] 23:24:29:547 GameCard/(7296:7315): Se selecciono el bloque 6 para cargar la posicion
+[INFO] 23:24:29:581 GameCard/(7296:7315): Posicion agregada en el block 6
+[INFO] 23:24:29:670 GameCard/(7296:7315): El archivo 6 pesa: 23
+[INFO] 23:24:29:672 GameCard/(7296:7315): El peso total de los blocks es de: 23

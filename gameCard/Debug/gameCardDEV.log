@@ -123,3 +123,168 @@
 [ERROR] 22:59:13:345 GameCard PAPAA/(3665:3686): Error: No se pudo enviar el mensaje
 [INFO] 22:59:15:566 GameCard PAPAA/(3665:3670): Iniciando verificacion de conexion con Broker...
 [ERROR] 22:59:15:566 GameCard PAPAA/(3665:3670): Reconexion con Broker fallida, intentando nuevamente en 10 segundos
+[INFO] 23:20:26:289 GameCard PAPAA/(6746:6746): logger iniciado.
+[INFO] 23:20:26:316 GameCard PAPAA/(6746:6746): Config cargada.
+[INFO] 23:20:26:318 GameCard PAPAA/(6746:6746): La IP del Broker: 127.0.0.1
+[INFO] 23:20:26:318 GameCard PAPAA/(6746:6746): El Puerto es: 6009
+[INFO] 23:20:26:321 GameCard PAPAA/(6746:6746): El tiempo de reintento de conexion es: 10
+[INFO] 23:20:26:322 GameCard PAPAA/(6746:6746): El tiempo de reintento de operacion es: 5
+[INFO] 23:20:26:323 GameCard PAPAA/(6746:6746): El tiempo de retardo de conexion es: 5
+[INFO] 23:20:26:323 GameCard PAPAA/(6746:6746): El punto de montaje es: /home/utnso/Escritorio/tall-grass
+[INFO] 23:20:26:324 GameCard PAPAA/(6746:6746): La IP es: 127.0.0.1
+[INFO] 23:20:26:325 GameCard PAPAA/(6746:6746): El puerto es: 4447
+[INFO] 23:20:26:326 GameCard PAPAA/(6746:6746): El punto de montaje es: /home/utnso/Escritorio/tall-grass
+[INFO] 23:20:26:328 GameCard PAPAA/(6746:6746): La ruta del metadataes: /home/utnso/Escritorio/tall-grass/Metadata
+[INFO] 23:20:26:330 GameCard PAPAA/(6746:6746): Se creo el config de MetaData
+[INFO] 23:20:26:331 GameCard PAPAA/(6746:6746): El Block Size es: 64
+[INFO] 23:20:26:332 GameCard PAPAA/(6746:6746): La cantidad de Bloques es: 5192
+[INFO] 23:20:26:332 GameCard PAPAA/(6746:6746): El Magic Number es: TALL_GRASS
+[INFO] 23:20:26:347 GameCard PAPAA/(6746:6746): Bitmap ya seteado
+[ERROR] 23:20:26:377 GameCard PAPAA/(6746:6746): Ya existe el BitMap
+[INFO] 23:20:26:380 GameCard PAPAA/(6746:6746): SETEO DE VARIABLES PARA ARCHIVOSYDIRECTORIOS.H
+[INFO] 23:20:26:380 GameCard PAPAA/(6746:6746): El ID de modulo es: 1804289383
+[INFO] 23:20:26:414 GameCard PAPAA/(6746:6747): Esperando mensajes de game boy en socket 7
+[INFO] 23:20:26:415 GameCard PAPAA/(6746:6749): Escucho CATCH de BROKER
+[INFO] 23:20:26:416 GameCard PAPAA/(6746:6748): Escuchando NEW de BROKER
+[ERROR] 23:20:26:426 GameCard PAPAA/(6746:6748): Hubo un problema enviando la suscripcion a la cola NEW del broker
+[ERROR] 23:20:26:426 GameCard PAPAA/(6746:6749): Hubo un problema enviando la suscripcion a la cola CATCH del broker
+[INFO] 23:20:26:428 GameCard PAPAA/(6746:6751): Hilo de verificacion periodica de conexion con Broker iniciado
+[INFO] 23:20:26:428 GameCard PAPAA/(6746:6750): Escucho GET de BROKER
+[ERROR] 23:20:26:446 GameCard PAPAA/(6746:6750): Hubo un problema enviando la suscripcion a la cola GET del broker
+[INFO] 23:20:31:95 GameCard PAPAA/(6746:6747): Socket 7 de gameBoy aceptado
+[INFO] 23:20:31:125 GameCard PAPAA/(6746:6770): Recibiendo codigo de operacion de GameBoy en socket 8
+[WARNING] 23:20:31:188 GameCard PAPAA/(6746:6770): Game boy acaba de cerrar la conexion correspondiente al socket 8
+[INFO] 23:20:36:462 GameCard PAPAA/(6746:6751): Iniciando verificacion de conexion con Broker...
+[ERROR] 23:20:36:481 GameCard PAPAA/(6746:6751): Reconexion con Broker fallida, intentando nuevamente en 10 segundos
+[INFO] 23:20:46:486 GameCard PAPAA/(6746:6751): Iniciando verificacion de conexion con Broker...
+[ERROR] 23:20:46:487 GameCard PAPAA/(6746:6751): Reconexion con Broker fallida, intentando nuevamente en 10 segundos
+[INFO] 23:23:16:664 GameCard PAPAA/(7100:7100): logger iniciado.
+[INFO] 23:23:16:695 GameCard PAPAA/(7100:7100): Config cargada.
+[INFO] 23:23:16:697 GameCard PAPAA/(7100:7100): La IP del Broker: 127.0.0.1
+[INFO] 23:23:16:698 GameCard PAPAA/(7100:7100): El Puerto es: 6009
+[INFO] 23:23:16:701 GameCard PAPAA/(7100:7100): El tiempo de reintento de conexion es: 10
+[INFO] 23:23:16:702 GameCard PAPAA/(7100:7100): El tiempo de reintento de operacion es: 5
+[INFO] 23:23:16:703 GameCard PAPAA/(7100:7100): El tiempo de retardo de conexion es: 5
+[INFO] 23:23:16:704 GameCard PAPAA/(7100:7100): El punto de montaje es: /home/utnso/Escritorio/tall-grass
+[INFO] 23:23:16:704 GameCard PAPAA/(7100:7100): La IP es: 127.0.0.1
+[INFO] 23:23:16:705 GameCard PAPAA/(7100:7100): El puerto es: 4447
+[INFO] 23:23:16:706 GameCard PAPAA/(7100:7100): El punto de montaje es: /home/utnso/Escritorio/tall-grass
+[INFO] 23:23:16:708 GameCard PAPAA/(7100:7100): La ruta del metadataes: /home/utnso/Escritorio/tall-grass/Metadata
+[INFO] 23:23:16:711 GameCard PAPAA/(7100:7100): Se creo el config de MetaData
+[INFO] 23:23:16:712 GameCard PAPAA/(7100:7100): El Block Size es: 64
+[INFO] 23:23:16:712 GameCard PAPAA/(7100:7100): La cantidad de Bloques es: 5192
+[INFO] 23:23:16:713 GameCard PAPAA/(7100:7100): El Magic Number es: TALL_GRASS
+[INFO] 23:23:16:730 GameCard PAPAA/(7100:7100): Bitmap ya seteado
+[ERROR] 23:23:16:764 GameCard PAPAA/(7100:7100): Ya existe el BitMap
+[INFO] 23:23:16:774 GameCard PAPAA/(7100:7100): SETEO DE VARIABLES PARA ARCHIVOSYDIRECTORIOS.H
+[INFO] 23:23:16:775 GameCard PAPAA/(7100:7100): El ID de modulo es: 1804289383
+[INFO] 23:23:16:840 GameCard PAPAA/(7100:7105): Esperando mensajes de game boy en socket 7
+[INFO] 23:23:16:844 GameCard PAPAA/(7100:7106): Escuchando NEW de BROKER
+[ERROR] 23:23:16:863 GameCard PAPAA/(7100:7106): Hubo un problema enviando la suscripcion a la cola NEW del broker
+[INFO] 23:23:16:864 GameCard PAPAA/(7100:7109): Hilo de verificacion periodica de conexion con Broker iniciado
+[INFO] 23:23:16:864 GameCard PAPAA/(7100:7108): Escucho GET de BROKER
+[INFO] 23:23:16:864 GameCard PAPAA/(7100:7107): Escucho CATCH de BROKER
+[ERROR] 23:23:16:874 GameCard PAPAA/(7100:7107): Hubo un problema enviando la suscripcion a la cola CATCH del broker
+[ERROR] 23:23:16:875 GameCard PAPAA/(7100:7108): Hubo un problema enviando la suscripcion a la cola GET del broker
+[INFO] 23:23:21:286 GameCard PAPAA/(7100:7105): Socket 7 de gameBoy aceptado
+[INFO] 23:23:21:331 GameCard PAPAA/(7100:7117): Recibiendo codigo de operacion de GameBoy en socket 8
+[WARNING] 23:23:21:378 GameCard PAPAA/(7100:7117): Game boy acaba de cerrar la conexion correspondiente al socket 8
+[INFO] 23:23:26:874 GameCard PAPAA/(7100:7109): Iniciando verificacion de conexion con Broker...
+[ERROR] 23:23:26:875 GameCard PAPAA/(7100:7109): Reconexion con Broker fallida, intentando nuevamente en 10 segundos
+[INFO] 23:24:23:90 GameCard PAPAA/(7296:7296): logger iniciado.
+[INFO] 23:24:23:119 GameCard PAPAA/(7296:7296): Config cargada.
+[INFO] 23:24:23:121 GameCard PAPAA/(7296:7296): La IP del Broker: 127.0.0.1
+[INFO] 23:24:23:122 GameCard PAPAA/(7296:7296): El Puerto es: 6009
+[INFO] 23:24:23:125 GameCard PAPAA/(7296:7296): El tiempo de reintento de conexion es: 10
+[INFO] 23:24:23:126 GameCard PAPAA/(7296:7296): El tiempo de reintento de operacion es: 5
+[INFO] 23:24:23:126 GameCard PAPAA/(7296:7296): El tiempo de retardo de conexion es: 5
+[INFO] 23:24:23:127 GameCard PAPAA/(7296:7296): El punto de montaje es: /home/utnso/Escritorio/tall-grass
+[INFO] 23:24:23:127 GameCard PAPAA/(7296:7296): La IP es: 127.0.0.1
+[INFO] 23:24:23:128 GameCard PAPAA/(7296:7296): El puerto es: 4447
+[INFO] 23:24:23:129 GameCard PAPAA/(7296:7296): El punto de montaje es: /home/utnso/Escritorio/tall-grass
+[INFO] 23:24:23:131 GameCard PAPAA/(7296:7296): La ruta del metadataes: /home/utnso/Escritorio/tall-grass/Metadata
+[INFO] 23:24:23:133 GameCard PAPAA/(7296:7296): Se creo el config de MetaData
+[INFO] 23:24:23:134 GameCard PAPAA/(7296:7296): El Block Size es: 64
+[INFO] 23:24:23:135 GameCard PAPAA/(7296:7296): La cantidad de Bloques es: 5192
+[INFO] 23:24:23:136 GameCard PAPAA/(7296:7296): El Magic Number es: TALL_GRASS
+[INFO] 23:24:23:152 GameCard PAPAA/(7296:7296): Bitmap ya seteado
+[ERROR] 23:24:23:184 GameCard PAPAA/(7296:7296): Ya existe el BitMap
+[INFO] 23:24:23:186 GameCard PAPAA/(7296:7296): SETEO DE VARIABLES PARA ARCHIVOSYDIRECTORIOS.H
+[INFO] 23:24:23:187 GameCard PAPAA/(7296:7296): El ID de modulo es: 1804289383
+[INFO] 23:24:23:219 GameCard PAPAA/(7296:7299): Esperando mensajes de game boy en socket 7
+[INFO] 23:24:23:221 GameCard PAPAA/(7296:7301): Escucho CATCH de BROKER
+[INFO] 23:24:23:221 GameCard PAPAA/(7296:7300): Escuchando NEW de BROKER
+[ERROR] 23:24:23:231 GameCard PAPAA/(7296:7301): Hubo un problema enviando la suscripcion a la cola CATCH del broker
+[ERROR] 23:24:23:231 GameCard PAPAA/(7296:7300): Hubo un problema enviando la suscripcion a la cola NEW del broker
+[INFO] 23:24:23:232 GameCard PAPAA/(7296:7303): Hilo de verificacion periodica de conexion con Broker iniciado
+[INFO] 23:24:23:233 GameCard PAPAA/(7296:7302): Escucho GET de BROKER
+[ERROR] 23:24:23:250 GameCard PAPAA/(7296:7302): Hubo un problema enviando la suscripcion a la cola GET del broker
+[INFO] 23:24:28:799 GameCard PAPAA/(7296:7299): Socket 7 de gameBoy aceptado
+[INFO] 23:24:28:838 GameCard PAPAA/(7296:7315): Recibiendo codigo de operacion de GameBoy en socket 8
+[INFO] 23:24:28:929 GameCard PAPAA/(7296:7315): Codigo de operacion de socket 8 recibido: 1
+[INFO] 23:24:28:939 GameCard PAPAA/(7296:7315): Procesando request de GameBoy
+[INFO] 23:24:28:945 GameCard PAPAA/(7296:7315): Codigo de operacion recibido del socket cliente 8 corresponde a un NEW
+[INFO] 23:24:28:959 GameCard PAPAA/(7296:7315): Recibiendo tamanio total
+[INFO] 23:24:28:960 GameCard PAPAA/(7296:7315): Tamanio total recibido: 31
+[INFO] 23:24:28:961 GameCard PAPAA/(7296:7315): EL ID recibido: 7
+[INFO] 23:24:28:962 GameCard PAPAA/(7296:7315): Tamanio del pokemon recibido: 11
+[INFO] 23:24:28:969 GameCard PAPAA/(7296:7315): Nombre del pokemon recibido: charmander
+[INFO] 23:24:28:999 GameCard PAPAA/(7296:7315): Posicion X recibida: 57
+[INFO] 23:24:29:10 GameCard PAPAA/(7296:7315): Posicion Y recibida: 71
+[INFO] 23:24:29:71 GameCard PAPAA/(7296:7315): Cantidad recibida: 1
+[INFO] 23:24:29:90 GameCard PAPAA/(7296:7315): NEW recibido del modulo Game Boy socket 8
+[INFO] 23:24:29:99 GameCard PAPAA/(7296:7315): Llegamo
+[INFO] 23:24:29:129 GameCard PAPAA/(7296:7315): Pokemon: charmander
+[INFO] 23:24:29:133 GameCard PAPAA/(7296:7315): PosX: 57
+[INFO] 23:24:29:133 GameCard PAPAA/(7296:7315): PosY: 71
+[INFO] 23:24:29:174 GameCard PAPAA/(7296:7315): Cantidad: 1
+[INFO] 23:24:29:191 GameCard PAPAA/(7296:7315): Ruta de Directorio: /home/utnso/Escritorio/tall-grass/Files/charmander
+[INFO] 23:24:29:193 GameCard PAPAA/(7296:7315): La coordenada generada es: 57-71
+[INFO] 23:24:29:234 GameCard PAPAA/(7296:7315): Posicion generada: 57-71
+[INFO] 23:24:29:255 GameCard PAPAA/(7296:7315): Ruta del directorio pokemon charmander es: /home/utnso/Escritorio/tall-grass/Files/charmander
+[INFO] 23:24:29:283 GameCard PAPAA/(7296:7315): Ruta del Archivo: /home/utnso/Escritorio/tall-grass/Files/charmander/charmander.bin
+[INFO] 23:24:29:297 GameCard PAPAA/(7296:7315): Se creo el archivo config
+[INFO] 23:24:29:319 GameCard PAPAA/(7296:7315): EL array de blocks es: 6
+[INFO] 23:24:29:340 GameCard PAPAA/(7296:7315): Se creo el falso config de la ruta
+[INFO] 23:24:29:341 GameCard PAPAA/(7296:7315): Retorno el estado: N
+[INFO] 23:24:29:359 GameCard PAPAA/(7296:7315): Se creo el falso config de la ruta
+[INFO] 23:24:29:417 GameCard PAPAA/(7296:7315): Paso el mutex
+[INFO] 23:24:29:442 GameCard PAPAA/(7296:7315): Validando Posiciones de New
+[INFO] 23:24:29:443 GameCard PAPAA/(7296:7315): Valido posicion
+[INFO] 23:24:29:451 GameCard PAPAA/(7296:7315): EL array de blocks es: 6
+[INFO] 23:24:29:456 GameCard PAPAA/(7296:7315): Se esta analizando el block: 6
+[INFO] 23:24:29:483 GameCard PAPAA/(7296:7315): Se esta viendo su el el block 6 cumple las condiciones
+[INFO] 23:24:29:494 GameCard PAPAA/(7296:7315): EL tamanio calculado del archivo es: 15
+[INFO] 23:24:29:529 GameCard PAPAA/(7296:7315): Se encontro el block 6 libre
+[INFO] 23:24:29:547 GameCard PAPAA/(7296:7315): El bloque disponible seleccionado es: 6
+[INFO] 23:24:29:555 GameCard PAPAA/(7296:7315): Agregamos nueva posicion con direccion del archivo: /home/utnso/Escritorio/tall-grass/Blocks/6.bin
+[INFO] 23:24:29:565 GameCard PAPAA/(7296:7315): Seteando nueva posicion: 57-71
+[INFO] 23:24:29:566 GameCard PAPAA/(7296:7315): Actualmente hay 2 de posiciones en el archivo
+[INFO] 23:24:29:572 GameCard PAPAA/(7296:7315): ACTUALIZACION : Actualmente hay 2 de posiciones en el archivo
+[INFO] 23:24:29:589 GameCard PAPAA/(7296:7315): Actualizo Metadata
+[INFO] 23:24:29:590 GameCard PAPAA/(7296:7315): Entro por distinto de NULL
+[INFO] 23:24:29:599 GameCard PAPAA/(7296:7315): Comparo el block: 6 con el block: 6
+[INFO] 23:24:29:606 GameCard PAPAA/(7296:7315): Igual
+[INFO] 23:24:29:622 GameCard PAPAA/(7296:7315): El bloque ya pertenece a la lista. No se agrega nada
+[INFO] 23:24:29:653 GameCard PAPAA/(7296:7315): EL tamanio calculado del archivo es: 23
+[INFO] 23:24:29:694 GameCard PAPAA/(7296:7315): El ID de mensaje cargado en el appeared es: 7
+[INFO] 23:24:29:695 GameCard PAPAA/(7296:7315): El pokemoncargado en el appeared es: charmander
+[INFO] 23:24:29:699 GameCard PAPAA/(7296:7315): El tamanio del nombre del pokemon cargado en el appeared es: 11
+[INFO] 23:24:29:717 GameCard PAPAA/(7296:7315): La coordenada del pokemon cargado en el appeared es: 57 - 71
+[INFO] 23:24:33:265 GameCard PAPAA/(7296:7303): Iniciando verificacion de conexion con Broker...
+[ERROR] 23:24:33:301 GameCard PAPAA/(7296:7303): Reconexion con Broker fallida, intentando nuevamente en 10 segundos
+[INFO] 23:24:34:726 GameCard PAPAA/(7296:7315): El ID cargado es 7
+[INFO] 23:24:34:730 GameCard PAPAA/(7296:7315): Tamanio nombre pokemon 11
+[INFO] 23:24:34:734 GameCard PAPAA/(7296:7315): Nombre pokemon charmander
+[INFO] 23:24:34:748 GameCard PAPAA/(7296:7315): Posicion X 57
+[INFO] 23:24:34:748 GameCard PAPAA/(7296:7315): Posicion Y 71
+[INFO] 23:24:34:749 GameCard PAPAA/(7296:7315): Creando paquete
+[INFO] 23:24:34:751 GameCard PAPAA/(7296:7315): CODIGO DE OPERACION: 2
+[INFO] 23:24:34:770 GameCard PAPAA/(7296:7315): Paquete Creado
+[INFO] 23:24:34:770 GameCard PAPAA/(7296:7315): la operacion a realizar es 2
+[INFO] 23:24:34:771 GameCard PAPAA/(7296:7315): Serializando...
+[INFO] 23:24:34:806 GameCard PAPAA/(7296:7315): Serializacion completa
+[INFO] 23:24:34:819 GameCard PAPAA/(7296:7315): El peso total es: 27
+[ERROR] 23:24:34:819 GameCard PAPAA/(7296:7315): Error: No se pudo enviar el mensaje
+[INFO] 23:24:43:303 GameCard PAPAA/(7296:7303): Iniciando verificacion de conexion con Broker...
+[ERROR] 23:24:43:308 GameCard PAPAA/(7296:7303): Reconexion con Broker fallida, intentando nuevamente en 10 segundos

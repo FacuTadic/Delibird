@@ -2,3 +2,13 @@
 [INFO] 22:59:08:313 Game-watch-client/(3685:3685): Conexion exitosa con GAMECARD IP: 127.0.0.1, PUERTO: 4447
 [INFO] 22:59:08:314 Game-watch-client/(3685:3685): Cerrando la conexion: 5
 [INFO] 22:59:08:314 Game-watch-client/(3685:3685): Conexion cerrada
+[INFO] 23:17:01:451 Game-watch-client/(6346:6346): Iniciando conexion con el modulo GAMECARD
+[INFO] 23:17:01:465 Game-watch-client/(6346:6346): Conexion exitosa con GAMECARD IP: 127.0.0.1, PUERTO: 4447
+[INFO] 23:20:31:50 Game-watch-client/(6757:6757): Iniciando conexion con el modulo GAMECARD
+[INFO] 23:20:31:92 Game-watch-client/(6757:6757): Conexion exitosa con GAMECARD IP: 127.0.0.1, PUERTO: 4447
+[INFO] 23:23:21:240 Game-watch-client/(7110:7110): Iniciando conexion con el modulo GAMECARD
+[INFO] 23:23:21:284 Game-watch-client/(7110:7110): Conexion exitosa con GAMECARD IP: 127.0.0.1, PUERTO: 4447
+[INFO] 23:24:28:754 Game-watch-client/(7312:7312): Iniciando conexion con el modulo GAMECARD
+[INFO] 23:24:28:804 Game-watch-client/(7312:7312): Conexion exitosa con GAMECARD IP: 127.0.0.1, PUERTO: 4447
+[INFO] 23:24:28:914 Game-watch-client/(7312:7312): Cerrando la conexion: 7
+[INFO] 23:24:28:919 Game-watch-client/(7312:7312): Conexion cerrada

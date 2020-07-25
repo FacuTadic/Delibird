@@ -29,3 +29,92 @@
 [INFO] 22:59:08:314 Game-watch-client/(3685:3685): Serializando...
 [INFO] 22:59:08:314 Game-watch-client/(3685:3685): Serializacion completa
 [INFO] 22:59:08:314 Game-watch-client/(3685:3685): El peso total es: 31
+[INFO] 23:17:01:377 Game-watch-client/(6346:6346): logger DEV iniciado.
+[INFO] 23:17:01:414 Game-watch-client/(6346:6346): logger GameBoy iniciado.
+[INFO] 23:17:01:443 Game-watch-client/(6346:6346): Config cargada.
+[INFO] 23:17:01:443 Game-watch-client/(6346:6346): EL modulo solicitado para comunicacion es: GAMECARD
+[INFO] 23:17:01:446 Game-watch-client/(6346:6346): La IP de GAMECARD es IP_GAMECARD
+[INFO] 23:17:01:447 Game-watch-client/(6346:6346): El PUERTO de GAMECARD es IP_GAMECARD
+[INFO] 23:17:01:450 Game-watch-client/(6346:6346): La ID del modulo GameBoy es: 6
+[INFO] 23:17:01:465 Game-watch-client/(6346:6346): Creando buffer
+[INFO] 23:17:01:466 Game-watch-client/(6346:6346): MENSAJE PARA ENVIAR ES: NEW_POKEMON
+[INFO] 23:17:01:468 Game-watch-client/(6346:6346): EL NUMERO DE MENSAJE ES: 1
+[INFO] 23:17:01:470 Game-watch-client/(6346:6346): El ID convertido es 7
+[INFO] 23:17:01:474 Game-watch-client/(6346:6346): El ID de Mensaje copiado es 7
+[INFO] 23:17:01:474 Game-watch-client/(6346:6346): EL offset quedo en: 4
+[INFO] 23:17:01:475 Game-watch-client/(6346:6346): Tamanio nombre pokemon 11
+[INFO] 23:17:01:478 Game-watch-client/(6346:6346): Nombre pokemon charmander
+[INFO] 23:17:01:479 Game-watch-client/(6346:6346): Posicion X 57
+[INFO] 23:17:01:479 Game-watch-client/(6346:6346): Posicion Y 32
+[INFO] 23:17:01:480 Game-watch-client/(6346:6346): Cantidad 1
+[INFO] 23:17:01:481 Game-watch-client/(6346:6346): Buffer creado
+[INFO] 23:17:01:481 Game-watch-client/(6346:6346): Creando paquete
+[INFO] 23:20:30:801 Game-watch-client/(6757:6757): logger DEV iniciado.
+[INFO] 23:20:30:928 Game-watch-client/(6757:6757): logger GameBoy iniciado.
+[INFO] 23:20:31:11 Game-watch-client/(6757:6757): Config cargada.
+[INFO] 23:20:31:15 Game-watch-client/(6757:6757): EL modulo solicitado para comunicacion es: GAMECARD
+[INFO] 23:20:31:26 Game-watch-client/(6757:6757): La IP de GAMECARD es IP_GAMECARD
+[INFO] 23:20:31:27 Game-watch-client/(6757:6757): El PUERTO de GAMECARD es IP_GAMECARD
+[INFO] 23:20:31:43 Game-watch-client/(6757:6757): La ID del modulo GameBoy es: 6
+[INFO] 23:20:31:92 Game-watch-client/(6757:6757): Creando buffer
+[INFO] 23:20:31:93 Game-watch-client/(6757:6757): MENSAJE PARA ENVIAR ES: NEW_POKEMON
+[INFO] 23:20:31:114 Game-watch-client/(6757:6757): EL NUMERO DE MENSAJE ES: 1
+[INFO] 23:20:31:116 Game-watch-client/(6757:6757): El ID convertido es 7
+[INFO] 23:20:31:131 Game-watch-client/(6757:6757): El ID de Mensaje copiado es 7
+[INFO] 23:20:31:135 Game-watch-client/(6757:6757): EL offset quedo en: 4
+[INFO] 23:20:31:136 Game-watch-client/(6757:6757): Tamanio nombre pokemon 11
+[INFO] 23:20:31:140 Game-watch-client/(6757:6757): Nombre pokemon charmander
+[INFO] 23:20:31:150 Game-watch-client/(6757:6757): Posicion X 57
+[INFO] 23:20:31:154 Game-watch-client/(6757:6757): Posicion Y 71
+[INFO] 23:20:31:158 Game-watch-client/(6757:6757): Cantidad 1
+[INFO] 23:20:31:159 Game-watch-client/(6757:6757): Buffer creado
+[INFO] 23:20:31:163 Game-watch-client/(6757:6757): Creando paquete
+[INFO] 23:23:20:982 Game-watch-client/(7110:7110): logger DEV iniciado.
+[INFO] 23:23:21:98 Game-watch-client/(7110:7110): logger GameBoy iniciado.
+[INFO] 23:23:21:200 Game-watch-client/(7110:7110): Config cargada.
+[INFO] 23:23:21:203 Game-watch-client/(7110:7110): EL modulo solicitado para comunicacion es: GAMECARD
+[INFO] 23:23:21:209 Game-watch-client/(7110:7110): La IP de GAMECARD es IP_GAMECARD
+[INFO] 23:23:21:221 Game-watch-client/(7110:7110): El PUERTO de GAMECARD es IP_GAMECARD
+[INFO] 23:23:21:240 Game-watch-client/(7110:7110): La ID del modulo GameBoy es: 6
+[INFO] 23:23:21:285 Game-watch-client/(7110:7110): Creando buffer
+[INFO] 23:23:21:291 Game-watch-client/(7110:7110): MENSAJE PARA ENVIAR ES: NEW_POKEMON
+[INFO] 23:23:21:310 Game-watch-client/(7110:7110): EL NUMERO DE MENSAJE ES: 1
+[INFO] 23:23:21:324 Game-watch-client/(7110:7110): El ID convertido es 7
+[INFO] 23:23:21:329 Game-watch-client/(7110:7110): El ID de Mensaje copiado es 7
+[INFO] 23:23:21:334 Game-watch-client/(7110:7110): EL offset quedo en: 4
+[INFO] 23:23:21:342 Game-watch-client/(7110:7110): Tamanio nombre pokemon 11
+[INFO] 23:23:21:345 Game-watch-client/(7110:7110): Nombre pokemon charmander
+[INFO] 23:23:21:346 Game-watch-client/(7110:7110): Posicion X 57
+[INFO] 23:23:21:351 Game-watch-client/(7110:7110): Posicion Y 71
+[INFO] 23:23:21:353 Game-watch-client/(7110:7110): Cantidad 1
+[INFO] 23:23:21:359 Game-watch-client/(7110:7110): Buffer creado
+[INFO] 23:23:21:360 Game-watch-client/(7110:7110): Creando paquete
+[INFO] 23:24:28:508 Game-watch-client/(7312:7312): logger DEV iniciado.
+[INFO] 23:24:28:631 Game-watch-client/(7312:7312): logger GameBoy iniciado.
+[INFO] 23:24:28:717 Game-watch-client/(7312:7312): Config cargada.
+[INFO] 23:24:28:717 Game-watch-client/(7312:7312): EL modulo solicitado para comunicacion es: GAMECARD
+[INFO] 23:24:28:731 Game-watch-client/(7312:7312): La IP de GAMECARD es IP_GAMECARD
+[INFO] 23:24:28:737 Game-watch-client/(7312:7312): El PUERTO de GAMECARD es IP_GAMECARD
+[INFO] 23:24:28:741 Game-watch-client/(7312:7312): La ID del modulo GameBoy es: 6
+[INFO] 23:24:28:805 Game-watch-client/(7312:7312): Creando buffer
+[INFO] 23:24:28:817 Game-watch-client/(7312:7312): MENSAJE PARA ENVIAR ES: NEW_POKEMON
+[INFO] 23:24:28:822 Game-watch-client/(7312:7312): EL NUMERO DE MENSAJE ES: 1
+[INFO] 23:24:28:835 Game-watch-client/(7312:7312): El ID convertido es 7
+[INFO] 23:24:28:842 Game-watch-client/(7312:7312): El ID de Mensaje copiado es 7
+[INFO] 23:24:28:843 Game-watch-client/(7312:7312): EL offset quedo en: 4
+[INFO] 23:24:28:849 Game-watch-client/(7312:7312): Tamanio nombre pokemon 11
+[INFO] 23:24:28:851 Game-watch-client/(7312:7312): Nombre pokemon charmander
+[INFO] 23:24:28:871 Game-watch-client/(7312:7312): Posicion X 57
+[INFO] 23:24:28:871 Game-watch-client/(7312:7312): Posicion Y 71
+[INFO] 23:24:28:872 Game-watch-client/(7312:7312): Cantidad 1
+[INFO] 23:24:28:873 Game-watch-client/(7312:7312): Buffer creado
+[INFO] 23:24:28:873 Game-watch-client/(7312:7312): Creando paquete
+[INFO] 23:24:28:874 Game-watch-client/(7312:7312): A
+[INFO] 23:24:28:888 Game-watch-client/(7312:7312): B
+[INFO] 23:24:28:892 Game-watch-client/(7312:7312): Te mando el opcode: 1
+[INFO] 23:24:28:893 Game-watch-client/(7312:7312): CODIGO DE OPERACION: 1
+[INFO] 23:24:28:894 Game-watch-client/(7312:7312): Paquete Creado
+[INFO] 23:24:28:902 Game-watch-client/(7312:7312): la operacion a realizar es 1
+[INFO] 23:24:28:902 Game-watch-client/(7312:7312): Serializando...
+[INFO] 23:24:28:904 Game-watch-client/(7312:7312): Serializacion completa
+[INFO] 23:24:28:905 Game-watch-client/(7312:7312): El peso total es: 31
