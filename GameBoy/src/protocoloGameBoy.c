@@ -5,16 +5,14 @@ void recibir_new(int socket_cliente, uint32_t* size, t_log* logger) {
 	t_newLlegada* new = malloc(sizeof(t_newLlegada));
 	uint32_t tamanio_pokemon;
 
-	log_info(logger, "Recibiendo tamanio total");
-
-	if (recv(socket_cliente, size, sizeof(uint32_t), MSG_WAITALL) == -1) {
+	if (recv(socket_cliente, &new->id , sizeof(uint32_t), MSG_WAITALL) == -1) {
 		close(socket_cliente);
-		log_error(logger, "Hubo un problema recibiendo el tamanio total");
+		log_error(logger, "Hubo un problema recibiendo el ID del mensaje");
 		free(new);
 		exit(-1);
 	}
 
-	log_info(logger, "Tamanio total recibido: %i", *size);
+	log_info(logger, "Id de new recibido: %i", new->id);
 
 	if (recv(socket_cliente, &(tamanio_pokemon), sizeof(uint32_t), MSG_WAITALL) == -1) {
 		close(socket_cliente);
@@ -23,12 +21,7 @@ void recibir_new(int socket_cliente, uint32_t* size, t_log* logger) {
 		exit(-1);
 	}
 
-	if (recv(socket_cliente, &new->id , sizeof(uint32_t), MSG_WAITALL) == -1) {
-			close(socket_cliente);
-			log_error(logger, "Hubo un problema recibiendo el ID del mensaje");
-			free(new);
-			exit(-1);
-	}
+	log_info(logger, "Tamanio del pokemon recibido: %i", tamanio_pokemon);
 
 	new->pokemon = malloc(tamanio_pokemon);
 
@@ -81,22 +74,11 @@ void recibir_appeared(int socket_cliente, uint32_t* size, t_log* logger) {
 
 	uint32_t tamanio_pokemon;
 
-	log_info(logger, "Recibiendo tamanio total");
-
-	if (recv(socket_cliente, size, sizeof(uint32_t), MSG_WAITALL) == -1) {
+	if (recv(socket_cliente,  &(appeared->id), sizeof(uint32_t), MSG_WAITALL) == -1) {
 		close(socket_cliente);
-		log_error(logger, "Hubo un problema recibiendo el tamanio total");
+		log_error(logger, "Hubo un problema recibiendo el ID del mensaje");
 		free(appeared);
 		exit(-1);
-	}
-
-	log_info(logger, "Tamanio total recibido: %i", *size);
-
-	if (recv(socket_cliente,  &appeared->id_correlativo , sizeof(uint32_t), MSG_WAITALL) == -1) { // lee id del mensaje ///
-				close(socket_cliente);
-				log_error(logger, "Hubo un problema recibiendo el ID del mensaje");
-				free(appeared);
-				exit(-1);
 	}
 	if (recv(socket_cliente, &(appeared->id_correlativo), sizeof(uint32_t), MSG_WAITALL) == -1) {
 		close(socket_cliente);
@@ -154,22 +136,11 @@ void recibir_catch(int socket_cliente, uint32_t* size, t_log* logger) {
 	t_catchLlegada* catch = malloc(sizeof(t_catchLlegada));
 	uint32_t tamanio_pokemon;
 
-	log_info(logger, "Recibiendo tamanio total");
-
-	if (recv(socket_cliente, size, sizeof(uint32_t), MSG_WAITALL) == -1) {
+	if (recv(socket_cliente, &catch->id , sizeof(uint32_t), MSG_WAITALL) == -1) { // lee id del mensaje ///
 		close(socket_cliente);
-		log_error(logger, "Hubo un problema recibiendo el tamanio total");
+		log_error(logger, "Hubo un problema recibiendo el ID del mensaje");
 		free(catch);
 		exit(-1);
-	}
-
-	log_info(logger, "Tamanio total recibido: %i", *size);
-
-	if (recv(socket_cliente, &catch->id , sizeof(uint32_t), MSG_WAITALL) == -1) { // lee id del mensaje ///
-					close(socket_cliente);
-					log_error(logger, "Hubo un problema recibiendo el ID del mensaje");
-					free(catch);
-					exit(-1);
 	}
 	if (recv(socket_cliente, &(tamanio_pokemon), sizeof(uint32_t), MSG_WAITALL) == -1) {
 		close(socket_cliente);
@@ -217,22 +188,11 @@ void recibir_catch(int socket_cliente, uint32_t* size, t_log* logger) {
 void recibir_caught(int socket_cliente, uint32_t* size, t_log* logger) {
 	t_caughtLlegada* caught = malloc(sizeof(t_caughtLlegada));
 
-	log_info(logger, "Recibiendo tamanio total");
-
-	if (recv(socket_cliente, size, sizeof(uint32_t), MSG_WAITALL) == -1) {
+	if (recv(socket_cliente, &caught->id , sizeof(uint32_t), MSG_WAITALL) == -1) { // lee id del mensaje ///
 		close(socket_cliente);
-		log_error(logger, "Hubo un problema recibiendo el tamanio total");
+		log_error(logger, "Hubo un problema recibiendo el ID del mensaje");
 		free(caught);
 		exit(-1);
-	}
-
-	log_info(logger, "Tamanio total recibido: %i", *size);
-
-	if (recv(socket_cliente, &caught->id , sizeof(uint32_t), MSG_WAITALL) == -1) { // lee id del mensaje ///
-					close(socket_cliente);
-					log_error(logger, "Hubo un problema recibiendo el ID del mensaje");
-					free(caught);
-					exit(-1);
 	}
 	if (recv(socket_cliente, &(caught->id_correlativo), sizeof(uint32_t), MSG_WAITALL) == -1) {
 		close(socket_cliente);
@@ -257,22 +217,11 @@ void recibir_get(int socket_cliente, uint32_t* size, t_log* logger) {
 	t_getLlegada* get = malloc(sizeof(t_getLlegada));
 	uint32_t tamanio_pokemon;
 
-	log_info(logger, "Recibiendo tamanio total");
-
-	if (recv(socket_cliente, size, sizeof(uint32_t), MSG_WAITALL) == -1) {
+	if (recv(socket_cliente, &get->id , sizeof(uint32_t), MSG_WAITALL) == -1) { // lee id del mensaje ///
 		close(socket_cliente);
-		log_error(logger, "Hubo un problema recibiendo el tamanio total");
+		log_error(logger, "Hubo un problema recibiendo el ID del mensaje");
 		free(get);
 		exit(-1);
-	}
-
-	log_info(logger, "Tamanio total recibido: %i", *size);
-
-	if (recv(socket_cliente, &get->id , sizeof(uint32_t), MSG_WAITALL) == -1) { // lee id del mensaje ///
-					close(socket_cliente);
-					log_error(logger, "Hubo un problema recibiendo el ID del mensaje");
-					free(get);
-					exit(-1);
 	}
 
 	if (recv(socket_cliente, &tamanio_pokemon, sizeof(uint32_t), MSG_WAITALL) == -1) {
@@ -301,22 +250,11 @@ void recibir_localized(int socket_cliente, uint32_t* size, t_log* logger) {
 	t_localizedLlegada* localized = malloc(sizeof(t_localizedLlegada));
 	uint32_t tamanio_pokemon;
 
-	log_info(logger, "Recibiendo tamanio total");
-
-	if (recv(socket_cliente, size, sizeof(uint32_t), MSG_WAITALL) == -1) {
+	if (recv(socket_cliente, &localized->id , sizeof(uint32_t), MSG_WAITALL) == -1) { // lee id del mensaje ///
 		close(socket_cliente);
-		log_error(logger, "Hubo un problema recibiendo el tamanio total");
+		log_error(logger, "Hubo un problema recibiendo el ID del mensaje");
 		free(localized);
 		exit(-1);
-	}
-
-	log_info(logger, "Tamanio total recibido: %i", *size);
-
-	if (recv(socket_cliente, &localized->id , sizeof(uint32_t), MSG_WAITALL) == -1) { // lee id del mensaje ///
-					close(socket_cliente);
-					log_error(logger, "Hubo un problema recibiendo el ID del mensaje");
-					free(localized);
-					exit(-1);
 	}
 
 	if (recv(socket_cliente, &(localized->id_correlativo), sizeof(uint32_t), MSG_WAITALL) == -1) {

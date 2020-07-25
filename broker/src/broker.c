@@ -527,10 +527,12 @@ void atender_mensaje_new(mensaje_queue* mensaje) {
 	registro->tipo = NEW;
 	registro->id_temporal = generar_id_temporal();
 	registro->id_modificacion = generar_id_modificacion();
+	registro->tamanio_nombre_pokemon = (strlen(((t_new*) mensaje->mensaje)->pokemon) + 1) * sizeof(char);
+	registro->tamanio_lista_coordenadas = 0;
 
 	uint32_t bytes;
 
-	void* mensaje_memoria = serializar_new(mensaje, &bytes);
+	void* mensaje_memoria = serializar_new_para_memoria((t_new*) mensaje->mensaje, &bytes);
 
 	registro->limit = bytes;
 
@@ -588,10 +590,12 @@ void atender_mensaje_appeared(mensaje_queue* mensaje) {
 	registro->tipo = APPEARED;
 	registro->id_temporal = generar_id_temporal();
 	registro->id_modificacion = generar_id_modificacion();
+	registro->tamanio_nombre_pokemon = (strlen(((t_appeared*) mensaje->mensaje)->pokemon) + 1) * sizeof(char);
+	registro->tamanio_lista_coordenadas = 0;
 
 	uint32_t bytes;
 
-	void* mensaje_memoria = serializar_appeared(mensaje, &bytes);
+	void* mensaje_memoria = serializar_appeared_para_memoria((t_appeared*) mensaje->mensaje, &bytes);
 
 	registro->limit = bytes;
 
@@ -648,10 +652,12 @@ void atender_mensaje_catch(mensaje_queue* mensaje) {
 	registro->tipo = CATCH;
 	registro->id_temporal = generar_id_temporal();
 	registro->id_modificacion = generar_id_modificacion();
+	registro->tamanio_nombre_pokemon = (strlen(((t_catch*) mensaje->mensaje)->pokemon) + 1) * sizeof(char);
+	registro->tamanio_lista_coordenadas = 0;
 
 	uint32_t bytes;
 
-	void* mensaje_memoria = serializar_catch(mensaje, &bytes);
+	void* mensaje_memoria = serializar_catch_para_memoria((t_catch*) mensaje->mensaje, &bytes);
 
 	registro->limit = bytes;
 
@@ -709,10 +715,12 @@ void atender_mensaje_caught(mensaje_queue* mensaje) {
 	registro->tipo = CAUGHT;
 	registro->id_temporal = generar_id_temporal();
 	registro->id_modificacion = generar_id_modificacion();
+	registro->tamanio_nombre_pokemon = 0;
+	registro->tamanio_lista_coordenadas = 0;
 
 	uint32_t bytes;
 
-	void* mensaje_memoria = serializar_caught(mensaje, &bytes);
+	void* mensaje_memoria = serializar_caught_para_memoria((t_caught*) mensaje->mensaje, &bytes);
 
 	registro->limit = bytes;
 
@@ -769,10 +777,12 @@ void atender_mensaje_get(mensaje_queue* mensaje) {
 	registro->tipo = GET;
 	registro->id_temporal = generar_id_temporal();
 	registro->id_modificacion = generar_id_modificacion();
+	registro->tamanio_nombre_pokemon = (strlen(((t_get*) mensaje->mensaje)->pokemon) + 1) * sizeof(char);
+	registro->tamanio_lista_coordenadas = 0;
 
 	uint32_t bytes;
 
-	void* mensaje_memoria = serializar_get(mensaje, &bytes);
+	void* mensaje_memoria = serializar_get_para_memoria((t_get*) mensaje->mensaje, &bytes);
 
 	registro->limit = bytes;
 
@@ -830,10 +840,12 @@ void atender_mensaje_localized(mensaje_queue* mensaje) {
 	registro->tipo = LOCALIZED;
 	registro->id_temporal = generar_id_temporal();
 	registro->id_modificacion = generar_id_modificacion();
+	registro->tamanio_nombre_pokemon = (strlen(((t_localized*) mensaje->mensaje)->pokemon) + 1) * sizeof(char);
+	registro->tamanio_lista_coordenadas = ((t_localized*) mensaje->mensaje)->lugares;
 
 	uint32_t bytes;
 
-	void* mensaje_memoria = serializar_localized(mensaje, &bytes);
+	void* mensaje_memoria = serializar_localized_para_memoria((t_localized*) mensaje->mensaje, &bytes);
 
 	registro->limit = bytes;
 
@@ -909,8 +921,8 @@ void mandar_new(void* new_mandable) {
 		if (status_recv == -1) {
 			log_error(extense_logger, "Error: No se recibió el ACK de cliente %i socket %i", argumento_new->info->id_cliente, argumento_new->info->socket_cliente);
 			status->ack = 0;
-			close(argumento_new->info->socket_cliente);
-			eliminar_suscriptor(gl_new_list_lock, gl_new_suscriptores, argumento_new->info);
+			//close(argumento_new->info->socket_cliente);
+			//eliminar_suscriptor(gl_new_list_lock, gl_new_suscriptores, argumento_new->info);
 		} else if (status_recv == 0) {
 			log_warning(extense_logger, "El cliente %i acaba de cerrar la conexion correspondiente al socket %i", argumento_new->info->id_cliente, argumento_new->info->socket_cliente);
 			status->ack = 0;
@@ -958,8 +970,8 @@ void mandar_appeared(void* appeared_mandable) {
 		if (status_recv == -1) {
 			log_error(extense_logger, "Error: No se recibió el ACK de cliente %i socket %i", argumento_appeared->info->id_cliente, argumento_appeared->info->socket_cliente);
 			status->ack = 0;
-			close(argumento_appeared->info->socket_cliente);
-			eliminar_suscriptor(gl_appeared_list_lock, gl_appeared_suscriptores, argumento_appeared->info);
+			//close(argumento_appeared->info->socket_cliente);
+			//eliminar_suscriptor(gl_appeared_list_lock, gl_appeared_suscriptores, argumento_appeared->info);
 		} else if (status_recv == 0) {
 			log_error(extense_logger, "El cliente %i acaba de cerrar la conexion correspondiente al socket %i", argumento_appeared->info->id_cliente, argumento_appeared->info->socket_cliente);
 			status->ack = 0;
@@ -1007,8 +1019,8 @@ void mandar_catch(void* catch_mandable) {
 		if (status_recv == -1) {
 			log_error(extense_logger, "Error: No se recibió el ACK de cliente %i socket %i", argumento_catch->info->id_cliente, argumento_catch->info->socket_cliente);
 			status->ack = 0;
-			close(argumento_catch->info->socket_cliente);
-			eliminar_suscriptor(gl_catch_list_lock, gl_catch_suscriptores, argumento_catch->info);
+			//close(argumento_catch->info->socket_cliente);
+			//eliminar_suscriptor(gl_catch_list_lock, gl_catch_suscriptores, argumento_catch->info);
 		} else if (status_recv == 0) {
 			log_warning(extense_logger, "El cliente %i acaba de cerrar la conexion correspondiente al socket %i", argumento_catch->info->id_cliente, argumento_catch->info->socket_cliente);
 			status->ack = 0;
@@ -1056,8 +1068,8 @@ void mandar_caught(void* caught_mandable) {
 		if (status_recv == -1) {
 			log_error(extense_logger, "Error: No se recibió el ACK de cliente %i socket %i", argumento_caught->info->id_cliente, argumento_caught->info->socket_cliente);
 			status->ack = 0;
-			close(argumento_caught->info->socket_cliente);
-			eliminar_suscriptor(gl_caught_list_lock, gl_caught_suscriptores, argumento_caught->info);
+			//close(argumento_caught->info->socket_cliente);
+			//eliminar_suscriptor(gl_caught_list_lock, gl_caught_suscriptores, argumento_caught->info);
 		} else if (status_recv == 0) {
 			log_warning(extense_logger, "El cliente %i acaba de cerrar la conexion correspondiente al socket %i", argumento_caught->info->id_cliente, argumento_caught->info->socket_cliente);
 			status->ack = 0;
@@ -1105,8 +1117,8 @@ void mandar_get(void* get_mandable) {
 		if (status_recv == -1) {
 			log_error(extense_logger, "Error: No se recibió el ACK de cliente %i socket %i", argumento_get->info->id_cliente, argumento_get->info->socket_cliente);
 			status->ack = 0;
-			close(argumento_get->info->socket_cliente);
-			eliminar_suscriptor(gl_get_list_lock, gl_get_suscriptores, argumento_get->info);
+			//close(argumento_get->info->socket_cliente);
+			//eliminar_suscriptor(gl_get_list_lock, gl_get_suscriptores, argumento_get->info);
 		} else if (status_recv == 0) {
 			log_warning(extense_logger, "El cliente %i acaba de cerrar la conexion correspondiente al socket %i", argumento_get->info->id_cliente, argumento_get->info->socket_cliente);
 			status->ack = 0;
@@ -1154,8 +1166,8 @@ void mandar_localized(void* localized_mandable) {
 		if (status_recv == -1) {
 			log_error(extense_logger, "Error: No se recibió el ACK de cliente %i socket %i", argumento_localized->info->id_cliente, argumento_localized->info->socket_cliente);
 			status->ack = 0;
-			close(argumento_localized->info->socket_cliente);
-			eliminar_suscriptor(gl_localized_list_lock, gl_localized_suscriptores, argumento_localized->info);
+			//close(argumento_localized->info->socket_cliente);
+			//eliminar_suscriptor(gl_localized_list_lock, gl_localized_suscriptores, argumento_localized->info);
 		} else if (status_recv == 0) {
 			log_warning(extense_logger, "El cliente %i acaba de cerrar la conexion correspondiente al socket %i", argumento_localized->info->id_cliente, argumento_localized->info->socket_cliente);
 			status->ack = 0;
@@ -1377,9 +1389,12 @@ void enviar_mensaje_new_de_memoria(void* new_mandable_memoria) {
 
 	status_envio* status = malloc(sizeof(status_envio));
 
+	int bytes;
+	void* flujo = serializar_new_desde_memoria(argumento->segmento, &bytes);
+
 	log_info(extense_logger, "Enviando mensaje NEW de memoria con id %i al cliente %i socket %i", argumento->segmento->registro->id, argumento->info_modulo->id_cliente, argumento->info_modulo->socket_cliente);
 
-	if (send(argumento->info_modulo->socket_cliente, argumento->segmento->mensaje, argumento->segmento->registro->limit, 0) == -1) {
+	if (send(argumento->info_modulo->socket_cliente, flujo, bytes, 0) == -1) {
 		log_error(extense_logger, "Error: No se pudo enviar el mensaje");
 		status->envio_ok = 0;
 		status->ack = 0;
@@ -1394,8 +1409,8 @@ void enviar_mensaje_new_de_memoria(void* new_mandable_memoria) {
 		if (status_recv == -1) {
 			log_error(extense_logger, "Error: No se recibió el ACK de cliente %i socket %i", argumento->info_modulo->id_cliente, argumento->info_modulo->socket_cliente);
 			status->ack = 0;
-			close(argumento->info_modulo->socket_cliente);
-			eliminar_suscriptor(gl_new_list_lock, gl_new_suscriptores, argumento->info_modulo);
+			//close(argumento->info_modulo->socket_cliente);
+			//eliminar_suscriptor(gl_new_list_lock, gl_new_suscriptores, argumento->info_modulo);
 		} else if (status_recv == 0) {
 			log_warning(extense_logger, "El cliente %i acaba de cerrar la conexion correspondiente al socket %i", argumento->info_modulo->id_cliente, argumento->info_modulo->socket_cliente);
 			status->ack = 0;
@@ -1429,9 +1444,12 @@ void enviar_mensaje_appeared_de_memoria(void* appeared_mandable_memoria) {
 
 	status_envio* status = malloc(sizeof(status_envio));
 
+	int bytes;
+	void* flujo = serializar_appeared_desde_memoria(argumento->segmento, &bytes);
+
 	log_info(extense_logger, "Enviando mensaje APPEARED de memoria con id %i al cliente %i socket %i", argumento->segmento->registro->id, argumento->info_modulo->id_cliente, argumento->info_modulo->socket_cliente);
 
-	if (send(argumento->info_modulo->socket_cliente, argumento->segmento->mensaje, argumento->segmento->registro->limit, 0) == -1) {
+	if (send(argumento->info_modulo->socket_cliente, flujo, bytes, 0) == -1) {
 		log_error(extense_logger, "Error: No se pudo enviar el mensaje");
 		status->envio_ok = 0;
 		status->ack = 0;
@@ -1446,8 +1464,8 @@ void enviar_mensaje_appeared_de_memoria(void* appeared_mandable_memoria) {
 		if (status_recv == -1) {
 			log_error(extense_logger, "Error: No se recibió el ACK de cliente %i socket %i", argumento->info_modulo->id_cliente, argumento->info_modulo->socket_cliente);
 			status->ack = 0;
-			close(argumento->info_modulo->socket_cliente);
-			eliminar_suscriptor(gl_appeared_list_lock, gl_appeared_suscriptores, argumento->info_modulo);
+			//close(argumento->info_modulo->socket_cliente);
+			//eliminar_suscriptor(gl_appeared_list_lock, gl_appeared_suscriptores, argumento->info_modulo);
 		} else if (status_recv == 0) {
 			log_warning(extense_logger, "El cliente %i acaba de cerrar la conexion correspondiente al socket %i", argumento->info_modulo->id_cliente, argumento->info_modulo->socket_cliente);
 			status->ack = 0;
@@ -1481,9 +1499,12 @@ void enviar_mensaje_catch_de_memoria(void* catch_mandable_memoria) {
 
 	status_envio* status = malloc(sizeof(status_envio));
 
+	int bytes;
+	void* flujo = serializar_catch_desde_memoria(argumento->segmento, &bytes);
+
 	log_info(extense_logger, "Enviando mensaje CATCH de memoria con id %i al cliente %i socket %i", argumento->segmento->registro->id, argumento->info_modulo->id_cliente, argumento->info_modulo->socket_cliente);
 
-	if (send(argumento->info_modulo->socket_cliente, argumento->segmento->mensaje, argumento->segmento->registro->limit, 0) == -1) {
+	if (send(argumento->info_modulo->socket_cliente, flujo, bytes, 0) == -1) {
 		log_error(extense_logger, "Error: No se pudo enviar el mensaje");
 		status->envio_ok = 0;
 		status->ack = 0;
@@ -1498,8 +1519,8 @@ void enviar_mensaje_catch_de_memoria(void* catch_mandable_memoria) {
 		if (status_recv == -1) {
 			log_error(extense_logger, "Error: No se recibió el ACK de cliente %i socket %i", argumento->info_modulo->id_cliente, argumento->info_modulo->socket_cliente);
 			status->ack = 0;
-			close(argumento->info_modulo->socket_cliente);
-			eliminar_suscriptor(gl_catch_list_lock, gl_catch_suscriptores, argumento->info_modulo);
+			//close(argumento->info_modulo->socket_cliente);
+			//eliminar_suscriptor(gl_catch_list_lock, gl_catch_suscriptores, argumento->info_modulo);
 		} else if (status_recv == 0) {
 			log_warning(extense_logger, "El cliente %i acaba de cerrar la conexion correspondiente al socket %i", argumento->info_modulo->id_cliente, argumento->info_modulo->socket_cliente);
 			status->ack = 0;
@@ -1533,9 +1554,12 @@ void enviar_mensaje_caught_de_memoria(void* caught_mandable_memoria) {
 
 	status_envio* status = malloc(sizeof(status_envio));
 
-	log_info(extense_logger, "Enviando mensaje CAUGHT de memoria con cliente %i socket %i puerto %s", argumento->segmento->registro->id, argumento->info_modulo->id_cliente, argumento->info_modulo->socket_cliente);
+	int bytes;
+	void* flujo = serializar_caught_desde_memoria(argumento->segmento, &bytes);
 
-	if (send(argumento->info_modulo->socket_cliente, argumento->segmento->mensaje, argumento->segmento->registro->limit, 0) == -1) {
+	log_info(extense_logger, "Enviando mensaje CAUGHT %i de memoria con cliente %i socket %i", argumento->segmento->registro->id, argumento->info_modulo->id_cliente, argumento->info_modulo->socket_cliente);
+
+	if (send(argumento->info_modulo->socket_cliente, flujo, bytes, 0) == -1) {
 		log_error(extense_logger, "Error: No se pudo enviar el mensaje");
 		status->envio_ok = 0;
 		status->ack = 0;
@@ -1550,8 +1574,8 @@ void enviar_mensaje_caught_de_memoria(void* caught_mandable_memoria) {
 		if (status_recv == -1) {
 			log_error(extense_logger, "Error: No se recibió el ACK de cliente %i socket %i", argumento->info_modulo->id_cliente, argumento->info_modulo->socket_cliente);
 			status->ack = 0;
-			close(argumento->info_modulo->socket_cliente);
-			eliminar_suscriptor(gl_caught_list_lock, gl_caught_suscriptores, argumento->info_modulo);
+			//close(argumento->info_modulo->socket_cliente);
+			//eliminar_suscriptor(gl_caught_list_lock, gl_caught_suscriptores, argumento->info_modulo);
 		} else if (status_recv == 0) {
 			log_warning(extense_logger, "El cliente %i acaba de cerrar la conexion correspondiente al socket %i", argumento->info_modulo->id_cliente, argumento->info_modulo->socket_cliente);
 			status->ack = 0;
@@ -1585,9 +1609,12 @@ void enviar_mensaje_get_de_memoria(void* get_mandable_memoria) {
 
 	status_envio* status = malloc(sizeof(status_envio));
 
+	int bytes;
+	void* flujo = serializar_get_desde_memoria(argumento->segmento, &bytes);
+
 	log_info(extense_logger, "Enviando mensaje GET de memoria con id %i al cliente %i socket %i", argumento->segmento->registro->id, argumento->info_modulo->id_cliente, argumento->info_modulo->socket_cliente);
 
-	if (send(argumento->info_modulo->socket_cliente, argumento->segmento->mensaje, argumento->segmento->registro->limit, 0) == -1) {
+	if (send(argumento->info_modulo->socket_cliente, flujo, bytes, 0) == -1) {
 		log_error(extense_logger, "Error: No se pudo enviar el mensaje");
 		status->envio_ok = 0;
 		status->ack = 0;
@@ -1602,8 +1629,8 @@ void enviar_mensaje_get_de_memoria(void* get_mandable_memoria) {
 		if (status_recv == -1) {
 			log_error(extense_logger, "Error: No se recibió el ACK de cliente %i socket %i", argumento->info_modulo->id_cliente, argumento->info_modulo->socket_cliente);
 			status->ack = 0;
-			close(argumento->info_modulo->socket_cliente);
-			eliminar_suscriptor(gl_get_list_lock, gl_get_suscriptores, argumento->info_modulo);
+			//close(argumento->info_modulo->socket_cliente);
+			//eliminar_suscriptor(gl_get_list_lock, gl_get_suscriptores, argumento->info_modulo);
 		} else if (status_recv == 0) {
 			log_warning(extense_logger, "El cliente %i acaba de cerrar la conexion correspondiente al socket %i", argumento->info_modulo->id_cliente, argumento->info_modulo->socket_cliente);
 			status->ack = 0;
@@ -1637,9 +1664,12 @@ void enviar_mensaje_localized_de_memoria(void* localized_mandable_memoria) {
 
 	status_envio* status = malloc(sizeof(status_envio));
 
+	int bytes;
+	void* flujo = serializar_localized_desde_memoria(argumento->segmento, &bytes);
+
 	log_info(extense_logger, "Enviando mensaje LOCALIZED de memoria con id %i al cliente %i socket %i", argumento->segmento->registro->id, argumento->info_modulo->id_cliente, argumento->info_modulo->socket_cliente);
 
-	if (send(argumento->info_modulo->socket_cliente, argumento->segmento->mensaje, argumento->segmento->registro->limit, 0) == -1) {
+	if (send(argumento->info_modulo->socket_cliente, flujo, bytes, 0) == -1) {
 		log_error(extense_logger, "Error: No se pudo enviar el mensaje");
 		close(argumento->info_modulo->socket_cliente);
 		status->envio_ok = 0;
@@ -1653,9 +1683,9 @@ void enviar_mensaje_localized_de_memoria(void* localized_mandable_memoria) {
 		int status_recv = recv(argumento->info_modulo->socket_cliente, &id, sizeof(uint32_t), MSG_WAITALL);
 		if (status_recv == -1) {
 			log_error(extense_logger, "Error: No se recibió el ACK de cliente %i socket %i", argumento->info_modulo->id_cliente, argumento->info_modulo->socket_cliente);
-			close(argumento->info_modulo->socket_cliente);
 			status->ack = 0;
-			eliminar_suscriptor(gl_localized_list_lock, gl_localized_suscriptores, argumento->info_modulo);
+			//close(argumento->info_modulo->socket_cliente);
+			//eliminar_suscriptor(gl_localized_list_lock, gl_localized_suscriptores, argumento->info_modulo);
 		} else if (status_recv == 0) {
 			log_warning(extense_logger, "El cliente %i acaba de cerrar la conexion correspondiente al socket %i", argumento->info_modulo->id_cliente, argumento->info_modulo->socket_cliente);
 			close(argumento->info_modulo->socket_cliente);
@@ -1857,6 +1887,266 @@ void* serializar_localized(mensaje_queue* localized, uint32_t* bytes) {
 		memcpy(flujo + desplazamiento, elemento_de_lista, sizeof(uint32_t));
 		desplazamiento += sizeof(uint32_t);
 	}
+
+	return flujo;
+}
+
+void* serializar_new_para_memoria(t_new* new, uint32_t* bytes) {
+	int tamanio_pokemon = (strlen(new->pokemon) + 1) * sizeof(char);
+
+	*bytes = tamanio_pokemon + sizeof(uint32_t) + sizeof(uint32_t) + sizeof(uint32_t);
+
+	void* flujo = malloc(*bytes);
+	int desplazamiento = 0;
+
+	memcpy(flujo + desplazamiento, new->pokemon, tamanio_pokemon);
+	desplazamiento += tamanio_pokemon;
+	memcpy(flujo + desplazamiento, &(new->pos_X), sizeof(uint32_t));
+	desplazamiento += sizeof(uint32_t);
+	memcpy(flujo + desplazamiento, &(new->pos_Y), sizeof(uint32_t));
+	desplazamiento += sizeof(uint32_t);
+	memcpy(flujo + desplazamiento, &(new->cantidad), sizeof(uint32_t));
+	desplazamiento += sizeof(uint32_t);
+
+	return flujo;
+}
+
+void* serializar_appeared_para_memoria(t_appeared* appeared, uint32_t* bytes) {
+	int tamanio_pokemon = (strlen(appeared->pokemon) + 1) * sizeof(char);
+
+	*bytes = tamanio_pokemon + sizeof(uint32_t) + sizeof(uint32_t);
+
+	void* flujo = malloc(*bytes);
+	int desplazamiento = 0;
+
+	memcpy(flujo + desplazamiento, appeared->pokemon, tamanio_pokemon);
+	desplazamiento += tamanio_pokemon;
+	memcpy(flujo + desplazamiento, &(appeared->pos_X), sizeof(uint32_t));
+	desplazamiento += sizeof(uint32_t);
+	memcpy(flujo + desplazamiento, &(appeared->pos_Y), sizeof(uint32_t));
+	desplazamiento += sizeof(uint32_t);
+
+	return flujo;
+}
+
+void* serializar_catch_para_memoria(t_catch* catch, uint32_t* bytes) {
+	int tamanio_pokemon = (strlen(catch->pokemon) + 1) * sizeof(char);
+
+	*bytes = tamanio_pokemon + sizeof(uint32_t) + sizeof(uint32_t);
+
+	void* flujo = malloc(*bytes);
+	int desplazamiento = 0;
+
+	memcpy(flujo + desplazamiento, catch->pokemon, tamanio_pokemon);
+	desplazamiento += tamanio_pokemon;
+	memcpy(flujo + desplazamiento, &(catch->pos_X), sizeof(uint32_t));
+	desplazamiento += sizeof(uint32_t);
+	memcpy(flujo + desplazamiento, &(catch->pos_Y), sizeof(uint32_t));
+	desplazamiento += sizeof(uint32_t);
+
+	return flujo;
+}
+
+void* serializar_caught_para_memoria(t_caught* caught, uint32_t* bytes) {
+
+	*bytes = sizeof(uint32_t);
+
+	void* flujo = malloc(*bytes);
+	int desplazamiento = 0;
+
+	memcpy(flujo + desplazamiento, &(caught->flag_caught), sizeof(uint32_t));
+	desplazamiento += sizeof(uint32_t);
+
+	return flujo;
+}
+
+void* serializar_get_para_memoria(t_get* get, uint32_t* bytes) {
+	int tamanio_pokemon = (strlen(get->pokemon) + 1) * sizeof(char);
+
+	*bytes = tamanio_pokemon;
+
+	void* flujo = malloc(*bytes);
+	int desplazamiento = 0;
+
+	memcpy(flujo + desplazamiento, get->pokemon, tamanio_pokemon);
+	desplazamiento += tamanio_pokemon;
+
+	return flujo;
+}
+
+void* serializar_localized_para_memoria(t_localized* localized, uint32_t* bytes) {
+	int tamanio_pokemon = (strlen(localized->pokemon) + 1) * sizeof(char);
+
+	*bytes = tamanio_pokemon + sizeof(uint32_t)
+				+ (localized->lugares * 2 * sizeof(uint32_t));
+
+	void* flujo = malloc(*bytes);
+	int desplazamiento = 0;
+
+	memcpy(flujo + desplazamiento, localized->pokemon, tamanio_pokemon);
+	desplazamiento += tamanio_pokemon;
+	memcpy(flujo + desplazamiento, &(localized->lugares), sizeof(uint32_t));
+	desplazamiento += sizeof(uint32_t);
+
+
+	for (int i = 0; i < localized->l_coordenadas->elements_count; i++) {
+		uint32_t* elemento_de_lista = (uint32_t*) list_get(localized->l_coordenadas, i);
+		memcpy(flujo + desplazamiento, &elemento_de_lista, sizeof(uint32_t));
+		desplazamiento += sizeof(uint32_t);
+	}
+
+	return flujo;
+}
+
+void* serializar_new_desde_memoria(segmento_memoria* new, int* bytes) {
+	*bytes = sizeof(uint32_t) + sizeof(uint32_t) +
+			sizeof(uint32_t) + sizeof(uint32_t) +
+			new->registro->tamanio_nombre_pokemon + sizeof(uint32_t) +
+			sizeof(uint32_t) + sizeof(uint32_t);
+
+	uint32_t cod_op = 1;
+	void* flujo = malloc(*bytes);
+	int desplazamiento = 0;
+
+	log_info(extense_logger, "Serializando new de memoria, codigo de operacion: %i", cod_op);
+	memcpy(flujo + desplazamiento, &cod_op, sizeof(uint32_t));
+	desplazamiento += sizeof(uint32_t);
+	log_info(extense_logger, "Serializando new de memoria, bytes: %i", *bytes);
+	memcpy(flujo + desplazamiento, bytes, sizeof(uint32_t));
+	desplazamiento += sizeof(uint32_t);
+	log_info(extense_logger, "Serializando new de memoria, id: %i", new->registro->id);
+	memcpy(flujo + desplazamiento, &(new->registro->id), sizeof(uint32_t));
+	desplazamiento += sizeof(uint32_t);
+	log_info(extense_logger, "Serializando new de memoria, tamanio del pokemon: %i", new->registro->tamanio_nombre_pokemon);
+	memcpy(flujo + desplazamiento, &(new->registro->tamanio_nombre_pokemon), sizeof(uint32_t));
+	desplazamiento += sizeof(uint32_t);
+	memcpy(flujo + desplazamiento, new->mensaje, new->registro->limit);
+	desplazamiento += new->registro->limit;
+
+	return flujo;
+}
+
+void* serializar_appeared_desde_memoria(segmento_memoria* appeared, int* bytes) {
+	*bytes = sizeof(uint32_t) + sizeof(uint32_t) +
+			sizeof(uint32_t) + sizeof(uint32_t) +
+			appeared->registro->tamanio_nombre_pokemon + sizeof(uint32_t) +
+			sizeof(uint32_t) + sizeof(uint32_t);
+
+	uint32_t cod_op = 2;
+	void* flujo = malloc(*bytes);
+	int desplazamiento = 0;
+
+	memcpy(flujo + desplazamiento, &cod_op, sizeof(uint32_t));
+	desplazamiento += sizeof(uint32_t);
+	memcpy(flujo + desplazamiento, bytes, sizeof(uint32_t));
+	desplazamiento += sizeof(uint32_t);
+	memcpy(flujo + desplazamiento, &(appeared->registro->id), sizeof(uint32_t));
+	desplazamiento += sizeof(uint32_t);
+	memcpy(flujo + desplazamiento, &(appeared->registro->id_correlativo), sizeof(uint32_t));
+	desplazamiento += sizeof(uint32_t);
+	memcpy(flujo + desplazamiento, &(appeared->registro->tamanio_nombre_pokemon), sizeof(uint32_t));
+	desplazamiento += sizeof(uint32_t);
+	memcpy(flujo + desplazamiento, appeared->mensaje, appeared->registro->limit);
+	desplazamiento += appeared->registro->limit;
+
+	return flujo;
+}
+
+void* serializar_catch_desde_memoria(segmento_memoria* catch, int* bytes) {
+	*bytes = sizeof(uint32_t) + sizeof(uint32_t) +
+			sizeof(uint32_t) + sizeof(uint32_t) +
+			catch->registro->tamanio_nombre_pokemon +
+			sizeof(uint32_t) + sizeof(uint32_t);
+
+	uint32_t cod_op = 3;
+	void* flujo = malloc(*bytes);
+	int desplazamiento = 0;
+
+	memcpy(flujo + desplazamiento, &cod_op, sizeof(uint32_t));
+	desplazamiento += sizeof(uint32_t);
+	memcpy(flujo + desplazamiento, bytes, sizeof(uint32_t));
+	desplazamiento += sizeof(uint32_t);
+	memcpy(flujo + desplazamiento, &(catch->registro->id), sizeof(uint32_t));
+	desplazamiento += sizeof(uint32_t);
+	memcpy(flujo + desplazamiento, &(catch->registro->tamanio_nombre_pokemon), sizeof(uint32_t));
+	desplazamiento += sizeof(uint32_t);
+	memcpy(flujo + desplazamiento, catch->mensaje, catch->registro->limit);
+	desplazamiento += catch->registro->limit;
+
+	return flujo;
+}
+
+void* serializar_caught_desde_memoria(segmento_memoria* caught, int* bytes) {
+
+	*bytes = sizeof(uint32_t) + sizeof(uint32_t) +
+			sizeof(uint32_t) + sizeof(uint32_t) +
+			sizeof(uint32_t);
+
+	uint32_t cod_op = 4;
+	void* flujo = malloc(*bytes);
+	int desplazamiento = 0;
+
+	memcpy(flujo + desplazamiento, &cod_op, sizeof(uint32_t));
+	desplazamiento += sizeof(uint32_t);
+	memcpy(flujo + desplazamiento, bytes, sizeof(uint32_t));
+	desplazamiento += sizeof(uint32_t);
+	memcpy(flujo + desplazamiento, &(caught->registro->id), sizeof(uint32_t));
+	desplazamiento += sizeof(uint32_t);
+	memcpy(flujo + desplazamiento, &(caught->registro->id_correlativo), sizeof(uint32_t));
+	desplazamiento += sizeof(uint32_t);
+	memcpy(flujo + desplazamiento, caught->mensaje, caught->registro->limit);
+	desplazamiento += caught->registro->limit;
+
+	return flujo;
+}
+
+void* serializar_get_desde_memoria(segmento_memoria* get, int* bytes) {
+	*bytes = sizeof(uint32_t) + sizeof(uint32_t) +
+			sizeof(uint32_t) + sizeof(uint32_t) +
+			get->registro->tamanio_nombre_pokemon;
+
+	uint32_t cod_op = 5;
+	void* flujo = malloc(*bytes);
+	int desplazamiento = 0;
+
+	memcpy(flujo + desplazamiento, &cod_op, sizeof(uint32_t));
+	desplazamiento += sizeof(uint32_t);
+	memcpy(flujo + desplazamiento, bytes, sizeof(uint32_t));
+	desplazamiento += sizeof(uint32_t);
+	memcpy(flujo + desplazamiento, &(get->registro->id), sizeof(uint32_t));
+	desplazamiento += sizeof(uint32_t);
+	memcpy(flujo + desplazamiento, &(get->registro->tamanio_nombre_pokemon), sizeof(uint32_t));
+	desplazamiento += sizeof(uint32_t);
+	memcpy(flujo + desplazamiento, get->mensaje, get->registro->limit);
+	desplazamiento += get->registro->limit;
+
+	return flujo;
+}
+
+void* serializar_localized_desde_memoria(segmento_memoria* localized, int* bytes) {
+	uint32_t tamanio_lista = localized->registro->tamanio_lista_coordenadas * sizeof(uint32_t);
+
+	*bytes = sizeof(uint32_t) + sizeof(uint32_t) +
+			sizeof(uint32_t) + sizeof(uint32_t) +
+			sizeof(uint32_t) + localized->registro->tamanio_nombre_pokemon +
+			sizeof(uint32_t) + tamanio_lista;
+
+	uint32_t cod_op = 6;
+	void* flujo = malloc(*bytes);
+	int desplazamiento = 0;
+
+	memcpy(flujo + desplazamiento, &cod_op, sizeof(uint32_t));
+	desplazamiento += sizeof(uint32_t);
+	memcpy(flujo + desplazamiento, bytes, sizeof(uint32_t));
+	desplazamiento += sizeof(uint32_t);
+	memcpy(flujo + desplazamiento, &(localized->registro->id), sizeof(uint32_t));
+	desplazamiento += sizeof(uint32_t);
+	memcpy(flujo + desplazamiento, &(localized->registro->id_correlativo), sizeof(uint32_t));
+	desplazamiento += sizeof(uint32_t);
+	memcpy(flujo + desplazamiento, &(localized->registro->tamanio_nombre_pokemon), sizeof(uint32_t));
+	desplazamiento += sizeof(uint32_t);
+	memcpy(flujo + desplazamiento, localized->mensaje, localized->registro->limit);
+	desplazamiento += localized->registro->limit;
 
 	return flujo;
 }

@@ -56,6 +56,8 @@ typedef struct {
 	void* base;
 	int id_temporal;
 	int id_modificacion;
+	uint32_t tamanio_nombre_pokemon;
+	uint32_t tamanio_lista_coordenadas;
 } data_tabla;                      // registro de la tabla
 
 typedef struct {
