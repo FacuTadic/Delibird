@@ -2779,3 +2779,10 @@
 [INFO] 10:59:32:329 Team/(20866:20866): Cantidad de ciclos de CPU del entrenador 2: 13
 [INFO] 10:59:32:329 Team/(20866:20866): Proceso Team terminado. Cantidad de cambios de contexto realizados: 20
 [INFO] 10:59:32:329 Team/(20866:20866): Proceso Team terminado. Cantidad de deadlocks encontrados y tratados: 1
+[ERROR] 14:55:00:784 Team/(4437:4444): Hubo un problema enviando la suscripcion a la cola LOCALIZED del broker
+[ERROR] 14:55:00:784 Team/(4437:4443): Hubo un problema enviando la suscripcion a la cola CAUGHT del broker
+[ERROR] 14:55:00:803 Team/(4437:4450): Error: No se pudo enviar el GET correspondiente al pokemon squirtle, iniciando el comportamiento default
+[ERROR] 14:55:00:803 Team/(4437:4451): Error: No se pudo enviar el GET correspondiente al pokemon pikachu, iniciando el comportamiento default
+[ERROR] 14:55:00:803 Team/(4437:4442): Hubo un problema enviando la suscripcion a la cola APPEARED del broker
+[ERROR] 14:55:00:815 Team/(4437:4453): Error: No se pudo enviar el GET correspondiente al pokemon onix, iniciando el comportamiento default
+[ERROR] 14:55:00:815 Team/(4437:4452): Error: No se pudo enviar el GET correspondiente al pokemon gengar, iniciando el comportamiento default

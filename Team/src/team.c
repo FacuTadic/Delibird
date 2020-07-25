@@ -37,21 +37,22 @@ void procesar_request_de_game_boy(int cod_op, int socket_game_boy) {
 }
 
 void atender_game_boy(int* socket_game_boy) {
+	int socket_cliente = *socket_game_boy;
 	uint32_t cod_op;
-	log_info(extense_logger, "Recibiendo codigo de operacion de Game boy en socket %i", *socket_game_boy);
-	int status_recv = recv(*socket_game_boy, &cod_op, sizeof(uint32_t), MSG_WAITALL);
+	log_info(extense_logger, "Recibiendo codigo de operacion de Game boy en socket %i", socket_cliente);
+	int status_recv = recv(socket_cliente, &cod_op, sizeof(uint32_t), MSG_WAITALL);
 	if (status_recv == -1) {
-		cerrar_conexion(*socket_game_boy);
-		log_error(extense_logger, "Hubo un problema recibiendo codigo de operacion de Game boy en socket %i", *socket_game_boy);
+		cerrar_conexion(socket_cliente);
+		log_error(extense_logger, "Hubo un problema recibiendo codigo de operacion de Game boy en socket %i", socket_cliente);
 		pthread_exit(NULL);
 	}
 	if (status_recv == 0) {
-		cerrar_conexion(*socket_game_boy);
-		log_warning(extense_logger, "Game boy acaba de cerrar la conexion correspondiente al socket %i", *socket_game_boy);
+		cerrar_conexion(socket_cliente);
+		log_warning(extense_logger, "Game boy acaba de cerrar la conexion correspondiente al socket %i", socket_cliente);
 		pthread_exit(NULL);
 	}
-	log_info(extense_logger, "Codigo de operacion de socket %i recibido: %i", *socket_game_boy, cod_op);
-	procesar_request_de_game_boy(cod_op, *socket_game_boy);
+	log_info(extense_logger, "Codigo de operacion de socket %i recibido: %i", socket_cliente, cod_op);
+	procesar_request_de_game_boy(cod_op, socket_cliente);
 }
 
 void esperar_game_boy(int socket_escucha_game_boy) {
@@ -62,10 +63,15 @@ void esperar_game_boy(int socket_escucha_game_boy) {
 	int socket_cliente = accept(socket_escucha_game_boy, (void*) &dir_cliente, &tam_direccion);
 	log_info(extense_logger, "Socket %i de Game boy aceptado", socket_escucha_game_boy);
 
-	pthread_t thread;
+	if(socket_cliente != -1) {
+		int* socket_final = malloc(sizeof(int));
+		*socket_final = socket_cliente;
 
-	pthread_create(&thread, NULL, (void*) atender_game_boy, &socket_cliente);
-	pthread_detach(thread);
+		pthread_t thread;
+
+		pthread_create(&thread, NULL, (void*) atender_game_boy, socket_final);
+		pthread_detach(thread);
+	}
 }
 
 void escuchar_game_boy(void* socket_escucha_game_boy) {

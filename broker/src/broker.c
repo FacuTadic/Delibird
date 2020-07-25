@@ -267,21 +267,22 @@ void procesar_request(int cod_op, int cliente_fd) {
 }
 
 void atender_cliente(int* socket) {
+	int socket_cliente = *socket;
 	uint32_t cod_op;
-	log_info(extense_logger, "Recibiendo codigo de operacion de socket %i", *socket);
-	int status_recv = recv(*socket, &cod_op, sizeof(uint32_t), MSG_WAITALL);
+	log_info(extense_logger, "Recibiendo codigo de operacion de socket %i", socket_cliente);
+	int status_recv = recv(socket_cliente, &cod_op, sizeof(uint32_t), MSG_WAITALL);
 	if (status_recv == -1) {
-		close(*socket);
-		log_error(extense_logger, "Hubo un problema recibiendo codigo de operacion de socket %i", *socket);
+		close(socket_cliente);
+		log_error(extense_logger, "Hubo un problema recibiendo codigo de operacion de socket %i", socket_cliente);
 		pthread_exit(NULL);
 	}
 	if (status_recv == 0) {
-		close(*socket);
-		log_warning(extense_logger, "El cliente acaba de cerrar la conexion correspondiente al socket %i", *socket);
+		close(socket_cliente);
+		log_warning(extense_logger, "El cliente acaba de cerrar la conexion correspondiente al socket %i", socket_cliente);
 		pthread_exit(NULL);
 	}
-	log_info(extense_logger, "Codigo de operacion de socket %i recibido: %i", *socket, cod_op);
-	procesar_request(cod_op, *socket);
+	log_info(extense_logger, "Codigo de operacion de socket %i recibido: %i", socket_cliente, cod_op);
+	procesar_request(cod_op, socket_cliente);
 }
 
 void esperar_cliente(int socket_servidor) {
@@ -294,10 +295,15 @@ void esperar_cliente(int socket_servidor) {
 	log_info(extense_logger, "Socket cliente %i aceptado", socket_cliente);
 	log_info(logger, "Nueva conexion de un proceso con socket cliente %i", socket_cliente);
 
-	pthread_t thread;
+	if (socket_cliente != -1) {
+		int* socket_final = malloc(sizeof(int));
+		*socket_final = socket_cliente;
 
-	pthread_create(&thread, NULL, (void*) atender_cliente, &socket_cliente);
-	pthread_detach(thread);
+		pthread_t thread;
+
+		pthread_create(&thread, NULL, (void*) atender_cliente, socket_final);
+		pthread_detach(thread);
+	}
 }
 
 void esperar_clientes(void* socket_servidor) {
@@ -1979,7 +1985,7 @@ void* serializar_localized_para_memoria(t_localized* localized, uint32_t* bytes)
 	int tamanio_pokemon = (strlen(localized->pokemon) + 1) * sizeof(char);
 
 	*bytes = tamanio_pokemon + sizeof(uint32_t)
-				+ (localized->lugares * 2 * sizeof(uint32_t));
+						+ (localized->lugares * 2 * sizeof(uint32_t));
 
 	void* flujo = malloc(*bytes);
 	int desplazamiento = 0;
