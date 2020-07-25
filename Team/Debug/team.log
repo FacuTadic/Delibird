@@ -573,3 +573,163 @@
 [INFO] 15:34:41:814 Team/(8633:8642): No se han encontrado deadlocks
 [INFO] 15:34:41:814 Team/(8633:8641): Iniciando verificacion de conexion con Broker...
 [ERROR] 15:34:41:815 Team/(8633:8641): Reconexion con Broker fallida, intentando nuevamente en 10 segundos
+[ERROR] 05:48:04:200 Team/(11110:11115): Hubo un problema enviando la suscripcion a la cola APPEARED del broker
+[ERROR] 05:48:04:202 Team/(11110:11117): Hubo un problema enviando la suscripcion a la cola LOCALIZED del broker
+[ERROR] 05:48:04:204 Team/(11110:11116): Hubo un problema enviando la suscripcion a la cola CAUGHT del broker
+[ERROR] 05:48:11:461 Team/(11110:11124): Error: No se pudo enviar el GET correspondiente al pokemon charmander, iniciando el comportamiento default
+[ERROR] 05:48:12:796 Team/(11110:11123): Error: No se pudo enviar el GET correspondiente al pokemon pikachu, iniciando el comportamiento default
+[INFO] 05:48:15:399 Team/(11110:11119): Buscando deadlock...
+[INFO] 05:48:17:139 Team/(11110:11119): No se han encontrado deadlocks
+[INFO] 05:48:17:507 Team/(11110:11118): Iniciando verificacion de conexion con Broker...
+[ERROR] 05:48:19:466 Team/(11110:11118): Reconexion con Broker fallida, intentando nuevamente en 10 segundos
+[ERROR] 05:49:19:529 Team/(11166:11172): Hubo un problema enviando la suscripcion a la cola CAUGHT del broker
+[ERROR] 05:49:19:533 Team/(11166:11171): Hubo un problema enviando la suscripcion a la cola APPEARED del broker
+[ERROR] 05:49:19:534 Team/(11166:11173): Hubo un problema enviando la suscripcion a la cola LOCALIZED del broker
+[ERROR] 05:49:20:46 Team/(11166:11179): Error: No se pudo enviar el GET correspondiente al pokemon pikachu, iniciando el comportamiento default
+[ERROR] 05:49:20:52 Team/(11166:11180): Error: No se pudo enviar el GET correspondiente al pokemon charmander, iniciando el comportamiento default
+[INFO] 05:49:29:797 Team/(11166:11174): Iniciando verificacion de conexion con Broker...
+[INFO] 05:49:31:360 Team/(11166:11175): Buscando deadlock...
+[ERROR] 05:49:31:479 Team/(11166:11174): Reconexion con Broker fallida, intentando nuevamente en 10 segundos
+[INFO] 05:49:31:479 Team/(11166:11175): No se han encontrado deadlocks
+[ERROR] 05:51:04:267 Team/(11244:11250): Hubo un problema enviando la suscripcion a la cola CAUGHT del broker
+[ERROR] 05:51:04:269 Team/(11244:11251): Hubo un problema enviando la suscripcion a la cola LOCALIZED del broker
+[ERROR] 05:51:04:270 Team/(11244:11249): Hubo un problema enviando la suscripcion a la cola APPEARED del broker
+[ERROR] 05:51:04:360 Team/(11244:11257): Error: No se pudo enviar el GET correspondiente al pokemon pikachu, iniciando el comportamiento default
+[ERROR] 05:51:04:367 Team/(11244:11258): Error: No se pudo enviar el GET correspondiente al pokemon charmander, iniciando el comportamiento default
+[INFO] 05:51:19:377 Team/(11244:11253): Buscando deadlock...
+[ERROR] 05:52:10:561 Team/(11276:11283): Hubo un problema enviando la suscripcion a la cola LOCALIZED del broker
+[ERROR] 05:52:10:569 Team/(11276:11282): Hubo un problema enviando la suscripcion a la cola CAUGHT del broker
+[ERROR] 05:52:10:577 Team/(11276:11290): Error: No se pudo enviar el GET correspondiente al pokemon charmander, iniciando el comportamiento default
+[ERROR] 05:52:10:577 Team/(11276:11281): Hubo un problema enviando la suscripcion a la cola APPEARED del broker
+[ERROR] 05:52:10:590 Team/(11276:11289): Error: No se pudo enviar el GET correspondiente al pokemon pikachu, iniciando el comportamiento default
+[INFO] 05:52:20:576 Team/(11276:11284): Iniciando verificacion de conexion con Broker...
+[ERROR] 05:52:20:577 Team/(11276:11284): Reconexion con Broker fallida, intentando nuevamente en 10 segundos
+[INFO] 05:52:20:586 Team/(11276:11285): Buscando deadlock...
+[INFO] 05:52:20:587 Team/(11276:11285): No se han encontrado deadlocks
+[ERROR] 06:12:30:750 Team/(11959:11971): Hubo un problema enviando la suscripcion a la cola CAUGHT del broker
+[ERROR] 06:12:30:753 Team/(11959:11972): Hubo un problema enviando la suscripcion a la cola LOCALIZED del broker
+[ERROR] 06:12:30:754 Team/(11959:11970): Hubo un problema enviando la suscripcion a la cola APPEARED del broker
+[ERROR] 06:12:30:948 Team/(11959:11981): Error: No se pudo enviar el GET correspondiente al pokemon onix, iniciando el comportamiento default
+[ERROR] 06:12:30:953 Team/(11959:11980): Error: No se pudo enviar el GET correspondiente al pokemon gengar, iniciando el comportamiento default
+[ERROR] 06:12:30:953 Team/(11959:11979): Error: No se pudo enviar el GET correspondiente al pokemon pikachu, iniciando el comportamiento default
+[ERROR] 06:12:31:390 Team/(11959:11978): Error: No se pudo enviar el GET correspondiente al pokemon squirtle, iniciando el comportamiento default
+[ERROR] 06:13:54:507 Team/(12056:12064): Hubo un problema enviando la suscripcion a la cola CAUGHT del broker
+[ERROR] 06:13:54:512 Team/(12056:12065): Hubo un problema enviando la suscripcion a la cola LOCALIZED del broker
+[ERROR] 06:13:54:513 Team/(12056:12063): Hubo un problema enviando la suscripcion a la cola APPEARED del broker
+[ERROR] 06:13:54:707 Team/(12056:12072): Error: No se pudo enviar el GET correspondiente al pokemon pikachu, iniciando el comportamiento default
+[ERROR] 06:13:54:710 Team/(12056:12073): Error: No se pudo enviar el GET correspondiente al pokemon gengar, iniciando el comportamiento default
+[ERROR] 06:13:55:254 Team/(12056:12071): Error: No se pudo enviar el GET correspondiente al pokemon squirtle, iniciando el comportamiento default
+[ERROR] 06:13:55:349 Team/(12056:12074): Error: No se pudo enviar el GET correspondiente al pokemon onix, iniciando el comportamiento default
+[ERROR] 06:15:54:94 Team/(12162:12170): Hubo un problema enviando la suscripcion a la cola CAUGHT del broker
+[ERROR] 06:15:54:97 Team/(12162:12171): Hubo un problema enviando la suscripcion a la cola LOCALIZED del broker
+[ERROR] 06:15:54:97 Team/(12162:12169): Hubo un problema enviando la suscripcion a la cola APPEARED del broker
+[ERROR] 06:16:10:726 Team/(12162:12186): Error: No se pudo enviar el GET correspondiente al pokemon onix, iniciando el comportamiento default
+[ERROR] 06:16:10:729 Team/(12162:12182): Error: No se pudo enviar el GET correspondiente al pokemon pikachu, iniciando el comportamiento default
+[ERROR] 06:16:10:730 Team/(12162:12183): Error: No se pudo enviar el GET correspondiente al pokemon gengar, iniciando el comportamiento default
+[ERROR] 06:16:12:449 Team/(12162:12180): Error: No se pudo enviar el GET correspondiente al pokemon squirtle, iniciando el comportamiento default
+[ERROR] 06:16:38:201 Team/(12202:12209): Hubo un problema enviando la suscripcion a la cola CAUGHT del broker
+[ERROR] 06:16:38:206 Team/(12202:12208): Hubo un problema enviando la suscripcion a la cola APPEARED del broker
+[ERROR] 06:16:38:210 Team/(12202:12216): Error: No se pudo enviar el GET correspondiente al pokemon squirtle, iniciando el comportamiento default
+[ERROR] 06:16:38:210 Team/(12202:12210): Hubo un problema enviando la suscripcion a la cola LOCALIZED del broker
+[ERROR] 06:16:38:215 Team/(12202:12219): Error: No se pudo enviar el GET correspondiente al pokemon onix, iniciando el comportamiento default
+[ERROR] 06:16:38:215 Team/(12202:12217): Error: No se pudo enviar el GET correspondiente al pokemon pikachu, iniciando el comportamiento default
+[ERROR] 06:16:38:215 Team/(12202:12218): Error: No se pudo enviar el GET correspondiente al pokemon gengar, iniciando el comportamiento default
+[ERROR] 06:18:29:190 Team/(12390:12397): Hubo un problema enviando la suscripcion a la cola LOCALIZED del broker
+[ERROR] 06:18:29:194 Team/(12390:12396): Hubo un problema enviando la suscripcion a la cola CAUGHT del broker
+[ERROR] 06:18:29:204 Team/(12390:12404): Error: No se pudo enviar el GET correspondiente al pokemon pikachu, iniciando el comportamiento default
+[ERROR] 06:18:29:204 Team/(12390:12405): Error: No se pudo enviar el GET correspondiente al pokemon gengar, iniciando el comportamiento default
+[ERROR] 06:18:29:204 Team/(12390:12403): Error: No se pudo enviar el GET correspondiente al pokemon squirtle, iniciando el comportamiento default
+[ERROR] 06:18:29:204 Team/(12390:12406): Error: No se pudo enviar el GET correspondiente al pokemon onix, iniciando el comportamiento default
+[ERROR] 06:18:29:204 Team/(12390:12395): Hubo un problema enviando la suscripcion a la cola APPEARED del broker
+[INFO] 06:18:44:87 Team/(12390:12392): Estado de entrenador 2 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 06:18:44:87 Team/(12390:12402): Estado de entrenador 2 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de atrapar pokemon
+[INFO] 06:18:44:87 Team/(12390:12402): Entrenador 2 esta atrapando pokemon pikachu ubicado en (9,9)
+[INFO] 06:18:44:87 Team/(12390:12402): El entrenador 2 se esta moviendo de (3,2) a (9,9)
+[INFO] 06:18:44:87 Team/(12390:12402): El entrenador 2 se encuentra en (3,3)
+[INFO] 06:18:44:422 Team/(12390:12392): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 06:18:44:672 Team/(12390:12392): Estado de entrenador 0 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 06:18:49:94 Team/(12390:12402): El entrenador 2 se encuentra en (3,4)
+[ERROR] 06:21:22:924 Team/(12702:12709): Hubo un problema enviando la suscripcion a la cola LOCALIZED del broker
+[ERROR] 06:21:22:934 Team/(12702:12716): Error: No se pudo enviar el GET correspondiente al pokemon pikachu, iniciando el comportamiento default
+[ERROR] 06:21:22:935 Team/(12702:12715): Error: No se pudo enviar el GET correspondiente al pokemon squirtle, iniciando el comportamiento default
+[ERROR] 06:21:22:935 Team/(12702:12708): Hubo un problema enviando la suscripcion a la cola CAUGHT del broker
+[ERROR] 06:21:22:944 Team/(12702:12717): Error: No se pudo enviar el GET correspondiente al pokemon gengar, iniciando el comportamiento default
+[ERROR] 06:21:22:944 Team/(12702:12718): Error: No se pudo enviar el GET correspondiente al pokemon onix, iniciando el comportamiento default
+[ERROR] 06:21:22:944 Team/(12702:12707): Hubo un problema enviando la suscripcion a la cola APPEARED del broker
+[INFO] 06:21:26:66 Team/(12702:12704): Estado de entrenador 2 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 06:21:26:66 Team/(12702:12714): Estado de entrenador 2 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de atrapar pokemon
+[INFO] 06:21:26:66 Team/(12702:12714): Entrenador 2 esta atrapando pokemon pikachu ubicado en (9,9)
+[INFO] 06:21:26:66 Team/(12702:12714): El entrenador 2 se esta moviendo de (3,2) a (9,9)
+[INFO] 06:21:26:66 Team/(12702:12714): El entrenador 2 se encuentra en (3,3)
+[INFO] 06:21:26:468 Team/(12702:12704): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 06:21:26:749 Team/(12702:12704): Estado de entrenador 0 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[ERROR] 06:22:37:930 Team/(12889:12896): Hubo un problema enviando la suscripcion a la cola LOCALIZED del broker
+[ERROR] 06:22:37:933 Team/(12889:12903): Error: No se pudo enviar el GET correspondiente al pokemon pikachu, iniciando el comportamiento default
+[ERROR] 06:22:37:933 Team/(12889:12902): Error: No se pudo enviar el GET correspondiente al pokemon squirtle, iniciando el comportamiento default
+[ERROR] 06:22:37:933 Team/(12889:12895): Hubo un problema enviando la suscripcion a la cola CAUGHT del broker
+[ERROR] 06:22:37:934 Team/(12889:12905): Error: No se pudo enviar el GET correspondiente al pokemon onix, iniciando el comportamiento default
+[ERROR] 06:22:37:934 Team/(12889:12904): Error: No se pudo enviar el GET correspondiente al pokemon gengar, iniciando el comportamiento default
+[ERROR] 06:22:37:934 Team/(12889:12894): Hubo un problema enviando la suscripcion a la cola APPEARED del broker
+[INFO] 06:22:40:109 Team/(12889:12891): Estado de entrenador 2 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 06:22:40:109 Team/(12889:12901): Estado de entrenador 2 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de atrapar pokemon
+[INFO] 06:22:40:110 Team/(12889:12901): Entrenador 2 esta atrapando pokemon pikachu ubicado en (9,9)
+[INFO] 06:22:40:110 Team/(12889:12901): El entrenador 2 se esta moviendo de (3,2) a (9,9)
+[INFO] 06:22:40:110 Team/(12889:12901): El entrenador 2 se encuentra en (3,3)
+[INFO] 06:22:40:518 Team/(12889:12891): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 06:22:40:814 Team/(12889:12891): Estado de entrenador 0 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[ERROR] 06:23:48:479 Team/(13064:13071): Hubo un problema enviando la suscripcion a la cola LOCALIZED del broker
+[ERROR] 06:23:48:484 Team/(13064:13070): Hubo un problema enviando la suscripcion a la cola CAUGHT del broker
+[ERROR] 06:23:48:494 Team/(13064:13079): Error: No se pudo enviar el GET correspondiente al pokemon gengar, iniciando el comportamiento default
+[ERROR] 06:23:48:494 Team/(13064:13077): Error: No se pudo enviar el GET correspondiente al pokemon squirtle, iniciando el comportamiento default
+[ERROR] 06:23:48:494 Team/(13064:13078): Error: No se pudo enviar el GET correspondiente al pokemon pikachu, iniciando el comportamiento default
+[ERROR] 06:23:48:494 Team/(13064:13080): Error: No se pudo enviar el GET correspondiente al pokemon onix, iniciando el comportamiento default
+[ERROR] 06:23:48:494 Team/(13064:13069): Hubo un problema enviando la suscripcion a la cola APPEARED del broker
+[INFO] 06:23:50:221 Team/(13064:13066): Estado de entrenador 2 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 06:23:50:221 Team/(13064:13076): Estado de entrenador 2 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de atrapar pokemon
+[INFO] 06:23:50:221 Team/(13064:13076): Entrenador 2 esta atrapando pokemon pikachu ubicado en (9,9)
+[INFO] 06:23:50:221 Team/(13064:13076): El entrenador 2 se esta moviendo de (3,2) a (9,9)
+[INFO] 06:23:50:221 Team/(13064:13076): El entrenador 2 se encuentra en (3,3)
+[INFO] 06:23:50:499 Team/(13064:13066): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 06:23:50:777 Team/(13064:13066): Estado de entrenador 0 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[ERROR] 06:25:06:482 Team/(13213:13220): Hubo un problema enviando la suscripcion a la cola LOCALIZED del broker
+[ERROR] 06:25:06:483 Team/(13213:13227): Error: No se pudo enviar el GET correspondiente al pokemon pikachu, iniciando el comportamiento default
+[ERROR] 06:25:06:483 Team/(13213:13219): Hubo un problema enviando la suscripcion a la cola CAUGHT del broker
+[ERROR] 06:25:06:485 Team/(13213:13229): Error: No se pudo enviar el GET correspondiente al pokemon onix, iniciando el comportamiento default
+[ERROR] 06:25:06:485 Team/(13213:13228): Error: No se pudo enviar el GET correspondiente al pokemon gengar, iniciando el comportamiento default
+[ERROR] 06:25:06:485 Team/(13213:13226): Error: No se pudo enviar el GET correspondiente al pokemon squirtle, iniciando el comportamiento default
+[ERROR] 06:25:06:485 Team/(13213:13218): Hubo un problema enviando la suscripcion a la cola APPEARED del broker
+[INFO] 06:25:08:75 Team/(13213:13215): Estado de entrenador 2 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 06:25:08:75 Team/(13213:13225): Estado de entrenador 2 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de atrapar pokemon
+[INFO] 06:25:08:75 Team/(13213:13225): Entrenador 2 esta atrapando pokemon pikachu ubicado en (9,9)
+[INFO] 06:25:08:75 Team/(13213:13225): El entrenador 2 se esta moviendo de (3,2) a (9,9)
+[INFO] 06:25:08:75 Team/(13213:13225): El entrenador 2 se encuentra en (3,3)
+[INFO] 06:25:08:339 Team/(13213:13215): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 06:25:08:597 Team/(13213:13215): Estado de entrenador 0 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[ERROR] 06:27:33:156 Team/(13420:13427): Hubo un problema enviando la suscripcion a la cola LOCALIZED del broker
+[ERROR] 06:27:33:168 Team/(13420:13426): Hubo un problema enviando la suscripcion a la cola CAUGHT del broker
+[ERROR] 06:27:33:179 Team/(13420:13434): Error: No se pudo enviar el GET correspondiente al pokemon pikachu, iniciando el comportamiento default
+[ERROR] 06:27:33:179 Team/(13420:13436): Error: No se pudo enviar el GET correspondiente al pokemon onix, iniciando el comportamiento default
+[ERROR] 06:27:33:179 Team/(13420:13433): Error: No se pudo enviar el GET correspondiente al pokemon squirtle, iniciando el comportamiento default
+[ERROR] 06:27:33:179 Team/(13420:13435): Error: No se pudo enviar el GET correspondiente al pokemon gengar, iniciando el comportamiento default
+[ERROR] 06:27:33:179 Team/(13420:13425): Hubo un problema enviando la suscripcion a la cola APPEARED del broker
+[INFO] 06:27:36:285 Team/(13420:13422): Estado de entrenador 2 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 06:27:36:286 Team/(13420:13432): Estado de entrenador 2 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de atrapar pokemon
+[INFO] 06:27:36:286 Team/(13420:13432): Entrenador 2 esta atrapando pokemon pikachu ubicado en (9,9)
+[INFO] 06:27:36:286 Team/(13420:13432): El entrenador 2 se esta moviendo de (3,2) a (9,9)
+[INFO] 06:27:36:286 Team/(13420:13432): El entrenador 2 se encuentra en (3,3)
+[INFO] 06:27:36:602 Team/(13420:13422): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 06:27:36:902 Team/(13420:13422): Estado de entrenador 0 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[ERROR] 06:33:07:161 Team/(13652:13659): Hubo un problema enviando la suscripcion a la cola LOCALIZED del broker
+[ERROR] 06:33:07:166 Team/(13652:13658): Hubo un problema enviando la suscripcion a la cola CAUGHT del broker
+[ERROR] 06:33:07:181 Team/(13652:13668): Error: No se pudo enviar el GET correspondiente al pokemon onix, iniciando el comportamiento default
+[ERROR] 06:33:07:181 Team/(13652:13666): Error: No se pudo enviar el GET correspondiente al pokemon pikachu, iniciando el comportamiento default
+[ERROR] 06:33:07:181 Team/(13652:13667): Error: No se pudo enviar el GET correspondiente al pokemon gengar, iniciando el comportamiento default
+[ERROR] 06:33:07:181 Team/(13652:13665): Error: No se pudo enviar el GET correspondiente al pokemon squirtle, iniciando el comportamiento default
+[ERROR] 06:33:07:181 Team/(13652:13657): Hubo un problema enviando la suscripcion a la cola APPEARED del broker
+[INFO] 06:33:08:649 Team/(13652:13654): Estado de entrenador 2 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 06:33:08:649 Team/(13652:13664): Estado de entrenador 2 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de atrapar pokemon
+[INFO] 06:33:08:649 Team/(13652:13664): Entrenador 2 esta atrapando pokemon pikachu ubicado en (9,9)
+[INFO] 06:33:08:649 Team/(13652:13664): El entrenador 2 se esta moviendo de (3,2) a (9,9)
+[INFO] 06:33:08:649 Team/(13652:13664): El entrenador 2 se encuentra en (3,3)
+[INFO] 06:33:08:663 Team/(13652:13654): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 06:33:08:666 Team/(13652:13654): Estado de entrenador 0 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon

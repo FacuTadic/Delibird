@@ -885,6 +885,9 @@ int main(void) {
 		pthread_join(threads_entrenadores[i], NULL);
 	}
 
+	log_destroy(logger);
+	logger = iniciar_logger(log_file);
+
 	mostrar_metricas();
 	terminar_programa();
 	return EXIT_SUCCESS;
@@ -935,14 +938,22 @@ void inicializar_entrenadores() {
 
 	int i = 0;
 
-	while (posiciones[i] != NULL && pokemones[i] != NULL && objetivos[i] != NULL) {
+	int cant_pokemon_entrenadores = cantidad_de_pokemon_entrenadores(pokemones);
+
+	while (posiciones[i] != NULL && objetivos[i] != NULL) {
 
 		char* objetivo_entrenador = objetivos[i];
 		log_info(extense_logger, "Objetivos para el entrenador %i: %s", i, objetivos[i]);
 		char* posicion = posiciones[i];
 		log_info(extense_logger, "Posiciones para el entrenador %i: %s", i, posiciones[i]);
-		char* conjunto_pokemon = pokemones[i];
-		log_info(extense_logger, "Pokemones para el entrenador %i: %s", i, pokemones[i]);
+		char* conjunto_pokemon;
+		if (i < cant_pokemon_entrenadores) {
+			conjunto_pokemon = pokemones[i];
+		} else {
+			conjunto_pokemon = "";
+		}
+
+		log_info(extense_logger, "Pokemones para el entrenador %i: %s", i, conjunto_pokemon);
 
 		string_to_lower(objetivo_entrenador);
 		string_to_lower(conjunto_pokemon);
@@ -1074,8 +1085,9 @@ void inicializar_entrenadores() {
 
 		free(objetivo_entrenador);
 		free(posicion);
-		free(conjunto_pokemon);
-		free(posiciones);
+		if (string_equals_ignore_case(conjunto_pokemon, "") != 1) {
+			free(conjunto_pokemon);
+		}
 		free(token_obj);
 		free(token_pok);
 
@@ -1085,6 +1097,14 @@ void inicializar_entrenadores() {
 	free(posiciones);
 	free(pokemones);
 	free(objetivos);
+}
+
+int cantidad_de_pokemon_entrenadores(char** pokemones) {
+	int i = 0;
+	while (pokemones[i] != NULL) {
+		i++;
+	}
+	return i;
 }
 
 void definir_primer_estado(t_entrenador* entrenador) {

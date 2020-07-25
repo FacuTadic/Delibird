@@ -9,9 +9,9 @@ t_log* iniciar_loggerGameBoy() {
 }
 
 t_config* leer_config(){
-		t_config* config;
-		config = config_create("gameBoy.config");
-		return config;
+	t_config* config;
+	config = config_create("gameBoy.config");
+	return config;
 }
 
 void inicializerVariables(char*argv[]){
@@ -27,10 +27,10 @@ void inicializerVariables(char*argv[]){
 			string_append(&mensajeSuscriptor,argv[2]);
 			string_append(&colaDeSuscripcion,argv[3]);
 			string_append(&tiempoReconexion,argv[4]);
-	} else {
-		string_append(&modulo,argv[1]);
+		} else {
+			string_append(&modulo,argv[1]);
+		}
 	}
-}
 }
 
 
@@ -78,7 +78,7 @@ int main(int argc,char*argv[]){
 	log_info(loggerDev, "La ID del modulo GameBoy es: %i", idGameBoy);
 
 
-//###################################################### PROCESO #####################################################################################
+	//###################################################### PROCESO #####################################################################################
 
 	log_info(loggerGameBoy, "Iniciando conexion con el modulo %s", argv[1]);
 	conexion = crear_conexion(ip, puerto);
@@ -102,20 +102,14 @@ int main(int argc,char*argv[]){
 		sleep(tiempoSuscripcion);
 	}
 
-
 	free(ipNombre);
 	free(puerto);
 
 	terminar_programa(conexion);
-
 }
 
-
-
-void terminar_programa(int conexion){
+void terminar_programa(int conexion) {
 	liberar_conexion(conexion);
-	log_destroy(loggerDev);
 	log_destroy(loggerGameBoy);
-	config_destroy(config);
+	log_destroy(loggerDev);
 }
-

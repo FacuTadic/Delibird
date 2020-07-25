@@ -498,8 +498,6 @@ void enviar_mensaje(char* argv[], int socket_cliente){
 	free(paquete);
 }
 
-
-
 void recibir_mensaje(int socket_cliente)
 {
 	log_info(loggerDev, "yendo a buscar el codigo de operacion");

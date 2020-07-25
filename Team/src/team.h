@@ -155,6 +155,7 @@ t_log* iniciar_logger_sin_consola(char* log_file);
 t_config* leer_config(void);
 void terminar_programa();
 void inicializar_entrenadores(void);
+int cantidad_de_pokemon_entrenadores(char** pokemones);
 void inicializar_cola(void);
 void obtener_objetivo_global(void);
 void obtener_pokemones_a_localizar(void);
