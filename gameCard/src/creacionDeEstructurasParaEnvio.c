@@ -2,10 +2,7 @@
 
 t_paquete* crearPaquete(t_buffer* buffer){
 	t_paquete* paquete = malloc(sizeof(t_paquete));
-	paquete->buffer = malloc(sizeof(t_buffer));
-	memcpy(paquete->buffer,  buffer, buffer->size + sizeof(uint32_t));
-	free(buffer->stream);
-	free(buffer);
+	paquete->buffer = buffer;
 	return paquete;
 }
 

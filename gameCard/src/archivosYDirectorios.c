@@ -173,8 +173,15 @@ void actualizarBlockMetadata(t_config* archivoMetadata, char*blockAAgregar){
 	config_set_value(archivoMetadata,"BLOCKS",listaNueva);
 	config_save(archivoMetadata);
 
-	free(blocksActuales);
 	free(listaNueva);
+
+	uint32_t indexParaBorrar = 0;
+	while(blocksActuales[indexParaBorrar] != NULL){
+		free(blocksActuales[indexParaBorrar]);
+		indexParaBorrar++;
+	}
+
+	free(blocksActuales);
 
 }
 
