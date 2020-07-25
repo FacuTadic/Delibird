@@ -287,16 +287,19 @@ void laburar(void* entrenador_param) {
 		// segundo entrenador de la lista de entrenadores
 		t_entrenador* otro_entrenador = (t_entrenador*) list_get(parametros_intercambio->entrenadores, 1);
 
-		log_info(extense_logger, "Cargado el entrenador %i con el que entrenador %i va a intercambiar pokemon", entrenador->index, otro_entrenador->index);
+		log_info(extense_logger, "Cargado el entrenador %i con el que entrenador %i va a intercambiar pokemon", otro_entrenador->index, entrenador->index);
 
 		// ir al lugar en cuestion
-		log_info(extense_logger, "Moviendo al entrenador %i a la posicion X: %i y posicion Y: %i",entrenador->index,parametros_atrapado->pos_X,parametros_atrapado->pos_Y);
+		log_info(extense_logger, "Moviendo al entrenador %i a la posicion X: %i y posicion Y: %i", entrenador->index, otro_entrenador->posX, otro_entrenador->posY);
 		irA(otro_entrenador->posX, otro_entrenador->posY, entrenador);
-		log_info(extense_logger, "Llego el entrenador %i a X:%i Y: %i",entrenador->index,parametros_atrapado->pos_X,parametros_atrapado->pos_Y);
+		log_info(extense_logger, "Llego el entrenador %i a X:%i Y: %i",entrenador->index, otro_entrenador->posX, otro_entrenador->posY);
+
+		char* pokemon1 = (char*) list_get(parametros_intercambio->pokemones, 0);
+		char* pokemon2 = (char*) list_get(parametros_intercambio->pokemones, 1);
 
 		// intercambiar el pokemon correspondiente con el otro entrenador
-		log_info(extense_logger, "Empezando el intercambio de pokemon %s y pokemon %s entre entrenador %i y entrenador %i",entrenador->index, otro_entrenador->index);
-		intercambiar_pokemones(entrenador, otro_entrenador, (char*) list_get(parametros_intercambio->pokemones, 0), (char*) list_get(parametros_intercambio->pokemones, 1));
+		log_info(extense_logger, "Empezando el intercambio de pokemon %s y pokemon %s entre entrenador %i y entrenador %i", pokemon1, pokemon2, entrenador->index, otro_entrenador->index);
+		intercambiar_pokemones(entrenador, otro_entrenador, pokemon1, pokemon2);
 		log_info(extense_logger, "Intercambio realizado");
 
 		// obtener deadlock nuevo si existe y agregarlo a la cola de mensajes del planificador
@@ -497,11 +500,7 @@ void planificar_deadlock(void) {
 		log_info(extense_logger, "Planificando tratamiento de deadlock");
 		t_deadlock* mensaje_deadlock = (t_deadlock*) mensaje_recibido->mensaje;
 
-		log_info(extense_logger, "A");
-
 		if (todavia_existe_deadlock(mensaje_deadlock) == 1) {
-
-			log_info(extense_logger, "B");
 
 			t_tarea* tarea_deadlock = malloc(sizeof(t_tarea));
 
@@ -512,8 +511,6 @@ void planificar_deadlock(void) {
 
 			cambiar_tarea_de_entrenador(primer_entrenador, tarea_deadlock);
 			cambiar_estado_de_entrenador(primer_entrenador, ESTADO_READY, "Entrenador planificado para intercambiar pokemones");
-
-			log_info(extense_logger, "C");
 
 			sem_post(&(((t_entrenador*) list_get(mensaje_deadlock->entrenadores, 0))->semaforo));
 		} else {
@@ -527,25 +524,25 @@ void planificar_deadlock(void) {
 }
 
 int todavia_existe_deadlock(t_deadlock* deadlock) {
-	int hay_deadlock = 1;
 	for (int i = 0; i < deadlock->entrenadores->elements_count; i++) {
-		t_entrenador* entrenador_lista = (t_entrenador*) list_get(deadlock->entrenadores, i);
-		char* pokemon_deadlock = (char*) list_get(deadlock->pokemones, i);
-		int hay_deadlock_en_entrenador = 0;
-		for (int j = 0; entrenador_lista->pokemones_innecesarios->elements_count; j++) {
-			char* pokemon_lista = (char*) list_get(entrenador_lista->pokemones_innecesarios, j);
-
-			if (string_equals_ignore_case(pokemon_deadlock, pokemon_lista) == 1) {
-				j = entrenador_lista->pokemones_innecesarios->elements_count;
-				hay_deadlock_en_entrenador = 1;
-			}
-		}
+		t_entrenador* entrenador_deadlock = list_get(deadlock->entrenadores, i);
+		char* pokemon_deadlock = list_get(deadlock->pokemones, i);
+		int hay_deadlock_en_entrenador = entrenador_tiene_pokemon_innecesario(entrenador_deadlock, pokemon_deadlock);
 		if (hay_deadlock_en_entrenador == 0) {
-			i = deadlock->entrenadores->elements_count;
-			hay_deadlock = 0;
+			return 0;
 		}
 	}
-	return hay_deadlock;
+	return 1;
+}
+
+int entrenador_tiene_pokemon_innecesario(t_entrenador* entrenador, char* pokemon) {
+	for (int i = 0; i < entrenador->pokemones_innecesarios->elements_count; i++) {
+		char* pokemon_lista = list_get(entrenador->pokemones_innecesarios, i);
+		if (string_equals_ignore_case(pokemon_lista, pokemon) == 1) {
+			return 1;
+		}
+	}
+	return 0;
 }
 
 void buscar_deadlocks(void) {
@@ -596,43 +593,35 @@ t_deadlock* obtener_deadlock_por_arbol(t_list* entrenadores_bloqueados, int inde
 	raiz->hijos = list_create();
 	raiz->pokemon_faltante = NULL;
 
-	log_info(extense_logger, "Cantidad de entrenadores bloqueados: %i", entrenadores_bloqueados->elements_count);
+	log_info(extense_logger, "Cantidad de entrenadores bloqueados para buscar deadlocks: %i", entrenadores_bloqueados->elements_count);
 	for (int i = 0; i < entrenadores_bloqueados->elements_count; i++) {
-		log_info(extense_logger, "Vuelta %i de agregado de nivel hasta deadlock", i);
 		t_deadlock* deadlock = agregar_nivel_hasta_deadlock(raiz, i, entrenadores_bloqueados);
 		if (deadlock != NULL) {
+			log_info(extense_logger, "Liberando arbol luego de encontrar deadlock");
 			liberar_arbol(raiz);
-			log_info(extense_logger, "Liberando raiz luego de encontrar deadlock");
 			free(raiz);
 			return deadlock;
 		}
 	}
 	log_info(extense_logger, "Liberando arbol luego de no encontrar deadlock");
 	liberar_arbol(raiz);
-	log_info(extense_logger, "Arbol liberado luego de no encontrar deadlock");
 	free(raiz);
-	log_info(extense_logger, "Raiz liberada luego de no encontrar deadlock");
 	return NULL;
 }
 
 t_deadlock* agregar_nivel_hasta_deadlock(t_nodo_arbol* raiz, int i, t_list* entrenadores_bloqueados) {
 	t_list* nivel = obtener_nivel_de_arbol(raiz, i);
 	t_deadlock* deadlock = NULL;
-	log_info(extense_logger, "Obteniendo nivel %i con %i elementos", i, nivel->elements_count);
 	for (int j = 0; j < nivel->elements_count; j++) {
-		log_info(extense_logger, "Vuelta de nivel %i", j);
 		t_nodo_arbol* nodo = (t_nodo_arbol*) list_get(nivel, j);
 		int ubicacion_nodo_raiz = agregar_hijos(nodo, raiz, entrenadores_bloqueados);
 		if (ubicacion_nodo_raiz != -1) {
-			log_info(extense_logger, "Ubicacion nodo raiz distinto de -1");
 			t_nodo_arbol* nodo_raiz = (t_nodo_arbol*) list_get(nodo->hijos, ubicacion_nodo_raiz);
 			deadlock = armar_deadlock(nodo_raiz);
 			j = nivel->elements_count;
 		}
 	}
-	log_info(extense_logger, "Destruyendo lista de nivel");
 	list_destroy(nivel);
-	log_info(extense_logger, "Lista de nivel destruida");
 	return deadlock;
 }
 
@@ -682,7 +671,6 @@ int agregar_hijos(t_nodo_arbol* nodo, t_nodo_arbol* raiz, t_list* entrenadores_b
 		char* pokemon_innecesario_lista = (char*) list_get(nodo->entrenador->pokemones_innecesarios, i);
 		t_list* entrenadores_que_necesitan = entrenadores_que_necesitan_pokemon(pokemon_innecesario_lista, entrenadores_bloqueados);
 		for (int j = 0; j < entrenadores_que_necesitan->elements_count; j++) {
-			log_info(extense_logger, "Agregando hijo");
 			t_entrenador* entrenador_hijo = (t_entrenador*) list_get(entrenadores_que_necesitan, j);
 			t_nodo_arbol* nodo_hijo = malloc(sizeof(t_nodo_arbol));
 			nodo_hijo->entrenador = entrenador_hijo;
@@ -691,7 +679,6 @@ int agregar_hijos(t_nodo_arbol* nodo, t_nodo_arbol* raiz, t_list* entrenadores_b
 			nodo_hijo->hijos = list_create();
 			list_add(nodo->hijos, nodo_hijo);
 			if (nodo_hijo->entrenador->index == raiz->entrenador->index) {
-				log_info(extense_logger, "Agregando hijo igual a la raiz, vamos a devolver %i", nodo->hijos->elements_count - 1);
 				hijo_raiz = nodo->hijos->elements_count - 1;
 				j = entrenadores_que_necesitan->elements_count;
 				i = nodo->entrenador->pokemones_innecesarios->elements_count;
@@ -699,24 +686,18 @@ int agregar_hijos(t_nodo_arbol* nodo, t_nodo_arbol* raiz, t_list* entrenadores_b
 		}
 		list_destroy(entrenadores_que_necesitan);
 	}
-
-	log_info(extense_logger, "Retornando hijo_raiz %i", hijo_raiz);
 	return hijo_raiz;
 }
 
 void liberar_arbol(t_nodo_arbol* raiz) {
-	log_info(extense_logger, "Liberando arbol de nodo de entrenador: %i", raiz->entrenador->index);
 	if (raiz->hijos == NULL || raiz->hijos->elements_count == 0) {
-		log_info(extense_logger, "Nodo de entrenador %i no tiene hijos", raiz->entrenador->index);
 		if (raiz->hijos != NULL) {
 			list_destroy(raiz->hijos);
 		}
 	} else {
-		log_info(extense_logger, "Nodo de entrenador %i tiene hijos", raiz->entrenador->index);
 		for (int i = 0; i < raiz->hijos->elements_count; i++) {
 			t_nodo_arbol* nodo_hijo = (t_nodo_arbol*) list_get(raiz->hijos, i);
 			liberar_arbol(nodo_hijo);
-			log_info(extense_logger, "Liberando nodo hijo de entrenador %i", nodo_hijo->entrenador->index);
 			free(nodo_hijo);
 		}
 		list_destroy(raiz->hijos);

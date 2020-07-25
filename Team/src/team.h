@@ -189,6 +189,7 @@ t_list* entrenadores_que_necesitan_pokemon(char* pokemon, t_list* entrenadores_b
 t_deadlock* armar_deadlock(t_nodo_arbol* nodo_raiz);
 void liberar_arbol(t_nodo_arbol* raiz);
 int todavia_existe_deadlock(t_deadlock* mensaje_deadlock);
+int entrenador_tiene_pokemon_innecesario(t_entrenador* entrenador, char* pokemon);
 int pokemon_ya_fue_recibido(char* pokemon);
 bool es_pokemon_global(char* nombre_pokemon);
 t_list* entrenadores_que_pueden_ir_a_atrapar();
