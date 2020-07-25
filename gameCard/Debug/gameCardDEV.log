@@ -4194,3 +4194,31 @@
 [INFO] 14:15:51:462 GameCard PAPAA/(16609:16629): Serializacion completa
 [INFO] 14:15:51:462 GameCard PAPAA/(16609:16629): El peso total es: 27
 [ERROR] 14:15:51:462 GameCard PAPAA/(16609:16629): Error: No se pudo enviar el mensaje
+[INFO] 14:24:58:302 GameCard PAPAA/(17653:17653): logger iniciado.
+[INFO] 14:24:58:331 GameCard PAPAA/(17653:17653): Config cargada.
+[INFO] 14:24:58:333 GameCard PAPAA/(17653:17653): La IP del Broker: 127.0.0.1
+[INFO] 14:24:58:333 GameCard PAPAA/(17653:17653): El Puerto es: 6009
+[INFO] 14:24:58:336 GameCard PAPAA/(17653:17653): El tiempo de reintento de conexion es: 10
+[INFO] 14:24:58:337 GameCard PAPAA/(17653:17653): El tiempo de reintento de operacion es: 5
+[INFO] 14:24:58:338 GameCard PAPAA/(17653:17653): El tiempo de retardo de conexion es: 5
+[INFO] 14:24:58:338 GameCard PAPAA/(17653:17653): El punto de montaje es: /home/utnso/Escritorio/tall-grass
+[INFO] 14:24:58:339 GameCard PAPAA/(17653:17653): La IP es: 127.0.0.1
+[INFO] 14:24:58:339 GameCard PAPAA/(17653:17653): El puerto es: 4447
+[INFO] 14:24:58:340 GameCard PAPAA/(17653:17653): El punto de montaje es: /home/utnso/Escritorio/tall-grass
+[INFO] 14:24:58:343 GameCard PAPAA/(17653:17653): La ruta del metadataes: /home/utnso/Escritorio/tall-grass/Metadata
+[INFO] 14:24:58:345 GameCard PAPAA/(17653:17653): Se creo el config de MetaData
+[INFO] 14:24:58:346 GameCard PAPAA/(17653:17653): El Block Size es: 64
+[INFO] 14:24:58:347 GameCard PAPAA/(17653:17653): La cantidad de Bloques es: 5192
+[INFO] 14:24:58:347 GameCard PAPAA/(17653:17653): El Magic Number es: TALL_GRASS
+[INFO] 14:24:58:364 GameCard PAPAA/(17653:17653): Bitmap ya seteado
+[ERROR] 14:24:58:397 GameCard PAPAA/(17653:17653): Ya existe el BitMap
+[INFO] 14:24:58:400 GameCard PAPAA/(17653:17653): SETEO DE VARIABLES PARA ARCHIVOSYDIRECTORIOS.H
+[INFO] 14:24:58:400 GameCard PAPAA/(17653:17653): El ID de modulo es: 1804289383
+[INFO] 14:24:58:434 GameCard PAPAA/(17653:17654): Esperando mensajes de game boy en socket 7
+[INFO] 14:24:58:435 GameCard PAPAA/(17653:17656): Escucho CATCH de BROKER
+[INFO] 14:24:58:436 GameCard PAPAA/(17653:17655): Escuchando NEW de BROKER
+[ERROR] 14:24:58:445 GameCard PAPAA/(17653:17656): Hubo un problema enviando la suscripcion a la cola CATCH del broker
+[ERROR] 14:24:58:446 GameCard PAPAA/(17653:17655): Hubo un problema enviando la suscripcion a la cola NEW del broker
+[INFO] 14:24:58:446 GameCard PAPAA/(17653:17657): Escucho GET de BROKER
+[INFO] 14:24:58:447 GameCard PAPAA/(17653:17658): Hilo de verificacion periodica de conexion con Broker iniciado
+[ERROR] 14:24:58:461 GameCard PAPAA/(17653:17657): Hubo un problema enviando la suscripcion a la cola GET del broker

@@ -521,3 +521,9 @@
 [INFO] 14:15:46:398 GameCard/(16609:16629): La cantidad nueva de la posicion 4-1 dentro del metadata es de 1818
 [INFO] 14:15:46:412 GameCard/(16609:16629): El archivo 1 pesa: 72
 [INFO] 14:15:46:413 GameCard/(16609:16629): El peso total de los blocks es de: 72
+[INFO] 14:24:58:270 GameCard/(17653:17653): logger iniciado.
+[INFO] 14:24:58:340 GameCard/(17653:17653): Lenavando el Tall Grass
+[INFO] 14:24:58:397 GameCard/(17653:17653): Punto de montaje del directorio Metadata es: /home/utnso/Escritorio/tall-grass/Metadata
+[INFO] 14:24:58:398 GameCard/(17653:17653): El BitMap se encuentra en: /home/utnso/Escritorio/tall-grass/Metadata/BitMap.bin
+[INFO] 14:24:58:399 GameCard/(17653:17653): Punto de montaje del directorio Files es: /home/utnso/Escritorio/tall-grass/Files
+[INFO] 14:24:58:399 GameCard/(17653:17653): Punto de montaje del directorio Blocks es: /home/utnso/Escritorio/tall-grass/Blocks
