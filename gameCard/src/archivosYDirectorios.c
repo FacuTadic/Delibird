@@ -305,7 +305,6 @@ char** cargarVectorSinElValor(char** arrayViejo,char* block){
 	uint32_t i = 0;
 	char* nada = string_new();
 
-
 	while(arrayViejo[i] != NULL){
 			if(strcasecmp(arrayViejo[i],block)){
 				log_info(loggerDevArchDir, "Se asigno el block %s a la posicion %i",arrayViejo[i],i);
@@ -332,6 +331,7 @@ char** cargarVectorSinElValor(char** arrayViejo,char* block){
 
 char* cargarArrayEnChar(char** arrayViejo){
 	char* arrayPlano = string_new();
+
 	string_append(&arrayPlano,"[");
 	uint32_t indexArray = 0;
 
@@ -351,6 +351,23 @@ char* cargarArrayEnChar(char** arrayViejo){
 
 void borrarBloqueDe(t_config* archivoMetaData, char*block){
 	char** blocksOcupados = config_get_array_value(archivoMetaData,"BLOCKS");
+	uint32_t i= 0;
+
+	if(blocksOcupados[i+1] == NULL){
+		log_info(loggerDevArchDir, "No hay mas bloques");
+		config_set_value(archivoMetaData,"BLOCKS","[]");
+		config_save(archivoMetaData);
+
+		while(blocksOcupados[i] != NULL){
+			free(blocksOcupados[i]);
+			i++;
+		}
+		free(blocksOcupados);
+
+		return;
+	}
+
+
 	char** nuevoArrayDeBlock = cargarVectorSinElValor(blocksOcupados,block);
 
 	char* arrayPlano = cargarArrayEnChar(nuevoArrayDeBlock);
@@ -360,6 +377,14 @@ void borrarBloqueDe(t_config* archivoMetaData, char*block){
 	log_info(loggerDevArchDir, "Se seteo el valor del nuevo array en el metadata del pokemon");
 
 	config_save(archivoMetaData);
+
+	uint32_t j =0;
+	while(nuevoArrayDeBlock[j] != NULL){
+			free(nuevoArrayDeBlock[j]);
+			j++;
+		}
+	free(nuevoArrayDeBlock);
+	free(arrayPlano);
 
 }
 

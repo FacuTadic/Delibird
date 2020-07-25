@@ -33,7 +33,7 @@ t_buffer* crearBufferAppeared(t_appeared* appearedAEnviar){
 	uint32_t posX = appearedAEnviar->coordX;
 	uint32_t posY = appearedAEnviar->coordY;
 
-	bufferAppeared->size = 4*sizeof(uint32_t) + strlen(nombrePokemon)+1; // sizeNombre, Cord X,Y + NOMBRE
+	bufferAppeared->size = 4*sizeof(uint32_t) + strlen(nombrePokemon)+1; // sizeNombre, idMensaje, Cord X, Coord Y + NOMBRE
 	bufferAppeared->stream = malloc(bufferAppeared->size);
 
 	memcpy(bufferAppeared->stream + offset,&idMensaje, sizeof(uint32_t));
@@ -59,6 +59,8 @@ t_buffer* crearBufferAppeared(t_appeared* appearedAEnviar){
 	memcpy(bufferAppeared->stream + offset,&posY, sizeof(uint32_t));
 	offset += sizeof(uint32_t);
 	log_info(loggerDevEstructuras, "Posicion Y %i", posY);
+
+	free(nombrePokemon);
 
 	return bufferAppeared;
 }

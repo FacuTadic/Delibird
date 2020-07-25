@@ -1080,3 +1080,1721 @@
 [ERROR] 01:19:36:581 GameCard PAPAA/(12816:12827): Error: No se pudo enviar el mensaje
 [INFO] 01:19:38:381 GameCard PAPAA/(12816:12821): Iniciando verificacion de conexion con Broker...
 [ERROR] 01:19:38:382 GameCard PAPAA/(12816:12821): Reconexion con Broker fallida, intentando nuevamente en 10 segundos
+[INFO] 01:24:32:640 GameCard PAPAA/(13507:13507): logger iniciado.
+[INFO] 01:24:32:670 GameCard PAPAA/(13507:13507): Config cargada.
+[INFO] 01:24:32:672 GameCard PAPAA/(13507:13507): La IP del Broker: 127.0.0.1
+[INFO] 01:24:32:672 GameCard PAPAA/(13507:13507): El Puerto es: 6009
+[INFO] 01:24:32:675 GameCard PAPAA/(13507:13507): El tiempo de reintento de conexion es: 10
+[INFO] 01:24:32:676 GameCard PAPAA/(13507:13507): El tiempo de reintento de operacion es: 5
+[INFO] 01:24:32:677 GameCard PAPAA/(13507:13507): El tiempo de retardo de conexion es: 5
+[INFO] 01:24:32:677 GameCard PAPAA/(13507:13507): El punto de montaje es: /home/utnso/Escritorio/tall-grass
+[INFO] 01:24:32:678 GameCard PAPAA/(13507:13507): La IP es: 127.0.0.1
+[INFO] 01:24:32:679 GameCard PAPAA/(13507:13507): El puerto es: 4447
+[INFO] 01:24:32:680 GameCard PAPAA/(13507:13507): El punto de montaje es: /home/utnso/Escritorio/tall-grass
+[INFO] 01:24:32:682 GameCard PAPAA/(13507:13507): La ruta del metadataes: /home/utnso/Escritorio/tall-grass/Metadata
+[INFO] 01:24:32:684 GameCard PAPAA/(13507:13507): Se creo el config de MetaData
+[INFO] 01:24:32:686 GameCard PAPAA/(13507:13507): El Block Size es: 64
+[INFO] 01:24:32:686 GameCard PAPAA/(13507:13507): La cantidad de Bloques es: 5192
+[INFO] 01:24:32:687 GameCard PAPAA/(13507:13507): El Magic Number es: TALL_GRASS
+[INFO] 01:24:32:706 GameCard PAPAA/(13507:13507): Bitmap ya seteado
+[ERROR] 01:24:32:738 GameCard PAPAA/(13507:13507): Ya existe el BitMap
+[INFO] 01:24:32:741 GameCard PAPAA/(13507:13507): SETEO DE VARIABLES PARA ARCHIVOSYDIRECTORIOS.H
+[INFO] 01:24:32:742 GameCard PAPAA/(13507:13507): El ID de modulo es: 1804289383
+[INFO] 01:24:32:777 GameCard PAPAA/(13507:13508): Esperando mensajes de game boy en socket 7
+[INFO] 01:24:32:778 GameCard PAPAA/(13507:13511): Escucho GET de BROKER
+[INFO] 01:24:32:779 GameCard PAPAA/(13507:13510): Escucho CATCH de BROKER
+[INFO] 01:24:32:780 GameCard PAPAA/(13507:13509): Escuchando NEW de BROKER
+[ERROR] 01:24:32:791 GameCard PAPAA/(13507:13511): Hubo un problema enviando la suscripcion a la cola GET del broker
+[INFO] 01:24:32:792 GameCard PAPAA/(13507:13512): Hilo de verificacion periodica de conexion con Broker iniciado
+[ERROR] 01:24:32:793 GameCard PAPAA/(13507:13509): Hubo un problema enviando la suscripcion a la cola NEW del broker
+[ERROR] 01:24:32:794 GameCard PAPAA/(13507:13510): Hubo un problema enviando la suscripcion a la cola CATCH del broker
+[INFO] 01:24:35:222 GameCard PAPAA/(13507:13508): Socket 7 de gameBoy aceptado
+[INFO] 01:24:35:239 GameCard PAPAA/(13507:13518): Recibiendo codigo de operacion de GameBoy en socket 8
+[INFO] 01:24:35:244 GameCard PAPAA/(13507:13518): Codigo de operacion de socket 8 recibido: 1
+[INFO] 01:24:35:257 GameCard PAPAA/(13507:13518): Procesando request de GameBoy
+[INFO] 01:24:35:294 GameCard PAPAA/(13507:13518): Codigo de operacion recibido del socket cliente 8 corresponde a un NEW
+[INFO] 01:24:35:295 GameCard PAPAA/(13507:13518): Recibiendo tamanio total
+[INFO] 01:24:35:300 GameCard PAPAA/(13507:13518): Tamanio total recibido: 34
+[INFO] 01:24:35:335 GameCard PAPAA/(13507:13518): EL ID recibido: 69
+[INFO] 01:24:35:336 GameCard PAPAA/(13507:13518): Tamanio del pokemon recibido: 14
+[INFO] 01:24:35:352 GameCard PAPAA/(13507:13518): Nombre del pokemon recibido: debiExagerada
+[INFO] 01:24:35:353 GameCard PAPAA/(13507:13518): Posicion X recibida: 69
+[INFO] 01:24:35:354 GameCard PAPAA/(13507:13518): Posicion Y recibida: 69
+[INFO] 01:24:35:367 GameCard PAPAA/(13507:13518): Cantidad recibida: 1
+[INFO] 01:24:35:376 GameCard PAPAA/(13507:13518): NEW recibido del modulo Game Boy socket 8
+[INFO] 01:24:35:396 GameCard PAPAA/(13507:13518): Llegamo
+[INFO] 01:24:35:398 GameCard PAPAA/(13507:13518): Pokemon: debiexagerada
+[INFO] 01:24:35:399 GameCard PAPAA/(13507:13518): PosX: 69
+[INFO] 01:24:35:403 GameCard PAPAA/(13507:13518): PosY: 69
+[INFO] 01:24:35:404 GameCard PAPAA/(13507:13518): Cantidad: 1
+[INFO] 01:24:35:405 GameCard PAPAA/(13507:13518): Ruta de Directorio: /home/utnso/Escritorio/tall-grass/Files/debiexagerada
+[INFO] 01:24:35:418 GameCard PAPAA/(13507:13518): La coordenada generada es: 69-69
+[INFO] 01:24:35:423 GameCard PAPAA/(13507:13518): Posicion generada: 69-69
+[INFO] 01:24:35:428 GameCard PAPAA/(13507:13518): Ruta del directorio pokemon debiexagerada es: /home/utnso/Escritorio/tall-grass/Files/debiexagerada
+[INFO] 01:24:35:458 GameCard PAPAA/(13507:13518): Ruta del Archivo: /home/utnso/Escritorio/tall-grass/Files/debiexagerada/debiexagerada.bin
+[INFO] 01:24:35:465 GameCard PAPAA/(13507:13518): Se creo el archivo config
+[INFO] 01:24:35:500 GameCard PAPAA/(13507:13518): EL array de blocks es: 7
+[INFO] 01:24:35:570 GameCard PAPAA/(13507:13518): Se creo el falso config de la ruta
+[INFO] 01:24:35:570 GameCard PAPAA/(13507:13518): Retorno el estado: N
+[INFO] 01:24:35:580 GameCard PAPAA/(13507:13518): Se creo el falso config de la ruta
+[INFO] 01:24:35:677 GameCard PAPAA/(13507:13518): Paso el mutex
+[INFO] 01:24:35:684 GameCard PAPAA/(13507:13518): Validando Posiciones de New
+[INFO] 01:24:35:684 GameCard PAPAA/(13507:13518): Valido posicion
+[INFO] 01:24:35:694 GameCard PAPAA/(13507:13518): EL array de blocks es: 7
+[INFO] 01:24:35:699 GameCard PAPAA/(13507:13518): Se esta analizando el block: 7
+[INFO] 01:24:35:713 GameCard PAPAA/(13507:13518): Se esta analizando el block: 7
+[INFO] 01:24:35:723 GameCard PAPAA/(13507:13518): Encontro el block donde esta la posicion: 7
+[INFO] 01:24:35:736 GameCard PAPAA/(13507:13518): El bloque en el que se encuentra es: 7
+[INFO] 01:24:35:737 GameCard PAPAA/(13507:13518): La ruta del block es: /home/utnso/Escritorio/tall-grass/Blocks/7.bin
+[INFO] 01:24:35:742 GameCard PAPAA/(13507:13518): La cantidad vieja de la posicion 69-69 dentro del metadata es de 2
+[INFO] 01:24:35:759 GameCard PAPAA/(13507:13518): La cantidad nueva de la posicion 69-69 dentro del metadata es de 3
+[INFO] 01:24:35:798 GameCard PAPAA/(13507:13518): EL tamanio calculado del archivo es: 8
+[INFO] 01:24:35:849 GameCard PAPAA/(13507:13518): El ID de mensaje cargado en el appeared es: 69
+[INFO] 01:24:35:861 GameCard PAPAA/(13507:13518): El pokemoncargado en el appeared es: debiexagerada
+[INFO] 01:24:35:861 GameCard PAPAA/(13507:13518): El tamanio del nombre del pokemon cargado en el appeared es: 14
+[INFO] 01:24:35:869 GameCard PAPAA/(13507:13518): La coordenada del pokemon cargado en el appeared es: 69 - 69
+[INFO] 01:24:40:873 GameCard PAPAA/(13507:13518): El ID cargado es 69
+[INFO] 01:24:40:891 GameCard PAPAA/(13507:13518): Tamanio nombre pokemon 14
+[INFO] 01:24:40:894 GameCard PAPAA/(13507:13518): Nombre pokemon debiexagerada
+[INFO] 01:24:40:910 GameCard PAPAA/(13507:13518): Posicion X 69
+[INFO] 01:24:40:911 GameCard PAPAA/(13507:13518): Posicion Y 69
+[INFO] 01:24:40:916 GameCard PAPAA/(13507:13518): Creando paquete
+[INFO] 01:24:40:916 GameCard PAPAA/(13507:13518): CODIGO DE OPERACION: 2
+[INFO] 01:24:40:941 GameCard PAPAA/(13507:13518): Paquete Creado
+[INFO] 01:24:40:941 GameCard PAPAA/(13507:13518): la operacion a realizar es 2
+[INFO] 01:24:40:942 GameCard PAPAA/(13507:13518): Serializando...
+[INFO] 01:24:40:955 GameCard PAPAA/(13507:13518): Serializacion completa
+[INFO] 01:24:40:0 GameCard PAPAA/(13507:13518): El peso total es: 30
+[ERROR] 01:24:40:1 GameCard PAPAA/(13507:13518): Error: No se pudo enviar el mensaje
+[INFO] 01:24:42:797 GameCard PAPAA/(13507:13512): Iniciando verificacion de conexion con Broker...
+[ERROR] 01:24:42:811 GameCard PAPAA/(13507:13512): Reconexion con Broker fallida, intentando nuevamente en 10 segundos
+[INFO] 01:28:52:351 GameCard PAPAA/(13972:13972): logger iniciado.
+[INFO] 01:28:52:380 GameCard PAPAA/(13972:13972): Config cargada.
+[INFO] 01:28:52:382 GameCard PAPAA/(13972:13972): La IP del Broker: 127.0.0.1
+[INFO] 01:28:52:382 GameCard PAPAA/(13972:13972): El Puerto es: 6009
+[INFO] 01:28:52:385 GameCard PAPAA/(13972:13972): El tiempo de reintento de conexion es: 10
+[INFO] 01:28:52:386 GameCard PAPAA/(13972:13972): El tiempo de reintento de operacion es: 5
+[INFO] 01:28:52:387 GameCard PAPAA/(13972:13972): El tiempo de retardo de conexion es: 5
+[INFO] 01:28:52:387 GameCard PAPAA/(13972:13972): El punto de montaje es: /home/utnso/Escritorio/tall-grass
+[INFO] 01:28:52:388 GameCard PAPAA/(13972:13972): La IP es: 127.0.0.1
+[INFO] 01:28:52:388 GameCard PAPAA/(13972:13972): El puerto es: 4447
+[INFO] 01:28:52:389 GameCard PAPAA/(13972:13972): El punto de montaje es: /home/utnso/Escritorio/tall-grass
+[INFO] 01:28:52:391 GameCard PAPAA/(13972:13972): La ruta del metadataes: /home/utnso/Escritorio/tall-grass/Metadata
+[INFO] 01:28:52:394 GameCard PAPAA/(13972:13972): Se creo el config de MetaData
+[INFO] 01:28:52:395 GameCard PAPAA/(13972:13972): El Block Size es: 64
+[INFO] 01:28:52:395 GameCard PAPAA/(13972:13972): La cantidad de Bloques es: 5192
+[INFO] 01:28:52:396 GameCard PAPAA/(13972:13972): El Magic Number es: TALL_GRASS
+[INFO] 01:28:52:412 GameCard PAPAA/(13972:13972): Bitmap ya seteado
+[ERROR] 01:28:52:444 GameCard PAPAA/(13972:13972): Ya existe el BitMap
+[INFO] 01:28:52:447 GameCard PAPAA/(13972:13972): SETEO DE VARIABLES PARA ARCHIVOSYDIRECTORIOS.H
+[INFO] 01:28:52:448 GameCard PAPAA/(13972:13972): El ID de modulo es: 1804289383
+[INFO] 01:28:52:480 GameCard PAPAA/(13972:13973): Esperando mensajes de game boy en socket 7
+[INFO] 01:28:52:481 GameCard PAPAA/(13972:13975): Escucho CATCH de BROKER
+[INFO] 01:28:52:482 GameCard PAPAA/(13972:13974): Escuchando NEW de BROKER
+[INFO] 01:28:52:483 GameCard PAPAA/(13972:13976): Escucho GET de BROKER
+[INFO] 01:28:52:485 GameCard PAPAA/(13972:13977): Hilo de verificacion periodica de conexion con Broker iniciado
+[ERROR] 01:28:52:493 GameCard PAPAA/(13972:13976): Hubo un problema enviando la suscripcion a la cola GET del broker
+[ERROR] 01:28:52:495 GameCard PAPAA/(13972:13974): Hubo un problema enviando la suscripcion a la cola NEW del broker
+[ERROR] 01:28:52:496 GameCard PAPAA/(13972:13975): Hubo un problema enviando la suscripcion a la cola CATCH del broker
+[INFO] 01:28:55:215 GameCard PAPAA/(13972:13973): Socket 7 de gameBoy aceptado
+[INFO] 01:28:55:248 GameCard PAPAA/(13972:13983): Recibiendo codigo de operacion de GameBoy en socket 8
+[INFO] 01:28:55:267 GameCard PAPAA/(13972:13983): Codigo de operacion de socket 8 recibido: 3
+[INFO] 01:28:55:276 GameCard PAPAA/(13972:13983): Procesando request de GameBoy
+[INFO] 01:28:55:284 GameCard PAPAA/(13972:13983): Codigo de operacion recibido del socket cliente 8 corresponde a un CATCH
+[INFO] 01:28:55:284 GameCard PAPAA/(13972:13983): Recibiendo tamanio total
+[INFO] 01:28:55:285 GameCard PAPAA/(13972:13983): Tamanio total recibido: 30
+[INFO] 01:28:55:286 GameCard PAPAA/(13972:13983): EL ID recibido: 6
+[INFO] 01:28:55:299 GameCard PAPAA/(13972:13983): Tamanio del pokemon: 14
+[INFO] 01:28:55:304 GameCard PAPAA/(13972:13983): Nombre del pokemon recibido: debiExagerada
+[INFO] 01:28:55:317 GameCard PAPAA/(13972:13983): Posicion X recibida: 69
+[INFO] 01:28:55:318 GameCard PAPAA/(13972:13983): Posicion Y recibida: 69
+[INFO] 01:28:55:327 GameCard PAPAA/(13972:13983): CATCH recibido del modulo Game Boy socket 8
+[INFO] 01:28:55:335 GameCard PAPAA/(13972:13983): La coordenada generada es: 69-69
+[INFO] 01:28:55:361 GameCard PAPAA/(13972:13983): EL array de blocks es: P�$
+[INFO] 01:28:55:381 GameCard PAPAA/(13972:13983): Se creo el falso config de la ruta
+[INFO] 01:28:55:382 GameCard PAPAA/(13972:13983): Retorno el estado: N
+[INFO] 01:28:55:387 GameCard PAPAA/(13972:13983): Se creo el falso config de la ruta
+[INFO] 01:28:55:432 GameCard PAPAA/(13972:13983): Valido posicion
+[INFO] 01:28:55:440 GameCard PAPAA/(13972:13983): EL array de blocks es: 7
+[INFO] 01:28:55:441 GameCard PAPAA/(13972:13983): Se esta analizando el block: 7
+[INFO] 01:28:55:452 GameCard PAPAA/(13972:13983): Se esta analizando el block: 7
+[INFO] 01:28:55:477 GameCard PAPAA/(13972:13983): Encontro el block donde esta la posicion: 7
+[INFO] 01:28:55:478 GameCard PAPAA/(13972:13983): El bloque en el que se encuentra es: 7
+[INFO] 01:28:55:491 GameCard PAPAA/(13972:13983): La ruta del block es: /home/utnso/Escritorio/tall-grass/Blocks/7.bin
+[INFO] 01:28:55:505 GameCard PAPAA/(13972:13983): La cantidad de pokemons en el la posicion 69-69 es: 3
+[INFO] 01:28:55:510 GameCard PAPAA/(13972:13983): Se decrementa en uno la posicion
+[INFO] 01:28:55:515 GameCard PAPAA/(13972:13983): La cantidad vieja en la posicion 69-69 en el metadata es de: 3
+[INFO] 01:28:55:531 GameCard PAPAA/(13972:13983): La cantidad nueva en la posicion 69-69 en el metadata es de: 2
+[INFO] 01:28:55:548 GameCard PAPAA/(13972:13983): EL tamanio calculado del archivo es: 8
+[INFO] 01:28:55:588 GameCard PAPAA/(13972:13983): El ID de mensaje cargado en el caught es: 6
+[INFO] 01:28:55:608 GameCard PAPAA/(13972:13983): El Flag cargado en el caught es: 1
+[INFO] 01:29:00:613 GameCard PAPAA/(13972:13983): El ID cargado es 6
+[INFO] 01:29:00:631 GameCard PAPAA/(13972:13983): El flag cargado es 1
+[INFO] 01:29:00:631 GameCard PAPAA/(13972:13983): Creando paquete
+[INFO] 01:29:00:632 GameCard PAPAA/(13972:13983): CODIGO DE OPERACION: 4
+[INFO] 01:29:00:633 GameCard PAPAA/(13972:13983): Paquete Creado
+[INFO] 01:29:00:633 GameCard PAPAA/(13972:13983): la operacion a realizar es 4
+[INFO] 01:29:00:634 GameCard PAPAA/(13972:13983): Serializando...
+[INFO] 01:29:00:637 GameCard PAPAA/(13972:13983): Serializacion completa
+[INFO] 01:29:00:670 GameCard PAPAA/(13972:13983): El peso total es: 8
+[ERROR] 01:29:00:671 GameCard PAPAA/(13972:13983): Error: No se pudo enviar el mensaje
+[INFO] 01:29:02:497 GameCard PAPAA/(13972:13977): Iniciando verificacion de conexion con Broker...
+[ERROR] 01:29:02:507 GameCard PAPAA/(13972:13977): Reconexion con Broker fallida, intentando nuevamente en 10 segundos
+[INFO] 01:32:20:341 GameCard PAPAA/(14374:14374): logger iniciado.
+[INFO] 01:32:20:370 GameCard PAPAA/(14374:14374): Config cargada.
+[INFO] 01:32:20:373 GameCard PAPAA/(14374:14374): La IP del Broker: 127.0.0.1
+[INFO] 01:32:20:373 GameCard PAPAA/(14374:14374): El Puerto es: 6009
+[INFO] 01:32:20:376 GameCard PAPAA/(14374:14374): El tiempo de reintento de conexion es: 10
+[INFO] 01:32:20:378 GameCard PAPAA/(14374:14374): El tiempo de reintento de operacion es: 5
+[INFO] 01:32:20:379 GameCard PAPAA/(14374:14374): El tiempo de retardo de conexion es: 5
+[INFO] 01:32:20:379 GameCard PAPAA/(14374:14374): El punto de montaje es: /home/utnso/Escritorio/tall-grass
+[INFO] 01:32:20:380 GameCard PAPAA/(14374:14374): La IP es: 127.0.0.1
+[INFO] 01:32:20:380 GameCard PAPAA/(14374:14374): El puerto es: 4447
+[INFO] 01:32:20:382 GameCard PAPAA/(14374:14374): El punto de montaje es: /home/utnso/Escritorio/tall-grass
+[INFO] 01:32:20:384 GameCard PAPAA/(14374:14374): La ruta del metadataes: /home/utnso/Escritorio/tall-grass/Metadata
+[INFO] 01:32:20:386 GameCard PAPAA/(14374:14374): Se creo el config de MetaData
+[INFO] 01:32:20:388 GameCard PAPAA/(14374:14374): El Block Size es: 64
+[INFO] 01:32:20:388 GameCard PAPAA/(14374:14374): La cantidad de Bloques es: 5192
+[INFO] 01:32:20:389 GameCard PAPAA/(14374:14374): El Magic Number es: TALL_GRASS
+[INFO] 01:32:20:405 GameCard PAPAA/(14374:14374): Bitmap ya seteado
+[ERROR] 01:32:20:441 GameCard PAPAA/(14374:14374): Ya existe el BitMap
+[INFO] 01:32:20:444 GameCard PAPAA/(14374:14374): SETEO DE VARIABLES PARA ARCHIVOSYDIRECTORIOS.H
+[INFO] 01:32:20:444 GameCard PAPAA/(14374:14374): El ID de modulo es: 1804289383
+[INFO] 01:32:20:479 GameCard PAPAA/(14374:14375): Esperando mensajes de game boy en socket 7
+[INFO] 01:32:20:480 GameCard PAPAA/(14374:14378): Escucho GET de BROKER
+[INFO] 01:32:20:481 GameCard PAPAA/(14374:14377): Escucho CATCH de BROKER
+[INFO] 01:32:20:482 GameCard PAPAA/(14374:14376): Escuchando NEW de BROKER
+[ERROR] 01:32:20:490 GameCard PAPAA/(14374:14378): Hubo un problema enviando la suscripcion a la cola GET del broker
+[INFO] 01:32:20:491 GameCard PAPAA/(14374:14379): Hilo de verificacion periodica de conexion con Broker iniciado
+[ERROR] 01:32:20:492 GameCard PAPAA/(14374:14376): Hubo un problema enviando la suscripcion a la cola NEW del broker
+[ERROR] 01:32:20:493 GameCard PAPAA/(14374:14377): Hubo un problema enviando la suscripcion a la cola CATCH del broker
+[INFO] 01:32:22:541 GameCard PAPAA/(14374:14375): Socket 7 de gameBoy aceptado
+[INFO] 01:32:22:559 GameCard PAPAA/(14374:14385): Recibiendo codigo de operacion de GameBoy en socket 8
+[INFO] 01:32:22:565 GameCard PAPAA/(14374:14385): Codigo de operacion de socket 8 recibido: 3
+[INFO] 01:32:22:598 GameCard PAPAA/(14374:14385): Procesando request de GameBoy
+[INFO] 01:32:22:598 GameCard PAPAA/(14374:14385): Codigo de operacion recibido del socket cliente 8 corresponde a un CATCH
+[INFO] 01:32:22:627 GameCard PAPAA/(14374:14385): Recibiendo tamanio total
+[INFO] 01:32:22:628 GameCard PAPAA/(14374:14385): Tamanio total recibido: 30
+[INFO] 01:32:22:629 GameCard PAPAA/(14374:14385): EL ID recibido: 6
+[INFO] 01:32:22:674 GameCard PAPAA/(14374:14385): Tamanio del pokemon: 14
+[ERROR] 01:32:22:675 GameCard PAPAA/(14374:14385): Hubo un problema recibiendo el nombre del pokemon
+[INFO] 01:33:12:219 GameCard PAPAA/(14507:14507): logger iniciado.
+[INFO] 01:33:12:249 GameCard PAPAA/(14507:14507): Config cargada.
+[INFO] 01:33:12:252 GameCard PAPAA/(14507:14507): La IP del Broker: 127.0.0.1
+[INFO] 01:33:12:252 GameCard PAPAA/(14507:14507): El Puerto es: 6009
+[INFO] 01:33:12:256 GameCard PAPAA/(14507:14507): El tiempo de reintento de conexion es: 10
+[INFO] 01:33:12:256 GameCard PAPAA/(14507:14507): El tiempo de reintento de operacion es: 5
+[INFO] 01:33:12:257 GameCard PAPAA/(14507:14507): El tiempo de retardo de conexion es: 5
+[INFO] 01:33:12:258 GameCard PAPAA/(14507:14507): El punto de montaje es: /home/utnso/Escritorio/tall-grass
+[INFO] 01:33:12:258 GameCard PAPAA/(14507:14507): La IP es: 127.0.0.1
+[INFO] 01:33:12:259 GameCard PAPAA/(14507:14507): El puerto es: 4447
+[INFO] 01:33:12:260 GameCard PAPAA/(14507:14507): El punto de montaje es: /home/utnso/Escritorio/tall-grass
+[INFO] 01:33:12:262 GameCard PAPAA/(14507:14507): La ruta del metadataes: /home/utnso/Escritorio/tall-grass/Metadata
+[INFO] 01:33:12:264 GameCard PAPAA/(14507:14507): Se creo el config de MetaData
+[INFO] 01:33:12:266 GameCard PAPAA/(14507:14507): El Block Size es: 64
+[INFO] 01:33:12:266 GameCard PAPAA/(14507:14507): La cantidad de Bloques es: 5192
+[INFO] 01:33:12:267 GameCard PAPAA/(14507:14507): El Magic Number es: TALL_GRASS
+[INFO] 01:33:12:284 GameCard PAPAA/(14507:14507): Bitmap ya seteado
+[ERROR] 01:33:12:318 GameCard PAPAA/(14507:14507): Ya existe el BitMap
+[INFO] 01:33:12:321 GameCard PAPAA/(14507:14507): SETEO DE VARIABLES PARA ARCHIVOSYDIRECTORIOS.H
+[INFO] 01:33:12:322 GameCard PAPAA/(14507:14507): El ID de modulo es: 1804289383
+[INFO] 01:33:12:355 GameCard PAPAA/(14507:14508): Esperando mensajes de game boy en socket 7
+[INFO] 01:33:12:357 GameCard PAPAA/(14507:14510): Escucho CATCH de BROKER
+[INFO] 01:33:12:357 GameCard PAPAA/(14507:14509): Escuchando NEW de BROKER
+[ERROR] 01:33:12:368 GameCard PAPAA/(14507:14510): Hubo un problema enviando la suscripcion a la cola CATCH del broker
+[ERROR] 01:33:12:372 GameCard PAPAA/(14507:14509): Hubo un problema enviando la suscripcion a la cola NEW del broker
+[INFO] 01:33:12:374 GameCard PAPAA/(14507:14512): Hilo de verificacion periodica de conexion con Broker iniciado
+[INFO] 01:33:12:373 GameCard PAPAA/(14507:14511): Escucho GET de BROKER
+[ERROR] 01:33:12:380 GameCard PAPAA/(14507:14511): Hubo un problema enviando la suscripcion a la cola GET del broker
+[INFO] 01:33:13:906 GameCard PAPAA/(14507:14508): Socket 7 de gameBoy aceptado
+[INFO] 01:33:13:940 GameCard PAPAA/(14507:14518): Recibiendo codigo de operacion de GameBoy en socket 8
+[INFO] 01:33:13:942 GameCard PAPAA/(14507:14518): Codigo de operacion de socket 8 recibido: 3
+[INFO] 01:33:13:951 GameCard PAPAA/(14507:14518): Procesando request de GameBoy
+[INFO] 01:33:13:951 GameCard PAPAA/(14507:14518): Codigo de operacion recibido del socket cliente 8 corresponde a un CATCH
+[INFO] 01:33:13:956 GameCard PAPAA/(14507:14518): Recibiendo tamanio total
+[INFO] 01:33:13:961 GameCard PAPAA/(14507:14518): Tamanio total recibido: 30
+[INFO] 01:33:13:974 GameCard PAPAA/(14507:14518): EL ID recibido: 6
+[INFO] 01:33:13:979 GameCard PAPAA/(14507:14518): Tamanio del pokemon: 14
+[INFO] 01:33:13:984 GameCard PAPAA/(14507:14518): Nombre del pokemon recibido: debiExagerada
+[INFO] 01:33:13:989 GameCard PAPAA/(14507:14518): Posicion X recibida: 69
+[INFO] 01:33:14:17 GameCard PAPAA/(14507:14518): Posicion Y recibida: 69
+[INFO] 01:33:14:18 GameCard PAPAA/(14507:14518): CATCH recibido del modulo Game Boy socket 8
+[INFO] 01:33:14:26 GameCard PAPAA/(14507:14518): La coordenada generada es: 69-69
+[INFO] 01:33:14:54 GameCard PAPAA/(14507:14518): EL array de blocks es: P�$
+[INFO] 01:33:14:99 GameCard PAPAA/(14507:14518): Se creo el falso config de la ruta
+[INFO] 01:33:14:99 GameCard PAPAA/(14507:14518): Retorno el estado: N
+[INFO] 01:33:14:110 GameCard PAPAA/(14507:14518): Se creo el falso config de la ruta
+[INFO] 01:33:14:153 GameCard PAPAA/(14507:14518): Valido posicion
+[INFO] 01:33:14:158 GameCard PAPAA/(14507:14518): EL array de blocks es: 7
+[INFO] 01:33:14:158 GameCard PAPAA/(14507:14518): Se esta analizando el block: 7
+[INFO] 01:33:14:176 GameCard PAPAA/(14507:14518): Se esta analizando el block: 7
+[INFO] 01:33:14:227 GameCard PAPAA/(14507:14518): Encontro el block donde esta la posicion: 7
+[INFO] 01:33:14:242 GameCard PAPAA/(14507:14518): El bloque en el que se encuentra es: 7
+[INFO] 01:33:14:247 GameCard PAPAA/(14507:14518): La ruta del block es: /home/utnso/Escritorio/tall-grass/Blocks/7.bin
+[INFO] 01:33:14:249 GameCard PAPAA/(14507:14518): La cantidad de pokemons en el la posicion 69-69 es: 2
+[INFO] 01:33:14:290 GameCard PAPAA/(14507:14518): Se decrementa en uno la posicion
+[INFO] 01:33:14:293 GameCard PAPAA/(14507:14518): La cantidad vieja en la posicion 69-69 en el metadata es de: 2
+[INFO] 01:33:14:295 GameCard PAPAA/(14507:14518): La cantidad nueva en la posicion 69-69 en el metadata es de: 1
+[INFO] 01:33:14:328 GameCard PAPAA/(14507:14518): EL tamanio calculado del archivo es: 8
+[INFO] 01:33:14:363 GameCard PAPAA/(14507:14518): El ID de mensaje cargado en el caught es: 6
+[INFO] 01:33:14:377 GameCard PAPAA/(14507:14518): El Flag cargado en el caught es: 1
+[INFO] 01:33:19:383 GameCard PAPAA/(14507:14518): El ID cargado es 6
+[INFO] 01:33:19:387 GameCard PAPAA/(14507:14518): El flag cargado es 1
+[INFO] 01:33:19:392 GameCard PAPAA/(14507:14518): Creando paquete
+[INFO] 01:33:19:398 GameCard PAPAA/(14507:14518): CODIGO DE OPERACION: 4
+[INFO] 01:33:19:403 GameCard PAPAA/(14507:14518): Paquete Creado
+[INFO] 01:33:19:407 GameCard PAPAA/(14507:14518): la operacion a realizar es 4
+[INFO] 01:33:19:415 GameCard PAPAA/(14507:14518): Serializando...
+[INFO] 01:33:19:418 GameCard PAPAA/(14507:14518): Serializacion completa
+[INFO] 01:33:19:431 GameCard PAPAA/(14507:14518): El peso total es: 8
+[ERROR] 01:33:19:431 GameCard PAPAA/(14507:14518): Error: No se pudo enviar el mensaje
+[INFO] 01:37:25:729 GameCard PAPAA/(14940:14940): logger iniciado.
+[INFO] 01:37:25:759 GameCard PAPAA/(14940:14940): Config cargada.
+[INFO] 01:37:25:761 GameCard PAPAA/(14940:14940): La IP del Broker: 127.0.0.1
+[INFO] 01:37:25:762 GameCard PAPAA/(14940:14940): El Puerto es: 6009
+[INFO] 01:37:25:765 GameCard PAPAA/(14940:14940): El tiempo de reintento de conexion es: 10
+[INFO] 01:37:25:765 GameCard PAPAA/(14940:14940): El tiempo de reintento de operacion es: 5
+[INFO] 01:37:25:766 GameCard PAPAA/(14940:14940): El tiempo de retardo de conexion es: 5
+[INFO] 01:37:25:767 GameCard PAPAA/(14940:14940): El punto de montaje es: /home/utnso/Escritorio/tall-grass
+[INFO] 01:37:25:768 GameCard PAPAA/(14940:14940): La IP es: 127.0.0.1
+[INFO] 01:37:25:768 GameCard PAPAA/(14940:14940): El puerto es: 4447
+[INFO] 01:37:25:769 GameCard PAPAA/(14940:14940): El punto de montaje es: /home/utnso/Escritorio/tall-grass
+[INFO] 01:37:25:771 GameCard PAPAA/(14940:14940): La ruta del metadataes: /home/utnso/Escritorio/tall-grass/Metadata
+[INFO] 01:37:25:774 GameCard PAPAA/(14940:14940): Se creo el config de MetaData
+[INFO] 01:37:25:775 GameCard PAPAA/(14940:14940): El Block Size es: 64
+[INFO] 01:37:25:776 GameCard PAPAA/(14940:14940): La cantidad de Bloques es: 5192
+[INFO] 01:37:25:776 GameCard PAPAA/(14940:14940): El Magic Number es: TALL_GRASS
+[INFO] 01:37:25:793 GameCard PAPAA/(14940:14940): Bitmap ya seteado
+[ERROR] 01:37:25:826 GameCard PAPAA/(14940:14940): Ya existe el BitMap
+[INFO] 01:37:25:829 GameCard PAPAA/(14940:14940): SETEO DE VARIABLES PARA ARCHIVOSYDIRECTORIOS.H
+[INFO] 01:37:25:829 GameCard PAPAA/(14940:14940): El ID de modulo es: 1804289383
+[INFO] 01:37:25:861 GameCard PAPAA/(14940:14941): Esperando mensajes de game boy en socket 7
+[INFO] 01:37:25:863 GameCard PAPAA/(14940:14943): Escucho CATCH de BROKER
+[INFO] 01:37:25:863 GameCard PAPAA/(14940:14942): Escuchando NEW de BROKER
+[ERROR] 01:37:25:873 GameCard PAPAA/(14940:14943): Hubo un problema enviando la suscripcion a la cola CATCH del broker
+[ERROR] 01:37:25:874 GameCard PAPAA/(14940:14942): Hubo un problema enviando la suscripcion a la cola NEW del broker
+[INFO] 01:37:25:874 GameCard PAPAA/(14940:14944): Escucho GET de BROKER
+[INFO] 01:37:25:876 GameCard PAPAA/(14940:14945): Hilo de verificacion periodica de conexion con Broker iniciado
+[ERROR] 01:37:25:890 GameCard PAPAA/(14940:14944): Hubo un problema enviando la suscripcion a la cola GET del broker
+[INFO] 01:37:27:776 GameCard PAPAA/(14940:14941): Socket 7 de gameBoy aceptado
+[INFO] 01:37:27:801 GameCard PAPAA/(14940:14951): Recibiendo codigo de operacion de GameBoy en socket 8
+[INFO] 01:37:27:814 GameCard PAPAA/(14940:14951): Codigo de operacion de socket 8 recibido: 3
+[INFO] 01:37:27:818 GameCard PAPAA/(14940:14951): Procesando request de GameBoy
+[INFO] 01:37:27:824 GameCard PAPAA/(14940:14951): Codigo de operacion recibido del socket cliente 8 corresponde a un CATCH
+[INFO] 01:37:27:829 GameCard PAPAA/(14940:14951): Recibiendo tamanio total
+[INFO] 01:37:27:830 GameCard PAPAA/(14940:14951): Tamanio total recibido: 30
+[INFO] 01:37:27:831 GameCard PAPAA/(14940:14951): EL ID recibido: 6
+[INFO] 01:37:27:836 GameCard PAPAA/(14940:14951): Tamanio del pokemon: 14
+[INFO] 01:37:27:841 GameCard PAPAA/(14940:14951): Nombre del pokemon recibido: debiExagerada
+[INFO] 01:37:27:849 GameCard PAPAA/(14940:14951): Posicion X recibida: 69
+[INFO] 01:37:27:854 GameCard PAPAA/(14940:14951): Posicion Y recibida: 69
+[INFO] 01:37:27:867 GameCard PAPAA/(14940:14951): CATCH recibido del modulo Game Boy socket 8
+[INFO] 01:37:27:871 GameCard PAPAA/(14940:14951): La coordenada generada es: 69-69
+[INFO] 01:37:27:897 GameCard PAPAA/(14940:14951): EL array de blocks es: P�$
+[INFO] 01:37:27:935 GameCard PAPAA/(14940:14951): Se creo el falso config de la ruta
+[INFO] 01:37:27:935 GameCard PAPAA/(14940:14951): Retorno el estado: N
+[INFO] 01:37:27:945 GameCard PAPAA/(14940:14951): Se creo el falso config de la ruta
+[INFO] 01:37:27:0 GameCard PAPAA/(14940:14951): Valido posicion
+[INFO] 01:37:27:5 GameCard PAPAA/(14940:14951): EL array de blocks es: 7
+[INFO] 01:37:28:10 GameCard PAPAA/(14940:14951): Se esta analizando el block: 7
+[INFO] 01:37:28:25 GameCard PAPAA/(14940:14951): Se esta analizando el block: 7
+[INFO] 01:37:28:39 GameCard PAPAA/(14940:14951): Encontro el block donde esta la posicion: 7
+[INFO] 01:37:28:48 GameCard PAPAA/(14940:14951): El bloque en el que se encuentra es: 7
+[INFO] 01:37:28:53 GameCard PAPAA/(14940:14951): La ruta del block es: /home/utnso/Escritorio/tall-grass/Blocks/7.bin
+[INFO] 01:37:28:54 GameCard PAPAA/(14940:14951): La cantidad de pokemons en el la posicion 69-69 es: 1
+[INFO] 01:37:28:71 GameCard PAPAA/(14940:14951): La cantidad de pokemons en esa posicion es 1
+[INFO] 01:37:28:102 GameCard PAPAA/(14940:14951): El valor del block es de: 1
+[INFO] 01:37:28:107 GameCard PAPAA/(14940:14951): El block fue desmarcado con el valor de: 0
+[INFO] 01:37:28:126 GameCard PAPAA/(14940:14951): Se macheo el block que hay que sacar
+[INFO] 01:55:49:987 GameCard PAPAA/(17024:17024): logger iniciado.
+[INFO] 01:55:49:987 GameCard PAPAA/(17024:17024): Config cargada.
+[INFO] 01:55:49:987 GameCard PAPAA/(17024:17024): La IP del Broker: 127.0.0.1
+[INFO] 01:55:49:987 GameCard PAPAA/(17024:17024): El Puerto es: 6009
+[INFO] 01:55:49:987 GameCard PAPAA/(17024:17024): El tiempo de reintento de conexion es: 10
+[INFO] 01:55:49:987 GameCard PAPAA/(17024:17024): El tiempo de reintento de operacion es: 5
+[INFO] 01:55:49:987 GameCard PAPAA/(17024:17024): El tiempo de retardo de conexion es: 5
+[INFO] 01:55:49:987 GameCard PAPAA/(17024:17024): El punto de montaje es: /home/utnso/Escritorio/tall-grass
+[INFO] 01:55:49:987 GameCard PAPAA/(17024:17024): La IP es: 127.0.0.1
+[INFO] 01:55:49:987 GameCard PAPAA/(17024:17024): El puerto es: 4447
+[INFO] 01:55:49:987 GameCard PAPAA/(17024:17024): El punto de montaje es: /home/utnso/Escritorio/tall-grass
+[INFO] 01:55:49:987 GameCard PAPAA/(17024:17024): La ruta del metadataes: /home/utnso/Escritorio/tall-grass/Metadata
+[INFO] 01:55:49:988 GameCard PAPAA/(17024:17024): Se creo el config de MetaData
+[INFO] 01:55:49:988 GameCard PAPAA/(17024:17024): El Block Size es: 64
+[INFO] 01:55:49:988 GameCard PAPAA/(17024:17024): La cantidad de Bloques es: 5192
+[INFO] 01:55:49:988 GameCard PAPAA/(17024:17024): El Magic Number es: TALL_GRASS
+[INFO] 01:55:49:988 GameCard PAPAA/(17024:17024): Bitmap ya seteado
+[ERROR] 01:55:49:988 GameCard PAPAA/(17024:17024): Ya existe el BitMap
+[INFO] 01:55:49:989 GameCard PAPAA/(17024:17024): SETEO DE VARIABLES PARA ARCHIVOSYDIRECTORIOS.H
+[INFO] 01:55:49:989 GameCard PAPAA/(17024:17024): El ID de modulo es: 1804289383
+[INFO] 01:55:49:989 GameCard PAPAA/(17024:17029): Hilo de verificacion periodica de conexion con Broker iniciado
+[INFO] 01:55:49:989 GameCard PAPAA/(17024:17028): Escucho GET de BROKER
+[ERROR] 01:55:49:989 GameCard PAPAA/(17024:17028): Hubo un problema enviando la suscripcion a la cola GET del broker
+[INFO] 01:55:49:990 GameCard PAPAA/(17024:17027): Escucho CATCH de BROKER
+[ERROR] 01:55:49:990 GameCard PAPAA/(17024:17027): Hubo un problema enviando la suscripcion a la cola CATCH del broker
+[INFO] 01:55:49:994 GameCard PAPAA/(17024:17026): Escuchando NEW de BROKER
+[ERROR] 01:55:49:994 GameCard PAPAA/(17024:17026): Hubo un problema enviando la suscripcion a la cola NEW del broker
+[INFO] 01:55:49:998 GameCard PAPAA/(17024:17025): Esperando mensajes de game boy en socket 5
+[INFO] 01:55:52:15 GameCard PAPAA/(17024:17025): Socket 5 de gameBoy aceptado
+[INFO] 01:55:52:20 GameCard PAPAA/(17024:17038): Recibiendo codigo de operacion de GameBoy en socket 7
+[INFO] 01:55:52:21 GameCard PAPAA/(17024:17038): Codigo de operacion de socket 7 recibido: 1
+[INFO] 01:55:52:21 GameCard PAPAA/(17024:17038): Procesando request de GameBoy
+[INFO] 01:55:52:21 GameCard PAPAA/(17024:17038): Codigo de operacion recibido del socket cliente 7 corresponde a un NEW
+[INFO] 01:55:52:21 GameCard PAPAA/(17024:17038): Recibiendo tamanio total
+[INFO] 01:55:52:21 GameCard PAPAA/(17024:17038): Tamanio total recibido: 34
+[INFO] 01:55:52:21 GameCard PAPAA/(17024:17038): EL ID recibido: 69
+[INFO] 01:55:52:29 GameCard PAPAA/(17024:17038): Tamanio del pokemon recibido: 14
+[INFO] 01:55:52:29 GameCard PAPAA/(17024:17038): Nombre del pokemon recibido: debiExagerada
+[INFO] 01:55:52:29 GameCard PAPAA/(17024:17038): Posicion X recibida: 69
+[INFO] 01:55:52:29 GameCard PAPAA/(17024:17038): Posicion Y recibida: 69
+[INFO] 01:55:52:29 GameCard PAPAA/(17024:17038): Cantidad recibida: 1
+[INFO] 01:55:52:29 GameCard PAPAA/(17024:17038): NEW recibido del modulo Game Boy socket 7
+[INFO] 01:55:52:29 GameCard PAPAA/(17024:17038): Llegamo
+[INFO] 01:55:52:29 GameCard PAPAA/(17024:17038): Pokemon: debiexagerada
+[INFO] 01:55:52:29 GameCard PAPAA/(17024:17038): PosX: 69
+[INFO] 01:55:52:29 GameCard PAPAA/(17024:17038): PosY: 69
+[INFO] 01:55:52:30 GameCard PAPAA/(17024:17038): Cantidad: 1
+[INFO] 01:55:52:30 GameCard PAPAA/(17024:17038): Ruta de Directorio: /home/utnso/Escritorio/tall-grass/Files/debiexagerada
+[INFO] 01:55:52:30 GameCard PAPAA/(17024:17038): La coordenada generada es: 69-69
+[INFO] 01:55:52:30 GameCard PAPAA/(17024:17038): Posicion generada: 69-69
+[INFO] 01:55:52:30 GameCard PAPAA/(17024:17038): Ruta del directorio pokemon debiexagerada es: /home/utnso/Escritorio/tall-grass/Files/debiexagerada
+[INFO] 01:55:52:30 GameCard PAPAA/(17024:17038): Ruta del Archivo: /home/utnso/Escritorio/tall-grass/Files/debiexagerada/debiexagerada.bin
+[INFO] 01:55:52:30 GameCard PAPAA/(17024:17038): Se creo el archivo config
+[INFO] 01:55:52:30 GameCard PAPAA/(17024:17038): EL array de blocks es: 7
+[INFO] 01:55:52:30 GameCard PAPAA/(17024:17038): Se creo el falso config de la ruta
+[INFO] 01:55:52:30 GameCard PAPAA/(17024:17038): Retorno el estado: Y
+[INFO] 01:55:57:31 GameCard PAPAA/(17024:17038): Llegamo
+[INFO] 01:55:57:31 GameCard PAPAA/(17024:17038): Pokemon: debiexagerada
+[INFO] 01:55:57:31 GameCard PAPAA/(17024:17038): PosX: 69
+[INFO] 01:55:57:31 GameCard PAPAA/(17024:17038): PosY: 69
+[INFO] 01:55:57:31 GameCard PAPAA/(17024:17038): Cantidad: 1
+[INFO] 01:55:57:31 GameCard PAPAA/(17024:17038): Ruta de Directorio: /home/utnso/Escritorio/tall-grass/Files/debiexagerada
+[INFO] 01:55:57:31 GameCard PAPAA/(17024:17038): La coordenada generada es: 69-69
+[INFO] 01:55:57:31 GameCard PAPAA/(17024:17038): Posicion generada: 69-69
+[INFO] 01:55:57:31 GameCard PAPAA/(17024:17038): Ruta del directorio pokemon debiexagerada es: /home/utnso/Escritorio/tall-grass/Files/debiexagerada
+[INFO] 01:55:57:31 GameCard PAPAA/(17024:17038): Ruta del Archivo: /home/utnso/Escritorio/tall-grass/Files/debiexagerada/debiexagerada.bin
+[INFO] 01:55:57:31 GameCard PAPAA/(17024:17038): Se creo el archivo config
+[INFO] 01:55:57:31 GameCard PAPAA/(17024:17038): EL array de blocks es: 7
+[INFO] 01:55:57:31 GameCard PAPAA/(17024:17038): Se creo el falso config de la ruta
+[INFO] 01:55:57:31 GameCard PAPAA/(17024:17038): Retorno el estado: Y
+[INFO] 01:56:38:898 GameCard PAPAA/(17134:17134): logger iniciado.
+[INFO] 01:56:38:899 GameCard PAPAA/(17134:17134): Config cargada.
+[INFO] 01:56:38:899 GameCard PAPAA/(17134:17134): La IP del Broker: 127.0.0.1
+[INFO] 01:56:38:899 GameCard PAPAA/(17134:17134): El Puerto es: 6009
+[INFO] 01:56:38:899 GameCard PAPAA/(17134:17134): El tiempo de reintento de conexion es: 10
+[INFO] 01:56:38:899 GameCard PAPAA/(17134:17134): El tiempo de reintento de operacion es: 5
+[INFO] 01:56:38:899 GameCard PAPAA/(17134:17134): El tiempo de retardo de conexion es: 5
+[INFO] 01:56:38:899 GameCard PAPAA/(17134:17134): El punto de montaje es: /home/utnso/Escritorio/tall-grass
+[INFO] 01:56:38:899 GameCard PAPAA/(17134:17134): La IP es: 127.0.0.1
+[INFO] 01:56:38:899 GameCard PAPAA/(17134:17134): El puerto es: 4447
+[INFO] 01:56:38:899 GameCard PAPAA/(17134:17134): El punto de montaje es: /home/utnso/Escritorio/tall-grass
+[INFO] 01:56:38:899 GameCard PAPAA/(17134:17134): La ruta del metadataes: /home/utnso/Escritorio/tall-grass/Metadata
+[INFO] 01:56:38:899 GameCard PAPAA/(17134:17134): Se creo el config de MetaData
+[INFO] 01:56:38:899 GameCard PAPAA/(17134:17134): El Block Size es: 64
+[INFO] 01:56:38:899 GameCard PAPAA/(17134:17134): La cantidad de Bloques es: 5192
+[INFO] 01:56:38:899 GameCard PAPAA/(17134:17134): El Magic Number es: TALL_GRASS
+[INFO] 01:56:38:900 GameCard PAPAA/(17134:17134): Bitmap ya seteado
+[ERROR] 01:56:38:900 GameCard PAPAA/(17134:17134): Ya existe el BitMap
+[INFO] 01:56:38:902 GameCard PAPAA/(17134:17134): SETEO DE VARIABLES PARA ARCHIVOSYDIRECTORIOS.H
+[INFO] 01:56:38:902 GameCard PAPAA/(17134:17134): El ID de modulo es: 1804289383
+[INFO] 01:56:38:902 GameCard PAPAA/(17134:17139): Hilo de verificacion periodica de conexion con Broker iniciado
+[INFO] 01:56:38:902 GameCard PAPAA/(17134:17138): Escucho GET de BROKER
+[ERROR] 01:56:38:902 GameCard PAPAA/(17134:17138): Hubo un problema enviando la suscripcion a la cola GET del broker
+[INFO] 01:56:38:903 GameCard PAPAA/(17134:17137): Escucho CATCH de BROKER
+[ERROR] 01:56:38:903 GameCard PAPAA/(17134:17137): Hubo un problema enviando la suscripcion a la cola CATCH del broker
+[INFO] 01:56:38:918 GameCard PAPAA/(17134:17136): Escuchando NEW de BROKER
+[ERROR] 01:56:38:918 GameCard PAPAA/(17134:17136): Hubo un problema enviando la suscripcion a la cola NEW del broker
+[INFO] 01:56:38:929 GameCard PAPAA/(17134:17135): Esperando mensajes de game boy en socket 5
+[INFO] 01:56:40:829 GameCard PAPAA/(17134:17135): Socket 5 de gameBoy aceptado
+[INFO] 01:56:40:833 GameCard PAPAA/(17134:17141): Recibiendo codigo de operacion de GameBoy en socket 7
+[INFO] 01:56:40:833 GameCard PAPAA/(17134:17141): Codigo de operacion de socket 7 recibido: 1
+[INFO] 01:56:40:833 GameCard PAPAA/(17134:17141): Procesando request de GameBoy
+[INFO] 01:56:40:833 GameCard PAPAA/(17134:17141): Codigo de operacion recibido del socket cliente 7 corresponde a un NEW
+[INFO] 01:56:40:833 GameCard PAPAA/(17134:17141): Recibiendo tamanio total
+[INFO] 01:56:40:833 GameCard PAPAA/(17134:17141): Tamanio total recibido: 34
+[INFO] 01:56:40:833 GameCard PAPAA/(17134:17141): EL ID recibido: 69
+[INFO] 01:56:40:833 GameCard PAPAA/(17134:17141): Tamanio del pokemon recibido: 14
+[INFO] 01:56:40:833 GameCard PAPAA/(17134:17141): Nombre del pokemon recibido: debiExagerada
+[INFO] 01:56:40:833 GameCard PAPAA/(17134:17141): Posicion X recibida: 69
+[INFO] 01:56:40:833 GameCard PAPAA/(17134:17141): Posicion Y recibida: 69
+[INFO] 01:56:40:833 GameCard PAPAA/(17134:17141): Cantidad recibida: 1
+[INFO] 01:56:40:834 GameCard PAPAA/(17134:17141): NEW recibido del modulo Game Boy socket 7
+[INFO] 01:56:40:834 GameCard PAPAA/(17134:17141): Llegamo
+[INFO] 01:56:40:834 GameCard PAPAA/(17134:17141): Pokemon: debiexagerada
+[INFO] 01:56:40:834 GameCard PAPAA/(17134:17141): PosX: 69
+[INFO] 01:56:40:834 GameCard PAPAA/(17134:17141): PosY: 69
+[INFO] 01:56:40:834 GameCard PAPAA/(17134:17141): Cantidad: 1
+[INFO] 01:56:40:834 GameCard PAPAA/(17134:17141): Ruta de Directorio: /home/utnso/Escritorio/tall-grass/Files/debiexagerada
+[INFO] 01:56:40:834 GameCard PAPAA/(17134:17141): La coordenada generada es: 69-69
+[INFO] 01:56:40:834 GameCard PAPAA/(17134:17141): Posicion generada: 69-69
+[INFO] 01:56:40:837 GameCard PAPAA/(17134:17141): Se creo el directorio: debiexagerada
+[INFO] 01:56:40:839 GameCard PAPAA/(17134:17141): Ruta del directorio pokemon debiexagerada es: /home/utnso/Escritorio/tall-grass/Files/debiexagerada
+[INFO] 01:56:40:841 GameCard PAPAA/(17134:17141): Ruta del Archivo: /home/utnso/Escritorio/tall-grass/Files/debiexagerada/debiexagerada.bin
+[INFO] 01:56:40:841 GameCard PAPAA/(17134:17141): Se creo el archivo config
+[INFO] 01:56:40:841 GameCard PAPAA/(17134:17141): EL array de blocks es: (null)
+[INFO] 01:56:40:841 GameCard PAPAA/(17134:17141): Se creo el falso config de la ruta
+[INFO] 01:56:40:842 GameCard PAPAA/(17134:17141): Retorno el estado: N
+[INFO] 01:56:40:842 GameCard PAPAA/(17134:17141): Se creo el falso config de la ruta
+[INFO] 01:56:40:842 GameCard PAPAA/(17134:17141): Paso el mutex
+[INFO] 01:56:40:842 GameCard PAPAA/(17134:17141): Validando Posiciones de New
+[INFO] 01:56:40:842 GameCard PAPAA/(17134:17141): Valido posicion
+[INFO] 01:56:40:842 GameCard PAPAA/(17134:17141): EL array de blocks es: (null)
+[INFO] 01:56:40:842 GameCard PAPAA/(17134:17141): Entro por NULL
+[INFO] 01:56:40:842 GameCard PAPAA/(17134:17141): Entro a buscar posiciones
+[INFO] 01:56:40:842 GameCard PAPAA/(17134:17141): Bloqueo
+[INFO] 01:56:40:842 GameCard PAPAA/(17134:17141): A
+[INFO] 01:56:40:843 GameCard PAPAA/(17134:17141): A
+[INFO] 01:56:40:843 GameCard PAPAA/(17134:17141): A
+[INFO] 01:56:40:843 GameCard PAPAA/(17134:17141): A
+[INFO] 01:56:40:843 GameCard PAPAA/(17134:17141): A
+[INFO] 01:56:40:843 GameCard PAPAA/(17134:17141): A
+[INFO] 01:56:40:843 GameCard PAPAA/(17134:17141): A
+[INFO] 01:56:40:843 GameCard PAPAA/(17134:17141): A
+[INFO] 01:56:40:843 GameCard PAPAA/(17134:17141): A
+[INFO] 01:56:40:843 GameCard PAPAA/(17134:17141): Guardando el bitarray
+[INFO] 01:56:40:843 GameCard PAPAA/(17134:17141): Termino el guardado
+[INFO] 01:56:40:843 GameCard PAPAA/(17134:17141): EL block 8 esta libre
+[INFO] 01:56:40:854 GameCard PAPAA/(17134:17141): El bloque disponible seleccionado es: 8
+[INFO] 01:56:40:854 GameCard PAPAA/(17134:17141): Agregamos nueva posicion con direccion del archivo: /home/utnso/Escritorio/tall-grass/Blocks/8.bin
+[INFO] 01:56:40:854 GameCard PAPAA/(17134:17141): Creamos el archivo
+[INFO] 01:56:40:854 GameCard PAPAA/(17134:17141): Seteando nueva posicion: 69-69
+[INFO] 01:56:40:854 GameCard PAPAA/(17134:17141): Actualmente hay 0 de posiciones en el archivo
+[INFO] 01:56:40:854 GameCard PAPAA/(17134:17141): ACTUALIZACION : Actualmente hay 0 de posiciones en el archivo
+[INFO] 01:56:40:854 GameCard PAPAA/(17134:17141): Actualizo Metadata
+[INFO] 01:56:40:854 GameCard PAPAA/(17134:17141): Entro por NULL
+[INFO] 01:56:40:854 GameCard PAPAA/(17134:17141): EL tamanio calculado del archivo es: 8
+[INFO] 01:56:40:858 GameCard PAPAA/(17134:17141): El ID de mensaje cargado en el appeared es: 69
+[INFO] 01:56:40:858 GameCard PAPAA/(17134:17141): El pokemoncargado en el appeared es: debiexagerada
+[INFO] 01:56:40:858 GameCard PAPAA/(17134:17141): El tamanio del nombre del pokemon cargado en el appeared es: 14
+[INFO] 01:56:40:858 GameCard PAPAA/(17134:17141): La coordenada del pokemon cargado en el appeared es: 69 - 69
+[INFO] 01:56:45:859 GameCard PAPAA/(17134:17141): El ID cargado es 69
+[INFO] 01:56:45:859 GameCard PAPAA/(17134:17141): Tamanio nombre pokemon 14
+[INFO] 01:56:45:859 GameCard PAPAA/(17134:17141): Nombre pokemon debiexagerada
+[INFO] 01:56:45:859 GameCard PAPAA/(17134:17141): Posicion X 69
+[INFO] 01:56:45:859 GameCard PAPAA/(17134:17141): Posicion Y 69
+[INFO] 01:56:45:859 GameCard PAPAA/(17134:17141): Creando paquete
+[INFO] 01:56:45:859 GameCard PAPAA/(17134:17141): CODIGO DE OPERACION: 2
+[INFO] 01:56:45:859 GameCard PAPAA/(17134:17141): Paquete Creado
+[INFO] 01:56:45:859 GameCard PAPAA/(17134:17141): la operacion a realizar es 2
+[INFO] 01:56:45:859 GameCard PAPAA/(17134:17141): Serializando...
+[INFO] 01:56:45:859 GameCard PAPAA/(17134:17141): Serializacion completa
+[INFO] 01:56:45:859 GameCard PAPAA/(17134:17141): El peso total es: 30
+[ERROR] 01:56:45:859 GameCard PAPAA/(17134:17141): Error: No se pudo enviar el mensaje
+[INFO] 01:56:48:902 GameCard PAPAA/(17134:17139): Iniciando verificacion de conexion con Broker...
+[ERROR] 01:56:48:903 GameCard PAPAA/(17134:17139): Reconexion con Broker fallida, intentando nuevamente en 10 segundos
+[INFO] 01:57:26:132 GameCard PAPAA/(17236:17236): logger iniciado.
+[INFO] 01:57:26:162 GameCard PAPAA/(17236:17236): Config cargada.
+[INFO] 01:57:26:165 GameCard PAPAA/(17236:17236): La IP del Broker: 127.0.0.1
+[INFO] 01:57:26:165 GameCard PAPAA/(17236:17236): El Puerto es: 6009
+[INFO] 01:57:26:168 GameCard PAPAA/(17236:17236): El tiempo de reintento de conexion es: 10
+[INFO] 01:57:26:169 GameCard PAPAA/(17236:17236): El tiempo de reintento de operacion es: 5
+[INFO] 01:57:26:170 GameCard PAPAA/(17236:17236): El tiempo de retardo de conexion es: 5
+[INFO] 01:57:26:170 GameCard PAPAA/(17236:17236): El punto de montaje es: /home/utnso/Escritorio/tall-grass
+[INFO] 01:57:26:171 GameCard PAPAA/(17236:17236): La IP es: 127.0.0.1
+[INFO] 01:57:26:172 GameCard PAPAA/(17236:17236): El puerto es: 4447
+[INFO] 01:57:26:173 GameCard PAPAA/(17236:17236): El punto de montaje es: /home/utnso/Escritorio/tall-grass
+[INFO] 01:57:26:175 GameCard PAPAA/(17236:17236): La ruta del metadataes: /home/utnso/Escritorio/tall-grass/Metadata
+[INFO] 01:57:26:177 GameCard PAPAA/(17236:17236): Se creo el config de MetaData
+[INFO] 01:57:26:179 GameCard PAPAA/(17236:17236): El Block Size es: 64
+[INFO] 01:57:26:179 GameCard PAPAA/(17236:17236): La cantidad de Bloques es: 5192
+[INFO] 01:57:26:180 GameCard PAPAA/(17236:17236): El Magic Number es: TALL_GRASS
+[INFO] 01:57:26:196 GameCard PAPAA/(17236:17236): Bitmap ya seteado
+[ERROR] 01:57:26:230 GameCard PAPAA/(17236:17236): Ya existe el BitMap
+[INFO] 01:57:26:233 GameCard PAPAA/(17236:17236): SETEO DE VARIABLES PARA ARCHIVOSYDIRECTORIOS.H
+[INFO] 01:57:26:234 GameCard PAPAA/(17236:17236): El ID de modulo es: 1804289383
+[INFO] 01:57:26:267 GameCard PAPAA/(17236:17241): Esperando mensajes de game boy en socket 7
+[INFO] 01:57:26:268 GameCard PAPAA/(17236:17243): Escucho CATCH de BROKER
+[INFO] 01:57:26:269 GameCard PAPAA/(17236:17242): Escuchando NEW de BROKER
+[ERROR] 01:57:26:279 GameCard PAPAA/(17236:17243): Hubo un problema enviando la suscripcion a la cola CATCH del broker
+[ERROR] 01:57:26:280 GameCard PAPAA/(17236:17242): Hubo un problema enviando la suscripcion a la cola NEW del broker
+[INFO] 01:57:26:281 GameCard PAPAA/(17236:17244): Escucho GET de BROKER
+[INFO] 01:57:26:282 GameCard PAPAA/(17236:17245): Hilo de verificacion periodica de conexion con Broker iniciado
+[ERROR] 01:57:26:302 GameCard PAPAA/(17236:17244): Hubo un problema enviando la suscripcion a la cola GET del broker
+[INFO] 01:57:27:436 GameCard PAPAA/(17236:17241): Socket 7 de gameBoy aceptado
+[INFO] 01:57:27:471 GameCard PAPAA/(17236:17247): Recibiendo codigo de operacion de GameBoy en socket 8
+[INFO] 01:57:27:477 GameCard PAPAA/(17236:17247): Codigo de operacion de socket 8 recibido: 3
+[INFO] 01:57:27:486 GameCard PAPAA/(17236:17247): Procesando request de GameBoy
+[INFO] 01:57:27:487 GameCard PAPAA/(17236:17247): Codigo de operacion recibido del socket cliente 8 corresponde a un CATCH
+[INFO] 01:57:27:492 GameCard PAPAA/(17236:17247): Recibiendo tamanio total
+[INFO] 01:57:27:497 GameCard PAPAA/(17236:17247): Tamanio total recibido: 30
+[INFO] 01:57:27:505 GameCard PAPAA/(17236:17247): EL ID recibido: 6
+[INFO] 01:57:27:506 GameCard PAPAA/(17236:17247): Tamanio del pokemon: 14
+[INFO] 01:57:27:510 GameCard PAPAA/(17236:17247): Nombre del pokemon recibido: debiExagerada
+[INFO] 01:57:27:511 GameCard PAPAA/(17236:17247): Posicion X recibida: 69
+[INFO] 01:57:27:520 GameCard PAPAA/(17236:17247): Posicion Y recibida: 69
+[INFO] 01:57:27:525 GameCard PAPAA/(17236:17247): CATCH recibido del modulo Game Boy socket 8
+[INFO] 01:57:27:540 GameCard PAPAA/(17236:17247): La coordenada generada es: 69-69
+[INFO] 01:57:27:568 GameCard PAPAA/(17236:17247): EL array de blocks es: P�$
+[INFO] 01:57:27:581 GameCard PAPAA/(17236:17247): Se creo el falso config de la ruta
+[INFO] 01:57:27:581 GameCard PAPAA/(17236:17247): Retorno el estado: N
+[INFO] 01:57:27:603 GameCard PAPAA/(17236:17247): Se creo el falso config de la ruta
+[INFO] 01:57:27:646 GameCard PAPAA/(17236:17247): Valido posicion
+[INFO] 01:57:27:651 GameCard PAPAA/(17236:17247): EL array de blocks es: 8
+[INFO] 01:57:27:659 GameCard PAPAA/(17236:17247): Se esta analizando el block: 8
+[INFO] 01:57:27:711 GameCard PAPAA/(17236:17247): Se esta analizando el block: 8
+[INFO] 01:57:27:728 GameCard PAPAA/(17236:17247): Encontro el block donde esta la posicion: 8
+[INFO] 01:57:27:733 GameCard PAPAA/(17236:17247): El bloque en el que se encuentra es: 8
+[INFO] 01:57:27:737 GameCard PAPAA/(17236:17247): La ruta del block es: /home/utnso/Escritorio/tall-grass/Blocks/8.bin
+[INFO] 01:57:27:743 GameCard PAPAA/(17236:17247): La cantidad de pokemons en el la posicion 69-69 es: 1
+[INFO] 01:57:27:760 GameCard PAPAA/(17236:17247): La cantidad de pokemons en esa posicion es 1
+[INFO] 01:57:27:767 GameCard PAPAA/(17236:17247): El valor del block es de: 1
+[INFO] 01:57:27:772 GameCard PAPAA/(17236:17247): El block fue desmarcado con el valor de: 0
+[INFO] 01:57:27:803 GameCard PAPAA/(17236:17247): Se seteo el valor del nuevo array en el metadata del pokemon
+[INFO] 01:57:27:817 GameCard PAPAA/(17236:17247): Dicha posicion es la ultima en el block por lo que se marco el block como libre y se elimino la linea
+[INFO] 02:03:14:586 GameCard PAPAA/(17973:17973): logger iniciado.
+[INFO] 02:03:14:586 GameCard PAPAA/(17973:17973): Config cargada.
+[INFO] 02:03:14:586 GameCard PAPAA/(17973:17973): La IP del Broker: 127.0.0.1
+[INFO] 02:03:14:587 GameCard PAPAA/(17973:17973): El Puerto es: 6009
+[INFO] 02:03:14:587 GameCard PAPAA/(17973:17973): El tiempo de reintento de conexion es: 10
+[INFO] 02:03:14:587 GameCard PAPAA/(17973:17973): El tiempo de reintento de operacion es: 5
+[INFO] 02:03:14:587 GameCard PAPAA/(17973:17973): El tiempo de retardo de conexion es: 5
+[INFO] 02:03:14:587 GameCard PAPAA/(17973:17973): El punto de montaje es: /home/utnso/Escritorio/tall-grass
+[INFO] 02:03:14:587 GameCard PAPAA/(17973:17973): La IP es: 127.0.0.1
+[INFO] 02:03:14:587 GameCard PAPAA/(17973:17973): El puerto es: 4447
+[INFO] 02:03:14:587 GameCard PAPAA/(17973:17973): El punto de montaje es: /home/utnso/Escritorio/tall-grass
+[INFO] 02:03:14:587 GameCard PAPAA/(17973:17973): La ruta del metadataes: /home/utnso/Escritorio/tall-grass/Metadata
+[INFO] 02:03:14:587 GameCard PAPAA/(17973:17973): Se creo el config de MetaData
+[INFO] 02:03:14:587 GameCard PAPAA/(17973:17973): El Block Size es: 64
+[INFO] 02:03:14:587 GameCard PAPAA/(17973:17973): La cantidad de Bloques es: 5192
+[INFO] 02:03:14:587 GameCard PAPAA/(17973:17973): El Magic Number es: TALL_GRASS
+[INFO] 02:03:14:587 GameCard PAPAA/(17973:17973): Bitmap ya seteado
+[ERROR] 02:03:14:588 GameCard PAPAA/(17973:17973): Ya existe el BitMap
+[INFO] 02:03:14:589 GameCard PAPAA/(17973:17973): SETEO DE VARIABLES PARA ARCHIVOSYDIRECTORIOS.H
+[INFO] 02:03:14:589 GameCard PAPAA/(17973:17973): El ID de modulo es: 1804289383
+[INFO] 02:03:14:589 GameCard PAPAA/(17973:17978): Hilo de verificacion periodica de conexion con Broker iniciado
+[INFO] 02:03:14:589 GameCard PAPAA/(17973:17977): Escucho GET de BROKER
+[ERROR] 02:03:14:589 GameCard PAPAA/(17973:17977): Hubo un problema enviando la suscripcion a la cola GET del broker
+[INFO] 02:03:14:591 GameCard PAPAA/(17973:17976): Escucho CATCH de BROKER
+[ERROR] 02:03:14:591 GameCard PAPAA/(17973:17976): Hubo un problema enviando la suscripcion a la cola CATCH del broker
+[INFO] 02:03:14:592 GameCard PAPAA/(17973:17975): Escuchando NEW de BROKER
+[ERROR] 02:03:14:592 GameCard PAPAA/(17973:17975): Hubo un problema enviando la suscripcion a la cola NEW del broker
+[INFO] 02:03:14:598 GameCard PAPAA/(17973:17974): Esperando mensajes de game boy en socket 5
+[INFO] 02:03:16:357 GameCard PAPAA/(17973:17974): Socket 5 de gameBoy aceptado
+[INFO] 02:03:16:364 GameCard PAPAA/(17973:17984): Recibiendo codigo de operacion de GameBoy en socket 7
+[INFO] 02:03:16:364 GameCard PAPAA/(17973:17984): Codigo de operacion de socket 7 recibido: 1
+[INFO] 02:03:16:364 GameCard PAPAA/(17973:17984): Procesando request de GameBoy
+[INFO] 02:03:16:364 GameCard PAPAA/(17973:17984): Codigo de operacion recibido del socket cliente 7 corresponde a un NEW
+[INFO] 02:03:16:364 GameCard PAPAA/(17973:17984): Recibiendo tamanio total
+[INFO] 02:03:16:364 GameCard PAPAA/(17973:17984): Tamanio total recibido: 34
+[INFO] 02:03:16:364 GameCard PAPAA/(17973:17984): EL ID recibido: 69
+[INFO] 02:03:16:364 GameCard PAPAA/(17973:17984): Tamanio del pokemon recibido: 14
+[INFO] 02:03:16:365 GameCard PAPAA/(17973:17984): Nombre del pokemon recibido: debiExagerada
+[INFO] 02:03:16:365 GameCard PAPAA/(17973:17984): Posicion X recibida: 69
+[INFO] 02:03:16:365 GameCard PAPAA/(17973:17984): Posicion Y recibida: 69
+[INFO] 02:03:16:365 GameCard PAPAA/(17973:17984): Cantidad recibida: 1
+[INFO] 02:03:16:365 GameCard PAPAA/(17973:17984): NEW recibido del modulo Game Boy socket 7
+[INFO] 02:03:16:365 GameCard PAPAA/(17973:17984): Llegamo
+[INFO] 02:03:16:365 GameCard PAPAA/(17973:17984): Pokemon: debiexagerada
+[INFO] 02:03:16:365 GameCard PAPAA/(17973:17984): PosX: 69
+[INFO] 02:03:16:365 GameCard PAPAA/(17973:17984): PosY: 69
+[INFO] 02:03:16:365 GameCard PAPAA/(17973:17984): Cantidad: 1
+[INFO] 02:03:16:365 GameCard PAPAA/(17973:17984): Ruta de Directorio: /home/utnso/Escritorio/tall-grass/Files/debiexagerada
+[INFO] 02:03:16:365 GameCard PAPAA/(17973:17984): La coordenada generada es: 69-69
+[INFO] 02:03:16:365 GameCard PAPAA/(17973:17984): Posicion generada: 69-69
+[INFO] 02:03:16:365 GameCard PAPAA/(17973:17984): Se creo el directorio: debiexagerada
+[INFO] 02:03:16:366 GameCard PAPAA/(17973:17984): Ruta del directorio pokemon debiexagerada es: /home/utnso/Escritorio/tall-grass/Files/debiexagerada
+[INFO] 02:03:16:383 GameCard PAPAA/(17973:17984): Ruta del Archivo: /home/utnso/Escritorio/tall-grass/Files/debiexagerada/debiexagerada.bin
+[INFO] 02:03:16:383 GameCard PAPAA/(17973:17984): Se creo el archivo config
+[INFO] 02:03:16:383 GameCard PAPAA/(17973:17984): EL array de blocks es: (null)
+[INFO] 02:03:16:383 GameCard PAPAA/(17973:17984): Se creo el falso config de la ruta
+[INFO] 02:03:16:383 GameCard PAPAA/(17973:17984): Retorno el estado: N
+[INFO] 02:03:16:383 GameCard PAPAA/(17973:17984): Se creo el falso config de la ruta
+[INFO] 02:03:16:383 GameCard PAPAA/(17973:17984): Paso el mutex
+[INFO] 02:03:16:383 GameCard PAPAA/(17973:17984): Validando Posiciones de New
+[INFO] 02:03:16:383 GameCard PAPAA/(17973:17984): Valido posicion
+[INFO] 02:03:16:384 GameCard PAPAA/(17973:17984): EL array de blocks es: (null)
+[INFO] 02:03:16:384 GameCard PAPAA/(17973:17984): Entro por NULL
+[INFO] 02:03:16:393 GameCard PAPAA/(17973:17984): Entro a buscar posiciones
+[INFO] 02:03:16:393 GameCard PAPAA/(17973:17984): Bloqueo
+[INFO] 02:03:16:393 GameCard PAPAA/(17973:17984): A
+[INFO] 02:03:16:393 GameCard PAPAA/(17973:17984): A
+[INFO] 02:03:16:394 GameCard PAPAA/(17973:17984): A
+[INFO] 02:03:16:394 GameCard PAPAA/(17973:17984): A
+[INFO] 02:03:16:394 GameCard PAPAA/(17973:17984): A
+[INFO] 02:03:16:394 GameCard PAPAA/(17973:17984): A
+[INFO] 02:03:16:394 GameCard PAPAA/(17973:17984): A
+[INFO] 02:03:16:394 GameCard PAPAA/(17973:17984): A
+[INFO] 02:03:16:395 GameCard PAPAA/(17973:17984): Guardando el bitarray
+[INFO] 02:03:16:395 GameCard PAPAA/(17973:17984): Termino el guardado
+[INFO] 02:03:16:395 GameCard PAPAA/(17973:17984): EL block 7 esta libre
+[INFO] 02:03:16:395 GameCard PAPAA/(17973:17984): El bloque disponible seleccionado es: 7
+[INFO] 02:03:16:395 GameCard PAPAA/(17973:17984): Agregamos nueva posicion con direccion del archivo: /home/utnso/Escritorio/tall-grass/Blocks/7.bin
+[INFO] 02:03:16:395 GameCard PAPAA/(17973:17984): Creamos el archivo
+[INFO] 02:03:16:402 GameCard PAPAA/(17973:17984): Seteando nueva posicion: 69-69
+[INFO] 02:03:16:402 GameCard PAPAA/(17973:17984): Actualmente hay 0 de posiciones en el archivo
+[INFO] 02:03:16:403 GameCard PAPAA/(17973:17984): ACTUALIZACION : Actualmente hay 0 de posiciones en el archivo
+[INFO] 02:03:16:403 GameCard PAPAA/(17973:17984): Actualizo Metadata
+[INFO] 02:03:16:403 GameCard PAPAA/(17973:17984): Entro por NULL
+[INFO] 02:03:16:403 GameCard PAPAA/(17973:17984): EL tamanio calculado del archivo es: 8
+[INFO] 02:03:16:404 GameCard PAPAA/(17973:17984): El ID de mensaje cargado en el appeared es: 69
+[INFO] 02:03:16:411 GameCard PAPAA/(17973:17984): El pokemoncargado en el appeared es: debiexagerada
+[INFO] 02:03:16:411 GameCard PAPAA/(17973:17984): El tamanio del nombre del pokemon cargado en el appeared es: 14
+[INFO] 02:03:16:411 GameCard PAPAA/(17973:17984): La coordenada del pokemon cargado en el appeared es: 69 - 69
+[INFO] 02:03:21:411 GameCard PAPAA/(17973:17984): El ID cargado es 69
+[INFO] 02:03:21:411 GameCard PAPAA/(17973:17984): Tamanio nombre pokemon 14
+[INFO] 02:03:21:411 GameCard PAPAA/(17973:17984): Nombre pokemon debiexagerada
+[INFO] 02:03:21:412 GameCard PAPAA/(17973:17984): Posicion X 69
+[INFO] 02:03:21:412 GameCard PAPAA/(17973:17984): Posicion Y 69
+[INFO] 02:03:21:412 GameCard PAPAA/(17973:17984): Creando paquete
+[INFO] 02:03:21:412 GameCard PAPAA/(17973:17984): CODIGO DE OPERACION: 2
+[INFO] 02:03:21:412 GameCard PAPAA/(17973:17984): Paquete Creado
+[INFO] 02:03:21:412 GameCard PAPAA/(17973:17984): la operacion a realizar es 2
+[INFO] 02:03:21:412 GameCard PAPAA/(17973:17984): Serializando...
+[INFO] 02:03:21:412 GameCard PAPAA/(17973:17984): Serializacion completa
+[INFO] 02:03:21:412 GameCard PAPAA/(17973:17984): El peso total es: 30
+[ERROR] 02:03:21:412 GameCard PAPAA/(17973:17984): Error: No se pudo enviar el mensaje
+[INFO] 02:03:24:589 GameCard PAPAA/(17973:17978): Iniciando verificacion de conexion con Broker...
+[ERROR] 02:03:24:589 GameCard PAPAA/(17973:17978): Reconexion con Broker fallida, intentando nuevamente en 10 segundos
+[INFO] 02:03:35:921 GameCard PAPAA/(18015:18015): logger iniciado.
+[INFO] 02:03:35:966 GameCard PAPAA/(18015:18015): Config cargada.
+[INFO] 02:03:35:968 GameCard PAPAA/(18015:18015): La IP del Broker: 127.0.0.1
+[INFO] 02:03:35:969 GameCard PAPAA/(18015:18015): El Puerto es: 6009
+[INFO] 02:03:35:972 GameCard PAPAA/(18015:18015): El tiempo de reintento de conexion es: 10
+[INFO] 02:03:35:973 GameCard PAPAA/(18015:18015): El tiempo de reintento de operacion es: 5
+[INFO] 02:03:35:973 GameCard PAPAA/(18015:18015): El tiempo de retardo de conexion es: 5
+[INFO] 02:03:35:974 GameCard PAPAA/(18015:18015): El punto de montaje es: /home/utnso/Escritorio/tall-grass
+[INFO] 02:03:35:974 GameCard PAPAA/(18015:18015): La IP es: 127.0.0.1
+[INFO] 02:03:35:975 GameCard PAPAA/(18015:18015): El puerto es: 4447
+[INFO] 02:03:35:976 GameCard PAPAA/(18015:18015): El punto de montaje es: /home/utnso/Escritorio/tall-grass
+[INFO] 02:03:35:978 GameCard PAPAA/(18015:18015): La ruta del metadataes: /home/utnso/Escritorio/tall-grass/Metadata
+[INFO] 02:03:35:980 GameCard PAPAA/(18015:18015): Se creo el config de MetaData
+[INFO] 02:03:35:981 GameCard PAPAA/(18015:18015): El Block Size es: 64
+[INFO] 02:03:35:982 GameCard PAPAA/(18015:18015): La cantidad de Bloques es: 5192
+[INFO] 02:03:35:983 GameCard PAPAA/(18015:18015): El Magic Number es: TALL_GRASS
+[INFO] 02:03:35:0 GameCard PAPAA/(18015:18015): Bitmap ya seteado
+[ERROR] 02:03:36:32 GameCard PAPAA/(18015:18015): Ya existe el BitMap
+[INFO] 02:03:36:35 GameCard PAPAA/(18015:18015): SETEO DE VARIABLES PARA ARCHIVOSYDIRECTORIOS.H
+[INFO] 02:03:36:35 GameCard PAPAA/(18015:18015): El ID de modulo es: 1804289383
+[INFO] 02:03:36:68 GameCard PAPAA/(18015:18016): Esperando mensajes de game boy en socket 7
+[INFO] 02:03:36:69 GameCard PAPAA/(18015:18018): Escucho CATCH de BROKER
+[INFO] 02:03:36:70 GameCard PAPAA/(18015:18017): Escuchando NEW de BROKER
+[ERROR] 02:03:36:83 GameCard PAPAA/(18015:18017): Hubo un problema enviando la suscripcion a la cola NEW del broker
+[ERROR] 02:03:36:83 GameCard PAPAA/(18015:18018): Hubo un problema enviando la suscripcion a la cola CATCH del broker
+[INFO] 02:03:36:85 GameCard PAPAA/(18015:18020): Hilo de verificacion periodica de conexion con Broker iniciado
+[INFO] 02:03:36:90 GameCard PAPAA/(18015:18019): Escucho GET de BROKER
+[ERROR] 02:03:36:103 GameCard PAPAA/(18015:18019): Hubo un problema enviando la suscripcion a la cola GET del broker
+[INFO] 02:03:38:410 GameCard PAPAA/(18015:18016): Socket 7 de gameBoy aceptado
+[INFO] 02:03:38:446 GameCard PAPAA/(18015:18026): Recibiendo codigo de operacion de GameBoy en socket 8
+[INFO] 02:03:38:464 GameCard PAPAA/(18015:18026): Codigo de operacion de socket 8 recibido: 3
+[INFO] 02:03:38:465 GameCard PAPAA/(18015:18026): Procesando request de GameBoy
+[INFO] 02:03:38:465 GameCard PAPAA/(18015:18026): Codigo de operacion recibido del socket cliente 8 corresponde a un CATCH
+[INFO] 02:03:38:466 GameCard PAPAA/(18015:18026): Recibiendo tamanio total
+[INFO] 02:03:38:511 GameCard PAPAA/(18015:18026): Tamanio total recibido: 30
+[INFO] 02:03:38:516 GameCard PAPAA/(18015:18026): EL ID recibido: 6
+[INFO] 02:03:38:521 GameCard PAPAA/(18015:18026): Tamanio del pokemon: 14
+[INFO] 02:03:38:551 GameCard PAPAA/(18015:18026): Nombre del pokemon recibido: debiExagerada
+[INFO] 02:03:38:556 GameCard PAPAA/(18015:18026): Posicion X recibida: 69
+[INFO] 02:03:38:556 GameCard PAPAA/(18015:18026): Posicion Y recibida: 69
+[INFO] 02:03:38:577 GameCard PAPAA/(18015:18026): CATCH recibido del modulo Game Boy socket 8
+[INFO] 02:03:38:581 GameCard PAPAA/(18015:18026): La coordenada generada es: 69-69
+[INFO] 02:03:38:625 GameCard PAPAA/(18015:18026): EL array de blocks es: 嘲$
+[INFO] 02:03:38:668 GameCard PAPAA/(18015:18026): Se creo el falso config de la ruta
+[INFO] 02:03:38:669 GameCard PAPAA/(18015:18026): Retorno el estado: N
+[INFO] 02:03:38:674 GameCard PAPAA/(18015:18026): Se creo el falso config de la ruta
+[INFO] 02:03:38:725 GameCard PAPAA/(18015:18026): Valido posicion
+[INFO] 02:03:38:738 GameCard PAPAA/(18015:18026): EL array de blocks es: 7
+[INFO] 02:03:38:739 GameCard PAPAA/(18015:18026): Se esta analizando el block: 7
+[INFO] 02:03:38:753 GameCard PAPAA/(18015:18026): Se esta analizando el block: 7
+[INFO] 02:03:38:771 GameCard PAPAA/(18015:18026): Encontro el block donde esta la posicion: 7
+[INFO] 02:03:38:789 GameCard PAPAA/(18015:18026): El bloque en el que se encuentra es: 7
+[INFO] 02:03:38:794 GameCard PAPAA/(18015:18026): La ruta del block es: /home/utnso/Escritorio/tall-grass/Blocks/7.bin
+[INFO] 02:03:38:815 GameCard PAPAA/(18015:18026): La cantidad de pokemons en el la posicion 69-69 es: 1
+[INFO] 02:03:38:820 GameCard PAPAA/(18015:18026): La cantidad de pokemons en esa posicion es 1
+[INFO] 02:03:38:847 GameCard PAPAA/(18015:18026): El valor del block es de: 1
+[INFO] 02:03:38:861 GameCard PAPAA/(18015:18026): El block fue desmarcado con el valor de: 0
+[INFO] 02:03:38:863 GameCard PAPAA/(18015:18026): No hay mas bloques
+[INFO] 02:03:38:870 GameCard PAPAA/(18015:18026): Se macheo el block que hay que sacar
+[INFO] 02:05:17:201 GameCard PAPAA/(18246:18246): logger iniciado.
+[INFO] 02:05:17:201 GameCard PAPAA/(18246:18246): Config cargada.
+[INFO] 02:05:17:201 GameCard PAPAA/(18246:18246): La IP del Broker: 127.0.0.1
+[INFO] 02:05:17:201 GameCard PAPAA/(18246:18246): El Puerto es: 6009
+[INFO] 02:05:17:201 GameCard PAPAA/(18246:18246): El tiempo de reintento de conexion es: 10
+[INFO] 02:05:17:201 GameCard PAPAA/(18246:18246): El tiempo de reintento de operacion es: 5
+[INFO] 02:05:17:201 GameCard PAPAA/(18246:18246): El tiempo de retardo de conexion es: 5
+[INFO] 02:05:17:201 GameCard PAPAA/(18246:18246): El punto de montaje es: /home/utnso/Escritorio/tall-grass
+[INFO] 02:05:17:201 GameCard PAPAA/(18246:18246): La IP es: 127.0.0.1
+[INFO] 02:05:17:201 GameCard PAPAA/(18246:18246): El puerto es: 4447
+[INFO] 02:05:17:202 GameCard PAPAA/(18246:18246): El punto de montaje es: /home/utnso/Escritorio/tall-grass
+[INFO] 02:05:17:202 GameCard PAPAA/(18246:18246): La ruta del metadataes: /home/utnso/Escritorio/tall-grass/Metadata
+[INFO] 02:05:17:202 GameCard PAPAA/(18246:18246): Se creo el config de MetaData
+[INFO] 02:05:17:202 GameCard PAPAA/(18246:18246): El Block Size es: 64
+[INFO] 02:05:17:202 GameCard PAPAA/(18246:18246): La cantidad de Bloques es: 5192
+[INFO] 02:05:17:202 GameCard PAPAA/(18246:18246): El Magic Number es: TALL_GRASS
+[INFO] 02:05:17:202 GameCard PAPAA/(18246:18246): Bitmap ya seteado
+[ERROR] 02:05:17:203 GameCard PAPAA/(18246:18246): Ya existe el BitMap
+[INFO] 02:05:17:203 GameCard PAPAA/(18246:18246): SETEO DE VARIABLES PARA ARCHIVOSYDIRECTORIOS.H
+[INFO] 02:05:17:203 GameCard PAPAA/(18246:18246): El ID de modulo es: 1804289383
+[INFO] 02:05:17:203 GameCard PAPAA/(18246:18251): Hilo de verificacion periodica de conexion con Broker iniciado
+[INFO] 02:05:17:203 GameCard PAPAA/(18246:18250): Escucho GET de BROKER
+[ERROR] 02:05:17:204 GameCard PAPAA/(18246:18250): Hubo un problema enviando la suscripcion a la cola GET del broker
+[INFO] 02:05:17:206 GameCard PAPAA/(18246:18249): Escucho CATCH de BROKER
+[ERROR] 02:05:17:206 GameCard PAPAA/(18246:18249): Hubo un problema enviando la suscripcion a la cola CATCH del broker
+[INFO] 02:05:17:210 GameCard PAPAA/(18246:18248): Escuchando NEW de BROKER
+[ERROR] 02:05:17:212 GameCard PAPAA/(18246:18248): Hubo un problema enviando la suscripcion a la cola NEW del broker
+[INFO] 02:05:17:214 GameCard PAPAA/(18246:18247): Esperando mensajes de game boy en socket 5
+[INFO] 02:05:19:627 GameCard PAPAA/(18246:18247): Socket 5 de gameBoy aceptado
+[INFO] 02:05:19:630 GameCard PAPAA/(18246:18257): Recibiendo codigo de operacion de GameBoy en socket 7
+[INFO] 02:05:19:630 GameCard PAPAA/(18246:18257): Codigo de operacion de socket 7 recibido: 1
+[INFO] 02:05:19:630 GameCard PAPAA/(18246:18257): Procesando request de GameBoy
+[INFO] 02:05:19:630 GameCard PAPAA/(18246:18257): Codigo de operacion recibido del socket cliente 7 corresponde a un NEW
+[INFO] 02:05:19:630 GameCard PAPAA/(18246:18257): Recibiendo tamanio total
+[INFO] 02:05:19:630 GameCard PAPAA/(18246:18257): Tamanio total recibido: 34
+[INFO] 02:05:19:630 GameCard PAPAA/(18246:18257): EL ID recibido: 69
+[INFO] 02:05:19:630 GameCard PAPAA/(18246:18257): Tamanio del pokemon recibido: 14
+[INFO] 02:05:19:630 GameCard PAPAA/(18246:18257): Nombre del pokemon recibido: debiExagerada
+[INFO] 02:05:19:630 GameCard PAPAA/(18246:18257): Posicion X recibida: 69
+[INFO] 02:05:19:631 GameCard PAPAA/(18246:18257): Posicion Y recibida: 69
+[INFO] 02:05:19:631 GameCard PAPAA/(18246:18257): Cantidad recibida: 1
+[INFO] 02:05:19:631 GameCard PAPAA/(18246:18257): NEW recibido del modulo Game Boy socket 7
+[INFO] 02:05:19:631 GameCard PAPAA/(18246:18257): Llegamo
+[INFO] 02:05:19:631 GameCard PAPAA/(18246:18257): Pokemon: debiexagerada
+[INFO] 02:05:19:631 GameCard PAPAA/(18246:18257): PosX: 69
+[INFO] 02:05:19:631 GameCard PAPAA/(18246:18257): PosY: 69
+[INFO] 02:05:19:631 GameCard PAPAA/(18246:18257): Cantidad: 1
+[INFO] 02:05:19:631 GameCard PAPAA/(18246:18257): Ruta de Directorio: /home/utnso/Escritorio/tall-grass/Files/debiexagerada
+[INFO] 02:05:19:631 GameCard PAPAA/(18246:18257): La coordenada generada es: 69-69
+[INFO] 02:05:19:631 GameCard PAPAA/(18246:18257): Posicion generada: 69-69
+[INFO] 02:05:19:631 GameCard PAPAA/(18246:18257): Se creo el directorio: debiexagerada
+[INFO] 02:05:19:631 GameCard PAPAA/(18246:18257): Ruta del directorio pokemon debiexagerada es: /home/utnso/Escritorio/tall-grass/Files/debiexagerada
+[INFO] 02:05:19:632 GameCard PAPAA/(18246:18257): Ruta del Archivo: /home/utnso/Escritorio/tall-grass/Files/debiexagerada/debiexagerada.bin
+[INFO] 02:05:19:632 GameCard PAPAA/(18246:18257): Se creo el archivo config
+[INFO] 02:05:19:633 GameCard PAPAA/(18246:18257): EL array de blocks es: (null)
+[INFO] 02:05:19:634 GameCard PAPAA/(18246:18257): Se creo el falso config de la ruta
+[INFO] 02:05:19:634 GameCard PAPAA/(18246:18257): Retorno el estado: N
+[INFO] 02:05:19:634 GameCard PAPAA/(18246:18257): Se creo el falso config de la ruta
+[INFO] 02:05:19:634 GameCard PAPAA/(18246:18257): Paso el mutex
+[INFO] 02:05:19:634 GameCard PAPAA/(18246:18257): Validando Posiciones de New
+[INFO] 02:05:19:634 GameCard PAPAA/(18246:18257): Valido posicion
+[INFO] 02:05:19:634 GameCard PAPAA/(18246:18257): EL array de blocks es: (null)
+[INFO] 02:05:19:634 GameCard PAPAA/(18246:18257): Entro por NULL
+[INFO] 02:05:19:634 GameCard PAPAA/(18246:18257): Entro a buscar posiciones
+[INFO] 02:05:19:634 GameCard PAPAA/(18246:18257): Bloqueo
+[INFO] 02:05:19:635 GameCard PAPAA/(18246:18257): A
+[INFO] 02:05:19:635 GameCard PAPAA/(18246:18257): A
+[INFO] 02:05:19:635 GameCard PAPAA/(18246:18257): A
+[INFO] 02:05:19:635 GameCard PAPAA/(18246:18257): A
+[INFO] 02:05:19:635 GameCard PAPAA/(18246:18257): A
+[INFO] 02:05:19:635 GameCard PAPAA/(18246:18257): A
+[INFO] 02:05:19:635 GameCard PAPAA/(18246:18257): A
+[INFO] 02:05:19:635 GameCard PAPAA/(18246:18257): A
+[INFO] 02:05:19:635 GameCard PAPAA/(18246:18257): Guardando el bitarray
+[INFO] 02:05:19:637 GameCard PAPAA/(18246:18257): Termino el guardado
+[INFO] 02:05:19:637 GameCard PAPAA/(18246:18257): EL block 7 esta libre
+[INFO] 02:05:19:637 GameCard PAPAA/(18246:18257): El bloque disponible seleccionado es: 7
+[INFO] 02:05:19:637 GameCard PAPAA/(18246:18257): Agregamos nueva posicion con direccion del archivo: /home/utnso/Escritorio/tall-grass/Blocks/7.bin
+[INFO] 02:05:19:637 GameCard PAPAA/(18246:18257): Creamos el archivo
+[INFO] 02:05:19:637 GameCard PAPAA/(18246:18257): Seteando nueva posicion: 69-69
+[INFO] 02:05:19:639 GameCard PAPAA/(18246:18257): Actualmente hay 0 de posiciones en el archivo
+[INFO] 02:05:19:639 GameCard PAPAA/(18246:18257): ACTUALIZACION : Actualmente hay 0 de posiciones en el archivo
+[INFO] 02:05:19:650 GameCard PAPAA/(18246:18257): Actualizo Metadata
+[INFO] 02:05:19:650 GameCard PAPAA/(18246:18257): Entro por NULL
+[INFO] 02:05:19:651 GameCard PAPAA/(18246:18257): EL tamanio calculado del archivo es: 8
+[INFO] 02:05:19:651 GameCard PAPAA/(18246:18257): El ID de mensaje cargado en el appeared es: 69
+[INFO] 02:05:19:651 GameCard PAPAA/(18246:18257): El pokemoncargado en el appeared es: debiexagerada
+[INFO] 02:05:19:654 GameCard PAPAA/(18246:18257): El tamanio del nombre del pokemon cargado en el appeared es: 14
+[INFO] 02:05:19:654 GameCard PAPAA/(18246:18257): La coordenada del pokemon cargado en el appeared es: 69 - 69
+[INFO] 02:05:24:655 GameCard PAPAA/(18246:18257): El ID cargado es 69
+[INFO] 02:05:24:655 GameCard PAPAA/(18246:18257): Tamanio nombre pokemon 14
+[INFO] 02:05:24:655 GameCard PAPAA/(18246:18257): Nombre pokemon debiexagerada
+[INFO] 02:05:24:655 GameCard PAPAA/(18246:18257): Posicion X 69
+[INFO] 02:05:24:655 GameCard PAPAA/(18246:18257): Posicion Y 69
+[INFO] 02:05:24:655 GameCard PAPAA/(18246:18257): Creando paquete
+[INFO] 02:05:24:655 GameCard PAPAA/(18246:18257): CODIGO DE OPERACION: 2
+[INFO] 02:05:24:655 GameCard PAPAA/(18246:18257): Paquete Creado
+[INFO] 02:05:24:655 GameCard PAPAA/(18246:18257): la operacion a realizar es 2
+[INFO] 02:05:24:655 GameCard PAPAA/(18246:18257): Serializando...
+[INFO] 02:05:24:656 GameCard PAPAA/(18246:18257): Serializacion completa
+[INFO] 02:05:24:656 GameCard PAPAA/(18246:18257): El peso total es: 30
+[ERROR] 02:05:24:656 GameCard PAPAA/(18246:18257): Error: No se pudo enviar el mensaje
+[INFO] 02:05:27:204 GameCard PAPAA/(18246:18251): Iniciando verificacion de conexion con Broker...
+[ERROR] 02:05:27:204 GameCard PAPAA/(18246:18251): Reconexion con Broker fallida, intentando nuevamente en 10 segundos
+[INFO] 02:05:36:117 GameCard PAPAA/(18283:18283): logger iniciado.
+[INFO] 02:05:36:148 GameCard PAPAA/(18283:18283): Config cargada.
+[INFO] 02:05:36:150 GameCard PAPAA/(18283:18283): La IP del Broker: 127.0.0.1
+[INFO] 02:05:36:151 GameCard PAPAA/(18283:18283): El Puerto es: 6009
+[INFO] 02:05:36:154 GameCard PAPAA/(18283:18283): El tiempo de reintento de conexion es: 10
+[INFO] 02:05:36:155 GameCard PAPAA/(18283:18283): El tiempo de reintento de operacion es: 5
+[INFO] 02:05:36:156 GameCard PAPAA/(18283:18283): El tiempo de retardo de conexion es: 5
+[INFO] 02:05:36:156 GameCard PAPAA/(18283:18283): El punto de montaje es: /home/utnso/Escritorio/tall-grass
+[INFO] 02:05:36:157 GameCard PAPAA/(18283:18283): La IP es: 127.0.0.1
+[INFO] 02:05:36:157 GameCard PAPAA/(18283:18283): El puerto es: 4447
+[INFO] 02:05:36:158 GameCard PAPAA/(18283:18283): El punto de montaje es: /home/utnso/Escritorio/tall-grass
+[INFO] 02:05:36:161 GameCard PAPAA/(18283:18283): La ruta del metadataes: /home/utnso/Escritorio/tall-grass/Metadata
+[INFO] 02:05:36:163 GameCard PAPAA/(18283:18283): Se creo el config de MetaData
+[INFO] 02:05:36:164 GameCard PAPAA/(18283:18283): El Block Size es: 64
+[INFO] 02:05:36:165 GameCard PAPAA/(18283:18283): La cantidad de Bloques es: 5192
+[INFO] 02:05:36:165 GameCard PAPAA/(18283:18283): El Magic Number es: TALL_GRASS
+[INFO] 02:05:36:182 GameCard PAPAA/(18283:18283): Bitmap ya seteado
+[ERROR] 02:05:36:216 GameCard PAPAA/(18283:18283): Ya existe el BitMap
+[INFO] 02:05:36:219 GameCard PAPAA/(18283:18283): SETEO DE VARIABLES PARA ARCHIVOSYDIRECTORIOS.H
+[INFO] 02:05:36:219 GameCard PAPAA/(18283:18283): El ID de modulo es: 1804289383
+[INFO] 02:05:36:253 GameCard PAPAA/(18283:18284): Esperando mensajes de game boy en socket 7
+[INFO] 02:05:36:254 GameCard PAPAA/(18283:18286): Escucho CATCH de BROKER
+[INFO] 02:05:36:254 GameCard PAPAA/(18283:18285): Escuchando NEW de BROKER
+[ERROR] 02:05:36:266 GameCard PAPAA/(18283:18285): Hubo un problema enviando la suscripcion a la cola NEW del broker
+[ERROR] 02:05:36:267 GameCard PAPAA/(18283:18286): Hubo un problema enviando la suscripcion a la cola CATCH del broker
+[INFO] 02:05:36:271 GameCard PAPAA/(18283:18288): Hilo de verificacion periodica de conexion con Broker iniciado
+[INFO] 02:05:36:272 GameCard PAPAA/(18283:18287): Escucho GET de BROKER
+[ERROR] 02:05:36:288 GameCard PAPAA/(18283:18287): Hubo un problema enviando la suscripcion a la cola GET del broker
+[INFO] 02:05:37:867 GameCard PAPAA/(18283:18284): Socket 7 de gameBoy aceptado
+[INFO] 02:05:37:901 GameCard PAPAA/(18283:18294): Recibiendo codigo de operacion de GameBoy en socket 8
+[INFO] 02:05:37:920 GameCard PAPAA/(18283:18294): Codigo de operacion de socket 8 recibido: 3
+[INFO] 02:05:37:936 GameCard PAPAA/(18283:18294): Procesando request de GameBoy
+[INFO] 02:05:37:937 GameCard PAPAA/(18283:18294): Codigo de operacion recibido del socket cliente 8 corresponde a un CATCH
+[INFO] 02:05:37:942 GameCard PAPAA/(18283:18294): Recibiendo tamanio total
+[INFO] 02:05:37:975 GameCard PAPAA/(18283:18294): Tamanio total recibido: 30
+[INFO] 02:05:37:980 GameCard PAPAA/(18283:18294): EL ID recibido: 6
+[INFO] 02:05:37:985 GameCard PAPAA/(18283:18294): Tamanio del pokemon: 14
+[INFO] 02:05:38:14 GameCard PAPAA/(18283:18294): Nombre del pokemon recibido: debiExagerada
+[INFO] 02:05:38:34 GameCard PAPAA/(18283:18294): Posicion X recibida: 69
+[INFO] 02:05:38:39 GameCard PAPAA/(18283:18294): Posicion Y recibida: 69
+[INFO] 02:05:38:44 GameCard PAPAA/(18283:18294): CATCH recibido del modulo Game Boy socket 8
+[INFO] 02:05:38:52 GameCard PAPAA/(18283:18294): La coordenada generada es: 69-69
+[INFO] 02:05:38:98 GameCard PAPAA/(18283:18294): EL array de blocks es: P�$
+[INFO] 02:05:38:111 GameCard PAPAA/(18283:18294): Se creo el falso config de la ruta
+[INFO] 02:05:38:137 GameCard PAPAA/(18283:18294): Retorno el estado: N
+[INFO] 02:05:38:183 GameCard PAPAA/(18283:18294): Se creo el falso config de la ruta
+[INFO] 02:05:38:203 GameCard PAPAA/(18283:18294): Valido posicion
+[INFO] 02:05:38:217 GameCard PAPAA/(18283:18294): EL array de blocks es: 7
+[INFO] 02:05:38:218 GameCard PAPAA/(18283:18294): Se esta analizando el block: 7
+[INFO] 02:05:38:269 GameCard PAPAA/(18283:18294): Se esta analizando el block: 7
+[INFO] 02:05:38:284 GameCard PAPAA/(18283:18294): Encontro el block donde esta la posicion: 7
+[INFO] 02:05:38:289 GameCard PAPAA/(18283:18294): El bloque en el que se encuentra es: 7
+[INFO] 02:05:38:301 GameCard PAPAA/(18283:18294): La ruta del block es: /home/utnso/Escritorio/tall-grass/Blocks/7.bin
+[INFO] 02:05:38:307 GameCard PAPAA/(18283:18294): La cantidad de pokemons en el la posicion 69-69 es: 1
+[INFO] 02:05:38:308 GameCard PAPAA/(18283:18294): La cantidad de pokemons en esa posicion es 1
+[INFO] 02:05:38:323 GameCard PAPAA/(18283:18294): El valor del block es de: 1
+[INFO] 02:05:38:336 GameCard PAPAA/(18283:18294): El block fue desmarcado con el valor de: 0
+[INFO] 02:05:38:337 GameCard PAPAA/(18283:18294): No hay mas bloques
+[INFO] 02:05:38:356 GameCard PAPAA/(18283:18294): Dicha posicion es la ultima en el block por lo que se marco el block como libre y se elimino la linea
+[INFO] 02:05:38:384 GameCard PAPAA/(18283:18294): El ID de mensaje cargado en el caught es: 6
+[INFO] 02:05:38:392 GameCard PAPAA/(18283:18294): El Flag cargado en el caught es: 1
+[INFO] 02:05:43:396 GameCard PAPAA/(18283:18294): El ID cargado es 6
+[INFO] 02:05:43:401 GameCard PAPAA/(18283:18294): El flag cargado es 1
+[INFO] 02:05:43:402 GameCard PAPAA/(18283:18294): Creando paquete
+[INFO] 02:05:43:403 GameCard PAPAA/(18283:18294): CODIGO DE OPERACION: 4
+[INFO] 02:05:43:437 GameCard PAPAA/(18283:18294): Paquete Creado
+[INFO] 02:05:43:437 GameCard PAPAA/(18283:18294): la operacion a realizar es 4
+[INFO] 02:05:43:438 GameCard PAPAA/(18283:18294): Serializando...
+[INFO] 02:05:43:457 GameCard PAPAA/(18283:18294): Serializacion completa
+[INFO] 02:05:43:482 GameCard PAPAA/(18283:18294): El peso total es: 8
+[ERROR] 02:05:43:487 GameCard PAPAA/(18283:18294): Error: No se pudo enviar el mensaje
+[INFO] 02:05:46:292 GameCard PAPAA/(18283:18288): Iniciando verificacion de conexion con Broker...
+[ERROR] 02:05:46:301 GameCard PAPAA/(18283:18288): Reconexion con Broker fallida, intentando nuevamente en 10 segundos
+[INFO] 02:11:43:484 GameCard PAPAA/(18990:18990): logger iniciado.
+[INFO] 02:11:43:484 GameCard PAPAA/(18990:18990): Config cargada.
+[INFO] 02:11:43:484 GameCard PAPAA/(18990:18990): La IP del Broker: 127.0.0.1
+[INFO] 02:11:43:484 GameCard PAPAA/(18990:18990): El Puerto es: 6009
+[INFO] 02:11:43:484 GameCard PAPAA/(18990:18990): El tiempo de reintento de conexion es: 10
+[INFO] 02:11:43:484 GameCard PAPAA/(18990:18990): El tiempo de reintento de operacion es: 5
+[INFO] 02:11:43:484 GameCard PAPAA/(18990:18990): El tiempo de retardo de conexion es: 5
+[INFO] 02:11:43:485 GameCard PAPAA/(18990:18990): El punto de montaje es: /home/utnso/Escritorio/tall-grass
+[INFO] 02:11:43:485 GameCard PAPAA/(18990:18990): La IP es: 127.0.0.1
+[INFO] 02:11:43:485 GameCard PAPAA/(18990:18990): El puerto es: 4447
+[INFO] 02:11:43:485 GameCard PAPAA/(18990:18990): El punto de montaje es: /home/utnso/Escritorio/tall-grass
+[INFO] 02:11:43:485 GameCard PAPAA/(18990:18990): La ruta del metadataes: /home/utnso/Escritorio/tall-grass/Metadata
+[INFO] 02:11:43:485 GameCard PAPAA/(18990:18990): Se creo el config de MetaData
+[INFO] 02:11:43:485 GameCard PAPAA/(18990:18990): El Block Size es: 64
+[INFO] 02:11:43:485 GameCard PAPAA/(18990:18990): La cantidad de Bloques es: 5192
+[INFO] 02:11:43:485 GameCard PAPAA/(18990:18990): El Magic Number es: TALL_GRASS
+[INFO] 02:11:43:485 GameCard PAPAA/(18990:18990): Bitmap ya seteado
+[ERROR] 02:11:43:486 GameCard PAPAA/(18990:18990): Ya existe el BitMap
+[INFO] 02:11:43:486 GameCard PAPAA/(18990:18990): SETEO DE VARIABLES PARA ARCHIVOSYDIRECTORIOS.H
+[INFO] 02:11:43:486 GameCard PAPAA/(18990:18990): El ID de modulo es: 1804289383
+[INFO] 02:11:43:487 GameCard PAPAA/(18990:18995): Hilo de verificacion periodica de conexion con Broker iniciado
+[INFO] 02:11:43:487 GameCard PAPAA/(18990:18994): Escucho GET de BROKER
+[ERROR] 02:11:43:487 GameCard PAPAA/(18990:18994): Hubo un problema enviando la suscripcion a la cola GET del broker
+[INFO] 02:11:43:490 GameCard PAPAA/(18990:18993): Escucho CATCH de BROKER
+[ERROR] 02:11:43:490 GameCard PAPAA/(18990:18993): Hubo un problema enviando la suscripcion a la cola CATCH del broker
+[INFO] 02:11:43:491 GameCard PAPAA/(18990:18992): Escuchando NEW de BROKER
+[ERROR] 02:11:43:491 GameCard PAPAA/(18990:18992): Hubo un problema enviando la suscripcion a la cola NEW del broker
+[INFO] 02:11:43:496 GameCard PAPAA/(18990:18991): Esperando mensajes de game boy en socket 5
+[INFO] 02:11:46:878 GameCard PAPAA/(18990:18991): Socket 5 de gameBoy aceptado
+[INFO] 02:11:46:881 GameCard PAPAA/(18990:19001): Recibiendo codigo de operacion de GameBoy en socket 7
+[INFO] 02:11:46:881 GameCard PAPAA/(18990:19001): Codigo de operacion de socket 7 recibido: 1
+[INFO] 02:11:46:881 GameCard PAPAA/(18990:19001): Procesando request de GameBoy
+[INFO] 02:11:46:881 GameCard PAPAA/(18990:19001): Codigo de operacion recibido del socket cliente 7 corresponde a un NEW
+[INFO] 02:11:46:881 GameCard PAPAA/(18990:19001): Recibiendo tamanio total
+[INFO] 02:11:46:881 GameCard PAPAA/(18990:19001): Tamanio total recibido: 34
+[INFO] 02:11:46:881 GameCard PAPAA/(18990:19001): EL ID recibido: 69
+[INFO] 02:11:46:881 GameCard PAPAA/(18990:19001): Tamanio del pokemon recibido: 14
+[INFO] 02:11:46:881 GameCard PAPAA/(18990:19001): Nombre del pokemon recibido: debiExagerada
+[INFO] 02:11:46:882 GameCard PAPAA/(18990:19001): Posicion X recibida: 69
+[INFO] 02:11:46:882 GameCard PAPAA/(18990:19001): Posicion Y recibida: 69
+[INFO] 02:11:46:882 GameCard PAPAA/(18990:19001): Cantidad recibida: 1
+[INFO] 02:11:46:882 GameCard PAPAA/(18990:19001): NEW recibido del modulo Game Boy socket 7
+[INFO] 02:11:46:882 GameCard PAPAA/(18990:19001): Llegamo
+[INFO] 02:11:46:882 GameCard PAPAA/(18990:19001): Pokemon: debiexagerada
+[INFO] 02:11:46:883 GameCard PAPAA/(18990:19001): PosX: 69
+[INFO] 02:11:46:883 GameCard PAPAA/(18990:19001): PosY: 69
+[INFO] 02:11:46:883 GameCard PAPAA/(18990:19001): Cantidad: 1
+[INFO] 02:11:46:883 GameCard PAPAA/(18990:19001): Ruta de Directorio: /home/utnso/Escritorio/tall-grass/Files/debiexagerada
+[INFO] 02:11:46:883 GameCard PAPAA/(18990:19001): La coordenada generada es: 69-69
+[INFO] 02:11:46:883 GameCard PAPAA/(18990:19001): Posicion generada: 69-69
+[INFO] 02:11:46:883 GameCard PAPAA/(18990:19001): Ruta del directorio pokemon debiexagerada es: /home/utnso/Escritorio/tall-grass/Files/debiexagerada
+[INFO] 02:11:46:883 GameCard PAPAA/(18990:19001): Ruta del Archivo: /home/utnso/Escritorio/tall-grass/Files/debiexagerada/debiexagerada.bin
+[INFO] 02:11:46:883 GameCard PAPAA/(18990:19001): Se creo el archivo config
+[INFO] 02:11:46:883 GameCard PAPAA/(18990:19001): EL array de blocks es: (null)
+[INFO] 02:11:46:883 GameCard PAPAA/(18990:19001): Se creo el falso config de la ruta
+[INFO] 02:11:46:883 GameCard PAPAA/(18990:19001): Retorno el estado: N
+[INFO] 02:11:46:883 GameCard PAPAA/(18990:19001): Se creo el falso config de la ruta
+[INFO] 02:11:46:883 GameCard PAPAA/(18990:19001): Paso el mutex
+[INFO] 02:11:46:884 GameCard PAPAA/(18990:19001): Validando Posiciones de New
+[INFO] 02:11:46:884 GameCard PAPAA/(18990:19001): Valido posicion
+[INFO] 02:11:46:884 GameCard PAPAA/(18990:19001): EL array de blocks es: (null)
+[INFO] 02:11:46:884 GameCard PAPAA/(18990:19001): Entro por NULL
+[INFO] 02:11:46:884 GameCard PAPAA/(18990:19001): Entro a buscar posiciones
+[INFO] 02:11:46:884 GameCard PAPAA/(18990:19001): Bloqueo
+[INFO] 02:11:46:884 GameCard PAPAA/(18990:19001): A
+[INFO] 02:11:46:884 GameCard PAPAA/(18990:19001): A
+[INFO] 02:11:46:884 GameCard PAPAA/(18990:19001): A
+[INFO] 02:11:46:884 GameCard PAPAA/(18990:19001): A
+[INFO] 02:11:46:884 GameCard PAPAA/(18990:19001): A
+[INFO] 02:11:46:884 GameCard PAPAA/(18990:19001): A
+[INFO] 02:11:46:884 GameCard PAPAA/(18990:19001): A
+[INFO] 02:11:46:885 GameCard PAPAA/(18990:19001): A
+[INFO] 02:11:46:885 GameCard PAPAA/(18990:19001): A
+[INFO] 02:11:46:885 GameCard PAPAA/(18990:19001): Guardando el bitarray
+[INFO] 02:11:46:885 GameCard PAPAA/(18990:19001): Termino el guardado
+[INFO] 02:11:46:885 GameCard PAPAA/(18990:19001): EL block 8 esta libre
+[INFO] 02:11:46:885 GameCard PAPAA/(18990:19001): El bloque disponible seleccionado es: 8
+[INFO] 02:11:46:885 GameCard PAPAA/(18990:19001): Agregamos nueva posicion con direccion del archivo: /home/utnso/Escritorio/tall-grass/Blocks/8.bin
+[INFO] 02:11:46:885 GameCard PAPAA/(18990:19001): Creamos el archivo
+[INFO] 02:11:46:885 GameCard PAPAA/(18990:19001): Seteando nueva posicion: 69-69
+[INFO] 02:11:46:885 GameCard PAPAA/(18990:19001): Actualmente hay 0 de posiciones en el archivo
+[INFO] 02:11:46:885 GameCard PAPAA/(18990:19001): ACTUALIZACION : Actualmente hay 0 de posiciones en el archivo
+[INFO] 02:11:46:886 GameCard PAPAA/(18990:19001): Actualizo Metadata
+[INFO] 02:11:46:886 GameCard PAPAA/(18990:19001): Entro por NULL
+[INFO] 02:11:46:886 GameCard PAPAA/(18990:19001): EL tamanio calculado del archivo es: 8
+[INFO] 02:11:46:891 GameCard PAPAA/(18990:19001): El ID de mensaje cargado en el appeared es: 69
+[INFO] 02:11:46:891 GameCard PAPAA/(18990:19001): El pokemoncargado en el appeared es: debiexagerada
+[INFO] 02:11:46:891 GameCard PAPAA/(18990:19001): El tamanio del nombre del pokemon cargado en el appeared es: 14
+[INFO] 02:11:46:892 GameCard PAPAA/(18990:19001): La coordenada del pokemon cargado en el appeared es: 69 - 69
+[INFO] 02:11:51:892 GameCard PAPAA/(18990:19001): El ID cargado es 69
+[INFO] 02:11:51:892 GameCard PAPAA/(18990:19001): Tamanio nombre pokemon 14
+[INFO] 02:11:51:892 GameCard PAPAA/(18990:19001): Nombre pokemon debiexagerada
+[INFO] 02:11:51:892 GameCard PAPAA/(18990:19001): Posicion X 69
+[INFO] 02:11:51:892 GameCard PAPAA/(18990:19001): Posicion Y 69
+[INFO] 02:11:51:892 GameCard PAPAA/(18990:19001): Creando paquete
+[INFO] 02:11:51:892 GameCard PAPAA/(18990:19001): CODIGO DE OPERACION: 2
+[INFO] 02:11:51:892 GameCard PAPAA/(18990:19001): Paquete Creado
+[INFO] 02:11:51:892 GameCard PAPAA/(18990:19001): la operacion a realizar es 2
+[INFO] 02:11:51:892 GameCard PAPAA/(18990:19001): Serializando...
+[INFO] 02:11:51:892 GameCard PAPAA/(18990:19001): Serializacion completa
+[INFO] 02:11:51:892 GameCard PAPAA/(18990:19001): El peso total es: 30
+[ERROR] 02:11:51:893 GameCard PAPAA/(18990:19001): Error: No se pudo enviar el mensaje
+[INFO] 02:11:53:487 GameCard PAPAA/(18990:18995): Iniciando verificacion de conexion con Broker...
+[ERROR] 02:11:53:487 GameCard PAPAA/(18990:18995): Reconexion con Broker fallida, intentando nuevamente en 10 segundos
+[INFO] 02:13:36:209 GameCard PAPAA/(19328:19328): logger iniciado.
+[INFO] 02:13:36:238 GameCard PAPAA/(19328:19328): Config cargada.
+[INFO] 02:13:36:240 GameCard PAPAA/(19328:19328): La IP del Broker: 127.0.0.1
+[INFO] 02:13:36:241 GameCard PAPAA/(19328:19328): El Puerto es: 6009
+[INFO] 02:13:36:244 GameCard PAPAA/(19328:19328): El tiempo de reintento de conexion es: 10
+[INFO] 02:13:36:244 GameCard PAPAA/(19328:19328): El tiempo de reintento de operacion es: 5
+[INFO] 02:13:36:245 GameCard PAPAA/(19328:19328): El tiempo de retardo de conexion es: 5
+[INFO] 02:13:36:246 GameCard PAPAA/(19328:19328): El punto de montaje es: /home/utnso/Escritorio/tall-grass
+[INFO] 02:13:36:246 GameCard PAPAA/(19328:19328): La IP es: 127.0.0.1
+[INFO] 02:13:36:247 GameCard PAPAA/(19328:19328): El puerto es: 4447
+[INFO] 02:13:36:248 GameCard PAPAA/(19328:19328): El punto de montaje es: /home/utnso/Escritorio/tall-grass
+[INFO] 02:13:36:250 GameCard PAPAA/(19328:19328): La ruta del metadataes: /home/utnso/Escritorio/tall-grass/Metadata
+[INFO] 02:13:36:253 GameCard PAPAA/(19328:19328): Se creo el config de MetaData
+[INFO] 02:13:36:254 GameCard PAPAA/(19328:19328): El Block Size es: 64
+[INFO] 02:13:36:255 GameCard PAPAA/(19328:19328): La cantidad de Bloques es: 5192
+[INFO] 02:13:36:256 GameCard PAPAA/(19328:19328): El Magic Number es: TALL_GRASS
+[INFO] 02:13:36:272 GameCard PAPAA/(19328:19328): Bitmap ya seteado
+[ERROR] 02:13:36:305 GameCard PAPAA/(19328:19328): Ya existe el BitMap
+[INFO] 02:13:36:308 GameCard PAPAA/(19328:19328): SETEO DE VARIABLES PARA ARCHIVOSYDIRECTORIOS.H
+[INFO] 02:13:36:308 GameCard PAPAA/(19328:19328): El ID de modulo es: 1804289383
+[INFO] 02:13:36:340 GameCard PAPAA/(19328:19333): Esperando mensajes de game boy en socket 7
+[INFO] 02:13:36:341 GameCard PAPAA/(19328:19335): Escucho CATCH de BROKER
+[INFO] 02:13:36:342 GameCard PAPAA/(19328:19334): Escuchando NEW de BROKER
+[ERROR] 02:13:36:352 GameCard PAPAA/(19328:19335): Hubo un problema enviando la suscripcion a la cola CATCH del broker
+[ERROR] 02:13:36:353 GameCard PAPAA/(19328:19334): Hubo un problema enviando la suscripcion a la cola NEW del broker
+[INFO] 02:13:36:354 GameCard PAPAA/(19328:19336): Escucho GET de BROKER
+[INFO] 02:13:36:354 GameCard PAPAA/(19328:19337): Hilo de verificacion periodica de conexion con Broker iniciado
+[ERROR] 02:13:36:362 GameCard PAPAA/(19328:19336): Hubo un problema enviando la suscripcion a la cola GET del broker
+[INFO] 02:13:39:635 GameCard PAPAA/(19328:19333): Socket 7 de gameBoy aceptado
+[INFO] 02:13:39:665 GameCard PAPAA/(19328:19345): Recibiendo codigo de operacion de GameBoy en socket 8
+[INFO] 02:13:39:686 GameCard PAPAA/(19328:19345): Codigo de operacion de socket 8 recibido: 3
+[INFO] 02:13:39:691 GameCard PAPAA/(19328:19345): Procesando request de GameBoy
+[INFO] 02:13:39:695 GameCard PAPAA/(19328:19345): Codigo de operacion recibido del socket cliente 8 corresponde a un CATCH
+[INFO] 02:13:39:703 GameCard PAPAA/(19328:19345): Recibiendo tamanio total
+[INFO] 02:13:39:704 GameCard PAPAA/(19328:19345): Tamanio total recibido: 30
+[INFO] 02:13:39:705 GameCard PAPAA/(19328:19345): EL ID recibido: 6
+[INFO] 02:13:39:738 GameCard PAPAA/(19328:19345): Tamanio del pokemon: 14
+[INFO] 02:13:39:739 GameCard PAPAA/(19328:19345): Nombre del pokemon recibido: debiExagerada
+[INFO] 02:13:39:740 GameCard PAPAA/(19328:19345): Posicion X recibida: 69
+[INFO] 02:13:39:768 GameCard PAPAA/(19328:19345): Posicion Y recibida: 69
+[INFO] 02:13:39:773 GameCard PAPAA/(19328:19345): CATCH recibido del modulo Game Boy socket 8
+[INFO] 02:13:39:777 GameCard PAPAA/(19328:19345): La coordenada generada es: 69-69
+[INFO] 02:13:39:804 GameCard PAPAA/(19328:19345): EL array de blocks es: P�$
+[INFO] 02:13:39:858 GameCard PAPAA/(19328:19345): Se creo el falso config de la ruta
+[INFO] 02:13:39:859 GameCard PAPAA/(19328:19345): Retorno el estado: N
+[INFO] 02:13:39:869 GameCard PAPAA/(19328:19345): Se creo el falso config de la ruta
+[INFO] 02:13:39:918 GameCard PAPAA/(19328:19345): Valido posicion
+[INFO] 02:13:39:922 GameCard PAPAA/(19328:19345): EL array de blocks es: 8
+[INFO] 02:13:39:923 GameCard PAPAA/(19328:19345): Se esta analizando el block: 8
+[INFO] 02:13:39:971 GameCard PAPAA/(19328:19345): Se esta analizando el block: 8
+[INFO] 02:13:39:976 GameCard PAPAA/(19328:19345): Encontro el block donde esta la posicion: 8
+[INFO] 02:13:39:990 GameCard PAPAA/(19328:19345): El bloque en el que se encuentra es: 8
+[INFO] 02:13:39:991 GameCard PAPAA/(19328:19345): La ruta del block es: /home/utnso/Escritorio/tall-grass/Blocks/8.bin
+[INFO] 02:13:39:992 GameCard PAPAA/(19328:19345): La cantidad de pokemons en el la posicion 69-69 es: 1
+[INFO] 02:13:40:6 GameCard PAPAA/(19328:19345): La cantidad de pokemons en esa posicion es 1
+[INFO] 02:13:40:16 GameCard PAPAA/(19328:19345): El valor del block es de: 1
+[INFO] 02:13:40:25 GameCard PAPAA/(19328:19345): El block fue desmarcado con el valor de: 0
+[INFO] 02:13:40:30 GameCard PAPAA/(19328:19345): Bitmap ya seteado
+[INFO] 02:13:40:122 GameCard PAPAA/(19328:19345): No hay mas bloques
+[INFO] 02:13:40:137 GameCard PAPAA/(19328:19345): Dicha posicion es la ultima en el block por lo que se marco el block como libre y se elimino la linea
+[INFO] 02:13:40:157 GameCard PAPAA/(19328:19345): El ID de mensaje cargado en el caught es: 6
+[INFO] 02:13:40:162 GameCard PAPAA/(19328:19345): El Flag cargado en el caught es: 1
+[INFO] 02:13:45:168 GameCard PAPAA/(19328:19345): El ID cargado es 6
+[INFO] 02:13:45:173 GameCard PAPAA/(19328:19345): El flag cargado es 1
+[INFO] 02:13:45:178 GameCard PAPAA/(19328:19345): Creando paquete
+[INFO] 02:13:45:184 GameCard PAPAA/(19328:19345): CODIGO DE OPERACION: 4
+[INFO] 02:13:45:184 GameCard PAPAA/(19328:19345): Paquete Creado
+[INFO] 02:13:45:189 GameCard PAPAA/(19328:19345): la operacion a realizar es 4
+[INFO] 02:13:45:209 GameCard PAPAA/(19328:19345): Serializando...
+[INFO] 02:13:45:213 GameCard PAPAA/(19328:19345): Serializacion completa
+[INFO] 02:13:45:233 GameCard PAPAA/(19328:19345): El peso total es: 8
+[ERROR] 02:13:45:233 GameCard PAPAA/(19328:19345): Error: No se pudo enviar el mensaje
+[INFO] 02:13:46:374 GameCard PAPAA/(19328:19337): Iniciando verificacion de conexion con Broker...
+[ERROR] 02:13:46:394 GameCard PAPAA/(19328:19337): Reconexion con Broker fallida, intentando nuevamente en 10 segundos
+[INFO] 02:14:39:284 GameCard PAPAA/(19476:19476): logger iniciado.
+[INFO] 02:14:39:284 GameCard PAPAA/(19476:19476): Config cargada.
+[INFO] 02:14:39:284 GameCard PAPAA/(19476:19476): La IP del Broker: 127.0.0.1
+[INFO] 02:14:39:284 GameCard PAPAA/(19476:19476): El Puerto es: 6009
+[INFO] 02:14:39:284 GameCard PAPAA/(19476:19476): El tiempo de reintento de conexion es: 10
+[INFO] 02:14:39:284 GameCard PAPAA/(19476:19476): El tiempo de reintento de operacion es: 5
+[INFO] 02:14:39:284 GameCard PAPAA/(19476:19476): El tiempo de retardo de conexion es: 5
+[INFO] 02:14:39:285 GameCard PAPAA/(19476:19476): El punto de montaje es: /home/utnso/Escritorio/tall-grass
+[INFO] 02:14:39:285 GameCard PAPAA/(19476:19476): La IP es: 127.0.0.1
+[INFO] 02:14:39:285 GameCard PAPAA/(19476:19476): El puerto es: 4447
+[INFO] 02:14:39:285 GameCard PAPAA/(19476:19476): El punto de montaje es: /home/utnso/Escritorio/tall-grass
+[INFO] 02:14:39:285 GameCard PAPAA/(19476:19476): La ruta del metadataes: /home/utnso/Escritorio/tall-grass/Metadata
+[INFO] 02:14:39:285 GameCard PAPAA/(19476:19476): Se creo el config de MetaData
+[INFO] 02:14:39:285 GameCard PAPAA/(19476:19476): El Block Size es: 64
+[INFO] 02:14:39:285 GameCard PAPAA/(19476:19476): La cantidad de Bloques es: 5192
+[INFO] 02:14:39:285 GameCard PAPAA/(19476:19476): El Magic Number es: TALL_GRASS
+[INFO] 02:14:39:285 GameCard PAPAA/(19476:19476): Bitmap ya seteado
+[ERROR] 02:14:39:286 GameCard PAPAA/(19476:19476): Ya existe el BitMap
+[INFO] 02:14:39:286 GameCard PAPAA/(19476:19476): SETEO DE VARIABLES PARA ARCHIVOSYDIRECTORIOS.H
+[INFO] 02:14:39:286 GameCard PAPAA/(19476:19476): El ID de modulo es: 1804289383
+[INFO] 02:14:39:286 GameCard PAPAA/(19476:19481): Hilo de verificacion periodica de conexion con Broker iniciado
+[INFO] 02:14:39:286 GameCard PAPAA/(19476:19480): Escucho GET de BROKER
+[ERROR] 02:14:39:287 GameCard PAPAA/(19476:19480): Hubo un problema enviando la suscripcion a la cola GET del broker
+[INFO] 02:14:39:289 GameCard PAPAA/(19476:19479): Escucho CATCH de BROKER
+[ERROR] 02:14:39:290 GameCard PAPAA/(19476:19479): Hubo un problema enviando la suscripcion a la cola CATCH del broker
+[INFO] 02:14:39:293 GameCard PAPAA/(19476:19478): Escuchando NEW de BROKER
+[ERROR] 02:14:39:295 GameCard PAPAA/(19476:19478): Hubo un problema enviando la suscripcion a la cola NEW del broker
+[INFO] 02:14:39:297 GameCard PAPAA/(19476:19477): Esperando mensajes de game boy en socket 5
+[INFO] 02:14:43:215 GameCard PAPAA/(19476:19477): Socket 5 de gameBoy aceptado
+[INFO] 02:14:43:221 GameCard PAPAA/(19476:19487): Recibiendo codigo de operacion de GameBoy en socket 7
+[INFO] 02:14:43:221 GameCard PAPAA/(19476:19487): Codigo de operacion de socket 7 recibido: 1
+[INFO] 02:14:43:222 GameCard PAPAA/(19476:19487): Procesando request de GameBoy
+[INFO] 02:14:43:222 GameCard PAPAA/(19476:19487): Codigo de operacion recibido del socket cliente 7 corresponde a un NEW
+[INFO] 02:14:43:222 GameCard PAPAA/(19476:19487): Recibiendo tamanio total
+[INFO] 02:14:43:222 GameCard PAPAA/(19476:19487): Tamanio total recibido: 34
+[INFO] 02:14:43:222 GameCard PAPAA/(19476:19487): EL ID recibido: 69
+[INFO] 02:14:43:222 GameCard PAPAA/(19476:19487): Tamanio del pokemon recibido: 14
+[INFO] 02:14:43:222 GameCard PAPAA/(19476:19487): Nombre del pokemon recibido: debiExagerada
+[INFO] 02:14:43:222 GameCard PAPAA/(19476:19487): Posicion X recibida: 69
+[INFO] 02:14:43:222 GameCard PAPAA/(19476:19487): Posicion Y recibida: 69
+[INFO] 02:14:43:222 GameCard PAPAA/(19476:19487): Cantidad recibida: 1
+[INFO] 02:14:43:222 GameCard PAPAA/(19476:19487): NEW recibido del modulo Game Boy socket 7
+[INFO] 02:14:43:222 GameCard PAPAA/(19476:19487): Llegamo
+[INFO] 02:14:43:222 GameCard PAPAA/(19476:19487): Pokemon: debiexagerada
+[INFO] 02:14:43:222 GameCard PAPAA/(19476:19487): PosX: 69
+[INFO] 02:14:43:222 GameCard PAPAA/(19476:19487): PosY: 69
+[INFO] 02:14:43:222 GameCard PAPAA/(19476:19487): Cantidad: 1
+[INFO] 02:14:43:223 GameCard PAPAA/(19476:19487): Ruta de Directorio: /home/utnso/Escritorio/tall-grass/Files/debiexagerada
+[INFO] 02:14:43:223 GameCard PAPAA/(19476:19487): La coordenada generada es: 69-69
+[INFO] 02:14:43:223 GameCard PAPAA/(19476:19487): Posicion generada: 69-69
+[INFO] 02:14:43:223 GameCard PAPAA/(19476:19487): Ruta del directorio pokemon debiexagerada es: /home/utnso/Escritorio/tall-grass/Files/debiexagerada
+[INFO] 02:14:43:223 GameCard PAPAA/(19476:19487): Ruta del Archivo: /home/utnso/Escritorio/tall-grass/Files/debiexagerada/debiexagerada.bin
+[INFO] 02:14:43:223 GameCard PAPAA/(19476:19487): Se creo el archivo config
+[INFO] 02:14:43:223 GameCard PAPAA/(19476:19487): EL array de blocks es: (null)
+[INFO] 02:14:43:223 GameCard PAPAA/(19476:19487): Se creo el falso config de la ruta
+[INFO] 02:14:43:223 GameCard PAPAA/(19476:19487): Retorno el estado: N
+[INFO] 02:14:43:223 GameCard PAPAA/(19476:19487): Se creo el falso config de la ruta
+[INFO] 02:14:43:223 GameCard PAPAA/(19476:19487): Paso el mutex
+[INFO] 02:14:43:224 GameCard PAPAA/(19476:19487): Validando Posiciones de New
+[INFO] 02:14:43:224 GameCard PAPAA/(19476:19487): Valido posicion
+[INFO] 02:14:43:224 GameCard PAPAA/(19476:19487): EL array de blocks es: (null)
+[INFO] 02:14:43:224 GameCard PAPAA/(19476:19487): Entro por NULL
+[INFO] 02:14:43:227 GameCard PAPAA/(19476:19487): Entro a buscar posiciones
+[INFO] 02:14:43:227 GameCard PAPAA/(19476:19487): Bloqueo
+[INFO] 02:14:43:227 GameCard PAPAA/(19476:19487): A
+[INFO] 02:14:43:227 GameCard PAPAA/(19476:19487): A
+[INFO] 02:14:43:227 GameCard PAPAA/(19476:19487): A
+[INFO] 02:14:43:228 GameCard PAPAA/(19476:19487): A
+[INFO] 02:14:43:228 GameCard PAPAA/(19476:19487): A
+[INFO] 02:14:43:228 GameCard PAPAA/(19476:19487): A
+[INFO] 02:14:43:228 GameCard PAPAA/(19476:19487): A
+[INFO] 02:14:43:228 GameCard PAPAA/(19476:19487): A
+[INFO] 02:14:43:228 GameCard PAPAA/(19476:19487): Guardando el bitarray
+[INFO] 02:14:43:228 GameCard PAPAA/(19476:19487): Termino el guardado
+[INFO] 02:14:43:228 GameCard PAPAA/(19476:19487): EL block 7 esta libre
+[INFO] 02:14:43:228 GameCard PAPAA/(19476:19487): El bloque disponible seleccionado es: 7
+[INFO] 02:14:43:228 GameCard PAPAA/(19476:19487): Agregamos nueva posicion con direccion del archivo: /home/utnso/Escritorio/tall-grass/Blocks/7.bin
+[INFO] 02:14:43:228 GameCard PAPAA/(19476:19487): Creamos el archivo
+[INFO] 02:14:43:229 GameCard PAPAA/(19476:19487): Seteando nueva posicion: 69-69
+[INFO] 02:14:43:229 GameCard PAPAA/(19476:19487): Actualmente hay 0 de posiciones en el archivo
+[INFO] 02:14:43:237 GameCard PAPAA/(19476:19487): ACTUALIZACION : Actualmente hay 0 de posiciones en el archivo
+[INFO] 02:14:43:237 GameCard PAPAA/(19476:19487): Actualizo Metadata
+[INFO] 02:14:43:237 GameCard PAPAA/(19476:19487): Entro por NULL
+[INFO] 02:14:43:238 GameCard PAPAA/(19476:19487): EL tamanio calculado del archivo es: 8
+[INFO] 02:14:43:244 GameCard PAPAA/(19476:19487): El ID de mensaje cargado en el appeared es: 69
+[INFO] 02:14:43:244 GameCard PAPAA/(19476:19487): El pokemoncargado en el appeared es: debiexagerada
+[INFO] 02:14:43:244 GameCard PAPAA/(19476:19487): El tamanio del nombre del pokemon cargado en el appeared es: 14
+[INFO] 02:14:43:244 GameCard PAPAA/(19476:19487): La coordenada del pokemon cargado en el appeared es: 69 - 69
+[INFO] 02:14:48:245 GameCard PAPAA/(19476:19487): El ID cargado es 69
+[INFO] 02:14:48:245 GameCard PAPAA/(19476:19487): Tamanio nombre pokemon 14
+[INFO] 02:14:48:245 GameCard PAPAA/(19476:19487): Nombre pokemon debiexagerada
+[INFO] 02:14:48:245 GameCard PAPAA/(19476:19487): Posicion X 69
+[INFO] 02:14:48:245 GameCard PAPAA/(19476:19487): Posicion Y 69
+[INFO] 02:14:48:245 GameCard PAPAA/(19476:19487): Creando paquete
+[INFO] 02:14:48:245 GameCard PAPAA/(19476:19487): CODIGO DE OPERACION: 2
+[INFO] 02:14:48:245 GameCard PAPAA/(19476:19487): Paquete Creado
+[INFO] 02:14:48:245 GameCard PAPAA/(19476:19487): la operacion a realizar es 2
+[INFO] 02:14:48:245 GameCard PAPAA/(19476:19487): Serializando...
+[INFO] 02:14:48:245 GameCard PAPAA/(19476:19487): Serializacion completa
+[INFO] 02:14:48:245 GameCard PAPAA/(19476:19487): El peso total es: 30
+[ERROR] 02:14:48:246 GameCard PAPAA/(19476:19487): Error: No se pudo enviar el mensaje
+[INFO] 02:14:49:287 GameCard PAPAA/(19476:19481): Iniciando verificacion de conexion con Broker...
+[ERROR] 02:14:49:287 GameCard PAPAA/(19476:19481): Reconexion con Broker fallida, intentando nuevamente en 10 segundos
+[INFO] 02:28:10:876 GameCard PAPAA/(21023:21023): logger iniciado.
+[INFO] 02:28:10:904 GameCard PAPAA/(21023:21023): Config cargada.
+[INFO] 02:28:10:906 GameCard PAPAA/(21023:21023): La IP del Broker: 127.0.0.1
+[INFO] 02:28:10:907 GameCard PAPAA/(21023:21023): El Puerto es: 6009
+[INFO] 02:28:10:910 GameCard PAPAA/(21023:21023): El tiempo de reintento de conexion es: 10
+[INFO] 02:28:10:910 GameCard PAPAA/(21023:21023): El tiempo de reintento de operacion es: 5
+[INFO] 02:28:10:911 GameCard PAPAA/(21023:21023): El tiempo de retardo de conexion es: 5
+[INFO] 02:28:10:911 GameCard PAPAA/(21023:21023): El punto de montaje es: /home/utnso/Escritorio/tall-grass
+[INFO] 02:28:10:912 GameCard PAPAA/(21023:21023): La IP es: 127.0.0.1
+[INFO] 02:28:10:913 GameCard PAPAA/(21023:21023): El puerto es: 4447
+[INFO] 02:28:10:914 GameCard PAPAA/(21023:21023): El punto de montaje es: /home/utnso/Escritorio/tall-grass
+[INFO] 02:28:10:916 GameCard PAPAA/(21023:21023): La ruta del metadataes: /home/utnso/Escritorio/tall-grass/Metadata
+[INFO] 02:28:10:918 GameCard PAPAA/(21023:21023): Se creo el config de MetaData
+[INFO] 02:28:10:919 GameCard PAPAA/(21023:21023): El Block Size es: 64
+[INFO] 02:28:10:920 GameCard PAPAA/(21023:21023): La cantidad de Bloques es: 5192
+[INFO] 02:28:10:920 GameCard PAPAA/(21023:21023): El Magic Number es: TALL_GRASS
+[INFO] 02:28:10:937 GameCard PAPAA/(21023:21023): Bitmap ya seteado
+[ERROR] 02:28:10:968 GameCard PAPAA/(21023:21023): Ya existe el BitMap
+[INFO] 02:28:10:971 GameCard PAPAA/(21023:21023): SETEO DE VARIABLES PARA ARCHIVOSYDIRECTORIOS.H
+[INFO] 02:28:10:972 GameCard PAPAA/(21023:21023): El ID de modulo es: 1804289383
+[INFO] 02:28:10:4 GameCard PAPAA/(21023:21024): Esperando mensajes de game boy en socket 7
+[INFO] 02:28:10:5 GameCard PAPAA/(21023:21026): Escucho CATCH de BROKER
+[INFO] 02:28:11:6 GameCard PAPAA/(21023:21025): Escuchando NEW de BROKER
+[ERROR] 02:28:11:16 GameCard PAPAA/(21023:21026): Hubo un problema enviando la suscripcion a la cola CATCH del broker
+[ERROR] 02:28:11:17 GameCard PAPAA/(21023:21025): Hubo un problema enviando la suscripcion a la cola NEW del broker
+[INFO] 02:28:11:17 GameCard PAPAA/(21023:21028): Hilo de verificacion periodica de conexion con Broker iniciado
+[INFO] 02:28:11:18 GameCard PAPAA/(21023:21027): Escucho GET de BROKER
+[ERROR] 02:28:11:25 GameCard PAPAA/(21023:21027): Hubo un problema enviando la suscripcion a la cola GET del broker
+[INFO] 02:28:14:115 GameCard PAPAA/(21023:21024): Socket 7 de gameBoy aceptado
+[INFO] 02:28:14:148 GameCard PAPAA/(21023:21034): Recibiendo codigo de operacion de GameBoy en socket 8
+[INFO] 02:28:14:150 GameCard PAPAA/(21023:21034): Codigo de operacion de socket 8 recibido: 3
+[INFO] 02:28:14:163 GameCard PAPAA/(21023:21034): Procesando request de GameBoy
+[INFO] 02:28:14:164 GameCard PAPAA/(21023:21034): Codigo de operacion recibido del socket cliente 8 corresponde a un CATCH
+[INFO] 02:28:14:173 GameCard PAPAA/(21023:21034): Recibiendo tamanio total
+[INFO] 02:28:14:178 GameCard PAPAA/(21023:21034): Tamanio total recibido: 30
+[INFO] 02:28:14:181 GameCard PAPAA/(21023:21034): EL ID recibido: 6
+[INFO] 02:28:14:187 GameCard PAPAA/(21023:21034): Tamanio del pokemon: 14
+[INFO] 02:28:14:192 GameCard PAPAA/(21023:21034): Nombre del pokemon recibido: debiExagerada
+[INFO] 02:28:14:197 GameCard PAPAA/(21023:21034): Posicion X recibida: 69
+[INFO] 02:28:14:198 GameCard PAPAA/(21023:21034): Posicion Y recibida: 69
+[INFO] 02:28:14:203 GameCard PAPAA/(21023:21034): CATCH recibido del modulo Game Boy socket 8
+[INFO] 02:28:14:214 GameCard PAPAA/(21023:21034): La coordenada generada es: 69-69
+[INFO] 02:28:14:257 GameCard PAPAA/(21023:21034): EL array de blocks es:  �$
+[INFO] 02:28:14:271 GameCard PAPAA/(21023:21034): Se creo el falso config de la ruta
+[INFO] 02:28:14:271 GameCard PAPAA/(21023:21034): Retorno el estado: N
+[INFO] 02:28:14:281 GameCard PAPAA/(21023:21034): Se creo el falso config de la ruta
+[INFO] 02:28:14:316 GameCard PAPAA/(21023:21034): Valido posicion
+[INFO] 02:28:14:325 GameCard PAPAA/(21023:21034): EL array de blocks es: 7
+[INFO] 02:28:14:326 GameCard PAPAA/(21023:21034): Se esta analizando el block: 7
+[INFO] 02:28:14:349 GameCard PAPAA/(21023:21034): Se esta analizando el block: 7
+[INFO] 02:28:14:387 GameCard PAPAA/(21023:21034): Encontro el block donde esta la posicion: 7
+[INFO] 02:28:14:404 GameCard PAPAA/(21023:21034): El bloque en el que se encuentra es: 7
+[INFO] 02:28:14:405 GameCard PAPAA/(21023:21034): La ruta del block es: /home/utnso/Escritorio/tall-grass/Blocks/7.bin
+[INFO] 02:28:14:411 GameCard PAPAA/(21023:21034): La cantidad de pokemons en el la posicion 69-69 es: 1
+[INFO] 02:28:14:420 GameCard PAPAA/(21023:21034): La cantidad de pokemons en esa posicion es 1
+[INFO] 02:28:14:435 GameCard PAPAA/(21023:21034): El valor del block es de: 1
+[INFO] 02:28:14:440 GameCard PAPAA/(21023:21034): El block fue desmarcado con el valor de: 0
+[INFO] 02:28:14:489 GameCard PAPAA/(21023:21034): No hay mas bloques
+[INFO] 02:28:14:500 GameCard PAPAA/(21023:21034): Dicha posicion es la ultima en el block por lo que se marco el block como libre y se elimino la linea
+[INFO] 02:28:14:524 GameCard PAPAA/(21023:21034): El ID de mensaje cargado en el caught es: 6
+[INFO] 02:28:14:554 GameCard PAPAA/(21023:21034): El Flag cargado en el caught es: 1
+[INFO] 02:28:19:559 GameCard PAPAA/(21023:21034): El ID cargado es 6
+[INFO] 02:28:19:568 GameCard PAPAA/(21023:21034): El flag cargado es 1
+[INFO] 02:28:19:573 GameCard PAPAA/(21023:21034): Creando paquete
+[INFO] 02:28:19:573 GameCard PAPAA/(21023:21034): CODIGO DE OPERACION: 4
+[INFO] 02:28:19:579 GameCard PAPAA/(21023:21034): Paquete Creado
+[INFO] 02:28:19:583 GameCard PAPAA/(21023:21034): la operacion a realizar es 4
+[INFO] 02:28:19:588 GameCard PAPAA/(21023:21034): Serializando...
+[INFO] 02:28:19:591 GameCard PAPAA/(21023:21034): Serializacion completa
+[INFO] 02:28:19:604 GameCard PAPAA/(21023:21034): El peso total es: 8
+[ERROR] 02:28:19:605 GameCard PAPAA/(21023:21034): Error: No se pudo enviar el mensaje
+[INFO] 02:28:21:32 GameCard PAPAA/(21023:21028): Iniciando verificacion de conexion con Broker...
+[ERROR] 02:28:21:33 GameCard PAPAA/(21023:21028): Reconexion con Broker fallida, intentando nuevamente en 10 segundos
+[INFO] 02:35:33:168 GameCard PAPAA/(21902:21902): logger iniciado.
+[INFO] 02:35:33:168 GameCard PAPAA/(21902:21902): Config cargada.
+[INFO] 02:35:33:169 GameCard PAPAA/(21902:21902): La IP del Broker: 127.0.0.1
+[INFO] 02:35:33:169 GameCard PAPAA/(21902:21902): El Puerto es: 6009
+[INFO] 02:35:33:169 GameCard PAPAA/(21902:21902): El tiempo de reintento de conexion es: 10
+[INFO] 02:35:33:169 GameCard PAPAA/(21902:21902): El tiempo de reintento de operacion es: 5
+[INFO] 02:35:33:169 GameCard PAPAA/(21902:21902): El tiempo de retardo de conexion es: 5
+[INFO] 02:35:33:169 GameCard PAPAA/(21902:21902): El punto de montaje es: /home/utnso/Escritorio/tall-grass
+[INFO] 02:35:33:169 GameCard PAPAA/(21902:21902): La IP es: 127.0.0.1
+[INFO] 02:35:33:169 GameCard PAPAA/(21902:21902): El puerto es: 4447
+[INFO] 02:35:33:169 GameCard PAPAA/(21902:21902): El punto de montaje es: /home/utnso/Escritorio/tall-grass
+[INFO] 02:35:33:170 GameCard PAPAA/(21902:21902): La ruta del metadataes: /home/utnso/Escritorio/tall-grass/Metadata
+[INFO] 02:35:33:170 GameCard PAPAA/(21902:21902): Se creo el config de MetaData
+[INFO] 02:35:33:170 GameCard PAPAA/(21902:21902): El Block Size es: 64
+[INFO] 02:35:33:170 GameCard PAPAA/(21902:21902): La cantidad de Bloques es: 5192
+[INFO] 02:35:33:170 GameCard PAPAA/(21902:21902): El Magic Number es: TALL_GRASS
+[INFO] 02:35:33:170 GameCard PAPAA/(21902:21902): Bitmap ya seteado
+[ERROR] 02:35:33:171 GameCard PAPAA/(21902:21902): Ya existe el BitMap
+[INFO] 02:35:33:172 GameCard PAPAA/(21902:21902): SETEO DE VARIABLES PARA ARCHIVOSYDIRECTORIOS.H
+[INFO] 02:35:33:172 GameCard PAPAA/(21902:21902): El ID de modulo es: 1804289383
+[INFO] 02:35:33:172 GameCard PAPAA/(21902:21907): Hilo de verificacion periodica de conexion con Broker iniciado
+[INFO] 02:35:33:172 GameCard PAPAA/(21902:21906): Escucho GET de BROKER
+[ERROR] 02:35:33:172 GameCard PAPAA/(21902:21906): Hubo un problema enviando la suscripcion a la cola GET del broker
+[INFO] 02:35:33:173 GameCard PAPAA/(21902:21905): Escucho CATCH de BROKER
+[ERROR] 02:35:33:174 GameCard PAPAA/(21902:21905): Hubo un problema enviando la suscripcion a la cola CATCH del broker
+[INFO] 02:35:33:177 GameCard PAPAA/(21902:21904): Escuchando NEW de BROKER
+[ERROR] 02:35:33:180 GameCard PAPAA/(21902:21904): Hubo un problema enviando la suscripcion a la cola NEW del broker
+[INFO] 02:35:33:183 GameCard PAPAA/(21902:21903): Esperando mensajes de game boy en socket 5
+[INFO] 02:35:35:113 GameCard PAPAA/(21902:21903): Socket 5 de gameBoy aceptado
+[INFO] 02:35:35:119 GameCard PAPAA/(21902:21911): Recibiendo codigo de operacion de GameBoy en socket 7
+[INFO] 02:35:35:120 GameCard PAPAA/(21902:21911): Codigo de operacion de socket 7 recibido: 1
+[INFO] 02:35:35:120 GameCard PAPAA/(21902:21911): Procesando request de GameBoy
+[INFO] 02:35:35:120 GameCard PAPAA/(21902:21911): Codigo de operacion recibido del socket cliente 7 corresponde a un NEW
+[INFO] 02:35:35:120 GameCard PAPAA/(21902:21911): Recibiendo tamanio total
+[INFO] 02:35:35:120 GameCard PAPAA/(21902:21911): Tamanio total recibido: 34
+[INFO] 02:35:35:120 GameCard PAPAA/(21902:21911): EL ID recibido: 69
+[INFO] 02:35:35:120 GameCard PAPAA/(21902:21911): Tamanio del pokemon recibido: 14
+[INFO] 02:35:35:120 GameCard PAPAA/(21902:21911): Nombre del pokemon recibido: debiExagerada
+[INFO] 02:35:35:120 GameCard PAPAA/(21902:21911): Posicion X recibida: 69
+[INFO] 02:35:35:120 GameCard PAPAA/(21902:21911): Posicion Y recibida: 69
+[INFO] 02:35:35:120 GameCard PAPAA/(21902:21911): Cantidad recibida: 1
+[INFO] 02:35:35:120 GameCard PAPAA/(21902:21911): NEW recibido del modulo Game Boy socket 7
+[INFO] 02:35:35:120 GameCard PAPAA/(21902:21911): Llegamo
+[INFO] 02:35:35:120 GameCard PAPAA/(21902:21911): Pokemon: debiexagerada
+[INFO] 02:35:35:121 GameCard PAPAA/(21902:21911): PosX: 69
+[INFO] 02:35:35:121 GameCard PAPAA/(21902:21911): PosY: 69
+[INFO] 02:35:35:121 GameCard PAPAA/(21902:21911): Cantidad: 1
+[INFO] 02:35:35:121 GameCard PAPAA/(21902:21911): Ruta de Directorio: /home/utnso/Escritorio/tall-grass/Files/debiexagerada
+[INFO] 02:35:35:121 GameCard PAPAA/(21902:21911): La coordenada generada es: 69-69
+[INFO] 02:35:35:122 GameCard PAPAA/(21902:21911): Posicion generada: 69-69
+[INFO] 02:35:35:122 GameCard PAPAA/(21902:21911): Ruta del directorio pokemon debiexagerada es: /home/utnso/Escritorio/tall-grass/Files/debiexagerada
+[INFO] 02:35:35:122 GameCard PAPAA/(21902:21911): Ruta del Archivo: /home/utnso/Escritorio/tall-grass/Files/debiexagerada/debiexagerada.bin
+[INFO] 02:35:35:122 GameCard PAPAA/(21902:21911): Se creo el archivo config
+[INFO] 02:35:35:122 GameCard PAPAA/(21902:21911): EL array de blocks es: (null)
+[INFO] 02:35:35:122 GameCard PAPAA/(21902:21911): Se creo el falso config de la ruta
+[INFO] 02:35:35:122 GameCard PAPAA/(21902:21911): Retorno el estado: N
+[INFO] 02:35:35:122 GameCard PAPAA/(21902:21911): Se creo el falso config de la ruta
+[INFO] 02:35:35:122 GameCard PAPAA/(21902:21911): Paso el mutex
+[INFO] 02:35:35:122 GameCard PAPAA/(21902:21911): Validando Posiciones de New
+[INFO] 02:35:35:123 GameCard PAPAA/(21902:21911): Valido posicion
+[INFO] 02:35:35:123 GameCard PAPAA/(21902:21911): EL array de blocks es: (null)
+[INFO] 02:35:35:123 GameCard PAPAA/(21902:21911): Entro por NULL
+[INFO] 02:35:35:123 GameCard PAPAA/(21902:21911): Entro a buscar posiciones
+[INFO] 02:35:35:125 GameCard PAPAA/(21902:21911): Bloqueo
+[INFO] 02:35:35:125 GameCard PAPAA/(21902:21911): A
+[INFO] 02:35:35:125 GameCard PAPAA/(21902:21911): A
+[INFO] 02:35:35:125 GameCard PAPAA/(21902:21911): A
+[INFO] 02:35:35:125 GameCard PAPAA/(21902:21911): A
+[INFO] 02:35:35:125 GameCard PAPAA/(21902:21911): A
+[INFO] 02:35:35:126 GameCard PAPAA/(21902:21911): A
+[INFO] 02:35:35:126 GameCard PAPAA/(21902:21911): A
+[INFO] 02:35:35:126 GameCard PAPAA/(21902:21911): A
+[INFO] 02:35:35:126 GameCard PAPAA/(21902:21911): Guardando el bitarray
+[INFO] 02:35:35:126 GameCard PAPAA/(21902:21911): Termino el guardado
+[INFO] 02:35:35:127 GameCard PAPAA/(21902:21911): EL block 7 esta libre
+[INFO] 02:35:35:127 GameCard PAPAA/(21902:21911): El bloque disponible seleccionado es: 7
+[INFO] 02:35:35:127 GameCard PAPAA/(21902:21911): Agregamos nueva posicion con direccion del archivo: /home/utnso/Escritorio/tall-grass/Blocks/7.bin
+[INFO] 02:35:35:127 GameCard PAPAA/(21902:21911): Seteando nueva posicion: 69-69
+[INFO] 02:35:35:128 GameCard PAPAA/(21902:21911): Actualmente hay 0 de posiciones en el archivo
+[INFO] 02:35:35:128 GameCard PAPAA/(21902:21911): ACTUALIZACION : Actualmente hay 0 de posiciones en el archivo
+[INFO] 02:35:35:128 GameCard PAPAA/(21902:21911): Actualizo Metadata
+[INFO] 02:35:35:129 GameCard PAPAA/(21902:21911): Entro por NULL
+[INFO] 02:35:35:129 GameCard PAPAA/(21902:21911): EL tamanio calculado del archivo es: 8
+[INFO] 02:35:35:129 GameCard PAPAA/(21902:21911): El ID de mensaje cargado en el appeared es: 69
+[INFO] 02:35:35:130 GameCard PAPAA/(21902:21911): El pokemoncargado en el appeared es: debiexagerada
+[INFO] 02:35:35:130 GameCard PAPAA/(21902:21911): El tamanio del nombre del pokemon cargado en el appeared es: 14
+[INFO] 02:35:35:130 GameCard PAPAA/(21902:21911): La coordenada del pokemon cargado en el appeared es: 69 - 69
+[INFO] 02:35:40:130 GameCard PAPAA/(21902:21911): El ID cargado es 69
+[INFO] 02:35:40:131 GameCard PAPAA/(21902:21911): Tamanio nombre pokemon 14
+[INFO] 02:35:40:131 GameCard PAPAA/(21902:21911): Nombre pokemon debiexagerada
+[INFO] 02:35:40:131 GameCard PAPAA/(21902:21911): Posicion X 69
+[INFO] 02:35:40:131 GameCard PAPAA/(21902:21911): Posicion Y 69
+[INFO] 02:35:40:131 GameCard PAPAA/(21902:21911): Creando paquete
+[INFO] 02:35:40:131 GameCard PAPAA/(21902:21911): CODIGO DE OPERACION: 2
+[INFO] 02:35:40:131 GameCard PAPAA/(21902:21911): Paquete Creado
+[INFO] 02:35:40:131 GameCard PAPAA/(21902:21911): la operacion a realizar es 2
+[INFO] 02:35:40:131 GameCard PAPAA/(21902:21911): Serializando...
+[INFO] 02:35:40:131 GameCard PAPAA/(21902:21911): Serializacion completa
+[INFO] 02:35:40:131 GameCard PAPAA/(21902:21911): El peso total es: 30
+[ERROR] 02:35:40:131 GameCard PAPAA/(21902:21911): Error: No se pudo enviar el mensaje
+[INFO] 02:36:04:127 GameCard PAPAA/(21972:21972): logger iniciado.
+[INFO] 02:36:04:158 GameCard PAPAA/(21972:21972): Config cargada.
+[INFO] 02:36:04:160 GameCard PAPAA/(21972:21972): La IP del Broker: 127.0.0.1
+[INFO] 02:36:04:161 GameCard PAPAA/(21972:21972): El Puerto es: 6009
+[INFO] 02:36:04:164 GameCard PAPAA/(21972:21972): El tiempo de reintento de conexion es: 10
+[INFO] 02:36:04:165 GameCard PAPAA/(21972:21972): El tiempo de reintento de operacion es: 5
+[INFO] 02:36:04:165 GameCard PAPAA/(21972:21972): El tiempo de retardo de conexion es: 5
+[INFO] 02:36:04:166 GameCard PAPAA/(21972:21972): El punto de montaje es: /home/utnso/Escritorio/tall-grass
+[INFO] 02:36:04:166 GameCard PAPAA/(21972:21972): La IP es: 127.0.0.1
+[INFO] 02:36:04:167 GameCard PAPAA/(21972:21972): El puerto es: 4447
+[INFO] 02:36:04:168 GameCard PAPAA/(21972:21972): El punto de montaje es: /home/utnso/Escritorio/tall-grass
+[INFO] 02:36:04:170 GameCard PAPAA/(21972:21972): La ruta del metadataes: /home/utnso/Escritorio/tall-grass/Metadata
+[INFO] 02:36:04:172 GameCard PAPAA/(21972:21972): Se creo el config de MetaData
+[INFO] 02:36:04:174 GameCard PAPAA/(21972:21972): El Block Size es: 64
+[INFO] 02:36:04:174 GameCard PAPAA/(21972:21972): La cantidad de Bloques es: 5192
+[INFO] 02:36:04:175 GameCard PAPAA/(21972:21972): El Magic Number es: TALL_GRASS
+[INFO] 02:36:04:191 GameCard PAPAA/(21972:21972): Bitmap ya seteado
+[ERROR] 02:36:04:224 GameCard PAPAA/(21972:21972): Ya existe el BitMap
+[INFO] 02:36:04:226 GameCard PAPAA/(21972:21972): SETEO DE VARIABLES PARA ARCHIVOSYDIRECTORIOS.H
+[INFO] 02:36:04:227 GameCard PAPAA/(21972:21972): El ID de modulo es: 1804289383
+[INFO] 02:36:04:259 GameCard PAPAA/(21972:21977): Esperando mensajes de game boy en socket 7
+[INFO] 02:36:04:260 GameCard PAPAA/(21972:21979): Escucho CATCH de BROKER
+[INFO] 02:36:04:261 GameCard PAPAA/(21972:21978): Escuchando NEW de BROKER
+[ERROR] 02:36:04:271 GameCard PAPAA/(21972:21979): Hubo un problema enviando la suscripcion a la cola CATCH del broker
+[INFO] 02:36:04:271 GameCard PAPAA/(21972:21981): Hilo de verificacion periodica de conexion con Broker iniciado
+[ERROR] 02:36:04:272 GameCard PAPAA/(21972:21978): Hubo un problema enviando la suscripcion a la cola NEW del broker
+[INFO] 02:36:04:274 GameCard PAPAA/(21972:21980): Escucho GET de BROKER
+[ERROR] 02:36:04:276 GameCard PAPAA/(21972:21980): Hubo un problema enviando la suscripcion a la cola GET del broker
+[INFO] 02:36:05:885 GameCard PAPAA/(21972:21977): Socket 7 de gameBoy aceptado
+[INFO] 02:36:05:907 GameCard PAPAA/(21972:21983): Recibiendo codigo de operacion de GameBoy en socket 8
+[INFO] 02:36:05:933 GameCard PAPAA/(21972:21983): Codigo de operacion de socket 8 recibido: 3
+[INFO] 02:36:05:934 GameCard PAPAA/(21972:21983): Procesando request de GameBoy
+[INFO] 02:36:05:951 GameCard PAPAA/(21972:21983): Codigo de operacion recibido del socket cliente 8 corresponde a un CATCH
+[INFO] 02:36:05:951 GameCard PAPAA/(21972:21983): Recibiendo tamanio total
+[INFO] 02:36:05:960 GameCard PAPAA/(21972:21983): Tamanio total recibido: 30
+[INFO] 02:36:05:989 GameCard PAPAA/(21972:21983): EL ID recibido: 6
+[INFO] 02:36:05:990 GameCard PAPAA/(21972:21983): Tamanio del pokemon: 14
+[INFO] 02:36:05:991 GameCard PAPAA/(21972:21983): Nombre del pokemon recibido: debiExagerada
+[INFO] 02:36:05:991 GameCard PAPAA/(21972:21983): Posicion X recibida: 69
+[INFO] 02:36:05:992 GameCard PAPAA/(21972:21983): Posicion Y recibida: 69
+[INFO] 02:36:06:21 GameCard PAPAA/(21972:21983): CATCH recibido del modulo Game Boy socket 8
+[INFO] 02:36:06:25 GameCard PAPAA/(21972:21983): La coordenada generada es: 69-69
+[INFO] 02:36:06:48 GameCard PAPAA/(21972:21983): EL array de blocks es: P�$
+[INFO] 02:36:06:91 GameCard PAPAA/(21972:21983): Se creo el falso config de la ruta
+[INFO] 02:36:06:92 GameCard PAPAA/(21972:21983): Retorno el estado: N
+[INFO] 02:36:06:121 GameCard PAPAA/(21972:21983): Se creo el falso config de la ruta
+[INFO] 02:36:06:201 GameCard PAPAA/(21972:21983): Valido posicion
+[INFO] 02:36:06:220 GameCard PAPAA/(21972:21983): EL array de blocks es: 7
+[INFO] 02:36:06:221 GameCard PAPAA/(21972:21983): Se esta analizando el block: 7
+[INFO] 02:36:06:239 GameCard PAPAA/(21972:21983): Se esta analizando el block: 7
+[INFO] 02:36:06:249 GameCard PAPAA/(21972:21983): Encontro el block donde esta la posicion: 7
+[INFO] 02:36:06:254 GameCard PAPAA/(21972:21983): El bloque en el que se encuentra es: 7
+[INFO] 02:36:06:259 GameCard PAPAA/(21972:21983): La ruta del block es: /home/utnso/Escritorio/tall-grass/Blocks/7.bin
+[INFO] 02:36:06:268 GameCard PAPAA/(21972:21983): La cantidad de pokemons en el la posicion 69-69 es: 1
+[INFO] 02:36:06:277 GameCard PAPAA/(21972:21983): La cantidad de pokemons en esa posicion es 1
+[INFO] 02:36:06:288 GameCard PAPAA/(21972:21983): El valor del block es de: 1
+[INFO] 02:36:06:298 GameCard PAPAA/(21972:21983): El block fue desmarcado con el valor de: 0
+[INFO] 02:37:43:756 GameCard PAPAA/(22243:22243): logger iniciado.
+[INFO] 02:37:43:786 GameCard PAPAA/(22243:22243): Config cargada.
+[INFO] 02:37:43:788 GameCard PAPAA/(22243:22243): La IP del Broker: 127.0.0.1
+[INFO] 02:37:43:789 GameCard PAPAA/(22243:22243): El Puerto es: 6009
+[INFO] 02:37:43:792 GameCard PAPAA/(22243:22243): El tiempo de reintento de conexion es: 10
+[INFO] 02:37:43:792 GameCard PAPAA/(22243:22243): El tiempo de reintento de operacion es: 5
+[INFO] 02:37:43:793 GameCard PAPAA/(22243:22243): El tiempo de retardo de conexion es: 5
+[INFO] 02:37:43:794 GameCard PAPAA/(22243:22243): El punto de montaje es: /home/utnso/Escritorio/tall-grass
+[INFO] 02:37:43:794 GameCard PAPAA/(22243:22243): La IP es: 127.0.0.1
+[INFO] 02:37:43:795 GameCard PAPAA/(22243:22243): El puerto es: 4447
+[INFO] 02:37:43:796 GameCard PAPAA/(22243:22243): El punto de montaje es: /home/utnso/Escritorio/tall-grass
+[INFO] 02:37:43:798 GameCard PAPAA/(22243:22243): La ruta del metadataes: /home/utnso/Escritorio/tall-grass/Metadata
+[INFO] 02:37:43:801 GameCard PAPAA/(22243:22243): Se creo el config de MetaData
+[INFO] 02:37:43:802 GameCard PAPAA/(22243:22243): El Block Size es: 64
+[INFO] 02:37:43:802 GameCard PAPAA/(22243:22243): La cantidad de Bloques es: 5192
+[INFO] 02:37:43:803 GameCard PAPAA/(22243:22243): El Magic Number es: TALL_GRASS
+[INFO] 02:37:43:820 GameCard PAPAA/(22243:22243): Bitmap ya seteado
+[ERROR] 02:37:43:853 GameCard PAPAA/(22243:22243): Ya existe el BitMap
+[INFO] 02:37:43:856 GameCard PAPAA/(22243:22243): SETEO DE VARIABLES PARA ARCHIVOSYDIRECTORIOS.H
+[INFO] 02:37:43:856 GameCard PAPAA/(22243:22243): El ID de modulo es: 1804289383
+[INFO] 02:37:43:891 GameCard PAPAA/(22243:22244): Esperando mensajes de game boy en socket 7
+[INFO] 02:37:43:893 GameCard PAPAA/(22243:22246): Escucho CATCH de BROKER
+[INFO] 02:37:43:893 GameCard PAPAA/(22243:22245): Escuchando NEW de BROKER
+[ERROR] 02:37:43:903 GameCard PAPAA/(22243:22246): Hubo un problema enviando la suscripcion a la cola CATCH del broker
+[ERROR] 02:37:43:904 GameCard PAPAA/(22243:22245): Hubo un problema enviando la suscripcion a la cola NEW del broker
+[INFO] 02:37:43:904 GameCard PAPAA/(22243:22247): Escucho GET de BROKER
+[INFO] 02:37:43:909 GameCard PAPAA/(22243:22248): Hilo de verificacion periodica de conexion con Broker iniciado
+[ERROR] 02:37:43:933 GameCard PAPAA/(22243:22247): Hubo un problema enviando la suscripcion a la cola GET del broker
+[INFO] 02:37:46:880 GameCard PAPAA/(22243:22244): Socket 7 de gameBoy aceptado
+[INFO] 02:37:46:913 GameCard PAPAA/(22243:22254): Recibiendo codigo de operacion de GameBoy en socket 8
+[INFO] 02:37:46:932 GameCard PAPAA/(22243:22254): Codigo de operacion de socket 8 recibido: 3
+[INFO] 02:37:46:936 GameCard PAPAA/(22243:22254): Procesando request de GameBoy
+[INFO] 02:37:46:956 GameCard PAPAA/(22243:22254): Codigo de operacion recibido del socket cliente 8 corresponde a un CATCH
+[INFO] 02:37:46:957 GameCard PAPAA/(22243:22254): Recibiendo tamanio total
+[INFO] 02:37:46:958 GameCard PAPAA/(22243:22254): Tamanio total recibido: 30
+[INFO] 02:37:46:959 GameCard PAPAA/(22243:22254): EL ID recibido: 6
+[INFO] 02:37:46:960 GameCard PAPAA/(22243:22254): Tamanio del pokemon: 14
+[INFO] 02:37:46:980 GameCard PAPAA/(22243:22254): Nombre del pokemon recibido: debiExagerada
+[INFO] 02:37:46:981 GameCard PAPAA/(22243:22254): Posicion X recibida: 69
+[INFO] 02:37:46:986 GameCard PAPAA/(22243:22254): Posicion Y recibida: 69
+[INFO] 02:37:46:995 GameCard PAPAA/(22243:22254): CATCH recibido del modulo Game Boy socket 8
+[INFO] 02:37:46:999 GameCard PAPAA/(22243:22254): La coordenada generada es: 69-69
+[INFO] 02:37:47:26 GameCard PAPAA/(22243:22254): EL array de blocks es: P�$
+[INFO] 02:37:47:42 GameCard PAPAA/(22243:22254): Se creo el falso config de la ruta
+[INFO] 02:37:47:43 GameCard PAPAA/(22243:22254): Retorno el estado: N
+[INFO] 02:37:47:52 GameCard PAPAA/(22243:22254): Se creo el falso config de la ruta
+[INFO] 02:37:47:100 GameCard PAPAA/(22243:22254): Valido posicion
+[INFO] 02:37:47:114 GameCard PAPAA/(22243:22254): EL array de blocks es: 7
+[INFO] 02:37:47:115 GameCard PAPAA/(22243:22254): Se esta analizando el block: 7
+[INFO] 02:37:47:126 GameCard PAPAA/(22243:22254): Se esta analizando el block: 7
+[INFO] 02:37:47:127 GameCard PAPAA/(22243:22254): Encontro el block donde esta la posicion: 7
+[INFO] 02:37:47:135 GameCard PAPAA/(22243:22254): El bloque en el que se encuentra es: 7
+[INFO] 02:37:47:149 GameCard PAPAA/(22243:22254): La ruta del block es: /home/utnso/Escritorio/tall-grass/Blocks/7.bin
+[INFO] 02:37:47:150 GameCard PAPAA/(22243:22254): La cantidad de pokemons en el la posicion 69-69 es: 1
+[INFO] 02:37:47:176 GameCard PAPAA/(22243:22254): La cantidad de pokemons en esa posicion es 1
+[INFO] 02:37:47:183 GameCard PAPAA/(22243:22254): El valor del block es de: 1
+[INFO] 02:37:47:188 GameCard PAPAA/(22243:22254): El block fue desmarcado con el valor de: 0
+[INFO] 02:38:50:449 GameCard PAPAA/(22411:22411): logger iniciado.
+[INFO] 02:38:50:479 GameCard PAPAA/(22411:22411): Config cargada.
+[INFO] 02:38:50:482 GameCard PAPAA/(22411:22411): La IP del Broker: 127.0.0.1
+[INFO] 02:38:50:482 GameCard PAPAA/(22411:22411): El Puerto es: 6009
+[INFO] 02:38:50:486 GameCard PAPAA/(22411:22411): El tiempo de reintento de conexion es: 10
+[INFO] 02:38:50:487 GameCard PAPAA/(22411:22411): El tiempo de reintento de operacion es: 5
+[INFO] 02:38:50:487 GameCard PAPAA/(22411:22411): El tiempo de retardo de conexion es: 5
+[INFO] 02:38:50:488 GameCard PAPAA/(22411:22411): El punto de montaje es: /home/utnso/Escritorio/tall-grass
+[INFO] 02:38:50:488 GameCard PAPAA/(22411:22411): La IP es: 127.0.0.1
+[INFO] 02:38:50:489 GameCard PAPAA/(22411:22411): El puerto es: 4447
+[INFO] 02:38:50:490 GameCard PAPAA/(22411:22411): El punto de montaje es: /home/utnso/Escritorio/tall-grass
+[INFO] 02:38:50:492 GameCard PAPAA/(22411:22411): La ruta del metadataes: /home/utnso/Escritorio/tall-grass/Metadata
+[INFO] 02:38:50:495 GameCard PAPAA/(22411:22411): Se creo el config de MetaData
+[INFO] 02:38:50:496 GameCard PAPAA/(22411:22411): El Block Size es: 64
+[INFO] 02:38:50:497 GameCard PAPAA/(22411:22411): La cantidad de Bloques es: 5192
+[INFO] 02:38:50:497 GameCard PAPAA/(22411:22411): El Magic Number es: TALL_GRASS
+[INFO] 02:38:50:515 GameCard PAPAA/(22411:22411): Bitmap ya seteado
+[ERROR] 02:38:50:548 GameCard PAPAA/(22411:22411): Ya existe el BitMap
+[INFO] 02:38:50:550 GameCard PAPAA/(22411:22411): SETEO DE VARIABLES PARA ARCHIVOSYDIRECTORIOS.H
+[INFO] 02:38:50:551 GameCard PAPAA/(22411:22411): El ID de modulo es: 1804289383
+[INFO] 02:38:50:583 GameCard PAPAA/(22411:22416): Esperando mensajes de game boy en socket 7
+[INFO] 02:38:50:585 GameCard PAPAA/(22411:22418): Escucho CATCH de BROKER
+[INFO] 02:38:50:585 GameCard PAPAA/(22411:22417): Escuchando NEW de BROKER
+[ERROR] 02:38:50:595 GameCard PAPAA/(22411:22418): Hubo un problema enviando la suscripcion a la cola CATCH del broker
+[ERROR] 02:38:50:596 GameCard PAPAA/(22411:22417): Hubo un problema enviando la suscripcion a la cola NEW del broker
+[INFO] 02:38:50:596 GameCard PAPAA/(22411:22419): Escucho GET de BROKER
+[INFO] 02:38:50:597 GameCard PAPAA/(22411:22420): Hilo de verificacion periodica de conexion con Broker iniciado
+[ERROR] 02:38:50:616 GameCard PAPAA/(22411:22419): Hubo un problema enviando la suscripcion a la cola GET del broker
+[INFO] 02:38:51:937 GameCard PAPAA/(22411:22416): Socket 7 de gameBoy aceptado
+[INFO] 02:38:51:973 GameCard PAPAA/(22411:22422): Recibiendo codigo de operacion de GameBoy en socket 8
+[INFO] 02:38:51:992 GameCard PAPAA/(22411:22422): Codigo de operacion de socket 8 recibido: 3
+[INFO] 02:38:51:993 GameCard PAPAA/(22411:22422): Procesando request de GameBoy
+[INFO] 02:38:52:13 GameCard PAPAA/(22411:22422): Codigo de operacion recibido del socket cliente 8 corresponde a un CATCH
+[INFO] 02:38:52:14 GameCard PAPAA/(22411:22422): Recibiendo tamanio total
+[INFO] 02:38:52:15 GameCard PAPAA/(22411:22422): Tamanio total recibido: 30
+[INFO] 02:38:52:15 GameCard PAPAA/(22411:22422): EL ID recibido: 6
+[INFO] 02:38:52:16 GameCard PAPAA/(22411:22422): Tamanio del pokemon: 14
+[INFO] 02:38:52:46 GameCard PAPAA/(22411:22422): Nombre del pokemon recibido: debiExagerada
+[INFO] 02:38:52:51 GameCard PAPAA/(22411:22422): Posicion X recibida: 69
+[INFO] 02:38:52:51 GameCard PAPAA/(22411:22422): Posicion Y recibida: 69
+[INFO] 02:38:52:56 GameCard PAPAA/(22411:22422): CATCH recibido del modulo Game Boy socket 8
+[INFO] 02:38:52:60 GameCard PAPAA/(22411:22422): La coordenada generada es: 69-69
+[INFO] 02:38:52:117 GameCard PAPAA/(22411:22422): EL array de blocks es: @�$
+[INFO] 02:38:52:143 GameCard PAPAA/(22411:22422): Se creo el falso config de la ruta
+[INFO] 02:38:52:143 GameCard PAPAA/(22411:22422): Retorno el estado: N
+[INFO] 02:38:52:162 GameCard PAPAA/(22411:22422): Se creo el falso config de la ruta
+[INFO] 02:38:52:211 GameCard PAPAA/(22411:22422): Valido posicion
+[INFO] 02:38:52:216 GameCard PAPAA/(22411:22422): EL array de blocks es: 7
+[INFO] 02:38:52:217 GameCard PAPAA/(22411:22422): Se esta analizando el block: 7
+[INFO] 02:38:52:235 GameCard PAPAA/(22411:22422): Se esta analizando el block: 7
+[INFO] 02:38:52:237 GameCard PAPAA/(22411:22422): Encontro el block donde esta la posicion: 7
+[INFO] 02:38:52:238 GameCard PAPAA/(22411:22422): El bloque en el que se encuentra es: 7
+[INFO] 02:38:52:251 GameCard PAPAA/(22411:22422): La ruta del block es: /home/utnso/Escritorio/tall-grass/Blocks/7.bin
+[INFO] 02:38:52:256 GameCard PAPAA/(22411:22422): La cantidad de pokemons en el la posicion 69-69 es: 1
+[INFO] 02:38:52:269 GameCard PAPAA/(22411:22422): La cantidad de pokemons en esa posicion es 1
+[INFO] 02:38:52:276 GameCard PAPAA/(22411:22422): El valor del block es de: 1
+[INFO] 02:38:52:305 GameCard PAPAA/(22411:22422): El block fue desmarcado con el valor de: 0
+[INFO] 02:38:52:667 GameCard PAPAA/(22411:22422): No hay mas bloques
+[INFO] 02:38:52:673 GameCard PAPAA/(22411:22422): Dicha posicion es la ultima en el block por lo que se marco el block como libre y se elimino la linea
+[INFO] 02:38:52:707 GameCard PAPAA/(22411:22422): El ID de mensaje cargado en el caught es: 6
+[INFO] 02:38:52:721 GameCard PAPAA/(22411:22422): El Flag cargado en el caught es: 1
+[INFO] 02:38:57:759 GameCard PAPAA/(22411:22422): El ID cargado es 6
+[INFO] 02:38:57:759 GameCard PAPAA/(22411:22422): El flag cargado es 1
+[INFO] 02:38:57:760 GameCard PAPAA/(22411:22422): Creando paquete
+[INFO] 02:38:57:761 GameCard PAPAA/(22411:22422): CODIGO DE OPERACION: 4
+[INFO] 02:38:57:779 GameCard PAPAA/(22411:22422): Paquete Creado
+[INFO] 02:38:57:779 GameCard PAPAA/(22411:22422): la operacion a realizar es 4
+[INFO] 02:38:57:780 GameCard PAPAA/(22411:22422): Serializando...
+[INFO] 02:38:57:799 GameCard PAPAA/(22411:22422): Serializacion completa
+[INFO] 02:38:57:812 GameCard PAPAA/(22411:22422): El peso total es: 8
+[ERROR] 02:38:57:812 GameCard PAPAA/(22411:22422): Error: No se pudo enviar el mensaje
+[INFO] 02:44:00:568 GameCard PAPAA/(23028:23028): logger iniciado.
+[INFO] 02:44:00:568 GameCard PAPAA/(23028:23028): Config cargada.
+[INFO] 02:44:00:568 GameCard PAPAA/(23028:23028): La IP del Broker: 127.0.0.1
+[INFO] 02:44:00:568 GameCard PAPAA/(23028:23028): El Puerto es: 6009
+[INFO] 02:44:00:568 GameCard PAPAA/(23028:23028): El tiempo de reintento de conexion es: 10
+[INFO] 02:44:00:568 GameCard PAPAA/(23028:23028): El tiempo de reintento de operacion es: 5
+[INFO] 02:44:00:568 GameCard PAPAA/(23028:23028): El tiempo de retardo de conexion es: 5
+[INFO] 02:44:00:568 GameCard PAPAA/(23028:23028): El punto de montaje es: /home/utnso/Escritorio/tall-grass
+[INFO] 02:44:00:568 GameCard PAPAA/(23028:23028): La IP es: 127.0.0.1
+[INFO] 02:44:00:568 GameCard PAPAA/(23028:23028): El puerto es: 4447
+[INFO] 02:44:00:569 GameCard PAPAA/(23028:23028): El punto de montaje es: /home/utnso/Escritorio/tall-grass
+[INFO] 02:44:00:569 GameCard PAPAA/(23028:23028): La ruta del metadataes: /home/utnso/Escritorio/tall-grass/Metadata
+[INFO] 02:44:00:569 GameCard PAPAA/(23028:23028): Se creo el config de MetaData
+[INFO] 02:44:00:569 GameCard PAPAA/(23028:23028): El Block Size es: 64
+[INFO] 02:44:00:569 GameCard PAPAA/(23028:23028): La cantidad de Bloques es: 5192
+[INFO] 02:44:00:569 GameCard PAPAA/(23028:23028): El Magic Number es: TALL_GRASS
+[INFO] 02:44:00:569 GameCard PAPAA/(23028:23028): Bitmap ya seteado
+[ERROR] 02:44:00:570 GameCard PAPAA/(23028:23028): Ya existe el BitMap
+[INFO] 02:44:00:570 GameCard PAPAA/(23028:23028): SETEO DE VARIABLES PARA ARCHIVOSYDIRECTORIOS.H
+[INFO] 02:44:00:570 GameCard PAPAA/(23028:23028): El ID de modulo es: 1804289383
+[INFO] 02:44:00:570 GameCard PAPAA/(23028:23033): Hilo de verificacion periodica de conexion con Broker iniciado
+[INFO] 02:44:00:570 GameCard PAPAA/(23028:23032): Escucho GET de BROKER
+[ERROR] 02:44:00:570 GameCard PAPAA/(23028:23032): Hubo un problema enviando la suscripcion a la cola GET del broker
+[INFO] 02:44:00:573 GameCard PAPAA/(23028:23031): Escucho CATCH de BROKER
+[ERROR] 02:44:00:573 GameCard PAPAA/(23028:23031): Hubo un problema enviando la suscripcion a la cola CATCH del broker
+[INFO] 02:44:00:575 GameCard PAPAA/(23028:23030): Escuchando NEW de BROKER
+[ERROR] 02:44:00:575 GameCard PAPAA/(23028:23030): Hubo un problema enviando la suscripcion a la cola NEW del broker
+[INFO] 02:44:00:580 GameCard PAPAA/(23028:23029): Esperando mensajes de game boy en socket 5
+[INFO] 02:44:02:178 GameCard PAPAA/(23028:23029): Socket 5 de gameBoy aceptado
+[INFO] 02:44:02:183 GameCard PAPAA/(23028:23041): Recibiendo codigo de operacion de GameBoy en socket 7
+[INFO] 02:44:02:183 GameCard PAPAA/(23028:23041): Codigo de operacion de socket 7 recibido: 1
+[INFO] 02:44:02:183 GameCard PAPAA/(23028:23041): Procesando request de GameBoy
+[INFO] 02:44:02:183 GameCard PAPAA/(23028:23041): Codigo de operacion recibido del socket cliente 7 corresponde a un NEW
+[INFO] 02:44:02:183 GameCard PAPAA/(23028:23041): Recibiendo tamanio total
+[INFO] 02:44:02:194 GameCard PAPAA/(23028:23041): Tamanio total recibido: 34
+[INFO] 02:44:02:194 GameCard PAPAA/(23028:23041): EL ID recibido: 69
+[INFO] 02:44:02:194 GameCard PAPAA/(23028:23041): Tamanio del pokemon recibido: 14
+[INFO] 02:44:02:194 GameCard PAPAA/(23028:23041): Nombre del pokemon recibido: debiExagerada
+[INFO] 02:44:02:194 GameCard PAPAA/(23028:23041): Posicion X recibida: 69
+[INFO] 02:44:02:194 GameCard PAPAA/(23028:23041): Posicion Y recibida: 69
+[INFO] 02:44:02:194 GameCard PAPAA/(23028:23041): Cantidad recibida: 1
+[INFO] 02:44:02:194 GameCard PAPAA/(23028:23041): NEW recibido del modulo Game Boy socket 7
+[INFO] 02:44:02:194 GameCard PAPAA/(23028:23041): Llegamo
+[INFO] 02:44:02:194 GameCard PAPAA/(23028:23041): Pokemon: debiexagerada
+[INFO] 02:44:02:194 GameCard PAPAA/(23028:23041): PosX: 69
+[INFO] 02:44:02:194 GameCard PAPAA/(23028:23041): PosY: 69
+[INFO] 02:44:02:195 GameCard PAPAA/(23028:23041): Cantidad: 1
+[INFO] 02:44:02:195 GameCard PAPAA/(23028:23041): Ruta de Directorio: /home/utnso/Escritorio/tall-grass/Files/debiexagerada
+[INFO] 02:44:02:195 GameCard PAPAA/(23028:23041): La coordenada generada es: 69-69
+[INFO] 02:44:02:195 GameCard PAPAA/(23028:23041): Posicion generada: 69-69
+[INFO] 02:44:02:195 GameCard PAPAA/(23028:23041): Ruta del directorio pokemon debiexagerada es: /home/utnso/Escritorio/tall-grass/Files/debiexagerada
+[INFO] 02:44:02:195 GameCard PAPAA/(23028:23041): Ruta del Archivo: /home/utnso/Escritorio/tall-grass/Files/debiexagerada/debiexagerada.bin
+[INFO] 02:44:02:195 GameCard PAPAA/(23028:23041): Se creo el archivo config
+[INFO] 02:44:02:198 GameCard PAPAA/(23028:23041): EL array de blocks es: (null)
+[INFO] 02:44:02:198 GameCard PAPAA/(23028:23041): Se creo el falso config de la ruta
+[INFO] 02:44:02:198 GameCard PAPAA/(23028:23041): Retorno el estado: N
+[INFO] 02:44:02:198 GameCard PAPAA/(23028:23041): Se creo el falso config de la ruta
+[INFO] 02:44:02:198 GameCard PAPAA/(23028:23041): Paso el mutex
+[INFO] 02:44:02:198 GameCard PAPAA/(23028:23041): Validando Posiciones de New
+[INFO] 02:44:02:198 GameCard PAPAA/(23028:23041): Valido posicion
+[INFO] 02:44:02:198 GameCard PAPAA/(23028:23041): EL array de blocks es: (null)
+[INFO] 02:44:02:198 GameCard PAPAA/(23028:23041): Entro por NULL
+[INFO] 02:44:02:199 GameCard PAPAA/(23028:23041): Entro a buscar posiciones
+[INFO] 02:44:02:199 GameCard PAPAA/(23028:23041): Bloqueo
+[INFO] 02:44:02:199 GameCard PAPAA/(23028:23041): A
+[INFO] 02:44:02:199 GameCard PAPAA/(23028:23041): A
+[INFO] 02:44:02:199 GameCard PAPAA/(23028:23041): A
+[INFO] 02:44:02:199 GameCard PAPAA/(23028:23041): A
+[INFO] 02:44:02:199 GameCard PAPAA/(23028:23041): A
+[INFO] 02:44:02:199 GameCard PAPAA/(23028:23041): A
+[INFO] 02:44:02:199 GameCard PAPAA/(23028:23041): A
+[INFO] 02:44:02:199 GameCard PAPAA/(23028:23041): A
+[INFO] 02:44:02:199 GameCard PAPAA/(23028:23041): A
+[INFO] 02:44:02:199 GameCard PAPAA/(23028:23041): Guardando el bitarray
+[INFO] 02:44:02:199 GameCard PAPAA/(23028:23041): Termino el guardado
+[INFO] 02:44:02:199 GameCard PAPAA/(23028:23041): EL block 8 esta libre
+[INFO] 02:44:02:200 GameCard PAPAA/(23028:23041): El bloque disponible seleccionado es: 8
+[INFO] 02:44:02:200 GameCard PAPAA/(23028:23041): Agregamos nueva posicion con direccion del archivo: /home/utnso/Escritorio/tall-grass/Blocks/8.bin
+[INFO] 02:44:02:200 GameCard PAPAA/(23028:23041): Creamos el archivo
+[INFO] 02:44:02:200 GameCard PAPAA/(23028:23041): Seteando nueva posicion: 69-69
+[INFO] 02:44:02:200 GameCard PAPAA/(23028:23041): Actualmente hay 0 de posiciones en el archivo
+[INFO] 02:44:02:200 GameCard PAPAA/(23028:23041): ACTUALIZACION : Actualmente hay 0 de posiciones en el archivo
+[INFO] 02:44:02:200 GameCard PAPAA/(23028:23041): Actualizo Metadata
+[INFO] 02:44:02:200 GameCard PAPAA/(23028:23041): Entro por NULL
+[INFO] 02:44:02:200 GameCard PAPAA/(23028:23041): EL tamanio calculado del archivo es: 8
+[INFO] 02:44:02:203 GameCard PAPAA/(23028:23041): El ID de mensaje cargado en el appeared es: 69
+[INFO] 02:44:02:203 GameCard PAPAA/(23028:23041): El pokemoncargado en el appeared es: debiexagerada
+[INFO] 02:44:02:203 GameCard PAPAA/(23028:23041): El tamanio del nombre del pokemon cargado en el appeared es: 14
+[INFO] 02:44:02:203 GameCard PAPAA/(23028:23041): La coordenada del pokemon cargado en el appeared es: 69 - 69
+[INFO] 02:44:07:204 GameCard PAPAA/(23028:23041): El ID cargado es 69
+[INFO] 02:44:07:204 GameCard PAPAA/(23028:23041): Tamanio nombre pokemon 14
+[INFO] 02:44:07:204 GameCard PAPAA/(23028:23041): Nombre pokemon debiexagerada
+[INFO] 02:44:07:204 GameCard PAPAA/(23028:23041): Posicion X 69
+[INFO] 02:44:07:204 GameCard PAPAA/(23028:23041): Posicion Y 69
+[INFO] 02:44:07:204 GameCard PAPAA/(23028:23041): Creando paquete
+[INFO] 02:44:07:204 GameCard PAPAA/(23028:23041): CODIGO DE OPERACION: 2
+[INFO] 02:44:07:204 GameCard PAPAA/(23028:23041): Paquete Creado
+[INFO] 02:44:07:204 GameCard PAPAA/(23028:23041): la operacion a realizar es 2
+[INFO] 02:44:07:204 GameCard PAPAA/(23028:23041): Serializando...
+[INFO] 02:44:07:204 GameCard PAPAA/(23028:23041): Serializacion completa
+[INFO] 02:44:07:204 GameCard PAPAA/(23028:23041): El peso total es: 30
+[ERROR] 02:44:07:204 GameCard PAPAA/(23028:23041): Error: No se pudo enviar el mensaje
+[INFO] 02:44:10:571 GameCard PAPAA/(23028:23033): Iniciando verificacion de conexion con Broker...
+[ERROR] 02:44:10:571 GameCard PAPAA/(23028:23033): Reconexion con Broker fallida, intentando nuevamente en 10 segundos
+[INFO] 02:44:18:151 GameCard PAPAA/(23066:23066): logger iniciado.
+[INFO] 02:44:18:186 GameCard PAPAA/(23066:23066): Config cargada.
+[INFO] 02:44:18:189 GameCard PAPAA/(23066:23066): La IP del Broker: 127.0.0.1
+[INFO] 02:44:18:191 GameCard PAPAA/(23066:23066): El Puerto es: 6009
+[INFO] 02:44:18:194 GameCard PAPAA/(23066:23066): El tiempo de reintento de conexion es: 10
+[INFO] 02:44:18:194 GameCard PAPAA/(23066:23066): El tiempo de reintento de operacion es: 5
+[INFO] 02:44:18:195 GameCard PAPAA/(23066:23066): El tiempo de retardo de conexion es: 5
+[INFO] 02:44:18:196 GameCard PAPAA/(23066:23066): El punto de montaje es: /home/utnso/Escritorio/tall-grass
+[INFO] 02:44:18:196 GameCard PAPAA/(23066:23066): La IP es: 127.0.0.1
+[INFO] 02:44:18:197 GameCard PAPAA/(23066:23066): El puerto es: 4447
+[INFO] 02:44:18:198 GameCard PAPAA/(23066:23066): El punto de montaje es: /home/utnso/Escritorio/tall-grass
+[INFO] 02:44:18:200 GameCard PAPAA/(23066:23066): La ruta del metadataes: /home/utnso/Escritorio/tall-grass/Metadata
+[INFO] 02:44:18:202 GameCard PAPAA/(23066:23066): Se creo el config de MetaData
+[INFO] 02:44:18:203 GameCard PAPAA/(23066:23066): El Block Size es: 64
+[INFO] 02:44:18:204 GameCard PAPAA/(23066:23066): La cantidad de Bloques es: 5192
+[INFO] 02:44:18:204 GameCard PAPAA/(23066:23066): El Magic Number es: TALL_GRASS
+[INFO] 02:44:18:223 GameCard PAPAA/(23066:23066): Bitmap ya seteado
+[ERROR] 02:44:18:257 GameCard PAPAA/(23066:23066): Ya existe el BitMap
+[INFO] 02:44:18:260 GameCard PAPAA/(23066:23066): SETEO DE VARIABLES PARA ARCHIVOSYDIRECTORIOS.H
+[INFO] 02:44:18:261 GameCard PAPAA/(23066:23066): El ID de modulo es: 1804289383
+[INFO] 02:44:18:295 GameCard PAPAA/(23066:23067): Esperando mensajes de game boy en socket 7
+[INFO] 02:44:18:296 GameCard PAPAA/(23066:23069): Escucho CATCH de BROKER
+[INFO] 02:44:18:297 GameCard PAPAA/(23066:23068): Escuchando NEW de BROKER
+[ERROR] 02:44:18:306 GameCard PAPAA/(23066:23069): Hubo un problema enviando la suscripcion a la cola CATCH del broker
+[ERROR] 02:44:18:307 GameCard PAPAA/(23066:23068): Hubo un problema enviando la suscripcion a la cola NEW del broker
+[INFO] 02:44:18:312 GameCard PAPAA/(23066:23071): Hilo de verificacion periodica de conexion con Broker iniciado
+[INFO] 02:44:18:310 GameCard PAPAA/(23066:23070): Escucho GET de BROKER
+[ERROR] 02:44:18:326 GameCard PAPAA/(23066:23070): Hubo un problema enviando la suscripcion a la cola GET del broker
+[INFO] 02:44:20:326 GameCard PAPAA/(23066:23067): Socket 7 de gameBoy aceptado
+[INFO] 02:44:20:354 GameCard PAPAA/(23066:23073): Recibiendo codigo de operacion de GameBoy en socket 8
+[INFO] 02:44:20:369 GameCard PAPAA/(23066:23073): Codigo de operacion de socket 8 recibido: 3
+[INFO] 02:44:20:373 GameCard PAPAA/(23066:23073): Procesando request de GameBoy
+[INFO] 02:44:20:374 GameCard PAPAA/(23066:23073): Codigo de operacion recibido del socket cliente 8 corresponde a un CATCH
+[INFO] 02:44:20:375 GameCard PAPAA/(23066:23073): Recibiendo tamanio total
+[INFO] 02:44:20:406 GameCard PAPAA/(23066:23073): Tamanio total recibido: 30
+[INFO] 02:44:20:411 GameCard PAPAA/(23066:23073): EL ID recibido: 6
+[INFO] 02:44:20:412 GameCard PAPAA/(23066:23073): Tamanio del pokemon: 14
+[INFO] 02:44:20:443 GameCard PAPAA/(23066:23073): Nombre del pokemon recibido: debiExagerada
+[INFO] 02:44:20:459 GameCard PAPAA/(23066:23073): Posicion X recibida: 69
+[INFO] 02:44:20:468 GameCard PAPAA/(23066:23073): Posicion Y recibida: 69
+[INFO] 02:44:20:479 GameCard PAPAA/(23066:23073): CATCH recibido del modulo Game Boy socket 8
+[INFO] 02:44:20:550 GameCard PAPAA/(23066:23073): La coordenada generada es: 69-69
+[INFO] 02:44:20:616 GameCard PAPAA/(23066:23073): EL array de blocks es: P�$
+[INFO] 02:44:20:662 GameCard PAPAA/(23066:23073): Se creo el falso config de la ruta
+[INFO] 02:44:20:670 GameCard PAPAA/(23066:23073): Retorno el estado: N
+[INFO] 02:44:20:703 GameCard PAPAA/(23066:23073): Se creo el falso config de la ruta
+[INFO] 02:44:20:763 GameCard PAPAA/(23066:23073): Valido posicion
+[INFO] 02:44:20:776 GameCard PAPAA/(23066:23073): EL array de blocks es: 8
+[INFO] 02:44:20:777 GameCard PAPAA/(23066:23073): Se esta analizando el block: 8
+[INFO] 02:44:20:797 GameCard PAPAA/(23066:23073): Se esta analizando el block: 8
+[INFO] 02:44:20:816 GameCard PAPAA/(23066:23073): Encontro el block donde esta la posicion: 8
+[INFO] 02:44:20:842 GameCard PAPAA/(23066:23073): El bloque en el que se encuentra es: 8
+[INFO] 02:44:20:847 GameCard PAPAA/(23066:23073): La ruta del block es: /home/utnso/Escritorio/tall-grass/Blocks/8.bin
+[INFO] 02:44:20:865 GameCard PAPAA/(23066:23073): La cantidad de pokemons en el la posicion 69-69 es: 1
+[INFO] 02:44:20:866 GameCard PAPAA/(23066:23073): La cantidad de pokemons en esa posicion es 1
+[INFO] 02:44:20:882 GameCard PAPAA/(23066:23073): El valor del block es de: 1
+[INFO] 02:44:20:901 GameCard PAPAA/(23066:23073): El block fue desmarcado con el valor de: 0
+[INFO] 02:44:20:901 GameCard PAPAA/(23066:23073): Guardando el bitarray
+[INFO] 02:44:20:904 GameCard PAPAA/(23066:23073): Termino el guardado
+[INFO] 02:44:20:923 GameCard PAPAA/(23066:23073): No hay mas bloques
+[INFO] 02:44:20:933 GameCard PAPAA/(23066:23073): Dicha posicion es la ultima en el block por lo que se marco el block como libre y se elimino la linea
+[INFO] 02:44:20:961 GameCard PAPAA/(23066:23073): El ID de mensaje cargado en el caught es: 6
+[INFO] 02:44:20:974 GameCard PAPAA/(23066:23073): El Flag cargado en el caught es: 1
+[INFO] 02:44:25:989 GameCard PAPAA/(23066:23073): El ID cargado es 6
+[INFO] 02:44:26:11 GameCard PAPAA/(23066:23073): El flag cargado es 1
+[INFO] 02:44:26:31 GameCard PAPAA/(23066:23073): Creando paquete
+[INFO] 02:44:26:37 GameCard PAPAA/(23066:23073): CODIGO DE OPERACION: 4
+[INFO] 02:44:26:37 GameCard PAPAA/(23066:23073): Paquete Creado
+[INFO] 02:44:26:38 GameCard PAPAA/(23066:23073): la operacion a realizar es 4
+[INFO] 02:44:26:46 GameCard PAPAA/(23066:23073): Serializando...
+[INFO] 02:44:26:55 GameCard PAPAA/(23066:23073): Serializacion completa
+[INFO] 02:44:26:88 GameCard PAPAA/(23066:23073): El peso total es: 8
+[ERROR] 02:44:26:112 GameCard PAPAA/(23066:23073): Error: No se pudo enviar el mensaje
+[INFO] 02:44:28:362 GameCard PAPAA/(23066:23071): Iniciando verificacion de conexion con Broker...
+[ERROR] 02:44:28:376 GameCard PAPAA/(23066:23071): Reconexion con Broker fallida, intentando nuevamente en 10 segundos

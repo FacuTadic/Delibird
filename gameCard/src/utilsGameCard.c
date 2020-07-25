@@ -132,6 +132,7 @@ char* buscarPosicionDisponibleEnElBitMap() {
 }
 
 
+
 void desmarcarBloqueBitmap(char* block){
 		uint32_t index = atoi(block);
 		uint32_t estadoBloque =bitarray_test_bit(bitarray, index);
@@ -139,6 +140,7 @@ void desmarcarBloqueBitmap(char* block){
 		bitarray_clean_bit(bitarray, index);
 		estadoBloque =bitarray_test_bit(bitarray, index);
 		log_info(loggerDev, "El block fue desmarcado con el valor de: %i",estadoBloque);
+		guardarBitarray(index);
 }
 
 
