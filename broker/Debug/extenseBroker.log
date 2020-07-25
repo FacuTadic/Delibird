@@ -1,0 +1,184 @@
+[INFO] 23:35:46:533 Broker/(4292:4292): logger extenso iniciado
+[INFO] 23:35:46:534 Broker/(4292:4292): logger de la catedra iniciado
+[INFO] 23:35:46:534 Broker/(4292:4292): La IP es: 127.0.0.1
+[INFO] 23:35:46:534 Broker/(4292:4292): El puerto es: 4444
+[INFO] 23:35:46:534 Broker/(4292:4292): El tamanio de la memoria es 2048
+[INFO] 23:35:46:534 Broker/(4292:4292): La frecuencia de la compactacion es 5
+[INFO] 23:35:46:534 Broker/(4292:4292): El tamanio minimo de la particion es 32
+[INFO] 23:35:46:534 Broker/(4292:4292): El algoritmo de busqueda de particiones libres es FF
+[INFO] 23:35:46:534 Broker/(4292:4292): El algoritmo de reemplazo de particiones es FIFO
+[INFO] 23:35:46:534 Broker/(4292:4292): Iniciando colas
+[INFO] 23:35:46:534 Broker/(4292:4292): Colas iniciadas
+[INFO] 23:35:46:534 Broker/(4292:4292): Iniciando listas de suscriptores
+[INFO] 23:35:46:534 Broker/(4292:4292): Listas de suscriptores iniciadas
+[INFO] 23:35:46:534 Broker/(4292:4292): Iniciando listas de ids respondidos
+[INFO] 23:35:46:534 Broker/(4292:4292): Listas de ids respondidos iniciadas
+[INFO] 23:35:46:535 Broker/(4292:4292): Iniciando estructuras de colas
+[INFO] 23:35:46:535 Broker/(4292:4292): Estructuras de colas iniciadas
+[INFO] 23:35:46:535 Broker/(4292:4292): Iniciando limites de colas
+[INFO] 23:35:46:535 Broker/(4292:4292): Limites de colas iniciadas
+[INFO] 23:35:46:535 Broker/(4292:4292): Iniciando semaforos de limite
+[INFO] 23:35:46:535 Broker/(4292:4292): Semaforos de limite iniciados
+[INFO] 23:35:46:535 Broker/(4292:4292): Iniciando semaforos de mensajes
+[INFO] 23:35:46:535 Broker/(4292:4292): Semaforos de mensajes iniciados
+[INFO] 23:35:46:535 Broker/(4292:4292): Iniciando semaforos de colas
+[INFO] 23:35:46:535 Broker/(4292:4292): Semaforos de colas iniciados
+[INFO] 23:35:46:535 Broker/(4292:4292): Iniciando semaforos de listas
+[INFO] 23:35:46:535 Broker/(4292:4292): Semaforos de listas iniciados
+[INFO] 23:35:46:535 Broker/(4292:4292): Iniciando semaforos de ids respondidos
+[INFO] 23:35:46:535 Broker/(4292:4292): Semaforos de ids respondidos iniciados
+[INFO] 23:35:46:535 Broker/(4292:4292): Creando generador id
+[INFO] 23:35:46:536 Broker/(4292:4292): Generador id creado
+[INFO] 23:35:46:536 Broker/(4292:4292): Levantando servidor
+[INFO] 23:35:46:536 Broker/(4292:4292): Servidor levantado
+[INFO] 23:35:46:536 Broker/(4292:4299): Atendiendo cola LOCALIZED
+[INFO] 23:35:46:536 Broker/(4292:4298): Atendiendo cola GET
+[INFO] 23:35:46:536 Broker/(4292:4297): Atendiendo cola CAUGHT
+[INFO] 23:35:46:536 Broker/(4292:4296): Atendiendo cola CATCH
+[INFO] 23:35:46:536 Broker/(4292:4295): Atendiendo cola APPEARED
+[INFO] 23:35:46:536 Broker/(4292:4294): Atendiendo cola NEW
+[INFO] 23:35:46:536 Broker/(4292:4293): Esperando clientes en socket 5
+[INFO] 23:38:31:829 Broker/(4522:4522): logger extenso iniciado
+[INFO] 23:38:31:829 Broker/(4522:4522): logger de la catedra iniciado
+[INFO] 23:38:31:829 Broker/(4522:4522): La IP es: 127.0.0.1
+[INFO] 23:38:31:829 Broker/(4522:4522): El puerto es: 4444
+[INFO] 23:38:31:830 Broker/(4522:4522): El tamanio de la memoria es 4096
+[INFO] 23:38:31:830 Broker/(4522:4522): La frecuencia de la compactacion es 10
+[INFO] 23:38:31:830 Broker/(4522:4522): El tamanio minimo de la particion es 4
+[INFO] 23:38:31:830 Broker/(4522:4522): El algoritmo de busqueda de particiones libres es FF
+[INFO] 23:38:31:830 Broker/(4522:4522): El algoritmo de reemplazo de particiones es FIFO
+[INFO] 23:38:31:830 Broker/(4522:4522): Iniciando colas
+[INFO] 23:38:31:830 Broker/(4522:4522): Colas iniciadas
+[INFO] 23:38:31:833 Broker/(4522:4522): Iniciando listas de suscriptores
+[INFO] 23:38:31:833 Broker/(4522:4522): Listas de suscriptores iniciadas
+[INFO] 23:38:31:833 Broker/(4522:4522): Iniciando listas de ids respondidos
+[INFO] 23:38:31:833 Broker/(4522:4522): Listas de ids respondidos iniciadas
+[INFO] 23:38:31:833 Broker/(4522:4522): Iniciando estructuras de colas
+[INFO] 23:38:31:833 Broker/(4522:4522): Estructuras de colas iniciadas
+[INFO] 23:38:31:833 Broker/(4522:4522): Iniciando limites de colas
+[INFO] 23:38:31:833 Broker/(4522:4522): Limites de colas iniciadas
+[INFO] 23:38:31:833 Broker/(4522:4522): Iniciando semaforos de limite
+[INFO] 23:38:31:833 Broker/(4522:4522): Semaforos de limite iniciados
+[INFO] 23:38:31:833 Broker/(4522:4522): Iniciando semaforos de mensajes
+[INFO] 23:38:31:833 Broker/(4522:4522): Semaforos de mensajes iniciados
+[INFO] 23:38:31:833 Broker/(4522:4522): Iniciando semaforos de colas
+[INFO] 23:38:31:833 Broker/(4522:4522): Semaforos de colas iniciados
+[INFO] 23:38:31:833 Broker/(4522:4522): Iniciando semaforos de listas
+[INFO] 23:38:31:833 Broker/(4522:4522): Semaforos de listas iniciados
+[INFO] 23:38:31:833 Broker/(4522:4522): Iniciando semaforos de ids respondidos
+[INFO] 23:38:31:833 Broker/(4522:4522): Semaforos de ids respondidos iniciados
+[INFO] 23:38:31:833 Broker/(4522:4522): Creando generador id
+[INFO] 23:38:31:833 Broker/(4522:4522): Generador id creado
+[INFO] 23:38:31:833 Broker/(4522:4522): Levantando servidor
+[INFO] 23:38:31:833 Broker/(4522:4522): Servidor levantado
+[INFO] 23:38:31:833 Broker/(4522:4529): Atendiendo cola LOCALIZED
+[INFO] 23:38:31:834 Broker/(4522:4528): Atendiendo cola GET
+[INFO] 23:38:31:834 Broker/(4522:4527): Atendiendo cola CAUGHT
+[INFO] 23:38:31:834 Broker/(4522:4526): Atendiendo cola CATCH
+[INFO] 23:38:31:834 Broker/(4522:4525): Atendiendo cola APPEARED
+[INFO] 23:38:31:834 Broker/(4522:4524): Atendiendo cola NEW
+[INFO] 23:38:31:834 Broker/(4522:4523): Esperando clientes en socket 5
+[INFO] 23:44:25:814 Broker/(4705:4705): logger extenso iniciado
+[INFO] 23:44:25:814 Broker/(4705:4705): logger de la catedra iniciado
+[INFO] 23:44:25:814 Broker/(4705:4705): La IP es: 127.0.0.1
+[INFO] 23:44:25:815 Broker/(4705:4705): El puerto es: 4444
+[INFO] 23:44:25:815 Broker/(4705:4705): El tamanio de la memoria es 4096
+[INFO] 23:44:25:815 Broker/(4705:4705): La frecuencia de la compactacion es 10
+[INFO] 23:44:25:815 Broker/(4705:4705): El tamanio minimo de la particion es 4
+[INFO] 23:44:25:815 Broker/(4705:4705): El algoritmo de busqueda de particiones libres es FF
+[INFO] 23:44:25:815 Broker/(4705:4705): El algoritmo de reemplazo de particiones es FIFO
+[INFO] 23:44:25:815 Broker/(4705:4705): Iniciando colas
+[INFO] 23:44:25:815 Broker/(4705:4705): Colas iniciadas
+[INFO] 23:44:25:815 Broker/(4705:4705): Iniciando listas de suscriptores
+[INFO] 23:44:25:815 Broker/(4705:4705): Listas de suscriptores iniciadas
+[INFO] 23:44:25:815 Broker/(4705:4705): Iniciando listas de ids respondidos
+[INFO] 23:44:25:815 Broker/(4705:4705): Listas de ids respondidos iniciadas
+[INFO] 23:44:25:815 Broker/(4705:4705): Iniciando estructuras de colas
+[INFO] 23:44:25:815 Broker/(4705:4705): Estructuras de colas iniciadas
+[INFO] 23:44:25:815 Broker/(4705:4705): Iniciando limites de colas
+[INFO] 23:44:25:816 Broker/(4705:4705): Limites de colas iniciadas
+[INFO] 23:44:25:816 Broker/(4705:4705): Iniciando semaforos de limite
+[INFO] 23:44:25:816 Broker/(4705:4705): Semaforos de limite iniciados
+[INFO] 23:44:25:816 Broker/(4705:4705): Iniciando semaforos de mensajes
+[INFO] 23:44:25:816 Broker/(4705:4705): Semaforos de mensajes iniciados
+[INFO] 23:44:25:816 Broker/(4705:4705): Iniciando semaforos de colas
+[INFO] 23:44:25:816 Broker/(4705:4705): Semaforos de colas iniciados
+[INFO] 23:44:25:816 Broker/(4705:4705): Iniciando semaforos de listas
+[INFO] 23:44:25:816 Broker/(4705:4705): Semaforos de listas iniciados
+[INFO] 23:44:25:816 Broker/(4705:4705): Iniciando semaforos de ids respondidos
+[INFO] 23:44:25:816 Broker/(4705:4705): Semaforos de ids respondidos iniciados
+[INFO] 23:44:25:816 Broker/(4705:4705): Creando generador id
+[INFO] 23:44:25:816 Broker/(4705:4705): Generador id creado
+[INFO] 23:44:25:816 Broker/(4705:4705): Levantando servidor
+[INFO] 23:44:25:817 Broker/(4705:4705): Servidor levantado
+[INFO] 23:44:25:817 Broker/(4705:4712): Atendiendo cola LOCALIZED
+[INFO] 23:44:25:817 Broker/(4705:4711): Atendiendo cola GET
+[INFO] 23:44:25:817 Broker/(4705:4710): Atendiendo cola CAUGHT
+[INFO] 23:44:25:817 Broker/(4705:4709): Atendiendo cola CATCH
+[INFO] 23:44:25:817 Broker/(4705:4708): Atendiendo cola APPEARED
+[INFO] 23:44:25:817 Broker/(4705:4707): Atendiendo cola NEW
+[INFO] 23:44:25:817 Broker/(4705:4706): Esperando clientes en socket 5
+[INFO] 23:44:27:1 Broker/(4705:4706): Socket cliente 7 aceptado
+[INFO] 23:44:27:2 Broker/(4705:4714): Recibiendo codigo de operacion de socket 7
+[WARNING] 23:44:28:245 Broker/(4705:4714): El cliente acaba de cerrar la conexion correspondiente al socket 7
+[INFO] 23:51:22:377 Broker/(5281:5281): logger extenso iniciado
+[INFO] 23:51:22:377 Broker/(5281:5281): logger de la catedra iniciado
+[INFO] 23:51:22:377 Broker/(5281:5281): La IP es: 127.0.0.1
+[INFO] 23:51:22:377 Broker/(5281:5281): El puerto es: 4444
+[INFO] 23:51:22:377 Broker/(5281:5281): El tamanio de la memoria es 4096
+[INFO] 23:51:22:377 Broker/(5281:5281): La frecuencia de la compactacion es 10
+[INFO] 23:51:22:377 Broker/(5281:5281): El tamanio minimo de la particion es 4
+[INFO] 23:51:22:377 Broker/(5281:5281): El algoritmo de busqueda de particiones libres es FF
+[INFO] 23:51:22:378 Broker/(5281:5281): El algoritmo de reemplazo de particiones es FIFO
+[INFO] 23:51:22:378 Broker/(5281:5281): Iniciando colas
+[INFO] 23:51:22:378 Broker/(5281:5281): Colas iniciadas
+[INFO] 23:51:22:378 Broker/(5281:5281): Iniciando listas de suscriptores
+[INFO] 23:51:22:378 Broker/(5281:5281): Listas de suscriptores iniciadas
+[INFO] 23:51:22:378 Broker/(5281:5281): Iniciando listas de ids respondidos
+[INFO] 23:51:22:378 Broker/(5281:5281): Listas de ids respondidos iniciadas
+[INFO] 23:51:22:378 Broker/(5281:5281): Iniciando estructuras de colas
+[INFO] 23:51:22:378 Broker/(5281:5281): Estructuras de colas iniciadas
+[INFO] 23:51:22:378 Broker/(5281:5281): Iniciando limites de colas
+[INFO] 23:51:22:378 Broker/(5281:5281): Limites de colas iniciadas
+[INFO] 23:51:22:378 Broker/(5281:5281): Iniciando semaforos de limite
+[INFO] 23:51:22:378 Broker/(5281:5281): Semaforos de limite iniciados
+[INFO] 23:51:22:378 Broker/(5281:5281): Iniciando semaforos de mensajes
+[INFO] 23:51:22:378 Broker/(5281:5281): Semaforos de mensajes iniciados
+[INFO] 23:51:22:378 Broker/(5281:5281): Iniciando semaforos de colas
+[INFO] 23:51:22:379 Broker/(5281:5281): Semaforos de colas iniciados
+[INFO] 23:51:22:379 Broker/(5281:5281): Iniciando semaforos de listas
+[INFO] 23:51:22:379 Broker/(5281:5281): Semaforos de listas iniciados
+[INFO] 23:51:22:379 Broker/(5281:5281): Iniciando semaforos de ids respondidos
+[INFO] 23:51:22:379 Broker/(5281:5281): Semaforos de ids respondidos iniciados
+[INFO] 23:51:22:379 Broker/(5281:5281): Creando generador id
+[INFO] 23:51:22:379 Broker/(5281:5281): Generador id creado
+[INFO] 23:51:22:379 Broker/(5281:5281): Levantando servidor
+[INFO] 23:51:22:379 Broker/(5281:5281): Servidor levantado
+[INFO] 23:51:22:379 Broker/(5281:5288): Atendiendo cola LOCALIZED
+[INFO] 23:51:22:379 Broker/(5281:5287): Atendiendo cola GET
+[INFO] 23:51:22:379 Broker/(5281:5286): Atendiendo cola CAUGHT
+[INFO] 23:51:22:380 Broker/(5281:5285): Atendiendo cola CATCH
+[INFO] 23:51:22:380 Broker/(5281:5284): Atendiendo cola APPEARED
+[INFO] 23:51:22:380 Broker/(5281:5283): Atendiendo cola NEW
+[INFO] 23:51:22:380 Broker/(5281:5282): Esperando clientes en socket 5
+[INFO] 23:52:07:40 Broker/(5281:5282): Socket cliente 7 aceptado
+[INFO] 23:52:07:46 Broker/(5281:5309): Recibiendo codigo de operacion de socket 7
+[WARNING] 23:52:07:198 Broker/(5281:5309): El cliente acaba de cerrar la conexion correspondiente al socket 7
+[INFO] 23:54:13:416 Broker/(5281:5282): Socket cliente 8 aceptado
+[INFO] 23:54:13:419 Broker/(5281:5386): Recibiendo codigo de operacion de socket 8
+[INFO] 23:54:13:419 Broker/(5281:5386): Codigo de operacion de socket 8 recibido: 5
+[INFO] 23:54:13:419 Broker/(5281:5386): Generando id para el mensaje del socket 8
+[INFO] 23:54:13:419 Broker/(5281:5386): El id generado es 1
+[INFO] 23:54:13:419 Broker/(5281:5386): Codigo de operacion recibido del socket cliente 8 corresponde a un GET
+[INFO] 23:54:13:419 Broker/(5281:5386): Recibiendo tamanio total
+[INFO] 23:54:13:419 Broker/(5281:5386): Tamanio total recibido: 12
+[INFO] 23:54:13:419 Broker/(5281:5386): Tamanio del pokemon recibido: 8
+[INFO] 23:54:13:419 Broker/(5281:5386): Nombre del pokemon recibido: pikachu
+[INFO] 23:54:13:420 Broker/(5281:5386): Encolando el mensaje GET con id 1
+[INFO] 23:54:13:420 Broker/(5281:5386): Mensaje GET con id 1 encolado
+[INFO] 23:54:13:420 Broker/(5281:5287): Atendiendo mensaje GET con id 1
+[INFO] 23:54:13:420 Broker/(5281:5287): Guardando mensaje con id 1 en particion 0x830dfc0
+[INFO] 23:54:13:420 Broker/(5281:5287): Eliminando mensaje GET con id 1
+[INFO] 23:54:13:420 Broker/(5281:5287): Eliminado mensaje GET con id 1
+[INFO] 23:54:13:420 Broker/(5281:5386): Retornando id 1 al socket 8
+[ERROR] 23:54:13:420 Broker/(5281:5386): Hubo un problema retornando el id 1 al socket 8
