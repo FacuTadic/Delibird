@@ -45,8 +45,10 @@ void* serializar_paquete(t_paquete* paquete, uint32_t *bytes)
 
 t_paquete* crearPaquete(t_buffer* buffer){
 	t_paquete* paquete = malloc(sizeof(t_paquete));
-	paquete->buffer = malloc(buffer->size + sizeof(buffer->size));
-	memcpy (paquete->buffer,  buffer, buffer->size + sizeof(uint32_t));
+	paquete->buffer = malloc(sizeof(t_buffer));
+	memcpy(paquete->buffer,  buffer, buffer->size + sizeof(uint32_t));
+	free(buffer->stream);
+	free(buffer);
 	return paquete;
 }
 
@@ -494,8 +496,6 @@ void enviar_mensaje(char* argv[], int socket_cliente){
 	}
 
 	free(flujo);
-	free(buffer->stream);
-	free(buffer);
 	free(paquete);
 }
 

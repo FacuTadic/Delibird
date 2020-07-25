@@ -101,6 +101,11 @@ int main(int argc,char*argv[]){
 		int tiempoSuscripcion = atoi(argv[4]);
 		sleep(tiempoSuscripcion);
 	}
+
+
+	free(ipNombre);
+	free(puerto);
+
 	terminar_programa(conexion);
 
 }
