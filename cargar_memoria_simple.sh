@@ -1,3 +1,3 @@
 #!/bin/sh
-./GameBoy/Debug/Gameboy BROKER GET_POKEMON Pikachu
-./GameBoy/Debug/Gameboy BROKER GET_POKEMON Charmander
+./GameBoy/Debug/GameBoy BROKER GET_POKEMON Pikachu
+./GameBoy/Debug/GameBoy BROKER GET_POKEMON Charmander

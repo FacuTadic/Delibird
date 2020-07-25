@@ -54,3 +54,8 @@
 [INFO] 21:08:26:754 Broker/(4821:4822): Nueva conexion de un proceso con socket cliente 7
 [INFO] 21:08:26:760 Broker/(4821:5082): Mensaje APPEARED con id 3 encolado
 [INFO] 21:08:26:760 Broker/(4821:4824): Guardando mensaje con id 3 en particion 0x97da008
+[INFO] 23:44:27:1 Broker/(4705:4706): Nueva conexion de un proceso con socket cliente 7
+[INFO] 23:52:07:40 Broker/(5281:5282): Nueva conexion de un proceso con socket cliente 7
+[INFO] 23:54:13:417 Broker/(5281:5282): Nueva conexion de un proceso con socket cliente 8
+[INFO] 23:54:13:420 Broker/(5281:5386): Mensaje GET con id 1 encolado
+[INFO] 23:54:13:420 Broker/(5281:5287): Guardando mensaje con id 1 en particion 0x830dfc0
