@@ -108,7 +108,6 @@ char* buscarPosicionDisponibleEnElBitMap() {
 
 	for (i = 0; i < cantidadDeBloques; i++) {
 
-		log_info(loggerDev, "A");
 		if (flag_free_block == 0) {
 
 			if (bitarray_test_bit(bitarray, i) == 0) {
