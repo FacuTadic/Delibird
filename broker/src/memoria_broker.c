@@ -663,16 +663,18 @@ t_list* obtener_segmentos_caught(uint32_t id_cliente) {
 }
 
 void dump_cache(int signal) {
-	char* fileName = "dump_";
+	char* file_name = string_new();
 	char* fecha = temporal_get_string_time();
-	string_append(&fileName, fecha);
-	string_append(&fileName, ".txt");
 
-	FILE* archivo_dump = txt_open_for_append(fileName);
+	string_append(&file_name, "dump_");
+	string_append(&file_name, fecha);
+	string_append(&file_name, ".txt");
+
+	FILE* archivo_dump = txt_open_for_append(file_name);
 
 	if (archivo_dump == NULL) {
 		log_error(extense_logger_memoria, "No se ha podido hacer el dump de la memoria, ha ocurrido un problema al crear el archivo de dump");
-		free(fileName);
+		free(file_name);
 		free(fecha);
 		txt_close_file(archivo_dump);
 	} else {
@@ -690,7 +692,7 @@ void dump_cache(int signal) {
 					// la cagamos
 					log_error(extense_logger_memoria, "El dump de la memoria se ha detenido abruptamente, no se ha encontrado la particion comenzada en %06p", particion);
 					free(dump);
-					free(fileName);
+					free(file_name);
 					free(fecha);
 					txt_close_file(archivo_dump);
 				} else {

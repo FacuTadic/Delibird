@@ -102,7 +102,7 @@ void procesar_request(int cod_op, int cliente_fd) {
 		pthread_exit(NULL);
 	} else {
 		pthread_mutex_lock(&gl_caught_ids_lock);
-		int ya_fue_respondido = contiene_al_id_respondido(gl_caught_ids_respondidos, appeared_msg->id_correlativo);
+		int ya_fue_respondido = contiene_al_id_respondido(gl_caught_ids_respondidos, caught_msg->id_correlativo);
 		pthread_mutex_unlock(&gl_caught_ids_lock);
 		if (ya_fue_respondido == 0) {
 			mensaje_a_guardar->mensaje = (void*) caught_msg;
@@ -162,7 +162,7 @@ void procesar_request(int cod_op, int cliente_fd) {
 		pthread_exit(NULL);
 	} else {
 		pthread_mutex_lock(&gl_localized_ids_lock);
-		int ya_fue_respondido = contiene_al_id_respondido(gl_localized_ids_respondidos, appeared_msg->id_correlativo);
+		int ya_fue_respondido = contiene_al_id_respondido(gl_localized_ids_respondidos, localized_msg->id_correlativo);
 		pthread_mutex_unlock(&gl_localized_ids_lock);
 
 		if (ya_fue_respondido == 0) {
