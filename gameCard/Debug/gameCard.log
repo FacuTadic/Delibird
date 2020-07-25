@@ -1,0 +1,22 @@
+[INFO] 22:58:20:162 GameCard/(3545:3545): logger iniciado.
+[INFO] 22:58:20:163 GameCard/(3545:3545): Lenavando el Tall Grass
+[INFO] 22:58:20:168 GameCard/(3545:3545): Punto de montaje del directorio Metadata es: /home/utnso/Escritorio/tall-grass/Metadata
+[INFO] 22:58:20:168 GameCard/(3545:3545): El BitMap se encuentra en: /home/utnso/Escritorio/tall-grass/Metadata/BitMap.bin
+[INFO] 22:58:20:168 GameCard/(3545:3545): Punto de montaje del directorio Files es: /home/utnso/Escritorio/tall-grass/Files
+[INFO] 22:58:20:168 GameCard/(3545:3545): Punto de montaje del directorio Blocks es: /home/utnso/Escritorio/tall-grass/Blocks
+[INFO] 22:59:05:560 GameCard/(3665:3665): logger iniciado.
+[INFO] 22:59:05:561 GameCard/(3665:3665): Lenavando el Tall Grass
+[INFO] 22:59:05:562 GameCard/(3665:3665): Punto de montaje del directorio Metadata es: /home/utnso/Escritorio/tall-grass/Metadata
+[INFO] 22:59:05:562 GameCard/(3665:3665): El BitMap se encuentra en: /home/utnso/Escritorio/tall-grass/Metadata/BitMap.bin
+[INFO] 22:59:05:562 GameCard/(3665:3665): Punto de montaje del directorio Files es: /home/utnso/Escritorio/tall-grass/Files
+[INFO] 22:59:05:562 GameCard/(3665:3665): Punto de montaje del directorio Blocks es: /home/utnso/Escritorio/tall-grass/Blocks
+[INFO] 22:59:08:338 GameCard/(3665:3686): La posicion 29-37 no se encuentra en ningun bloque actual
+[INFO] 22:59:08:339 GameCard/(3665:3686): Calculando el peso de: 6
+[INFO] 22:59:08:339 GameCard/(3665:3686): El archivo block pesa: 7
+[INFO] 22:59:08:339 GameCard/(3665:3686): El KEY-VALUE para agregar pesa: 4
+[INFO] 22:59:08:339 GameCard/(3665:3686): Puede cargarse en el bloque
+[INFO] 22:59:08:341 GameCard/(3665:3686): El bloque seleccionado para cargar es: 6
+[INFO] 22:59:08:341 GameCard/(3665:3686): Se selecciono el bloque 6 para cargar la posicion
+[INFO] 22:59:08:341 GameCard/(3665:3686): Posicion agregada en el block 6
+[INFO] 22:59:08:341 GameCard/(3665:3686): El archivo 6 pesa: 15
+[INFO] 22:59:08:341 GameCard/(3665:3686): El peso total de los blocks es de: 15

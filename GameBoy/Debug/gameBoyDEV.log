@@ -1,0 +1,31 @@
+[INFO] 22:58:22:218 Game-watch-client/(3557:3557): logger DEV iniciado.
+[INFO] 22:58:22:219 Game-watch-client/(3557:3557): logger GameBoy iniciado.
+[INFO] 22:58:22:219 Game-watch-client/(3557:3557): Config cargada.
+[INFO] 22:58:22:219 Game-watch-client/(3557:3557): EL modulo solicitado para comunicacion es: GAMECARD
+[INFO] 22:59:08:312 Game-watch-client/(3685:3685): logger DEV iniciado.
+[INFO] 22:59:08:312 Game-watch-client/(3685:3685): logger GameBoy iniciado.
+[INFO] 22:59:08:312 Game-watch-client/(3685:3685): Config cargada.
+[INFO] 22:59:08:312 Game-watch-client/(3685:3685): EL modulo solicitado para comunicacion es: GAMECARD
+[INFO] 22:59:08:312 Game-watch-client/(3685:3685): La IP de GAMECARD es IP_GAMECARD
+[INFO] 22:59:08:312 Game-watch-client/(3685:3685): El PUERTO de GAMECARD es IP_GAMECARD
+[INFO] 22:59:08:312 Game-watch-client/(3685:3685): La ID del modulo GameBoy es: 6
+[INFO] 22:59:08:313 Game-watch-client/(3685:3685): Creando buffer
+[INFO] 22:59:08:313 Game-watch-client/(3685:3685): MENSAJE PARA ENVIAR ES: NEW_POKEMON
+[INFO] 22:59:08:313 Game-watch-client/(3685:3685): EL NUMERO DE MENSAJE ES: 1
+[INFO] 22:59:08:313 Game-watch-client/(3685:3685): El ID convertido es 99
+[INFO] 22:59:08:313 Game-watch-client/(3685:3685): El ID de Mensaje copiado es 99
+[INFO] 22:59:08:313 Game-watch-client/(3685:3685): EL offset quedo en: 4
+[INFO] 22:59:08:313 Game-watch-client/(3685:3685): Tamanio nombre pokemon 11
+[INFO] 22:59:08:313 Game-watch-client/(3685:3685): Nombre pokemon charmander
+[INFO] 22:59:08:313 Game-watch-client/(3685:3685): Posicion X 29
+[INFO] 22:59:08:313 Game-watch-client/(3685:3685): Posicion Y 37
+[INFO] 22:59:08:313 Game-watch-client/(3685:3685): Cantidad 1
+[INFO] 22:59:08:313 Game-watch-client/(3685:3685): Buffer creado
+[INFO] 22:59:08:313 Game-watch-client/(3685:3685): Creando paquete
+[INFO] 22:59:08:313 Game-watch-client/(3685:3685): Te mando el opcode: 1
+[INFO] 22:59:08:314 Game-watch-client/(3685:3685): CODIGO DE OPERACION: 1
+[INFO] 22:59:08:314 Game-watch-client/(3685:3685): Paquete Creado
+[INFO] 22:59:08:314 Game-watch-client/(3685:3685): la operacion a realizar es 1
+[INFO] 22:59:08:314 Game-watch-client/(3685:3685): Serializando...
+[INFO] 22:59:08:314 Game-watch-client/(3685:3685): Serializacion completa
+[INFO] 22:59:08:314 Game-watch-client/(3685:3685): El peso total es: 31
