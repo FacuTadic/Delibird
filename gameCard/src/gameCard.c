@@ -89,6 +89,8 @@ int main(void) {
 	pthread_mutex_init(&estoy_conectado_al_broker_mutex, NULL);
 	pthread_mutex_init(&estoy_leyendo_metadata_mutex,NULL);
 
+	sem_init(&bloques_bitmap,0,1);
+
 
 	//################################################## 	CONEXION 	###############################################################################
 
@@ -133,4 +135,5 @@ void terminar_programa(){
 	free(rutaFiles);
 	free(rutaBlocks);
 	free(bitMap);
+	sem_destroy(&bloques_bitmap);
 }

@@ -60,7 +60,6 @@ t_buffer* crearBufferAppeared(t_appeared* appearedAEnviar){
 	offset += sizeof(uint32_t);
 	log_info(loggerDevEstructuras, "Posicion Y %i", posY);
 
-	free(nombrePokemon);
 
 	return bufferAppeared;
 }

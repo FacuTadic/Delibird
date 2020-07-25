@@ -103,25 +103,39 @@ char* buscarPosicionDisponibleEnElBitMap() {
 
 	log_info(loggerDev, "Entro a buscar posiciones");
 
-	//sem_wait(&bloques_bitmap);
+	sem_wait(&bloques_bitmap);
 	log_info(loggerDev, "Bloqueo");
 
+	log_info(loggerDev, "EL valor de i es de : %i",i);
+	log_info(loggerDev, "EL valor de cant de bloques es de : %i",cantidadDeBloques);
+
 	for (i = 0; i < cantidadDeBloques; i++) {
+		log_info(loggerDev, "EL valor de i es de : %i",i);
+		log_info(loggerDev, "EL valor de cant de bloques es de : %i",cantidadDeBloques);
+
 
 		if (flag_free_block == 0) {
+			log_info(loggerDev, "Entro primer IF");
 
 			if (bitarray_test_bit(bitarray, i) == 0) {
+				log_info(loggerDev, "Entro segundo IF");
 				flag_free_block = 1;
 				free_block = i;
 				bitarray_set_bit(bitarray, i);
 				guardarBitarray(i);
-				//sem_post(&bloques_bitmap);
+				sem_post(&bloques_bitmap);
 				char* block = string_itoa(free_block);
 				log_info(loggerDev, "EL block %s esta libre",block);
 				log_info(loggerGameCard, "El bloque seleccionado para cargar es: %i",free_block);
 				return block;
 			}
 		}
+
+		log_info(loggerDev, "EL valor FINAL de i es de : %i",i);
+		log_info(loggerDev, "EL valor FINAL de cant de bloques es de : %i",cantidadDeBloques);
+
+
+
 	}
 	sem_post(&bloques_bitmap);
 
@@ -218,20 +232,22 @@ void procesarRequestDeGameBoy(int cod_op, int socketGameBoy) {
 
 void atenderGameBoy(int* socketGameBoy) {
 	uint32_t cod_op;
-	log_info(loggerDev, "Recibiendo codigo de operacion de GameBoy en socket %i", *socketGameBoy);
-	int status_recv = recv(*socketGameBoy, &cod_op, sizeof(uint32_t), MSG_WAITALL);
+	int socketCliente = *socketGameBoy;
+	free(socketGameBoy);
+	log_info(loggerDev, "Recibiendo codigo de operacion de GameBoy en socket %i", socketCliente);
+	int status_recv = recv(socketCliente, &cod_op, sizeof(uint32_t), MSG_WAITALL);
 	if (status_recv == -1) {
-		liberar_conexion(*socketGameBoy);
-		log_error(loggerDev, "Hubo un problema recibiendo codigo de operacion de GameBoy en socket %i", *socketGameBoy);
+		liberar_conexion(socketCliente);
+		log_error(loggerDev, "Hubo un problema recibiendo codigo de operacion de GameBoy en socket %i", socketCliente);
 		pthread_exit(NULL);
 	}
 	if (status_recv == 0) {
-		liberar_conexion(*socketGameBoy);
-		log_warning(loggerDev, "Game boy acaba de cerrar la conexion correspondiente al socket %i", *socketGameBoy);
+		liberar_conexion(socketCliente);
+		log_warning(loggerDev, "Game boy acaba de cerrar la conexion correspondiente al socket %i", socketCliente);
 		pthread_exit(NULL);
 	}
-	log_info(loggerDev, "Codigo de operacion de socket %i recibido: %i", *socketGameBoy, cod_op);
-	procesarRequestDeGameBoy(cod_op, *socketGameBoy);
+	log_info(loggerDev, "Codigo de operacion de socket %i recibido: %i", socketCliente, cod_op);
+	procesarRequestDeGameBoy(cod_op, socketCliente);
 }
 
 void esperarGameBoy(int socketEscuchaGameBoyPar) {
@@ -240,12 +256,18 @@ void esperarGameBoy(int socketEscuchaGameBoyPar) {
 	int tam_direccion = sizeof(struct sockaddr_in);
 
 	int socketCliente = accept(socketEscuchaGameBoyPar, (void*) &dir_cliente, &tam_direccion);
-	log_info(loggerDev, "Socket %i de gameBoy aceptado", socketEscuchaGameBoyPar);
+	log_info(loggerDev, "Socket %i de gameBoy aceptado", socketCliente);
 
-	pthread_t thread;
+	if(socketCliente != -1){
+		pthread_t thread;
 
-	pthread_create(&thread, NULL, (void*) atenderGameBoy, &socketCliente);
-	pthread_detach(thread);
+		int* socketSaraza = malloc(sizeof(int));
+		*socketSaraza = socketCliente;
+
+		pthread_create(&thread, NULL, (void*) atenderGameBoy, socketSaraza);
+		pthread_detach(thread);
+	}
+
 }
 
 void escucharGameBoy(void* socketEscuchaGameBoyPar) {
@@ -583,7 +605,6 @@ void validarPosicionesDeNew(t_config* archivoMetadataPokemon, char** blocksOcupa
 		t_config* archivoBlock = config_create(rutaDelBlock);
 		agregarCantidadSolicitadaAUnaKey(archivoBlock,posicion,cantidad);
 		config_destroy(archivoBlock);
-		free(block);
 		free(rutaDelBlock);
 	} else {
 		log_info(loggerGameCard, "La posicion %s no se encuentra en ningun bloque actual",posicion);
@@ -594,8 +615,6 @@ void validarPosicionesDeNew(t_config* archivoMetadataPokemon, char** blocksOcupa
 		log_info(loggerGameCard, "Posicion agregada en el block %s",blockOptimo);
 		log_info(loggerDev, "Actualizo Metadata");
 		actualizarBlockMetadata(archivoMetadataPokemon,blockOptimo);
-
-		free(blockOptimo);
 	}
 
 
@@ -630,7 +649,6 @@ bool validarPosicionesDeCatch(t_config* archivoMetadataPokemon, char** blocksOcu
 			}
 
 			config_destroy(archivoBlock);
-			free(block);
 			free(rutaDelBlock);
 			return true;
 
@@ -638,7 +656,6 @@ bool validarPosicionesDeCatch(t_config* archivoMetadataPokemon, char** blocksOcu
 			log_info(loggerDev, "Se decrementa en uno la posicion");
 			decrementarEnUnoEnLaPosicion(archivoBlock,posicion);
 			config_destroy(archivoBlock);
-			free(block);
 			free(rutaDelBlock);
 			return true;
 		}
@@ -714,8 +731,9 @@ void newPokemon(int socketCliente,t_newLlegada* new){
 		pthread_mutex_unlock(&estoy_leyendo_metadata_mutex);
 
 		log_info(loggerDev,"Paso el mutex");
-
-		validarPosicionesDeNew(archivoMetadataPokemon, blocksOcupados,posicion,cantidad);
+		log_info(loggerDev,"Posicion generada SEGUN LOG UTIL: %s",posicion);
+		log_info(loggerDevArchDir,"Posicion generada SEGUN LOG ArchYDir: %s",posicion);
+		validarPosicionesDeNew(archivoMetadataPokemon, blocksOcupados, posicion, cantidad);
 		actualizarSizeMetadataPokemon(archivoMetadataPokemon);
 
 	} else{
@@ -745,6 +763,11 @@ void newPokemon(int socketCliente,t_newLlegada* new){
 	free(directorioPokemon);
 	uint32_t indexParaBorrar = 0;
 	while(blocksOcupados[indexParaBorrar] != NULL){
+
+		if(blocksOcupados[indexParaBorrar] == NULL){
+			log_info(loggerDev,"EL BLOCK ES NULL");
+		}
+
 		free(blocksOcupados[indexParaBorrar]);
 		indexParaBorrar++;
 	}

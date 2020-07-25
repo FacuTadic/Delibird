@@ -395,7 +395,7 @@ void eliminarKeyValueDe(t_config* archivoBlock,char* posicion){
 }
 
 void agregarCantidadSolicitadaAUnaKey(t_config* archivo,char* key, uint32_t cantidad){
-	log_info(loggerGameCardArchDir, "Agregando %i pokemons a la posicion %i", key);
+	log_info(loggerGameCardArchDir, "Agregando %i pokemons a la posicion %s", cantidad, key);
 
 	uint32_t cantidadVieja= config_get_int_value(archivo,key);
 	log_info(loggerDevArchDir, "La cantidad vieja de la posicion %s dentro del metadata es de %i", key, cantidadVieja);
