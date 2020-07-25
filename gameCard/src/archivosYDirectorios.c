@@ -493,9 +493,16 @@ void obtenerTodasLasPosiciones(char** blocks, t_queue* posicionesPokemon){
 				string_append(&posicion,data[0]);
 				log_info(loggerGameCardArchDir, "Posicion: %s",posicion);
 				queue_push(posicionesPokemon, posicion);
+
+				uint32_t j = 0;
+				while(data[j] != NULL){
+					free(data[j]);
+					j++;
+				}
 				free(data);
 			}
 
+			free(rutaDeArchivo);
 			free(line);
 			fclose(fp);
 

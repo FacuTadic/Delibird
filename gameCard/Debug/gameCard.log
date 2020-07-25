@@ -419,3 +419,215 @@
 [INFO] 02:44:20:866 GameCard/(23066:23073): La cantidad de pokemons en el la posicion 69-69 es de 1
 [INFO] 02:44:20:868 GameCard/(23066:23073): La posicion 69-69 es la unica en el block 8. Se procede a eliminarlo
 [INFO] 02:44:20:940 GameCard/(23066:23073): El peso total de los blocks es de: 0
+[INFO] 02:48:47:217 GameCard/(23834:23834): logger iniciado.
+[INFO] 02:48:47:294 GameCard/(23834:23834): Lenavando el Tall Grass
+[INFO] 02:48:47:355 GameCard/(23834:23834): Punto de montaje del directorio Metadata es: /home/utnso/Escritorio/tall-grass/Metadata
+[INFO] 02:48:47:356 GameCard/(23834:23834): El BitMap se encuentra en: /home/utnso/Escritorio/tall-grass/Metadata/BitMap.bin
+[INFO] 02:48:47:356 GameCard/(23834:23834): Punto de montaje del directorio Files es: /home/utnso/Escritorio/tall-grass/Files
+[INFO] 02:48:47:357 GameCard/(23834:23834): Punto de montaje del directorio Blocks es: /home/utnso/Escritorio/tall-grass/Blocks
+[ERROR] 02:48:49:589 GameCard/(23834:23845): La posicion 7-9 se encuentra en el block 3
+[INFO] 02:48:49:635 GameCard/(23834:23845): La cantidad de pokemons en el la posicion 7-9 es de 2
+[INFO] 02:48:49:686 GameCard/(23834:23845): La cantidad vieja en la posicion 7-9 en el metadata es de: 2
+[INFO] 02:48:49:692 GameCard/(23834:23845): La cantidad nueva en la posicion 7-9 en el metadata es de: 1
+[INFO] 02:48:49:716 GameCard/(23834:23845): El archivo 3 pesa: 62
+[INFO] 02:48:49:759 GameCard/(23834:23845): El archivo 4 pesa: 6
+[INFO] 02:48:49:764 GameCard/(23834:23845): El peso total de los blocks es de: 68
+[INFO] 02:49:27:721 GameCard/(23915:23915): logger iniciado.
+[INFO] 02:49:27:794 GameCard/(23915:23915): Lenavando el Tall Grass
+[INFO] 02:49:27:854 GameCard/(23915:23915): Punto de montaje del directorio Metadata es: /home/utnso/Escritorio/tall-grass/Metadata
+[INFO] 02:49:27:855 GameCard/(23915:23915): El BitMap se encuentra en: /home/utnso/Escritorio/tall-grass/Metadata/BitMap.bin
+[INFO] 02:49:27:855 GameCard/(23915:23915): Punto de montaje del directorio Files es: /home/utnso/Escritorio/tall-grass/Files
+[INFO] 02:49:27:856 GameCard/(23915:23915): Punto de montaje del directorio Blocks es: /home/utnso/Escritorio/tall-grass/Blocks
+[ERROR] 02:49:30:727 GameCard/(23915:23930): La posicion 7-9 se encuentra en el block 3
+[INFO] 02:49:30:785 GameCard/(23915:23930): La cantidad de pokemons en el la posicion 7-9 es de 1
+[INFO] 02:49:30:836 GameCard/(23915:23930): El archivo 3 pesa: 56
+[INFO] 02:49:30:837 GameCard/(23915:23930): El archivo 4 pesa: 6
+[INFO] 02:49:30:838 GameCard/(23915:23930): El peso total de los blocks es de: 62
+[INFO] 02:58:47:841 GameCard/(24876:24876): logger iniciado.
+[INFO] 02:58:47:913 GameCard/(24876:24876): Lenavando el Tall Grass
+[INFO] 02:58:47:970 GameCard/(24876:24876): Punto de montaje del directorio Metadata es: /home/utnso/Escritorio/tall-grass/Metadata
+[INFO] 02:58:47:970 GameCard/(24876:24876): El BitMap se encuentra en: /home/utnso/Escritorio/tall-grass/Metadata/BitMap.bin
+[INFO] 02:58:47:971 GameCard/(24876:24876): Punto de montaje del directorio Files es: /home/utnso/Escritorio/tall-grass/Files
+[INFO] 02:58:47:971 GameCard/(24876:24876): Punto de montaje del directorio Blocks es: /home/utnso/Escritorio/tall-grass/Blocks
+[INFO] 02:58:49:412 GameCard/(24876:24887): Obteniendo las posiciones en las que se encuentra el pokemon
+[INFO] 02:58:49:427 GameCard/(24876:24887): El peso total de los blocks es de: 0
+[INFO] 02:59:15:267 GameCard/(24939:24939): logger iniciado.
+[INFO] 02:59:15:343 GameCard/(24939:24939): Lenavando el Tall Grass
+[INFO] 02:59:15:403 GameCard/(24939:24939): Punto de montaje del directorio Metadata es: /home/utnso/Escritorio/tall-grass/Metadata
+[INFO] 02:59:15:404 GameCard/(24939:24939): El BitMap se encuentra en: /home/utnso/Escritorio/tall-grass/Metadata/BitMap.bin
+[INFO] 02:59:15:404 GameCard/(24939:24939): Punto de montaje del directorio Files es: /home/utnso/Escritorio/tall-grass/Files
+[INFO] 02:59:15:405 GameCard/(24939:24939): Punto de montaje del directorio Blocks es: /home/utnso/Escritorio/tall-grass/Blocks
+[INFO] 02:59:17:791 GameCard/(24939:24950): Obteniendo las posiciones en las que se encuentra el pokemon
+[INFO] 02:59:17:818 GameCard/(24939:24950): El peso total de los blocks es de: 0
+[INFO] 02:59:52:994 GameCard/(25011:25011): logger iniciado.
+[INFO] 02:59:53:69 GameCard/(25011:25011): Lenavando el Tall Grass
+[INFO] 02:59:53:129 GameCard/(25011:25011): Punto de montaje del directorio Metadata es: /home/utnso/Escritorio/tall-grass/Metadata
+[INFO] 02:59:53:130 GameCard/(25011:25011): El BitMap se encuentra en: /home/utnso/Escritorio/tall-grass/Metadata/BitMap.bin
+[INFO] 02:59:53:130 GameCard/(25011:25011): Punto de montaje del directorio Files es: /home/utnso/Escritorio/tall-grass/Files
+[INFO] 02:59:53:131 GameCard/(25011:25011): Punto de montaje del directorio Blocks es: /home/utnso/Escritorio/tall-grass/Blocks
+[INFO] 02:59:55:848 GameCard/(25011:25022): Obteniendo las posiciones en las que se encuentra el pokemon
+[INFO] 02:59:55:875 GameCard/(25011:25022): Posicion: 5-9
+[INFO] 02:59:55:944 GameCard/(25011:25022): Posicion: 3-7
+[INFO] 02:59:55:954 GameCard/(25011:25022): Posicion: 4-9
+[INFO] 02:59:55:959 GameCard/(25011:25022): Posicion: 3-9
+[INFO] 02:59:55:967 GameCard/(25011:25022): Posicion: 6-9
+[INFO] 02:59:55:968 GameCard/(25011:25022): Posicion: 3-5
+[INFO] 02:59:55:2 GameCard/(25011:25022): Posicion: 8-9
+[INFO] 02:59:56:7 GameCard/(25011:25022): Posicion: 3-4
+[INFO] 02:59:56:31 GameCard/(25011:25022): Posicion: 3-6
+[INFO] 02:59:56:51 GameCard/(25011:25022): Posicion: 9-9
+[INFO] 02:59:56:67 GameCard/(25011:25022): El archivo 3 pesa: 56
+[INFO] 02:59:56:72 GameCard/(25011:25022): El archivo 4 pesa: 6
+[INFO] 02:59:56:78 GameCard/(25011:25022): El peso total de los blocks es de: 62
+[INFO] 03:16:33:931 GameCard/(27016:27016): logger iniciado.
+[INFO] 03:16:34:2 GameCard/(27016:27016): Lenavando el Tall Grass
+[INFO] 03:16:34:58 GameCard/(27016:27016): Punto de montaje del directorio Metadata es: /home/utnso/Escritorio/tall-grass/Metadata
+[INFO] 03:16:34:59 GameCard/(27016:27016): El BitMap se encuentra en: /home/utnso/Escritorio/tall-grass/Metadata/BitMap.bin
+[INFO] 03:16:34:59 GameCard/(27016:27016): Punto de montaje del directorio Files es: /home/utnso/Escritorio/tall-grass/Files
+[INFO] 03:16:34:60 GameCard/(27016:27016): Punto de montaje del directorio Blocks es: /home/utnso/Escritorio/tall-grass/Blocks
+[INFO] 03:16:35:820 GameCard/(27016:27027): Obteniendo las posiciones en las que se encuentra el pokemon
+[INFO] 03:16:35:896 GameCard/(27016:27027): Posicion: 5-9
+[INFO] 03:16:35:913 GameCard/(27016:27027): Posicion: 3-7
+[INFO] 03:16:35:926 GameCard/(27016:27027): Posicion: 4-9
+[INFO] 03:16:35:941 GameCard/(27016:27027): Posicion: 3-9
+[INFO] 03:16:35:942 GameCard/(27016:27027): Posicion: 6-9
+[INFO] 03:16:35:943 GameCard/(27016:27027): Posicion: 3-5
+[INFO] 03:16:35:981 GameCard/(27016:27027): Posicion: 8-9
+[INFO] 03:16:35:989 GameCard/(27016:27027): Posicion: 3-4
+[INFO] 03:16:35:990 GameCard/(27016:27027): Posicion: 3-6
+[INFO] 03:16:36:10 GameCard/(27016:27027): Posicion: 9-9
+[INFO] 03:16:36:34 GameCard/(27016:27027): El archivo 3 pesa: 56
+[INFO] 03:16:36:50 GameCard/(27016:27027): El archivo 4 pesa: 6
+[INFO] 03:16:36:52 GameCard/(27016:27027): El peso total de los blocks es de: 62
+[INFO] 03:23:55:489 GameCard/(27884:27884): logger iniciado.
+[INFO] 03:23:55:564 GameCard/(27884:27884): Lenavando el Tall Grass
+[INFO] 03:23:55:620 GameCard/(27884:27884): Punto de montaje del directorio Metadata es: /home/utnso/Escritorio/tall-grass/Metadata
+[INFO] 03:23:55:620 GameCard/(27884:27884): El BitMap se encuentra en: /home/utnso/Escritorio/tall-grass/Metadata/BitMap.bin
+[INFO] 03:23:55:621 GameCard/(27884:27884): Punto de montaje del directorio Files es: /home/utnso/Escritorio/tall-grass/Files
+[INFO] 03:23:55:621 GameCard/(27884:27884): Punto de montaje del directorio Blocks es: /home/utnso/Escritorio/tall-grass/Blocks
+[INFO] 03:24:09:110 GameCard/(27921:27921): logger iniciado.
+[INFO] 03:24:09:287 GameCard/(27921:27921): Lenavando el Tall Grass
+[INFO] 03:24:09:415 GameCard/(27921:27921): Punto de montaje del directorio Metadata es: /home/utnso/Escritorio/tall-grass/Metadata
+[INFO] 03:24:09:416 GameCard/(27921:27921): El BitMap se encuentra en: /home/utnso/Escritorio/tall-grass/Metadata/BitMap.bin
+[INFO] 03:24:09:416 GameCard/(27921:27921): Punto de montaje del directorio Files es: /home/utnso/Escritorio/tall-grass/Files
+[INFO] 03:24:09:417 GameCard/(27921:27921): Punto de montaje del directorio Blocks es: /home/utnso/Escritorio/tall-grass/Blocks
+[INFO] 03:24:10:976 GameCard/(27921:27932): Obteniendo las posiciones en las que se encuentra el pokemon
+[INFO] 03:24:11:109 GameCard/(27921:27932): Posicion: 5-9
+[INFO] 03:24:11:148 GameCard/(27921:27932): Posicion: 3-7
+[INFO] 03:24:11:150 GameCard/(27921:27932): Posicion: 4-9
+[INFO] 03:24:11:167 GameCard/(27921:27932): Posicion: 3-9
+[INFO] 03:24:11:172 GameCard/(27921:27932): Posicion: 6-9
+[INFO] 03:24:11:196 GameCard/(27921:27932): Posicion: 3-5
+[INFO] 03:24:11:201 GameCard/(27921:27932): Posicion: 8-9
+[INFO] 03:24:11:202 GameCard/(27921:27932): Posicion: 3-4
+[INFO] 03:24:11:203 GameCard/(27921:27932): Posicion: 3-6
+[INFO] 03:24:11:257 GameCard/(27921:27932): Posicion: 9-9
+[INFO] 03:24:11:319 GameCard/(27921:27932): El archivo 3 pesa: 56
+[INFO] 03:24:11:329 GameCard/(27921:27932): El archivo 4 pesa: 6
+[INFO] 03:24:11:367 GameCard/(27921:27932): El peso total de los blocks es de: 62
+[INFO] 03:24:18:338 GameCard/(27947:27947): logger iniciado.
+[INFO] 03:24:18:410 GameCard/(27947:27947): Lenavando el Tall Grass
+[INFO] 03:24:18:467 GameCard/(27947:27947): Punto de montaje del directorio Metadata es: /home/utnso/Escritorio/tall-grass/Metadata
+[INFO] 03:24:18:467 GameCard/(27947:27947): El BitMap se encuentra en: /home/utnso/Escritorio/tall-grass/Metadata/BitMap.bin
+[INFO] 03:24:18:468 GameCard/(27947:27947): Punto de montaje del directorio Files es: /home/utnso/Escritorio/tall-grass/Files
+[INFO] 03:24:18:468 GameCard/(27947:27947): Punto de montaje del directorio Blocks es: /home/utnso/Escritorio/tall-grass/Blocks
+[INFO] 03:24:40:223 GameCard/(28010:28010): logger iniciado.
+[INFO] 03:24:40:299 GameCard/(28010:28010): Lenavando el Tall Grass
+[INFO] 03:24:40:355 GameCard/(28010:28010): Punto de montaje del directorio Metadata es: /home/utnso/Escritorio/tall-grass/Metadata
+[INFO] 03:24:40:356 GameCard/(28010:28010): El BitMap se encuentra en: /home/utnso/Escritorio/tall-grass/Metadata/BitMap.bin
+[INFO] 03:24:40:356 GameCard/(28010:28010): Punto de montaje del directorio Files es: /home/utnso/Escritorio/tall-grass/Files
+[INFO] 03:24:40:357 GameCard/(28010:28010): Punto de montaje del directorio Blocks es: /home/utnso/Escritorio/tall-grass/Blocks
+[INFO] 03:24:42:321 GameCard/(28010:28021): Obteniendo las posiciones en las que se encuentra el pokemon
+[INFO] 03:24:42:372 GameCard/(28010:28021): Posicion: 5-9
+[INFO] 03:24:42:390 GameCard/(28010:28021): Posicion: 3-7
+[INFO] 03:24:42:405 GameCard/(28010:28021): Posicion: 4-9
+[INFO] 03:24:42:422 GameCard/(28010:28021): Posicion: 3-9
+[INFO] 03:24:42:427 GameCard/(28010:28021): Posicion: 6-9
+[INFO] 03:24:42:432 GameCard/(28010:28021): Posicion: 3-5
+[INFO] 03:24:42:433 GameCard/(28010:28021): Posicion: 8-9
+[INFO] 03:24:42:438 GameCard/(28010:28021): Posicion: 3-4
+[INFO] 03:24:42:439 GameCard/(28010:28021): Posicion: 3-6
+[INFO] 03:24:42:457 GameCard/(28010:28021): Posicion: 9-9
+[INFO] 03:24:42:473 GameCard/(28010:28021): El archivo 3 pesa: 56
+[INFO] 03:24:42:474 GameCard/(28010:28021): El archivo 4 pesa: 6
+[INFO] 03:24:42:479 GameCard/(28010:28021): El peso total de los blocks es de: 62
+[INFO] 03:27:35:459 GameCard/(28353:28353): logger iniciado.
+[INFO] 03:27:35:533 GameCard/(28353:28353): Lenavando el Tall Grass
+[INFO] 03:27:35:623 GameCard/(28353:28353): Punto de montaje del directorio Metadata es: /home/utnso/Escritorio/tall-grass/Metadata
+[INFO] 03:27:35:623 GameCard/(28353:28353): El BitMap se encuentra en: /home/utnso/Escritorio/tall-grass/Metadata/BitMap.bin
+[INFO] 03:27:35:624 GameCard/(28353:28353): Punto de montaje del directorio Files es: /home/utnso/Escritorio/tall-grass/Files
+[INFO] 03:27:35:624 GameCard/(28353:28353): Punto de montaje del directorio Blocks es: /home/utnso/Escritorio/tall-grass/Blocks
+[INFO] 03:27:36:513 GameCard/(28353:28360): Obteniendo las posiciones en las que se encuentra el pokemon
+[INFO] 03:27:36:566 GameCard/(28353:28360): Posicion: 5-9
+[INFO] 03:27:36:597 GameCard/(28353:28360): Posicion: 3-7
+[INFO] 03:27:36:599 GameCard/(28353:28360): Posicion: 4-9
+[INFO] 03:27:36:613 GameCard/(28353:28360): Posicion: 3-9
+[INFO] 03:27:36:621 GameCard/(28353:28360): Posicion: 6-9
+[INFO] 03:27:36:639 GameCard/(28353:28360): Posicion: 3-5
+[INFO] 03:27:36:640 GameCard/(28353:28360): Posicion: 8-9
+[INFO] 03:27:36:641 GameCard/(28353:28360): Posicion: 3-4
+[INFO] 03:27:36:657 GameCard/(28353:28360): Posicion: 3-6
+[INFO] 03:27:36:659 GameCard/(28353:28360): Posicion: 9-9
+[INFO] 03:27:36:679 GameCard/(28353:28360): El archivo 3 pesa: 56
+[INFO] 03:27:36:688 GameCard/(28353:28360): El archivo 4 pesa: 6
+[INFO] 03:27:36:690 GameCard/(28353:28360): El peso total de los blocks es de: 62
+[INFO] 03:44:29:945 GameCard/(30132:30132): logger iniciado.
+[INFO] 03:44:30:20 GameCard/(30132:30132): Lenavando el Tall Grass
+[INFO] 03:44:30:84 GameCard/(30132:30132): Punto de montaje del directorio Metadata es: /home/utnso/Escritorio/tall-grass/Metadata
+[INFO] 03:44:30:85 GameCard/(30132:30132): El BitMap se encuentra en: /home/utnso/Escritorio/tall-grass/Metadata/BitMap.bin
+[INFO] 03:44:30:86 GameCard/(30132:30132): Punto de montaje del directorio Files es: /home/utnso/Escritorio/tall-grass/Files
+[INFO] 03:44:30:86 GameCard/(30132:30132): Punto de montaje del directorio Blocks es: /home/utnso/Escritorio/tall-grass/Blocks
+[INFO] 03:44:31:552 GameCard/(30132:30139): Obteniendo las posiciones en las que se encuentra el pokemon
+[INFO] 03:44:31:601 GameCard/(30132:30139): Posicion: 5-9
+[INFO] 03:44:31:642 GameCard/(30132:30139): Posicion: 3-7
+[INFO] 03:44:31:660 GameCard/(30132:30139): Posicion: 4-9
+[INFO] 03:44:31:662 GameCard/(30132:30139): Posicion: 3-9
+[INFO] 03:44:31:663 GameCard/(30132:30139): Posicion: 6-9
+[INFO] 03:44:31:664 GameCard/(30132:30139): Posicion: 3-5
+[INFO] 03:44:31:681 GameCard/(30132:30139): Posicion: 8-9
+[INFO] 03:44:31:722 GameCard/(30132:30139): Posicion: 3-4
+[INFO] 03:44:31:723 GameCard/(30132:30139): Posicion: 3-6
+[INFO] 03:44:31:745 GameCard/(30132:30139): Posicion: 9-9
+[INFO] 03:44:31:761 GameCard/(30132:30139): El archivo 3 pesa: 56
+[INFO] 03:44:31:763 GameCard/(30132:30139): El archivo 4 pesa: 6
+[INFO] 03:44:31:764 GameCard/(30132:30139): El peso total de los blocks es de: 62
+[INFO] 03:53:41:167 GameCard/(31288:31288): logger iniciado.
+[INFO] 03:53:41:240 GameCard/(31288:31288): Lenavando el Tall Grass
+[INFO] 03:53:41:296 GameCard/(31288:31288): Punto de montaje del directorio Metadata es: /home/utnso/Escritorio/tall-grass/Metadata
+[INFO] 03:53:41:297 GameCard/(31288:31288): El BitMap se encuentra en: /home/utnso/Escritorio/tall-grass/Metadata/BitMap.bin
+[INFO] 03:53:41:297 GameCard/(31288:31288): Punto de montaje del directorio Files es: /home/utnso/Escritorio/tall-grass/Files
+[INFO] 03:53:41:298 GameCard/(31288:31288): Punto de montaje del directorio Blocks es: /home/utnso/Escritorio/tall-grass/Blocks
+[INFO] 03:53:42:904 GameCard/(31288:31303): Obteniendo las posiciones en las que se encuentra el pokemon
+[INFO] 03:53:42:956 GameCard/(31288:31303): Posicion: 5-9
+[INFO] 03:53:42:1 GameCard/(31288:31303): Posicion: 3-7
+[INFO] 03:53:43:14 GameCard/(31288:31303): Posicion: 4-9
+[INFO] 03:53:43:45 GameCard/(31288:31303): Posicion: 3-9
+[INFO] 03:53:43:50 GameCard/(31288:31303): Posicion: 6-9
+[INFO] 03:53:43:59 GameCard/(31288:31303): Posicion: 3-5
+[INFO] 03:53:43:65 GameCard/(31288:31303): Posicion: 8-9
+[INFO] 03:53:43:66 GameCard/(31288:31303): Posicion: 3-4
+[INFO] 03:53:43:79 GameCard/(31288:31303): Posicion: 3-6
+[INFO] 03:53:43:89 GameCard/(31288:31303): Posicion: 9-9
+[INFO] 03:53:43:114 GameCard/(31288:31303): El archivo 3 pesa: 56
+[INFO] 03:53:43:128 GameCard/(31288:31303): El archivo 4 pesa: 6
+[INFO] 03:53:43:131 GameCard/(31288:31303): El peso total de los blocks es de: 62
+[INFO] 03:56:54:208 GameCard/(31690:31690): logger iniciado.
+[INFO] 03:56:54:279 GameCard/(31690:31690): Lenavando el Tall Grass
+[INFO] 03:56:54:335 GameCard/(31690:31690): Punto de montaje del directorio Metadata es: /home/utnso/Escritorio/tall-grass/Metadata
+[INFO] 03:56:54:336 GameCard/(31690:31690): El BitMap se encuentra en: /home/utnso/Escritorio/tall-grass/Metadata/BitMap.bin
+[INFO] 03:56:54:336 GameCard/(31690:31690): Punto de montaje del directorio Files es: /home/utnso/Escritorio/tall-grass/Files
+[INFO] 03:56:54:337 GameCard/(31690:31690): Punto de montaje del directorio Blocks es: /home/utnso/Escritorio/tall-grass/Blocks
+[INFO] 03:56:56:720 GameCard/(31690:31701): Obteniendo las posiciones en las que se encuentra el pokemon
+[INFO] 03:56:56:755 GameCard/(31690:31701): Posicion: 5-9
+[INFO] 03:56:56:799 GameCard/(31690:31701): Posicion: 3-7
+[INFO] 03:56:56:801 GameCard/(31690:31701): Posicion: 4-9
+[INFO] 03:56:56:838 GameCard/(31690:31701): Posicion: 3-9
+[INFO] 03:56:56:839 GameCard/(31690:31701): Posicion: 6-9
+[INFO] 03:56:56:840 GameCard/(31690:31701): Posicion: 3-5
+[INFO] 03:56:56:841 GameCard/(31690:31701): Posicion: 8-9
+[INFO] 03:56:56:855 GameCard/(31690:31701): Posicion: 3-4
+[INFO] 03:56:56:856 GameCard/(31690:31701): Posicion: 3-6
+[INFO] 03:56:56:861 GameCard/(31690:31701): Posicion: 9-9
+[INFO] 03:56:56:886 GameCard/(31690:31701): El archivo 3 pesa: 56
+[INFO] 03:56:56:898 GameCard/(31690:31701): El archivo 4 pesa: 6
+[INFO] 03:56:56:900 GameCard/(31690:31701): El peso total de los blocks es de: 62

@@ -108,7 +108,6 @@ char* buscarPosicionDisponibleEnElBitMap() {
 
 	for (i = 0; i < cantidadDeBloques; i++) {
 
-		log_info(loggerDev, "A");
 		if (flag_free_block == 0) {
 
 			if (bitarray_test_bit(bitarray, i) == 0) {
@@ -658,6 +657,7 @@ t_queue* validarPosicionesDeGet(char** blocksOcupados){
 	log_info(loggerGameCard, "Obteniendo las posiciones en las que se encuentra el pokemon");
 	obtenerTodasLasPosiciones(blocksOcupados, posicionesPokemon);
 
+
 	return posicionesPokemon;
 }
 
@@ -815,7 +815,7 @@ void catchPokemon(int socketCliente,t_catchLlegada* catch){
 void getPokemon(int socketCliente,t_getLlegada* getLlegada){
 
 	char* pokemon = getLlegada->pokemon;
-	t_queue* coordenadas = queue_create();
+	t_queue* coordenadas;
 	string_to_lower(pokemon);
 
 	char* rutaDeDirectorio = generadorDeRutaDeCreacionDeDirectorios(rutaFiles,pokemon);
@@ -853,8 +853,11 @@ void getPokemon(int socketCliente,t_getLlegada* getLlegada){
 	enviar_localized(socketCliente,localizedAEnviar);
 
 	config_destroy(archivoMetadataPokemon);
-	queue_clean(coordenadas);
-	queue_destroy(coordenadas);
+
+	if(coordenadas != NULL){
+		queue_clean(coordenadas);
+		queue_destroy(coordenadas);
+	}
 
 	free(rutaDeDirectorio);
 	free(rutaDeArchivo);
@@ -865,6 +868,11 @@ void getPokemon(int socketCliente,t_getLlegada* getLlegada){
 	}
 	free(blocksOcupados);
 	free(localizedAEnviar->pokemon);
+
+	for(int w=0; w<localizedAEnviar->l_coordenadas->elements_count;w++){
+		free(list_get(localizedAEnviar->l_coordenadas,w));
+	}
+
 	list_destroy(localizedAEnviar->l_coordenadas);
 	free(localizedAEnviar);
 
