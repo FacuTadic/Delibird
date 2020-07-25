@@ -1,0 +1,593 @@
+==9917== Memcheck, a memory error detector
+==9917== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==9917== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==9917== Command: ./broker
+==9917== Parent PID: 8735
+==9917== 
+==9917== Thread 9:
+==9917== Use of uninitialised value of size 4
+==9917==    at 0x40B724B: _itoa_word (_itoa.c:179)
+==9917==    by 0x40BB221: vfprintf (vfprintf.c:1631)
+==9917==    by 0x40DE3DE: vsnprintf (vsnprintf.c:114)
+==9917==    by 0x4054A1B: _string_append_with_format_list (in /usr/lib/libcommons.so)
+==9917==    by 0x40541D3: string_from_vformat (in /usr/lib/libcommons.so)
+==9917==    by 0x4053F0C: _log_write_in_level (in /usr/lib/libcommons.so)
+==9917==    by 0x4053D8D: log_info (in /usr/lib/libcommons.so)
+==9917==    by 0x804A120: atender_cliente (broker.c:270)
+==9917==    by 0x4061294: start_thread (pthread_create.c:333)
+==9917==    by 0x415F0AD: clone (clone.S:114)
+==9917== 
+==9917== Conditional jump or move depends on uninitialised value(s)
+==9917==    at 0x40B7253: _itoa_word (_itoa.c:179)
+==9917==    by 0x40BB221: vfprintf (vfprintf.c:1631)
+==9917==    by 0x40DE3DE: vsnprintf (vsnprintf.c:114)
+==9917==    by 0x4054A1B: _string_append_with_format_list (in /usr/lib/libcommons.so)
+==9917==    by 0x40541D3: string_from_vformat (in /usr/lib/libcommons.so)
+==9917==    by 0x4053F0C: _log_write_in_level (in /usr/lib/libcommons.so)
+==9917==    by 0x4053D8D: log_info (in /usr/lib/libcommons.so)
+==9917==    by 0x804A120: atender_cliente (broker.c:270)
+==9917==    by 0x4061294: start_thread (pthread_create.c:333)
+==9917==    by 0x415F0AD: clone (clone.S:114)
+==9917== 
+==9917== Conditional jump or move depends on uninitialised value(s)
+==9917==    at 0x40BA7A4: vfprintf (vfprintf.c:1631)
+==9917==    by 0x40DE3DE: vsnprintf (vsnprintf.c:114)
+==9917==    by 0x4054A1B: _string_append_with_format_list (in /usr/lib/libcommons.so)
+==9917==    by 0x40541D3: string_from_vformat (in /usr/lib/libcommons.so)
+==9917==    by 0x4053F0C: _log_write_in_level (in /usr/lib/libcommons.so)
+==9917==    by 0x4053D8D: log_info (in /usr/lib/libcommons.so)
+==9917==    by 0x804A120: atender_cliente (broker.c:270)
+==9917==    by 0x4061294: start_thread (pthread_create.c:333)
+==9917==    by 0x415F0AD: clone (clone.S:114)
+==9917== 
+==9917== Conditional jump or move depends on uninitialised value(s)
+==9917==    at 0x40BACBD: vfprintf (vfprintf.c:1631)
+==9917==    by 0x40DE3DE: vsnprintf (vsnprintf.c:114)
+==9917==    by 0x4054A1B: _string_append_with_format_list (in /usr/lib/libcommons.so)
+==9917==    by 0x40541D3: string_from_vformat (in /usr/lib/libcommons.so)
+==9917==    by 0x4053F0C: _log_write_in_level (in /usr/lib/libcommons.so)
+==9917==    by 0x4053D8D: log_info (in /usr/lib/libcommons.so)
+==9917==    by 0x804A120: atender_cliente (broker.c:270)
+==9917==    by 0x4061294: start_thread (pthread_create.c:333)
+==9917==    by 0x415F0AD: clone (clone.S:114)
+==9917== 
+==9917== Conditional jump or move depends on uninitialised value(s)
+==9917==    at 0x40BAB04: vfprintf (vfprintf.c:1631)
+==9917==    by 0x40DE3DE: vsnprintf (vsnprintf.c:114)
+==9917==    by 0x4054A1B: _string_append_with_format_list (in /usr/lib/libcommons.so)
+==9917==    by 0x40541D3: string_from_vformat (in /usr/lib/libcommons.so)
+==9917==    by 0x4053F0C: _log_write_in_level (in /usr/lib/libcommons.so)
+==9917==    by 0x4053D8D: log_info (in /usr/lib/libcommons.so)
+==9917==    by 0x804A120: atender_cliente (broker.c:270)
+==9917==    by 0x4061294: start_thread (pthread_create.c:333)
+==9917==    by 0x415F0AD: clone (clone.S:114)
+==9917== 
+==9917== Conditional jump or move depends on uninitialised value(s)
+==9917==    at 0x40BAB4D: vfprintf (vfprintf.c:1631)
+==9917==    by 0x40DE3DE: vsnprintf (vsnprintf.c:114)
+==9917==    by 0x4054A1B: _string_append_with_format_list (in /usr/lib/libcommons.so)
+==9917==    by 0x40541D3: string_from_vformat (in /usr/lib/libcommons.so)
+==9917==    by 0x4053F0C: _log_write_in_level (in /usr/lib/libcommons.so)
+==9917==    by 0x4053D8D: log_info (in /usr/lib/libcommons.so)
+==9917==    by 0x804A120: atender_cliente (broker.c:270)
+==9917==    by 0x4061294: start_thread (pthread_create.c:333)
+==9917==    by 0x415F0AD: clone (clone.S:114)
+==9917== 
+==9917== Use of uninitialised value of size 4
+==9917==    at 0x40B724B: _itoa_word (_itoa.c:179)
+==9917==    by 0x40BB221: vfprintf (vfprintf.c:1631)
+==9917==    by 0x40DE3DE: vsnprintf (vsnprintf.c:114)
+==9917==    by 0x4054A4D: _string_append_with_format_list (in /usr/lib/libcommons.so)
+==9917==    by 0x40541D3: string_from_vformat (in /usr/lib/libcommons.so)
+==9917==    by 0x4053F0C: _log_write_in_level (in /usr/lib/libcommons.so)
+==9917==    by 0x4053D8D: log_info (in /usr/lib/libcommons.so)
+==9917==    by 0x804A120: atender_cliente (broker.c:270)
+==9917==    by 0x4061294: start_thread (pthread_create.c:333)
+==9917==    by 0x415F0AD: clone (clone.S:114)
+==9917== 
+==9917== Conditional jump or move depends on uninitialised value(s)
+==9917==    at 0x40B7253: _itoa_word (_itoa.c:179)
+==9917==    by 0x40BB221: vfprintf (vfprintf.c:1631)
+==9917==    by 0x40DE3DE: vsnprintf (vsnprintf.c:114)
+==9917==    by 0x4054A4D: _string_append_with_format_list (in /usr/lib/libcommons.so)
+==9917==    by 0x40541D3: string_from_vformat (in /usr/lib/libcommons.so)
+==9917==    by 0x4053F0C: _log_write_in_level (in /usr/lib/libcommons.so)
+==9917==    by 0x4053D8D: log_info (in /usr/lib/libcommons.so)
+==9917==    by 0x804A120: atender_cliente (broker.c:270)
+==9917==    by 0x4061294: start_thread (pthread_create.c:333)
+==9917==    by 0x415F0AD: clone (clone.S:114)
+==9917== 
+==9917== Conditional jump or move depends on uninitialised value(s)
+==9917==    at 0x40BA7A4: vfprintf (vfprintf.c:1631)
+==9917==    by 0x40DE3DE: vsnprintf (vsnprintf.c:114)
+==9917==    by 0x4054A4D: _string_append_with_format_list (in /usr/lib/libcommons.so)
+==9917==    by 0x40541D3: string_from_vformat (in /usr/lib/libcommons.so)
+==9917==    by 0x4053F0C: _log_write_in_level (in /usr/lib/libcommons.so)
+==9917==    by 0x4053D8D: log_info (in /usr/lib/libcommons.so)
+==9917==    by 0x804A120: atender_cliente (broker.c:270)
+==9917==    by 0x4061294: start_thread (pthread_create.c:333)
+==9917==    by 0x415F0AD: clone (clone.S:114)
+==9917== 
+==9917== Conditional jump or move depends on uninitialised value(s)
+==9917==    at 0x40BACBD: vfprintf (vfprintf.c:1631)
+==9917==    by 0x40DE3DE: vsnprintf (vsnprintf.c:114)
+==9917==    by 0x4054A4D: _string_append_with_format_list (in /usr/lib/libcommons.so)
+==9917==    by 0x40541D3: string_from_vformat (in /usr/lib/libcommons.so)
+==9917==    by 0x4053F0C: _log_write_in_level (in /usr/lib/libcommons.so)
+==9917==    by 0x4053D8D: log_info (in /usr/lib/libcommons.so)
+==9917==    by 0x804A120: atender_cliente (broker.c:270)
+==9917==    by 0x4061294: start_thread (pthread_create.c:333)
+==9917==    by 0x415F0AD: clone (clone.S:114)
+==9917== 
+==9917== Conditional jump or move depends on uninitialised value(s)
+==9917==    at 0x40BAB04: vfprintf (vfprintf.c:1631)
+==9917==    by 0x40DE3DE: vsnprintf (vsnprintf.c:114)
+==9917==    by 0x4054A4D: _string_append_with_format_list (in /usr/lib/libcommons.so)
+==9917==    by 0x40541D3: string_from_vformat (in /usr/lib/libcommons.so)
+==9917==    by 0x4053F0C: _log_write_in_level (in /usr/lib/libcommons.so)
+==9917==    by 0x4053D8D: log_info (in /usr/lib/libcommons.so)
+==9917==    by 0x804A120: atender_cliente (broker.c:270)
+==9917==    by 0x4061294: start_thread (pthread_create.c:333)
+==9917==    by 0x415F0AD: clone (clone.S:114)
+==9917== 
+==9917== Conditional jump or move depends on uninitialised value(s)
+==9917==    at 0x40BAB4D: vfprintf (vfprintf.c:1631)
+==9917==    by 0x40DE3DE: vsnprintf (vsnprintf.c:114)
+==9917==    by 0x4054A4D: _string_append_with_format_list (in /usr/lib/libcommons.so)
+==9917==    by 0x40541D3: string_from_vformat (in /usr/lib/libcommons.so)
+==9917==    by 0x4053F0C: _log_write_in_level (in /usr/lib/libcommons.so)
+==9917==    by 0x4053D8D: log_info (in /usr/lib/libcommons.so)
+==9917==    by 0x804A120: atender_cliente (broker.c:270)
+==9917==    by 0x4061294: start_thread (pthread_create.c:333)
+==9917==    by 0x415F0AD: clone (clone.S:114)
+==9917== 
+==9917== Syscall param socketcall.recv(args) points to uninitialised byte(s)
+==9917==    at 0x406A389: recv (recv.c:35)
+==9917==    by 0x804A139: atender_cliente (broker.c:271)
+==9917==    by 0x4061294: start_thread (pthread_create.c:333)
+==9917==    by 0x415F0AD: clone (clone.S:114)
+==9917==  Address 0x905b310 is on thread 9's stack
+==9917==  in frame #0, created by recv (recv.c:29)
+==9917== 
+==9917== Syscall param socketcall.recv(args) points to uninitialised byte(s)
+==9917==    at 0x406A389: recv (recv.c:35)
+==9917==    by 0x8053A76: recibir_caught (protocolBroker.c:334)
+==9917==    by 0x8049829: procesar_request (broker.c:98)
+==9917==    by 0x804A1E8: atender_cliente (broker.c:283)
+==9917==    by 0x4061294: start_thread (pthread_create.c:333)
+==9917==    by 0x415F0AD: clone (clone.S:114)
+==9917==  Address 0x905b280 is on thread 9's stack
+==9917==  in frame #0, created by recv (recv.c:29)
+==9917== 
+==9917== Syscall param socketcall.recv(args) points to uninitialised byte(s)
+==9917==    at 0x406A389: recv (recv.c:35)
+==9917==    by 0x8053B29: recibir_caught (protocolBroker.c:350)
+==9917==    by 0x8049829: procesar_request (broker.c:98)
+==9917==    by 0x804A1E8: atender_cliente (broker.c:283)
+==9917==    by 0x4061294: start_thread (pthread_create.c:333)
+==9917==    by 0x415F0AD: clone (clone.S:114)
+==9917==  Address 0x905b280 is on thread 9's stack
+==9917==  in frame #0, created by recv (recv.c:29)
+==9917== 
+==9917== Syscall param socketcall.recv(args) points to uninitialised byte(s)
+==9917==    at 0x406A389: recv (recv.c:35)
+==9917==    by 0x8053BDF: recibir_caught (protocolBroker.c:366)
+==9917==    by 0x8049829: procesar_request (broker.c:98)
+==9917==    by 0x804A1E8: atender_cliente (broker.c:283)
+==9917==    by 0x4061294: start_thread (pthread_create.c:333)
+==9917==    by 0x415F0AD: clone (clone.S:114)
+==9917==  Address 0x905b280 is on thread 9's stack
+==9917==  in frame #0, created by recv (recv.c:29)
+==9917== 
+==9917== Thread 12:
+==9917== Syscall param socketcall.recv(args) points to uninitialised byte(s)
+==9917==    at 0x406A389: recv (recv.c:35)
+==9917==    by 0x8053129: recibir_appeared (protocolBroker.c:125)
+==9917==    by 0x804953B: procesar_request (broker.c:38)
+==9917==    by 0x804A1E8: atender_cliente (broker.c:283)
+==9917==    by 0x4061294: start_thread (pthread_create.c:333)
+==9917==    by 0x415F0AD: clone (clone.S:114)
+==9917==  Address 0xa85e270 is on thread 12's stack
+==9917==  in frame #0, created by recv (recv.c:29)
+==9917== 
+==9917== Syscall param close(fd) contains uninitialised byte(s)
+==9917==    at 0x406A0E3: ??? (syscall-template.S:84)
+==9917==    by 0x8053140: recibir_appeared (protocolBroker.c:127)
+==9917==    by 0x804953B: procesar_request (broker.c:38)
+==9917==    by 0x804A1E8: atender_cliente (broker.c:283)
+==9917==    by 0x4061294: start_thread (pthread_create.c:333)
+==9917==    by 0x415F0AD: clone (clone.S:114)
+==9917== 
+==9917== Thread 6:
+==9917== Invalid write of size 1
+==9917==    at 0x40D8668: vsprintf (iovsprintf.c:43)
+==9917==    by 0x40C16E7: sprintf (sprintf.c:32)
+==9917==    by 0x805168E: guardar_mensaje_en_memoria (memoria_broker.c:49)
+==9917==    by 0x804B4E5: atender_mensaje_caught (broker.c:727)
+==9917==    by 0x804A76F: atender_caught (broker.c:431)
+==9917==    by 0x4061294: start_thread (pthread_create.c:333)
+==9917==    by 0x415F0AD: clone (clone.S:114)
+==9917==  Address 0x4254489 is 0 bytes after a block of size 1 alloc'd
+==9917==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==9917==    by 0x8051672: guardar_mensaje_en_memoria (memoria_broker.c:48)
+==9917==    by 0x804B4E5: atender_mensaje_caught (broker.c:727)
+==9917==    by 0x804A76F: atender_caught (broker.c:431)
+==9917==    by 0x4061294: start_thread (pthread_create.c:333)
+==9917==    by 0x415F0AD: clone (clone.S:114)
+==9917== 
+==9917== Invalid read of size 1
+==9917==    at 0x402F383: strlen (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==9917==    by 0x4056054: dictionary_get_element (in /usr/lib/libcommons.so)
+==9917==    by 0x4055AD1: dictionary_put (in /usr/lib/libcommons.so)
+==9917==    by 0x80516B0: guardar_mensaje_en_memoria (memoria_broker.c:51)
+==9917==    by 0x804B4E5: atender_mensaje_caught (broker.c:727)
+==9917==    by 0x804A76F: atender_caught (broker.c:431)
+==9917==    by 0x4061294: start_thread (pthread_create.c:333)
+==9917==    by 0x415F0AD: clone (clone.S:114)
+==9917==  Address 0x4254489 is 0 bytes after a block of size 1 alloc'd
+==9917==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==9917==    by 0x8051672: guardar_mensaje_en_memoria (memoria_broker.c:48)
+==9917==    by 0x804B4E5: atender_mensaje_caught (broker.c:727)
+==9917==    by 0x804A76F: atender_caught (broker.c:431)
+==9917==    by 0x4061294: start_thread (pthread_create.c:333)
+==9917==    by 0x415F0AD: clone (clone.S:114)
+==9917== 
+==9917== Invalid read of size 1
+==9917==    at 0x402F383: strlen (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==9917==    by 0x4055AF6: dictionary_put (in /usr/lib/libcommons.so)
+==9917==    by 0x80516B0: guardar_mensaje_en_memoria (memoria_broker.c:51)
+==9917==    by 0x804B4E5: atender_mensaje_caught (broker.c:727)
+==9917==    by 0x804A76F: atender_caught (broker.c:431)
+==9917==    by 0x4061294: start_thread (pthread_create.c:333)
+==9917==    by 0x415F0AD: clone (clone.S:114)
+==9917==  Address 0x4254489 is 0 bytes after a block of size 1 alloc'd
+==9917==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==9917==    by 0x8051672: guardar_mensaje_en_memoria (memoria_broker.c:48)
+==9917==    by 0x804B4E5: atender_mensaje_caught (broker.c:727)
+==9917==    by 0x804A76F: atender_caught (broker.c:431)
+==9917==    by 0x4061294: start_thread (pthread_create.c:333)
+==9917==    by 0x415F0AD: clone (clone.S:114)
+==9917== 
+==9917== Invalid read of size 1
+==9917==    at 0x402F3A3: __GI_strlen (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==9917==    by 0x40ED2BA: strdup (strdup.c:41)
+==9917==    by 0x4055B2D: dictionary_put (in /usr/lib/libcommons.so)
+==9917==    by 0x80516B0: guardar_mensaje_en_memoria (memoria_broker.c:51)
+==9917==    by 0x804B4E5: atender_mensaje_caught (broker.c:727)
+==9917==    by 0x804A76F: atender_caught (broker.c:431)
+==9917==    by 0x4061294: start_thread (pthread_create.c:333)
+==9917==    by 0x415F0AD: clone (clone.S:114)
+==9917==  Address 0x4254489 is 0 bytes after a block of size 1 alloc'd
+==9917==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==9917==    by 0x8051672: guardar_mensaje_en_memoria (memoria_broker.c:48)
+==9917==    by 0x804B4E5: atender_mensaje_caught (broker.c:727)
+==9917==    by 0x804A76F: atender_caught (broker.c:431)
+==9917==    by 0x4061294: start_thread (pthread_create.c:333)
+==9917==    by 0x415F0AD: clone (clone.S:114)
+==9917== 
+==9917== Invalid read of size 2
+==9917==    at 0x4031200: __GI_memcpy (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==9917==    by 0x40ED2D7: strdup (strdup.c:47)
+==9917==    by 0x4055B2D: dictionary_put (in /usr/lib/libcommons.so)
+==9917==    by 0x80516B0: guardar_mensaje_en_memoria (memoria_broker.c:51)
+==9917==    by 0x804B4E5: atender_mensaje_caught (broker.c:727)
+==9917==    by 0x804A76F: atender_caught (broker.c:431)
+==9917==    by 0x4061294: start_thread (pthread_create.c:333)
+==9917==    by 0x415F0AD: clone (clone.S:114)
+==9917==  Address 0x4254488 is 0 bytes inside a block of size 1 alloc'd
+==9917==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==9917==    by 0x8051672: guardar_mensaje_en_memoria (memoria_broker.c:48)
+==9917==    by 0x804B4E5: atender_mensaje_caught (broker.c:727)
+==9917==    by 0x804A76F: atender_caught (broker.c:431)
+==9917==    by 0x4061294: start_thread (pthread_create.c:333)
+==9917==    by 0x415F0AD: clone (clone.S:114)
+==9917== 
+==9917== Invalid write of size 1
+==9917==    at 0x40D8668: vsprintf (iovsprintf.c:43)
+==9917==    by 0x40C16E7: sprintf (sprintf.c:32)
+==9917==    by 0x80514BB: guardar_info_envios (memoria_broker.c:5)
+==9917==    by 0x804B6C3: atender_mensaje_caught (broker.c:761)
+==9917==    by 0x804A76F: atender_caught (broker.c:431)
+==9917==    by 0x4061294: start_thread (pthread_create.c:333)
+==9917==    by 0x415F0AD: clone (clone.S:114)
+==9917==  Address 0x4254609 is 0 bytes after a block of size 1 alloc'd
+==9917==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==9917==    by 0x80514A2: guardar_info_envios (memoria_broker.c:4)
+==9917==    by 0x804B6C3: atender_mensaje_caught (broker.c:761)
+==9917==    by 0x804A76F: atender_caught (broker.c:431)
+==9917==    by 0x4061294: start_thread (pthread_create.c:333)
+==9917==    by 0x415F0AD: clone (clone.S:114)
+==9917== 
+==9917== Invalid read of size 1
+==9917==    at 0x402F383: strlen (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==9917==    by 0x4056054: dictionary_get_element (in /usr/lib/libcommons.so)
+==9917==    by 0x4055BF5: dictionary_get (in /usr/lib/libcommons.so)
+==9917==    by 0x80514DF: guardar_info_envios (memoria_broker.c:9)
+==9917==    by 0x804B6C3: atender_mensaje_caught (broker.c:761)
+==9917==    by 0x804A76F: atender_caught (broker.c:431)
+==9917==    by 0x4061294: start_thread (pthread_create.c:333)
+==9917==    by 0x415F0AD: clone (clone.S:114)
+==9917==  Address 0x4254609 is 0 bytes after a block of size 1 alloc'd
+==9917==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==9917==    by 0x80514A2: guardar_info_envios (memoria_broker.c:4)
+==9917==    by 0x804B6C3: atender_mensaje_caught (broker.c:761)
+==9917==    by 0x804A76F: atender_caught (broker.c:431)
+==9917==    by 0x4061294: start_thread (pthread_create.c:333)
+==9917==    by 0x415F0AD: clone (clone.S:114)
+==9917== 
+==9917== Thread 9:
+==9917== Syscall param socketcall.send(args) points to uninitialised byte(s)
+==9917==    at 0x406A549: send (send.c:35)
+==9917==    by 0x8054753: devolver_id (protocolBroker.c:633)
+==9917==    by 0x804999A: procesar_request (broker.c:125)
+==9917==    by 0x804A1E8: atender_cliente (broker.c:283)
+==9917==    by 0x4061294: start_thread (pthread_create.c:333)
+==9917==    by 0x415F0AD: clone (clone.S:114)
+==9917==  Address 0x905b290 is on thread 9's stack
+==9917==  in frame #0, created by send (send.c:29)
+==9917== 
+==9917== Syscall param socketcall.send(msg) points to unaddressable byte(s)
+==9917==    at 0x406A549: send (send.c:35)
+==9917==    by 0x8054753: devolver_id (protocolBroker.c:633)
+==9917==    by 0x804999A: procesar_request (broker.c:125)
+==9917==    by 0x804A1E8: atender_cliente (broker.c:283)
+==9917==    by 0x4061294: start_thread (pthread_create.c:333)
+==9917==    by 0x415F0AD: clone (clone.S:114)
+==9917==  Address 0x1 is not stack'd, malloc'd or (recently) free'd
+==9917== 
+==9917== Thread 11:
+==9917== Syscall param socketcall.recv(buf) points to unaddressable byte(s)
+==9917==    at 0x406A389: recv (recv.c:35)
+==9917==    by 0x8054687: recibir_suscripcion (protocolBroker.c:611)
+==9917==    by 0x8049CDF: procesar_request (broker.c:194)
+==9917==    by 0x804A1E8: atender_cliente (broker.c:283)
+==9917==    by 0x4061294: start_thread (pthread_create.c:333)
+==9917==    by 0x415F0AD: clone (clone.S:114)
+==9917==  Address 0x425188c is 0 bytes after a block of size 4 alloc'd
+==9917==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==9917==    by 0x80544CD: recibir_suscripcion (protocolBroker.c:572)
+==9917==    by 0x8049CDF: procesar_request (broker.c:194)
+==9917==    by 0x804A1E8: atender_cliente (broker.c:283)
+==9917==    by 0x4061294: start_thread (pthread_create.c:333)
+==9917==    by 0x415F0AD: clone (clone.S:114)
+==9917== 
+==9917== Thread 13:
+==9917== Syscall param socketcall.recv(args) points to uninitialised byte(s)
+==9917==    at 0x406A389: recv (recv.c:35)
+==9917==    by 0x8053F73: recibir_localized (protocolBroker.c:452)
+==9917==    by 0x8049B17: procesar_request (broker.c:158)
+==9917==    by 0x804A1E8: atender_cliente (broker.c:283)
+==9917==    by 0x4061294: start_thread (pthread_create.c:333)
+==9917==    by 0x415F0AD: clone (clone.S:114)
+==9917==  Address 0xb05f260 is on thread 13's stack
+==9917==  in frame #0, created by recv (recv.c:29)
+==9917== 
+==9917== Syscall param close(fd) contains uninitialised byte(s)
+==9917==    at 0x406A0E3: ??? (syscall-template.S:84)
+==9917==    by 0x8053FC9: recibir_localized (protocolBroker.c:460)
+==9917==    by 0x8049B17: procesar_request (broker.c:158)
+==9917==    by 0x804A1E8: atender_cliente (broker.c:283)
+==9917==    by 0x4061294: start_thread (pthread_create.c:333)
+==9917==    by 0x415F0AD: clone (clone.S:114)
+==9917== 
+==9917== Thread 9:
+==9917== Syscall param socketcall.recv(args) points to uninitialised byte(s)
+==9917==    at 0x406A389: recv (recv.c:35)
+==9917==    by 0x8053639: recibir_catch (protocolBroker.c:238)
+==9917==    by 0x8049703: procesar_request (broker.c:74)
+==9917==    by 0x804A1E8: atender_cliente (broker.c:283)
+==9917==    by 0x4061294: start_thread (pthread_create.c:333)
+==9917==    by 0x415F0AD: clone (clone.S:114)
+==9917==  Address 0xa05d270 is on thread 9's stack
+==9917==  in frame #0, created by recv (recv.c:29)
+==9917== 
+==9917== Syscall param socketcall.recv(args) points to uninitialised byte(s)
+==9917==    at 0x406A389: recv (recv.c:35)
+==9917==    by 0x80536EC: recibir_catch (protocolBroker.c:254)
+==9917==    by 0x8049703: procesar_request (broker.c:74)
+==9917==    by 0x804A1E8: atender_cliente (broker.c:283)
+==9917==    by 0x4061294: start_thread (pthread_create.c:333)
+==9917==    by 0x415F0AD: clone (clone.S:114)
+==9917==  Address 0xa05d270 is on thread 9's stack
+==9917==  in frame #0, created by recv (recv.c:29)
+==9917== 
+==9917== Syscall param socketcall.recv(args) points to uninitialised byte(s)
+==9917==    at 0x406A389: recv (recv.c:35)
+==9917==    by 0x80537B7: recibir_catch (protocolBroker.c:272)
+==9917==    by 0x8049703: procesar_request (broker.c:74)
+==9917==    by 0x804A1E8: atender_cliente (broker.c:283)
+==9917==    by 0x4061294: start_thread (pthread_create.c:333)
+==9917==    by 0x415F0AD: clone (clone.S:114)
+==9917==  Address 0xa05d270 is on thread 9's stack
+==9917==  in frame #0, created by recv (recv.c:29)
+==9917== 
+==9917== Syscall param socketcall.recv(args) points to uninitialised byte(s)
+==9917==    at 0x406A389: recv (recv.c:35)
+==9917==    by 0x805388F: recibir_catch (protocolBroker.c:290)
+==9917==    by 0x8049703: procesar_request (broker.c:74)
+==9917==    by 0x804A1E8: atender_cliente (broker.c:283)
+==9917==    by 0x4061294: start_thread (pthread_create.c:333)
+==9917==    by 0x415F0AD: clone (clone.S:114)
+==9917==  Address 0xa05d270 is on thread 9's stack
+==9917==  in frame #0, created by recv (recv.c:29)
+==9917== 
+==9917== Syscall param socketcall.recv(args) points to uninitialised byte(s)
+==9917==    at 0x406A389: recv (recv.c:35)
+==9917==    by 0x8053968: recibir_catch (protocolBroker.c:308)
+==9917==    by 0x8049703: procesar_request (broker.c:74)
+==9917==    by 0x804A1E8: atender_cliente (broker.c:283)
+==9917==    by 0x4061294: start_thread (pthread_create.c:333)
+==9917==    by 0x415F0AD: clone (clone.S:114)
+==9917==  Address 0xa05d270 is on thread 9's stack
+==9917==  in frame #0, created by recv (recv.c:29)
+==9917== 
+==9917== Thread 5:
+==9917== Invalid write of size 1
+==9917==    at 0x40D8668: vsprintf (iovsprintf.c:43)
+==9917==    by 0x40C16E7: sprintf (sprintf.c:32)
+==9917==    by 0x805168E: guardar_mensaje_en_memoria (memoria_broker.c:49)
+==9917==    by 0x804B1D8: atender_mensaje_catch (broker.c:664)
+==9917==    by 0x804A62C: atender_catch (broker.c:398)
+==9917==    by 0x4061294: start_thread (pthread_create.c:333)
+==9917==    by 0x415F0AD: clone (clone.S:114)
+==9917==  Address 0x425d6d1 is 0 bytes after a block of size 1 alloc'd
+==9917==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==9917==    by 0x8051672: guardar_mensaje_en_memoria (memoria_broker.c:48)
+==9917==    by 0x804B1D8: atender_mensaje_catch (broker.c:664)
+==9917==    by 0x804A62C: atender_catch (broker.c:398)
+==9917==    by 0x4061294: start_thread (pthread_create.c:333)
+==9917==    by 0x415F0AD: clone (clone.S:114)
+==9917== 
+==9917== Invalid read of size 1
+==9917==    at 0x402F383: strlen (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==9917==    by 0x4055AF6: dictionary_put (in /usr/lib/libcommons.so)
+==9917==    by 0x80516B0: guardar_mensaje_en_memoria (memoria_broker.c:51)
+==9917==    by 0x804B1D8: atender_mensaje_catch (broker.c:664)
+==9917==    by 0x804A62C: atender_catch (broker.c:398)
+==9917==    by 0x4061294: start_thread (pthread_create.c:333)
+==9917==    by 0x415F0AD: clone (clone.S:114)
+==9917==  Address 0x425d6d1 is 0 bytes after a block of size 1 alloc'd
+==9917==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==9917==    by 0x8051672: guardar_mensaje_en_memoria (memoria_broker.c:48)
+==9917==    by 0x804B1D8: atender_mensaje_catch (broker.c:664)
+==9917==    by 0x804A62C: atender_catch (broker.c:398)
+==9917==    by 0x4061294: start_thread (pthread_create.c:333)
+==9917==    by 0x415F0AD: clone (clone.S:114)
+==9917== 
+==9917== Invalid write of size 1
+==9917==    at 0x40D8668: vsprintf (iovsprintf.c:43)
+==9917==    by 0x40C16E7: sprintf (sprintf.c:32)
+==9917==    by 0x80514BB: guardar_info_envios (memoria_broker.c:5)
+==9917==    by 0x804B3B6: atender_mensaje_catch (broker.c:698)
+==9917==    by 0x804A62C: atender_catch (broker.c:398)
+==9917==    by 0x4061294: start_thread (pthread_create.c:333)
+==9917==    by 0x415F0AD: clone (clone.S:114)
+==9917==  Address 0x425d851 is 0 bytes after a block of size 1 alloc'd
+==9917==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==9917==    by 0x80514A2: guardar_info_envios (memoria_broker.c:4)
+==9917==    by 0x804B3B6: atender_mensaje_catch (broker.c:698)
+==9917==    by 0x804A62C: atender_catch (broker.c:398)
+==9917==    by 0x4061294: start_thread (pthread_create.c:333)
+==9917==    by 0x415F0AD: clone (clone.S:114)
+==9917== 
+==9917== Thread 9:
+==9917== Syscall param socketcall.send(args) points to uninitialised byte(s)
+==9917==    at 0x406A549: send (send.c:35)
+==9917==    by 0x8054753: devolver_id (protocolBroker.c:633)
+==9917==    by 0x80497F3: procesar_request (broker.c:93)
+==9917==    by 0x804A1E8: atender_cliente (broker.c:283)
+==9917==    by 0x4061294: start_thread (pthread_create.c:333)
+==9917==    by 0x415F0AD: clone (clone.S:114)
+==9917==  Address 0xa05d290 is on thread 9's stack
+==9917==  in frame #0, created by send (send.c:29)
+==9917== 
+==9917== Syscall param socketcall.send(msg) points to unaddressable byte(s)
+==9917==    at 0x406A549: send (send.c:35)
+==9917==    by 0x8054753: devolver_id (protocolBroker.c:633)
+==9917==    by 0x80497F3: procesar_request (broker.c:93)
+==9917==    by 0x804A1E8: atender_cliente (broker.c:283)
+==9917==    by 0x4061294: start_thread (pthread_create.c:333)
+==9917==    by 0x415F0AD: clone (clone.S:114)
+==9917==  Address 0x7 is not stack'd, malloc'd or (recently) free'd
+==9917== 
+==9917== 
+==9917== Process terminating with default action of signal 2 (SIGINT)
+==9917==    at 0x40623FB: pthread_join (pthread_join.c:90)
+==9917==    by 0x80506AC: main (broker.c:2239)
+==9917== 
+==9917== HEAP SUMMARY:
+==9917==     in use at exit: 3,886 bytes in 107 blocks
+==9917==   total heap usage: 1,973 allocs, 1,866 frees, 86,905 bytes allocated
+==9917== 
+==9917== Thread 1:
+==9917== 1 bytes in 1 blocks are definitely lost in loss record 1 of 65
+==9917==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==9917==    by 0x8051672: guardar_mensaje_en_memoria (memoria_broker.c:48)
+==9917==    by 0x804B4E5: atender_mensaje_caught (broker.c:727)
+==9917==    by 0x804A76F: atender_caught (broker.c:431)
+==9917==    by 0x4061294: start_thread (pthread_create.c:333)
+==9917==    by 0x415F0AD: clone (clone.S:114)
+==9917== 
+==9917== 1 bytes in 1 blocks are definitely lost in loss record 2 of 65
+==9917==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==9917==    by 0x8051672: guardar_mensaje_en_memoria (memoria_broker.c:48)
+==9917==    by 0x804B1D8: atender_mensaje_catch (broker.c:664)
+==9917==    by 0x804A62C: atender_catch (broker.c:398)
+==9917==    by 0x4061294: start_thread (pthread_create.c:333)
+==9917==    by 0x415F0AD: clone (clone.S:114)
+==9917== 
+==9917== 8 bytes in 1 blocks are definitely lost in loss record 37 of 65
+==9917==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==9917==    by 0x8049385: procesar_request (broker.c:6)
+==9917==    by 0x804A1E8: atender_cliente (broker.c:283)
+==9917==    by 0x4061294: start_thread (pthread_create.c:333)
+==9917==    by 0x415F0AD: clone (clone.S:114)
+==9917== 
+==9917== 136 bytes in 1 blocks are possibly lost in loss record 53 of 65
+==9917==    at 0x402E0B8: calloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==9917==    by 0x4011726: allocate_dtv (dl-tls.c:322)
+==9917==    by 0x401214B: _dl_allocate_tls (dl-tls.c:539)
+==9917==    by 0x4061CC3: allocate_stack (allocatestack.c:588)
+==9917==    by 0x4061CC3: pthread_create@@GLIBC_2.1 (pthread_create.c:539)
+==9917==    by 0x805061D: main (broker.c:2230)
+==9917== 
+==9917== 136 bytes in 1 blocks are possibly lost in loss record 54 of 65
+==9917==    at 0x402E0B8: calloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==9917==    by 0x4011726: allocate_dtv (dl-tls.c:322)
+==9917==    by 0x401214B: _dl_allocate_tls (dl-tls.c:539)
+==9917==    by 0x4061CC3: allocate_stack (allocatestack.c:588)
+==9917==    by 0x4061CC3: pthread_create@@GLIBC_2.1 (pthread_create.c:539)
+==9917==    by 0x8050632: main (broker.c:2232)
+==9917== 
+==9917== 136 bytes in 1 blocks are possibly lost in loss record 55 of 65
+==9917==    at 0x402E0B8: calloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==9917==    by 0x4011726: allocate_dtv (dl-tls.c:322)
+==9917==    by 0x401214B: _dl_allocate_tls (dl-tls.c:539)
+==9917==    by 0x4061CC3: allocate_stack (allocatestack.c:588)
+==9917==    by 0x4061CC3: pthread_create@@GLIBC_2.1 (pthread_create.c:539)
+==9917==    by 0x8050647: main (broker.c:2233)
+==9917== 
+==9917== 136 bytes in 1 blocks are possibly lost in loss record 56 of 65
+==9917==    at 0x402E0B8: calloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==9917==    by 0x4011726: allocate_dtv (dl-tls.c:322)
+==9917==    by 0x401214B: _dl_allocate_tls (dl-tls.c:539)
+==9917==    by 0x4061CC3: allocate_stack (allocatestack.c:588)
+==9917==    by 0x4061CC3: pthread_create@@GLIBC_2.1 (pthread_create.c:539)
+==9917==    by 0x805065C: main (broker.c:2234)
+==9917== 
+==9917== 136 bytes in 1 blocks are possibly lost in loss record 57 of 65
+==9917==    at 0x402E0B8: calloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==9917==    by 0x4011726: allocate_dtv (dl-tls.c:322)
+==9917==    by 0x401214B: _dl_allocate_tls (dl-tls.c:539)
+==9917==    by 0x4061CC3: allocate_stack (allocatestack.c:588)
+==9917==    by 0x4061CC3: pthread_create@@GLIBC_2.1 (pthread_create.c:539)
+==9917==    by 0x8050671: main (broker.c:2235)
+==9917== 
+==9917== 136 bytes in 1 blocks are possibly lost in loss record 58 of 65
+==9917==    at 0x402E0B8: calloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==9917==    by 0x4011726: allocate_dtv (dl-tls.c:322)
+==9917==    by 0x401214B: _dl_allocate_tls (dl-tls.c:539)
+==9917==    by 0x4061CC3: allocate_stack (allocatestack.c:588)
+==9917==    by 0x4061CC3: pthread_create@@GLIBC_2.1 (pthread_create.c:539)
+==9917==    by 0x8050686: main (broker.c:2236)
+==9917== 
+==9917== 136 bytes in 1 blocks are possibly lost in loss record 59 of 65
+==9917==    at 0x402E0B8: calloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==9917==    by 0x4011726: allocate_dtv (dl-tls.c:322)
+==9917==    by 0x401214B: _dl_allocate_tls (dl-tls.c:539)
+==9917==    by 0x4061CC3: allocate_stack (allocatestack.c:588)
+==9917==    by 0x4061CC3: pthread_create@@GLIBC_2.1 (pthread_create.c:539)
+==9917==    by 0x805069B: main (broker.c:2237)
+==9917== 
+==9917== LEAK SUMMARY:
+==9917==    definitely lost: 10 bytes in 3 blocks
+==9917==    indirectly lost: 0 bytes in 0 blocks
+==9917==      possibly lost: 952 bytes in 7 blocks
+==9917==    still reachable: 2,924 bytes in 97 blocks
+==9917==         suppressed: 0 bytes in 0 blocks
+==9917== Reachable blocks (those to which a pointer was found) are not shown.
+==9917== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==9917== 
+==9917== For counts of detected and suppressed errors, rerun with: -v
+==9917== Use --track-origins=yes to see where uninitialised values come from
+==9917== ERROR SUMMARY: 419 errors from 50 contexts (suppressed: 0 from 0)

@@ -94,6 +94,7 @@ data_tabla* encontrar_particion_con_lru();
 data_tabla* buscar_registro(void* particion);
 void liberar_registro_en_particiones_libres(data_tabla* registro);
 void corregir_particiones_libres();
+void ordenar_particiones_libres();
 data_tabla* obtener_registro_proximo(particion_libre* particion_libre);
 void dump_cache(int signal);
 char* obtener_dump_particion_libre(particion_libre* particion_libre, int numero_particion);

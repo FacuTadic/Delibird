@@ -20,6 +20,11 @@ void guardar_info_envios(uint32_t id, t_list* mandados, t_list* acks) {
 void guardar_mensaje_en_memoria(data_tabla* registro, void* mensaje) {
 	if (registro->limit > tamanio_memoria) {
 		log_error(extense_logger_memoria, "No se ha podido guardar el mensaje, es mayor al tamanio maximo permitido. Tamanio del mensaje: %i. Tamanio maximo permitido: %i", registro->limit, tamanio_memoria);
+		list_clean(registro->acknowledgements);
+		list_destroy(registro->acknowledgements);
+		list_clean(registro->envios);
+		list_destroy(registro->envios);
+		free(registro);
 		return;
 	}
 
@@ -44,13 +49,14 @@ void guardar_mensaje_en_memoria(data_tabla* registro, void* mensaje) {
 		sprintf(id_char, "%u", registro->id);
 		registro->base = lugar_en_memoria->desde;
 		dictionary_put(tabla_segmentos, id_char, (void *) registro);
-		free(id_char);
 
 		memcpy(lugar_en_memoria->desde, mensaje, registro->limit);
 
 		ocupar_lugar_en_particiones_libres(lugar_en_memoria, lugar_a_ubicar);
 
 		pthread_mutex_unlock(&mutex_memoria);
+
+		free(mensaje);
 	}
 
 }
@@ -125,7 +131,7 @@ void liberar_registro_en_particiones_libres(data_tabla* registro) {
 
 	particion_libre* nueva_particion = malloc(sizeof(particion_libre));
 	nueva_particion->desde = registro->base;
-	nueva_particion->hasta = registro->base + registro->limit;
+	nueva_particion->hasta = registro->base + registro->tamanio_particion;
 
 	size_t desde_nuevo = (size_t) nueva_particion->desde;
 
@@ -151,28 +157,42 @@ void liberar_registro_en_particiones_libres(data_tabla* registro) {
 	// limpiar lista
 
 	corregir_particiones_libres();
-
 }
 
 void corregir_particiones_libres() {
-	size_t final_anterior = 0;
-	size_t comienzo_actual;
-
-	int tamanio_lista = particiones_libres->elements_count;
-
-	for (int j = 0; j < tamanio_lista; j++) {
-		particion_libre* particion_lista = list_get(particiones_libres, j);
-		comienzo_actual = (size_t) particion_lista->desde;
-		if (j != 0 && comienzo_actual == final_anterior) {
+	int j;
+	for (j = 1; j < particiones_libres->elements_count; j++) {
+		if (j > 0) {
+			particion_libre* particion_actual = list_get(particiones_libres, j);
 			particion_libre* particion_anterior = list_get(particiones_libres, j - 1);
-			particion_anterior->hasta = particion_lista->hasta;
-			list_remove(particiones_libres, j);
-			tamanio_lista--;
-			j--;
-			free(particion_lista);
-			final_anterior = (size_t) particion_anterior->hasta;
-		} else {
-			final_anterior = (size_t) particion_lista->hasta;
+			size_t comienzo_actual = (size_t) particion_actual->desde;
+			size_t final_anterior = (size_t) particion_anterior->hasta;
+			if (comienzo_actual == final_anterior) {
+				particion_anterior->hasta = particion_actual->hasta;
+				list_remove(particiones_libres, j);
+				j = -1;
+			}
+		}
+	}
+
+	//ordenar_particiones_libres();
+
+	if (j == -1) {
+		corregir_particiones_libres();
+	}
+}
+
+void ordenar_particiones_libres() {
+	for (int i = 0; i < particiones_libres->elements_count - 1; i++) {
+		particion_libre* particion_actual = list_get(particiones_libres, i);
+		particion_libre* particion_siguiente = list_get(particiones_libres, i + 1);
+
+		size_t comienzo_actual = (size_t) particion_actual->desde;
+		size_t comienzo_siguiente = (size_t) particion_siguiente->desde;
+
+		if (comienzo_actual > comienzo_siguiente) {
+			list_remove(particiones_libres, i + 1);
+			list_add_in_index(particiones_libres, i, particion_siguiente);
 		}
 	}
 }
@@ -260,8 +280,6 @@ void compactar_memoria() {
 	log_info(extense_logger_memoria, "Compactando memoria");
 	log_info(logger_memoria, "Compactando memoria");
 	while (final_memoria != final_primer_particion) {
-		primer_particion_libre = list_get(particiones_libres, 0);
-		final_primer_particion = (size_t) primer_particion_libre->hasta;
 		data_tabla* registro_proximo = obtener_registro_proximo(primer_particion_libre);
 
 		log_info(extense_logger_memoria, "Moviendo registro de %06p a %06p", registro_proximo->base, primer_particion_libre->desde);
@@ -272,10 +290,15 @@ void compactar_memoria() {
 
 		free(aux);
 
+		registro_proximo->base = primer_particion_libre->desde;
+
 		primer_particion_libre->desde = primer_particion_libre->desde + registro_proximo->tamanio_particion;
 		primer_particion_libre->hasta = primer_particion_libre->hasta + registro_proximo->tamanio_particion;
 
 		corregir_particiones_libres();
+
+		primer_particion_libre = list_get(particiones_libres, 0);
+		final_primer_particion = (size_t) primer_particion_libre->hasta;
 	}
 }
 

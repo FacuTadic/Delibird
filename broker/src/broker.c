@@ -261,6 +261,7 @@ void procesar_request(int cod_op, int cliente_fd) {
 		}
 	}
 	free(suscripcion);
+	free(mensaje_a_guardar);
 	break;
 	}
 }
