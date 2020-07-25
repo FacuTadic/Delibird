@@ -18,7 +18,6 @@ sudo ./buildGameBoy.sh
 sudo ./buildTeam.sh
 
 cd
-cd Proyectos/tp-2020-1c-Postre-de-vainilla-DIA-
 mkdir tall-grass
 cd tall-grass
 mkdir Metadata
