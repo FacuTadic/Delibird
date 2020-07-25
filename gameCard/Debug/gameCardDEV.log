@@ -2798,3 +2798,1794 @@
 [ERROR] 02:44:26:112 GameCard PAPAA/(23066:23073): Error: No se pudo enviar el mensaje
 [INFO] 02:44:28:362 GameCard PAPAA/(23066:23071): Iniciando verificacion de conexion con Broker...
 [ERROR] 02:44:28:376 GameCard PAPAA/(23066:23071): Reconexion con Broker fallida, intentando nuevamente en 10 segundos
+[INFO] 02:48:47:253 GameCard PAPAA/(23834:23834): logger iniciado.
+[INFO] 02:48:47:284 GameCard PAPAA/(23834:23834): Config cargada.
+[INFO] 02:48:47:287 GameCard PAPAA/(23834:23834): La IP del Broker: 127.0.0.1
+[INFO] 02:48:47:287 GameCard PAPAA/(23834:23834): El Puerto es: 6009
+[INFO] 02:48:47:290 GameCard PAPAA/(23834:23834): El tiempo de reintento de conexion es: 10
+[INFO] 02:48:47:291 GameCard PAPAA/(23834:23834): El tiempo de reintento de operacion es: 5
+[INFO] 02:48:47:292 GameCard PAPAA/(23834:23834): El tiempo de retardo de conexion es: 5
+[INFO] 02:48:47:292 GameCard PAPAA/(23834:23834): El punto de montaje es: /home/utnso/Escritorio/tall-grass
+[INFO] 02:48:47:293 GameCard PAPAA/(23834:23834): La IP es: 127.0.0.1
+[INFO] 02:48:47:294 GameCard PAPAA/(23834:23834): El puerto es: 4447
+[INFO] 02:48:47:295 GameCard PAPAA/(23834:23834): El punto de montaje es: /home/utnso/Escritorio/tall-grass
+[INFO] 02:48:47:297 GameCard PAPAA/(23834:23834): La ruta del metadataes: /home/utnso/Escritorio/tall-grass/Metadata
+[INFO] 02:48:47:299 GameCard PAPAA/(23834:23834): Se creo el config de MetaData
+[INFO] 02:48:47:300 GameCard PAPAA/(23834:23834): El Block Size es: 64
+[INFO] 02:48:47:301 GameCard PAPAA/(23834:23834): La cantidad de Bloques es: 5192
+[INFO] 02:48:47:302 GameCard PAPAA/(23834:23834): El Magic Number es: TALL_GRASS
+[INFO] 02:48:47:319 GameCard PAPAA/(23834:23834): Bitmap ya seteado
+[ERROR] 02:48:47:355 GameCard PAPAA/(23834:23834): Ya existe el BitMap
+[INFO] 02:48:47:357 GameCard PAPAA/(23834:23834): SETEO DE VARIABLES PARA ARCHIVOSYDIRECTORIOS.H
+[INFO] 02:48:47:358 GameCard PAPAA/(23834:23834): El ID de modulo es: 1804289383
+[INFO] 02:48:47:392 GameCard PAPAA/(23834:23839): Esperando mensajes de game boy en socket 7
+[INFO] 02:48:47:393 GameCard PAPAA/(23834:23841): Escucho CATCH de BROKER
+[INFO] 02:48:47:394 GameCard PAPAA/(23834:23840): Escuchando NEW de BROKER
+[ERROR] 02:48:47:408 GameCard PAPAA/(23834:23840): Hubo un problema enviando la suscripcion a la cola NEW del broker
+[ERROR] 02:48:47:408 GameCard PAPAA/(23834:23841): Hubo un problema enviando la suscripcion a la cola CATCH del broker
+[INFO] 02:48:47:410 GameCard PAPAA/(23834:23843): Hilo de verificacion periodica de conexion con Broker iniciado
+[INFO] 02:48:47:411 GameCard PAPAA/(23834:23842): Escucho GET de BROKER
+[ERROR] 02:48:47:421 GameCard PAPAA/(23834:23842): Hubo un problema enviando la suscripcion a la cola GET del broker
+[INFO] 02:48:49:266 GameCard PAPAA/(23834:23839): Socket 7 de gameBoy aceptado
+[INFO] 02:48:49:298 GameCard PAPAA/(23834:23845): Recibiendo codigo de operacion de GameBoy en socket 8
+[INFO] 02:48:49:307 GameCard PAPAA/(23834:23845): Codigo de operacion de socket 8 recibido: 3
+[INFO] 02:48:49:321 GameCard PAPAA/(23834:23845): Procesando request de GameBoy
+[INFO] 02:48:49:326 GameCard PAPAA/(23834:23845): Codigo de operacion recibido del socket cliente 8 corresponde a un CATCH
+[INFO] 02:48:49:331 GameCard PAPAA/(23834:23845): Recibiendo tamanio total
+[INFO] 02:48:49:340 GameCard PAPAA/(23834:23845): Tamanio total recibido: 32
+[INFO] 02:48:49:358 GameCard PAPAA/(23834:23845): EL ID recibido: 2
+[INFO] 02:48:49:359 GameCard PAPAA/(23834:23845): Tamanio del pokemon: 16
+[INFO] 02:48:49:390 GameCard PAPAA/(23834:23845): Nombre del pokemon recibido: miltonchupapija
+[INFO] 02:48:49:403 GameCard PAPAA/(23834:23845): Posicion X recibida: 7
+[INFO] 02:48:49:407 GameCard PAPAA/(23834:23845): Posicion Y recibida: 9
+[INFO] 02:48:49:408 GameCard PAPAA/(23834:23845): CATCH recibido del modulo Game Boy socket 8
+[INFO] 02:48:49:433 GameCard PAPAA/(23834:23845): La coordenada generada es: 7-9
+[INFO] 02:48:49:478 GameCard PAPAA/(23834:23845): EL array de blocks es: เภ$Pม$
+[INFO] 02:48:49:492 GameCard PAPAA/(23834:23845): Se creo el falso config de la ruta
+[INFO] 02:48:49:492 GameCard PAPAA/(23834:23845): Retorno el estado: N
+[INFO] 02:48:49:512 GameCard PAPAA/(23834:23845): Se creo el falso config de la ruta
+[INFO] 02:48:49:574 GameCard PAPAA/(23834:23845): Valido posicion
+[INFO] 02:48:49:586 GameCard PAPAA/(23834:23845): EL array de blocks es: 3
+[INFO] 02:48:49:587 GameCard PAPAA/(23834:23845): Se esta analizando el block: 3
+[INFO] 02:48:49:603 GameCard PAPAA/(23834:23845): Se esta analizando el block: 3
+[INFO] 02:48:49:609 GameCard PAPAA/(23834:23845): Encontro el block donde esta la posicion: 3
+[INFO] 02:48:49:610 GameCard PAPAA/(23834:23845): El bloque en el que se encuentra es: 3
+[INFO] 02:48:49:624 GameCard PAPAA/(23834:23845): La ruta del block es: /home/utnso/Escritorio/tall-grass/Blocks/3.bin
+[INFO] 02:48:49:630 GameCard PAPAA/(23834:23845): La cantidad de pokemons en el la posicion 7-9 es: 2
+[INFO] 02:48:49:640 GameCard PAPAA/(23834:23845): Se decrementa en uno la posicion
+[INFO] 02:48:49:645 GameCard PAPAA/(23834:23845): La cantidad vieja en la posicion 7-9 en el metadata es de: 2
+[INFO] 02:48:49:691 GameCard PAPAA/(23834:23845): La cantidad nueva en la posicion 7-9 en el metadata es de: 1
+[INFO] 02:48:49:704 GameCard PAPAA/(23834:23845): EL tamanio calculado del archivo es: 62
+[INFO] 02:48:49:747 GameCard PAPAA/(23834:23845): EL tamanio calculado del archivo es: 6
+[INFO] 02:48:49:766 GameCard PAPAA/(23834:23845): El ID de mensaje cargado en el caught es: 2
+[INFO] 02:48:49:780 GameCard PAPAA/(23834:23845): El Flag cargado en el caught es: 1
+[INFO] 02:48:54:791 GameCard PAPAA/(23834:23845): El ID cargado es 2
+[INFO] 02:48:54:796 GameCard PAPAA/(23834:23845): El flag cargado es 1
+[INFO] 02:48:54:815 GameCard PAPAA/(23834:23845): Creando paquete
+[INFO] 02:48:54:815 GameCard PAPAA/(23834:23845): CODIGO DE OPERACION: 4
+[INFO] 02:48:54:845 GameCard PAPAA/(23834:23845): Paquete Creado
+[INFO] 02:48:54:850 GameCard PAPAA/(23834:23845): la operacion a realizar es 4
+[INFO] 02:48:54:855 GameCard PAPAA/(23834:23845): Serializando...
+[INFO] 02:48:54:866 GameCard PAPAA/(23834:23845): Serializacion completa
+[INFO] 02:48:54:885 GameCard PAPAA/(23834:23845): El peso total es: 8
+[ERROR] 02:48:54:886 GameCard PAPAA/(23834:23845): Error: No se pudo enviar el mensaje
+[INFO] 02:48:57:440 GameCard PAPAA/(23834:23843): Iniciando verificacion de conexion con Broker...
+[ERROR] 02:48:57:464 GameCard PAPAA/(23834:23843): Reconexion con Broker fallida, intentando nuevamente en 10 segundos
+[INFO] 02:49:27:755 GameCard PAPAA/(23915:23915): logger iniciado.
+[INFO] 02:49:27:784 GameCard PAPAA/(23915:23915): Config cargada.
+[INFO] 02:49:27:787 GameCard PAPAA/(23915:23915): La IP del Broker: 127.0.0.1
+[INFO] 02:49:27:787 GameCard PAPAA/(23915:23915): El Puerto es: 6009
+[INFO] 02:49:27:790 GameCard PAPAA/(23915:23915): El tiempo de reintento de conexion es: 10
+[INFO] 02:49:27:791 GameCard PAPAA/(23915:23915): El tiempo de reintento de operacion es: 5
+[INFO] 02:49:27:792 GameCard PAPAA/(23915:23915): El tiempo de retardo de conexion es: 5
+[INFO] 02:49:27:792 GameCard PAPAA/(23915:23915): El punto de montaje es: /home/utnso/Escritorio/tall-grass
+[INFO] 02:49:27:793 GameCard PAPAA/(23915:23915): La IP es: 127.0.0.1
+[INFO] 02:49:27:793 GameCard PAPAA/(23915:23915): El puerto es: 4447
+[INFO] 02:49:27:794 GameCard PAPAA/(23915:23915): El punto de montaje es: /home/utnso/Escritorio/tall-grass
+[INFO] 02:49:27:797 GameCard PAPAA/(23915:23915): La ruta del metadataes: /home/utnso/Escritorio/tall-grass/Metadata
+[INFO] 02:49:27:800 GameCard PAPAA/(23915:23915): Se creo el config de MetaData
+[INFO] 02:49:27:801 GameCard PAPAA/(23915:23915): El Block Size es: 64
+[INFO] 02:49:27:802 GameCard PAPAA/(23915:23915): La cantidad de Bloques es: 5192
+[INFO] 02:49:27:802 GameCard PAPAA/(23915:23915): El Magic Number es: TALL_GRASS
+[INFO] 02:49:27:819 GameCard PAPAA/(23915:23915): Bitmap ya seteado
+[ERROR] 02:49:27:854 GameCard PAPAA/(23915:23915): Ya existe el BitMap
+[INFO] 02:49:27:856 GameCard PAPAA/(23915:23915): SETEO DE VARIABLES PARA ARCHIVOSYDIRECTORIOS.H
+[INFO] 02:49:27:857 GameCard PAPAA/(23915:23915): El ID de modulo es: 1804289383
+[INFO] 02:49:27:891 GameCard PAPAA/(23915:23920): Esperando mensajes de game boy en socket 7
+[INFO] 02:49:27:893 GameCard PAPAA/(23915:23921): Escuchando NEW de BROKER
+[INFO] 02:49:27:894 GameCard PAPAA/(23915:23922): Escucho CATCH de BROKER
+[INFO] 02:49:27:898 GameCard PAPAA/(23915:23923): Escucho GET de BROKER
+[INFO] 02:49:27:898 GameCard PAPAA/(23915:23924): Hilo de verificacion periodica de conexion con Broker iniciado
+[ERROR] 02:49:27:909 GameCard PAPAA/(23915:23921): Hubo un problema enviando la suscripcion a la cola NEW del broker
+[ERROR] 02:49:27:912 GameCard PAPAA/(23915:23922): Hubo un problema enviando la suscripcion a la cola CATCH del broker
+[ERROR] 02:49:27:913 GameCard PAPAA/(23915:23923): Hubo un problema enviando la suscripcion a la cola GET del broker
+[INFO] 02:49:30:381 GameCard PAPAA/(23915:23920): Socket 7 de gameBoy aceptado
+[INFO] 02:49:30:415 GameCard PAPAA/(23915:23930): Recibiendo codigo de operacion de GameBoy en socket 8
+[INFO] 02:49:30:447 GameCard PAPAA/(23915:23930): Codigo de operacion de socket 8 recibido: 3
+[INFO] 02:49:30:452 GameCard PAPAA/(23915:23930): Procesando request de GameBoy
+[INFO] 02:49:30:453 GameCard PAPAA/(23915:23930): Codigo de operacion recibido del socket cliente 8 corresponde a un CATCH
+[INFO] 02:49:30:462 GameCard PAPAA/(23915:23930): Recibiendo tamanio total
+[INFO] 02:49:30:484 GameCard PAPAA/(23915:23930): Tamanio total recibido: 32
+[INFO] 02:49:30:485 GameCard PAPAA/(23915:23930): EL ID recibido: 2
+[INFO] 02:49:30:499 GameCard PAPAA/(23915:23930): Tamanio del pokemon: 16
+[INFO] 02:49:30:508 GameCard PAPAA/(23915:23930): Nombre del pokemon recibido: miltonchupapija
+[INFO] 02:49:30:513 GameCard PAPAA/(23915:23930): Posicion X recibida: 7
+[INFO] 02:49:30:518 GameCard PAPAA/(23915:23930): Posicion Y recibida: 9
+[INFO] 02:49:30:523 GameCard PAPAA/(23915:23930): CATCH recibido del modulo Game Boy socket 8
+[INFO] 02:49:30:527 GameCard PAPAA/(23915:23930): La coordenada generada es: 7-9
+[INFO] 02:49:30:564 GameCard PAPAA/(23915:23930): EL array de blocks es: เภ$Pม$
+[INFO] 02:49:30:593 GameCard PAPAA/(23915:23930): Se creo el falso config de la ruta
+[INFO] 02:49:30:594 GameCard PAPAA/(23915:23930): Retorno el estado: N
+[INFO] 02:49:30:614 GameCard PAPAA/(23915:23930): Se creo el falso config de la ruta
+[INFO] 02:49:30:682 GameCard PAPAA/(23915:23930): Valido posicion
+[INFO] 02:49:30:704 GameCard PAPAA/(23915:23930): EL array de blocks es: 3
+[INFO] 02:49:30:724 GameCard PAPAA/(23915:23930): Se esta analizando el block: 3
+[INFO] 02:49:30:741 GameCard PAPAA/(23915:23930): Se esta analizando el block: 3
+[INFO] 02:49:30:759 GameCard PAPAA/(23915:23930): Encontro el block donde esta la posicion: 3
+[INFO] 02:49:30:765 GameCard PAPAA/(23915:23930): El bloque en el que se encuentra es: 3
+[INFO] 02:49:30:775 GameCard PAPAA/(23915:23930): La ruta del block es: /home/utnso/Escritorio/tall-grass/Blocks/3.bin
+[INFO] 02:49:30:784 GameCard PAPAA/(23915:23930): La cantidad de pokemons en el la posicion 7-9 es: 1
+[INFO] 02:49:30:795 GameCard PAPAA/(23915:23930): La cantidad de pokemons en esa posicion es 1
+[INFO] 02:49:30:816 GameCard PAPAA/(23915:23930): Se elimina la linea
+[INFO] 02:49:30:819 GameCard PAPAA/(23915:23930): EL tamanio calculado del archivo es: 56
+[INFO] 02:49:30:836 GameCard PAPAA/(23915:23930): EL tamanio calculado del archivo es: 6
+[INFO] 02:49:30:857 GameCard PAPAA/(23915:23930): El ID de mensaje cargado en el caught es: 2
+[INFO] 02:49:30:871 GameCard PAPAA/(23915:23930): El Flag cargado en el caught es: 1
+[INFO] 02:49:35:887 GameCard PAPAA/(23915:23930): El ID cargado es 2
+[INFO] 02:49:35:912 GameCard PAPAA/(23915:23930): El flag cargado es 1
+[INFO] 02:49:35:935 GameCard PAPAA/(23915:23930): Creando paquete
+[INFO] 02:49:35:936 GameCard PAPAA/(23915:23930): CODIGO DE OPERACION: 4
+[INFO] 02:49:35:956 GameCard PAPAA/(23915:23930): Paquete Creado
+[INFO] 02:49:35:957 GameCard PAPAA/(23915:23930): la operacion a realizar es 4
+[INFO] 02:49:35:957 GameCard PAPAA/(23915:23930): Serializando...
+[INFO] 02:49:35:974 GameCard PAPAA/(23915:23930): Serializacion completa
+[INFO] 02:49:35:992 GameCard PAPAA/(23915:23930): El peso total es: 8
+[ERROR] 02:49:35:992 GameCard PAPAA/(23915:23930): Error: No se pudo enviar el mensaje
+[INFO] 02:49:37:913 GameCard PAPAA/(23915:23924): Iniciando verificacion de conexion con Broker...
+[ERROR] 02:49:37:927 GameCard PAPAA/(23915:23924): Reconexion con Broker fallida, intentando nuevamente en 10 segundos
+[INFO] 02:58:47:875 GameCard PAPAA/(24876:24876): logger iniciado.
+[INFO] 02:58:47:904 GameCard PAPAA/(24876:24876): Config cargada.
+[INFO] 02:58:47:906 GameCard PAPAA/(24876:24876): La IP del Broker: 127.0.0.1
+[INFO] 02:58:47:906 GameCard PAPAA/(24876:24876): El Puerto es: 6009
+[INFO] 02:58:47:909 GameCard PAPAA/(24876:24876): El tiempo de reintento de conexion es: 10
+[INFO] 02:58:47:910 GameCard PAPAA/(24876:24876): El tiempo de reintento de operacion es: 5
+[INFO] 02:58:47:911 GameCard PAPAA/(24876:24876): El tiempo de retardo de conexion es: 5
+[INFO] 02:58:47:911 GameCard PAPAA/(24876:24876): El punto de montaje es: /home/utnso/Escritorio/tall-grass
+[INFO] 02:58:47:912 GameCard PAPAA/(24876:24876): La IP es: 127.0.0.1
+[INFO] 02:58:47:913 GameCard PAPAA/(24876:24876): El puerto es: 4447
+[INFO] 02:58:47:914 GameCard PAPAA/(24876:24876): El punto de montaje es: /home/utnso/Escritorio/tall-grass
+[INFO] 02:58:47:916 GameCard PAPAA/(24876:24876): La ruta del metadataes: /home/utnso/Escritorio/tall-grass/Metadata
+[INFO] 02:58:47:918 GameCard PAPAA/(24876:24876): Se creo el config de MetaData
+[INFO] 02:58:47:919 GameCard PAPAA/(24876:24876): El Block Size es: 64
+[INFO] 02:58:47:920 GameCard PAPAA/(24876:24876): La cantidad de Bloques es: 5192
+[INFO] 02:58:47:920 GameCard PAPAA/(24876:24876): El Magic Number es: TALL_GRASS
+[INFO] 02:58:47:936 GameCard PAPAA/(24876:24876): Bitmap ya seteado
+[ERROR] 02:58:47:969 GameCard PAPAA/(24876:24876): Ya existe el BitMap
+[INFO] 02:58:47:972 GameCard PAPAA/(24876:24876): SETEO DE VARIABLES PARA ARCHIVOSYDIRECTORIOS.H
+[INFO] 02:58:47:972 GameCard PAPAA/(24876:24876): El ID de modulo es: 1804289383
+[INFO] 02:58:47:4 GameCard PAPAA/(24876:24877): Esperando mensajes de game boy en socket 7
+[INFO] 02:58:48:6 GameCard PAPAA/(24876:24878): Escuchando NEW de BROKER
+[INFO] 02:58:48:7 GameCard PAPAA/(24876:24879): Escucho CATCH de BROKER
+[INFO] 02:58:48:10 GameCard PAPAA/(24876:24880): Escucho GET de BROKER
+[INFO] 02:58:48:10 GameCard PAPAA/(24876:24881): Hilo de verificacion periodica de conexion con Broker iniciado
+[ERROR] 02:58:48:18 GameCard PAPAA/(24876:24878): Hubo un problema enviando la suscripcion a la cola NEW del broker
+[ERROR] 02:58:48:21 GameCard PAPAA/(24876:24879): Hubo un problema enviando la suscripcion a la cola CATCH del broker
+[ERROR] 02:58:48:22 GameCard PAPAA/(24876:24880): Hubo un problema enviando la suscripcion a la cola GET del broker
+[INFO] 02:58:49:198 GameCard PAPAA/(24876:24877): Socket 7 de gameBoy aceptado
+[INFO] 02:58:49:226 GameCard PAPAA/(24876:24887): Recibiendo codigo de operacion de GameBoy en socket 8
+[INFO] 02:58:49:243 GameCard PAPAA/(24876:24887): Codigo de operacion de socket 8 recibido: 5
+[INFO] 02:58:49:244 GameCard PAPAA/(24876:24887): Procesando request de GameBoy
+[INFO] 02:58:49:261 GameCard PAPAA/(24876:24887): Codigo de operacion recibido del socket cliente 8 corresponde a un GET
+[INFO] 02:58:49:264 GameCard PAPAA/(24876:24887): Recibiendo tamanio total
+[INFO] 02:58:49:279 GameCard PAPAA/(24876:24887): Tamanio total recibido: 22
+[INFO] 02:58:49:280 GameCard PAPAA/(24876:24887): EL ID recibido: 0
+[INFO] 02:58:49:281 GameCard PAPAA/(24876:24887): Tamanio del pokemon recibido: 14
+[INFO] 02:58:49:281 GameCard PAPAA/(24876:24887): Nombre del pokemon recibido: debiexagerada
+[INFO] 02:58:49:297 GameCard PAPAA/(24876:24887): GET recibido del modulo Game Boy socket 8
+[INFO] 02:58:49:327 GameCard PAPAA/(24876:24887): EL array de blocks es: (null)
+[INFO] 02:58:49:361 GameCard PAPAA/(24876:24887): Se creo el falso config de la ruta
+[INFO] 02:58:49:362 GameCard PAPAA/(24876:24887): Retorno el estado: N
+[INFO] 02:58:49:380 GameCard PAPAA/(24876:24887): Se creo el falso config de la ruta
+[INFO] 02:58:49:442 GameCard PAPAA/(24876:24887): El ID mensaje cargado en el localized es: 0
+[INFO] 02:58:49:451 GameCard PAPAA/(24876:24887): El Pokemon cargado en el localized es: debiexagerada
+[INFO] 02:58:49:459 GameCard PAPAA/(24876:24887): El tamanio del nombre del pokemon cargado en el localized es: 13
+[INFO] 02:58:49:460 GameCard PAPAA/(24876:24887): La cantidad de lugares donde apareche el pokemon cargado en el localized es: 0
+[INFO] 02:58:54:463 GameCard PAPAA/(24876:24887): El ID cargado es 0
+[INFO] 02:58:54:485 GameCard PAPAA/(24876:24887): Tamanio nombre pokemon 13
+[INFO] 02:58:54:489 GameCard PAPAA/(24876:24887): Nombre pokemon debiexagerada
+[INFO] 02:58:54:530 GameCard PAPAA/(24876:24887): Cantidad de coordenadas donde aparece:  0
+[INFO] 02:58:54:530 GameCard PAPAA/(24876:24887): SAliendo
+[INFO] 02:58:54:535 GameCard PAPAA/(24876:24887): Creando paquete
+[INFO] 02:58:54:540 GameCard PAPAA/(24876:24887): CODIGO DE OPERACION: 6
+[INFO] 02:58:54:545 GameCard PAPAA/(24876:24887): Paquete Creado
+[INFO] 02:58:54:546 GameCard PAPAA/(24876:24887): la operacion a realizar es 6
+[INFO] 02:58:54:551 GameCard PAPAA/(24876:24887): Serializando...
+[INFO] 02:58:54:559 GameCard PAPAA/(24876:24887): Serializacion completa
+[INFO] 02:58:54:593 GameCard PAPAA/(24876:24887): El peso total es: 26
+[ERROR] 02:58:54:594 GameCard PAPAA/(24876:24887): Error: No se pudo enviar el mensaje
+[INFO] 02:59:15:301 GameCard PAPAA/(24939:24939): logger iniciado.
+[INFO] 02:59:15:332 GameCard PAPAA/(24939:24939): Config cargada.
+[INFO] 02:59:15:335 GameCard PAPAA/(24939:24939): La IP del Broker: 127.0.0.1
+[INFO] 02:59:15:335 GameCard PAPAA/(24939:24939): El Puerto es: 6009
+[INFO] 02:59:15:338 GameCard PAPAA/(24939:24939): El tiempo de reintento de conexion es: 10
+[INFO] 02:59:15:339 GameCard PAPAA/(24939:24939): El tiempo de reintento de operacion es: 5
+[INFO] 02:59:15:341 GameCard PAPAA/(24939:24939): El tiempo de retardo de conexion es: 5
+[INFO] 02:59:15:342 GameCard PAPAA/(24939:24939): El punto de montaje es: /home/utnso/Escritorio/tall-grass
+[INFO] 02:59:15:342 GameCard PAPAA/(24939:24939): La IP es: 127.0.0.1
+[INFO] 02:59:15:343 GameCard PAPAA/(24939:24939): El puerto es: 4447
+[INFO] 02:59:15:344 GameCard PAPAA/(24939:24939): El punto de montaje es: /home/utnso/Escritorio/tall-grass
+[INFO] 02:59:15:346 GameCard PAPAA/(24939:24939): La ruta del metadataes: /home/utnso/Escritorio/tall-grass/Metadata
+[INFO] 02:59:15:349 GameCard PAPAA/(24939:24939): Se creo el config de MetaData
+[INFO] 02:59:15:350 GameCard PAPAA/(24939:24939): El Block Size es: 64
+[INFO] 02:59:15:351 GameCard PAPAA/(24939:24939): La cantidad de Bloques es: 5192
+[INFO] 02:59:15:351 GameCard PAPAA/(24939:24939): El Magic Number es: TALL_GRASS
+[INFO] 02:59:15:368 GameCard PAPAA/(24939:24939): Bitmap ya seteado
+[ERROR] 02:59:15:402 GameCard PAPAA/(24939:24939): Ya existe el BitMap
+[INFO] 02:59:15:405 GameCard PAPAA/(24939:24939): SETEO DE VARIABLES PARA ARCHIVOSYDIRECTORIOS.H
+[INFO] 02:59:15:406 GameCard PAPAA/(24939:24939): El ID de modulo es: 1804289383
+[INFO] 02:59:15:441 GameCard PAPAA/(24939:24944): Esperando mensajes de game boy en socket 7
+[INFO] 02:59:15:443 GameCard PAPAA/(24939:24946): Escucho CATCH de BROKER
+[INFO] 02:59:15:443 GameCard PAPAA/(24939:24945): Escuchando NEW de BROKER
+[ERROR] 02:59:15:456 GameCard PAPAA/(24939:24946): Hubo un problema enviando la suscripcion a la cola CATCH del broker
+[ERROR] 02:59:15:457 GameCard PAPAA/(24939:24945): Hubo un problema enviando la suscripcion a la cola NEW del broker
+[INFO] 02:59:15:458 GameCard PAPAA/(24939:24947): Escucho GET de BROKER
+[INFO] 02:59:15:459 GameCard PAPAA/(24939:24948): Hilo de verificacion periodica de conexion con Broker iniciado
+[ERROR] 02:59:15:483 GameCard PAPAA/(24939:24947): Hubo un problema enviando la suscripcion a la cola GET del broker
+[INFO] 02:59:17:570 GameCard PAPAA/(24939:24944): Socket 7 de gameBoy aceptado
+[INFO] 02:59:17:606 GameCard PAPAA/(24939:24950): Recibiendo codigo de operacion de GameBoy en socket 8
+[INFO] 02:59:17:608 GameCard PAPAA/(24939:24950): Codigo de operacion de socket 8 recibido: 5
+[INFO] 02:59:17:621 GameCard PAPAA/(24939:24950): Procesando request de GameBoy
+[INFO] 02:59:17:626 GameCard PAPAA/(24939:24950): Codigo de operacion recibido del socket cliente 8 corresponde a un GET
+[INFO] 02:59:17:627 GameCard PAPAA/(24939:24950): Recibiendo tamanio total
+[INFO] 02:59:17:632 GameCard PAPAA/(24939:24950): Tamanio total recibido: 22
+[INFO] 02:59:17:640 GameCard PAPAA/(24939:24950): EL ID recibido: 0
+[INFO] 02:59:17:669 GameCard PAPAA/(24939:24950): Tamanio del pokemon recibido: 14
+[INFO] 02:59:17:686 GameCard PAPAA/(24939:24950): Nombre del pokemon recibido: debiexagerada
+[INFO] 02:59:17:687 GameCard PAPAA/(24939:24950): GET recibido del modulo Game Boy socket 8
+[INFO] 02:59:17:722 GameCard PAPAA/(24939:24950): EL array de blocks es: (null)
+[INFO] 02:59:17:735 GameCard PAPAA/(24939:24950): Se creo el falso config de la ruta
+[INFO] 02:59:17:744 GameCard PAPAA/(24939:24950): Retorno el estado: N
+[INFO] 02:59:17:755 GameCard PAPAA/(24939:24950): Se creo el falso config de la ruta
+[INFO] 02:59:17:835 GameCard PAPAA/(24939:24950): El ID mensaje cargado en el localized es: 0
+[INFO] 02:59:17:841 GameCard PAPAA/(24939:24950): El Pokemon cargado en el localized es: debiexagerada
+[INFO] 02:59:17:846 GameCard PAPAA/(24939:24950): El tamanio del nombre del pokemon cargado en el localized es: 13
+[INFO] 02:59:17:847 GameCard PAPAA/(24939:24950): La cantidad de lugares donde apareche el pokemon cargado en el localized es: 0
+[INFO] 02:59:22:856 GameCard PAPAA/(24939:24950): El ID cargado es 0
+[INFO] 02:59:22:870 GameCard PAPAA/(24939:24950): Tamanio nombre pokemon 13
+[INFO] 02:59:22:887 GameCard PAPAA/(24939:24950): Nombre pokemon debiexagerada
+[INFO] 02:59:22:903 GameCard PAPAA/(24939:24950): Cantidad de coordenadas donde aparece:  0
+[INFO] 02:59:22:903 GameCard PAPAA/(24939:24950): SAliendo
+[INFO] 02:59:22:904 GameCard PAPAA/(24939:24950): Creando paquete
+[INFO] 02:59:22:905 GameCard PAPAA/(24939:24950): CODIGO DE OPERACION: 6
+[INFO] 02:59:22:905 GameCard PAPAA/(24939:24950): Paquete Creado
+[INFO] 02:59:22:906 GameCard PAPAA/(24939:24950): la operacion a realizar es 6
+[INFO] 02:59:22:932 GameCard PAPAA/(24939:24950): Serializando...
+[INFO] 02:59:22:933 GameCard PAPAA/(24939:24950): Serializacion completa
+[INFO] 02:59:22:934 GameCard PAPAA/(24939:24950): El peso total es: 26
+[ERROR] 02:59:22:934 GameCard PAPAA/(24939:24950): Error: No se pudo enviar el mensaje
+[INFO] 02:59:25:483 GameCard PAPAA/(24939:24948): Iniciando verificacion de conexion con Broker...
+[ERROR] 02:59:25:488 GameCard PAPAA/(24939:24948): Reconexion con Broker fallida, intentando nuevamente en 10 segundos
+[INFO] 02:59:53:29 GameCard PAPAA/(25011:25011): logger iniciado.
+[INFO] 02:59:53:59 GameCard PAPAA/(25011:25011): Config cargada.
+[INFO] 02:59:53:62 GameCard PAPAA/(25011:25011): La IP del Broker: 127.0.0.1
+[INFO] 02:59:53:62 GameCard PAPAA/(25011:25011): El Puerto es: 6009
+[INFO] 02:59:53:65 GameCard PAPAA/(25011:25011): El tiempo de reintento de conexion es: 10
+[INFO] 02:59:53:66 GameCard PAPAA/(25011:25011): El tiempo de reintento de operacion es: 5
+[INFO] 02:59:53:67 GameCard PAPAA/(25011:25011): El tiempo de retardo de conexion es: 5
+[INFO] 02:59:53:67 GameCard PAPAA/(25011:25011): El punto de montaje es: /home/utnso/Escritorio/tall-grass
+[INFO] 02:59:53:68 GameCard PAPAA/(25011:25011): La IP es: 127.0.0.1
+[INFO] 02:59:53:69 GameCard PAPAA/(25011:25011): El puerto es: 4447
+[INFO] 02:59:53:70 GameCard PAPAA/(25011:25011): El punto de montaje es: /home/utnso/Escritorio/tall-grass
+[INFO] 02:59:53:72 GameCard PAPAA/(25011:25011): La ruta del metadataes: /home/utnso/Escritorio/tall-grass/Metadata
+[INFO] 02:59:53:74 GameCard PAPAA/(25011:25011): Se creo el config de MetaData
+[INFO] 02:59:53:76 GameCard PAPAA/(25011:25011): El Block Size es: 64
+[INFO] 02:59:53:76 GameCard PAPAA/(25011:25011): La cantidad de Bloques es: 5192
+[INFO] 02:59:53:77 GameCard PAPAA/(25011:25011): El Magic Number es: TALL_GRASS
+[INFO] 02:59:53:94 GameCard PAPAA/(25011:25011): Bitmap ya seteado
+[ERROR] 02:59:53:128 GameCard PAPAA/(25011:25011): Ya existe el BitMap
+[INFO] 02:59:53:131 GameCard PAPAA/(25011:25011): SETEO DE VARIABLES PARA ARCHIVOSYDIRECTORIOS.H
+[INFO] 02:59:53:132 GameCard PAPAA/(25011:25011): El ID de modulo es: 1804289383
+[INFO] 02:59:53:166 GameCard PAPAA/(25011:25012): Esperando mensajes de game boy en socket 7
+[INFO] 02:59:53:168 GameCard PAPAA/(25011:25014): Escucho CATCH de BROKER
+[INFO] 02:59:53:168 GameCard PAPAA/(25011:25013): Escuchando NEW de BROKER
+[ERROR] 02:59:53:182 GameCard PAPAA/(25011:25013): Hubo un problema enviando la suscripcion a la cola NEW del broker
+[ERROR] 02:59:53:183 GameCard PAPAA/(25011:25014): Hubo un problema enviando la suscripcion a la cola CATCH del broker
+[INFO] 02:59:53:184 GameCard PAPAA/(25011:25016): Hilo de verificacion periodica de conexion con Broker iniciado
+[INFO] 02:59:53:185 GameCard PAPAA/(25011:25015): Escucho GET de BROKER
+[ERROR] 02:59:53:197 GameCard PAPAA/(25011:25015): Hubo un problema enviando la suscripcion a la cola GET del broker
+[INFO] 02:59:55:620 GameCard PAPAA/(25011:25012): Socket 7 de gameBoy aceptado
+[INFO] 02:59:55:661 GameCard PAPAA/(25011:25022): Recibiendo codigo de operacion de GameBoy en socket 8
+[INFO] 02:59:55:667 GameCard PAPAA/(25011:25022): Codigo de operacion de socket 8 recibido: 5
+[INFO] 02:59:55:680 GameCard PAPAA/(25011:25022): Procesando request de GameBoy
+[INFO] 02:59:55:681 GameCard PAPAA/(25011:25022): Codigo de operacion recibido del socket cliente 8 corresponde a un GET
+[INFO] 02:59:55:689 GameCard PAPAA/(25011:25022): Recibiendo tamanio total
+[INFO] 02:59:55:690 GameCard PAPAA/(25011:25022): Tamanio total recibido: 24
+[INFO] 02:59:55:699 GameCard PAPAA/(25011:25022): EL ID recibido: 0
+[INFO] 02:59:55:704 GameCard PAPAA/(25011:25022): Tamanio del pokemon recibido: 16
+[INFO] 02:59:55:716 GameCard PAPAA/(25011:25022): Nombre del pokemon recibido: miltonchupapija
+[INFO] 02:59:55:721 GameCard PAPAA/(25011:25022): GET recibido del modulo Game Boy socket 8
+[INFO] 02:59:55:743 GameCard PAPAA/(25011:25022): EL array de blocks es: 3
+[INFO] 02:59:55:772 GameCard PAPAA/(25011:25022): Se creo el falso config de la ruta
+[INFO] 02:59:55:772 GameCard PAPAA/(25011:25022): Retorno el estado: N
+[INFO] 02:59:55:802 GameCard PAPAA/(25011:25022): Se creo el falso config de la ruta
+[INFO] 02:59:55:853 GameCard PAPAA/(25011:25022): Se esta analizando el block: 3
+[INFO] 02:59:55:854 GameCard PAPAA/(25011:25022): La ruta del archivo es: /home/utnso/Escritorio/tall-grass/Blocks/3.bin
+[INFO] 02:59:55:858 GameCard PAPAA/(25011:25022): Se esta leyendo la linea: 5-9=2
+
+[INFO] 02:59:55:875 GameCard PAPAA/(25011:25022): La coordenada de la linea es: 5-9
+[INFO] 02:59:55:919 GameCard PAPAA/(25011:25022): Se esta leyendo la linea: 3-7=2
+
+[INFO] 02:59:55:943 GameCard PAPAA/(25011:25022): La coordenada de la linea es: 3-7
+[INFO] 02:59:55:945 GameCard PAPAA/(25011:25022): Se esta leyendo la linea: 4-9=2
+
+[INFO] 02:59:55:950 GameCard PAPAA/(25011:25022): La coordenada de la linea es: 4-9
+[INFO] 02:59:55:955 GameCard PAPAA/(25011:25022): Se esta leyendo la linea: 3-9=2
+
+[INFO] 02:59:55:959 GameCard PAPAA/(25011:25022): La coordenada de la linea es: 3-9
+[INFO] 02:59:55:960 GameCard PAPAA/(25011:25022): Se esta leyendo la linea: 6-9=2
+
+[INFO] 02:59:55:960 GameCard PAPAA/(25011:25022): La coordenada de la linea es: 6-9
+[INFO] 02:59:55:968 GameCard PAPAA/(25011:25022): Se esta leyendo la linea: 3-5=16
+
+[INFO] 02:59:55:968 GameCard PAPAA/(25011:25022): La coordenada de la linea es: 3-5
+[INFO] 02:59:55:986 GameCard PAPAA/(25011:25022): Se esta leyendo la linea: 8-9=2
+
+[INFO] 02:59:55:986 GameCard PAPAA/(25011:25022): La coordenada de la linea es: 8-9
+[INFO] 02:59:55:2 GameCard PAPAA/(25011:25022): Se esta leyendo la linea: 3-4=16
+
+[INFO] 02:59:55:3 GameCard PAPAA/(25011:25022): La coordenada de la linea es: 3-4
+[INFO] 02:59:56:12 GameCard PAPAA/(25011:25022): Se esta leyendo la linea: 3-6=1
+
+[INFO] 02:59:56:12 GameCard PAPAA/(25011:25022): La coordenada de la linea es: 3-6
+[INFO] 02:59:56:32 GameCard PAPAA/(25011:25022): Se esta analizando el block: 4
+[INFO] 02:59:56:46 GameCard PAPAA/(25011:25022): La ruta del archivo es: /home/utnso/Escritorio/tall-grass/Blocks/4.bin
+[INFO] 02:59:56:46 GameCard PAPAA/(25011:25022): Se esta leyendo la linea: 9-9=2
+
+[INFO] 02:59:56:51 GameCard PAPAA/(25011:25022): La coordenada de la linea es: 9-9
+[INFO] 02:59:56:55 GameCard PAPAA/(25011:25022): EL tamanio calculado del archivo es: 56
+[INFO] 02:59:56:72 GameCard PAPAA/(25011:25022): EL tamanio calculado del archivo es: 6
+[INFO] 02:59:56:91 GameCard PAPAA/(25011:25022): El ID mensaje cargado en el localized es: 0
+[INFO] 02:59:56:100 GameCard PAPAA/(25011:25022): El Pokemon cargado en el localized es: miltonchupapija
+[INFO] 02:59:56:121 GameCard PAPAA/(25011:25022): El tamanio del nombre del pokemon cargado en el localized es: 15
+[INFO] 02:59:56:122 GameCard PAPAA/(25011:25022): La cantidad de lugares donde apareche el pokemon cargado en el localized es: 10
+[INFO] 02:59:56:132 GameCard PAPAA/(25011:25022): La coordenada sacada de la cola es: 5-9
+[INFO] 02:59:56:138 GameCard PAPAA/(25011:25022): La coordenada sacada de la cola es: 5
+[INFO] 02:59:56:143 GameCard PAPAA/(25011:25022): La coordenada sacada de la cola es: 9
+[INFO] 02:59:56:155 GameCard PAPAA/(25011:25022): La coordenada cargada es (5 ; 9)
+[INFO] 02:59:56:160 GameCard PAPAA/(25011:25022): La coordenada sacada de la cola es: 3-7
+[INFO] 02:59:56:169 GameCard PAPAA/(25011:25022): La coordenada sacada de la cola es: 3
+[INFO] 02:59:56:169 GameCard PAPAA/(25011:25022): La coordenada sacada de la cola es: 7
+[INFO] 02:59:56:173 GameCard PAPAA/(25011:25022): La coordenada cargada es (3 ; 7)
+[INFO] 02:59:56:185 GameCard PAPAA/(25011:25022): La coordenada sacada de la cola es: 4-9
+[INFO] 02:59:56:185 GameCard PAPAA/(25011:25022): La coordenada sacada de la cola es: 4
+[INFO] 02:59:56:190 GameCard PAPAA/(25011:25022): La coordenada sacada de la cola es: 9
+[INFO] 02:59:56:195 GameCard PAPAA/(25011:25022): La coordenada cargada es (4 ; 9)
+[INFO] 02:59:56:199 GameCard PAPAA/(25011:25022): La coordenada sacada de la cola es: 3-9
+[INFO] 02:59:56:204 GameCard PAPAA/(25011:25022): La coordenada sacada de la cola es: 3
+[INFO] 02:59:56:204 GameCard PAPAA/(25011:25022): La coordenada sacada de la cola es: 9
+[INFO] 02:59:56:205 GameCard PAPAA/(25011:25022): La coordenada cargada es (3 ; 9)
+[INFO] 02:59:56:209 GameCard PAPAA/(25011:25022): La coordenada sacada de la cola es: 6-9
+[INFO] 02:59:56:217 GameCard PAPAA/(25011:25022): La coordenada sacada de la cola es: 6
+[INFO] 02:59:56:222 GameCard PAPAA/(25011:25022): La coordenada sacada de la cola es: 9
+[INFO] 02:59:56:222 GameCard PAPAA/(25011:25022): La coordenada cargada es (6 ; 9)
+[INFO] 02:59:56:226 GameCard PAPAA/(25011:25022): La coordenada sacada de la cola es: 3-5
+[INFO] 02:59:56:227 GameCard PAPAA/(25011:25022): La coordenada sacada de la cola es: 3
+[INFO] 02:59:56:227 GameCard PAPAA/(25011:25022): La coordenada sacada de la cola es: 5
+[INFO] 02:59:56:231 GameCard PAPAA/(25011:25022): La coordenada cargada es (3 ; 5)
+[INFO] 02:59:56:232 GameCard PAPAA/(25011:25022): La coordenada sacada de la cola es: 8-9
+[INFO] 02:59:56:236 GameCard PAPAA/(25011:25022): La coordenada sacada de la cola es: 8
+[INFO] 02:59:56:236 GameCard PAPAA/(25011:25022): La coordenada sacada de la cola es: 9
+[INFO] 02:59:56:237 GameCard PAPAA/(25011:25022): La coordenada cargada es (8 ; 9)
+[INFO] 02:59:56:237 GameCard PAPAA/(25011:25022): La coordenada sacada de la cola es: 3-4
+[INFO] 02:59:56:237 GameCard PAPAA/(25011:25022): La coordenada sacada de la cola es: 3
+[INFO] 02:59:56:238 GameCard PAPAA/(25011:25022): La coordenada sacada de la cola es: 4
+[INFO] 02:59:56:238 GameCard PAPAA/(25011:25022): La coordenada cargada es (3 ; 4)
+[INFO] 02:59:56:238 GameCard PAPAA/(25011:25022): La coordenada sacada de la cola es: 3-6
+[INFO] 02:59:56:239 GameCard PAPAA/(25011:25022): La coordenada sacada de la cola es: 3
+[INFO] 02:59:56:246 GameCard PAPAA/(25011:25022): La coordenada sacada de la cola es: 6
+[INFO] 02:59:56:251 GameCard PAPAA/(25011:25022): La coordenada cargada es (3 ; 6)
+[INFO] 02:59:56:256 GameCard PAPAA/(25011:25022): La coordenada sacada de la cola es: 9-9
+[INFO] 02:59:56:256 GameCard PAPAA/(25011:25022): La coordenada sacada de la cola es: 9
+[INFO] 02:59:56:261 GameCard PAPAA/(25011:25022): La coordenada sacada de la cola es: 9
+[INFO] 02:59:56:261 GameCard PAPAA/(25011:25022): La coordenada cargada es (9 ; 9)
+[INFO] 02:59:56:262 GameCard PAPAA/(25011:25022): El valor de index 0 es: 5
+[INFO] 02:59:56:268 GameCard PAPAA/(25011:25022): El valor de index 1 es: 9
+[INFO] 02:59:56:276 GameCard PAPAA/(25011:25022): El valor de index 2 es: 3
+[INFO] 02:59:56:277 GameCard PAPAA/(25011:25022): El valor de index 3 es: 7
+[INFO] 02:59:56:277 GameCard PAPAA/(25011:25022): El valor de index 4 es: 4
+[INFO] 02:59:56:283 GameCard PAPAA/(25011:25022): El valor de index 5 es: 9
+[INFO] 02:59:56:293 GameCard PAPAA/(25011:25022): El valor de index 6 es: 3
+[INFO] 02:59:56:301 GameCard PAPAA/(25011:25022): El valor de index 7 es: 9
+[INFO] 02:59:56:302 GameCard PAPAA/(25011:25022): El valor de index 8 es: 6
+[INFO] 02:59:56:326 GameCard PAPAA/(25011:25022): El valor de index 9 es: 9
+[INFO] 02:59:56:333 GameCard PAPAA/(25011:25022): El valor de index 10 es: 3
+[INFO] 02:59:56:333 GameCard PAPAA/(25011:25022): El valor de index 11 es: 5
+[INFO] 02:59:56:354 GameCard PAPAA/(25011:25022): El valor de index 12 es: 8
+[INFO] 02:59:56:363 GameCard PAPAA/(25011:25022): El valor de index 13 es: 9
+[INFO] 02:59:56:363 GameCard PAPAA/(25011:25022): El valor de index 14 es: 3
+[INFO] 02:59:56:365 GameCard PAPAA/(25011:25022): El valor de index 15 es: 4
+[INFO] 02:59:56:384 GameCard PAPAA/(25011:25022): El valor de index 16 es: 3
+[INFO] 02:59:56:397 GameCard PAPAA/(25011:25022): El valor de index 17 es: 6
+[INFO] 02:59:56:398 GameCard PAPAA/(25011:25022): El valor de index 18 es: 9
+[INFO] 02:59:56:398 GameCard PAPAA/(25011:25022): El valor de index 19 es: 9
+[INFO] 03:00:01:426 GameCard PAPAA/(25011:25022): El ID cargado es 0
+[INFO] 03:00:01:441 GameCard PAPAA/(25011:25022): Tamanio nombre pokemon 15
+[INFO] 03:00:01:443 GameCard PAPAA/(25011:25022): Nombre pokemon miltonchupapija
+[INFO] 03:00:01:459 GameCard PAPAA/(25011:25022): Cantidad de coordenadas donde aparece:  10
+[INFO] 03:00:01:460 GameCard PAPAA/(25011:25022): Posicion X previa al mem 5
+[INFO] 03:00:01:460 GameCard PAPAA/(25011:25022): Posicion Y previa al mem 9
+[INFO] 03:00:01:461 GameCard PAPAA/(25011:25022): Posicion X 5
+[INFO] 03:00:01:461 GameCard PAPAA/(25011:25022): Posicion Y 9
+[INFO] 03:00:01:462 GameCard PAPAA/(25011:25022): Posicion X previa al mem 3
+[INFO] 03:00:01:475 GameCard PAPAA/(25011:25022): Posicion Y previa al mem 7
+[INFO] 03:00:01:475 GameCard PAPAA/(25011:25022): Posicion X 3
+[INFO] 03:00:01:476 GameCard PAPAA/(25011:25022): Posicion Y 7
+[INFO] 03:00:01:476 GameCard PAPAA/(25011:25022): Posicion X previa al mem 4
+[INFO] 03:00:01:476 GameCard PAPAA/(25011:25022): Posicion Y previa al mem 9
+[INFO] 03:00:01:477 GameCard PAPAA/(25011:25022): Posicion X 4
+[INFO] 03:00:01:477 GameCard PAPAA/(25011:25022): Posicion Y 9
+[INFO] 03:00:01:477 GameCard PAPAA/(25011:25022): Posicion X previa al mem 3
+[INFO] 03:00:01:478 GameCard PAPAA/(25011:25022): Posicion Y previa al mem 9
+[INFO] 03:00:01:478 GameCard PAPAA/(25011:25022): Posicion X 3
+[INFO] 03:00:01:478 GameCard PAPAA/(25011:25022): Posicion Y 9
+[INFO] 03:00:01:478 GameCard PAPAA/(25011:25022): Posicion X previa al mem 6
+[INFO] 03:00:01:494 GameCard PAPAA/(25011:25022): Posicion Y previa al mem 9
+[INFO] 03:00:01:494 GameCard PAPAA/(25011:25022): Posicion X 6
+[INFO] 03:00:01:495 GameCard PAPAA/(25011:25022): Posicion Y 9
+[INFO] 03:00:01:495 GameCard PAPAA/(25011:25022): Posicion X previa al mem 3
+[INFO] 03:00:01:499 GameCard PAPAA/(25011:25022): Posicion Y previa al mem 5
+[INFO] 03:00:01:500 GameCard PAPAA/(25011:25022): Posicion X 3
+[INFO] 03:00:01:500 GameCard PAPAA/(25011:25022): Posicion Y 5
+[INFO] 03:00:01:500 GameCard PAPAA/(25011:25022): Posicion X previa al mem 8
+[INFO] 03:00:01:501 GameCard PAPAA/(25011:25022): Posicion Y previa al mem 9
+[INFO] 03:00:01:501 GameCard PAPAA/(25011:25022): Posicion X 8
+[INFO] 03:00:01:501 GameCard PAPAA/(25011:25022): Posicion Y 9
+[INFO] 03:00:01:502 GameCard PAPAA/(25011:25022): Posicion X previa al mem 3
+[INFO] 03:00:01:510 GameCard PAPAA/(25011:25022): Posicion Y previa al mem 4
+[INFO] 03:00:01:510 GameCard PAPAA/(25011:25022): Posicion X 3
+[INFO] 03:00:01:511 GameCard PAPAA/(25011:25022): Posicion Y 4
+[INFO] 03:00:01:511 GameCard PAPAA/(25011:25022): Posicion X previa al mem 3
+[INFO] 03:00:01:511 GameCard PAPAA/(25011:25022): Posicion Y previa al mem 6
+[INFO] 03:00:01:512 GameCard PAPAA/(25011:25022): Posicion X 3
+[INFO] 03:00:01:512 GameCard PAPAA/(25011:25022): Posicion Y 6
+[INFO] 03:00:01:512 GameCard PAPAA/(25011:25022): Posicion X previa al mem 9
+[INFO] 03:00:01:513 GameCard PAPAA/(25011:25022): Posicion Y previa al mem 9
+[INFO] 03:00:01:513 GameCard PAPAA/(25011:25022): Posicion X 9
+[INFO] 03:00:01:513 GameCard PAPAA/(25011:25022): Posicion Y 9
+[INFO] 03:00:01:514 GameCard PAPAA/(25011:25022): SAliendo
+[INFO] 03:00:01:530 GameCard PAPAA/(25011:25022): Creando paquete
+[INFO] 03:00:01:531 GameCard PAPAA/(25011:25022): CODIGO DE OPERACION: 6
+[INFO] 03:00:01:544 GameCard PAPAA/(25011:25022): Paquete Creado
+[INFO] 03:00:01:544 GameCard PAPAA/(25011:25022): la operacion a realizar es 6
+[INFO] 03:00:01:545 GameCard PAPAA/(25011:25022): Serializando...
+[INFO] 03:00:01:546 GameCard PAPAA/(25011:25022): Serializacion completa
+[INFO] 03:00:01:546 GameCard PAPAA/(25011:25022): El peso total es: 108
+[ERROR] 03:00:01:562 GameCard PAPAA/(25011:25022): Error: No se pudo enviar el mensaje
+[INFO] 03:00:03:199 GameCard PAPAA/(25011:25016): Iniciando verificacion de conexion con Broker...
+[ERROR] 03:00:03:208 GameCard PAPAA/(25011:25016): Reconexion con Broker fallida, intentando nuevamente en 10 segundos
+[INFO] 03:16:33:964 GameCard PAPAA/(27016:27016): logger iniciado.
+[INFO] 03:16:33:992 GameCard PAPAA/(27016:27016): Config cargada.
+[INFO] 03:16:33:995 GameCard PAPAA/(27016:27016): La IP del Broker: 127.0.0.1
+[INFO] 03:16:33:995 GameCard PAPAA/(27016:27016): El Puerto es: 6009
+[INFO] 03:16:33:998 GameCard PAPAA/(27016:27016): El tiempo de reintento de conexion es: 10
+[INFO] 03:16:33:999 GameCard PAPAA/(27016:27016): El tiempo de reintento de operacion es: 5
+[INFO] 03:16:33:0 GameCard PAPAA/(27016:27016): El tiempo de retardo de conexion es: 5
+[INFO] 03:16:33:1 GameCard PAPAA/(27016:27016): El punto de montaje es: /home/utnso/Escritorio/tall-grass
+[INFO] 03:16:34:1 GameCard PAPAA/(27016:27016): La IP es: 127.0.0.1
+[INFO] 03:16:34:2 GameCard PAPAA/(27016:27016): El puerto es: 4447
+[INFO] 03:16:34:3 GameCard PAPAA/(27016:27016): El punto de montaje es: /home/utnso/Escritorio/tall-grass
+[INFO] 03:16:34:5 GameCard PAPAA/(27016:27016): La ruta del metadataes: /home/utnso/Escritorio/tall-grass/Metadata
+[INFO] 03:16:34:7 GameCard PAPAA/(27016:27016): Se creo el config de MetaData
+[INFO] 03:16:34:9 GameCard PAPAA/(27016:27016): El Block Size es: 64
+[INFO] 03:16:34:9 GameCard PAPAA/(27016:27016): La cantidad de Bloques es: 5192
+[INFO] 03:16:34:10 GameCard PAPAA/(27016:27016): El Magic Number es: TALL_GRASS
+[INFO] 03:16:34:26 GameCard PAPAA/(27016:27016): Bitmap ya seteado
+[ERROR] 03:16:34:58 GameCard PAPAA/(27016:27016): Ya existe el BitMap
+[INFO] 03:16:34:60 GameCard PAPAA/(27016:27016): SETEO DE VARIABLES PARA ARCHIVOSYDIRECTORIOS.H
+[INFO] 03:16:34:61 GameCard PAPAA/(27016:27016): El ID de modulo es: 1804289383
+[INFO] 03:16:34:96 GameCard PAPAA/(27016:27021): Esperando mensajes de game boy en socket 7
+[INFO] 03:16:34:98 GameCard PAPAA/(27016:27022): Escuchando NEW de BROKER
+[INFO] 03:16:34:99 GameCard PAPAA/(27016:27023): Escucho CATCH de BROKER
+[INFO] 03:16:34:100 GameCard PAPAA/(27016:27024): Escucho GET de BROKER
+[INFO] 03:16:34:102 GameCard PAPAA/(27016:27025): Hilo de verificacion periodica de conexion con Broker iniciado
+[ERROR] 03:16:34:107 GameCard PAPAA/(27016:27022): Hubo un problema enviando la suscripcion a la cola NEW del broker
+[ERROR] 03:16:34:109 GameCard PAPAA/(27016:27024): Hubo un problema enviando la suscripcion a la cola GET del broker
+[ERROR] 03:16:34:110 GameCard PAPAA/(27016:27023): Hubo un problema enviando la suscripcion a la cola CATCH del broker
+[INFO] 03:16:35:504 GameCard PAPAA/(27016:27021): Socket 7 de gameBoy aceptado
+[INFO] 03:16:35:527 GameCard PAPAA/(27016:27027): Recibiendo codigo de operacion de GameBoy en socket 8
+[INFO] 03:16:35:537 GameCard PAPAA/(27016:27027): Codigo de operacion de socket 8 recibido: 5
+[INFO] 03:16:35:547 GameCard PAPAA/(27016:27027): Procesando request de GameBoy
+[INFO] 03:16:35:552 GameCard PAPAA/(27016:27027): Codigo de operacion recibido del socket cliente 8 corresponde a un GET
+[INFO] 03:16:35:553 GameCard PAPAA/(27016:27027): Recibiendo tamanio total
+[INFO] 03:16:35:558 GameCard PAPAA/(27016:27027): Tamanio total recibido: 24
+[INFO] 03:16:35:558 GameCard PAPAA/(27016:27027): EL ID recibido: 0
+[INFO] 03:16:35:570 GameCard PAPAA/(27016:27027): Tamanio del pokemon recibido: 16
+[INFO] 03:16:35:583 GameCard PAPAA/(27016:27027): Nombre del pokemon recibido: miltonchupapija
+[INFO] 03:16:35:592 GameCard PAPAA/(27016:27027): GET recibido del modulo Game Boy socket 8
+[INFO] 03:16:35:651 GameCard PAPAA/(27016:27027): EL array de blocks es: 3
+[INFO] 03:16:35:675 GameCard PAPAA/(27016:27027): Se creo el falso config de la ruta
+[INFO] 03:16:35:677 GameCard PAPAA/(27016:27027): Retorno el estado: N
+[INFO] 03:16:35:708 GameCard PAPAA/(27016:27027): Se creo el falso config de la ruta
+[INFO] 03:16:35:848 GameCard PAPAA/(27016:27027): Se esta analizando el block: 3
+[INFO] 03:16:35:854 GameCard PAPAA/(27016:27027): La ruta del archivo es: /home/utnso/Escritorio/tall-grass/Blocks/3.bin
+[INFO] 03:16:35:867 GameCard PAPAA/(27016:27027): Se esta leyendo la linea: 5-9=2
+
+[INFO] 03:16:35:891 GameCard PAPAA/(27016:27027): La coordenada de la linea es: 5-9
+[INFO] 03:16:35:898 GameCard PAPAA/(27016:27027): Se esta leyendo la linea: 3-7=2
+
+[INFO] 03:16:35:908 GameCard PAPAA/(27016:27027): La coordenada de la linea es: 3-7
+[INFO] 03:16:35:914 GameCard PAPAA/(27016:27027): Se esta leyendo la linea: 4-9=2
+
+[INFO] 03:16:35:921 GameCard PAPAA/(27016:27027): La coordenada de la linea es: 4-9
+[INFO] 03:16:35:927 GameCard PAPAA/(27016:27027): Se esta leyendo la linea: 3-9=2
+
+[INFO] 03:16:35:931 GameCard PAPAA/(27016:27027): La coordenada de la linea es: 3-9
+[INFO] 03:16:35:941 GameCard PAPAA/(27016:27027): Se esta leyendo la linea: 6-9=2
+
+[INFO] 03:16:35:942 GameCard PAPAA/(27016:27027): La coordenada de la linea es: 6-9
+[INFO] 03:16:35:942 GameCard PAPAA/(27016:27027): Se esta leyendo la linea: 3-5=16
+
+[INFO] 03:16:35:943 GameCard PAPAA/(27016:27027): La coordenada de la linea es: 3-5
+[INFO] 03:16:35:948 GameCard PAPAA/(27016:27027): Se esta leyendo la linea: 8-9=2
+
+[INFO] 03:16:35:956 GameCard PAPAA/(27016:27027): La coordenada de la linea es: 8-9
+[INFO] 03:16:35:989 GameCard PAPAA/(27016:27027): Se esta leyendo la linea: 3-4=16
+
+[INFO] 03:16:35:989 GameCard PAPAA/(27016:27027): La coordenada de la linea es: 3-4
+[INFO] 03:16:35:990 GameCard PAPAA/(27016:27027): Se esta leyendo la linea: 3-6=1
+
+[INFO] 03:16:35:990 GameCard PAPAA/(27016:27027): La coordenada de la linea es: 3-6
+[INFO] 03:16:35:991 GameCard PAPAA/(27016:27027): Se esta analizando el block: 4
+[INFO] 03:16:35:992 GameCard PAPAA/(27016:27027): La ruta del archivo es: /home/utnso/Escritorio/tall-grass/Blocks/4.bin
+[INFO] 03:16:36:5 GameCard PAPAA/(27016:27027): Se esta leyendo la linea: 9-9=2
+
+[INFO] 03:16:36:5 GameCard PAPAA/(27016:27027): La coordenada de la linea es: 9-9
+[INFO] 03:16:36:17 GameCard PAPAA/(27016:27027): EL tamanio calculado del archivo es: 56
+[INFO] 03:16:36:35 GameCard PAPAA/(27016:27027): EL tamanio calculado del archivo es: 6
+[INFO] 03:16:36:63 GameCard PAPAA/(27016:27027): El ID mensaje cargado en el localized es: 0
+[INFO] 03:16:36:68 GameCard PAPAA/(27016:27027): El Pokemon cargado en el localized es: miltonchupapija
+[INFO] 03:16:36:73 GameCard PAPAA/(27016:27027): El tamanio del nombre del pokemon cargado en el localized es: 15
+[INFO] 03:16:36:77 GameCard PAPAA/(27016:27027): La cantidad de lugares donde apareche el pokemon cargado en el localized es: 10
+[INFO] 03:16:36:87 GameCard PAPAA/(27016:27027): La coordenada sacada de la cola es: 5-9
+[INFO] 03:16:36:101 GameCard PAPAA/(27016:27027): La coordenada sacada de la cola es: 5
+[INFO] 03:16:36:102 GameCard PAPAA/(27016:27027): La coordenada sacada de la cola es: 9
+[INFO] 03:16:36:103 GameCard PAPAA/(27016:27027): La coordenada cargada es (5 ; 9)
+[INFO] 03:16:36:107 GameCard PAPAA/(27016:27027): La coordenada sacada de la cola es: 3-7
+[INFO] 03:16:36:128 GameCard PAPAA/(27016:27027): La coordenada sacada de la cola es: 3
+[INFO] 03:16:36:129 GameCard PAPAA/(27016:27027): La coordenada sacada de la cola es: 7
+[INFO] 03:16:36:129 GameCard PAPAA/(27016:27027): La coordenada cargada es (3 ; 7)
+[INFO] 03:16:36:129 GameCard PAPAA/(27016:27027): La coordenada sacada de la cola es: 4-9
+[INFO] 03:16:36:130 GameCard PAPAA/(27016:27027): La coordenada sacada de la cola es: 4
+[INFO] 03:16:36:130 GameCard PAPAA/(27016:27027): La coordenada sacada de la cola es: 9
+[INFO] 03:16:36:130 GameCard PAPAA/(27016:27027): La coordenada cargada es (4 ; 9)
+[INFO] 03:16:36:131 GameCard PAPAA/(27016:27027): La coordenada sacada de la cola es: 3-9
+[INFO] 03:16:36:131 GameCard PAPAA/(27016:27027): La coordenada sacada de la cola es: 3
+[INFO] 03:16:36:131 GameCard PAPAA/(27016:27027): La coordenada sacada de la cola es: 9
+[INFO] 03:16:36:157 GameCard PAPAA/(27016:27027): La coordenada cargada es (3 ; 9)
+[INFO] 03:16:36:177 GameCard PAPAA/(27016:27027): La coordenada sacada de la cola es: 6-9
+[INFO] 03:16:36:177 GameCard PAPAA/(27016:27027): La coordenada sacada de la cola es: 6
+[INFO] 03:16:36:177 GameCard PAPAA/(27016:27027): La coordenada sacada de la cola es: 9
+[INFO] 03:16:36:186 GameCard PAPAA/(27016:27027): La coordenada cargada es (6 ; 9)
+[INFO] 03:16:36:190 GameCard PAPAA/(27016:27027): La coordenada sacada de la cola es: 3-5
+[INFO] 03:16:36:191 GameCard PAPAA/(27016:27027): La coordenada sacada de la cola es: 3
+[INFO] 03:16:36:191 GameCard PAPAA/(27016:27027): La coordenada sacada de la cola es: 5
+[INFO] 03:16:36:220 GameCard PAPAA/(27016:27027): La coordenada cargada es (3 ; 5)
+[INFO] 03:16:36:220 GameCard PAPAA/(27016:27027): La coordenada sacada de la cola es: 8-9
+[INFO] 03:16:36:220 GameCard PAPAA/(27016:27027): La coordenada sacada de la cola es: 8
+[INFO] 03:16:36:221 GameCard PAPAA/(27016:27027): La coordenada sacada de la cola es: 9
+[INFO] 03:16:36:221 GameCard PAPAA/(27016:27027): La coordenada cargada es (8 ; 9)
+[INFO] 03:16:36:221 GameCard PAPAA/(27016:27027): La coordenada sacada de la cola es: 3-4
+[INFO] 03:16:36:222 GameCard PAPAA/(27016:27027): La coordenada sacada de la cola es: 3
+[INFO] 03:16:36:222 GameCard PAPAA/(27016:27027): La coordenada sacada de la cola es: 4
+[INFO] 03:16:36:222 GameCard PAPAA/(27016:27027): La coordenada cargada es (3 ; 4)
+[INFO] 03:16:36:223 GameCard PAPAA/(27016:27027): La coordenada sacada de la cola es: 3-6
+[INFO] 03:16:36:223 GameCard PAPAA/(27016:27027): La coordenada sacada de la cola es: 3
+[INFO] 03:16:36:243 GameCard PAPAA/(27016:27027): La coordenada sacada de la cola es: 6
+[INFO] 03:16:36:244 GameCard PAPAA/(27016:27027): La coordenada cargada es (3 ; 6)
+[INFO] 03:16:36:244 GameCard PAPAA/(27016:27027): La coordenada sacada de la cola es: 9-9
+[INFO] 03:16:36:244 GameCard PAPAA/(27016:27027): La coordenada sacada de la cola es: 9
+[INFO] 03:16:36:244 GameCard PAPAA/(27016:27027): La coordenada sacada de la cola es: 9
+[INFO] 03:16:36:245 GameCard PAPAA/(27016:27027): La coordenada cargada es (9 ; 9)
+[INFO] 03:16:36:246 GameCard PAPAA/(27016:27027): El valor de index 0 es: 5
+[INFO] 03:16:36:247 GameCard PAPAA/(27016:27027): El valor de index 1 es: 9
+[INFO] 03:16:36:269 GameCard PAPAA/(27016:27027): El valor de index 2 es: 3
+[INFO] 03:16:36:274 GameCard PAPAA/(27016:27027): El valor de index 3 es: 7
+[INFO] 03:16:36:274 GameCard PAPAA/(27016:27027): El valor de index 4 es: 4
+[INFO] 03:16:36:274 GameCard PAPAA/(27016:27027): El valor de index 5 es: 9
+[INFO] 03:16:36:275 GameCard PAPAA/(27016:27027): El valor de index 6 es: 3
+[INFO] 03:16:36:295 GameCard PAPAA/(27016:27027): El valor de index 7 es: 9
+[INFO] 03:16:36:295 GameCard PAPAA/(27016:27027): El valor de index 8 es: 6
+[INFO] 03:16:36:296 GameCard PAPAA/(27016:27027): El valor de index 9 es: 9
+[INFO] 03:16:36:300 GameCard PAPAA/(27016:27027): El valor de index 10 es: 3
+[INFO] 03:16:36:300 GameCard PAPAA/(27016:27027): El valor de index 11 es: 5
+[INFO] 03:16:36:301 GameCard PAPAA/(27016:27027): El valor de index 12 es: 8
+[INFO] 03:16:36:301 GameCard PAPAA/(27016:27027): El valor de index 13 es: 9
+[INFO] 03:16:36:301 GameCard PAPAA/(27016:27027): El valor de index 14 es: 3
+[INFO] 03:16:36:302 GameCard PAPAA/(27016:27027): El valor de index 15 es: 4
+[INFO] 03:16:36:302 GameCard PAPAA/(27016:27027): El valor de index 16 es: 3
+[INFO] 03:16:36:302 GameCard PAPAA/(27016:27027): El valor de index 17 es: 6
+[INFO] 03:16:36:302 GameCard PAPAA/(27016:27027): El valor de index 18 es: 9
+[INFO] 03:16:36:307 GameCard PAPAA/(27016:27027): El valor de index 19 es: 9
+[INFO] 03:16:41:318 GameCard PAPAA/(27016:27027): El ID cargado es 0
+[INFO] 03:16:41:332 GameCard PAPAA/(27016:27027): Tamanio nombre pokemon 15
+[INFO] 03:16:41:335 GameCard PAPAA/(27016:27027): Nombre pokemon miltonchupapija
+[INFO] 03:16:41:351 GameCard PAPAA/(27016:27027): Cantidad de coordenadas donde aparece:  10
+[INFO] 03:16:41:352 GameCard PAPAA/(27016:27027): Posicion X previa al mem 5
+[INFO] 03:16:41:361 GameCard PAPAA/(27016:27027): Posicion Y previa al mem 9
+[INFO] 03:16:41:378 GameCard PAPAA/(27016:27027): Posicion X 5
+[INFO] 03:16:41:379 GameCard PAPAA/(27016:27027): Posicion Y 9
+[INFO] 03:16:41:403 GameCard PAPAA/(27016:27027): Posicion X previa al mem 3
+[INFO] 03:16:41:403 GameCard PAPAA/(27016:27027): Posicion Y previa al mem 7
+[INFO] 03:16:41:404 GameCard PAPAA/(27016:27027): Posicion X 3
+[INFO] 03:16:41:404 GameCard PAPAA/(27016:27027): Posicion Y 7
+[INFO] 03:16:41:404 GameCard PAPAA/(27016:27027): Posicion X previa al mem 4
+[INFO] 03:16:41:404 GameCard PAPAA/(27016:27027): Posicion Y previa al mem 9
+[INFO] 03:16:41:405 GameCard PAPAA/(27016:27027): Posicion X 4
+[INFO] 03:16:41:405 GameCard PAPAA/(27016:27027): Posicion Y 9
+[INFO] 03:16:41:405 GameCard PAPAA/(27016:27027): Posicion X previa al mem 3
+[INFO] 03:16:41:406 GameCard PAPAA/(27016:27027): Posicion Y previa al mem 9
+[INFO] 03:16:41:406 GameCard PAPAA/(27016:27027): Posicion X 3
+[INFO] 03:16:41:406 GameCard PAPAA/(27016:27027): Posicion Y 9
+[INFO] 03:16:41:422 GameCard PAPAA/(27016:27027): Posicion X previa al mem 6
+[INFO] 03:16:41:422 GameCard PAPAA/(27016:27027): Posicion Y previa al mem 9
+[INFO] 03:16:41:422 GameCard PAPAA/(27016:27027): Posicion X 6
+[INFO] 03:16:41:423 GameCard PAPAA/(27016:27027): Posicion Y 9
+[INFO] 03:16:41:451 GameCard PAPAA/(27016:27027): Posicion X previa al mem 3
+[INFO] 03:16:41:451 GameCard PAPAA/(27016:27027): Posicion Y previa al mem 5
+[INFO] 03:16:41:451 GameCard PAPAA/(27016:27027): Posicion X 3
+[INFO] 03:16:41:477 GameCard PAPAA/(27016:27027): Posicion Y 5
+[INFO] 03:16:41:482 GameCard PAPAA/(27016:27027): Posicion X previa al mem 8
+[INFO] 03:16:41:487 GameCard PAPAA/(27016:27027): Posicion Y previa al mem 9
+[INFO] 03:16:41:500 GameCard PAPAA/(27016:27027): Posicion X 8
+[INFO] 03:16:41:500 GameCard PAPAA/(27016:27027): Posicion Y 9
+[INFO] 03:16:41:500 GameCard PAPAA/(27016:27027): Posicion X previa al mem 3
+[INFO] 03:16:41:501 GameCard PAPAA/(27016:27027): Posicion Y previa al mem 4
+[INFO] 03:16:41:503 GameCard PAPAA/(27016:27027): Posicion X 3
+[INFO] 03:16:41:504 GameCard PAPAA/(27016:27027): Posicion Y 4
+[INFO] 03:16:41:504 GameCard PAPAA/(27016:27027): Posicion X previa al mem 3
+[INFO] 03:16:41:505 GameCard PAPAA/(27016:27027): Posicion Y previa al mem 6
+[INFO] 03:16:41:505 GameCard PAPAA/(27016:27027): Posicion X 3
+[INFO] 03:16:41:505 GameCard PAPAA/(27016:27027): Posicion Y 6
+[INFO] 03:16:41:506 GameCard PAPAA/(27016:27027): Posicion X previa al mem 9
+[INFO] 03:16:41:506 GameCard PAPAA/(27016:27027): Posicion Y previa al mem 9
+[INFO] 03:16:41:510 GameCard PAPAA/(27016:27027): Posicion X 9
+[INFO] 03:16:41:519 GameCard PAPAA/(27016:27027): Posicion Y 9
+[INFO] 03:16:41:519 GameCard PAPAA/(27016:27027): SAliendo
+[INFO] 03:16:41:520 GameCard PAPAA/(27016:27027): Creando paquete
+[INFO] 03:16:41:521 GameCard PAPAA/(27016:27027): CODIGO DE OPERACION: 6
+[INFO] 03:16:41:521 GameCard PAPAA/(27016:27027): Paquete Creado
+[INFO] 03:16:41:522 GameCard PAPAA/(27016:27027): la operacion a realizar es 6
+[INFO] 03:16:41:522 GameCard PAPAA/(27016:27027): Serializando...
+[INFO] 03:16:41:539 GameCard PAPAA/(27016:27027): Serializacion completa
+[INFO] 03:16:41:543 GameCard PAPAA/(27016:27027): El peso total es: 108
+[ERROR] 03:16:41:544 GameCard PAPAA/(27016:27027): Error: No se pudo enviar el mensaje
+[INFO] 03:16:44:118 GameCard PAPAA/(27016:27025): Iniciando verificacion de conexion con Broker...
+[ERROR] 03:16:44:138 GameCard PAPAA/(27016:27025): Reconexion con Broker fallida, intentando nuevamente en 10 segundos
+[INFO] 03:23:55:525 GameCard PAPAA/(27884:27884): logger iniciado.
+[INFO] 03:23:55:554 GameCard PAPAA/(27884:27884): Config cargada.
+[INFO] 03:23:55:557 GameCard PAPAA/(27884:27884): La IP del Broker: 127.0.0.1
+[INFO] 03:23:55:557 GameCard PAPAA/(27884:27884): El Puerto es: 6009
+[INFO] 03:23:55:560 GameCard PAPAA/(27884:27884): El tiempo de reintento de conexion es: 10
+[INFO] 03:23:55:561 GameCard PAPAA/(27884:27884): El tiempo de reintento de operacion es: 5
+[INFO] 03:23:55:562 GameCard PAPAA/(27884:27884): El tiempo de retardo de conexion es: 5
+[INFO] 03:23:55:562 GameCard PAPAA/(27884:27884): El punto de montaje es: /home/utnso/Escritorio/tall-grass
+[INFO] 03:23:55:563 GameCard PAPAA/(27884:27884): La IP es: 127.0.0.1
+[INFO] 03:23:55:563 GameCard PAPAA/(27884:27884): El puerto es: 4447
+[INFO] 03:23:55:564 GameCard PAPAA/(27884:27884): El punto de montaje es: /home/utnso/Escritorio/tall-grass
+[INFO] 03:23:55:566 GameCard PAPAA/(27884:27884): La ruta del metadataes: /home/utnso/Escritorio/tall-grass/Metadata
+[INFO] 03:23:55:569 GameCard PAPAA/(27884:27884): Se creo el config de MetaData
+[INFO] 03:23:55:570 GameCard PAPAA/(27884:27884): El Block Size es: 64
+[INFO] 03:23:55:571 GameCard PAPAA/(27884:27884): La cantidad de Bloques es: 5192
+[INFO] 03:23:55:571 GameCard PAPAA/(27884:27884): El Magic Number es: TALL_GRASS
+[INFO] 03:23:55:588 GameCard PAPAA/(27884:27884): Bitmap ya seteado
+[ERROR] 03:23:55:619 GameCard PAPAA/(27884:27884): Ya existe el BitMap
+[INFO] 03:23:55:622 GameCard PAPAA/(27884:27884): SETEO DE VARIABLES PARA ARCHIVOSYDIRECTORIOS.H
+[INFO] 03:23:55:623 GameCard PAPAA/(27884:27884): El ID de modulo es: 1804289383
+[INFO] 03:23:55:655 GameCard PAPAA/(27884:27885): Esperando mensajes de game boy en socket 7
+[INFO] 03:23:55:656 GameCard PAPAA/(27884:27887): Escucho CATCH de BROKER
+[INFO] 03:23:55:657 GameCard PAPAA/(27884:27886): Escuchando NEW de BROKER
+[ERROR] 03:23:55:667 GameCard PAPAA/(27884:27886): Hubo un problema enviando la suscripcion a la cola NEW del broker
+[ERROR] 03:23:55:667 GameCard PAPAA/(27884:27887): Hubo un problema enviando la suscripcion a la cola CATCH del broker
+[INFO] 03:23:55:668 GameCard PAPAA/(27884:27889): Hilo de verificacion periodica de conexion con Broker iniciado
+[INFO] 03:23:55:669 GameCard PAPAA/(27884:27888): Escucho GET de BROKER
+[ERROR] 03:23:55:682 GameCard PAPAA/(27884:27888): Hubo un problema enviando la suscripcion a la cola GET del broker
+[INFO] 03:24:09:183 GameCard PAPAA/(27921:27921): logger iniciado.
+[INFO] 03:24:09:266 GameCard PAPAA/(27921:27921): Config cargada.
+[INFO] 03:24:09:270 GameCard PAPAA/(27921:27921): La IP del Broker: 127.0.0.1
+[INFO] 03:24:09:271 GameCard PAPAA/(27921:27921): El Puerto es: 6009
+[INFO] 03:24:09:274 GameCard PAPAA/(27921:27921): El tiempo de reintento de conexion es: 10
+[INFO] 03:24:09:275 GameCard PAPAA/(27921:27921): El tiempo de reintento de operacion es: 5
+[INFO] 03:24:09:276 GameCard PAPAA/(27921:27921): El tiempo de retardo de conexion es: 5
+[INFO] 03:24:09:277 GameCard PAPAA/(27921:27921): El punto de montaje es: /home/utnso/Escritorio/tall-grass
+[INFO] 03:24:09:286 GameCard PAPAA/(27921:27921): La IP es: 127.0.0.1
+[INFO] 03:24:09:287 GameCard PAPAA/(27921:27921): El puerto es: 4447
+[INFO] 03:24:09:288 GameCard PAPAA/(27921:27921): El punto de montaje es: /home/utnso/Escritorio/tall-grass
+[INFO] 03:24:09:290 GameCard PAPAA/(27921:27921): La ruta del metadataes: /home/utnso/Escritorio/tall-grass/Metadata
+[INFO] 03:24:09:292 GameCard PAPAA/(27921:27921): Se creo el config de MetaData
+[INFO] 03:24:09:305 GameCard PAPAA/(27921:27921): El Block Size es: 64
+[INFO] 03:24:09:306 GameCard PAPAA/(27921:27921): La cantidad de Bloques es: 5192
+[INFO] 03:24:09:307 GameCard PAPAA/(27921:27921): El Magic Number es: TALL_GRASS
+[INFO] 03:24:09:341 GameCard PAPAA/(27921:27921): Bitmap ya seteado
+[ERROR] 03:24:09:414 GameCard PAPAA/(27921:27921): Ya existe el BitMap
+[INFO] 03:24:09:418 GameCard PAPAA/(27921:27921): SETEO DE VARIABLES PARA ARCHIVOSYDIRECTORIOS.H
+[INFO] 03:24:09:418 GameCard PAPAA/(27921:27921): El ID de modulo es: 1804289383
+[INFO] 03:24:09:482 GameCard PAPAA/(27921:27922): Esperando mensajes de game boy en socket 7
+[INFO] 03:24:09:484 GameCard PAPAA/(27921:27924): Escucho CATCH de BROKER
+[INFO] 03:24:09:485 GameCard PAPAA/(27921:27923): Escuchando NEW de BROKER
+[ERROR] 03:24:09:503 GameCard PAPAA/(27921:27924): Hubo un problema enviando la suscripcion a la cola CATCH del broker
+[INFO] 03:24:09:503 GameCard PAPAA/(27921:27926): Hilo de verificacion periodica de conexion con Broker iniciado
+[ERROR] 03:24:09:504 GameCard PAPAA/(27921:27923): Hubo un problema enviando la suscripcion a la cola NEW del broker
+[INFO] 03:24:09:506 GameCard PAPAA/(27921:27925): Escucho GET de BROKER
+[ERROR] 03:24:09:508 GameCard PAPAA/(27921:27925): Hubo un problema enviando la suscripcion a la cola GET del broker
+[INFO] 03:24:10:720 GameCard PAPAA/(27921:27922): Socket 7 de gameBoy aceptado
+[INFO] 03:24:10:738 GameCard PAPAA/(27921:27932): Recibiendo codigo de operacion de GameBoy en socket 8
+[INFO] 03:24:10:751 GameCard PAPAA/(27921:27932): Codigo de operacion de socket 8 recibido: 5
+[INFO] 03:24:10:765 GameCard PAPAA/(27921:27932): Procesando request de GameBoy
+[INFO] 03:24:10:791 GameCard PAPAA/(27921:27932): Codigo de operacion recibido del socket cliente 8 corresponde a un GET
+[INFO] 03:24:10:792 GameCard PAPAA/(27921:27932): Recibiendo tamanio total
+[INFO] 03:24:10:802 GameCard PAPAA/(27921:27932): Tamanio total recibido: 24
+[INFO] 03:24:10:803 GameCard PAPAA/(27921:27932): EL ID recibido: 0
+[INFO] 03:24:10:820 GameCard PAPAA/(27921:27932): Tamanio del pokemon recibido: 16
+[INFO] 03:24:10:839 GameCard PAPAA/(27921:27932): Nombre del pokemon recibido: miltonchupapija
+[INFO] 03:24:10:839 GameCard PAPAA/(27921:27932): GET recibido del modulo Game Boy socket 8
+[INFO] 03:24:10:879 GameCard PAPAA/(27921:27932): EL array de blocks es: 3
+[INFO] 03:24:10:896 GameCard PAPAA/(27921:27932): Se creo el falso config de la ruta
+[INFO] 03:24:10:897 GameCard PAPAA/(27921:27932): Retorno el estado: N
+[INFO] 03:24:10:931 GameCard PAPAA/(27921:27932): Se creo el falso config de la ruta
+[INFO] 03:24:11:18 GameCard PAPAA/(27921:27932): Se esta analizando el block: 3
+[INFO] 03:24:11:19 GameCard PAPAA/(27921:27932): La ruta del archivo es: /home/utnso/Escritorio/tall-grass/Blocks/3.bin
+[INFO] 03:24:11:23 GameCard PAPAA/(27921:27932): Se esta leyendo la linea: 5-9=2
+
+[INFO] 03:24:11:79 GameCard PAPAA/(27921:27932): La coordenada de la linea es: 5-9
+[INFO] 03:24:11:116 GameCard PAPAA/(27921:27932): Se esta leyendo la linea: 3-7=2
+
+[INFO] 03:24:11:134 GameCard PAPAA/(27921:27932): La coordenada de la linea es: 3-7
+[INFO] 03:24:11:150 GameCard PAPAA/(27921:27932): Se esta leyendo la linea: 4-9=2
+
+[INFO] 03:24:11:150 GameCard PAPAA/(27921:27932): La coordenada de la linea es: 4-9
+[INFO] 03:24:11:151 GameCard PAPAA/(27921:27932): Se esta leyendo la linea: 3-9=2
+
+[INFO] 03:24:11:167 GameCard PAPAA/(27921:27932): La coordenada de la linea es: 3-9
+[INFO] 03:24:11:167 GameCard PAPAA/(27921:27932): Se esta leyendo la linea: 6-9=2
+
+[INFO] 03:24:11:168 GameCard PAPAA/(27921:27932): La coordenada de la linea es: 6-9
+[INFO] 03:24:11:172 GameCard PAPAA/(27921:27932): Se esta leyendo la linea: 3-5=16
+
+[INFO] 03:24:11:173 GameCard PAPAA/(27921:27932): La coordenada de la linea es: 3-5
+[INFO] 03:24:11:196 GameCard PAPAA/(27921:27932): Se esta leyendo la linea: 8-9=2
+
+[INFO] 03:24:11:201 GameCard PAPAA/(27921:27932): La coordenada de la linea es: 8-9
+[INFO] 03:24:11:201 GameCard PAPAA/(27921:27932): Se esta leyendo la linea: 3-4=16
+
+[INFO] 03:24:11:202 GameCard PAPAA/(27921:27932): La coordenada de la linea es: 3-4
+[INFO] 03:24:11:202 GameCard PAPAA/(27921:27932): Se esta leyendo la linea: 3-6=1
+
+[INFO] 03:24:11:203 GameCard PAPAA/(27921:27932): La coordenada de la linea es: 3-6
+[INFO] 03:24:11:204 GameCard PAPAA/(27921:27932): Se esta analizando el block: 4
+[INFO] 03:24:11:207 GameCard PAPAA/(27921:27932): La ruta del archivo es: /home/utnso/Escritorio/tall-grass/Blocks/4.bin
+[INFO] 03:24:11:208 GameCard PAPAA/(27921:27932): Se esta leyendo la linea: 9-9=2
+
+[INFO] 03:24:11:221 GameCard PAPAA/(27921:27932): La coordenada de la linea es: 9-9
+[INFO] 03:24:11:260 GameCard PAPAA/(27921:27932): EL tamanio calculado del archivo es: 56
+[INFO] 03:24:11:321 GameCard PAPAA/(27921:27932): EL tamanio calculado del archivo es: 6
+[INFO] 03:24:11:375 GameCard PAPAA/(27921:27932): El ID mensaje cargado en el localized es: 0
+[INFO] 03:24:11:388 GameCard PAPAA/(27921:27932): El Pokemon cargado en el localized es: miltonchupapija
+[INFO] 03:24:11:408 GameCard PAPAA/(27921:27932): El tamanio del nombre del pokemon cargado en el localized es: 15
+[INFO] 03:24:11:418 GameCard PAPAA/(27921:27932): La cantidad de lugares donde apareche el pokemon cargado en el localized es: 10
+[INFO] 03:24:11:420 GameCard PAPAA/(27921:27932): La coordenada sacada de la cola es: 5-9
+[INFO] 03:24:11:428 GameCard PAPAA/(27921:27932): La coordenada sacada de la cola es: 5
+[INFO] 03:24:11:447 GameCard PAPAA/(27921:27932): La coordenada sacada de la cola es: 9
+[INFO] 03:24:18:372 GameCard PAPAA/(27947:27947): logger iniciado.
+[INFO] 03:24:18:401 GameCard PAPAA/(27947:27947): Config cargada.
+[INFO] 03:24:18:403 GameCard PAPAA/(27947:27947): La IP del Broker: 127.0.0.1
+[INFO] 03:24:18:403 GameCard PAPAA/(27947:27947): El Puerto es: 6009
+[INFO] 03:24:18:406 GameCard PAPAA/(27947:27947): El tiempo de reintento de conexion es: 10
+[INFO] 03:24:18:407 GameCard PAPAA/(27947:27947): El tiempo de reintento de operacion es: 5
+[INFO] 03:24:18:408 GameCard PAPAA/(27947:27947): El tiempo de retardo de conexion es: 5
+[INFO] 03:24:18:408 GameCard PAPAA/(27947:27947): El punto de montaje es: /home/utnso/Escritorio/tall-grass
+[INFO] 03:24:18:409 GameCard PAPAA/(27947:27947): La IP es: 127.0.0.1
+[INFO] 03:24:18:409 GameCard PAPAA/(27947:27947): El puerto es: 4447
+[INFO] 03:24:18:410 GameCard PAPAA/(27947:27947): El punto de montaje es: /home/utnso/Escritorio/tall-grass
+[INFO] 03:24:18:412 GameCard PAPAA/(27947:27947): La ruta del metadataes: /home/utnso/Escritorio/tall-grass/Metadata
+[INFO] 03:24:18:415 GameCard PAPAA/(27947:27947): Se creo el config de MetaData
+[INFO] 03:24:18:416 GameCard PAPAA/(27947:27947): El Block Size es: 64
+[INFO] 03:24:18:417 GameCard PAPAA/(27947:27947): La cantidad de Bloques es: 5192
+[INFO] 03:24:18:417 GameCard PAPAA/(27947:27947): El Magic Number es: TALL_GRASS
+[INFO] 03:24:18:433 GameCard PAPAA/(27947:27947): Bitmap ya seteado
+[ERROR] 03:24:18:466 GameCard PAPAA/(27947:27947): Ya existe el BitMap
+[INFO] 03:24:18:469 GameCard PAPAA/(27947:27947): SETEO DE VARIABLES PARA ARCHIVOSYDIRECTORIOS.H
+[INFO] 03:24:18:470 GameCard PAPAA/(27947:27947): El ID de modulo es: 1804289383
+[INFO] 03:24:18:502 GameCard PAPAA/(27947:27948): Esperando mensajes de game boy en socket 7
+[INFO] 03:24:18:503 GameCard PAPAA/(27947:27950): Escucho CATCH de BROKER
+[INFO] 03:24:18:504 GameCard PAPAA/(27947:27949): Escuchando NEW de BROKER
+[ERROR] 03:24:18:514 GameCard PAPAA/(27947:27949): Hubo un problema enviando la suscripcion a la cola NEW del broker
+[ERROR] 03:24:18:515 GameCard PAPAA/(27947:27950): Hubo un problema enviando la suscripcion a la cola CATCH del broker
+[INFO] 03:24:18:516 GameCard PAPAA/(27947:27952): Hilo de verificacion periodica de conexion con Broker iniciado
+[INFO] 03:24:18:516 GameCard PAPAA/(27947:27951): Escucho GET de BROKER
+[ERROR] 03:24:18:530 GameCard PAPAA/(27947:27951): Hubo un problema enviando la suscripcion a la cola GET del broker
+[INFO] 03:24:40:257 GameCard PAPAA/(28010:28010): logger iniciado.
+[INFO] 03:24:40:289 GameCard PAPAA/(28010:28010): Config cargada.
+[INFO] 03:24:40:291 GameCard PAPAA/(28010:28010): La IP del Broker: 127.0.0.1
+[INFO] 03:24:40:292 GameCard PAPAA/(28010:28010): El Puerto es: 6009
+[INFO] 03:24:40:295 GameCard PAPAA/(28010:28010): El tiempo de reintento de conexion es: 10
+[INFO] 03:24:40:296 GameCard PAPAA/(28010:28010): El tiempo de reintento de operacion es: 5
+[INFO] 03:24:40:296 GameCard PAPAA/(28010:28010): El tiempo de retardo de conexion es: 5
+[INFO] 03:24:40:297 GameCard PAPAA/(28010:28010): El punto de montaje es: /home/utnso/Escritorio/tall-grass
+[INFO] 03:24:40:298 GameCard PAPAA/(28010:28010): La IP es: 127.0.0.1
+[INFO] 03:24:40:298 GameCard PAPAA/(28010:28010): El puerto es: 4447
+[INFO] 03:24:40:299 GameCard PAPAA/(28010:28010): El punto de montaje es: /home/utnso/Escritorio/tall-grass
+[INFO] 03:24:40:301 GameCard PAPAA/(28010:28010): La ruta del metadataes: /home/utnso/Escritorio/tall-grass/Metadata
+[INFO] 03:24:40:303 GameCard PAPAA/(28010:28010): Se creo el config de MetaData
+[INFO] 03:24:40:305 GameCard PAPAA/(28010:28010): El Block Size es: 64
+[INFO] 03:24:40:305 GameCard PAPAA/(28010:28010): La cantidad de Bloques es: 5192
+[INFO] 03:24:40:306 GameCard PAPAA/(28010:28010): El Magic Number es: TALL_GRASS
+[INFO] 03:24:40:322 GameCard PAPAA/(28010:28010): Bitmap ya seteado
+[ERROR] 03:24:40:355 GameCard PAPAA/(28010:28010): Ya existe el BitMap
+[INFO] 03:24:40:358 GameCard PAPAA/(28010:28010): SETEO DE VARIABLES PARA ARCHIVOSYDIRECTORIOS.H
+[INFO] 03:24:40:358 GameCard PAPAA/(28010:28010): El ID de modulo es: 1804289383
+[INFO] 03:24:40:390 GameCard PAPAA/(28010:28011): Esperando mensajes de game boy en socket 7
+[INFO] 03:24:40:392 GameCard PAPAA/(28010:28013): Escucho CATCH de BROKER
+[INFO] 03:24:40:392 GameCard PAPAA/(28010:28012): Escuchando NEW de BROKER
+[ERROR] 03:24:40:402 GameCard PAPAA/(28010:28013): Hubo un problema enviando la suscripcion a la cola CATCH del broker
+[ERROR] 03:24:40:403 GameCard PAPAA/(28010:28012): Hubo un problema enviando la suscripcion a la cola NEW del broker
+[INFO] 03:24:40:403 GameCard PAPAA/(28010:28014): Escucho GET de BROKER
+[INFO] 03:24:40:404 GameCard PAPAA/(28010:28015): Hilo de verificacion periodica de conexion con Broker iniciado
+[ERROR] 03:24:40:446 GameCard PAPAA/(28010:28014): Hubo un problema enviando la suscripcion a la cola GET del broker
+[INFO] 03:24:42:101 GameCard PAPAA/(28010:28011): Socket 7 de gameBoy aceptado
+[INFO] 03:24:42:135 GameCard PAPAA/(28010:28021): Recibiendo codigo de operacion de GameBoy en socket 8
+[INFO] 03:24:42:145 GameCard PAPAA/(28010:28021): Codigo de operacion de socket 8 recibido: 5
+[INFO] 03:24:42:150 GameCard PAPAA/(28010:28021): Procesando request de GameBoy
+[INFO] 03:24:42:150 GameCard PAPAA/(28010:28021): Codigo de operacion recibido del socket cliente 8 corresponde a un GET
+[INFO] 03:24:42:155 GameCard PAPAA/(28010:28021): Recibiendo tamanio total
+[INFO] 03:24:42:180 GameCard PAPAA/(28010:28021): Tamanio total recibido: 24
+[INFO] 03:24:42:185 GameCard PAPAA/(28010:28021): EL ID recibido: 0
+[INFO] 03:24:42:190 GameCard PAPAA/(28010:28021): Tamanio del pokemon recibido: 16
+[INFO] 03:24:42:191 GameCard PAPAA/(28010:28021): Nombre del pokemon recibido: miltonchupapija
+[INFO] 03:24:42:212 GameCard PAPAA/(28010:28021): GET recibido del modulo Game Boy socket 8
+[INFO] 03:24:42:241 GameCard PAPAA/(28010:28021): EL array de blocks es: 3
+[INFO] 03:24:42:265 GameCard PAPAA/(28010:28021): Se creo el falso config de la ruta
+[INFO] 03:24:42:282 GameCard PAPAA/(28010:28021): Retorno el estado: N
+[INFO] 03:24:42:291 GameCard PAPAA/(28010:28021): Se creo el falso config de la ruta
+[INFO] 03:24:42:331 GameCard PAPAA/(28010:28021): Se esta analizando el block: 3
+[INFO] 03:24:42:332 GameCard PAPAA/(28010:28021): La ruta del archivo es: /home/utnso/Escritorio/tall-grass/Blocks/3.bin
+[INFO] 03:24:42:341 GameCard PAPAA/(28010:28021): Se esta leyendo la linea: 5-9=2
+
+[INFO] 03:24:42:359 GameCard PAPAA/(28010:28021): La coordenada de la linea es: 5-9
+[INFO] 03:24:42:374 GameCard PAPAA/(28010:28021): Se esta leyendo la linea: 3-7=2
+
+[INFO] 03:24:42:390 GameCard PAPAA/(28010:28021): La coordenada de la linea es: 3-7
+[INFO] 03:24:42:392 GameCard PAPAA/(28010:28021): Se esta leyendo la linea: 4-9=2
+
+[INFO] 03:24:42:396 GameCard PAPAA/(28010:28021): La coordenada de la linea es: 4-9
+[INFO] 03:24:42:405 GameCard PAPAA/(28010:28021): Se esta leyendo la linea: 3-9=2
+
+[INFO] 03:24:42:406 GameCard PAPAA/(28010:28021): La coordenada de la linea es: 3-9
+[INFO] 03:24:42:422 GameCard PAPAA/(28010:28021): Se esta leyendo la linea: 6-9=2
+
+[INFO] 03:24:42:422 GameCard PAPAA/(28010:28021): La coordenada de la linea es: 6-9
+[INFO] 03:24:42:431 GameCard PAPAA/(28010:28021): Se esta leyendo la linea: 3-5=16
+
+[INFO] 03:24:42:432 GameCard PAPAA/(28010:28021): La coordenada de la linea es: 3-5
+[INFO] 03:24:42:432 GameCard PAPAA/(28010:28021): Se esta leyendo la linea: 8-9=2
+
+[INFO] 03:24:42:433 GameCard PAPAA/(28010:28021): La coordenada de la linea es: 8-9
+[INFO] 03:24:42:433 GameCard PAPAA/(28010:28021): Se esta leyendo la linea: 3-4=16
+
+[INFO] 03:24:42:433 GameCard PAPAA/(28010:28021): La coordenada de la linea es: 3-4
+[INFO] 03:24:42:438 GameCard PAPAA/(28010:28021): Se esta leyendo la linea: 3-6=1
+
+[INFO] 03:24:42:439 GameCard PAPAA/(28010:28021): La coordenada de la linea es: 3-6
+[INFO] 03:24:42:440 GameCard PAPAA/(28010:28021): Se esta analizando el block: 4
+[INFO] 03:24:42:451 GameCard PAPAA/(28010:28021): La ruta del archivo es: /home/utnso/Escritorio/tall-grass/Blocks/4.bin
+[INFO] 03:24:42:456 GameCard PAPAA/(28010:28021): Se esta leyendo la linea: 9-9=2
+
+[INFO] 03:24:42:456 GameCard PAPAA/(28010:28021): La coordenada de la linea es: 9-9
+[INFO] 03:24:42:460 GameCard PAPAA/(28010:28021): EL tamanio calculado del archivo es: 56
+[INFO] 03:24:42:474 GameCard PAPAA/(28010:28021): EL tamanio calculado del archivo es: 6
+[INFO] 03:24:42:486 GameCard PAPAA/(28010:28021): El ID mensaje cargado en el localized es: 0
+[INFO] 03:24:42:495 GameCard PAPAA/(28010:28021): El Pokemon cargado en el localized es: miltonchupapija
+[INFO] 03:24:42:499 GameCard PAPAA/(28010:28021): El tamanio del nombre del pokemon cargado en el localized es: 15
+[INFO] 03:24:42:505 GameCard PAPAA/(28010:28021): La cantidad de lugares donde apareche el pokemon cargado en el localized es: 10
+[INFO] 03:24:42:514 GameCard PAPAA/(28010:28021): La coordenada sacada de la cola es: 5-9
+[INFO] 03:24:42:527 GameCard PAPAA/(28010:28021): La coordenada sacada de la cola es: 5
+[INFO] 03:24:42:544 GameCard PAPAA/(28010:28021): La coordenada sacada de la cola es: 9
+[INFO] 03:24:42:545 GameCard PAPAA/(28010:28021): La coordenada cargada es (5 ; 9)
+[INFO] 03:24:42:546 GameCard PAPAA/(28010:28021): La coordenada sacada de la cola es: 3-7
+[INFO] 03:24:42:546 GameCard PAPAA/(28010:28021): La coordenada sacada de la cola es: 3
+[INFO] 03:24:42:563 GameCard PAPAA/(28010:28021): La coordenada sacada de la cola es: 7
+[INFO] 03:24:42:564 GameCard PAPAA/(28010:28021): La coordenada cargada es (3 ; 7)
+[INFO] 03:24:42:564 GameCard PAPAA/(28010:28021): La coordenada sacada de la cola es: 4-9
+[INFO] 03:24:42:571 GameCard PAPAA/(28010:28021): La coordenada sacada de la cola es: 4
+[INFO] 03:24:42:572 GameCard PAPAA/(28010:28021): La coordenada sacada de la cola es: 9
+[INFO] 03:24:42:572 GameCard PAPAA/(28010:28021): La coordenada cargada es (4 ; 9)
+[INFO] 03:24:42:572 GameCard PAPAA/(28010:28021): La coordenada sacada de la cola es: 3-9
+[INFO] 03:24:42:573 GameCard PAPAA/(28010:28021): La coordenada sacada de la cola es: 3
+[INFO] 03:24:42:573 GameCard PAPAA/(28010:28021): La coordenada sacada de la cola es: 9
+[INFO] 03:24:42:573 GameCard PAPAA/(28010:28021): La coordenada cargada es (3 ; 9)
+[INFO] 03:24:42:574 GameCard PAPAA/(28010:28021): La coordenada sacada de la cola es: 6-9
+[INFO] 03:24:42:582 GameCard PAPAA/(28010:28021): La coordenada sacada de la cola es: 6
+[INFO] 03:24:42:583 GameCard PAPAA/(28010:28021): La coordenada sacada de la cola es: 9
+[INFO] 03:24:42:583 GameCard PAPAA/(28010:28021): La coordenada cargada es (6 ; 9)
+[INFO] 03:24:42:587 GameCard PAPAA/(28010:28021): La coordenada sacada de la cola es: 3-5
+[INFO] 03:24:42:592 GameCard PAPAA/(28010:28021): La coordenada sacada de la cola es: 3
+[INFO] 03:24:42:596 GameCard PAPAA/(28010:28021): La coordenada sacada de la cola es: 5
+[INFO] 03:24:42:597 GameCard PAPAA/(28010:28021): La coordenada cargada es (3 ; 5)
+[INFO] 03:24:42:597 GameCard PAPAA/(28010:28021): La coordenada sacada de la cola es: 8-9
+[INFO] 03:24:42:597 GameCard PAPAA/(28010:28021): La coordenada sacada de la cola es: 8
+[INFO] 03:24:42:598 GameCard PAPAA/(28010:28021): La coordenada sacada de la cola es: 9
+[INFO] 03:24:42:598 GameCard PAPAA/(28010:28021): La coordenada cargada es (8 ; 9)
+[INFO] 03:24:42:598 GameCard PAPAA/(28010:28021): La coordenada sacada de la cola es: 3-4
+[INFO] 03:24:42:602 GameCard PAPAA/(28010:28021): La coordenada sacada de la cola es: 3
+[INFO] 03:24:42:602 GameCard PAPAA/(28010:28021): La coordenada sacada de la cola es: 4
+[INFO] 03:24:42:603 GameCard PAPAA/(28010:28021): La coordenada cargada es (3 ; 4)
+[INFO] 03:24:42:607 GameCard PAPAA/(28010:28021): La coordenada sacada de la cola es: 3-6
+[INFO] 03:24:42:612 GameCard PAPAA/(28010:28021): La coordenada sacada de la cola es: 3
+[INFO] 03:24:42:612 GameCard PAPAA/(28010:28021): La coordenada sacada de la cola es: 6
+[INFO] 03:24:42:612 GameCard PAPAA/(28010:28021): La coordenada cargada es (3 ; 6)
+[INFO] 03:24:42:641 GameCard PAPAA/(28010:28021): La coordenada sacada de la cola es: 9-9
+[INFO] 03:24:42:641 GameCard PAPAA/(28010:28021): La coordenada sacada de la cola es: 9
+[INFO] 03:24:42:641 GameCard PAPAA/(28010:28021): La coordenada sacada de la cola es: 9
+[INFO] 03:24:42:646 GameCard PAPAA/(28010:28021): La coordenada cargada es (9 ; 9)
+[INFO] 03:24:42:655 GameCard PAPAA/(28010:28021): El valor de index 0 es: 5
+[INFO] 03:24:42:662 GameCard PAPAA/(28010:28021): El valor de index 1 es: 9
+[INFO] 03:24:42:663 GameCard PAPAA/(28010:28021): El valor de index 2 es: 3
+[INFO] 03:24:42:663 GameCard PAPAA/(28010:28021): El valor de index 3 es: 7
+[INFO] 03:24:42:672 GameCard PAPAA/(28010:28021): El valor de index 4 es: 4
+[INFO] 03:24:42:672 GameCard PAPAA/(28010:28021): El valor de index 5 es: 9
+[INFO] 03:24:42:672 GameCard PAPAA/(28010:28021): El valor de index 6 es: 3
+[INFO] 03:24:42:673 GameCard PAPAA/(28010:28021): El valor de index 7 es: 9
+[INFO] 03:24:42:697 GameCard PAPAA/(28010:28021): El valor de index 8 es: 6
+[INFO] 03:24:42:697 GameCard PAPAA/(28010:28021): El valor de index 9 es: 9
+[INFO] 03:24:42:697 GameCard PAPAA/(28010:28021): El valor de index 10 es: 3
+[INFO] 03:24:42:710 GameCard PAPAA/(28010:28021): El valor de index 11 es: 5
+[INFO] 03:24:42:711 GameCard PAPAA/(28010:28021): El valor de index 12 es: 8
+[INFO] 03:24:42:711 GameCard PAPAA/(28010:28021): El valor de index 13 es: 9
+[INFO] 03:24:42:711 GameCard PAPAA/(28010:28021): El valor de index 14 es: 3
+[INFO] 03:24:42:711 GameCard PAPAA/(28010:28021): El valor de index 15 es: 4
+[INFO] 03:24:42:712 GameCard PAPAA/(28010:28021): El valor de index 16 es: 3
+[INFO] 03:24:42:712 GameCard PAPAA/(28010:28021): El valor de index 17 es: 6
+[INFO] 03:24:42:712 GameCard PAPAA/(28010:28021): El valor de index 18 es: 9
+[INFO] 03:24:42:721 GameCard PAPAA/(28010:28021): El valor de index 19 es: 9
+[INFO] 03:24:47:726 GameCard PAPAA/(28010:28021): El ID cargado es 0
+[INFO] 03:24:47:731 GameCard PAPAA/(28010:28021): Tamanio nombre pokemon 15
+[INFO] 03:24:47:738 GameCard PAPAA/(28010:28021): Nombre pokemon miltonchupapija
+[INFO] 03:24:47:759 GameCard PAPAA/(28010:28021): Cantidad de coordenadas donde aparece:  10
+[INFO] 03:24:47:764 GameCard PAPAA/(28010:28021): Posicion X previa al mem 5
+[INFO] 03:24:47:769 GameCard PAPAA/(28010:28021): Posicion Y previa al mem 9
+[INFO] 03:24:47:774 GameCard PAPAA/(28010:28021): Posicion X 5
+[INFO] 03:24:47:778 GameCard PAPAA/(28010:28021): Posicion Y 9
+[INFO] 03:24:47:783 GameCard PAPAA/(28010:28021): Posicion X previa al mem 3
+[INFO] 03:24:47:794 GameCard PAPAA/(28010:28021): Posicion Y previa al mem 7
+[INFO] 03:24:47:795 GameCard PAPAA/(28010:28021): Posicion X 3
+[INFO] 03:24:47:795 GameCard PAPAA/(28010:28021): Posicion Y 7
+[INFO] 03:24:47:804 GameCard PAPAA/(28010:28021): Posicion X previa al mem 4
+[INFO] 03:24:47:809 GameCard PAPAA/(28010:28021): Posicion Y previa al mem 9
+[INFO] 03:24:47:814 GameCard PAPAA/(28010:28021): Posicion X 4
+[INFO] 03:24:47:838 GameCard PAPAA/(28010:28021): Posicion Y 9
+[INFO] 03:24:47:838 GameCard PAPAA/(28010:28021): Posicion X previa al mem 3
+[INFO] 03:24:47:839 GameCard PAPAA/(28010:28021): Posicion Y previa al mem 9
+[INFO] 03:24:47:839 GameCard PAPAA/(28010:28021): Posicion X 3
+[INFO] 03:24:47:855 GameCard PAPAA/(28010:28021): Posicion Y 9
+[INFO] 03:24:47:855 GameCard PAPAA/(28010:28021): Posicion X previa al mem 6
+[INFO] 03:24:47:855 GameCard PAPAA/(28010:28021): Posicion Y previa al mem 9
+[INFO] 03:24:47:855 GameCard PAPAA/(28010:28021): Posicion X 6
+[INFO] 03:24:47:856 GameCard PAPAA/(28010:28021): Posicion Y 9
+[INFO] 03:24:47:856 GameCard PAPAA/(28010:28021): Posicion X previa al mem 3
+[INFO] 03:24:47:856 GameCard PAPAA/(28010:28021): Posicion Y previa al mem 5
+[INFO] 03:24:47:857 GameCard PAPAA/(28010:28021): Posicion X 3
+[INFO] 03:24:47:857 GameCard PAPAA/(28010:28021): Posicion Y 5
+[INFO] 03:24:47:857 GameCard PAPAA/(28010:28021): Posicion X previa al mem 8
+[INFO] 03:24:47:858 GameCard PAPAA/(28010:28021): Posicion Y previa al mem 9
+[INFO] 03:24:47:858 GameCard PAPAA/(28010:28021): Posicion X 8
+[INFO] 03:24:47:871 GameCard PAPAA/(28010:28021): Posicion Y 9
+[INFO] 03:24:47:871 GameCard PAPAA/(28010:28021): Posicion X previa al mem 3
+[INFO] 03:24:47:871 GameCard PAPAA/(28010:28021): Posicion Y previa al mem 4
+[INFO] 03:24:47:872 GameCard PAPAA/(28010:28021): Posicion X 3
+[INFO] 03:24:47:876 GameCard PAPAA/(28010:28021): Posicion Y 4
+[INFO] 03:24:47:877 GameCard PAPAA/(28010:28021): Posicion X previa al mem 3
+[INFO] 03:24:47:877 GameCard PAPAA/(28010:28021): Posicion Y previa al mem 6
+[INFO] 03:24:47:877 GameCard PAPAA/(28010:28021): Posicion X 3
+[INFO] 03:24:47:920 GameCard PAPAA/(28010:28021): Posicion Y 6
+[INFO] 03:24:47:920 GameCard PAPAA/(28010:28021): Posicion X previa al mem 9
+[INFO] 03:24:47:920 GameCard PAPAA/(28010:28021): Posicion Y previa al mem 9
+[INFO] 03:24:47:921 GameCard PAPAA/(28010:28021): Posicion X 9
+[INFO] 03:24:47:921 GameCard PAPAA/(28010:28021): Posicion Y 9
+[INFO] 03:24:47:921 GameCard PAPAA/(28010:28021): SAliendo
+[INFO] 03:24:47:922 GameCard PAPAA/(28010:28021): Creando paquete
+[INFO] 03:24:47:923 GameCard PAPAA/(28010:28021): CODIGO DE OPERACION: 6
+[INFO] 03:24:47:923 GameCard PAPAA/(28010:28021): Paquete Creado
+[INFO] 03:24:47:936 GameCard PAPAA/(28010:28021): la operacion a realizar es 6
+[INFO] 03:24:47:937 GameCard PAPAA/(28010:28021): Serializando...
+[INFO] 03:24:47:938 GameCard PAPAA/(28010:28021): Serializacion completa
+[INFO] 03:24:47:938 GameCard PAPAA/(28010:28021): El peso total es: 108
+[ERROR] 03:24:47:939 GameCard PAPAA/(28010:28021): Error: No se pudo enviar el mensaje
+[INFO] 03:27:35:494 GameCard PAPAA/(28353:28353): logger iniciado.
+[INFO] 03:27:35:523 GameCard PAPAA/(28353:28353): Config cargada.
+[INFO] 03:27:35:525 GameCard PAPAA/(28353:28353): La IP del Broker: 127.0.0.1
+[INFO] 03:27:35:526 GameCard PAPAA/(28353:28353): El Puerto es: 6009
+[INFO] 03:27:35:529 GameCard PAPAA/(28353:28353): El tiempo de reintento de conexion es: 10
+[INFO] 03:27:35:530 GameCard PAPAA/(28353:28353): El tiempo de reintento de operacion es: 5
+[INFO] 03:27:35:530 GameCard PAPAA/(28353:28353): El tiempo de retardo de conexion es: 5
+[INFO] 03:27:35:531 GameCard PAPAA/(28353:28353): El punto de montaje es: /home/utnso/Escritorio/tall-grass
+[INFO] 03:27:35:532 GameCard PAPAA/(28353:28353): La IP es: 127.0.0.1
+[INFO] 03:27:35:532 GameCard PAPAA/(28353:28353): El puerto es: 4447
+[INFO] 03:27:35:534 GameCard PAPAA/(28353:28353): El punto de montaje es: /home/utnso/Escritorio/tall-grass
+[INFO] 03:27:35:536 GameCard PAPAA/(28353:28353): La ruta del metadataes: /home/utnso/Escritorio/tall-grass/Metadata
+[INFO] 03:27:35:539 GameCard PAPAA/(28353:28353): Se creo el config de MetaData
+[INFO] 03:27:35:540 GameCard PAPAA/(28353:28353): El Block Size es: 64
+[INFO] 03:27:35:540 GameCard PAPAA/(28353:28353): La cantidad de Bloques es: 5192
+[INFO] 03:27:35:541 GameCard PAPAA/(28353:28353): El Magic Number es: TALL_GRASS
+[INFO] 03:27:35:558 GameCard PAPAA/(28353:28353): Bitmap ya seteado
+[ERROR] 03:27:35:622 GameCard PAPAA/(28353:28353): Ya existe el BitMap
+[INFO] 03:27:35:625 GameCard PAPAA/(28353:28353): SETEO DE VARIABLES PARA ARCHIVOSYDIRECTORIOS.H
+[INFO] 03:27:35:625 GameCard PAPAA/(28353:28353): El ID de modulo es: 1804289383
+[INFO] 03:27:35:665 GameCard PAPAA/(28353:28354): Esperando mensajes de game boy en socket 7
+[INFO] 03:27:35:670 GameCard PAPAA/(28353:28356): Escucho CATCH de BROKER
+[ERROR] 03:27:35:676 GameCard PAPAA/(28353:28356): Hubo un problema enviando la suscripcion a la cola CATCH del broker
+[INFO] 03:27:35:677 GameCard PAPAA/(28353:28358): Hilo de verificacion periodica de conexion con Broker iniciado
+[INFO] 03:27:35:679 GameCard PAPAA/(28353:28355): Escuchando NEW de BROKER
+[INFO] 03:27:35:679 GameCard PAPAA/(28353:28357): Escucho GET de BROKER
+[ERROR] 03:27:35:685 GameCard PAPAA/(28353:28357): Hubo un problema enviando la suscripcion a la cola GET del broker
+[ERROR] 03:27:35:695 GameCard PAPAA/(28353:28355): Hubo un problema enviando la suscripcion a la cola NEW del broker
+[INFO] 03:27:36:245 GameCard PAPAA/(28353:28354): Socket 7 de gameBoy aceptado
+[INFO] 03:27:36:299 GameCard PAPAA/(28353:28360): Recibiendo codigo de operacion de GameBoy en socket 8
+[INFO] 03:27:36:312 GameCard PAPAA/(28353:28360): Codigo de operacion de socket 8 recibido: 5
+[INFO] 03:27:36:316 GameCard PAPAA/(28353:28360): Procesando request de GameBoy
+[INFO] 03:27:36:346 GameCard PAPAA/(28353:28360): Codigo de operacion recibido del socket cliente 8 corresponde a un GET
+[INFO] 03:27:36:347 GameCard PAPAA/(28353:28360): Recibiendo tamanio total
+[INFO] 03:27:36:360 GameCard PAPAA/(28353:28360): Tamanio total recibido: 24
+[INFO] 03:27:36:389 GameCard PAPAA/(28353:28360): EL ID recibido: 0
+[INFO] 03:27:36:403 GameCard PAPAA/(28353:28360): Tamanio del pokemon recibido: 16
+[INFO] 03:27:36:408 GameCard PAPAA/(28353:28360): Nombre del pokemon recibido: miltonchupapija
+[INFO] 03:27:36:413 GameCard PAPAA/(28353:28360): GET recibido del modulo Game Boy socket 8
+[INFO] 03:27:36:446 GameCard PAPAA/(28353:28360): EL array de blocks es: 3
+[INFO] 03:27:36:464 GameCard PAPAA/(28353:28360): Se creo el falso config de la ruta
+[INFO] 03:27:36:465 GameCard PAPAA/(28353:28360): Retorno el estado: N
+[INFO] 03:27:36:470 GameCard PAPAA/(28353:28360): Se creo el falso config de la ruta
+[INFO] 03:27:36:530 GameCard PAPAA/(28353:28360): Se esta analizando el block: 3
+[INFO] 03:27:36:535 GameCard PAPAA/(28353:28360): La ruta del archivo es: /home/utnso/Escritorio/tall-grass/Blocks/3.bin
+[INFO] 03:27:36:544 GameCard PAPAA/(28353:28360): Se esta leyendo la linea: 5-9=2
+
+[INFO] 03:27:36:561 GameCard PAPAA/(28353:28360): La coordenada de la linea es: 5-9
+[INFO] 03:27:36:580 GameCard PAPAA/(28353:28360): Se esta leyendo la linea: 3-7=2
+
+[INFO] 03:27:36:596 GameCard PAPAA/(28353:28360): La coordenada de la linea es: 3-7
+[INFO] 03:27:36:598 GameCard PAPAA/(28353:28360): Se esta leyendo la linea: 4-9=2
+
+[INFO] 03:27:36:599 GameCard PAPAA/(28353:28360): La coordenada de la linea es: 4-9
+[INFO] 03:27:36:604 GameCard PAPAA/(28353:28360): Se esta leyendo la linea: 3-9=2
+
+[INFO] 03:27:36:612 GameCard PAPAA/(28353:28360): La coordenada de la linea es: 3-9
+[INFO] 03:27:36:616 GameCard PAPAA/(28353:28360): Se esta leyendo la linea: 6-9=2
+
+[INFO] 03:27:36:621 GameCard PAPAA/(28353:28360): La coordenada de la linea es: 6-9
+[INFO] 03:27:36:621 GameCard PAPAA/(28353:28360): Se esta leyendo la linea: 3-5=16
+
+[INFO] 03:27:36:622 GameCard PAPAA/(28353:28360): La coordenada de la linea es: 3-5
+[INFO] 03:27:36:639 GameCard PAPAA/(28353:28360): Se esta leyendo la linea: 8-9=2
+
+[INFO] 03:27:36:639 GameCard PAPAA/(28353:28360): La coordenada de la linea es: 8-9
+[INFO] 03:27:36:640 GameCard PAPAA/(28353:28360): Se esta leyendo la linea: 3-4=16
+
+[INFO] 03:27:36:640 GameCard PAPAA/(28353:28360): La coordenada de la linea es: 3-4
+[INFO] 03:27:36:641 GameCard PAPAA/(28353:28360): Se esta leyendo la linea: 3-6=1
+
+[INFO] 03:27:36:652 GameCard PAPAA/(28353:28360): La coordenada de la linea es: 3-6
+[INFO] 03:27:36:658 GameCard PAPAA/(28353:28360): Se esta analizando el block: 4
+[INFO] 03:27:36:658 GameCard PAPAA/(28353:28360): La ruta del archivo es: /home/utnso/Escritorio/tall-grass/Blocks/4.bin
+[INFO] 03:27:36:659 GameCard PAPAA/(28353:28360): Se esta leyendo la linea: 9-9=2
+
+[INFO] 03:27:36:659 GameCard PAPAA/(28353:28360): La coordenada de la linea es: 9-9
+[INFO] 03:27:36:662 GameCard PAPAA/(28353:28360): EL tamanio calculado del archivo es: 56
+[INFO] 03:27:36:683 GameCard PAPAA/(28353:28360): EL tamanio calculado del archivo es: 6
+[INFO] 03:27:36:696 GameCard PAPAA/(28353:28360): El ID mensaje cargado en el localized es: 0
+[INFO] 03:27:36:712 GameCard PAPAA/(28353:28360): El Pokemon cargado en el localized es: miltonchupapija
+[INFO] 03:27:36:712 GameCard PAPAA/(28353:28360): El tamanio del nombre del pokemon cargado en el localized es: 15
+[INFO] 03:27:36:714 GameCard PAPAA/(28353:28360): La cantidad de lugares donde apareche el pokemon cargado en el localized es: 10
+[INFO] 03:27:36:724 GameCard PAPAA/(28353:28360): La coordenada sacada de la cola es: 5-9
+[INFO] 03:27:36:729 GameCard PAPAA/(28353:28360): La coordenada sacada de la cola es: 5
+[INFO] 03:27:36:742 GameCard PAPAA/(28353:28360): La coordenada sacada de la cola es: 9
+[INFO] 03:27:36:747 GameCard PAPAA/(28353:28360): La coordenada cargada es (5 ; 9)
+[INFO] 03:27:36:752 GameCard PAPAA/(28353:28360): La coordenada sacada de la cola es: 3-7
+[INFO] 03:27:36:772 GameCard PAPAA/(28353:28360): La coordenada sacada de la cola es: 3
+[INFO] 03:27:36:772 GameCard PAPAA/(28353:28360): La coordenada sacada de la cola es: 7
+[INFO] 03:27:36:773 GameCard PAPAA/(28353:28360): La coordenada cargada es (3 ; 7)
+[INFO] 03:27:36:794 GameCard PAPAA/(28353:28360): La coordenada sacada de la cola es: 4-9
+[INFO] 03:27:36:794 GameCard PAPAA/(28353:28360): La coordenada sacada de la cola es: 4
+[INFO] 03:27:36:794 GameCard PAPAA/(28353:28360): La coordenada sacada de la cola es: 9
+[INFO] 03:27:36:795 GameCard PAPAA/(28353:28360): La coordenada cargada es (4 ; 9)
+[INFO] 03:27:36:795 GameCard PAPAA/(28353:28360): La coordenada sacada de la cola es: 3-9
+[INFO] 03:27:36:795 GameCard PAPAA/(28353:28360): La coordenada sacada de la cola es: 3
+[INFO] 03:27:36:796 GameCard PAPAA/(28353:28360): La coordenada sacada de la cola es: 9
+[INFO] 03:27:36:796 GameCard PAPAA/(28353:28360): La coordenada cargada es (3 ; 9)
+[INFO] 03:27:36:796 GameCard PAPAA/(28353:28360): La coordenada sacada de la cola es: 6-9
+[INFO] 03:27:36:797 GameCard PAPAA/(28353:28360): La coordenada sacada de la cola es: 6
+[INFO] 03:27:36:797 GameCard PAPAA/(28353:28360): La coordenada sacada de la cola es: 9
+[INFO] 03:27:36:806 GameCard PAPAA/(28353:28360): La coordenada cargada es (6 ; 9)
+[INFO] 03:27:36:806 GameCard PAPAA/(28353:28360): La coordenada sacada de la cola es: 3-5
+[INFO] 03:27:36:806 GameCard PAPAA/(28353:28360): La coordenada sacada de la cola es: 3
+[INFO] 03:27:36:807 GameCard PAPAA/(28353:28360): La coordenada sacada de la cola es: 5
+[INFO] 03:27:36:815 GameCard PAPAA/(28353:28360): La coordenada cargada es (3 ; 5)
+[INFO] 03:27:36:816 GameCard PAPAA/(28353:28360): La coordenada sacada de la cola es: 8-9
+[INFO] 03:27:36:816 GameCard PAPAA/(28353:28360): La coordenada sacada de la cola es: 8
+[INFO] 03:27:36:816 GameCard PAPAA/(28353:28360): La coordenada sacada de la cola es: 9
+[INFO] 03:27:36:817 GameCard PAPAA/(28353:28360): La coordenada cargada es (8 ; 9)
+[INFO] 03:27:36:817 GameCard PAPAA/(28353:28360): La coordenada sacada de la cola es: 3-4
+[INFO] 03:27:36:817 GameCard PAPAA/(28353:28360): La coordenada sacada de la cola es: 3
+[INFO] 03:27:36:818 GameCard PAPAA/(28353:28360): La coordenada sacada de la cola es: 4
+[INFO] 03:27:36:818 GameCard PAPAA/(28353:28360): La coordenada cargada es (3 ; 4)
+[INFO] 03:27:36:818 GameCard PAPAA/(28353:28360): La coordenada sacada de la cola es: 3-6
+[INFO] 03:27:36:819 GameCard PAPAA/(28353:28360): La coordenada sacada de la cola es: 3
+[INFO] 03:27:36:835 GameCard PAPAA/(28353:28360): La coordenada sacada de la cola es: 6
+[INFO] 03:27:36:836 GameCard PAPAA/(28353:28360): La coordenada cargada es (3 ; 6)
+[INFO] 03:27:36:836 GameCard PAPAA/(28353:28360): La coordenada sacada de la cola es: 9-9
+[INFO] 03:27:36:871 GameCard PAPAA/(28353:28360): La coordenada sacada de la cola es: 9
+[INFO] 03:27:36:872 GameCard PAPAA/(28353:28360): La coordenada sacada de la cola es: 9
+[INFO] 03:27:36:904 GameCard PAPAA/(28353:28360): La coordenada cargada es (9 ; 9)
+[INFO] 03:27:36:905 GameCard PAPAA/(28353:28360): El valor de index 0 es: 5
+[INFO] 03:27:36:922 GameCard PAPAA/(28353:28360): El valor de index 1 es: 9
+[INFO] 03:27:36:925 GameCard PAPAA/(28353:28360): El valor de index 2 es: 3
+[INFO] 03:27:36:935 GameCard PAPAA/(28353:28360): El valor de index 3 es: 7
+[INFO] 03:27:36:939 GameCard PAPAA/(28353:28360): El valor de index 4 es: 4
+[INFO] 03:27:36:939 GameCard PAPAA/(28353:28360): El valor de index 5 es: 9
+[INFO] 03:27:36:940 GameCard PAPAA/(28353:28360): El valor de index 6 es: 3
+[INFO] 03:27:36:972 GameCard PAPAA/(28353:28360): El valor de index 7 es: 9
+[INFO] 03:27:36:972 GameCard PAPAA/(28353:28360): El valor de index 8 es: 6
+[INFO] 03:27:36:973 GameCard PAPAA/(28353:28360): El valor de index 9 es: 9
+[INFO] 03:27:36:973 GameCard PAPAA/(28353:28360): El valor de index 10 es: 3
+[INFO] 03:27:36:973 GameCard PAPAA/(28353:28360): El valor de index 11 es: 5
+[INFO] 03:27:36:974 GameCard PAPAA/(28353:28360): El valor de index 12 es: 8
+[INFO] 03:27:36:974 GameCard PAPAA/(28353:28360): El valor de index 13 es: 9
+[INFO] 03:27:36:974 GameCard PAPAA/(28353:28360): El valor de index 14 es: 3
+[INFO] 03:27:36:983 GameCard PAPAA/(28353:28360): El valor de index 15 es: 4
+[INFO] 03:27:36:987 GameCard PAPAA/(28353:28360): El valor de index 16 es: 3
+[INFO] 03:27:36:988 GameCard PAPAA/(28353:28360): El valor de index 17 es: 6
+[INFO] 03:27:36:991 GameCard PAPAA/(28353:28360): El valor de index 18 es: 9
+[INFO] 03:27:36:991 GameCard PAPAA/(28353:28360): El valor de index 19 es: 9
+[INFO] 03:27:41:997 GameCard PAPAA/(28353:28360): El ID cargado es 0
+[INFO] 03:27:42:15 GameCard PAPAA/(28353:28360): Tamanio nombre pokemon 15
+[INFO] 03:27:42:18 GameCard PAPAA/(28353:28360): Nombre pokemon miltonchupapija
+[INFO] 03:27:42:34 GameCard PAPAA/(28353:28360): Cantidad de coordenadas donde aparece:  10
+[INFO] 03:27:42:35 GameCard PAPAA/(28353:28360): Posicion X previa al mem 5
+[INFO] 03:27:42:39 GameCard PAPAA/(28353:28360): Posicion Y previa al mem 9
+[INFO] 03:27:42:44 GameCard PAPAA/(28353:28360): Posicion X 5
+[INFO] 03:27:42:45 GameCard PAPAA/(28353:28360): Posicion Y 9
+[INFO] 03:27:42:64 GameCard PAPAA/(28353:28360): Posicion X previa al mem 3
+[INFO] 03:27:42:65 GameCard PAPAA/(28353:28360): Posicion Y previa al mem 7
+[INFO] 03:27:42:65 GameCard PAPAA/(28353:28360): Posicion X 3
+[INFO] 03:27:42:65 GameCard PAPAA/(28353:28360): Posicion Y 7
+[INFO] 03:27:42:66 GameCard PAPAA/(28353:28360): Posicion X previa al mem 4
+[INFO] 03:27:42:66 GameCard PAPAA/(28353:28360): Posicion Y previa al mem 9
+[INFO] 03:27:42:66 GameCard PAPAA/(28353:28360): Posicion X 4
+[INFO] 03:27:42:67 GameCard PAPAA/(28353:28360): Posicion Y 9
+[INFO] 03:27:42:67 GameCard PAPAA/(28353:28360): Posicion X previa al mem 3
+[INFO] 03:27:42:67 GameCard PAPAA/(28353:28360): Posicion Y previa al mem 9
+[INFO] 03:27:42:67 GameCard PAPAA/(28353:28360): Posicion X 3
+[INFO] 03:27:42:68 GameCard PAPAA/(28353:28360): Posicion Y 9
+[INFO] 03:27:42:85 GameCard PAPAA/(28353:28360): Posicion X previa al mem 6
+[INFO] 03:27:42:85 GameCard PAPAA/(28353:28360): Posicion Y previa al mem 9
+[INFO] 03:27:42:85 GameCard PAPAA/(28353:28360): Posicion X 6
+[INFO] 03:27:42:93 GameCard PAPAA/(28353:28360): Posicion Y 9
+[INFO] 03:27:42:114 GameCard PAPAA/(28353:28360): Posicion X previa al mem 3
+[INFO] 03:27:42:114 GameCard PAPAA/(28353:28360): Posicion Y previa al mem 5
+[INFO] 03:27:42:115 GameCard PAPAA/(28353:28360): Posicion X 3
+[INFO] 03:27:42:115 GameCard PAPAA/(28353:28360): Posicion Y 5
+[INFO] 03:27:42:122 GameCard PAPAA/(28353:28360): Posicion X previa al mem 8
+[INFO] 03:27:42:123 GameCard PAPAA/(28353:28360): Posicion Y previa al mem 9
+[INFO] 03:27:42:123 GameCard PAPAA/(28353:28360): Posicion X 8
+[INFO] 03:27:42:123 GameCard PAPAA/(28353:28360): Posicion Y 9
+[INFO] 03:27:42:132 GameCard PAPAA/(28353:28360): Posicion X previa al mem 3
+[INFO] 03:27:42:132 GameCard PAPAA/(28353:28360): Posicion Y previa al mem 4
+[INFO] 03:27:42:132 GameCard PAPAA/(28353:28360): Posicion X 3
+[INFO] 03:27:42:133 GameCard PAPAA/(28353:28360): Posicion Y 4
+[INFO] 03:27:42:137 GameCard PAPAA/(28353:28360): Posicion X previa al mem 3
+[INFO] 03:27:42:137 GameCard PAPAA/(28353:28360): Posicion Y previa al mem 6
+[INFO] 03:27:42:138 GameCard PAPAA/(28353:28360): Posicion X 3
+[INFO] 03:27:42:138 GameCard PAPAA/(28353:28360): Posicion Y 6
+[INFO] 03:27:42:138 GameCard PAPAA/(28353:28360): Posicion X previa al mem 9
+[INFO] 03:27:42:139 GameCard PAPAA/(28353:28360): Posicion Y previa al mem 9
+[INFO] 03:27:42:139 GameCard PAPAA/(28353:28360): Posicion X 9
+[INFO] 03:27:42:139 GameCard PAPAA/(28353:28360): Posicion Y 9
+[INFO] 03:27:42:140 GameCard PAPAA/(28353:28360): SAliendo
+[INFO] 03:27:42:149 GameCard PAPAA/(28353:28360): Creando paquete
+[INFO] 03:27:42:149 GameCard PAPAA/(28353:28360): CODIGO DE OPERACION: 6
+[INFO] 03:27:42:174 GameCard PAPAA/(28353:28360): Paquete Creado
+[INFO] 03:27:42:175 GameCard PAPAA/(28353:28360): la operacion a realizar es 6
+[INFO] 03:27:42:186 GameCard PAPAA/(28353:28360): Serializando...
+[INFO] 03:27:42:191 GameCard PAPAA/(28353:28360): Serializacion completa
+[INFO] 03:27:42:196 GameCard PAPAA/(28353:28360): El peso total es: 108
+[ERROR] 03:27:42:197 GameCard PAPAA/(28353:28360): Error: No se pudo enviar el mensaje
+[INFO] 03:44:29:980 GameCard PAPAA/(30132:30132): logger iniciado.
+[INFO] 03:44:30:10 GameCard PAPAA/(30132:30132): Config cargada.
+[INFO] 03:44:30:12 GameCard PAPAA/(30132:30132): La IP del Broker: 127.0.0.1
+[INFO] 03:44:30:13 GameCard PAPAA/(30132:30132): El Puerto es: 6009
+[INFO] 03:44:30:16 GameCard PAPAA/(30132:30132): El tiempo de reintento de conexion es: 10
+[INFO] 03:44:30:17 GameCard PAPAA/(30132:30132): El tiempo de reintento de operacion es: 5
+[INFO] 03:44:30:18 GameCard PAPAA/(30132:30132): El tiempo de retardo de conexion es: 5
+[INFO] 03:44:30:18 GameCard PAPAA/(30132:30132): El punto de montaje es: /home/utnso/Escritorio/tall-grass
+[INFO] 03:44:30:19 GameCard PAPAA/(30132:30132): La IP es: 127.0.0.1
+[INFO] 03:44:30:19 GameCard PAPAA/(30132:30132): El puerto es: 4447
+[INFO] 03:44:30:20 GameCard PAPAA/(30132:30132): El punto de montaje es: /home/utnso/Escritorio/tall-grass
+[INFO] 03:44:30:22 GameCard PAPAA/(30132:30132): La ruta del metadataes: /home/utnso/Escritorio/tall-grass/Metadata
+[INFO] 03:44:30:25 GameCard PAPAA/(30132:30132): Se creo el config de MetaData
+[INFO] 03:44:30:27 GameCard PAPAA/(30132:30132): El Block Size es: 64
+[INFO] 03:44:30:27 GameCard PAPAA/(30132:30132): La cantidad de Bloques es: 5192
+[INFO] 03:44:30:28 GameCard PAPAA/(30132:30132): El Magic Number es: TALL_GRASS
+[INFO] 03:44:30:45 GameCard PAPAA/(30132:30132): Bitmap ya seteado
+[ERROR] 03:44:30:84 GameCard PAPAA/(30132:30132): Ya existe el BitMap
+[INFO] 03:44:30:87 GameCard PAPAA/(30132:30132): SETEO DE VARIABLES PARA ARCHIVOSYDIRECTORIOS.H
+[INFO] 03:44:30:88 GameCard PAPAA/(30132:30132): El ID de modulo es: 1804289383
+[INFO] 03:44:30:125 GameCard PAPAA/(30132:30133): Esperando mensajes de game boy en socket 7
+[INFO] 03:44:30:126 GameCard PAPAA/(30132:30135): Escucho CATCH de BROKER
+[INFO] 03:44:30:127 GameCard PAPAA/(30132:30134): Escuchando NEW de BROKER
+[ERROR] 03:44:30:137 GameCard PAPAA/(30132:30134): Hubo un problema enviando la suscripcion a la cola NEW del broker
+[ERROR] 03:44:30:138 GameCard PAPAA/(30132:30135): Hubo un problema enviando la suscripcion a la cola CATCH del broker
+[INFO] 03:44:30:144 GameCard PAPAA/(30132:30136): Escucho GET de BROKER
+[INFO] 03:44:30:140 GameCard PAPAA/(30132:30137): Hilo de verificacion periodica de conexion con Broker iniciado
+[ERROR] 03:44:30:150 GameCard PAPAA/(30132:30136): Hubo un problema enviando la suscripcion a la cola GET del broker
+[INFO] 03:44:31:246 GameCard PAPAA/(30132:30133): Socket 7 de gameBoy aceptado
+[INFO] 03:44:31:284 GameCard PAPAA/(30132:30139): Recibiendo codigo de operacion de GameBoy en socket 8
+[INFO] 03:44:31:318 GameCard PAPAA/(30132:30139): Codigo de operacion de socket 8 recibido: 5
+[INFO] 03:44:31:323 GameCard PAPAA/(30132:30139): Procesando request de GameBoy
+[INFO] 03:44:31:328 GameCard PAPAA/(30132:30139): Codigo de operacion recibido del socket cliente 8 corresponde a un GET
+[INFO] 03:44:31:329 GameCard PAPAA/(30132:30139): Recibiendo tamanio total
+[INFO] 03:44:31:362 GameCard PAPAA/(30132:30139): Tamanio total recibido: 24
+[INFO] 03:44:31:367 GameCard PAPAA/(30132:30139): EL ID recibido: 0
+[INFO] 03:44:31:382 GameCard PAPAA/(30132:30139): Tamanio del pokemon recibido: 16
+[INFO] 03:44:31:391 GameCard PAPAA/(30132:30139): Nombre del pokemon recibido: miltonchupapija
+[INFO] 03:44:31:392 GameCard PAPAA/(30132:30139): GET recibido del modulo Game Boy socket 8
+[INFO] 03:44:31:430 GameCard PAPAA/(30132:30139): EL array de blocks es: 3
+[INFO] 03:44:31:443 GameCard PAPAA/(30132:30139): Se creo el falso config de la ruta
+[INFO] 03:44:31:444 GameCard PAPAA/(30132:30139): Retorno el estado: N
+[INFO] 03:44:31:477 GameCard PAPAA/(30132:30139): Se creo el falso config de la ruta
+[INFO] 03:44:31:566 GameCard PAPAA/(30132:30139): Se esta analizando el block: 3
+[INFO] 03:44:31:571 GameCard PAPAA/(30132:30139): La ruta del archivo es: /home/utnso/Escritorio/tall-grass/Blocks/3.bin
+[INFO] 03:44:31:587 GameCard PAPAA/(30132:30139): Se esta leyendo la linea: 5-9=2
+
+[INFO] 03:44:31:600 GameCard PAPAA/(30132:30139): La coordenada de la linea es: 5-9
+[INFO] 03:44:31:604 GameCard PAPAA/(30132:30139): Se esta leyendo la linea: 3-7=2
+
+[INFO] 03:44:31:625 GameCard PAPAA/(30132:30139): La coordenada de la linea es: 3-7
+[INFO] 03:44:31:643 GameCard PAPAA/(30132:30139): Se esta leyendo la linea: 4-9=2
+
+[INFO] 03:44:31:656 GameCard PAPAA/(30132:30139): La coordenada de la linea es: 4-9
+[INFO] 03:44:31:661 GameCard PAPAA/(30132:30139): Se esta leyendo la linea: 3-9=2
+
+[INFO] 03:44:31:661 GameCard PAPAA/(30132:30139): La coordenada de la linea es: 3-9
+[INFO] 03:44:31:662 GameCard PAPAA/(30132:30139): Se esta leyendo la linea: 6-9=2
+
+[INFO] 03:44:31:662 GameCard PAPAA/(30132:30139): La coordenada de la linea es: 6-9
+[INFO] 03:44:31:663 GameCard PAPAA/(30132:30139): Se esta leyendo la linea: 3-5=16
+
+[INFO] 03:44:31:663 GameCard PAPAA/(30132:30139): La coordenada de la linea es: 3-5
+[INFO] 03:44:31:680 GameCard PAPAA/(30132:30139): Se esta leyendo la linea: 8-9=2
+
+[INFO] 03:44:31:680 GameCard PAPAA/(30132:30139): La coordenada de la linea es: 8-9
+[INFO] 03:44:31:681 GameCard PAPAA/(30132:30139): Se esta leyendo la linea: 3-4=16
+
+[INFO] 03:44:31:709 GameCard PAPAA/(30132:30139): La coordenada de la linea es: 3-4
+[INFO] 03:44:31:722 GameCard PAPAA/(30132:30139): Se esta leyendo la linea: 3-6=1
+
+[INFO] 03:44:31:722 GameCard PAPAA/(30132:30139): La coordenada de la linea es: 3-6
+[INFO] 03:44:31:724 GameCard PAPAA/(30132:30139): Se esta analizando el block: 4
+[INFO] 03:44:31:724 GameCard PAPAA/(30132:30139): La ruta del archivo es: /home/utnso/Escritorio/tall-grass/Blocks/4.bin
+[INFO] 03:44:31:725 GameCard PAPAA/(30132:30139): Se esta leyendo la linea: 9-9=2
+
+[INFO] 03:44:31:725 GameCard PAPAA/(30132:30139): La coordenada de la linea es: 9-9
+[INFO] 03:44:31:748 GameCard PAPAA/(30132:30139): EL tamanio calculado del archivo es: 56
+[INFO] 03:44:31:762 GameCard PAPAA/(30132:30139): EL tamanio calculado del archivo es: 6
+[INFO] 03:44:31:782 GameCard PAPAA/(30132:30139): El ID mensaje cargado en el localized es: 0
+[INFO] 03:44:31:787 GameCard PAPAA/(30132:30139): El Pokemon cargado en el localized es: miltonchupapija
+[INFO] 03:44:31:792 GameCard PAPAA/(30132:30139): El tamanio del nombre del pokemon cargado en el localized es: 15
+[INFO] 03:44:31:793 GameCard PAPAA/(30132:30139): La cantidad de lugares donde apareche el pokemon cargado en el localized es: 10
+[INFO] 03:44:31:803 GameCard PAPAA/(30132:30139): La coordenada sacada de la cola es: 5-9
+[INFO] 03:44:31:816 GameCard PAPAA/(30132:30139): La coordenada sacada de la cola es: 5
+[INFO] 03:44:31:821 GameCard PAPAA/(30132:30139): La coordenada sacada de la cola es: 9
+[INFO] 03:44:31:822 GameCard PAPAA/(30132:30139): La coordenada cargada es (5 ; 9)
+[INFO] 03:44:31:823 GameCard PAPAA/(30132:30139): La coordenada sacada de la cola es: 3-7
+[INFO] 03:44:31:831 GameCard PAPAA/(30132:30139): La coordenada sacada de la cola es: 3
+[INFO] 03:44:31:836 GameCard PAPAA/(30132:30139): La coordenada sacada de la cola es: 7
+[INFO] 03:44:31:836 GameCard PAPAA/(30132:30139): La coordenada cargada es (3 ; 7)
+[INFO] 03:44:31:854 GameCard PAPAA/(30132:30139): La coordenada sacada de la cola es: 4-9
+[INFO] 03:44:31:854 GameCard PAPAA/(30132:30139): La coordenada sacada de la cola es: 4
+[INFO] 03:44:31:855 GameCard PAPAA/(30132:30139): La coordenada sacada de la cola es: 9
+[INFO] 03:44:31:870 GameCard PAPAA/(30132:30139): La coordenada cargada es (4 ; 9)
+[INFO] 03:44:31:871 GameCard PAPAA/(30132:30139): La coordenada sacada de la cola es: 3-9
+[INFO] 03:44:31:875 GameCard PAPAA/(30132:30139): La coordenada sacada de la cola es: 3
+[INFO] 03:44:31:875 GameCard PAPAA/(30132:30139): La coordenada sacada de la cola es: 9
+[INFO] 03:44:31:880 GameCard PAPAA/(30132:30139): La coordenada cargada es (3 ; 9)
+[INFO] 03:44:31:885 GameCard PAPAA/(30132:30139): La coordenada sacada de la cola es: 6-9
+[INFO] 03:44:31:885 GameCard PAPAA/(30132:30139): La coordenada sacada de la cola es: 6
+[INFO] 03:44:31:885 GameCard PAPAA/(30132:30139): La coordenada sacada de la cola es: 9
+[INFO] 03:44:31:886 GameCard PAPAA/(30132:30139): La coordenada cargada es (6 ; 9)
+[INFO] 03:44:31:886 GameCard PAPAA/(30132:30139): La coordenada sacada de la cola es: 3-5
+[INFO] 03:44:31:886 GameCard PAPAA/(30132:30139): La coordenada sacada de la cola es: 3
+[INFO] 03:44:31:887 GameCard PAPAA/(30132:30139): La coordenada sacada de la cola es: 5
+[INFO] 03:44:31:887 GameCard PAPAA/(30132:30139): La coordenada cargada es (3 ; 5)
+[INFO] 03:44:31:887 GameCard PAPAA/(30132:30139): La coordenada sacada de la cola es: 8-9
+[INFO] 03:44:31:888 GameCard PAPAA/(30132:30139): La coordenada sacada de la cola es: 8
+[INFO] 03:44:31:896 GameCard PAPAA/(30132:30139): La coordenada sacada de la cola es: 9
+[INFO] 03:44:31:896 GameCard PAPAA/(30132:30139): La coordenada cargada es (8 ; 9)
+[INFO] 03:44:31:914 GameCard PAPAA/(30132:30139): La coordenada sacada de la cola es: 3-4
+[INFO] 03:44:31:924 GameCard PAPAA/(30132:30139): La coordenada sacada de la cola es: 3
+[INFO] 03:44:31:926 GameCard PAPAA/(30132:30139): La coordenada sacada de la cola es: 4
+[INFO] 03:44:31:934 GameCard PAPAA/(30132:30139): La coordenada cargada es (3 ; 4)
+[INFO] 03:44:31:943 GameCard PAPAA/(30132:30139): La coordenada sacada de la cola es: 3-6
+[INFO] 03:44:31:958 GameCard PAPAA/(30132:30139): La coordenada sacada de la cola es: 3
+[INFO] 03:44:31:966 GameCard PAPAA/(30132:30139): La coordenada sacada de la cola es: 6
+[INFO] 03:44:31:977 GameCard PAPAA/(30132:30139): La coordenada cargada es (3 ; 6)
+[INFO] 03:44:31:990 GameCard PAPAA/(30132:30139): La coordenada sacada de la cola es: 9-9
+[INFO] 03:44:31:2 GameCard PAPAA/(30132:30139): La coordenada sacada de la cola es: 9
+[INFO] 03:44:32:9 GameCard PAPAA/(30132:30139): La coordenada sacada de la cola es: 9
+[INFO] 03:44:32:10 GameCard PAPAA/(30132:30139): La coordenada cargada es (9 ; 9)
+[INFO] 03:44:32:26 GameCard PAPAA/(30132:30139): El valor de index 0 es: 5
+[INFO] 03:44:32:35 GameCard PAPAA/(30132:30139): El valor de index 1 es: 9
+[INFO] 03:44:32:43 GameCard PAPAA/(30132:30139): El valor de index 2 es: 3
+[INFO] 03:44:32:55 GameCard PAPAA/(30132:30139): El valor de index 3 es: 7
+[INFO] 03:44:32:56 GameCard PAPAA/(30132:30139): El valor de index 4 es: 4
+[INFO] 03:44:32:57 GameCard PAPAA/(30132:30139): El valor de index 5 es: 9
+[INFO] 03:44:32:66 GameCard PAPAA/(30132:30139): El valor de index 6 es: 3
+[INFO] 03:44:32:74 GameCard PAPAA/(30132:30139): El valor de index 7 es: 9
+[INFO] 03:44:32:78 GameCard PAPAA/(30132:30139): El valor de index 8 es: 6
+[INFO] 03:44:32:90 GameCard PAPAA/(30132:30139): El valor de index 9 es: 9
+[INFO] 03:44:32:98 GameCard PAPAA/(30132:30139): El valor de index 10 es: 3
+[INFO] 03:44:32:107 GameCard PAPAA/(30132:30139): El valor de index 11 es: 5
+[INFO] 03:44:32:107 GameCard PAPAA/(30132:30139): El valor de index 12 es: 8
+[INFO] 03:44:32:130 GameCard PAPAA/(30132:30139): El valor de index 13 es: 9
+[INFO] 03:44:32:138 GameCard PAPAA/(30132:30139): El valor de index 14 es: 3
+[INFO] 03:44:32:141 GameCard PAPAA/(30132:30139): El valor de index 15 es: 4
+[INFO] 03:44:32:142 GameCard PAPAA/(30132:30139): El valor de index 16 es: 3
+[INFO] 03:44:32:161 GameCard PAPAA/(30132:30139): El valor de index 17 es: 6
+[INFO] 03:44:32:170 GameCard PAPAA/(30132:30139): El valor de index 18 es: 9
+[INFO] 03:44:32:171 GameCard PAPAA/(30132:30139): El valor de index 19 es: 9
+[INFO] 03:44:37:192 GameCard PAPAA/(30132:30139): El ID cargado es 0
+[INFO] 03:44:37:201 GameCard PAPAA/(30132:30139): Tamanio nombre pokemon 15
+[INFO] 03:44:37:204 GameCard PAPAA/(30132:30139): Nombre pokemon miltonchupapija
+[INFO] 03:44:37:210 GameCard PAPAA/(30132:30139): Cantidad de coordenadas donde aparece:  10
+[INFO] 03:44:37:210 GameCard PAPAA/(30132:30139): Posicion X previa al mem 5
+[INFO] 03:44:37:226 GameCard PAPAA/(30132:30139): Posicion Y previa al mem 9
+[INFO] 03:44:37:226 GameCard PAPAA/(30132:30139): Posicion X 5
+[INFO] 03:44:37:227 GameCard PAPAA/(30132:30139): Posicion Y 9
+[INFO] 03:44:37:228 GameCard PAPAA/(30132:30139): Posicion X previa al mem 3
+[INFO] 03:44:37:228 GameCard PAPAA/(30132:30139): Posicion Y previa al mem 7
+[INFO] 03:44:37:228 GameCard PAPAA/(30132:30139): Posicion X 3
+[INFO] 03:44:37:229 GameCard PAPAA/(30132:30139): Posicion Y 7
+[INFO] 03:44:37:229 GameCard PAPAA/(30132:30139): Posicion X previa al mem 4
+[INFO] 03:44:37:252 GameCard PAPAA/(30132:30139): Posicion Y previa al mem 9
+[INFO] 03:44:37:256 GameCard PAPAA/(30132:30139): Posicion X 4
+[INFO] 03:44:37:256 GameCard PAPAA/(30132:30139): Posicion Y 9
+[INFO] 03:44:37:257 GameCard PAPAA/(30132:30139): Posicion X previa al mem 3
+[INFO] 03:44:37:257 GameCard PAPAA/(30132:30139): Posicion Y previa al mem 9
+[INFO] 03:44:37:260 GameCard PAPAA/(30132:30139): Posicion X 3
+[INFO] 03:44:37:261 GameCard PAPAA/(30132:30139): Posicion Y 9
+[INFO] 03:44:37:261 GameCard PAPAA/(30132:30139): Posicion X previa al mem 6
+[INFO] 03:44:37:261 GameCard PAPAA/(30132:30139): Posicion Y previa al mem 9
+[INFO] 03:44:37:262 GameCard PAPAA/(30132:30139): Posicion X 6
+[INFO] 03:44:37:262 GameCard PAPAA/(30132:30139): Posicion Y 9
+[INFO] 03:44:37:262 GameCard PAPAA/(30132:30139): Posicion X previa al mem 3
+[INFO] 03:44:37:262 GameCard PAPAA/(30132:30139): Posicion Y previa al mem 5
+[INFO] 03:44:37:263 GameCard PAPAA/(30132:30139): Posicion X 3
+[INFO] 03:44:37:264 GameCard PAPAA/(30132:30139): Posicion Y 5
+[INFO] 03:44:37:264 GameCard PAPAA/(30132:30139): Posicion X previa al mem 8
+[INFO] 03:44:37:264 GameCard PAPAA/(30132:30139): Posicion Y previa al mem 9
+[INFO] 03:44:37:264 GameCard PAPAA/(30132:30139): Posicion X 8
+[INFO] 03:44:37:285 GameCard PAPAA/(30132:30139): Posicion Y 9
+[INFO] 03:44:37:285 GameCard PAPAA/(30132:30139): Posicion X previa al mem 3
+[INFO] 03:44:37:286 GameCard PAPAA/(30132:30139): Posicion Y previa al mem 4
+[INFO] 03:44:37:286 GameCard PAPAA/(30132:30139): Posicion X 3
+[INFO] 03:44:37:287 GameCard PAPAA/(30132:30139): Posicion Y 4
+[INFO] 03:44:37:287 GameCard PAPAA/(30132:30139): Posicion X previa al mem 3
+[INFO] 03:44:37:293 GameCard PAPAA/(30132:30139): Posicion Y previa al mem 6
+[INFO] 03:44:37:293 GameCard PAPAA/(30132:30139): Posicion X 3
+[INFO] 03:44:37:293 GameCard PAPAA/(30132:30139): Posicion Y 6
+[INFO] 03:44:37:294 GameCard PAPAA/(30132:30139): Posicion X previa al mem 9
+[INFO] 03:44:37:297 GameCard PAPAA/(30132:30139): Posicion Y previa al mem 9
+[INFO] 03:44:37:324 GameCard PAPAA/(30132:30139): Posicion X 9
+[INFO] 03:44:37:335 GameCard PAPAA/(30132:30139): Posicion Y 9
+[INFO] 03:44:37:335 GameCard PAPAA/(30132:30139): SAliendo
+[INFO] 03:44:37:367 GameCard PAPAA/(30132:30139): Creando paquete
+[INFO] 03:44:37:368 GameCard PAPAA/(30132:30139): CODIGO DE OPERACION: 6
+[INFO] 03:44:37:377 GameCard PAPAA/(30132:30139): Paquete Creado
+[INFO] 03:44:37:385 GameCard PAPAA/(30132:30139): la operacion a realizar es 6
+[INFO] 03:44:37:392 GameCard PAPAA/(30132:30139): Serializando...
+[INFO] 03:44:37:394 GameCard PAPAA/(30132:30139): Serializacion completa
+[INFO] 03:44:37:406 GameCard PAPAA/(30132:30139): El peso total es: 108
+[ERROR] 03:44:37:429 GameCard PAPAA/(30132:30139): Error: No se pudo enviar el mensaje
+[INFO] 03:44:40:154 GameCard PAPAA/(30132:30137): Iniciando verificacion de conexion con Broker...
+[ERROR] 03:44:40:177 GameCard PAPAA/(30132:30137): Reconexion con Broker fallida, intentando nuevamente en 10 segundos
+[INFO] 03:53:41:201 GameCard PAPAA/(31288:31288): logger iniciado.
+[INFO] 03:53:41:229 GameCard PAPAA/(31288:31288): Config cargada.
+[INFO] 03:53:41:232 GameCard PAPAA/(31288:31288): La IP del Broker: 127.0.0.1
+[INFO] 03:53:41:233 GameCard PAPAA/(31288:31288): El Puerto es: 6009
+[INFO] 03:53:41:236 GameCard PAPAA/(31288:31288): El tiempo de reintento de conexion es: 10
+[INFO] 03:53:41:236 GameCard PAPAA/(31288:31288): El tiempo de reintento de operacion es: 5
+[INFO] 03:53:41:237 GameCard PAPAA/(31288:31288): El tiempo de retardo de conexion es: 5
+[INFO] 03:53:41:238 GameCard PAPAA/(31288:31288): El punto de montaje es: /home/utnso/Escritorio/tall-grass
+[INFO] 03:53:41:238 GameCard PAPAA/(31288:31288): La IP es: 127.0.0.1
+[INFO] 03:53:41:239 GameCard PAPAA/(31288:31288): El puerto es: 4447
+[INFO] 03:53:41:240 GameCard PAPAA/(31288:31288): El punto de montaje es: /home/utnso/Escritorio/tall-grass
+[INFO] 03:53:41:242 GameCard PAPAA/(31288:31288): La ruta del metadataes: /home/utnso/Escritorio/tall-grass/Metadata
+[INFO] 03:53:41:244 GameCard PAPAA/(31288:31288): Se creo el config de MetaData
+[INFO] 03:53:41:246 GameCard PAPAA/(31288:31288): El Block Size es: 64
+[INFO] 03:53:41:246 GameCard PAPAA/(31288:31288): La cantidad de Bloques es: 5192
+[INFO] 03:53:41:247 GameCard PAPAA/(31288:31288): El Magic Number es: TALL_GRASS
+[INFO] 03:53:41:263 GameCard PAPAA/(31288:31288): Bitmap ya seteado
+[ERROR] 03:53:41:295 GameCard PAPAA/(31288:31288): Ya existe el BitMap
+[INFO] 03:53:41:299 GameCard PAPAA/(31288:31288): SETEO DE VARIABLES PARA ARCHIVOSYDIRECTORIOS.H
+[INFO] 03:53:41:299 GameCard PAPAA/(31288:31288): El ID de modulo es: 1804289383
+[INFO] 03:53:41:334 GameCard PAPAA/(31288:31293): Esperando mensajes de game boy en socket 7
+[INFO] 03:53:41:337 GameCard PAPAA/(31288:31296): Escucho GET de BROKER
+[INFO] 03:53:41:338 GameCard PAPAA/(31288:31295): Escucho CATCH de BROKER
+[INFO] 03:53:41:339 GameCard PAPAA/(31288:31294): Escuchando NEW de BROKER
+[ERROR] 03:53:41:347 GameCard PAPAA/(31288:31294): Hubo un problema enviando la suscripcion a la cola NEW del broker
+[ERROR] 03:53:41:347 GameCard PAPAA/(31288:31295): Hubo un problema enviando la suscripcion a la cola CATCH del broker
+[ERROR] 03:53:41:348 GameCard PAPAA/(31288:31296): Hubo un problema enviando la suscripcion a la cola GET del broker
+[INFO] 03:53:41:349 GameCard PAPAA/(31288:31297): Hilo de verificacion periodica de conexion con Broker iniciado
+[INFO] 03:53:42:679 GameCard PAPAA/(31288:31293): Socket 7 de gameBoy aceptado
+[INFO] 03:53:42:713 GameCard PAPAA/(31288:31303): Recibiendo codigo de operacion de GameBoy en socket 8
+[INFO] 03:53:42:723 GameCard PAPAA/(31288:31303): Codigo de operacion de socket 8 recibido: 5
+[INFO] 03:53:42:732 GameCard PAPAA/(31288:31303): Procesando request de GameBoy
+[INFO] 03:53:42:737 GameCard PAPAA/(31288:31303): Codigo de operacion recibido del socket cliente 8 corresponde a un GET
+[INFO] 03:53:42:749 GameCard PAPAA/(31288:31303): Recibiendo tamanio total
+[INFO] 03:53:42:754 GameCard PAPAA/(31288:31303): Tamanio total recibido: 24
+[INFO] 03:53:42:759 GameCard PAPAA/(31288:31303): EL ID recibido: 0
+[INFO] 03:53:42:769 GameCard PAPAA/(31288:31303): Tamanio del pokemon recibido: 16
+[INFO] 03:53:42:782 GameCard PAPAA/(31288:31303): Nombre del pokemon recibido: miltonchupapija
+[INFO] 03:53:42:786 GameCard PAPAA/(31288:31303): GET recibido del modulo Game Boy socket 8
+[INFO] 03:53:42:834 GameCard PAPAA/(31288:31303): EL array de blocks es: 3
+[INFO] 03:53:42:856 GameCard PAPAA/(31288:31303): Se creo el falso config de la ruta
+[INFO] 03:53:42:857 GameCard PAPAA/(31288:31303): Retorno el estado: N
+[INFO] 03:53:42:868 GameCard PAPAA/(31288:31303): Se creo el falso config de la ruta
+[INFO] 03:53:42:921 GameCard PAPAA/(31288:31303): Se esta analizando el block: 3
+[INFO] 03:53:42:930 GameCard PAPAA/(31288:31303): La ruta del archivo es: /home/utnso/Escritorio/tall-grass/Blocks/3.bin
+[INFO] 03:53:42:939 GameCard PAPAA/(31288:31303): Se esta leyendo la linea: 5-9=2
+
+[INFO] 03:53:42:955 GameCard PAPAA/(31288:31303): La coordenada de la linea es: 5-9
+[INFO] 03:53:42:976 GameCard PAPAA/(31288:31303): Se esta leyendo la linea: 3-7=2
+
+[INFO] 03:53:42:976 GameCard PAPAA/(31288:31303): La coordenada de la linea es: 3-7
+[INFO] 03:53:43:6 GameCard PAPAA/(31288:31303): Se esta leyendo la linea: 4-9=2
+
+[INFO] 03:53:43:7 GameCard PAPAA/(31288:31303): La coordenada de la linea es: 4-9
+[INFO] 03:53:43:24 GameCard PAPAA/(31288:31303): Se esta leyendo la linea: 3-9=2
+
+[INFO] 03:53:43:37 GameCard PAPAA/(31288:31303): La coordenada de la linea es: 3-9
+[INFO] 03:53:43:45 GameCard PAPAA/(31288:31303): Se esta leyendo la linea: 6-9=2
+
+[INFO] 03:53:43:45 GameCard PAPAA/(31288:31303): La coordenada de la linea es: 6-9
+[INFO] 03:53:43:54 GameCard PAPAA/(31288:31303): Se esta leyendo la linea: 3-5=16
+
+[INFO] 03:53:43:59 GameCard PAPAA/(31288:31303): La coordenada de la linea es: 3-5
+[INFO] 03:53:43:59 GameCard PAPAA/(31288:31303): Se esta leyendo la linea: 8-9=2
+
+[INFO] 03:53:43:64 GameCard PAPAA/(31288:31303): La coordenada de la linea es: 8-9
+[INFO] 03:53:43:65 GameCard PAPAA/(31288:31303): Se esta leyendo la linea: 3-4=16
+
+[INFO] 03:53:43:65 GameCard PAPAA/(31288:31303): La coordenada de la linea es: 3-4
+[INFO] 03:53:43:66 GameCard PAPAA/(31288:31303): Se esta leyendo la linea: 3-6=1
+
+[INFO] 03:53:43:73 GameCard PAPAA/(31288:31303): La coordenada de la linea es: 3-6
+[INFO] 03:53:43:80 GameCard PAPAA/(31288:31303): Se esta analizando el block: 4
+[INFO] 03:53:43:88 GameCard PAPAA/(31288:31303): La ruta del archivo es: /home/utnso/Escritorio/tall-grass/Blocks/4.bin
+[INFO] 03:53:43:89 GameCard PAPAA/(31288:31303): Se esta leyendo la linea: 9-9=2
+
+[INFO] 03:53:43:89 GameCard PAPAA/(31288:31303): La coordenada de la linea es: 9-9
+[INFO] 03:53:43:92 GameCard PAPAA/(31288:31303): EL tamanio calculado del archivo es: 56
+[INFO] 03:53:43:115 GameCard PAPAA/(31288:31303): EL tamanio calculado del archivo es: 6
+[INFO] 03:53:43:133 GameCard PAPAA/(31288:31303): El ID mensaje cargado en el localized es: 0
+[INFO] 03:53:43:145 GameCard PAPAA/(31288:31303): El Pokemon cargado en el localized es: miltonchupapija
+[INFO] 03:53:43:152 GameCard PAPAA/(31288:31303): El tamanio del nombre del pokemon cargado en el localized es: 15
+[INFO] 03:53:43:162 GameCard PAPAA/(31288:31303): La cantidad de lugares donde apareche el pokemon cargado en el localized es: 10
+[INFO] 03:53:43:180 GameCard PAPAA/(31288:31303): La coordenada sacada de la cola es: 5-9
+[INFO] 03:53:43:181 GameCard PAPAA/(31288:31303): La coordenada sacada de la cola es: 5
+[INFO] 03:53:43:205 GameCard PAPAA/(31288:31303): La coordenada sacada de la cola es: 9
+[INFO] 03:53:43:210 GameCard PAPAA/(31288:31303): La coordenada cargada es (5 ; 9)
+[INFO] 03:53:43:215 GameCard PAPAA/(31288:31303): La coordenada sacada de la cola es: 3-7
+[INFO] 03:53:43:220 GameCard PAPAA/(31288:31303): La coordenada sacada de la cola es: 3
+[INFO] 03:53:43:239 GameCard PAPAA/(31288:31303): La coordenada sacada de la cola es: 7
+[INFO] 03:53:43:285 GameCard PAPAA/(31288:31303): La coordenada cargada es (3 ; 7)
+[INFO] 03:53:43:285 GameCard PAPAA/(31288:31303): La coordenada sacada de la cola es: 4-9
+[INFO] 03:53:43:285 GameCard PAPAA/(31288:31303): La coordenada sacada de la cola es: 4
+[INFO] 03:53:43:286 GameCard PAPAA/(31288:31303): La coordenada sacada de la cola es: 9
+[INFO] 03:53:43:302 GameCard PAPAA/(31288:31303): La coordenada cargada es (4 ; 9)
+[INFO] 03:53:43:303 GameCard PAPAA/(31288:31303): La coordenada sacada de la cola es: 3-9
+[INFO] 03:53:43:303 GameCard PAPAA/(31288:31303): La coordenada sacada de la cola es: 3
+[INFO] 03:53:43:303 GameCard PAPAA/(31288:31303): La coordenada sacada de la cola es: 9
+[INFO] 03:53:43:304 GameCard PAPAA/(31288:31303): La coordenada cargada es (3 ; 9)
+[INFO] 03:53:43:304 GameCard PAPAA/(31288:31303): La coordenada sacada de la cola es: 6-9
+[INFO] 03:53:43:304 GameCard PAPAA/(31288:31303): La coordenada sacada de la cola es: 6
+[INFO] 03:53:43:305 GameCard PAPAA/(31288:31303): La coordenada sacada de la cola es: 9
+[INFO] 03:53:43:305 GameCard PAPAA/(31288:31303): La coordenada cargada es (6 ; 9)
+[INFO] 03:53:43:305 GameCard PAPAA/(31288:31303): La coordenada sacada de la cola es: 3-5
+[INFO] 03:53:43:306 GameCard PAPAA/(31288:31303): La coordenada sacada de la cola es: 3
+[INFO] 03:53:43:322 GameCard PAPAA/(31288:31303): La coordenada sacada de la cola es: 5
+[INFO] 03:53:43:322 GameCard PAPAA/(31288:31303): La coordenada cargada es (3 ; 5)
+[INFO] 03:53:43:322 GameCard PAPAA/(31288:31303): La coordenada sacada de la cola es: 8-9
+[INFO] 03:53:43:323 GameCard PAPAA/(31288:31303): La coordenada sacada de la cola es: 8
+[INFO] 03:53:43:323 GameCard PAPAA/(31288:31303): La coordenada sacada de la cola es: 9
+[INFO] 03:53:43:323 GameCard PAPAA/(31288:31303): La coordenada cargada es (8 ; 9)
+[INFO] 03:53:43:323 GameCard PAPAA/(31288:31303): La coordenada sacada de la cola es: 3-4
+[INFO] 03:53:43:324 GameCard PAPAA/(31288:31303): La coordenada sacada de la cola es: 3
+[INFO] 03:53:43:324 GameCard PAPAA/(31288:31303): La coordenada sacada de la cola es: 4
+[INFO] 03:53:43:324 GameCard PAPAA/(31288:31303): La coordenada cargada es (3 ; 4)
+[INFO] 03:53:43:325 GameCard PAPAA/(31288:31303): La coordenada sacada de la cola es: 3-6
+[INFO] 03:53:43:325 GameCard PAPAA/(31288:31303): La coordenada sacada de la cola es: 3
+[INFO] 03:53:43:338 GameCard PAPAA/(31288:31303): La coordenada sacada de la cola es: 6
+[INFO] 03:53:43:339 GameCard PAPAA/(31288:31303): La coordenada cargada es (3 ; 6)
+[INFO] 03:53:43:339 GameCard PAPAA/(31288:31303): La coordenada sacada de la cola es: 9-9
+[INFO] 03:53:43:339 GameCard PAPAA/(31288:31303): La coordenada sacada de la cola es: 9
+[INFO] 03:53:43:340 GameCard PAPAA/(31288:31303): La coordenada sacada de la cola es: 9
+[INFO] 03:53:43:340 GameCard PAPAA/(31288:31303): La coordenada cargada es (9 ; 9)
+[INFO] 03:53:43:341 GameCard PAPAA/(31288:31303): El valor de index 0 es: 5
+[INFO] 03:53:43:342 GameCard PAPAA/(31288:31303): El valor de index 1 es: 9
+[INFO] 03:53:43:346 GameCard PAPAA/(31288:31303): El valor de index 2 es: 3
+[INFO] 03:53:43:350 GameCard PAPAA/(31288:31303): El valor de index 3 es: 7
+[INFO] 03:53:43:350 GameCard PAPAA/(31288:31303): El valor de index 4 es: 4
+[INFO] 03:53:43:350 GameCard PAPAA/(31288:31303): El valor de index 5 es: 9
+[INFO] 03:53:43:359 GameCard PAPAA/(31288:31303): El valor de index 6 es: 3
+[INFO] 03:53:43:359 GameCard PAPAA/(31288:31303): El valor de index 7 es: 9
+[INFO] 03:53:43:360 GameCard PAPAA/(31288:31303): El valor de index 8 es: 6
+[INFO] 03:53:43:364 GameCard PAPAA/(31288:31303): El valor de index 9 es: 9
+[INFO] 03:53:43:369 GameCard PAPAA/(31288:31303): El valor de index 10 es: 3
+[INFO] 03:53:43:374 GameCard PAPAA/(31288:31303): El valor de index 11 es: 5
+[INFO] 03:53:43:374 GameCard PAPAA/(31288:31303): El valor de index 12 es: 8
+[INFO] 03:53:43:374 GameCard PAPAA/(31288:31303): El valor de index 13 es: 9
+[INFO] 03:53:43:382 GameCard PAPAA/(31288:31303): El valor de index 14 es: 3
+[INFO] 03:53:43:386 GameCard PAPAA/(31288:31303): El valor de index 15 es: 4
+[INFO] 03:53:43:386 GameCard PAPAA/(31288:31303): El valor de index 16 es: 3
+[INFO] 03:53:43:387 GameCard PAPAA/(31288:31303): El valor de index 17 es: 6
+[INFO] 03:53:43:387 GameCard PAPAA/(31288:31303): El valor de index 18 es: 9
+[INFO] 03:53:43:416 GameCard PAPAA/(31288:31303): El valor de index 19 es: 9
+[INFO] 03:53:48:420 GameCard PAPAA/(31288:31303): El ID cargado es 0
+[INFO] 03:53:48:425 GameCard PAPAA/(31288:31303): Tamanio nombre pokemon 15
+[INFO] 03:53:48:438 GameCard PAPAA/(31288:31303): Nombre pokemon miltonchupapija
+[INFO] 03:53:48:442 GameCard PAPAA/(31288:31303): Cantidad de coordenadas donde aparece:  10
+[INFO] 03:53:48:454 GameCard PAPAA/(31288:31303): Posicion X previa al mem 5
+[INFO] 03:53:48:459 GameCard PAPAA/(31288:31303): Posicion Y previa al mem 9
+[INFO] 03:53:48:497 GameCard PAPAA/(31288:31303): Posicion X 5
+[INFO] 03:53:48:502 GameCard PAPAA/(31288:31303): Posicion Y 9
+[INFO] 03:53:48:507 GameCard PAPAA/(31288:31303): Posicion X previa al mem 3
+[INFO] 03:53:48:518 GameCard PAPAA/(31288:31303): Posicion Y previa al mem 7
+[INFO] 03:53:48:519 GameCard PAPAA/(31288:31303): Posicion X 3
+[INFO] 03:53:48:519 GameCard PAPAA/(31288:31303): Posicion Y 7
+[INFO] 03:53:48:519 GameCard PAPAA/(31288:31303): Posicion X previa al mem 4
+[INFO] 03:53:48:520 GameCard PAPAA/(31288:31303): Posicion Y previa al mem 9
+[INFO] 03:53:48:520 GameCard PAPAA/(31288:31303): Posicion X 4
+[INFO] 03:53:48:520 GameCard PAPAA/(31288:31303): Posicion Y 9
+[INFO] 03:53:48:520 GameCard PAPAA/(31288:31303): Posicion X previa al mem 3
+[INFO] 03:53:48:521 GameCard PAPAA/(31288:31303): Posicion Y previa al mem 9
+[INFO] 03:53:48:521 GameCard PAPAA/(31288:31303): Posicion X 3
+[INFO] 03:53:48:521 GameCard PAPAA/(31288:31303): Posicion Y 9
+[INFO] 03:53:48:526 GameCard PAPAA/(31288:31303): Posicion X previa al mem 6
+[INFO] 03:53:48:531 GameCard PAPAA/(31288:31303): Posicion Y previa al mem 9
+[INFO] 03:53:48:531 GameCard PAPAA/(31288:31303): Posicion X 6
+[INFO] 03:53:48:536 GameCard PAPAA/(31288:31303): Posicion Y 9
+[INFO] 03:53:48:556 GameCard PAPAA/(31288:31303): Posicion X previa al mem 3
+[INFO] 03:53:48:557 GameCard PAPAA/(31288:31303): Posicion Y previa al mem 5
+[INFO] 03:53:48:557 GameCard PAPAA/(31288:31303): Posicion X 3
+[INFO] 03:53:48:570 GameCard PAPAA/(31288:31303): Posicion Y 5
+[INFO] 03:53:48:570 GameCard PAPAA/(31288:31303): Posicion X previa al mem 8
+[INFO] 03:53:48:578 GameCard PAPAA/(31288:31303): Posicion Y previa al mem 9
+[INFO] 03:53:48:578 GameCard PAPAA/(31288:31303): Posicion X 8
+[INFO] 03:53:48:582 GameCard PAPAA/(31288:31303): Posicion Y 9
+[INFO] 03:53:48:587 GameCard PAPAA/(31288:31303): Posicion X previa al mem 3
+[INFO] 03:53:48:587 GameCard PAPAA/(31288:31303): Posicion Y previa al mem 4
+[INFO] 03:53:48:592 GameCard PAPAA/(31288:31303): Posicion X 3
+[INFO] 03:53:48:592 GameCard PAPAA/(31288:31303): Posicion Y 4
+[INFO] 03:53:48:592 GameCard PAPAA/(31288:31303): Posicion X previa al mem 3
+[INFO] 03:53:48:592 GameCard PAPAA/(31288:31303): Posicion Y previa al mem 6
+[INFO] 03:53:48:593 GameCard PAPAA/(31288:31303): Posicion X 3
+[INFO] 03:53:48:593 GameCard PAPAA/(31288:31303): Posicion Y 6
+[INFO] 03:53:48:593 GameCard PAPAA/(31288:31303): Posicion X previa al mem 9
+[INFO] 03:53:48:594 GameCard PAPAA/(31288:31303): Posicion Y previa al mem 9
+[INFO] 03:53:48:594 GameCard PAPAA/(31288:31303): Posicion X 9
+[INFO] 03:53:48:599 GameCard PAPAA/(31288:31303): Posicion Y 9
+[INFO] 03:53:48:603 GameCard PAPAA/(31288:31303): SAliendo
+[INFO] 03:53:48:604 GameCard PAPAA/(31288:31303): Creando paquete
+[INFO] 03:53:48:612 GameCard PAPAA/(31288:31303): CODIGO DE OPERACION: 6
+[INFO] 03:53:48:653 GameCard PAPAA/(31288:31303): Paquete Creado
+[INFO] 03:53:48:657 GameCard PAPAA/(31288:31303): la operacion a realizar es 6
+[INFO] 03:53:48:658 GameCard PAPAA/(31288:31303): Serializando...
+[INFO] 03:53:48:659 GameCard PAPAA/(31288:31303): Serializacion completa
+[INFO] 03:53:48:675 GameCard PAPAA/(31288:31303): El peso total es: 108
+[ERROR] 03:53:48:676 GameCard PAPAA/(31288:31303): Error: No se pudo enviar el mensaje
+[INFO] 03:53:51:370 GameCard PAPAA/(31288:31297): Iniciando verificacion de conexion con Broker...
+[ERROR] 03:53:51:376 GameCard PAPAA/(31288:31297): Reconexion con Broker fallida, intentando nuevamente en 10 segundos
+[INFO] 03:56:54:240 GameCard PAPAA/(31690:31690): logger iniciado.
+[INFO] 03:56:54:269 GameCard PAPAA/(31690:31690): Config cargada.
+[INFO] 03:56:54:271 GameCard PAPAA/(31690:31690): La IP del Broker: 127.0.0.1
+[INFO] 03:56:54:271 GameCard PAPAA/(31690:31690): El Puerto es: 6009
+[INFO] 03:56:54:274 GameCard PAPAA/(31690:31690): El tiempo de reintento de conexion es: 10
+[INFO] 03:56:54:275 GameCard PAPAA/(31690:31690): El tiempo de reintento de operacion es: 5
+[INFO] 03:56:54:276 GameCard PAPAA/(31690:31690): El tiempo de retardo de conexion es: 5
+[INFO] 03:56:54:277 GameCard PAPAA/(31690:31690): El punto de montaje es: /home/utnso/Escritorio/tall-grass
+[INFO] 03:56:54:278 GameCard PAPAA/(31690:31690): La IP es: 127.0.0.1
+[INFO] 03:56:54:278 GameCard PAPAA/(31690:31690): El puerto es: 4447
+[INFO] 03:56:54:279 GameCard PAPAA/(31690:31690): El punto de montaje es: /home/utnso/Escritorio/tall-grass
+[INFO] 03:56:54:281 GameCard PAPAA/(31690:31690): La ruta del metadataes: /home/utnso/Escritorio/tall-grass/Metadata
+[INFO] 03:56:54:283 GameCard PAPAA/(31690:31690): Se creo el config de MetaData
+[INFO] 03:56:54:285 GameCard PAPAA/(31690:31690): El Block Size es: 64
+[INFO] 03:56:54:286 GameCard PAPAA/(31690:31690): La cantidad de Bloques es: 5192
+[INFO] 03:56:54:286 GameCard PAPAA/(31690:31690): El Magic Number es: TALL_GRASS
+[INFO] 03:56:54:302 GameCard PAPAA/(31690:31690): Bitmap ya seteado
+[ERROR] 03:56:54:335 GameCard PAPAA/(31690:31690): Ya existe el BitMap
+[INFO] 03:56:54:337 GameCard PAPAA/(31690:31690): SETEO DE VARIABLES PARA ARCHIVOSYDIRECTORIOS.H
+[INFO] 03:56:54:338 GameCard PAPAA/(31690:31690): El ID de modulo es: 1804289383
+[INFO] 03:56:54:373 GameCard PAPAA/(31690:31695): Esperando mensajes de game boy en socket 7
+[INFO] 03:56:54:375 GameCard PAPAA/(31690:31697): Escucho CATCH de BROKER
+[INFO] 03:56:54:375 GameCard PAPAA/(31690:31696): Escuchando NEW de BROKER
+[ERROR] 03:56:54:387 GameCard PAPAA/(31690:31697): Hubo un problema enviando la suscripcion a la cola CATCH del broker
+[INFO] 03:56:54:387 GameCard PAPAA/(31690:31699): Hilo de verificacion periodica de conexion con Broker iniciado
+[ERROR] 03:56:54:388 GameCard PAPAA/(31690:31696): Hubo un problema enviando la suscripcion a la cola NEW del broker
+[INFO] 03:56:54:389 GameCard PAPAA/(31690:31698): Escucho GET de BROKER
+[ERROR] 03:56:54:395 GameCard PAPAA/(31690:31698): Hubo un problema enviando la suscripcion a la cola GET del broker
+[INFO] 03:56:56:460 GameCard PAPAA/(31690:31695): Socket 7 de gameBoy aceptado
+[INFO] 03:56:56:486 GameCard PAPAA/(31690:31701): Recibiendo codigo de operacion de GameBoy en socket 8
+[INFO] 03:56:56:491 GameCard PAPAA/(31690:31701): Codigo de operacion de socket 8 recibido: 5
+[INFO] 03:56:56:517 GameCard PAPAA/(31690:31701): Procesando request de GameBoy
+[INFO] 03:56:56:525 GameCard PAPAA/(31690:31701): Codigo de operacion recibido del socket cliente 8 corresponde a un GET
+[INFO] 03:56:56:530 GameCard PAPAA/(31690:31701): Recibiendo tamanio total
+[INFO] 03:56:56:535 GameCard PAPAA/(31690:31701): Tamanio total recibido: 24
+[INFO] 03:56:56:541 GameCard PAPAA/(31690:31701): EL ID recibido: 0
+[INFO] 03:56:56:542 GameCard PAPAA/(31690:31701): Tamanio del pokemon recibido: 16
+[INFO] 03:56:56:573 GameCard PAPAA/(31690:31701): Nombre del pokemon recibido: miltonchupapija
+[INFO] 03:56:56:574 GameCard PAPAA/(31690:31701): GET recibido del modulo Game Boy socket 8
+[INFO] 03:56:56:607 GameCard PAPAA/(31690:31701): EL array de blocks es: 3
+[INFO] 03:56:56:654 GameCard PAPAA/(31690:31701): Se creo el falso config de la ruta
+[INFO] 03:56:56:655 GameCard PAPAA/(31690:31701): Retorno el estado: N
+[INFO] 03:56:56:660 GameCard PAPAA/(31690:31701): Se creo el falso config de la ruta
+[INFO] 03:56:56:736 GameCard PAPAA/(31690:31701): Se esta analizando el block: 3
+[INFO] 03:56:56:737 GameCard PAPAA/(31690:31701): La ruta del archivo es: /home/utnso/Escritorio/tall-grass/Blocks/3.bin
+[INFO] 03:56:56:741 GameCard PAPAA/(31690:31701): Se esta leyendo la linea: 5-9=2
+
+[INFO] 03:56:56:755 GameCard PAPAA/(31690:31701): La coordenada de la linea es: 5-9
+[INFO] 03:56:56:773 GameCard PAPAA/(31690:31701): Se esta leyendo la linea: 3-7=2
+
+[INFO] 03:56:56:779 GameCard PAPAA/(31690:31701): La coordenada de la linea es: 3-7
+[INFO] 03:56:56:800 GameCard PAPAA/(31690:31701): Se esta leyendo la linea: 4-9=2
+
+[INFO] 03:56:56:801 GameCard PAPAA/(31690:31701): La coordenada de la linea es: 4-9
+[INFO] 03:56:56:814 GameCard PAPAA/(31690:31701): Se esta leyendo la linea: 3-9=2
+
+[INFO] 03:56:56:815 GameCard PAPAA/(31690:31701): La coordenada de la linea es: 3-9
+[INFO] 03:56:56:838 GameCard PAPAA/(31690:31701): Se esta leyendo la linea: 6-9=2
+
+[INFO] 03:56:56:839 GameCard PAPAA/(31690:31701): La coordenada de la linea es: 6-9
+[INFO] 03:56:56:839 GameCard PAPAA/(31690:31701): Se esta leyendo la linea: 3-5=16
+
+[INFO] 03:56:56:840 GameCard PAPAA/(31690:31701): La coordenada de la linea es: 3-5
+[INFO] 03:56:56:840 GameCard PAPAA/(31690:31701): Se esta leyendo la linea: 8-9=2
+
+[INFO] 03:56:56:841 GameCard PAPAA/(31690:31701): La coordenada de la linea es: 8-9
+[INFO] 03:56:56:841 GameCard PAPAA/(31690:31701): Se esta leyendo la linea: 3-4=16
+
+[INFO] 03:56:56:842 GameCard PAPAA/(31690:31701): La coordenada de la linea es: 3-4
+[INFO] 03:56:56:855 GameCard PAPAA/(31690:31701): Se esta leyendo la linea: 3-6=1
+
+[INFO] 03:56:56:856 GameCard PAPAA/(31690:31701): La coordenada de la linea es: 3-6
+[INFO] 03:56:56:857 GameCard PAPAA/(31690:31701): Se esta analizando el block: 4
+[INFO] 03:56:56:860 GameCard PAPAA/(31690:31701): La ruta del archivo es: /home/utnso/Escritorio/tall-grass/Blocks/4.bin
+[INFO] 03:56:56:861 GameCard PAPAA/(31690:31701): Se esta leyendo la linea: 9-9=2
+
+[INFO] 03:56:56:861 GameCard PAPAA/(31690:31701): La coordenada de la linea es: 9-9
+[INFO] 03:56:56:877 GameCard PAPAA/(31690:31701): EL tamanio calculado del archivo es: 56
+[INFO] 03:56:56:898 GameCard PAPAA/(31690:31701): EL tamanio calculado del archivo es: 6
+[INFO] 03:56:56:915 GameCard PAPAA/(31690:31701): El ID mensaje cargado en el localized es: 0
+[INFO] 03:56:56:932 GameCard PAPAA/(31690:31701): El Pokemon cargado en el localized es: miltonchupapija
+[INFO] 03:56:56:932 GameCard PAPAA/(31690:31701): El tamanio del nombre del pokemon cargado en el localized es: 15
+[INFO] 03:56:56:933 GameCard PAPAA/(31690:31701): La cantidad de lugares donde apareche el pokemon cargado en el localized es: 10
+[INFO] 03:56:56:940 GameCard PAPAA/(31690:31701): La coordenada sacada de la cola es: 5-9
+[INFO] 03:56:56:960 GameCard PAPAA/(31690:31701): La coordenada sacada de la cola es: 5
+[INFO] 03:56:56:961 GameCard PAPAA/(31690:31701): La coordenada sacada de la cola es: 9
+[INFO] 03:56:56:962 GameCard PAPAA/(31690:31701): La coordenada cargada es (5 ; 9)
+[INFO] 03:56:56:963 GameCard PAPAA/(31690:31701): La coordenada sacada de la cola es: 3-7
+[INFO] 03:56:56:980 GameCard PAPAA/(31690:31701): La coordenada sacada de la cola es: 3
+[INFO] 03:56:56:983 GameCard PAPAA/(31690:31701): La coordenada sacada de la cola es: 7
+[INFO] 03:56:57:9 GameCard PAPAA/(31690:31701): La coordenada cargada es (3 ; 7)
+[INFO] 03:56:57:16 GameCard PAPAA/(31690:31701): La coordenada sacada de la cola es: 4-9
+[INFO] 03:56:57:16 GameCard PAPAA/(31690:31701): La coordenada sacada de la cola es: 4
+[INFO] 03:56:57:21 GameCard PAPAA/(31690:31701): La coordenada sacada de la cola es: 9
+[INFO] 03:56:57:25 GameCard PAPAA/(31690:31701): La coordenada cargada es (4 ; 9)
+[INFO] 03:56:57:26 GameCard PAPAA/(31690:31701): La coordenada sacada de la cola es: 3-9
+[INFO] 03:56:57:26 GameCard PAPAA/(31690:31701): La coordenada sacada de la cola es: 3
+[INFO] 03:56:57:26 GameCard PAPAA/(31690:31701): La coordenada sacada de la cola es: 9
+[INFO] 03:56:57:31 GameCard PAPAA/(31690:31701): La coordenada cargada es (3 ; 9)
+[INFO] 03:56:57:31 GameCard PAPAA/(31690:31701): La coordenada sacada de la cola es: 6-9
+[INFO] 03:56:57:31 GameCard PAPAA/(31690:31701): La coordenada sacada de la cola es: 6
+[INFO] 03:56:57:52 GameCard PAPAA/(31690:31701): La coordenada sacada de la cola es: 9
+[INFO] 03:56:57:52 GameCard PAPAA/(31690:31701): La coordenada cargada es (6 ; 9)
+[INFO] 03:56:57:53 GameCard PAPAA/(31690:31701): La coordenada sacada de la cola es: 3-5
+[INFO] 03:56:57:53 GameCard PAPAA/(31690:31701): La coordenada sacada de la cola es: 3
+[INFO] 03:56:57:58 GameCard PAPAA/(31690:31701): La coordenada sacada de la cola es: 5
+[INFO] 03:56:57:58 GameCard PAPAA/(31690:31701): La coordenada cargada es (3 ; 5)
+[INFO] 03:56:57:58 GameCard PAPAA/(31690:31701): La coordenada sacada de la cola es: 8-9
+[INFO] 03:56:57:58 GameCard PAPAA/(31690:31701): La coordenada sacada de la cola es: 8
+[INFO] 03:56:57:63 GameCard PAPAA/(31690:31701): La coordenada sacada de la cola es: 9
+[INFO] 03:56:57:68 GameCard PAPAA/(31690:31701): La coordenada cargada es (8 ; 9)
+[INFO] 03:56:57:68 GameCard PAPAA/(31690:31701): La coordenada sacada de la cola es: 3-4
+[INFO] 03:56:57:68 GameCard PAPAA/(31690:31701): La coordenada sacada de la cola es: 3
+[INFO] 03:56:57:69 GameCard PAPAA/(31690:31701): La coordenada sacada de la cola es: 4
+[INFO] 03:56:57:69 GameCard PAPAA/(31690:31701): La coordenada cargada es (3 ; 4)
+[INFO] 03:56:57:69 GameCard PAPAA/(31690:31701): La coordenada sacada de la cola es: 3-6
+[INFO] 03:56:57:69 GameCard PAPAA/(31690:31701): La coordenada sacada de la cola es: 3
+[INFO] 03:56:57:70 GameCard PAPAA/(31690:31701): La coordenada sacada de la cola es: 6
+[INFO] 03:56:57:70 GameCard PAPAA/(31690:31701): La coordenada cargada es (3 ; 6)
+[INFO] 03:56:57:70 GameCard PAPAA/(31690:31701): La coordenada sacada de la cola es: 9-9
+[INFO] 03:56:57:71 GameCard PAPAA/(31690:31701): La coordenada sacada de la cola es: 9
+[INFO] 03:56:57:84 GameCard PAPAA/(31690:31701): La coordenada sacada de la cola es: 9
+[INFO] 03:56:57:101 GameCard PAPAA/(31690:31701): La coordenada cargada es (9 ; 9)
+[INFO] 03:56:57:127 GameCard PAPAA/(31690:31701): El valor de index 0 es: 5
+[INFO] 03:56:57:156 GameCard PAPAA/(31690:31701): El valor de index 1 es: 9
+[INFO] 03:56:57:156 GameCard PAPAA/(31690:31701): El valor de index 2 es: 3
+[INFO] 03:56:57:156 GameCard PAPAA/(31690:31701): El valor de index 3 es: 7
+[INFO] 03:56:57:161 GameCard PAPAA/(31690:31701): El valor de index 4 es: 4
+[INFO] 03:56:57:167 GameCard PAPAA/(31690:31701): El valor de index 5 es: 9
+[INFO] 03:56:57:172 GameCard PAPAA/(31690:31701): El valor de index 6 es: 3
+[INFO] 03:56:57:173 GameCard PAPAA/(31690:31701): El valor de index 7 es: 9
+[INFO] 03:56:57:173 GameCard PAPAA/(31690:31701): El valor de index 8 es: 6
+[INFO] 03:56:57:173 GameCard PAPAA/(31690:31701): El valor de index 9 es: 9
+[INFO] 03:56:57:173 GameCard PAPAA/(31690:31701): El valor de index 10 es: 3
+[INFO] 03:56:57:174 GameCard PAPAA/(31690:31701): El valor de index 11 es: 5
+[INFO] 03:56:57:174 GameCard PAPAA/(31690:31701): El valor de index 12 es: 8
+[INFO] 03:56:57:183 GameCard PAPAA/(31690:31701): El valor de index 13 es: 9
+[INFO] 03:56:57:187 GameCard PAPAA/(31690:31701): El valor de index 14 es: 3
+[INFO] 03:56:57:188 GameCard PAPAA/(31690:31701): El valor de index 15 es: 4
+[INFO] 03:56:57:188 GameCard PAPAA/(31690:31701): El valor de index 16 es: 3
+[INFO] 03:56:57:208 GameCard PAPAA/(31690:31701): El valor de index 17 es: 6
+[INFO] 03:56:57:208 GameCard PAPAA/(31690:31701): El valor de index 18 es: 9
+[INFO] 03:56:57:208 GameCard PAPAA/(31690:31701): El valor de index 19 es: 9
+[INFO] 03:57:02:227 GameCard PAPAA/(31690:31701): El ID cargado es 0
+[INFO] 03:57:02:249 GameCard PAPAA/(31690:31701): Tamanio nombre pokemon 15
+[INFO] 03:57:02:252 GameCard PAPAA/(31690:31701): Nombre pokemon miltonchupapija
+[INFO] 03:57:02:266 GameCard PAPAA/(31690:31701): Cantidad de coordenadas donde aparece:  10
+[INFO] 03:57:02:267 GameCard PAPAA/(31690:31701): Posicion X previa al mem 5
+[INFO] 03:57:02:318 GameCard PAPAA/(31690:31701): Posicion Y previa al mem 9
+[INFO] 03:57:02:318 GameCard PAPAA/(31690:31701): Posicion X 5
+[INFO] 03:57:02:323 GameCard PAPAA/(31690:31701): Posicion Y 9
+[INFO] 03:57:02:323 GameCard PAPAA/(31690:31701): Posicion X previa al mem 3
+[INFO] 03:57:02:324 GameCard PAPAA/(31690:31701): Posicion Y previa al mem 7
+[INFO] 03:57:02:324 GameCard PAPAA/(31690:31701): Posicion X 3
+[INFO] 03:57:02:324 GameCard PAPAA/(31690:31701): Posicion Y 7
+[INFO] 03:57:02:325 GameCard PAPAA/(31690:31701): Posicion X previa al mem 4
+[INFO] 03:57:02:329 GameCard PAPAA/(31690:31701): Posicion Y previa al mem 9
+[INFO] 03:57:02:335 GameCard PAPAA/(31690:31701): Posicion X 4
+[INFO] 03:57:02:335 GameCard PAPAA/(31690:31701): Posicion Y 9
+[INFO] 03:57:02:340 GameCard PAPAA/(31690:31701): Posicion X previa al mem 3
+[INFO] 03:57:02:340 GameCard PAPAA/(31690:31701): Posicion Y previa al mem 9
+[INFO] 03:57:02:340 GameCard PAPAA/(31690:31701): Posicion X 3
+[INFO] 03:57:02:340 GameCard PAPAA/(31690:31701): Posicion Y 9
+[INFO] 03:57:02:341 GameCard PAPAA/(31690:31701): Posicion X previa al mem 6
+[INFO] 03:57:02:341 GameCard PAPAA/(31690:31701): Posicion Y previa al mem 9
+[INFO] 03:57:02:341 GameCard PAPAA/(31690:31701): Posicion X 6
+[INFO] 03:57:02:342 GameCard PAPAA/(31690:31701): Posicion Y 9
+[INFO] 03:57:02:342 GameCard PAPAA/(31690:31701): Posicion X previa al mem 3
+[INFO] 03:57:02:354 GameCard PAPAA/(31690:31701): Posicion Y previa al mem 5
+[INFO] 03:57:02:359 GameCard PAPAA/(31690:31701): Posicion X 3
+[INFO] 03:57:02:359 GameCard PAPAA/(31690:31701): Posicion Y 5
+[INFO] 03:57:02:359 GameCard PAPAA/(31690:31701): Posicion X previa al mem 8
+[INFO] 03:57:02:360 GameCard PAPAA/(31690:31701): Posicion Y previa al mem 9
+[INFO] 03:57:02:360 GameCard PAPAA/(31690:31701): Posicion X 8
+[INFO] 03:57:02:360 GameCard PAPAA/(31690:31701): Posicion Y 9
+[INFO] 03:57:02:361 GameCard PAPAA/(31690:31701): Posicion X previa al mem 3
+[INFO] 03:57:02:361 GameCard PAPAA/(31690:31701): Posicion Y previa al mem 4
+[INFO] 03:57:02:361 GameCard PAPAA/(31690:31701): Posicion X 3
+[INFO] 03:57:02:361 GameCard PAPAA/(31690:31701): Posicion Y 4
+[INFO] 03:57:02:362 GameCard PAPAA/(31690:31701): Posicion X previa al mem 3
+[INFO] 03:57:02:362 GameCard PAPAA/(31690:31701): Posicion Y previa al mem 6
+[INFO] 03:57:02:371 GameCard PAPAA/(31690:31701): Posicion X 3
+[INFO] 03:57:02:375 GameCard PAPAA/(31690:31701): Posicion Y 6
+[INFO] 03:57:02:375 GameCard PAPAA/(31690:31701): Posicion X previa al mem 9
+[INFO] 03:57:02:376 GameCard PAPAA/(31690:31701): Posicion Y previa al mem 9
+[INFO] 03:57:02:376 GameCard PAPAA/(31690:31701): Posicion X 9
+[INFO] 03:57:02:377 GameCard PAPAA/(31690:31701): Posicion Y 9
+[INFO] 03:57:02:377 GameCard PAPAA/(31690:31701): SAliendo
+[INFO] 03:57:02:378 GameCard PAPAA/(31690:31701): Creando paquete
+[INFO] 03:57:02:379 GameCard PAPAA/(31690:31701): CODIGO DE OPERACION: 6
+[INFO] 03:57:02:386 GameCard PAPAA/(31690:31701): Paquete Creado
+[INFO] 03:57:02:387 GameCard PAPAA/(31690:31701): la operacion a realizar es 6
+[INFO] 03:57:02:416 GameCard PAPAA/(31690:31701): Serializando...
+[INFO] 03:57:02:417 GameCard PAPAA/(31690:31701): Serializacion completa
+[INFO] 03:57:02:418 GameCard PAPAA/(31690:31701): El peso total es: 108
+[ERROR] 03:57:02:418 GameCard PAPAA/(31690:31701): Error: No se pudo enviar el mensaje
+[INFO] 03:57:04:398 GameCard PAPAA/(31690:31699): Iniciando verificacion de conexion con Broker...
+[ERROR] 03:57:04:418 GameCard PAPAA/(31690:31699): Reconexion con Broker fallida, intentando nuevamente en 10 segundos
