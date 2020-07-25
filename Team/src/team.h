@@ -27,6 +27,15 @@ int tiempo_deadlock;
 uint32_t retardo_de_CPU;
 int tiempo_reconexion;
 
+// FIFO    1
+// RR      2
+// SJF-SD  3
+// SJF-CD  4
+int algoritmo_planificacion;
+
+// Valor default: 0
+int quantum;
+
 int socket_escucha_game_boy;
 
 int socket_escucha_appeared;
@@ -159,7 +168,8 @@ int cantidad_de_pokemon_entrenadores(char** pokemones);
 void inicializar_cola(void);
 void obtener_objetivo_global(void);
 void obtener_pokemones_a_localizar(void);
-void laburar(void* entrenador);
+void laburar_fifo(void* entrenador);
+void laburar_rr(void* entrenador);
 void planificar_pokemon(void);
 void planificar_caught(void);
 void planificar_deadlock(void);
