@@ -62,7 +62,7 @@ pthread_mutex_t cola_deadlock_mutex;
 pthread_mutex_t pokemones_llegados_mutex;
 pthread_mutex_t catch_IDs_mutex;
 pthread_mutex_t estoy_conectado_al_broker_mutex;
-pthread_mutex_t planificacion_fifo;
+pthread_mutex_t planificacion_ready;
 
 sem_t sem_cola_pokemones;
 sem_t sem_cola_caught;
@@ -122,6 +122,7 @@ typedef struct {
 	t_tarea* tarea_actual;
 	sem_t semaforo;
 	int contador_ciclos_CPU;
+	int contador_quantum;
 } t_entrenador;
 
 typedef struct {

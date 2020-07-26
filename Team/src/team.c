@@ -259,7 +259,7 @@ void laburar_fifo(void* entrenador_param) {
 		switch(entrenador->tarea_actual->id_tarea) {
 		case ATRAPAR_POKEMON: ;
 
-		pthread_mutex_lock(&planificacion_fifo);
+		pthread_mutex_lock(&planificacion_ready);
 
 		char* mensaje_log = string_new();
 		string_append(&mensaje_log, "Ha comenzado a ejecutar la tarea de atrapar pokemon ");
@@ -277,13 +277,13 @@ void laburar_fifo(void* entrenador_param) {
 
 		enviar_catch_a_broker(parametros_atrapado, entrenador);
 
-		pthread_mutex_unlock(&planificacion_fifo);
+		pthread_mutex_unlock(&planificacion_ready);
 
 		break;
 
 		case INTERCAMBIAR_POKEMON: ;
 
-		pthread_mutex_lock(&planificacion_fifo);
+		pthread_mutex_lock(&planificacion_ready);
 
 		log_info(extense_logger, "Entrenador %i entro por Intercambiar Pokemon", entrenador->index);
 
@@ -292,25 +292,16 @@ void laburar_fifo(void* entrenador_param) {
 		t_deadlock* parametros_intercambio = (t_deadlock*) entrenador->tarea_actual->parametros;
 		log_info(extense_logger, "Parametros del deadlock cargados");
 
-		// segundo entrenador de la lista de entrenadores
 		t_entrenador* otro_entrenador = (t_entrenador*) list_get(parametros_intercambio->entrenadores, 1);
 
-		log_info(extense_logger, "Cargado el entrenador %i con el que entrenador %i va a intercambiar pokemon", otro_entrenador->index, entrenador->index);
-
-		// ir al lugar en cuestion
-		log_info(extense_logger, "Moviendo al entrenador %i a la posicion X: %i y posicion Y: %i", entrenador->index, otro_entrenador->posX, otro_entrenador->posY);
 		irA(otro_entrenador->posX, otro_entrenador->posY, entrenador);
-		log_info(extense_logger, "Llego el entrenador %i a X:%i Y: %i",entrenador->index, otro_entrenador->posX, otro_entrenador->posY);
 
 		char* pokemon1 = (char*) list_get(parametros_intercambio->pokemones, 0);
 		char* pokemon2 = (char*) list_get(parametros_intercambio->pokemones, 1);
 
-		// intercambiar el pokemon correspondiente con el otro entrenador
 		log_info(extense_logger, "Empezando el intercambio de pokemon %s y pokemon %s entre entrenador %i y entrenador %i", pokemon1, pokemon2, entrenador->index, otro_entrenador->index);
 		intercambiar_pokemones(entrenador, otro_entrenador, pokemon1, pokemon2);
 		log_info(extense_logger, "Intercambio realizado");
-
-		// obtener deadlock nuevo si existe y agregarlo a la cola de mensajes del planificador
 
 		if (parametros_intercambio->entrenadores->elements_count > 2) {
 			list_remove(parametros_intercambio->entrenadores, 0); // se elimina al primer entrenador
@@ -359,7 +350,8 @@ void laburar_fifo(void* entrenador_param) {
 			log_info(extense_logger, "entrenador %i cambia su estado a BLOQUEADO",entrenador->index);
 		}
 
-		pthread_mutex_unlock(&planificacion_fifo);
+		pthread_mutex_unlock(&planificacion_ready);
+
 		break;
 
 		case NO_HACER_PINGO:
@@ -386,6 +378,10 @@ void laburar_rr(void* entrenador_param) {
 		switch(entrenador->tarea_actual->id_tarea) {
 		case ATRAPAR_POKEMON: ;
 
+		pthread_mutex_lock(&planificacion_ready);
+
+		entrenador->contador_quantum = quantum;
+
 		char* mensaje_log = string_new();
 		string_append(&mensaje_log, "Ha comenzado a ejecutar la tarea de atrapar pokemon ");
 		string_append(&mensaje_log, ((t_pokemon*) entrenador->tarea_actual->parametros)->nombre);
@@ -402,9 +398,15 @@ void laburar_rr(void* entrenador_param) {
 
 		enviar_catch_a_broker(parametros_atrapado, entrenador);
 
+		pthread_mutex_unlock(&planificacion_ready);
+
 		break;
 
 		case INTERCAMBIAR_POKEMON: ;
+
+		pthread_mutex_lock(&planificacion_ready);
+
+		entrenador->contador_quantum = quantum;
 
 		log_info(extense_logger, "Entrenador %i entro por Intercambiar Pokemon", entrenador->index);
 
@@ -413,25 +415,16 @@ void laburar_rr(void* entrenador_param) {
 		t_deadlock* parametros_intercambio = (t_deadlock*) entrenador->tarea_actual->parametros;
 		log_info(extense_logger, "Parametros del deadlock cargados");
 
-		// segundo entrenador de la lista de entrenadores
 		t_entrenador* otro_entrenador = (t_entrenador*) list_get(parametros_intercambio->entrenadores, 1);
 
-		log_info(extense_logger, "Cargado el entrenador %i con el que entrenador %i va a intercambiar pokemon", otro_entrenador->index, entrenador->index);
-
-		// ir al lugar en cuestion
-		log_info(extense_logger, "Moviendo al entrenador %i a la posicion X: %i y posicion Y: %i", entrenador->index, otro_entrenador->posX, otro_entrenador->posY);
 		irA(otro_entrenador->posX, otro_entrenador->posY, entrenador);
-		log_info(extense_logger, "Llego el entrenador %i a X:%i Y: %i",entrenador->index, otro_entrenador->posX, otro_entrenador->posY);
 
 		char* pokemon1 = (char*) list_get(parametros_intercambio->pokemones, 0);
 		char* pokemon2 = (char*) list_get(parametros_intercambio->pokemones, 1);
 
-		// intercambiar el pokemon correspondiente con el otro entrenador
 		log_info(extense_logger, "Empezando el intercambio de pokemon %s y pokemon %s entre entrenador %i y entrenador %i", pokemon1, pokemon2, entrenador->index, otro_entrenador->index);
 		intercambiar_pokemones(entrenador, otro_entrenador, pokemon1, pokemon2);
 		log_info(extense_logger, "Intercambio realizado");
-
-		// obtener deadlock nuevo si existe y agregarlo a la cola de mensajes del planificador
 
 		if (parametros_intercambio->entrenadores->elements_count > 2) {
 			list_remove(parametros_intercambio->entrenadores, 0); // se elimina al primer entrenador
@@ -479,6 +472,8 @@ void laburar_rr(void* entrenador_param) {
 			cambiar_estado_de_entrenador(entrenador, ESTADO_BLOCKED, "Se ha terminado de intercambiar pokemones y sigue sin cumplirse el objetivo");
 			log_info(extense_logger, "entrenador %i cambia su estado a BLOQUEADO",entrenador->index);
 		}
+
+		pthread_mutex_lock(&planificacion_ready);
 
 		break;
 
@@ -926,7 +921,7 @@ int main(void) {
 	config = leer_config();
 	log_file = config_get_string_value(config, "LOG_FILE");
 	extense_log_file = config_get_string_value(config, "EXTENSE_LOG_FILE");
-	extense_logger = iniciar_logger_sin_consola(extense_log_file);
+	extense_logger = iniciar_logger(extense_log_file);
 	extense_logger_protocol = extense_logger;
 	log_info(extense_logger, "logger extenso iniciado");
 	logger = iniciar_logger_sin_consola(log_file);
@@ -982,7 +977,7 @@ int main(void) {
 	// crear cola de mensajes recibidos
 	inicializar_cola();
 
-	pthread_mutex_init(&planificacion_fifo, NULL);
+	pthread_mutex_init(&planificacion_ready, NULL);
 	pthread_mutex_init(&cola_pokemones_mutex, NULL);
 	pthread_mutex_init(&cola_caught_mutex, NULL);
 	pthread_mutex_init(&cola_deadlock_mutex, NULL);
@@ -1542,6 +1537,14 @@ void irA(uint32_t posX, uint32_t posY, t_entrenador* entrenador) {
 			log_info(extense_logger, "El entrenador %i se encuentra en (%i,%i)", entrenador->index, entrenador->posX, entrenador->posY);
 			log_info(logger, "El entrenador %i se encuentra en (%i,%i)", entrenador->index, entrenador->posX, entrenador->posY);
 			sleep(retardo_de_CPU);
+			if (algoritmo_planificacion == 2) {
+				entrenador->contador_quantum--;
+				if (entrenador->contador_quantum == 0) {
+					entrenador->contador_quantum = quantum;
+					pthread_mutex_unlock(&planificacion_ready);
+					pthread_mutex_lock(&planificacion_ready);
+				}
+			}
 		} else {
 			entrenador->posY--;
 			entrenador->contador_ciclos_CPU++;
@@ -1551,6 +1554,14 @@ void irA(uint32_t posX, uint32_t posY, t_entrenador* entrenador) {
 			log_info(extense_logger, "El entrenador %i se encuentra en (%i,%i)", entrenador->index, entrenador->posX, entrenador->posY);
 			log_info(logger, "El entrenador %i se encuentra en (%i,%i)", entrenador->index, entrenador->posX, entrenador->posY);
 			sleep(retardo_de_CPU);
+			if (algoritmo_planificacion == 2) {
+				entrenador->contador_quantum--;
+				if (entrenador->contador_quantum == 0) {
+					entrenador->contador_quantum = quantum;
+					pthread_mutex_unlock(&planificacion_ready);
+					pthread_mutex_lock(&planificacion_ready);
+				}
+			}
 		}
 	}
 
@@ -1564,6 +1575,14 @@ void irA(uint32_t posX, uint32_t posY, t_entrenador* entrenador) {
 			log_info(extense_logger, "El entrenador %i se encuentra en (%i,%i)", entrenador->index, entrenador->posX, entrenador->posY);
 			log_info(logger, "El entrenador %i se encuentra en (%i,%i)", entrenador->index, entrenador->posX, entrenador->posY);
 			sleep(retardo_de_CPU);
+			if (algoritmo_planificacion == 2) {
+				entrenador->contador_quantum--;
+				if (entrenador->contador_quantum == 0) {
+					entrenador->contador_quantum = quantum;
+					pthread_mutex_unlock(&planificacion_ready);
+					pthread_mutex_lock(&planificacion_ready);
+				}
+			}
 		} else {
 			entrenador->posX--;
 			entrenador->contador_ciclos_CPU++;
@@ -1573,8 +1592,15 @@ void irA(uint32_t posX, uint32_t posY, t_entrenador* entrenador) {
 			log_info(extense_logger, "El entrenador %i se encuentra en (%i,%i)", entrenador->index, entrenador->posX, entrenador->posY);
 			log_info(logger, "El entrenador %i se encuentra en (%i,%i)", entrenador->index, entrenador->posX, entrenador->posY);
 			sleep(retardo_de_CPU);
+			if (algoritmo_planificacion == 2) {
+				entrenador->contador_quantum--;
+				if (entrenador->contador_quantum == 0) {
+					entrenador->contador_quantum = quantum;
+					pthread_mutex_unlock(&planificacion_ready);
+					pthread_mutex_lock(&planificacion_ready);
+				}
+			}
 		}
-
 	}
 
 	log_info(extense_logger, "El entrenador %i ha llegado a (%i,%i)", entrenador->index, entrenador->posX, entrenador->posY);
@@ -1583,7 +1609,19 @@ void irA(uint32_t posX, uint32_t posY, t_entrenador* entrenador) {
 void intercambiar_pokemones(t_entrenador* entrenador1, t_entrenador* entrenador2, char* pokemon1, char* pokemon2) {
 	log_info(extense_logger, "Entrenadores %i y %i intercambiando pokemones %s y %s", entrenador1->index, entrenador2->index, pokemon1, pokemon2);
 	log_info(logger, "Entrenadores %i y %i intercambiando pokemones %s y %s", entrenador1->index, entrenador2->index, pokemon1, pokemon2);
-	sleep(retardo_de_CPU * 5);
+
+	for (int i = 0; i < 5; i++) {
+		sleep(retardo_de_CPU);
+		if (algoritmo_planificacion == 2) {
+			entrenador1->contador_quantum--;
+			if (entrenador1->contador_quantum == 0) {
+				entrenador1->contador_quantum = quantum;
+				pthread_mutex_unlock(&planificacion_ready);
+				pthread_mutex_lock(&planificacion_ready);
+			}
+		}
+	}
+
 	entrenador1->contador_ciclos_CPU = entrenador1->contador_ciclos_CPU + 5;
 	pthread_mutex_lock(&ciclos_CPU_mutex);
 	ciclos_CPU = ciclos_CPU + 5;
@@ -1938,7 +1976,7 @@ void terminar_programa() {
 	pthread_mutex_destroy(&cola_pokemones_mutex);
 	pthread_mutex_destroy(&cola_caught_mutex);
 	pthread_mutex_destroy(&cola_deadlock_mutex);
-	pthread_mutex_destroy(&planificacion_fifo);
+	pthread_mutex_destroy(&planificacion_ready);
 	pthread_mutex_destroy(&pokemones_llegados_mutex);
 	pthread_mutex_destroy(&catch_IDs_mutex);
 	pthread_mutex_destroy(&estoy_conectado_al_broker_mutex);
