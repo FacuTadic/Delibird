@@ -1536,15 +1536,7 @@ void irA(uint32_t posX, uint32_t posY, t_entrenador* entrenador) {
 			pthread_mutex_unlock(&ciclos_CPU_mutex);
 			log_info(extense_logger, "El entrenador %i se encuentra en (%i,%i)", entrenador->index, entrenador->posX, entrenador->posY);
 			log_info(logger, "El entrenador %i se encuentra en (%i,%i)", entrenador->index, entrenador->posX, entrenador->posY);
-			sleep(retardo_de_CPU);
-			if (algoritmo_planificacion == 2) {
-				entrenador->contador_quantum--;
-				if (entrenador->contador_quantum == 0) {
-					entrenador->contador_quantum = quantum;
-					pthread_mutex_unlock(&planificacion_ready);
-					pthread_mutex_lock(&planificacion_ready);
-				}
-			}
+			consumir_tiempo_retardo(entrenador);
 		} else {
 			entrenador->posY--;
 			entrenador->contador_ciclos_CPU++;
@@ -1553,15 +1545,7 @@ void irA(uint32_t posX, uint32_t posY, t_entrenador* entrenador) {
 			pthread_mutex_unlock(&ciclos_CPU_mutex);
 			log_info(extense_logger, "El entrenador %i se encuentra en (%i,%i)", entrenador->index, entrenador->posX, entrenador->posY);
 			log_info(logger, "El entrenador %i se encuentra en (%i,%i)", entrenador->index, entrenador->posX, entrenador->posY);
-			sleep(retardo_de_CPU);
-			if (algoritmo_planificacion == 2) {
-				entrenador->contador_quantum--;
-				if (entrenador->contador_quantum == 0) {
-					entrenador->contador_quantum = quantum;
-					pthread_mutex_unlock(&planificacion_ready);
-					pthread_mutex_lock(&planificacion_ready);
-				}
-			}
+			consumir_tiempo_retardo(entrenador);
 		}
 	}
 
@@ -1574,15 +1558,7 @@ void irA(uint32_t posX, uint32_t posY, t_entrenador* entrenador) {
 			pthread_mutex_unlock(&ciclos_CPU_mutex);
 			log_info(extense_logger, "El entrenador %i se encuentra en (%i,%i)", entrenador->index, entrenador->posX, entrenador->posY);
 			log_info(logger, "El entrenador %i se encuentra en (%i,%i)", entrenador->index, entrenador->posX, entrenador->posY);
-			sleep(retardo_de_CPU);
-			if (algoritmo_planificacion == 2) {
-				entrenador->contador_quantum--;
-				if (entrenador->contador_quantum == 0) {
-					entrenador->contador_quantum = quantum;
-					pthread_mutex_unlock(&planificacion_ready);
-					pthread_mutex_lock(&planificacion_ready);
-				}
-			}
+			consumir_tiempo_retardo(entrenador);
 		} else {
 			entrenador->posX--;
 			entrenador->contador_ciclos_CPU++;
@@ -1591,19 +1567,23 @@ void irA(uint32_t posX, uint32_t posY, t_entrenador* entrenador) {
 			pthread_mutex_unlock(&ciclos_CPU_mutex);
 			log_info(extense_logger, "El entrenador %i se encuentra en (%i,%i)", entrenador->index, entrenador->posX, entrenador->posY);
 			log_info(logger, "El entrenador %i se encuentra en (%i,%i)", entrenador->index, entrenador->posX, entrenador->posY);
-			sleep(retardo_de_CPU);
-			if (algoritmo_planificacion == 2) {
-				entrenador->contador_quantum--;
-				if (entrenador->contador_quantum == 0) {
-					entrenador->contador_quantum = quantum;
-					pthread_mutex_unlock(&planificacion_ready);
-					pthread_mutex_lock(&planificacion_ready);
-				}
-			}
+			consumir_tiempo_retardo(entrenador);
 		}
 	}
 
 	log_info(extense_logger, "El entrenador %i ha llegado a (%i,%i)", entrenador->index, entrenador->posX, entrenador->posY);
+}
+
+void consumir_tiempo_retardo(t_entrenador* entrenador) {
+	sleep(retardo_de_CPU);
+	if (algoritmo_planificacion == 2) {
+		entrenador->contador_quantum--;
+		if (entrenador->contador_quantum == 0) {
+			entrenador->contador_quantum = quantum;
+			pthread_mutex_unlock(&planificacion_ready);
+			pthread_mutex_lock(&planificacion_ready);
+		}
+	}
 }
 
 void intercambiar_pokemones(t_entrenador* entrenador1, t_entrenador* entrenador2, char* pokemon1, char* pokemon2) {
@@ -1611,15 +1591,7 @@ void intercambiar_pokemones(t_entrenador* entrenador1, t_entrenador* entrenador2
 	log_info(logger, "Entrenadores %i y %i intercambiando pokemones %s y %s", entrenador1->index, entrenador2->index, pokemon1, pokemon2);
 
 	for (int i = 0; i < 5; i++) {
-		sleep(retardo_de_CPU);
-		if (algoritmo_planificacion == 2) {
-			entrenador1->contador_quantum--;
-			if (entrenador1->contador_quantum == 0) {
-				entrenador1->contador_quantum = quantum;
-				pthread_mutex_unlock(&planificacion_ready);
-				pthread_mutex_lock(&planificacion_ready);
-			}
-		}
+		consumir_tiempo_retardo(entrenador1);
 	}
 
 	entrenador1->contador_ciclos_CPU = entrenador1->contador_ciclos_CPU + 5;

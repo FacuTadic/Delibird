@@ -222,3 +222,4 @@ int es_id_catch(uint32_t id);
 int calcular_posicion_entrenador(int posXEntrenador, int posYEntrenador, int posXPokemon, int posYPokemon);
 char* obtener_nombre_de_tarea(id_tarea id);
 char* obtener_nombre_de_estado(estado id);
+void consumir_tiempo_retardo(t_entrenador* entrenador);
