@@ -33,8 +33,10 @@ int tiempo_reconexion;
 // SJF-CD  4
 int algoritmo_planificacion;
 
-// Valor default: 0
 int quantum;
+
+double alpha;
+int estimacion_inicial;
 
 int socket_escucha_game_boy;
 
@@ -123,6 +125,8 @@ typedef struct {
 	sem_t semaforo;
 	int contador_ciclos_CPU;
 	int contador_quantum;
+	double estimacion;
+	double real;
 } t_entrenador;
 
 typedef struct {
@@ -171,6 +175,7 @@ void obtener_objetivo_global(void);
 void obtener_pokemones_a_localizar(void);
 void laburar_fifo(void* entrenador);
 void laburar_rr(void* entrenador);
+void laburar_sjf_sd(void* entrenador);
 void planificar_pokemon(void);
 void planificar_caught(void);
 void planificar_deadlock(void);
@@ -223,3 +228,5 @@ int calcular_posicion_entrenador(int posXEntrenador, int posYEntrenador, int pos
 char* obtener_nombre_de_tarea(id_tarea id);
 char* obtener_nombre_de_estado(estado id);
 void consumir_tiempo_retardo(t_entrenador* entrenador);
+double calcular_nueva_estimacion(t_entrenador* entrenador);
+void definir_nueva_estimacion(t_entrenador* entrenador);

@@ -490,6 +490,129 @@ void laburar_rr(void* entrenador_param) {
 	pthread_exit(NULL);
 }
 
+void laburar_sjf_sd(void* entrenador_param) {
+	t_entrenador* entrenador = (t_entrenador*) entrenador_param;
+
+	log_info(extense_logger, "Trabajo de entrenador %i comenzado", entrenador->index);
+
+	while (entrenador->estado != ESTADO_EXIT) {
+
+		sem_wait(&(entrenador->semaforo));
+		switch(entrenador->tarea_actual->id_tarea) {
+		case ATRAPAR_POKEMON: ;
+
+		pthread_mutex_lock(&planificacion_ready);
+
+		entrenador->contador_quantum = quantum;
+
+		char* mensaje_log = string_new();
+		string_append(&mensaje_log, "Ha comenzado a ejecutar la tarea de atrapar pokemon ");
+		string_append(&mensaje_log, ((t_pokemon*) entrenador->tarea_actual->parametros)->nombre);
+
+		cambiar_estado_de_entrenador(entrenador, ESTADO_EXECUTING, mensaje_log);
+		t_pokemon* parametros_atrapado = (t_pokemon*) entrenador->tarea_actual->parametros;
+		log_info(extense_logger, "Entrenador %i esta atrapando pokemon %s ubicado en (%i,%i)",entrenador->index, parametros_atrapado->nombre, parametros_atrapado->pos_X, parametros_atrapado->pos_Y);
+		log_info(logger, "Entrenador %i esta atrapando pokemon %s ubicado en (%i,%i)",entrenador->index, parametros_atrapado->nombre, parametros_atrapado->pos_X, parametros_atrapado->pos_Y);
+		free(mensaje_log);
+
+		irA(parametros_atrapado->pos_X, parametros_atrapado->pos_Y, entrenador);
+
+		cambiar_estado_de_entrenador(entrenador, ESTADO_BLOCKED, "Se ha enviado un catch");
+
+		enviar_catch_a_broker(parametros_atrapado, entrenador);
+
+		pthread_mutex_unlock(&planificacion_ready);
+
+		break;
+
+		case INTERCAMBIAR_POKEMON: ;
+
+		pthread_mutex_lock(&planificacion_ready);
+
+		entrenador->contador_quantum = quantum;
+
+		log_info(extense_logger, "Entrenador %i entro por Intercambiar Pokemon", entrenador->index);
+
+		cambiar_estado_de_entrenador(entrenador, ESTADO_EXECUTING, "Ha comenzado a ejecutar la tarea de intercambiar pokemon");
+		log_info(extense_logger, "entrenador %i cambia su estado a EXECUTING",entrenador->index);
+		t_deadlock* parametros_intercambio = (t_deadlock*) entrenador->tarea_actual->parametros;
+		log_info(extense_logger, "Parametros del deadlock cargados");
+
+		t_entrenador* otro_entrenador = (t_entrenador*) list_get(parametros_intercambio->entrenadores, 1);
+
+		irA(otro_entrenador->posX, otro_entrenador->posY, entrenador);
+
+		char* pokemon1 = (char*) list_get(parametros_intercambio->pokemones, 0);
+		char* pokemon2 = (char*) list_get(parametros_intercambio->pokemones, 1);
+
+		log_info(extense_logger, "Empezando el intercambio de pokemon %s y pokemon %s entre entrenador %i y entrenador %i", pokemon1, pokemon2, entrenador->index, otro_entrenador->index);
+		intercambiar_pokemones(entrenador, otro_entrenador, pokemon1, pokemon2);
+		log_info(extense_logger, "Intercambio realizado");
+
+		if (parametros_intercambio->entrenadores->elements_count > 2) {
+			list_remove(parametros_intercambio->entrenadores, 0); // se elimina al primer entrenador
+			list_remove(parametros_intercambio->pokemones, 1); // se elimina al segundo pokemon al pedo (seria el pokemon que el primer entrenador necesita)
+
+			t_mensaje_recibido* mensaje_deadlock = malloc(sizeof(t_mensaje_recibido));
+
+			mensaje_deadlock->tipo_mensaje = MENSAJE_DEADLOCK;
+			mensaje_deadlock->mensaje = (void*) parametros_intercambio;
+
+			pthread_mutex_lock(&cola_pokemones_mutex);
+			queue_push(cola_pokemones, (void*) mensaje_deadlock);
+			pthread_mutex_unlock(&cola_pokemones_mutex);
+			sem_post(&sem_cola_deadlock);
+		} else {
+			pthread_mutex_lock(&cantidad_deadlocks_mutex);
+			cantidad_deadlocks++;
+			pthread_mutex_unlock(&cantidad_deadlocks_mutex);
+			if (otro_entrenador->pokemones_innecesarios->elements_count == 0) {
+				cambiar_estado_de_entrenador(otro_entrenador, ESTADO_EXIT, "Ha terminado su objetivo");
+				t_tarea* otra_tarea_pingo = malloc(sizeof(t_tarea));
+				otra_tarea_pingo->id_tarea = NO_HACER_PINGO;
+				cambiar_tarea_de_entrenador(otro_entrenador, otra_tarea_pingo);
+				sem_post(&(otro_entrenador->semaforo));
+			} else {
+				t_tarea* otra_tarea_pingo = malloc(sizeof(t_tarea));
+				otra_tarea_pingo->id_tarea = NO_HACER_PINGO;
+				cambiar_tarea_de_entrenador(otro_entrenador, otra_tarea_pingo);
+				list_destroy(parametros_intercambio->entrenadores);
+				list_destroy(parametros_intercambio->pokemones);
+				free(parametros_intercambio);
+			}
+		}
+
+		if (entrenador->pokemones_innecesarios->elements_count == 0) {
+			cambiar_estado_de_entrenador(entrenador, ESTADO_EXIT, "Ha terminado su objetivo");
+			t_tarea* tarea_pingo = malloc(sizeof(t_tarea));
+			tarea_pingo->id_tarea = NO_HACER_PINGO;
+			cambiar_tarea_de_entrenador(entrenador, tarea_pingo);
+			sem_post(&(entrenador->semaforo));
+		} else {
+			t_tarea* tarea_pingo = malloc(sizeof(t_tarea));
+			tarea_pingo->id_tarea = NO_HACER_PINGO;
+			cambiar_tarea_de_entrenador(entrenador, tarea_pingo);
+			cambiar_estado_de_entrenador(entrenador, ESTADO_BLOCKED, "Se ha terminado de intercambiar pokemones y sigue sin cumplirse el objetivo");
+			log_info(extense_logger, "entrenador %i cambia su estado a BLOQUEADO",entrenador->index);
+		}
+
+		pthread_mutex_lock(&planificacion_ready);
+
+		break;
+
+		case NO_HACER_PINGO:
+			break;
+		default:
+			log_info(extense_logger, "Entro por cualquier lado bro");
+		}
+
+	}
+
+	log_info(extense_logger, "Entrenador %i ha terminado", entrenador->index);
+
+	pthread_exit(NULL);
+}
+
 void planificar_pokemon(void) {
 	log_info(extense_logger, "Hilo planificador de pokemones iniciado");
 
@@ -943,6 +1066,9 @@ int main(void) {
 	retardo_de_CPU = config_get_int_value(config, "RETARDO_CICLO_CPU");
 	log_info(extense_logger, "EL tiempo de retardo de CPU es cada %i segundos", retardo_de_CPU);
 	char* algoritmo_planificacion_config =  config_get_string_value(config, "ALGORITMO_PLANIFICACION");
+	log_info(extense_logger, "EL algoritmo de planificacion es %s", algoritmo_planificacion_config);
+	alpha = config_get_double_value(config, "ALPHA");
+	estimacion_inicial = config_get_int_value(config, "ESTIMACION_INICIAL");
 
 	if (string_equals_ignore_case(algoritmo_planificacion_config, "FIFO")) {
 		algoritmo_planificacion = 1;
@@ -1038,6 +1164,10 @@ int main(void) {
 	} else if (algoritmo_planificacion == 2) {
 		for (int i = 0; i < entrenadores->elements_count; i++) {
 			pthread_create(&(threads_entrenadores[i]), NULL, (void*) laburar_rr, list_get(entrenadores, i));
+		}
+	} else if (algoritmo_planificacion == 3) {
+		for (int i = 0; i < entrenadores->elements_count; i++) {
+			pthread_create(&(threads_entrenadores[i]), NULL, (void*) laburar_sjf_sd, list_get(entrenadores, i));
 		}
 	}
 
@@ -1224,6 +1354,10 @@ void inicializar_entrenadores() {
 		sem_init(&(entrenador->semaforo), 0, 0);
 
 		entrenador->contador_ciclos_CPU = 0;
+
+		entrenador->estimacion = (double) estimacion_inicial;
+
+		entrenador->real = (double) estimacion_inicial;
 
 		log_info(extense_logger, "Estado del entrenador %i: %i", entrenador->index, entrenador->estado);
 
@@ -1884,6 +2018,17 @@ int es_id_catch(uint32_t id) {
 	pthread_mutex_unlock(&catch_IDs_mutex);
 
 	return es_id_de_catch;
+}
+
+void definir_nueva_estimacion(t_entrenador* entrenador) {
+	entrenador->estimacion = calcular_nueva_estimacion(entrenador);
+}
+
+double calcular_nueva_estimacion(t_entrenador* entrenador) {
+	double estimacion_alpheada = entrenador->estimacion * alpha;
+	double real_alpheado = entrenador->real * alpha;
+
+	return estimacion_alpheada + real_alpheado;
 }
 
 int calcular_posicion_entrenador(int posXEntrenador, int posYEntrenador, int posXPokemon, int posYPokemon) {
