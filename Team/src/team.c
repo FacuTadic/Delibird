@@ -501,10 +501,6 @@ void laburar_sjf_sd(void* entrenador_param) {
 		switch(entrenador->tarea_actual->id_tarea) {
 		case ATRAPAR_POKEMON: ;
 
-		pthread_mutex_lock(&planificacion_ready);
-
-		entrenador->contador_quantum = quantum;
-
 		char* mensaje_log = string_new();
 		string_append(&mensaje_log, "Ha comenzado a ejecutar la tarea de atrapar pokemon ");
 		string_append(&mensaje_log, ((t_pokemon*) entrenador->tarea_actual->parametros)->nombre);
@@ -521,15 +517,13 @@ void laburar_sjf_sd(void* entrenador_param) {
 
 		enviar_catch_a_broker(parametros_atrapado, entrenador);
 
-		pthread_mutex_unlock(&planificacion_ready);
+		definir_nueva_estimacion(entrenador);
+
+		mandar_a_siguente_entrenador_a_ejecutar_por_sjf();
 
 		break;
 
 		case INTERCAMBIAR_POKEMON: ;
-
-		pthread_mutex_lock(&planificacion_ready);
-
-		entrenador->contador_quantum = quantum;
 
 		log_info(extense_logger, "Entrenador %i entro por Intercambiar Pokemon", entrenador->index);
 
@@ -596,7 +590,7 @@ void laburar_sjf_sd(void* entrenador_param) {
 			log_info(extense_logger, "entrenador %i cambia su estado a BLOQUEADO",entrenador->index);
 		}
 
-		pthread_mutex_lock(&planificacion_ready);
+		mandar_a_siguente_entrenador_a_ejecutar_por_sjf();
 
 		break;
 
@@ -645,7 +639,16 @@ void planificar_pokemon(void) {
 
 			cambiar_estado_de_entrenador(entrenador_a_planificar, ESTADO_READY, "Entrenador planificado para ir a atrapar pokemon");
 
-			sem_post(&(entrenador_a_planificar->semaforo));
+			if (algoritmo_planificacion == 3) {
+				pthread_mutex_lock(&planificacion_sjf);
+				if (cantidad_de_entrenadores_en_ready() == 1) {
+					sem_post(&(entrenador_a_planificar->semaforo));
+				}
+				pthread_mutex_unlock(&planificacion_sjf);
+			} else {
+				sem_post(&(entrenador_a_planificar->semaforo));
+			}
+
 		} else {
 			sem_post(&sem_entrenadores_disponibles);
 		}
@@ -758,7 +761,15 @@ void planificar_deadlock(void) {
 			cambiar_tarea_de_entrenador(primer_entrenador, tarea_deadlock);
 			cambiar_estado_de_entrenador(primer_entrenador, ESTADO_READY, "Entrenador planificado para intercambiar pokemones");
 
-			sem_post(&(((t_entrenador*) list_get(mensaje_deadlock->entrenadores, 0))->semaforo));
+			if (algoritmo_planificacion == 3) {
+				pthread_mutex_lock(&planificacion_sjf);
+				if (cantidad_de_entrenadores_en_ready() == 1) {
+					sem_post(&(((t_entrenador*) list_get(mensaje_deadlock->entrenadores, 0))->semaforo));
+				}
+				pthread_mutex_unlock(&planificacion_sjf);
+			} else {
+				sem_post(&(((t_entrenador*) list_get(mensaje_deadlock->entrenadores, 0))->semaforo));
+			}
 		} else {
 			list_destroy(mensaje_deadlock->entrenadores);
 			list_destroy(mensaje_deadlock->pokemones);
@@ -1113,6 +1124,7 @@ int main(void) {
 	pthread_mutex_init(&ciclos_CPU_mutex, NULL);
 	pthread_mutex_init(&cambios_contexto_mutex, NULL);
 	pthread_mutex_init(&cantidad_deadlocks_mutex, NULL);
+	pthread_mutex_init(&planificacion_sjf, NULL);
 
 	socket_escucha_game_boy = iniciar_escucha_game_boy(ip, puerto);
 	pthread_t hilo_escucha_de_game_boy;
@@ -1358,6 +1370,8 @@ void inicializar_entrenadores() {
 		entrenador->estimacion = (double) estimacion_inicial;
 
 		entrenador->real = (double) estimacion_inicial;
+
+		entrenador->real_actual = 0;
 
 		log_info(extense_logger, "Estado del entrenador %i: %i", entrenador->index, entrenador->estado);
 
@@ -1718,6 +1732,9 @@ void consumir_tiempo_retardo(t_entrenador* entrenador) {
 			pthread_mutex_lock(&planificacion_ready);
 		}
 	}
+	if (algoritmo_planificacion == 3) {
+		entrenador->real_actual++;
+	}
 }
 
 void intercambiar_pokemones(t_entrenador* entrenador1, t_entrenador* entrenador2, char* pokemon1, char* pokemon2) {
@@ -2021,6 +2038,8 @@ int es_id_catch(uint32_t id) {
 }
 
 void definir_nueva_estimacion(t_entrenador* entrenador) {
+	entrenador->real = entrenador->real_actual;
+	entrenador->real_actual = 0;
 	entrenador->estimacion = calcular_nueva_estimacion(entrenador);
 }
 
@@ -2065,6 +2084,32 @@ char* obtener_nombre_de_estado(estado id) {
 	}
 }
 
+int cantidad_de_entrenadores_en_ready(void) {
+	int cantidad = 0;
+	for (int i = 0; i < entrenadores->elements_count; i++) {
+		t_entrenador* entrenador_lista = (t_entrenador*) list_get(entrenadores, i);
+		if (entrenador_lista->estado == ESTADO_READY) {
+			cantidad++;
+		}
+	}
+	return cantidad;
+}
+
+void mandar_a_siguente_entrenador_a_ejecutar_por_sjf(void) {
+	t_entrenador* entrenador_con_estimacion_mas_baja = NULL;
+	double estimacion_mas_baja = 50000;
+
+	for (int i = 0; i < entrenadores->elements_count; i++) {
+		t_entrenador* entrenador_lista = (t_entrenador*) list_get(entrenadores, i);
+		if (entrenador_lista->estado == ESTADO_READY && entrenador_lista->estimacion < estimacion_mas_baja) {
+			entrenador_con_estimacion_mas_baja = entrenador_lista;
+			estimacion_mas_baja = entrenador_lista->estimacion;
+		}
+	}
+
+	sem_post(&entrenador_con_estimacion_mas_baja->semaforo);
+}
+
 void terminar_programa() {
 	free(ip_broker);
 	free(puerto_broker);
@@ -2100,6 +2145,7 @@ void terminar_programa() {
 	pthread_mutex_destroy(&ciclos_CPU_mutex);
 	pthread_mutex_destroy(&cambios_contexto_mutex);
 	pthread_mutex_destroy(&cantidad_deadlocks_mutex);
+	pthread_mutex_destroy(&planificacion_sjf);
 
 	log_destroy(logger);
 	log_destroy(extense_logger);

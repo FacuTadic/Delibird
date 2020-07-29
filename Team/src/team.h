@@ -65,6 +65,7 @@ pthread_mutex_t pokemones_llegados_mutex;
 pthread_mutex_t catch_IDs_mutex;
 pthread_mutex_t estoy_conectado_al_broker_mutex;
 pthread_mutex_t planificacion_ready;
+pthread_mutex_t planificacion_sjf;
 
 sem_t sem_cola_pokemones;
 sem_t sem_cola_caught;
@@ -127,6 +128,7 @@ typedef struct {
 	int contador_quantum;
 	double estimacion;
 	double real;
+	double real_actual;
 } t_entrenador;
 
 typedef struct {
@@ -230,3 +232,5 @@ char* obtener_nombre_de_estado(estado id);
 void consumir_tiempo_retardo(t_entrenador* entrenador);
 double calcular_nueva_estimacion(t_entrenador* entrenador);
 void definir_nueva_estimacion(t_entrenador* entrenador);
+void mandar_a_siguente_entrenador_a_ejecutar_por_sjf(void);
+int cantidad_de_entrenadores_en_ready(void);
