@@ -590,6 +590,127 @@ void laburar_sjf_sd(void* entrenador_param) {
 			log_info(extense_logger, "entrenador %i cambia su estado a BLOQUEADO",entrenador->index);
 		}
 
+		definir_nueva_estimacion(entrenador);
+
+		mandar_a_siguente_entrenador_a_ejecutar_por_sjf();
+
+		break;
+
+		case NO_HACER_PINGO:
+			break;
+		default:
+			log_info(extense_logger, "Entro por cualquier lado bro");
+		}
+
+	}
+
+	log_info(extense_logger, "Entrenador %i ha terminado", entrenador->index);
+
+	pthread_exit(NULL);
+}
+
+void laburar_sjf_cd(void* entrenador_param) {
+	t_entrenador* entrenador = (t_entrenador*) entrenador_param;
+
+	log_info(extense_logger, "Trabajo de entrenador %i comenzado", entrenador->index);
+
+	while (entrenador->estado != ESTADO_EXIT) {
+
+		sem_wait(&(entrenador->semaforo));
+		switch(entrenador->tarea_actual->id_tarea) {
+		case ATRAPAR_POKEMON: ;
+
+		char* mensaje_log = string_new();
+		string_append(&mensaje_log, "Ha comenzado a ejecutar la tarea de atrapar pokemon ");
+		string_append(&mensaje_log, ((t_pokemon*) entrenador->tarea_actual->parametros)->nombre);
+
+		cambiar_estado_de_entrenador(entrenador, ESTADO_EXECUTING, mensaje_log);
+		t_pokemon* parametros_atrapado = (t_pokemon*) entrenador->tarea_actual->parametros;
+		log_info(extense_logger, "Entrenador %i esta atrapando pokemon %s ubicado en (%i,%i)",entrenador->index, parametros_atrapado->nombre, parametros_atrapado->pos_X, parametros_atrapado->pos_Y);
+		log_info(logger, "Entrenador %i esta atrapando pokemon %s ubicado en (%i,%i)",entrenador->index, parametros_atrapado->nombre, parametros_atrapado->pos_X, parametros_atrapado->pos_Y);
+		free(mensaje_log);
+
+		irA(parametros_atrapado->pos_X, parametros_atrapado->pos_Y, entrenador);
+
+		cambiar_estado_de_entrenador(entrenador, ESTADO_BLOCKED, "Se ha enviado un catch");
+
+		enviar_catch_a_broker(parametros_atrapado, entrenador);
+
+		definir_nueva_estimacion(entrenador);
+
+		mandar_a_siguente_entrenador_a_ejecutar_por_sjf();
+
+		break;
+
+		case INTERCAMBIAR_POKEMON: ;
+
+		log_info(extense_logger, "Entrenador %i entro por Intercambiar Pokemon", entrenador->index);
+
+		cambiar_estado_de_entrenador(entrenador, ESTADO_EXECUTING, "Ha comenzado a ejecutar la tarea de intercambiar pokemon");
+		log_info(extense_logger, "entrenador %i cambia su estado a EXECUTING",entrenador->index);
+		t_deadlock* parametros_intercambio = (t_deadlock*) entrenador->tarea_actual->parametros;
+		log_info(extense_logger, "Parametros del deadlock cargados");
+
+		t_entrenador* otro_entrenador = (t_entrenador*) list_get(parametros_intercambio->entrenadores, 1);
+
+		irA(otro_entrenador->posX, otro_entrenador->posY, entrenador);
+
+		char* pokemon1 = (char*) list_get(parametros_intercambio->pokemones, 0);
+		char* pokemon2 = (char*) list_get(parametros_intercambio->pokemones, 1);
+
+		log_info(extense_logger, "Empezando el intercambio de pokemon %s y pokemon %s entre entrenador %i y entrenador %i", pokemon1, pokemon2, entrenador->index, otro_entrenador->index);
+		intercambiar_pokemones(entrenador, otro_entrenador, pokemon1, pokemon2);
+		log_info(extense_logger, "Intercambio realizado");
+
+		if (parametros_intercambio->entrenadores->elements_count > 2) {
+			list_remove(parametros_intercambio->entrenadores, 0); // se elimina al primer entrenador
+			list_remove(parametros_intercambio->pokemones, 1); // se elimina al segundo pokemon al pedo (seria el pokemon que el primer entrenador necesita)
+
+			t_mensaje_recibido* mensaje_deadlock = malloc(sizeof(t_mensaje_recibido));
+
+			mensaje_deadlock->tipo_mensaje = MENSAJE_DEADLOCK;
+			mensaje_deadlock->mensaje = (void*) parametros_intercambio;
+
+			pthread_mutex_lock(&cola_pokemones_mutex);
+			queue_push(cola_pokemones, (void*) mensaje_deadlock);
+			pthread_mutex_unlock(&cola_pokemones_mutex);
+			sem_post(&sem_cola_deadlock);
+		} else {
+			pthread_mutex_lock(&cantidad_deadlocks_mutex);
+			cantidad_deadlocks++;
+			pthread_mutex_unlock(&cantidad_deadlocks_mutex);
+			if (otro_entrenador->pokemones_innecesarios->elements_count == 0) {
+				cambiar_estado_de_entrenador(otro_entrenador, ESTADO_EXIT, "Ha terminado su objetivo");
+				t_tarea* otra_tarea_pingo = malloc(sizeof(t_tarea));
+				otra_tarea_pingo->id_tarea = NO_HACER_PINGO;
+				cambiar_tarea_de_entrenador(otro_entrenador, otra_tarea_pingo);
+				sem_post(&(otro_entrenador->semaforo));
+			} else {
+				t_tarea* otra_tarea_pingo = malloc(sizeof(t_tarea));
+				otra_tarea_pingo->id_tarea = NO_HACER_PINGO;
+				cambiar_tarea_de_entrenador(otro_entrenador, otra_tarea_pingo);
+				list_destroy(parametros_intercambio->entrenadores);
+				list_destroy(parametros_intercambio->pokemones);
+				free(parametros_intercambio);
+			}
+		}
+
+		if (entrenador->pokemones_innecesarios->elements_count == 0) {
+			cambiar_estado_de_entrenador(entrenador, ESTADO_EXIT, "Ha terminado su objetivo");
+			t_tarea* tarea_pingo = malloc(sizeof(t_tarea));
+			tarea_pingo->id_tarea = NO_HACER_PINGO;
+			cambiar_tarea_de_entrenador(entrenador, tarea_pingo);
+			sem_post(&(entrenador->semaforo));
+		} else {
+			t_tarea* tarea_pingo = malloc(sizeof(t_tarea));
+			tarea_pingo->id_tarea = NO_HACER_PINGO;
+			cambiar_tarea_de_entrenador(entrenador, tarea_pingo);
+			cambiar_estado_de_entrenador(entrenador, ESTADO_BLOCKED, "Se ha terminado de intercambiar pokemones y sigue sin cumplirse el objetivo");
+			log_info(extense_logger, "entrenador %i cambia su estado a BLOQUEADO",entrenador->index);
+		}
+
+		definir_nueva_estimacion(entrenador);
+
 		mandar_a_siguente_entrenador_a_ejecutar_por_sjf();
 
 		break;
@@ -643,6 +764,14 @@ void planificar_pokemon(void) {
 				pthread_mutex_lock(&planificacion_sjf);
 				if (cantidad_de_entrenadores_en_ready() == 1) {
 					sem_post(&(entrenador_a_planificar->semaforo));
+				}
+				pthread_mutex_unlock(&planificacion_sjf);
+			} else if (algoritmo_planificacion == 4) {
+				pthread_mutex_lock(&planificacion_sjf);
+				if (cantidad_de_entrenadores_en_ready() == 1) {
+					sem_post(&(entrenador_a_planificar->semaforo));
+				} else {
+					desalojar_si_es_necesario(entrenador_a_planificar);
 				}
 				pthread_mutex_unlock(&planificacion_sjf);
 			} else {
@@ -1180,6 +1309,10 @@ int main(void) {
 	} else if (algoritmo_planificacion == 3) {
 		for (int i = 0; i < entrenadores->elements_count; i++) {
 			pthread_create(&(threads_entrenadores[i]), NULL, (void*) laburar_sjf_sd, list_get(entrenadores, i));
+		}
+	} else if (algoritmo_planificacion == 4) {
+		for (int i = 0; i < entrenadores->elements_count; i++) {
+			pthread_create(&(threads_entrenadores[i]), NULL, (void*) laburar_sjf_cd, list_get(entrenadores, i));
 		}
 	}
 
@@ -1734,6 +1867,10 @@ void consumir_tiempo_retardo(t_entrenador* entrenador) {
 	}
 	if (algoritmo_planificacion == 3) {
 		entrenador->real_actual++;
+	} if (algoritmo_planificacion == 4) {
+		entrenador->real_actual++;
+		sem_wait(&(entrenador->semaforo));
+		sem_post(&(entrenador->semaforo));
 	}
 }
 
@@ -2108,6 +2245,24 @@ void mandar_a_siguente_entrenador_a_ejecutar_por_sjf(void) {
 	}
 
 	sem_post(&entrenador_con_estimacion_mas_baja->semaforo);
+}
+
+void desalojar_si_es_necesario(t_entrenador* entrenador_planificado) {
+	t_entrenador* entrenador_ejecutando = NULL;
+
+	for (int i = 0; i < entrenadores->elements_count; i++) {
+		t_entrenador* entrenador_lista = (t_entrenador*) list_get(entrenadores, i);
+		if (entrenador_lista->estado == ESTADO_EXECUTING) {
+			entrenador_ejecutando = entrenador_lista;
+		}
+	}
+
+	if (entrenador_ejecutando != NULL) {
+		if (entrenador_ejecutando->estimacion > entrenador_planificado->estimacion) {
+			sem_wait(&(entrenador_ejecutando->semaforo));
+			sem_post(&(entrenador_planificado->semaforo));
+		}
+	}
 }
 
 void terminar_programa() {
