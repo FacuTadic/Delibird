@@ -762,13 +762,13 @@ void planificar_pokemon(void) {
 
 			if (algoritmo_planificacion == 3) {
 				pthread_mutex_lock(&planificacion_sjf);
-				if (cantidad_de_entrenadores_en_ready() == 1) {
+				if (cantidad_de_entrenadores_en_ready_o_exec() == 1) {
 					sem_post(&(entrenador_a_planificar->semaforo));
 				}
 				pthread_mutex_unlock(&planificacion_sjf);
 			} else if (algoritmo_planificacion == 4) {
 				pthread_mutex_lock(&planificacion_sjf);
-				if (cantidad_de_entrenadores_en_ready() == 1) {
+				if (cantidad_de_entrenadores_en_ready_o_exec() == 1) {
 					sem_post(&(entrenador_a_planificar->semaforo));
 				} else {
 					desalojar_si_es_necesario(entrenador_a_planificar);
@@ -892,12 +892,20 @@ void planificar_deadlock(void) {
 
 			if (algoritmo_planificacion == 3) {
 				pthread_mutex_lock(&planificacion_sjf);
-				if (cantidad_de_entrenadores_en_ready() == 1) {
-					sem_post(&(((t_entrenador*) list_get(mensaje_deadlock->entrenadores, 0))->semaforo));
+				if (cantidad_de_entrenadores_en_ready_o_exec() == 1) {
+					sem_post(&(primer_entrenador->semaforo));
+				}
+				pthread_mutex_unlock(&planificacion_sjf);
+			} else if (algoritmo_planificacion == 4) {
+				pthread_mutex_lock(&planificacion_sjf);
+				if (cantidad_de_entrenadores_en_ready_o_exec() == 1) {
+					sem_post(&(primer_entrenador->semaforo));
+				} else {
+					desalojar_si_es_necesario(primer_entrenador);
 				}
 				pthread_mutex_unlock(&planificacion_sjf);
 			} else {
-				sem_post(&(((t_entrenador*) list_get(mensaje_deadlock->entrenadores, 0))->semaforo));
+				sem_post(&(primer_entrenador->semaforo));
 			}
 		} else {
 			list_destroy(mensaje_deadlock->entrenadores);
@@ -1869,8 +1877,8 @@ void consumir_tiempo_retardo(t_entrenador* entrenador) {
 		entrenador->real_actual++;
 	} if (algoritmo_planificacion == 4) {
 		entrenador->real_actual++;
-		sem_wait(&(entrenador->semaforo));
 		sem_post(&(entrenador->semaforo));
+		sem_wait(&(entrenador->semaforo));
 	}
 }
 
@@ -2182,7 +2190,7 @@ void definir_nueva_estimacion(t_entrenador* entrenador) {
 
 double calcular_nueva_estimacion(t_entrenador* entrenador) {
 	double estimacion_alpheada = entrenador->estimacion * alpha;
-	double real_alpheado = entrenador->real * alpha;
+	double real_alpheado = entrenador->real * (1 - alpha);
 
 	return estimacion_alpheada + real_alpheado;
 }
@@ -2221,11 +2229,11 @@ char* obtener_nombre_de_estado(estado id) {
 	}
 }
 
-int cantidad_de_entrenadores_en_ready(void) {
+int cantidad_de_entrenadores_en_ready_o_exec(void) {
 	int cantidad = 0;
 	for (int i = 0; i < entrenadores->elements_count; i++) {
 		t_entrenador* entrenador_lista = (t_entrenador*) list_get(entrenadores, i);
-		if (entrenador_lista->estado == ESTADO_READY) {
+		if (entrenador_lista->estado == ESTADO_READY || entrenador_lista->estado == ESTADO_EXECUTING) {
 			cantidad++;
 		}
 	}

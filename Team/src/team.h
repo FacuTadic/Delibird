@@ -235,4 +235,4 @@ double calcular_nueva_estimacion(t_entrenador* entrenador);
 void definir_nueva_estimacion(t_entrenador* entrenador);
 void mandar_a_siguente_entrenador_a_ejecutar_por_sjf(void);
 void desalojar_si_es_necesario(t_entrenador* entrenador_planificado);
-int cantidad_de_entrenadores_en_ready(void);
+int cantidad_de_entrenadores_en_ready_o_exec(void);
