@@ -400,6 +400,8 @@ void laburar_rr(void* entrenador_param) {
 
 		pthread_mutex_unlock(&planificacion_ready);
 
+		entrenador->contador_quantum = quantum;
+
 		break;
 
 		case INTERCAMBIAR_POKEMON: ;
@@ -474,6 +476,8 @@ void laburar_rr(void* entrenador_param) {
 		}
 
 		pthread_mutex_lock(&planificacion_ready);
+
+		entrenador->contador_quantum = quantum;
 
 		break;
 
@@ -1870,7 +1874,9 @@ void consumir_tiempo_retardo(t_entrenador* entrenador) {
 		if (entrenador->contador_quantum == 0) {
 			entrenador->contador_quantum = quantum;
 			pthread_mutex_unlock(&planificacion_ready);
+			cambiar_estado_de_entrenador(entrenador, ESTADO_READY, "Quantum terminado");
 			pthread_mutex_lock(&planificacion_ready);
+			cambiar_estado_de_entrenador(entrenador, ESTADO_EXECUTING, "Ejecutando por quantum");
 		}
 	}
 	if (algoritmo_planificacion == 3) {
@@ -2252,7 +2258,11 @@ void mandar_a_siguente_entrenador_a_ejecutar_por_sjf(void) {
 		}
 	}
 
-	sem_post(&entrenador_con_estimacion_mas_baja->semaforo);
+	if (entrenador_con_estimacion_mas_baja != NULL) {
+		sem_post(&entrenador_con_estimacion_mas_baja->semaforo);
+		cambiar_estado_de_entrenador(entrenador_con_estimacion_mas_baja, ESTADO_EXECUTING, "Ejecutando tarea");
+	}
+
 }
 
 void desalojar_si_es_necesario(t_entrenador* entrenador_planificado) {
@@ -2269,6 +2279,8 @@ void desalojar_si_es_necesario(t_entrenador* entrenador_planificado) {
 		if (entrenador_ejecutando->estimacion > entrenador_planificado->estimacion) {
 			sem_wait(&(entrenador_ejecutando->semaforo));
 			sem_post(&(entrenador_planificado->semaforo));
+			cambiar_estado_de_entrenador(entrenador_ejecutando, ESTADO_BLOCKED, "Desalojado");
+			cambiar_estado_de_entrenador(entrenador_planificado, ESTADO_EXECUTING, "Ejecutando tarea");
 		}
 	}
 }
