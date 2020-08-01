@@ -912,6 +912,7 @@ void planificar_deadlock(void) {
 				sem_post(&(primer_entrenador->semaforo));
 			}
 		} else {
+			log_info(extense_logger, "Deadlock encontrado ya no aplica, desestimando para planificar");
 			list_destroy(mensaje_deadlock->entrenadores);
 			list_destroy(mensaje_deadlock->pokemones);
 			free(mensaje_deadlock);
@@ -1038,10 +1039,14 @@ t_deadlock* armar_deadlock(t_nodo_arbol* nodo_raiz) {
 	nodo_actual = nodo_raiz;
 	while (nodo_actual->pokemon_faltante != NULL) {
 		log_info(extense_logger, "Agregando pokemon %s al deadlock", nodo_actual->pokemon_faltante);
-		list_add_in_index(deadlock->pokemones, 0, (void*) nodo_actual->pokemon_faltante);
+		list_add(deadlock->pokemones, (void*) nodo_actual->pokemon_faltante);
 		log_info(extense_logger, "Pokemon %s agregado al deadlock", nodo_actual->pokemon_faltante);
 		nodo_actual = nodo_actual->padre;
 	}
+
+	char* ultimo_pokemon = list_remove(deadlock->pokemones, deadlock->pokemones->elements_count - 1);
+	list_add_in_index(deadlock->pokemones, 0, ultimo_pokemon);
+
 	return deadlock;
 }
 
@@ -1974,9 +1979,10 @@ bool es_pokemon_global(char* nombre_pokemon){
 t_list* entrenadores_que_pueden_ir_a_atrapar() {
 	t_list* entrenadores_disponibles = list_create();
 
-	for(int i = 0; i < entrenadores->elements_count; i++) {
+	for (int i = 0; i < entrenadores->elements_count; i++) {
 		t_entrenador* entrenador_lista = (t_entrenador*) list_get(entrenadores, i);
-		if(entrenador_lista->estado == ESTADO_NEW || (entrenador_lista->estado == ESTADO_BLOCKED && entrenador_lista->tarea_actual->id_tarea == NO_HACER_PINGO)){
+		if (entrenador_lista->estado == ESTADO_NEW ||
+				(entrenador_lista->estado == ESTADO_BLOCKED && entrenador_lista->tarea_actual->id_tarea == NO_HACER_PINGO && entrenador_lista->pokebolas != 0)) {
 			list_add(entrenadores_disponibles, entrenador_lista);
 		}
 	}

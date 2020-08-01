@@ -2192,7 +2192,7 @@ int main(void) {
 	config = leer_config();
 	log_file = config_get_string_value(config, "LOG_FILE");
 	extense_log_file = config_get_string_value(config, "EXTENSE_LOG_FILE");
-	extense_logger = iniciar_logger_sin_consola(extense_log_file);
+	extense_logger = iniciar_logger(extense_log_file);
 	log_info(extense_logger, "logger extenso iniciado");
 	logger = iniciar_logger_sin_consola(log_file);
 	log_info(extense_logger, "logger de la catedra iniciado");
