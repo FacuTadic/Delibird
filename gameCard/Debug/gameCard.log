@@ -112,3 +112,61 @@
 [INFO] 18:53:14:87 GameCard/(20138:20138): El BitMap se encuentra en: /home/utnso/Escritorio/tall-grass/Metadata/BitMap.bin
 [INFO] 18:53:14:87 GameCard/(20138:20138): Punto de montaje del directorio Files es: /home/utnso/Escritorio/tall-grass/Files
 [INFO] 18:53:14:87 GameCard/(20138:20138): Punto de montaje del directorio Blocks es: /home/utnso/Escritorio/tall-grass/Blocks
+[INFO] 19:03:06:235 GameCard/(21455:21455): logger iniciado.
+[INFO] 19:03:06:236 GameCard/(21455:21455): Lenavando el Tall Grass
+[INFO] 19:03:06:237 GameCard/(21455:21455): Punto de montaje del directorio Metadata es: /home/utnso/Escritorio/tall-grass/Metadata
+[INFO] 19:03:06:237 GameCard/(21455:21455): El BitMap se encuentra en: /home/utnso/Escritorio/tall-grass/Metadata/BitMap.bin
+[INFO] 19:03:06:237 GameCard/(21455:21455): Punto de montaje del directorio Files es: /home/utnso/Escritorio/tall-grass/Files
+[INFO] 19:03:06:237 GameCard/(21455:21455): Punto de montaje del directorio Blocks es: /home/utnso/Escritorio/tall-grass/Blocks
+[INFO] 19:03:26:910 GameCard/(21455:21460): El pokemon escuchogetslocos2 no existe en el FS, se pasa a crear su directorio
+[INFO] 19:03:26:911 GameCard/(21455:21460): La posicion 3-4 no se encuentra en ningun bloque actual
+[INFO] 19:03:26:911 GameCard/(21455:21460): El pokemon actual no tiene ningun bloque
+[INFO] 19:03:26:911 GameCard/(21455:21460): Se busca en el bitmap bloques disponibles
+[INFO] 19:03:26:912 GameCard/(21455:21460): El bloque seleccionado para cargar es: 1
+[INFO] 19:03:26:912 GameCard/(21455:21460): Se selecciono el bloque 1 para cargar la posicion
+[INFO] 19:03:26:912 GameCard/(21455:21460): Posicion agregada en el block 1
+[INFO] 19:03:26:912 GameCard/(21455:21460): El archivo 1 pesa: 6
+[INFO] 19:03:26:912 GameCard/(21455:21460): El peso total de los blocks es de: 6
+[INFO] 19:06:53:745 GameCard/(21891:21891): logger iniciado.
+[INFO] 19:06:53:747 GameCard/(21891:21891): Lenavando el Tall Grass
+[INFO] 19:06:53:748 GameCard/(21891:21891): Punto de montaje del directorio Metadata es: /home/utnso/Escritorio/tall-grass/Metadata
+[INFO] 19:06:53:748 GameCard/(21891:21891): El BitMap se encuentra en: /home/utnso/Escritorio/tall-grass/Metadata/BitMap.bin
+[INFO] 19:06:53:748 GameCard/(21891:21891): Punto de montaje del directorio Files es: /home/utnso/Escritorio/tall-grass/Files
+[INFO] 19:06:53:748 GameCard/(21891:21891): Punto de montaje del directorio Blocks es: /home/utnso/Escritorio/tall-grass/Blocks
+[INFO] 19:06:53:758 GameCard/(21891:21896): El pokemon prueba no existe en el FS, se pasa a crear su directorio
+[INFO] 19:06:53:760 GameCard/(21891:21896): La posicion 6-4 no se encuentra en ningun bloque actual
+[INFO] 19:06:53:760 GameCard/(21891:21896): El pokemon actual no tiene ningun bloque
+[INFO] 19:06:53:760 GameCard/(21891:21896): Se busca en el bitmap bloques disponibles
+[INFO] 19:06:53:763 GameCard/(21891:21896): El bloque seleccionado para cargar es: 2
+[INFO] 19:06:53:763 GameCard/(21891:21896): Se selecciono el bloque 2 para cargar la posicion
+[INFO] 19:06:53:763 GameCard/(21891:21896): Posicion agregada en el block 2
+[INFO] 19:06:53:763 GameCard/(21891:21896): El archivo 2 pesa: 6
+[INFO] 19:06:53:763 GameCard/(21891:21896): El peso total de los blocks es de: 6
+[INFO] 19:09:42:515 GameCard/(22349:22349): logger iniciado.
+[INFO] 19:09:42:515 GameCard/(22349:22349): Lenavando el Tall Grass
+[INFO] 19:09:42:516 GameCard/(22349:22349): Punto de montaje del directorio Metadata es: /home/utnso/Escritorio/tall-grass/Metadata
+[INFO] 19:09:42:516 GameCard/(22349:22349): El BitMap se encuentra en: /home/utnso/Escritorio/tall-grass/Metadata/BitMap.bin
+[INFO] 19:09:42:516 GameCard/(22349:22349): Punto de montaje del directorio Files es: /home/utnso/Escritorio/tall-grass/Files
+[INFO] 19:09:42:516 GameCard/(22349:22349): Punto de montaje del directorio Blocks es: /home/utnso/Escritorio/tall-grass/Blocks
+[INFO] 19:09:58:71 GameCard/(22349:22354): El pokemon prueba2 no existe en el FS, se pasa a crear su directorio
+[INFO] 19:09:58:72 GameCard/(22349:22354): La posicion 9-4 no se encuentra en ningun bloque actual
+[INFO] 19:09:58:72 GameCard/(22349:22354): El pokemon actual no tiene ningun bloque
+[INFO] 19:09:58:72 GameCard/(22349:22354): Se busca en el bitmap bloques disponibles
+[INFO] 19:09:58:73 GameCard/(22349:22354): El bloque seleccionado para cargar es: 3
+[INFO] 19:09:58:73 GameCard/(22349:22354): Se selecciono el bloque 3 para cargar la posicion
+[INFO] 19:09:58:73 GameCard/(22349:22354): Posicion agregada en el block 3
+[INFO] 19:09:58:73 GameCard/(22349:22354): El archivo 3 pesa: 6
+[INFO] 19:09:58:73 GameCard/(22349:22354): El peso total de los blocks es de: 6
+[INFO] 19:12:19:66 GameCard/(22349:22354): El pokemon prueba3 no existe en el FS, se pasa a crear su directorio
+[INFO] 19:12:19:68 GameCard/(22349:22354): La posicion 19-4 no se encuentra en ningun bloque actual
+[INFO] 19:12:19:68 GameCard/(22349:22354): El pokemon actual no tiene ningun bloque
+[INFO] 19:12:19:68 GameCard/(22349:22354): Se busca en el bitmap bloques disponibles
+[INFO] 19:12:19:68 GameCard/(22349:22354): El bloque seleccionado para cargar es: 4
+[INFO] 19:12:19:68 GameCard/(22349:22354): Se selecciono el bloque 4 para cargar la posicion
+[INFO] 19:12:19:69 GameCard/(22349:22354): Posicion agregada en el block 4
+[INFO] 19:12:19:69 GameCard/(22349:22354): El archivo 4 pesa: 7
+[INFO] 19:12:19:69 GameCard/(22349:22354): El peso total de los blocks es de: 7
+[ERROR] 19:13:27:402 GameCard/(22349:22355): La posicion 19-4 se encuentra en el block 4
+[INFO] 19:13:27:402 GameCard/(22349:22355): La cantidad de pokemons en el la posicion 19-4 es de 1
+[INFO] 19:13:27:402 GameCard/(22349:22355): La posicion 19-4 es la unica en el block 4. Se procede a eliminarlo
+[INFO] 19:13:27:403 GameCard/(22349:22355): El peso total de los blocks es de: 0
