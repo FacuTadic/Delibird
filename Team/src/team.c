@@ -312,9 +312,9 @@ void laburar_fifo(void* entrenador_param) {
 			mensaje_deadlock->tipo_mensaje = MENSAJE_DEADLOCK;
 			mensaje_deadlock->mensaje = (void*) parametros_intercambio;
 
-			pthread_mutex_lock(&cola_pokemones_mutex);
-			queue_push(cola_pokemones, (void*) mensaje_deadlock);
-			pthread_mutex_unlock(&cola_pokemones_mutex);
+			pthread_mutex_lock(&cola_deadlock_mutex);
+			queue_push(cola_deadlock, (void*) mensaje_deadlock);
+			pthread_mutex_unlock(&cola_deadlock_mutex);
 			sem_post(&sem_cola_deadlock);
 		} else {
 			pthread_mutex_lock(&cantidad_deadlocks_mutex);
@@ -429,17 +429,26 @@ void laburar_rr(void* entrenador_param) {
 		log_info(extense_logger, "Intercambio realizado");
 
 		if (parametros_intercambio->entrenadores->elements_count > 2) {
-			list_remove(parametros_intercambio->entrenadores, 0); // se elimina al primer entrenador
-			list_remove(parametros_intercambio->pokemones, 1); // se elimina al segundo pokemon al pedo (seria el pokemon que el primer entrenador necesita)
+			t_entrenador* entrenador_removido = list_remove(parametros_intercambio->entrenadores, 0); // se elimina al primer entrenador
+			log_info(extense_logger, "Entrenador removido: %i", entrenador_removido->index);
+			log_info(extense_logger, "Nueva cantidad de entrenadores en deadlock: %i", parametros_intercambio->entrenadores->elements_count);
+			char* kokemon = list_remove(parametros_intercambio->pokemones, 1); // se elimina al segundo pokemon al pedo (seria el pokemon que el primer entrenador necesita)
+			log_info(extense_logger, "Kokemon removido: %s", kokemon);
+			log_info(extense_logger, "Nueva cantidad de kokemones en deadlock: %i", parametros_intercambio->pokemones->elements_count);
+
+			// BORRAR A LA BERGA
 
 			t_mensaje_recibido* mensaje_deadlock = malloc(sizeof(t_mensaje_recibido));
 
 			mensaje_deadlock->tipo_mensaje = MENSAJE_DEADLOCK;
 			mensaje_deadlock->mensaje = (void*) parametros_intercambio;
 
-			pthread_mutex_lock(&cola_pokemones_mutex);
-			queue_push(cola_pokemones, (void*) mensaje_deadlock);
-			pthread_mutex_unlock(&cola_pokemones_mutex);
+			log_info(extense_logger, "Nueva cantidad de entrenadores en deadlock: %i", ((t_deadlock*) (mensaje_deadlock->mensaje))->entrenadores->elements_count);
+			log_info(extense_logger, "Nueva cantidad de pokemones en deadlock: %i", ((t_deadlock*) (mensaje_deadlock->mensaje))->pokemones->elements_count);
+
+			pthread_mutex_lock(&cola_deadlock_mutex);
+			queue_push(cola_deadlock, (void*) mensaje_deadlock);
+			pthread_mutex_unlock(&cola_deadlock_mutex);
 			sem_post(&sem_cola_deadlock);
 		} else {
 			pthread_mutex_lock(&cantidad_deadlocks_mutex);
@@ -475,7 +484,7 @@ void laburar_rr(void* entrenador_param) {
 			log_info(extense_logger, "entrenador %i cambia su estado a BLOQUEADO",entrenador->index);
 		}
 
-		pthread_mutex_lock(&planificacion_ready);
+		pthread_mutex_unlock(&planificacion_ready);
 
 		entrenador->contador_quantum = quantum;
 
@@ -556,9 +565,9 @@ void laburar_sjf_sd(void* entrenador_param) {
 			mensaje_deadlock->tipo_mensaje = MENSAJE_DEADLOCK;
 			mensaje_deadlock->mensaje = (void*) parametros_intercambio;
 
-			pthread_mutex_lock(&cola_pokemones_mutex);
-			queue_push(cola_pokemones, (void*) mensaje_deadlock);
-			pthread_mutex_unlock(&cola_pokemones_mutex);
+			pthread_mutex_lock(&cola_deadlock_mutex);
+			queue_push(cola_deadlock, (void*) mensaje_deadlock);
+			pthread_mutex_unlock(&cola_deadlock_mutex);
 			sem_post(&sem_cola_deadlock);
 		} else {
 			pthread_mutex_lock(&cantidad_deadlocks_mutex);
@@ -675,9 +684,9 @@ void laburar_sjf_cd(void* entrenador_param) {
 			mensaje_deadlock->tipo_mensaje = MENSAJE_DEADLOCK;
 			mensaje_deadlock->mensaje = (void*) parametros_intercambio;
 
-			pthread_mutex_lock(&cola_pokemones_mutex);
-			queue_push(cola_pokemones, (void*) mensaje_deadlock);
-			pthread_mutex_unlock(&cola_pokemones_mutex);
+			pthread_mutex_lock(&cola_deadlock_mutex);
+			queue_push(cola_deadlock, (void*) mensaje_deadlock);
+			pthread_mutex_unlock(&cola_deadlock_mutex);
 			sem_post(&sem_cola_deadlock);
 		} else {
 			pthread_mutex_lock(&cantidad_deadlocks_mutex);
@@ -882,7 +891,22 @@ void planificar_deadlock(void) {
 		log_info(extense_logger, "Planificando tratamiento de deadlock");
 		t_deadlock* mensaje_deadlock = (t_deadlock*) mensaje_recibido->mensaje;
 
+		log_info(extense_logger, "Cantidad de entrenadores en deadlock antes de ver si existe: %i", mensaje_deadlock->entrenadores->elements_count);
+		log_info(extense_logger, "Cantidad de pokemones en deadlock antes de ver si existe: %i", mensaje_deadlock->pokemones->elements_count);
+
+		for (int p = 0; p < mensaje_deadlock->entrenadores->elements_count; p++) {
+			log_info(extense_logger, "Entrenador %i: %i", p, ((t_entrenador*) (list_get(mensaje_deadlock->entrenadores, p)))->index);
+		}
+
+		for (int p = 0; p < mensaje_deadlock->pokemones->elements_count; p++) {
+			log_info(extense_logger, "Pokemon %i: %s", p, (char*) list_get(mensaje_deadlock->pokemones, p));
+		}
+
+		log_info(extense_logger, "A");
+
 		if (todavia_existe_deadlock(mensaje_deadlock) == 1) {
+
+			log_info(extense_logger, "B");
 
 			t_tarea* tarea_deadlock = malloc(sizeof(t_tarea));
 
@@ -890,6 +914,8 @@ void planificar_deadlock(void) {
 			tarea_deadlock->parametros = (void*) mensaje_deadlock;
 
 			t_entrenador* primer_entrenador = (t_entrenador*) list_get(mensaje_deadlock->entrenadores, 0);
+
+			log_info(extense_logger, "C");
 
 			cambiar_tarea_de_entrenador(primer_entrenador, tarea_deadlock);
 			cambiar_estado_de_entrenador(primer_entrenador, ESTADO_READY, "Entrenador planificado para intercambiar pokemones");
@@ -923,10 +949,16 @@ void planificar_deadlock(void) {
 }
 
 int todavia_existe_deadlock(t_deadlock* deadlock) {
+	log_info(extense_logger, "Cantidad de entrenadores en deadlock: %i", deadlock->entrenadores->elements_count);
+	log_info(extense_logger, "Cantidad de pokemones en deadlock: %i", deadlock->pokemones->elements_count);
 	for (int i = 0; i < deadlock->entrenadores->elements_count; i++) {
+		log_info(extense_logger, "P");
 		t_entrenador* entrenador_deadlock = list_get(deadlock->entrenadores, i);
+		log_info(extense_logger, "Q");
 		char* pokemon_deadlock = list_get(deadlock->pokemones, i);
+		log_info(extense_logger, "R");
 		int hay_deadlock_en_entrenador = entrenador_tiene_pokemon_innecesario(entrenador_deadlock, pokemon_deadlock);
+		log_info(extense_logger, "S");
 		if (hay_deadlock_en_entrenador == 0) {
 			return 0;
 		}

@@ -1308,3 +1308,1478 @@
 [INFO] 21:29:06:753 Team/(6679:6679): Cantidad de ciclos de CPU del entrenador 2: 13
 [INFO] 21:29:06:753 Team/(6679:6679): Proceso Team terminado. Cantidad de cambios de contexto realizados: 20
 [INFO] 21:29:06:753 Team/(6679:6679): Proceso Team terminado. Cantidad de deadlocks encontrados y tratados: 1
+[ERROR] 19:41:24:359 Team/(3620:3627): Hubo un problema enviando la suscripcion a la cola LOCALIZED del broker
+[ERROR] 19:41:24:360 Team/(3620:3626): Hubo un problema enviando la suscripcion a la cola CAUGHT del broker
+[ERROR] 19:41:24:361 Team/(3620:3625): Hubo un problema enviando la suscripcion a la cola APPEARED del broker
+[ERROR] 19:41:24:374 Team/(3620:3636): Error: No se pudo enviar el GET correspondiente al pokemon onix, iniciando el comportamiento default
+[ERROR] 19:41:24:374 Team/(3620:3635): Error: No se pudo enviar el GET correspondiente al pokemon gengar, iniciando el comportamiento default
+[ERROR] 19:41:24:374 Team/(3620:3633): Error: No se pudo enviar el GET correspondiente al pokemon squirtle, iniciando el comportamiento default
+[ERROR] 19:41:24:374 Team/(3620:3634): Error: No se pudo enviar el GET correspondiente al pokemon pikachu, iniciando el comportamiento default
+[INFO] 19:41:32:363 Team/(3620:3629): Buscando deadlock...
+[INFO] 19:41:32:363 Team/(3620:3629): No se han encontrado deadlocks
+[INFO] 19:41:33:641 Team/(3620:3622): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 19:41:33:641 Team/(3620:3631): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de atrapar pokemon pikachu
+[INFO] 19:41:33:641 Team/(3620:3631): Entrenador 1 esta atrapando pokemon pikachu ubicado en (9,9)
+[INFO] 19:41:33:641 Team/(3620:3631): El entrenador 1 se esta moviendo de (2,3) a (9,9)
+[INFO] 19:41:33:641 Team/(3620:3631): El entrenador 1 se encuentra en (2,4)
+[INFO] 19:41:33:643 Team/(3620:3622): Estado de entrenador 2 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 19:41:33:646 Team/(3620:3622): Estado de entrenador 0 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 19:41:38:643 Team/(3620:3631): El entrenador 1 se encuentra en (2,5)
+[INFO] 19:41:40:373 Team/(3620:3629): Buscando deadlock...
+[INFO] 19:41:40:373 Team/(3620:3629): No se han encontrado deadlocks
+[INFO] 19:41:43:653 Team/(3620:3631): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 19:41:43:653 Team/(3620:3632): Estado de entrenador 2 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de atrapar pokemon squirtle
+[INFO] 19:41:43:653 Team/(3620:3632): Entrenador 2 esta atrapando pokemon squirtle ubicado en (6,7)
+[INFO] 19:41:43:653 Team/(3620:3632): El entrenador 2 se esta moviendo de (3,2) a (6,7)
+[INFO] 19:41:43:653 Team/(3620:3632): El entrenador 2 se encuentra en (3,3)
+[INFO] 19:41:48:383 Team/(3620:3629): Buscando deadlock...
+[INFO] 19:41:48:383 Team/(3620:3629): No se han encontrado deadlocks
+[INFO] 19:41:48:663 Team/(3620:3632): El entrenador 2 se encuentra en (3,4)
+[INFO] 19:41:53:673 Team/(3620:3632): Estado de entrenador 2 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 19:41:53:673 Team/(3620:3630): Estado de entrenador 0 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de atrapar pokemon onix
+[INFO] 19:41:53:673 Team/(3620:3630): Entrenador 0 esta atrapando pokemon onix ubicado en (2,8)
+[INFO] 19:41:53:673 Team/(3620:3630): El entrenador 0 se esta moviendo de (1,3) a (2,8)
+[INFO] 19:41:53:673 Team/(3620:3630): El entrenador 0 se encuentra en (1,4)
+[INFO] 19:41:54:383 Team/(3620:3628): Iniciando verificacion de conexion con Broker...
+[ERROR] 19:41:54:383 Team/(3620:3628): Reconexion con Broker fallida, intentando nuevamente en 30 segundos
+[INFO] 19:41:56:393 Team/(3620:3629): Buscando deadlock...
+[INFO] 19:41:56:393 Team/(3620:3629): No se han encontrado deadlocks
+[INFO] 19:41:58:683 Team/(3620:3630): El entrenador 0 se encuentra en (1,5)
+[INFO] 19:42:03:693 Team/(3620:3630): Estado de entrenador 0 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 19:42:03:693 Team/(3620:3631): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 19:42:03:693 Team/(3620:3631): El entrenador 1 se encuentra en (2,6)
+[INFO] 19:42:04:403 Team/(3620:3629): Buscando deadlock...
+[INFO] 19:42:04:403 Team/(3620:3629): No se han encontrado deadlocks
+[INFO] 19:42:08:703 Team/(3620:3631): El entrenador 1 se encuentra en (2,7)
+[INFO] 19:42:12:413 Team/(3620:3629): Buscando deadlock...
+[INFO] 19:42:12:413 Team/(3620:3629): No se han encontrado deadlocks
+[INFO] 19:42:13:713 Team/(3620:3631): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 19:42:13:713 Team/(3620:3632): Estado de entrenador 2 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 19:42:13:713 Team/(3620:3632): El entrenador 2 se encuentra en (3,5)
+[INFO] 19:42:18:722 Team/(3620:3632): El entrenador 2 se encuentra en (3,6)
+[INFO] 19:42:20:422 Team/(3620:3629): Buscando deadlock...
+[INFO] 19:42:20:422 Team/(3620:3629): No se han encontrado deadlocks
+[INFO] 19:42:23:732 Team/(3620:3632): Estado de entrenador 2 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 19:42:23:732 Team/(3620:3630): Estado de entrenador 0 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 19:42:23:732 Team/(3620:3630): El entrenador 0 se encuentra en (1,6)
+[INFO] 19:42:24:392 Team/(3620:3628): Iniciando verificacion de conexion con Broker...
+[ERROR] 19:42:24:392 Team/(3620:3628): Reconexion con Broker fallida, intentando nuevamente en 30 segundos
+[INFO] 19:42:28:432 Team/(3620:3629): Buscando deadlock...
+[INFO] 19:42:28:432 Team/(3620:3629): No se han encontrado deadlocks
+[INFO] 19:42:28:742 Team/(3620:3630): El entrenador 0 se encuentra en (1,7)
+[INFO] 19:42:33:752 Team/(3620:3630): Estado de entrenador 0 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 19:42:33:752 Team/(3620:3631): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 19:42:33:752 Team/(3620:3631): El entrenador 1 se encuentra en (2,8)
+[INFO] 19:42:36:442 Team/(3620:3629): Buscando deadlock...
+[INFO] 19:42:36:442 Team/(3620:3629): No se han encontrado deadlocks
+[INFO] 19:42:38:762 Team/(3620:3631): El entrenador 1 se encuentra en (2,9)
+[INFO] 19:42:43:765 Team/(3620:3631): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 19:42:43:765 Team/(3620:3632): Estado de entrenador 2 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 19:42:43:765 Team/(3620:3632): El entrenador 2 se encuentra en (3,7)
+[INFO] 19:42:44:448 Team/(3620:3629): Buscando deadlock...
+[INFO] 19:42:44:449 Team/(3620:3629): No se han encontrado deadlocks
+[INFO] 19:42:48:772 Team/(3620:3632): El entrenador 2 se encuentra en (4,7)
+[INFO] 19:42:52:452 Team/(3620:3629): Buscando deadlock...
+[INFO] 19:42:52:452 Team/(3620:3629): No se han encontrado deadlocks
+[INFO] 19:42:53:774 Team/(3620:3632): Estado de entrenador 2 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 19:42:53:774 Team/(3620:3630): Estado de entrenador 0 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 19:42:53:774 Team/(3620:3630): El entrenador 0 se encuentra en (1,8)
+[INFO] 19:42:54:402 Team/(3620:3628): Iniciando verificacion de conexion con Broker...
+[ERROR] 19:42:54:402 Team/(3620:3628): Reconexion con Broker fallida, intentando nuevamente en 30 segundos
+[INFO] 19:42:58:777 Team/(3620:3630): El entrenador 0 se encuentra en (2,8)
+[INFO] 19:43:00:462 Team/(3620:3629): Buscando deadlock...
+[INFO] 19:43:00:462 Team/(3620:3629): No se han encontrado deadlocks
+[INFO] 19:43:03:782 Team/(3620:3630): Estado de entrenador 0 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 19:43:03:782 Team/(3620:3631): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 19:43:03:782 Team/(3620:3631): El entrenador 1 se encuentra en (3,9)
+[INFO] 19:43:08:471 Team/(3620:3629): Buscando deadlock...
+[INFO] 19:43:08:472 Team/(3620:3629): No se han encontrado deadlocks
+[INFO] 19:43:08:792 Team/(3620:3631): El entrenador 1 se encuentra en (4,9)
+[INFO] 19:43:13:797 Team/(3620:3631): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 19:43:13:797 Team/(3620:3632): Estado de entrenador 2 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 19:43:13:797 Team/(3620:3632): El entrenador 2 se encuentra en (5,7)
+[INFO] 19:43:16:481 Team/(3620:3629): Buscando deadlock...
+[INFO] 19:43:16:481 Team/(3620:3629): No se han encontrado deadlocks
+[INFO] 19:43:18:801 Team/(3620:3632): El entrenador 2 se encuentra en (6,7)
+[INFO] 19:43:23:811 Team/(3620:3632): Estado de entrenador 2 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 19:43:23:811 Team/(3620:3630): Estado de entrenador 0 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 19:43:23:811 Team/(3620:3630): Estado de entrenador 0 cambiado a Estado blocked. Razon del cambio: Se ha enviado un catch
+[INFO] 19:43:24:411 Team/(3620:3628): Iniciando verificacion de conexion con Broker...
+[ERROR] 19:43:24:411 Team/(3620:3628): Reconexion con Broker fallida, intentando nuevamente en 30 segundos
+[INFO] 19:43:24:491 Team/(3620:3629): Buscando deadlock...
+[INFO] 19:43:24:491 Team/(3620:3629): No se han encontrado deadlocks
+[ERROR] 19:43:28:821 Team/(3620:3630): Error: No se pudo enviar el mensaje catch del entrenador 0 para el pokemon onix en (2,8), obteniendo pokemon por comportamiento default
+[INFO] 19:43:28:821 Team/(3620:3631): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 19:43:28:821 Team/(3620:3631): El entrenador 1 se encuentra en (5,9)
+[INFO] 19:43:32:501 Team/(3620:3629): Buscando deadlock...
+[INFO] 19:43:32:501 Team/(3620:3629): No se han encontrado deadlocks
+[INFO] 19:43:33:831 Team/(3620:3631): El entrenador 1 se encuentra en (6,9)
+[INFO] 19:43:38:841 Team/(3620:3631): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 19:43:38:841 Team/(3620:3632): Estado de entrenador 2 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 19:43:38:841 Team/(3620:3632): Estado de entrenador 2 cambiado a Estado blocked. Razon del cambio: Se ha enviado un catch
+[INFO] 19:43:40:511 Team/(3620:3629): Buscando deadlock...
+[INFO] 19:43:40:511 Team/(3620:3629): No se han encontrado deadlocks
+[ERROR] 19:43:43:851 Team/(3620:3632): Error: No se pudo enviar el mensaje catch del entrenador 2 para el pokemon squirtle en (6,7), obteniendo pokemon por comportamiento default
+[INFO] 19:43:43:851 Team/(3620:3622): Estado de entrenador 2 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 19:43:43:851 Team/(3620:3631): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 19:43:43:851 Team/(3620:3631): El entrenador 1 se encuentra en (7,9)
+[INFO] 19:43:48:521 Team/(3620:3629): Buscando deadlock...
+[INFO] 19:43:48:521 Team/(3620:3629): No se han encontrado deadlocks
+[INFO] 19:43:48:861 Team/(3620:3631): El entrenador 1 se encuentra en (8,9)
+[INFO] 19:43:53:871 Team/(3620:3631): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 19:43:53:871 Team/(3620:3632): Estado de entrenador 2 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de atrapar pokemon gengar
+[INFO] 19:43:53:871 Team/(3620:3632): Entrenador 2 esta atrapando pokemon gengar ubicado en (6,6)
+[INFO] 19:43:53:871 Team/(3620:3632): El entrenador 2 se esta moviendo de (6,7) a (6,6)
+[INFO] 19:43:53:871 Team/(3620:3632): El entrenador 2 se encuentra en (6,6)
+[INFO] 19:43:54:418 Team/(3620:3628): Iniciando verificacion de conexion con Broker...
+[ERROR] 19:43:54:418 Team/(3620:3628): Reconexion con Broker fallida, intentando nuevamente en 30 segundos
+[INFO] 19:43:56:530 Team/(3620:3629): Buscando deadlock...
+[INFO] 19:43:56:531 Team/(3620:3629): No se han encontrado deadlocks
+[INFO] 19:43:58:881 Team/(3620:3632): Estado de entrenador 2 cambiado a Estado blocked. Razon del cambio: Se ha enviado un catch
+[ERROR] 19:44:03:890 Team/(3620:3632): Error: No se pudo enviar el mensaje catch del entrenador 2 para el pokemon gengar en (6,6), obteniendo pokemon por comportamiento default
+[INFO] 19:44:03:891 Team/(3620:3631): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 19:44:03:891 Team/(3620:3631): El entrenador 1 se encuentra en (9,9)
+[INFO] 19:44:04:540 Team/(3620:3629): Buscando deadlock...
+[INFO] 19:44:04:541 Team/(3620:3629): No se han encontrado deadlocks
+[INFO] 19:44:08:900 Team/(3620:3631): Estado de entrenador 1 cambiado a Estado blocked. Razon del cambio: Se ha enviado un catch
+[INFO] 19:44:12:550 Team/(3620:3629): Buscando deadlock...
+[INFO] 19:44:12:550 Team/(3620:3629): No se han encontrado deadlocks
+[ERROR] 19:44:13:910 Team/(3620:3631): Error: No se pudo enviar el mensaje catch del entrenador 1 para el pokemon pikachu en (9,9), obteniendo pokemon por comportamiento default
+[INFO] 19:44:13:910 Team/(3620:3622): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 19:44:13:911 Team/(3620:3631): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de atrapar pokemon squirtle
+[INFO] 19:44:13:911 Team/(3620:3631): Entrenador 1 esta atrapando pokemon squirtle ubicado en (5,5)
+[INFO] 19:44:13:911 Team/(3620:3631): El entrenador 1 se esta moviendo de (9,9) a (5,5)
+[INFO] 19:44:13:911 Team/(3620:3631): El entrenador 1 se encuentra en (9,8)
+[INFO] 19:44:18:920 Team/(3620:3631): El entrenador 1 se encuentra en (9,7)
+[INFO] 19:44:20:560 Team/(3620:3629): Buscando deadlock...
+[INFO] 19:44:20:560 Team/(3620:3629): No se han encontrado deadlocks
+[INFO] 19:44:23:930 Team/(3620:3631): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 19:44:23:930 Team/(3620:3631): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 19:44:23:930 Team/(3620:3631): El entrenador 1 se encuentra en (9,6)
+[INFO] 19:44:24:420 Team/(3620:3628): Iniciando verificacion de conexion con Broker...
+[ERROR] 19:44:24:420 Team/(3620:3628): Reconexion con Broker fallida, intentando nuevamente en 30 segundos
+[INFO] 19:44:28:570 Team/(3620:3629): Buscando deadlock...
+[INFO] 19:44:28:570 Team/(3620:3629): No se han encontrado deadlocks
+[INFO] 19:44:28:940 Team/(3620:3631): El entrenador 1 se encuentra en (9,5)
+[INFO] 19:44:33:950 Team/(3620:3631): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 19:44:33:950 Team/(3620:3631): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 19:44:33:950 Team/(3620:3631): El entrenador 1 se encuentra en (8,5)
+[INFO] 19:44:36:580 Team/(3620:3629): Buscando deadlock...
+[INFO] 19:44:36:580 Team/(3620:3629): No se han encontrado deadlocks
+[INFO] 19:44:38:960 Team/(3620:3631): El entrenador 1 se encuentra en (7,5)
+[INFO] 19:44:43:970 Team/(3620:3631): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 19:44:43:970 Team/(3620:3631): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 19:44:43:970 Team/(3620:3631): El entrenador 1 se encuentra en (6,5)
+[INFO] 19:44:44:590 Team/(3620:3629): Buscando deadlock...
+[INFO] 19:44:44:590 Team/(3620:3629): No se han encontrado deadlocks
+[INFO] 19:44:48:980 Team/(3620:3631): El entrenador 1 se encuentra en (5,5)
+[INFO] 19:44:52:599 Team/(3620:3629): Buscando deadlock...
+[INFO] 19:44:52:600 Team/(3620:3629): No se han encontrado deadlocks
+[INFO] 19:44:53:990 Team/(3620:3631): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 19:44:53:990 Team/(3620:3631): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 19:44:53:990 Team/(3620:3631): Estado de entrenador 1 cambiado a Estado blocked. Razon del cambio: Se ha enviado un catch
+[INFO] 19:44:54:429 Team/(3620:3628): Iniciando verificacion de conexion con Broker...
+[ERROR] 19:44:54:429 Team/(3620:3628): Reconexion con Broker fallida, intentando nuevamente en 30 segundos
+[ERROR] 19:44:58:999 Team/(3620:3631): Error: No se pudo enviar el mensaje catch del entrenador 1 para el pokemon squirtle en (5,5), obteniendo pokemon por comportamiento default
+[INFO] 19:45:00:609 Team/(3620:3629): Buscando deadlock...
+[INFO] 19:45:00:610 Team/(3620:3629): Deadlock obtenido involucrando a 3 entrenadores
+[INFO] 19:45:00:610 Team/(3620:3624): Estado de entrenador 0 cambiado a Estado ready. Razon del cambio: Entrenador planificado para intercambiar pokemones
+[INFO] 19:45:00:610 Team/(3620:3630): Estado de entrenador 0 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de intercambiar pokemon
+[INFO] 19:45:00:610 Team/(3620:3630): El entrenador 0 se esta moviendo de (2,8) a (5,5)
+[INFO] 19:45:00:610 Team/(3620:3630): El entrenador 0 se encuentra en (2,7)
+[INFO] 19:45:05:619 Team/(3620:3630): El entrenador 0 se encuentra en (2,6)
+[INFO] 19:45:08:619 Team/(3620:3629): Buscando deadlock...
+[INFO] 19:45:08:619 Team/(3620:3629): No se han encontrado deadlocks
+[INFO] 19:45:10:629 Team/(3620:3630): Estado de entrenador 0 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 19:45:10:629 Team/(3620:3630): Estado de entrenador 0 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 19:45:10:629 Team/(3620:3630): El entrenador 0 se encuentra en (2,5)
+[INFO] 19:45:15:639 Team/(3620:3630): El entrenador 0 se encuentra en (3,5)
+[INFO] 19:45:16:629 Team/(3620:3629): Buscando deadlock...
+[INFO] 19:45:16:629 Team/(3620:3629): No se han encontrado deadlocks
+[INFO] 19:45:20:649 Team/(3620:3630): Estado de entrenador 0 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 19:45:20:649 Team/(3620:3630): Estado de entrenador 0 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 19:45:20:649 Team/(3620:3630): El entrenador 0 se encuentra en (4,5)
+[INFO] 19:45:24:439 Team/(3620:3628): Iniciando verificacion de conexion con Broker...
+[ERROR] 19:45:24:439 Team/(3620:3628): Reconexion con Broker fallida, intentando nuevamente en 30 segundos
+[INFO] 19:45:24:639 Team/(3620:3629): Buscando deadlock...
+[INFO] 19:45:24:639 Team/(3620:3629): No se han encontrado deadlocks
+[INFO] 19:45:25:659 Team/(3620:3630): El entrenador 0 se encuentra en (5,5)
+[INFO] 19:45:30:669 Team/(3620:3630): Estado de entrenador 0 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 19:45:30:669 Team/(3620:3630): Estado de entrenador 0 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 19:45:30:669 Team/(3620:3630): Entrenadores 0 y 1 intercambiando pokemones onix y squirtle
+[INFO] 19:45:32:649 Team/(3620:3629): Buscando deadlock...
+[INFO] 19:45:32:649 Team/(3620:3629): No se han encontrado deadlocks
+[INFO] 19:45:40:658 Team/(3620:3629): Buscando deadlock...
+[INFO] 19:45:40:659 Team/(3620:3629): No se han encontrado deadlocks
+[INFO] 19:45:40:689 Team/(3620:3630): Estado de entrenador 0 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 19:45:40:689 Team/(3620:3630): Estado de entrenador 0 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 19:45:48:668 Team/(3620:3629): Buscando deadlock...
+[INFO] 19:45:48:669 Team/(3620:3629): No se han encontrado deadlocks
+[INFO] 19:45:50:709 Team/(3620:3630): Estado de entrenador 0 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 19:45:50:709 Team/(3620:3630): Estado de entrenador 0 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 19:45:54:448 Team/(3620:3628): Iniciando verificacion de conexion con Broker...
+[ERROR] 19:45:54:448 Team/(3620:3628): Reconexion con Broker fallida, intentando nuevamente en 30 segundos
+[ERROR] 19:51:56:971 Team/(3925:3931): Hubo un problema enviando la suscripcion a la cola CAUGHT del broker
+[ERROR] 19:51:56:972 Team/(3925:3932): Hubo un problema enviando la suscripcion a la cola LOCALIZED del broker
+[ERROR] 19:51:56:972 Team/(3925:3930): Hubo un problema enviando la suscripcion a la cola APPEARED del broker
+[ERROR] 19:51:56:0 Team/(3925:3939): Error: No se pudo enviar el GET correspondiente al pokemon pikachu, iniciando el comportamiento default
+[ERROR] 19:51:56:0 Team/(3925:3940): Error: No se pudo enviar el GET correspondiente al pokemon gengar, iniciando el comportamiento default
+[ERROR] 19:51:56:0 Team/(3925:3938): Error: No se pudo enviar el GET correspondiente al pokemon squirtle, iniciando el comportamiento default
+[ERROR] 19:51:56:0 Team/(3925:3941): Error: No se pudo enviar el GET correspondiente al pokemon onix, iniciando el comportamiento default
+[INFO] 19:52:00:983 Team/(3925:3927): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 19:52:00:983 Team/(3925:3936): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de atrapar pokemon pikachu
+[INFO] 19:52:00:983 Team/(3925:3936): Entrenador 1 esta atrapando pokemon pikachu ubicado en (9,9)
+[INFO] 19:52:00:983 Team/(3925:3936): El entrenador 1 se esta moviendo de (2,3) a (9,9)
+[INFO] 19:52:00:983 Team/(3925:3936): El entrenador 1 se encuentra en (2,4)
+[INFO] 19:52:00:995 Team/(3925:3927): Estado de entrenador 2 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 19:52:00:4 Team/(3925:3927): Estado de entrenador 0 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 19:52:04:980 Team/(3925:3934): Buscando deadlock...
+[INFO] 19:52:04:980 Team/(3925:3934): No se han encontrado deadlocks
+[INFO] 19:52:05:990 Team/(3925:3936): El entrenador 1 se encuentra en (2,5)
+[INFO] 19:52:10:0 Team/(3925:3936): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 19:52:10:0 Team/(3925:3937): Estado de entrenador 2 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de atrapar pokemon squirtle
+[INFO] 19:52:10:0 Team/(3925:3937): Entrenador 2 esta atrapando pokemon squirtle ubicado en (6,7)
+[INFO] 19:52:10:0 Team/(3925:3937): El entrenador 2 se esta moviendo de (3,2) a (6,7)
+[INFO] 19:52:10:0 Team/(3925:3937): El entrenador 2 se encuentra en (3,3)
+[INFO] 19:52:12:990 Team/(3925:3934): Buscando deadlock...
+[INFO] 19:52:12:990 Team/(3925:3934): No se han encontrado deadlocks
+[INFO] 19:52:16:10 Team/(3925:3937): El entrenador 2 se encuentra en (3,4)
+[INFO] 19:52:20:990 Team/(3925:3934): Buscando deadlock...
+[INFO] 19:52:20:990 Team/(3925:3934): No se han encontrado deadlocks
+[INFO] 19:52:21:21 Team/(3925:3937): Estado de entrenador 2 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 19:52:21:22 Team/(3925:3935): Estado de entrenador 0 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de atrapar pokemon onix
+[INFO] 19:52:21:22 Team/(3925:3935): Entrenador 0 esta atrapando pokemon onix ubicado en (2,8)
+[INFO] 19:52:21:22 Team/(3925:3935): El entrenador 0 se esta moviendo de (1,3) a (2,8)
+[INFO] 19:52:21:22 Team/(3925:3935): El entrenador 0 se encuentra en (1,4)
+[INFO] 19:52:26:31 Team/(3925:3935): El entrenador 0 se encuentra en (1,5)
+[INFO] 19:52:26:980 Team/(3925:3933): Iniciando verificacion de conexion con Broker...
+[ERROR] 19:52:26:981 Team/(3925:3933): Reconexion con Broker fallida, intentando nuevamente en 30 segundos
+[INFO] 19:52:28:991 Team/(3925:3934): Buscando deadlock...
+[INFO] 19:52:28:991 Team/(3925:3934): No se han encontrado deadlocks
+[INFO] 19:52:31:41 Team/(3925:3935): Estado de entrenador 0 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 19:52:31:41 Team/(3925:3936): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 19:52:31:41 Team/(3925:3936): El entrenador 1 se encuentra en (2,6)
+[INFO] 19:52:36:51 Team/(3925:3936): El entrenador 1 se encuentra en (2,7)
+[INFO] 19:52:36:1 Team/(3925:3934): Buscando deadlock...
+[INFO] 19:52:36:1 Team/(3925:3934): No se han encontrado deadlocks
+[INFO] 19:52:41:61 Team/(3925:3936): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 19:52:41:61 Team/(3925:3937): Estado de entrenador 2 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 19:52:41:61 Team/(3925:3937): El entrenador 2 se encuentra en (3,5)
+[INFO] 19:52:45:11 Team/(3925:3934): Buscando deadlock...
+[INFO] 19:52:45:11 Team/(3925:3934): No se han encontrado deadlocks
+[INFO] 19:52:46:71 Team/(3925:3937): El entrenador 2 se encuentra en (3,6)
+[INFO] 19:52:51:81 Team/(3925:3937): Estado de entrenador 2 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 19:52:51:81 Team/(3925:3935): Estado de entrenador 0 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 19:52:51:81 Team/(3925:3935): El entrenador 0 se encuentra en (1,6)
+[INFO] 19:52:53:21 Team/(3925:3934): Buscando deadlock...
+[INFO] 19:52:53:21 Team/(3925:3934): No se han encontrado deadlocks
+[INFO] 19:52:56:91 Team/(3925:3935): El entrenador 0 se encuentra en (1,7)
+[INFO] 19:52:56:981 Team/(3925:3933): Iniciando verificacion de conexion con Broker...
+[ERROR] 19:52:56:981 Team/(3925:3933): Reconexion con Broker fallida, intentando nuevamente en 30 segundos
+[INFO] 19:53:01:31 Team/(3925:3934): Buscando deadlock...
+[INFO] 19:53:01:31 Team/(3925:3934): No se han encontrado deadlocks
+[INFO] 19:53:01:98 Team/(3925:3935): Estado de entrenador 0 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 19:53:01:98 Team/(3925:3936): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 19:53:01:98 Team/(3925:3936): El entrenador 1 se encuentra en (2,8)
+[INFO] 19:53:06:102 Team/(3925:3936): El entrenador 1 se encuentra en (2,9)
+[INFO] 19:53:09:42 Team/(3925:3934): Buscando deadlock...
+[INFO] 19:53:09:42 Team/(3925:3934): No se han encontrado deadlocks
+[INFO] 19:53:11:112 Team/(3925:3936): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 19:53:11:112 Team/(3925:3937): Estado de entrenador 2 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 19:53:11:112 Team/(3925:3937): El entrenador 2 se encuentra en (3,7)
+[INFO] 19:53:16:122 Team/(3925:3937): El entrenador 2 se encuentra en (4,7)
+[INFO] 19:53:17:52 Team/(3925:3934): Buscando deadlock...
+[INFO] 19:53:17:52 Team/(3925:3934): No se han encontrado deadlocks
+[INFO] 19:53:21:132 Team/(3925:3937): Estado de entrenador 2 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 19:53:21:132 Team/(3925:3935): Estado de entrenador 0 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 19:53:21:132 Team/(3925:3935): El entrenador 0 se encuentra en (1,8)
+[INFO] 19:53:25:62 Team/(3925:3934): Buscando deadlock...
+[INFO] 19:53:25:62 Team/(3925:3934): No se han encontrado deadlocks
+[INFO] 19:53:26:142 Team/(3925:3935): El entrenador 0 se encuentra en (2,8)
+[INFO] 19:53:26:982 Team/(3925:3933): Iniciando verificacion de conexion con Broker...
+[ERROR] 19:53:26:982 Team/(3925:3933): Reconexion con Broker fallida, intentando nuevamente en 30 segundos
+[INFO] 19:53:31:152 Team/(3925:3935): Estado de entrenador 0 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 19:53:31:153 Team/(3925:3936): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 19:53:31:153 Team/(3925:3936): El entrenador 1 se encuentra en (3,9)
+[INFO] 19:53:33:62 Team/(3925:3934): Buscando deadlock...
+[INFO] 19:53:33:62 Team/(3925:3934): No se han encontrado deadlocks
+[INFO] 19:53:36:162 Team/(3925:3936): El entrenador 1 se encuentra en (4,9)
+[INFO] 19:53:41:72 Team/(3925:3934): Buscando deadlock...
+[INFO] 19:53:41:73 Team/(3925:3934): No se han encontrado deadlocks
+[INFO] 19:53:41:173 Team/(3925:3936): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 19:53:41:173 Team/(3925:3937): Estado de entrenador 2 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 19:53:41:173 Team/(3925:3937): El entrenador 2 se encuentra en (5,7)
+[INFO] 19:53:46:183 Team/(3925:3937): El entrenador 2 se encuentra en (6,7)
+[INFO] 19:53:49:83 Team/(3925:3934): Buscando deadlock...
+[INFO] 19:53:49:83 Team/(3925:3934): No se han encontrado deadlocks
+[INFO] 19:53:51:186 Team/(3925:3937): Estado de entrenador 2 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 19:53:51:186 Team/(3925:3935): Estado de entrenador 0 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 19:53:51:186 Team/(3925:3935): Estado de entrenador 0 cambiado a Estado blocked. Razon del cambio: Se ha enviado un catch
+[ERROR] 19:53:56:191 Team/(3925:3935): Error: No se pudo enviar el mensaje catch del entrenador 0 para el pokemon onix en (2,8), obteniendo pokemon por comportamiento default
+[INFO] 19:53:56:191 Team/(3925:3936): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 19:53:56:192 Team/(3925:3936): El entrenador 1 se encuentra en (5,9)
+[INFO] 19:53:56:983 Team/(3925:3933): Iniciando verificacion de conexion con Broker...
+[ERROR] 19:53:56:983 Team/(3925:3933): Reconexion con Broker fallida, intentando nuevamente en 30 segundos
+[INFO] 19:53:57:91 Team/(3925:3934): Buscando deadlock...
+[INFO] 19:53:57:91 Team/(3925:3934): No se han encontrado deadlocks
+[INFO] 19:54:01:193 Team/(3925:3936): El entrenador 1 se encuentra en (6,9)
+[INFO] 19:54:05:91 Team/(3925:3934): Buscando deadlock...
+[INFO] 19:54:05:91 Team/(3925:3934): No se han encontrado deadlocks
+[INFO] 19:54:06:203 Team/(3925:3936): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 19:54:06:203 Team/(3925:3937): Estado de entrenador 2 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 19:54:06:203 Team/(3925:3937): Estado de entrenador 2 cambiado a Estado blocked. Razon del cambio: Se ha enviado un catch
+[ERROR] 19:54:11:206 Team/(3925:3937): Error: No se pudo enviar el mensaje catch del entrenador 2 para el pokemon squirtle en (6,7), obteniendo pokemon por comportamiento default
+[INFO] 19:54:11:206 Team/(3925:3927): Estado de entrenador 2 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 19:54:11:206 Team/(3925:3936): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 19:54:11:206 Team/(3925:3936): El entrenador 1 se encuentra en (7,9)
+[INFO] 19:54:13:93 Team/(3925:3934): Buscando deadlock...
+[INFO] 19:54:13:93 Team/(3925:3934): No se han encontrado deadlocks
+[INFO] 19:54:16:213 Team/(3925:3936): El entrenador 1 se encuentra en (8,9)
+[INFO] 19:54:21:99 Team/(3925:3934): Buscando deadlock...
+[INFO] 19:54:21:99 Team/(3925:3934): No se han encontrado deadlocks
+[INFO] 19:54:21:224 Team/(3925:3936): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 19:54:21:224 Team/(3925:3937): Estado de entrenador 2 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de atrapar pokemon gengar
+[INFO] 19:54:21:224 Team/(3925:3937): Entrenador 2 esta atrapando pokemon gengar ubicado en (6,6)
+[INFO] 19:54:21:224 Team/(3925:3937): El entrenador 2 se esta moviendo de (6,7) a (6,6)
+[INFO] 19:54:21:224 Team/(3925:3937): El entrenador 2 se encuentra en (6,6)
+[INFO] 19:54:26:234 Team/(3925:3937): Estado de entrenador 2 cambiado a Estado blocked. Razon del cambio: Se ha enviado un catch
+[INFO] 19:54:26:984 Team/(3925:3933): Iniciando verificacion de conexion con Broker...
+[ERROR] 19:54:26:984 Team/(3925:3933): Reconexion con Broker fallida, intentando nuevamente en 30 segundos
+[INFO] 19:54:29:102 Team/(3925:3934): Buscando deadlock...
+[INFO] 19:54:29:102 Team/(3925:3934): No se han encontrado deadlocks
+[ERROR] 19:54:31:237 Team/(3925:3937): Error: No se pudo enviar el mensaje catch del entrenador 2 para el pokemon gengar en (6,6), obteniendo pokemon por comportamiento default
+[INFO] 19:54:31:237 Team/(3925:3936): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 19:54:31:237 Team/(3925:3936): El entrenador 1 se encuentra en (9,9)
+[INFO] 19:54:36:243 Team/(3925:3936): Estado de entrenador 1 cambiado a Estado blocked. Razon del cambio: Se ha enviado un catch
+[INFO] 19:54:37:104 Team/(3925:3934): Buscando deadlock...
+[INFO] 19:54:37:104 Team/(3925:3934): No se han encontrado deadlocks
+[ERROR] 19:54:41:244 Team/(3925:3936): Error: No se pudo enviar el mensaje catch del entrenador 1 para el pokemon pikachu en (9,9), obteniendo pokemon por comportamiento default
+[INFO] 19:54:41:244 Team/(3925:3927): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 19:54:41:244 Team/(3925:3936): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de atrapar pokemon squirtle
+[INFO] 19:54:41:244 Team/(3925:3936): Entrenador 1 esta atrapando pokemon squirtle ubicado en (5,5)
+[INFO] 19:54:41:244 Team/(3925:3936): El entrenador 1 se esta moviendo de (9,9) a (5,5)
+[INFO] 19:54:41:244 Team/(3925:3936): El entrenador 1 se encuentra en (9,8)
+[INFO] 19:54:45:114 Team/(3925:3934): Buscando deadlock...
+[INFO] 19:54:45:115 Team/(3925:3934): No se han encontrado deadlocks
+[INFO] 19:54:46:254 Team/(3925:3936): El entrenador 1 se encuentra en (9,7)
+[INFO] 19:54:51:257 Team/(3925:3936): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 19:54:51:257 Team/(3925:3936): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 19:54:51:257 Team/(3925:3936): El entrenador 1 se encuentra en (9,6)
+[INFO] 19:54:53:124 Team/(3925:3934): Buscando deadlock...
+[INFO] 19:54:53:125 Team/(3925:3934): No se han encontrado deadlocks
+[INFO] 19:54:56:264 Team/(3925:3936): El entrenador 1 se encuentra en (9,5)
+[INFO] 19:54:56:984 Team/(3925:3933): Iniciando verificacion de conexion con Broker...
+[ERROR] 19:54:56:984 Team/(3925:3933): Reconexion con Broker fallida, intentando nuevamente en 30 segundos
+[INFO] 19:55:01:134 Team/(3925:3934): Buscando deadlock...
+[INFO] 19:55:01:135 Team/(3925:3934): No se han encontrado deadlocks
+[INFO] 19:55:01:275 Team/(3925:3936): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 19:55:01:275 Team/(3925:3936): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 19:55:01:275 Team/(3925:3936): El entrenador 1 se encuentra en (8,5)
+[INFO] 19:55:06:285 Team/(3925:3936): El entrenador 1 se encuentra en (7,5)
+[INFO] 19:55:09:145 Team/(3925:3934): Buscando deadlock...
+[INFO] 19:55:09:145 Team/(3925:3934): No se han encontrado deadlocks
+[INFO] 19:55:11:295 Team/(3925:3936): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 19:55:11:295 Team/(3925:3936): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 19:55:11:295 Team/(3925:3936): El entrenador 1 se encuentra en (6,5)
+[INFO] 19:55:16:305 Team/(3925:3936): El entrenador 1 se encuentra en (5,5)
+[INFO] 19:55:17:155 Team/(3925:3934): Buscando deadlock...
+[INFO] 19:55:17:155 Team/(3925:3934): No se han encontrado deadlocks
+[INFO] 19:55:21:315 Team/(3925:3936): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 19:55:21:315 Team/(3925:3936): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 19:55:21:315 Team/(3925:3936): Estado de entrenador 1 cambiado a Estado blocked. Razon del cambio: Se ha enviado un catch
+[INFO] 19:55:25:165 Team/(3925:3934): Buscando deadlock...
+[INFO] 19:55:25:165 Team/(3925:3934): No se han encontrado deadlocks
+[ERROR] 19:55:26:325 Team/(3925:3936): Error: No se pudo enviar el mensaje catch del entrenador 1 para el pokemon squirtle en (5,5), obteniendo pokemon por comportamiento default
+[INFO] 19:55:26:985 Team/(3925:3933): Iniciando verificacion de conexion con Broker...
+[ERROR] 19:55:26:985 Team/(3925:3933): Reconexion con Broker fallida, intentando nuevamente en 30 segundos
+[INFO] 19:55:33:175 Team/(3925:3934): Buscando deadlock...
+[INFO] 19:55:33:176 Team/(3925:3934): Deadlock obtenido involucrando a 3 entrenadores
+[INFO] 19:55:33:176 Team/(3925:3929): Estado de entrenador 0 cambiado a Estado ready. Razon del cambio: Entrenador planificado para intercambiar pokemones
+[INFO] 19:55:33:176 Team/(3925:3935): Estado de entrenador 0 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de intercambiar pokemon
+[INFO] 19:55:33:176 Team/(3925:3935): El entrenador 0 se esta moviendo de (2,8) a (5,5)
+[INFO] 19:55:33:176 Team/(3925:3935): El entrenador 0 se encuentra en (2,7)
+[INFO] 19:55:38:185 Team/(3925:3935): El entrenador 0 se encuentra en (2,6)
+[INFO] 19:55:41:185 Team/(3925:3934): Buscando deadlock...
+[INFO] 19:55:41:186 Team/(3925:3934): No se han encontrado deadlocks
+[INFO] 19:55:43:196 Team/(3925:3935): Estado de entrenador 0 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 19:55:43:196 Team/(3925:3935): Estado de entrenador 0 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 19:55:43:196 Team/(3925:3935): El entrenador 0 se encuentra en (2,5)
+[INFO] 19:55:48:206 Team/(3925:3935): El entrenador 0 se encuentra en (3,5)
+[INFO] 19:55:49:196 Team/(3925:3934): Buscando deadlock...
+[INFO] 19:55:49:196 Team/(3925:3934): No se han encontrado deadlocks
+[INFO] 19:55:53:216 Team/(3925:3935): Estado de entrenador 0 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 19:55:53:216 Team/(3925:3935): Estado de entrenador 0 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 19:55:53:216 Team/(3925:3935): El entrenador 0 se encuentra en (4,5)
+[INFO] 19:55:56:986 Team/(3925:3933): Iniciando verificacion de conexion con Broker...
+[ERROR] 19:55:56:986 Team/(3925:3933): Reconexion con Broker fallida, intentando nuevamente en 30 segundos
+[INFO] 19:55:57:206 Team/(3925:3934): Buscando deadlock...
+[INFO] 19:55:57:206 Team/(3925:3934): No se han encontrado deadlocks
+[INFO] 19:55:58:226 Team/(3925:3935): El entrenador 0 se encuentra en (5,5)
+[INFO] 19:56:03:236 Team/(3925:3935): Estado de entrenador 0 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 19:56:03:236 Team/(3925:3935): Estado de entrenador 0 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 19:56:03:236 Team/(3925:3935): Entrenadores 0 y 1 intercambiando pokemones onix y squirtle
+[INFO] 19:56:05:216 Team/(3925:3934): Buscando deadlock...
+[INFO] 19:56:05:216 Team/(3925:3934): No se han encontrado deadlocks
+[INFO] 19:56:13:226 Team/(3925:3934): Buscando deadlock...
+[INFO] 19:56:13:226 Team/(3925:3934): No se han encontrado deadlocks
+[INFO] 19:56:13:247 Team/(3925:3935): Estado de entrenador 0 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 19:56:13:247 Team/(3925:3935): Estado de entrenador 0 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 19:56:21:236 Team/(3925:3934): Buscando deadlock...
+[INFO] 19:56:21:236 Team/(3925:3934): No se han encontrado deadlocks
+[INFO] 19:56:23:256 Team/(3925:3935): Estado de entrenador 0 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 19:56:23:256 Team/(3925:3935): Estado de entrenador 0 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 19:56:26:986 Team/(3925:3933): Iniciando verificacion de conexion con Broker...
+[ERROR] 19:56:26:987 Team/(3925:3933): Reconexion con Broker fallida, intentando nuevamente en 30 segundos
+[INFO] 19:56:28:267 Team/(3925:3935): Estado de entrenador 0 cambiado a Estado exit. Razon del cambio: Ha terminado su objetivo
+[ERROR] 19:58:12:980 Team/(4089:4096): Hubo un problema enviando la suscripcion a la cola LOCALIZED del broker
+[ERROR] 19:58:12:991 Team/(4089:4095): Hubo un problema enviando la suscripcion a la cola CAUGHT del broker
+[ERROR] 19:58:12:998 Team/(4089:4103): Error: No se pudo enviar el GET correspondiente al pokemon pikachu, iniciando el comportamiento default
+[ERROR] 19:58:12:998 Team/(4089:4104): Error: No se pudo enviar el GET correspondiente al pokemon gengar, iniciando el comportamiento default
+[ERROR] 19:58:12:998 Team/(4089:4102): Error: No se pudo enviar el GET correspondiente al pokemon squirtle, iniciando el comportamiento default
+[ERROR] 19:58:12:998 Team/(4089:4094): Hubo un problema enviando la suscripcion a la cola APPEARED del broker
+[ERROR] 19:58:13:8 Team/(4089:4105): Error: No se pudo enviar el GET correspondiente al pokemon onix, iniciando el comportamiento default
+[INFO] 19:58:17:740 Team/(4089:4091): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 19:58:17:740 Team/(4089:4100): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de atrapar pokemon pikachu
+[INFO] 19:58:17:740 Team/(4089:4100): Entrenador 1 esta atrapando pokemon pikachu ubicado en (9,9)
+[INFO] 19:58:17:740 Team/(4089:4100): El entrenador 1 se esta moviendo de (2,3) a (9,9)
+[INFO] 19:58:17:740 Team/(4089:4100): El entrenador 1 se encuentra en (2,4)
+[INFO] 19:58:17:750 Team/(4089:4091): Estado de entrenador 2 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 19:58:17:753 Team/(4089:4091): Estado de entrenador 0 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 19:58:20:998 Team/(4089:4098): Buscando deadlock...
+[INFO] 19:58:20:998 Team/(4089:4098): No se han encontrado deadlocks
+[INFO] 19:58:22:748 Team/(4089:4100): El entrenador 1 se encuentra en (2,5)
+[INFO] 19:58:27:758 Team/(4089:4100): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 19:58:27:758 Team/(4089:4101): Estado de entrenador 2 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de atrapar pokemon squirtle
+[INFO] 19:58:27:758 Team/(4089:4101): Entrenador 2 esta atrapando pokemon squirtle ubicado en (6,7)
+[INFO] 19:58:27:758 Team/(4089:4101): El entrenador 2 se esta moviendo de (3,2) a (6,7)
+[INFO] 19:58:27:758 Team/(4089:4101): El entrenador 2 se encuentra en (3,3)
+[INFO] 19:58:29:8 Team/(4089:4098): Buscando deadlock...
+[INFO] 19:58:29:8 Team/(4089:4098): No se han encontrado deadlocks
+[INFO] 19:58:32:768 Team/(4089:4101): El entrenador 2 se encuentra en (3,4)
+[INFO] 19:58:37:18 Team/(4089:4098): Buscando deadlock...
+[INFO] 19:58:37:18 Team/(4089:4098): No se han encontrado deadlocks
+[INFO] 19:58:37:778 Team/(4089:4101): Estado de entrenador 2 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 19:58:37:778 Team/(4089:4099): Estado de entrenador 0 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de atrapar pokemon onix
+[INFO] 19:58:37:778 Team/(4089:4099): Entrenador 0 esta atrapando pokemon onix ubicado en (2,8)
+[INFO] 19:58:37:778 Team/(4089:4099): El entrenador 0 se esta moviendo de (1,3) a (2,8)
+[INFO] 19:58:37:778 Team/(4089:4099): El entrenador 0 se encuentra en (1,4)
+[INFO] 19:58:42:788 Team/(4089:4099): El entrenador 0 se encuentra en (1,5)
+[INFO] 19:58:42:998 Team/(4089:4097): Iniciando verificacion de conexion con Broker...
+[ERROR] 19:58:42:998 Team/(4089:4097): Reconexion con Broker fallida, intentando nuevamente en 30 segundos
+[INFO] 19:58:45:28 Team/(4089:4098): Buscando deadlock...
+[INFO] 19:58:45:28 Team/(4089:4098): No se han encontrado deadlocks
+[INFO] 19:58:47:798 Team/(4089:4099): Estado de entrenador 0 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 19:58:47:799 Team/(4089:4100): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 19:58:47:799 Team/(4089:4100): El entrenador 1 se encuentra en (2,6)
+[INFO] 19:58:52:809 Team/(4089:4100): El entrenador 1 se encuentra en (2,7)
+[INFO] 19:58:53:38 Team/(4089:4098): Buscando deadlock...
+[INFO] 19:58:53:38 Team/(4089:4098): No se han encontrado deadlocks
+[INFO] 19:58:57:817 Team/(4089:4100): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 19:58:57:817 Team/(4089:4101): Estado de entrenador 2 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 19:58:57:817 Team/(4089:4101): El entrenador 2 se encuentra en (3,5)
+[INFO] 19:59:01:49 Team/(4089:4098): Buscando deadlock...
+[INFO] 19:59:01:49 Team/(4089:4098): No se han encontrado deadlocks
+[INFO] 19:59:02:819 Team/(4089:4101): El entrenador 2 se encuentra en (3,6)
+[INFO] 19:59:07:819 Team/(4089:4101): Estado de entrenador 2 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 19:59:07:819 Team/(4089:4099): Estado de entrenador 0 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 19:59:07:819 Team/(4089:4099): El entrenador 0 se encuentra en (1,6)
+[INFO] 19:59:09:59 Team/(4089:4098): Buscando deadlock...
+[INFO] 19:59:09:59 Team/(4089:4098): No se han encontrado deadlocks
+[INFO] 19:59:12:829 Team/(4089:4099): El entrenador 0 se encuentra en (1,7)
+[INFO] 19:59:12:999 Team/(4089:4097): Iniciando verificacion de conexion con Broker...
+[ERROR] 19:59:12:999 Team/(4089:4097): Reconexion con Broker fallida, intentando nuevamente en 30 segundos
+[INFO] 19:59:17:69 Team/(4089:4098): Buscando deadlock...
+[INFO] 19:59:17:69 Team/(4089:4098): No se han encontrado deadlocks
+[INFO] 19:59:17:839 Team/(4089:4099): Estado de entrenador 0 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 19:59:17:839 Team/(4089:4100): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 19:59:17:839 Team/(4089:4100): El entrenador 1 se encuentra en (2,8)
+[INFO] 19:59:22:849 Team/(4089:4100): El entrenador 1 se encuentra en (2,9)
+[INFO] 19:59:25:79 Team/(4089:4098): Buscando deadlock...
+[INFO] 19:59:25:79 Team/(4089:4098): No se han encontrado deadlocks
+[INFO] 19:59:27:859 Team/(4089:4100): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 19:59:27:859 Team/(4089:4101): Estado de entrenador 2 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 19:59:27:859 Team/(4089:4101): El entrenador 2 se encuentra en (3,7)
+[INFO] 19:59:32:869 Team/(4089:4101): El entrenador 2 se encuentra en (4,7)
+[INFO] 19:59:33:89 Team/(4089:4098): Buscando deadlock...
+[INFO] 19:59:33:89 Team/(4089:4098): No se han encontrado deadlocks
+[INFO] 19:59:37:879 Team/(4089:4101): Estado de entrenador 2 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 19:59:37:879 Team/(4089:4099): Estado de entrenador 0 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 19:59:37:879 Team/(4089:4099): El entrenador 0 se encuentra en (1,8)
+[INFO] 19:59:41:99 Team/(4089:4098): Buscando deadlock...
+[INFO] 19:59:41:99 Team/(4089:4098): No se han encontrado deadlocks
+[INFO] 19:59:42:889 Team/(4089:4099): El entrenador 0 se encuentra en (2,8)
+[INFO] 19:59:42:999 Team/(4089:4097): Iniciando verificacion de conexion con Broker...
+[ERROR] 19:59:42:999 Team/(4089:4097): Reconexion con Broker fallida, intentando nuevamente en 30 segundos
+[INFO] 19:59:47:895 Team/(4089:4099): Estado de entrenador 0 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 19:59:47:895 Team/(4089:4100): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 19:59:47:895 Team/(4089:4100): El entrenador 1 se encuentra en (3,9)
+[INFO] 19:59:49:99 Team/(4089:4098): Buscando deadlock...
+[INFO] 19:59:49:99 Team/(4089:4098): No se han encontrado deadlocks
+[INFO] 19:59:52:899 Team/(4089:4100): El entrenador 1 se encuentra en (4,9)
+[INFO] 19:59:57:109 Team/(4089:4098): Buscando deadlock...
+[INFO] 19:59:57:109 Team/(4089:4098): No se han encontrado deadlocks
+[INFO] 19:59:57:909 Team/(4089:4100): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 19:59:57:909 Team/(4089:4101): Estado de entrenador 2 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 19:59:57:909 Team/(4089:4101): El entrenador 2 se encuentra en (5,7)
+[INFO] 20:00:02:919 Team/(4089:4101): El entrenador 2 se encuentra en (6,7)
+[INFO] 20:00:05:119 Team/(4089:4098): Buscando deadlock...
+[INFO] 20:00:05:119 Team/(4089:4098): No se han encontrado deadlocks
+[INFO] 20:00:07:929 Team/(4089:4101): Estado de entrenador 2 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 20:00:07:929 Team/(4089:4099): Estado de entrenador 0 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 20:00:07:929 Team/(4089:4099): Estado de entrenador 0 cambiado a Estado blocked. Razon del cambio: Se ha enviado un catch
+[ERROR] 20:00:12:939 Team/(4089:4099): Error: No se pudo enviar el mensaje catch del entrenador 0 para el pokemon onix en (2,8), obteniendo pokemon por comportamiento default
+[INFO] 20:00:12:940 Team/(4089:4100): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 20:00:12:940 Team/(4089:4100): El entrenador 1 se encuentra en (5,9)
+[INFO] 20:00:13:7 Team/(4089:4097): Iniciando verificacion de conexion con Broker...
+[ERROR] 20:00:13:7 Team/(4089:4097): Reconexion con Broker fallida, intentando nuevamente en 30 segundos
+[INFO] 20:00:13:124 Team/(4089:4098): Buscando deadlock...
+[INFO] 20:00:13:124 Team/(4089:4098): No se han encontrado deadlocks
+[INFO] 20:00:17:949 Team/(4089:4100): El entrenador 1 se encuentra en (6,9)
+[INFO] 20:00:21:129 Team/(4089:4098): Buscando deadlock...
+[INFO] 20:00:21:130 Team/(4089:4098): No se han encontrado deadlocks
+[INFO] 20:00:22:959 Team/(4089:4100): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 20:00:22:960 Team/(4089:4101): Estado de entrenador 2 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 20:00:22:960 Team/(4089:4101): Estado de entrenador 2 cambiado a Estado blocked. Razon del cambio: Se ha enviado un catch
+[ERROR] 20:00:27:970 Team/(4089:4101): Error: No se pudo enviar el mensaje catch del entrenador 2 para el pokemon squirtle en (6,7), obteniendo pokemon por comportamiento default
+[INFO] 20:00:27:970 Team/(4089:4091): Estado de entrenador 2 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 20:00:27:970 Team/(4089:4100): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 20:00:27:970 Team/(4089:4100): El entrenador 1 se encuentra en (7,9)
+[INFO] 20:00:29:139 Team/(4089:4098): Buscando deadlock...
+[INFO] 20:00:29:139 Team/(4089:4098): No se han encontrado deadlocks
+[INFO] 20:00:32:980 Team/(4089:4100): El entrenador 1 se encuentra en (8,9)
+[INFO] 20:00:37:140 Team/(4089:4098): Buscando deadlock...
+[INFO] 20:00:37:140 Team/(4089:4098): No se han encontrado deadlocks
+[INFO] 20:00:37:990 Team/(4089:4100): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 20:00:37:990 Team/(4089:4101): Estado de entrenador 2 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de atrapar pokemon gengar
+[INFO] 20:00:37:990 Team/(4089:4101): Entrenador 2 esta atrapando pokemon gengar ubicado en (6,6)
+[INFO] 20:00:37:990 Team/(4089:4101): El entrenador 2 se esta moviendo de (6,7) a (6,6)
+[INFO] 20:00:37:990 Team/(4089:4101): El entrenador 2 se encuentra en (6,6)
+[INFO] 20:00:42:997 Team/(4089:4101): Estado de entrenador 2 cambiado a Estado blocked. Razon del cambio: Se ha enviado un catch
+[INFO] 20:00:43:10 Team/(4089:4097): Iniciando verificacion de conexion con Broker...
+[ERROR] 20:00:43:10 Team/(4089:4097): Reconexion con Broker fallida, intentando nuevamente en 30 segundos
+[INFO] 20:00:45:150 Team/(4089:4098): Buscando deadlock...
+[INFO] 20:00:45:150 Team/(4089:4098): No se han encontrado deadlocks
+[ERROR] 20:00:47:0 Team/(4089:4101): Error: No se pudo enviar el mensaje catch del entrenador 2 para el pokemon gengar en (6,6), obteniendo pokemon por comportamiento default
+[INFO] 20:00:47:0 Team/(4089:4100): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 20:00:47:0 Team/(4089:4100): El entrenador 1 se encuentra en (9,9)
+[INFO] 20:00:53:10 Team/(4089:4100): Estado de entrenador 1 cambiado a Estado blocked. Razon del cambio: Se ha enviado un catch
+[INFO] 20:00:53:160 Team/(4089:4098): Buscando deadlock...
+[INFO] 20:00:53:160 Team/(4089:4098): No se han encontrado deadlocks
+[ERROR] 20:00:58:20 Team/(4089:4100): Error: No se pudo enviar el mensaje catch del entrenador 1 para el pokemon pikachu en (9,9), obteniendo pokemon por comportamiento default
+[INFO] 20:00:58:20 Team/(4089:4091): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 20:00:58:20 Team/(4089:4100): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de atrapar pokemon squirtle
+[INFO] 20:00:58:20 Team/(4089:4100): Entrenador 1 esta atrapando pokemon squirtle ubicado en (5,5)
+[INFO] 20:00:58:20 Team/(4089:4100): El entrenador 1 se esta moviendo de (9,9) a (5,5)
+[INFO] 20:00:58:20 Team/(4089:4100): El entrenador 1 se encuentra en (9,8)
+[INFO] 20:01:01:170 Team/(4089:4098): Buscando deadlock...
+[INFO] 20:01:01:170 Team/(4089:4098): No se han encontrado deadlocks
+[INFO] 20:01:03:30 Team/(4089:4100): El entrenador 1 se encuentra en (9,7)
+[INFO] 20:01:08:40 Team/(4089:4100): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 20:01:08:40 Team/(4089:4100): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 20:01:08:40 Team/(4089:4100): El entrenador 1 se encuentra en (9,6)
+[INFO] 20:01:09:180 Team/(4089:4098): Buscando deadlock...
+[INFO] 20:01:09:180 Team/(4089:4098): No se han encontrado deadlocks
+[INFO] 20:01:13:20 Team/(4089:4097): Iniciando verificacion de conexion con Broker...
+[ERROR] 20:01:13:20 Team/(4089:4097): Reconexion con Broker fallida, intentando nuevamente en 30 segundos
+[INFO] 20:01:13:50 Team/(4089:4100): El entrenador 1 se encuentra en (9,5)
+[INFO] 20:01:17:190 Team/(4089:4098): Buscando deadlock...
+[INFO] 20:01:17:190 Team/(4089:4098): No se han encontrado deadlocks
+[INFO] 20:01:18:60 Team/(4089:4100): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 20:01:18:60 Team/(4089:4100): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 20:01:18:61 Team/(4089:4100): El entrenador 1 se encuentra en (8,5)
+[INFO] 20:01:23:70 Team/(4089:4100): El entrenador 1 se encuentra en (7,5)
+[INFO] 20:01:25:200 Team/(4089:4098): Buscando deadlock...
+[INFO] 20:01:25:200 Team/(4089:4098): No se han encontrado deadlocks
+[INFO] 20:01:28:80 Team/(4089:4100): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 20:01:28:80 Team/(4089:4100): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 20:01:28:80 Team/(4089:4100): El entrenador 1 se encuentra en (6,5)
+[INFO] 20:01:33:90 Team/(4089:4100): El entrenador 1 se encuentra en (5,5)
+[INFO] 20:01:33:210 Team/(4089:4098): Buscando deadlock...
+[INFO] 20:01:33:210 Team/(4089:4098): No se han encontrado deadlocks
+[INFO] 20:01:38:100 Team/(4089:4100): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 20:01:38:100 Team/(4089:4100): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 20:01:38:100 Team/(4089:4100): Estado de entrenador 1 cambiado a Estado blocked. Razon del cambio: Se ha enviado un catch
+[INFO] 20:01:41:220 Team/(4089:4098): Buscando deadlock...
+[INFO] 20:01:41:220 Team/(4089:4098): No se han encontrado deadlocks
+[INFO] 20:01:43:30 Team/(4089:4097): Iniciando verificacion de conexion con Broker...
+[ERROR] 20:01:43:30 Team/(4089:4097): Reconexion con Broker fallida, intentando nuevamente en 30 segundos
+[ERROR] 20:01:43:110 Team/(4089:4100): Error: No se pudo enviar el mensaje catch del entrenador 1 para el pokemon squirtle en (5,5), obteniendo pokemon por comportamiento default
+[INFO] 20:01:49:230 Team/(4089:4098): Buscando deadlock...
+[INFO] 20:01:49:231 Team/(4089:4098): Deadlock obtenido involucrando a 3 entrenadores
+[INFO] 20:01:49:231 Team/(4089:4093): Estado de entrenador 0 cambiado a Estado ready. Razon del cambio: Entrenador planificado para intercambiar pokemones
+[INFO] 20:01:49:231 Team/(4089:4099): Estado de entrenador 0 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de intercambiar pokemon
+[INFO] 20:01:49:231 Team/(4089:4099): El entrenador 0 se esta moviendo de (2,8) a (5,5)
+[INFO] 20:01:49:231 Team/(4089:4099): El entrenador 0 se encuentra en (2,7)
+[INFO] 20:01:54:240 Team/(4089:4099): El entrenador 0 se encuentra en (2,6)
+[INFO] 20:01:57:240 Team/(4089:4098): Buscando deadlock...
+[INFO] 20:01:57:241 Team/(4089:4098): No se han encontrado deadlocks
+[INFO] 20:01:59:242 Team/(4089:4099): Estado de entrenador 0 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 20:01:59:242 Team/(4089:4099): Estado de entrenador 0 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 20:01:59:242 Team/(4089:4099): El entrenador 0 se encuentra en (2,5)
+[INFO] 20:02:04:250 Team/(4089:4099): El entrenador 0 se encuentra en (3,5)
+[INFO] 20:02:05:250 Team/(4089:4098): Buscando deadlock...
+[INFO] 20:02:05:251 Team/(4089:4098): No se han encontrado deadlocks
+[INFO] 20:02:09:260 Team/(4089:4099): Estado de entrenador 0 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 20:02:09:260 Team/(4089:4099): Estado de entrenador 0 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 20:02:09:260 Team/(4089:4099): El entrenador 0 se encuentra en (4,5)
+[INFO] 20:02:13:40 Team/(4089:4097): Iniciando verificacion de conexion con Broker...
+[ERROR] 20:02:13:40 Team/(4089:4097): Reconexion con Broker fallida, intentando nuevamente en 30 segundos
+[INFO] 20:02:13:260 Team/(4089:4098): Buscando deadlock...
+[INFO] 20:02:13:261 Team/(4089:4098): No se han encontrado deadlocks
+[INFO] 20:02:14:260 Team/(4089:4099): El entrenador 0 se encuentra en (5,5)
+[INFO] 20:02:19:271 Team/(4089:4099): Estado de entrenador 0 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 20:02:19:271 Team/(4089:4099): Estado de entrenador 0 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 20:02:19:271 Team/(4089:4099): Entrenadores 0 y 1 intercambiando pokemones onix y squirtle
+[INFO] 20:02:21:270 Team/(4089:4098): Buscando deadlock...
+[INFO] 20:02:21:271 Team/(4089:4098): No se han encontrado deadlocks
+[INFO] 20:02:29:280 Team/(4089:4098): Buscando deadlock...
+[INFO] 20:02:29:281 Team/(4089:4098): No se han encontrado deadlocks
+[INFO] 20:02:29:281 Team/(4089:4099): Estado de entrenador 0 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 20:02:29:281 Team/(4089:4099): Estado de entrenador 0 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 20:02:37:290 Team/(4089:4098): Buscando deadlock...
+[INFO] 20:02:37:291 Team/(4089:4098): No se han encontrado deadlocks
+[INFO] 20:02:39:290 Team/(4089:4099): Estado de entrenador 0 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 20:02:39:291 Team/(4089:4099): Estado de entrenador 0 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 20:02:43:49 Team/(4089:4097): Iniciando verificacion de conexion con Broker...
+[ERROR] 20:02:43:49 Team/(4089:4097): Reconexion con Broker fallida, intentando nuevamente en 30 segundos
+[INFO] 20:02:44:301 Team/(4089:4099): Estado de entrenador 0 cambiado a Estado exit. Razon del cambio: Ha terminado su objetivo
+[ERROR] 20:04:11:554 Team/(4255:4262): Hubo un problema enviando la suscripcion a la cola LOCALIZED del broker
+[ERROR] 20:04:11:564 Team/(4255:4270): Error: No se pudo enviar el GET correspondiente al pokemon gengar, iniciando el comportamiento default
+[ERROR] 20:04:11:564 Team/(4255:4269): Error: No se pudo enviar el GET correspondiente al pokemon pikachu, iniciando el comportamiento default
+[ERROR] 20:04:11:564 Team/(4255:4271): Error: No se pudo enviar el GET correspondiente al pokemon onix, iniciando el comportamiento default
+[ERROR] 20:04:11:564 Team/(4255:4268): Error: No se pudo enviar el GET correspondiente al pokemon squirtle, iniciando el comportamiento default
+[ERROR] 20:04:11:565 Team/(4255:4261): Hubo un problema enviando la suscripcion a la cola CAUGHT del broker
+[ERROR] 20:04:11:571 Team/(4255:4260): Hubo un problema enviando la suscripcion a la cola APPEARED del broker
+[INFO] 20:04:14:390 Team/(4255:4257): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 20:04:14:390 Team/(4255:4266): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de atrapar pokemon pikachu
+[INFO] 20:04:14:390 Team/(4255:4266): Entrenador 1 esta atrapando pokemon pikachu ubicado en (9,9)
+[INFO] 20:04:14:390 Team/(4255:4266): El entrenador 1 se esta moviendo de (2,3) a (9,9)
+[INFO] 20:04:14:391 Team/(4255:4266): El entrenador 1 se encuentra en (2,4)
+[INFO] 20:04:14:410 Team/(4255:4257): Estado de entrenador 2 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 20:04:14:414 Team/(4255:4257): Estado de entrenador 0 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 20:04:19:391 Team/(4255:4266): El entrenador 1 se encuentra en (2,5)
+[INFO] 20:04:19:571 Team/(4255:4264): Buscando deadlock...
+[INFO] 20:04:19:571 Team/(4255:4264): No se han encontrado deadlocks
+[INFO] 20:04:24:401 Team/(4255:4266): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 20:04:24:401 Team/(4255:4267): Estado de entrenador 2 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de atrapar pokemon squirtle
+[INFO] 20:04:24:401 Team/(4255:4267): Entrenador 2 esta atrapando pokemon squirtle ubicado en (6,7)
+[INFO] 20:04:24:401 Team/(4255:4267): El entrenador 2 se esta moviendo de (3,2) a (6,7)
+[INFO] 20:04:24:401 Team/(4255:4267): El entrenador 2 se encuentra en (3,3)
+[INFO] 20:04:27:581 Team/(4255:4264): Buscando deadlock...
+[INFO] 20:04:27:581 Team/(4255:4264): No se han encontrado deadlocks
+[INFO] 20:04:29:411 Team/(4255:4267): El entrenador 2 se encuentra en (3,4)
+[INFO] 20:04:34:421 Team/(4255:4267): Estado de entrenador 2 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 20:04:34:421 Team/(4255:4265): Estado de entrenador 0 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de atrapar pokemon onix
+[INFO] 20:04:34:421 Team/(4255:4265): Entrenador 0 esta atrapando pokemon onix ubicado en (2,8)
+[INFO] 20:04:34:421 Team/(4255:4265): El entrenador 0 se esta moviendo de (1,3) a (2,8)
+[INFO] 20:04:34:421 Team/(4255:4265): El entrenador 0 se encuentra en (1,4)
+[INFO] 20:04:35:591 Team/(4255:4264): Buscando deadlock...
+[INFO] 20:04:35:591 Team/(4255:4264): No se han encontrado deadlocks
+[INFO] 20:04:39:431 Team/(4255:4265): El entrenador 0 se encuentra en (1,5)
+[INFO] 20:04:41:571 Team/(4255:4263): Iniciando verificacion de conexion con Broker...
+[ERROR] 20:04:41:571 Team/(4255:4263): Reconexion con Broker fallida, intentando nuevamente en 30 segundos
+[INFO] 20:04:43:601 Team/(4255:4264): Buscando deadlock...
+[INFO] 20:04:43:601 Team/(4255:4264): No se han encontrado deadlocks
+[INFO] 20:04:44:441 Team/(4255:4265): Estado de entrenador 0 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 20:04:44:441 Team/(4255:4266): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 20:04:44:441 Team/(4255:4266): El entrenador 1 se encuentra en (2,6)
+[INFO] 20:04:49:451 Team/(4255:4266): El entrenador 1 se encuentra en (2,7)
+[INFO] 20:04:51:611 Team/(4255:4264): Buscando deadlock...
+[INFO] 20:04:51:611 Team/(4255:4264): No se han encontrado deadlocks
+[INFO] 20:04:54:461 Team/(4255:4266): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 20:04:54:461 Team/(4255:4267): Estado de entrenador 2 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 20:04:54:461 Team/(4255:4267): El entrenador 2 se encuentra en (3,5)
+[INFO] 20:04:59:471 Team/(4255:4267): El entrenador 2 se encuentra en (3,6)
+[INFO] 20:04:59:621 Team/(4255:4264): Buscando deadlock...
+[INFO] 20:04:59:621 Team/(4255:4264): No se han encontrado deadlocks
+[INFO] 20:05:04:481 Team/(4255:4267): Estado de entrenador 2 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 20:05:04:481 Team/(4255:4265): Estado de entrenador 0 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 20:05:04:481 Team/(4255:4265): El entrenador 0 se encuentra en (1,6)
+[INFO] 20:05:07:631 Team/(4255:4264): Buscando deadlock...
+[INFO] 20:05:07:631 Team/(4255:4264): No se han encontrado deadlocks
+[INFO] 20:05:09:491 Team/(4255:4265): El entrenador 0 se encuentra en (1,7)
+[INFO] 20:05:11:581 Team/(4255:4263): Iniciando verificacion de conexion con Broker...
+[ERROR] 20:05:11:581 Team/(4255:4263): Reconexion con Broker fallida, intentando nuevamente en 30 segundos
+[INFO] 20:05:14:501 Team/(4255:4265): Estado de entrenador 0 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 20:05:14:501 Team/(4255:4266): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 20:05:14:501 Team/(4255:4266): El entrenador 1 se encuentra en (2,8)
+[INFO] 20:05:15:641 Team/(4255:4264): Buscando deadlock...
+[INFO] 20:05:15:641 Team/(4255:4264): No se han encontrado deadlocks
+[INFO] 20:05:19:511 Team/(4255:4266): El entrenador 1 se encuentra en (2,9)
+[INFO] 20:05:23:651 Team/(4255:4264): Buscando deadlock...
+[INFO] 20:05:23:651 Team/(4255:4264): No se han encontrado deadlocks
+[INFO] 20:05:24:521 Team/(4255:4266): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 20:05:24:521 Team/(4255:4267): Estado de entrenador 2 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 20:05:24:522 Team/(4255:4267): El entrenador 2 se encuentra en (3,7)
+[INFO] 20:05:29:531 Team/(4255:4267): El entrenador 2 se encuentra en (4,7)
+[INFO] 20:05:31:661 Team/(4255:4264): Buscando deadlock...
+[INFO] 20:05:31:662 Team/(4255:4264): No se han encontrado deadlocks
+[INFO] 20:05:34:542 Team/(4255:4267): Estado de entrenador 2 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 20:05:34:542 Team/(4255:4265): Estado de entrenador 0 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 20:05:34:542 Team/(4255:4265): El entrenador 0 se encuentra en (1,8)
+[INFO] 20:05:39:551 Team/(4255:4265): El entrenador 0 se encuentra en (2,8)
+[INFO] 20:05:39:671 Team/(4255:4264): Buscando deadlock...
+[INFO] 20:05:39:671 Team/(4255:4264): No se han encontrado deadlocks
+[INFO] 20:05:41:591 Team/(4255:4263): Iniciando verificacion de conexion con Broker...
+[ERROR] 20:05:41:591 Team/(4255:4263): Reconexion con Broker fallida, intentando nuevamente en 30 segundos
+[INFO] 20:05:44:561 Team/(4255:4265): Estado de entrenador 0 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 20:05:44:561 Team/(4255:4266): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 20:05:44:561 Team/(4255:4266): El entrenador 1 se encuentra en (3,9)
+[INFO] 20:05:47:681 Team/(4255:4264): Buscando deadlock...
+[INFO] 20:05:47:682 Team/(4255:4264): No se han encontrado deadlocks
+[INFO] 20:05:49:571 Team/(4255:4266): El entrenador 1 se encuentra en (4,9)
+[INFO] 20:05:54:581 Team/(4255:4266): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 20:05:54:582 Team/(4255:4267): Estado de entrenador 2 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 20:05:54:582 Team/(4255:4267): El entrenador 2 se encuentra en (5,7)
+[INFO] 20:05:55:691 Team/(4255:4264): Buscando deadlock...
+[INFO] 20:05:55:692 Team/(4255:4264): No se han encontrado deadlocks
+[INFO] 20:05:59:591 Team/(4255:4267): El entrenador 2 se encuentra en (6,7)
+[INFO] 20:06:03:701 Team/(4255:4264): Buscando deadlock...
+[INFO] 20:06:03:702 Team/(4255:4264): No se han encontrado deadlocks
+[INFO] 20:06:04:602 Team/(4255:4267): Estado de entrenador 2 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 20:06:04:602 Team/(4255:4265): Estado de entrenador 0 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 20:06:04:602 Team/(4255:4265): Estado de entrenador 0 cambiado a Estado blocked. Razon del cambio: Se ha enviado un catch
+[ERROR] 20:06:09:612 Team/(4255:4265): Error: No se pudo enviar el mensaje catch del entrenador 0 para el pokemon onix en (2,8), obteniendo pokemon por comportamiento default
+[INFO] 20:06:09:612 Team/(4255:4266): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 20:06:09:612 Team/(4255:4266): El entrenador 1 se encuentra en (5,9)
+[INFO] 20:06:11:601 Team/(4255:4263): Iniciando verificacion de conexion con Broker...
+[ERROR] 20:06:11:602 Team/(4255:4263): Reconexion con Broker fallida, intentando nuevamente en 30 segundos
+[INFO] 20:06:11:711 Team/(4255:4264): Buscando deadlock...
+[INFO] 20:06:11:711 Team/(4255:4264): No se han encontrado deadlocks
+[INFO] 20:06:14:622 Team/(4255:4266): El entrenador 1 se encuentra en (6,9)
+[INFO] 20:06:19:632 Team/(4255:4266): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 20:06:19:632 Team/(4255:4267): Estado de entrenador 2 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 20:06:19:632 Team/(4255:4267): Estado de entrenador 2 cambiado a Estado blocked. Razon del cambio: Se ha enviado un catch
+[INFO] 20:06:19:721 Team/(4255:4264): Buscando deadlock...
+[INFO] 20:06:19:722 Team/(4255:4264): No se han encontrado deadlocks
+[ERROR] 20:06:24:642 Team/(4255:4267): Error: No se pudo enviar el mensaje catch del entrenador 2 para el pokemon squirtle en (6,7), obteniendo pokemon por comportamiento default
+[INFO] 20:06:24:642 Team/(4255:4257): Estado de entrenador 2 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 20:06:24:642 Team/(4255:4266): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 20:06:24:642 Team/(4255:4266): El entrenador 1 se encuentra en (7,9)
+[INFO] 20:06:27:731 Team/(4255:4264): Buscando deadlock...
+[INFO] 20:06:27:732 Team/(4255:4264): No se han encontrado deadlocks
+[INFO] 20:06:29:651 Team/(4255:4266): El entrenador 1 se encuentra en (8,9)
+[INFO] 20:06:34:662 Team/(4255:4266): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 20:06:34:662 Team/(4255:4267): Estado de entrenador 2 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de atrapar pokemon gengar
+[INFO] 20:06:34:662 Team/(4255:4267): Entrenador 2 esta atrapando pokemon gengar ubicado en (6,6)
+[INFO] 20:06:34:662 Team/(4255:4267): El entrenador 2 se esta moviendo de (6,7) a (6,6)
+[INFO] 20:06:34:662 Team/(4255:4267): El entrenador 2 se encuentra en (6,6)
+[INFO] 20:06:35:741 Team/(4255:4264): Buscando deadlock...
+[INFO] 20:06:35:742 Team/(4255:4264): No se han encontrado deadlocks
+[INFO] 20:06:39:672 Team/(4255:4267): Estado de entrenador 2 cambiado a Estado blocked. Razon del cambio: Se ha enviado un catch
+[INFO] 20:06:41:611 Team/(4255:4263): Iniciando verificacion de conexion con Broker...
+[ERROR] 20:06:41:612 Team/(4255:4263): Reconexion con Broker fallida, intentando nuevamente en 30 segundos
+[INFO] 20:06:43:751 Team/(4255:4264): Buscando deadlock...
+[INFO] 20:06:43:752 Team/(4255:4264): No se han encontrado deadlocks
+[ERROR] 20:06:44:681 Team/(4255:4267): Error: No se pudo enviar el mensaje catch del entrenador 2 para el pokemon gengar en (6,6), obteniendo pokemon por comportamiento default
+[INFO] 20:06:44:682 Team/(4255:4266): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 20:06:44:682 Team/(4255:4266): El entrenador 1 se encuentra en (9,9)
+[INFO] 20:06:49:692 Team/(4255:4266): Estado de entrenador 1 cambiado a Estado blocked. Razon del cambio: Se ha enviado un catch
+[INFO] 20:06:51:761 Team/(4255:4264): Buscando deadlock...
+[INFO] 20:06:51:762 Team/(4255:4264): No se han encontrado deadlocks
+[ERROR] 20:06:54:702 Team/(4255:4266): Error: No se pudo enviar el mensaje catch del entrenador 1 para el pokemon pikachu en (9,9), obteniendo pokemon por comportamiento default
+[INFO] 20:06:54:702 Team/(4255:4257): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 20:06:54:702 Team/(4255:4266): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de atrapar pokemon squirtle
+[INFO] 20:06:54:702 Team/(4255:4266): Entrenador 1 esta atrapando pokemon squirtle ubicado en (5,5)
+[INFO] 20:06:54:702 Team/(4255:4266): El entrenador 1 se esta moviendo de (9,9) a (5,5)
+[INFO] 20:06:54:702 Team/(4255:4266): El entrenador 1 se encuentra en (9,8)
+[INFO] 20:06:59:712 Team/(4255:4266): El entrenador 1 se encuentra en (9,7)
+[INFO] 20:06:59:772 Team/(4255:4264): Buscando deadlock...
+[INFO] 20:06:59:772 Team/(4255:4264): No se han encontrado deadlocks
+[INFO] 20:07:04:722 Team/(4255:4266): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 20:07:04:722 Team/(4255:4266): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 20:07:04:722 Team/(4255:4266): El entrenador 1 se encuentra en (9,6)
+[INFO] 20:07:07:781 Team/(4255:4264): Buscando deadlock...
+[INFO] 20:07:07:782 Team/(4255:4264): No se han encontrado deadlocks
+[INFO] 20:07:09:732 Team/(4255:4266): El entrenador 1 se encuentra en (9,5)
+[INFO] 20:07:11:621 Team/(4255:4263): Iniciando verificacion de conexion con Broker...
+[ERROR] 20:07:11:622 Team/(4255:4263): Reconexion con Broker fallida, intentando nuevamente en 30 segundos
+[INFO] 20:07:14:742 Team/(4255:4266): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 20:07:14:742 Team/(4255:4266): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 20:07:14:742 Team/(4255:4266): El entrenador 1 se encuentra en (8,5)
+[INFO] 20:07:15:791 Team/(4255:4264): Buscando deadlock...
+[INFO] 20:07:15:792 Team/(4255:4264): No se han encontrado deadlocks
+[INFO] 20:07:19:752 Team/(4255:4266): El entrenador 1 se encuentra en (7,5)
+[INFO] 20:07:23:801 Team/(4255:4264): Buscando deadlock...
+[INFO] 20:07:23:802 Team/(4255:4264): No se han encontrado deadlocks
+[INFO] 20:07:24:762 Team/(4255:4266): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 20:07:24:762 Team/(4255:4266): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 20:07:24:762 Team/(4255:4266): El entrenador 1 se encuentra en (6,5)
+[INFO] 20:07:29:772 Team/(4255:4266): El entrenador 1 se encuentra en (5,5)
+[INFO] 20:07:31:808 Team/(4255:4264): Buscando deadlock...
+[INFO] 20:07:31:809 Team/(4255:4264): No se han encontrado deadlocks
+[INFO] 20:07:34:782 Team/(4255:4266): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 20:07:34:782 Team/(4255:4266): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 20:07:34:782 Team/(4255:4266): Estado de entrenador 1 cambiado a Estado blocked. Razon del cambio: Se ha enviado un catch
+[ERROR] 20:07:39:792 Team/(4255:4266): Error: No se pudo enviar el mensaje catch del entrenador 1 para el pokemon squirtle en (5,5), obteniendo pokemon por comportamiento default
+[INFO] 20:07:39:813 Team/(4255:4264): Buscando deadlock...
+[INFO] 20:07:39:813 Team/(4255:4264): Deadlock obtenido involucrando a 3 entrenadores
+[INFO] 20:07:39:813 Team/(4255:4259): Estado de entrenador 0 cambiado a Estado ready. Razon del cambio: Entrenador planificado para intercambiar pokemones
+[INFO] 20:07:39:813 Team/(4255:4265): Estado de entrenador 0 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de intercambiar pokemon
+[INFO] 20:07:39:813 Team/(4255:4265): El entrenador 0 se esta moviendo de (2,8) a (5,5)
+[INFO] 20:07:39:813 Team/(4255:4265): El entrenador 0 se encuentra en (2,7)
+[INFO] 20:07:41:631 Team/(4255:4263): Iniciando verificacion de conexion con Broker...
+[ERROR] 20:07:41:632 Team/(4255:4263): Reconexion con Broker fallida, intentando nuevamente en 30 segundos
+[INFO] 20:07:44:818 Team/(4255:4265): El entrenador 0 se encuentra en (2,6)
+[INFO] 20:07:47:815 Team/(4255:4264): Buscando deadlock...
+[INFO] 20:07:47:816 Team/(4255:4264): No se han encontrado deadlocks
+[INFO] 20:07:49:819 Team/(4255:4265): Estado de entrenador 0 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 20:07:49:819 Team/(4255:4265): Estado de entrenador 0 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 20:07:49:819 Team/(4255:4265): El entrenador 0 se encuentra en (2,5)
+[INFO] 20:07:54:822 Team/(4255:4265): El entrenador 0 se encuentra en (3,5)
+[INFO] 20:07:55:821 Team/(4255:4264): Buscando deadlock...
+[INFO] 20:07:55:822 Team/(4255:4264): No se han encontrado deadlocks
+[INFO] 20:07:59:822 Team/(4255:4265): Estado de entrenador 0 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 20:07:59:822 Team/(4255:4265): Estado de entrenador 0 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 20:07:59:822 Team/(4255:4265): El entrenador 0 se encuentra en (4,5)
+[INFO] 20:08:03:832 Team/(4255:4264): Buscando deadlock...
+[INFO] 20:08:03:832 Team/(4255:4264): No se han encontrado deadlocks
+[INFO] 20:08:04:832 Team/(4255:4265): El entrenador 0 se encuentra en (5,5)
+[INFO] 20:08:09:842 Team/(4255:4265): Estado de entrenador 0 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 20:08:09:842 Team/(4255:4265): Estado de entrenador 0 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 20:08:09:842 Team/(4255:4265): Entrenadores 0 y 1 intercambiando pokemones onix y squirtle
+[INFO] 20:08:11:641 Team/(4255:4263): Iniciando verificacion de conexion con Broker...
+[ERROR] 20:08:11:642 Team/(4255:4263): Reconexion con Broker fallida, intentando nuevamente en 30 segundos
+[INFO] 20:08:11:841 Team/(4255:4264): Buscando deadlock...
+[INFO] 20:08:11:842 Team/(4255:4264): No se han encontrado deadlocks
+[INFO] 20:08:19:852 Team/(4255:4264): Buscando deadlock...
+[INFO] 20:08:19:852 Team/(4255:4264): No se han encontrado deadlocks
+[INFO] 20:08:19:862 Team/(4255:4265): Estado de entrenador 0 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 20:08:19:862 Team/(4255:4265): Estado de entrenador 0 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 20:08:27:861 Team/(4255:4264): Buscando deadlock...
+[INFO] 20:08:27:862 Team/(4255:4264): No se han encontrado deadlocks
+[INFO] 20:08:29:882 Team/(4255:4265): Estado de entrenador 0 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 20:08:29:882 Team/(4255:4265): Estado de entrenador 0 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 20:08:34:892 Team/(4255:4265): Estado de entrenador 0 cambiado a Estado exit. Razon del cambio: Ha terminado su objetivo
+[ERROR] 20:16:54:965 Team/(4543:4550): Hubo un problema enviando la suscripcion a la cola LOCALIZED del broker
+[ERROR] 20:16:54:973 Team/(4543:4557): Error: No se pudo enviar el GET correspondiente al pokemon pikachu, iniciando el comportamiento default
+[ERROR] 20:16:54:973 Team/(4543:4549): Hubo un problema enviando la suscripcion a la cola CAUGHT del broker
+[ERROR] 20:16:54:975 Team/(4543:4558): Error: No se pudo enviar el GET correspondiente al pokemon gengar, iniciando el comportamiento default
+[ERROR] 20:16:54:975 Team/(4543:4556): Error: No se pudo enviar el GET correspondiente al pokemon squirtle, iniciando el comportamiento default
+[ERROR] 20:16:54:975 Team/(4543:4559): Error: No se pudo enviar el GET correspondiente al pokemon onix, iniciando el comportamiento default
+[ERROR] 20:16:54:976 Team/(4543:4548): Hubo un problema enviando la suscripcion a la cola APPEARED del broker
+[INFO] 20:16:57:27 Team/(4543:4545): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 20:16:57:27 Team/(4543:4554): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de atrapar pokemon pikachu
+[INFO] 20:16:57:27 Team/(4543:4554): Entrenador 1 esta atrapando pokemon pikachu ubicado en (9,9)
+[INFO] 20:16:57:27 Team/(4543:4554): El entrenador 1 se esta moviendo de (2,3) a (9,9)
+[INFO] 20:16:57:27 Team/(4543:4554): El entrenador 1 se encuentra en (2,4)
+[INFO] 20:16:57:31 Team/(4543:4545): Estado de entrenador 2 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 20:16:57:46 Team/(4543:4545): Estado de entrenador 0 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 20:17:02:30 Team/(4543:4554): El entrenador 1 se encuentra en (2,5)
+[INFO] 20:17:02:980 Team/(4543:4552): Buscando deadlock...
+[INFO] 20:17:02:980 Team/(4543:4552): No se han encontrado deadlocks
+[INFO] 20:17:07:40 Team/(4543:4554): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 20:17:07:40 Team/(4543:4555): Estado de entrenador 2 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de atrapar pokemon squirtle
+[INFO] 20:17:07:40 Team/(4543:4555): Entrenador 2 esta atrapando pokemon squirtle ubicado en (6,7)
+[INFO] 20:17:07:41 Team/(4543:4555): El entrenador 2 se esta moviendo de (3,2) a (6,7)
+[INFO] 20:17:07:41 Team/(4543:4555): El entrenador 2 se encuentra en (3,3)
+[INFO] 20:17:10:990 Team/(4543:4552): Buscando deadlock...
+[INFO] 20:17:10:991 Team/(4543:4552): No se han encontrado deadlocks
+[INFO] 20:17:12:50 Team/(4543:4555): El entrenador 2 se encuentra en (3,4)
+[INFO] 20:17:17:60 Team/(4543:4555): Estado de entrenador 2 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 20:17:17:60 Team/(4543:4553): Estado de entrenador 0 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de atrapar pokemon onix
+[INFO] 20:17:17:60 Team/(4543:4553): Entrenador 0 esta atrapando pokemon onix ubicado en (2,8)
+[INFO] 20:17:17:60 Team/(4543:4553): El entrenador 0 se esta moviendo de (1,3) a (2,8)
+[INFO] 20:17:17:60 Team/(4543:4553): El entrenador 0 se encuentra en (1,4)
+[INFO] 20:17:18:996 Team/(4543:4552): Buscando deadlock...
+[INFO] 20:17:18:996 Team/(4543:4552): No se han encontrado deadlocks
+[INFO] 20:17:22:70 Team/(4543:4553): El entrenador 0 se encuentra en (1,5)
+[INFO] 20:17:24:980 Team/(4543:4551): Iniciando verificacion de conexion con Broker...
+[ERROR] 20:17:24:980 Team/(4543:4551): Reconexion con Broker fallida, intentando nuevamente en 30 segundos
+[INFO] 20:17:26:0 Team/(4543:4552): Buscando deadlock...
+[INFO] 20:17:26:0 Team/(4543:4552): No se han encontrado deadlocks
+[INFO] 20:17:27:73 Team/(4543:4553): Estado de entrenador 0 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 20:17:27:73 Team/(4543:4554): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 20:17:27:73 Team/(4543:4554): El entrenador 1 se encuentra en (2,6)
+[INFO] 20:17:32:80 Team/(4543:4554): El entrenador 1 se encuentra en (2,7)
+[INFO] 20:17:35:10 Team/(4543:4552): Buscando deadlock...
+[INFO] 20:17:35:10 Team/(4543:4552): No se han encontrado deadlocks
+[INFO] 20:17:37:90 Team/(4543:4554): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 20:17:37:90 Team/(4543:4555): Estado de entrenador 2 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 20:17:37:90 Team/(4543:4555): El entrenador 2 se encuentra en (3,5)
+[INFO] 20:17:42:91 Team/(4543:4555): El entrenador 2 se encuentra en (3,6)
+[INFO] 20:17:43:20 Team/(4543:4552): Buscando deadlock...
+[INFO] 20:17:43:20 Team/(4543:4552): No se han encontrado deadlocks
+[INFO] 20:17:47:100 Team/(4543:4555): Estado de entrenador 2 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 20:17:47:100 Team/(4543:4553): Estado de entrenador 0 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 20:17:47:100 Team/(4543:4553): El entrenador 0 se encuentra en (1,6)
+[INFO] 20:17:51:30 Team/(4543:4552): Buscando deadlock...
+[INFO] 20:17:51:30 Team/(4543:4552): No se han encontrado deadlocks
+[INFO] 20:17:52:110 Team/(4543:4553): El entrenador 0 se encuentra en (1,7)
+[INFO] 20:17:54:990 Team/(4543:4551): Iniciando verificacion de conexion con Broker...
+[ERROR] 20:17:54:990 Team/(4543:4551): Reconexion con Broker fallida, intentando nuevamente en 30 segundos
+[INFO] 20:17:57:120 Team/(4543:4553): Estado de entrenador 0 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 20:17:57:120 Team/(4543:4554): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 20:17:57:120 Team/(4543:4554): El entrenador 1 se encuentra en (2,8)
+[INFO] 20:17:59:40 Team/(4543:4552): Buscando deadlock...
+[INFO] 20:17:59:40 Team/(4543:4552): No se han encontrado deadlocks
+[INFO] 20:18:02:130 Team/(4543:4554): El entrenador 1 se encuentra en (2,9)
+[INFO] 20:18:07:50 Team/(4543:4552): Buscando deadlock...
+[INFO] 20:18:07:50 Team/(4543:4552): No se han encontrado deadlocks
+[INFO] 20:18:07:140 Team/(4543:4554): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 20:18:07:140 Team/(4543:4555): Estado de entrenador 2 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 20:18:07:140 Team/(4543:4555): El entrenador 2 se encuentra en (3,7)
+[INFO] 20:18:12:150 Team/(4543:4555): El entrenador 2 se encuentra en (4,7)
+[INFO] 20:18:15:60 Team/(4543:4552): Buscando deadlock...
+[INFO] 20:18:15:60 Team/(4543:4552): No se han encontrado deadlocks
+[INFO] 20:18:17:160 Team/(4543:4555): Estado de entrenador 2 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 20:18:17:160 Team/(4543:4553): Estado de entrenador 0 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 20:18:17:160 Team/(4543:4553): El entrenador 0 se encuentra en (1,8)
+[INFO] 20:18:22:170 Team/(4543:4553): El entrenador 0 se encuentra en (2,8)
+[INFO] 20:18:23:70 Team/(4543:4552): Buscando deadlock...
+[INFO] 20:18:23:70 Team/(4543:4552): No se han encontrado deadlocks
+[INFO] 20:18:24:0 Team/(4543:4551): Iniciando verificacion de conexion con Broker...
+[ERROR] 20:18:24:0 Team/(4543:4551): Reconexion con Broker fallida, intentando nuevamente en 30 segundos
+[INFO] 20:18:27:180 Team/(4543:4553): Estado de entrenador 0 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 20:18:27:180 Team/(4543:4554): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 20:18:27:180 Team/(4543:4554): El entrenador 1 se encuentra en (3,9)
+[INFO] 20:18:31:80 Team/(4543:4552): Buscando deadlock...
+[INFO] 20:18:31:80 Team/(4543:4552): No se han encontrado deadlocks
+[INFO] 20:18:32:190 Team/(4543:4554): El entrenador 1 se encuentra en (4,9)
+[INFO] 20:18:37:200 Team/(4543:4554): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 20:18:37:200 Team/(4543:4555): Estado de entrenador 2 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 20:18:37:200 Team/(4543:4555): El entrenador 2 se encuentra en (5,7)
+[INFO] 20:18:39:90 Team/(4543:4552): Buscando deadlock...
+[INFO] 20:18:39:90 Team/(4543:4552): No se han encontrado deadlocks
+[INFO] 20:18:42:210 Team/(4543:4555): El entrenador 2 se encuentra en (6,7)
+[INFO] 20:18:47:100 Team/(4543:4552): Buscando deadlock...
+[INFO] 20:18:47:100 Team/(4543:4552): No se han encontrado deadlocks
+[INFO] 20:18:47:220 Team/(4543:4555): Estado de entrenador 2 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 20:18:47:220 Team/(4543:4553): Estado de entrenador 0 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 20:18:47:220 Team/(4543:4553): Estado de entrenador 0 cambiado a Estado blocked. Razon del cambio: Se ha enviado un catch
+[ERROR] 20:18:52:230 Team/(4543:4553): Error: No se pudo enviar el mensaje catch del entrenador 0 para el pokemon onix en (2,8), obteniendo pokemon por comportamiento default
+[INFO] 20:18:52:230 Team/(4543:4554): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 20:18:52:230 Team/(4543:4554): El entrenador 1 se encuentra en (5,9)
+[INFO] 20:18:55:10 Team/(4543:4551): Iniciando verificacion de conexion con Broker...
+[ERROR] 20:18:55:10 Team/(4543:4551): Reconexion con Broker fallida, intentando nuevamente en 30 segundos
+[INFO] 20:18:55:110 Team/(4543:4552): Buscando deadlock...
+[INFO] 20:18:55:110 Team/(4543:4552): No se han encontrado deadlocks
+[INFO] 20:18:57:240 Team/(4543:4554): El entrenador 1 se encuentra en (6,9)
+[INFO] 20:19:02:250 Team/(4543:4554): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 20:19:02:250 Team/(4543:4555): Estado de entrenador 2 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 20:19:02:250 Team/(4543:4555): Estado de entrenador 2 cambiado a Estado blocked. Razon del cambio: Se ha enviado un catch
+[INFO] 20:19:03:111 Team/(4543:4552): Buscando deadlock...
+[INFO] 20:19:03:112 Team/(4543:4552): No se han encontrado deadlocks
+[ERROR] 20:19:07:260 Team/(4543:4555): Error: No se pudo enviar el mensaje catch del entrenador 2 para el pokemon squirtle en (6,7), obteniendo pokemon por comportamiento default
+[INFO] 20:19:07:260 Team/(4543:4545): Estado de entrenador 2 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 20:19:07:260 Team/(4543:4554): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 20:19:07:260 Team/(4543:4554): El entrenador 1 se encuentra en (7,9)
+[INFO] 20:19:11:120 Team/(4543:4552): Buscando deadlock...
+[INFO] 20:19:11:120 Team/(4543:4552): No se han encontrado deadlocks
+[INFO] 20:19:12:270 Team/(4543:4554): El entrenador 1 se encuentra en (8,9)
+[INFO] 20:19:17:280 Team/(4543:4554): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 20:19:17:280 Team/(4543:4555): Estado de entrenador 2 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de atrapar pokemon gengar
+[INFO] 20:19:17:280 Team/(4543:4555): Entrenador 2 esta atrapando pokemon gengar ubicado en (6,6)
+[INFO] 20:19:17:280 Team/(4543:4555): El entrenador 2 se esta moviendo de (6,7) a (6,6)
+[INFO] 20:19:17:280 Team/(4543:4555): El entrenador 2 se encuentra en (6,6)
+[INFO] 20:19:19:130 Team/(4543:4552): Buscando deadlock...
+[INFO] 20:19:19:130 Team/(4543:4552): No se han encontrado deadlocks
+[INFO] 20:19:22:290 Team/(4543:4555): Estado de entrenador 2 cambiado a Estado blocked. Razon del cambio: Se ha enviado un catch
+[INFO] 20:19:25:19 Team/(4543:4551): Iniciando verificacion de conexion con Broker...
+[ERROR] 20:19:25:20 Team/(4543:4551): Reconexion con Broker fallida, intentando nuevamente en 30 segundos
+[INFO] 20:19:27:140 Team/(4543:4552): Buscando deadlock...
+[INFO] 20:19:27:140 Team/(4543:4552): No se han encontrado deadlocks
+[ERROR] 20:19:27:300 Team/(4543:4555): Error: No se pudo enviar el mensaje catch del entrenador 2 para el pokemon gengar en (6,6), obteniendo pokemon por comportamiento default
+[INFO] 20:19:27:300 Team/(4543:4554): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 20:19:27:300 Team/(4543:4554): El entrenador 1 se encuentra en (9,9)
+[INFO] 20:19:32:310 Team/(4543:4554): Estado de entrenador 1 cambiado a Estado blocked. Razon del cambio: Se ha enviado un catch
+[INFO] 20:19:35:150 Team/(4543:4552): Buscando deadlock...
+[INFO] 20:19:35:150 Team/(4543:4552): No se han encontrado deadlocks
+[ERROR] 20:19:37:320 Team/(4543:4554): Error: No se pudo enviar el mensaje catch del entrenador 1 para el pokemon pikachu en (9,9), obteniendo pokemon por comportamiento default
+[INFO] 20:19:37:320 Team/(4543:4545): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 20:19:37:320 Team/(4543:4554): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de atrapar pokemon squirtle
+[INFO] 20:19:37:320 Team/(4543:4554): Entrenador 1 esta atrapando pokemon squirtle ubicado en (5,5)
+[INFO] 20:19:37:320 Team/(4543:4554): El entrenador 1 se esta moviendo de (9,9) a (5,5)
+[INFO] 20:19:37:320 Team/(4543:4554): El entrenador 1 se encuentra en (9,8)
+[INFO] 20:19:42:330 Team/(4543:4554): El entrenador 1 se encuentra en (9,7)
+[INFO] 20:19:43:160 Team/(4543:4552): Buscando deadlock...
+[INFO] 20:19:43:160 Team/(4543:4552): No se han encontrado deadlocks
+[INFO] 20:19:47:340 Team/(4543:4554): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 20:19:47:340 Team/(4543:4554): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 20:19:47:340 Team/(4543:4554): El entrenador 1 se encuentra en (9,6)
+[INFO] 20:19:51:170 Team/(4543:4552): Buscando deadlock...
+[INFO] 20:19:51:170 Team/(4543:4552): No se han encontrado deadlocks
+[INFO] 20:19:52:341 Team/(4543:4554): El entrenador 1 se encuentra en (9,5)
+[INFO] 20:19:55:30 Team/(4543:4551): Iniciando verificacion de conexion con Broker...
+[ERROR] 20:19:55:30 Team/(4543:4551): Reconexion con Broker fallida, intentando nuevamente en 30 segundos
+[INFO] 20:19:57:350 Team/(4543:4554): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 20:19:57:350 Team/(4543:4554): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 20:19:57:350 Team/(4543:4554): El entrenador 1 se encuentra en (8,5)
+[INFO] 20:19:59:180 Team/(4543:4552): Buscando deadlock...
+[INFO] 20:19:59:180 Team/(4543:4552): No se han encontrado deadlocks
+[INFO] 20:20:02:360 Team/(4543:4554): El entrenador 1 se encuentra en (7,5)
+[INFO] 20:20:07:189 Team/(4543:4552): Buscando deadlock...
+[INFO] 20:20:07:189 Team/(4543:4552): No se han encontrado deadlocks
+[INFO] 20:20:07:370 Team/(4543:4554): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 20:20:07:370 Team/(4543:4554): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 20:20:07:370 Team/(4543:4554): El entrenador 1 se encuentra en (6,5)
+[INFO] 20:20:12:380 Team/(4543:4554): El entrenador 1 se encuentra en (5,5)
+[INFO] 20:20:15:200 Team/(4543:4552): Buscando deadlock...
+[INFO] 20:20:15:200 Team/(4543:4552): No se han encontrado deadlocks
+[INFO] 20:20:17:390 Team/(4543:4554): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 20:20:17:390 Team/(4543:4554): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 20:20:17:391 Team/(4543:4554): Estado de entrenador 1 cambiado a Estado blocked. Razon del cambio: Se ha enviado un catch
+[ERROR] 20:20:22:400 Team/(4543:4554): Error: No se pudo enviar el mensaje catch del entrenador 1 para el pokemon squirtle en (5,5), obteniendo pokemon por comportamiento default
+[INFO] 20:20:23:210 Team/(4543:4552): Buscando deadlock...
+[INFO] 20:20:23:210 Team/(4543:4552): Deadlock obtenido involucrando a 3 entrenadores
+[INFO] 20:20:23:211 Team/(4543:4547): Estado de entrenador 0 cambiado a Estado ready. Razon del cambio: Entrenador planificado para intercambiar pokemones
+[INFO] 20:20:23:211 Team/(4543:4553): Estado de entrenador 0 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de intercambiar pokemon
+[INFO] 20:20:23:211 Team/(4543:4553): El entrenador 0 se esta moviendo de (2,8) a (5,5)
+[INFO] 20:20:23:211 Team/(4543:4553): El entrenador 0 se encuentra en (2,7)
+[INFO] 20:20:25:40 Team/(4543:4551): Iniciando verificacion de conexion con Broker...
+[ERROR] 20:20:25:40 Team/(4543:4551): Reconexion con Broker fallida, intentando nuevamente en 30 segundos
+[INFO] 20:20:28:220 Team/(4543:4553): El entrenador 0 se encuentra en (2,6)
+[INFO] 20:20:31:219 Team/(4543:4552): Buscando deadlock...
+[INFO] 20:20:31:220 Team/(4543:4552): No se han encontrado deadlocks
+[INFO] 20:20:33:229 Team/(4543:4553): Estado de entrenador 0 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 20:20:33:230 Team/(4543:4553): Estado de entrenador 0 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 20:20:33:230 Team/(4543:4553): El entrenador 0 se encuentra en (2,5)
+[INFO] 20:20:38:240 Team/(4543:4553): El entrenador 0 se encuentra en (3,5)
+[INFO] 20:20:39:229 Team/(4543:4552): Buscando deadlock...
+[INFO] 20:20:39:230 Team/(4543:4552): No se han encontrado deadlocks
+[INFO] 20:20:43:250 Team/(4543:4553): Estado de entrenador 0 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 20:20:43:250 Team/(4543:4553): Estado de entrenador 0 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 20:20:43:250 Team/(4543:4553): El entrenador 0 se encuentra en (4,5)
+[INFO] 20:20:47:239 Team/(4543:4552): Buscando deadlock...
+[INFO] 20:20:47:240 Team/(4543:4552): No se han encontrado deadlocks
+[INFO] 20:20:48:260 Team/(4543:4553): El entrenador 0 se encuentra en (5,5)
+[INFO] 20:20:53:270 Team/(4543:4553): Estado de entrenador 0 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 20:20:53:270 Team/(4543:4553): Estado de entrenador 0 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 20:20:53:270 Team/(4543:4553): Entrenadores 0 y 1 intercambiando pokemones onix y squirtle
+[INFO] 20:20:55:49 Team/(4543:4551): Iniciando verificacion de conexion con Broker...
+[ERROR] 20:20:55:50 Team/(4543:4551): Reconexion con Broker fallida, intentando nuevamente en 30 segundos
+[INFO] 20:20:55:249 Team/(4543:4552): Buscando deadlock...
+[INFO] 20:20:55:250 Team/(4543:4552): No se han encontrado deadlocks
+[INFO] 20:21:03:259 Team/(4543:4552): Buscando deadlock...
+[INFO] 20:21:03:260 Team/(4543:4552): No se han encontrado deadlocks
+[INFO] 20:21:03:289 Team/(4543:4553): Estado de entrenador 0 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 20:21:03:289 Team/(4543:4553): Estado de entrenador 0 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 20:21:11:269 Team/(4543:4552): Buscando deadlock...
+[INFO] 20:21:11:270 Team/(4543:4552): No se han encontrado deadlocks
+[INFO] 20:21:13:299 Team/(4543:4553): Estado de entrenador 0 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 20:21:13:299 Team/(4543:4553): Estado de entrenador 0 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 20:21:18:310 Team/(4543:4553): Estado de entrenador 0 cambiado a Estado exit. Razon del cambio: Ha terminado su objetivo
+[ERROR] 20:28:30:480 Team/(4873:4880): Hubo un problema enviando la suscripcion a la cola LOCALIZED del broker
+[ERROR] 20:28:30:484 Team/(4873:4879): Hubo un problema enviando la suscripcion a la cola CAUGHT del broker
+[ERROR] 20:28:30:492 Team/(4873:4888): Error: No se pudo enviar el GET correspondiente al pokemon gengar, iniciando el comportamiento default
+[ERROR] 20:28:30:493 Team/(4873:4887): Error: No se pudo enviar el GET correspondiente al pokemon pikachu, iniciando el comportamiento default
+[ERROR] 20:28:30:493 Team/(4873:4886): Error: No se pudo enviar el GET correspondiente al pokemon squirtle, iniciando el comportamiento default
+[ERROR] 20:28:30:493 Team/(4873:4889): Error: No se pudo enviar el GET correspondiente al pokemon onix, iniciando el comportamiento default
+[ERROR] 20:28:30:493 Team/(4873:4878): Hubo un problema enviando la suscripcion a la cola APPEARED del broker
+[INFO] 20:28:33:760 Team/(4873:4875): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 20:28:33:760 Team/(4873:4884): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de atrapar pokemon pikachu
+[INFO] 20:28:33:760 Team/(4873:4884): Entrenador 1 esta atrapando pokemon pikachu ubicado en (9,9)
+[INFO] 20:28:33:760 Team/(4873:4884): El entrenador 1 se esta moviendo de (2,3) a (9,9)
+[INFO] 20:28:33:760 Team/(4873:4884): El entrenador 1 se encuentra en (2,4)
+[INFO] 20:28:33:777 Team/(4873:4875): Estado de entrenador 2 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 20:28:33:781 Team/(4873:4875): Estado de entrenador 0 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 20:28:38:492 Team/(4873:4882): Buscando deadlock...
+[INFO] 20:28:38:492 Team/(4873:4882): No se han encontrado deadlocks
+[INFO] 20:28:38:762 Team/(4873:4884): El entrenador 1 se encuentra en (2,5)
+[INFO] 20:28:43:772 Team/(4873:4884): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 20:28:43:772 Team/(4873:4885): Estado de entrenador 2 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de atrapar pokemon squirtle
+[INFO] 20:28:43:772 Team/(4873:4885): Entrenador 2 esta atrapando pokemon squirtle ubicado en (6,7)
+[INFO] 20:28:43:772 Team/(4873:4885): El entrenador 2 se esta moviendo de (3,2) a (6,7)
+[INFO] 20:28:43:772 Team/(4873:4885): El entrenador 2 se encuentra en (3,3)
+[INFO] 20:28:46:502 Team/(4873:4882): Buscando deadlock...
+[INFO] 20:28:46:502 Team/(4873:4882): No se han encontrado deadlocks
+[INFO] 20:28:48:782 Team/(4873:4885): El entrenador 2 se encuentra en (3,4)
+[INFO] 20:28:53:792 Team/(4873:4885): Estado de entrenador 2 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 20:28:53:792 Team/(4873:4883): Estado de entrenador 0 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de atrapar pokemon onix
+[INFO] 20:28:53:792 Team/(4873:4883): Entrenador 0 esta atrapando pokemon onix ubicado en (2,8)
+[INFO] 20:28:53:792 Team/(4873:4883): El entrenador 0 se esta moviendo de (1,3) a (2,8)
+[INFO] 20:28:53:792 Team/(4873:4883): El entrenador 0 se encuentra en (1,4)
+[INFO] 20:28:54:512 Team/(4873:4882): Buscando deadlock...
+[INFO] 20:28:54:512 Team/(4873:4882): No se han encontrado deadlocks
+[INFO] 20:28:58:803 Team/(4873:4883): El entrenador 0 se encuentra en (1,5)
+[INFO] 20:29:00:493 Team/(4873:4881): Iniciando verificacion de conexion con Broker...
+[ERROR] 20:29:00:493 Team/(4873:4881): Reconexion con Broker fallida, intentando nuevamente en 30 segundos
+[INFO] 20:29:02:522 Team/(4873:4882): Buscando deadlock...
+[INFO] 20:29:02:522 Team/(4873:4882): No se han encontrado deadlocks
+[INFO] 20:29:03:811 Team/(4873:4883): Estado de entrenador 0 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 20:29:03:811 Team/(4873:4884): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 20:29:03:811 Team/(4873:4884): El entrenador 1 se encuentra en (2,6)
+[INFO] 20:29:08:812 Team/(4873:4884): El entrenador 1 se encuentra en (2,7)
+[INFO] 20:29:10:532 Team/(4873:4882): Buscando deadlock...
+[INFO] 20:29:10:532 Team/(4873:4882): No se han encontrado deadlocks
+[INFO] 20:29:13:818 Team/(4873:4884): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 20:29:13:818 Team/(4873:4885): Estado de entrenador 2 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 20:29:13:818 Team/(4873:4885): El entrenador 2 se encuentra en (3,5)
+[INFO] 20:29:18:542 Team/(4873:4882): Buscando deadlock...
+[INFO] 20:29:18:542 Team/(4873:4882): No se han encontrado deadlocks
+[INFO] 20:29:18:822 Team/(4873:4885): El entrenador 2 se encuentra en (3,6)
+[INFO] 20:29:23:822 Team/(4873:4885): Estado de entrenador 2 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 20:29:23:822 Team/(4873:4883): Estado de entrenador 0 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 20:29:23:822 Team/(4873:4883): El entrenador 0 se encuentra en (1,6)
+[INFO] 20:29:26:552 Team/(4873:4882): Buscando deadlock...
+[INFO] 20:29:26:552 Team/(4873:4882): No se han encontrado deadlocks
+[INFO] 20:29:28:832 Team/(4873:4883): El entrenador 0 se encuentra en (1,7)
+[INFO] 20:29:30:502 Team/(4873:4881): Iniciando verificacion de conexion con Broker...
+[ERROR] 20:29:30:502 Team/(4873:4881): Reconexion con Broker fallida, intentando nuevamente en 30 segundos
+[INFO] 20:29:33:842 Team/(4873:4883): Estado de entrenador 0 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 20:29:33:842 Team/(4873:4884): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 20:29:33:842 Team/(4873:4884): El entrenador 1 se encuentra en (2,8)
+[INFO] 20:29:34:562 Team/(4873:4882): Buscando deadlock...
+[INFO] 20:29:34:562 Team/(4873:4882): No se han encontrado deadlocks
+[INFO] 20:29:38:852 Team/(4873:4884): El entrenador 1 se encuentra en (2,9)
+[INFO] 20:29:42:572 Team/(4873:4882): Buscando deadlock...
+[INFO] 20:29:42:572 Team/(4873:4882): No se han encontrado deadlocks
+[INFO] 20:29:43:862 Team/(4873:4884): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 20:29:43:862 Team/(4873:4885): Estado de entrenador 2 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 20:29:43:862 Team/(4873:4885): El entrenador 2 se encuentra en (3,7)
+[INFO] 20:29:48:872 Team/(4873:4885): El entrenador 2 se encuentra en (4,7)
+[INFO] 20:29:50:575 Team/(4873:4882): Buscando deadlock...
+[INFO] 20:29:50:575 Team/(4873:4882): No se han encontrado deadlocks
+[INFO] 20:29:53:882 Team/(4873:4885): Estado de entrenador 2 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 20:29:53:882 Team/(4873:4883): Estado de entrenador 0 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 20:29:53:882 Team/(4873:4883): El entrenador 0 se encuentra en (1,8)
+[INFO] 20:29:58:578 Team/(4873:4882): Buscando deadlock...
+[INFO] 20:29:58:578 Team/(4873:4882): No se han encontrado deadlocks
+[INFO] 20:29:58:888 Team/(4873:4883): El entrenador 0 se encuentra en (2,8)
+[INFO] 20:30:00:503 Team/(4873:4881): Iniciando verificacion de conexion con Broker...
+[ERROR] 20:30:00:503 Team/(4873:4881): Reconexion con Broker fallida, intentando nuevamente en 30 segundos
+[INFO] 20:30:03:892 Team/(4873:4883): Estado de entrenador 0 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 20:30:03:892 Team/(4873:4884): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 20:30:03:892 Team/(4873:4884): El entrenador 1 se encuentra en (3,9)
+[INFO] 20:30:06:579 Team/(4873:4882): Buscando deadlock...
+[INFO] 20:30:06:581 Team/(4873:4882): No se han encontrado deadlocks
+[INFO] 20:30:08:894 Team/(4873:4884): El entrenador 1 se encuentra en (4,9)
+[INFO] 20:30:13:903 Team/(4873:4884): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 20:30:13:903 Team/(4873:4885): Estado de entrenador 2 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 20:30:13:903 Team/(4873:4885): El entrenador 2 se encuentra en (5,7)
+[INFO] 20:30:14:582 Team/(4873:4882): Buscando deadlock...
+[INFO] 20:30:14:582 Team/(4873:4882): No se han encontrado deadlocks
+[INFO] 20:30:18:912 Team/(4873:4885): El entrenador 2 se encuentra en (6,7)
+[INFO] 20:30:22:592 Team/(4873:4882): Buscando deadlock...
+[INFO] 20:30:22:592 Team/(4873:4882): No se han encontrado deadlocks
+[INFO] 20:30:23:922 Team/(4873:4885): Estado de entrenador 2 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 20:30:23:922 Team/(4873:4883): Estado de entrenador 0 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 20:30:23:922 Team/(4873:4883): Estado de entrenador 0 cambiado a Estado blocked. Razon del cambio: Se ha enviado un catch
+[ERROR] 20:30:28:932 Team/(4873:4883): Error: No se pudo enviar el mensaje catch del entrenador 0 para el pokemon onix en (2,8), obteniendo pokemon por comportamiento default
+[INFO] 20:30:28:933 Team/(4873:4884): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 20:30:28:933 Team/(4873:4884): El entrenador 1 se encuentra en (5,9)
+[INFO] 20:30:30:512 Team/(4873:4881): Iniciando verificacion de conexion con Broker...
+[ERROR] 20:30:30:512 Team/(4873:4881): Reconexion con Broker fallida, intentando nuevamente en 30 segundos
+[INFO] 20:30:30:602 Team/(4873:4882): Buscando deadlock...
+[INFO] 20:30:30:602 Team/(4873:4882): No se han encontrado deadlocks
+[INFO] 20:30:33:942 Team/(4873:4884): El entrenador 1 se encuentra en (6,9)
+[INFO] 20:30:38:612 Team/(4873:4882): Buscando deadlock...
+[INFO] 20:30:38:613 Team/(4873:4882): No se han encontrado deadlocks
+[INFO] 20:30:38:952 Team/(4873:4884): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 20:30:38:952 Team/(4873:4885): Estado de entrenador 2 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 20:30:38:953 Team/(4873:4885): Estado de entrenador 2 cambiado a Estado blocked. Razon del cambio: Se ha enviado un catch
+[ERROR] 20:30:43:962 Team/(4873:4885): Error: No se pudo enviar el mensaje catch del entrenador 2 para el pokemon squirtle en (6,7), obteniendo pokemon por comportamiento default
+[INFO] 20:30:43:963 Team/(4873:4875): Estado de entrenador 2 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 20:30:43:963 Team/(4873:4884): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 20:30:43:963 Team/(4873:4884): El entrenador 1 se encuentra en (7,9)
+[INFO] 20:30:46:622 Team/(4873:4882): Buscando deadlock...
+[INFO] 20:30:46:622 Team/(4873:4882): No se han encontrado deadlocks
+[INFO] 20:30:48:973 Team/(4873:4884): El entrenador 1 se encuentra en (8,9)
+[INFO] 20:30:53:982 Team/(4873:4884): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 20:30:53:982 Team/(4873:4885): Estado de entrenador 2 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de atrapar pokemon gengar
+[INFO] 20:30:53:982 Team/(4873:4885): Entrenador 2 esta atrapando pokemon gengar ubicado en (6,6)
+[INFO] 20:30:53:982 Team/(4873:4885): El entrenador 2 se esta moviendo de (6,7) a (6,6)
+[INFO] 20:30:53:983 Team/(4873:4885): El entrenador 2 se encuentra en (6,6)
+[INFO] 20:30:54:632 Team/(4873:4882): Buscando deadlock...
+[INFO] 20:30:54:632 Team/(4873:4882): No se han encontrado deadlocks
+[INFO] 20:30:58:992 Team/(4873:4885): Estado de entrenador 2 cambiado a Estado blocked. Razon del cambio: Se ha enviado un catch
+[INFO] 20:31:00:522 Team/(4873:4881): Iniciando verificacion de conexion con Broker...
+[ERROR] 20:31:00:522 Team/(4873:4881): Reconexion con Broker fallida, intentando nuevamente en 30 segundos
+[INFO] 20:31:02:642 Team/(4873:4882): Buscando deadlock...
+[INFO] 20:31:02:642 Team/(4873:4882): No se han encontrado deadlocks
+[ERROR] 20:31:04:2 Team/(4873:4885): Error: No se pudo enviar el mensaje catch del entrenador 2 para el pokemon gengar en (6,6), obteniendo pokemon por comportamiento default
+[INFO] 20:31:04:3 Team/(4873:4884): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 20:31:04:3 Team/(4873:4884): El entrenador 1 se encuentra en (9,9)
+[INFO] 20:31:09:12 Team/(4873:4884): Estado de entrenador 1 cambiado a Estado blocked. Razon del cambio: Se ha enviado un catch
+[INFO] 20:31:10:651 Team/(4873:4882): Buscando deadlock...
+[INFO] 20:31:10:652 Team/(4873:4882): No se han encontrado deadlocks
+[ERROR] 20:31:14:22 Team/(4873:4884): Error: No se pudo enviar el mensaje catch del entrenador 1 para el pokemon pikachu en (9,9), obteniendo pokemon por comportamiento default
+[INFO] 20:31:14:23 Team/(4873:4875): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 20:31:14:23 Team/(4873:4884): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de atrapar pokemon squirtle
+[INFO] 20:31:14:23 Team/(4873:4884): Entrenador 1 esta atrapando pokemon squirtle ubicado en (5,5)
+[INFO] 20:31:14:23 Team/(4873:4884): El entrenador 1 se esta moviendo de (9,9) a (5,5)
+[INFO] 20:31:14:23 Team/(4873:4884): El entrenador 1 se encuentra en (9,8)
+[INFO] 20:31:18:662 Team/(4873:4882): Buscando deadlock...
+[INFO] 20:31:18:663 Team/(4873:4882): No se han encontrado deadlocks
+[INFO] 20:31:19:32 Team/(4873:4884): El entrenador 1 se encuentra en (9,7)
+[INFO] 20:31:24:42 Team/(4873:4884): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 20:31:24:42 Team/(4873:4884): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 20:31:24:43 Team/(4873:4884): El entrenador 1 se encuentra en (9,6)
+[INFO] 20:31:26:672 Team/(4873:4882): Buscando deadlock...
+[INFO] 20:31:26:673 Team/(4873:4882): No se han encontrado deadlocks
+[INFO] 20:31:29:52 Team/(4873:4884): El entrenador 1 se encuentra en (9,5)
+[INFO] 20:31:30:532 Team/(4873:4881): Iniciando verificacion de conexion con Broker...
+[ERROR] 20:31:30:532 Team/(4873:4881): Reconexion con Broker fallida, intentando nuevamente en 30 segundos
+[INFO] 20:31:34:62 Team/(4873:4884): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 20:31:34:63 Team/(4873:4884): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 20:31:34:63 Team/(4873:4884): El entrenador 1 se encuentra en (8,5)
+[INFO] 20:31:34:683 Team/(4873:4882): Buscando deadlock...
+[INFO] 20:31:34:683 Team/(4873:4882): No se han encontrado deadlocks
+[INFO] 20:31:39:72 Team/(4873:4884): El entrenador 1 se encuentra en (7,5)
+[INFO] 20:31:42:692 Team/(4873:4882): Buscando deadlock...
+[INFO] 20:31:42:693 Team/(4873:4882): No se han encontrado deadlocks
+[INFO] 20:31:44:82 Team/(4873:4884): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 20:31:44:83 Team/(4873:4884): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 20:31:44:83 Team/(4873:4884): El entrenador 1 se encuentra en (6,5)
+[INFO] 20:31:49:92 Team/(4873:4884): El entrenador 1 se encuentra en (5,5)
+[INFO] 20:31:50:702 Team/(4873:4882): Buscando deadlock...
+[INFO] 20:31:50:703 Team/(4873:4882): No se han encontrado deadlocks
+[INFO] 20:31:54:102 Team/(4873:4884): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 20:31:54:103 Team/(4873:4884): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 20:31:54:103 Team/(4873:4884): Estado de entrenador 1 cambiado a Estado blocked. Razon del cambio: Se ha enviado un catch
+[INFO] 20:31:58:712 Team/(4873:4882): Buscando deadlock...
+[INFO] 20:31:58:713 Team/(4873:4882): No se han encontrado deadlocks
+[ERROR] 20:31:59:112 Team/(4873:4884): Error: No se pudo enviar el mensaje catch del entrenador 1 para el pokemon squirtle en (5,5), obteniendo pokemon por comportamiento default
+[INFO] 20:32:00:542 Team/(4873:4881): Iniciando verificacion de conexion con Broker...
+[ERROR] 20:32:00:543 Team/(4873:4881): Reconexion con Broker fallida, intentando nuevamente en 30 segundos
+[INFO] 20:32:06:722 Team/(4873:4882): Buscando deadlock...
+[INFO] 20:32:06:723 Team/(4873:4882): Deadlock obtenido involucrando a 3 entrenadores
+[INFO] 20:32:06:724 Team/(4873:4877): Estado de entrenador 0 cambiado a Estado ready. Razon del cambio: Entrenador planificado para intercambiar pokemones
+[INFO] 20:32:06:724 Team/(4873:4883): Estado de entrenador 0 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de intercambiar pokemon
+[INFO] 20:32:06:724 Team/(4873:4883): El entrenador 0 se esta moviendo de (2,8) a (5,5)
+[INFO] 20:32:06:724 Team/(4873:4883): El entrenador 0 se encuentra en (2,7)
+[INFO] 20:32:11:732 Team/(4873:4883): El entrenador 0 se encuentra en (2,6)
+[INFO] 20:32:14:732 Team/(4873:4882): Buscando deadlock...
+[INFO] 20:32:14:733 Team/(4873:4882): No se han encontrado deadlocks
+[INFO] 20:32:16:742 Team/(4873:4883): Estado de entrenador 0 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 20:32:16:743 Team/(4873:4883): Estado de entrenador 0 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 20:32:16:743 Team/(4873:4883): El entrenador 0 se encuentra en (2,5)
+[INFO] 20:32:21:752 Team/(4873:4883): El entrenador 0 se encuentra en (3,5)
+[INFO] 20:32:22:742 Team/(4873:4882): Buscando deadlock...
+[INFO] 20:32:22:743 Team/(4873:4882): No se han encontrado deadlocks
+[INFO] 20:32:26:762 Team/(4873:4883): Estado de entrenador 0 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 20:32:26:763 Team/(4873:4883): Estado de entrenador 0 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 20:32:26:763 Team/(4873:4883): El entrenador 0 se encuentra en (4,5)
+[INFO] 20:32:30:552 Team/(4873:4881): Iniciando verificacion de conexion con Broker...
+[ERROR] 20:32:30:552 Team/(4873:4881): Reconexion con Broker fallida, intentando nuevamente en 30 segundos
+[INFO] 20:32:30:752 Team/(4873:4882): Buscando deadlock...
+[INFO] 20:32:30:753 Team/(4873:4882): No se han encontrado deadlocks
+[INFO] 20:32:31:772 Team/(4873:4883): El entrenador 0 se encuentra en (5,5)
+[INFO] 20:32:36:782 Team/(4873:4883): Estado de entrenador 0 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 20:32:36:783 Team/(4873:4883): Estado de entrenador 0 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 20:32:36:783 Team/(4873:4883): Entrenadores 0 y 1 intercambiando pokemones onix y squirtle
+[INFO] 20:32:38:762 Team/(4873:4882): Buscando deadlock...
+[INFO] 20:32:38:763 Team/(4873:4882): No se han encontrado deadlocks
+[INFO] 20:32:46:772 Team/(4873:4882): Buscando deadlock...
+[INFO] 20:32:46:773 Team/(4873:4882): No se han encontrado deadlocks
+[INFO] 20:32:46:802 Team/(4873:4883): Estado de entrenador 0 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 20:32:46:802 Team/(4873:4883): Estado de entrenador 0 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 20:32:54:782 Team/(4873:4882): Buscando deadlock...
+[INFO] 20:32:54:783 Team/(4873:4882): No se han encontrado deadlocks
+[INFO] 20:32:56:821 Team/(4873:4883): Estado de entrenador 0 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 20:32:56:821 Team/(4873:4883): Estado de entrenador 0 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 20:33:00:562 Team/(4873:4881): Iniciando verificacion de conexion con Broker...
+[ERROR] 20:33:00:563 Team/(4873:4881): Reconexion con Broker fallida, intentando nuevamente en 30 segundos
+[INFO] 20:33:01:823 Team/(4873:4883): Estado de entrenador 0 cambiado a Estado exit. Razon del cambio: Ha terminado su objetivo
+[ERROR] 20:39:42:17 Team/(5132:5139): Hubo un problema enviando la suscripcion a la cola LOCALIZED del broker
+[ERROR] 20:39:42:22 Team/(5132:5138): Hubo un problema enviando la suscripcion a la cola CAUGHT del broker
+[ERROR] 20:39:42:32 Team/(5132:5146): Error: No se pudo enviar el GET correspondiente al pokemon pikachu, iniciando el comportamiento default
+[ERROR] 20:39:42:32 Team/(5132:5148): Error: No se pudo enviar el GET correspondiente al pokemon onix, iniciando el comportamiento default
+[ERROR] 20:39:42:32 Team/(5132:5145): Error: No se pudo enviar el GET correspondiente al pokemon squirtle, iniciando el comportamiento default
+[ERROR] 20:39:42:32 Team/(5132:5137): Hubo un problema enviando la suscripcion a la cola APPEARED del broker
+[ERROR] 20:39:42:41 Team/(5132:5147): Error: No se pudo enviar el GET correspondiente al pokemon gengar, iniciando el comportamiento default
+[INFO] 20:39:45:949 Team/(5132:5134): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 20:39:45:949 Team/(5132:5143): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de atrapar pokemon pikachu
+[INFO] 20:39:45:949 Team/(5132:5143): Entrenador 1 esta atrapando pokemon pikachu ubicado en (9,9)
+[INFO] 20:39:45:949 Team/(5132:5143): El entrenador 1 se esta moviendo de (2,3) a (9,9)
+[INFO] 20:39:45:949 Team/(5132:5143): El entrenador 1 se encuentra en (2,4)
+[INFO] 20:39:45:952 Team/(5132:5134): Estado de entrenador 2 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 20:39:45:962 Team/(5132:5134): Estado de entrenador 0 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 20:39:50:41 Team/(5132:5141): Buscando deadlock...
+[INFO] 20:39:50:42 Team/(5132:5141): No se han encontrado deadlocks
+[INFO] 20:39:50:952 Team/(5132:5143): El entrenador 1 se encuentra en (2,5)
+[INFO] 20:39:55:962 Team/(5132:5143): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 20:39:55:962 Team/(5132:5144): Estado de entrenador 2 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de atrapar pokemon squirtle
+[INFO] 20:39:55:962 Team/(5132:5144): Entrenador 2 esta atrapando pokemon squirtle ubicado en (6,7)
+[INFO] 20:39:55:962 Team/(5132:5144): El entrenador 2 se esta moviendo de (3,2) a (6,7)
+[INFO] 20:39:55:962 Team/(5132:5144): El entrenador 2 se encuentra en (3,3)
+[INFO] 20:39:58:52 Team/(5132:5141): Buscando deadlock...
+[INFO] 20:39:58:52 Team/(5132:5141): No se han encontrado deadlocks
+[INFO] 20:40:00:972 Team/(5132:5144): El entrenador 2 se encuentra en (3,4)
+[INFO] 20:40:05:982 Team/(5132:5144): Estado de entrenador 2 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 20:40:05:982 Team/(5132:5142): Estado de entrenador 0 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de atrapar pokemon onix
+[INFO] 20:40:05:982 Team/(5132:5142): Entrenador 0 esta atrapando pokemon onix ubicado en (2,8)
+[INFO] 20:40:05:982 Team/(5132:5142): El entrenador 0 se esta moviendo de (1,3) a (2,8)
+[INFO] 20:40:05:982 Team/(5132:5142): El entrenador 0 se encuentra en (1,4)
+[INFO] 20:40:06:62 Team/(5132:5141): Buscando deadlock...
+[INFO] 20:40:06:62 Team/(5132:5141): No se han encontrado deadlocks
+[INFO] 20:40:10:992 Team/(5132:5142): El entrenador 0 se encuentra en (1,5)
+[INFO] 20:40:12:41 Team/(5132:5140): Iniciando verificacion de conexion con Broker...
+[ERROR] 20:40:12:42 Team/(5132:5140): Reconexion con Broker fallida, intentando nuevamente en 30 segundos
+[INFO] 20:40:14:72 Team/(5132:5141): Buscando deadlock...
+[INFO] 20:40:14:72 Team/(5132:5141): No se han encontrado deadlocks
+[INFO] 20:40:15:2 Team/(5132:5142): Estado de entrenador 0 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 20:40:15:2 Team/(5132:5143): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 20:40:15:2 Team/(5132:5143): El entrenador 1 se encuentra en (2,6)
+[INFO] 20:40:21:12 Team/(5132:5143): El entrenador 1 se encuentra en (2,7)
+[INFO] 20:40:22:81 Team/(5132:5141): Buscando deadlock...
+[INFO] 20:40:22:81 Team/(5132:5141): No se han encontrado deadlocks
+[INFO] 20:40:26:22 Team/(5132:5143): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 20:40:26:22 Team/(5132:5144): Estado de entrenador 2 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 20:40:26:22 Team/(5132:5144): El entrenador 2 se encuentra en (3,5)
+[INFO] 20:40:30:91 Team/(5132:5141): Buscando deadlock...
+[INFO] 20:40:30:92 Team/(5132:5141): No se han encontrado deadlocks
+[INFO] 20:40:31:32 Team/(5132:5144): El entrenador 2 se encuentra en (3,6)
+[INFO] 20:40:36:42 Team/(5132:5144): Estado de entrenador 2 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 20:40:36:42 Team/(5132:5142): Estado de entrenador 0 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 20:40:36:42 Team/(5132:5142): El entrenador 0 se encuentra en (1,6)
+[INFO] 20:40:38:101 Team/(5132:5141): Buscando deadlock...
+[INFO] 20:40:38:101 Team/(5132:5141): No se han encontrado deadlocks
+[INFO] 20:40:41:52 Team/(5132:5142): El entrenador 0 se encuentra en (1,7)
+[INFO] 20:40:42:51 Team/(5132:5140): Iniciando verificacion de conexion con Broker...
+[ERROR] 20:40:42:52 Team/(5132:5140): Reconexion con Broker fallida, intentando nuevamente en 30 segundos
+[INFO] 20:40:46:62 Team/(5132:5142): Estado de entrenador 0 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 20:40:46:62 Team/(5132:5143): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 20:40:46:62 Team/(5132:5143): El entrenador 1 se encuentra en (2,8)
+[INFO] 20:40:46:111 Team/(5132:5141): Buscando deadlock...
+[INFO] 20:40:46:112 Team/(5132:5141): No se han encontrado deadlocks
+[INFO] 20:40:51:72 Team/(5132:5143): El entrenador 1 se encuentra en (2,9)
+[INFO] 20:40:54:121 Team/(5132:5141): Buscando deadlock...
+[INFO] 20:40:54:122 Team/(5132:5141): No se han encontrado deadlocks
+[INFO] 20:40:56:82 Team/(5132:5143): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 20:40:56:82 Team/(5132:5144): Estado de entrenador 2 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 20:40:56:82 Team/(5132:5144): El entrenador 2 se encuentra en (3,7)
+[INFO] 20:41:01:91 Team/(5132:5144): El entrenador 2 se encuentra en (4,7)
+[INFO] 20:41:02:131 Team/(5132:5141): Buscando deadlock...
+[INFO] 20:41:02:131 Team/(5132:5141): No se han encontrado deadlocks
+[INFO] 20:41:06:102 Team/(5132:5144): Estado de entrenador 2 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 20:41:06:102 Team/(5132:5142): Estado de entrenador 0 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 20:41:06:102 Team/(5132:5142): El entrenador 0 se encuentra en (1,8)
+[INFO] 20:41:10:141 Team/(5132:5141): Buscando deadlock...
+[INFO] 20:41:10:141 Team/(5132:5141): No se han encontrado deadlocks
+[INFO] 20:41:11:111 Team/(5132:5142): El entrenador 0 se encuentra en (2,8)
+[INFO] 20:41:12:61 Team/(5132:5140): Iniciando verificacion de conexion con Broker...
+[ERROR] 20:41:12:61 Team/(5132:5140): Reconexion con Broker fallida, intentando nuevamente en 30 segundos
+[INFO] 20:41:16:121 Team/(5132:5142): Estado de entrenador 0 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 20:41:16:121 Team/(5132:5143): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 20:41:16:121 Team/(5132:5143): El entrenador 1 se encuentra en (3,9)
+[INFO] 20:41:18:151 Team/(5132:5141): Buscando deadlock...
+[INFO] 20:41:18:151 Team/(5132:5141): No se han encontrado deadlocks
+[INFO] 20:41:21:131 Team/(5132:5143): El entrenador 1 se encuentra en (4,9)
+[INFO] 20:41:26:141 Team/(5132:5143): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 20:41:26:141 Team/(5132:5144): Estado de entrenador 2 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 20:41:26:141 Team/(5132:5144): El entrenador 2 se encuentra en (5,7)
+[INFO] 20:41:26:162 Team/(5132:5141): Buscando deadlock...
+[INFO] 20:41:26:162 Team/(5132:5141): No se han encontrado deadlocks
+[INFO] 20:41:31:151 Team/(5132:5144): El entrenador 2 se encuentra en (6,7)
+[INFO] 20:41:34:171 Team/(5132:5141): Buscando deadlock...
+[INFO] 20:41:34:171 Team/(5132:5141): No se han encontrado deadlocks
+[INFO] 20:41:36:161 Team/(5132:5144): Estado de entrenador 2 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 20:41:36:161 Team/(5132:5142): Estado de entrenador 0 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 20:41:36:161 Team/(5132:5142): Estado de entrenador 0 cambiado a Estado blocked. Razon del cambio: Se ha enviado un catch
+[ERROR] 20:41:41:171 Team/(5132:5142): Error: No se pudo enviar el mensaje catch del entrenador 0 para el pokemon onix en (2,8), obteniendo pokemon por comportamiento default
+[INFO] 20:41:41:172 Team/(5132:5143): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 20:41:41:172 Team/(5132:5143): El entrenador 1 se encuentra en (5,9)
+[INFO] 20:41:42:71 Team/(5132:5140): Iniciando verificacion de conexion con Broker...
+[ERROR] 20:41:42:71 Team/(5132:5140): Reconexion con Broker fallida, intentando nuevamente en 30 segundos
+[INFO] 20:41:42:181 Team/(5132:5141): Buscando deadlock...
+[INFO] 20:41:42:181 Team/(5132:5141): No se han encontrado deadlocks
+[INFO] 20:41:46:181 Team/(5132:5143): El entrenador 1 se encuentra en (6,9)
+[INFO] 20:41:50:191 Team/(5132:5141): Buscando deadlock...
+[INFO] 20:41:50:191 Team/(5132:5141): No se han encontrado deadlocks
+[INFO] 20:41:51:191 Team/(5132:5143): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 20:41:51:191 Team/(5132:5144): Estado de entrenador 2 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 20:41:51:191 Team/(5132:5144): Estado de entrenador 2 cambiado a Estado blocked. Razon del cambio: Se ha enviado un catch
+[ERROR] 20:41:56:201 Team/(5132:5144): Error: No se pudo enviar el mensaje catch del entrenador 2 para el pokemon squirtle en (6,7), obteniendo pokemon por comportamiento default
+[INFO] 20:41:56:202 Team/(5132:5134): Estado de entrenador 2 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 20:41:56:202 Team/(5132:5143): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 20:41:56:202 Team/(5132:5143): El entrenador 1 se encuentra en (7,9)
+[INFO] 20:41:58:201 Team/(5132:5141): Buscando deadlock...
+[INFO] 20:41:58:201 Team/(5132:5141): No se han encontrado deadlocks
+[INFO] 20:42:01:211 Team/(5132:5143): El entrenador 1 se encuentra en (8,9)
+[INFO] 20:42:06:211 Team/(5132:5141): Buscando deadlock...
+[INFO] 20:42:06:212 Team/(5132:5141): No se han encontrado deadlocks
+[INFO] 20:42:06:221 Team/(5132:5143): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 20:42:06:221 Team/(5132:5144): Estado de entrenador 2 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de atrapar pokemon gengar
+[INFO] 20:42:06:221 Team/(5132:5144): Entrenador 2 esta atrapando pokemon gengar ubicado en (6,6)
+[INFO] 20:42:06:221 Team/(5132:5144): El entrenador 2 se esta moviendo de (6,7) a (6,6)
+[INFO] 20:42:06:221 Team/(5132:5144): El entrenador 2 se encuentra en (6,6)
+[INFO] 20:42:11:231 Team/(5132:5144): Estado de entrenador 2 cambiado a Estado blocked. Razon del cambio: Se ha enviado un catch
+[INFO] 20:42:12:74 Team/(5132:5140): Iniciando verificacion de conexion con Broker...
+[ERROR] 20:42:12:74 Team/(5132:5140): Reconexion con Broker fallida, intentando nuevamente en 30 segundos
+[INFO] 20:42:14:221 Team/(5132:5141): Buscando deadlock...
+[INFO] 20:42:14:222 Team/(5132:5141): No se han encontrado deadlocks
+[ERROR] 20:42:16:241 Team/(5132:5144): Error: No se pudo enviar el mensaje catch del entrenador 2 para el pokemon gengar en (6,6), obteniendo pokemon por comportamiento default
+[INFO] 20:42:16:242 Team/(5132:5143): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 20:42:16:242 Team/(5132:5143): El entrenador 1 se encuentra en (9,9)
+[INFO] 20:42:21:251 Team/(5132:5143): Estado de entrenador 1 cambiado a Estado blocked. Razon del cambio: Se ha enviado un catch
+[INFO] 20:42:22:231 Team/(5132:5141): Buscando deadlock...
+[INFO] 20:42:22:231 Team/(5132:5141): No se han encontrado deadlocks
+[ERROR] 20:42:26:261 Team/(5132:5143): Error: No se pudo enviar el mensaje catch del entrenador 1 para el pokemon pikachu en (9,9), obteniendo pokemon por comportamiento default
+[INFO] 20:42:26:262 Team/(5132:5134): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 20:42:26:262 Team/(5132:5143): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de atrapar pokemon squirtle
+[INFO] 20:42:26:262 Team/(5132:5143): Entrenador 1 esta atrapando pokemon squirtle ubicado en (5,5)
+[INFO] 20:42:26:262 Team/(5132:5143): El entrenador 1 se esta moviendo de (9,9) a (5,5)
+[INFO] 20:42:26:262 Team/(5132:5143): El entrenador 1 se encuentra en (9,8)
+[INFO] 20:42:30:241 Team/(5132:5141): Buscando deadlock...
+[INFO] 20:42:30:242 Team/(5132:5141): No se han encontrado deadlocks
+[INFO] 20:42:31:271 Team/(5132:5143): El entrenador 1 se encuentra en (9,7)
+[INFO] 20:42:36:281 Team/(5132:5143): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 20:42:36:281 Team/(5132:5143): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 20:42:36:281 Team/(5132:5143): El entrenador 1 se encuentra en (9,6)
+[INFO] 20:42:38:251 Team/(5132:5141): Buscando deadlock...
+[INFO] 20:42:38:251 Team/(5132:5141): No se han encontrado deadlocks
+[INFO] 20:42:41:291 Team/(5132:5143): El entrenador 1 se encuentra en (9,5)
+[INFO] 20:42:42:81 Team/(5132:5140): Iniciando verificacion de conexion con Broker...
+[ERROR] 20:42:42:81 Team/(5132:5140): Reconexion con Broker fallida, intentando nuevamente en 30 segundos
+[INFO] 20:42:46:261 Team/(5132:5141): Buscando deadlock...
+[INFO] 20:42:46:261 Team/(5132:5141): No se han encontrado deadlocks
+[INFO] 20:42:46:301 Team/(5132:5143): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 20:42:46:301 Team/(5132:5143): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 20:42:46:301 Team/(5132:5143): El entrenador 1 se encuentra en (8,5)
+[INFO] 20:42:51:311 Team/(5132:5143): El entrenador 1 se encuentra en (7,5)
+[INFO] 20:42:54:271 Team/(5132:5141): Buscando deadlock...
+[INFO] 20:42:54:271 Team/(5132:5141): No se han encontrado deadlocks
+[INFO] 20:42:56:321 Team/(5132:5143): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 20:42:56:321 Team/(5132:5143): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 20:42:56:321 Team/(5132:5143): El entrenador 1 se encuentra en (6,5)
+[INFO] 20:43:01:331 Team/(5132:5143): El entrenador 1 se encuentra en (5,5)
+[INFO] 20:43:02:281 Team/(5132:5141): Buscando deadlock...
+[INFO] 20:43:02:281 Team/(5132:5141): No se han encontrado deadlocks
+[INFO] 20:43:06:341 Team/(5132:5143): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 20:43:06:341 Team/(5132:5143): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 20:43:06:341 Team/(5132:5143): Estado de entrenador 1 cambiado a Estado blocked. Razon del cambio: Se ha enviado un catch
+[INFO] 20:43:10:291 Team/(5132:5141): Buscando deadlock...
+[INFO] 20:43:10:291 Team/(5132:5141): No se han encontrado deadlocks
+[ERROR] 20:43:11:351 Team/(5132:5143): Error: No se pudo enviar el mensaje catch del entrenador 1 para el pokemon squirtle en (5,5), obteniendo pokemon por comportamiento default
+[INFO] 20:43:12:91 Team/(5132:5140): Iniciando verificacion de conexion con Broker...
+[ERROR] 20:43:12:91 Team/(5132:5140): Reconexion con Broker fallida, intentando nuevamente en 30 segundos
+[INFO] 20:43:18:301 Team/(5132:5141): Buscando deadlock...
+[INFO] 20:43:18:302 Team/(5132:5141): Deadlock obtenido involucrando a 3 entrenadores
+[INFO] 20:43:18:302 Team/(5132:5136): Estado de entrenador 0 cambiado a Estado ready. Razon del cambio: Entrenador planificado para intercambiar pokemones
+[INFO] 20:43:18:302 Team/(5132:5142): Estado de entrenador 0 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de intercambiar pokemon
+[INFO] 20:43:18:302 Team/(5132:5142): El entrenador 0 se esta moviendo de (2,8) a (5,5)
+[INFO] 20:43:18:302 Team/(5132:5142): El entrenador 0 se encuentra en (2,7)
+[INFO] 20:43:23:311 Team/(5132:5142): El entrenador 0 se encuentra en (2,6)
+[INFO] 20:43:26:311 Team/(5132:5141): Buscando deadlock...
+[INFO] 20:43:26:311 Team/(5132:5141): No se han encontrado deadlocks
+[INFO] 20:43:28:321 Team/(5132:5142): Estado de entrenador 0 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 20:43:28:321 Team/(5132:5142): Estado de entrenador 0 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 20:43:28:321 Team/(5132:5142): El entrenador 0 se encuentra en (2,5)
+[INFO] 20:43:33:331 Team/(5132:5142): El entrenador 0 se encuentra en (3,5)
+[INFO] 20:43:34:321 Team/(5132:5141): Buscando deadlock...
+[INFO] 20:43:34:321 Team/(5132:5141): No se han encontrado deadlocks
+[INFO] 20:43:38:341 Team/(5132:5142): Estado de entrenador 0 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 20:43:38:341 Team/(5132:5142): Estado de entrenador 0 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 20:43:38:341 Team/(5132:5142): El entrenador 0 se encuentra en (4,5)
+[INFO] 20:43:42:101 Team/(5132:5140): Iniciando verificacion de conexion con Broker...
+[ERROR] 20:43:42:101 Team/(5132:5140): Reconexion con Broker fallida, intentando nuevamente en 30 segundos
+[INFO] 20:43:42:331 Team/(5132:5141): Buscando deadlock...
+[INFO] 20:43:42:331 Team/(5132:5141): No se han encontrado deadlocks
+[INFO] 20:43:43:351 Team/(5132:5142): El entrenador 0 se encuentra en (5,5)
+[INFO] 20:43:48:357 Team/(5132:5142): Estado de entrenador 0 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 20:43:48:358 Team/(5132:5142): Estado de entrenador 0 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 20:43:48:358 Team/(5132:5142): Entrenadores 0 y 1 intercambiando pokemones onix y squirtle
+[INFO] 20:43:50:341 Team/(5132:5141): Buscando deadlock...
+[INFO] 20:43:50:342 Team/(5132:5141): No se han encontrado deadlocks
+[INFO] 20:43:58:351 Team/(5132:5141): Buscando deadlock...
+[INFO] 20:43:58:351 Team/(5132:5141): No se han encontrado deadlocks
+[INFO] 20:43:58:372 Team/(5132:5142): Estado de entrenador 0 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 20:43:58:372 Team/(5132:5142): Estado de entrenador 0 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 20:44:06:361 Team/(5132:5141): Buscando deadlock...
+[INFO] 20:44:06:361 Team/(5132:5141): No se han encontrado deadlocks
+[INFO] 20:44:08:381 Team/(5132:5142): Estado de entrenador 0 cambiado a Estado ready. Razon del cambio: Quantum terminado
+[INFO] 20:44:08:381 Team/(5132:5142): Estado de entrenador 0 cambiado a Estado executing. Razon del cambio: Ejecutando por quantum
+[INFO] 20:44:12:111 Team/(5132:5140): Iniciando verificacion de conexion con Broker...
+[ERROR] 20:44:12:111 Team/(5132:5140): Reconexion con Broker fallida, intentando nuevamente en 30 segundos
+[INFO] 20:44:13:386 Team/(5132:5142): Estado de entrenador 0 cambiado a Estado exit. Razon del cambio: Ha terminado su objetivo
