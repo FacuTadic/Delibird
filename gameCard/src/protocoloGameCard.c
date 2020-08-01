@@ -20,6 +20,7 @@ int mandar_suscripcion(int socket_mandado, uint32_t id_cola) {
 	desplazamiento += sizeof(uint32_t);
 
 	int status_send = send(socket_mandado, flujo, bytes, 0);
+
 	if (status_send == -1 || status_send == 0) {
 		liberar_conexion(socket_mandado);
 		free(flujo);

@@ -283,7 +283,7 @@ void escucharNewDeBroker(void) {
 	uint32_t id_cola = 11;
 
 	log_info(loggerDev, "Escuchando NEW de BROKER" );
-
+	log_info(loggerDev, "Socker de NEW: %i", socketEscuchaNew);
 	int status_envio = mandar_suscripcion(socketEscuchaNew, id_cola);
 
 	if (status_envio == -1) {
@@ -295,6 +295,26 @@ void escucharNewDeBroker(void) {
 
 	while (1) {
 		if (estoy_conectado_al_broker == 1) {
+
+			uint32_t cod_op;
+			log_info(loggerDev, "Recibiendo codigo de operacion de BROKER en socket %i", socketEscuchaNew);
+
+			int status_recv = recv(socketEscuchaNew, &cod_op, sizeof(uint32_t), MSG_WAITALL);
+
+			if (status_recv == -1) {
+				liberar_conexion(socketEscuchaNew);
+				log_error(loggerDev, "Hubo un problema recibiendo codigo de operacion de BROKER en socket %i", socketEscuchaNew);
+				pthread_exit(NULL);
+			}
+			if (status_recv == 0) {
+				liberar_conexion(socketEscuchaNew);
+				log_warning(loggerDev, "BROKER acaba de cerrar la conexion correspondiente al socket %i", socketEscuchaNew);
+				pthread_exit(NULL);
+			}
+
+			log_info(loggerDev, "Se recibio el opcode %i", cod_op);
+
+
 			uint32_t size;
 			log_info(loggerDev, "Codigo de operacion recibido del socket cliente %i corresponde a un NEW", socketEscuchaNew);
 			t_newLlegada* newBroker = recibir_new(socketEscuchaNew,&size,loggerDev);
@@ -393,13 +413,13 @@ void reconectarAlBroker() {
 	if (conexion_al_broker != -1) {
 
 		socketEscuchaNew = conexion_al_broker;
-		log_info(loggerDev, "Socket de reconexion appeared: %i",socketEscuchaNew);
+		log_info(loggerDev, "Socket de reconexion new: %i",socketEscuchaNew);
 
 		socketEscuchaCatch = crear_conexion(ipBroker, puertoBroker);
-		log_info(loggerDev, "Socket de reconexion appeared: %i",socketEscuchaCatch);
+		log_info(loggerDev, "Socket de reconexion catch: %i",socketEscuchaCatch);
 
 		socketEscuchaGet = crear_conexion(ipBroker, puertoBroker);
-		log_info(loggerDev, "Socket de reconexion appeared: %i",socketEscuchaGet);
+		log_info(loggerDev, "Socket de reconexion get: %i",socketEscuchaGet);
 
 		log_info(loggerDev, "conexion establecida con BROKER, ip: %s puerto : %s", ipBroker, puertoBroker);
 		estoy_conectado_al_broker = 1;

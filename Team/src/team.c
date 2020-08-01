@@ -1292,6 +1292,11 @@ int main(void) {
 	// crear hilos que se conecten al broker y que cada uno escuche una cola del broker
 	// cuando obtengan algo van a tener que mandar el mensaje a la cola del team correspondiente
 	socket_escucha_appeared = crear_conexion(ip_broker, puerto_broker);
+
+	if(socket_escucha_appeared != -1){
+		estoy_conectado_al_broker = 1;
+	}
+
 	socket_escucha_caught = crear_conexion(ip_broker, puerto_broker);
 	socket_escucha_localized = crear_conexion(ip_broker, puerto_broker);
 	pthread_t hilo_escucha_appeared;
