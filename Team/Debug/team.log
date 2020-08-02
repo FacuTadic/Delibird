@@ -1,0 +1,221 @@
+[ERROR] 23:22:15:650 Team/(2662:2669): Hubo un problema enviando la suscripcion a la cola CAUGHT del broker
+[ERROR] 23:22:15:656 Team/(2662:2670): Hubo un problema enviando la suscripcion a la cola LOCALIZED del broker
+[ERROR] 23:22:15:663 Team/(2662:2668): Hubo un problema enviando la suscripcion a la cola APPEARED del broker
+[ERROR] 23:22:15:666 Team/(2662:2678): Error: No se pudo enviar el GET correspondiente al pokemon gengar, iniciando el comportamiento default
+[ERROR] 23:22:15:666 Team/(2662:2679): Error: No se pudo enviar el GET correspondiente al pokemon onix, iniciando el comportamiento default
+[ERROR] 23:22:15:666 Team/(2662:2677): Error: No se pudo enviar el GET correspondiente al pokemon pikachu, iniciando el comportamiento default
+[ERROR] 23:22:15:666 Team/(2662:2676): Error: No se pudo enviar el GET correspondiente al pokemon squirtle, iniciando el comportamiento default
+[INFO] 23:22:22:458 Team/(2662:2665): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 23:22:22:458 Team/(2662:2674): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de atrapar pokemon pikachu
+[INFO] 23:22:22:459 Team/(2662:2674): Entrenador 1 esta atrapando pokemon pikachu ubicado en (9,9)
+[INFO] 23:22:22:459 Team/(2662:2674): El entrenador 1 se esta moviendo de (2,3) a (9,9)
+[INFO] 23:22:22:459 Team/(2662:2674): El entrenador 1 se encuentra en (2,4)
+[INFO] 23:22:22:467 Team/(2662:2665): Estado de entrenador 2 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 23:22:22:482 Team/(2662:2665): Estado de entrenador 0 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 23:22:23:656 Team/(2662:2672): Buscando deadlock...
+[INFO] 23:22:23:657 Team/(2662:2672): No se han encontrado deadlocks
+[INFO] 23:22:27:467 Team/(2662:2674): El entrenador 1 se encuentra en (2,5)
+[INFO] 23:22:31:657 Team/(2662:2672): Buscando deadlock...
+[INFO] 23:22:31:657 Team/(2662:2672): No se han encontrado deadlocks
+[INFO] 23:22:32:477 Team/(2662:2674): El entrenador 1 se encuentra en (2,6)
+[INFO] 23:22:37:488 Team/(2662:2674): El entrenador 1 se encuentra en (2,7)
+[INFO] 23:22:39:657 Team/(2662:2672): Buscando deadlock...
+[INFO] 23:22:39:658 Team/(2662:2672): No se han encontrado deadlocks
+[INFO] 23:22:42:498 Team/(2662:2674): El entrenador 1 se encuentra en (2,8)
+[INFO] 23:22:45:668 Team/(2662:2671): Iniciando verificacion de conexion con Broker...
+[ERROR] 23:22:45:668 Team/(2662:2671): Reconexion con Broker fallida, intentando nuevamente en 30 segundos
+[INFO] 23:22:47:499 Team/(2662:2674): El entrenador 1 se encuentra en (2,9)
+[INFO] 23:22:47:658 Team/(2662:2672): Buscando deadlock...
+[INFO] 23:22:47:658 Team/(2662:2672): No se han encontrado deadlocks
+[INFO] 23:22:52:508 Team/(2662:2674): El entrenador 1 se encuentra en (3,9)
+[INFO] 23:22:55:658 Team/(2662:2672): Buscando deadlock...
+[INFO] 23:22:55:658 Team/(2662:2672): No se han encontrado deadlocks
+[INFO] 23:22:57:519 Team/(2662:2674): El entrenador 1 se encuentra en (4,9)
+[INFO] 23:23:02:529 Team/(2662:2674): El entrenador 1 se encuentra en (5,9)
+[INFO] 23:23:03:659 Team/(2662:2672): Buscando deadlock...
+[INFO] 23:23:03:659 Team/(2662:2672): No se han encontrado deadlocks
+[INFO] 23:23:07:539 Team/(2662:2674): El entrenador 1 se encuentra en (6,9)
+[INFO] 23:23:11:669 Team/(2662:2672): Buscando deadlock...
+[INFO] 23:23:11:669 Team/(2662:2672): No se han encontrado deadlocks
+[INFO] 23:23:12:549 Team/(2662:2674): El entrenador 1 se encuentra en (7,9)
+[INFO] 23:23:15:669 Team/(2662:2671): Iniciando verificacion de conexion con Broker...
+[ERROR] 23:23:15:669 Team/(2662:2671): Reconexion con Broker fallida, intentando nuevamente en 30 segundos
+[INFO] 23:23:17:559 Team/(2662:2674): El entrenador 1 se encuentra en (8,9)
+[INFO] 23:23:19:679 Team/(2662:2672): Buscando deadlock...
+[INFO] 23:23:19:679 Team/(2662:2672): No se han encontrado deadlocks
+[INFO] 23:23:22:569 Team/(2662:2674): El entrenador 1 se encuentra en (9,9)
+[INFO] 23:23:27:579 Team/(2662:2674): Estado de entrenador 1 cambiado a Estado blocked. Razon del cambio: Se ha enviado un catch
+[INFO] 23:23:27:689 Team/(2662:2672): Buscando deadlock...
+[INFO] 23:23:27:689 Team/(2662:2672): No se han encontrado deadlocks
+[ERROR] 23:23:32:589 Team/(2662:2674): Error: No se pudo enviar el mensaje catch del entrenador 1 para el pokemon pikachu en (9,9), obteniendo pokemon por comportamiento default
+[INFO] 23:23:32:590 Team/(2662:2665): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 23:23:32:590 Team/(2662:2675): Estado de entrenador 2 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de atrapar pokemon squirtle
+[INFO] 23:23:32:590 Team/(2662:2675): Entrenador 2 esta atrapando pokemon squirtle ubicado en (6,7)
+[INFO] 23:23:32:590 Team/(2662:2675): El entrenador 2 se esta moviendo de (3,2) a (6,7)
+[INFO] 23:23:32:590 Team/(2662:2675): El entrenador 2 se encuentra en (3,3)
+[INFO] 23:23:35:699 Team/(2662:2672): Buscando deadlock...
+[INFO] 23:23:35:699 Team/(2662:2672): No se han encontrado deadlocks
+[INFO] 23:23:37:599 Team/(2662:2675): El entrenador 2 se encuentra en (3,4)
+[INFO] 23:23:42:609 Team/(2662:2675): El entrenador 2 se encuentra en (3,5)
+[INFO] 23:23:43:709 Team/(2662:2672): Buscando deadlock...
+[INFO] 23:23:43:709 Team/(2662:2672): No se han encontrado deadlocks
+[INFO] 23:23:45:679 Team/(2662:2671): Iniciando verificacion de conexion con Broker...
+[ERROR] 23:23:45:679 Team/(2662:2671): Reconexion con Broker fallida, intentando nuevamente en 30 segundos
+[INFO] 23:23:47:619 Team/(2662:2675): El entrenador 2 se encuentra en (3,6)
+[INFO] 23:23:51:710 Team/(2662:2672): Buscando deadlock...
+[INFO] 23:23:51:710 Team/(2662:2672): No se han encontrado deadlocks
+[INFO] 23:23:52:630 Team/(2662:2675): El entrenador 2 se encuentra en (3,7)
+[INFO] 23:23:57:640 Team/(2662:2675): El entrenador 2 se encuentra en (4,7)
+[INFO] 23:23:59:720 Team/(2662:2672): Buscando deadlock...
+[INFO] 23:23:59:720 Team/(2662:2672): No se han encontrado deadlocks
+[INFO] 23:24:02:657 Team/(2662:2675): El entrenador 2 se encuentra en (5,7)
+[INFO] 23:24:07:660 Team/(2662:2675): El entrenador 2 se encuentra en (6,7)
+[INFO] 23:24:07:730 Team/(2662:2672): Buscando deadlock...
+[INFO] 23:24:07:730 Team/(2662:2672): No se han encontrado deadlocks
+[INFO] 23:24:12:670 Team/(2662:2675): Estado de entrenador 2 cambiado a Estado blocked. Razon del cambio: Se ha enviado un catch
+[INFO] 23:24:15:680 Team/(2662:2671): Iniciando verificacion de conexion con Broker...
+[ERROR] 23:24:15:681 Team/(2662:2671): Reconexion con Broker fallida, intentando nuevamente en 30 segundos
+[INFO] 23:24:15:740 Team/(2662:2672): Buscando deadlock...
+[INFO] 23:24:15:740 Team/(2662:2672): No se han encontrado deadlocks
+[ERROR] 23:24:17:681 Team/(2662:2675): Error: No se pudo enviar el mensaje catch del entrenador 2 para el pokemon squirtle en (6,7), obteniendo pokemon por comportamiento default
+[INFO] 23:24:17:681 Team/(2662:2665): Estado de entrenador 2 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 23:24:17:682 Team/(2662:2673): Estado de entrenador 0 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de atrapar pokemon onix
+[INFO] 23:24:17:682 Team/(2662:2673): Entrenador 0 esta atrapando pokemon onix ubicado en (2,8)
+[INFO] 23:24:17:682 Team/(2662:2673): El entrenador 0 se esta moviendo de (1,3) a (2,8)
+[INFO] 23:24:17:682 Team/(2662:2673): El entrenador 0 se encuentra en (1,4)
+[INFO] 23:24:22:691 Team/(2662:2673): El entrenador 0 se encuentra en (1,5)
+[INFO] 23:24:23:741 Team/(2662:2672): Buscando deadlock...
+[INFO] 23:24:23:741 Team/(2662:2672): No se han encontrado deadlocks
+[INFO] 23:24:27:701 Team/(2662:2673): El entrenador 0 se encuentra en (1,6)
+[INFO] 23:24:31:751 Team/(2662:2672): Buscando deadlock...
+[INFO] 23:24:31:751 Team/(2662:2672): No se han encontrado deadlocks
+[INFO] 23:24:32:711 Team/(2662:2673): El entrenador 0 se encuentra en (1,7)
+[INFO] 23:24:37:721 Team/(2662:2673): El entrenador 0 se encuentra en (1,8)
+[INFO] 23:24:39:762 Team/(2662:2672): Buscando deadlock...
+[INFO] 23:24:39:762 Team/(2662:2672): No se han encontrado deadlocks
+[INFO] 23:24:42:731 Team/(2662:2673): El entrenador 0 se encuentra en (2,8)
+[INFO] 23:24:45:682 Team/(2662:2671): Iniciando verificacion de conexion con Broker...
+[ERROR] 23:24:45:682 Team/(2662:2671): Reconexion con Broker fallida, intentando nuevamente en 30 segundos
+[INFO] 23:24:47:742 Team/(2662:2673): Estado de entrenador 0 cambiado a Estado blocked. Razon del cambio: Se ha enviado un catch
+[INFO] 23:24:47:772 Team/(2662:2672): Buscando deadlock...
+[INFO] 23:24:47:772 Team/(2662:2672): No se han encontrado deadlocks
+[ERROR] 23:24:52:752 Team/(2662:2673): Error: No se pudo enviar el mensaje catch del entrenador 0 para el pokemon onix en (2,8), obteniendo pokemon por comportamiento default
+[INFO] 23:24:52:752 Team/(2662:2674): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de atrapar pokemon gengar
+[INFO] 23:24:52:752 Team/(2662:2674): Entrenador 1 esta atrapando pokemon gengar ubicado en (6,6)
+[INFO] 23:24:52:752 Team/(2662:2674): El entrenador 1 se esta moviendo de (9,9) a (6,6)
+[INFO] 23:24:52:752 Team/(2662:2674): El entrenador 1 se encuentra en (9,8)
+[INFO] 23:24:55:782 Team/(2662:2672): Buscando deadlock...
+[INFO] 23:24:55:782 Team/(2662:2672): No se han encontrado deadlocks
+[INFO] 23:24:57:762 Team/(2662:2674): El entrenador 1 se encuentra en (9,7)
+[INFO] 23:25:02:772 Team/(2662:2674): El entrenador 1 se encuentra en (9,6)
+[INFO] 23:25:03:792 Team/(2662:2672): Buscando deadlock...
+[INFO] 23:25:03:793 Team/(2662:2672): No se han encontrado deadlocks
+[INFO] 23:25:07:783 Team/(2662:2674): El entrenador 1 se encuentra en (8,6)
+[INFO] 23:25:11:803 Team/(2662:2672): Buscando deadlock...
+[INFO] 23:25:11:803 Team/(2662:2672): No se han encontrado deadlocks
+[INFO] 23:25:12:793 Team/(2662:2674): El entrenador 1 se encuentra en (7,6)
+[INFO] 23:25:15:683 Team/(2662:2671): Iniciando verificacion de conexion con Broker...
+[ERROR] 23:25:15:683 Team/(2662:2671): Reconexion con Broker fallida, intentando nuevamente en 30 segundos
+[INFO] 23:25:17:803 Team/(2662:2674): El entrenador 1 se encuentra en (6,6)
+[INFO] 23:25:19:813 Team/(2662:2672): Buscando deadlock...
+[INFO] 23:25:19:813 Team/(2662:2672): No se han encontrado deadlocks
+[INFO] 23:25:22:813 Team/(2662:2674): Estado de entrenador 1 cambiado a Estado blocked. Razon del cambio: Se ha enviado un catch
+[INFO] 23:25:27:824 Team/(2662:2672): Buscando deadlock...
+[ERROR] 23:25:27:824 Team/(2662:2674): Error: No se pudo enviar el mensaje catch del entrenador 1 para el pokemon gengar en (6,6), obteniendo pokemon por comportamiento default
+[INFO] 23:25:27:824 Team/(2662:2672): No se han encontrado deadlocks
+[INFO] 23:25:27:824 Team/(2662:2674): Estado de entrenador 1 cambiado a Estado exit. Razon del cambio: Ha completado su objetivo
+[INFO] 23:25:27:824 Team/(2662:2675): Estado de entrenador 2 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de atrapar pokemon squirtle
+[INFO] 23:25:27:824 Team/(2662:2675): Entrenador 2 esta atrapando pokemon squirtle ubicado en (5,5)
+[INFO] 23:25:27:824 Team/(2662:2675): El entrenador 2 se esta moviendo de (6,7) a (5,5)
+[INFO] 23:25:27:824 Team/(2662:2675): El entrenador 2 se encuentra en (6,6)
+[INFO] 23:25:32:834 Team/(2662:2675): El entrenador 2 se encuentra en (6,5)
+[INFO] 23:25:35:834 Team/(2662:2672): Buscando deadlock...
+[INFO] 23:25:35:834 Team/(2662:2672): No se han encontrado deadlocks
+[INFO] 23:25:37:844 Team/(2662:2675): El entrenador 2 se encuentra en (5,5)
+[INFO] 23:25:42:854 Team/(2662:2675): Estado de entrenador 2 cambiado a Estado blocked. Razon del cambio: Se ha enviado un catch
+[INFO] 23:25:43:844 Team/(2662:2672): Buscando deadlock...
+[INFO] 23:25:43:844 Team/(2662:2672): No se han encontrado deadlocks
+[INFO] 23:25:45:684 Team/(2662:2671): Iniciando verificacion de conexion con Broker...
+[ERROR] 23:25:45:684 Team/(2662:2671): Reconexion con Broker fallida, intentando nuevamente en 30 segundos
+[ERROR] 23:25:47:864 Team/(2662:2675): Error: No se pudo enviar el mensaje catch del entrenador 2 para el pokemon squirtle en (5,5), obteniendo pokemon por comportamiento default
+[INFO] 23:25:51:854 Team/(2662:2672): Buscando deadlock...
+[INFO] 23:25:51:855 Team/(2662:2672): Deadlock obtenido involucrando a 2 entrenadores
+[INFO] 23:25:51:855 Team/(2662:2667): Estado de entrenador 0 cambiado a Estado ready. Razon del cambio: Entrenador planificado para intercambiar pokemones
+[INFO] 23:25:51:856 Team/(2662:2673): Estado de entrenador 0 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de intercambiar pokemon
+[INFO] 23:25:51:856 Team/(2662:2673): El entrenador 0 se esta moviendo de (2,8) a (5,5)
+[INFO] 23:25:51:856 Team/(2662:2673): El entrenador 0 se encuentra en (2,7)
+[INFO] 23:25:56:864 Team/(2662:2673): El entrenador 0 se encuentra en (2,6)
+[INFO] 23:25:59:865 Team/(2662:2672): Buscando deadlock...
+[INFO] 23:25:59:865 Team/(2662:2672): No se han encontrado deadlocks
+[INFO] 23:26:01:875 Team/(2662:2673): El entrenador 0 se encuentra en (2,5)
+[INFO] 23:26:06:885 Team/(2662:2673): El entrenador 0 se encuentra en (3,5)
+[INFO] 23:26:07:875 Team/(2662:2672): Buscando deadlock...
+[INFO] 23:26:07:875 Team/(2662:2672): No se han encontrado deadlocks
+[INFO] 23:26:11:895 Team/(2662:2673): El entrenador 0 se encuentra en (4,5)
+[INFO] 23:26:15:685 Team/(2662:2671): Iniciando verificacion de conexion con Broker...
+[ERROR] 23:26:15:686 Team/(2662:2671): Reconexion con Broker fallida, intentando nuevamente en 30 segundos
+[INFO] 23:26:15:885 Team/(2662:2672): Buscando deadlock...
+[INFO] 23:26:15:886 Team/(2662:2672): No se han encontrado deadlocks
+[INFO] 23:26:16:905 Team/(2662:2673): El entrenador 0 se encuentra en (5,5)
+[INFO] 23:26:21:916 Team/(2662:2673): Entrenadores 0 y 2 intercambiando pokemones onix y squirtle
+[INFO] 23:26:23:896 Team/(2662:2672): Buscando deadlock...
+[INFO] 23:26:23:896 Team/(2662:2672): No se han encontrado deadlocks
+[INFO] 23:26:31:900 Team/(2662:2672): Buscando deadlock...
+[INFO] 23:26:31:901 Team/(2662:2672): No se han encontrado deadlocks
+[INFO] 23:26:39:907 Team/(2662:2672): Buscando deadlock...
+[INFO] 23:26:39:907 Team/(2662:2672): No se han encontrado deadlocks
+[INFO] 23:26:45:686 Team/(2662:2671): Iniciando verificacion de conexion con Broker...
+[ERROR] 23:26:45:687 Team/(2662:2671): Reconexion con Broker fallida, intentando nuevamente en 30 segundos
+[INFO] 23:26:46:927 Team/(2662:2673): Estado de entrenador 2 cambiado a Estado exit. Razon del cambio: Ha terminado su objetivo
+[INFO] 23:26:46:927 Team/(2662:2673): Estado de entrenador 0 cambiado a Estado exit. Razon del cambio: Ha terminado su objetivo
+[INFO] 23:26:46:927 Team/(2662:2662): Proceso Team terminado. Cantidad de ciclos de CPU totales: 52
+[INFO] 23:26:46:927 Team/(2662:2662): Cantidad de ciclos de CPU del entrenador 0: 18
+[INFO] 23:26:46:927 Team/(2662:2662): Cantidad de ciclos de CPU del entrenador 1: 21
+[INFO] 23:26:46:927 Team/(2662:2662): Cantidad de ciclos de CPU del entrenador 2: 13
+[INFO] 23:26:46:928 Team/(2662:2662): Proceso Team terminado. Cantidad de cambios de contexto realizados: 20
+[INFO] 23:26:46:928 Team/(2662:2662): Proceso Team terminado. Cantidad de deadlocks encontrados y tratados: 1
+[INFO] 23:30:07:146 Team/(3310:3324): Buscando deadlock...
+[INFO] 23:30:07:147 Team/(3310:3324): No se han encontrado deadlocks
+[INFO] 23:30:15:149 Team/(3310:3324): Buscando deadlock...
+[INFO] 23:30:15:149 Team/(3310:3324): No se han encontrado deadlocks
+[INFO] 23:44:51:365 Team/(3929:3943): Buscando deadlock...
+[INFO] 23:44:51:365 Team/(3929:3943): No se han encontrado deadlocks
+[INFO] 23:44:59:366 Team/(3929:3943): Buscando deadlock...
+[INFO] 23:44:59:366 Team/(3929:3943): No se han encontrado deadlocks
+[ERROR] 23:48:10:955 Team/(4054:4061): Hubo un problema enviando la suscripcion a la cola APPEARED del broker
+[ERROR] 23:48:10:958 Team/(4054:4062): Hubo un problema enviando la suscripcion a la cola CAUGHT del broker
+[ERROR] 23:48:10:960 Team/(4054:4063): Hubo un problema enviando la suscripcion a la cola LOCALIZED del broker
+[ERROR] 23:48:10:969 Team/(4054:4071): Error: No se pudo enviar el GET correspondiente al pokemon gengar, iniciando el comportamiento default
+[ERROR] 23:48:10:969 Team/(4054:4070): Error: No se pudo enviar el GET correspondiente al pokemon pikachu, iniciando el comportamiento default
+[ERROR] 23:48:10:969 Team/(4054:4069): Error: No se pudo enviar el GET correspondiente al pokemon squirtle, iniciando el comportamiento default
+[ERROR] 23:48:10:969 Team/(4054:4072): Error: No se pudo enviar el GET correspondiente al pokemon onix, iniciando el comportamiento default
+[INFO] 23:48:29:251 Team/(4084:4097): Buscando deadlock...
+[INFO] 23:48:29:252 Team/(4084:4097): No se han encontrado deadlocks
+[INFO] 23:50:42:725 Team/(4193:4207): Buscando deadlock...
+[INFO] 23:50:42:725 Team/(4193:4207): No se han encontrado deadlocks
+[INFO] 23:59:15:913 Team/(4414:4427): Buscando deadlock...
+[INFO] 23:59:15:913 Team/(4414:4427): No se han encontrado deadlocks
+[INFO] 00:04:25:444 Team/(4609:4623): Buscando deadlock...
+[INFO] 00:04:25:445 Team/(4609:4623): No se han encontrado deadlocks
+[INFO] 00:05:47:173 Team/(4739:4753): Buscando deadlock...
+[INFO] 00:05:47:173 Team/(4739:4753): No se han encontrado deadlocks
+[INFO] 00:15:51:622 Team/(5044:5057): Buscando deadlock...
+[INFO] 00:15:51:623 Team/(5044:5057): No se han encontrado deadlocks
+[INFO] 00:15:59:625 Team/(5044:5057): Buscando deadlock...
+[INFO] 00:15:59:625 Team/(5044:5057): No se han encontrado deadlocks
+[INFO] 00:17:17:132 Team/(5231:5244): Buscando deadlock...
+[INFO] 00:17:17:132 Team/(5231:5244): No se han encontrado deadlocks
+[INFO] 00:19:51:82 Team/(5364:5377): Buscando deadlock...
+[INFO] 00:19:51:83 Team/(5364:5377): No se han encontrado deadlocks
+[INFO] 00:30:38:679 Team/(5555:5569): Buscando deadlock...
+[INFO] 00:30:38:679 Team/(5555:5569): No se han encontrado deadlocks
+[INFO] 00:32:02:429 Team/(5801:5815): Buscando deadlock...
+[INFO] 00:32:02:430 Team/(5801:5815): No se han encontrado deadlocks
+[INFO] 00:32:10:437 Team/(5801:5815): Buscando deadlock...
+[INFO] 00:32:10:437 Team/(5801:5815): No se han encontrado deadlocks
+[INFO] 00:32:18:447 Team/(5801:5815): Buscando deadlock...
+[INFO] 00:32:18:447 Team/(5801:5815): No se han encontrado deadlocks
+[INFO] 00:32:24:426 Team/(5801:5814): Iniciando verificacion de conexion con Broker...
+[ERROR] 00:32:24:427 Team/(5801:5814): Reconexion con Broker fallida, intentando nuevamente en 30 segundos
+[INFO] 00:32:26:456 Team/(5801:5815): Buscando deadlock...
+[INFO] 00:32:26:457 Team/(5801:5815): No se han encontrado deadlocks

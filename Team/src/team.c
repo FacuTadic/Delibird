@@ -95,15 +95,13 @@ void escuchar_appeared_de_broker(void) {
 	while (1) {
 		if (estoy_conectado_al_broker == 1) {
 			uint32_t size;
-			log_info(extense_logger, "Recibiendo el Appeared de BROKER");
 			t_appeared* appeared_msg = recibir_appeared(socket_escucha_appeared, &size);
-			log_info(extense_logger, "Appeared recibido de BROKER");
 			if (appeared_msg == NULL) {
 				pthread_mutex_lock(&estoy_conectado_al_broker_mutex);
 				estoy_conectado_al_broker = 0;
 				pthread_mutex_unlock(&estoy_conectado_al_broker_mutex);
 			} else {
-				log_info(extense_logger, "Appeared recibido");
+				log_info(extense_logger, "Appeared recibido de BROKER");
 
 				if(es_pokemon_global(appeared_msg->pokemon)) {
 					log_info(extense_logger, "pokemon %s esta en el objetivo global");
@@ -146,15 +144,14 @@ void escuchar_caught_de_broker(void) {
 	while (1) {
 		if (estoy_conectado_al_broker == 1) {
 			uint32_t size;
-			log_info(extense_logger, "Recibiendo caught del Broker en socket %i",socket_escucha_caught);
 			t_caught* caught_msg = recibir_caught(socket_escucha_caught, &size);
-			log_info(extense_logger, "Caught recibido del Broker en socket %i",socket_escucha_caught);
 
 			if (caught_msg == NULL) {
 				pthread_mutex_lock(&estoy_conectado_al_broker_mutex);
 				estoy_conectado_al_broker = 0;
 				pthread_mutex_unlock(&estoy_conectado_al_broker_mutex);
 			} else {
+				log_info(extense_logger, "Caught recibido del Broker en socket %i",socket_escucha_caught);
 				if (es_id_catch(caught_msg->idCorrelativo) == 1) {
 					pthread_mutex_lock(&cola_caught_mutex);
 					queue_push(cola_caught, (void*) caught_msg);
@@ -184,15 +181,13 @@ void escuchar_localized_de_broker(void) {
 	while (1) {
 		if (estoy_conectado_al_broker == 1) {
 			uint32_t size;
-			log_info(extense_logger, "Recibiendo localized de Broker de socket %i",socket_escucha_localized);
 			t_localized* localized_msg = recibir_localized(socket_escucha_localized, &size);
-			log_info(extense_logger, "Localized recibido de Broker de socket %i",socket_escucha_localized);
 			if (localized_msg == NULL) {
 				pthread_mutex_lock(&estoy_conectado_al_broker_mutex);
 				estoy_conectado_al_broker = 0;
 				pthread_mutex_unlock(&estoy_conectado_al_broker_mutex);
 			} else {
-				log_info(extense_logger, "Localized recibido");
+				log_info(extense_logger, "Localized recibido de Broker");
 
 				if (pokemon_ya_fue_recibido(localized_msg->pokemon) == 0) {
 					log_info(extense_logger, "pokemon %s llego por primera vez",localized_msg->pokemon);
@@ -1245,7 +1240,7 @@ int main(void) {
 	// cuando obtengan algo van a tener que mandar el mensaje a la cola del team correspondiente
 	socket_escucha_appeared = crear_conexion(ip_broker, puerto_broker);
 
-	if(socket_escucha_appeared != -1){
+	if (socket_escucha_appeared != -1) {
 		estoy_conectado_al_broker = 1;
 	}
 

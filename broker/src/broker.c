@@ -19,6 +19,8 @@ void procesar_request(int cod_op, int cliente_fd) {
 	} else {
 		mensaje_a_guardar->mensaje = (void*) new_msg;
 
+		devolver_id(cliente_fd, mensaje_a_guardar->id, extense_logger);
+
 		sem_wait(&gl_new_limite);
 
 		log_info(extense_logger, "Encolando el mensaje NEW con id %i", mensaje_a_guardar->id);
@@ -29,8 +31,6 @@ void procesar_request(int cod_op, int cliente_fd) {
 		log_info(logger, "Mensaje NEW con id %i encolado", mensaje_a_guardar->id);
 
 		sem_post(&gl_new_mensajes);
-
-		devolver_id(cliente_fd, mensaje_a_guardar->id, extense_logger);
 	}
 	break;
 	case APPEARED: ;
@@ -47,6 +47,7 @@ void procesar_request(int cod_op, int cliente_fd) {
 
 		if (ya_fue_respondido == 0) {
 			mensaje_a_guardar->mensaje = (void*) appeared_msg;
+			devolver_id(cliente_fd, mensaje_a_guardar->id, extense_logger);
 
 			sem_wait(&gl_appeared_limite);
 
@@ -62,8 +63,6 @@ void procesar_request(int cod_op, int cliente_fd) {
 			log_info(logger, "Mensaje APPEARED con id %i encolado", mensaje_a_guardar->id);
 
 			sem_post(&gl_appeared_mensajes);
-
-			devolver_id(cliente_fd, mensaje_a_guardar->id, extense_logger);
 		} else {
 			log_info(extense_logger, "El mensaje con id %i ya obtuvo una respuesta, desestimando mensaje APPEARED con el mismo id correlativo", appeared_msg->id_correlativo);
 		}
@@ -78,6 +77,7 @@ void procesar_request(int cod_op, int cliente_fd) {
 		pthread_exit(NULL);
 	} else {
 		mensaje_a_guardar->mensaje = (void*) catch_msg;
+		devolver_id(cliente_fd, mensaje_a_guardar->id, extense_logger);
 
 		sem_wait(&gl_catch_limite);
 
@@ -89,8 +89,6 @@ void procesar_request(int cod_op, int cliente_fd) {
 		log_info(logger, "Mensaje CATCH con id %i encolado", mensaje_a_guardar->id);
 
 		sem_post(&gl_catch_mensajes);
-
-		devolver_id(cliente_fd, mensaje_a_guardar->id, extense_logger);
 	}
 	break;
 	case CAUGHT: ;
@@ -107,6 +105,8 @@ void procesar_request(int cod_op, int cliente_fd) {
 		if (ya_fue_respondido == 0) {
 			mensaje_a_guardar->mensaje = (void*) caught_msg;
 
+			devolver_id(cliente_fd, mensaje_a_guardar->id, extense_logger);
+
 			sem_wait(&gl_caught_limite);
 
 			log_info(extense_logger, "Encolando el mensaje CAUGHT con id %i", mensaje_a_guardar->id);
@@ -121,9 +121,6 @@ void procesar_request(int cod_op, int cliente_fd) {
 			log_info(logger, "Mensaje CAUGHT con id %i encolado", mensaje_a_guardar->id);
 
 			sem_post(&gl_caught_mensajes);
-
-			devolver_id(cliente_fd, mensaje_a_guardar->id, extense_logger);
-
 		} else {
 			log_info(extense_logger, "El mensaje con id %i ya obtuvo una respuesta, desestimando mensaje CAUGHT con el mismo id correlativo", caught_msg->id_correlativo);
 		}
@@ -139,6 +136,8 @@ void procesar_request(int cod_op, int cliente_fd) {
 	} else {
 		mensaje_a_guardar->mensaje = (void*) get_msg;
 
+		devolver_id(cliente_fd, mensaje_a_guardar->id, extense_logger);
+
 		sem_wait(&gl_get_limite);
 
 		log_info(extense_logger, "Encolando el mensaje GET con id %i", mensaje_a_guardar->id);
@@ -149,8 +148,6 @@ void procesar_request(int cod_op, int cliente_fd) {
 		log_info(logger, "Mensaje GET con id %i encolado", mensaje_a_guardar->id);
 
 		sem_post(&gl_get_mensajes);
-
-		devolver_id(cliente_fd, mensaje_a_guardar->id, extense_logger);
 	}
 	break;
 	case LOCALIZED: ;
@@ -168,6 +165,8 @@ void procesar_request(int cod_op, int cliente_fd) {
 		if (ya_fue_respondido == 0) {
 			mensaje_a_guardar->mensaje = (void*) localized_msg;
 
+			devolver_id(cliente_fd, mensaje_a_guardar->id, extense_logger);
+
 			sem_wait(&gl_localized_limite);
 
 			log_info(extense_logger, "Encolando el mensaje LOCALIZED con id %i", mensaje_a_guardar->id);
@@ -182,8 +181,6 @@ void procesar_request(int cod_op, int cliente_fd) {
 			log_info(logger, "Mensaje LOCALIZED con id %i encolado", mensaje_a_guardar->id);
 
 			sem_post(&gl_localized_mensajes);
-
-			devolver_id(cliente_fd, mensaje_a_guardar->id, extense_logger);
 		} else {
 			log_info(extense_logger, "El mensaje con id %i ya obtuvo una respuesta, desestimando mensaje LOCALIZED con el mismo id correlativo", localized_msg->id_correlativo);
 		}

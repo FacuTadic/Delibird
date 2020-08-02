@@ -630,8 +630,7 @@ t_suscripcion* recibir_suscripcion(int socket_cliente, uint32_t* size, t_log* lo
 void devolver_id(int socket_cliente, uint32_t id, t_log* logger) {
 	log_info(logger, "Retornando id %i al socket %i", id, socket_cliente);
 
-	if (send(socket_cliente, (void *) id, sizeof(uint32_t), 0) == -1) {
+	if (send(socket_cliente, &id, sizeof(uint32_t), 0) == -1) {
 		log_error(logger, "Hubo un problema retornando el id %i al socket %i", id, socket_cliente);
-		//close(socket_cliente);
 	}
 }

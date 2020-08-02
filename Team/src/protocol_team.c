@@ -30,14 +30,34 @@ int mandar_suscripcion(int socket_mandado, uint32_t id_cola) {
 
 t_appeared* recibir_appeared(int socket_broker, uint32_t* size) {
 	t_appeared* appeared = malloc(sizeof(t_appeared));
-
+	uint32_t op_code;
 	uint32_t tamanio_pokemon;
-
 	uint32_t id_correlativo;
+
+	int status_recv = recv(socket_broker, &op_code, sizeof(uint32_t), MSG_WAITALL);
+	log_info(extense_logger_protocol, "Recibiendo mensaje Appeared");
+	if (status_recv == -1) {
+		cerrar_conexion(socket_broker);
+		log_error(extense_logger_protocol, "Hubo un problema recibiendo el codigo de operacion");
+		free(appeared);
+		return NULL;
+	}
+	if (status_recv == 0) {
+		cerrar_conexion(socket_broker);
+		log_warning(extense_logger_protocol, "El cliente con socket %i acaba de cerrar la conexion", socket_broker);
+		free(appeared);
+		return NULL;
+	}
+
+	if (op_code != 2) {
+		log_error(extense_logger_protocol, "El codigo de operacion %i no corresponde a un mensaje Appeared", op_code);
+		free(appeared);
+		return NULL;
+	}
 
 	log_info(extense_logger_protocol, "Recibiendo tamanio total");
 
-	int status_recv = recv(socket_broker, size, sizeof(uint32_t), MSG_WAITALL);
+	status_recv = recv(socket_broker, size, sizeof(uint32_t), MSG_WAITALL);
 	if (status_recv == -1) {
 		cerrar_conexion(socket_broker);
 		log_error(extense_logger_protocol, "Hubo un problema recibiendo el tamanio total");
@@ -151,10 +171,32 @@ t_appeared* recibir_appeared(int socket_broker, uint32_t* size) {
 
 t_caught* recibir_caught(int socket_broker, uint32_t* size) {
 	t_caught* caught = malloc(sizeof(t_caught));
+	uint32_t op_code;
+
+	int status_recv = recv(socket_broker, &op_code, sizeof(uint32_t), MSG_WAITALL);
+	log_info(extense_logger_protocol, "Recibiendo mensaje Caught");
+	if (status_recv == -1) {
+		cerrar_conexion(socket_broker);
+		log_error(extense_logger_protocol, "Hubo un problema recibiendo el codigo de operacion");
+		free(caught);
+		return NULL;
+	}
+	if (status_recv == 0) {
+		cerrar_conexion(socket_broker);
+		log_warning(extense_logger_protocol, "El cliente con socket %i acaba de cerrar la conexion", socket_broker);
+		free(caught);
+		return NULL;
+	}
+
+	if (op_code != 4) {
+		log_error(extense_logger_protocol, "El codigo de operacion %i no corresponde a un mensaje Caught", op_code);
+		free(caught);
+		return NULL;
+	}
 
 	log_info(extense_logger_protocol, "Recibiendo tamanio total");
 
-	int status_recv = recv(socket_broker, size, sizeof(uint32_t), MSG_WAITALL);
+	status_recv = recv(socket_broker, size, sizeof(uint32_t), MSG_WAITALL);
 	if (status_recv == -1) {
 		cerrar_conexion(socket_broker);
 		log_error(extense_logger_protocol, "Hubo un problema recibiendo el tamanio total");
@@ -210,10 +252,32 @@ t_caught* recibir_caught(int socket_broker, uint32_t* size) {
 t_localized* recibir_localized(int socket_broker, uint32_t* size) {
 	t_localized* localized = malloc(sizeof(t_localized));
 	uint32_t tamanio_pokemon;
+	uint32_t op_code;
+
+	int status_recv = recv(socket_broker, &op_code, sizeof(uint32_t), MSG_WAITALL);
+	log_info(extense_logger_protocol, "Recibiendo mensaje Localized");
+	if (status_recv == -1) {
+		cerrar_conexion(socket_broker);
+		log_error(extense_logger_protocol, "Hubo un problema recibiendo el codigo de operacion");
+		free(localized);
+		return NULL;
+	}
+	if (status_recv == 0) {
+		cerrar_conexion(socket_broker);
+		log_warning(extense_logger_protocol, "El cliente con socket %i acaba de cerrar la conexion", socket_broker);
+		free(localized);
+		return NULL;
+	}
+
+	if (op_code != 6) {
+		log_error(extense_logger_protocol, "El codigo de operacion %i no corresponde a un mensaje Localized", op_code);
+		free(localized);
+		return NULL;
+	}
 
 	log_info(extense_logger_protocol, "Recibiendo tamanio total");
 
-	int status_recv = recv(socket_broker, size, sizeof(uint32_t), MSG_WAITALL);
+	status_recv = recv(socket_broker, size, sizeof(uint32_t), MSG_WAITALL);
 	if (status_recv == -1) {
 		cerrar_conexion(socket_broker);
 		log_error(extense_logger_protocol, "Hubo un problema recibiendo el tamanio total");
@@ -483,7 +547,7 @@ uint32_t recibir_ID_get(int socket_broker) {
 
 int devolver_ack(int socket_broker) {
 	uint32_t ack = 1;
-	int status_send = send(socket_broker, (void *) &ack, sizeof(uint32_t), 0);
+	int status_send = send(socket_broker, &ack, sizeof(uint32_t), 0);
 	if (status_send == -1) {
 		log_error(extense_logger_protocol, "Error: no se pudo enviar el ACK al socket %i", socket_broker);
 		return -1;

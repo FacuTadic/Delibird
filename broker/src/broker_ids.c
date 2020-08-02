@@ -7,16 +7,19 @@
 
 #include "broker_ids.h"
 
-uint32_t id_mensaje = 1;
+//uint32_t id_mensaje = 1;
 pthread_mutex_t lock_mensaje;
 
-int id_temporal = 1;
+//int id_temporal = 1;
 pthread_mutex_t lock_temporal;
 
-int id_modificacion = 1;
+//int id_modificacion = 1;
 pthread_mutex_t lock_modificacion;
 
 void crea_generador_id(void){
+	id_mensaje = 1;
+	id_temporal = 1;
+	id_modificacion = 1;
 	pthread_mutex_init(&lock_mensaje, NULL);
 	pthread_mutex_init(&lock_temporal, NULL);
 	pthread_mutex_init(&lock_modificacion, NULL);
