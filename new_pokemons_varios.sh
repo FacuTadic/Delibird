@@ -1,4 +1,5 @@
 #!/bin/sh
+cd GameBoy/Debug
 ./GameBoy GAMECARD NEW_POKEMON Pikachu 1 9 3 1
 ./GameBoy GAMECARD NEW_POKEMON Charmander 4 1 101 2
 ./GameBoy GAMECARD NEW_POKEMON Charmander 517 2046 15 3

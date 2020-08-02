@@ -1,4 +1,5 @@
 #!/bin/sh
+cd GameBoy/Debug
 ./GameBoy BROKER CAUGHT_POKEMON 1 OK
 ./GameBoy BROKER CAUGHT_POKEMON 2 FAIL
 

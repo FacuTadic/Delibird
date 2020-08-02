@@ -1,4 +1,5 @@
 #!/bin/sh
+cd GameBoy/Debug
 ./GameBoy BROKER CATCH_POKEMON Pikachu 9 3
 ./GameBoy BROKER CATCH_POKEMON Squirtle 9 3
 
