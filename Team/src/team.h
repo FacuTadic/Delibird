@@ -131,10 +131,10 @@ typedef struct {
 	double real_actual;
 } t_entrenador;
 
-typedef struct {
-	tipo_mensaje tipo_mensaje;
-	void* mensaje; // t_pokemon, t_caught o t_deadlock
-} t_mensaje_recibido;
+//typedef struct {
+//	tipo_mensaje tipo_mensaje;
+//	void* mensaje; // t_pokemon, t_caught o t_deadlock
+//} t_mensaje_recibido;
 
 typedef struct {
 	t_list* entrenadores; // de t_entrenador
