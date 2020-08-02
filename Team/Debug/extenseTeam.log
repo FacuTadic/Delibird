@@ -1,0 +1,1027 @@
+[INFO] 00:39:56:858 Team/(6313:6313): logger extenso iniciado
+[INFO] 00:39:56:858 Team/(6313:6313): logger de la catedra iniciado
+[INFO] 00:39:56:859 Team/(6313:6313): La IP es: 127.0.0.1
+[INFO] 00:39:56:859 Team/(6313:6313): El puerto es: 4445
+[INFO] 00:39:56:859 Team/(6313:6313): La IP del Broker es: 127.0.0.1
+[INFO] 00:39:56:859 Team/(6313:6313): El puerto del Broker es: 4444
+[INFO] 00:39:56:860 Team/(6313:6313): El Id de Team es: 5
+[INFO] 00:39:56:860 Team/(6313:6313): La busqueda de deadlocks se corre cada 8 segundos
+[INFO] 00:39:56:860 Team/(6313:6313): La conexion al Broker se verifica cada 30 segundos
+[INFO] 00:39:56:860 Team/(6313:6313): EL tiempo de retardo de CPU es cada 5 segundos
+[INFO] 00:39:56:861 Team/(6313:6313): EL algoritmo de planificacion es RR
+[INFO] 00:39:56:861 Team/(6313:6313): Objetivos para el entrenador 0: Pikachu|Squirtle
+[INFO] 00:39:56:861 Team/(6313:6313): Posiciones para el entrenador 0: 1|3
+[INFO] 00:39:56:861 Team/(6313:6313): Pokemones para el entrenador 0: Pikachu
+[INFO] 00:39:56:861 Team/(6313:6313): Llego token objetivo pikachu para el entrenador 0
+[INFO] 00:39:56:862 Team/(6313:6313): Llego token objetivo squirtle para el entrenador 0
+[INFO] 00:39:56:862 Team/(6313:6313): Llego token pokemon pikachu
+[INFO] 00:39:56:862 Team/(6313:6313): Posicion X del entrenador 0: 1
+[INFO] 00:39:56:863 Team/(6313:6313): Posicion Y del entrenador 0: 3
+[INFO] 00:39:56:863 Team/(6313:6313): Estado del entrenador 0: 1111
+[INFO] 00:39:56:863 Team/(6313:6313): Objetivo del entrenador 0: pikachu
+[INFO] 00:39:56:863 Team/(6313:6313): Objetivo del entrenador 0: squirtle
+[INFO] 00:39:56:863 Team/(6313:6313): Objetivo actual del entrenador 0: squirtle
+[INFO] 00:39:56:864 Team/(6313:6313): Pokemon del entrenador 0: pikachu
+[INFO] 00:39:56:864 Team/(6313:6313): Objetivos para el entrenador 1: Pikachu|Gengar
+[INFO] 00:39:56:864 Team/(6313:6313): Posiciones para el entrenador 1: 2|3
+[INFO] 00:39:56:864 Team/(6313:6313): Pokemones para el entrenador 1: 
+[INFO] 00:39:56:864 Team/(6313:6313): Llego token objetivo pikachu para el entrenador 1
+[INFO] 00:39:56:864 Team/(6313:6313): Llego token objetivo gengar para el entrenador 1
+[INFO] 00:39:56:865 Team/(6313:6313): No existen pokemones para el entrenador 1
+[INFO] 00:39:56:865 Team/(6313:6313): Posicion X del entrenador 1: 2
+[INFO] 00:39:56:865 Team/(6313:6313): Posicion Y del entrenador 1: 3
+[INFO] 00:39:56:865 Team/(6313:6313): Estado del entrenador 1: 1111
+[INFO] 00:39:56:866 Team/(6313:6313): Objetivo del entrenador 1: pikachu
+[INFO] 00:39:56:866 Team/(6313:6313): Objetivo del entrenador 1: gengar
+[INFO] 00:39:56:866 Team/(6313:6313): Objetivo actual del entrenador 1: pikachu
+[INFO] 00:39:56:866 Team/(6313:6313): Objetivo actual del entrenador 1: gengar
+[INFO] 00:39:56:866 Team/(6313:6313): Objetivos para el entrenador 2: Squirtle|Onix
+[INFO] 00:39:56:866 Team/(6313:6313): Posiciones para el entrenador 2: 3|2
+[INFO] 00:39:56:866 Team/(6313:6313): Pokemones para el entrenador 2: 
+[INFO] 00:39:56:866 Team/(6313:6313): Llego token objetivo squirtle para el entrenador 2
+[INFO] 00:39:56:867 Team/(6313:6313): Llego token objetivo onix para el entrenador 2
+[INFO] 00:39:56:867 Team/(6313:6313): No existen pokemones para el entrenador 2
+[INFO] 00:39:56:867 Team/(6313:6313): Posicion X del entrenador 2: 3
+[INFO] 00:39:56:867 Team/(6313:6313): Posicion Y del entrenador 2: 2
+[INFO] 00:39:56:867 Team/(6313:6313): Estado del entrenador 2: 1111
+[INFO] 00:39:56:867 Team/(6313:6313): Objetivo del entrenador 2: squirtle
+[INFO] 00:39:56:867 Team/(6313:6313): Objetivo del entrenador 2: onix
+[INFO] 00:39:56:867 Team/(6313:6313): Objetivo actual del entrenador 2: squirtle
+[INFO] 00:39:56:867 Team/(6313:6313): Objetivo actual del entrenador 2: onix
+[INFO] 00:39:56:867 Team/(6313:6313): Obteniendo objetivo global
+[INFO] 00:39:56:867 Team/(6313:6313): Objetivo global: squirtle
+[INFO] 00:39:56:867 Team/(6313:6313): Objetivo global: pikachu
+[INFO] 00:39:56:867 Team/(6313:6313): Objetivo global: gengar
+[INFO] 00:39:56:867 Team/(6313:6313): Objetivo global: squirtle
+[INFO] 00:39:56:868 Team/(6313:6313): Objetivo global: onix
+[INFO] 00:39:56:868 Team/(6313:6313): Objetivo global obtenido
+[INFO] 00:39:56:868 Team/(6313:6313): Obteniendo cantidad de cada pokemon a planificar
+[INFO] 00:39:56:868 Team/(6313:6313): Cantidad a planificar de squirtle: 1
+[INFO] 00:39:56:868 Team/(6313:6313): Cantidad a planificar de pikachu: 1
+[INFO] 00:39:56:868 Team/(6313:6313): Cantidad a planificar de gengar: 1
+[INFO] 00:39:56:868 Team/(6313:6313): Cantidad a planificar de squirtle: 2
+[INFO] 00:39:56:868 Team/(6313:6313): Cantidad a planificar de onix: 1
+[INFO] 00:39:56:868 Team/(6313:6313): Cantidad de cada pokemon a planificar obtenida
+[INFO] 00:39:56:868 Team/(6313:6313): Inicializando colas
+[INFO] 00:39:56:868 Team/(6313:6313): Iniciando semaforo de entrenadores libres en 3
+[INFO] 00:39:56:868 Team/(6313:6313): Colas inicializadas
+[INFO] 00:39:56:869 Team/(6313:6313): Mandando gets
+[INFO] 00:39:56:870 Team/(6313:6320): Escucho localized de BROKER
+[INFO] 00:39:56:870 Team/(6313:6321): Hilo de verificacion periodica de conexion con Broker iniciado
+[INFO] 00:39:56:870 Team/(6313:6322): Hilo de busqueda de deadlocks iniciado
+[INFO] 00:39:56:870 Team/(6313:6323): Trabajo de entrenador 0 comenzado
+[INFO] 00:39:56:870 Team/(6313:6319): Escucho caught de BROKER
+[INFO] 00:39:56:870 Team/(6313:6317): Hilo planificador de tratamiento de deadlocks iniciado
+[INFO] 00:39:56:870 Team/(6313:6324): Trabajo de entrenador 1 comenzado
+[INFO] 00:39:56:878 Team/(6313:6318): Escucho appeared de BROKER
+[INFO] 00:39:56:880 Team/(6313:6325): Trabajo de entrenador 2 comenzado
+[INFO] 00:39:56:886 Team/(6313:6316): Hilo planificador de mensajes caught iniciado
+[INFO] 00:39:56:886 Team/(6313:6326): Enviando get correspondiente al pokemon squirtle
+[INFO] 00:39:56:886 Team/(6313:6327): Enviando get correspondiente al pokemon pikachu
+[INFO] 00:39:56:886 Team/(6313:6328): Enviando get correspondiente al pokemon gengar
+[ERROR] 00:39:56:887 Team/(6313:6326): Error: No se pudo enviar el GET correspondiente al pokemon squirtle, iniciando el comportamiento default
+[INFO] 00:39:56:887 Team/(6313:6329): Enviando get correspondiente al pokemon onix
+[ERROR] 00:39:56:887 Team/(6313:6328): Error: No se pudo enviar el GET correspondiente al pokemon gengar, iniciando el comportamiento default
+[ERROR] 00:39:56:887 Team/(6313:6327): Error: No se pudo enviar el GET correspondiente al pokemon pikachu, iniciando el comportamiento default
+[ERROR] 00:39:56:887 Team/(6313:6329): Error: No se pudo enviar el GET correspondiente al pokemon onix, iniciando el comportamiento default
+[INFO] 00:39:56:887 Team/(6313:6313): Gets mandados
+[INFO] 00:39:56:888 Team/(6313:6315): Hilo planificador de pokemones iniciado
+[INFO] 00:39:56:890 Team/(6313:6314): Esperando mensajes de game boy en socket 5
+[INFO] 01:00:27:322 Team/(6636:6636): logger extenso iniciado
+[INFO] 01:00:27:322 Team/(6636:6636): logger de la catedra iniciado
+[INFO] 01:00:27:322 Team/(6636:6636): La IP es: 127.0.0.1
+[INFO] 01:00:27:322 Team/(6636:6636): El puerto es: 4445
+[INFO] 01:00:27:322 Team/(6636:6636): La IP del Broker es: 127.0.0.1
+[INFO] 01:00:27:322 Team/(6636:6636): El puerto del Broker es: 4444
+[INFO] 01:00:27:322 Team/(6636:6636): El Id de Team es: 5
+[INFO] 01:00:27:323 Team/(6636:6636): La busqueda de deadlocks se corre cada 8 segundos
+[INFO] 01:00:27:323 Team/(6636:6636): La conexion al Broker se verifica cada 30 segundos
+[INFO] 01:00:27:323 Team/(6636:6636): EL tiempo de retardo de CPU es cada 5 segundos
+[INFO] 01:00:27:323 Team/(6636:6636): EL algoritmo de planificacion es RR
+[INFO] 01:00:27:323 Team/(6636:6636): Objetivos para el entrenador 0: Pikachu|Squirtle
+[INFO] 01:00:27:323 Team/(6636:6636): Posiciones para el entrenador 0: 1|3
+[INFO] 01:00:27:323 Team/(6636:6636): Pokemones para el entrenador 0: Pikachu
+[INFO] 01:00:27:323 Team/(6636:6636): Llego token objetivo pikachu para el entrenador 0
+[INFO] 01:00:27:324 Team/(6636:6636): Llego token objetivo squirtle para el entrenador 0
+[INFO] 01:00:27:324 Team/(6636:6636): Llego token pokemon pikachu
+[INFO] 01:00:27:324 Team/(6636:6636): Posicion X del entrenador 0: 1
+[INFO] 01:00:27:324 Team/(6636:6636): Posicion Y del entrenador 0: 3
+[INFO] 01:00:27:324 Team/(6636:6636): Estado del entrenador 0: 1111
+[INFO] 01:00:27:324 Team/(6636:6636): Objetivo del entrenador 0: pikachu
+[INFO] 01:00:27:324 Team/(6636:6636): Objetivo del entrenador 0: squirtle
+[INFO] 01:00:27:324 Team/(6636:6636): Objetivo actual del entrenador 0: squirtle
+[INFO] 01:00:27:325 Team/(6636:6636): Pokemon del entrenador 0: pikachu
+[INFO] 01:00:27:325 Team/(6636:6636): Objetivos para el entrenador 1: Pikachu|Gengar
+[INFO] 01:00:27:325 Team/(6636:6636): Posiciones para el entrenador 1: 2|3
+[INFO] 01:00:27:325 Team/(6636:6636): Pokemones para el entrenador 1: 
+[INFO] 01:00:27:325 Team/(6636:6636): Llego token objetivo pikachu para el entrenador 1
+[INFO] 01:00:27:325 Team/(6636:6636): Llego token objetivo gengar para el entrenador 1
+[INFO] 01:00:27:326 Team/(6636:6636): No existen pokemones para el entrenador 1
+[INFO] 01:00:27:326 Team/(6636:6636): Posicion X del entrenador 1: 2
+[INFO] 01:00:27:326 Team/(6636:6636): Posicion Y del entrenador 1: 3
+[INFO] 01:00:27:326 Team/(6636:6636): Estado del entrenador 1: 1111
+[INFO] 01:00:27:326 Team/(6636:6636): Objetivo del entrenador 1: pikachu
+[INFO] 01:00:27:326 Team/(6636:6636): Objetivo del entrenador 1: gengar
+[INFO] 01:00:27:326 Team/(6636:6636): Objetivo actual del entrenador 1: pikachu
+[INFO] 01:00:27:326 Team/(6636:6636): Objetivo actual del entrenador 1: gengar
+[INFO] 01:00:27:326 Team/(6636:6636): Objetivos para el entrenador 2: Squirtle|Onix
+[INFO] 01:00:27:327 Team/(6636:6636): Posiciones para el entrenador 2: 3|2
+[INFO] 01:00:27:327 Team/(6636:6636): Pokemones para el entrenador 2: 
+[INFO] 01:00:27:327 Team/(6636:6636): Llego token objetivo squirtle para el entrenador 2
+[INFO] 01:00:27:327 Team/(6636:6636): Llego token objetivo onix para el entrenador 2
+[INFO] 01:00:27:327 Team/(6636:6636): No existen pokemones para el entrenador 2
+[INFO] 01:00:27:327 Team/(6636:6636): Posicion X del entrenador 2: 3
+[INFO] 01:00:27:327 Team/(6636:6636): Posicion Y del entrenador 2: 2
+[INFO] 01:00:27:327 Team/(6636:6636): Estado del entrenador 2: 1111
+[INFO] 01:00:27:328 Team/(6636:6636): Objetivo del entrenador 2: squirtle
+[INFO] 01:00:27:328 Team/(6636:6636): Objetivo del entrenador 2: onix
+[INFO] 01:00:27:328 Team/(6636:6636): Objetivo actual del entrenador 2: squirtle
+[INFO] 01:00:27:328 Team/(6636:6636): Objetivo actual del entrenador 2: onix
+[INFO] 01:00:27:328 Team/(6636:6636): Obteniendo objetivo global
+[INFO] 01:00:27:328 Team/(6636:6636): Objetivo global: squirtle
+[INFO] 01:00:27:328 Team/(6636:6636): Objetivo global: pikachu
+[INFO] 01:00:27:328 Team/(6636:6636): Objetivo global: gengar
+[INFO] 01:00:27:328 Team/(6636:6636): Objetivo global: squirtle
+[INFO] 01:00:27:328 Team/(6636:6636): Objetivo global: onix
+[INFO] 01:00:27:328 Team/(6636:6636): Objetivo global obtenido
+[INFO] 01:00:27:328 Team/(6636:6636): Obteniendo cantidad de cada pokemon a planificar
+[INFO] 01:00:27:328 Team/(6636:6636): Cantidad a planificar de squirtle: 1
+[INFO] 01:00:27:328 Team/(6636:6636): Cantidad a planificar de pikachu: 1
+[INFO] 01:00:27:328 Team/(6636:6636): Cantidad a planificar de gengar: 1
+[INFO] 01:00:27:328 Team/(6636:6636): Cantidad a planificar de squirtle: 2
+[INFO] 01:00:27:328 Team/(6636:6636): Cantidad a planificar de onix: 1
+[INFO] 01:00:27:328 Team/(6636:6636): Cantidad de cada pokemon a planificar obtenida
+[INFO] 01:00:27:328 Team/(6636:6636): Inicializando colas
+[INFO] 01:00:27:328 Team/(6636:6636): Iniciando semaforo de entrenadores libres en 3
+[INFO] 01:00:27:329 Team/(6636:6636): Colas inicializadas
+[INFO] 01:00:27:330 Team/(6636:6636): Mandando gets
+[INFO] 01:00:27:330 Team/(6636:6644): Escucho appeared de BROKER
+[INFO] 01:00:27:330 Team/(6636:6645): Escucho caught de BROKER
+[INFO] 01:00:27:330 Team/(6636:6646): Escucho localized de BROKER
+[INFO] 01:00:27:330 Team/(6636:6647): Hilo de verificacion periodica de conexion con Broker iniciado
+[INFO] 01:00:27:330 Team/(6636:6648): Hilo de busqueda de deadlocks iniciado
+[INFO] 01:00:27:330 Team/(6636:6649): Trabajo de entrenador 0 comenzado
+[INFO] 01:00:27:331 Team/(6636:6650): Trabajo de entrenador 1 comenzado
+[INFO] 01:00:27:331 Team/(6636:6651): Trabajo de entrenador 2 comenzado
+[INFO] 01:00:27:331 Team/(6636:6652): Enviando get correspondiente al pokemon squirtle
+[INFO] 01:00:27:332 Team/(6636:6653): Enviando get correspondiente al pokemon pikachu
+[INFO] 01:00:27:332 Team/(6636:6654): Enviando get correspondiente al pokemon gengar
+[INFO] 01:00:27:332 Team/(6636:6652): Mensaje GET correspondiente al pokemon squirtle enviado correctamente al BROKER a traves del socket 10
+[INFO] 01:00:27:332 Team/(6636:6655): Enviando get correspondiente al pokemon onix
+[INFO] 01:00:27:333 Team/(6636:6652): Recibiendo ID del GET enviado por el Broker
+[INFO] 01:00:27:333 Team/(6636:6640): Hilo planificador de tratamiento de deadlocks iniciado
+[INFO] 01:00:27:333 Team/(6636:6654): Mensaje GET correspondiente al pokemon gengar enviado correctamente al BROKER a traves del socket 11
+[INFO] 01:00:27:333 Team/(6636:6654): Recibiendo ID del GET enviado por el Broker
+[INFO] 01:00:27:334 Team/(6636:6653): Mensaje GET correspondiente al pokemon pikachu enviado correctamente al BROKER a traves del socket 12
+[INFO] 01:00:27:334 Team/(6636:6655): Mensaje GET correspondiente al pokemon onix enviado correctamente al BROKER a traves del socket 13
+[INFO] 01:00:27:334 Team/(6636:6653): Recibiendo ID del GET enviado por el Broker
+[INFO] 01:00:27:334 Team/(6636:6655): Recibiendo ID del GET enviado por el Broker
+[INFO] 01:00:27:342 Team/(6636:6639): Hilo planificador de mensajes caught iniciado
+[INFO] 01:00:27:342 Team/(6636:6638): Hilo planificador de pokemones iniciado
+[INFO] 01:00:27:342 Team/(6636:6652): El id recibido es: 4
+[INFO] 01:00:27:342 Team/(6636:6652): Id del mensaje GET correspondiente al pokemon squirtle es 4
+[INFO] 01:00:27:343 Team/(6636:6653): El id recibido es: 5
+[INFO] 01:00:27:343 Team/(6636:6653): Id del mensaje GET correspondiente al pokemon pikachu es 5
+[INFO] 01:00:27:343 Team/(6636:6654): El id recibido es: 6
+[INFO] 01:00:27:343 Team/(6636:6654): Id del mensaje GET correspondiente al pokemon gengar es 6
+[INFO] 01:00:27:344 Team/(6636:6655): El id recibido es: 7
+[INFO] 01:00:27:344 Team/(6636:6655): Id del mensaje GET correspondiente al pokemon onix es 7
+[INFO] 01:00:27:344 Team/(6636:6636): Gets mandados
+[INFO] 01:00:27:344 Team/(6636:6637): Esperando mensajes de game boy en socket 5
+[INFO] 01:00:35:331 Team/(6636:6648): Buscando deadlock...
+[INFO] 01:00:35:332 Team/(6636:6648): Obtengo entrenadores bloqueados
+[INFO] 01:00:35:332 Team/(6636:6648): Entrenadores bloqueados obtenidos
+[INFO] 01:00:35:332 Team/(6636:6648): No se han encontrado deadlocks
+[INFO] 01:00:43:332 Team/(6636:6648): Buscando deadlock...
+[INFO] 01:00:43:332 Team/(6636:6648): Obtengo entrenadores bloqueados
+[INFO] 01:00:43:332 Team/(6636:6648): Entrenadores bloqueados obtenidos
+[INFO] 01:00:43:332 Team/(6636:6648): No se han encontrado deadlocks
+[INFO] 01:00:51:332 Team/(6636:6648): Buscando deadlock...
+[INFO] 01:00:51:333 Team/(6636:6648): Obtengo entrenadores bloqueados
+[INFO] 01:00:51:333 Team/(6636:6648): Entrenadores bloqueados obtenidos
+[INFO] 01:00:51:333 Team/(6636:6648): No se han encontrado deadlocks
+[INFO] 01:00:57:331 Team/(6636:6647): Iniciando verificacion de conexion con Broker...
+[INFO] 01:00:57:332 Team/(6636:6647): Conexion con Broker en buen estado, verificando nuevamente en 30 segundos
+[INFO] 01:00:59:333 Team/(6636:6648): Buscando deadlock...
+[INFO] 01:00:59:333 Team/(6636:6648): Obtengo entrenadores bloqueados
+[INFO] 01:00:59:333 Team/(6636:6648): Entrenadores bloqueados obtenidos
+[INFO] 01:00:59:333 Team/(6636:6648): No se han encontrado deadlocks
+[INFO] 01:01:07:333 Team/(6636:6648): Buscando deadlock...
+[INFO] 01:01:07:334 Team/(6636:6648): Obtengo entrenadores bloqueados
+[INFO] 01:01:07:334 Team/(6636:6648): Entrenadores bloqueados obtenidos
+[INFO] 01:01:07:334 Team/(6636:6648): No se han encontrado deadlocks
+[INFO] 01:01:15:334 Team/(6636:6648): Buscando deadlock...
+[INFO] 01:01:15:334 Team/(6636:6648): Obtengo entrenadores bloqueados
+[INFO] 01:01:15:335 Team/(6636:6648): Entrenadores bloqueados obtenidos
+[INFO] 01:01:15:335 Team/(6636:6648): No se han encontrado deadlocks
+[INFO] 01:01:23:335 Team/(6636:6648): Buscando deadlock...
+[INFO] 01:01:23:335 Team/(6636:6648): Obtengo entrenadores bloqueados
+[INFO] 01:01:23:335 Team/(6636:6648): Entrenadores bloqueados obtenidos
+[INFO] 01:01:23:336 Team/(6636:6648): No se han encontrado deadlocks
+[INFO] 01:01:27:333 Team/(6636:6647): Iniciando verificacion de conexion con Broker...
+[INFO] 01:01:27:333 Team/(6636:6647): Conexion con Broker en buen estado, verificando nuevamente en 30 segundos
+[INFO] 01:01:31:336 Team/(6636:6648): Buscando deadlock...
+[INFO] 01:01:31:336 Team/(6636:6648): Obtengo entrenadores bloqueados
+[INFO] 01:01:31:336 Team/(6636:6648): Entrenadores bloqueados obtenidos
+[INFO] 01:01:31:336 Team/(6636:6648): No se han encontrado deadlocks
+[INFO] 01:01:39:337 Team/(6636:6648): Buscando deadlock...
+[INFO] 01:01:39:337 Team/(6636:6648): Obtengo entrenadores bloqueados
+[INFO] 01:01:39:337 Team/(6636:6648): Entrenadores bloqueados obtenidos
+[INFO] 01:01:39:337 Team/(6636:6648): No se han encontrado deadlocks
+[INFO] 01:01:47:337 Team/(6636:6648): Buscando deadlock...
+[INFO] 01:01:47:337 Team/(6636:6648): Obtengo entrenadores bloqueados
+[INFO] 01:01:47:338 Team/(6636:6648): Entrenadores bloqueados obtenidos
+[INFO] 01:01:47:338 Team/(6636:6648): No se han encontrado deadlocks
+[INFO] 01:01:55:338 Team/(6636:6648): Buscando deadlock...
+[INFO] 01:01:55:338 Team/(6636:6648): Obtengo entrenadores bloqueados
+[INFO] 01:01:55:339 Team/(6636:6648): Entrenadores bloqueados obtenidos
+[INFO] 01:01:55:339 Team/(6636:6648): No se han encontrado deadlocks
+[INFO] 01:01:57:333 Team/(6636:6647): Iniciando verificacion de conexion con Broker...
+[INFO] 01:01:57:333 Team/(6636:6647): Conexion con Broker en buen estado, verificando nuevamente en 30 segundos
+[INFO] 01:02:03:339 Team/(6636:6648): Buscando deadlock...
+[INFO] 01:02:03:339 Team/(6636:6648): Obtengo entrenadores bloqueados
+[INFO] 01:02:03:339 Team/(6636:6648): Entrenadores bloqueados obtenidos
+[INFO] 01:02:03:340 Team/(6636:6648): No se han encontrado deadlocks
+[INFO] 01:02:11:340 Team/(6636:6648): Buscando deadlock...
+[INFO] 01:02:11:340 Team/(6636:6648): Obtengo entrenadores bloqueados
+[INFO] 01:02:11:340 Team/(6636:6648): Entrenadores bloqueados obtenidos
+[INFO] 01:02:11:340 Team/(6636:6648): No se han encontrado deadlocks
+[INFO] 01:02:19:340 Team/(6636:6648): Buscando deadlock...
+[INFO] 01:02:19:341 Team/(6636:6648): Obtengo entrenadores bloqueados
+[INFO] 01:02:19:341 Team/(6636:6648): Entrenadores bloqueados obtenidos
+[INFO] 01:02:19:341 Team/(6636:6648): No se han encontrado deadlocks
+[INFO] 01:02:27:334 Team/(6636:6647): Iniciando verificacion de conexion con Broker...
+[INFO] 01:02:27:334 Team/(6636:6647): Conexion con Broker en buen estado, verificando nuevamente en 30 segundos
+[INFO] 01:02:27:341 Team/(6636:6648): Buscando deadlock...
+[INFO] 01:02:27:341 Team/(6636:6648): Obtengo entrenadores bloqueados
+[INFO] 01:02:27:341 Team/(6636:6648): Entrenadores bloqueados obtenidos
+[INFO] 01:02:27:341 Team/(6636:6648): No se han encontrado deadlocks
+[INFO] 01:02:35:342 Team/(6636:6648): Buscando deadlock...
+[INFO] 01:02:35:342 Team/(6636:6648): Obtengo entrenadores bloqueados
+[INFO] 01:02:35:342 Team/(6636:6648): Entrenadores bloqueados obtenidos
+[INFO] 01:02:35:342 Team/(6636:6648): No se han encontrado deadlocks
+[INFO] 01:02:43:342 Team/(6636:6648): Buscando deadlock...
+[INFO] 01:02:43:342 Team/(6636:6648): Obtengo entrenadores bloqueados
+[INFO] 01:02:43:342 Team/(6636:6648): Entrenadores bloqueados obtenidos
+[INFO] 01:02:43:342 Team/(6636:6648): No se han encontrado deadlocks
+[INFO] 01:02:51:343 Team/(6636:6648): Buscando deadlock...
+[INFO] 01:02:51:343 Team/(6636:6648): Obtengo entrenadores bloqueados
+[INFO] 01:02:51:343 Team/(6636:6648): Entrenadores bloqueados obtenidos
+[INFO] 01:02:51:343 Team/(6636:6648): No se han encontrado deadlocks
+[INFO] 01:02:57:335 Team/(6636:6647): Iniciando verificacion de conexion con Broker...
+[INFO] 01:02:57:335 Team/(6636:6647): Conexion con Broker en buen estado, verificando nuevamente en 30 segundos
+[INFO] 01:02:59:344 Team/(6636:6648): Buscando deadlock...
+[INFO] 01:02:59:344 Team/(6636:6648): Obtengo entrenadores bloqueados
+[INFO] 01:02:59:345 Team/(6636:6648): Entrenadores bloqueados obtenidos
+[INFO] 01:02:59:345 Team/(6636:6648): No se han encontrado deadlocks
+[INFO] 01:03:07:345 Team/(6636:6648): Buscando deadlock...
+[INFO] 01:03:07:346 Team/(6636:6648): Obtengo entrenadores bloqueados
+[INFO] 01:03:07:346 Team/(6636:6648): Entrenadores bloqueados obtenidos
+[INFO] 01:03:07:346 Team/(6636:6648): No se han encontrado deadlocks
+[INFO] 01:03:15:346 Team/(6636:6648): Buscando deadlock...
+[INFO] 01:03:15:346 Team/(6636:6648): Obtengo entrenadores bloqueados
+[INFO] 01:03:15:346 Team/(6636:6648): Entrenadores bloqueados obtenidos
+[INFO] 01:03:15:346 Team/(6636:6648): No se han encontrado deadlocks
+[INFO] 01:03:23:347 Team/(6636:6648): Buscando deadlock...
+[INFO] 01:03:23:347 Team/(6636:6648): Obtengo entrenadores bloqueados
+[INFO] 01:03:23:347 Team/(6636:6648): Entrenadores bloqueados obtenidos
+[INFO] 01:03:23:347 Team/(6636:6648): No se han encontrado deadlocks
+[INFO] 01:03:27:335 Team/(6636:6647): Iniciando verificacion de conexion con Broker...
+[INFO] 01:03:27:336 Team/(6636:6647): Conexion con Broker en buen estado, verificando nuevamente en 30 segundos
+[INFO] 01:03:31:347 Team/(6636:6648): Buscando deadlock...
+[INFO] 01:03:31:347 Team/(6636:6648): Obtengo entrenadores bloqueados
+[INFO] 01:03:31:348 Team/(6636:6648): Entrenadores bloqueados obtenidos
+[INFO] 01:03:31:348 Team/(6636:6648): No se han encontrado deadlocks
+[INFO] 01:03:39:348 Team/(6636:6648): Buscando deadlock...
+[INFO] 01:03:39:348 Team/(6636:6648): Obtengo entrenadores bloqueados
+[INFO] 01:03:39:348 Team/(6636:6648): Entrenadores bloqueados obtenidos
+[INFO] 01:03:39:348 Team/(6636:6648): No se han encontrado deadlocks
+[INFO] 01:03:47:349 Team/(6636:6648): Buscando deadlock...
+[INFO] 01:03:47:349 Team/(6636:6648): Obtengo entrenadores bloqueados
+[INFO] 01:03:47:349 Team/(6636:6648): Entrenadores bloqueados obtenidos
+[INFO] 01:03:47:349 Team/(6636:6648): No se han encontrado deadlocks
+[INFO] 01:03:55:349 Team/(6636:6648): Buscando deadlock...
+[INFO] 01:03:55:350 Team/(6636:6648): Obtengo entrenadores bloqueados
+[INFO] 01:03:55:350 Team/(6636:6648): Entrenadores bloqueados obtenidos
+[INFO] 01:03:55:350 Team/(6636:6648): No se han encontrado deadlocks
+[INFO] 01:03:57:336 Team/(6636:6647): Iniciando verificacion de conexion con Broker...
+[INFO] 01:03:57:337 Team/(6636:6647): Conexion con Broker en buen estado, verificando nuevamente en 30 segundos
+[INFO] 01:04:03:351 Team/(6636:6648): Buscando deadlock...
+[INFO] 01:04:03:351 Team/(6636:6648): Obtengo entrenadores bloqueados
+[INFO] 01:04:03:351 Team/(6636:6648): Entrenadores bloqueados obtenidos
+[INFO] 01:04:03:351 Team/(6636:6648): No se han encontrado deadlocks
+[INFO] 01:04:11:351 Team/(6636:6648): Buscando deadlock...
+[INFO] 01:04:11:351 Team/(6636:6648): Obtengo entrenadores bloqueados
+[INFO] 01:04:11:351 Team/(6636:6648): Entrenadores bloqueados obtenidos
+[INFO] 01:04:11:351 Team/(6636:6648): No se han encontrado deadlocks
+[INFO] 01:04:19:351 Team/(6636:6648): Buscando deadlock...
+[INFO] 01:04:19:352 Team/(6636:6648): Obtengo entrenadores bloqueados
+[INFO] 01:04:19:352 Team/(6636:6648): Entrenadores bloqueados obtenidos
+[INFO] 01:04:19:352 Team/(6636:6648): No se han encontrado deadlocks
+[INFO] 01:04:27:337 Team/(6636:6647): Iniciando verificacion de conexion con Broker...
+[INFO] 01:04:27:337 Team/(6636:6647): Conexion con Broker en buen estado, verificando nuevamente en 30 segundos
+[INFO] 01:04:27:352 Team/(6636:6648): Buscando deadlock...
+[INFO] 01:04:27:352 Team/(6636:6648): Obtengo entrenadores bloqueados
+[INFO] 01:04:27:352 Team/(6636:6648): Entrenadores bloqueados obtenidos
+[INFO] 01:04:27:352 Team/(6636:6648): No se han encontrado deadlocks
+[INFO] 01:04:35:352 Team/(6636:6648): Buscando deadlock...
+[INFO] 01:04:35:353 Team/(6636:6648): Obtengo entrenadores bloqueados
+[INFO] 01:04:35:353 Team/(6636:6648): Entrenadores bloqueados obtenidos
+[INFO] 01:04:35:354 Team/(6636:6648): No se han encontrado deadlocks
+[INFO] 01:04:43:354 Team/(6636:6648): Buscando deadlock...
+[INFO] 01:04:43:354 Team/(6636:6648): Obtengo entrenadores bloqueados
+[INFO] 01:04:43:354 Team/(6636:6648): Entrenadores bloqueados obtenidos
+[INFO] 01:04:43:355 Team/(6636:6648): No se han encontrado deadlocks
+[INFO] 01:04:51:355 Team/(6636:6648): Buscando deadlock...
+[INFO] 01:04:51:355 Team/(6636:6648): Obtengo entrenadores bloqueados
+[INFO] 01:04:51:355 Team/(6636:6648): Entrenadores bloqueados obtenidos
+[INFO] 01:04:51:356 Team/(6636:6648): No se han encontrado deadlocks
+[INFO] 01:04:57:337 Team/(6636:6647): Iniciando verificacion de conexion con Broker...
+[INFO] 01:04:57:337 Team/(6636:6647): Conexion con Broker en buen estado, verificando nuevamente en 30 segundos
+[INFO] 01:04:59:356 Team/(6636:6648): Buscando deadlock...
+[INFO] 01:04:59:356 Team/(6636:6648): Obtengo entrenadores bloqueados
+[INFO] 01:04:59:356 Team/(6636:6648): Entrenadores bloqueados obtenidos
+[INFO] 01:04:59:356 Team/(6636:6648): No se han encontrado deadlocks
+[INFO] 01:05:07:357 Team/(6636:6648): Buscando deadlock...
+[INFO] 01:05:07:357 Team/(6636:6648): Obtengo entrenadores bloqueados
+[INFO] 01:05:07:357 Team/(6636:6648): Entrenadores bloqueados obtenidos
+[INFO] 01:05:07:357 Team/(6636:6648): No se han encontrado deadlocks
+[INFO] 01:05:15:357 Team/(6636:6648): Buscando deadlock...
+[INFO] 01:05:15:358 Team/(6636:6648): Obtengo entrenadores bloqueados
+[INFO] 01:05:15:358 Team/(6636:6648): Entrenadores bloqueados obtenidos
+[INFO] 01:05:15:358 Team/(6636:6648): No se han encontrado deadlocks
+[INFO] 01:05:23:359 Team/(6636:6648): Buscando deadlock...
+[INFO] 01:05:23:359 Team/(6636:6648): Obtengo entrenadores bloqueados
+[INFO] 01:05:23:360 Team/(6636:6648): Entrenadores bloqueados obtenidos
+[INFO] 01:05:23:360 Team/(6636:6648): No se han encontrado deadlocks
+[INFO] 01:05:27:338 Team/(6636:6647): Iniciando verificacion de conexion con Broker...
+[INFO] 01:05:27:338 Team/(6636:6647): Conexion con Broker en buen estado, verificando nuevamente en 30 segundos
+[INFO] 01:05:31:361 Team/(6636:6648): Buscando deadlock...
+[INFO] 01:05:31:361 Team/(6636:6648): Obtengo entrenadores bloqueados
+[INFO] 01:05:31:361 Team/(6636:6648): Entrenadores bloqueados obtenidos
+[INFO] 01:05:31:361 Team/(6636:6648): No se han encontrado deadlocks
+[INFO] 01:05:39:362 Team/(6636:6648): Buscando deadlock...
+[INFO] 01:05:39:362 Team/(6636:6648): Obtengo entrenadores bloqueados
+[INFO] 01:05:39:362 Team/(6636:6648): Entrenadores bloqueados obtenidos
+[INFO] 01:05:39:362 Team/(6636:6648): No se han encontrado deadlocks
+[INFO] 01:05:47:362 Team/(6636:6648): Buscando deadlock...
+[INFO] 01:05:47:363 Team/(6636:6648): Obtengo entrenadores bloqueados
+[INFO] 01:05:47:363 Team/(6636:6648): Entrenadores bloqueados obtenidos
+[INFO] 01:05:47:363 Team/(6636:6648): No se han encontrado deadlocks
+[INFO] 01:05:55:363 Team/(6636:6648): Buscando deadlock...
+[INFO] 01:05:55:364 Team/(6636:6648): Obtengo entrenadores bloqueados
+[INFO] 01:05:55:364 Team/(6636:6648): Entrenadores bloqueados obtenidos
+[INFO] 01:05:55:364 Team/(6636:6648): No se han encontrado deadlocks
+[INFO] 01:05:57:338 Team/(6636:6647): Iniciando verificacion de conexion con Broker...
+[INFO] 01:05:57:339 Team/(6636:6647): Conexion con Broker en buen estado, verificando nuevamente en 30 segundos
+[INFO] 01:06:03:364 Team/(6636:6648): Buscando deadlock...
+[INFO] 01:06:03:365 Team/(6636:6648): Obtengo entrenadores bloqueados
+[INFO] 01:06:03:365 Team/(6636:6648): Entrenadores bloqueados obtenidos
+[INFO] 01:06:03:365 Team/(6636:6648): No se han encontrado deadlocks
+[INFO] 01:06:11:365 Team/(6636:6648): Buscando deadlock...
+[INFO] 01:06:11:365 Team/(6636:6648): Obtengo entrenadores bloqueados
+[INFO] 01:06:11:365 Team/(6636:6648): Entrenadores bloqueados obtenidos
+[INFO] 01:06:11:365 Team/(6636:6648): No se han encontrado deadlocks
+[INFO] 01:06:19:366 Team/(6636:6648): Buscando deadlock...
+[INFO] 01:06:19:366 Team/(6636:6648): Obtengo entrenadores bloqueados
+[INFO] 01:06:19:366 Team/(6636:6648): Entrenadores bloqueados obtenidos
+[INFO] 01:06:19:366 Team/(6636:6648): No se han encontrado deadlocks
+[INFO] 01:06:27:339 Team/(6636:6647): Iniciando verificacion de conexion con Broker...
+[INFO] 01:06:27:339 Team/(6636:6647): Conexion con Broker en buen estado, verificando nuevamente en 30 segundos
+[INFO] 01:06:27:368 Team/(6636:6648): Buscando deadlock...
+[INFO] 01:06:27:368 Team/(6636:6648): Obtengo entrenadores bloqueados
+[INFO] 01:06:27:368 Team/(6636:6648): Entrenadores bloqueados obtenidos
+[INFO] 01:06:27:368 Team/(6636:6648): No se han encontrado deadlocks
+[INFO] 01:06:35:369 Team/(6636:6648): Buscando deadlock...
+[INFO] 01:06:35:369 Team/(6636:6648): Obtengo entrenadores bloqueados
+[INFO] 01:06:35:369 Team/(6636:6648): Entrenadores bloqueados obtenidos
+[INFO] 01:06:35:369 Team/(6636:6648): No se han encontrado deadlocks
+[INFO] 01:06:43:369 Team/(6636:6648): Buscando deadlock...
+[INFO] 01:06:43:369 Team/(6636:6648): Obtengo entrenadores bloqueados
+[INFO] 01:06:43:369 Team/(6636:6648): Entrenadores bloqueados obtenidos
+[INFO] 01:06:43:370 Team/(6636:6648): No se han encontrado deadlocks
+[INFO] 01:06:51:370 Team/(6636:6648): Buscando deadlock...
+[INFO] 01:06:51:370 Team/(6636:6648): Obtengo entrenadores bloqueados
+[INFO] 01:06:51:370 Team/(6636:6648): Entrenadores bloqueados obtenidos
+[INFO] 01:06:51:370 Team/(6636:6648): No se han encontrado deadlocks
+[INFO] 01:06:57:339 Team/(6636:6647): Iniciando verificacion de conexion con Broker...
+[INFO] 01:06:57:340 Team/(6636:6647): Conexion con Broker en buen estado, verificando nuevamente en 30 segundos
+[INFO] 01:06:59:371 Team/(6636:6648): Buscando deadlock...
+[INFO] 01:06:59:371 Team/(6636:6648): Obtengo entrenadores bloqueados
+[INFO] 01:06:59:371 Team/(6636:6648): Entrenadores bloqueados obtenidos
+[INFO] 01:06:59:371 Team/(6636:6648): No se han encontrado deadlocks
+[INFO] 01:07:07:371 Team/(6636:6648): Buscando deadlock...
+[INFO] 01:07:07:371 Team/(6636:6648): Obtengo entrenadores bloqueados
+[INFO] 01:07:07:371 Team/(6636:6648): Entrenadores bloqueados obtenidos
+[INFO] 01:07:07:372 Team/(6636:6648): No se han encontrado deadlocks
+[INFO] 01:07:15:372 Team/(6636:6648): Buscando deadlock...
+[INFO] 01:07:15:372 Team/(6636:6648): Obtengo entrenadores bloqueados
+[INFO] 01:07:15:373 Team/(6636:6648): Entrenadores bloqueados obtenidos
+[INFO] 01:07:15:373 Team/(6636:6648): No se han encontrado deadlocks
+[INFO] 01:07:23:373 Team/(6636:6648): Buscando deadlock...
+[INFO] 01:07:23:373 Team/(6636:6648): Obtengo entrenadores bloqueados
+[INFO] 01:07:23:373 Team/(6636:6648): Entrenadores bloqueados obtenidos
+[INFO] 01:07:23:374 Team/(6636:6648): No se han encontrado deadlocks
+[INFO] 01:07:27:340 Team/(6636:6647): Iniciando verificacion de conexion con Broker...
+[INFO] 01:07:27:340 Team/(6636:6647): Conexion con Broker en buen estado, verificando nuevamente en 30 segundos
+[INFO] 01:07:31:374 Team/(6636:6648): Buscando deadlock...
+[INFO] 01:07:31:374 Team/(6636:6648): Obtengo entrenadores bloqueados
+[INFO] 01:07:31:374 Team/(6636:6648): Entrenadores bloqueados obtenidos
+[INFO] 01:07:31:374 Team/(6636:6648): No se han encontrado deadlocks
+[INFO] 01:07:39:374 Team/(6636:6648): Buscando deadlock...
+[INFO] 01:07:39:375 Team/(6636:6648): Obtengo entrenadores bloqueados
+[INFO] 01:07:39:375 Team/(6636:6648): Entrenadores bloqueados obtenidos
+[INFO] 01:07:39:375 Team/(6636:6648): No se han encontrado deadlocks
+[INFO] 01:07:47:375 Team/(6636:6648): Buscando deadlock...
+[INFO] 01:07:47:375 Team/(6636:6648): Obtengo entrenadores bloqueados
+[INFO] 01:07:47:375 Team/(6636:6648): Entrenadores bloqueados obtenidos
+[INFO] 01:07:47:375 Team/(6636:6648): No se han encontrado deadlocks
+[INFO] 01:07:55:376 Team/(6636:6648): Buscando deadlock...
+[INFO] 01:07:55:376 Team/(6636:6648): Obtengo entrenadores bloqueados
+[INFO] 01:07:55:376 Team/(6636:6648): Entrenadores bloqueados obtenidos
+[INFO] 01:07:55:377 Team/(6636:6648): No se han encontrado deadlocks
+[INFO] 01:07:57:340 Team/(6636:6647): Iniciando verificacion de conexion con Broker...
+[INFO] 01:07:57:341 Team/(6636:6647): Conexion con Broker en buen estado, verificando nuevamente en 30 segundos
+[INFO] 01:08:03:377 Team/(6636:6648): Buscando deadlock...
+[INFO] 01:08:03:377 Team/(6636:6648): Obtengo entrenadores bloqueados
+[INFO] 01:08:03:377 Team/(6636:6648): Entrenadores bloqueados obtenidos
+[INFO] 01:08:03:377 Team/(6636:6648): No se han encontrado deadlocks
+[INFO] 01:08:11:378 Team/(6636:6648): Buscando deadlock...
+[INFO] 01:08:11:378 Team/(6636:6648): Obtengo entrenadores bloqueados
+[INFO] 01:08:11:378 Team/(6636:6648): Entrenadores bloqueados obtenidos
+[INFO] 01:08:11:379 Team/(6636:6648): No se han encontrado deadlocks
+[INFO] 01:08:19:379 Team/(6636:6648): Buscando deadlock...
+[INFO] 01:08:19:379 Team/(6636:6648): Obtengo entrenadores bloqueados
+[INFO] 01:08:19:379 Team/(6636:6648): Entrenadores bloqueados obtenidos
+[INFO] 01:08:19:379 Team/(6636:6648): No se han encontrado deadlocks
+[INFO] 01:08:27:341 Team/(6636:6647): Iniciando verificacion de conexion con Broker...
+[INFO] 01:08:27:341 Team/(6636:6647): Conexion con Broker en buen estado, verificando nuevamente en 30 segundos
+[INFO] 01:08:27:379 Team/(6636:6648): Buscando deadlock...
+[INFO] 01:08:27:379 Team/(6636:6648): Obtengo entrenadores bloqueados
+[INFO] 01:08:27:379 Team/(6636:6648): Entrenadores bloqueados obtenidos
+[INFO] 01:08:27:379 Team/(6636:6648): No se han encontrado deadlocks
+[INFO] 01:08:35:380 Team/(6636:6648): Buscando deadlock...
+[INFO] 01:08:35:380 Team/(6636:6648): Obtengo entrenadores bloqueados
+[INFO] 01:08:35:380 Team/(6636:6648): Entrenadores bloqueados obtenidos
+[INFO] 01:08:35:380 Team/(6636:6648): No se han encontrado deadlocks
+[INFO] 01:08:43:380 Team/(6636:6648): Buscando deadlock...
+[INFO] 01:08:43:381 Team/(6636:6648): Obtengo entrenadores bloqueados
+[INFO] 01:08:43:381 Team/(6636:6648): Entrenadores bloqueados obtenidos
+[INFO] 01:08:43:381 Team/(6636:6648): No se han encontrado deadlocks
+[INFO] 01:08:47:834 Team/(6636:6644): Recibiendo mensaje Appeared
+[INFO] 01:08:47:834 Team/(6636:6644): Recibiendo tamanio total
+[INFO] 01:08:47:835 Team/(6636:6644): Tamanio total recibido: 38
+[INFO] 01:08:47:835 Team/(6636:6644): Id correlativo recibido: 8
+[INFO] 01:08:47:835 Team/(6636:6644): Tamanio del pokemon recibido: 4
+[INFO] 01:08:47:835 Team/(6636:6644): Nombre del pokemon recibido: 
+
+[INFO] 01:08:47:835 Team/(6636:6644): Posicion X recibida: 1634363760
+[INFO] 01:08:47:835 Team/(6636:6644): Posicion Y recibida: 1785687142
+[INFO] 01:08:47:835 Team/(6636:6644): Acknowledgement enviado al modulo Broker
+[INFO] 01:08:47:835 Team/(6636:6644): Appeared recibido de BROKER
+[INFO] 01:08:47:835 Team/(6636:6644): Recibiendo mensaje Appeared
+[ERROR] 01:08:47:835 Team/(6636:6644): El codigo de operacion 131169 no corresponde a un mensaje Appeared
+[INFO] 01:08:51:388 Team/(6636:6648): Buscando deadlock...
+[INFO] 01:08:51:389 Team/(6636:6648): Obtengo entrenadores bloqueados
+[INFO] 01:08:51:389 Team/(6636:6648): Entrenadores bloqueados obtenidos
+[INFO] 01:08:51:389 Team/(6636:6648): No se han encontrado deadlocks
+[INFO] 01:13:46:13 Team/(6907:6907): logger extenso iniciado
+[INFO] 01:13:46:14 Team/(6907:6907): logger de la catedra iniciado
+[INFO] 01:13:46:15 Team/(6907:6907): La IP es: 127.0.0.1
+[INFO] 01:13:46:15 Team/(6907:6907): El puerto es: 4445
+[INFO] 01:13:46:15 Team/(6907:6907): La IP del Broker es: 127.0.0.1
+[INFO] 01:13:46:15 Team/(6907:6907): El puerto del Broker es: 4444
+[INFO] 01:13:46:16 Team/(6907:6907): El Id de Team es: 5
+[INFO] 01:13:46:16 Team/(6907:6907): La busqueda de deadlocks se corre cada 8 segundos
+[INFO] 01:13:46:17 Team/(6907:6907): La conexion al Broker se verifica cada 30 segundos
+[INFO] 01:13:46:17 Team/(6907:6907): EL tiempo de retardo de CPU es cada 5 segundos
+[INFO] 01:13:46:17 Team/(6907:6907): EL algoritmo de planificacion es RR
+[INFO] 01:13:46:18 Team/(6907:6907): Objetivos para el entrenador 0: Pikachu|Squirtle
+[INFO] 01:13:46:18 Team/(6907:6907): Posiciones para el entrenador 0: 1|3
+[INFO] 01:13:46:18 Team/(6907:6907): Pokemones para el entrenador 0: Pikachu
+[INFO] 01:13:46:18 Team/(6907:6907): Llego token objetivo pikachu para el entrenador 0
+[INFO] 01:13:46:18 Team/(6907:6907): Llego token objetivo squirtle para el entrenador 0
+[INFO] 01:13:46:22 Team/(6907:6907): Llego token pokemon pikachu
+[INFO] 01:13:46:22 Team/(6907:6907): Posicion X del entrenador 0: 1
+[INFO] 01:13:46:22 Team/(6907:6907): Posicion Y del entrenador 0: 3
+[INFO] 01:13:46:22 Team/(6907:6907): Estado del entrenador 0: 1111
+[INFO] 01:13:46:22 Team/(6907:6907): Objetivo del entrenador 0: pikachu
+[INFO] 01:13:46:22 Team/(6907:6907): Objetivo del entrenador 0: squirtle
+[INFO] 01:13:46:22 Team/(6907:6907): Objetivo actual del entrenador 0: squirtle
+[INFO] 01:13:46:22 Team/(6907:6907): Pokemon del entrenador 0: pikachu
+[INFO] 01:13:46:23 Team/(6907:6907): Objetivos para el entrenador 1: Pikachu|Gengar
+[INFO] 01:13:46:23 Team/(6907:6907): Posiciones para el entrenador 1: 2|3
+[INFO] 01:13:46:23 Team/(6907:6907): Pokemones para el entrenador 1: 
+[INFO] 01:13:46:23 Team/(6907:6907): Llego token objetivo pikachu para el entrenador 1
+[INFO] 01:13:46:23 Team/(6907:6907): Llego token objetivo gengar para el entrenador 1
+[INFO] 01:13:46:23 Team/(6907:6907): No existen pokemones para el entrenador 1
+[INFO] 01:13:46:23 Team/(6907:6907): Posicion X del entrenador 1: 2
+[INFO] 01:13:46:23 Team/(6907:6907): Posicion Y del entrenador 1: 3
+[INFO] 01:13:46:23 Team/(6907:6907): Estado del entrenador 1: 1111
+[INFO] 01:13:46:23 Team/(6907:6907): Objetivo del entrenador 1: pikachu
+[INFO] 01:13:46:23 Team/(6907:6907): Objetivo del entrenador 1: gengar
+[INFO] 01:13:46:24 Team/(6907:6907): Objetivo actual del entrenador 1: pikachu
+[INFO] 01:13:46:24 Team/(6907:6907): Objetivo actual del entrenador 1: gengar
+[INFO] 01:13:46:24 Team/(6907:6907): Objetivos para el entrenador 2: Squirtle|Onix
+[INFO] 01:13:46:24 Team/(6907:6907): Posiciones para el entrenador 2: 3|2
+[INFO] 01:13:46:24 Team/(6907:6907): Pokemones para el entrenador 2: 
+[INFO] 01:13:46:24 Team/(6907:6907): Llego token objetivo squirtle para el entrenador 2
+[INFO] 01:13:46:24 Team/(6907:6907): Llego token objetivo onix para el entrenador 2
+[INFO] 01:13:46:25 Team/(6907:6907): No existen pokemones para el entrenador 2
+[INFO] 01:13:46:25 Team/(6907:6907): Posicion X del entrenador 2: 3
+[INFO] 01:13:46:25 Team/(6907:6907): Posicion Y del entrenador 2: 2
+[INFO] 01:13:46:25 Team/(6907:6907): Estado del entrenador 2: 1111
+[INFO] 01:13:46:25 Team/(6907:6907): Objetivo del entrenador 2: squirtle
+[INFO] 01:13:46:25 Team/(6907:6907): Objetivo del entrenador 2: onix
+[INFO] 01:13:46:25 Team/(6907:6907): Objetivo actual del entrenador 2: squirtle
+[INFO] 01:13:46:25 Team/(6907:6907): Objetivo actual del entrenador 2: onix
+[INFO] 01:13:46:25 Team/(6907:6907): Obteniendo objetivo global
+[INFO] 01:13:46:25 Team/(6907:6907): Objetivo global: squirtle
+[INFO] 01:13:46:25 Team/(6907:6907): Objetivo global: pikachu
+[INFO] 01:13:46:25 Team/(6907:6907): Objetivo global: gengar
+[INFO] 01:13:46:25 Team/(6907:6907): Objetivo global: squirtle
+[INFO] 01:13:46:25 Team/(6907:6907): Objetivo global: onix
+[INFO] 01:13:46:25 Team/(6907:6907): Objetivo global obtenido
+[INFO] 01:13:46:25 Team/(6907:6907): Obteniendo cantidad de cada pokemon a planificar
+[INFO] 01:13:46:25 Team/(6907:6907): Cantidad a planificar de squirtle: 1
+[INFO] 01:13:46:26 Team/(6907:6907): Cantidad a planificar de pikachu: 1
+[INFO] 01:13:46:26 Team/(6907:6907): Cantidad a planificar de gengar: 1
+[INFO] 01:13:46:26 Team/(6907:6907): Cantidad a planificar de squirtle: 2
+[INFO] 01:13:46:26 Team/(6907:6907): Cantidad a planificar de onix: 1
+[INFO] 01:13:46:26 Team/(6907:6907): Cantidad de cada pokemon a planificar obtenida
+[INFO] 01:13:46:26 Team/(6907:6907): Inicializando colas
+[INFO] 01:13:46:26 Team/(6907:6907): Iniciando semaforo de entrenadores libres en 3
+[INFO] 01:13:46:26 Team/(6907:6907): Colas inicializadas
+[INFO] 01:13:46:28 Team/(6907:6907): Mandando gets
+[INFO] 01:13:46:28 Team/(6907:6911): Hilo planificador de tratamiento de deadlocks iniciado
+[INFO] 01:13:46:28 Team/(6907:6910): Hilo planificador de mensajes caught iniciado
+[INFO] 01:13:46:28 Team/(6907:6914): Escucho localized de BROKER
+[INFO] 01:13:46:28 Team/(6907:6915): Hilo de verificacion periodica de conexion con Broker iniciado
+[INFO] 01:13:46:28 Team/(6907:6916): Hilo de busqueda de deadlocks iniciado
+[INFO] 01:13:46:29 Team/(6907:6913): Escucho caught de BROKER
+[INFO] 01:13:46:29 Team/(6907:6920): Trabajo de entrenador 0 comenzado
+[INFO] 01:13:46:29 Team/(6907:6921): Trabajo de entrenador 1 comenzado
+[INFO] 01:13:46:29 Team/(6907:6922): Trabajo de entrenador 2 comenzado
+[INFO] 01:13:46:29 Team/(6907:6912): Escucho appeared de BROKER
+[INFO] 01:13:46:29 Team/(6907:6923): Enviando get correspondiente al pokemon squirtle
+[INFO] 01:13:46:29 Team/(6907:6924): Enviando get correspondiente al pokemon pikachu
+[INFO] 01:13:46:29 Team/(6907:6909): Hilo planificador de pokemones iniciado
+[INFO] 01:13:46:29 Team/(6907:6925): Enviando get correspondiente al pokemon gengar
+[INFO] 01:13:46:30 Team/(6907:6926): Enviando get correspondiente al pokemon onix
+[INFO] 01:13:46:30 Team/(6907:6923): Mensaje GET correspondiente al pokemon squirtle enviado correctamente al BROKER a traves del socket 13
+[INFO] 01:13:46:30 Team/(6907:6924): Mensaje GET correspondiente al pokemon pikachu enviado correctamente al BROKER a traves del socket 12
+[INFO] 01:13:46:30 Team/(6907:6925): Mensaje GET correspondiente al pokemon gengar enviado correctamente al BROKER a traves del socket 11
+[INFO] 01:13:46:30 Team/(6907:6924): Recibiendo ID del GET enviado por el Broker
+[INFO] 01:13:46:30 Team/(6907:6926): Mensaje GET correspondiente al pokemon onix enviado correctamente al BROKER a traves del socket 10
+[INFO] 01:13:46:30 Team/(6907:6926): Recibiendo ID del GET enviado por el Broker
+[INFO] 01:13:46:30 Team/(6907:6923): Recibiendo ID del GET enviado por el Broker
+[INFO] 01:13:46:30 Team/(6907:6925): Recibiendo ID del GET enviado por el Broker
+[INFO] 01:13:46:35 Team/(6907:6908): Esperando mensajes de game boy en socket 5
+[INFO] 01:13:46:36 Team/(6907:6924): El id recibido es: 4
+[INFO] 01:13:46:36 Team/(6907:6924): Id del mensaje GET correspondiente al pokemon pikachu es 4
+[INFO] 01:13:46:36 Team/(6907:6923): El id recibido es: 5
+[INFO] 01:13:46:36 Team/(6907:6923): Id del mensaje GET correspondiente al pokemon squirtle es 5
+[INFO] 01:13:46:36 Team/(6907:6925): El id recibido es: 6
+[INFO] 01:13:46:36 Team/(6907:6925): Id del mensaje GET correspondiente al pokemon gengar es 6
+[INFO] 01:13:46:37 Team/(6907:6926): El id recibido es: 7
+[INFO] 01:13:46:37 Team/(6907:6926): Id del mensaje GET correspondiente al pokemon onix es 7
+[INFO] 01:13:46:37 Team/(6907:6907): Gets mandados
+[INFO] 01:13:54:29 Team/(6907:6916): Buscando deadlock...
+[INFO] 01:13:54:29 Team/(6907:6916): Obtengo entrenadores bloqueados
+[INFO] 01:13:54:30 Team/(6907:6916): Entrenadores bloqueados obtenidos
+[INFO] 01:13:54:30 Team/(6907:6916): No se han encontrado deadlocks
+[INFO] 01:13:57:922 Team/(6907:6912): Recibiendo mensaje Appeared
+[INFO] 01:13:57:922 Team/(6907:6912): Recibiendo tamanio total
+[INFO] 01:13:57:922 Team/(6907:6912): Tamanio total recibido: 38
+[INFO] 01:13:57:923 Team/(6907:6912): Id recibido: 8
+[INFO] 01:13:57:923 Team/(6907:6912): Id correlativo recibido: 4
+[INFO] 01:13:57:923 Team/(6907:6912): Tamanio del pokemon recibido: 10
+[INFO] 01:13:57:923 Team/(6907:6912): Nombre del pokemon recibido: pijafloja
+[INFO] 01:13:57:923 Team/(6907:6912): Posicion X recibida: 2
+[INFO] 01:13:57:923 Team/(6907:6912): Posicion Y recibida: 3
+[INFO] 01:13:57:923 Team/(6907:6912): Acknowledgement enviado al modulo Broker
+[INFO] 01:13:57:923 Team/(6907:6912): Appeared recibido de BROKER
+[INFO] 01:14:02:30 Team/(6907:6916): Buscando deadlock...
+[INFO] 01:14:02:30 Team/(6907:6916): Obtengo entrenadores bloqueados
+[INFO] 01:14:02:30 Team/(6907:6916): Entrenadores bloqueados obtenidos
+[INFO] 01:14:02:31 Team/(6907:6916): No se han encontrado deadlocks
+[INFO] 01:15:56:123 Team/(7083:7083): logger extenso iniciado
+[INFO] 01:15:56:123 Team/(7083:7083): logger de la catedra iniciado
+[INFO] 01:15:56:123 Team/(7083:7083): La IP es: 127.0.0.1
+[INFO] 01:15:56:123 Team/(7083:7083): El puerto es: 4445
+[INFO] 01:15:56:123 Team/(7083:7083): La IP del Broker es: 127.0.0.1
+[INFO] 01:15:56:123 Team/(7083:7083): El puerto del Broker es: 4444
+[INFO] 01:15:56:123 Team/(7083:7083): El Id de Team es: 5
+[INFO] 01:15:56:123 Team/(7083:7083): La busqueda de deadlocks se corre cada 8 segundos
+[INFO] 01:15:56:123 Team/(7083:7083): La conexion al Broker se verifica cada 30 segundos
+[INFO] 01:15:56:123 Team/(7083:7083): EL tiempo de retardo de CPU es cada 5 segundos
+[INFO] 01:15:56:123 Team/(7083:7083): EL algoritmo de planificacion es RR
+[INFO] 01:15:56:124 Team/(7083:7083): Objetivos para el entrenador 0: Pikachu|Squirtle
+[INFO] 01:15:56:124 Team/(7083:7083): Posiciones para el entrenador 0: 1|3
+[INFO] 01:15:56:124 Team/(7083:7083): Pokemones para el entrenador 0: Pikachu
+[INFO] 01:15:56:124 Team/(7083:7083): Llego token objetivo pikachu para el entrenador 0
+[INFO] 01:15:56:124 Team/(7083:7083): Llego token objetivo squirtle para el entrenador 0
+[INFO] 01:15:56:124 Team/(7083:7083): Llego token pokemon pikachu
+[INFO] 01:15:56:124 Team/(7083:7083): Posicion X del entrenador 0: 1
+[INFO] 01:15:56:124 Team/(7083:7083): Posicion Y del entrenador 0: 3
+[INFO] 01:15:56:124 Team/(7083:7083): Estado del entrenador 0: 1111
+[INFO] 01:15:56:124 Team/(7083:7083): Objetivo del entrenador 0: pikachu
+[INFO] 01:15:56:124 Team/(7083:7083): Objetivo del entrenador 0: squirtle
+[INFO] 01:15:56:124 Team/(7083:7083): Objetivo actual del entrenador 0: squirtle
+[INFO] 01:15:56:125 Team/(7083:7083): Pokemon del entrenador 0: pikachu
+[INFO] 01:15:56:125 Team/(7083:7083): Objetivos para el entrenador 1: Pikachu|Gengar
+[INFO] 01:15:56:125 Team/(7083:7083): Posiciones para el entrenador 1: 2|3
+[INFO] 01:15:56:125 Team/(7083:7083): Pokemones para el entrenador 1: 
+[INFO] 01:15:56:125 Team/(7083:7083): Llego token objetivo pikachu para el entrenador 1
+[INFO] 01:15:56:125 Team/(7083:7083): Llego token objetivo gengar para el entrenador 1
+[INFO] 01:15:56:125 Team/(7083:7083): No existen pokemones para el entrenador 1
+[INFO] 01:15:56:125 Team/(7083:7083): Posicion X del entrenador 1: 2
+[INFO] 01:15:56:125 Team/(7083:7083): Posicion Y del entrenador 1: 3
+[INFO] 01:15:56:125 Team/(7083:7083): Estado del entrenador 1: 1111
+[INFO] 01:15:56:125 Team/(7083:7083): Objetivo del entrenador 1: pikachu
+[INFO] 01:15:56:125 Team/(7083:7083): Objetivo del entrenador 1: gengar
+[INFO] 01:15:56:125 Team/(7083:7083): Objetivo actual del entrenador 1: pikachu
+[INFO] 01:15:56:126 Team/(7083:7083): Objetivo actual del entrenador 1: gengar
+[INFO] 01:15:56:126 Team/(7083:7083): Objetivos para el entrenador 2: Squirtle|Onix
+[INFO] 01:15:56:126 Team/(7083:7083): Posiciones para el entrenador 2: 3|2
+[INFO] 01:15:56:126 Team/(7083:7083): Pokemones para el entrenador 2: 
+[INFO] 01:15:56:126 Team/(7083:7083): Llego token objetivo squirtle para el entrenador 2
+[INFO] 01:15:56:126 Team/(7083:7083): Llego token objetivo onix para el entrenador 2
+[INFO] 01:15:56:126 Team/(7083:7083): No existen pokemones para el entrenador 2
+[INFO] 01:15:56:126 Team/(7083:7083): Posicion X del entrenador 2: 3
+[INFO] 01:15:56:126 Team/(7083:7083): Posicion Y del entrenador 2: 2
+[INFO] 01:15:56:126 Team/(7083:7083): Estado del entrenador 2: 1111
+[INFO] 01:15:56:126 Team/(7083:7083): Objetivo del entrenador 2: squirtle
+[INFO] 01:15:56:126 Team/(7083:7083): Objetivo del entrenador 2: onix
+[INFO] 01:15:56:126 Team/(7083:7083): Objetivo actual del entrenador 2: squirtle
+[INFO] 01:15:56:126 Team/(7083:7083): Objetivo actual del entrenador 2: onix
+[INFO] 01:15:56:126 Team/(7083:7083): Obteniendo objetivo global
+[INFO] 01:15:56:126 Team/(7083:7083): Objetivo global: squirtle
+[INFO] 01:15:56:127 Team/(7083:7083): Objetivo global: pikachu
+[INFO] 01:15:56:127 Team/(7083:7083): Objetivo global: gengar
+[INFO] 01:15:56:127 Team/(7083:7083): Objetivo global: squirtle
+[INFO] 01:15:56:127 Team/(7083:7083): Objetivo global: onix
+[INFO] 01:15:56:127 Team/(7083:7083): Objetivo global obtenido
+[INFO] 01:15:56:127 Team/(7083:7083): Obteniendo cantidad de cada pokemon a planificar
+[INFO] 01:15:56:127 Team/(7083:7083): Cantidad a planificar de squirtle: 1
+[INFO] 01:15:56:127 Team/(7083:7083): Cantidad a planificar de pikachu: 1
+[INFO] 01:15:56:127 Team/(7083:7083): Cantidad a planificar de gengar: 1
+[INFO] 01:15:56:127 Team/(7083:7083): Cantidad a planificar de squirtle: 2
+[INFO] 01:15:56:127 Team/(7083:7083): Cantidad a planificar de onix: 1
+[INFO] 01:15:56:127 Team/(7083:7083): Cantidad de cada pokemon a planificar obtenida
+[INFO] 01:15:56:127 Team/(7083:7083): Inicializando colas
+[INFO] 01:15:56:127 Team/(7083:7083): Iniciando semaforo de entrenadores libres en 3
+[INFO] 01:15:56:127 Team/(7083:7083): Colas inicializadas
+[INFO] 01:15:56:127 Team/(7083:7083): Mandando gets
+[INFO] 01:15:56:127 Team/(7083:7090): Escucho localized de BROKER
+[INFO] 01:15:56:127 Team/(7083:7091): Hilo de verificacion periodica de conexion con Broker iniciado
+[INFO] 01:15:56:128 Team/(7083:7092): Hilo de busqueda de deadlocks iniciado
+[INFO] 01:15:56:128 Team/(7083:7093): Trabajo de entrenador 0 comenzado
+[INFO] 01:15:56:128 Team/(7083:7094): Trabajo de entrenador 1 comenzado
+[INFO] 01:15:56:128 Team/(7083:7095): Trabajo de entrenador 2 comenzado
+[INFO] 01:15:56:128 Team/(7083:7096): Enviando get correspondiente al pokemon squirtle
+[INFO] 01:15:56:128 Team/(7083:7097): Enviando get correspondiente al pokemon pikachu
+[INFO] 01:15:56:128 Team/(7083:7098): Enviando get correspondiente al pokemon gengar
+[INFO] 01:15:56:128 Team/(7083:7096): Mensaje GET correspondiente al pokemon squirtle enviado correctamente al BROKER a traves del socket 10
+[INFO] 01:15:56:128 Team/(7083:7099): Enviando get correspondiente al pokemon onix
+[INFO] 01:15:56:128 Team/(7083:7089): Escucho caught de BROKER
+[INFO] 01:15:56:128 Team/(7083:7096): Recibiendo ID del GET enviado por el Broker
+[INFO] 01:15:56:128 Team/(7083:7099): Mensaje GET correspondiente al pokemon onix enviado correctamente al BROKER a traves del socket 11
+[INFO] 01:15:56:128 Team/(7083:7099): Recibiendo ID del GET enviado por el Broker
+[INFO] 01:15:56:129 Team/(7083:7097): Mensaje GET correspondiente al pokemon pikachu enviado correctamente al BROKER a traves del socket 12
+[INFO] 01:15:56:129 Team/(7083:7097): Recibiendo ID del GET enviado por el Broker
+[INFO] 01:15:56:129 Team/(7083:7098): Mensaje GET correspondiente al pokemon gengar enviado correctamente al BROKER a traves del socket 13
+[INFO] 01:15:56:129 Team/(7083:7098): Recibiendo ID del GET enviado por el Broker
+[INFO] 01:15:56:129 Team/(7083:7088): Escucho appeared de BROKER
+[INFO] 01:15:56:129 Team/(7083:7087): Hilo planificador de tratamiento de deadlocks iniciado
+[INFO] 01:15:56:129 Team/(7083:7086): Hilo planificador de mensajes caught iniciado
+[INFO] 01:15:56:132 Team/(7083:7097): El id recibido es: 4
+[INFO] 01:15:56:132 Team/(7083:7097): Id del mensaje GET correspondiente al pokemon pikachu es 4
+[INFO] 01:15:56:133 Team/(7083:7096): El id recibido es: 5
+[INFO] 01:15:56:133 Team/(7083:7096): Id del mensaje GET correspondiente al pokemon squirtle es 5
+[INFO] 01:15:56:133 Team/(7083:7098): El id recibido es: 6
+[INFO] 01:15:56:133 Team/(7083:7098): Id del mensaje GET correspondiente al pokemon gengar es 6
+[INFO] 01:15:56:133 Team/(7083:7099): El id recibido es: 7
+[INFO] 01:15:56:133 Team/(7083:7099): Id del mensaje GET correspondiente al pokemon onix es 7
+[INFO] 01:15:56:133 Team/(7083:7083): Gets mandados
+[INFO] 01:15:56:133 Team/(7083:7085): Hilo planificador de pokemones iniciado
+[INFO] 01:15:56:133 Team/(7083:7084): Esperando mensajes de game boy en socket 5
+[INFO] 01:16:00:469 Team/(7083:7088): Recibiendo mensaje Appeared
+[INFO] 01:16:00:469 Team/(7083:7088): Recibiendo tamanio total
+[INFO] 01:16:00:470 Team/(7083:7088): Tamanio total recibido: 38
+[INFO] 01:16:00:470 Team/(7083:7088): Id recibido: 8
+[INFO] 01:16:00:470 Team/(7083:7088): Id correlativo recibido: 4
+[INFO] 01:16:00:470 Team/(7083:7088): Tamanio del pokemon recibido: 10
+[INFO] 01:16:00:470 Team/(7083:7088): Nombre del pokemon recibido: pijafloja
+[INFO] 01:16:00:470 Team/(7083:7088): Posicion X recibida: 2
+[INFO] 01:16:00:470 Team/(7083:7088): Posicion Y recibida: 3
+[INFO] 01:16:00:470 Team/(7083:7088): Acknowledgement enviado al modulo Broker
+[INFO] 01:16:00:470 Team/(7083:7088): Appeared recibido de BROKER
+[INFO] 01:16:04:128 Team/(7083:7092): Buscando deadlock...
+[INFO] 01:16:04:130 Team/(7083:7092): Obtengo entrenadores bloqueados
+[INFO] 01:16:04:131 Team/(7083:7092): Entrenadores bloqueados obtenidos
+[INFO] 01:16:04:131 Team/(7083:7092): No se han encontrado deadlocks
+[INFO] 01:16:12:131 Team/(7083:7092): Buscando deadlock...
+[INFO] 01:16:12:131 Team/(7083:7092): Obtengo entrenadores bloqueados
+[INFO] 01:16:12:131 Team/(7083:7092): Entrenadores bloqueados obtenidos
+[INFO] 01:16:12:131 Team/(7083:7092): No se han encontrado deadlocks
+[INFO] 01:16:20:131 Team/(7083:7092): Buscando deadlock...
+[INFO] 01:16:20:132 Team/(7083:7092): Obtengo entrenadores bloqueados
+[INFO] 01:16:20:132 Team/(7083:7092): Entrenadores bloqueados obtenidos
+[INFO] 01:16:20:132 Team/(7083:7092): No se han encontrado deadlocks
+[INFO] 01:16:26:128 Team/(7083:7091): Iniciando verificacion de conexion con Broker...
+[INFO] 01:16:26:128 Team/(7083:7091): Conexion con Broker en buen estado, verificando nuevamente en 30 segundos
+[INFO] 01:16:27:41 Team/(7083:7089): Recibiendo mensaje Caught
+[INFO] 01:16:27:41 Team/(7083:7089): Recibiendo tamanio total
+[INFO] 01:16:27:41 Team/(7083:7089): Tamanio total recibido: 20
+[INFO] 01:16:27:41 Team/(7083:7089): Id recibido: 9
+[INFO] 01:16:27:41 Team/(7083:7089): Id correlativo recibido: 98
+[INFO] 01:16:27:41 Team/(7083:7089): Flag atrapado recibido: 1
+[INFO] 01:16:27:41 Team/(7083:7089): Acknowledgement enviado al modulo Broker
+[INFO] 01:16:27:41 Team/(7083:7089): Caught recibido del Broker en socket 8
+[INFO] 01:16:28:132 Team/(7083:7092): Buscando deadlock...
+[INFO] 01:16:28:132 Team/(7083:7092): Obtengo entrenadores bloqueados
+[INFO] 01:16:28:132 Team/(7083:7092): Entrenadores bloqueados obtenidos
+[INFO] 01:16:28:132 Team/(7083:7092): No se han encontrado deadlocks
+[INFO] 01:16:32:335 Team/(7083:7090): Recibiendo mensaje Localized
+[INFO] 01:16:32:336 Team/(7083:7089): Recibiendo mensaje Caught
+[INFO] 01:16:32:336 Team/(7083:7088): Recibiendo mensaje Appeared
+[WARNING] 01:16:32:336 Team/(7083:7090): El cliente con socket 9 acaba de cerrar la conexion
+[WARNING] 01:16:32:339 Team/(7083:7088): El cliente con socket 7 acaba de cerrar la conexion
+[WARNING] 01:16:32:342 Team/(7083:7089): El cliente con socket 8 acaba de cerrar la conexion
+[INFO] 01:17:42:762 Team/(7337:7337): logger extenso iniciado
+[INFO] 01:17:42:763 Team/(7337:7337): logger de la catedra iniciado
+[INFO] 01:17:42:763 Team/(7337:7337): La IP es: 127.0.0.1
+[INFO] 01:17:42:763 Team/(7337:7337): El puerto es: 4445
+[INFO] 01:17:42:763 Team/(7337:7337): La IP del Broker es: 127.0.0.1
+[INFO] 01:17:42:763 Team/(7337:7337): El puerto del Broker es: 4444
+[INFO] 01:17:42:763 Team/(7337:7337): El Id de Team es: 5
+[INFO] 01:17:42:763 Team/(7337:7337): La busqueda de deadlocks se corre cada 8 segundos
+[INFO] 01:17:42:763 Team/(7337:7337): La conexion al Broker se verifica cada 30 segundos
+[INFO] 01:17:42:763 Team/(7337:7337): EL tiempo de retardo de CPU es cada 5 segundos
+[INFO] 01:17:42:763 Team/(7337:7337): EL algoritmo de planificacion es RR
+[INFO] 01:17:42:764 Team/(7337:7337): Objetivos para el entrenador 0: Pikachu|Squirtle
+[INFO] 01:17:42:764 Team/(7337:7337): Posiciones para el entrenador 0: 1|3
+[INFO] 01:17:42:764 Team/(7337:7337): Pokemones para el entrenador 0: Pikachu
+[INFO] 01:17:42:764 Team/(7337:7337): Llego token objetivo pikachu para el entrenador 0
+[INFO] 01:17:42:764 Team/(7337:7337): Llego token objetivo squirtle para el entrenador 0
+[INFO] 01:17:42:764 Team/(7337:7337): Llego token pokemon pikachu
+[INFO] 01:17:42:764 Team/(7337:7337): Posicion X del entrenador 0: 1
+[INFO] 01:17:42:764 Team/(7337:7337): Posicion Y del entrenador 0: 3
+[INFO] 01:17:42:764 Team/(7337:7337): Estado del entrenador 0: 1111
+[INFO] 01:17:42:764 Team/(7337:7337): Objetivo del entrenador 0: pikachu
+[INFO] 01:17:42:764 Team/(7337:7337): Objetivo del entrenador 0: squirtle
+[INFO] 01:17:42:764 Team/(7337:7337): Objetivo actual del entrenador 0: squirtle
+[INFO] 01:17:42:764 Team/(7337:7337): Pokemon del entrenador 0: pikachu
+[INFO] 01:17:42:765 Team/(7337:7337): Objetivos para el entrenador 1: Pikachu|Gengar
+[INFO] 01:17:42:765 Team/(7337:7337): Posiciones para el entrenador 1: 2|3
+[INFO] 01:17:42:765 Team/(7337:7337): Pokemones para el entrenador 1: 
+[INFO] 01:17:42:765 Team/(7337:7337): Llego token objetivo pikachu para el entrenador 1
+[INFO] 01:17:42:765 Team/(7337:7337): Llego token objetivo gengar para el entrenador 1
+[INFO] 01:17:42:765 Team/(7337:7337): No existen pokemones para el entrenador 1
+[INFO] 01:17:42:765 Team/(7337:7337): Posicion X del entrenador 1: 2
+[INFO] 01:17:42:765 Team/(7337:7337): Posicion Y del entrenador 1: 3
+[INFO] 01:17:42:765 Team/(7337:7337): Estado del entrenador 1: 1111
+[INFO] 01:17:42:765 Team/(7337:7337): Objetivo del entrenador 1: pikachu
+[INFO] 01:17:42:765 Team/(7337:7337): Objetivo del entrenador 1: gengar
+[INFO] 01:17:42:766 Team/(7337:7337): Objetivo actual del entrenador 1: pikachu
+[INFO] 01:17:42:766 Team/(7337:7337): Objetivo actual del entrenador 1: gengar
+[INFO] 01:17:42:766 Team/(7337:7337): Objetivos para el entrenador 2: Squirtle|Onix
+[INFO] 01:17:42:766 Team/(7337:7337): Posiciones para el entrenador 2: 3|2
+[INFO] 01:17:42:766 Team/(7337:7337): Pokemones para el entrenador 2: 
+[INFO] 01:17:42:766 Team/(7337:7337): Llego token objetivo squirtle para el entrenador 2
+[INFO] 01:17:42:766 Team/(7337:7337): Llego token objetivo onix para el entrenador 2
+[INFO] 01:17:42:766 Team/(7337:7337): No existen pokemones para el entrenador 2
+[INFO] 01:17:42:766 Team/(7337:7337): Posicion X del entrenador 2: 3
+[INFO] 01:17:42:766 Team/(7337:7337): Posicion Y del entrenador 2: 2
+[INFO] 01:17:42:766 Team/(7337:7337): Estado del entrenador 2: 1111
+[INFO] 01:17:42:766 Team/(7337:7337): Objetivo del entrenador 2: squirtle
+[INFO] 01:17:42:766 Team/(7337:7337): Objetivo del entrenador 2: onix
+[INFO] 01:17:42:767 Team/(7337:7337): Objetivo actual del entrenador 2: squirtle
+[INFO] 01:17:42:767 Team/(7337:7337): Objetivo actual del entrenador 2: onix
+[INFO] 01:17:42:767 Team/(7337:7337): Obteniendo objetivo global
+[INFO] 01:17:42:767 Team/(7337:7337): Objetivo global: squirtle
+[INFO] 01:17:42:767 Team/(7337:7337): Objetivo global: pikachu
+[INFO] 01:17:42:767 Team/(7337:7337): Objetivo global: gengar
+[INFO] 01:17:42:767 Team/(7337:7337): Objetivo global: squirtle
+[INFO] 01:17:42:767 Team/(7337:7337): Objetivo global: onix
+[INFO] 01:17:42:767 Team/(7337:7337): Objetivo global obtenido
+[INFO] 01:17:42:767 Team/(7337:7337): Obteniendo cantidad de cada pokemon a planificar
+[INFO] 01:17:42:767 Team/(7337:7337): Cantidad a planificar de squirtle: 1
+[INFO] 01:17:42:767 Team/(7337:7337): Cantidad a planificar de pikachu: 1
+[INFO] 01:17:42:767 Team/(7337:7337): Cantidad a planificar de gengar: 1
+[INFO] 01:17:42:767 Team/(7337:7337): Cantidad a planificar de squirtle: 2
+[INFO] 01:17:42:767 Team/(7337:7337): Cantidad a planificar de onix: 1
+[INFO] 01:17:42:767 Team/(7337:7337): Cantidad de cada pokemon a planificar obtenida
+[INFO] 01:17:42:767 Team/(7337:7337): Inicializando colas
+[INFO] 01:17:42:767 Team/(7337:7337): Iniciando semaforo de entrenadores libres en 3
+[INFO] 01:17:42:767 Team/(7337:7337): Colas inicializadas
+[INFO] 01:17:42:768 Team/(7337:7337): Mandando gets
+[INFO] 01:17:42:768 Team/(7337:7345): Escucho appeared de BROKER
+[INFO] 01:17:42:768 Team/(7337:7346): Escucho caught de BROKER
+[INFO] 01:17:42:768 Team/(7337:7347): Escucho localized de BROKER
+[INFO] 01:17:42:768 Team/(7337:7348): Hilo de verificacion periodica de conexion con Broker iniciado
+[INFO] 01:17:42:768 Team/(7337:7349): Hilo de busqueda de deadlocks iniciado
+[INFO] 01:17:42:768 Team/(7337:7350): Trabajo de entrenador 0 comenzado
+[INFO] 01:17:42:769 Team/(7337:7351): Trabajo de entrenador 1 comenzado
+[INFO] 01:17:42:769 Team/(7337:7352): Trabajo de entrenador 2 comenzado
+[INFO] 01:17:42:769 Team/(7337:7353): Enviando get correspondiente al pokemon squirtle
+[INFO] 01:17:42:769 Team/(7337:7354): Enviando get correspondiente al pokemon pikachu
+[INFO] 01:17:42:769 Team/(7337:7355): Enviando get correspondiente al pokemon gengar
+[INFO] 01:17:42:769 Team/(7337:7356): Enviando get correspondiente al pokemon onix
+[INFO] 01:17:42:769 Team/(7337:7353): Mensaje GET correspondiente al pokemon squirtle enviado correctamente al BROKER a traves del socket 10
+[INFO] 01:17:42:770 Team/(7337:7353): Recibiendo ID del GET enviado por el Broker
+[INFO] 01:17:42:770 Team/(7337:7355): Mensaje GET correspondiente al pokemon gengar enviado correctamente al BROKER a traves del socket 11
+[INFO] 01:17:42:770 Team/(7337:7355): Recibiendo ID del GET enviado por el Broker
+[INFO] 01:17:42:770 Team/(7337:7356): Mensaje GET correspondiente al pokemon onix enviado correctamente al BROKER a traves del socket 13
+[INFO] 01:17:42:770 Team/(7337:7356): Recibiendo ID del GET enviado por el Broker
+[INFO] 01:17:42:770 Team/(7337:7354): Mensaje GET correspondiente al pokemon pikachu enviado correctamente al BROKER a traves del socket 12
+[INFO] 01:17:42:770 Team/(7337:7354): Recibiendo ID del GET enviado por el Broker
+[INFO] 01:17:42:775 Team/(7337:7341): Hilo planificador de tratamiento de deadlocks iniciado
+[INFO] 01:17:42:775 Team/(7337:7340): Hilo planificador de mensajes caught iniciado
+[INFO] 01:17:42:775 Team/(7337:7353): El id recibido es: 4
+[INFO] 01:17:42:776 Team/(7337:7353): Id del mensaje GET correspondiente al pokemon squirtle es 4
+[INFO] 01:17:42:776 Team/(7337:7339): Hilo planificador de pokemones iniciado
+[INFO] 01:17:42:776 Team/(7337:7355): El id recibido es: 5
+[INFO] 01:17:42:776 Team/(7337:7355): Id del mensaje GET correspondiente al pokemon gengar es 5
+[INFO] 01:17:42:777 Team/(7337:7356): El id recibido es: 6
+[INFO] 01:17:42:777 Team/(7337:7356): Id del mensaje GET correspondiente al pokemon onix es 6
+[INFO] 01:17:42:777 Team/(7337:7354): El id recibido es: 7
+[INFO] 01:17:42:777 Team/(7337:7354): Id del mensaje GET correspondiente al pokemon pikachu es 7
+[INFO] 01:17:42:777 Team/(7337:7337): Gets mandados
+[INFO] 01:17:42:778 Team/(7337:7338): Esperando mensajes de game boy en socket 5
+[INFO] 01:17:46:547 Team/(7337:7347): Recibiendo mensaje Localized
+[INFO] 01:17:46:547 Team/(7337:7346): Recibiendo mensaje Caught
+[INFO] 01:17:46:547 Team/(7337:7345): Recibiendo mensaje Appeared
+[WARNING] 01:17:46:549 Team/(7337:7347): El cliente con socket 9 acaba de cerrar la conexion
+[WARNING] 01:17:46:559 Team/(7337:7345): El cliente con socket 7 acaba de cerrar la conexion
+[WARNING] 01:17:46:560 Team/(7337:7346): El cliente con socket 8 acaba de cerrar la conexion
+[INFO] 01:17:50:779 Team/(7337:7349): Buscando deadlock...
+[INFO] 01:17:50:779 Team/(7337:7349): Obtengo entrenadores bloqueados
+[INFO] 01:17:50:779 Team/(7337:7349): Entrenadores bloqueados obtenidos
+[INFO] 01:17:50:779 Team/(7337:7349): No se han encontrado deadlocks
+[INFO] 01:17:58:789 Team/(7337:7349): Buscando deadlock...
+[INFO] 01:17:58:789 Team/(7337:7349): Obtengo entrenadores bloqueados
+[INFO] 01:17:58:789 Team/(7337:7349): Entrenadores bloqueados obtenidos
+[INFO] 01:17:58:789 Team/(7337:7349): No se han encontrado deadlocks
+[INFO] 01:18:06:799 Team/(7337:7349): Buscando deadlock...
+[INFO] 01:18:06:799 Team/(7337:7349): Obtengo entrenadores bloqueados
+[INFO] 01:18:06:799 Team/(7337:7349): Entrenadores bloqueados obtenidos
+[INFO] 01:18:06:799 Team/(7337:7349): No se han encontrado deadlocks
+[INFO] 01:18:12:779 Team/(7337:7348): Iniciando verificacion de conexion con Broker...
+[INFO] 01:18:12:779 Team/(7337:7348): Intentando reconectar con Broker
+[ERROR] 01:18:12:779 Team/(7337:7348): Reconexion con Broker fallida, intentando nuevamente en 30 segundos
+[INFO] 01:18:14:809 Team/(7337:7349): Buscando deadlock...
+[INFO] 01:18:14:809 Team/(7337:7349): Obtengo entrenadores bloqueados
+[INFO] 01:18:14:809 Team/(7337:7349): Entrenadores bloqueados obtenidos
+[INFO] 01:18:14:809 Team/(7337:7349): No se han encontrado deadlocks
+[INFO] 01:18:22:819 Team/(7337:7349): Buscando deadlock...
+[INFO] 01:18:22:819 Team/(7337:7349): Obtengo entrenadores bloqueados
+[INFO] 01:18:22:819 Team/(7337:7349): Entrenadores bloqueados obtenidos
+[INFO] 01:18:22:819 Team/(7337:7349): No se han encontrado deadlocks
+[INFO] 01:18:30:829 Team/(7337:7349): Buscando deadlock...
+[INFO] 01:18:30:832 Team/(7337:7349): Obtengo entrenadores bloqueados
+[INFO] 01:18:30:832 Team/(7337:7349): Entrenadores bloqueados obtenidos
+[INFO] 01:18:30:832 Team/(7337:7349): No se han encontrado deadlocks
+[INFO] 01:18:38:839 Team/(7337:7349): Buscando deadlock...
+[INFO] 01:18:38:839 Team/(7337:7349): Obtengo entrenadores bloqueados
+[INFO] 01:18:38:839 Team/(7337:7349): Entrenadores bloqueados obtenidos
+[INFO] 01:18:38:839 Team/(7337:7349): No se han encontrado deadlocks
+[INFO] 01:18:42:781 Team/(7337:7348): Iniciando verificacion de conexion con Broker...
+[INFO] 01:18:42:782 Team/(7337:7348): Intentando reconectar con Broker
+[ERROR] 01:18:42:782 Team/(7337:7348): Reconexion con Broker fallida, intentando nuevamente en 30 segundos
+[INFO] 01:18:46:849 Team/(7337:7349): Buscando deadlock...
+[INFO] 01:18:46:849 Team/(7337:7349): Obtengo entrenadores bloqueados
+[INFO] 01:18:46:849 Team/(7337:7349): Entrenadores bloqueados obtenidos
+[INFO] 01:18:46:849 Team/(7337:7349): No se han encontrado deadlocks
+[INFO] 01:18:54:859 Team/(7337:7349): Buscando deadlock...
+[INFO] 01:18:54:859 Team/(7337:7349): Obtengo entrenadores bloqueados
+[INFO] 01:18:54:859 Team/(7337:7349): Entrenadores bloqueados obtenidos
+[INFO] 01:18:54:859 Team/(7337:7349): No se han encontrado deadlocks
+[INFO] 01:19:02:869 Team/(7337:7349): Buscando deadlock...
+[INFO] 01:19:02:869 Team/(7337:7349): Obtengo entrenadores bloqueados
+[INFO] 01:19:02:869 Team/(7337:7349): Entrenadores bloqueados obtenidos
+[INFO] 01:19:02:869 Team/(7337:7349): No se han encontrado deadlocks
+[INFO] 01:19:10:879 Team/(7337:7349): Buscando deadlock...
+[INFO] 01:19:10:879 Team/(7337:7349): Obtengo entrenadores bloqueados
+[INFO] 01:19:10:879 Team/(7337:7349): Entrenadores bloqueados obtenidos
+[INFO] 01:19:10:879 Team/(7337:7349): No se han encontrado deadlocks
+[INFO] 01:19:12:789 Team/(7337:7348): Iniciando verificacion de conexion con Broker...
+[INFO] 01:19:12:789 Team/(7337:7348): Intentando reconectar con Broker
+[INFO] 01:19:12:789 Team/(7337:7348): Socket de reconexion appeared: 7
+[INFO] 01:19:12:789 Team/(7337:7348): Socket de reconexion appeared: 8
+[INFO] 01:19:12:789 Team/(7337:7348): Socket de reconexion appeared: 9
+[INFO] 01:19:12:789 Team/(7337:7348): Reconexion con Broker exitosa, verificando nuevamente en 30 segundos
+[INFO] 01:19:18:879 Team/(7337:7349): Buscando deadlock...
+[INFO] 01:19:18:879 Team/(7337:7349): Obtengo entrenadores bloqueados
+[INFO] 01:19:18:880 Team/(7337:7349): Entrenadores bloqueados obtenidos
+[INFO] 01:19:18:880 Team/(7337:7349): No se han encontrado deadlocks
+[INFO] 01:19:26:880 Team/(7337:7349): Buscando deadlock...
+[INFO] 01:19:26:880 Team/(7337:7349): Obtengo entrenadores bloqueados
+[INFO] 01:19:26:880 Team/(7337:7349): Entrenadores bloqueados obtenidos
+[INFO] 01:19:26:880 Team/(7337:7349): No se han encontrado deadlocks
+[INFO] 01:19:34:881 Team/(7337:7349): Buscando deadlock...
+[INFO] 01:19:34:881 Team/(7337:7349): Obtengo entrenadores bloqueados
+[INFO] 01:19:34:881 Team/(7337:7349): Entrenadores bloqueados obtenidos
+[INFO] 01:19:34:881 Team/(7337:7349): No se han encontrado deadlocks
+[INFO] 01:19:42:169 Team/(7524:7524): logger extenso iniciado
+[INFO] 01:19:42:169 Team/(7524:7524): logger de la catedra iniciado
+[INFO] 01:19:42:169 Team/(7524:7524): La IP es: 127.0.0.1
+[INFO] 01:19:42:169 Team/(7524:7524): El puerto es: 4445
+[INFO] 01:19:42:169 Team/(7524:7524): La IP del Broker es: 127.0.0.1
+[INFO] 01:19:42:169 Team/(7524:7524): El puerto del Broker es: 4444
+[INFO] 01:19:42:169 Team/(7524:7524): El Id de Team es: 5
+[INFO] 01:19:42:169 Team/(7524:7524): La busqueda de deadlocks se corre cada 8 segundos
+[INFO] 01:19:42:169 Team/(7524:7524): La conexion al Broker se verifica cada 30 segundos
+[INFO] 01:19:42:170 Team/(7524:7524): EL tiempo de retardo de CPU es cada 5 segundos
+[INFO] 01:19:42:170 Team/(7524:7524): EL algoritmo de planificacion es RR
+[INFO] 01:19:42:170 Team/(7524:7524): Objetivos para el entrenador 0: Pikachu|Squirtle
+[INFO] 01:19:42:170 Team/(7524:7524): Posiciones para el entrenador 0: 1|3
+[INFO] 01:19:42:170 Team/(7524:7524): Pokemones para el entrenador 0: Pikachu
+[INFO] 01:19:42:170 Team/(7524:7524): Llego token objetivo pikachu para el entrenador 0
+[INFO] 01:19:42:170 Team/(7524:7524): Llego token objetivo squirtle para el entrenador 0
+[INFO] 01:19:42:170 Team/(7524:7524): Llego token pokemon pikachu
+[INFO] 01:19:42:170 Team/(7524:7524): Posicion X del entrenador 0: 1
+[INFO] 01:19:42:170 Team/(7524:7524): Posicion Y del entrenador 0: 3
+[INFO] 01:19:42:170 Team/(7524:7524): Estado del entrenador 0: 1111
+[INFO] 01:19:42:170 Team/(7524:7524): Objetivo del entrenador 0: pikachu
+[INFO] 01:19:42:170 Team/(7524:7524): Objetivo del entrenador 0: squirtle
+[INFO] 01:19:42:170 Team/(7524:7524): Objetivo actual del entrenador 0: squirtle
+[INFO] 01:19:42:170 Team/(7524:7524): Pokemon del entrenador 0: pikachu
+[INFO] 01:19:42:171 Team/(7524:7524): Objetivos para el entrenador 1: Pikachu|Gengar
+[INFO] 01:19:42:171 Team/(7524:7524): Posiciones para el entrenador 1: 2|3
+[INFO] 01:19:42:171 Team/(7524:7524): Pokemones para el entrenador 1: 
+[INFO] 01:19:42:171 Team/(7524:7524): Llego token objetivo pikachu para el entrenador 1
+[INFO] 01:19:42:171 Team/(7524:7524): Llego token objetivo gengar para el entrenador 1
+[INFO] 01:19:42:171 Team/(7524:7524): No existen pokemones para el entrenador 1
+[INFO] 01:19:42:171 Team/(7524:7524): Posicion X del entrenador 1: 2
+[INFO] 01:19:42:171 Team/(7524:7524): Posicion Y del entrenador 1: 3
+[INFO] 01:19:42:171 Team/(7524:7524): Estado del entrenador 1: 1111
+[INFO] 01:19:42:171 Team/(7524:7524): Objetivo del entrenador 1: pikachu
+[INFO] 01:19:42:171 Team/(7524:7524): Objetivo del entrenador 1: gengar
+[INFO] 01:19:42:171 Team/(7524:7524): Objetivo actual del entrenador 1: pikachu
+[INFO] 01:19:42:171 Team/(7524:7524): Objetivo actual del entrenador 1: gengar
+[INFO] 01:19:42:171 Team/(7524:7524): Objetivos para el entrenador 2: Squirtle|Onix
+[INFO] 01:19:42:171 Team/(7524:7524): Posiciones para el entrenador 2: 3|2
+[INFO] 01:19:42:172 Team/(7524:7524): Pokemones para el entrenador 2: 
+[INFO] 01:19:42:172 Team/(7524:7524): Llego token objetivo squirtle para el entrenador 2
+[INFO] 01:19:42:172 Team/(7524:7524): Llego token objetivo onix para el entrenador 2
+[INFO] 01:19:42:172 Team/(7524:7524): No existen pokemones para el entrenador 2
+[INFO] 01:19:42:172 Team/(7524:7524): Posicion X del entrenador 2: 3
+[INFO] 01:19:42:172 Team/(7524:7524): Posicion Y del entrenador 2: 2
+[INFO] 01:19:42:172 Team/(7524:7524): Estado del entrenador 2: 1111
+[INFO] 01:19:42:172 Team/(7524:7524): Objetivo del entrenador 2: squirtle
+[INFO] 01:19:42:172 Team/(7524:7524): Objetivo del entrenador 2: onix
+[INFO] 01:19:42:172 Team/(7524:7524): Objetivo actual del entrenador 2: squirtle
+[INFO] 01:19:42:172 Team/(7524:7524): Objetivo actual del entrenador 2: onix
+[INFO] 01:19:42:172 Team/(7524:7524): Obteniendo objetivo global
+[INFO] 01:19:42:173 Team/(7524:7524): Objetivo global: squirtle
+[INFO] 01:19:42:173 Team/(7524:7524): Objetivo global: pikachu
+[INFO] 01:19:42:173 Team/(7524:7524): Objetivo global: gengar
+[INFO] 01:19:42:173 Team/(7524:7524): Objetivo global: squirtle
+[INFO] 01:19:42:173 Team/(7524:7524): Objetivo global: onix
+[INFO] 01:19:42:173 Team/(7524:7524): Objetivo global obtenido
+[INFO] 01:19:42:173 Team/(7524:7524): Obteniendo cantidad de cada pokemon a planificar
+[INFO] 01:19:42:173 Team/(7524:7524): Cantidad a planificar de squirtle: 1
+[INFO] 01:19:42:173 Team/(7524:7524): Cantidad a planificar de pikachu: 1
+[INFO] 01:19:42:173 Team/(7524:7524): Cantidad a planificar de gengar: 1
+[INFO] 01:19:42:173 Team/(7524:7524): Cantidad a planificar de squirtle: 2
+[INFO] 01:19:42:173 Team/(7524:7524): Cantidad a planificar de onix: 1
+[INFO] 01:19:42:173 Team/(7524:7524): Cantidad de cada pokemon a planificar obtenida
+[INFO] 01:19:42:173 Team/(7524:7524): Inicializando colas
+[INFO] 01:19:42:173 Team/(7524:7524): Iniciando semaforo de entrenadores libres en 3
+[INFO] 01:19:42:173 Team/(7524:7524): Colas inicializadas
+[INFO] 01:19:42:173 Team/(7524:7524): Mandando gets
+[INFO] 01:19:42:174 Team/(7524:7532): Escucho appeared de BROKER
+[INFO] 01:19:42:174 Team/(7524:7533): Escucho caught de BROKER
+[INFO] 01:19:42:174 Team/(7524:7534): Escucho localized de BROKER
+[INFO] 01:19:42:174 Team/(7524:7535): Hilo de verificacion periodica de conexion con Broker iniciado
+[INFO] 01:19:42:174 Team/(7524:7536): Hilo de busqueda de deadlocks iniciado
+[INFO] 01:19:42:174 Team/(7524:7537): Trabajo de entrenador 0 comenzado
+[INFO] 01:19:42:174 Team/(7524:7538): Trabajo de entrenador 1 comenzado
+[INFO] 01:19:42:174 Team/(7524:7539): Trabajo de entrenador 2 comenzado
+[INFO] 01:19:42:174 Team/(7524:7540): Enviando get correspondiente al pokemon squirtle
+[INFO] 01:19:42:175 Team/(7524:7541): Enviando get correspondiente al pokemon pikachu
+[INFO] 01:19:42:175 Team/(7524:7542): Enviando get correspondiente al pokemon gengar
+[INFO] 01:19:42:175 Team/(7524:7543): Enviando get correspondiente al pokemon onix
+[INFO] 01:19:42:175 Team/(7524:7540): Mensaje GET correspondiente al pokemon squirtle enviado correctamente al BROKER a traves del socket 10
+[INFO] 01:19:42:175 Team/(7524:7540): Recibiendo ID del GET enviado por el Broker
+[INFO] 01:19:42:176 Team/(7524:7543): Mensaje GET correspondiente al pokemon onix enviado correctamente al BROKER a traves del socket 11
+[INFO] 01:19:42:176 Team/(7524:7543): Recibiendo ID del GET enviado por el Broker
+[INFO] 01:19:42:176 Team/(7524:7541): Mensaje GET correspondiente al pokemon pikachu enviado correctamente al BROKER a traves del socket 13
+[INFO] 01:19:42:176 Team/(7524:7542): Mensaje GET correspondiente al pokemon gengar enviado correctamente al BROKER a traves del socket 12
+[INFO] 01:19:42:176 Team/(7524:7541): Recibiendo ID del GET enviado por el Broker
+[INFO] 01:19:42:176 Team/(7524:7542): Recibiendo ID del GET enviado por el Broker
+[INFO] 01:19:42:177 Team/(7524:7528): Hilo planificador de tratamiento de deadlocks iniciado
+[INFO] 01:19:42:178 Team/(7524:7527): Hilo planificador de mensajes caught iniciado
+[INFO] 01:19:42:178 Team/(7524:7540): El id recibido es: 4
+[INFO] 01:19:42:178 Team/(7524:7540): Id del mensaje GET correspondiente al pokemon squirtle es 4
+[INFO] 01:19:42:179 Team/(7524:7542): El id recibido es: 5
+[INFO] 01:19:42:179 Team/(7524:7542): Id del mensaje GET correspondiente al pokemon gengar es 5
+[INFO] 01:19:42:179 Team/(7524:7526): Hilo planificador de pokemones iniciado
+[INFO] 01:19:42:181 Team/(7524:7543): El id recibido es: 6
+[INFO] 01:19:42:181 Team/(7524:7543): Id del mensaje GET correspondiente al pokemon onix es 6
+[INFO] 01:19:42:181 Team/(7524:7541): El id recibido es: 7
+[INFO] 01:19:42:182 Team/(7524:7541): Id del mensaje GET correspondiente al pokemon pikachu es 7
+[INFO] 01:19:42:182 Team/(7524:7524): Gets mandados
+[INFO] 01:19:42:182 Team/(7524:7525): Esperando mensajes de game boy en socket 5

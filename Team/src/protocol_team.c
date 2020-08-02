@@ -32,6 +32,7 @@ t_appeared* recibir_appeared(int socket_broker, uint32_t* size) {
 	t_appeared* appeared = malloc(sizeof(t_appeared));
 	uint32_t op_code;
 	uint32_t tamanio_pokemon;
+	uint32_t id;
 	uint32_t id_correlativo;
 
 	int status_recv = recv(socket_broker, &op_code, sizeof(uint32_t), MSG_WAITALL);
@@ -72,6 +73,22 @@ t_appeared* recibir_appeared(int socket_broker, uint32_t* size) {
 	}
 
 	log_info(extense_logger_protocol, "Tamanio total recibido: %i", *size);
+
+	status_recv = recv(socket_broker, &id, sizeof(uint32_t), MSG_WAITALL);
+	if (status_recv == -1) {
+		cerrar_conexion(socket_broker);
+		log_error(extense_logger_protocol, "Hubo un problema recibiendo el id");
+		free(appeared);
+		return NULL;
+	}
+	if (status_recv == 0) {
+		cerrar_conexion(socket_broker);
+		log_warning(extense_logger_protocol, "El cliente con socket %i acaba de cerrar la conexion", socket_broker);
+		free(appeared);
+		return NULL;
+	}
+
+	log_info(extense_logger_protocol, "Id recibido: %i", id);
 
 	status_recv = recv(socket_broker, &id_correlativo, sizeof(uint32_t), MSG_WAITALL);
 	if (status_recv == -1) {
@@ -172,6 +189,7 @@ t_appeared* recibir_appeared(int socket_broker, uint32_t* size) {
 t_caught* recibir_caught(int socket_broker, uint32_t* size) {
 	t_caught* caught = malloc(sizeof(t_caught));
 	uint32_t op_code;
+	uint32_t id;
 
 	int status_recv = recv(socket_broker, &op_code, sizeof(uint32_t), MSG_WAITALL);
 	log_info(extense_logger_protocol, "Recibiendo mensaje Caught");
@@ -211,6 +229,22 @@ t_caught* recibir_caught(int socket_broker, uint32_t* size) {
 	}
 
 	log_info(extense_logger_protocol, "Tamanio total recibido: %i", *size);
+
+	status_recv = recv(socket_broker, &id, sizeof(uint32_t), MSG_WAITALL);
+	if (status_recv == -1) {
+		cerrar_conexion(socket_broker);
+		log_error(extense_logger_protocol, "Hubo un problema recibiendo el id");
+		free(caught);
+		return NULL;
+	}
+	if (status_recv == 0) {
+		cerrar_conexion(socket_broker);
+		log_warning(extense_logger_protocol, "El cliente con socket %i acaba de cerrar la conexion", socket_broker);
+		free(caught);
+		return NULL;
+	}
+
+	log_info(extense_logger_protocol, "Id recibido: %i", id);
 
 	status_recv = recv(socket_broker, &(caught->idCorrelativo), sizeof(uint32_t), MSG_WAITALL);
 	if (status_recv == -1) {
@@ -253,6 +287,7 @@ t_localized* recibir_localized(int socket_broker, uint32_t* size) {
 	t_localized* localized = malloc(sizeof(t_localized));
 	uint32_t tamanio_pokemon;
 	uint32_t op_code;
+	uint32_t id;
 
 	int status_recv = recv(socket_broker, &op_code, sizeof(uint32_t), MSG_WAITALL);
 	log_info(extense_logger_protocol, "Recibiendo mensaje Localized");
@@ -292,6 +327,22 @@ t_localized* recibir_localized(int socket_broker, uint32_t* size) {
 	}
 
 	log_info(extense_logger_protocol, "Tamanio total recibido: %i", *size);
+
+	status_recv = recv(socket_broker, &id, sizeof(uint32_t), MSG_WAITALL);
+	if (status_recv == -1) {
+		cerrar_conexion(socket_broker);
+		log_error(extense_logger_protocol, "Hubo un problema recibiendo el id");
+		free(localized);
+		return NULL;
+	}
+	if (status_recv == 0) {
+		cerrar_conexion(socket_broker);
+		log_warning(extense_logger_protocol, "El cliente con socket %i acaba de cerrar la conexion", socket_broker);
+		free(localized);
+		return NULL;
+	}
+
+	log_info(extense_logger_protocol, "Id recibido: %i", id);
 
 	status_recv = recv(socket_broker, &(localized->id_correlativo), sizeof(uint32_t), MSG_WAITALL);
 	if (status_recv == -1) {
