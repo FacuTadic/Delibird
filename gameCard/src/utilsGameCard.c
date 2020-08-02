@@ -809,7 +809,9 @@ void newPokemon(int socketCliente,t_newLlegada* new){
 	t_appeared* appearedGenerado = crearAppeared(new);
 	sleep(tiempoRetardoOperacion);
 
-	enviar_appeared(socketCliente,appearedGenerado);
+	int socket_envio = crear_conexion(ipBroker, puertoBroker);
+
+	enviar_appeared(socket_envio, appearedGenerado);
 
 	config_destroy(archivoMetadataPokemon);
 
@@ -877,7 +879,9 @@ void catchPokemon(int socketCliente,t_catchLlegada* catch){
 	t_caught* caughtAEnviar = crearCaught(idMensaje,validacion);
 	sleep(tiempoRetardoOperacion);
 
-	enviar_caught(socketCliente,caughtAEnviar);
+	int socket_envio = crear_conexion(ipBroker, puertoBroker);
+
+	enviar_caught(socket_envio, caughtAEnviar);
 
 	config_destroy(archivoMetadataPokemon);
 
@@ -933,7 +937,9 @@ void getPokemon(int socketCliente,t_getLlegada* getLlegada){
 
 	sleep(tiempoRetardoOperacion);
 
-	enviar_localized(socketCliente,localizedAEnviar);
+	int socket_envio = crear_conexion(ipBroker, puertoBroker);
+
+	enviar_localized(socket_envio, localizedAEnviar);
 
 	config_destroy(archivoMetadataPokemon);
 

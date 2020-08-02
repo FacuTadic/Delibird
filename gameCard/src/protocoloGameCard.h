@@ -104,13 +104,13 @@ typedef struct {
 int mandar_suscripcion(int socket_broker, uint32_t id_cola);
 
 t_newLlegada* recibir_new(int socket_cliente, uint32_t* size, t_log* logger);
-void enviar_appeared(int socket, t_appeared* appearedAEnviar);
+void enviar_appeared(int socketCliente, t_appeared* appearedAEnviar);
 
 t_catchLlegada* recibir_catch(int socket_cliente, uint32_t* size, t_log* logger);
-void enviar_caught(int socket, t_caught* caughtAEnviar);
+void enviar_caught(int socketCliente, t_caught* caughtAEnviar);
 
 t_getLlegada* recibir_get(int socket_cliente, uint32_t* size, t_log* logger);
-void enviar_localized(int socket, t_localized* localizedAEnviar);
+void enviar_localized(int socketCliente, t_localized* localizedAEnviar);
 
 void liberar_conexion(int socket_cliente);
 
