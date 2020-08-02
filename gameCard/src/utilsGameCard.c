@@ -290,7 +290,7 @@ void escucharNewDeBroker(void) {
 		pthread_mutex_lock(&estoy_conectado_al_broker_mutex);
 		estoy_conectado_al_broker = 0;
 		pthread_mutex_unlock(&estoy_conectado_al_broker_mutex);
-		log_error(loggerDev, "Hubo un problema enviando la suscripcion a la cola NEW del broker");
+		log_error(loggerDev, "Hubo un problema enviando la suscripcion a la cola NEW del BROKER");
 	}
 
 	while (1) {
@@ -319,7 +319,7 @@ void escucharNewDeBroker(void) {
 			log_info(loggerDev, "Codigo de operacion recibido del socket cliente %i corresponde a un NEW", socketEscuchaNew);
 			t_newLlegada* newBroker = recibir_new(socketEscuchaNew,&size,loggerDev);
 			devolver_ack(socketEscuchaNew);
-			log_info(loggerDev, "NEW recibido del modulo Game Boy socket %i", socketEscuchaNew);
+			log_info(loggerDev, "NEW recibido del modulo BROKER socket %i", socketEscuchaNew);
 
 			if (newBroker == NULL) {
 				pthread_mutex_lock(&estoy_conectado_al_broker_mutex);
@@ -346,16 +346,36 @@ void escucharCatchDeBroker(void) {
 		pthread_mutex_lock(&estoy_conectado_al_broker_mutex);
 		estoy_conectado_al_broker = 0;
 		pthread_mutex_unlock(&estoy_conectado_al_broker_mutex);
-		log_error(loggerDev, "Hubo un problema enviando la suscripcion a la cola CATCH del broker");
+		log_error(loggerDev, "Hubo un problema enviando la suscripcion a la cola CATCH del BROKER");
 	}
 
 	while (1) {
 		if (estoy_conectado_al_broker == 1) {
+
+			uint32_t cod_op;
+			log_info(loggerDev, "Recibiendo codigo de operacion de BROKER en socket %i", socketEscuchaCatch);
+
+			int status_recv = recv(socketEscuchaCatch, &cod_op, sizeof(uint32_t), MSG_WAITALL);
+
+			if (status_recv == -1) {
+				liberar_conexion(socketEscuchaCatch);
+				log_error(loggerDev, "Hubo un problema recibiendo codigo de operacion de BROKER en socket %i", socketEscuchaCatch);
+				pthread_exit(NULL);
+			}
+			if (status_recv == 0) {
+				liberar_conexion(socketEscuchaCatch);
+				log_warning(loggerDev, "BROKER acaba de cerrar la conexion correspondiente al socket %i", socketEscuchaCatch);
+				pthread_exit(NULL);
+			}
+
+			log_info(loggerDev, "Se recibio el opcode %i", cod_op);
+
+
 			uint32_t size;
 			log_info(loggerDev, "Codigo de operacion recibido del socket cliente %i corresponde a un CATCH", socketEscuchaCatch);
 			t_catchLlegada* catchGameBoy = recibir_catch(socketEscuchaCatch,&size,loggerDev);
 			devolver_ack(socketEscuchaCatch);
-			log_info(loggerDev, "CATCH recibido del modulo Game Boy socket %i", socketEscuchaCatch);
+			log_info(loggerDev, "CATCH recibido del modulo BROKER socket %i", socketEscuchaCatch);
 
 			if (catchGameBoy == NULL) {
 				pthread_mutex_lock(&estoy_conectado_al_broker_mutex);
@@ -387,11 +407,31 @@ void escucharGetDeBroker(void) {
 
 	while (1) {
 		if (estoy_conectado_al_broker == 1) {
+
+			uint32_t cod_op;
+			log_info(loggerDev, "Recibiendo codigo de operacion de BROKER en socket %i", socketEscuchaGet);
+
+			int status_recv = recv(socketEscuchaGet, &cod_op, sizeof(uint32_t), MSG_WAITALL);
+
+			if (status_recv == -1) {
+				liberar_conexion(socketEscuchaGet);
+				log_error(loggerDev, "Hubo un problema recibiendo codigo de operacion de BROKER en socket %i", socketEscuchaGet);
+				pthread_exit(NULL);
+			}
+			if (status_recv == 0) {
+				liberar_conexion(socketEscuchaGet);
+				log_warning(loggerDev, "BROKER acaba de cerrar la conexion correspondiente al socket %i", socketEscuchaGet);
+				pthread_exit(NULL);
+			}
+
+			log_info(loggerDev, "Se recibio el opcode %i", cod_op);
+
+
 			uint32_t size;
 			log_info(loggerDev, "Codigo de operacion recibido del socket cliente %i corresponde a un GET", socketEscuchaGet);
 			t_getLlegada* getGameBoy = recibir_get(socketEscuchaGet,&size,loggerDev);
 			devolver_ack(socketEscuchaGet);
-			log_info(loggerDev, "GET recibido del modulo Game Boy socket %i", socketEscuchaGet);
+			log_info(loggerDev, "GET recibido del modulo BROKER socket %i", socketEscuchaGet);
 
 			if (getGameBoy == NULL) {
 				pthread_mutex_lock(&estoy_conectado_al_broker_mutex);
@@ -413,33 +453,33 @@ void reconectarAlBroker() {
 	if (conexion_al_broker != -1) {
 
 		socketEscuchaNew = conexion_al_broker;
-		log_info(loggerDev, "Socket de reconexion new: %i",socketEscuchaNew);
+		log_info(loggerDev, "Socket de reconexion NEW: %i",socketEscuchaNew);
 
 		socketEscuchaCatch = crear_conexion(ipBroker, puertoBroker);
-		log_info(loggerDev, "Socket de reconexion catch: %i",socketEscuchaCatch);
+		log_info(loggerDev, "Socket de reconexion CATCH: %i",socketEscuchaCatch);
 
 		socketEscuchaGet = crear_conexion(ipBroker, puertoBroker);
-		log_info(loggerDev, "Socket de reconexion get: %i",socketEscuchaGet);
+		log_info(loggerDev, "Socket de reconexion GET: %i",socketEscuchaGet);
 
-		log_info(loggerDev, "conexion establecida con BROKER, ip: %s puerto : %s", ipBroker, puertoBroker);
+		log_info(loggerDev, "Conexion establecida con BROKER, IP: %s PUERTO : %s", ipBroker, puertoBroker);
 		estoy_conectado_al_broker = 1;
-		log_info(loggerDev, "Reconexion con Broker exitosa, verificando nuevamente en %i segundos", tiempoReintentoConexion);
+		log_info(loggerDev, "Reconexion con BROKER exitosa, verificando nuevamente en %i segundos", tiempoReintentoConexion);
 	}else{
-		log_error(loggerDev, "Reconexion con Broker fallida, intentando nuevamente en %i segundos", tiempoReintentoConexion);
+		log_error(loggerDev, "Reconexion con BROKER fallida, intentando nuevamente en %i segundos", tiempoReintentoConexion);
 
 	}
 }
 
 
 void verificarConexion(void) {
-	log_info(loggerDev, "Hilo de verificacion periodica de conexion con Broker iniciado");
+	log_info(loggerDev, "Hilo de verificacion periodica de conexion con BROKER iniciado");
 	while(1) {
 		sleep(tiempoReintentoConexion);
-		log_info(loggerDev, "Iniciando verificacion de conexion con Broker...");
+		log_info(loggerDev, "Iniciando verificacion de conexion con BROKER...");
 		if (estoy_conectado_al_broker == 0) {
 			reconectarAlBroker();
 		} else {
-			log_info(loggerDev, "Conexion con Broker en buen estado, verificando nuevamente en %i segundos", tiempoReintentoConexion);
+			log_info(loggerDev, "Conexion con BROKER en buen estado, verificando nuevamente en %i segundos", tiempoReintentoConexion);
 		}
 	}
 }
