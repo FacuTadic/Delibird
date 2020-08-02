@@ -1,2 +1,2 @@
 #!/bin/sh
-./GameBoy/Debug/GameBoy GAMECARD CATCH_POKEMON Charmander 413 17 1
+./GameBoy GAMECARD CATCH_POKEMON Charmander 413 17 1
