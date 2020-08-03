@@ -30,6 +30,7 @@ int crear_conexion(char *ip, char* puerto){
 }
 
 
+
 //#######################################################################			BITARRAY			###########################################################################
 
 void setearBitarray() {
@@ -126,7 +127,8 @@ char* buscarPosicionDisponibleEnElBitMap() {
 				sem_post(&bloques_bitmap);
 				char* block = string_itoa(free_block);
 				log_info(loggerDev, "EL block %s esta libre",block);
-				log_info(loggerGameCard, "El bloque seleccionado para cargar es: %i",free_block);
+				//log_info(loggerGameCard, "El bloque seleccionado para cargar es: %i",free_block);
+				log_info(loggerDev, "EL block %s esta libre, vuelvo a chequear",block);
 				return block;
 			}
 		}
@@ -149,10 +151,10 @@ char* buscarPosicionDisponibleEnElBitMap() {
 void desmarcarBloqueBitmap(char* block){
 		uint32_t index = atoi(block);
 		uint32_t estadoBloque =bitarray_test_bit(bitarray, index);
-		log_info(loggerDev, "El valor del block es de: %i",estadoBloque);
+		log_info(loggerDev, "El valor del block %s es de: %i",block,estadoBloque);
 		bitarray_clean_bit(bitarray, index);
 		estadoBloque =bitarray_test_bit(bitarray, index);
-		log_info(loggerDev, "El block fue desmarcado con el valor de: %i",estadoBloque);
+		log_info(loggerDev, "El block %s fue desmarcado con el valor de: %i",block, estadoBloque);
 		guardarBitarray(index);
 }
 
@@ -189,11 +191,242 @@ char* seleccionarBlockParaCargarPosiciones(char** blocksOcupados, char*posicion,
 
 
 
-//############################################################################################################################################
+//############################################################################ SE PRENDE FUEGO EL FS ######################################################################################
+
+// recibe array de strings numeros y devuelve array de paths bloques
+char** generarVectorDePaths(char** blocksOcupados){
+
+	log_info(loggerDev, "Generando los paths de los bloques");
+
+	uint32_t indexBlocks = 0;
+	char* pathsDeBlocks = string_new();
 
 
-//HAce falta los mutex para los escucha?
-//MUtex en archivos
+	if(blocksOcupados[indexBlocks + 1] == NULL){
+		log_info(loggerDev, "Unico bloque");
+
+		log_info(loggerDev, "Se genera la ruta para: %s", blocksOcupados[indexBlocks]);
+		char* rutaDelUltimoBlock = generadorDeRutaDeCreacionDeArchivos(rutaBlocks,blocksOcupados[indexBlocks],".bin");
+		log_info(loggerDev, "El path del block es: %s", rutaDelUltimoBlock);
+		string_append(&pathsDeBlocks,rutaDelUltimoBlock);
+		string_append(&pathsDeBlocks,",");
+
+		char** blockUnico = string_split(pathsDeBlocks,",");
+
+		log_info(loggerDev, "El puto array es: %s", blockUnico[0]);
+		log_info(loggerDev, "El puto array es: %s", blockUnico[1]);
+
+		return blockUnico;
+	}
+
+
+	while(blocksOcupados[indexBlocks] != NULL){
+
+		if(blocksOcupados[indexBlocks+1] == NULL){
+			log_info(loggerDev, "Se genera la ruta para: %s", blocksOcupados[indexBlocks]);
+			char* rutaDelUltimoBlock = generadorDeRutaDeCreacionDeArchivos(rutaBlocks,blocksOcupados[indexBlocks],".bin");
+			log_info(loggerDev, "El path del block es: %s", rutaDelUltimoBlock);
+			string_append(&pathsDeBlocks,rutaDelUltimoBlock);
+			free(rutaDelUltimoBlock);
+			log_info(loggerDev, "Ultimo bloque");
+		} else {
+			log_info(loggerDev, "Se genera la ruta para: %s", blocksOcupados[indexBlocks]);
+			char* rutaDelBlock = generadorDeRutaDeCreacionDeArchivos(rutaBlocks,blocksOcupados[indexBlocks],".bin");
+			log_info(loggerDev, "El path del block es: %s", rutaDelBlock);
+			string_append(&pathsDeBlocks,rutaDelBlock);
+			string_append(&pathsDeBlocks,",");
+
+			free(rutaDelBlock);
+		}
+
+		indexBlocks++;
+	}
+
+	log_info(loggerDev, "Devolviendo el char**");
+	return string_n_split(pathsDeBlocks,indexBlocks,",");
+}
+
+
+void string_append_char(char** string, char c){
+	char str[2];
+	str[0] = c;
+	str[1]='\0';
+	string_append(string,str);
+}
+
+// conversor de char* registro a array [pos,cant]
+char** generarVectorDeKeyValue(char* linea){
+	return string_split(linea,"=");
+}
+// conversor de array [pos,cant] a char* registro
+char* aplanarVectorDeKeyValue(char** vector){
+	char* registro = string_new();
+	string_append(&registro, vector[0]);
+	string_append(&registro, "=");
+	string_append(&registro, vector[1]);
+	string_append(&registro, "\n");
+	log_info(loggerDev, "El registro aplanado quedo como: %s", registro);
+	return registro;
+}
+
+// recibe array de paths bloques y devuelve lista de registros [pos,cant]
+t_list* traerRegistrosBloques(char** bloques){
+
+	//Creo la lista de registros (coordenadas+cantidad) donde voy a cargar mis char** con ambos valores
+	t_list* registros = list_create();
+	char* registroActual = string_new();
+
+	//Lo pongo adentro porque cuando lo saco de la funcion hay un puntero que se pierde
+	void leerBloque(char* nombreBloque){
+		FILE* archivoDeBloque = fopen(nombreBloque,"r");
+		//Leo el primer caracter
+		char nuevoCaracter = fgetc(archivoDeBloque);
+		//Mientras no sea fin de archivo
+		while(nuevoCaracter != EOF){
+			//Si es Nueva Linea (ASCII) y no esta vacio
+			if((nuevoCaracter == 10) && !string_is_empty(registroActual)){
+				//Agrego el valor a la lista
+				list_add(registros, generarVectorDeKeyValue(registroActual));
+				free(registroActual);
+				registroActual = string_new();
+			}else{
+				string_append_char(&registroActual,nuevoCaracter);
+			}
+			nuevoCaracter = fgetc(archivoDeBloque);
+		}
+		fclose(archivoDeBloque);
+	}
+
+	string_iterate_lines(bloques, (void*) leerBloque);
+
+	// Esto aplica si la ultima linea del ultimo bloque no termina en \n
+	if (!string_is_empty(registroActual) && (strcmp(registroActual,"\n") != 0)){ //TODO: Marca entraba como \n
+		list_add(registros, generarVectorDeKeyValue(registroActual));
+		free(registroActual);
+		registroActual = string_new();
+	}
+
+	free(registroActual);
+	return registros;
+}
+
+
+// recibe registro[pos,cant] y lista de registros [pos,cant], devuelve lista de registros [pos,cant]
+//Mi char** registro es -> [POSICION,CANTIDAD]
+//Hacerla void y que modifique la lista simplemente
+t_list* evaluarRegistroNew(char** registro, t_list* registros){
+
+	for(uint32_t i=0;i < list_size(registros);i++){
+		char** registroActual = list_get(registros,i);
+		if(!strcmp(registro[0],registroActual[0])){
+			uint32_t sumaTotal = 0;
+
+			sumaTotal += atoi(registroActual[1]);
+			log_info(loggerDev, "La vieja cantidad es: %i",sumaTotal);
+
+			sumaTotal += atoi(registro[1]);
+			log_info(loggerDev, "La nueva cantidad es: %i",sumaTotal);
+
+			free(registroActual[1]);
+			registroActual[1] = string_itoa(sumaTotal);
+			//POLEMICO ACA BROOOOO CHEQUEA ESE REGISTRO ACTUAL SI HAY QUE METERLO EN LA LIST CON UN REPLACE
+			return registros;
+		}
+	}
+
+
+	log_info(loggerDev, "La coordenada %s es nueva. Se agrega al los registros",registro[0]);
+	list_add(registros,registro);
+	return registros;
+}
+
+
+//Recibe char** bloquesOcupados y limpia los block y los libera del bitmap
+
+void vaciarBloques(char** blocksOcupados){
+	log_info(loggerDev, "Vaciando blocks");
+	uint32_t i = 0;
+	while(blocksOcupados[i] != NULL){
+		char* pathBlock = generadorDeRutaDeCreacionDeArchivos(rutaBlocks,blocksOcupados[i],".bin");
+		FILE* archivo = fopen(pathBlock,"w");
+		fclose(archivo);
+		free(pathBlock);
+		desmarcarBloqueBitmap(blocksOcupados[i]);
+		i++;
+	}
+
+
+}
+
+
+// recibe lista de registros char* y un archivo metadata, actualiza metadata despues de escribir todos los registros
+void escribirEnBloques(t_list* registros, t_config* archivoMetadata) {
+
+	int cantidadBytesEscritos = 0;
+	int cantidadBytesTotales = 0;
+
+	char* arrayBloques = string_new();
+	string_append(&arrayBloques,"[");
+
+	char* block = buscarPosicionDisponibleEnElBitMap();
+	log_info(loggerDev, "El block libre seleccionado es: %s",block);
+
+	char* pathBlock = generadorDeRutaDeCreacionDeArchivos(rutaBlocks,block,".bin");
+	log_info(loggerDev, "La ruta del block es: %s",pathBlock);
+
+	FILE* archivoBloque;
+
+	archivoBloque = fopen(pathBlock,"w");
+
+	string_append(&arrayBloques,block);
+	string_append(&arrayBloques,",");
+
+	void escribirRegistro(char* registro){
+		for(int i = 0; i < string_length(registro); i++){
+			if(cantidadBytesEscritos == blockSize){
+				fclose(archivoBloque);
+				free(pathBlock);
+				char* blockNuevo = buscarPosicionDisponibleEnElBitMap();
+				log_info(loggerDev, "El block libre seleccionado FUNCION ESCRIBIR_REGISTRO es: %s",block);
+
+				pathBlock = generadorDeRutaDeCreacionDeArchivos(rutaBlocks,blockNuevo,".bin");
+				log_info(loggerDev, "La ruta del block FUNCION ESCRIBIR_REGISTRO es: %s",pathBlock);
+
+				archivoBloque = fopen(pathBlock,"w");
+
+				string_append(&arrayBloques,blockNuevo);
+				string_append(&arrayBloques,",");
+				cantidadBytesEscritos = 0;
+			}
+			fputc(registro[i], archivoBloque);
+			cantidadBytesEscritos++;
+			cantidadBytesTotales++;
+		}
+	}
+
+	log_info(loggerDev, "Iterando la lista");
+	list_iterate(registros,(void*)escribirRegistro);
+	fclose(archivoBloque);
+
+	char* arrayBloquesFinalizado = 	string_substring_until(arrayBloques,string_length(arrayBloques)-1);
+	string_append(&arrayBloquesFinalizado,"]");
+	char* sizeTotal = string_itoa(cantidadBytesTotales);
+
+	config_set_value(archivoMetadata,"SIZE",sizeTotal);
+	config_set_value(archivoMetadata,"BLOCKS",arrayBloquesFinalizado);
+	config_save(archivoMetadata);
+
+
+	free(block);
+	free(pathBlock);
+	free(sizeTotal);
+	free(arrayBloques);
+	free(arrayBloquesFinalizado);
+}
+
+
+
+//################################################################################################################################################################################################
 
 void procesarRequestDeGameBoy(int cod_op, int socketGameBoy) {
 	log_info(loggerDev, "Procesando request de GameBoy");
@@ -652,7 +885,7 @@ uint32_t calcularPesoTotalDeBlockEnMetadataPokemon(char** blocks){
 }
 
 
-
+/* VIEJO PARADIGMA
 void validarPosicionesDeNew(t_config* archivoMetadataPokemon, char** blocksOcupados,char* posicion, uint32_t cantidad){
 
 	log_info(loggerDev, "Validando Posiciones de New");
@@ -676,10 +909,34 @@ void validarPosicionesDeNew(t_config* archivoMetadataPokemon, char** blocksOcupa
 		log_info(loggerDev, "Actualizo Metadata");
 		actualizarBlockMetadata(archivoMetadataPokemon,blockOptimo);
 	}
-
-
-
 }
+*/
+
+void validarPosicionesDeNew(t_config* archivoMetadataPokemon, char** blocksOcupados, char** keyValue){
+
+ 	if(blocksOcupados[0] != NULL){
+ 		log_info(loggerDev, "Pokemon ya conocido");
+ 		char** pathsDeBlocks = generarVectorDePaths(blocksOcupados);
+ 		t_list* registros = traerRegistrosBloques(pathsDeBlocks);
+ 		registros = evaluarRegistroNew(keyValue,registros);
+ 		t_list* registrosAEscribir = list_map(registros, (void*) aplanarVectorDeKeyValue);
+ 		vaciarBloques(blocksOcupados);
+ 		escribirEnBloques(registrosAEscribir,archivoMetadataPokemon);
+ 	} else {
+ 		log_info(loggerDev, "No tiene blocks asignados. Primera vez");
+ 		t_list* registroNuevo = list_create();
+ 		list_add(registroNuevo, aplanarVectorDeKeyValue(keyValue));
+ 		escribirEnBloques(registroNuevo,archivoMetadataPokemon);
+ 	}
+
+ }
+
+
+
+
+
+
+
 
 bool validarPosicionesDeCatch(t_config* archivoMetadataPokemon, char** blocksOcupados, char* posicion){
 	if(existenPosicionesEnArchivo(posicion,blocksOcupados)){
@@ -762,8 +1019,7 @@ void newPokemon(int socketCliente,t_newLlegada* new){
 	log_info(loggerDev,"Ruta de Directorio: %s",rutaDeDirectorio);
 
 	char* posicion = generadorDePosiciones(posX,posY);
-	log_info(loggerDev,"Posicion generada: %s",posicion);
-
+	char** registroPokemon = generadorDeRegistros(posicion,cantidad);
 
 	if(noExisteDirectorio(rutaDeDirectorio)){
 		log_info(loggerGameCard,"El pokemon %s no existe en el FS, se pasa a crear su directorio", pokemon);
@@ -774,7 +1030,6 @@ void newPokemon(int socketCliente,t_newLlegada* new){
 
 	char* directorioPokemon = generadorDeRutaDeCreacionDeDirectorios(rutaFiles,pokemon);
 	log_info(loggerDev,"Ruta del directorio pokemon %s es: %s",pokemon, directorioPokemon);
-
 	char* rutaDeArchivo = generadorDeRutaDeCreacionDeArchivos(directorioPokemon, pokemon, ".bin");
 	log_info(loggerDev,"Ruta del Archivo: %s",rutaDeArchivo);
 
@@ -790,11 +1045,8 @@ void newPokemon(int socketCliente,t_newLlegada* new){
 		activarFlagDeLectura(archivoMetadataPokemon);
 		pthread_mutex_unlock(&estoy_leyendo_metadata_mutex);
 
-		log_info(loggerDev,"Paso el mutex");
-		log_info(loggerDev,"Posicion generada SEGUN LOG UTIL: %s",posicion);
-		log_info(loggerDevArchDir,"Posicion generada SEGUN LOG ArchYDir: %s",posicion);
-		validarPosicionesDeNew(archivoMetadataPokemon, blocksOcupados, posicion, cantidad);
-		actualizarSizeMetadataPokemon(archivoMetadataPokemon);
+		validarPosicionesDeNew(archivoMetadataPokemon, blocksOcupados, registroPokemon);
+		//actualizarSizeMetadataPokemon(archivoMetadataPokemon);
 
 	} else{
 		pthread_mutex_unlock(&estoy_leyendo_metadata_mutex);
@@ -863,7 +1115,7 @@ void catchPokemon(int socketCliente,t_catchLlegada* catch){
 		activarFlagDeLectura(archivoMetadataPokemon);
 		pthread_mutex_unlock(&estoy_leyendo_metadata_mutex);
 		validacion = validarPosicionesDeCatch(archivoMetadataPokemon,blocksOcupados,posicion);
-		actualizarSizeMetadataPokemon(archivoMetadataPokemon);
+		//actualizarSizeMetadataPokemon(archivoMetadataPokemon);
 	}else{
 		pthread_mutex_unlock(&estoy_leyendo_metadata_mutex);
 		log_error(loggerGameCard, "Ya existe un proceso utilizando el archivo Metadata de %s",pokemon);
@@ -918,7 +1170,7 @@ void getPokemon(int socketCliente,t_getLlegada* getLlegada){
 		activarFlagDeLectura(archivoMetadataPokemon);
 		pthread_mutex_unlock(&estoy_leyendo_metadata_mutex);
 		coordenadas = validarPosicionesDeGet(blocksOcupados);
-		actualizarSizeMetadataPokemon(archivoMetadataPokemon);
+		//actualizarSizeMetadataPokemon(archivoMetadataPokemon);
 	} else{
 		pthread_mutex_unlock(&estoy_leyendo_metadata_mutex);
 		log_error(loggerGameCard, "Ya existe un proceso utilizando el archivo Metadata de %s",pokemon);

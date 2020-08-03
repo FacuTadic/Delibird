@@ -98,6 +98,24 @@ char* generadorDePosiciones(uint32_t posX, uint32_t posY){
 	return coordenadas;
 }
 
+char** generadorDeRegistros(char* posicion, uint32_t cantidad){
+	log_info(loggerDevArchDir, "La posicion que me llega es: %s", posicion);
+	char** registro;
+	char* cantidadString = string_itoa(cantidad);
+
+	string_append(&posicion,"=");
+	string_append(&posicion,cantidadString);
+	log_info(loggerDevArchDir, "El valor del KEY-VALUE cargado completamente es: %s", posicion);
+
+	registro = string_split(posicion,"=");
+
+	log_info(loggerDevArchDir, "La posicion del registro generado es: %s", registro[0]);
+	log_info(loggerDevArchDir, "La cantidad del registro generado es: %s", registro[1]);
+	free(cantidadString);
+
+	return registro;
+}
+
 
 
 bool existeArchivo(char* ruta){
@@ -185,7 +203,7 @@ void actualizarBlockMetadata(t_config* archivoMetadata, char*blockAAgregar){
 
 }
 
-
+/*
 void actualizarSizeMetadataPokemon(t_config* archivoMetadata){
 	char** blocksOcupados = config_get_array_value(archivoMetadata,"BLOCKS");
 	uint32_t i = 0;
@@ -217,7 +235,7 @@ void actualizarSizeMetadataPokemon(t_config* archivoMetadata){
 
 	free(blocksOcupados);
 }
-
+*/
 
 
 bool hayEspacioEnElBlock(char* rutaDelBlock, char* posicion, uint32_t cantidad){
@@ -279,7 +297,6 @@ void crearArchivoEnDirectorio(char* nombreDelArchivo, char* directorio){
 
 
 bool puedeAbrirseArchivo(t_config* archivo){
-	log_info(loggerDevArchDir, "Se creo el falso config de la ruta");
 	char* estadoArchivo = config_get_string_value(archivo, "OPEN");
 	log_info(loggerDevArchDir, "Retorno el estado: %s", estadoArchivo);
 
@@ -290,7 +307,6 @@ bool puedeAbrirseArchivo(t_config* archivo){
 
 void activarFlagDeLectura(t_config* archivo){
 	config_set_value(archivo, "OPEN", "Y");
-	log_info(loggerDevArchDir, "Se creo el falso config de la ruta");
 	config_save(archivo);
 }
 
@@ -436,7 +452,7 @@ uint32_t cantidadDePokemonEnUnaCoordenada(t_config* archivoBlock,char* posicion)
 
 
 void agregarNuevaPosicionA(char* block, char* posicion, uint32_t cantidad){
-	char* rutaArchivo = generadorDeRutaDeCreacionDeArchivos(rutaBlocksArchDir,block,".bin");
+	/*char* rutaArchivo = generadorDeRutaDeCreacionDeArchivos(rutaBlocksArchDir,block,".bin");
 	log_info(loggerDevArchDir, "Agregamos nueva posicion con direccion del archivo: %s",rutaArchivo);
 
 	if(noExisteDirectorio(rutaArchivo)){
@@ -460,12 +476,45 @@ void agregarNuevaPosicionA(char* block, char* posicion, uint32_t cantidad){
 
 	free(rutaArchivo);
 	free(cantidadString);
+*/
+	char* cantString = string_itoa(cantidad);
+	char* coordenada = string_new();
+
+	string_append(&coordenada,posicion);
+	string_append(&coordenada,"=");
+	string_append(&coordenada,cantString);
+
+	char* rutaArchivo = generadorDeRutaDeCreacionDeArchivos(rutaBlocksArchDir,block,".bin");
+	log_info(loggerDevArchDir, "Agregamos nueva posicion con direccion del archivo: %s",rutaArchivo);
+
+	if(noExisteDirectorio(rutaArchivo)){
+		log_info(loggerDevArchDir, "Creamos el archivo");
+		crearTemplateDeArchivoTipo(BLOCK,block,rutaBlocksArchDir);
+	}
+
+	log_info(loggerDevArchDir, "Seteando nueva posicion: %s",posicion);
+
+	FILE* archivo;
+	archivo = fopen(rutaArchivo,"w+");
+
+	fseek(archivo, 0L, SEEK_END);
+
+	fwrite(coordenada,1,sizeof(coordenada),archivo);
+
+	fseek(archivo, 0L, SEEK_SET);
+
+	fclose(archivo);
+	free(coordenada);
+	free(cantString);
+
 }
 
 
 void obtenerTodasLasPosiciones(char** blocks, t_queue* posicionesPokemon){
 
 	uint32_t i = 0;
+	char* auxLine1 = string_new();
+	char* auxLine2 = string_new();
 
 	while(blocks[i] != NULL){
 
@@ -485,33 +534,90 @@ void obtenerTodasLasPosiciones(char** blocks, t_queue* posicionesPokemon){
 				exit(EXIT_FAILURE);
 			}
 
-			while ((read = getline(&line, &len, fp)) != -1) {
-				log_info(loggerDevArchDir, "Se esta leyendo la linea: %s",line);
-				char** data = string_split(line,"=");
-				log_info(loggerDevArchDir, "La coordenada de la linea es: %s",data[0]);
+			//El auxLine es por si una coordenada esta cargada por la mitad
+
+			//Si auxLine no esta vacio significa que no cargo una coordenada completa
+			//por lo que la otra parte esta en el archivo siguiente
+			//leo la primera linea, completo el auxLine y hago el procedimiento normal para una coordenada completa
+			//Luego sigo el flujo normal de lectura con el while
+
+			if(string_is_empty(auxLine1)){
+				read = getline(&line, &len, fp);
+				log_info(loggerDevArchDir, "La porcion leida de la primera linea es: %s",line);
+
+				string_append(&auxLine2,line);
+
+				char* auxLinePlano = string_new();
+				string_append(&auxLinePlano,auxLine1);
+				string_append(&auxLinePlano,auxLine2);
+
+				log_info(loggerDevArchDir, "La coordenada finalmente quedo como: %s",auxLinePlano);
+
+				char** dataAux = string_split(auxLinePlano,"=");
+				log_info(loggerDevArchDir, "La coordenada de la linea es: %s",dataAux[0]);
+
 				char* posicion = string_new();
-				string_append(&posicion,data[0]);
+				string_append(&posicion,dataAux[0]);
 				log_info(loggerGameCardArchDir, "Posicion: %s",posicion);
+				log_info(loggerDevArchDir, "LOG DEV Posicion : %s",posicion);
+
+
 				queue_push(posicionesPokemon, posicion);
 
-				uint32_t j = 0;
-				while(data[j] != NULL){
-					free(data[j]);
-					j++;
+				uint32_t w = 0;
+				while(dataAux[w] != NULL){
+					free(dataAux[w]);
+					w++;
 				}
-				free(data);
+
+				free(dataAux);
+				free(auxLine1);
+				free(auxLine2);
+
+				auxLine1 = string_new();
+				auxLine2 = string_new();
+			}
+
+			while ((read = getline(&line, &len, fp)) != -1) {
+
+				if(string_contains(line,"=")){
+					log_info(loggerDevArchDir, "Se esta leyendo la linea: %s",line);
+					char** data = string_split(line,"=");
+					log_info(loggerDevArchDir, "La coordenada de la linea es: %s",data[0]);
+					char* posicion = string_new();
+					string_append(&posicion,data[0]);
+					log_info(loggerGameCardArchDir, "Posicion: %s",posicion);
+					queue_push(posicionesPokemon, posicion);
+
+					uint32_t j = 0;
+					while(data[j] != NULL){
+						free(data[j]);
+						j++;
+					}
+					free(data);
+
+				}else{
+					string_append(&auxLine1,line);
+				}
 			}
 
 			free(rutaDeArchivo);
 			free(line);
 			fclose(fp);
-
 			i++;
 		}
+
+	free(auxLine1);
+	free(auxLine2);
 }
 
+
+bool tieneFormatoConfig(char* linea){
+	return string_contains(linea,"-") && string_contains(linea,"=");
+}
 
 
 bool noExisteDirectorio(char* ruta){
 	return stat(ruta, &st1) == -1;
 }
+
