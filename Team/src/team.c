@@ -1178,9 +1178,9 @@ int main(void) {
 		algoritmo_planificacion = 1;
 	} else if (string_equals_ignore_case(algoritmo_planificacion_config, "RR")) {
 		algoritmo_planificacion = 2;
-	} else if (string_equals_ignore_case(algoritmo_planificacion_config, "SJF-SD")) {
+	} else if (string_equals_ignore_case(algoritmo_planificacion_config, "SJF-SD") || string_equals_ignore_case(algoritmo_planificacion_config, "SJFSD")) {
 		algoritmo_planificacion = 3;
-	} else if (string_equals_ignore_case(algoritmo_planificacion_config, "SJF-SD")) {
+	} else if (string_equals_ignore_case(algoritmo_planificacion_config, "SJF-CD") || string_equals_ignore_case(algoritmo_planificacion_config, "SJFCD")) {
 		algoritmo_planificacion = 4;
 	}
 

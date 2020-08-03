@@ -5432,3 +5432,2082 @@
 [INFO] 18:47:24:935 Broker/(6595:6602): Guardando mensaje con id 11 en particion 0x8fc501c
 [INFO] 18:47:24:935 Broker/(6595:6602): Eliminando mensaje LOCALIZED con id 11
 [INFO] 18:47:24:935 Broker/(6595:6602): Eliminado mensaje LOCALIZED con id 11
+[INFO] 00:38:01:275 Broker/(11592:11592): logger extenso iniciado
+[INFO] 00:38:01:276 Broker/(11592:11592): logger de la catedra iniciado
+[INFO] 00:38:01:276 Broker/(11592:11592): La IP es: 127.0.0.1
+[INFO] 00:38:01:277 Broker/(11592:11592): El puerto es: 4444
+[INFO] 00:38:01:277 Broker/(11592:11592): El tamanio de la memoria es 64
+[INFO] 00:38:01:277 Broker/(11592:11592): La frecuencia de la compactacion es 1
+[INFO] 00:38:01:277 Broker/(11592:11592): El tamanio minimo de la particion es 4
+[INFO] 00:38:01:277 Broker/(11592:11592): El algoritmo de busqueda de particiones libres es FF
+[INFO] 00:38:01:277 Broker/(11592:11592): El algoritmo de reemplazo de particiones es FIFO
+[INFO] 00:38:01:277 Broker/(11592:11592): Iniciando colas
+[INFO] 00:38:01:277 Broker/(11592:11592): Colas iniciadas
+[INFO] 00:38:01:277 Broker/(11592:11592): Iniciando listas de suscriptores
+[INFO] 00:38:01:278 Broker/(11592:11592): Listas de suscriptores iniciadas
+[INFO] 00:38:01:278 Broker/(11592:11592): Iniciando listas de ids respondidos
+[INFO] 00:38:01:278 Broker/(11592:11592): Listas de ids respondidos iniciadas
+[INFO] 00:38:01:278 Broker/(11592:11592): Iniciando estructuras de colas
+[INFO] 00:38:01:278 Broker/(11592:11592): Estructuras de colas iniciadas
+[INFO] 00:38:01:278 Broker/(11592:11592): Iniciando limites de colas
+[INFO] 00:38:01:278 Broker/(11592:11592): Limites de colas iniciadas
+[INFO] 00:38:01:278 Broker/(11592:11592): Iniciando semaforos de limite
+[INFO] 00:38:01:278 Broker/(11592:11592): Semaforos de limite iniciados
+[INFO] 00:38:01:278 Broker/(11592:11592): Iniciando semaforos de mensajes
+[INFO] 00:38:01:279 Broker/(11592:11592): Semaforos de mensajes iniciados
+[INFO] 00:38:01:279 Broker/(11592:11592): Iniciando semaforos de colas
+[INFO] 00:38:01:279 Broker/(11592:11592): Semaforos de colas iniciados
+[INFO] 00:38:01:279 Broker/(11592:11592): Iniciando semaforos de listas
+[INFO] 00:38:01:279 Broker/(11592:11592): Semaforos de listas iniciados
+[INFO] 00:38:01:279 Broker/(11592:11592): Iniciando semaforos de ids respondidos
+[INFO] 00:38:01:279 Broker/(11592:11592): Semaforos de ids respondidos iniciados
+[INFO] 00:38:01:279 Broker/(11592:11592): Creando generador id
+[INFO] 00:38:01:279 Broker/(11592:11592): Generador id creado
+[INFO] 00:38:01:279 Broker/(11592:11592): Levantando servidor
+[INFO] 00:38:01:279 Broker/(11592:11592): Servidor levantado
+[INFO] 00:38:01:280 Broker/(11592:11599): Atendiendo cola LOCALIZED
+[INFO] 00:38:01:280 Broker/(11592:11598): Atendiendo cola GET
+[INFO] 00:38:01:280 Broker/(11592:11597): Atendiendo cola CAUGHT
+[INFO] 00:38:01:280 Broker/(11592:11596): Atendiendo cola CATCH
+[INFO] 00:38:01:280 Broker/(11592:11595): Atendiendo cola APPEARED
+[INFO] 00:38:01:280 Broker/(11592:11594): Atendiendo cola NEW
+[INFO] 00:38:01:280 Broker/(11592:11593): Esperando clientes en socket 5
+[INFO] 00:38:09:508 Broker/(11592:11593): Socket cliente 7 aceptado
+[INFO] 00:38:09:509 Broker/(11592:11593): Socket cliente 8 aceptado
+[INFO] 00:38:09:509 Broker/(11592:11593): Socket cliente 9 aceptado
+[INFO] 00:38:09:510 Broker/(11592:11608): Recibiendo codigo de operacion de socket 9
+[INFO] 00:38:09:510 Broker/(11592:11608): Codigo de operacion de socket 9 recibido: 7
+[INFO] 00:38:09:510 Broker/(11592:11608): Generando id para el mensaje del socket 9
+[INFO] 00:38:09:510 Broker/(11592:11608): El id generado es 1
+[INFO] 00:38:09:511 Broker/(11592:11607): Recibiendo codigo de operacion de socket 8
+[INFO] 00:38:09:511 Broker/(11592:11608): Codigo de operacion recibido del socket cliente 9 corresponde a un SUSCRIPCION
+[INFO] 00:38:09:511 Broker/(11592:11608): Recibiendo tamanio total
+[INFO] 00:38:09:511 Broker/(11592:11608): Tamanio total recibido: 16
+[INFO] 00:38:09:511 Broker/(11592:11608): Recibiendo id de cliente
+[INFO] 00:38:09:511 Broker/(11592:11608): Id de cliente recibido: 1804289383
+[INFO] 00:38:09:515 Broker/(11592:11608): Recibiendo id de cola
+[INFO] 00:38:09:515 Broker/(11592:11606): Recibiendo codigo de operacion de socket 7
+[INFO] 00:38:09:515 Broker/(11592:11608): Id de cola recibido: 15
+[INFO] 00:38:09:515 Broker/(11592:11608): Id de cola recibido del socket cliente 9 corresponde a la cola de GET
+[INFO] 00:38:09:515 Broker/(11592:11608): Tamanio tabla de segmentos: 0
+[INFO] 00:38:09:515 Broker/(11592:11608): No existen segmentos GET a enviar al cliente 1804289383 socket 9
+[INFO] 00:38:09:515 Broker/(11592:11608): Modulo con id 1804289383 agregado correctamente en la cola de GET
+[INFO] 00:38:09:515 Broker/(11592:11606): Codigo de operacion de socket 7 recibido: 7
+[INFO] 00:38:09:516 Broker/(11592:11606): Generando id para el mensaje del socket 7
+[INFO] 00:38:09:516 Broker/(11592:11606): El id generado es 2
+[INFO] 00:38:09:516 Broker/(11592:11606): Codigo de operacion recibido del socket cliente 7 corresponde a un SUSCRIPCION
+[INFO] 00:38:09:516 Broker/(11592:11606): Recibiendo tamanio total
+[INFO] 00:38:09:516 Broker/(11592:11606): Tamanio total recibido: 16
+[INFO] 00:38:09:516 Broker/(11592:11606): Recibiendo id de cliente
+[INFO] 00:38:09:516 Broker/(11592:11606): Id de cliente recibido: 1804289383
+[INFO] 00:38:09:516 Broker/(11592:11606): Recibiendo id de cola
+[INFO] 00:38:09:516 Broker/(11592:11606): Id de cola recibido: 11
+[INFO] 00:38:09:516 Broker/(11592:11606): Id de cola recibido del socket cliente 7 corresponde a la cola de NEW
+[INFO] 00:38:09:516 Broker/(11592:11606): Tamanio tabla de segmentos: 0
+[INFO] 00:38:09:516 Broker/(11592:11606): No existen segmentos NEW a enviar al cliente 1804289383 socket 7
+[INFO] 00:38:09:517 Broker/(11592:11606): Modulo con id 1804289383 agregado correctamente en la cola de NEW
+[INFO] 00:38:09:517 Broker/(11592:11607): Codigo de operacion de socket 8 recibido: 7
+[INFO] 00:38:09:517 Broker/(11592:11607): Generando id para el mensaje del socket 8
+[INFO] 00:38:09:517 Broker/(11592:11607): El id generado es 3
+[INFO] 00:38:09:517 Broker/(11592:11607): Codigo de operacion recibido del socket cliente 8 corresponde a un SUSCRIPCION
+[INFO] 00:38:09:517 Broker/(11592:11607): Recibiendo tamanio total
+[INFO] 00:38:09:517 Broker/(11592:11607): Tamanio total recibido: 16
+[INFO] 00:38:09:517 Broker/(11592:11607): Recibiendo id de cliente
+[INFO] 00:38:09:517 Broker/(11592:11607): Id de cliente recibido: 1804289383
+[INFO] 00:38:09:517 Broker/(11592:11607): Recibiendo id de cola
+[INFO] 00:38:09:517 Broker/(11592:11607): Id de cola recibido: 13
+[INFO] 00:38:09:517 Broker/(11592:11607): Id de cola recibido del socket cliente 8 corresponde a la cola de CATCH
+[INFO] 00:38:09:517 Broker/(11592:11607): Tamanio tabla de segmentos: 0
+[INFO] 00:38:09:517 Broker/(11592:11607): No existen segmentos CATCH a enviar al cliente 1804289383 socket 8
+[INFO] 00:38:09:517 Broker/(11592:11607): Modulo con id 1804289383 agregado correctamente en la cola de CATCH
+[INFO] 00:38:33:629 Broker/(11592:11593): Socket cliente 10 aceptado
+[INFO] 00:38:33:631 Broker/(11592:11714): Recibiendo codigo de operacion de socket 10
+[INFO] 00:38:33:631 Broker/(11592:11714): Codigo de operacion de socket 10 recibido: 1
+[INFO] 00:38:33:631 Broker/(11592:11714): Generando id para el mensaje del socket 10
+[INFO] 00:38:33:631 Broker/(11592:11714): El id generado es 4
+[INFO] 00:38:33:631 Broker/(11592:11714): Codigo de operacion recibido del socket cliente 10 corresponde a un NEW
+[INFO] 00:38:33:631 Broker/(11592:11714): Recibiendo tamanio total
+[INFO] 00:38:33:631 Broker/(11592:11714): Tamanio total recibido: 24
+[INFO] 00:38:33:631 Broker/(11592:11714): Tamanio del pokemon recibido: 8
+[INFO] 00:38:33:631 Broker/(11592:11714): Nombre del pokemon recibido: Pikachu
+[INFO] 00:38:33:632 Broker/(11592:11714): Posicion X recibida: 9
+[INFO] 00:38:33:632 Broker/(11592:11714): Posicion Y recibida: 9
+[INFO] 00:38:33:632 Broker/(11592:11714): Cantidad recibida: 1
+[INFO] 00:38:33:632 Broker/(11592:11714): Retornando id 4 al socket 10
+[INFO] 00:38:33:632 Broker/(11592:11714): Encolando el mensaje NEW con id 4
+[INFO] 00:38:33:632 Broker/(11592:11714): Mensaje NEW con id 4 encolado
+[INFO] 00:38:33:632 Broker/(11592:11594): Atendiendo mensaje NEW con id 4
+[INFO] 00:38:33:632 Broker/(11592:11594): Guardando mensaje con id 4 en particion 0x86685d0
+[INFO] 00:38:33:633 Broker/(11592:11593): Socket cliente 11 aceptado
+[INFO] 00:38:33:634 Broker/(11592:11716): Preparandose para enviar mensaje NEW con id 4 al cliente 1804289383 socket 7
+[INFO] 00:38:33:634 Broker/(11592:11716): Enviando mensaje NEW con id 4 al cliente 1804289383 socket 7
+[INFO] 00:38:33:636 Broker/(11592:11716): Mensaje NEW con id 4 al cliente 1804289383 socket 7 enviado correctamente
+[INFO] 00:38:33:636 Broker/(11592:11716): ACK de cliente 1804289383 socket 7 recibido
+[INFO] 00:38:33:637 Broker/(11592:11594): Eliminando mensaje NEW con id 4
+[INFO] 00:38:33:637 Broker/(11592:11594): Eliminado mensaje NEW con id 4
+[INFO] 00:38:33:643 Broker/(11592:11717): Recibiendo codigo de operacion de socket 11
+[INFO] 00:38:33:643 Broker/(11592:11717): Codigo de operacion de socket 11 recibido: 1
+[INFO] 00:38:33:643 Broker/(11592:11717): Generando id para el mensaje del socket 11
+[INFO] 00:38:33:644 Broker/(11592:11717): El id generado es 5
+[INFO] 00:38:33:644 Broker/(11592:11717): Codigo de operacion recibido del socket cliente 11 corresponde a un NEW
+[INFO] 00:38:33:644 Broker/(11592:11717): Recibiendo tamanio total
+[INFO] 00:38:33:644 Broker/(11592:11717): Tamanio total recibido: 25
+[INFO] 00:38:33:644 Broker/(11592:11717): Tamanio del pokemon recibido: 9
+[INFO] 00:38:33:644 Broker/(11592:11717): Nombre del pokemon recibido: Squirtle
+[INFO] 00:38:33:644 Broker/(11592:11717): Posicion X recibida: 5
+[INFO] 00:38:33:644 Broker/(11592:11717): Posicion Y recibida: 2
+[INFO] 00:38:33:644 Broker/(11592:11717): Cantidad recibida: 1
+[INFO] 00:38:33:644 Broker/(11592:11717): Retornando id 5 al socket 11
+[INFO] 00:38:33:645 Broker/(11592:11717): Encolando el mensaje NEW con id 5
+[INFO] 00:38:33:645 Broker/(11592:11717): Mensaje NEW con id 5 encolado
+[INFO] 00:38:33:645 Broker/(11592:11594): Atendiendo mensaje NEW con id 5
+[INFO] 00:38:33:645 Broker/(11592:11594): Guardando mensaje con id 5 en particion 0x86685e4
+[INFO] 00:38:33:646 Broker/(11592:11719): Preparandose para enviar mensaje NEW con id 5 al cliente 1804289383 socket 7
+[INFO] 00:38:33:646 Broker/(11592:11719): Enviando mensaje NEW con id 5 al cliente 1804289383 socket 7
+[INFO] 00:38:33:646 Broker/(11592:11719): Mensaje NEW con id 5 al cliente 1804289383 socket 7 enviado correctamente
+[INFO] 00:38:33:647 Broker/(11592:11593): Socket cliente 12 aceptado
+[INFO] 00:38:33:648 Broker/(11592:11720): Recibiendo codigo de operacion de socket 12
+[INFO] 00:38:33:648 Broker/(11592:11720): Codigo de operacion de socket 12 recibido: 1
+[INFO] 00:38:33:648 Broker/(11592:11720): Generando id para el mensaje del socket 12
+[INFO] 00:38:33:649 Broker/(11592:11720): El id generado es 6
+[INFO] 00:38:33:649 Broker/(11592:11720): Codigo de operacion recibido del socket cliente 12 corresponde a un NEW
+[INFO] 00:38:33:649 Broker/(11592:11720): Recibiendo tamanio total
+[INFO] 00:38:33:649 Broker/(11592:11720): Tamanio total recibido: 24
+[INFO] 00:38:33:649 Broker/(11592:11720): Tamanio del pokemon recibido: 8
+[INFO] 00:38:33:649 Broker/(11592:11720): Nombre del pokemon recibido: Jolteon
+[INFO] 00:38:33:649 Broker/(11592:11720): Posicion X recibida: 2
+[INFO] 00:38:33:649 Broker/(11592:11720): Posicion Y recibida: 2
+[INFO] 00:38:33:649 Broker/(11592:11720): Cantidad recibida: 1
+[INFO] 00:38:33:649 Broker/(11592:11720): Retornando id 6 al socket 12
+[INFO] 00:38:33:649 Broker/(11592:11720): Encolando el mensaje NEW con id 6
+[INFO] 00:38:33:649 Broker/(11592:11720): Mensaje NEW con id 6 encolado
+[INFO] 00:38:33:655 Broker/(11592:11593): Socket cliente 13 aceptado
+[INFO] 00:38:33:663 Broker/(11592:11722): Recibiendo codigo de operacion de socket 13
+[INFO] 00:38:33:663 Broker/(11592:11722): Codigo de operacion de socket 13 recibido: 1
+[INFO] 00:38:33:663 Broker/(11592:11722): Generando id para el mensaje del socket 13
+[INFO] 00:38:33:663 Broker/(11592:11722): El id generado es 7
+[INFO] 00:38:33:663 Broker/(11592:11722): Codigo de operacion recibido del socket cliente 13 corresponde a un NEW
+[INFO] 00:38:33:663 Broker/(11592:11722): Recibiendo tamanio total
+[INFO] 00:38:33:663 Broker/(11592:11722): Tamanio total recibido: 24
+[INFO] 00:38:33:663 Broker/(11592:11722): Tamanio del pokemon recibido: 8
+[INFO] 00:38:33:663 Broker/(11592:11722): Nombre del pokemon recibido: Flareon
+[INFO] 00:38:33:663 Broker/(11592:11722): Posicion X recibida: 4
+[INFO] 00:38:33:664 Broker/(11592:11722): Posicion Y recibida: 6
+[INFO] 00:38:33:664 Broker/(11592:11722): Cantidad recibida: 1
+[INFO] 00:38:33:664 Broker/(11592:11722): Retornando id 7 al socket 13
+[INFO] 00:38:33:664 Broker/(11592:11722): Encolando el mensaje NEW con id 7
+[INFO] 00:38:33:664 Broker/(11592:11722): Mensaje NEW con id 7 encolado
+[INFO] 00:38:38:642 Broker/(11592:11593): Socket cliente 14 aceptado
+[INFO] 00:38:38:643 Broker/(11592:11719): ACK de cliente 1804289383 socket 7 recibido
+[INFO] 00:38:38:643 Broker/(11592:11594): Eliminando mensaje NEW con id 5
+[INFO] 00:38:38:643 Broker/(11592:11594): Eliminado mensaje NEW con id 5
+[INFO] 00:38:38:643 Broker/(11592:11594): Atendiendo mensaje NEW con id 6
+[INFO] 00:38:38:644 Broker/(11592:11594): Guardando mensaje con id 6 en particion 0x86685f9
+[INFO] 00:38:38:647 Broker/(11592:11724): Preparandose para enviar mensaje NEW con id 6 al cliente 1804289383 socket 7
+[INFO] 00:38:38:647 Broker/(11592:11724): Enviando mensaje NEW con id 6 al cliente 1804289383 socket 7
+[INFO] 00:38:38:648 Broker/(11592:11724): Mensaje NEW con id 6 al cliente 1804289383 socket 7 enviado correctamente
+[INFO] 00:38:38:648 Broker/(11592:11723): Recibiendo codigo de operacion de socket 14
+[INFO] 00:38:38:648 Broker/(11592:11723): Codigo de operacion de socket 14 recibido: 2
+[INFO] 00:38:38:648 Broker/(11592:11723): Generando id para el mensaje del socket 14
+[INFO] 00:38:38:648 Broker/(11592:11723): El id generado es 8
+[INFO] 00:38:38:648 Broker/(11592:11723): Codigo de operacion recibido del socket cliente 14 corresponde a un APPEARED
+[INFO] 00:38:38:648 Broker/(11592:11723): Recibiendo tamanio total
+[INFO] 00:38:38:648 Broker/(11592:11723): Tamanio total recibido: 24
+[INFO] 00:38:38:648 Broker/(11592:11723): Id correlativo recibido: 4
+[INFO] 00:38:38:648 Broker/(11592:11723): Tamanio del pokemon recibido: 8
+[INFO] 00:38:38:648 Broker/(11592:11723): Nombre del pokemon recibido: pikachu
+[INFO] 00:38:38:649 Broker/(11592:11723): Posicion X recibida: 9
+[INFO] 00:38:38:649 Broker/(11592:11723): Posicion Y recibida: 9
+[INFO] 00:38:38:649 Broker/(11592:11723): Retornando id 8 al socket 14
+[INFO] 00:38:38:649 Broker/(11592:11723): Encolando el mensaje APPEARED con id 8
+[INFO] 00:38:38:649 Broker/(11592:11723): Mensaje APPEARED con id 8 encolado
+[INFO] 00:38:38:649 Broker/(11592:11595): Atendiendo mensaje APPEARED con id 8
+[INFO] 00:38:38:649 Broker/(11592:11595): Se ha eliminado el registro con id 4 ubicado en 0x86685d0 de la tabla de segmentos
+[INFO] 00:38:38:649 Broker/(11592:11595): Guardando mensaje con id 8 en particion 0x86685d0
+[INFO] 00:38:38:649 Broker/(11592:11595): Eliminando mensaje APPEARED con id 8
+[INFO] 00:38:38:649 Broker/(11592:11595): Eliminado mensaje APPEARED con id 8
+[INFO] 00:38:43:648 Broker/(11592:11593): Socket cliente 15 aceptado
+[INFO] 00:38:43:650 Broker/(11592:11724): ACK de cliente 1804289383 socket 7 recibido
+[INFO] 00:38:43:650 Broker/(11592:11594): Eliminando mensaje NEW con id 6
+[INFO] 00:38:43:650 Broker/(11592:11594): Eliminado mensaje NEW con id 6
+[INFO] 00:38:43:650 Broker/(11592:11594): Atendiendo mensaje NEW con id 7
+[INFO] 00:38:43:650 Broker/(11592:11594): Compactando memoria
+[INFO] 00:38:43:650 Broker/(11592:11594): Moviendo registro de 0x86685e4 a 0x86685e0
+[INFO] 00:38:43:650 Broker/(11592:11594): Moviendo registro de 0x86685f9 a 0x86685f5
+[INFO] 00:38:43:650 Broker/(11592:11594): Se ha eliminado el registro con id 5 ubicado en 0x86685e0 de la tabla de segmentos
+[INFO] 00:38:43:650 Broker/(11592:11594): Guardando mensaje con id 7 en particion 0x86685e0
+[INFO] 00:38:43:655 Broker/(11592:11726): Preparandose para enviar mensaje NEW con id 7 al cliente 1804289383 socket 7
+[INFO] 00:38:43:656 Broker/(11592:11726): Enviando mensaje NEW con id 7 al cliente 1804289383 socket 7
+[INFO] 00:38:43:656 Broker/(11592:11726): Mensaje NEW con id 7 al cliente 1804289383 socket 7 enviado correctamente
+[INFO] 00:38:43:656 Broker/(11592:11725): Recibiendo codigo de operacion de socket 15
+[INFO] 00:38:43:656 Broker/(11592:11725): Codigo de operacion de socket 15 recibido: 2
+[INFO] 00:38:43:657 Broker/(11592:11725): Generando id para el mensaje del socket 15
+[INFO] 00:38:43:657 Broker/(11592:11725): El id generado es 9
+[INFO] 00:38:43:657 Broker/(11592:11725): Codigo de operacion recibido del socket cliente 15 corresponde a un APPEARED
+[INFO] 00:38:43:657 Broker/(11592:11725): Recibiendo tamanio total
+[INFO] 00:38:43:657 Broker/(11592:11725): Tamanio total recibido: 25
+[INFO] 00:38:43:657 Broker/(11592:11725): Id correlativo recibido: 5
+[INFO] 00:38:43:657 Broker/(11592:11725): Tamanio del pokemon recibido: 9
+[INFO] 00:38:43:658 Broker/(11592:11725): Nombre del pokemon recibido: squirtle
+[INFO] 00:38:43:658 Broker/(11592:11725): Posicion X recibida: 5
+[INFO] 00:38:43:658 Broker/(11592:11725): Posicion Y recibida: 2
+[INFO] 00:38:43:658 Broker/(11592:11725): Retornando id 9 al socket 15
+[INFO] 00:38:43:662 Broker/(11592:11725): Encolando el mensaje APPEARED con id 9
+[INFO] 00:38:43:662 Broker/(11592:11725): Mensaje APPEARED con id 9 encolado
+[INFO] 00:38:43:662 Broker/(11592:11595): Atendiendo mensaje APPEARED con id 9
+[INFO] 00:38:43:662 Broker/(11592:11595): Compactando memoria
+[INFO] 00:38:43:662 Broker/(11592:11595): Moviendo registro de 0x86685f5 a 0x86685f4
+[INFO] 00:38:43:662 Broker/(11592:11595): Se ha eliminado el registro con id 6 ubicado en 0x86685f4 de la tabla de segmentos
+[INFO] 00:38:43:662 Broker/(11592:11595): Guardando mensaje con id 9 en particion 0x86685f4
+[INFO] 00:38:43:662 Broker/(11592:11595): Eliminando mensaje APPEARED con id 9
+[INFO] 00:38:43:662 Broker/(11592:11595): Eliminado mensaje APPEARED con id 9
+[INFO] 00:38:48:656 Broker/(11592:11593): Socket cliente 16 aceptado
+[INFO] 00:38:48:658 Broker/(11592:11726): ACK de cliente 1804289383 socket 7 recibido
+[INFO] 00:38:48:658 Broker/(11592:11594): Eliminando mensaje NEW con id 7
+[INFO] 00:38:48:658 Broker/(11592:11594): Eliminado mensaje NEW con id 7
+[INFO] 00:38:48:662 Broker/(11592:11729): Recibiendo codigo de operacion de socket 16
+[INFO] 00:38:48:662 Broker/(11592:11729): Codigo de operacion de socket 16 recibido: 2
+[INFO] 00:38:48:663 Broker/(11592:11729): Generando id para el mensaje del socket 16
+[INFO] 00:38:48:663 Broker/(11592:11729): El id generado es 10
+[INFO] 00:38:48:663 Broker/(11592:11729): Codigo de operacion recibido del socket cliente 16 corresponde a un APPEARED
+[INFO] 00:38:48:663 Broker/(11592:11729): Recibiendo tamanio total
+[INFO] 00:38:48:663 Broker/(11592:11729): Tamanio total recibido: 24
+[INFO] 00:38:48:663 Broker/(11592:11729): Id correlativo recibido: 6
+[INFO] 00:38:48:663 Broker/(11592:11729): Tamanio del pokemon recibido: 8
+[INFO] 00:38:48:663 Broker/(11592:11729): Nombre del pokemon recibido: jolteon
+[INFO] 00:38:48:663 Broker/(11592:11729): Posicion X recibida: 2
+[INFO] 00:38:48:663 Broker/(11592:11729): Posicion Y recibida: 2
+[INFO] 00:38:48:663 Broker/(11592:11729): Retornando id 10 al socket 16
+[INFO] 00:38:48:663 Broker/(11592:11729): Encolando el mensaje APPEARED con id 10
+[INFO] 00:38:48:664 Broker/(11592:11729): Mensaje APPEARED con id 10 encolado
+[INFO] 00:38:48:664 Broker/(11592:11595): Atendiendo mensaje APPEARED con id 10
+[INFO] 00:38:48:664 Broker/(11592:11595): Compactando memoria
+[INFO] 00:38:48:664 Broker/(11592:11595): Se ha eliminado el registro con id 8 ubicado en 0x86685d0 de la tabla de segmentos
+[INFO] 00:38:48:664 Broker/(11592:11595): Compactando memoria
+[INFO] 00:38:48:664 Broker/(11592:11595): Moviendo registro de 0x86685e0 a 0x86685d0
+[INFO] 00:38:48:664 Broker/(11592:11595): Moviendo registro de 0x86685f4 a 0x86685e4
+[INFO] 00:38:48:664 Broker/(11592:11595): Guardando mensaje con id 10 en particion 0x86685f5
+[INFO] 00:38:48:664 Broker/(11592:11595): Eliminando mensaje APPEARED con id 10
+[INFO] 00:38:48:664 Broker/(11592:11595): Eliminado mensaje APPEARED con id 10
+[INFO] 00:38:53:663 Broker/(11592:11593): Socket cliente 17 aceptado
+[INFO] 00:38:53:670 Broker/(11592:11730): Recibiendo codigo de operacion de socket 17
+[INFO] 00:38:53:670 Broker/(11592:11730): Codigo de operacion de socket 17 recibido: 2
+[INFO] 00:38:53:670 Broker/(11592:11730): Generando id para el mensaje del socket 17
+[INFO] 00:38:53:670 Broker/(11592:11730): El id generado es 11
+[INFO] 00:38:53:671 Broker/(11592:11730): Codigo de operacion recibido del socket cliente 17 corresponde a un APPEARED
+[INFO] 00:38:53:671 Broker/(11592:11730): Recibiendo tamanio total
+[INFO] 00:38:53:671 Broker/(11592:11730): Tamanio total recibido: 24
+[INFO] 00:38:53:671 Broker/(11592:11730): Id correlativo recibido: 7
+[INFO] 00:38:53:672 Broker/(11592:11730): Tamanio del pokemon recibido: 8
+[INFO] 00:38:53:672 Broker/(11592:11730): Nombre del pokemon recibido: flareon
+[INFO] 00:38:53:672 Broker/(11592:11730): Posicion X recibida: 4
+[INFO] 00:38:53:672 Broker/(11592:11730): Posicion Y recibida: 6
+[INFO] 00:38:53:672 Broker/(11592:11730): Retornando id 11 al socket 17
+[INFO] 00:38:53:673 Broker/(11592:11730): Encolando el mensaje APPEARED con id 11
+[INFO] 00:38:53:673 Broker/(11592:11730): Mensaje APPEARED con id 11 encolado
+[INFO] 00:38:53:673 Broker/(11592:11595): Atendiendo mensaje APPEARED con id 11
+[INFO] 00:38:53:673 Broker/(11592:11595): Se ha eliminado el registro con id 7 ubicado en 0x86685d0 de la tabla de segmentos
+[INFO] 00:38:53:674 Broker/(11592:11595): Guardando mensaje con id 11 en particion 0x86685d0
+[INFO] 00:38:53:674 Broker/(11592:11595): Eliminando mensaje APPEARED con id 11
+[INFO] 00:38:53:674 Broker/(11592:11595): Eliminado mensaje APPEARED con id 11
+[INFO] 00:41:31:731 Broker/(11592:11593): Socket cliente 18 aceptado
+[INFO] 00:41:31:731 Broker/(11592:11593): Socket cliente 19 aceptado
+[INFO] 00:41:31:731 Broker/(11592:11593): Socket cliente 20 aceptado
+[INFO] 00:41:31:731 Broker/(11592:11815): Recibiendo codigo de operacion de socket 18
+[INFO] 00:41:31:731 Broker/(11592:11816): Recibiendo codigo de operacion de socket 19
+[INFO] 00:41:31:732 Broker/(11592:11817): Recibiendo codigo de operacion de socket 20
+[INFO] 00:41:31:732 Broker/(11592:11815): Codigo de operacion de socket 18 recibido: 7
+[INFO] 00:41:31:732 Broker/(11592:11815): Generando id para el mensaje del socket 18
+[INFO] 00:41:31:732 Broker/(11592:11815): El id generado es 12
+[INFO] 00:41:31:732 Broker/(11592:11815): Codigo de operacion recibido del socket cliente 18 corresponde a un SUSCRIPCION
+[INFO] 00:41:31:732 Broker/(11592:11815): Recibiendo tamanio total
+[INFO] 00:41:31:732 Broker/(11592:11815): Tamanio total recibido: 16
+[INFO] 00:41:31:732 Broker/(11592:11816): Codigo de operacion de socket 19 recibido: 7
+[INFO] 00:41:31:732 Broker/(11592:11817): Codigo de operacion de socket 20 recibido: 7
+[INFO] 00:41:31:733 Broker/(11592:11815): Recibiendo id de cliente
+[INFO] 00:41:31:733 Broker/(11592:11815): Id de cliente recibido: 1804289383
+[INFO] 00:41:31:733 Broker/(11592:11593): Socket cliente 21 aceptado
+[INFO] 00:41:31:733 Broker/(11592:11815): Recibiendo id de cola
+[INFO] 00:41:31:733 Broker/(11592:11816): Generando id para el mensaje del socket 19
+[INFO] 00:41:31:733 Broker/(11592:11816): El id generado es 13
+[INFO] 00:41:31:733 Broker/(11592:11816): Codigo de operacion recibido del socket cliente 19 corresponde a un SUSCRIPCION
+[INFO] 00:41:31:733 Broker/(11592:11816): Recibiendo tamanio total
+[INFO] 00:41:31:733 Broker/(11592:11816): Tamanio total recibido: 16
+[INFO] 00:41:31:734 Broker/(11592:11816): Recibiendo id de cliente
+[INFO] 00:41:31:734 Broker/(11592:11816): Id de cliente recibido: 1804289383
+[INFO] 00:41:31:734 Broker/(11592:11816): Recibiendo id de cola
+[INFO] 00:41:31:734 Broker/(11592:11593): Socket cliente 22 aceptado
+[INFO] 00:41:31:734 Broker/(11592:11816): Id de cola recibido: 14
+[INFO] 00:41:31:734 Broker/(11592:11593): Socket cliente 23 aceptado
+[INFO] 00:41:31:734 Broker/(11592:11593): Socket cliente 24 aceptado
+[INFO] 00:41:31:734 Broker/(11592:11816): Id de cola recibido del socket cliente 19 corresponde a la cola de CAUGHT
+[INFO] 00:41:31:735 Broker/(11592:11816): Tamanio tabla de segmentos: 3
+[WARNING] 00:41:31:736 Broker/(11592:11816): Registro NULL leido
+[WARNING] 00:41:31:737 Broker/(11592:11816): Registro NULL leido
+[WARNING] 00:41:31:737 Broker/(11592:11816): Registro NULL leido
+[WARNING] 00:41:31:737 Broker/(11592:11816): Registro NULL leido
+[WARNING] 00:41:31:737 Broker/(11592:11816): Registro NULL leido
+[WARNING] 00:41:31:737 Broker/(11592:11816): Registro NULL leido
+[WARNING] 00:41:31:737 Broker/(11592:11816): Registro NULL leido
+[WARNING] 00:41:31:737 Broker/(11592:11816): Registro NULL leido
+[INFO] 00:41:31:737 Broker/(11592:11816): No existen segmentos CAUGHT a enviar al cliente 1804289383 socket 19
+[INFO] 00:41:31:737 Broker/(11592:11816): Modulo con id 1804289383 agregado correctamente en la cola de CAUGHT
+[INFO] 00:41:31:737 Broker/(11592:11817): Generando id para el mensaje del socket 20
+[INFO] 00:41:31:737 Broker/(11592:11817): El id generado es 14
+[INFO] 00:41:31:738 Broker/(11592:11817): Codigo de operacion recibido del socket cliente 20 corresponde a un SUSCRIPCION
+[INFO] 00:41:31:738 Broker/(11592:11817): Recibiendo tamanio total
+[INFO] 00:41:31:738 Broker/(11592:11817): Tamanio total recibido: 16
+[INFO] 00:41:31:738 Broker/(11592:11817): Recibiendo id de cliente
+[INFO] 00:41:31:738 Broker/(11592:11817): Id de cliente recibido: 1804289383
+[INFO] 00:41:31:738 Broker/(11592:11817): Recibiendo id de cola
+[INFO] 00:41:31:738 Broker/(11592:11817): Id de cola recibido: 16
+[INFO] 00:41:31:738 Broker/(11592:11817): Id de cola recibido del socket cliente 20 corresponde a la cola de LOCALIZED
+[INFO] 00:41:31:738 Broker/(11592:11815): Id de cola recibido: 12
+[INFO] 00:41:31:738 Broker/(11592:11815): Id de cola recibido del socket cliente 18 corresponde a la cola de APPEARED
+[INFO] 00:41:31:738 Broker/(11592:11815): Tamanio tabla de segmentos: 3
+[WARNING] 00:41:31:738 Broker/(11592:11815): Registro NULL leido
+[WARNING] 00:41:31:738 Broker/(11592:11815): Registro NULL leido
+[WARNING] 00:41:31:738 Broker/(11592:11815): Registro NULL leido
+[WARNING] 00:41:31:738 Broker/(11592:11815): Registro NULL leido
+[WARNING] 00:41:31:738 Broker/(11592:11815): Registro NULL leido
+[WARNING] 00:41:31:738 Broker/(11592:11815): Registro NULL leido
+[WARNING] 00:41:31:738 Broker/(11592:11815): Registro NULL leido
+[WARNING] 00:41:31:738 Broker/(11592:11815): Registro NULL leido
+[INFO] 00:41:31:738 Broker/(11592:11817): Tamanio tabla de segmentos: 3
+[INFO] 00:41:31:738 Broker/(11592:11815): Segmentos APPEARED a enviar al cliente 1804289383 socket 18: 3
+[WARNING] 00:41:31:738 Broker/(11592:11817): Registro NULL leido
+[WARNING] 00:41:31:738 Broker/(11592:11817): Registro NULL leido
+[WARNING] 00:41:31:738 Broker/(11592:11817): Registro NULL leido
+[WARNING] 00:41:31:738 Broker/(11592:11817): Registro NULL leido
+[WARNING] 00:41:31:738 Broker/(11592:11817): Registro NULL leido
+[WARNING] 00:41:31:738 Broker/(11592:11817): Registro NULL leido
+[WARNING] 00:41:31:738 Broker/(11592:11817): Registro NULL leido
+[WARNING] 00:41:31:738 Broker/(11592:11817): Registro NULL leido
+[INFO] 00:41:31:738 Broker/(11592:11817): No existen segmentos LOCALIZED a enviar al cliente 1804289383 socket 20
+[INFO] 00:41:31:738 Broker/(11592:11817): Modulo con id 1804289383 agregado correctamente en la cola de LOCALIZED
+[INFO] 00:41:31:739 Broker/(11592:11830): Recibiendo codigo de operacion de socket 21
+[INFO] 00:41:31:739 Broker/(11592:11830): Codigo de operacion de socket 21 recibido: 5
+[INFO] 00:41:31:739 Broker/(11592:11830): Generando id para el mensaje del socket 21
+[INFO] 00:41:31:739 Broker/(11592:11830): El id generado es 15
+[INFO] 00:41:31:739 Broker/(11592:11830): Codigo de operacion recibido del socket cliente 21 corresponde a un GET
+[INFO] 00:41:31:739 Broker/(11592:11830): Recibiendo tamanio total
+[INFO] 00:41:31:739 Broker/(11592:11830): Tamanio total recibido: 21
+[INFO] 00:41:31:739 Broker/(11592:11830): Tamanio del pokemon recibido: 9
+[INFO] 00:41:31:739 Broker/(11592:11833): Recibiendo codigo de operacion de socket 24
+[INFO] 00:41:31:739 Broker/(11592:11831): Recibiendo codigo de operacion de socket 22
+[INFO] 00:41:31:739 Broker/(11592:11832): Recibiendo codigo de operacion de socket 23
+[INFO] 00:41:31:739 Broker/(11592:11830): Nombre del pokemon recibido: squirtle
+[INFO] 00:41:31:739 Broker/(11592:11830): Retornando id 15 al socket 21
+[INFO] 00:41:31:739 Broker/(11592:11830): Encolando el mensaje GET con id 15
+[INFO] 00:41:31:739 Broker/(11592:11830): Mensaje GET con id 15 encolado
+[INFO] 00:41:31:739 Broker/(11592:11598): Atendiendo mensaje GET con id 15
+[INFO] 00:41:31:739 Broker/(11592:11598): Guardando mensaje con id 15 en particion 0x8668605
+[INFO] 00:41:31:739 Broker/(11592:11832): Codigo de operacion de socket 23 recibido: 5
+[INFO] 00:41:31:739 Broker/(11592:11832): Generando id para el mensaje del socket 23
+[INFO] 00:41:31:739 Broker/(11592:11832): El id generado es 16
+[INFO] 00:41:31:739 Broker/(11592:11832): Codigo de operacion recibido del socket cliente 23 corresponde a un GET
+[INFO] 00:41:31:739 Broker/(11592:11832): Recibiendo tamanio total
+[INFO] 00:41:31:739 Broker/(11592:11832): Tamanio total recibido: 17
+[INFO] 00:41:31:739 Broker/(11592:11832): Tamanio del pokemon recibido: 5
+[INFO] 00:41:31:739 Broker/(11592:11832): Nombre del pokemon recibido: onix
+[INFO] 00:41:31:739 Broker/(11592:11832): Retornando id 16 al socket 23
+[INFO] 00:41:31:739 Broker/(11592:11832): Encolando el mensaje GET con id 16
+[INFO] 00:41:31:740 Broker/(11592:11832): Mensaje GET con id 16 encolado
+[INFO] 00:41:31:740 Broker/(11592:11834): Enviando mensaje APPEARED de memoria con id 9 al cliente 1804289383 socket 18
+[INFO] 00:41:31:740 Broker/(11592:11835): Enviando mensaje APPEARED de memoria con id 10 al cliente 1804289383 socket 18
+[INFO] 00:41:31:740 Broker/(11592:11836): Enviando mensaje APPEARED de memoria con id 11 al cliente 1804289383 socket 18
+[INFO] 00:41:31:740 Broker/(11592:11831): Codigo de operacion de socket 22 recibido: 5
+[INFO] 00:41:31:740 Broker/(11592:11831): Generando id para el mensaje del socket 22
+[INFO] 00:41:31:740 Broker/(11592:11831): El id generado es 17
+[INFO] 00:41:31:740 Broker/(11592:11831): Codigo de operacion recibido del socket cliente 22 corresponde a un GET
+[INFO] 00:41:31:740 Broker/(11592:11831): Recibiendo tamanio total
+[INFO] 00:41:31:740 Broker/(11592:11831): Tamanio total recibido: 20
+[INFO] 00:41:31:740 Broker/(11592:11831): Tamanio del pokemon recibido: 8
+[INFO] 00:41:31:740 Broker/(11592:11831): Nombre del pokemon recibido: pikachu
+[INFO] 00:41:31:740 Broker/(11592:11831): Retornando id 17 al socket 22
+[INFO] 00:41:31:740 Broker/(11592:11831): Encolando el mensaje GET con id 17
+[INFO] 00:41:31:740 Broker/(11592:11831): Mensaje GET con id 17 encolado
+[INFO] 00:41:31:742 Broker/(11592:11836): Mensaje APPEARED de memoria con id 11 al cliente 1804289383 socket 18 enviado correctamente
+[INFO] 00:41:31:742 Broker/(11592:11834): Mensaje APPEARED de memoria con id 9 al cliente 1804289383 socket 18 enviado correctamente
+[INFO] 00:41:31:742 Broker/(11592:11836): ACK de cliente 1804289383 socket 18 recibido
+[INFO] 00:41:31:742 Broker/(11592:11833): Codigo de operacion de socket 24 recibido: 5
+[INFO] 00:41:31:742 Broker/(11592:11833): Generando id para el mensaje del socket 24
+[INFO] 00:41:31:742 Broker/(11592:11833): El id generado es 18
+[INFO] 00:41:31:742 Broker/(11592:11833): Codigo de operacion recibido del socket cliente 24 corresponde a un GET
+[INFO] 00:41:31:742 Broker/(11592:11833): Recibiendo tamanio total
+[INFO] 00:41:31:742 Broker/(11592:11833): Tamanio total recibido: 19
+[INFO] 00:41:31:743 Broker/(11592:11833): Tamanio del pokemon recibido: 7
+[INFO] 00:41:31:743 Broker/(11592:11833): Nombre del pokemon recibido: gengar
+[INFO] 00:41:31:743 Broker/(11592:11833): Retornando id 18 al socket 24
+[INFO] 00:41:31:743 Broker/(11592:11833): Encolando el mensaje GET con id 18
+[INFO] 00:41:31:743 Broker/(11592:11833): Mensaje GET con id 18 encolado
+[INFO] 00:41:31:743 Broker/(11592:11835): Mensaje APPEARED de memoria con id 10 al cliente 1804289383 socket 18 enviado correctamente
+[INFO] 00:41:31:743 Broker/(11592:11835): ACK de cliente 1804289383 socket 18 recibido
+[INFO] 00:41:31:743 Broker/(11592:11834): ACK de cliente 1804289383 socket 18 recibido
+[INFO] 00:41:31:743 Broker/(11592:11815): Modulo con id 1804289383 agregado correctamente en la cola de APPEARED
+[INFO] 00:41:31:743 Broker/(11592:11837): Preparandose para enviar mensaje GET con id 15 al cliente 1804289383 socket 9
+[INFO] 00:41:31:743 Broker/(11592:11837): Enviando mensaje GET con id 15 al cliente 1804289383 socket 9
+[INFO] 00:41:31:746 Broker/(11592:11837): Mensaje GET con id 15 al cliente 1804289383 socket 9 enviado correctamente
+[INFO] 00:41:31:747 Broker/(11592:11837): ACK de cliente 1804289383 socket 9 recibido
+[INFO] 00:41:31:747 Broker/(11592:11598): Eliminando mensaje GET con id 15
+[INFO] 00:41:31:747 Broker/(11592:11598): Eliminado mensaje GET con id 15
+[INFO] 00:41:31:747 Broker/(11592:11598): Atendiendo mensaje GET con id 16
+[INFO] 00:41:31:747 Broker/(11592:11598): Compactando memoria
+[INFO] 00:41:31:747 Broker/(11592:11598): Moviendo registro de 0x86685e4 a 0x86685e0
+[INFO] 00:41:31:747 Broker/(11592:11598): Moviendo registro de 0x86685f5 a 0x86685f1
+[INFO] 00:41:31:747 Broker/(11592:11598): Moviendo registro de 0x8668605 a 0x8668601
+[INFO] 00:41:31:747 Broker/(11592:11598): Guardando mensaje con id 16 en particion 0x866860a
+[INFO] 00:41:31:747 Broker/(11592:11838): Preparandose para enviar mensaje GET con id 16 al cliente 1804289383 socket 9
+[INFO] 00:41:31:747 Broker/(11592:11838): Enviando mensaje GET con id 16 al cliente 1804289383 socket 9
+[INFO] 00:41:31:747 Broker/(11592:11838): Mensaje GET con id 16 al cliente 1804289383 socket 9 enviado correctamente
+[INFO] 00:41:34:990 Broker/(11592:11593): Socket cliente 25 aceptado
+[INFO] 00:41:34:990 Broker/(11592:11593): Socket cliente 26 aceptado
+[INFO] 00:41:34:991 Broker/(11592:11593): Socket cliente 27 aceptado
+[INFO] 00:41:34:991 Broker/(11592:11844): Recibiendo codigo de operacion de socket 25
+[INFO] 00:41:34:991 Broker/(11592:11845): Recibiendo codigo de operacion de socket 26
+[INFO] 00:41:34:991 Broker/(11592:11846): Recibiendo codigo de operacion de socket 27
+[INFO] 00:41:34:991 Broker/(11592:11844): Codigo de operacion de socket 25 recibido: 7
+[INFO] 00:41:34:991 Broker/(11592:11844): Generando id para el mensaje del socket 25
+[INFO] 00:41:34:991 Broker/(11592:11844): El id generado es 19
+[INFO] 00:41:34:992 Broker/(11592:11844): Codigo de operacion recibido del socket cliente 25 corresponde a un SUSCRIPCION
+[INFO] 00:41:34:992 Broker/(11592:11845): Codigo de operacion de socket 26 recibido: 7
+[INFO] 00:41:34:992 Broker/(11592:11844): Recibiendo tamanio total
+[INFO] 00:41:34:992 Broker/(11592:11846): Codigo de operacion de socket 27 recibido: 7
+[INFO] 00:41:34:992 Broker/(11592:11844): Tamanio total recibido: 16
+[INFO] 00:41:34:992 Broker/(11592:11844): Recibiendo id de cliente
+[INFO] 00:41:34:992 Broker/(11592:11593): Socket cliente 28 aceptado
+[INFO] 00:41:34:993 Broker/(11592:11844): Id de cliente recibido: 1804289383
+[INFO] 00:41:34:993 Broker/(11592:11845): Generando id para el mensaje del socket 26
+[INFO] 00:41:34:993 Broker/(11592:11845): El id generado es 20
+[INFO] 00:41:34:993 Broker/(11592:11845): Codigo de operacion recibido del socket cliente 26 corresponde a un SUSCRIPCION
+[INFO] 00:41:34:993 Broker/(11592:11845): Recibiendo tamanio total
+[INFO] 00:41:34:993 Broker/(11592:11845): Tamanio total recibido: 16
+[INFO] 00:41:34:993 Broker/(11592:11845): Recibiendo id de cliente
+[INFO] 00:41:34:994 Broker/(11592:11845): Id de cliente recibido: 1804289383
+[INFO] 00:41:34:994 Broker/(11592:11845): Recibiendo id de cola
+[INFO] 00:41:34:994 Broker/(11592:11593): Socket cliente 29 aceptado
+[INFO] 00:41:34:994 Broker/(11592:11845): Id de cola recibido: 14
+[INFO] 00:41:34:994 Broker/(11592:11593): Socket cliente 30 aceptado
+[INFO] 00:41:34:995 Broker/(11592:11593): Socket cliente 31 aceptado
+[INFO] 00:41:34:995 Broker/(11592:11593): Socket cliente 32 aceptado
+[INFO] 00:41:34:995 Broker/(11592:11846): Generando id para el mensaje del socket 27
+[INFO] 00:41:34:995 Broker/(11592:11846): El id generado es 21
+[INFO] 00:41:34:995 Broker/(11592:11846): Codigo de operacion recibido del socket cliente 27 corresponde a un SUSCRIPCION
+[INFO] 00:41:34:995 Broker/(11592:11846): Recibiendo tamanio total
+[INFO] 00:41:34:995 Broker/(11592:11846): Tamanio total recibido: 16
+[INFO] 00:41:34:995 Broker/(11592:11846): Recibiendo id de cliente
+[INFO] 00:41:34:995 Broker/(11592:11846): Id de cliente recibido: 1804289383
+[INFO] 00:41:34:995 Broker/(11592:11846): Recibiendo id de cola
+[INFO] 00:41:34:995 Broker/(11592:11846): Id de cola recibido: 16
+[INFO] 00:41:34:995 Broker/(11592:11846): Id de cola recibido del socket cliente 27 corresponde a la cola de LOCALIZED
+[INFO] 00:41:34:995 Broker/(11592:11845): Id de cola recibido del socket cliente 26 corresponde a la cola de CAUGHT
+[INFO] 00:41:34:995 Broker/(11592:11846): Tamanio tabla de segmentos: 5
+[WARNING] 00:41:34:996 Broker/(11592:11846): Registro NULL leido
+[WARNING] 00:41:34:996 Broker/(11592:11846): Registro NULL leido
+[WARNING] 00:41:34:996 Broker/(11592:11846): Registro NULL leido
+[WARNING] 00:41:34:996 Broker/(11592:11846): Registro NULL leido
+[WARNING] 00:41:34:996 Broker/(11592:11846): Registro NULL leido
+[WARNING] 00:41:34:996 Broker/(11592:11846): Registro NULL leido
+[WARNING] 00:41:34:996 Broker/(11592:11846): Registro NULL leido
+[WARNING] 00:41:34:996 Broker/(11592:11846): Registro NULL leido
+[WARNING] 00:41:34:996 Broker/(11592:11846): Registro NULL leido
+[WARNING] 00:41:34:996 Broker/(11592:11846): Registro NULL leido
+[WARNING] 00:41:34:996 Broker/(11592:11846): Registro NULL leido
+[INFO] 00:41:34:996 Broker/(11592:11846): No existen segmentos LOCALIZED a enviar al cliente 1804289383 socket 27
+[INFO] 00:41:34:996 Broker/(11592:11846): Modulo con id 1804289383 agregado correctamente en la cola de LOCALIZED
+[INFO] 00:41:34:996 Broker/(11592:11845): Tamanio tabla de segmentos: 5
+[WARNING] 00:41:34:996 Broker/(11592:11845): Registro NULL leido
+[WARNING] 00:41:34:996 Broker/(11592:11845): Registro NULL leido
+[WARNING] 00:41:34:996 Broker/(11592:11845): Registro NULL leido
+[WARNING] 00:41:34:996 Broker/(11592:11845): Registro NULL leido
+[WARNING] 00:41:34:996 Broker/(11592:11845): Registro NULL leido
+[WARNING] 00:41:34:996 Broker/(11592:11845): Registro NULL leido
+[WARNING] 00:41:34:996 Broker/(11592:11845): Registro NULL leido
+[WARNING] 00:41:34:996 Broker/(11592:11845): Registro NULL leido
+[WARNING] 00:41:34:997 Broker/(11592:11845): Registro NULL leido
+[WARNING] 00:41:34:997 Broker/(11592:11845): Registro NULL leido
+[WARNING] 00:41:34:997 Broker/(11592:11845): Registro NULL leido
+[INFO] 00:41:34:997 Broker/(11592:11845): No existen segmentos CAUGHT a enviar al cliente 1804289383 socket 26
+[INFO] 00:41:34:997 Broker/(11592:11845): Modulo con id 1804289383 agregado correctamente en la cola de CAUGHT
+[INFO] 00:41:34:997 Broker/(11592:11844): Recibiendo id de cola
+[INFO] 00:41:34:997 Broker/(11592:11844): Id de cola recibido: 12
+[INFO] 00:41:34:997 Broker/(11592:11844): Id de cola recibido del socket cliente 25 corresponde a la cola de APPEARED
+[INFO] 00:41:34:997 Broker/(11592:11844): Tamanio tabla de segmentos: 5
+[WARNING] 00:41:34:997 Broker/(11592:11844): Registro NULL leido
+[WARNING] 00:41:34:997 Broker/(11592:11844): Registro NULL leido
+[WARNING] 00:41:34:997 Broker/(11592:11844): Registro NULL leido
+[WARNING] 00:41:34:997 Broker/(11592:11844): Registro NULL leido
+[WARNING] 00:41:34:997 Broker/(11592:11844): Registro NULL leido
+[WARNING] 00:41:34:997 Broker/(11592:11844): Registro NULL leido
+[WARNING] 00:41:34:997 Broker/(11592:11844): Registro NULL leido
+[WARNING] 00:41:34:997 Broker/(11592:11844): Registro NULL leido
+[WARNING] 00:41:34:997 Broker/(11592:11844): Registro NULL leido
+[WARNING] 00:41:34:997 Broker/(11592:11844): Registro NULL leido
+[WARNING] 00:41:34:997 Broker/(11592:11844): Registro NULL leido
+[INFO] 00:41:34:997 Broker/(11592:11844): No existen segmentos APPEARED a enviar al cliente 1804289383 socket 25
+[INFO] 00:41:34:997 Broker/(11592:11844): Modulo con id 1804289383 agregado correctamente en la cola de APPEARED
+[INFO] 00:41:34:997 Broker/(11592:11862): Recibiendo codigo de operacion de socket 28
+[INFO] 00:41:34:997 Broker/(11592:11862): Codigo de operacion de socket 28 recibido: 5
+[INFO] 00:41:34:997 Broker/(11592:11862): Generando id para el mensaje del socket 28
+[INFO] 00:41:34:997 Broker/(11592:11862): El id generado es 22
+[INFO] 00:41:34:997 Broker/(11592:11862): Codigo de operacion recibido del socket cliente 28 corresponde a un GET
+[INFO] 00:41:34:997 Broker/(11592:11862): Recibiendo tamanio total
+[INFO] 00:41:34:997 Broker/(11592:11862): Tamanio total recibido: 20
+[INFO] 00:41:34:999 Broker/(11592:11866): Recibiendo codigo de operacion de socket 32
+[INFO] 00:41:34:999 Broker/(11592:11863): Recibiendo codigo de operacion de socket 29
+[INFO] 00:41:34:999 Broker/(11592:11864): Recibiendo codigo de operacion de socket 30
+[INFO] 00:41:34:999 Broker/(11592:11865): Recibiendo codigo de operacion de socket 31
+[INFO] 00:41:34:999 Broker/(11592:11862): Tamanio del pokemon recibido: 8
+[INFO] 00:41:34:999 Broker/(11592:11862): Nombre del pokemon recibido: jolteon
+[INFO] 00:41:34:999 Broker/(11592:11862): Retornando id 22 al socket 28
+[INFO] 00:41:34:999 Broker/(11592:11862): Encolando el mensaje GET con id 22
+[INFO] 00:41:34:0 Broker/(11592:11862): Mensaje GET con id 22 encolado
+[INFO] 00:41:34:0 Broker/(11592:11866): Codigo de operacion de socket 32 recibido: 5
+[INFO] 00:41:34:0 Broker/(11592:11866): Generando id para el mensaje del socket 32
+[INFO] 00:41:34:0 Broker/(11592:11866): El id generado es 23
+[INFO] 00:41:34:0 Broker/(11592:11866): Codigo de operacion recibido del socket cliente 32 corresponde a un GET
+[INFO] 00:41:34:0 Broker/(11592:11866): Recibiendo tamanio total
+[INFO] 00:41:34:0 Broker/(11592:11866): Tamanio total recibido: 20
+[INFO] 00:41:34:0 Broker/(11592:11866): Tamanio del pokemon recibido: 8
+[INFO] 00:41:34:0 Broker/(11592:11866): Nombre del pokemon recibido: flareon
+[INFO] 00:41:34:0 Broker/(11592:11866): Retornando id 23 al socket 32
+[INFO] 00:41:34:0 Broker/(11592:11864): Codigo de operacion de socket 30 recibido: 5
+[INFO] 00:41:34:0 Broker/(11592:11864): Generando id para el mensaje del socket 30
+[INFO] 00:41:34:0 Broker/(11592:11864): El id generado es 24
+[INFO] 00:41:34:0 Broker/(11592:11864): Codigo de operacion recibido del socket cliente 30 corresponde a un GET
+[INFO] 00:41:34:1 Broker/(11592:11864): Recibiendo tamanio total
+[INFO] 00:41:34:1 Broker/(11592:11864): Tamanio total recibido: 19
+[INFO] 00:41:34:1 Broker/(11592:11864): Tamanio del pokemon recibido: 7
+[INFO] 00:41:34:1 Broker/(11592:11864): Nombre del pokemon recibido: espeon
+[INFO] 00:41:34:1 Broker/(11592:11864): Retornando id 24 al socket 30
+[INFO] 00:41:34:1 Broker/(11592:11863): Codigo de operacion de socket 29 recibido: 5
+[INFO] 00:41:34:1 Broker/(11592:11863): Generando id para el mensaje del socket 29
+[INFO] 00:41:34:1 Broker/(11592:11863): El id generado es 25
+[INFO] 00:41:34:1 Broker/(11592:11863): Codigo de operacion recibido del socket cliente 29 corresponde a un GET
+[INFO] 00:41:34:1 Broker/(11592:11863): Recibiendo tamanio total
+[INFO] 00:41:34:1 Broker/(11592:11863): Tamanio total recibido: 21
+[INFO] 00:41:34:1 Broker/(11592:11863): Tamanio del pokemon recibido: 9
+[INFO] 00:41:34:1 Broker/(11592:11863): Nombre del pokemon recibido: vaporeon
+[INFO] 00:41:34:1 Broker/(11592:11863): Retornando id 25 al socket 29
+[INFO] 00:41:34:1 Broker/(11592:11865): Codigo de operacion de socket 31 recibido: 5
+[INFO] 00:41:34:1 Broker/(11592:11865): Generando id para el mensaje del socket 31
+[INFO] 00:41:34:1 Broker/(11592:11865): El id generado es 26
+[INFO] 00:41:34:1 Broker/(11592:11865): Codigo de operacion recibido del socket cliente 31 corresponde a un GET
+[INFO] 00:41:34:1 Broker/(11592:11865): Recibiendo tamanio total
+[INFO] 00:41:34:1 Broker/(11592:11865): Tamanio total recibido: 20
+[INFO] 00:41:34:1 Broker/(11592:11865): Tamanio del pokemon recibido: 8
+[INFO] 00:41:34:1 Broker/(11592:11865): Nombre del pokemon recibido: umbreon
+[INFO] 00:41:34:1 Broker/(11592:11865): Retornando id 26 al socket 31
+[INFO] 00:41:34:1 Broker/(11592:11865): Encolando el mensaje GET con id 26
+[INFO] 00:41:34:2 Broker/(11592:11865): Mensaje GET con id 26 encolado
+[INFO] 00:41:34:2 Broker/(11592:11863): Encolando el mensaje GET con id 25
+[INFO] 00:41:34:2 Broker/(11592:11863): Mensaje GET con id 25 encolado
+[INFO] 00:41:34:2 Broker/(11592:11864): Encolando el mensaje GET con id 24
+[INFO] 00:41:34:2 Broker/(11592:11864): Mensaje GET con id 24 encolado
+[INFO] 00:41:34:2 Broker/(11592:11866): Encolando el mensaje GET con id 23
+[INFO] 00:41:34:2 Broker/(11592:11866): Mensaje GET con id 23 encolado
+[INFO] 00:41:36:747 Broker/(11592:11593): Socket cliente 33 aceptado
+[INFO] 00:41:36:750 Broker/(11592:11838): ACK de cliente 1804289383 socket 9 recibido
+[INFO] 00:41:36:750 Broker/(11592:11598): Eliminando mensaje GET con id 16
+[INFO] 00:41:36:750 Broker/(11592:11598): Eliminado mensaje GET con id 16
+[INFO] 00:41:36:750 Broker/(11592:11598): Atendiendo mensaje GET con id 17
+[INFO] 00:41:36:750 Broker/(11592:11598): Se ha eliminado el registro con id 9 ubicado en 0x86685e0 de la tabla de segmentos
+[INFO] 00:41:36:750 Broker/(11592:11598): Guardando mensaje con id 17 en particion 0x86685e0
+[INFO] 00:41:36:759 Broker/(11592:11868): Preparandose para enviar mensaje GET con id 17 al cliente 1804289383 socket 9
+[INFO] 00:41:36:760 Broker/(11592:11868): Enviando mensaje GET con id 17 al cliente 1804289383 socket 9
+[INFO] 00:41:36:760 Broker/(11592:11867): Recibiendo codigo de operacion de socket 33
+[INFO] 00:41:36:760 Broker/(11592:11868): Mensaje GET con id 17 al cliente 1804289383 socket 9 enviado correctamente
+[WARNING] 00:41:36:761 Broker/(11592:11868): El cliente 1804289383 acaba de cerrar la conexion correspondiente al socket 9
+[INFO] 00:41:36:762 Broker/(11592:11868): Eliminando suscriptor con id 1804289383 y socket 9
+[INFO] 00:41:36:762 Broker/(11592:11598): Eliminando mensaje GET con id 17
+[INFO] 00:41:36:762 Broker/(11592:11598): Eliminado mensaje GET con id 17
+[INFO] 00:41:36:762 Broker/(11592:11598): Atendiendo mensaje GET con id 18
+[INFO] 00:41:36:762 Broker/(11592:11598): Guardando mensaje con id 18 en particion 0x86685e8
+[INFO] 00:41:36:762 Broker/(11592:11598): Eliminando mensaje GET con id 18
+[INFO] 00:41:36:763 Broker/(11592:11598): Eliminado mensaje GET con id 18
+[INFO] 00:41:36:763 Broker/(11592:11598): Atendiendo mensaje GET con id 22
+[INFO] 00:41:36:763 Broker/(11592:11598): Compactando memoria
+[INFO] 00:41:36:763 Broker/(11592:11598): Moviendo registro de 0x86685f1 a 0x86685ef
+[INFO] 00:41:36:763 Broker/(11592:11598): Moviendo registro de 0x8668601 a 0x86685ff
+[INFO] 00:41:36:763 Broker/(11592:11598): Moviendo registro de 0x866860a a 0x8668608
+[INFO] 00:41:36:763 Broker/(11592:11598): Se ha eliminado el registro con id 10 ubicado en 0x86685ef de la tabla de segmentos
+[INFO] 00:41:36:763 Broker/(11592:11598): Guardando mensaje con id 22 en particion 0x86685ef
+[INFO] 00:41:36:763 Broker/(11592:11598): Eliminando mensaje GET con id 22
+[INFO] 00:41:36:763 Broker/(11592:11598): Eliminado mensaje GET con id 22
+[INFO] 00:41:36:763 Broker/(11592:11598): Atendiendo mensaje GET con id 26
+[INFO] 00:41:36:763 Broker/(11592:11598): Compactando memoria
+[INFO] 00:41:36:764 Broker/(11592:11598): Moviendo registro de 0x86685ff a 0x86685f7
+[INFO] 00:41:36:764 Broker/(11592:11598): Moviendo registro de 0x8668608 a 0x8668600
+[INFO] 00:41:36:764 Broker/(11592:11598): Guardando mensaje con id 26 en particion 0x8668605
+[INFO] 00:41:36:764 Broker/(11592:11598): Eliminando mensaje GET con id 26
+[INFO] 00:41:36:764 Broker/(11592:11598): Eliminado mensaje GET con id 26
+[INFO] 00:41:36:764 Broker/(11592:11598): Atendiendo mensaje GET con id 25
+[INFO] 00:41:36:764 Broker/(11592:11598): Se ha eliminado el registro con id 11 ubicado en 0x86685d0 de la tabla de segmentos
+[INFO] 00:41:36:764 Broker/(11592:11598): Guardando mensaje con id 25 en particion 0x86685d0
+[INFO] 00:41:36:764 Broker/(11592:11598): Eliminando mensaje GET con id 25
+[INFO] 00:41:36:764 Broker/(11592:11598): Eliminado mensaje GET con id 25
+[INFO] 00:41:36:764 Broker/(11592:11598): Atendiendo mensaje GET con id 24
+[INFO] 00:41:36:765 Broker/(11592:11598): Compactando memoria
+[INFO] 00:41:36:765 Broker/(11592:11598): Moviendo registro de 0x86685e0 a 0x86685d9
+[INFO] 00:41:36:765 Broker/(11592:11598): Moviendo registro de 0x86685e8 a 0x86685e1
+[INFO] 00:41:36:765 Broker/(11592:11598): Moviendo registro de 0x86685ef a 0x86685e8
+[INFO] 00:41:36:765 Broker/(11592:11598): Moviendo registro de 0x86685f7 a 0x86685f0
+[INFO] 00:41:36:765 Broker/(11592:11598): Moviendo registro de 0x8668600 a 0x86685f9
+[INFO] 00:41:36:766 Broker/(11592:11598): Moviendo registro de 0x8668605 a 0x86685fe
+[INFO] 00:41:36:766 Broker/(11592:11598): Guardando mensaje con id 24 en particion 0x8668606
+[INFO] 00:41:36:766 Broker/(11592:11598): Eliminando mensaje GET con id 24
+[INFO] 00:41:36:767 Broker/(11592:11598): Eliminado mensaje GET con id 24
+[INFO] 00:41:36:767 Broker/(11592:11598): Atendiendo mensaje GET con id 23
+[INFO] 00:41:36:767 Broker/(11592:11598): Se ha eliminado el registro con id 15 ubicado en 0x86685f0 de la tabla de segmentos
+[INFO] 00:41:36:768 Broker/(11592:11598): Guardando mensaje con id 23 en particion 0x86685f0
+[INFO] 00:41:36:768 Broker/(11592:11867): Codigo de operacion de socket 33 recibido: 6
+[INFO] 00:41:36:768 Broker/(11592:11867): Generando id para el mensaje del socket 33
+[INFO] 00:41:36:768 Broker/(11592:11867): El id generado es 27
+[INFO] 00:41:36:768 Broker/(11592:11867): Codigo de operacion recibido del socket cliente 33 corresponde a un LOCALIZED
+[INFO] 00:41:36:768 Broker/(11592:11867): Recibiendo tamanio total
+[INFO] 00:41:36:768 Broker/(11592:11867): Tamanio total recibido: 29
+[INFO] 00:41:36:768 Broker/(11592:11867): Id correlativo recibido: 15
+[INFO] 00:41:36:768 Broker/(11592:11867): Tamanio del pokemon recibido: 9
+[INFO] 00:41:36:768 Broker/(11592:11867): Nombre del pokemon recibido: squirtle
+[INFO] 00:41:36:768 Broker/(11592:11867): Cantidad de coordenadas recibida: 1
+[INFO] 00:41:36:768 Broker/(11592:11867): Unidad de coordenada recibida: 5
+[INFO] 00:41:36:769 Broker/(11592:11867): Unidad de coordenada recibida: 2
+[INFO] 00:41:36:769 Broker/(11592:11867): Retornando id 27 al socket 33
+[INFO] 00:41:36:769 Broker/(11592:11867): Encolando el mensaje LOCALIZED con id 27
+[INFO] 00:41:36:769 Broker/(11592:11867): Mensaje LOCALIZED con id 27 encolado
+[INFO] 00:41:36:769 Broker/(11592:11599): Atendiendo mensaje LOCALIZED con id 27
+[INFO] 00:41:36:769 Broker/(11592:11599): Compactando memoria
+[INFO] 00:41:36:769 Broker/(11592:11599): Moviendo registro de 0x86685f9 a 0x86685f8
+[INFO] 00:41:36:769 Broker/(11592:11599): Moviendo registro de 0x86685fe a 0x86685fd
+[INFO] 00:41:36:770 Broker/(11592:11599): Moviendo registro de 0x8668606 a 0x8668605
+[INFO] 00:41:36:770 Broker/(11592:11599): Se ha eliminado el registro con id 16 ubicado en 0x86685f8 de la tabla de segmentos
+[INFO] 00:41:36:770 Broker/(11592:11599): Compactando memoria
+[INFO] 00:41:36:770 Broker/(11592:11599): Moviendo registro de 0x86685fd a 0x86685f8
+[INFO] 00:41:36:770 Broker/(11592:11599): Moviendo registro de 0x8668605 a 0x8668600
+[INFO] 00:41:36:770 Broker/(11592:11599): Se ha eliminado el registro con id 17 ubicado en 0x86685d9 de la tabla de segmentos
+[INFO] 00:41:36:771 Broker/(11592:11599): Compactando memoria
+[INFO] 00:41:36:771 Broker/(11592:11599): Moviendo registro de 0x86685e1 a 0x86685d9
+[INFO] 00:41:36:771 Broker/(11592:11599): Moviendo registro de 0x86685e8 a 0x86685e0
+[INFO] 00:41:36:771 Broker/(11592:11599): Moviendo registro de 0x86685f0 a 0x86685e8
+[INFO] 00:41:36:771 Broker/(11592:11599): Moviendo registro de 0x86685f8 a 0x86685f0
+[INFO] 00:41:36:771 Broker/(11592:11599): Moviendo registro de 0x8668600 a 0x86685f8
+[INFO] 00:41:36:772 Broker/(11592:11599): Se ha eliminado el registro con id 18 ubicado en 0x86685d9 de la tabla de segmentos
+[INFO] 00:41:36:772 Broker/(11592:11599): Compactando memoria
+[INFO] 00:41:36:772 Broker/(11592:11599): Moviendo registro de 0x86685e0 a 0x86685d9
+[INFO] 00:41:36:776 Broker/(11592:11599): Moviendo registro de 0x86685e8 a 0x86685e1
+[INFO] 00:41:36:776 Broker/(11592:11599): Moviendo registro de 0x86685f0 a 0x86685e9
+[INFO] 00:41:36:776 Broker/(11592:11599): Moviendo registro de 0x86685f8 a 0x86685f1
+[INFO] 00:41:36:777 Broker/(11592:11599): Guardando mensaje con id 27 en particion 0x86685f8
+[INFO] 00:41:36:781 Broker/(11592:11598): Eliminando mensaje GET con id 23
+[INFO] 00:41:36:781 Broker/(11592:11598): Eliminado mensaje GET con id 23
+[INFO] 00:45:46:455 Broker/(12067:12067): logger extenso iniciado
+[INFO] 00:45:46:457 Broker/(12067:12067): logger de la catedra iniciado
+[INFO] 00:45:46:457 Broker/(12067:12067): La IP es: 127.0.0.1
+[INFO] 00:45:46:458 Broker/(12067:12067): El puerto es: 4444
+[INFO] 00:45:46:459 Broker/(12067:12067): El tamanio de la memoria es 64
+[INFO] 00:45:46:462 Broker/(12067:12067): La frecuencia de la compactacion es 1
+[INFO] 00:45:46:462 Broker/(12067:12067): El tamanio minimo de la particion es 4
+[INFO] 00:45:46:462 Broker/(12067:12067): El algoritmo de busqueda de particiones libres es FF
+[INFO] 00:45:46:462 Broker/(12067:12067): El algoritmo de reemplazo de particiones es FIFO
+[INFO] 00:45:46:463 Broker/(12067:12067): Iniciando colas
+[INFO] 00:45:46:463 Broker/(12067:12067): Colas iniciadas
+[INFO] 00:45:46:463 Broker/(12067:12067): Iniciando listas de suscriptores
+[INFO] 00:45:46:463 Broker/(12067:12067): Listas de suscriptores iniciadas
+[INFO] 00:45:46:463 Broker/(12067:12067): Iniciando listas de ids respondidos
+[INFO] 00:45:46:463 Broker/(12067:12067): Listas de ids respondidos iniciadas
+[INFO] 00:45:46:463 Broker/(12067:12067): Iniciando estructuras de colas
+[INFO] 00:45:46:463 Broker/(12067:12067): Estructuras de colas iniciadas
+[INFO] 00:45:46:463 Broker/(12067:12067): Iniciando limites de colas
+[INFO] 00:45:46:463 Broker/(12067:12067): Limites de colas iniciadas
+[INFO] 00:45:46:463 Broker/(12067:12067): Iniciando semaforos de limite
+[INFO] 00:45:46:463 Broker/(12067:12067): Semaforos de limite iniciados
+[INFO] 00:45:46:464 Broker/(12067:12067): Iniciando semaforos de mensajes
+[INFO] 00:45:46:464 Broker/(12067:12067): Semaforos de mensajes iniciados
+[INFO] 00:45:46:464 Broker/(12067:12067): Iniciando semaforos de colas
+[INFO] 00:45:46:464 Broker/(12067:12067): Semaforos de colas iniciados
+[INFO] 00:45:46:464 Broker/(12067:12067): Iniciando semaforos de listas
+[INFO] 00:45:46:464 Broker/(12067:12067): Semaforos de listas iniciados
+[INFO] 00:45:46:464 Broker/(12067:12067): Iniciando semaforos de ids respondidos
+[INFO] 00:45:46:464 Broker/(12067:12067): Semaforos de ids respondidos iniciados
+[INFO] 00:45:46:464 Broker/(12067:12067): Creando generador id
+[INFO] 00:45:46:464 Broker/(12067:12067): Generador id creado
+[INFO] 00:45:46:464 Broker/(12067:12067): Levantando servidor
+[INFO] 00:45:46:464 Broker/(12067:12067): Servidor levantado
+[INFO] 00:45:46:465 Broker/(12067:12073): Atendiendo cola GET
+[INFO] 00:45:46:465 Broker/(12067:12074): Atendiendo cola LOCALIZED
+[INFO] 00:45:46:465 Broker/(12067:12072): Atendiendo cola CAUGHT
+[INFO] 00:45:46:466 Broker/(12067:12071): Atendiendo cola CATCH
+[INFO] 00:45:46:466 Broker/(12067:12070): Atendiendo cola APPEARED
+[INFO] 00:45:46:466 Broker/(12067:12069): Atendiendo cola NEW
+[INFO] 00:45:46:466 Broker/(12067:12068): Esperando clientes en socket 5
+[INFO] 00:45:51:555 Broker/(12067:12068): Socket cliente 7 aceptado
+[INFO] 00:45:51:556 Broker/(12067:12068): Socket cliente 8 aceptado
+[INFO] 00:45:51:556 Broker/(12067:12068): Socket cliente 9 aceptado
+[INFO] 00:45:51:560 Broker/(12067:12085): Recibiendo codigo de operacion de socket 9
+[INFO] 00:45:51:561 Broker/(12067:12085): Codigo de operacion de socket 9 recibido: 7
+[INFO] 00:45:51:561 Broker/(12067:12085): Generando id para el mensaje del socket 9
+[INFO] 00:45:51:561 Broker/(12067:12085): El id generado es 1
+[INFO] 00:45:51:561 Broker/(12067:12085): Codigo de operacion recibido del socket cliente 9 corresponde a un SUSCRIPCION
+[INFO] 00:45:51:561 Broker/(12067:12084): Recibiendo codigo de operacion de socket 8
+[INFO] 00:45:51:561 Broker/(12067:12085): Recibiendo tamanio total
+[INFO] 00:45:51:561 Broker/(12067:12085): Tamanio total recibido: 16
+[INFO] 00:45:51:561 Broker/(12067:12085): Recibiendo id de cliente
+[INFO] 00:45:51:561 Broker/(12067:12085): Id de cliente recibido: 1804289383
+[INFO] 00:45:51:561 Broker/(12067:12085): Recibiendo id de cola
+[INFO] 00:45:51:562 Broker/(12067:12085): Id de cola recibido: 15
+[INFO] 00:45:51:562 Broker/(12067:12085): Id de cola recibido del socket cliente 9 corresponde a la cola de GET
+[INFO] 00:45:51:562 Broker/(12067:12085): Tamanio tabla de segmentos: 0
+[INFO] 00:45:51:562 Broker/(12067:12083): Recibiendo codigo de operacion de socket 7
+[INFO] 00:45:51:562 Broker/(12067:12085): No existen segmentos GET a enviar al cliente 1804289383 socket 9
+[INFO] 00:45:51:562 Broker/(12067:12085): Modulo con id 1804289383 agregado correctamente en la cola de GET
+[INFO] 00:45:51:562 Broker/(12067:12083): Codigo de operacion de socket 7 recibido: 7
+[INFO] 00:45:51:562 Broker/(12067:12083): Generando id para el mensaje del socket 7
+[INFO] 00:45:51:563 Broker/(12067:12083): El id generado es 2
+[INFO] 00:45:51:563 Broker/(12067:12083): Codigo de operacion recibido del socket cliente 7 corresponde a un SUSCRIPCION
+[INFO] 00:45:51:563 Broker/(12067:12083): Recibiendo tamanio total
+[INFO] 00:45:51:563 Broker/(12067:12083): Tamanio total recibido: 16
+[INFO] 00:45:51:563 Broker/(12067:12083): Recibiendo id de cliente
+[INFO] 00:45:51:563 Broker/(12067:12083): Id de cliente recibido: 1804289383
+[INFO] 00:45:51:563 Broker/(12067:12083): Recibiendo id de cola
+[INFO] 00:45:51:563 Broker/(12067:12083): Id de cola recibido: 11
+[INFO] 00:45:51:563 Broker/(12067:12083): Id de cola recibido del socket cliente 7 corresponde a la cola de NEW
+[INFO] 00:45:51:564 Broker/(12067:12083): Tamanio tabla de segmentos: 0
+[INFO] 00:45:51:564 Broker/(12067:12083): No existen segmentos NEW a enviar al cliente 1804289383 socket 7
+[INFO] 00:45:51:564 Broker/(12067:12083): Modulo con id 1804289383 agregado correctamente en la cola de NEW
+[INFO] 00:45:51:564 Broker/(12067:12084): Codigo de operacion de socket 8 recibido: 7
+[INFO] 00:45:51:564 Broker/(12067:12084): Generando id para el mensaje del socket 8
+[INFO] 00:45:51:564 Broker/(12067:12084): El id generado es 3
+[INFO] 00:45:51:564 Broker/(12067:12084): Codigo de operacion recibido del socket cliente 8 corresponde a un SUSCRIPCION
+[INFO] 00:45:51:564 Broker/(12067:12084): Recibiendo tamanio total
+[INFO] 00:45:51:564 Broker/(12067:12084): Tamanio total recibido: 16
+[INFO] 00:45:51:564 Broker/(12067:12084): Recibiendo id de cliente
+[INFO] 00:45:51:564 Broker/(12067:12084): Id de cliente recibido: 1804289383
+[INFO] 00:45:51:564 Broker/(12067:12084): Recibiendo id de cola
+[INFO] 00:45:51:564 Broker/(12067:12084): Id de cola recibido: 13
+[INFO] 00:45:51:564 Broker/(12067:12084): Id de cola recibido del socket cliente 8 corresponde a la cola de CATCH
+[INFO] 00:45:51:564 Broker/(12067:12084): Tamanio tabla de segmentos: 0
+[INFO] 00:45:51:564 Broker/(12067:12084): No existen segmentos CATCH a enviar al cliente 1804289383 socket 8
+[INFO] 00:45:51:564 Broker/(12067:12084): Modulo con id 1804289383 agregado correctamente en la cola de CATCH
+[INFO] 00:46:07:752 Broker/(12067:12068): Socket cliente 10 aceptado
+[INFO] 00:46:07:753 Broker/(12067:12190): Recibiendo codigo de operacion de socket 10
+[INFO] 00:46:07:754 Broker/(12067:12190): Codigo de operacion de socket 10 recibido: 1
+[INFO] 00:46:07:754 Broker/(12067:12190): Generando id para el mensaje del socket 10
+[INFO] 00:46:07:754 Broker/(12067:12190): El id generado es 4
+[INFO] 00:46:07:754 Broker/(12067:12190): Codigo de operacion recibido del socket cliente 10 corresponde a un NEW
+[INFO] 00:46:07:754 Broker/(12067:12190): Recibiendo tamanio total
+[INFO] 00:46:07:754 Broker/(12067:12190): Tamanio total recibido: 24
+[INFO] 00:46:07:754 Broker/(12067:12190): Tamanio del pokemon recibido: 8
+[INFO] 00:46:07:754 Broker/(12067:12190): Nombre del pokemon recibido: Pikachu
+[INFO] 00:46:07:754 Broker/(12067:12190): Posicion X recibida: 9
+[INFO] 00:46:07:755 Broker/(12067:12190): Posicion Y recibida: 9
+[INFO] 00:46:07:755 Broker/(12067:12190): Cantidad recibida: 1
+[INFO] 00:46:07:755 Broker/(12067:12190): Retornando id 4 al socket 10
+[INFO] 00:46:07:755 Broker/(12067:12190): Encolando el mensaje NEW con id 4
+[INFO] 00:46:07:755 Broker/(12067:12190): Mensaje NEW con id 4 encolado
+[INFO] 00:46:07:755 Broker/(12067:12069): Atendiendo mensaje NEW con id 4
+[INFO] 00:46:07:755 Broker/(12067:12069): Guardando mensaje con id 4 en particion 0x810e5d0
+[INFO] 00:46:07:756 Broker/(12067:12192): Preparandose para enviar mensaje NEW con id 4 al cliente 1804289383 socket 7
+[INFO] 00:46:07:757 Broker/(12067:12192): Enviando mensaje NEW con id 4 al cliente 1804289383 socket 7
+[INFO] 00:46:07:758 Broker/(12067:12192): Mensaje NEW con id 4 al cliente 1804289383 socket 7 enviado correctamente
+[INFO] 00:46:07:766 Broker/(12067:12192): ACK de cliente 1804289383 socket 7 recibido
+[INFO] 00:46:07:766 Broker/(12067:12068): Socket cliente 11 aceptado
+[INFO] 00:46:07:766 Broker/(12067:12069): Eliminando mensaje NEW con id 4
+[INFO] 00:46:07:766 Broker/(12067:12069): Eliminado mensaje NEW con id 4
+[INFO] 00:46:07:768 Broker/(12067:12193): Recibiendo codigo de operacion de socket 11
+[INFO] 00:46:07:768 Broker/(12067:12193): Codigo de operacion de socket 11 recibido: 1
+[INFO] 00:46:07:768 Broker/(12067:12193): Generando id para el mensaje del socket 11
+[INFO] 00:46:07:768 Broker/(12067:12193): El id generado es 5
+[INFO] 00:46:07:768 Broker/(12067:12193): Codigo de operacion recibido del socket cliente 11 corresponde a un NEW
+[INFO] 00:46:07:768 Broker/(12067:12193): Recibiendo tamanio total
+[INFO] 00:46:07:768 Broker/(12067:12193): Tamanio total recibido: 25
+[INFO] 00:46:07:768 Broker/(12067:12193): Tamanio del pokemon recibido: 9
+[INFO] 00:46:07:769 Broker/(12067:12193): Nombre del pokemon recibido: Squirtle
+[INFO] 00:46:07:769 Broker/(12067:12193): Posicion X recibida: 5
+[INFO] 00:46:07:769 Broker/(12067:12193): Posicion Y recibida: 2
+[INFO] 00:46:07:769 Broker/(12067:12193): Cantidad recibida: 1
+[INFO] 00:46:07:769 Broker/(12067:12193): Retornando id 5 al socket 11
+[INFO] 00:46:07:769 Broker/(12067:12193): Encolando el mensaje NEW con id 5
+[INFO] 00:46:07:769 Broker/(12067:12193): Mensaje NEW con id 5 encolado
+[INFO] 00:46:07:769 Broker/(12067:12069): Atendiendo mensaje NEW con id 5
+[INFO] 00:46:07:769 Broker/(12067:12069): Guardando mensaje con id 5 en particion 0x810e5e4
+[INFO] 00:46:07:770 Broker/(12067:12195): Preparandose para enviar mensaje NEW con id 5 al cliente 1804289383 socket 7
+[INFO] 00:46:07:770 Broker/(12067:12195): Enviando mensaje NEW con id 5 al cliente 1804289383 socket 7
+[INFO] 00:46:07:770 Broker/(12067:12195): Mensaje NEW con id 5 al cliente 1804289383 socket 7 enviado correctamente
+[INFO] 00:46:07:771 Broker/(12067:12068): Socket cliente 12 aceptado
+[INFO] 00:46:07:772 Broker/(12067:12196): Recibiendo codigo de operacion de socket 12
+[INFO] 00:46:07:772 Broker/(12067:12196): Codigo de operacion de socket 12 recibido: 1
+[INFO] 00:46:07:772 Broker/(12067:12196): Generando id para el mensaje del socket 12
+[INFO] 00:46:07:772 Broker/(12067:12196): El id generado es 6
+[INFO] 00:46:07:772 Broker/(12067:12196): Codigo de operacion recibido del socket cliente 12 corresponde a un NEW
+[INFO] 00:46:07:773 Broker/(12067:12196): Recibiendo tamanio total
+[INFO] 00:46:07:773 Broker/(12067:12196): Tamanio total recibido: 24
+[INFO] 00:46:07:773 Broker/(12067:12196): Tamanio del pokemon recibido: 8
+[INFO] 00:46:07:773 Broker/(12067:12196): Nombre del pokemon recibido: Jolteon
+[INFO] 00:46:07:773 Broker/(12067:12196): Posicion X recibida: 2
+[INFO] 00:46:07:773 Broker/(12067:12196): Posicion Y recibida: 2
+[INFO] 00:46:07:773 Broker/(12067:12196): Cantidad recibida: 1
+[INFO] 00:46:07:773 Broker/(12067:12196): Retornando id 6 al socket 12
+[INFO] 00:46:07:773 Broker/(12067:12196): Encolando el mensaje NEW con id 6
+[INFO] 00:46:07:773 Broker/(12067:12196): Mensaje NEW con id 6 encolado
+[INFO] 00:46:07:778 Broker/(12067:12068): Socket cliente 13 aceptado
+[INFO] 00:46:07:784 Broker/(12067:12198): Recibiendo codigo de operacion de socket 13
+[INFO] 00:46:07:784 Broker/(12067:12198): Codigo de operacion de socket 13 recibido: 1
+[INFO] 00:46:07:784 Broker/(12067:12198): Generando id para el mensaje del socket 13
+[INFO] 00:46:07:784 Broker/(12067:12198): El id generado es 7
+[INFO] 00:46:07:784 Broker/(12067:12198): Codigo de operacion recibido del socket cliente 13 corresponde a un NEW
+[INFO] 00:46:07:784 Broker/(12067:12198): Recibiendo tamanio total
+[INFO] 00:46:07:784 Broker/(12067:12198): Tamanio total recibido: 24
+[INFO] 00:46:07:785 Broker/(12067:12198): Tamanio del pokemon recibido: 8
+[INFO] 00:46:07:785 Broker/(12067:12198): Nombre del pokemon recibido: Flareon
+[INFO] 00:46:07:785 Broker/(12067:12198): Posicion X recibida: 4
+[INFO] 00:46:07:785 Broker/(12067:12198): Posicion Y recibida: 6
+[INFO] 00:46:07:785 Broker/(12067:12198): Cantidad recibida: 1
+[INFO] 00:46:07:785 Broker/(12067:12198): Retornando id 7 al socket 13
+[INFO] 00:46:07:785 Broker/(12067:12198): Encolando el mensaje NEW con id 7
+[INFO] 00:46:07:785 Broker/(12067:12198): Mensaje NEW con id 7 encolado
+[INFO] 00:46:12:766 Broker/(12067:12068): Socket cliente 14 aceptado
+[INFO] 00:46:12:768 Broker/(12067:12195): ACK de cliente 1804289383 socket 7 recibido
+[INFO] 00:46:12:768 Broker/(12067:12069): Eliminando mensaje NEW con id 5
+[INFO] 00:46:12:768 Broker/(12067:12069): Eliminado mensaje NEW con id 5
+[INFO] 00:46:12:768 Broker/(12067:12069): Atendiendo mensaje NEW con id 6
+[INFO] 00:46:12:768 Broker/(12067:12069): Guardando mensaje con id 6 en particion 0x810e5f9
+[INFO] 00:46:12:769 Broker/(12067:12200): Preparandose para enviar mensaje NEW con id 6 al cliente 1804289383 socket 7
+[INFO] 00:46:12:769 Broker/(12067:12200): Enviando mensaje NEW con id 6 al cliente 1804289383 socket 7
+[INFO] 00:46:12:770 Broker/(12067:12200): Mensaje NEW con id 6 al cliente 1804289383 socket 7 enviado correctamente
+[INFO] 00:46:12:771 Broker/(12067:12199): Recibiendo codigo de operacion de socket 14
+[INFO] 00:46:12:771 Broker/(12067:12199): Codigo de operacion de socket 14 recibido: 2
+[INFO] 00:46:12:771 Broker/(12067:12199): Generando id para el mensaje del socket 14
+[INFO] 00:46:12:771 Broker/(12067:12199): El id generado es 8
+[INFO] 00:46:12:771 Broker/(12067:12199): Codigo de operacion recibido del socket cliente 14 corresponde a un APPEARED
+[INFO] 00:46:12:771 Broker/(12067:12199): Recibiendo tamanio total
+[INFO] 00:46:12:771 Broker/(12067:12199): Tamanio total recibido: 24
+[INFO] 00:46:12:771 Broker/(12067:12199): Id correlativo recibido: 4
+[INFO] 00:46:12:771 Broker/(12067:12199): Tamanio del pokemon recibido: 8
+[INFO] 00:46:12:771 Broker/(12067:12199): Nombre del pokemon recibido: pikachu
+[INFO] 00:46:12:772 Broker/(12067:12199): Posicion X recibida: 9
+[INFO] 00:46:12:772 Broker/(12067:12199): Posicion Y recibida: 9
+[INFO] 00:46:12:772 Broker/(12067:12199): Retornando id 8 al socket 14
+[INFO] 00:46:12:772 Broker/(12067:12199): Encolando el mensaje APPEARED con id 8
+[INFO] 00:46:12:772 Broker/(12067:12199): Mensaje APPEARED con id 8 encolado
+[INFO] 00:46:12:772 Broker/(12067:12070): Atendiendo mensaje APPEARED con id 8
+[INFO] 00:46:12:772 Broker/(12067:12070): Se ha eliminado el registro con id 4 ubicado en 0x810e5d0 de la tabla de segmentos
+[INFO] 00:46:12:772 Broker/(12067:12070): Guardando mensaje con id 8 en particion 0x810e5d0
+[INFO] 00:46:12:772 Broker/(12067:12070): Eliminando mensaje APPEARED con id 8
+[INFO] 00:46:12:772 Broker/(12067:12070): Eliminado mensaje APPEARED con id 8
+[INFO] 00:46:17:771 Broker/(12067:12068): Socket cliente 15 aceptado
+[INFO] 00:46:17:777 Broker/(12067:12200): ACK de cliente 1804289383 socket 7 recibido
+[INFO] 00:46:17:778 Broker/(12067:12069): Eliminando mensaje NEW con id 6
+[INFO] 00:46:17:778 Broker/(12067:12069): Eliminado mensaje NEW con id 6
+[INFO] 00:46:17:778 Broker/(12067:12069): Atendiendo mensaje NEW con id 7
+[INFO] 00:46:17:778 Broker/(12067:12069): Compactando memoria
+[INFO] 00:46:17:778 Broker/(12067:12069): Moviendo registro de 0x810e5e4 a 0x810e5e0
+[INFO] 00:46:17:778 Broker/(12067:12069): Moviendo registro de 0x810e5f9 a 0x810e5f5
+[INFO] 00:46:17:778 Broker/(12067:12069): Se ha eliminado el registro con id 5 ubicado en 0x810e5e0 de la tabla de segmentos
+[INFO] 00:46:17:778 Broker/(12067:12069): Guardando mensaje con id 7 en particion 0x810e5e0
+[INFO] 00:46:17:780 Broker/(12067:12202): Preparandose para enviar mensaje NEW con id 7 al cliente 1804289383 socket 7
+[INFO] 00:46:17:780 Broker/(12067:12202): Enviando mensaje NEW con id 7 al cliente 1804289383 socket 7
+[INFO] 00:46:17:789 Broker/(12067:12202): Mensaje NEW con id 7 al cliente 1804289383 socket 7 enviado correctamente
+[INFO] 00:46:17:790 Broker/(12067:12201): Recibiendo codigo de operacion de socket 15
+[INFO] 00:46:17:790 Broker/(12067:12201): Codigo de operacion de socket 15 recibido: 2
+[INFO] 00:46:17:790 Broker/(12067:12201): Generando id para el mensaje del socket 15
+[INFO] 00:46:17:790 Broker/(12067:12201): El id generado es 9
+[INFO] 00:46:17:790 Broker/(12067:12201): Codigo de operacion recibido del socket cliente 15 corresponde a un APPEARED
+[INFO] 00:46:17:790 Broker/(12067:12201): Recibiendo tamanio total
+[INFO] 00:46:17:790 Broker/(12067:12201): Tamanio total recibido: 25
+[INFO] 00:46:17:790 Broker/(12067:12201): Id correlativo recibido: 5
+[INFO] 00:46:17:790 Broker/(12067:12201): Tamanio del pokemon recibido: 9
+[INFO] 00:46:17:790 Broker/(12067:12201): Nombre del pokemon recibido: squirtle
+[INFO] 00:46:17:790 Broker/(12067:12201): Posicion X recibida: 5
+[INFO] 00:46:17:791 Broker/(12067:12201): Posicion Y recibida: 2
+[INFO] 00:46:17:791 Broker/(12067:12201): Retornando id 9 al socket 15
+[INFO] 00:46:17:791 Broker/(12067:12201): Encolando el mensaje APPEARED con id 9
+[INFO] 00:46:17:791 Broker/(12067:12201): Mensaje APPEARED con id 9 encolado
+[INFO] 00:46:17:791 Broker/(12067:12070): Atendiendo mensaje APPEARED con id 9
+[INFO] 00:46:17:791 Broker/(12067:12070): Compactando memoria
+[INFO] 00:46:17:791 Broker/(12067:12070): Moviendo registro de 0x810e5f5 a 0x810e5f4
+[INFO] 00:46:17:791 Broker/(12067:12070): Se ha eliminado el registro con id 6 ubicado en 0x810e5f4 de la tabla de segmentos
+[INFO] 00:46:17:791 Broker/(12067:12070): Guardando mensaje con id 9 en particion 0x810e5f4
+[INFO] 00:46:17:791 Broker/(12067:12070): Eliminando mensaje APPEARED con id 9
+[INFO] 00:46:17:791 Broker/(12067:12070): Eliminado mensaje APPEARED con id 9
+[INFO] 00:46:22:791 Broker/(12067:12068): Socket cliente 16 aceptado
+[INFO] 00:46:22:793 Broker/(12067:12202): ACK de cliente 1804289383 socket 7 recibido
+[INFO] 00:46:22:793 Broker/(12067:12069): Eliminando mensaje NEW con id 7
+[INFO] 00:46:22:793 Broker/(12067:12069): Eliminado mensaje NEW con id 7
+[INFO] 00:46:22:793 Broker/(12067:12203): Recibiendo codigo de operacion de socket 16
+[INFO] 00:46:22:793 Broker/(12067:12203): Codigo de operacion de socket 16 recibido: 2
+[INFO] 00:46:22:793 Broker/(12067:12203): Generando id para el mensaje del socket 16
+[INFO] 00:46:22:794 Broker/(12067:12203): El id generado es 10
+[INFO] 00:46:22:794 Broker/(12067:12203): Codigo de operacion recibido del socket cliente 16 corresponde a un APPEARED
+[INFO] 00:46:22:794 Broker/(12067:12203): Recibiendo tamanio total
+[INFO] 00:46:22:795 Broker/(12067:12203): Tamanio total recibido: 24
+[INFO] 00:46:22:795 Broker/(12067:12203): Id correlativo recibido: 6
+[INFO] 00:46:22:795 Broker/(12067:12203): Tamanio del pokemon recibido: 8
+[INFO] 00:46:22:796 Broker/(12067:12203): Nombre del pokemon recibido: jolteon
+[INFO] 00:46:22:796 Broker/(12067:12203): Posicion X recibida: 2
+[INFO] 00:46:22:796 Broker/(12067:12203): Posicion Y recibida: 2
+[INFO] 00:46:22:796 Broker/(12067:12203): Retornando id 10 al socket 16
+[INFO] 00:46:22:796 Broker/(12067:12203): Encolando el mensaje APPEARED con id 10
+[INFO] 00:46:22:796 Broker/(12067:12203): Mensaje APPEARED con id 10 encolado
+[INFO] 00:46:22:796 Broker/(12067:12070): Atendiendo mensaje APPEARED con id 10
+[INFO] 00:46:22:796 Broker/(12067:12070): Compactando memoria
+[INFO] 00:46:22:796 Broker/(12067:12070): Se ha eliminado el registro con id 8 ubicado en 0x810e5d0 de la tabla de segmentos
+[INFO] 00:46:22:796 Broker/(12067:12070): Compactando memoria
+[INFO] 00:46:22:796 Broker/(12067:12070): Moviendo registro de 0x810e5e0 a 0x810e5d0
+[INFO] 00:46:22:796 Broker/(12067:12070): Moviendo registro de 0x810e5f4 a 0x810e5e4
+[INFO] 00:46:22:796 Broker/(12067:12070): Guardando mensaje con id 10 en particion 0x810e5f5
+[INFO] 00:46:22:796 Broker/(12067:12070): Eliminando mensaje APPEARED con id 10
+[INFO] 00:46:22:796 Broker/(12067:12070): Eliminado mensaje APPEARED con id 10
+[INFO] 00:46:27:796 Broker/(12067:12068): Socket cliente 17 aceptado
+[INFO] 00:46:27:802 Broker/(12067:12204): Recibiendo codigo de operacion de socket 17
+[INFO] 00:46:27:802 Broker/(12067:12204): Codigo de operacion de socket 17 recibido: 2
+[INFO] 00:46:27:803 Broker/(12067:12204): Generando id para el mensaje del socket 17
+[INFO] 00:46:27:803 Broker/(12067:12204): El id generado es 11
+[INFO] 00:46:27:803 Broker/(12067:12204): Codigo de operacion recibido del socket cliente 17 corresponde a un APPEARED
+[INFO] 00:46:27:803 Broker/(12067:12204): Recibiendo tamanio total
+[INFO] 00:46:27:804 Broker/(12067:12204): Tamanio total recibido: 24
+[INFO] 00:46:27:804 Broker/(12067:12204): Id correlativo recibido: 7
+[INFO] 00:46:27:804 Broker/(12067:12204): Tamanio del pokemon recibido: 8
+[INFO] 00:46:27:805 Broker/(12067:12204): Nombre del pokemon recibido: flareon
+[INFO] 00:46:27:805 Broker/(12067:12204): Posicion X recibida: 4
+[INFO] 00:46:27:805 Broker/(12067:12204): Posicion Y recibida: 6
+[INFO] 00:46:27:806 Broker/(12067:12204): Retornando id 11 al socket 17
+[INFO] 00:46:27:806 Broker/(12067:12204): Encolando el mensaje APPEARED con id 11
+[INFO] 00:46:27:806 Broker/(12067:12204): Mensaje APPEARED con id 11 encolado
+[INFO] 00:46:27:807 Broker/(12067:12070): Atendiendo mensaje APPEARED con id 11
+[INFO] 00:46:27:807 Broker/(12067:12070): Se ha eliminado el registro con id 7 ubicado en 0x810e5d0 de la tabla de segmentos
+[INFO] 00:46:27:807 Broker/(12067:12070): Guardando mensaje con id 11 en particion 0x810e5d0
+[INFO] 00:46:27:807 Broker/(12067:12070): Eliminando mensaje APPEARED con id 11
+[INFO] 00:46:27:807 Broker/(12067:12070): Eliminado mensaje APPEARED con id 11
+[INFO] 00:46:48:225 Broker/(12067:12068): Socket cliente 18 aceptado
+[INFO] 00:46:48:225 Broker/(12067:12068): Socket cliente 19 aceptado
+[INFO] 00:46:48:225 Broker/(12067:12068): Socket cliente 20 aceptado
+[INFO] 00:46:48:226 Broker/(12067:12212): Recibiendo codigo de operacion de socket 18
+[INFO] 00:46:48:226 Broker/(12067:12213): Recibiendo codigo de operacion de socket 19
+[INFO] 00:46:48:226 Broker/(12067:12214): Recibiendo codigo de operacion de socket 20
+[INFO] 00:46:48:226 Broker/(12067:12212): Codigo de operacion de socket 18 recibido: 7
+[INFO] 00:46:48:226 Broker/(12067:12212): Generando id para el mensaje del socket 18
+[INFO] 00:46:48:226 Broker/(12067:12212): El id generado es 12
+[INFO] 00:46:48:226 Broker/(12067:12212): Codigo de operacion recibido del socket cliente 18 corresponde a un SUSCRIPCION
+[INFO] 00:46:48:227 Broker/(12067:12213): Codigo de operacion de socket 19 recibido: 7
+[INFO] 00:46:48:227 Broker/(12067:12214): Codigo de operacion de socket 20 recibido: 7
+[INFO] 00:46:48:227 Broker/(12067:12212): Recibiendo tamanio total
+[INFO] 00:46:48:227 Broker/(12067:12068): Socket cliente 21 aceptado
+[INFO] 00:46:48:227 Broker/(12067:12212): Tamanio total recibido: 16
+[INFO] 00:46:48:227 Broker/(12067:12214): Generando id para el mensaje del socket 20
+[INFO] 00:46:48:227 Broker/(12067:12214): El id generado es 13
+[INFO] 00:46:48:228 Broker/(12067:12214): Codigo de operacion recibido del socket cliente 20 corresponde a un SUSCRIPCION
+[INFO] 00:46:48:228 Broker/(12067:12214): Recibiendo tamanio total
+[INFO] 00:46:48:228 Broker/(12067:12212): Recibiendo id de cliente
+[INFO] 00:46:48:228 Broker/(12067:12214): Tamanio total recibido: 16
+[INFO] 00:46:48:228 Broker/(12067:12214): Recibiendo id de cliente
+[INFO] 00:46:48:228 Broker/(12067:12214): Id de cliente recibido: 1804289383
+[INFO] 00:46:48:228 Broker/(12067:12068): Socket cliente 22 aceptado
+[INFO] 00:46:48:228 Broker/(12067:12214): Recibiendo id de cola
+[INFO] 00:46:48:229 Broker/(12067:12068): Socket cliente 23 aceptado
+[INFO] 00:46:48:229 Broker/(12067:12068): Socket cliente 24 aceptado
+[INFO] 00:46:48:229 Broker/(12067:12212): Id de cliente recibido: 1804289383
+[INFO] 00:46:48:229 Broker/(12067:12212): Recibiendo id de cola
+[INFO] 00:46:48:232 Broker/(12067:12212): Id de cola recibido: 12
+[INFO] 00:46:48:232 Broker/(12067:12212): Id de cola recibido del socket cliente 18 corresponde a la cola de APPEARED
+[INFO] 00:46:48:232 Broker/(12067:12212): Tamanio tabla de segmentos: 3
+[WARNING] 00:46:48:232 Broker/(12067:12212): Registro NULL leido
+[WARNING] 00:46:48:232 Broker/(12067:12212): Registro NULL leido
+[WARNING] 00:46:48:232 Broker/(12067:12212): Registro NULL leido
+[WARNING] 00:46:48:232 Broker/(12067:12212): Registro NULL leido
+[WARNING] 00:46:48:232 Broker/(12067:12212): Registro NULL leido
+[WARNING] 00:46:48:232 Broker/(12067:12212): Registro NULL leido
+[WARNING] 00:46:48:232 Broker/(12067:12212): Registro NULL leido
+[WARNING] 00:46:48:232 Broker/(12067:12212): Registro NULL leido
+[INFO] 00:46:48:233 Broker/(12067:12212): Segmentos APPEARED a enviar al cliente 1804289383 socket 18: 3
+[INFO] 00:46:48:233 Broker/(12067:12213): Generando id para el mensaje del socket 19
+[INFO] 00:46:48:233 Broker/(12067:12213): El id generado es 14
+[INFO] 00:46:48:233 Broker/(12067:12213): Codigo de operacion recibido del socket cliente 19 corresponde a un SUSCRIPCION
+[INFO] 00:46:48:233 Broker/(12067:12213): Recibiendo tamanio total
+[INFO] 00:46:48:233 Broker/(12067:12213): Tamanio total recibido: 16
+[INFO] 00:46:48:233 Broker/(12067:12213): Recibiendo id de cliente
+[INFO] 00:46:48:233 Broker/(12067:12213): Id de cliente recibido: 1804289383
+[INFO] 00:46:48:233 Broker/(12067:12213): Recibiendo id de cola
+[INFO] 00:46:48:233 Broker/(12067:12213): Id de cola recibido: 14
+[INFO] 00:46:48:233 Broker/(12067:12213): Id de cola recibido del socket cliente 19 corresponde a la cola de CAUGHT
+[INFO] 00:46:48:234 Broker/(12067:12213): Tamanio tabla de segmentos: 3
+[WARNING] 00:46:48:234 Broker/(12067:12213): Registro NULL leido
+[WARNING] 00:46:48:234 Broker/(12067:12213): Registro NULL leido
+[WARNING] 00:46:48:234 Broker/(12067:12213): Registro NULL leido
+[WARNING] 00:46:48:234 Broker/(12067:12213): Registro NULL leido
+[WARNING] 00:46:48:234 Broker/(12067:12213): Registro NULL leido
+[WARNING] 00:46:48:234 Broker/(12067:12213): Registro NULL leido
+[WARNING] 00:46:48:234 Broker/(12067:12213): Registro NULL leido
+[WARNING] 00:46:48:234 Broker/(12067:12213): Registro NULL leido
+[INFO] 00:46:48:234 Broker/(12067:12213): No existen segmentos CAUGHT a enviar al cliente 1804289383 socket 19
+[INFO] 00:46:48:234 Broker/(12067:12213): Modulo con id 1804289383 agregado correctamente en la cola de CAUGHT
+[INFO] 00:46:48:234 Broker/(12067:12214): Id de cola recibido: 16
+[INFO] 00:46:48:234 Broker/(12067:12214): Id de cola recibido del socket cliente 20 corresponde a la cola de LOCALIZED
+[INFO] 00:46:48:234 Broker/(12067:12214): Tamanio tabla de segmentos: 3
+[WARNING] 00:46:48:234 Broker/(12067:12214): Registro NULL leido
+[WARNING] 00:46:48:234 Broker/(12067:12214): Registro NULL leido
+[WARNING] 00:46:48:234 Broker/(12067:12214): Registro NULL leido
+[WARNING] 00:46:48:234 Broker/(12067:12214): Registro NULL leido
+[WARNING] 00:46:48:234 Broker/(12067:12214): Registro NULL leido
+[WARNING] 00:46:48:234 Broker/(12067:12214): Registro NULL leido
+[WARNING] 00:46:48:234 Broker/(12067:12214): Registro NULL leido
+[WARNING] 00:46:48:234 Broker/(12067:12214): Registro NULL leido
+[INFO] 00:46:48:234 Broker/(12067:12214): No existen segmentos LOCALIZED a enviar al cliente 1804289383 socket 20
+[INFO] 00:46:48:234 Broker/(12067:12214): Modulo con id 1804289383 agregado correctamente en la cola de LOCALIZED
+[INFO] 00:46:48:234 Broker/(12067:12227): Recibiendo codigo de operacion de socket 21
+[INFO] 00:46:48:234 Broker/(12067:12227): Codigo de operacion de socket 21 recibido: 5
+[INFO] 00:46:48:234 Broker/(12067:12227): Generando id para el mensaje del socket 21
+[INFO] 00:46:48:234 Broker/(12067:12227): El id generado es 15
+[INFO] 00:46:48:234 Broker/(12067:12227): Codigo de operacion recibido del socket cliente 21 corresponde a un GET
+[INFO] 00:46:48:234 Broker/(12067:12227): Recibiendo tamanio total
+[INFO] 00:46:48:234 Broker/(12067:12227): Tamanio total recibido: 21
+[INFO] 00:46:48:234 Broker/(12067:12227): Tamanio del pokemon recibido: 9
+[INFO] 00:46:48:234 Broker/(12067:12227): Nombre del pokemon recibido: squirtle
+[INFO] 00:46:48:234 Broker/(12067:12228): Recibiendo codigo de operacion de socket 22
+[INFO] 00:46:48:234 Broker/(12067:12229): Recibiendo codigo de operacion de socket 23
+[INFO] 00:46:48:234 Broker/(12067:12230): Recibiendo codigo de operacion de socket 24
+[INFO] 00:46:48:234 Broker/(12067:12227): Retornando id 15 al socket 21
+[INFO] 00:46:48:234 Broker/(12067:12227): Encolando el mensaje GET con id 15
+[INFO] 00:46:48:235 Broker/(12067:12227): Mensaje GET con id 15 encolado
+[INFO] 00:46:48:235 Broker/(12067:12073): Atendiendo mensaje GET con id 15
+[INFO] 00:46:48:235 Broker/(12067:12073): Guardando mensaje con id 15 en particion 0x810e605
+[INFO] 00:46:48:235 Broker/(12067:12229): Codigo de operacion de socket 23 recibido: 5
+[INFO] 00:46:48:235 Broker/(12067:12229): Generando id para el mensaje del socket 23
+[INFO] 00:46:48:235 Broker/(12067:12228): Codigo de operacion de socket 22 recibido: 5
+[INFO] 00:46:48:235 Broker/(12067:12228): Generando id para el mensaje del socket 22
+[INFO] 00:46:48:235 Broker/(12067:12228): El id generado es 16
+[INFO] 00:46:48:235 Broker/(12067:12228): Codigo de operacion recibido del socket cliente 22 corresponde a un GET
+[INFO] 00:46:48:235 Broker/(12067:12228): Recibiendo tamanio total
+[INFO] 00:46:48:235 Broker/(12067:12228): Tamanio total recibido: 17
+[INFO] 00:46:48:235 Broker/(12067:12228): Tamanio del pokemon recibido: 5
+[INFO] 00:46:48:235 Broker/(12067:12229): El id generado es 17
+[INFO] 00:46:48:235 Broker/(12067:12228): Nombre del pokemon recibido: onix
+[INFO] 00:46:48:235 Broker/(12067:12228): Retornando id 16 al socket 22
+[INFO] 00:46:48:235 Broker/(12067:12228): Encolando el mensaje GET con id 16
+[INFO] 00:46:48:235 Broker/(12067:12228): Mensaje GET con id 16 encolado
+[INFO] 00:46:48:235 Broker/(12067:12229): Codigo de operacion recibido del socket cliente 23 corresponde a un GET
+[INFO] 00:46:48:235 Broker/(12067:12229): Recibiendo tamanio total
+[INFO] 00:46:48:235 Broker/(12067:12229): Tamanio total recibido: 19
+[INFO] 00:46:48:235 Broker/(12067:12229): Tamanio del pokemon recibido: 7
+[INFO] 00:46:48:235 Broker/(12067:12229): Nombre del pokemon recibido: gengar
+[INFO] 00:46:48:236 Broker/(12067:12229): Retornando id 17 al socket 23
+[INFO] 00:46:48:236 Broker/(12067:12231): Enviando mensaje APPEARED de memoria con id 9 al cliente 1804289383 socket 18
+[INFO] 00:46:48:236 Broker/(12067:12232): Enviando mensaje APPEARED de memoria con id 10 al cliente 1804289383 socket 18
+[INFO] 00:46:48:236 Broker/(12067:12233): Enviando mensaje APPEARED de memoria con id 11 al cliente 1804289383 socket 18
+[INFO] 00:46:48:240 Broker/(12067:12233): Mensaje APPEARED de memoria con id 11 al cliente 1804289383 socket 18 enviado correctamente
+[INFO] 00:46:48:240 Broker/(12067:12229): Encolando el mensaje GET con id 17
+[INFO] 00:46:48:240 Broker/(12067:12231): Mensaje APPEARED de memoria con id 9 al cliente 1804289383 socket 18 enviado correctamente
+[INFO] 00:46:48:241 Broker/(12067:12233): ACK de cliente 1804289383 socket 18 recibido
+[INFO] 00:46:48:241 Broker/(12067:12231): ACK de cliente 1804289383 socket 18 recibido
+[INFO] 00:46:48:242 Broker/(12067:12230): Codigo de operacion de socket 24 recibido: 5
+[INFO] 00:46:48:242 Broker/(12067:12230): Generando id para el mensaje del socket 24
+[INFO] 00:46:48:242 Broker/(12067:12230): El id generado es 18
+[INFO] 00:46:48:242 Broker/(12067:12230): Codigo de operacion recibido del socket cliente 24 corresponde a un GET
+[INFO] 00:46:48:242 Broker/(12067:12230): Recibiendo tamanio total
+[INFO] 00:46:48:242 Broker/(12067:12230): Tamanio total recibido: 20
+[INFO] 00:46:48:242 Broker/(12067:12230): Tamanio del pokemon recibido: 8
+[INFO] 00:46:48:242 Broker/(12067:12230): Nombre del pokemon recibido: pikachu
+[INFO] 00:46:48:242 Broker/(12067:12230): Retornando id 18 al socket 24
+[INFO] 00:46:48:242 Broker/(12067:12230): Encolando el mensaje GET con id 18
+[INFO] 00:46:48:242 Broker/(12067:12230): Mensaje GET con id 18 encolado
+[INFO] 00:46:48:242 Broker/(12067:12229): Mensaje GET con id 17 encolado
+[INFO] 00:46:48:242 Broker/(12067:12232): Mensaje APPEARED de memoria con id 10 al cliente 1804289383 socket 18 enviado correctamente
+[INFO] 00:46:48:243 Broker/(12067:12232): ACK de cliente 1804289383 socket 18 recibido
+[INFO] 00:46:48:243 Broker/(12067:12212): Modulo con id 1804289383 agregado correctamente en la cola de APPEARED
+[INFO] 00:46:48:243 Broker/(12067:12234): Preparandose para enviar mensaje GET con id 15 al cliente 1804289383 socket 9
+[INFO] 00:46:48:243 Broker/(12067:12234): Enviando mensaje GET con id 15 al cliente 1804289383 socket 9
+[INFO] 00:46:48:244 Broker/(12067:12234): Mensaje GET con id 15 al cliente 1804289383 socket 9 enviado correctamente
+[INFO] 00:46:48:245 Broker/(12067:12234): ACK de cliente 1804289383 socket 9 recibido
+[INFO] 00:46:48:245 Broker/(12067:12073): Eliminando mensaje GET con id 15
+[INFO] 00:46:48:245 Broker/(12067:12073): Eliminado mensaje GET con id 15
+[INFO] 00:46:48:245 Broker/(12067:12073): A
+[INFO] 00:46:48:245 Broker/(12067:12073): B
+[INFO] 00:46:48:245 Broker/(12067:12073): C
+[INFO] 00:46:48:245 Broker/(12067:12073): Atendiendo mensaje GET con id 16
+[INFO] 00:46:48:245 Broker/(12067:12073): Compactando memoria
+[INFO] 00:46:48:245 Broker/(12067:12073): Moviendo registro de 0x810e5e4 a 0x810e5e0
+[INFO] 00:46:48:245 Broker/(12067:12073): Moviendo registro de 0x810e5f5 a 0x810e5f1
+[INFO] 00:46:48:245 Broker/(12067:12073): Moviendo registro de 0x810e605 a 0x810e601
+[INFO] 00:46:48:245 Broker/(12067:12073): Guardando mensaje con id 16 en particion 0x810e60a
+[INFO] 00:46:48:249 Broker/(12067:12235): Preparandose para enviar mensaje GET con id 16 al cliente 1804289383 socket 9
+[INFO] 00:46:48:249 Broker/(12067:12235): Enviando mensaje GET con id 16 al cliente 1804289383 socket 9
+[INFO] 00:46:48:249 Broker/(12067:12235): Mensaje GET con id 16 al cliente 1804289383 socket 9 enviado correctamente
+[INFO] 00:46:50:261 Broker/(12067:12068): Socket cliente 25 aceptado
+[INFO] 00:46:50:261 Broker/(12067:12068): Socket cliente 26 aceptado
+[INFO] 00:46:50:261 Broker/(12067:12068): Socket cliente 27 aceptado
+[INFO] 00:46:50:262 Broker/(12067:12241): Recibiendo codigo de operacion de socket 25
+[INFO] 00:46:50:262 Broker/(12067:12242): Recibiendo codigo de operacion de socket 26
+[INFO] 00:46:50:262 Broker/(12067:12243): Recibiendo codigo de operacion de socket 27
+[INFO] 00:46:50:262 Broker/(12067:12241): Codigo de operacion de socket 25 recibido: 7
+[INFO] 00:46:50:262 Broker/(12067:12241): Generando id para el mensaje del socket 25
+[INFO] 00:46:50:263 Broker/(12067:12241): El id generado es 19
+[INFO] 00:46:50:263 Broker/(12067:12241): Codigo de operacion recibido del socket cliente 25 corresponde a un SUSCRIPCION
+[INFO] 00:46:50:263 Broker/(12067:12241): Recibiendo tamanio total
+[INFO] 00:46:50:263 Broker/(12067:12242): Codigo de operacion de socket 26 recibido: 7
+[INFO] 00:46:50:263 Broker/(12067:12241): Tamanio total recibido: 16
+[INFO] 00:46:50:263 Broker/(12067:12241): Recibiendo id de cliente
+[INFO] 00:46:50:263 Broker/(12067:12243): Codigo de operacion de socket 27 recibido: 7
+[INFO] 00:46:50:263 Broker/(12067:12241): Id de cliente recibido: 1804289383
+[INFO] 00:46:50:264 Broker/(12067:12241): Recibiendo id de cola
+[INFO] 00:46:50:264 Broker/(12067:12241): Id de cola recibido: 12
+[INFO] 00:46:50:264 Broker/(12067:12241): Id de cola recibido del socket cliente 25 corresponde a la cola de APPEARED
+[INFO] 00:46:50:264 Broker/(12067:12241): Tamanio tabla de segmentos: 5
+[WARNING] 00:46:50:264 Broker/(12067:12241): Registro NULL leido
+[WARNING] 00:46:50:264 Broker/(12067:12241): Registro NULL leido
+[WARNING] 00:46:50:264 Broker/(12067:12241): Registro NULL leido
+[WARNING] 00:46:50:264 Broker/(12067:12241): Registro NULL leido
+[WARNING] 00:46:50:264 Broker/(12067:12241): Registro NULL leido
+[WARNING] 00:46:50:264 Broker/(12067:12241): Registro NULL leido
+[INFO] 00:46:50:264 Broker/(12067:12068): Socket cliente 28 aceptado
+[WARNING] 00:46:50:264 Broker/(12067:12241): Registro NULL leido
+[INFO] 00:46:50:265 Broker/(12067:12242): Generando id para el mensaje del socket 26
+[INFO] 00:46:50:265 Broker/(12067:12242): El id generado es 20
+[INFO] 00:46:50:265 Broker/(12067:12242): Codigo de operacion recibido del socket cliente 26 corresponde a un SUSCRIPCION
+[INFO] 00:46:50:265 Broker/(12067:12242): Recibiendo tamanio total
+[INFO] 00:46:50:265 Broker/(12067:12242): Tamanio total recibido: 16
+[INFO] 00:46:50:265 Broker/(12067:12242): Recibiendo id de cliente
+[INFO] 00:46:50:265 Broker/(12067:12242): Id de cliente recibido: 1804289383
+[INFO] 00:46:50:265 Broker/(12067:12242): Recibiendo id de cola
+[INFO] 00:46:50:265 Broker/(12067:12242): Id de cola recibido: 14
+[INFO] 00:46:50:266 Broker/(12067:12242): Id de cola recibido del socket cliente 26 corresponde a la cola de CAUGHT
+[INFO] 00:46:50:266 Broker/(12067:12242): Tamanio tabla de segmentos: 5
+[WARNING] 00:46:50:266 Broker/(12067:12242): Registro NULL leido
+[WARNING] 00:46:50:266 Broker/(12067:12242): Registro NULL leido
+[WARNING] 00:46:50:266 Broker/(12067:12242): Registro NULL leido
+[WARNING] 00:46:50:266 Broker/(12067:12242): Registro NULL leido
+[WARNING] 00:46:50:266 Broker/(12067:12242): Registro NULL leido
+[WARNING] 00:46:50:266 Broker/(12067:12242): Registro NULL leido
+[WARNING] 00:46:50:266 Broker/(12067:12242): Registro NULL leido
+[WARNING] 00:46:50:266 Broker/(12067:12242): Registro NULL leido
+[WARNING] 00:46:50:266 Broker/(12067:12242): Registro NULL leido
+[INFO] 00:46:50:267 Broker/(12067:12068): Socket cliente 29 aceptado
+[WARNING] 00:46:50:267 Broker/(12067:12242): Registro NULL leido
+[INFO] 00:46:50:267 Broker/(12067:12068): Socket cliente 30 aceptado
+[INFO] 00:46:50:267 Broker/(12067:12068): Socket cliente 31 aceptado
+[INFO] 00:46:50:267 Broker/(12067:12068): Socket cliente 32 aceptado
+[WARNING] 00:46:50:267 Broker/(12067:12241): Registro NULL leido
+[WARNING] 00:46:50:267 Broker/(12067:12241): Registro NULL leido
+[WARNING] 00:46:50:267 Broker/(12067:12241): Registro NULL leido
+[WARNING] 00:46:50:267 Broker/(12067:12241): Registro NULL leido
+[INFO] 00:46:50:267 Broker/(12067:12241): No existen segmentos APPEARED a enviar al cliente 1804289383 socket 25
+[INFO] 00:46:50:267 Broker/(12067:12241): Modulo con id 1804289383 agregado correctamente en la cola de APPEARED
+[INFO] 00:46:50:267 Broker/(12067:12243): Generando id para el mensaje del socket 27
+[INFO] 00:46:50:267 Broker/(12067:12243): El id generado es 21
+[INFO] 00:46:50:267 Broker/(12067:12243): Codigo de operacion recibido del socket cliente 27 corresponde a un SUSCRIPCION
+[INFO] 00:46:50:267 Broker/(12067:12243): Recibiendo tamanio total
+[INFO] 00:46:50:267 Broker/(12067:12243): Tamanio total recibido: 16
+[INFO] 00:46:50:267 Broker/(12067:12243): Recibiendo id de cliente
+[INFO] 00:46:50:267 Broker/(12067:12243): Id de cliente recibido: 1804289383
+[INFO] 00:46:50:268 Broker/(12067:12243): Recibiendo id de cola
+[INFO] 00:46:50:268 Broker/(12067:12243): Id de cola recibido: 16
+[INFO] 00:46:50:268 Broker/(12067:12243): Id de cola recibido del socket cliente 27 corresponde a la cola de LOCALIZED
+[INFO] 00:46:50:268 Broker/(12067:12243): Tamanio tabla de segmentos: 5
+[WARNING] 00:46:50:268 Broker/(12067:12243): Registro NULL leido
+[WARNING] 00:46:50:268 Broker/(12067:12243): Registro NULL leido
+[WARNING] 00:46:50:268 Broker/(12067:12243): Registro NULL leido
+[WARNING] 00:46:50:268 Broker/(12067:12243): Registro NULL leido
+[WARNING] 00:46:50:268 Broker/(12067:12243): Registro NULL leido
+[WARNING] 00:46:50:268 Broker/(12067:12243): Registro NULL leido
+[WARNING] 00:46:50:268 Broker/(12067:12243): Registro NULL leido
+[WARNING] 00:46:50:268 Broker/(12067:12243): Registro NULL leido
+[WARNING] 00:46:50:268 Broker/(12067:12243): Registro NULL leido
+[WARNING] 00:46:50:268 Broker/(12067:12243): Registro NULL leido
+[WARNING] 00:46:50:268 Broker/(12067:12243): Registro NULL leido
+[INFO] 00:46:50:268 Broker/(12067:12243): No existen segmentos LOCALIZED a enviar al cliente 1804289383 socket 27
+[INFO] 00:46:50:268 Broker/(12067:12243): Modulo con id 1804289383 agregado correctamente en la cola de LOCALIZED
+[WARNING] 00:46:50:268 Broker/(12067:12242): Registro NULL leido
+[INFO] 00:46:50:268 Broker/(12067:12242): No existen segmentos CAUGHT a enviar al cliente 1804289383 socket 26
+[INFO] 00:46:50:268 Broker/(12067:12242): Modulo con id 1804289383 agregado correctamente en la cola de CAUGHT
+[INFO] 00:46:50:268 Broker/(12067:12259): Recibiendo codigo de operacion de socket 28
+[INFO] 00:46:50:268 Broker/(12067:12259): Codigo de operacion de socket 28 recibido: 5
+[INFO] 00:46:50:268 Broker/(12067:12259): Generando id para el mensaje del socket 28
+[INFO] 00:46:50:268 Broker/(12067:12259): El id generado es 22
+[INFO] 00:46:50:268 Broker/(12067:12259): Codigo de operacion recibido del socket cliente 28 corresponde a un GET
+[INFO] 00:46:50:268 Broker/(12067:12259): Recibiendo tamanio total
+[INFO] 00:46:50:268 Broker/(12067:12259): Tamanio total recibido: 21
+[INFO] 00:46:50:268 Broker/(12067:12259): Tamanio del pokemon recibido: 9
+[INFO] 00:46:50:268 Broker/(12067:12259): Nombre del pokemon recibido: vaporeon
+[INFO] 00:46:50:268 Broker/(12067:12260): Recibiendo codigo de operacion de socket 29
+[INFO] 00:46:50:268 Broker/(12067:12261): Recibiendo codigo de operacion de socket 30
+[INFO] 00:46:50:268 Broker/(12067:12262): Recibiendo codigo de operacion de socket 31
+[INFO] 00:46:50:268 Broker/(12067:12263): Recibiendo codigo de operacion de socket 32
+[INFO] 00:46:50:268 Broker/(12067:12259): Retornando id 22 al socket 28
+[INFO] 00:46:50:268 Broker/(12067:12259): Encolando el mensaje GET con id 22
+[INFO] 00:46:50:268 Broker/(12067:12259): Mensaje GET con id 22 encolado
+[INFO] 00:46:50:269 Broker/(12067:12262): Codigo de operacion de socket 31 recibido: 5
+[INFO] 00:46:50:269 Broker/(12067:12262): Generando id para el mensaje del socket 31
+[INFO] 00:46:50:269 Broker/(12067:12262): El id generado es 23
+[INFO] 00:46:50:269 Broker/(12067:12262): Codigo de operacion recibido del socket cliente 31 corresponde a un GET
+[INFO] 00:46:50:269 Broker/(12067:12262): Recibiendo tamanio total
+[INFO] 00:46:50:269 Broker/(12067:12262): Tamanio total recibido: 20
+[INFO] 00:46:50:269 Broker/(12067:12262): Tamanio del pokemon recibido: 8
+[INFO] 00:46:50:269 Broker/(12067:12262): Nombre del pokemon recibido: umbreon
+[INFO] 00:46:50:269 Broker/(12067:12262): Retornando id 23 al socket 31
+[INFO] 00:46:50:271 Broker/(12067:12260): Codigo de operacion de socket 29 recibido: 5
+[INFO] 00:46:50:271 Broker/(12067:12260): Generando id para el mensaje del socket 29
+[INFO] 00:46:50:271 Broker/(12067:12260): El id generado es 24
+[INFO] 00:46:50:271 Broker/(12067:12260): Codigo de operacion recibido del socket cliente 29 corresponde a un GET
+[INFO] 00:46:50:271 Broker/(12067:12260): Recibiendo tamanio total
+[INFO] 00:46:50:271 Broker/(12067:12260): Tamanio total recibido: 20
+[INFO] 00:46:50:271 Broker/(12067:12260): Tamanio del pokemon recibido: 8
+[INFO] 00:46:50:271 Broker/(12067:12260): Nombre del pokemon recibido: flareon
+[INFO] 00:46:50:271 Broker/(12067:12260): Retornando id 24 al socket 29
+[INFO] 00:46:50:271 Broker/(12067:12262): Encolando el mensaje GET con id 23
+[INFO] 00:46:50:271 Broker/(12067:12263): Codigo de operacion de socket 32 recibido: 5
+[INFO] 00:46:50:271 Broker/(12067:12263): Generando id para el mensaje del socket 32
+[INFO] 00:46:50:271 Broker/(12067:12263): El id generado es 25
+[INFO] 00:46:50:271 Broker/(12067:12263): Codigo de operacion recibido del socket cliente 32 corresponde a un GET
+[INFO] 00:46:50:271 Broker/(12067:12263): Recibiendo tamanio total
+[INFO] 00:46:50:271 Broker/(12067:12263): Tamanio total recibido: 20
+[INFO] 00:46:50:271 Broker/(12067:12263): Tamanio del pokemon recibido: 8
+[INFO] 00:46:50:271 Broker/(12067:12263): Nombre del pokemon recibido: jolteon
+[INFO] 00:46:50:271 Broker/(12067:12263): Retornando id 25 al socket 32
+[INFO] 00:46:50:272 Broker/(12067:12263): Encolando el mensaje GET con id 25
+[INFO] 00:46:50:272 Broker/(12067:12263): Mensaje GET con id 25 encolado
+[INFO] 00:46:50:272 Broker/(12067:12260): Encolando el mensaje GET con id 24
+[INFO] 00:46:50:272 Broker/(12067:12262): Mensaje GET con id 23 encolado
+[INFO] 00:46:50:272 Broker/(12067:12260): Mensaje GET con id 24 encolado
+[INFO] 00:46:50:272 Broker/(12067:12261): Codigo de operacion de socket 30 recibido: 5
+[INFO] 00:46:50:272 Broker/(12067:12261): Generando id para el mensaje del socket 30
+[INFO] 00:46:50:272 Broker/(12067:12261): El id generado es 26
+[INFO] 00:46:50:272 Broker/(12067:12261): Codigo de operacion recibido del socket cliente 30 corresponde a un GET
+[INFO] 00:46:50:272 Broker/(12067:12261): Recibiendo tamanio total
+[INFO] 00:46:50:272 Broker/(12067:12261): Tamanio total recibido: 19
+[INFO] 00:46:50:272 Broker/(12067:12261): Tamanio del pokemon recibido: 7
+[INFO] 00:46:50:272 Broker/(12067:12261): Nombre del pokemon recibido: espeon
+[INFO] 00:46:50:272 Broker/(12067:12261): Retornando id 26 al socket 30
+[INFO] 00:46:50:272 Broker/(12067:12261): Encolando el mensaje GET con id 26
+[INFO] 00:46:50:272 Broker/(12067:12261): Mensaje GET con id 26 encolado
+[INFO] 00:46:53:245 Broker/(12067:12068): Socket cliente 33 aceptado
+[INFO] 00:46:53:247 Broker/(12067:12235): ACK de cliente 1804289383 socket 9 recibido
+[INFO] 00:46:53:247 Broker/(12067:12073): Eliminando mensaje GET con id 16
+[INFO] 00:46:53:247 Broker/(12067:12073): Eliminado mensaje GET con id 16
+[INFO] 00:46:53:247 Broker/(12067:12073): A
+[INFO] 00:46:53:247 Broker/(12067:12073): B
+[INFO] 00:46:53:247 Broker/(12067:12073): C
+[INFO] 00:46:53:247 Broker/(12067:12073): Atendiendo mensaje GET con id 18
+[INFO] 00:46:53:247 Broker/(12067:12073): Se ha eliminado el registro con id 9 ubicado en 0x810e5e0 de la tabla de segmentos
+[INFO] 00:46:53:247 Broker/(12067:12073): Guardando mensaje con id 18 en particion 0x810e5e0
+[INFO] 00:46:53:249 Broker/(12067:12265): Preparandose para enviar mensaje GET con id 18 al cliente 1804289383 socket 9
+[INFO] 00:46:53:249 Broker/(12067:12265): Enviando mensaje GET con id 18 al cliente 1804289383 socket 9
+[INFO] 00:46:53:249 Broker/(12067:12265): Mensaje GET con id 18 al cliente 1804289383 socket 9 enviado correctamente
+[WARNING] 00:46:53:249 Broker/(12067:12265): El cliente 1804289383 acaba de cerrar la conexion correspondiente al socket 9
+[INFO] 00:46:53:250 Broker/(12067:12265): Eliminando suscriptor con id 1804289383 y socket 9
+[INFO] 00:46:53:250 Broker/(12067:12073): Eliminando mensaje GET con id 18
+[INFO] 00:46:53:250 Broker/(12067:12073): Eliminado mensaje GET con id 18
+[INFO] 00:46:53:250 Broker/(12067:12073): A
+[INFO] 00:46:53:250 Broker/(12067:12073): B
+[INFO] 00:46:53:250 Broker/(12067:12073): C
+[INFO] 00:46:53:250 Broker/(12067:12073): Atendiendo mensaje GET con id 17
+[INFO] 00:46:53:250 Broker/(12067:12073): Guardando mensaje con id 17 en particion 0x810e5e8
+[INFO] 00:46:53:250 Broker/(12067:12073): Eliminando mensaje GET con id 17
+[INFO] 00:46:53:250 Broker/(12067:12073): Eliminado mensaje GET con id 17
+[INFO] 00:46:53:250 Broker/(12067:12073): A
+[INFO] 00:46:53:250 Broker/(12067:12073): B
+[INFO] 00:46:53:250 Broker/(12067:12073): C
+[INFO] 00:46:53:250 Broker/(12067:12073): Atendiendo mensaje GET con id 22
+[INFO] 00:46:53:250 Broker/(12067:12073): Compactando memoria
+[INFO] 00:46:53:250 Broker/(12067:12073): Moviendo registro de 0x810e5f1 a 0x810e5ef
+[INFO] 00:46:53:250 Broker/(12067:12073): Moviendo registro de 0x810e601 a 0x810e5ff
+[INFO] 00:46:53:250 Broker/(12067:12073): Moviendo registro de 0x810e60a a 0x810e608
+[INFO] 00:46:53:250 Broker/(12067:12073): Se ha eliminado el registro con id 10 ubicado en 0x810e5ef de la tabla de segmentos
+[INFO] 00:46:53:250 Broker/(12067:12073): Guardando mensaje con id 22 en particion 0x810e5ef
+[INFO] 00:46:53:250 Broker/(12067:12073): Eliminando mensaje GET con id 22
+[INFO] 00:46:53:250 Broker/(12067:12073): Eliminado mensaje GET con id 22
+[INFO] 00:46:53:250 Broker/(12067:12073): A
+[INFO] 00:46:53:251 Broker/(12067:12073): B
+[INFO] 00:46:53:251 Broker/(12067:12073): C
+[INFO] 00:46:53:251 Broker/(12067:12073): Atendiendo mensaje GET con id 25
+[INFO] 00:46:53:251 Broker/(12067:12073): Compactando memoria
+[INFO] 00:46:53:251 Broker/(12067:12073): Moviendo registro de 0x810e5ff a 0x810e5f8
+[INFO] 00:46:53:251 Broker/(12067:12073): Moviendo registro de 0x810e608 a 0x810e601
+[INFO] 00:46:53:251 Broker/(12067:12073): Guardando mensaje con id 25 en particion 0x810e606
+[INFO] 00:46:53:251 Broker/(12067:12073): Eliminando mensaje GET con id 25
+[INFO] 00:46:53:251 Broker/(12067:12073): Eliminado mensaje GET con id 25
+[INFO] 00:46:53:251 Broker/(12067:12073): A
+[INFO] 00:46:53:251 Broker/(12067:12073): B
+[INFO] 00:46:53:251 Broker/(12067:12073): C
+[INFO] 00:46:53:251 Broker/(12067:12073): Atendiendo mensaje GET con id 23
+[INFO] 00:46:53:251 Broker/(12067:12073): Se ha eliminado el registro con id 11 ubicado en 0x810e5d0 de la tabla de segmentos
+[INFO] 00:46:53:251 Broker/(12067:12073): Guardando mensaje con id 23 en particion 0x810e5d0
+[INFO] 00:46:53:251 Broker/(12067:12073): Eliminando mensaje GET con id 23
+[INFO] 00:46:53:251 Broker/(12067:12073): Eliminado mensaje GET con id 23
+[INFO] 00:46:53:251 Broker/(12067:12073): A
+[INFO] 00:46:53:251 Broker/(12067:12073): B
+[INFO] 00:46:53:251 Broker/(12067:12073): C
+[INFO] 00:46:53:251 Broker/(12067:12073): Atendiendo mensaje GET con id 24
+[INFO] 00:46:53:251 Broker/(12067:12073): Compactando memoria
+[INFO] 00:46:53:251 Broker/(12067:12073): Moviendo registro de 0x810e5e0 a 0x810e5d8
+[INFO] 00:46:53:251 Broker/(12067:12073): Moviendo registro de 0x810e5e8 a 0x810e5e0
+[INFO] 00:46:53:252 Broker/(12067:12073): Moviendo registro de 0x810e5ef a 0x810e5e7
+[INFO] 00:46:53:252 Broker/(12067:12073): Moviendo registro de 0x810e5f8 a 0x810e5f0
+[INFO] 00:46:53:252 Broker/(12067:12073): Moviendo registro de 0x810e601 a 0x810e5f9
+[INFO] 00:46:53:252 Broker/(12067:12073): Moviendo registro de 0x810e606 a 0x810e5fe
+[INFO] 00:46:53:252 Broker/(12067:12073): Guardando mensaje con id 24 en particion 0x810e606
+[INFO] 00:46:53:252 Broker/(12067:12073): Eliminando mensaje GET con id 24
+[INFO] 00:46:53:252 Broker/(12067:12073): Eliminado mensaje GET con id 24
+[INFO] 00:46:53:252 Broker/(12067:12073): A
+[INFO] 00:46:53:252 Broker/(12067:12073): B
+[INFO] 00:46:53:252 Broker/(12067:12073): C
+[INFO] 00:46:53:252 Broker/(12067:12073): Atendiendo mensaje GET con id 26
+[INFO] 00:46:53:252 Broker/(12067:12073): Se ha eliminado el registro con id 15 ubicado en 0x810e5f0 de la tabla de segmentos
+[INFO] 00:46:53:252 Broker/(12067:12073): Guardando mensaje con id 26 en particion 0x810e5f0
+[INFO] 00:46:53:252 Broker/(12067:12073): Eliminando mensaje GET con id 26
+[INFO] 00:46:53:252 Broker/(12067:12073): Eliminado mensaje GET con id 26
+[INFO] 00:46:53:252 Broker/(12067:12073): A
+[INFO] 00:46:53:252 Broker/(12067:12073): B
+[INFO] 00:46:53:252 Broker/(12067:12073): C
+[INFO] 00:46:53:252 Broker/(12067:12264): Recibiendo codigo de operacion de socket 33
+[INFO] 00:46:53:252 Broker/(12067:12264): Codigo de operacion de socket 33 recibido: 6
+[INFO] 00:46:53:252 Broker/(12067:12264): Generando id para el mensaje del socket 33
+[INFO] 00:46:53:252 Broker/(12067:12264): El id generado es 27
+[INFO] 00:46:53:253 Broker/(12067:12264): Codigo de operacion recibido del socket cliente 33 corresponde a un LOCALIZED
+[INFO] 00:46:53:253 Broker/(12067:12264): Recibiendo tamanio total
+[INFO] 00:46:53:253 Broker/(12067:12264): Tamanio total recibido: 29
+[INFO] 00:46:53:253 Broker/(12067:12264): Id correlativo recibido: 15
+[INFO] 00:46:53:253 Broker/(12067:12264): Tamanio del pokemon recibido: 9
+[INFO] 00:46:53:253 Broker/(12067:12264): Nombre del pokemon recibido: squirtle
+[INFO] 00:46:53:253 Broker/(12067:12264): Cantidad de coordenadas recibida: 1
+[INFO] 00:46:53:253 Broker/(12067:12264): Unidad de coordenada recibida: 5
+[INFO] 00:46:53:253 Broker/(12067:12264): Unidad de coordenada recibida: 2
+[INFO] 00:46:53:253 Broker/(12067:12264): Retornando id 27 al socket 33
+[INFO] 00:46:53:253 Broker/(12067:12264): Encolando el mensaje LOCALIZED con id 27
+[INFO] 00:46:53:253 Broker/(12067:12264): Mensaje LOCALIZED con id 27 encolado
+[INFO] 00:46:53:254 Broker/(12067:12074): Atendiendo mensaje LOCALIZED con id 27
+[INFO] 00:46:53:254 Broker/(12067:12074): Compactando memoria
+[INFO] 00:46:53:254 Broker/(12067:12074): Moviendo registro de 0x810e5f9 a 0x810e5f7
+[INFO] 00:46:53:254 Broker/(12067:12074): Moviendo registro de 0x810e5fe a 0x810e5fc
+[INFO] 00:46:53:254 Broker/(12067:12074): Moviendo registro de 0x810e606 a 0x810e604
+[INFO] 00:46:53:254 Broker/(12067:12074): Se ha eliminado el registro con id 16 ubicado en 0x810e5f7 de la tabla de segmentos
+[INFO] 00:46:53:254 Broker/(12067:12074): Compactando memoria
+[INFO] 00:46:53:254 Broker/(12067:12074): Moviendo registro de 0x810e5fc a 0x810e5f7
+[INFO] 00:46:53:254 Broker/(12067:12074): Moviendo registro de 0x810e604 a 0x810e5ff
+[INFO] 00:46:53:254 Broker/(12067:12074): Se ha eliminado el registro con id 18 ubicado en 0x810e5d8 de la tabla de segmentos
+[INFO] 00:46:53:254 Broker/(12067:12074): Compactando memoria
+[INFO] 00:46:53:254 Broker/(12067:12074): Moviendo registro de 0x810e5e0 a 0x810e5d8
+[INFO] 00:46:53:254 Broker/(12067:12074): Moviendo registro de 0x810e5e7 a 0x810e5df
+[INFO] 00:46:53:254 Broker/(12067:12074): Moviendo registro de 0x810e5f0 a 0x810e5e8
+[INFO] 00:46:53:254 Broker/(12067:12074): Moviendo registro de 0x810e5f7 a 0x810e5ef
+[INFO] 00:46:53:254 Broker/(12067:12074): Moviendo registro de 0x810e5ff a 0x810e5f7
+[INFO] 00:46:53:254 Broker/(12067:12074): Se ha eliminado el registro con id 17 ubicado en 0x810e5d8 de la tabla de segmentos
+[INFO] 00:46:53:254 Broker/(12067:12074): Compactando memoria
+[INFO] 00:46:53:254 Broker/(12067:12074): Moviendo registro de 0x810e5df a 0x810e5d8
+[INFO] 00:46:53:254 Broker/(12067:12074): Moviendo registro de 0x810e5e8 a 0x810e5e1
+[INFO] 00:46:53:254 Broker/(12067:12074): Moviendo registro de 0x810e5ef a 0x810e5e8
+[INFO] 00:46:53:254 Broker/(12067:12074): Moviendo registro de 0x810e5f7 a 0x810e5f0
+[INFO] 00:46:53:254 Broker/(12067:12074): Guardando mensaje con id 27 en particion 0x810e5f8
+[INFO] 00:49:47:738 Broker/(12310:12310): logger extenso iniciado
+[INFO] 00:49:47:762 Broker/(12310:12310): logger de la catedra iniciado
+[INFO] 00:49:47:764 Broker/(12310:12310): La IP es: 127.0.0.1
+[INFO] 00:49:47:764 Broker/(12310:12310): El puerto es: 4444
+[INFO] 00:49:47:767 Broker/(12310:12310): El tamanio de la memoria es 64
+[INFO] 00:49:47:767 Broker/(12310:12310): La frecuencia de la compactacion es 1
+[INFO] 00:49:47:768 Broker/(12310:12310): El tamanio minimo de la particion es 4
+[INFO] 00:49:47:768 Broker/(12310:12310): El algoritmo de busqueda de particiones libres es FF
+[INFO] 00:49:47:769 Broker/(12310:12310): El algoritmo de reemplazo de particiones es FIFO
+[INFO] 00:49:47:775 Broker/(12310:12310): Iniciando colas
+[INFO] 00:49:47:778 Broker/(12310:12310): Colas iniciadas
+[INFO] 00:49:47:778 Broker/(12310:12310): Iniciando listas de suscriptores
+[INFO] 00:49:47:779 Broker/(12310:12310): Listas de suscriptores iniciadas
+[INFO] 00:49:47:779 Broker/(12310:12310): Iniciando listas de ids respondidos
+[INFO] 00:49:47:780 Broker/(12310:12310): Listas de ids respondidos iniciadas
+[INFO] 00:49:47:780 Broker/(12310:12310): Iniciando estructuras de colas
+[INFO] 00:49:47:781 Broker/(12310:12310): Estructuras de colas iniciadas
+[INFO] 00:49:47:781 Broker/(12310:12310): Iniciando limites de colas
+[INFO] 00:49:47:782 Broker/(12310:12310): Limites de colas iniciadas
+[INFO] 00:49:47:782 Broker/(12310:12310): Iniciando semaforos de limite
+[INFO] 00:49:47:784 Broker/(12310:12310): Semaforos de limite iniciados
+[INFO] 00:49:47:784 Broker/(12310:12310): Iniciando semaforos de mensajes
+[INFO] 00:49:47:785 Broker/(12310:12310): Semaforos de mensajes iniciados
+[INFO] 00:49:47:785 Broker/(12310:12310): Iniciando semaforos de colas
+[INFO] 00:49:47:786 Broker/(12310:12310): Semaforos de colas iniciados
+[INFO] 00:49:47:786 Broker/(12310:12310): Iniciando semaforos de listas
+[INFO] 00:49:47:787 Broker/(12310:12310): Semaforos de listas iniciados
+[INFO] 00:49:47:787 Broker/(12310:12310): Iniciando semaforos de ids respondidos
+[INFO] 00:49:47:788 Broker/(12310:12310): Semaforos de ids respondidos iniciados
+[INFO] 00:49:47:788 Broker/(12310:12310): Creando generador id
+[INFO] 00:49:47:789 Broker/(12310:12310): Generador id creado
+[INFO] 00:49:47:789 Broker/(12310:12310): Levantando servidor
+[INFO] 00:49:47:801 Broker/(12310:12310): Servidor levantado
+[INFO] 00:49:47:812 Broker/(12310:12311): Esperando clientes en socket 7
+[INFO] 00:49:47:813 Broker/(12310:12312): Atendiendo cola NEW
+[INFO] 00:49:47:814 Broker/(12310:12313): Atendiendo cola APPEARED
+[INFO] 00:49:47:815 Broker/(12310:12314): Atendiendo cola CATCH
+[INFO] 00:49:47:816 Broker/(12310:12315): Atendiendo cola CAUGHT
+[INFO] 00:49:47:817 Broker/(12310:12316): Atendiendo cola GET
+[INFO] 00:49:47:819 Broker/(12310:12317): Atendiendo cola LOCALIZED
+[INFO] 00:49:57:793 Broker/(12310:12311): Socket cliente 8 aceptado
+[INFO] 00:49:57:797 Broker/(12310:12311): Socket cliente 9 aceptado
+[INFO] 00:49:57:800 Broker/(12310:12319): Recibiendo codigo de operacion de socket 8
+[INFO] 00:49:57:804 Broker/(12310:12319): Codigo de operacion de socket 8 recibido: 7
+[INFO] 00:49:57:805 Broker/(12310:12325): Recibiendo codigo de operacion de socket 9
+[INFO] 00:49:57:805 Broker/(12310:12311): Socket cliente 10 aceptado
+[INFO] 00:49:57:805 Broker/(12310:12325): Codigo de operacion de socket 9 recibido: 7
+[INFO] 00:49:57:807 Broker/(12310:12325): Generando id para el mensaje del socket 9
+[INFO] 00:49:57:809 Broker/(12310:12325): El id generado es 1
+[INFO] 00:49:57:809 Broker/(12310:12319): Generando id para el mensaje del socket 8
+[INFO] 00:49:57:810 Broker/(12310:12319): El id generado es 2
+[INFO] 00:49:57:811 Broker/(12310:12319): Codigo de operacion recibido del socket cliente 8 corresponde a un SUSCRIPCION
+[INFO] 00:49:57:811 Broker/(12310:12319): Recibiendo tamanio total
+[INFO] 00:49:57:810 Broker/(12310:12326): Recibiendo codigo de operacion de socket 10
+[INFO] 00:49:57:812 Broker/(12310:12319): Tamanio total recibido: 16
+[INFO] 00:49:57:813 Broker/(12310:12319): Recibiendo id de cliente
+[INFO] 00:49:57:813 Broker/(12310:12326): Codigo de operacion de socket 10 recibido: 7
+[INFO] 00:49:57:814 Broker/(12310:12326): Generando id para el mensaje del socket 10
+[INFO] 00:49:57:814 Broker/(12310:12326): El id generado es 3
+[INFO] 00:49:57:814 Broker/(12310:12326): Codigo de operacion recibido del socket cliente 10 corresponde a un SUSCRIPCION
+[INFO] 00:49:57:818 Broker/(12310:12325): Codigo de operacion recibido del socket cliente 9 corresponde a un SUSCRIPCION
+[INFO] 00:49:57:818 Broker/(12310:12325): Recibiendo tamanio total
+[INFO] 00:49:57:819 Broker/(12310:12325): Tamanio total recibido: 16
+[INFO] 00:49:57:819 Broker/(12310:12325): Recibiendo id de cliente
+[INFO] 00:49:57:820 Broker/(12310:12325): Id de cliente recibido: 1804289383
+[INFO] 00:49:57:820 Broker/(12310:12325): Recibiendo id de cola
+[INFO] 00:49:57:821 Broker/(12310:12325): Id de cola recibido: 13
+[INFO] 00:49:57:821 Broker/(12310:12326): Recibiendo tamanio total
+[INFO] 00:49:57:821 Broker/(12310:12326): Tamanio total recibido: 16
+[INFO] 00:49:57:822 Broker/(12310:12326): Recibiendo id de cliente
+[INFO] 00:49:57:822 Broker/(12310:12326): Id de cliente recibido: 1804289383
+[INFO] 00:49:57:822 Broker/(12310:12326): Recibiendo id de cola
+[INFO] 00:49:57:823 Broker/(12310:12326): Id de cola recibido: 15
+[INFO] 00:49:57:823 Broker/(12310:12319): Id de cliente recibido: 1804289383
+[INFO] 00:49:57:823 Broker/(12310:12319): Recibiendo id de cola
+[INFO] 00:49:57:824 Broker/(12310:12319): Id de cola recibido: 11
+[INFO] 00:49:57:825 Broker/(12310:12319): Id de cola recibido del socket cliente 8 corresponde a la cola de NEW
+[INFO] 00:49:57:826 Broker/(12310:12319): Tamanio tabla de segmentos: 0
+[INFO] 00:49:57:826 Broker/(12310:12326): Id de cola recibido del socket cliente 10 corresponde a la cola de GET
+[INFO] 00:49:57:827 Broker/(12310:12326): Tamanio tabla de segmentos: 0
+[INFO] 00:49:57:828 Broker/(12310:12325): Id de cola recibido del socket cliente 9 corresponde a la cola de CATCH
+[INFO] 00:49:57:829 Broker/(12310:12325): Tamanio tabla de segmentos: 0
+[INFO] 00:49:57:829 Broker/(12310:12325): No existen segmentos CATCH a enviar al cliente 1804289383 socket 9
+[INFO] 00:49:57:831 Broker/(12310:12325): Modulo con id 1804289383 agregado correctamente en la cola de CATCH
+[INFO] 00:49:57:832 Broker/(12310:12326): No existen segmentos GET a enviar al cliente 1804289383 socket 10
+[INFO] 00:49:57:833 Broker/(12310:12326): Modulo con id 1804289383 agregado correctamente en la cola de GET
+[INFO] 00:49:57:834 Broker/(12310:12319): No existen segmentos NEW a enviar al cliente 1804289383 socket 8
+[INFO] 00:49:57:835 Broker/(12310:12319): Modulo con id 1804289383 agregado correctamente en la cola de NEW
+[INFO] 00:50:18:761 Broker/(12310:12311): Socket cliente 11 aceptado
+[INFO] 00:50:18:770 Broker/(12310:12431): Recibiendo codigo de operacion de socket 11
+[INFO] 00:50:18:770 Broker/(12310:12431): Codigo de operacion de socket 11 recibido: 1
+[INFO] 00:50:18:772 Broker/(12310:12431): Generando id para el mensaje del socket 11
+[INFO] 00:50:18:774 Broker/(12310:12431): El id generado es 4
+[INFO] 00:50:18:775 Broker/(12310:12311): Socket cliente 12 aceptado
+[INFO] 00:50:18:776 Broker/(12310:12431): Codigo de operacion recibido del socket cliente 11 corresponde a un NEW
+[INFO] 00:50:18:777 Broker/(12310:12431): Recibiendo tamanio total
+[INFO] 00:50:18:779 Broker/(12310:12431): Tamanio total recibido: 24
+[INFO] 00:50:18:780 Broker/(12310:12311): Socket cliente 13 aceptado
+[INFO] 00:50:18:781 Broker/(12310:12434): Recibiendo codigo de operacion de socket 12
+[INFO] 00:50:18:782 Broker/(12310:12431): Tamanio del pokemon recibido: 8
+[INFO] 00:50:18:783 Broker/(12310:12431): Nombre del pokemon recibido: Pikachu
+[INFO] 00:50:18:784 Broker/(12310:12436): Recibiendo codigo de operacion de socket 13
+[INFO] 00:50:18:784 Broker/(12310:12434): Codigo de operacion de socket 12 recibido: 1
+[INFO] 00:50:18:784 Broker/(12310:12434): Generando id para el mensaje del socket 12
+[INFO] 00:50:18:785 Broker/(12310:12434): El id generado es 5
+[INFO] 00:50:18:785 Broker/(12310:12434): Codigo de operacion recibido del socket cliente 12 corresponde a un NEW
+[INFO] 00:50:18:785 Broker/(12310:12434): Recibiendo tamanio total
+[INFO] 00:50:18:785 Broker/(12310:12434): Tamanio total recibido: 25
+[INFO] 00:50:18:786 Broker/(12310:12434): Tamanio del pokemon recibido: 9
+[INFO] 00:50:18:786 Broker/(12310:12434): Nombre del pokemon recibido: Squirtle
+[INFO] 00:50:18:787 Broker/(12310:12311): Socket cliente 14 aceptado
+[INFO] 00:50:18:794 Broker/(12310:12434): Posicion X recibida: 5
+[INFO] 00:50:18:797 Broker/(12310:12436): Codigo de operacion de socket 13 recibido: 1
+[INFO] 00:50:18:798 Broker/(12310:12436): Generando id para el mensaje del socket 13
+[INFO] 00:50:18:798 Broker/(12310:12436): El id generado es 6
+[INFO] 00:50:18:798 Broker/(12310:12436): Codigo de operacion recibido del socket cliente 13 corresponde a un NEW
+[INFO] 00:50:18:799 Broker/(12310:12436): Recibiendo tamanio total
+[INFO] 00:50:18:799 Broker/(12310:12431): Posicion X recibida: 9
+[INFO] 00:50:18:800 Broker/(12310:12431): Posicion Y recibida: 9
+[INFO] 00:50:18:800 Broker/(12310:12431): Cantidad recibida: 1
+[INFO] 00:50:18:801 Broker/(12310:12431): Retornando id 4 al socket 11
+[INFO] 00:50:18:801 Broker/(12310:12436): Tamanio total recibido: 24
+[INFO] 00:50:18:802 Broker/(12310:12436): Tamanio del pokemon recibido: 8
+[INFO] 00:50:18:802 Broker/(12310:12436): Nombre del pokemon recibido: Jolteon
+[INFO] 00:50:18:802 Broker/(12310:12436): Posicion X recibida: 2
+[INFO] 00:50:18:803 Broker/(12310:12436): Posicion Y recibida: 2
+[INFO] 00:50:18:803 Broker/(12310:12436): Cantidad recibida: 1
+[INFO] 00:50:18:803 Broker/(12310:12434): Posicion Y recibida: 2
+[INFO] 00:50:18:804 Broker/(12310:12434): Cantidad recibida: 1
+[INFO] 00:50:18:804 Broker/(12310:12434): Retornando id 5 al socket 12
+[INFO] 00:50:18:805 Broker/(12310:12434): Encolando el mensaje NEW con id 5
+[INFO] 00:50:18:806 Broker/(12310:12437): Recibiendo codigo de operacion de socket 14
+[INFO] 00:50:18:806 Broker/(12310:12431): Encolando el mensaje NEW con id 4
+[INFO] 00:50:18:807 Broker/(12310:12431): Mensaje NEW con id 4 encolado
+[INFO] 00:50:18:807 Broker/(12310:12436): Retornando id 6 al socket 13
+[INFO] 00:50:18:808 Broker/(12310:12436): Encolando el mensaje NEW con id 6
+[INFO] 00:50:18:809 Broker/(12310:12436): Mensaje NEW con id 6 encolado
+[INFO] 00:50:18:809 Broker/(12310:12437): Codigo de operacion de socket 14 recibido: 1
+[INFO] 00:50:18:810 Broker/(12310:12437): Generando id para el mensaje del socket 14
+[INFO] 00:50:18:810 Broker/(12310:12437): El id generado es 7
+[INFO] 00:50:18:810 Broker/(12310:12437): Codigo de operacion recibido del socket cliente 14 corresponde a un NEW
+[INFO] 00:50:18:811 Broker/(12310:12437): Recibiendo tamanio total
+[INFO] 00:50:18:811 Broker/(12310:12437): Tamanio total recibido: 24
+[INFO] 00:50:18:811 Broker/(12310:12437): Tamanio del pokemon recibido: 8
+[INFO] 00:50:18:812 Broker/(12310:12437): Nombre del pokemon recibido: Flareon
+[INFO] 00:50:18:812 Broker/(12310:12437): Posicion X recibida: 4
+[INFO] 00:50:18:815 Broker/(12310:12312): Atendiendo mensaje NEW con id 4
+[INFO] 00:50:18:825 Broker/(12310:12312): Guardando mensaje con id 4 en particion 0x42393a0
+[INFO] 00:50:18:825 Broker/(12310:12437): Posicion Y recibida: 6
+[INFO] 00:50:18:833 Broker/(12310:12437): Cantidad recibida: 1
+[INFO] 00:50:18:826 Broker/(12310:12434): Mensaje NEW con id 5 encolado
+[INFO] 00:50:18:834 Broker/(12310:12437): Retornando id 7 al socket 14
+[INFO] 00:50:18:835 Broker/(12310:12437): Encolando el mensaje NEW con id 7
+[INFO] 00:50:18:836 Broker/(12310:12437): Mensaje NEW con id 7 encolado
+[INFO] 00:50:18:843 Broker/(12310:12438): Preparandose para enviar mensaje NEW con id 4 al cliente 1804289383 socket 8
+[INFO] 00:50:18:845 Broker/(12310:12438): Enviando mensaje NEW con id 4 al cliente 1804289383 socket 8
+[INFO] 00:50:18:849 Broker/(12310:12438): Mensaje NEW con id 4 al cliente 1804289383 socket 8 enviado correctamente
+[INFO] 00:50:18:850 Broker/(12310:12438): ACK de cliente 1804289383 socket 8 recibido
+[INFO] 00:50:18:855 Broker/(12310:12312): Eliminando mensaje NEW con id 4
+[INFO] 00:50:18:857 Broker/(12310:12312): Eliminado mensaje NEW con id 4
+[INFO] 00:50:18:862 Broker/(12310:12312): Atendiendo mensaje NEW con id 6
+[INFO] 00:50:18:863 Broker/(12310:12312): Guardando mensaje con id 6 en particion 0x42393b4
+[INFO] 00:50:18:863 Broker/(12310:12439): Preparandose para enviar mensaje NEW con id 6 al cliente 1804289383 socket 8
+[INFO] 00:50:18:863 Broker/(12310:12439): Enviando mensaje NEW con id 6 al cliente 1804289383 socket 8
+[INFO] 00:50:18:864 Broker/(12310:12439): Mensaje NEW con id 6 al cliente 1804289383 socket 8 enviado correctamente
+[INFO] 00:50:23:849 Broker/(12310:12311): Socket cliente 15 aceptado
+[INFO] 00:50:23:852 Broker/(12310:12439): ACK de cliente 1804289383 socket 8 recibido
+[INFO] 00:50:23:852 Broker/(12310:12312): Eliminando mensaje NEW con id 6
+[INFO] 00:50:23:853 Broker/(12310:12312): Eliminado mensaje NEW con id 6
+[INFO] 00:50:23:853 Broker/(12310:12312): Atendiendo mensaje NEW con id 5
+[INFO] 00:50:23:855 Broker/(12310:12312): Guardando mensaje con id 5 en particion 0x42393c8
+[INFO] 00:50:23:859 Broker/(12310:12441): Preparandose para enviar mensaje NEW con id 5 al cliente 1804289383 socket 8
+[INFO] 00:50:23:863 Broker/(12310:12441): Enviando mensaje NEW con id 5 al cliente 1804289383 socket 8
+[INFO] 00:50:23:863 Broker/(12310:12440): Recibiendo codigo de operacion de socket 15
+[INFO] 00:50:23:864 Broker/(12310:12441): Mensaje NEW con id 5 al cliente 1804289383 socket 8 enviado correctamente
+[INFO] 00:50:23:865 Broker/(12310:12440): Codigo de operacion de socket 15 recibido: 2
+[INFO] 00:50:23:865 Broker/(12310:12440): Generando id para el mensaje del socket 15
+[INFO] 00:50:23:865 Broker/(12310:12440): El id generado es 8
+[INFO] 00:50:23:866 Broker/(12310:12440): Codigo de operacion recibido del socket cliente 15 corresponde a un APPEARED
+[INFO] 00:50:23:867 Broker/(12310:12440): Recibiendo tamanio total
+[INFO] 00:50:23:868 Broker/(12310:12440): Tamanio total recibido: 24
+[INFO] 00:50:23:869 Broker/(12310:12440): Id correlativo recibido: 4
+[INFO] 00:50:23:870 Broker/(12310:12440): Tamanio del pokemon recibido: 8
+[INFO] 00:50:23:871 Broker/(12310:12440): Nombre del pokemon recibido: pikachu
+[INFO] 00:50:23:872 Broker/(12310:12440): Posicion X recibida: 9
+[INFO] 00:50:23:873 Broker/(12310:12440): Posicion Y recibida: 9
+[INFO] 00:50:23:874 Broker/(12310:12440): Retornando id 8 al socket 15
+[INFO] 00:50:23:879 Broker/(12310:12440): Encolando el mensaje APPEARED con id 8
+[INFO] 00:50:23:880 Broker/(12310:12440): Mensaje APPEARED con id 8 encolado
+[INFO] 00:50:23:881 Broker/(12310:12313): Atendiendo mensaje APPEARED con id 8
+[INFO] 00:50:23:887 Broker/(12310:12313): Se ha eliminado el registro con id 4 ubicado en 0x42393a0 de la tabla de segmentos
+[INFO] 00:50:23:891 Broker/(12310:12313): Guardando mensaje con id 8 en particion 0x42393a0
+[INFO] 00:50:23:894 Broker/(12310:12313): Eliminando mensaje APPEARED con id 8
+[INFO] 00:50:23:895 Broker/(12310:12313): Eliminado mensaje APPEARED con id 8
+[INFO] 00:50:28:860 Broker/(12310:12311): Socket cliente 16 aceptado
+[INFO] 00:50:28:863 Broker/(12310:12441): ACK de cliente 1804289383 socket 8 recibido
+[INFO] 00:50:28:863 Broker/(12310:12312): Eliminando mensaje NEW con id 5
+[INFO] 00:50:28:864 Broker/(12310:12312): Eliminado mensaje NEW con id 5
+[INFO] 00:50:28:864 Broker/(12310:12312): Atendiendo mensaje NEW con id 7
+[INFO] 00:50:28:865 Broker/(12310:12312): Compactando memoria
+[INFO] 00:50:28:870 Broker/(12310:12312): Moviendo registro de 0x42393b4 a 0x42393b0
+[INFO] 00:50:28:875 Broker/(12310:12312): Moviendo registro de 0x42393c8 a 0x42393c4
+[INFO] 00:50:28:875 Broker/(12310:12442): Recibiendo codigo de operacion de socket 16
+[INFO] 00:50:28:876 Broker/(12310:12442): Codigo de operacion de socket 16 recibido: 2
+[INFO] 00:50:28:876 Broker/(12310:12442): Generando id para el mensaje del socket 16
+[INFO] 00:50:28:876 Broker/(12310:12442): El id generado es 9
+[INFO] 00:50:28:877 Broker/(12310:12442): Codigo de operacion recibido del socket cliente 16 corresponde a un APPEARED
+[INFO] 00:50:28:877 Broker/(12310:12442): Recibiendo tamanio total
+[INFO] 00:50:28:878 Broker/(12310:12442): Tamanio total recibido: 24
+[INFO] 00:50:28:878 Broker/(12310:12442): Id correlativo recibido: 6
+[INFO] 00:50:28:879 Broker/(12310:12442): Tamanio del pokemon recibido: 8
+[INFO] 00:50:28:881 Broker/(12310:12312): Se ha eliminado el registro con id 6 ubicado en 0x42393b0 de la tabla de segmentos
+[INFO] 00:50:28:882 Broker/(12310:12312): Compactando memoria
+[INFO] 00:50:28:882 Broker/(12310:12442): Nombre del pokemon recibido: jolteon
+[INFO] 00:50:28:882 Broker/(12310:12442): Posicion X recibida: 2
+[INFO] 00:50:28:883 Broker/(12310:12442): Posicion Y recibida: 2
+[INFO] 00:50:28:883 Broker/(12310:12442): Retornando id 9 al socket 16
+[INFO] 00:50:28:884 Broker/(12310:12442): Encolando el mensaje APPEARED con id 9
+[INFO] 00:50:28:884 Broker/(12310:12442): Mensaje APPEARED con id 9 encolado
+[INFO] 00:50:28:885 Broker/(12310:12313): Atendiendo mensaje APPEARED con id 9
+[INFO] 00:50:28:885 Broker/(12310:12312): Moviendo registro de 0x42393c4 a 0x42393b0
+[INFO] 00:50:28:886 Broker/(12310:12313): Guardando mensaje con id 9 en particion 0x42393c5
+[INFO] 00:50:28:888 Broker/(12310:12313): Eliminando mensaje APPEARED con id 9
+[INFO] 00:50:28:891 Broker/(12310:12313): Eliminado mensaje APPEARED con id 9
+[INFO] 00:50:28:892 Broker/(12310:12312): Se ha eliminado el registro con id 5 ubicado en 0x42393b0 de la tabla de segmentos
+[INFO] 00:50:28:893 Broker/(12310:12312): Guardando mensaje con id 7 en particion 0x42393b0
+[INFO] 00:50:28:893 Broker/(12310:12443): Preparandose para enviar mensaje NEW con id 7 al cliente 1804289383 socket 8
+[INFO] 00:50:28:893 Broker/(12310:12443): Enviando mensaje NEW con id 7 al cliente 1804289383 socket 8
+[INFO] 00:50:28:894 Broker/(12310:12443): Mensaje NEW con id 7 al cliente 1804289383 socket 8 enviado correctamente
+[INFO] 00:50:33:870 Broker/(12310:12311): Socket cliente 17 aceptado
+[INFO] 00:50:33:877 Broker/(12310:12443): ACK de cliente 1804289383 socket 8 recibido
+[INFO] 00:50:33:879 Broker/(12310:12312): Eliminando mensaje NEW con id 7
+[INFO] 00:50:33:879 Broker/(12310:12312): Eliminado mensaje NEW con id 7
+[INFO] 00:50:33:888 Broker/(12310:12444): Recibiendo codigo de operacion de socket 17
+[INFO] 00:50:33:888 Broker/(12310:12444): Codigo de operacion de socket 17 recibido: 2
+[INFO] 00:50:33:889 Broker/(12310:12444): Generando id para el mensaje del socket 17
+[INFO] 00:50:33:890 Broker/(12310:12444): El id generado es 10
+[INFO] 00:50:33:890 Broker/(12310:12444): Codigo de operacion recibido del socket cliente 17 corresponde a un APPEARED
+[INFO] 00:50:33:891 Broker/(12310:12444): Recibiendo tamanio total
+[INFO] 00:50:33:891 Broker/(12310:12444): Tamanio total recibido: 25
+[INFO] 00:50:33:891 Broker/(12310:12444): Id correlativo recibido: 5
+[INFO] 00:50:33:892 Broker/(12310:12444): Tamanio del pokemon recibido: 9
+[INFO] 00:50:33:892 Broker/(12310:12444): Nombre del pokemon recibido: squirtle
+[INFO] 00:50:33:892 Broker/(12310:12444): Posicion X recibida: 5
+[INFO] 00:50:33:893 Broker/(12310:12444): Posicion Y recibida: 2
+[INFO] 00:50:33:893 Broker/(12310:12444): Retornando id 10 al socket 17
+[INFO] 00:50:33:893 Broker/(12310:12444): Encolando el mensaje APPEARED con id 10
+[INFO] 00:50:33:894 Broker/(12310:12444): Mensaje APPEARED con id 10 encolado
+[INFO] 00:50:33:894 Broker/(12310:12313): Atendiendo mensaje APPEARED con id 10
+[INFO] 00:50:33:895 Broker/(12310:12313): Compactando memoria
+[INFO] 00:50:33:895 Broker/(12310:12313): Moviendo registro de 0x42393c5 a 0x42393c4
+[INFO] 00:50:33:896 Broker/(12310:12313): Se ha eliminado el registro con id 8 ubicado en 0x42393a0 de la tabla de segmentos
+[INFO] 00:50:33:896 Broker/(12310:12313): Compactando memoria
+[INFO] 00:50:33:897 Broker/(12310:12313): Moviendo registro de 0x42393b0 a 0x42393a0
+[INFO] 00:50:33:901 Broker/(12310:12313): Moviendo registro de 0x42393c4 a 0x42393b4
+[INFO] 00:50:33:902 Broker/(12310:12313): Guardando mensaje con id 10 en particion 0x42393c4
+[INFO] 00:50:33:903 Broker/(12310:12313): Eliminando mensaje APPEARED con id 10
+[INFO] 00:50:33:903 Broker/(12310:12313): Eliminado mensaje APPEARED con id 10
+[INFO] 00:50:38:889 Broker/(12310:12311): Socket cliente 18 aceptado
+[INFO] 00:50:38:895 Broker/(12310:12445): Recibiendo codigo de operacion de socket 18
+[INFO] 00:50:38:897 Broker/(12310:12445): Codigo de operacion de socket 18 recibido: 2
+[INFO] 00:50:38:898 Broker/(12310:12445): Generando id para el mensaje del socket 18
+[INFO] 00:50:38:899 Broker/(12310:12445): El id generado es 11
+[INFO] 00:50:38:900 Broker/(12310:12445): Codigo de operacion recibido del socket cliente 18 corresponde a un APPEARED
+[INFO] 00:50:38:908 Broker/(12310:12445): Recibiendo tamanio total
+[INFO] 00:50:38:910 Broker/(12310:12445): Tamanio total recibido: 24
+[INFO] 00:50:38:911 Broker/(12310:12445): Id correlativo recibido: 7
+[INFO] 00:50:38:912 Broker/(12310:12445): Tamanio del pokemon recibido: 8
+[INFO] 00:50:38:912 Broker/(12310:12445): Nombre del pokemon recibido: flareon
+[INFO] 00:50:38:913 Broker/(12310:12445): Posicion X recibida: 4
+[INFO] 00:50:38:913 Broker/(12310:12445): Posicion Y recibida: 6
+[INFO] 00:50:38:914 Broker/(12310:12445): Retornando id 11 al socket 18
+[INFO] 00:50:38:915 Broker/(12310:12445): Encolando el mensaje APPEARED con id 11
+[INFO] 00:50:38:915 Broker/(12310:12445): Mensaje APPEARED con id 11 encolado
+[INFO] 00:50:38:916 Broker/(12310:12313): Atendiendo mensaje APPEARED con id 11
+[INFO] 00:50:38:920 Broker/(12310:12313): Se ha eliminado el registro con id 7 ubicado en 0x42393a0 de la tabla de segmentos
+[INFO] 00:50:38:921 Broker/(12310:12313): Guardando mensaje con id 11 en particion 0x42393a0
+[INFO] 00:50:38:923 Broker/(12310:12313): Eliminando mensaje APPEARED con id 11
+[INFO] 00:50:38:923 Broker/(12310:12313): Eliminado mensaje APPEARED con id 11
+[INFO] 00:51:03:135 Broker/(12310:12311): Socket cliente 19 aceptado
+[INFO] 00:51:03:137 Broker/(12310:12311): Socket cliente 20 aceptado
+[INFO] 00:51:03:137 Broker/(12310:12311): Socket cliente 21 aceptado
+[INFO] 00:51:03:138 Broker/(12310:12454): Recibiendo codigo de operacion de socket 20
+[INFO] 00:51:03:139 Broker/(12310:12463): Recibiendo codigo de operacion de socket 21
+[INFO] 00:51:03:139 Broker/(12310:12453): Recibiendo codigo de operacion de socket 19
+[INFO] 00:51:03:140 Broker/(12310:12311): Socket cliente 22 aceptado
+[INFO] 00:51:03:143 Broker/(12310:12454): Codigo de operacion de socket 20 recibido: 7
+[INFO] 00:51:03:145 Broker/(12310:12311): Socket cliente 23 aceptado
+[INFO] 00:51:03:145 Broker/(12310:12463): Codigo de operacion de socket 21 recibido: 7
+[INFO] 00:51:03:145 Broker/(12310:12463): Generando id para el mensaje del socket 21
+[INFO] 00:51:03:148 Broker/(12310:12453): Codigo de operacion de socket 19 recibido: 7
+[INFO] 00:51:03:148 Broker/(12310:12453): Generando id para el mensaje del socket 19
+[INFO] 00:51:03:149 Broker/(12310:12453): El id generado es 12
+[INFO] 00:51:03:149 Broker/(12310:12453): Codigo de operacion recibido del socket cliente 19 corresponde a un SUSCRIPCION
+[INFO] 00:51:03:149 Broker/(12310:12311): Socket cliente 24 aceptado
+[INFO] 00:51:03:150 Broker/(12310:12468): Recibiendo codigo de operacion de socket 22
+[INFO] 00:51:03:150 Broker/(12310:12453): Recibiendo tamanio total
+[INFO] 00:51:03:150 Broker/(12310:12469): Recibiendo codigo de operacion de socket 23
+[INFO] 00:51:03:151 Broker/(12310:12454): Generando id para el mensaje del socket 20
+[INFO] 00:51:03:152 Broker/(12310:12454): El id generado es 13
+[INFO] 00:51:03:152 Broker/(12310:12454): Codigo de operacion recibido del socket cliente 20 corresponde a un SUSCRIPCION
+[INFO] 00:51:03:152 Broker/(12310:12454): Recibiendo tamanio total
+[INFO] 00:51:03:153 Broker/(12310:12454): Tamanio total recibido: 16
+[INFO] 00:51:03:153 Broker/(12310:12454): Recibiendo id de cliente
+[INFO] 00:51:03:153 Broker/(12310:12463): El id generado es 14
+[INFO] 00:51:03:153 Broker/(12310:12463): Codigo de operacion recibido del socket cliente 21 corresponde a un SUSCRIPCION
+[INFO] 00:51:03:154 Broker/(12310:12463): Recibiendo tamanio total
+[INFO] 00:51:03:154 Broker/(12310:12463): Tamanio total recibido: 16
+[INFO] 00:51:03:154 Broker/(12310:12463): Recibiendo id de cliente
+[INFO] 00:51:03:155 Broker/(12310:12463): Id de cliente recibido: 1804289383
+[INFO] 00:51:03:155 Broker/(12310:12311): Socket cliente 25 aceptado
+[INFO] 00:51:03:155 Broker/(12310:12463): Recibiendo id de cola
+[INFO] 00:51:03:156 Broker/(12310:12463): Id de cola recibido: 16
+[INFO] 00:51:03:157 Broker/(12310:12469): Codigo de operacion de socket 23 recibido: 5
+[INFO] 00:51:03:157 Broker/(12310:12469): Generando id para el mensaje del socket 23
+[INFO] 00:51:03:160 Broker/(12310:12469): El id generado es 15
+[INFO] 00:51:03:161 Broker/(12310:12463): Id de cola recibido del socket cliente 21 corresponde a la cola de LOCALIZED
+[INFO] 00:51:03:161 Broker/(12310:12468): Codigo de operacion de socket 22 recibido: 5
+[INFO] 00:51:03:164 Broker/(12310:12468): Generando id para el mensaje del socket 22
+[INFO] 00:51:03:165 Broker/(12310:12468): El id generado es 16
+[INFO] 00:51:03:165 Broker/(12310:12470): Recibiendo codigo de operacion de socket 24
+[INFO] 00:51:03:165 Broker/(12310:12453): Tamanio total recibido: 16
+[INFO] 00:51:03:166 Broker/(12310:12453): Recibiendo id de cliente
+[INFO] 00:51:03:166 Broker/(12310:12453): Id de cliente recibido: 1804289383
+[INFO] 00:51:03:166 Broker/(12310:12453): Recibiendo id de cola
+[INFO] 00:51:03:166 Broker/(12310:12453): Id de cola recibido: 12
+[INFO] 00:51:03:167 Broker/(12310:12453): Id de cola recibido del socket cliente 19 corresponde a la cola de APPEARED
+[INFO] 00:51:03:167 Broker/(12310:12454): Id de cliente recibido: 1804289383
+[INFO] 00:51:03:167 Broker/(12310:12454): Recibiendo id de cola
+[INFO] 00:51:03:168 Broker/(12310:12454): Id de cola recibido: 14
+[INFO] 00:51:03:168 Broker/(12310:12454): Id de cola recibido del socket cliente 20 corresponde a la cola de CAUGHT
+[INFO] 00:51:03:169 Broker/(12310:12454): Tamanio tabla de segmentos: 3
+[INFO] 00:51:03:170 Broker/(12310:12471): Recibiendo codigo de operacion de socket 25
+[INFO] 00:51:03:170 Broker/(12310:12469): Codigo de operacion recibido del socket cliente 23 corresponde a un GET
+[INFO] 00:51:03:171 Broker/(12310:12469): Recibiendo tamanio total
+[INFO] 00:51:03:172 Broker/(12310:12469): Tamanio total recibido: 19
+[INFO] 00:51:03:172 Broker/(12310:12468): Codigo de operacion recibido del socket cliente 22 corresponde a un GET
+[INFO] 00:51:03:172 Broker/(12310:12468): Recibiendo tamanio total
+[INFO] 00:51:03:173 Broker/(12310:12468): Tamanio total recibido: 20
+[INFO] 00:51:03:174 Broker/(12310:12468): Tamanio del pokemon recibido: 8
+[INFO] 00:51:03:175 Broker/(12310:12463): Tamanio tabla de segmentos: 3
+[WARNING] 00:51:03:176 Broker/(12310:12463): Registro NULL leido
+[INFO] 00:51:03:177 Broker/(12310:12468): Nombre del pokemon recibido: pikachu
+[INFO] 00:51:03:177 Broker/(12310:12471): Codigo de operacion de socket 25 recibido: 5
+[INFO] 00:51:03:178 Broker/(12310:12453): Tamanio tabla de segmentos: 3
+[INFO] 00:51:03:180 Broker/(12310:12471): Generando id para el mensaje del socket 25
+[INFO] 00:51:03:180 Broker/(12310:12470): Codigo de operacion de socket 24 recibido: 5
+[INFO] 00:51:03:180 Broker/(12310:12470): Generando id para el mensaje del socket 24
+[INFO] 00:51:03:180 Broker/(12310:12470): El id generado es 17
+[INFO] 00:51:03:181 Broker/(12310:12470): Codigo de operacion recibido del socket cliente 24 corresponde a un GET
+[INFO] 00:51:03:181 Broker/(12310:12470): Recibiendo tamanio total
+[INFO] 00:51:03:181 Broker/(12310:12470): Tamanio total recibido: 21
+[INFO] 00:51:03:182 Broker/(12310:12470): Tamanio del pokemon recibido: 9
+[INFO] 00:51:03:182 Broker/(12310:12470): Nombre del pokemon recibido: squirtle
+[WARNING] 00:51:03:179 Broker/(12310:12454): Registro NULL leido
+[INFO] 00:51:03:183 Broker/(12310:12470): Retornando id 17 al socket 24
+[WARNING] 00:51:03:184 Broker/(12310:12453): Registro NULL leido
+[WARNING] 00:51:03:185 Broker/(12310:12453): Registro NULL leido
+[INFO] 00:51:03:185 Broker/(12310:12469): Tamanio del pokemon recibido: 7
+[INFO] 00:51:03:185 Broker/(12310:12469): Nombre del pokemon recibido: gengar
+[INFO] 00:51:03:186 Broker/(12310:12469): Retornando id 15 al socket 23
+[INFO] 00:51:03:186 Broker/(12310:12469): Encolando el mensaje GET con id 15
+[INFO] 00:51:03:187 Broker/(12310:12469): Mensaje GET con id 15 encolado
+[INFO] 00:51:03:187 Broker/(12310:12471): El id generado es 18
+[INFO] 00:51:03:188 Broker/(12310:12471): Codigo de operacion recibido del socket cliente 25 corresponde a un GET
+[INFO] 00:51:03:188 Broker/(12310:12471): Recibiendo tamanio total
+[INFO] 00:51:03:188 Broker/(12310:12471): Tamanio total recibido: 17
+[INFO] 00:51:03:189 Broker/(12310:12471): Tamanio del pokemon recibido: 5
+[INFO] 00:51:03:189 Broker/(12310:12471): Nombre del pokemon recibido: onix
+[INFO] 00:51:03:189 Broker/(12310:12471): Retornando id 18 al socket 25
+[WARNING] 00:51:03:190 Broker/(12310:12463): Registro NULL leido
+[INFO] 00:51:03:190 Broker/(12310:12470): Encolando el mensaje GET con id 17
+[WARNING] 00:51:03:190 Broker/(12310:12463): Registro NULL leido
+[WARNING] 00:51:03:190 Broker/(12310:12463): Registro NULL leido
+[INFO] 00:51:03:191 Broker/(12310:12471): Encolando el mensaje GET con id 18
+[INFO] 00:51:03:191 Broker/(12310:12468): Retornando id 16 al socket 22
+[INFO] 00:51:03:193 Broker/(12310:12468): Encolando el mensaje GET con id 16
+[INFO] 00:51:03:194 Broker/(12310:12468): Mensaje GET con id 16 encolado
+[INFO] 00:51:03:195 Broker/(12310:12316): Atendiendo mensaje GET con id 15
+[INFO] 00:51:03:197 Broker/(12310:12316): Guardando mensaje con id 15 en particion 0x42393d5
+[WARNING] 00:51:03:201 Broker/(12310:12454): Registro NULL leido
+[WARNING] 00:51:03:201 Broker/(12310:12454): Registro NULL leido
+[WARNING] 00:51:03:202 Broker/(12310:12454): Registro NULL leido
+[WARNING] 00:51:03:202 Broker/(12310:12454): Registro NULL leido
+[WARNING] 00:51:03:202 Broker/(12310:12454): Registro NULL leido
+[WARNING] 00:51:03:203 Broker/(12310:12454): Registro NULL leido
+[WARNING] 00:51:03:203 Broker/(12310:12453): Registro NULL leido
+[WARNING] 00:51:03:203 Broker/(12310:12453): Registro NULL leido
+[WARNING] 00:51:03:203 Broker/(12310:12453): Registro NULL leido
+[WARNING] 00:51:03:204 Broker/(12310:12453): Registro NULL leido
+[WARNING] 00:51:03:204 Broker/(12310:12453): Registro NULL leido
+[WARNING] 00:51:03:204 Broker/(12310:12453): Registro NULL leido
+[WARNING] 00:51:03:204 Broker/(12310:12454): Registro NULL leido
+[INFO] 00:51:03:205 Broker/(12310:12470): Mensaje GET con id 17 encolado
+[INFO] 00:51:03:207 Broker/(12310:12471): Mensaje GET con id 18 encolado
+[WARNING] 00:51:03:208 Broker/(12310:12453): Registro NULL leido
+[WARNING] 00:51:03:208 Broker/(12310:12463): Registro NULL leido
+[WARNING] 00:51:03:209 Broker/(12310:12463): Registro NULL leido
+[WARNING] 00:51:03:209 Broker/(12310:12463): Registro NULL leido
+[WARNING] 00:51:03:209 Broker/(12310:12463): Registro NULL leido
+[WARNING] 00:51:03:210 Broker/(12310:12463): Registro NULL leido
+[WARNING] 00:51:03:210 Broker/(12310:12463): Registro NULL leido
+[WARNING] 00:51:03:211 Broker/(12310:12463): Registro NULL leido
+[WARNING] 00:51:03:211 Broker/(12310:12454): Registro NULL leido
+[WARNING] 00:51:03:212 Broker/(12310:12454): Registro NULL leido
+[WARNING] 00:51:03:212 Broker/(12310:12454): Registro NULL leido
+[INFO] 00:51:03:213 Broker/(12310:12454): No existen segmentos CAUGHT a enviar al cliente 1804289383 socket 20
+[WARNING] 00:51:03:214 Broker/(12310:12453): Registro NULL leido
+[INFO] 00:51:03:214 Broker/(12310:12463): No existen segmentos LOCALIZED a enviar al cliente 1804289383 socket 21
+[INFO] 00:51:03:215 Broker/(12310:12454): Modulo con id 1804289383 agregado correctamente en la cola de CAUGHT
+[WARNING] 00:51:03:215 Broker/(12310:12453): Registro NULL leido
+[INFO] 00:51:03:216 Broker/(12310:12453): Segmentos APPEARED a enviar al cliente 1804289383 socket 19: 3
+[INFO] 00:51:03:218 Broker/(12310:12463): Modulo con id 1804289383 agregado correctamente en la cola de LOCALIZED
+[INFO] 00:51:03:220 Broker/(12310:12472): Preparandose para enviar mensaje GET con id 15 al cliente 1804289383 socket 10
+[INFO] 00:51:03:223 Broker/(12310:12475): Enviando mensaje APPEARED de memoria con id 11 al cliente 1804289383 socket 19
+[INFO] 00:51:03:224 Broker/(12310:12472): Enviando mensaje GET con id 15 al cliente 1804289383 socket 10
+[INFO] 00:51:03:224 Broker/(12310:12473): Enviando mensaje APPEARED de memoria con id 9 al cliente 1804289383 socket 19
+[INFO] 00:51:03:225 Broker/(12310:12474): Enviando mensaje APPEARED de memoria con id 10 al cliente 1804289383 socket 19
+[INFO] 00:51:03:227 Broker/(12310:12474): Mensaje APPEARED de memoria con id 10 al cliente 1804289383 socket 19 enviado correctamente
+[INFO] 00:51:03:228 Broker/(12310:12473): Mensaje APPEARED de memoria con id 9 al cliente 1804289383 socket 19 enviado correctamente
+[INFO] 00:51:03:232 Broker/(12310:12474): ACK de cliente 1804289383 socket 19 recibido
+[INFO] 00:51:03:233 Broker/(12310:12473): ACK de cliente 1804289383 socket 19 recibido
+[INFO] 00:51:03:239 Broker/(12310:12475): Mensaje APPEARED de memoria con id 11 al cliente 1804289383 socket 19 enviado correctamente
+[INFO] 00:51:03:240 Broker/(12310:12472): Mensaje GET con id 15 al cliente 1804289383 socket 10 enviado correctamente
+[INFO] 00:51:03:241 Broker/(12310:12475): ACK de cliente 1804289383 socket 19 recibido
+[INFO] 00:51:03:244 Broker/(12310:12453): Modulo con id 1804289383 agregado correctamente en la cola de APPEARED
+[INFO] 00:51:03:247 Broker/(12310:12472): ACK de cliente 1804289383 socket 10 recibido
+[INFO] 00:51:03:250 Broker/(12310:12316): Eliminando mensaje GET con id 15
+[INFO] 00:51:03:254 Broker/(12310:12316): Eliminado mensaje GET con id 15
+[INFO] 00:51:03:254 Broker/(12310:12316): A
+[INFO] 00:51:03:255 Broker/(12310:12316): B
+[INFO] 00:51:03:255 Broker/(12310:12316): C
+[INFO] 00:51:03:256 Broker/(12310:12316): Atendiendo mensaje GET con id 16
+[INFO] 00:51:03:256 Broker/(12310:12316): Compactando memoria
+[INFO] 00:51:03:256 Broker/(12310:12316): Moviendo registro de 0x42393b4 a 0x42393b0
+[INFO] 00:51:03:257 Broker/(12310:12316): Moviendo registro de 0x42393c4 a 0x42393c0
+[INFO] 00:51:03:257 Broker/(12310:12316): Moviendo registro de 0x42393d5 a 0x42393d1
+[INFO] 00:51:03:258 Broker/(12310:12316): Se ha eliminado el registro con id 9 ubicado en 0x42393b0 de la tabla de segmentos
+[INFO] 00:51:03:270 Broker/(12310:12316): Guardando mensaje con id 16 en particion 0x42393b0
+[INFO] 00:51:03:270 Broker/(12310:12476): Preparandose para enviar mensaje GET con id 16 al cliente 1804289383 socket 10
+[INFO] 00:51:03:271 Broker/(12310:12476): Enviando mensaje GET con id 16 al cliente 1804289383 socket 10
+[INFO] 00:51:03:271 Broker/(12310:12476): Mensaje GET con id 16 al cliente 1804289383 socket 10 enviado correctamente
+[WARNING] 00:51:03:272 Broker/(12310:12476): El cliente 1804289383 acaba de cerrar la conexion correspondiente al socket 10
+[INFO] 00:51:03:274 Broker/(12310:12476): Eliminando suscriptor con id 1804289383 y socket 10
+[INFO] 00:51:03:275 Broker/(12310:12316): Eliminando mensaje GET con id 16
+[INFO] 00:51:03:276 Broker/(12310:12316): Eliminado mensaje GET con id 16
+[INFO] 00:51:03:276 Broker/(12310:12316): A
+[INFO] 00:51:03:276 Broker/(12310:12316): B
+[INFO] 00:51:03:276 Broker/(12310:12316): C
+[INFO] 00:51:03:277 Broker/(12310:12316): Atendiendo mensaje GET con id 17
+[INFO] 00:51:03:277 Broker/(12310:12316): Compactando memoria
+[INFO] 00:51:03:278 Broker/(12310:12316): Moviendo registro de 0x42393c0 a 0x42393b8
+[INFO] 00:51:03:278 Broker/(12310:12316): Moviendo registro de 0x42393d1 a 0x42393c9
+[INFO] 00:51:03:278 Broker/(12310:12316): Guardando mensaje con id 17 en particion 0x42393d0
+[INFO] 00:51:03:279 Broker/(12310:12316): Eliminando mensaje GET con id 17
+[INFO] 00:51:03:279 Broker/(12310:12316): Eliminado mensaje GET con id 17
+[INFO] 00:51:03:280 Broker/(12310:12316): A
+[INFO] 00:51:03:280 Broker/(12310:12316): B
+[INFO] 00:51:03:280 Broker/(12310:12316): C
+[INFO] 00:51:03:280 Broker/(12310:12316): Atendiendo mensaje GET con id 18
+[INFO] 00:51:03:281 Broker/(12310:12316): Guardando mensaje con id 18 en particion 0x42393d9
+[INFO] 00:51:03:281 Broker/(12310:12316): Eliminando mensaje GET con id 18
+[INFO] 00:51:03:281 Broker/(12310:12316): Eliminado mensaje GET con id 18
+[INFO] 00:51:03:282 Broker/(12310:12316): A
+[INFO] 00:51:03:282 Broker/(12310:12316): B
+[INFO] 00:51:03:282 Broker/(12310:12316): C
+[INFO] 00:51:06:536 Broker/(12310:12311): Socket cliente 26 aceptado
+[INFO] 00:51:06:537 Broker/(12310:12311): Socket cliente 10 aceptado
+[INFO] 00:51:06:538 Broker/(12310:12311): Socket cliente 27 aceptado
+[INFO] 00:51:06:539 Broker/(12310:12483): Recibiendo codigo de operacion de socket 10
+[INFO] 00:51:06:539 Broker/(12310:12484): Recibiendo codigo de operacion de socket 27
+[INFO] 00:51:06:539 Broker/(12310:12482): Recibiendo codigo de operacion de socket 26
+[INFO] 00:51:06:540 Broker/(12310:12311): Socket cliente 28 aceptado
+[INFO] 00:51:06:540 Broker/(12310:12483): Codigo de operacion de socket 10 recibido: 7
+[INFO] 00:51:06:542 Broker/(12310:12311): Socket cliente 29 aceptado
+[INFO] 00:51:06:542 Broker/(12310:12311): Socket cliente 30 aceptado
+[INFO] 00:51:06:543 Broker/(12310:12484): Codigo de operacion de socket 27 recibido: 7
+[INFO] 00:51:06:543 Broker/(12310:12311): Socket cliente 31 aceptado
+[INFO] 00:51:06:544 Broker/(12310:12484): Generando id para el mensaje del socket 27
+[INFO] 00:51:06:544 Broker/(12310:12484): El id generado es 19
+[INFO] 00:51:06:545 Broker/(12310:12483): Generando id para el mensaje del socket 10
+[INFO] 00:51:06:546 Broker/(12310:12483): El id generado es 20
+[INFO] 00:51:06:546 Broker/(12310:12311): Socket cliente 32 aceptado
+[INFO] 00:51:06:546 Broker/(12310:12501): Recibiendo codigo de operacion de socket 29
+[INFO] 00:51:06:547 Broker/(12310:12502): Recibiendo codigo de operacion de socket 30
+[INFO] 00:51:06:553 Broker/(12310:12483): Codigo de operacion recibido del socket cliente 10 corresponde a un SUSCRIPCION
+[INFO] 00:51:06:554 Broker/(12310:12500): Recibiendo codigo de operacion de socket 28
+[INFO] 00:51:06:554 Broker/(12310:12483): Recibiendo tamanio total
+[INFO] 00:51:06:555 Broker/(12310:12503): Recibiendo codigo de operacion de socket 31
+[INFO] 00:51:06:555 Broker/(12310:12482): Codigo de operacion de socket 26 recibido: 7
+[INFO] 00:51:06:556 Broker/(12310:12482): Generando id para el mensaje del socket 26
+[INFO] 00:51:06:556 Broker/(12310:12482): El id generado es 21
+[INFO] 00:51:06:556 Broker/(12310:12482): Codigo de operacion recibido del socket cliente 26 corresponde a un SUSCRIPCION
+[INFO] 00:51:06:556 Broker/(12310:12482): Recibiendo tamanio total
+[INFO] 00:51:06:557 Broker/(12310:12482): Tamanio total recibido: 16
+[INFO] 00:51:06:557 Broker/(12310:12482): Recibiendo id de cliente
+[INFO] 00:51:06:557 Broker/(12310:12482): Id de cliente recibido: 1804289383
+[INFO] 00:51:06:558 Broker/(12310:12483): Tamanio total recibido: 16
+[INFO] 00:51:06:559 Broker/(12310:12500): Codigo de operacion de socket 28 recibido: 5
+[INFO] 00:51:06:559 Broker/(12310:12500): Generando id para el mensaje del socket 28
+[INFO] 00:51:06:559 Broker/(12310:12500): El id generado es 22
+[INFO] 00:51:06:560 Broker/(12310:12482): Recibiendo id de cola
+[INFO] 00:51:06:560 Broker/(12310:12500): Codigo de operacion recibido del socket cliente 28 corresponde a un GET
+[INFO] 00:51:06:560 Broker/(12310:12484): Codigo de operacion recibido del socket cliente 27 corresponde a un SUSCRIPCION
+[INFO] 00:51:06:560 Broker/(12310:12484): Recibiendo tamanio total
+[INFO] 00:51:06:561 Broker/(12310:12484): Tamanio total recibido: 16
+[INFO] 00:51:06:561 Broker/(12310:12484): Recibiendo id de cliente
+[INFO] 00:51:06:561 Broker/(12310:12484): Id de cliente recibido: 1804289383
+[INFO] 00:51:06:562 Broker/(12310:12484): Recibiendo id de cola
+[INFO] 00:51:06:562 Broker/(12310:12484): Id de cola recibido: 16
+[INFO] 00:51:06:562 Broker/(12310:12484): Id de cola recibido del socket cliente 27 corresponde a la cola de LOCALIZED
+[INFO] 00:51:06:565 Broker/(12310:12501): Codigo de operacion de socket 29 recibido: 5
+[INFO] 00:51:06:565 Broker/(12310:12501): Generando id para el mensaje del socket 29
+[INFO] 00:51:06:565 Broker/(12310:12501): El id generado es 23
+[INFO] 00:51:06:565 Broker/(12310:12501): Codigo de operacion recibido del socket cliente 29 corresponde a un GET
+[INFO] 00:51:06:566 Broker/(12310:12501): Recibiendo tamanio total
+[INFO] 00:51:06:566 Broker/(12310:12502): Codigo de operacion de socket 30 recibido: 5
+[INFO] 00:51:06:566 Broker/(12310:12502): Generando id para el mensaje del socket 30
+[INFO] 00:51:06:566 Broker/(12310:12502): El id generado es 24
+[INFO] 00:51:06:566 Broker/(12310:12502): Codigo de operacion recibido del socket cliente 30 corresponde a un GET
+[INFO] 00:51:06:567 Broker/(12310:12502): Recibiendo tamanio total
+[INFO] 00:51:06:567 Broker/(12310:12502): Tamanio total recibido: 20
+[INFO] 00:51:06:567 Broker/(12310:12484): Tamanio tabla de segmentos: 6
+[INFO] 00:51:06:570 Broker/(12310:12502): Tamanio del pokemon recibido: 8
+[INFO] 00:51:06:570 Broker/(12310:12502): Nombre del pokemon recibido: umbreon
+[INFO] 00:51:06:570 Broker/(12310:12502): Retornando id 24 al socket 30
+[INFO] 00:51:06:571 Broker/(12310:12503): Codigo de operacion de socket 31 recibido: 5
+[INFO] 00:51:06:571 Broker/(12310:12503): Generando id para el mensaje del socket 31
+[INFO] 00:51:06:571 Broker/(12310:12503): El id generado es 25
+[INFO] 00:51:06:571 Broker/(12310:12503): Codigo de operacion recibido del socket cliente 31 corresponde a un GET
+[INFO] 00:51:06:572 Broker/(12310:12503): Recibiendo tamanio total
+[INFO] 00:51:06:572 Broker/(12310:12503): Tamanio total recibido: 19
+[INFO] 00:51:06:572 Broker/(12310:12482): Id de cola recibido: 12
+[INFO] 00:51:06:573 Broker/(12310:12482): Id de cola recibido del socket cliente 26 corresponde a la cola de APPEARED
+[INFO] 00:51:06:573 Broker/(12310:12482): Tamanio tabla de segmentos: 6
+[WARNING] 00:51:06:573 Broker/(12310:12482): Registro NULL leido
+[WARNING] 00:51:06:573 Broker/(12310:12482): Registro NULL leido
+[WARNING] 00:51:06:574 Broker/(12310:12482): Registro NULL leido
+[INFO] 00:51:06:574 Broker/(12310:12503): Tamanio del pokemon recibido: 7
+[INFO] 00:51:06:574 Broker/(12310:12500): Recibiendo tamanio total
+[INFO] 00:51:06:574 Broker/(12310:12500): Tamanio total recibido: 21
+[INFO] 00:51:06:574 Broker/(12310:12500): Tamanio del pokemon recibido: 9
+[INFO] 00:51:06:575 Broker/(12310:12500): Nombre del pokemon recibido: vaporeon
+[INFO] 00:51:06:575 Broker/(12310:12500): Retornando id 22 al socket 28
+[INFO] 00:51:06:576 Broker/(12310:12500): Encolando el mensaje GET con id 22
+[WARNING] 00:51:06:576 Broker/(12310:12482): Registro NULL leido
+[INFO] 00:51:06:576 Broker/(12310:12504): Recibiendo codigo de operacion de socket 32
+[INFO] 00:51:06:577 Broker/(12310:12483): Recibiendo id de cliente
+[INFO] 00:51:06:577 Broker/(12310:12483): Id de cliente recibido: 1804289383
+[INFO] 00:51:06:577 Broker/(12310:12483): Recibiendo id de cola
+[INFO] 00:51:06:577 Broker/(12310:12483): Id de cola recibido: 14
+[INFO] 00:51:06:577 Broker/(12310:12483): Id de cola recibido del socket cliente 10 corresponde a la cola de CAUGHT
+[INFO] 00:51:06:578 Broker/(12310:12483): Tamanio tabla de segmentos: 6
+[WARNING] 00:51:06:578 Broker/(12310:12483): Registro NULL leido
+[INFO] 00:51:06:578 Broker/(12310:12500): Mensaje GET con id 22 encolado
+[WARNING] 00:51:06:579 Broker/(12310:12483): Registro NULL leido
+[WARNING] 00:51:06:579 Broker/(12310:12484): Registro NULL leido
+[WARNING] 00:51:06:579 Broker/(12310:12484): Registro NULL leido
+[WARNING] 00:51:06:580 Broker/(12310:12484): Registro NULL leido
+[WARNING] 00:51:06:580 Broker/(12310:12484): Registro NULL leido
+[WARNING] 00:51:06:580 Broker/(12310:12484): Registro NULL leido
+[INFO] 00:51:06:581 Broker/(12310:12501): Tamanio total recibido: 20
+[INFO] 00:51:06:581 Broker/(12310:12501): Tamanio del pokemon recibido: 8
+[INFO] 00:51:06:581 Broker/(12310:12501): Nombre del pokemon recibido: flareon
+[INFO] 00:51:06:582 Broker/(12310:12501): Retornando id 23 al socket 29
+[INFO] 00:51:06:582 Broker/(12310:12501): Encolando el mensaje GET con id 23
+[INFO] 00:51:06:582 Broker/(12310:12501): Mensaje GET con id 23 encolado
+[INFO] 00:51:06:583 Broker/(12310:12316): Atendiendo mensaje GET con id 22
+[INFO] 00:51:06:584 Broker/(12310:12316): Se ha eliminado el registro con id 10 ubicado en 0x42393b8 de la tabla de segmentos
+[INFO] 00:51:06:585 Broker/(12310:12316): Guardando mensaje con id 22 en particion 0x42393b8
+[INFO] 00:51:06:586 Broker/(12310:12316): Eliminando mensaje GET con id 22
+[INFO] 00:51:06:586 Broker/(12310:12316): Eliminado mensaje GET con id 22
+[WARNING] 00:51:06:586 Broker/(12310:12484): Registro NULL leido
+[INFO] 00:51:06:586 Broker/(12310:12316): A
+[INFO] 00:51:06:587 Broker/(12310:12316): B
+[INFO] 00:51:06:587 Broker/(12310:12504): Codigo de operacion de socket 32 recibido: 5
+[INFO] 00:51:06:588 Broker/(12310:12504): Generando id para el mensaje del socket 32
+[INFO] 00:51:06:588 Broker/(12310:12504): El id generado es 26
+[INFO] 00:51:06:588 Broker/(12310:12503): Nombre del pokemon recibido: espeon
+[INFO] 00:51:06:588 Broker/(12310:12503): Retornando id 25 al socket 31
+[INFO] 00:51:06:589 Broker/(12310:12503): Encolando el mensaje GET con id 25
+[INFO] 00:51:06:589 Broker/(12310:12503): Mensaje GET con id 25 encolado
+[INFO] 00:51:06:590 Broker/(12310:12502): Encolando el mensaje GET con id 24
+[INFO] 00:51:06:590 Broker/(12310:12502): Mensaje GET con id 24 encolado
+[WARNING] 00:51:06:590 Broker/(12310:12483): Registro NULL leido
+[WARNING] 00:51:06:591 Broker/(12310:12483): Registro NULL leido
+[WARNING] 00:51:06:591 Broker/(12310:12483): Registro NULL leido
+[WARNING] 00:51:06:591 Broker/(12310:12483): Registro NULL leido
+[WARNING] 00:51:06:591 Broker/(12310:12482): Registro NULL leido
+[WARNING] 00:51:06:591 Broker/(12310:12482): Registro NULL leido
+[WARNING] 00:51:06:592 Broker/(12310:12482): Registro NULL leido
+[WARNING] 00:51:06:592 Broker/(12310:12482): Registro NULL leido
+[WARNING] 00:51:06:592 Broker/(12310:12482): Registro NULL leido
+[WARNING] 00:51:06:592 Broker/(12310:12482): Registro NULL leido
+[WARNING] 00:51:06:593 Broker/(12310:12482): Registro NULL leido
+[WARNING] 00:51:06:593 Broker/(12310:12482): Registro NULL leido
+[WARNING] 00:51:06:593 Broker/(12310:12484): Registro NULL leido
+[WARNING] 00:51:06:593 Broker/(12310:12484): Registro NULL leido
+[WARNING] 00:51:06:594 Broker/(12310:12484): Registro NULL leido
+[WARNING] 00:51:06:594 Broker/(12310:12484): Registro NULL leido
+[WARNING] 00:51:06:594 Broker/(12310:12484): Registro NULL leido
+[WARNING] 00:51:06:594 Broker/(12310:12484): Registro NULL leido
+[WARNING] 00:51:06:594 Broker/(12310:12484): Registro NULL leido
+[INFO] 00:51:06:595 Broker/(12310:12504): Codigo de operacion recibido del socket cliente 32 corresponde a un GET
+[INFO] 00:51:06:595 Broker/(12310:12504): Recibiendo tamanio total
+[INFO] 00:51:06:595 Broker/(12310:12504): Tamanio total recibido: 20
+[INFO] 00:51:06:595 Broker/(12310:12504): Tamanio del pokemon recibido: 8
+[INFO] 00:51:06:595 Broker/(12310:12504): Nombre del pokemon recibido: jolteon
+[INFO] 00:51:06:596 Broker/(12310:12504): Retornando id 26 al socket 32
+[WARNING] 00:51:06:596 Broker/(12310:12483): Registro NULL leido
+[WARNING] 00:51:06:596 Broker/(12310:12483): Registro NULL leido
+[WARNING] 00:51:06:597 Broker/(12310:12483): Registro NULL leido
+[WARNING] 00:51:06:597 Broker/(12310:12483): Registro NULL leido
+[WARNING] 00:51:06:597 Broker/(12310:12483): Registro NULL leido
+[WARNING] 00:51:06:597 Broker/(12310:12483): Registro NULL leido
+[INFO] 00:51:06:597 Broker/(12310:12504): Encolando el mensaje GET con id 26
+[INFO] 00:51:06:600 Broker/(12310:12316): C
+[INFO] 00:51:06:601 Broker/(12310:12316): Atendiendo mensaje GET con id 23
+[INFO] 00:51:06:601 Broker/(12310:12316): Compactando memoria
+[INFO] 00:51:06:601 Broker/(12310:12316): Moviendo registro de 0x42393c9 a 0x42393c1
+[INFO] 00:51:06:601 Broker/(12310:12316): Moviendo registro de 0x42393d0 a 0x42393c8
+[INFO] 00:51:06:602 Broker/(12310:12316): Moviendo registro de 0x42393d9 a 0x42393d1
+[INFO] 00:51:06:602 Broker/(12310:12316): Guardando mensaje con id 23 en particion 0x42393d6
+[WARNING] 00:51:06:602 Broker/(12310:12482): Registro NULL leido
+[WARNING] 00:51:06:603 Broker/(12310:12482): Registro NULL leido
+[WARNING] 00:51:06:603 Broker/(12310:12482): Registro NULL leido
+[WARNING] 00:51:06:603 Broker/(12310:12482): Registro NULL leido
+[INFO] 00:51:06:604 Broker/(12310:12482): No existen segmentos APPEARED a enviar al cliente 1804289383 socket 26
+[INFO] 00:51:06:604 Broker/(12310:12316): Eliminando mensaje GET con id 23
+[WARNING] 00:51:06:604 Broker/(12310:12484): Registro NULL leido
+[WARNING] 00:51:06:605 Broker/(12310:12484): Registro NULL leido
+[WARNING] 00:51:06:605 Broker/(12310:12484): Registro NULL leido
+[INFO] 00:51:06:605 Broker/(12310:12484): No existen segmentos LOCALIZED a enviar al cliente 1804289383 socket 27
+[INFO] 00:51:06:605 Broker/(12310:12484): Modulo con id 1804289383 agregado correctamente en la cola de LOCALIZED
+[INFO] 00:51:06:606 Broker/(12310:12482): Modulo con id 1804289383 agregado correctamente en la cola de APPEARED
+[INFO] 00:51:06:606 Broker/(12310:12504): Mensaje GET con id 26 encolado
+[WARNING] 00:51:06:607 Broker/(12310:12483): Registro NULL leido
+[WARNING] 00:51:06:607 Broker/(12310:12483): Registro NULL leido
+[WARNING] 00:51:06:610 Broker/(12310:12483): Registro NULL leido
+[WARNING] 00:51:06:610 Broker/(12310:12483): Registro NULL leido
+[INFO] 00:51:06:611 Broker/(12310:12483): No existen segmentos CAUGHT a enviar al cliente 1804289383 socket 10
+[INFO] 00:51:06:611 Broker/(12310:12483): Modulo con id 1804289383 agregado correctamente en la cola de CAUGHT
+[INFO] 00:51:06:612 Broker/(12310:12316): Eliminado mensaje GET con id 23
+[INFO] 00:51:06:612 Broker/(12310:12316): A
+[INFO] 00:51:06:613 Broker/(12310:12316): B
+[INFO] 00:51:06:613 Broker/(12310:12316): C
+[INFO] 00:51:06:614 Broker/(12310:12316): Atendiendo mensaje GET con id 25
+[INFO] 00:51:06:614 Broker/(12310:12316): Se ha eliminado el registro con id 11 ubicado en 0x42393a0 de la tabla de segmentos
+[INFO] 00:51:06:615 Broker/(12310:12316): Guardando mensaje con id 25 en particion 0x42393a0
+[INFO] 00:51:06:616 Broker/(12310:12316): Eliminando mensaje GET con id 25
+[INFO] 00:51:06:616 Broker/(12310:12316): Eliminado mensaje GET con id 25
+[INFO] 00:51:06:616 Broker/(12310:12316): A
+[INFO] 00:51:06:617 Broker/(12310:12316): B
+[INFO] 00:51:06:617 Broker/(12310:12316): C
+[INFO] 00:51:06:618 Broker/(12310:12316): Atendiendo mensaje GET con id 24
+[INFO] 00:51:06:618 Broker/(12310:12316): Guardando mensaje con id 24 en particion 0x42393a7
+[INFO] 00:51:06:619 Broker/(12310:12316): Eliminando mensaje GET con id 24
+[INFO] 00:51:06:619 Broker/(12310:12316): Eliminado mensaje GET con id 24
+[INFO] 00:51:06:620 Broker/(12310:12316): A
+[INFO] 00:51:06:620 Broker/(12310:12316): B
+[INFO] 00:51:06:620 Broker/(12310:12316): C
+[INFO] 00:51:06:621 Broker/(12310:12316): Atendiendo mensaje GET con id 26
+[INFO] 00:51:06:621 Broker/(12310:12316): Compactando memoria
+[INFO] 00:51:06:622 Broker/(12310:12316): Moviendo registro de 0x42393b0 a 0x42393af
+[INFO] 00:51:06:622 Broker/(12310:12316): Moviendo registro de 0x42393b8 a 0x42393b7
+[INFO] 00:51:06:623 Broker/(12310:12316): Moviendo registro de 0x42393c1 a 0x42393c0
+[INFO] 00:51:06:623 Broker/(12310:12316): Moviendo registro de 0x42393c8 a 0x42393c7
+[INFO] 00:51:06:624 Broker/(12310:12316): Moviendo registro de 0x42393d1 a 0x42393d0
+[INFO] 00:51:06:624 Broker/(12310:12316): Moviendo registro de 0x42393d6 a 0x42393d5
+[INFO] 00:51:06:625 Broker/(12310:12316): Se ha eliminado el registro con id 15 ubicado en 0x42393c0 de la tabla de segmentos
+[INFO] 00:51:06:626 Broker/(12310:12316): Compactando memoria
+[INFO] 00:51:06:627 Broker/(12310:12316): Moviendo registro de 0x42393c7 a 0x42393c0
+[INFO] 00:51:06:627 Broker/(12310:12316): Moviendo registro de 0x42393d0 a 0x42393c9
+[INFO] 00:51:06:628 Broker/(12310:12316): Moviendo registro de 0x42393d5 a 0x42393ce
+[INFO] 00:51:06:628 Broker/(12310:12316): Guardando mensaje con id 26 en particion 0x42393d6
+[INFO] 00:51:06:629 Broker/(12310:12316): Eliminando mensaje GET con id 26
+[INFO] 00:51:06:629 Broker/(12310:12316): Eliminado mensaje GET con id 26
+[INFO] 00:51:06:630 Broker/(12310:12316): A
+[INFO] 00:51:06:630 Broker/(12310:12316): B
+[INFO] 00:51:06:630 Broker/(12310:12316): C
+[INFO] 00:51:13:231 Broker/(12310:12311): Socket cliente 33 aceptado
+[INFO] 00:51:13:233 Broker/(12310:12506): Recibiendo codigo de operacion de socket 33
+[INFO] 00:51:18:233 Broker/(12310:12506): Codigo de operacion de socket 33 recibido: 3
+[INFO] 00:51:18:234 Broker/(12310:12506): Generando id para el mensaje del socket 33
+[INFO] 00:51:18:234 Broker/(12310:12506): El id generado es 27
+[INFO] 00:51:18:235 Broker/(12310:12506): Codigo de operacion recibido del socket cliente 33 corresponde a un CATCH
+[INFO] 00:51:18:236 Broker/(12310:12506): Recibiendo tamanio total
+[INFO] 00:51:18:236 Broker/(12310:12506): Tamanio total recibido: 29
+[INFO] 00:51:18:237 Broker/(12310:12506): Tamanio del pokemon: 9
+[INFO] 00:51:18:238 Broker/(12310:12506): Nombre del pokemon recibido: squirtle
+[INFO] 00:51:18:239 Broker/(12310:12506): Posicion X recibida: 5
+[INFO] 00:51:18:239 Broker/(12310:12506): Posicion Y recibida: 2
+[INFO] 00:51:18:240 Broker/(12310:12506): Retornando id 27 al socket 33
+[INFO] 00:51:18:241 Broker/(12310:12506): Encolando el mensaje CATCH con id 27
+[INFO] 00:51:18:242 Broker/(12310:12506): Mensaje CATCH con id 27 encolado
+[INFO] 00:51:18:243 Broker/(12310:12314): Atendiendo mensaje CATCH con id 27
+[INFO] 00:51:18:246 Broker/(12310:12314): Se ha eliminado el registro con id 16 ubicado en 0x42393af de la tabla de segmentos
+[INFO] 00:51:18:250 Broker/(12310:12314): Compactando memoria
+[INFO] 00:51:18:251 Broker/(12310:12314): Moviendo registro de 0x42393b7 a 0x42393af
+[INFO] 00:51:18:251 Broker/(12310:12314): Moviendo registro de 0x42393c0 a 0x42393b8
+[INFO] 00:51:18:252 Broker/(12310:12314): Moviendo registro de 0x42393c9 a 0x42393c1
+[INFO] 00:51:18:252 Broker/(12310:12314): Moviendo registro de 0x42393ce a 0x42393c6
+[INFO] 00:51:18:253 Broker/(12310:12314): Moviendo registro de 0x42393d6 a 0x42393ce
+[INFO] 00:51:18:254 Broker/(12310:12314): Se ha eliminado el registro con id 17 ubicado en 0x42393b8 de la tabla de segmentos
+[INFO] 00:51:18:254 Broker/(12310:12314): Compactando memoria
+[INFO] 00:51:18:255 Broker/(12310:12314): Moviendo registro de 0x42393c1 a 0x42393b8
+[INFO] 00:51:18:255 Broker/(12310:12314): Moviendo registro de 0x42393c6 a 0x42393bd
+[INFO] 00:51:18:256 Broker/(12310:12314): Moviendo registro de 0x42393ce a 0x42393c5
+[INFO] 00:51:18:256 Broker/(12310:12314): Guardando mensaje con id 27 en particion 0x42393cd
+[INFO] 00:51:18:258 Broker/(12310:12507): Preparandose para enviar mensaje CATCH con id 27 al cliente 1804289383 socket 9
+[INFO] 00:51:18:260 Broker/(12310:12507): Enviando mensaje CATCH con id 27 al cliente 1804289383 socket 9
+[INFO] 00:51:18:261 Broker/(12310:12507): Mensaje CATCH con id 27 al cliente 1804289383 socket 9 enviado correctamente
+[WARNING] 00:51:18:265 Broker/(12310:12507): El cliente 1804289383 acaba de cerrar la conexion correspondiente al socket 9
+[INFO] 00:51:18:266 Broker/(12310:12507): Eliminando suscriptor con id 1804289383 y socket 9
+[INFO] 00:51:18:270 Broker/(12310:12314): Eliminando mensaje CATCH con id 27
+[INFO] 00:51:18:271 Broker/(12310:12314): Eliminado mensaje CATCH con id 27

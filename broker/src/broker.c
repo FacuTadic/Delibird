@@ -480,8 +480,11 @@ void* atender_get(void* args) {
 		log_info(extense_logger, "Eliminado mensaje GET con id %i", primer_elemento->id);
 
 		free(mensaje_a_eliminar->pokemon);
+		log_info(extense_logger, "A");
 		free(mensaje_a_eliminar);
+		log_info(extense_logger, "B");
 		free(elemento_a_eliminar);
+		log_info(extense_logger, "C");
 	}
 }
 
