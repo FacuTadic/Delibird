@@ -2286,13 +2286,13 @@ void terminar_programa() {
 	pthread_mutex_destroy(&cola_caught_mutex);
 	pthread_mutex_destroy(&llegada_mutex);
 	pthread_mutex_destroy(&cola_deadlock_mutex);
-	pthread_mutex_destroy(&planificacion_ready);
 	pthread_mutex_destroy(&pokemones_llegados_mutex);
 	pthread_mutex_destroy(&catch_IDs_mutex);
 	pthread_mutex_destroy(&estoy_conectado_al_broker_mutex);
 	pthread_mutex_destroy(&ciclos_CPU_mutex);
 	pthread_mutex_destroy(&cambios_contexto_mutex);
 	pthread_mutex_destroy(&cantidad_deadlocks_mutex);
+	pthread_mutex_destroy(&planificacion_ready);
 	pthread_mutex_destroy(&planificacion_sjf);
 
 	log_destroy(logger);
