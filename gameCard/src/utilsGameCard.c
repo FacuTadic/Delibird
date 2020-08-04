@@ -1074,11 +1074,11 @@ void newPokemon(int socketCliente,t_newLlegada* new){
 	}
 	free(blocksOcupados);
 
-	uint32_t w = 0;
+	/*uint32_t w = 0;
 	while(registroPokemon[w] !=NULL){
 		free(registroPokemon[w]);
 	}
-	free(registroPokemon);
+	free(registroPokemon);*/
 }
 
 void catchPokemon(int socketCliente,t_catchLlegada* catch){
