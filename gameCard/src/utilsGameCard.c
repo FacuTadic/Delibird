@@ -269,6 +269,10 @@ char* aplanarVectorDeKeyValue(char** vector){
 	return registro;
 }
 
+char* getCoordenadaDeRegistro(char** vector){
+	return vector[0];
+}
+
 // recibe array de paths bloques y devuelve lista de registros [pos,cant]
 t_list* traerRegistrosBloques(char** bloques){
 
@@ -360,6 +364,24 @@ bool evaluarRegistroCatch(char* registro, t_list* registros){
 	}
 	return false;
 }
+
+t_list* obtenerTodasLasPosiciones(char** blocks){
+	t_list* coordenadas;
+
+	if(blocks[0] == NULL){
+		log_info(loggerDev, "No hay coordenadas bro te equivocaste, suerte para la proxima");
+		coordenadas = list_create();
+	}else{
+		char** pathsDeBlocks = generarVectorDePaths(blocks);
+		t_list* registros = traerRegistrosBloques(pathsDeBlocks);
+		coordenadas = list_map(registros, (void*) getCoordenadaDeRegistro);
+	}
+
+	return coordenadas;
+}
+
+
+
 
 
 
@@ -955,11 +977,10 @@ bool validarPosicionesDeCatch(t_config* archivoMetadataPokemon, char** blocksOcu
 
 
 
-t_queue* validarPosicionesDeGet(char** blocksOcupados){
-	t_queue* posicionesPokemon = queue_create();
-	log_info(loggerGameCard, "Obteniendo las posiciones en las que se encuentra el pokemon");
-	obtenerTodasLasPosiciones(blocksOcupados, posicionesPokemon);
+t_list* validarPosicionesDeGet(char** blocksOcupados){
 
+	log_info(loggerGameCard, "Obteniendo las posiciones en las que se encuentra el pokemon");
+	t_list* posicionesPokemon = obtenerTodasLasPosiciones(blocksOcupados);
 
 	return posicionesPokemon;
 }
@@ -1053,6 +1074,11 @@ void newPokemon(int socketCliente,t_newLlegada* new){
 	}
 	free(blocksOcupados);
 
+	uint32_t w = 0;
+	while(registroPokemon[w] !=NULL){
+		free(registroPokemon[w]);
+	}
+	free(registroPokemon);
 }
 
 void catchPokemon(int socketCliente,t_catchLlegada* catch){
@@ -1117,7 +1143,7 @@ void catchPokemon(int socketCliente,t_catchLlegada* catch){
 void getPokemon(int socketCliente,t_getLlegada* getLlegada){
 
 	char* pokemon = getLlegada->pokemon;
-	t_queue* coordenadas;
+	t_list* coordenadas;
 	string_to_lower(pokemon);
 
 	char* rutaDeDirectorio = generadorDeRutaDeCreacionDeDirectorios(rutaFiles,pokemon);
@@ -1129,6 +1155,7 @@ void getPokemon(int socketCliente,t_getLlegada* getLlegada){
 
 	char* rutaDeArchivo = generadorDeRutaDeCreacionDeArchivos(rutaDeDirectorio, pokemon, ".bin");
 	t_config* archivoMetadataPokemon = config_create(rutaDeArchivo);
+
 	char** blocksOcupados = config_get_array_value(archivoMetadataPokemon,"BLOCKS");
 	log_info(loggerDev, "EL array de blocks es: %s", blocksOcupados[0]);
 
@@ -1155,13 +1182,11 @@ void getPokemon(int socketCliente,t_getLlegada* getLlegada){
 
 	config_destroy(archivoMetadataPokemon);
 
-	if(coordenadas != NULL){
-		queue_clean(coordenadas);
-		queue_destroy(coordenadas);
-	}
+	list_destroy_and_destroy_elements(coordenadas,(void *) elLimpiaCharDinamicos);
 
 	free(rutaDeDirectorio);
 	free(rutaDeArchivo);
+
 	uint32_t indexParaBorrar = 0;
 	while(blocksOcupados[indexParaBorrar] != NULL){
 		free(blocksOcupados[indexParaBorrar]);

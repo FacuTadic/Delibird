@@ -101,6 +101,9 @@ t_list* traerRegistrosBloques(char** bloques);
 t_list* evaluarRegistroNew(char** registro, t_list* registros);
 void vaciarBloques(char** blocksOcupados);
 void escribirEnBloques(t_list* registros, t_config* archivoMetadata);
+bool evaluarRegistroCatch(char* registro, t_list* registros);
+t_list* obtenerTodasLasPosiciones(char** blocks);
+char* getCoordenadaDeRegistro(char** vector);
 
 
 #endif /* UTILSGAMECARD_H_ */

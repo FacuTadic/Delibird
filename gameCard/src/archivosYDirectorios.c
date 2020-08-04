@@ -509,114 +509,6 @@ void agregarNuevaPosicionA(char* block, char* posicion, uint32_t cantidad){
 
 }
 
-
-void obtenerTodasLasPosiciones(char** blocks, t_queue* posicionesPokemon){
-
-	uint32_t i = 0;
-	char* auxLine1 = string_new();
-	char* auxLine2 = string_new();
-
-	while(blocks[i] != NULL){
-
-			log_info(loggerDevArchDir, "Se esta analizando el block: %s",blocks[i]);
-			char* rutaDeArchivo = generadorDeRutaDeCreacionDeArchivos(rutaBlocksArchDir,blocks[i],".bin");
-			log_info(loggerDevArchDir, "La ruta del archivo es: %s",rutaDeArchivo);
-
-			FILE *fp;
-			char *line = NULL;
-			size_t len = 0;
-			ssize_t read;
-
-			fp = fopen(rutaDeArchivo, "r");
-
-			if (fp == NULL){
-				log_error(loggerDevArchDir, "Archivo vacio");
-				exit(EXIT_FAILURE);
-			}
-
-			//El auxLine es por si una coordenada esta cargada por la mitad
-
-			//Si auxLine no esta vacio significa que no cargo una coordenada completa
-			//por lo que la otra parte esta en el archivo siguiente
-			//leo la primera linea, completo el auxLine y hago el procedimiento normal para una coordenada completa
-			//Luego sigo el flujo normal de lectura con el while
-
-			if(string_is_empty(auxLine1)){
-				read = getline(&line, &len, fp);
-				log_info(loggerDevArchDir, "La porcion leida de la primera linea es: %s",line);
-
-				string_append(&auxLine2,line);
-
-				char* auxLinePlano = string_new();
-				string_append(&auxLinePlano,auxLine1);
-				string_append(&auxLinePlano,auxLine2);
-
-				log_info(loggerDevArchDir, "La coordenada finalmente quedo como: %s",auxLinePlano);
-
-				char** dataAux = string_split(auxLinePlano,"=");
-				log_info(loggerDevArchDir, "La coordenada de la linea es: %s",dataAux[0]);
-
-				char* posicion = string_new();
-				string_append(&posicion,dataAux[0]);
-				log_info(loggerGameCardArchDir, "Posicion: %s",posicion);
-				log_info(loggerDevArchDir, "LOG DEV Posicion : %s",posicion);
-
-
-				queue_push(posicionesPokemon, posicion);
-
-				uint32_t w = 0;
-				while(dataAux[w] != NULL){
-					free(dataAux[w]);
-					w++;
-				}
-
-				free(dataAux);
-				free(auxLine1);
-				free(auxLine2);
-
-				auxLine1 = string_new();
-				auxLine2 = string_new();
-			}
-
-			while ((read = getline(&line, &len, fp)) != -1) {
-
-				if(string_contains(line,"=")){
-					log_info(loggerDevArchDir, "Se esta leyendo la linea: %s",line);
-					char** data = string_split(line,"=");
-					log_info(loggerDevArchDir, "La coordenada de la linea es: %s",data[0]);
-					char* posicion = string_new();
-					string_append(&posicion,data[0]);
-					log_info(loggerGameCardArchDir, "Posicion: %s",posicion);
-					queue_push(posicionesPokemon, posicion);
-
-					uint32_t j = 0;
-					while(data[j] != NULL){
-						free(data[j]);
-						j++;
-					}
-					free(data);
-
-				}else{
-					string_append(&auxLine1,line);
-				}
-			}
-
-			free(rutaDeArchivo);
-			free(line);
-			fclose(fp);
-			i++;
-		}
-
-	free(auxLine1);
-	free(auxLine2);
-}
-
-
-bool tieneFormatoConfig(char* linea){
-	return string_contains(linea,"-") && string_contains(linea,"=");
-}
-
-
 bool noExisteDirectorio(char* ruta){
 	return stat(ruta, &st1) == -1;
 }
@@ -630,3 +522,7 @@ void elDestroyerDeCorchetazos(char** array){
 	free(array);
 }
 
+
+void elLimpiaCharDinamicos(char* string){
+	free(string);
+}

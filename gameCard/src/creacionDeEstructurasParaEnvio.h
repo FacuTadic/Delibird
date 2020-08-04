@@ -28,6 +28,6 @@ t_localized* crearLocalizedDePokemonInexistente(t_getLlegada* getLlegado);
 t_appeared* crearAppeared(t_newLlegada* new);
 t_caught* crearCaught(uint32_t idMensaje, bool flag);
 t_localized* crearLocalizedDePokemonInexistente(t_getLlegada* getLlegado);
-t_localized* crearLocalized(t_getLlegada* getLlegado,t_queue* dataPokemon);
+t_localized* crearLocalized(t_getLlegada* getLlegado, t_list* dataPokemon);
 
 #endif /* CREACIONDEESTRUCTURASPARAENVIO_H_ */
