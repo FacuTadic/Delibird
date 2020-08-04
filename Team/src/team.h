@@ -46,6 +46,8 @@ int socket_escucha_localized;
 
 int estoy_conectado_al_broker; // 1 true 0 false
 
+int id_llegada;
+
 t_list* entrenadores; // t_entrenador
 
 t_list* objetivo_global; // nombres de pokemon
@@ -66,6 +68,7 @@ pthread_mutex_t catch_IDs_mutex;
 pthread_mutex_t estoy_conectado_al_broker_mutex;
 pthread_mutex_t planificacion_ready;
 pthread_mutex_t planificacion_sjf;
+pthread_mutex_t llegada_mutex;
 
 sem_t sem_cola_pokemones;
 sem_t sem_cola_caught;
@@ -129,6 +132,7 @@ typedef struct {
 	double estimacion;
 	double real;
 	double real_actual;
+	int llegada;
 } t_entrenador;
 
 //typedef struct {
@@ -236,3 +240,4 @@ void definir_nueva_estimacion(t_entrenador* entrenador);
 void mandar_a_siguente_entrenador_a_ejecutar_por_sjf(void);
 void desalojar_si_es_necesario(t_entrenador* entrenador_planificado);
 int cantidad_de_entrenadores_en_ready_o_exec(void);
+int obtener_id_llegada(void);
