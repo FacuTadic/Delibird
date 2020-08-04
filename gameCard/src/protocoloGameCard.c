@@ -32,7 +32,7 @@ int mandar_suscripcion(int socket_mandado, uint32_t id_cola) {
 }
 
 
-void enviar_appeared(int socket, t_appeared* appearedAEnviar){
+void enviar_appeared(int socketCliente, t_appeared* appearedAEnviar){
 
 	t_buffer* bufferAppeared = crearBufferAppeared(appearedAEnviar);
 	uint32_t bytes;
@@ -54,9 +54,11 @@ void enviar_appeared(int socket, t_appeared* appearedAEnviar){
 	log_info(loggerDevProtocolo, "El peso total es: %i",paquete->buffer->size);
 
 	//    ENVIAR MENSAJE
-	if(send(socket, flujo, bytes, 0) == -1){
+	if(send(socketCliente, flujo, bytes, 0) == -1){
 		log_error(loggerDevProtocolo, "Error: No se pudo enviar el mensaje");
 	}
+
+	close(socketCliente);
 
 	free(flujo);
 	free(paquete->buffer->stream);
@@ -67,7 +69,7 @@ void enviar_appeared(int socket, t_appeared* appearedAEnviar){
 }
 
 
-void enviar_caught(int socket, t_caught* caughtAEnviar){
+void enviar_caught(int socketCliente, t_caught* caughtAEnviar){
 	t_buffer* bufferCaught = crearBufferCaught(caughtAEnviar);
 	uint32_t bytes;
 
@@ -88,9 +90,11 @@ void enviar_caught(int socket, t_caught* caughtAEnviar){
 	log_info(loggerDevProtocolo, "El peso total es: %i",paquete->buffer->size);
 
 	//    ENVIAR MENSAJE
-	if(send(socket, flujo, bytes, 0) == -1){
+	if(send(socketCliente, flujo, bytes, 0) == -1){
 		log_error(loggerDevProtocolo, "Error: No se pudo enviar el mensaje");
 	}
+
+	close(socketCliente);
 
 	free(flujo);
 	free(paquete->buffer->stream);
@@ -99,7 +103,7 @@ void enviar_caught(int socket, t_caught* caughtAEnviar){
 }
 
 
-void enviar_localized(int socket, t_localized* localizedAEnviar){
+void enviar_localized(int socketCliente, t_localized* localizedAEnviar){
 	t_buffer* bufferLocalized = crearBufferLocalized(localizedAEnviar);
 	uint32_t bytes;
 
@@ -120,9 +124,11 @@ void enviar_localized(int socket, t_localized* localizedAEnviar){
 	log_info(loggerDevProtocolo, "El peso total es: %i",paquete->buffer->size);
 
 	//    ENVIAR MENSAJE
-	if(send(socket, flujo, bytes, 0) == -1){
+	if(send(socketCliente, flujo, bytes, 0) == -1){
 		log_error(loggerDevProtocolo, "Error: No se pudo enviar el mensaje");
 	}
+
+	close(socketCliente);
 
 	free(flujo);
 	free(paquete->buffer->stream);

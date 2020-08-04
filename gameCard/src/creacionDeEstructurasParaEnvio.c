@@ -223,7 +223,7 @@ t_localized* crearLocalizedDePokemonInexistente(t_getLlegada* getLlegado){
 	t_localized* localizedAEnviar = malloc(sizeof(t_localized));
 
 	localizedAEnviar->idMensaje = getLlegado->id;
-	localizedAEnviar->sizePokemon = strlen(getLlegado->pokemon);
+	localizedAEnviar->sizePokemon = strlen(getLlegado->pokemon) + 1;
 	localizedAEnviar->pokemon = getLlegado->pokemon;
 	localizedAEnviar->lugares = 0;
 
@@ -236,7 +236,7 @@ t_localized* crearLocalized(t_getLlegada* getLlegado, t_list* dataPokemon){
 
 	localizedAEnviar->idMensaje = getLlegado->id;
 	log_info(loggerDevEstructuras, "El ID mensaje cargado en el localized es: %i", localizedAEnviar->idMensaje);
-	localizedAEnviar->sizePokemon = strlen(getLlegado->pokemon);
+	localizedAEnviar->sizePokemon = strlen(getLlegado->pokemon) + 1;
 	localizedAEnviar->pokemon = getLlegado->pokemon;
 	log_info(loggerDevEstructuras, "El Pokemon cargado en el localized es: %s", localizedAEnviar->pokemon);
 	log_info(loggerDevEstructuras, "El tamanio del nombre del pokemon cargado en el localized es: %i", localizedAEnviar->sizePokemon);

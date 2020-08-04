@@ -480,8 +480,11 @@ void* atender_get(void* args) {
 		log_info(extense_logger, "Eliminado mensaje GET con id %i", primer_elemento->id);
 
 		free(mensaje_a_eliminar->pokemon);
+		log_info(extense_logger, "A");
 		free(mensaje_a_eliminar);
+		log_info(extense_logger, "B");
 		free(elemento_a_eliminar);
+		log_info(extense_logger, "C");
 	}
 }
 
@@ -514,7 +517,6 @@ void* atender_localized(void* args) {
 
 		free(mensaje_a_eliminar->pokemon);
 		list_destroy(mensaje_a_eliminar->l_coordenadas);
-		free(mensaje_a_eliminar->l_coordenadas);
 		free(mensaje_a_eliminar);
 		free(elemento_a_eliminar);
 	}
@@ -799,7 +801,7 @@ void atender_mensaje_get(mensaje_queue* mensaje) {
 	for (int i = 0; i < suscriptores_para_enviar->elements_count; i++) {
 		struct_para_enviar[i].info = list_get(suscriptores_para_enviar, i);
 		struct_para_enviar[i].mensaje_queue = mensaje;
-		pthread_create(&(threads[i]), NULL, (void*) atender_get, &struct_para_enviar[i]);
+		pthread_create(&(threads[i]), NULL, (void*) mandar_get, &struct_para_enviar[i]);
 	}
 
 	for (int i = 0; i < suscriptores_para_enviar->elements_count; i++) {

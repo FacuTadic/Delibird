@@ -718,8 +718,8 @@ void planificar_pokemon(void) {
 			tarea_pokemon->id_tarea = ATRAPAR_POKEMON;
 			tarea_pokemon->parametros = mensaje_pokemon;
 			cambiar_tarea_de_entrenador(entrenador_a_planificar, tarea_pokemon);
-
 			cambiar_estado_de_entrenador(entrenador_a_planificar, ESTADO_READY, "Entrenador planificado para ir a atrapar pokemon");
+			entrenador_a_planificar->llegada = obtener_id_llegada();
 
 			if (algoritmo_planificacion == 3) {
 				pthread_mutex_lock(&planificacion_sjf);
@@ -845,6 +845,7 @@ void planificar_deadlock(void) {
 
 			cambiar_tarea_de_entrenador(primer_entrenador, tarea_deadlock);
 			cambiar_estado_de_entrenador(primer_entrenador, ESTADO_READY, "Entrenador planificado para intercambiar pokemones");
+			primer_entrenador->llegada = obtener_id_llegada();
 
 			if (algoritmo_planificacion == 3) {
 				pthread_mutex_lock(&planificacion_sjf);
@@ -1178,9 +1179,9 @@ int main(void) {
 		algoritmo_planificacion = 1;
 	} else if (string_equals_ignore_case(algoritmo_planificacion_config, "RR")) {
 		algoritmo_planificacion = 2;
-	} else if (string_equals_ignore_case(algoritmo_planificacion_config, "SJF-SD")) {
+	} else if (string_equals_ignore_case(algoritmo_planificacion_config, "SJF-SD") || string_equals_ignore_case(algoritmo_planificacion_config, "SJFSD")) {
 		algoritmo_planificacion = 3;
-	} else if (string_equals_ignore_case(algoritmo_planificacion_config, "SJF-SD")) {
+	} else if (string_equals_ignore_case(algoritmo_planificacion_config, "SJF-CD") || string_equals_ignore_case(algoritmo_planificacion_config, "SJFCD")) {
 		algoritmo_planificacion = 4;
 	}
 
@@ -1193,6 +1194,8 @@ int main(void) {
 	pokemones_llegados = list_create();
 
 	pokemones_conocidos_que_no_se_intentan_atrapar = dictionary_create();
+
+	id_llegada = 0;
 
 	inicializar_entrenadores();
 
@@ -1218,6 +1221,7 @@ int main(void) {
 	pthread_mutex_init(&cambios_contexto_mutex, NULL);
 	pthread_mutex_init(&cantidad_deadlocks_mutex, NULL);
 	pthread_mutex_init(&planificacion_sjf, NULL);
+	pthread_mutex_init(&llegada_mutex, NULL);
 
 	socket_escucha_game_boy = iniciar_escucha_game_boy(ip, puerto);
 	pthread_t hilo_escucha_de_game_boy;
@@ -1474,6 +1478,8 @@ void inicializar_entrenadores() {
 		entrenador->real = (double) estimacion_inicial;
 
 		entrenador->real_actual = 0;
+
+		entrenador->llegada = 0;
 
 		log_info(extense_logger, "Estado del entrenador %i: %i", entrenador->index, entrenador->estado);
 
@@ -2209,7 +2215,7 @@ void mandar_a_siguente_entrenador_a_ejecutar_por_sjf(void) {
 
 	for (int i = 0; i < entrenadores->elements_count; i++) {
 		t_entrenador* entrenador_lista = (t_entrenador*) list_get(entrenadores, i);
-		if (entrenador_lista->estado == ESTADO_READY && entrenador_lista->estimacion < estimacion_mas_baja) {
+		if (entrenador_lista->estado == ESTADO_READY && (entrenador_lista->estimacion < estimacion_mas_baja || (entrenador_lista->estimacion == estimacion_mas_baja && entrenador_lista->llegada < entrenador_con_estimacion_mas_baja->llegada))) {
 			entrenador_con_estimacion_mas_baja = entrenador_lista;
 			estimacion_mas_baja = entrenador_lista->estimacion;
 		}
@@ -2242,6 +2248,15 @@ void desalojar_si_es_necesario(t_entrenador* entrenador_planificado) {
 	}
 }
 
+int obtener_id_llegada(void) {
+	int aux;
+	pthread_mutex_lock(&llegada_mutex);
+	id_llegada++;
+	aux = id_llegada;
+	pthread_mutex_unlock(&llegada_mutex);
+	return aux;
+}
+
 void terminar_programa() {
 	free(ip_broker);
 	free(puerto_broker);
@@ -2269,14 +2284,15 @@ void terminar_programa() {
 
 	pthread_mutex_destroy(&cola_pokemones_mutex);
 	pthread_mutex_destroy(&cola_caught_mutex);
+	pthread_mutex_destroy(&llegada_mutex);
 	pthread_mutex_destroy(&cola_deadlock_mutex);
-	pthread_mutex_destroy(&planificacion_ready);
 	pthread_mutex_destroy(&pokemones_llegados_mutex);
 	pthread_mutex_destroy(&catch_IDs_mutex);
 	pthread_mutex_destroy(&estoy_conectado_al_broker_mutex);
 	pthread_mutex_destroy(&ciclos_CPU_mutex);
 	pthread_mutex_destroy(&cambios_contexto_mutex);
 	pthread_mutex_destroy(&cantidad_deadlocks_mutex);
+	pthread_mutex_destroy(&planificacion_ready);
 	pthread_mutex_destroy(&planificacion_sjf);
 
 	log_destroy(logger);
