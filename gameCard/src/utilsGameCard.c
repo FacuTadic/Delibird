@@ -341,6 +341,28 @@ t_list* evaluarRegistroNew(char** registro, t_list* registros){
 }
 
 
+bool evaluarRegistroCatch(char* registro, t_list* registros){
+
+	for(uint32_t i=0;i < list_size(registros);i++){
+		char** registroActual = list_get(registros,i);
+		uint32_t cantidadReg = atoi(registroActual[1]);
+		if(!strcmp(registro,registroActual[0])){
+			if( cantidadReg > 1){
+				uint32_t cantActualizada = atoi(registroActual[1]);
+				cantActualizada --;
+				free(registroActual[1]);
+				registroActual[1] = string_itoa(cantActualizada);
+			} else {
+				list_remove_and_destroy_element(registros,i,(void*) elDestroyerDeCorchetazos);
+			}
+			return true;
+		}
+	}
+	return false;
+}
+
+
+
 //Recibe char** bloquesOcupados y limpia los block y los libera del bitmap
 
 void vaciarBloques(char** blocksOcupados){
@@ -361,6 +383,14 @@ void vaciarBloques(char** blocksOcupados){
 
 // recibe lista de registros char* y un archivo metadata, actualiza metadata despues de escribir todos los registros
 void escribirEnBloques(t_list* registros, t_config* archivoMetadata) {
+
+	if(list_is_empty(registros)){
+		config_set_value(archivoMetadata,"SIZE","0");
+		config_set_value(archivoMetadata,"BLOCKS","[]");
+		config_save(archivoMetadata);
+		return;
+	}
+
 
 	int cantidadBytesEscritos = 0;
 	int cantidadBytesTotales = 0;
@@ -867,8 +897,6 @@ char* blockDondeSeEncuentraLaPosicion(char* posicion, char** blocks){
 }
 
 
-
-
 uint32_t calcularPesoTotalDeBlockEnMetadataPokemon(char** blocks){
 	uint32_t i = 0;
 	uint32_t pesoTotal = 0;
@@ -884,33 +912,6 @@ uint32_t calcularPesoTotalDeBlockEnMetadataPokemon(char** blocks){
 	return pesoTotal;
 }
 
-
-/* VIEJO PARADIGMA
-void validarPosicionesDeNew(t_config* archivoMetadataPokemon, char** blocksOcupados,char* posicion, uint32_t cantidad){
-
-	log_info(loggerDev, "Validando Posiciones de New");
-
-	if(existenPosicionesEnArchivo(posicion,blocksOcupados)){
-		char* block = blockDondeSeEncuentraLaPosicion(posicion,blocksOcupados);
-		log_info(loggerDev, "El bloque en el que se encuentra es: %s",block);
-		char* rutaDelBlock = generadorDeRutaDeCreacionDeArchivos(rutaBlocks,block,".bin");
-		log_info(loggerDev, "La ruta del block es: %s",rutaDelBlock);
-		t_config* archivoBlock = config_create(rutaDelBlock);
-		agregarCantidadSolicitadaAUnaKey(archivoBlock,posicion,cantidad);
-		config_destroy(archivoBlock);
-		free(rutaDelBlock);
-	} else {
-		log_info(loggerGameCard, "La posicion %s no se encuentra en ningun bloque actual",posicion);
-		char* blockOptimo = seleccionarBlockParaCargarPosiciones(blocksOcupados,posicion, cantidad);
-		log_info(loggerGameCard, "Se selecciono el bloque %s para cargar la posicion",blockOptimo);
-		log_info(loggerDev, "El bloque disponible seleccionado es: %s",blockOptimo);
-		agregarNuevaPosicionA(blockOptimo,posicion, cantidad);
-		log_info(loggerGameCard, "Posicion agregada en el block %s",blockOptimo);
-		log_info(loggerDev, "Actualizo Metadata");
-		actualizarBlockMetadata(archivoMetadataPokemon,blockOptimo);
-	}
-}
-*/
 
 void validarPosicionesDeNew(t_config* archivoMetadataPokemon, char** blocksOcupados, char** keyValue){
 
@@ -928,60 +929,28 @@ void validarPosicionesDeNew(t_config* archivoMetadataPokemon, char** blocksOcupa
  		list_add(registroNuevo, aplanarVectorDeKeyValue(keyValue));
  		escribirEnBloques(registroNuevo,archivoMetadataPokemon);
  	}
-
- }
-
+}
 
 
 
+bool validarPosicionesDeCatch(t_config* archivoMetadataPokemon, char** blocksOcupados, char* key){
 
+ 	if(blocksOcupados[0] == NULL){
+ 		log_info(loggerDev, "No hay bloques perri");
+ 		return false;
+ 	}
 
+ 	char** pathsDeBlocks = generarVectorDePaths(blocksOcupados);
+ 	t_list* registros = traerRegistrosBloques(pathsDeBlocks);
 
+ 	bool flagAtrapado = evaluarRegistroCatch(key,registros);
+ 	log_info(loggerDev, "EL FLAG DEL CATCH ES: %i", flagAtrapado);
 
-bool validarPosicionesDeCatch(t_config* archivoMetadataPokemon, char** blocksOcupados, char* posicion){
-	if(existenPosicionesEnArchivo(posicion,blocksOcupados)){
-		char* block = blockDondeSeEncuentraLaPosicion(posicion,blocksOcupados);
-		log_info(loggerDev, "El bloque en el que se encuentra es: %s",block);
-		char* rutaDelBlock = generadorDeRutaDeCreacionDeArchivos(rutaBlocks,block,".bin");
-		log_info(loggerDev, "La ruta del block es: %s",rutaDelBlock);
-		t_config* archivoBlock = config_create(rutaDelBlock);
+ 	t_list* registrosAEscribir = list_map(registros, (void*) aplanarVectorDeKeyValue);
+ 	vaciarBloques(blocksOcupados);
+ 	escribirEnBloques(registrosAEscribir,archivoMetadataPokemon);
 
-		uint32_t cantidadPokemon = cantidadDePokemonEnUnaCoordenada(archivoBlock,posicion);
-
-		log_info(loggerDev, "La cantidad de pokemons en el la posicion %s es: %i",posicion, cantidadPokemon);
-		log_info(loggerGameCard, "La cantidad de pokemons en el la posicion %s es de %i",posicion, cantidadPokemon);
-
-		if(cantidadPokemon == 1){
-			log_info(loggerDev, "La cantidad de pokemons en esa posicion es 1");
-
-			if(config_keys_amount(archivoBlock) == 1){
-				log_info(loggerGameCard, "La posicion %s es la unica en el block %s. Se procede a eliminarlo",posicion, block);
-				desmarcarBloqueBitmap(block);
-				eliminarKeyValueDe(archivoBlock,posicion);
-				borrarBloqueDe(archivoMetadataPokemon,block);
-				log_info(loggerDev, "Dicha posicion es la ultima en el block por lo que se marco el block como libre y se elimino la linea");
-			}else{
-				eliminarKeyValueDe(archivoBlock,posicion);
-				log_info(loggerDev, "Se elimina la linea");
-			}
-
-			config_destroy(archivoBlock);
-			free(rutaDelBlock);
-			return true;
-
-		}else{
-			log_info(loggerDev, "Se decrementa en uno la posicion");
-			decrementarEnUnoEnLaPosicion(archivoBlock,posicion);
-			config_destroy(archivoBlock);
-			free(rutaDelBlock);
-			return true;
-		}
-
-	} else {
-		log_error(loggerGameCard, "No existen las posiciones en el archivo");
-		return false;
-	}
-
+ 	return flagAtrapado;
 }
 
 
@@ -1046,7 +1015,6 @@ void newPokemon(int socketCliente,t_newLlegada* new){
 		pthread_mutex_unlock(&estoy_leyendo_metadata_mutex);
 
 		validarPosicionesDeNew(archivoMetadataPokemon, blocksOcupados, registroPokemon);
-		//actualizarSizeMetadataPokemon(archivoMetadataPokemon);
 
 	} else{
 		pthread_mutex_unlock(&estoy_leyendo_metadata_mutex);
@@ -1108,14 +1076,13 @@ void catchPokemon(int socketCliente,t_catchLlegada* catch){
 	char* rutaDeArchivo = generadorDeRutaDeCreacionDeArchivos(rutaDeDirectorio, pokemon, ".bin");
 	t_config* archivoMetadataPokemon = config_create(rutaDeArchivo);
 	char** blocksOcupados = config_get_array_value(archivoMetadataPokemon,"BLOCKS");
-	log_info(loggerDev, "EL array de blocks es: %s", blocksOcupados);
+	log_info(loggerDev, "EL array de blocks es: %s", blocksOcupados[0]);
 
 	pthread_mutex_lock(&estoy_leyendo_metadata_mutex);
 	if(puedeAbrirseArchivo(archivoMetadataPokemon)){
 		activarFlagDeLectura(archivoMetadataPokemon);
 		pthread_mutex_unlock(&estoy_leyendo_metadata_mutex);
 		validacion = validarPosicionesDeCatch(archivoMetadataPokemon,blocksOcupados,posicion);
-		//actualizarSizeMetadataPokemon(archivoMetadataPokemon);
 	}else{
 		pthread_mutex_unlock(&estoy_leyendo_metadata_mutex);
 		log_error(loggerGameCard, "Ya existe un proceso utilizando el archivo Metadata de %s",pokemon);
@@ -1170,7 +1137,6 @@ void getPokemon(int socketCliente,t_getLlegada* getLlegada){
 		activarFlagDeLectura(archivoMetadataPokemon);
 		pthread_mutex_unlock(&estoy_leyendo_metadata_mutex);
 		coordenadas = validarPosicionesDeGet(blocksOcupados);
-		//actualizarSizeMetadataPokemon(archivoMetadataPokemon);
 	} else{
 		pthread_mutex_unlock(&estoy_leyendo_metadata_mutex);
 		log_error(loggerGameCard, "Ya existe un proceso utilizando el archivo Metadata de %s",pokemon);

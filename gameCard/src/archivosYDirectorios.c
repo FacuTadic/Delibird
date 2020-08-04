@@ -621,3 +621,12 @@ bool noExisteDirectorio(char* ruta){
 	return stat(ruta, &st1) == -1;
 }
 
+void elDestroyerDeCorchetazos(char** array){
+	uint32_t i = 0;
+	while(array[i]!= NULL){
+		free(array[i]);
+		i++;
+	}
+	free(array);
+}
+

@@ -55,6 +55,7 @@ uint32_t cantidadDePokemonEnUnaCoordenada(t_config* archivoBlock,char* posicion)
 void agregarNuevaPosicionA(char* block, char* posicion, uint32_t cantidad);
 void obtenerTodasLasPosiciones(char** blocks, t_queue* posicionesPokemon);
 bool noExisteDirectorio(char* ruta);
+void elDestroyerDeCorchetazos(char** array);
 
 
 #endif /* ARCHIVOSYDIRECTORIOS_H_ */
