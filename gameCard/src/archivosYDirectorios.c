@@ -98,6 +98,24 @@ char* generadorDePosiciones(uint32_t posX, uint32_t posY){
 	return coordenadas;
 }
 
+char** generadorDeRegistros(char* posicion, uint32_t cantidad){
+	log_info(loggerDevArchDir, "La posicion que me llega es: %s", posicion);
+	char** registro;
+	char* cantidadString = string_itoa(cantidad);
+
+	string_append(&posicion,"=");
+	string_append(&posicion,cantidadString);
+	log_info(loggerDevArchDir, "El valor del KEY-VALUE cargado completamente es: %s", posicion);
+
+	registro = string_split(posicion,"=");
+
+	log_info(loggerDevArchDir, "La posicion del registro generado es: %s", registro[0]);
+	log_info(loggerDevArchDir, "La cantidad del registro generado es: %s", registro[1]);
+	free(cantidadString);
+
+	return registro;
+}
+
 
 
 bool existeArchivo(char* ruta){
@@ -185,7 +203,7 @@ void actualizarBlockMetadata(t_config* archivoMetadata, char*blockAAgregar){
 
 }
 
-
+/*
 void actualizarSizeMetadataPokemon(t_config* archivoMetadata){
 	char** blocksOcupados = config_get_array_value(archivoMetadata,"BLOCKS");
 	uint32_t i = 0;
@@ -217,7 +235,7 @@ void actualizarSizeMetadataPokemon(t_config* archivoMetadata){
 
 	free(blocksOcupados);
 }
-
+*/
 
 
 bool hayEspacioEnElBlock(char* rutaDelBlock, char* posicion, uint32_t cantidad){
@@ -279,7 +297,6 @@ void crearArchivoEnDirectorio(char* nombreDelArchivo, char* directorio){
 
 
 bool puedeAbrirseArchivo(t_config* archivo){
-	log_info(loggerDevArchDir, "Se creo el falso config de la ruta");
 	char* estadoArchivo = config_get_string_value(archivo, "OPEN");
 	log_info(loggerDevArchDir, "Retorno el estado: %s", estadoArchivo);
 
@@ -290,7 +307,6 @@ bool puedeAbrirseArchivo(t_config* archivo){
 
 void activarFlagDeLectura(t_config* archivo){
 	config_set_value(archivo, "OPEN", "Y");
-	log_info(loggerDevArchDir, "Se creo el falso config de la ruta");
 	config_save(archivo);
 }
 
@@ -436,7 +452,7 @@ uint32_t cantidadDePokemonEnUnaCoordenada(t_config* archivoBlock,char* posicion)
 
 
 void agregarNuevaPosicionA(char* block, char* posicion, uint32_t cantidad){
-	char* rutaArchivo = generadorDeRutaDeCreacionDeArchivos(rutaBlocksArchDir,block,".bin");
+	/*char* rutaArchivo = generadorDeRutaDeCreacionDeArchivos(rutaBlocksArchDir,block,".bin");
 	log_info(loggerDevArchDir, "Agregamos nueva posicion con direccion del archivo: %s",rutaArchivo);
 
 	if(noExisteDirectorio(rutaArchivo)){
@@ -460,58 +476,53 @@ void agregarNuevaPosicionA(char* block, char* posicion, uint32_t cantidad){
 
 	free(rutaArchivo);
 	free(cantidadString);
+*/
+	char* cantString = string_itoa(cantidad);
+	char* coordenada = string_new();
+
+	string_append(&coordenada,posicion);
+	string_append(&coordenada,"=");
+	string_append(&coordenada,cantString);
+
+	char* rutaArchivo = generadorDeRutaDeCreacionDeArchivos(rutaBlocksArchDir,block,".bin");
+	log_info(loggerDevArchDir, "Agregamos nueva posicion con direccion del archivo: %s",rutaArchivo);
+
+	if(noExisteDirectorio(rutaArchivo)){
+		log_info(loggerDevArchDir, "Creamos el archivo");
+		crearTemplateDeArchivoTipo(BLOCK,block,rutaBlocksArchDir);
+	}
+
+	log_info(loggerDevArchDir, "Seteando nueva posicion: %s",posicion);
+
+	FILE* archivo;
+	archivo = fopen(rutaArchivo,"w+");
+
+	fseek(archivo, 0L, SEEK_END);
+
+	fwrite(coordenada,1,sizeof(coordenada),archivo);
+
+	fseek(archivo, 0L, SEEK_SET);
+
+	fclose(archivo);
+	free(coordenada);
+	free(cantString);
+
 }
-
-
-void obtenerTodasLasPosiciones(char** blocks, t_queue* posicionesPokemon){
-
-	uint32_t i = 0;
-
-	while(blocks[i] != NULL){
-
-			log_info(loggerDevArchDir, "Se esta analizando el block: %s",blocks[i]);
-			char* rutaDeArchivo = generadorDeRutaDeCreacionDeArchivos(rutaBlocksArchDir,blocks[i],".bin");
-			log_info(loggerDevArchDir, "La ruta del archivo es: %s",rutaDeArchivo);
-
-			FILE *fp;
-			char *line = NULL;
-			size_t len = 0;
-			ssize_t read;
-
-			fp = fopen(rutaDeArchivo, "r");
-
-			if (fp == NULL){
-				log_error(loggerDevArchDir, "Archivo vacio");
-				exit(EXIT_FAILURE);
-			}
-
-			while ((read = getline(&line, &len, fp)) != -1) {
-				log_info(loggerDevArchDir, "Se esta leyendo la linea: %s",line);
-				char** data = string_split(line,"=");
-				log_info(loggerDevArchDir, "La coordenada de la linea es: %s",data[0]);
-				char* posicion = string_new();
-				string_append(&posicion,data[0]);
-				log_info(loggerGameCardArchDir, "Posicion: %s",posicion);
-				queue_push(posicionesPokemon, posicion);
-
-				uint32_t j = 0;
-				while(data[j] != NULL){
-					free(data[j]);
-					j++;
-				}
-				free(data);
-			}
-
-			free(rutaDeArchivo);
-			free(line);
-			fclose(fp);
-
-			i++;
-		}
-}
-
-
 
 bool noExisteDirectorio(char* ruta){
 	return stat(ruta, &st1) == -1;
+}
+
+void elDestroyerDeCorchetazos(char** array){
+	uint32_t i = 0;
+	while(array[i]!= NULL){
+		free(array[i]);
+		i++;
+	}
+	free(array);
+}
+
+
+void elLimpiaCharDinamicos(char* string){
+	free(string);
 }

@@ -225,11 +225,12 @@ t_localized* crearLocalizedDePokemonInexistente(t_getLlegada* getLlegado){
 	localizedAEnviar->idMensaje = getLlegado->id;
 	localizedAEnviar->sizePokemon = strlen(getLlegado->pokemon) + 1;
 	localizedAEnviar->pokemon = getLlegado->pokemon;
+	localizedAEnviar->lugares = 0;
 
 	return localizedAEnviar;
 }
 
-t_localized* crearLocalized(t_getLlegada* getLlegado, t_queue* dataPokemon){
+t_localized* crearLocalized(t_getLlegada* getLlegado, t_list* dataPokemon){
 
 	t_localized* localizedAEnviar = malloc(sizeof(t_localized));
 
@@ -239,24 +240,21 @@ t_localized* crearLocalized(t_getLlegada* getLlegado, t_queue* dataPokemon){
 	localizedAEnviar->pokemon = getLlegado->pokemon;
 	log_info(loggerDevEstructuras, "El Pokemon cargado en el localized es: %s", localizedAEnviar->pokemon);
 	log_info(loggerDevEstructuras, "El tamanio del nombre del pokemon cargado en el localized es: %i", localizedAEnviar->sizePokemon);
-	localizedAEnviar->lugares = queue_size(dataPokemon);
+	localizedAEnviar->lugares = dataPokemon->elements_count;
 	log_info(loggerDevEstructuras, "La cantidad de lugares donde apareche el pokemon cargado en el localized es: %i", localizedAEnviar->lugares);
 	localizedAEnviar->l_coordenadas = list_create();
 
 
 	for(int i = 0; i<localizedAEnviar->lugares ;i++){
 
-		char* coordenada = queue_pop(dataPokemon);
+		char* coordenada = list_get(dataPokemon,i);
 		log_info(loggerDevEstructuras, "La coordenada sacada de la cola es: %s", coordenada);
 
-		char** data = string_n_split(coordenada,2,"-");
+		char** data = string_split(coordenada,"-");
 		uint32_t posX = atoi(data[0]);
-		log_info(loggerDevEstructuras, "La coordenada sacada de la cola es: %i", posX);
+		//log_info(loggerDevEstructuras, "La coordenada sacada de la cola es: %i", posX);
 		uint32_t posY = atoi(data[1]);
-		log_info(loggerDevEstructuras, "La coordenada sacada de la cola es: %i", posY);
-
-
-
+		//log_info(loggerDevEstructuras, "La coordenada sacada de la cola es: %i", posY);
 
 		uint32_t* segundaX=malloc(sizeof(uint32_t));
 		uint32_t* segundaY=malloc(sizeof(uint32_t));
@@ -277,15 +275,11 @@ t_localized* crearLocalized(t_getLlegada* getLlegado, t_queue* dataPokemon){
 			j++;
 		}
 		free(data);
-
 	}
 
 	for(int j = 0; j<localizedAEnviar->l_coordenadas->elements_count ;j++){
-
 		log_info(loggerDevEstructuras, "El valor de index %i es: %i",j, *((uint32_t*) list_get(localizedAEnviar->l_coordenadas,j)));
-
 	}
-
 
 	return localizedAEnviar;
 

@@ -30,8 +30,6 @@
 #include "creacionDeEstructurasParaEnvio.h"
 
 
-
-
 int id_moduloGC;
 
 
@@ -91,6 +89,21 @@ void verificarConexion(void);
 void generar_ID_Modulo();
 bool noExisteDirectorio(char* ruta);
 void liberar_conexion(int socket_cliente);
+
+
+//############################################################################ SE PRENDE FUEGO EL FS ######################################################################################
+
+char** generarVectorDePaths(char** blocksOcupados);
+void string_append_char(char** string, char c);
+char** generarVectorDeKeyValue(char* linea);
+char* aplanarVectorDeKeyValue(char** vector);
+t_list* traerRegistrosBloques(char** bloques);
+t_list* evaluarRegistroNew(char** registro, t_list* registros);
+void vaciarBloques(char** blocksOcupados);
+void escribirEnBloques(t_list* registros, t_config* archivoMetadata);
+bool evaluarRegistroCatch(char* registro, t_list* registros);
+t_list* obtenerTodasLasPosiciones(char** blocks);
+char* getCoordenadaDeRegistro(char** vector);
 
 
 #endif /* UTILSGAMECARD_H_ */

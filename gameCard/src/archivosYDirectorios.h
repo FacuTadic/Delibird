@@ -34,6 +34,7 @@ void crearTemplateDeArchivoTipo(tipoArchivo tipo, char* nombreDelArchivo ,char* 
 char* generadorDeRutaDeCreacionDeDirectorios(char* ruta, char* nombreDelDirectorio);
 char* generadorDeRutaDeCreacionDeArchivos(char* rutaDirectorio,char* nombreDelArchivo, char* tipoDeDato);
 char* generadorDePosiciones(uint32_t posX, uint32_t posY);
+char** generadorDeRegistros(char* posicion, uint32_t cantidad);
 bool existeArchivo(char* ruta);
 uint32_t tamanioDeUnArchivo(char* rutaDelArchivo);
 void actualizarBlockMetadata(t_config* archivoMetadata, char*blockAAgregar);
@@ -52,6 +53,9 @@ void agregarCantidadSolicitadaAUnaKey(t_config* archivo,char* key, uint32_t cant
 void decrementarEnUnoEnLaPosicion(t_config* archivo,char* key);
 uint32_t cantidadDePokemonEnUnaCoordenada(t_config* archivoBlock,char* posicion);
 void agregarNuevaPosicionA(char* block, char* posicion, uint32_t cantidad);
-void obtenerTodasLasPosiciones(char** blocks, t_queue* posicionesPokemon);
 bool noExisteDirectorio(char* ruta);
+void elDestroyerDeCorchetazos(char** array);
+void elLimpiaCharDinamicos(char* string);
+
+
 #endif /* ARCHIVOSYDIRECTORIOS_H_ */
