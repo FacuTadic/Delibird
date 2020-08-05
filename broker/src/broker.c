@@ -52,9 +52,10 @@ void procesar_request(int cod_op, int cliente_fd) {
 			sem_wait(&gl_appeared_limite);
 
 			log_info(extense_logger, "Encolando el mensaje APPEARED con id %i", mensaje_a_guardar->id);
-			uint32_t id_respondido = appeared_msg->id_correlativo;
+			id_respondido* id_respondido_appeared = malloc(sizeof(id_respondido));
+			id_respondido_appeared->id = appeared_msg->id_correlativo;
 			pthread_mutex_lock(&gl_appeared_ids_lock);
-			list_add(gl_appeared_ids_respondidos, (void*) &id_respondido);
+			list_add(gl_appeared_ids_respondidos, (void*) id_respondido_appeared);
 			pthread_mutex_unlock(&gl_appeared_ids_lock);
 			pthread_mutex_lock(&gl_appeared_queue_lock);
 			queue_push(gl_appeared_pokemon_queue, mensaje_a_guardar);
@@ -110,9 +111,10 @@ void procesar_request(int cod_op, int cliente_fd) {
 			sem_wait(&gl_caught_limite);
 
 			log_info(extense_logger, "Encolando el mensaje CAUGHT con id %i", mensaje_a_guardar->id);
-			uint32_t id_respondido = caught_msg->id_correlativo;
+			id_respondido* id_respondido_caught = malloc(sizeof(id_respondido));
+			id_respondido_caught->id = caught_msg->id_correlativo;
 			pthread_mutex_lock(&gl_caught_ids_lock);
-			list_add(gl_caught_ids_respondidos, (void*) &id_respondido);
+			list_add(gl_caught_ids_respondidos, (void*) id_respondido_caught);
 			pthread_mutex_unlock(&gl_caught_ids_lock);
 			pthread_mutex_lock(&gl_caught_queue_lock);
 			queue_push(gl_caught_pokemon_queue, mensaje_a_guardar);
@@ -176,9 +178,10 @@ void procesar_request(int cod_op, int cliente_fd) {
 			sem_wait(&gl_localized_limite);
 
 			log_info(extense_logger, "Encolando el mensaje LOCALIZED con id %i", mensaje_a_guardar->id);
-			uint32_t id_respondido = localized_msg->id_correlativo;
+			id_respondido* id_respondido_localized = malloc(sizeof(id_respondido));
+			id_respondido_localized->id = localized_msg->id_correlativo;
 			pthread_mutex_lock(&gl_localized_ids_lock);
-			list_add(gl_localized_ids_respondidos, (void*) &id_respondido);
+			list_add(gl_localized_ids_respondidos, (void*) id_respondido_localized);
 			pthread_mutex_unlock(&gl_localized_ids_lock);
 			pthread_mutex_lock(&gl_localized_queue_lock);
 			queue_push(gl_localized_pokemon_queue, mensaje_a_guardar);
@@ -319,8 +322,8 @@ void esperar_clientes(void* socket_servidor) {
 
 int contiene_al_id_respondido(t_list* lista_de_ids_respondidos, uint32_t id_a_buscar) {
 	for (int i = 0; i < lista_de_ids_respondidos->elements_count; i++) {
-		uint32_t* id = (uint32_t*) list_get(lista_de_ids_respondidos, i);
-		if (id_a_buscar == *id) {
+		id_respondido* id_ya_respondido = list_get(lista_de_ids_respondidos, i);
+		if (id_a_buscar == id_ya_respondido->id) {
 			return 1;
 		}
 	}
