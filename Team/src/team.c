@@ -2089,7 +2089,7 @@ t_pokemon* mejor_pokemon_para_reintentar(t_entrenador* entrenador, char* pokemon
 }
 
 void cambiar_estado_de_entrenador(t_entrenador* entrenador, estado estado_nuevo, char* razon) {
-	log_info(extense_logger, "Cambiando estado de entrenador %i a %s", entrenador->index, obtener_nombre_de_estado(estado_nuevo));
+	log_info(extense_logger, "Cambiando estado de entrenador %i de %s a %s", entrenador->index, obtener_nombre_de_estado(entrenador->estado), obtener_nombre_de_estado(estado_nuevo));
 	if (entrenador->estado != estado_nuevo) {
 		entrenador->estado = estado_nuevo;
 		pthread_mutex_lock(&cambios_contexto_mutex);
@@ -2101,7 +2101,7 @@ void cambiar_estado_de_entrenador(t_entrenador* entrenador, estado estado_nuevo,
 }
 
 void cambiar_tarea_de_entrenador(t_entrenador* entrenador, t_tarea* tarea_nueva) {
-	log_info(extense_logger, "Cambiando tarea de entrenador %i a %s", entrenador->index, obtener_nombre_de_tarea(tarea_nueva->id_tarea));
+	log_info(extense_logger, "Cambiando tarea de entrenador %i de %s a %s", entrenador->index, obtener_nombre_de_tarea(entrenador->tarea_actual->id_tarea), obtener_nombre_de_tarea(tarea_nueva->id_tarea));
 	switch(entrenador->tarea_actual->id_tarea) {
 	case NO_HACER_PINGO:
 		free(entrenador->tarea_actual);
