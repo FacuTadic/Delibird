@@ -226,6 +226,7 @@ t_localized* crearLocalizedDePokemonInexistente(t_getLlegada* getLlegado){
 	localizedAEnviar->sizePokemon = strlen(getLlegado->pokemon) + 1;
 	localizedAEnviar->pokemon = getLlegado->pokemon;
 	localizedAEnviar->lugares = 0;
+	localizedAEnviar->l_coordenadas = list_create();
 
 	return localizedAEnviar;
 }

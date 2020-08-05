@@ -444,3 +444,15 @@
 [INFO] 21:52:57:951 Team/(5247:5247): Cantidad de ciclos de CPU del entrenador 2: 13
 [INFO] 21:52:57:951 Team/(5247:5247): Proceso Team terminado. Cantidad de cambios de contexto realizados: 21
 [INFO] 21:52:57:951 Team/(5247:5247): Proceso Team terminado. Cantidad de deadlocks encontrados y tratados: 1
+[INFO] 21:58:00:992 Team/(15522:15524): Estado de entrenador 2 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 21:58:00:992 Team/(15522:15539): Estado de entrenador 2 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de atrapar pokemon squirtle
+[INFO] 21:58:00:992 Team/(15522:15539): Entrenador 2 esta atrapando pokemon squirtle ubicado en (5,2)
+[INFO] 21:58:00:992 Team/(15522:15539): El entrenador 2 se esta moviendo de (3,2) a (5,2)
+[INFO] 21:58:00:992 Team/(15522:15539): El entrenador 2 se encuentra en (4,2)
+[INFO] 21:58:05:992 Team/(15522:15539): El entrenador 2 se encuentra en (5,2)
+[INFO] 21:58:10:993 Team/(15522:15539): Estado de entrenador 2 cambiado a Estado blocked. Razon del cambio: Se ha enviado un catch
+[ERROR] 21:58:15:993 Team/(15522:15539): Error: No se pudo enviar el mensaje catch del entrenador 2 para el pokemon squirtle en (5,2), obteniendo pokemon por comportamiento default
+[INFO] 21:58:20:963 Team/(15522:15536): Buscando deadlock...
+[INFO] 21:58:20:964 Team/(15522:15536): No se han encontrado deadlocks
+[INFO] 21:58:30:735 Team/(15522:15535): Iniciando verificacion de conexion con Broker...
+[ERROR] 21:58:30:735 Team/(15522:15535): Reconexion con Broker fallida, intentando nuevamente en 30 segundos
