@@ -1155,7 +1155,7 @@ void mandar_localized(void* localized_mandable) {
 	uint32_t bytes;
 	void* flujo = serializar_localized(argumento_localized->mensaje_queue, &bytes);
 
-	log_info(extense_logger, "Enviando mensaje LOCALIZED con cliente %i socket %i puerto %s", argumento_localized->mensaje_queue->id, argumento_localized->info->id_cliente, argumento_localized->info->socket_cliente);
+	log_info(extense_logger, "Enviando mensaje LOCALIZED con id %i al cliente %i socket %i", argumento_localized->mensaje_queue->id, argumento_localized->info->id_cliente, argumento_localized->info->socket_cliente);
 
 	if (send(argumento_localized->info->socket_cliente, flujo, bytes, 0) == -1) {
 		log_error(extense_logger, "Error: No se pudo enviar el mensaje");
