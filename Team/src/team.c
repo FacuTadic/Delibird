@@ -124,6 +124,9 @@ void escuchar_appeared_de_broker(void) {
 					queue_push(cola_pokemones, (void*) pokemon_a_agregar);
 					pthread_mutex_unlock(&cola_pokemones_mutex);
 					sem_post(&sem_cola_pokemones);
+				} else {
+					log_info(extense_logger, "El pokemon recibido %s no forma parte del objetivo global, se desestima el mensaje", appeared_msg->pokemon);
+					free(appeared_msg->pokemon);
 				}
 				free(appeared_msg);
 			}
