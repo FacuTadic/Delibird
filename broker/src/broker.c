@@ -154,13 +154,19 @@ void procesar_request(int cod_op, int cliente_fd) {
 	log_info(extense_logger, "Codigo de operacion recibido del socket cliente %i corresponde a un LOCALIZED", cliente_fd);
 	t_localized* localized_msg = recibir_localized(cliente_fd, &size, extense_logger);
 
+	log_info(extense_logger, "A");
+
 	if (localized_msg == NULL) {
+		log_info(extense_logger, "B? raris");
 		free(mensaje_a_guardar);
 		pthread_exit(NULL);
 	} else {
+		log_info(extense_logger, "B");
 		pthread_mutex_lock(&gl_localized_ids_lock);
 		int ya_fue_respondido = contiene_al_id_respondido(gl_localized_ids_respondidos, localized_msg->id_correlativo);
 		pthread_mutex_unlock(&gl_localized_ids_lock);
+
+		log_info(extense_logger, "C");
 
 		if (ya_fue_respondido == 0) {
 			mensaje_a_guardar->mensaje = (void*) localized_msg;
@@ -480,11 +486,8 @@ void* atender_get(void* args) {
 		log_info(extense_logger, "Eliminado mensaje GET con id %i", primer_elemento->id);
 
 		free(mensaje_a_eliminar->pokemon);
-		log_info(extense_logger, "A");
 		free(mensaje_a_eliminar);
-		log_info(extense_logger, "B");
 		free(elemento_a_eliminar);
-		log_info(extense_logger, "C");
 	}
 }
 
