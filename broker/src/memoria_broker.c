@@ -1,8 +1,7 @@
 #include "memoria_broker.h"
 
 void guardar_info_envios(uint32_t id, t_list* mandados, t_list* acks) {
-	char* id_char = malloc(sizeof(char));
-	sprintf(id_char, "%u", id);
+	char* id_char = string_itoa(id);
 
 	pthread_mutex_lock(&mutex_memoria);
 
@@ -45,8 +44,7 @@ void guardar_mensaje_en_memoria(data_tabla* registro, void* mensaje) {
 	} else {
 		log_info(extense_logger_memoria, "Guardando mensaje con id %i en particion %06p", registro->id, (size_t) lugar_en_memoria->desde);
 		log_info(logger_memoria, "Guardando mensaje con id %i en particion %06p", registro->id, (size_t) lugar_en_memoria->desde);
-		char* id_char = malloc(sizeof(char));
-		sprintf(id_char, "%u", registro->id);
+		char* id_char = string_itoa(registro->id);
 		registro->base = lugar_en_memoria->desde;
 		dictionary_put(tabla_segmentos, id_char, (void *) registro);
 
@@ -100,10 +98,7 @@ void hacer_lugar_en_memoria() {
 
 int eliminar_particion() {
 	data_tabla* registro = encontrar_particion_a_eliminar();
-
-	char* id_char = malloc(sizeof(char));
-	sprintf(id_char, "%u", registro->id);
-
+	char* id_char = string_itoa(registro->id);
 	data_tabla* elemento_removido = dictionary_remove(tabla_segmentos, id_char);
 
 	if (elemento_removido == NULL) {
@@ -216,8 +211,7 @@ data_tabla* encontrar_particion_con_fifo() {
 	int id_a_buscar = 1;
 	int cantidad_registros_leidos = 0;
 	while (cantidad_registros_leidos < tabla_segmentos->elements_amount) {
-		char* id_char = malloc(sizeof(char));
-		sprintf(id_char, "%u", id_a_buscar);
+		char* id_char = string_itoa(id_a_buscar);
 
 		data_tabla* registro = (data_tabla*) dictionary_get(tabla_segmentos, id_char);
 
@@ -248,8 +242,7 @@ data_tabla* encontrar_particion_con_lru() {
 	uint32_t id_a_buscar = 1;
 	int cantidad_registros_leidos = 0;
 	while (cantidad_registros_leidos < tabla_segmentos->elements_amount) {
-		char* id_char = malloc(sizeof(char));
-		sprintf(id_char, "%u", id_a_buscar);
+		char* id_char = string_itoa(id_a_buscar);
 
 		data_tabla* registro = (data_tabla*) dictionary_get(tabla_segmentos, id_char);
 
@@ -308,8 +301,7 @@ data_tabla* obtener_registro_proximo(particion_libre* particion_libre) {
 	uint32_t id_a_buscar = 1;
 	int cantidad_registros_leidos = 0;
 	while (cantidad_registros_leidos < tabla_segmentos->elements_amount) {
-		char* id_char = malloc(sizeof(char));
-		sprintf(id_char, "%u", id_a_buscar);
+		char* id_char = string_itoa(id_a_buscar);
 
 		data_tabla* registro = (data_tabla*) dictionary_get(tabla_segmentos, id_char);
 
@@ -430,10 +422,7 @@ t_list* obtener_segmentos_new(uint32_t id_cliente) {
 	int k = 0;
 
 	for (uint32_t i = 1; k < tabla_segmentos->elements_amount; i++) {
-
-		char* id_char = malloc(sizeof(char));
-		sprintf(id_char, "%u", i);
-
+		char* id_char = string_itoa(i);
 		data_tabla* registro = (data_tabla*) dictionary_get(tabla_segmentos, id_char);
 
 		if (registro == NULL) {
@@ -474,10 +463,7 @@ t_list* obtener_segmentos_appeared(uint32_t id_cliente) {
 	int k = 0;
 
 	for (uint32_t i = 1; k < tabla_segmentos->elements_amount; i++) {
-
-		char* id_char = malloc(sizeof(char));
-		sprintf(id_char, "%u", i);
-
+		char* id_char = string_itoa(i);
 		data_tabla* registro = (data_tabla*) dictionary_get(tabla_segmentos, id_char);
 
 		if (registro == NULL) {
@@ -518,10 +504,7 @@ t_list* obtener_segmentos_get(uint32_t id_cliente) {
 	int k = 0;
 
 	for (uint32_t i = 1; k < tabla_segmentos->elements_amount; i++) {
-
-		char* id_char = malloc(sizeof(char));
-		sprintf(id_char, "%u", i);
-
+		char* id_char = string_itoa(i);
 		data_tabla* registro = (data_tabla*) dictionary_get(tabla_segmentos, id_char);
 
 		if (registro == NULL) {
@@ -562,10 +545,7 @@ t_list* obtener_segmentos_localized(uint32_t id_cliente) {
 	int k = 0;
 
 	for (uint32_t i = 1; k < tabla_segmentos->elements_amount; i++) {
-
-		char* id_char = malloc(sizeof(char));
-		sprintf(id_char, "%u", i);
-
+		char* id_char = string_itoa(i);
 		data_tabla* registro = (data_tabla*) dictionary_get(tabla_segmentos, id_char);
 
 		if (registro == NULL) {
@@ -606,10 +586,7 @@ t_list* obtener_segmentos_catch(uint32_t id_cliente) {
 	int k = 0;
 
 	for (uint32_t i = 1; k < tabla_segmentos->elements_amount; i++) {
-
-		char* id_char = malloc(sizeof(char));
-		sprintf(id_char, "%u", i);
-
+		char* id_char = string_itoa(i);
 		data_tabla* registro = (data_tabla*) dictionary_get(tabla_segmentos, id_char);
 
 		if (registro == NULL) {
@@ -650,10 +627,7 @@ t_list* obtener_segmentos_caught(uint32_t id_cliente) {
 	int k = 0;
 
 	for (uint32_t i = 1; k < tabla_segmentos->elements_amount; i++) {
-
-		char* id_char = malloc(sizeof(char));
-		sprintf(id_char, "%u", i);
-
+		char* id_char = string_itoa(i);
 		data_tabla* registro = (data_tabla*) dictionary_get(tabla_segmentos, id_char);
 
 		if (registro == NULL) {
@@ -738,9 +712,7 @@ data_tabla* buscar_registro(void* particion) {
 	int id_a_buscar = 1;
 	int cantidad_registros_leidos = 0;
 	while (cantidad_registros_leidos < tabla_segmentos->elements_amount) {
-		char* id_char = malloc(sizeof(char));
-		sprintf(id_char, "%u", id_a_buscar);
-
+		char* id_char = string_itoa(id_a_buscar);
 		data_tabla* registro = (data_tabla*) dictionary_get(tabla_segmentos, id_char);
 
 		if (registro != NULL) {
@@ -786,4 +758,3 @@ char* obtener_dump_registro(data_tabla* registro, int numero_particion) {
 			registro->tipo,
 			registro->id);
 }
-
