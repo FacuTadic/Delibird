@@ -1150,7 +1150,7 @@ void mandar_localized(void* localized_mandable) {
 	status->id_cliente = argumento_localized->info->id_cliente;
 	status->socket_cliente = argumento_localized->info->socket_cliente;
 
-	log_info(extense_logger, "Preparandose para enviar mensaje LOCALIZED con cliente %i socket %i puerto %s", argumento_localized->mensaje_queue->id, argumento_localized->info->id_cliente, argumento_localized->info->socket_cliente);
+	log_info(extense_logger, "Preparandose para enviar mensaje LOCALIZED con id %i al cliente %i socket %i", argumento_localized->mensaje_queue->id, argumento_localized->info->id_cliente, argumento_localized->info->socket_cliente);
 
 	uint32_t bytes;
 	void* flujo = serializar_localized(argumento_localized->mensaje_queue, &bytes);
