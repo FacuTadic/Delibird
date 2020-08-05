@@ -205,3 +205,80 @@
 [INFO] 01:29:45:32 GameCard/(5099:5106): Obteniendo las posiciones en las que se encuentra el pokemon
 [INFO] 01:29:50:43 GameCard/(5099:5106): Obteniendo las posiciones en las que se encuentra el pokemon
 [INFO] 01:29:55:44 GameCard/(5099:5106): Obteniendo las posiciones en las que se encuentra el pokemon
+[INFO] 02:01:13:701 GameCard/(8009:8009): logger iniciado.
+[INFO] 02:01:13:702 GameCard/(8009:8009): Lenavando el Tall Grass
+[INFO] 02:01:13:704 GameCard/(8009:8009): Punto de montaje del directorio Metadata es: /home/utnso/Escritorio/tall-grass/Metadata
+[INFO] 02:01:13:704 GameCard/(8009:8009): El BitMap se encuentra en: /home/utnso/Escritorio/tall-grass/Metadata/BitMap.bin
+[INFO] 02:01:13:704 GameCard/(8009:8009): Punto de montaje del directorio Files es: /home/utnso/Escritorio/tall-grass/Files
+[INFO] 02:01:13:704 GameCard/(8009:8009): Punto de montaje del directorio Blocks es: /home/utnso/Escritorio/tall-grass/Blocks
+[INFO] 02:01:21:201 GameCard/(8009:8014): El pokemon pikachu no existe en el FS, se pasa a crear su directorio
+[INFO] 02:01:26:207 GameCard/(8009:8014): El pokemon squirtle no existe en el FS, se pasa a crear su directorio
+[INFO] 02:01:31:212 GameCard/(8009:8014): El pokemon jolteon no existe en el FS, se pasa a crear su directorio
+[INFO] 02:01:36:215 GameCard/(8009:8014): El pokemon flareon no existe en el FS, se pasa a crear su directorio
+[INFO] 02:01:53:432 GameCard/(8009:8016): Obteniendo las posiciones en las que se encuentra el pokemon
+[INFO] 02:09:32:776 GameCard/(8646:8646): logger iniciado.
+[INFO] 02:09:32:846 GameCard/(8646:8646): Lenavando el Tall Grass
+[INFO] 02:09:32:897 GameCard/(8646:8646): Punto de montaje del directorio Metadata es: /home/utnso/Escritorio/tall-grass/Metadata
+[INFO] 02:09:32:898 GameCard/(8646:8646): El BitMap se encuentra en: /home/utnso/Escritorio/tall-grass/Metadata/BitMap.bin
+[INFO] 02:09:32:898 GameCard/(8646:8646): Punto de montaje del directorio Files es: /home/utnso/Escritorio/tall-grass/Files
+[INFO] 02:09:32:898 GameCard/(8646:8646): Punto de montaje del directorio Blocks es: /home/utnso/Escritorio/tall-grass/Blocks
+[INFO] 02:09:52:644 GameCard/(8646:8651): El pokemon pikachu no existe en el FS, se pasa a crear su directorio
+[INFO] 02:09:57:763 GameCard/(8646:8651): El pokemon squirtle no existe en el FS, se pasa a crear su directorio
+[INFO] 02:10:02:821 GameCard/(8646:8651): El pokemon jolteon no existe en el FS, se pasa a crear su directorio
+[INFO] 02:10:07:854 GameCard/(8646:8651): El pokemon flareon no existe en el FS, se pasa a crear su directorio
+[INFO] 02:10:27:222 GameCard/(8646:8653): Obteniendo las posiciones en las que se encuentra el pokemon
+[INFO] 02:10:32:340 GameCard/(8646:8653): Obteniendo las posiciones en las que se encuentra el pokemon
+[INFO] 02:10:37:433 GameCard/(8646:8653): Obteniendo las posiciones en las que se encuentra el pokemon
+[INFO] 02:10:42:466 GameCard/(8646:8653): Obteniendo las posiciones en las que se encuentra el pokemon
+[INFO] 02:49:55:852 GameCard/(11606:11606): logger iniciado.
+[INFO] 02:49:55:928 GameCard/(11606:11606): Lenavando el Tall Grass
+[INFO] 02:49:55:0 GameCard/(11606:11606): Punto de montaje del directorio Metadata es: /home/utnso/Escritorio/tall-grass/Metadata
+[INFO] 02:49:55:0 GameCard/(11606:11606): El BitMap se encuentra en: /home/utnso/Escritorio/tall-grass/Metadata/BitMap.bin
+[INFO] 02:49:55:0 GameCard/(11606:11606): Punto de montaje del directorio Files es: /home/utnso/Escritorio/tall-grass/Files
+[INFO] 02:49:55:1 GameCard/(11606:11606): Punto de montaje del directorio Blocks es: /home/utnso/Escritorio/tall-grass/Blocks
+[INFO] 02:50:02:136 GameCard/(11606:11615): El pokemon pikachu no existe en el FS, se pasa a crear su directorio
+[INFO] 02:50:07:228 GameCard/(11606:11615): El pokemon squirtle no existe en el FS, se pasa a crear su directorio
+[INFO] 02:50:12:267 GameCard/(11606:11615): El pokemon jolteon no existe en el FS, se pasa a crear su directorio
+[INFO] 02:50:17:305 GameCard/(11606:11615): El pokemon flareon no existe en el FS, se pasa a crear su directorio
+[INFO] 02:50:48:458 GameCard/(11606:11617): Obteniendo las posiciones en las que se encuentra el pokemon
+[INFO] 02:50:53:614 GameCard/(11606:11617): Obteniendo las posiciones en las que se encuentra el pokemon
+[INFO] 02:53:23:2 GameCard/(12037:12037): logger iniciado.
+[INFO] 02:53:24:76 GameCard/(12037:12037): Lenavando el Tall Grass
+[INFO] 02:53:24:131 GameCard/(12037:12037): Punto de montaje del directorio Metadata es: /home/utnso/Escritorio/tall-grass/Metadata
+[INFO] 02:53:24:132 GameCard/(12037:12037): El BitMap se encuentra en: /home/utnso/Escritorio/tall-grass/Metadata/BitMap.bin
+[INFO] 02:53:24:132 GameCard/(12037:12037): Punto de montaje del directorio Files es: /home/utnso/Escritorio/tall-grass/Files
+[INFO] 02:53:24:132 GameCard/(12037:12037): Punto de montaje del directorio Blocks es: /home/utnso/Escritorio/tall-grass/Blocks
+[INFO] 02:53:35:790 GameCard/(12037:12042): El pokemon pikachu no existe en el FS, se pasa a crear su directorio
+[INFO] 02:53:40:913 GameCard/(12037:12042): El pokemon squirtle no existe en el FS, se pasa a crear su directorio
+[INFO] 02:53:45:996 GameCard/(12037:12042): El pokemon jolteon no existe en el FS, se pasa a crear su directorio
+[INFO] 02:53:51:36 GameCard/(12037:12042): El pokemon flareon no existe en el FS, se pasa a crear su directorio
+[INFO] 02:54:25:131 GameCard/(12037:12044): Obteniendo las posiciones en las que se encuentra el pokemon
+[INFO] 02:54:30:349 GameCard/(12037:12044): Obteniendo las posiciones en las que se encuentra el pokemon
+[INFO] 03:07:02:146 GameCard/(13077:13077): logger iniciado.
+[INFO] 03:07:02:215 GameCard/(13077:13077): Lenavando el Tall Grass
+[INFO] 03:07:02:278 GameCard/(13077:13077): Punto de montaje del directorio Metadata es: /home/utnso/Escritorio/tall-grass/Metadata
+[INFO] 03:07:02:278 GameCard/(13077:13077): El BitMap se encuentra en: /home/utnso/Escritorio/tall-grass/Metadata/BitMap.bin
+[INFO] 03:07:02:279 GameCard/(13077:13077): Punto de montaje del directorio Files es: /home/utnso/Escritorio/tall-grass/Files
+[INFO] 03:07:02:279 GameCard/(13077:13077): Punto de montaje del directorio Blocks es: /home/utnso/Escritorio/tall-grass/Blocks
+[INFO] 03:07:54:281 GameCard/(13077:13101): Obteniendo las posiciones en las que se encuentra el pokemon
+[INFO] 03:07:59:368 GameCard/(13077:13101): Obteniendo las posiciones en las que se encuentra el pokemon
+[INFO] 03:08:04:464 GameCard/(13077:13101): Obteniendo las posiciones en las que se encuentra el pokemon
+[INFO] 03:08:09:505 GameCard/(13077:13101): Obteniendo las posiciones en las que se encuentra el pokemon
+[INFO] 03:11:49:400 GameCard/(13706:13706): logger iniciado.
+[INFO] 03:11:49:474 GameCard/(13706:13706): Lenavando el Tall Grass
+[INFO] 03:11:49:531 GameCard/(13706:13706): Punto de montaje del directorio Metadata es: /home/utnso/Escritorio/tall-grass/Metadata
+[INFO] 03:11:49:531 GameCard/(13706:13706): El BitMap se encuentra en: /home/utnso/Escritorio/tall-grass/Metadata/BitMap.bin
+[INFO] 03:11:49:532 GameCard/(13706:13706): Punto de montaje del directorio Files es: /home/utnso/Escritorio/tall-grass/Files
+[INFO] 03:11:49:532 GameCard/(13706:13706): Punto de montaje del directorio Blocks es: /home/utnso/Escritorio/tall-grass/Blocks
+[INFO] 03:12:51:290 GameCard/(13873:13873): logger iniciado.
+[INFO] 03:12:51:362 GameCard/(13873:13873): Lenavando el Tall Grass
+[INFO] 03:12:51:418 GameCard/(13873:13873): Punto de montaje del directorio Metadata es: /home/utnso/Escritorio/tall-grass/Metadata
+[INFO] 03:12:51:418 GameCard/(13873:13873): El BitMap se encuentra en: /home/utnso/Escritorio/tall-grass/Metadata/BitMap.bin
+[INFO] 03:12:51:419 GameCard/(13873:13873): Punto de montaje del directorio Files es: /home/utnso/Escritorio/tall-grass/Files
+[INFO] 03:12:51:419 GameCard/(13873:13873): Punto de montaje del directorio Blocks es: /home/utnso/Escritorio/tall-grass/Blocks
+[INFO] 03:13:11:521 GameCard/(13873:13878): El pokemon pikachu no existe en el FS, se pasa a crear su directorio
+[INFO] 03:13:16:615 GameCard/(13873:13878): El pokemon squirtle no existe en el FS, se pasa a crear su directorio
+[INFO] 03:13:21:662 GameCard/(13873:13878): El pokemon jolteon no existe en el FS, se pasa a crear su directorio
+[INFO] 03:13:26:702 GameCard/(13873:13878): El pokemon flareon no existe en el FS, se pasa a crear su directorio
+[INFO] 03:14:04:133 GameCard/(13873:13880): Obteniendo las posiciones en las que se encuentra el pokemon
+[INFO] 03:14:09:319 GameCard/(13873:13880): Obteniendo las posiciones en las que se encuentra el pokemon

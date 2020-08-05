@@ -980,7 +980,7 @@ bool validarPosicionesDeCatch(t_config* archivoMetadataPokemon, char** blocksOcu
 
 
 
-void validarPosicionesDeGetAntiInvalidFree(char** blocksOcupados,t_list* registros){
+void validarPosicionesDeGetAntiInvalidFree(char** blocksOcupados,t_list** registros){
 
 	log_info(loggerGameCard, "Obteniendo las posiciones en las que se encuentra el pokemon");
 
@@ -991,11 +991,11 @@ void validarPosicionesDeGetAntiInvalidFree(char** blocksOcupados,t_list* registr
 
 		t_list* registrosDeBLoques = traerRegistrosBloques(pathsDeBlocks);
 
-		registros = list_map(registrosDeBLoques, (void*) getCoordenadaDeRegistro);
+		*registros = list_map(registrosDeBLoques, (void*) getCoordenadaDeRegistro);
 	}
 
-	for(int j=0; j<registros->elements_count;j++){
-		char* saraza2 = list_get(registros,j);
+	for(int j=0; j<(*registros)->elements_count;j++){
+		char* saraza2 = list_get((*registros),j);
 		log_info(loggerDev, "LA COORDENADA MAPEADA ES: %s", saraza2);
 	}
 }
@@ -1174,7 +1174,8 @@ void getPokemon(int socketCliente,t_getLlegada* getLlegada){
 
 	char* pokemon = getLlegada->pokemon;
 
-	t_list* coordenadas=list_create();
+	//t_list* coordenadas=list_create();
+	t_list* coordenadas;
 
 	string_to_lower(pokemon);
 
@@ -1205,8 +1206,8 @@ void getPokemon(int socketCliente,t_getLlegada* getLlegada){
 	if(puedeAbrirseArchivo(archivoMetadataPokemon)){
 		activarFlagDeLectura(archivoMetadataPokemon);
 		pthread_mutex_unlock(&estoy_leyendo_metadata_mutex);
-		validarPosicionesDeGetAntiInvalidFree(blocksOcupados,coordenadas);
-		//coordenadas = validarPosicionesDeGet(blocksOcupados);
+		//validarPosicionesDeGetAntiInvalidFree(blocksOcupados,&coordenadas);
+		coordenadas = validarPosicionesDeGet(blocksOcupados);
 	} else{
 		pthread_mutex_unlock(&estoy_leyendo_metadata_mutex);
 		log_error(loggerGameCard, "Ya existe un proceso utilizando el archivo Metadata de %s",pokemon);
@@ -1232,8 +1233,8 @@ void getPokemon(int socketCliente,t_getLlegada* getLlegada){
 
 	config_destroy(archivoMetadataPokemon);
 
-	//list_destroy_and_destroy_elements(coordenadas,(void *) elLimpiaCharDinamicos);
-
+	list_destroy_and_destroy_elements(coordenadas,(void *) elLimpiaCharDinamicos);
+/*
 	log_info(loggerDev, "PINDONGA");
 	for(int w=0; w<coordenadas->elements_count;w++){
 		log_info(loggerDev, "CANTIDAD DE ELEMENTOS DEL ORTO: %i", coordenadas->elements_count);
@@ -1244,8 +1245,8 @@ void getPokemon(int socketCliente,t_getLlegada* getLlegada){
 		}
 
 	}
-
-	list_destroy(coordenadas);
+*/
+//	list_destroy(coordenadas);
 
 	free(rutaDeDirectorio);
 	free(rutaDeArchivo);

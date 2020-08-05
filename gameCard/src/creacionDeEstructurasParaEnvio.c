@@ -270,7 +270,7 @@ t_localized* crearLocalized(t_getLlegada* getLlegado, t_list* dataPokemon){
 		log_info(loggerDevEstructuras, "La coordenada cargada es (%i ; %i)", *segundaX, *segundaY);
 
 		uint32_t j = 0;
-		free(coordenada);
+		//free(coordenada);
 		while(data[j] != NULL){
 			free(data[j]);
 			j++;

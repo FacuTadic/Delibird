@@ -491,3 +491,13 @@
 [INFO] 01:29:50:24 Team/(5164:5179): Estado de entrenador 2 cambiado a Estado blocked. Razon del cambio: Se ha enviado un catch
 [INFO] 01:30:00:13 Team/(5164:5176): Buscando deadlock...
 [INFO] 01:30:00:13 Team/(5164:5176): No se han encontrado deadlocks
+[INFO] 02:01:53:431 Team/(8067:8069): Estado de entrenador 2 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 02:01:53:431 Team/(8067:8082): Estado de entrenador 2 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de atrapar pokemon squirtle
+[INFO] 02:01:53:431 Team/(8067:8082): Entrenador 2 esta atrapando pokemon squirtle ubicado en (5,2)
+[INFO] 02:01:53:431 Team/(8067:8082): El entrenador 2 se esta moviendo de (3,2) a (5,2)
+[INFO] 02:01:53:431 Team/(8067:8082): El entrenador 2 se encuentra en (4,2)
+[INFO] 02:01:58:431 Team/(8067:8082): El entrenador 2 se encuentra en (5,2)
+[INFO] 02:02:03:433 Team/(8067:8082): Estado de entrenador 2 cambiado a Estado blocked. Razon del cambio: Se ha enviado un catch
+[ERROR] 02:02:08:434 Team/(8067:8082): Error: No se pudo enviar el mensaje catch del entrenador 2 para el pokemon squirtle en (5,2), obteniendo pokemon por comportamiento default
+[INFO] 02:02:13:420 Team/(8067:8079): Buscando deadlock...
+[INFO] 02:02:13:420 Team/(8067:8079): No se han encontrado deadlocks
