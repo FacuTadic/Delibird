@@ -1860,8 +1860,11 @@ void* serializar_get(mensaje_queue* get, uint32_t* bytes) {
 }
 
 void* serializar_localized(mensaje_queue* localized, uint32_t* bytes) {
+	log_info(extense_logger, "A");
 	uint32_t tamanio_pokemon = (strlen(((t_localized*) localized->mensaje)->pokemon) + 1) * sizeof(char);
+	log_info(extense_logger, "B");
 	uint32_t elementos_lista = ((t_localized*) localized->mensaje)->l_coordenadas->elements_count;
+	log_info(extense_logger, "C");
 	uint32_t tamanio_lista = elementos_lista * sizeof(uint32_t);
 
 	*bytes = sizeof(uint32_t) + sizeof(uint32_t) +
@@ -1869,9 +1872,13 @@ void* serializar_localized(mensaje_queue* localized, uint32_t* bytes) {
 			sizeof(uint32_t) + tamanio_pokemon +
 			sizeof(uint32_t) + tamanio_lista;
 
+	log_info(extense_logger, "D");
+
 	uint32_t cod_op = 6;
 	void* flujo = malloc(*bytes);
 	int desplazamiento = 0;
+
+	log_info(extense_logger, "E");
 
 	memcpy(flujo + desplazamiento, &cod_op, sizeof(uint32_t));
 	desplazamiento += sizeof(uint32_t);
@@ -1888,11 +1895,15 @@ void* serializar_localized(mensaje_queue* localized, uint32_t* bytes) {
 	memcpy(flujo + desplazamiento, &(((t_localized*) localized->mensaje)->lugares), sizeof(uint32_t));
 	desplazamiento += sizeof(uint32_t);
 
+	log_info(extense_logger, "F");
+
 	for (int i = 0; i < elementos_lista; i++) {
 		uint32_t* elemento_de_lista = (uint32_t*) list_get(((t_localized*) localized->mensaje)->l_coordenadas, i);
 		memcpy(flujo + desplazamiento, elemento_de_lista, sizeof(uint32_t));
 		desplazamiento += sizeof(uint32_t);
 	}
+
+	log_info(extense_logger, "G");
 
 	return flujo;
 }
