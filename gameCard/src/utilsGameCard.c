@@ -149,13 +149,13 @@ char* buscarPosicionDisponibleEnElBitMap() {
 
 
 void desmarcarBloqueBitmap(char* block){
-		uint32_t index = atoi(block);
-		uint32_t estadoBloque =bitarray_test_bit(bitarray, index);
-		log_info(loggerDev, "El valor del block %s es de: %i",block,estadoBloque);
-		bitarray_clean_bit(bitarray, index);
-		estadoBloque =bitarray_test_bit(bitarray, index);
-		log_info(loggerDev, "El block %s fue desmarcado con el valor de: %i",block, estadoBloque);
-		guardarBitarray(index);
+	uint32_t index = atoi(block);
+	uint32_t estadoBloque =bitarray_test_bit(bitarray, index);
+	log_info(loggerDev, "El valor del block %s es de: %i",block,estadoBloque);
+	bitarray_clean_bit(bitarray, index);
+	estadoBloque =bitarray_test_bit(bitarray, index);
+	log_info(loggerDev, "El block %s fue desmarcado con el valor de: %i",block, estadoBloque);
+	guardarBitarray(index);
 }
 
 
@@ -168,25 +168,25 @@ char* seleccionarBlockParaCargarPosiciones(char** blocksOcupados, char*posicion,
 	}
 
 	uint32_t i = 0;
-		while(blocksOcupados[i] != NULL){
-			log_info(loggerDevArchDir, "Se esta viendo su el el block %s cumple las condiciones",blocksOcupados[i]);
-			char* rutaDeArchivo = generadorDeRutaDeCreacionDeArchivos(rutaBlocksArchDir,blocksOcupados[i],".bin");
+	while(blocksOcupados[i] != NULL){
+		log_info(loggerDevArchDir, "Se esta viendo su el el block %s cumple las condiciones",blocksOcupados[i]);
+		char* rutaDeArchivo = generadorDeRutaDeCreacionDeArchivos(rutaBlocksArchDir,blocksOcupados[i],".bin");
 
-			log_info(loggerGameCard, "Calculando el peso de: %s",blocksOcupados[i]);
-			if(hayEspacioEnElBlock(rutaDeArchivo,posicion,cantidad)){
-				log_info(loggerDev, "Se encontro el block %s libre",blocksOcupados[i]);
-				log_info(loggerGameCard, "El bloque seleccionado para cargar es: %s",blocksOcupados[i]);
-				free(rutaDeArchivo);
-				return blocksOcupados[i];
-			} else{
-				i++;
-			}
+		log_info(loggerGameCard, "Calculando el peso de: %s",blocksOcupados[i]);
+		if(hayEspacioEnElBlock(rutaDeArchivo,posicion,cantidad)){
+			log_info(loggerDev, "Se encontro el block %s libre",blocksOcupados[i]);
+			log_info(loggerGameCard, "El bloque seleccionado para cargar es: %s",blocksOcupados[i]);
+			free(rutaDeArchivo);
+			return blocksOcupados[i];
+		} else{
+			i++;
 		}
+	}
 
-		log_info(loggerGameCard, "Ningun bloque actual puede cargar la posicion");
-		log_info(loggerGameCard, "Buscando nuevo bloque");
+	log_info(loggerGameCard, "Ningun bloque actual puede cargar la posicion");
+	log_info(loggerGameCard, "Buscando nuevo bloque");
 
-		return buscarPosicionDisponibleEnElBitMap();
+	return buscarPosicionDisponibleEnElBitMap();
 }
 
 
@@ -365,6 +365,8 @@ bool evaluarRegistroCatch(char* registro, t_list* registros){
 	return false;
 }
 
+
+
 t_list* obtenerTodasLasPosiciones(char** blocks){
 	t_list* coordenadas;
 
@@ -379,6 +381,7 @@ t_list* obtenerTodasLasPosiciones(char** blocks){
 
 	return coordenadas;
 }
+
 
 
 
@@ -484,32 +487,32 @@ void procesarRequestDeGameBoy(int cod_op, int socketGameBoy) {
 	log_info(loggerDev, "Procesando request de GameBoy");
 	uint32_t size;
 	switch(cod_op){
-		case NEW:
-			log_info(loggerDev, "Codigo de operacion recibido del socket cliente %i corresponde a un NEW", socketGameBoy);
-			t_newLlegada* newGameBoy = recibir_new(socketGameBoy,&size,loggerDev);
-			log_info(loggerDev, "NEW recibido del modulo Game Boy socket %i", socketGameBoy);
-			newPokemon(socketEscuchaNew,newGameBoy);
-			free(newGameBoy);
-			break;
+	case NEW:
+		log_info(loggerDev, "Codigo de operacion recibido del socket cliente %i corresponde a un NEW", socketGameBoy);
+		t_newLlegada* newGameBoy = recibir_new(socketGameBoy,&size,loggerDev);
+		log_info(loggerDev, "NEW recibido del modulo Game Boy socket %i", socketGameBoy);
+		newPokemon(socketEscuchaNew,newGameBoy);
+		free(newGameBoy);
+		break;
 
-		case CATCH:
-			log_info(loggerDev, "Codigo de operacion recibido del socket cliente %i corresponde a un CATCH", socketGameBoy);
-			t_catchLlegada* catchGameBoy = recibir_catch(socketGameBoy,&size,loggerDev);
-			log_info(loggerDev, "CATCH recibido del modulo Game Boy socket %i", socketGameBoy);
-			catchPokemon(socketEscuchaCatch,catchGameBoy);
-			free(catchGameBoy);
-			break;
+	case CATCH:
+		log_info(loggerDev, "Codigo de operacion recibido del socket cliente %i corresponde a un CATCH", socketGameBoy);
+		t_catchLlegada* catchGameBoy = recibir_catch(socketGameBoy,&size,loggerDev);
+		log_info(loggerDev, "CATCH recibido del modulo Game Boy socket %i", socketGameBoy);
+		catchPokemon(socketEscuchaCatch,catchGameBoy);
+		free(catchGameBoy);
+		break;
 
-		case GET:
-			log_info(loggerDev, "Codigo de operacion recibido del socket cliente %i corresponde a un GET", socketGameBoy);
-			t_getLlegada* getGameBoy = recibir_get(socketGameBoy,&size,loggerDev);
-			log_info(loggerDev, "GET recibido del modulo Game Boy socket %i", socketGameBoy);
-			getPokemon(socketEscuchaGet,getGameBoy);
-			free(getGameBoy);
-			break;
+	case GET:
+		log_info(loggerDev, "Codigo de operacion recibido del socket cliente %i corresponde a un GET", socketGameBoy);
+		t_getLlegada* getGameBoy = recibir_get(socketGameBoy,&size,loggerDev);
+		log_info(loggerDev, "GET recibido del modulo Game Boy socket %i", socketGameBoy);
+		getPokemon(socketEscuchaGet,getGameBoy);
+		free(getGameBoy);
+		break;
 
-		default:
-			log_error(loggerDev, "NO SE RECONOCE EL TIPO DE MENSAJE");
+	default:
+		log_error(loggerDev, "NO SE RECONOCE EL TIPO DE MENSAJE");
 	}
 
 	liberar_conexion(socketGameBoy);;
@@ -616,7 +619,7 @@ void escucharNewDeBroker(void) {
 				newPokemon(socketEscuchaNew,newBroker);
 
 			}
-				free(newBroker);
+			free(newBroker);
 		}
 	}
 }
@@ -937,43 +940,66 @@ uint32_t calcularPesoTotalDeBlockEnMetadataPokemon(char** blocks){
 
 void validarPosicionesDeNew(t_config* archivoMetadataPokemon, char** blocksOcupados, char** keyValue){
 
- 	if(blocksOcupados[0] != NULL){
- 		log_info(loggerDev, "Pokemon ya conocido");
- 		char** pathsDeBlocks = generarVectorDePaths(blocksOcupados);
- 		t_list* registros = traerRegistrosBloques(pathsDeBlocks);
- 		registros = evaluarRegistroNew(keyValue,registros);
- 		t_list* registrosAEscribir = list_map(registros, (void*) aplanarVectorDeKeyValue);
- 		vaciarBloques(blocksOcupados);
- 		escribirEnBloques(registrosAEscribir,archivoMetadataPokemon);
- 	} else {
- 		log_info(loggerDev, "No tiene blocks asignados. Primera vez");
- 		t_list* registroNuevo = list_create();
- 		list_add(registroNuevo, aplanarVectorDeKeyValue(keyValue));
- 		escribirEnBloques(registroNuevo,archivoMetadataPokemon);
- 	}
+	if(blocksOcupados[0] != NULL){
+		log_info(loggerDev, "Pokemon ya conocido");
+		char** pathsDeBlocks = generarVectorDePaths(blocksOcupados);
+		t_list* registros = traerRegistrosBloques(pathsDeBlocks);
+		registros = evaluarRegistroNew(keyValue,registros);
+		t_list* registrosAEscribir = list_map(registros, (void*) aplanarVectorDeKeyValue);
+		vaciarBloques(blocksOcupados);
+		escribirEnBloques(registrosAEscribir,archivoMetadataPokemon);
+	} else {
+		log_info(loggerDev, "No tiene blocks asignados. Primera vez");
+		t_list* registroNuevo = list_create();
+		list_add(registroNuevo, aplanarVectorDeKeyValue(keyValue));
+		escribirEnBloques(registroNuevo,archivoMetadataPokemon);
+	}
 }
 
 
 
 bool validarPosicionesDeCatch(t_config* archivoMetadataPokemon, char** blocksOcupados, char* key){
 
- 	if(blocksOcupados[0] == NULL){
- 		log_info(loggerDev, "No hay bloques perri");
- 		return false;
- 	}
+	if(blocksOcupados[0] == NULL){
+		log_info(loggerDev, "No hay bloques perri");
+		return false;
+	}
 
- 	char** pathsDeBlocks = generarVectorDePaths(blocksOcupados);
- 	t_list* registros = traerRegistrosBloques(pathsDeBlocks);
+	char** pathsDeBlocks = generarVectorDePaths(blocksOcupados);
+	t_list* registros = traerRegistrosBloques(pathsDeBlocks);
 
- 	bool flagAtrapado = evaluarRegistroCatch(key,registros);
- 	log_info(loggerDev, "EL FLAG DEL CATCH ES: %i", flagAtrapado);
+	bool flagAtrapado = evaluarRegistroCatch(key,registros);
+	log_info(loggerDev, "EL FLAG DEL CATCH ES: %i", flagAtrapado);
 
- 	t_list* registrosAEscribir = list_map(registros, (void*) aplanarVectorDeKeyValue);
- 	vaciarBloques(blocksOcupados);
- 	escribirEnBloques(registrosAEscribir,archivoMetadataPokemon);
+	t_list* registrosAEscribir = list_map(registros, (void*) aplanarVectorDeKeyValue);
+	vaciarBloques(blocksOcupados);
+	escribirEnBloques(registrosAEscribir,archivoMetadataPokemon);
 
- 	return flagAtrapado;
+	return flagAtrapado;
 }
+
+
+
+void validarPosicionesDeGetAntiInvalidFree(char** blocksOcupados,t_list* registros){
+
+	log_info(loggerGameCard, "Obteniendo las posiciones en las que se encuentra el pokemon");
+
+	if(blocksOcupados[0] == NULL){
+		log_info(loggerDev, "No hay coordenadas bro te equivocaste, suerte para la proxima");
+	}else{
+		char** pathsDeBlocks = generarVectorDePaths(blocksOcupados);
+
+		t_list* registrosDeBLoques = traerRegistrosBloques(pathsDeBlocks);
+
+		registros = list_map(registrosDeBLoques, (void*) getCoordenadaDeRegistro);
+	}
+
+	for(int j=0; j<registros->elements_count;j++){
+		char* saraza2 = list_get(registros,j);
+		log_info(loggerDev, "LA COORDENADA MAPEADA ES: %s", saraza2);
+	}
+}
+
 
 
 
@@ -1148,7 +1174,7 @@ void getPokemon(int socketCliente,t_getLlegada* getLlegada){
 
 	char* pokemon = getLlegada->pokemon;
 
-	t_list* coordenadas;
+	t_list* coordenadas=list_create();
 
 	string_to_lower(pokemon);
 
@@ -1170,7 +1196,6 @@ void getPokemon(int socketCliente,t_getLlegada* getLlegada){
 
 	char* rutaDeArchivo = generadorDeRutaDeCreacionDeArchivos(rutaDeDirectorio, pokemon, ".bin");
 	t_config* archivoMetadataPokemon = config_create(rutaDeArchivo);
-	log_info(loggerDev, "LA RUTA DE MIERDA 2 ESTA ES: %s", rutaDeArchivo);
 
 
 	char** blocksOcupados = config_get_array_value(archivoMetadataPokemon,"BLOCKS");
@@ -1180,7 +1205,8 @@ void getPokemon(int socketCliente,t_getLlegada* getLlegada){
 	if(puedeAbrirseArchivo(archivoMetadataPokemon)){
 		activarFlagDeLectura(archivoMetadataPokemon);
 		pthread_mutex_unlock(&estoy_leyendo_metadata_mutex);
-		coordenadas = validarPosicionesDeGet(blocksOcupados);
+		validarPosicionesDeGetAntiInvalidFree(blocksOcupados,coordenadas);
+		//coordenadas = validarPosicionesDeGet(blocksOcupados);
 	} else{
 		pthread_mutex_unlock(&estoy_leyendo_metadata_mutex);
 		log_error(loggerGameCard, "Ya existe un proceso utilizando el archivo Metadata de %s",pokemon);
@@ -1190,6 +1216,11 @@ void getPokemon(int socketCliente,t_getLlegada* getLlegada){
 	}
 
 	desactivarFlagDeLectura(archivoMetadataPokemon);
+
+	for(int j=0; j<coordenadas->elements_count;j++){
+		char* saraza2 = list_get(coordenadas,j);
+		log_info(loggerDev, "LA COORDENADA ANTES DEL CREAR ES: %s", saraza2);
+	}
 
 	t_localized* localizedAEnviar = crearLocalized(getLlegada, coordenadas);
 
@@ -1201,7 +1232,20 @@ void getPokemon(int socketCliente,t_getLlegada* getLlegada){
 
 	config_destroy(archivoMetadataPokemon);
 
-	list_destroy_and_destroy_elements(coordenadas,(void *) elLimpiaCharDinamicos);
+	//list_destroy_and_destroy_elements(coordenadas,(void *) elLimpiaCharDinamicos);
+
+	log_info(loggerDev, "PINDONGA");
+	for(int w=0; w<coordenadas->elements_count;w++){
+		log_info(loggerDev, "CANTIDAD DE ELEMENTOS DEL ORTO: %i", coordenadas->elements_count);
+		char* quePIjazo = list_get(coordenadas,w);
+		if(quePIjazo != NULL){
+			log_info(loggerDev, "LA CONCHA DE TU MADRE ESTOY BORRANDO: %s", quePIjazo);
+			free(quePIjazo);
+		}
+
+	}
+
+	list_destroy(coordenadas);
 
 	free(rutaDeDirectorio);
 	free(rutaDeArchivo);
@@ -1232,32 +1276,32 @@ void generar_ID_Modulo(){
 int iniciarEscuchaGameBoy(char* IP, char* PUERTO) {
 	int socket_servidor;
 
-    struct addrinfo hints, *servinfo, *p;
+	struct addrinfo hints, *servinfo, *p;
 
-    memset(&hints, 0, sizeof(hints));
-    hints.ai_family = AF_UNSPEC;
-    hints.ai_socktype = SOCK_STREAM;
-    hints.ai_flags = AI_PASSIVE;
+	memset(&hints, 0, sizeof(hints));
+	hints.ai_family = AF_UNSPEC;
+	hints.ai_socktype = SOCK_STREAM;
+	hints.ai_flags = AI_PASSIVE;
 
-    getaddrinfo(IP, PUERTO, &hints, &servinfo);
+	getaddrinfo(IP, PUERTO, &hints, &servinfo);
 
-    for (p=servinfo; p != NULL; p = p->ai_next)
-    {
-        if ((socket_servidor = socket(p->ai_family, p->ai_socktype, p->ai_protocol)) == -1)
-            continue;
+	for (p=servinfo; p != NULL; p = p->ai_next)
+	{
+		if ((socket_servidor = socket(p->ai_family, p->ai_socktype, p->ai_protocol)) == -1)
+			continue;
 
-        if (bind(socket_servidor, p->ai_addr, p->ai_addrlen) == -1) {
-            close(socket_servidor);
-            continue;
-        }
-        break;
-    }
+		if (bind(socket_servidor, p->ai_addr, p->ai_addrlen) == -1) {
+			close(socket_servidor);
+			continue;
+		}
+		break;
+	}
 
 	listen(socket_servidor, SOMAXCONN);
 
-    freeaddrinfo(servinfo);
+	freeaddrinfo(servinfo);
 
-    return socket_servidor;
+	return socket_servidor;
 }
 
 

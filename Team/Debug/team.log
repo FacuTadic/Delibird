@@ -456,3 +456,38 @@
 [INFO] 21:58:20:964 Team/(15522:15536): No se han encontrado deadlocks
 [INFO] 21:58:30:735 Team/(15522:15535): Iniciando verificacion de conexion con Broker...
 [ERROR] 21:58:30:735 Team/(15522:15535): Reconexion con Broker fallida, intentando nuevamente en 30 segundos
+[INFO] 23:05:50:152 Team/(23433:23435): Estado de entrenador 2 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 23:05:50:152 Team/(23433:23448): Estado de entrenador 2 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de atrapar pokemon squirtle
+[INFO] 23:05:50:152 Team/(23433:23448): Entrenador 2 esta atrapando pokemon squirtle ubicado en (5,2)
+[INFO] 23:05:50:152 Team/(23433:23448): El entrenador 2 se esta moviendo de (3,2) a (5,2)
+[INFO] 23:05:50:152 Team/(23433:23448): El entrenador 2 se encuentra en (4,2)
+[INFO] 23:05:55:153 Team/(23433:23448): El entrenador 2 se encuentra en (5,2)
+[INFO] 23:06:00:153 Team/(23433:23448): Estado de entrenador 2 cambiado a Estado blocked. Razon del cambio: Se ha enviado un catch
+[INFO] 23:23:11:341 Team/(25155:25157): Estado de entrenador 2 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 23:23:11:341 Team/(25155:25170): Estado de entrenador 2 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de atrapar pokemon squirtle
+[INFO] 23:23:11:341 Team/(25155:25170): Entrenador 2 esta atrapando pokemon squirtle ubicado en (5,2)
+[INFO] 23:23:11:341 Team/(25155:25170): El entrenador 2 se esta moviendo de (3,2) a (5,2)
+[INFO] 23:23:11:341 Team/(25155:25170): El entrenador 2 se encuentra en (4,2)
+[INFO] 23:23:16:123 Team/(25155:25170): El entrenador 2 se encuentra en (5,2)
+[INFO] 23:23:21:123 Team/(25155:25170): Estado de entrenador 2 cambiado a Estado blocked. Razon del cambio: Se ha enviado un catch
+[INFO] 00:20:55:176 Team/(31053:31055): Estado de entrenador 2 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 00:20:55:176 Team/(31053:31068): Estado de entrenador 2 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de atrapar pokemon squirtle
+[INFO] 00:20:55:176 Team/(31053:31068): Entrenador 2 esta atrapando pokemon squirtle ubicado en (5,2)
+[INFO] 00:20:55:176 Team/(31053:31068): El entrenador 2 se esta moviendo de (3,2) a (5,2)
+[INFO] 00:20:55:178 Team/(31053:31068): El entrenador 2 se encuentra en (4,2)
+[INFO] 00:21:00:179 Team/(31053:31068): El entrenador 2 se encuentra en (5,2)
+[INFO] 00:48:22:856 Team/(1094:1096): Estado de entrenador 2 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 00:48:22:856 Team/(1094:1110): Estado de entrenador 2 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de atrapar pokemon squirtle
+[INFO] 00:48:22:856 Team/(1094:1110): Entrenador 2 esta atrapando pokemon squirtle ubicado en (5,2)
+[INFO] 00:48:22:856 Team/(1094:1110): El entrenador 2 se esta moviendo de (3,2) a (5,2)
+[INFO] 00:48:22:856 Team/(1094:1110): El entrenador 2 se encuentra en (4,2)
+[INFO] 00:48:27:857 Team/(1094:1110): El entrenador 2 se encuentra en (5,2)
+[INFO] 01:29:40:23 Team/(5164:5166): Estado de entrenador 2 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 01:29:40:23 Team/(5164:5179): Estado de entrenador 2 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de atrapar pokemon squirtle
+[INFO] 01:29:40:23 Team/(5164:5179): Entrenador 2 esta atrapando pokemon squirtle ubicado en (5,2)
+[INFO] 01:29:40:23 Team/(5164:5179): El entrenador 2 se esta moviendo de (3,2) a (5,2)
+[INFO] 01:29:40:23 Team/(5164:5179): El entrenador 2 se encuentra en (4,2)
+[INFO] 01:29:45:23 Team/(5164:5179): El entrenador 2 se encuentra en (5,2)
+[INFO] 01:29:50:24 Team/(5164:5179): Estado de entrenador 2 cambiado a Estado blocked. Razon del cambio: Se ha enviado un catch
+[INFO] 01:30:00:13 Team/(5164:5176): Buscando deadlock...
+[INFO] 01:30:00:13 Team/(5164:5176): No se han encontrado deadlocks
