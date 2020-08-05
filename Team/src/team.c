@@ -1770,7 +1770,7 @@ void enviar_catch_a_broker(t_pokemon* pokemon, t_entrenador* entrenador) {
 			catch_id->entrenador = entrenador;
 			catch_id->pokemon = pokemon;
 			pthread_mutex_lock(&catch_IDs_mutex);
-			list_add(catch_IDs, (void*) id_catch);
+			list_add(catch_IDs, (void*) catch_id);
 			pthread_mutex_unlock(&catch_IDs_mutex);
 		}
 	}
