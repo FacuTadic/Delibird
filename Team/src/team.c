@@ -12,8 +12,10 @@ void procesar_request_de_game_boy(int cod_op, int socket_game_boy) {
 				t_pokemon* pokemon_a_agregar = generar_pokemon_de_appeared(appeared_msg);
 				agrego_pokemon_a_dictionary(pokemon_a_agregar);
 				if (pokemon_ya_fue_recibido(appeared_msg->pokemon) == 0) {
+					log_info(extense_logger, "Pokemon %s llego por primera vez");
+					char* pokemon_nuevo = string_duplicate(appeared_msg->pokemon);
 					pthread_mutex_lock(&pokemones_llegados_mutex);
-					list_add(pokemones_llegados, (void*) appeared_msg->pokemon);
+					list_add(pokemones_llegados, pokemon_nuevo);
 					pthread_mutex_unlock(&pokemones_llegados_mutex);
 				}
 				pthread_mutex_lock(&cola_pokemones_mutex);
@@ -111,9 +113,10 @@ void escuchar_appeared_de_broker(void) {
 					agrego_pokemon_a_dictionary(pokemon_a_agregar);
 
 					if (pokemon_ya_fue_recibido(appeared_msg->pokemon) == 0) {
-						log_info(extense_logger, "pokemon %s llego por primera vez");
+						log_info(extense_logger, "Pokemon %s llego por primera vez");
+						char* pokemon_nuevo = string_duplicate(appeared_msg->pokemon);
 						pthread_mutex_lock(&pokemones_llegados_mutex);
-						list_add(pokemones_llegados, (void*) appeared_msg->pokemon);
+						list_add(pokemones_llegados, pokemon_nuevo);
 						pthread_mutex_unlock(&pokemones_llegados_mutex);
 					}
 
