@@ -818,8 +818,6 @@ void planificar_caught(void) {
 			pthread_mutex_lock(&catch_IDs_mutex);
 			list_remove(catch_IDs, index_catch); // guarda con que haya cambiado de lugar, corresponderia bloquear la lista
 			pthread_mutex_unlock(&catch_IDs_mutex);
-			free(catch_id->pokemon->nombre);
-			//free(catch_id->pokemon);
 			free(catch_id);
 		} else {
 			// ???
