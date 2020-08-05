@@ -1042,7 +1042,7 @@ void newPokemon(int socketCliente,t_newLlegada* new){
 		log_error(loggerGameCard, "Ya existe un proceso utilizando el archivo Metadata de %s",pokemon);
 		sleep(tiempoReintentoOperacion);
 		newPokemon(socketCliente,new);
-		exit(0);
+		return;
 	}
 
 	desactivarFlagDeLectura(archivoMetadataPokemon);
@@ -1062,7 +1062,7 @@ void newPokemon(int socketCliente,t_newLlegada* new){
 
 	free(rutaDeDirectorio);
 	free(rutaDeArchivo);
-	free(posicion);
+	//free(posicion);
 	free(directorioPokemon);
 	uint32_t indexParaBorrar = 0;
 	while(blocksOcupados[indexParaBorrar] != NULL){
@@ -1097,7 +1097,7 @@ void catchPokemon(int socketCliente,t_catchLlegada* catch){
 
 	if(noExisteDirectorio(rutaDeDirectorio)){
 		log_error(loggerGameCard, "No existe directorio dentro de Files para el pokemon: %s",pokemon);
-		exit(-1);
+		return;
 	}
 
 
@@ -1116,7 +1116,7 @@ void catchPokemon(int socketCliente,t_catchLlegada* catch){
 		log_error(loggerGameCard, "Ya existe un proceso utilizando el archivo Metadata de %s",pokemon);
 		sleep(tiempoReintentoOperacion);
 		catchPokemon(socketCliente,catch);
-		exit(0);
+		return;
 	}
 
 	desactivarFlagDeLectura(archivoMetadataPokemon);
@@ -1147,18 +1147,31 @@ void catchPokemon(int socketCliente,t_catchLlegada* catch){
 void getPokemon(int socketCliente,t_getLlegada* getLlegada){
 
 	char* pokemon = getLlegada->pokemon;
+
 	t_list* coordenadas;
+
 	string_to_lower(pokemon);
 
 	char* rutaDeDirectorio = generadorDeRutaDeCreacionDeDirectorios(rutaFiles,pokemon);
 
 	if(noExisteDirectorio(rutaDeDirectorio)){
-		crearLocalizedDePokemonInexistente(getLlegada);
-		exit(0);
+		t_localized* localizedAEnviar = crearLocalizedDePokemonInexistente(getLlegada);
+		int socketLocalizedFrula = crear_conexion(ipBroker, puertoBroker);
+		enviar_localized(socketLocalizedFrula, localizedAEnviar);
+
+		free(localizedAEnviar->pokemon);
+
+		list_destroy(localizedAEnviar->l_coordenadas);
+		free(localizedAEnviar);
+
+		free(rutaDeDirectorio);
+		return;
 	}
 
 	char* rutaDeArchivo = generadorDeRutaDeCreacionDeArchivos(rutaDeDirectorio, pokemon, ".bin");
 	t_config* archivoMetadataPokemon = config_create(rutaDeArchivo);
+	log_info(loggerDev, "LA RUTA DE MIERDA 2 ESTA ES: %s", rutaDeArchivo);
+
 
 	char** blocksOcupados = config_get_array_value(archivoMetadataPokemon,"BLOCKS");
 	log_info(loggerDev, "EL array de blocks es: %s", blocksOcupados[0]);
@@ -1173,7 +1186,7 @@ void getPokemon(int socketCliente,t_getLlegada* getLlegada){
 		log_error(loggerGameCard, "Ya existe un proceso utilizando el archivo Metadata de %s",pokemon);
 		sleep(tiempoReintentoOperacion);
 		getPokemon(socketCliente,getLlegada);
-		exit(0);
+		return;
 	}
 
 	desactivarFlagDeLectura(archivoMetadataPokemon);
