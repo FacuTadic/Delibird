@@ -2010,7 +2010,8 @@ t_list* generar_pokemones_de_localized(t_localized* mensaje_localized) {
 
 	for (int i = 0; i < mensaje_localized->lugares; i++) {
 		t_pokemon* pokemon = malloc(sizeof(t_pokemon));
-		memcpy(pokemon->nombre, mensaje_localized->pokemon, strlen(mensaje_localized->pokemon) + 1);
+		pokemon->nombre = malloc((strlen(mensaje_localized->pokemon) + 1) * sizeof(char));
+		memcpy(pokemon->nombre, mensaje_localized->pokemon, (strlen(mensaje_localized->pokemon) + 1) * sizeof(char));
 		pokemon->pos_X = *((uint32_t*) list_get(mensaje_localized->l_coordenadas, j));
 		j++;
 		pokemon->pos_Y = *((uint32_t*) list_get(mensaje_localized->l_coordenadas, j));
