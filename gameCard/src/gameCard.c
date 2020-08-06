@@ -24,6 +24,8 @@ void terminar_programa();
 
 int main(void) {
 
+	srand(time(NULL));
+
 	generar_ID_Modulo();
 
 	// ################################################# 	SETTER Y SARAZA 	####################################################
@@ -62,6 +64,8 @@ int main(void) {
 
 	puerto = config_get_string_value(config, "PUERTO");
 	log_info(loggerDev, "El puerto es: %s", puerto);
+
+	log_info(loggerDev, "El id del modulo es %i", id_moduloGC);
 
 
 	//SETEO DE VARIABLES PARA ARCHIVOSYDIRECTORIOS.H

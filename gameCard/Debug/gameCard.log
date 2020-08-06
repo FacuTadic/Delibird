@@ -282,3 +282,15 @@
 [INFO] 03:13:26:702 GameCard/(13873:13878): El pokemon flareon no existe en el FS, se pasa a crear su directorio
 [INFO] 03:14:04:133 GameCard/(13873:13880): Obteniendo las posiciones en las que se encuentra el pokemon
 [INFO] 03:14:09:319 GameCard/(13873:13880): Obteniendo las posiciones en las que se encuentra el pokemon
+[INFO] 00:55:39:292 GameCard/(10141:10141): logger iniciado.
+[INFO] 00:55:39:294 GameCard/(10141:10141): Lenavando el Tall Grass
+[INFO] 00:55:39:297 GameCard/(10141:10141): Punto de montaje del directorio Metadata es: /home/utnso/Escritorio/tall-grass/Metadata
+[INFO] 00:55:39:297 GameCard/(10141:10141): El BitMap se encuentra en: /home/utnso/Escritorio/tall-grass/Metadata/BitMap.bin
+[INFO] 00:55:39:297 GameCard/(10141:10141): Punto de montaje del directorio Files es: /home/utnso/Escritorio/tall-grass/Files
+[INFO] 00:55:39:297 GameCard/(10141:10141): Punto de montaje del directorio Blocks es: /home/utnso/Escritorio/tall-grass/Blocks
+[INFO] 00:57:40:134 GameCard/(10345:10345): logger iniciado.
+[INFO] 00:57:40:143 GameCard/(10345:10345): Lenavando el Tall Grass
+[INFO] 00:57:40:145 GameCard/(10345:10345): Punto de montaje del directorio Metadata es: /home/utnso/Escritorio/tall-grass/Metadata
+[INFO] 00:57:40:145 GameCard/(10345:10345): El BitMap se encuentra en: /home/utnso/Escritorio/tall-grass/Metadata/BitMap.bin
+[INFO] 00:57:40:145 GameCard/(10345:10345): Punto de montaje del directorio Files es: /home/utnso/Escritorio/tall-grass/Files
+[INFO] 00:57:40:145 GameCard/(10345:10345): Punto de montaje del directorio Blocks es: /home/utnso/Escritorio/tall-grass/Blocks

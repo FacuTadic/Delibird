@@ -1191,6 +1191,8 @@ int main(void) {
 
 	quantum = config_get_int_value(config, "QUANTUM");
 
+	srand(time(NULL));
+
 	generar_ID_Modulo();
 
 	log_info(extense_logger, "El id del modulo es %i", id_modulo);

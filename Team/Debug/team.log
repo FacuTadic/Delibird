@@ -501,3 +501,38 @@
 [ERROR] 02:02:08:434 Team/(8067:8082): Error: No se pudo enviar el mensaje catch del entrenador 2 para el pokemon squirtle en (5,2), obteniendo pokemon por comportamiento default
 [INFO] 02:02:13:420 Team/(8067:8079): Buscando deadlock...
 [INFO] 02:02:13:420 Team/(8067:8079): No se han encontrado deadlocks
+[ERROR] 00:54:09:604 Team/(9624:9631): Hubo un problema enviando la suscripcion a la cola LOCALIZED del broker
+[ERROR] 00:54:09:605 Team/(9624:9630): Hubo un problema enviando la suscripcion a la cola CAUGHT del broker
+[ERROR] 00:54:09:620 Team/(9624:9639): Error: No se pudo enviar el GET correspondiente al pokemon gengar, iniciando el comportamiento default
+[ERROR] 00:54:09:621 Team/(9624:9637): Error: No se pudo enviar el GET correspondiente al pokemon squirtle, iniciando el comportamiento default
+[ERROR] 00:54:09:621 Team/(9624:9640): Error: No se pudo enviar el GET correspondiente al pokemon onix, iniciando el comportamiento default
+[ERROR] 00:54:09:621 Team/(9624:9638): Error: No se pudo enviar el GET correspondiente al pokemon pikachu, iniciando el comportamiento default
+[ERROR] 00:54:09:621 Team/(9624:9629): Hubo un problema enviando la suscripcion a la cola APPEARED del broker
+[ERROR] 00:54:44:49 Team/(9752:9759): Hubo un problema enviando la suscripcion a la cola LOCALIZED del broker
+[ERROR] 00:54:44:53 Team/(9752:9758): Hubo un problema enviando la suscripcion a la cola CAUGHT del broker
+[ERROR] 00:54:44:57 Team/(9752:9757): Hubo un problema enviando la suscripcion a la cola APPEARED del broker
+[ERROR] 00:54:44:61 Team/(9752:9765): Error: No se pudo enviar el GET correspondiente al pokemon squirtle, iniciando el comportamiento default
+[ERROR] 00:54:44:61 Team/(9752:9768): Error: No se pudo enviar el GET correspondiente al pokemon onix, iniciando el comportamiento default
+[ERROR] 00:54:44:61 Team/(9752:9767): Error: No se pudo enviar el GET correspondiente al pokemon gengar, iniciando el comportamiento default
+[ERROR] 00:54:44:61 Team/(9752:9766): Error: No se pudo enviar el GET correspondiente al pokemon pikachu, iniciando el comportamiento default
+[ERROR] 00:55:35:941 Team/(10124:10131): Hubo un problema enviando la suscripcion a la cola LOCALIZED del broker
+[ERROR] 00:55:35:941 Team/(10124:10130): Hubo un problema enviando la suscripcion a la cola CAUGHT del broker
+[ERROR] 00:55:35:957 Team/(10124:10129): Hubo un problema enviando la suscripcion a la cola APPEARED del broker
+[ERROR] 00:55:35:959 Team/(10124:10138): Error: No se pudo enviar el GET correspondiente al pokemon pikachu, iniciando el comportamiento default
+[ERROR] 00:55:35:959 Team/(10124:10137): Error: No se pudo enviar el GET correspondiente al pokemon squirtle, iniciando el comportamiento default
+[ERROR] 00:55:35:959 Team/(10124:10140): Error: No se pudo enviar el GET correspondiente al pokemon onix, iniciando el comportamiento default
+[ERROR] 00:55:35:959 Team/(10124:10139): Error: No se pudo enviar el GET correspondiente al pokemon gengar, iniciando el comportamiento default
+[ERROR] 00:56:26:190 Team/(10192:10199): Hubo un problema enviando la suscripcion a la cola LOCALIZED del broker
+[ERROR] 00:56:26:192 Team/(10192:10198): Hubo un problema enviando la suscripcion a la cola CAUGHT del broker
+[ERROR] 00:56:26:206 Team/(10192:10197): Hubo un problema enviando la suscripcion a la cola APPEARED del broker
+[ERROR] 00:56:26:212 Team/(10192:10205): Error: No se pudo enviar el GET correspondiente al pokemon squirtle, iniciando el comportamiento default
+[ERROR] 00:56:26:212 Team/(10192:10206): Error: No se pudo enviar el GET correspondiente al pokemon pikachu, iniciando el comportamiento default
+[ERROR] 00:56:26:212 Team/(10192:10207): Error: No se pudo enviar el GET correspondiente al pokemon gengar, iniciando el comportamiento default
+[ERROR] 00:56:26:212 Team/(10192:10208): Error: No se pudo enviar el GET correspondiente al pokemon onix, iniciando el comportamiento default
+[ERROR] 00:57:37:513 Team/(10328:10334): Hubo un problema enviando la suscripcion a la cola CAUGHT del broker
+[ERROR] 00:57:37:517 Team/(10328:10335): Hubo un problema enviando la suscripcion a la cola LOCALIZED del broker
+[ERROR] 00:57:37:524 Team/(10328:10333): Hubo un problema enviando la suscripcion a la cola APPEARED del broker
+[ERROR] 00:57:37:529 Team/(10328:10341): Error: No se pudo enviar el GET correspondiente al pokemon squirtle, iniciando el comportamiento default
+[ERROR] 00:57:37:529 Team/(10328:10342): Error: No se pudo enviar el GET correspondiente al pokemon pikachu, iniciando el comportamiento default
+[ERROR] 00:57:37:529 Team/(10328:10343): Error: No se pudo enviar el GET correspondiente al pokemon gengar, iniciando el comportamiento default
+[ERROR] 00:57:37:529 Team/(10328:10344): Error: No se pudo enviar el GET correspondiente al pokemon onix, iniciando el comportamiento default

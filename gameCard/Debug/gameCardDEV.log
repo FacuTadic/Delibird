@@ -12336,3 +12336,62 @@
 [WARNING] 03:14:14:458 GameCard/(13873:13880): BROKER acaba de cerrar la conexion correspondiente al socket 10
 [INFO] 03:14:21:491 GameCard/(13873:13881): Iniciando verificacion de conexion con BROKER...
 [INFO] 03:14:21:491 GameCard/(13873:13881): Conexion con BROKER en buen estado, verificando nuevamente en 10 segundos
+[INFO] 00:55:39:292 GameCard/(10141:10141): logger iniciado.
+[INFO] 00:55:39:293 GameCard/(10141:10141): Config cargada.
+[INFO] 00:55:39:293 GameCard/(10141:10141): La IP del Broker: 127.0.0.1
+[INFO] 00:55:39:293 GameCard/(10141:10141): El Puerto es: 4444
+[INFO] 00:55:39:293 GameCard/(10141:10141): El tiempo de reintento de conexion es: 10
+[INFO] 00:55:39:293 GameCard/(10141:10141): El tiempo de reintento de operacion es: 5
+[INFO] 00:55:39:293 GameCard/(10141:10141): El tiempo de retardo de conexion es: 5
+[INFO] 00:55:39:293 GameCard/(10141:10141): El punto de montaje es: /home/utnso/Escritorio/tall-grass
+[INFO] 00:55:39:294 GameCard/(10141:10141): La IP es: 127.0.0.1
+[INFO] 00:55:39:294 GameCard/(10141:10141): El puerto es: 4447
+[INFO] 00:55:39:294 GameCard/(10141:10141): El punto de montaje es: /home/utnso/Escritorio/tall-grass
+[INFO] 00:55:39:294 GameCard/(10141:10141): La ruta del metadataes: /home/utnso/Escritorio/tall-grass/Metadata
+[INFO] 00:55:39:296 GameCard/(10141:10141): Se creo el config de MetaData
+[INFO] 00:55:39:296 GameCard/(10141:10141): El Block Size es: 64
+[INFO] 00:55:39:296 GameCard/(10141:10141): La cantidad de Bloques es: 1024
+[INFO] 00:55:39:297 GameCard/(10141:10141): El Magic Number es: TALL_GRASS
+[INFO] 00:55:39:297 GameCard/(10141:10141): Bitmap ya seteado
+[ERROR] 00:55:39:297 GameCard/(10141:10141): Ya existe el BitMap
+[INFO] 00:55:39:297 GameCard/(10141:10141): SETEO DE VARIABLES PARA ARCHIVOSYDIRECTORIOS.H
+[INFO] 00:55:39:298 GameCard/(10141:10141): El ID de modulo es: 2001978944
+[INFO] 00:55:39:311 GameCard/(10141:10145): Escucho GET de BROKER
+[INFO] 00:55:39:311 GameCard/(10141:10146): Hilo de verificacion periodica de conexion con BROKER iniciado
+[INFO] 00:55:39:311 GameCard/(10141:10144): Escucho CATCH de BROKER
+[ERROR] 00:55:39:311 GameCard/(10141:10145): Hubo un problema enviando la suscripcion a la cola GET del broker
+[ERROR] 00:55:39:323 GameCard/(10141:10144): Hubo un problema enviando la suscripcion a la cola CATCH del BROKER
+[INFO] 00:55:39:331 GameCard/(10141:10143): Escuchando NEW de BROKER
+[INFO] 00:55:39:332 GameCard/(10141:10143): Socker de NEW: -1
+[ERROR] 00:55:39:332 GameCard/(10141:10143): Hubo un problema enviando la suscripcion a la cola NEW del BROKER
+[INFO] 00:55:39:341 GameCard/(10141:10142): Esperando mensajes de game boy en socket 5
+[INFO] 00:57:40:142 GameCard/(10345:10345): logger iniciado.
+[INFO] 00:57:40:143 GameCard/(10345:10345): Config cargada.
+[INFO] 00:57:40:143 GameCard/(10345:10345): La IP del Broker: 127.0.0.1
+[INFO] 00:57:40:143 GameCard/(10345:10345): El Puerto es: 4444
+[INFO] 00:57:40:143 GameCard/(10345:10345): El tiempo de reintento de conexion es: 10
+[INFO] 00:57:40:143 GameCard/(10345:10345): El tiempo de reintento de operacion es: 5
+[INFO] 00:57:40:143 GameCard/(10345:10345): El tiempo de retardo de conexion es: 5
+[INFO] 00:57:40:143 GameCard/(10345:10345): El punto de montaje es: /home/utnso/Escritorio/tall-grass
+[INFO] 00:57:40:143 GameCard/(10345:10345): La IP es: 127.0.0.1
+[INFO] 00:57:40:143 GameCard/(10345:10345): El puerto es: 4447
+[INFO] 00:57:40:143 GameCard/(10345:10345): El id del modulo es 625375522
+[INFO] 00:57:40:143 GameCard/(10345:10345): El punto de montaje es: /home/utnso/Escritorio/tall-grass
+[INFO] 00:57:40:143 GameCard/(10345:10345): La ruta del metadataes: /home/utnso/Escritorio/tall-grass/Metadata
+[INFO] 00:57:40:144 GameCard/(10345:10345): Se creo el config de MetaData
+[INFO] 00:57:40:144 GameCard/(10345:10345): El Block Size es: 64
+[INFO] 00:57:40:144 GameCard/(10345:10345): La cantidad de Bloques es: 1024
+[INFO] 00:57:40:144 GameCard/(10345:10345): El Magic Number es: TALL_GRASS
+[INFO] 00:57:40:145 GameCard/(10345:10345): Bitmap ya seteado
+[ERROR] 00:57:40:145 GameCard/(10345:10345): Ya existe el BitMap
+[INFO] 00:57:40:145 GameCard/(10345:10345): SETEO DE VARIABLES PARA ARCHIVOSYDIRECTORIOS.H
+[INFO] 00:57:40:145 GameCard/(10345:10345): El ID de modulo es: 625375522
+[INFO] 00:57:40:155 GameCard/(10345:10349): Escucho GET de BROKER
+[INFO] 00:57:40:155 GameCard/(10345:10350): Hilo de verificacion periodica de conexion con BROKER iniciado
+[ERROR] 00:57:40:155 GameCard/(10345:10349): Hubo un problema enviando la suscripcion a la cola GET del broker
+[INFO] 00:57:40:162 GameCard/(10345:10348): Escucho CATCH de BROKER
+[ERROR] 00:57:40:162 GameCard/(10345:10348): Hubo un problema enviando la suscripcion a la cola CATCH del BROKER
+[INFO] 00:57:40:172 GameCard/(10345:10347): Escuchando NEW de BROKER
+[INFO] 00:57:40:172 GameCard/(10345:10347): Socker de NEW: -1
+[ERROR] 00:57:40:172 GameCard/(10345:10347): Hubo un problema enviando la suscripcion a la cola NEW del BROKER
+[INFO] 00:57:40:182 GameCard/(10345:10346): Esperando mensajes de game boy en socket 5
