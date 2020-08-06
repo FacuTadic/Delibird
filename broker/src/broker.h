@@ -56,6 +56,8 @@ pthread_mutex_t gl_appeared_ids_lock;
 pthread_mutex_t gl_caught_ids_lock;
 pthread_mutex_t gl_localized_ids_lock;
 
+pthread_mutex_t mutex_utilizacion_memoria;
+
 sem_t gl_new_limite;
 sem_t gl_appeared_limite;
 sem_t gl_catch_limite;

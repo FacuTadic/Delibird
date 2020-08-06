@@ -294,3 +294,9 @@
 [INFO] 00:57:40:145 GameCard/(10345:10345): El BitMap se encuentra en: /home/utnso/Escritorio/tall-grass/Metadata/BitMap.bin
 [INFO] 00:57:40:145 GameCard/(10345:10345): Punto de montaje del directorio Files es: /home/utnso/Escritorio/tall-grass/Files
 [INFO] 00:57:40:145 GameCard/(10345:10345): Punto de montaje del directorio Blocks es: /home/utnso/Escritorio/tall-grass/Blocks
+[INFO] 14:24:00:820 GameCard/(3522:3522): logger iniciado.
+[INFO] 14:24:00:822 GameCard/(3522:3522): Lenavando el Tall Grass
+[INFO] 14:24:00:826 GameCard/(3522:3522): Punto de montaje del directorio Metadata es: /home/utnso/Escritorio/tall-grass/Metadata
+[INFO] 14:24:00:826 GameCard/(3522:3522): El BitMap se encuentra en: /home/utnso/Escritorio/tall-grass/Metadata/BitMap.bin
+[INFO] 14:24:00:826 GameCard/(3522:3522): Punto de montaje del directorio Files es: /home/utnso/Escritorio/tall-grass/Files
+[INFO] 14:24:00:826 GameCard/(3522:3522): Punto de montaje del directorio Blocks es: /home/utnso/Escritorio/tall-grass/Blocks

@@ -542,6 +542,7 @@ void atender_mensaje_new(mensaje_queue* mensaje) {
 
 	registro->limit = bytes;
 
+	pthread_mutex_lock(&mutex_utilizacion_memoria);
 	guardar_mensaje_en_memoria(registro, mensaje_memoria);
 
 	pthread_t* threads = malloc(sizeof(pthread_t) * suscriptores_para_enviar->elements_count);
@@ -557,6 +558,8 @@ void atender_mensaje_new(mensaje_queue* mensaje) {
 	for (int i = 0; i < suscriptores_para_enviar->elements_count; i++) {
 		pthread_join(threads[i], NULL);
 	}
+
+	pthread_mutex_unlock(&mutex_utilizacion_memoria);
 
 	t_list* mandados = list_create();
 
@@ -605,6 +608,7 @@ void atender_mensaje_appeared(mensaje_queue* mensaje) {
 
 	registro->limit = bytes;
 
+	pthread_mutex_lock(&mutex_utilizacion_memoria);
 	guardar_mensaje_en_memoria(registro, mensaje_memoria);
 
 	pthread_t* threads = malloc(sizeof(pthread_t) * suscriptores_para_enviar->elements_count);
@@ -620,6 +624,8 @@ void atender_mensaje_appeared(mensaje_queue* mensaje) {
 	for (int i = 0; i < suscriptores_para_enviar->elements_count; i++) {
 		pthread_join(threads[i], NULL);
 	}
+
+	pthread_mutex_unlock(&mutex_utilizacion_memoria);
 
 	t_list* mandados = list_create();
 
@@ -667,6 +673,7 @@ void atender_mensaje_catch(mensaje_queue* mensaje) {
 
 	registro->limit = bytes;
 
+	pthread_mutex_lock(&mutex_utilizacion_memoria);
 	guardar_mensaje_en_memoria(registro, mensaje_memoria);
 
 	pthread_t* threads = malloc(sizeof(pthread_t) * suscriptores_para_enviar->elements_count);
@@ -682,6 +689,8 @@ void atender_mensaje_catch(mensaje_queue* mensaje) {
 	for (int i = 0; i < suscriptores_para_enviar->elements_count; i++) {
 		pthread_join(threads[i], NULL);
 	}
+
+	pthread_mutex_unlock(&mutex_utilizacion_memoria);
 
 	t_list* mandados = list_create();
 
@@ -730,6 +739,7 @@ void atender_mensaje_caught(mensaje_queue* mensaje) {
 
 	registro->limit = bytes;
 
+	pthread_mutex_lock(&mutex_utilizacion_memoria);
 	guardar_mensaje_en_memoria(registro, mensaje_memoria);
 
 	pthread_t* threads = malloc(sizeof(pthread_t) * suscriptores_para_enviar->elements_count);
@@ -745,6 +755,8 @@ void atender_mensaje_caught(mensaje_queue* mensaje) {
 	for (int i = 0; i < suscriptores_para_enviar->elements_count; i++) {
 		pthread_join(threads[i], NULL);
 	}
+
+	pthread_mutex_unlock(&mutex_utilizacion_memoria);
 
 	t_list* mandados = list_create();
 
@@ -792,6 +804,7 @@ void atender_mensaje_get(mensaje_queue* mensaje) {
 
 	registro->limit = bytes;
 
+	pthread_mutex_lock(&mutex_utilizacion_memoria);
 	guardar_mensaje_en_memoria(registro, mensaje_memoria);
 
 	pthread_t* threads = malloc(sizeof(pthread_t) * suscriptores_para_enviar->elements_count);
@@ -807,6 +820,8 @@ void atender_mensaje_get(mensaje_queue* mensaje) {
 	for (int i = 0; i < suscriptores_para_enviar->elements_count; i++) {
 		pthread_join(threads[i], NULL);
 	}
+
+	pthread_mutex_unlock(&mutex_utilizacion_memoria);
 
 	t_list* mandados = list_create();
 
@@ -855,6 +870,7 @@ void atender_mensaje_localized(mensaje_queue* mensaje) {
 
 	registro->limit = bytes;
 
+	pthread_mutex_lock(&mutex_utilizacion_memoria);
 	guardar_mensaje_en_memoria(registro, mensaje_memoria);
 
 	pthread_t* threads = malloc(sizeof(pthread_t) * suscriptores_para_enviar->elements_count);
@@ -870,6 +886,8 @@ void atender_mensaje_localized(mensaje_queue* mensaje) {
 	for (int i = 0; i < suscriptores_para_enviar->elements_count; i++) {
 		pthread_join(threads[i], NULL);
 	}
+
+	pthread_mutex_unlock(&mutex_utilizacion_memoria);
 
 	t_list* mandados = list_create();
 
@@ -1192,6 +1210,7 @@ void mandar_localized(void* localized_mandable) {
 }
 
 void enviar_new_de_memoria(info_modulo* info_modulo) {
+	pthread_mutex_lock(&mutex_utilizacion_memoria);
 	t_list* segmentos = obtener_segmentos_new(info_modulo->id_cliente);
 
 	if (segmentos->elements_count == 0) {
@@ -1217,6 +1236,8 @@ void enviar_new_de_memoria(info_modulo* info_modulo) {
 		free(struct_para_enviar);
 	}
 
+	pthread_mutex_unlock(&mutex_utilizacion_memoria);
+
 	for (int i = 0; i < segmentos->elements_count; i++) {
 		segmento_memoria* seg = list_get(segmentos, i);
 		free(seg);
@@ -1226,6 +1247,7 @@ void enviar_new_de_memoria(info_modulo* info_modulo) {
 }
 
 void enviar_appeared_de_memoria(info_modulo* info_modulo) {
+	pthread_mutex_lock(&mutex_utilizacion_memoria);
 	t_list* segmentos = obtener_segmentos_appeared(info_modulo->id_cliente);
 
 	if (segmentos->elements_count == 0) {
@@ -1250,6 +1272,8 @@ void enviar_appeared_de_memoria(info_modulo* info_modulo) {
 		free(struct_para_enviar);
 	}
 
+	pthread_mutex_unlock(&mutex_utilizacion_memoria);
+
 	for (int i = 0; i < segmentos->elements_count; i++) {
 		segmento_memoria* seg = list_get(segmentos, i);
 		free(seg);
@@ -1259,6 +1283,7 @@ void enviar_appeared_de_memoria(info_modulo* info_modulo) {
 }
 
 void enviar_catch_de_memoria(info_modulo* info_modulo) {
+	pthread_mutex_lock(&mutex_utilizacion_memoria);
 	t_list* segmentos = obtener_segmentos_catch(info_modulo->id_cliente);
 
 	if (segmentos->elements_count == 0) {
@@ -1283,6 +1308,8 @@ void enviar_catch_de_memoria(info_modulo* info_modulo) {
 		free(struct_para_enviar);
 	}
 
+	pthread_mutex_unlock(&mutex_utilizacion_memoria);
+
 	for (int i = 0; i < segmentos->elements_count; i++) {
 		segmento_memoria* seg = list_get(segmentos, i);
 		free(seg);
@@ -1292,6 +1319,7 @@ void enviar_catch_de_memoria(info_modulo* info_modulo) {
 }
 
 void enviar_caught_de_memoria(info_modulo* info_modulo) {
+	pthread_mutex_lock(&mutex_utilizacion_memoria);
 	t_list* segmentos = obtener_segmentos_caught(info_modulo->id_cliente);
 
 	if (segmentos->elements_count == 0) {
@@ -1316,6 +1344,8 @@ void enviar_caught_de_memoria(info_modulo* info_modulo) {
 		free(struct_para_enviar);
 	}
 
+	pthread_mutex_unlock(&mutex_utilizacion_memoria);
+
 	for (int i = 0; i < segmentos->elements_count; i++) {
 		segmento_memoria* seg = list_get(segmentos, i);
 		free(seg);
@@ -1325,6 +1355,7 @@ void enviar_caught_de_memoria(info_modulo* info_modulo) {
 }
 
 void enviar_get_de_memoria(info_modulo* info_modulo) {
+	pthread_mutex_lock(&mutex_utilizacion_memoria);
 	t_list* segmentos = obtener_segmentos_get(info_modulo->id_cliente);
 
 	if (segmentos->elements_count == 0) {
@@ -1349,6 +1380,8 @@ void enviar_get_de_memoria(info_modulo* info_modulo) {
 		free(struct_para_enviar);
 	}
 
+	pthread_mutex_unlock(&mutex_utilizacion_memoria);
+
 	for (int i = 0; i < segmentos->elements_count; i++) {
 		segmento_memoria* seg = list_get(segmentos, i);
 		free(seg);
@@ -1358,6 +1391,7 @@ void enviar_get_de_memoria(info_modulo* info_modulo) {
 }
 
 void enviar_localized_de_memoria(info_modulo* info_modulo) {
+	pthread_mutex_lock(&mutex_utilizacion_memoria);
 	t_list* segmentos = obtener_segmentos_localized(info_modulo->id_cliente);
 
 	if (segmentos->elements_count == 0) {
@@ -1381,6 +1415,8 @@ void enviar_localized_de_memoria(info_modulo* info_modulo) {
 		free(threads);
 		free(struct_para_enviar);
 	}
+
+	pthread_mutex_unlock(&mutex_utilizacion_memoria);
 
 	for (int i = 0; i < segmentos->elements_count; i++) {
 		segmento_memoria* seg = list_get(segmentos, i);
@@ -2323,6 +2359,7 @@ void inicializar_memoria() {
 	memoria_completa->hasta = memoria + tamanio_memoria;
 	list_add(particiones_libres, memoria_completa);
 
+	pthread_mutex_init(&mutex_utilizacion_memoria, NULL);
 }
 
 void inicializar_cola(void) {
@@ -2529,6 +2566,7 @@ void terminar_programa(void) {
 	pthread_mutex_destroy(&gl_appeared_ids_lock);
 	pthread_mutex_destroy(&gl_caught_ids_lock);
 	pthread_mutex_destroy(&gl_localized_ids_lock);
+	pthread_mutex_destroy(&mutex_utilizacion_memoria);
 
 	destruir_generador_id();
 }

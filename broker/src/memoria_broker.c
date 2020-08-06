@@ -7,9 +7,11 @@ void guardar_info_envios(uint32_t id, t_list* mandados, t_list* acks) {
 
 	data_tabla* registro_tabla = (data_tabla*) dictionary_get(tabla_segmentos, id_char);
 
-	registro_tabla->envios = mandados;
-	registro_tabla->acknowledgements = acks;
-	registro_tabla->id_modificacion = generar_id_modificacion();
+	if (registro_tabla != NULL) {
+		registro_tabla->envios = mandados;
+		registro_tabla->acknowledgements = acks;
+		registro_tabla->id_modificacion = generar_id_modificacion();
+	}
 
 	pthread_mutex_unlock(&mutex_memoria);
 
