@@ -27,6 +27,8 @@ int tiempo_deadlock;
 uint32_t retardo_de_CPU;
 int tiempo_reconexion;
 
+uint32_t id_modulo;
+
 // FIFO    1
 // RR      2
 // SJF-SD  3
@@ -241,3 +243,4 @@ void mandar_a_siguente_entrenador_a_ejecutar_por_sjf(void);
 void desalojar_si_es_necesario(t_entrenador* entrenador_planificado);
 int cantidad_de_entrenadores_en_ready_o_exec(void);
 int obtener_id_llegada(void);
+void generar_ID_Modulo();

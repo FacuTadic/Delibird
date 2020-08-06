@@ -1193,6 +1193,8 @@ int main(void) {
 
 	generar_ID_Modulo();
 
+	log_info(extense_logger, "El id del modulo es %i", id_modulo);
+
 	catch_IDs = list_create();
 
 	pokemones_llegados = list_create();
@@ -2262,6 +2264,11 @@ int obtener_id_llegada(void) {
 	aux = id_llegada;
 	pthread_mutex_unlock(&llegada_mutex);
 	return aux;
+}
+
+void generar_ID_Modulo() {
+	id_modulo = rand();
+	id_modulo_protocol = id_modulo;
 }
 
 void terminar_programa() {

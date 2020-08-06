@@ -11,7 +11,7 @@ int mandar_suscripcion(int socket_mandado, uint32_t id_cola) {
 	desplazamiento += sizeof(uint32_t);
 	memcpy(flujo + desplazamiento, &bytes, sizeof(uint32_t));
 	desplazamiento += sizeof(uint32_t);
-	memcpy(flujo + desplazamiento, &id_modulo, sizeof(uint32_t));
+	memcpy(flujo + desplazamiento, &id_modulo_protocol, sizeof(uint32_t));
 	desplazamiento += sizeof(uint32_t);
 	memcpy(flujo + desplazamiento, &id_cola, sizeof(uint32_t));
 	desplazamiento += sizeof(uint32_t);
@@ -550,10 +550,6 @@ t_appeared* recibir_appeared_de_game_boy(int socket, uint32_t* size) {
 	log_info(extense_logger_protocol, "Posicion Y recibida: %i", appeared->pos_Y);
 
 	return appeared;
-}
-
-void generar_ID_Modulo(){
-	id_modulo = rand();
 }
 
 uint32_t recibir_ID_Catch(int socket_broker) {
