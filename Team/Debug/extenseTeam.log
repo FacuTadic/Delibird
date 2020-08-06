@@ -5370,3 +5370,1673 @@
 [INFO] 00:57:37:529 Team/(10328:10331): Hilo planificador de mensajes caught iniciado
 [INFO] 00:57:37:529 Team/(10328:10330): Hilo planificador de pokemones iniciado
 [INFO] 00:57:37:530 Team/(10328:10329): Esperando mensajes de game boy en socket 5
+[INFO] 20:04:03:110 Team/(5455:5455): logger extenso iniciado
+[INFO] 20:04:03:112 Team/(5455:5455): logger de la catedra iniciado
+[INFO] 20:04:03:113 Team/(5455:5455): La IP es: 127.0.0.1
+[INFO] 20:04:03:113 Team/(5455:5455): El puerto es: 4445
+[INFO] 20:04:03:113 Team/(5455:5455): La IP del Broker es: 127.0.0.1
+[INFO] 20:04:03:113 Team/(5455:5455): El puerto del Broker es: 4444
+[INFO] 20:04:03:114 Team/(5455:5455): El Id de Team es: 5
+[INFO] 20:04:03:114 Team/(5455:5455): La busqueda de deadlocks se corre cada 20 segundos
+[INFO] 20:04:03:114 Team/(5455:5455): La conexion al Broker se verifica cada 30 segundos
+[INFO] 20:04:03:115 Team/(5455:5455): EL tiempo de retardo de CPU es cada 5 segundos
+[INFO] 20:04:03:115 Team/(5455:5455): EL algoritmo de planificacion es FIFO
+[INFO] 20:04:03:115 Team/(5455:5455): El id del modulo es 477188066
+[INFO] 20:04:03:116 Team/(5455:5455): Objetivos para el entrenador 0: Pikachu|Squirtle
+[INFO] 20:04:03:116 Team/(5455:5455): Posiciones para el entrenador 0: 1|3
+[INFO] 20:04:03:116 Team/(5455:5455): Pokemones para el entrenador 0: Pikachu
+[INFO] 20:04:03:116 Team/(5455:5455): Llego token objetivo pikachu para el entrenador 0
+[INFO] 20:04:03:117 Team/(5455:5455): Llego token objetivo squirtle para el entrenador 0
+[INFO] 20:04:03:117 Team/(5455:5455): Llego token pokemon pikachu
+[INFO] 20:04:03:117 Team/(5455:5455): Posicion X del entrenador 0: 1
+[INFO] 20:04:03:121 Team/(5455:5455): Posicion Y del entrenador 0: 3
+[INFO] 20:04:03:122 Team/(5455:5455): Estado del entrenador 0: 1111
+[INFO] 20:04:03:122 Team/(5455:5455): Objetivo del entrenador 0: pikachu
+[INFO] 20:04:03:122 Team/(5455:5455): Objetivo del entrenador 0: squirtle
+[INFO] 20:04:03:122 Team/(5455:5455): Objetivo actual del entrenador 0: squirtle
+[INFO] 20:04:03:122 Team/(5455:5455): Pokemon del entrenador 0: pikachu
+[INFO] 20:04:03:122 Team/(5455:5455): Objetivos para el entrenador 1: Pikachu|Gengar
+[INFO] 20:04:03:122 Team/(5455:5455): Posiciones para el entrenador 1: 2|3
+[INFO] 20:04:03:122 Team/(5455:5455): Pokemones para el entrenador 1: 
+[INFO] 20:04:03:122 Team/(5455:5455): Llego token objetivo pikachu para el entrenador 1
+[INFO] 20:04:03:122 Team/(5455:5455): Llego token objetivo gengar para el entrenador 1
+[INFO] 20:04:03:122 Team/(5455:5455): No existen pokemones para el entrenador 1
+[INFO] 20:04:03:122 Team/(5455:5455): Posicion X del entrenador 1: 2
+[INFO] 20:04:03:122 Team/(5455:5455): Posicion Y del entrenador 1: 3
+[INFO] 20:04:03:122 Team/(5455:5455): Estado del entrenador 1: 1111
+[INFO] 20:04:03:122 Team/(5455:5455): Objetivo del entrenador 1: pikachu
+[INFO] 20:04:03:122 Team/(5455:5455): Objetivo del entrenador 1: gengar
+[INFO] 20:04:03:122 Team/(5455:5455): Objetivo actual del entrenador 1: pikachu
+[INFO] 20:04:03:122 Team/(5455:5455): Objetivo actual del entrenador 1: gengar
+[INFO] 20:04:03:122 Team/(5455:5455): Objetivos para el entrenador 2: Squirtle|Onix
+[INFO] 20:04:03:123 Team/(5455:5455): Posiciones para el entrenador 2: 3|2
+[INFO] 20:04:03:123 Team/(5455:5455): Pokemones para el entrenador 2: 
+[INFO] 20:04:03:123 Team/(5455:5455): Llego token objetivo squirtle para el entrenador 2
+[INFO] 20:04:03:123 Team/(5455:5455): Llego token objetivo onix para el entrenador 2
+[INFO] 20:04:03:123 Team/(5455:5455): No existen pokemones para el entrenador 2
+[INFO] 20:04:03:123 Team/(5455:5455): Posicion X del entrenador 2: 3
+[INFO] 20:04:03:123 Team/(5455:5455): Posicion Y del entrenador 2: 2
+[INFO] 20:04:03:123 Team/(5455:5455): Estado del entrenador 2: 1111
+[INFO] 20:04:03:123 Team/(5455:5455): Objetivo del entrenador 2: squirtle
+[INFO] 20:04:03:123 Team/(5455:5455): Objetivo del entrenador 2: onix
+[INFO] 20:04:03:123 Team/(5455:5455): Objetivo actual del entrenador 2: squirtle
+[INFO] 20:04:03:123 Team/(5455:5455): Objetivo actual del entrenador 2: onix
+[INFO] 20:04:03:123 Team/(5455:5455): Obteniendo objetivo global
+[INFO] 20:04:03:123 Team/(5455:5455): Objetivo global: squirtle
+[INFO] 20:04:03:123 Team/(5455:5455): Objetivo global: pikachu
+[INFO] 20:04:03:123 Team/(5455:5455): Objetivo global: gengar
+[INFO] 20:04:03:123 Team/(5455:5455): Objetivo global: squirtle
+[INFO] 20:04:03:123 Team/(5455:5455): Objetivo global: onix
+[INFO] 20:04:03:123 Team/(5455:5455): Objetivo global obtenido
+[INFO] 20:04:03:123 Team/(5455:5455): Obteniendo cantidad de cada pokemon a planificar
+[INFO] 20:04:03:123 Team/(5455:5455): Cantidad a planificar de squirtle: 1
+[INFO] 20:04:03:123 Team/(5455:5455): Cantidad a planificar de pikachu: 1
+[INFO] 20:04:03:124 Team/(5455:5455): Cantidad a planificar de gengar: 1
+[INFO] 20:04:03:124 Team/(5455:5455): Cantidad a planificar de squirtle: 2
+[INFO] 20:04:03:124 Team/(5455:5455): Cantidad a planificar de onix: 1
+[INFO] 20:04:03:124 Team/(5455:5455): Cantidad de cada pokemon a planificar obtenida
+[INFO] 20:04:03:124 Team/(5455:5455): Inicializando colas
+[INFO] 20:04:03:124 Team/(5455:5455): Iniciando semaforo de entrenadores libres en 3
+[INFO] 20:04:03:124 Team/(5455:5455): Colas inicializadas
+[INFO] 20:04:03:127 Team/(5455:5455): Mandando gets
+[INFO] 20:04:03:129 Team/(5455:5469): Trabajo de entrenador 2 comenzado
+[INFO] 20:04:03:129 Team/(5455:5462): Escucho appeared de BROKER
+[INFO] 20:04:03:129 Team/(5455:5466): Hilo de busqueda de deadlocks iniciado
+[INFO] 20:04:03:129 Team/(5455:5463): Escucho caught de BROKER
+[INFO] 20:04:03:129 Team/(5455:5464): Escucho localized de BROKER
+[INFO] 20:04:03:129 Team/(5455:5465): Hilo de verificacion periodica de conexion con Broker iniciado
+[INFO] 20:04:03:129 Team/(5455:5467): Trabajo de entrenador 0 comenzado
+[INFO] 20:04:03:129 Team/(5455:5468): Trabajo de entrenador 1 comenzado
+[INFO] 20:04:03:131 Team/(5455:5471): Enviando get correspondiente al pokemon squirtle
+[INFO] 20:04:03:131 Team/(5455:5472): Enviando get correspondiente al pokemon pikachu
+[INFO] 20:04:03:131 Team/(5455:5474): Enviando get correspondiente al pokemon onix
+[INFO] 20:04:03:131 Team/(5455:5473): Enviando get correspondiente al pokemon gengar
+[INFO] 20:04:03:131 Team/(5455:5473): Mensaje GET correspondiente al pokemon gengar enviado correctamente al BROKER a traves del socket 13
+[INFO] 20:04:03:131 Team/(5455:5472): Mensaje GET correspondiente al pokemon pikachu enviado correctamente al BROKER a traves del socket 12
+[INFO] 20:04:03:131 Team/(5455:5459): Hilo planificador de tratamiento de deadlocks iniciado
+[INFO] 20:04:03:131 Team/(5455:5474): Mensaje GET correspondiente al pokemon onix enviado correctamente al BROKER a traves del socket 11
+[INFO] 20:04:03:131 Team/(5455:5471): Mensaje GET correspondiente al pokemon squirtle enviado correctamente al BROKER a traves del socket 10
+[INFO] 20:04:03:131 Team/(5455:5473): Recibiendo ID del GET enviado por el Broker
+[INFO] 20:04:03:131 Team/(5455:5472): Recibiendo ID del GET enviado por el Broker
+[INFO] 20:04:03:131 Team/(5455:5474): Recibiendo ID del GET enviado por el Broker
+[INFO] 20:04:03:131 Team/(5455:5471): Recibiendo ID del GET enviado por el Broker
+[INFO] 20:04:03:132 Team/(5455:5458): Hilo planificador de mensajes caught iniciado
+[INFO] 20:04:03:134 Team/(5455:5457): Hilo planificador de pokemones iniciado
+[INFO] 20:04:03:143 Team/(5455:5456): Esperando mensajes de game boy en socket 5
+[INFO] 20:04:03:167 Team/(5455:5474): El id recibido es: 16
+[INFO] 20:04:03:167 Team/(5455:5474): Id del mensaje GET correspondiente al pokemon onix es 16
+[INFO] 20:04:03:174 Team/(5455:5472): El id recibido es: 17
+[INFO] 20:04:03:175 Team/(5455:5472): Id del mensaje GET correspondiente al pokemon pikachu es 17
+[INFO] 20:04:03:176 Team/(5455:5471): El id recibido es: 15
+[INFO] 20:04:03:176 Team/(5455:5471): Id del mensaje GET correspondiente al pokemon squirtle es 15
+[INFO] 20:04:03:180 Team/(5455:5473): El id recibido es: 18
+[INFO] 20:04:03:180 Team/(5455:5473): Id del mensaje GET correspondiente al pokemon gengar es 18
+[INFO] 20:04:03:181 Team/(5455:5455): Gets mandados
+[INFO] 20:04:03:192 Team/(5455:5462): Recibiendo mensaje Appeared
+[INFO] 20:04:03:192 Team/(5455:5462): Recibiendo tamanio total
+[INFO] 20:04:03:192 Team/(5455:5462): Tamanio total recibido: 36
+[INFO] 20:04:03:192 Team/(5455:5462): Id recibido: 11
+[INFO] 20:04:03:192 Team/(5455:5462): Id correlativo recibido: 6
+[INFO] 20:04:03:192 Team/(5455:5462): Tamanio del pokemon recibido: 8
+[INFO] 20:04:03:192 Team/(5455:5462): Nombre del pokemon recibido: jolteon
+[INFO] 20:04:03:192 Team/(5455:5462): Posicion X recibida: 2
+[INFO] 20:04:03:192 Team/(5455:5462): Posicion Y recibida: 2
+[INFO] 20:04:03:192 Team/(5455:5462): Acknowledgement enviado al modulo Broker
+[INFO] 20:04:03:192 Team/(5455:5462): Appeared recibido de BROKER
+[INFO] 20:04:03:192 Team/(5455:5462): El pokemon recibido jolteon no forma parte del objetivo global, se desestima el mensaje
+[INFO] 20:04:03:194 Team/(5455:5462): Recibiendo mensaje Appeared
+[INFO] 20:04:03:195 Team/(5455:5462): Recibiendo tamanio total
+[INFO] 20:04:03:195 Team/(5455:5462): Tamanio total recibido: 37
+[INFO] 20:04:03:195 Team/(5455:5462): Id recibido: 10
+[INFO] 20:04:03:195 Team/(5455:5462): Id correlativo recibido: 5
+[INFO] 20:04:03:195 Team/(5455:5462): Tamanio del pokemon recibido: 9
+[INFO] 20:04:03:195 Team/(5455:5462): Nombre del pokemon recibido: squirtle
+[INFO] 20:04:03:195 Team/(5455:5462): Posicion X recibida: 5
+[INFO] 20:04:03:195 Team/(5455:5462): Posicion Y recibida: 2
+[INFO] 20:04:03:195 Team/(5455:5462): Acknowledgement enviado al modulo Broker
+[INFO] 20:04:03:195 Team/(5455:5462): Appeared recibido de BROKER
+[INFO] 20:04:03:195 Team/(5455:5462): pokemon squirtle esta en el objetivo global
+[INFO] 20:04:03:195 Team/(5455:5462): Agregando pokemon squirtle en (5,2) a los pokemones del mapa
+[INFO] 20:04:03:195 Team/(5455:5462): Pokemon squirtle en (5,2) agregado a los pokemones del mapa
+[INFO] 20:04:03:195 Team/(5455:5462): Pokemon squirtle llego por primera vez
+[INFO] 20:04:03:195 Team/(5455:5457): Planificando un nuevo pokemon
+[INFO] 20:04:03:195 Team/(5455:5457): El pokemon squirtle ubicado en (5,2) se puede planificar
+[INFO] 20:04:03:195 Team/(5455:5457): Nueva cantidad de planificaciones disponibles para pokemon squirtle: 1
+[INFO] 20:04:03:195 Team/(5455:5457): Eliminando pokemon squirtle en (5,2) del mapa
+[INFO] 20:04:03:195 Team/(5455:5457): Cambiando tarea de entrenador 2 de No hacer nada a Atrapar pokemon
+[INFO] 20:04:03:195 Team/(5455:5457): Tarea de entrenador 2 cambiada a Atrapar pokemon
+[INFO] 20:04:03:195 Team/(5455:5457): Cambiando estado de entrenador 2 de Estado new a Estado ready
+[INFO] 20:04:03:195 Team/(5455:5457): Estado de entrenador 2 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 20:04:03:196 Team/(5455:5469): Cambiando estado de entrenador 2 de Estado ready a Estado executing
+[INFO] 20:04:03:196 Team/(5455:5469): Estado de entrenador 2 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de atrapar pokemon squirtle
+[INFO] 20:04:03:196 Team/(5455:5469): Entrenador 2 esta atrapando pokemon squirtle ubicado en (5,2)
+[INFO] 20:04:03:196 Team/(5455:5469): El entrenador 2 se esta moviendo de (3,2) a (5,2)
+[INFO] 20:04:03:196 Team/(5455:5469): El entrenador 2 se encuentra en (4,2)
+[INFO] 20:04:03:198 Team/(5455:5462): Recibiendo mensaje Appeared
+[INFO] 20:04:03:198 Team/(5455:5462): Recibiendo tamanio total
+[INFO] 20:04:03:198 Team/(5455:5462): Tamanio total recibido: 36
+[INFO] 20:04:03:198 Team/(5455:5462): Id recibido: 9
+[INFO] 20:04:03:198 Team/(5455:5462): Id correlativo recibido: 7
+[INFO] 20:04:03:198 Team/(5455:5462): Tamanio del pokemon recibido: 8
+[INFO] 20:04:03:198 Team/(5455:5462): Nombre del pokemon recibido: flareon
+[INFO] 20:04:03:198 Team/(5455:5462): Posicion X recibida: 4
+[INFO] 20:04:03:198 Team/(5455:5462): Posicion Y recibida: 6
+[INFO] 20:04:03:198 Team/(5455:5462): Acknowledgement enviado al modulo Broker
+[INFO] 20:04:03:198 Team/(5455:5462): Appeared recibido de BROKER
+[INFO] 20:04:03:198 Team/(5455:5462): El pokemon recibido flareon no forma parte del objetivo global, se desestima el mensaje
+[INFO] 20:04:08:196 Team/(5455:5469): El entrenador 2 se encuentra en (5,2)
+[INFO] 20:04:08:261 Team/(5455:5464): Recibiendo mensaje Localized
+[INFO] 20:04:08:262 Team/(5455:5464): Recibiendo tamanio total
+[INFO] 20:04:08:262 Team/(5455:5464): Tamanio total recibido: 29
+[INFO] 20:04:08:262 Team/(5455:5464): Id recibido: 19
+[INFO] 20:04:08:262 Team/(5455:5464): Id correlativo recibido: 16
+[INFO] 20:04:08:262 Team/(5455:5464): Tamanio del pokemon recibido: 5
+[INFO] 20:04:08:262 Team/(5455:5464): Nombre del pokemon recibido: onix
+[INFO] 20:04:08:262 Team/(5455:5464): Cantidad de coordenadas recibida: 0
+[INFO] 20:04:08:262 Team/(5455:5464): Acknowledgement enviado al modulo Broker
+[INFO] 20:04:08:262 Team/(5455:5464): Localized recibido de Broker
+[INFO] 20:04:08:262 Team/(5455:5464): pokemon onix llego por primera vez
+[INFO] 20:04:13:197 Team/(5455:5469): El entrenador 2 ha llegado a (5,2)
+[INFO] 20:04:13:197 Team/(5455:5469): Cambiando estado de entrenador 2 de Estado executing a Estado blocked
+[INFO] 20:04:13:197 Team/(5455:5469): Estado de entrenador 2 cambiado a Estado blocked. Razon del cambio: Se ha enviado un catch
+[INFO] 20:04:13:197 Team/(5455:5469): Entrenador 2 enviando catch para el pokemon squirtle en (5,2)
+[INFO] 20:04:13:295 Team/(5455:5464): Recibiendo mensaje Localized
+[INFO] 20:04:13:295 Team/(5455:5464): Recibiendo tamanio total
+[INFO] 20:04:13:295 Team/(5455:5464): Tamanio total recibido: 41
+[INFO] 20:04:13:295 Team/(5455:5464): Id recibido: 28
+[INFO] 20:04:13:295 Team/(5455:5464): Id correlativo recibido: 15
+[INFO] 20:04:13:295 Team/(5455:5464): Tamanio del pokemon recibido: 9
+[INFO] 20:04:13:295 Team/(5455:5464): Nombre del pokemon recibido: squirtle
+[INFO] 20:04:13:295 Team/(5455:5464): Cantidad de coordenadas recibida: 1
+[INFO] 20:04:13:295 Team/(5455:5464): Unidad de coordenada recibida: 5
+[INFO] 20:04:13:295 Team/(5455:5464): Unidad de coordenada recibida: 2
+[INFO] 20:04:13:295 Team/(5455:5464): Acknowledgement enviado al modulo Broker
+[INFO] 20:04:13:295 Team/(5455:5464): Localized recibido de Broker
+[INFO] 20:04:13:331 Team/(5455:5464): Recibiendo mensaje Localized
+[INFO] 20:04:13:331 Team/(5455:5464): Recibiendo tamanio total
+[INFO] 20:04:13:331 Team/(5455:5464): Tamanio total recibido: 40
+[INFO] 20:04:13:331 Team/(5455:5464): Id recibido: 29
+[INFO] 20:04:13:331 Team/(5455:5464): Id correlativo recibido: 17
+[INFO] 20:04:13:331 Team/(5455:5464): Tamanio del pokemon recibido: 8
+[INFO] 20:04:13:331 Team/(5455:5464): Nombre del pokemon recibido: pikachu
+[INFO] 20:04:13:331 Team/(5455:5464): Cantidad de coordenadas recibida: 1
+[INFO] 20:04:13:331 Team/(5455:5464): Unidad de coordenada recibida: 9
+[INFO] 20:04:13:331 Team/(5455:5464): Unidad de coordenada recibida: 9
+[INFO] 20:04:13:331 Team/(5455:5464): Acknowledgement enviado al modulo Broker
+[INFO] 20:04:13:331 Team/(5455:5464): Localized recibido de Broker
+[INFO] 20:04:13:331 Team/(5455:5464): pokemon pikachu llego por primera vez
+[INFO] 20:04:13:331 Team/(5455:5457): Planificando un nuevo pokemon
+[INFO] 20:04:13:331 Team/(5455:5457): El pokemon pikachu ubicado en (9,9) se puede planificar
+[INFO] 20:04:13:331 Team/(5455:5457): Nueva cantidad de planificaciones disponibles para pokemon pikachu: 0
+[INFO] 20:04:13:331 Team/(5455:5457): Eliminando pokemon pikachu en (9,9) del mapa
+[INFO] 20:04:13:331 Team/(5455:5457): Cambiando tarea de entrenador 1 de No hacer nada a Atrapar pokemon
+[INFO] 20:04:13:331 Team/(5455:5457): Tarea de entrenador 1 cambiada a Atrapar pokemon
+[INFO] 20:04:13:331 Team/(5455:5457): Cambiando estado de entrenador 1 de Estado new a Estado ready
+[INFO] 20:04:13:331 Team/(5455:5457): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 20:04:13:350 Team/(5455:5464): Recibiendo mensaje Localized
+[INFO] 20:04:13:350 Team/(5455:5464): Recibiendo tamanio total
+[INFO] 20:04:13:351 Team/(5455:5464): Tamanio total recibido: 31
+[INFO] 20:04:13:351 Team/(5455:5464): Id recibido: 30
+[INFO] 20:04:13:351 Team/(5455:5464): Id correlativo recibido: 18
+[INFO] 20:04:13:351 Team/(5455:5464): Tamanio del pokemon recibido: 7
+[INFO] 20:04:13:351 Team/(5455:5464): Nombre del pokemon recibido: gengar
+[INFO] 20:04:13:351 Team/(5455:5464): Cantidad de coordenadas recibida: 0
+[INFO] 20:04:13:351 Team/(5455:5464): Acknowledgement enviado al modulo Broker
+[INFO] 20:04:13:351 Team/(5455:5464): Localized recibido de Broker
+[INFO] 20:04:13:351 Team/(5455:5464): pokemon gengar llego por primera vez
+[INFO] 20:04:13:375 Team/(5455:5464): Recibiendo mensaje Localized
+[INFO] 20:04:13:375 Team/(5455:5464): Recibiendo tamanio total
+[INFO] 20:04:13:375 Team/(5455:5464): Tamanio total recibido: 33
+[INFO] 20:04:13:376 Team/(5455:5464): Id recibido: 31
+[INFO] 20:04:13:376 Team/(5455:5464): Id correlativo recibido: 23
+[INFO] 20:04:13:376 Team/(5455:5464): Tamanio del pokemon recibido: 9
+[INFO] 20:04:13:376 Team/(5455:5464): Nombre del pokemon recibido: vaporeon
+[INFO] 20:04:13:376 Team/(5455:5464): Cantidad de coordenadas recibida: 0
+[INFO] 20:04:13:376 Team/(5455:5464): Acknowledgement enviado al modulo Broker
+[INFO] 20:04:13:376 Team/(5455:5464): Localized recibido de Broker
+[INFO] 20:04:13:376 Team/(5455:5464): pokemon vaporeon llego por primera vez
+[INFO] 20:04:18:199 Team/(5455:5469): El entrenador 2 ha enviado el catch para el pokemon squirtle en (5,2) correctamente por el socket 10
+[INFO] 20:04:18:202 Team/(5455:5469): Recibiendo ID del CATCH enviado al Broker
+[INFO] 20:04:18:233 Team/(5455:5469): El id recibido es: 33
+[INFO] 20:04:18:233 Team/(5455:5469): Id del catch enviado por el entrenador 2 para el pokemon squirtle en (5,2) recibido correctamente por el socket 10 y es igual a 33
+[INFO] 20:04:18:233 Team/(5455:5468): Cambiando estado de entrenador 1 de Estado ready a Estado executing
+[INFO] 20:04:18:233 Team/(5455:5468): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de atrapar pokemon pikachu
+[INFO] 20:04:18:233 Team/(5455:5468): Entrenador 1 esta atrapando pokemon pikachu ubicado en (9,9)
+[INFO] 20:04:18:233 Team/(5455:5468): El entrenador 1 se esta moviendo de (2,3) a (9,9)
+[INFO] 20:04:18:233 Team/(5455:5468): El entrenador 1 se encuentra en (2,4)
+[INFO] 20:04:18:387 Team/(5455:5464): Recibiendo mensaje Localized
+[INFO] 20:04:18:387 Team/(5455:5464): Recibiendo tamanio total
+[INFO] 20:04:18:387 Team/(5455:5464): Tamanio total recibido: 31
+[INFO] 20:04:18:387 Team/(5455:5464): Id recibido: 32
+[INFO] 20:04:18:387 Team/(5455:5464): Id correlativo recibido: 24
+[INFO] 20:04:18:387 Team/(5455:5464): Tamanio del pokemon recibido: 7
+[INFO] 20:04:18:387 Team/(5455:5464): Nombre del pokemon recibido: espeon
+[INFO] 20:04:18:387 Team/(5455:5464): Cantidad de coordenadas recibida: 0
+[INFO] 20:04:18:387 Team/(5455:5464): Acknowledgement enviado al modulo Broker
+[INFO] 20:04:18:387 Team/(5455:5464): Localized recibido de Broker
+[INFO] 20:04:18:387 Team/(5455:5464): pokemon espeon llego por primera vez
+[INFO] 20:04:18:445 Team/(5455:5464): Recibiendo mensaje Localized
+[INFO] 20:04:18:446 Team/(5455:5464): Recibiendo tamanio total
+[INFO] 20:04:18:446 Team/(5455:5464): Tamanio total recibido: 32
+[INFO] 20:04:18:446 Team/(5455:5464): Id recibido: 35
+[INFO] 20:04:18:446 Team/(5455:5464): Id correlativo recibido: 26
+[INFO] 20:04:18:446 Team/(5455:5464): Tamanio del pokemon recibido: 8
+[INFO] 20:04:18:446 Team/(5455:5464): Nombre del pokemon recibido: umbreon
+[INFO] 20:04:18:446 Team/(5455:5464): Cantidad de coordenadas recibida: 0
+[INFO] 20:04:18:446 Team/(5455:5464): Acknowledgement enviado al modulo Broker
+[INFO] 20:04:18:446 Team/(5455:5464): Localized recibido de Broker
+[INFO] 20:04:18:446 Team/(5455:5464): pokemon umbreon llego por primera vez
+[INFO] 20:04:23:130 Team/(5455:5466): Buscando deadlock...
+[INFO] 20:04:23:131 Team/(5455:5466): Obtengo entrenadores bloqueados
+[INFO] 20:04:23:131 Team/(5455:5466): Entrenadores bloqueados obtenidos
+[INFO] 20:04:23:131 Team/(5455:5466): No se han encontrado deadlocks
+[INFO] 20:04:23:234 Team/(5455:5468): El entrenador 1 se encuentra en (2,5)
+[INFO] 20:04:23:478 Team/(5455:5464): Recibiendo mensaje Localized
+[INFO] 20:04:23:478 Team/(5455:5464): Recibiendo tamanio total
+[INFO] 20:04:23:478 Team/(5455:5464): Tamanio total recibido: 40
+[INFO] 20:04:23:478 Team/(5455:5464): Id recibido: 36
+[INFO] 20:04:23:478 Team/(5455:5464): Id correlativo recibido: 25
+[INFO] 20:04:23:478 Team/(5455:5464): Tamanio del pokemon recibido: 8
+[INFO] 20:04:23:478 Team/(5455:5464): Nombre del pokemon recibido: flareon
+[INFO] 20:04:23:478 Team/(5455:5464): Cantidad de coordenadas recibida: 1
+[INFO] 20:04:23:478 Team/(5455:5464): Unidad de coordenada recibida: 4
+[INFO] 20:04:23:478 Team/(5455:5464): Unidad de coordenada recibida: 6
+[INFO] 20:04:23:478 Team/(5455:5464): Acknowledgement enviado al modulo Broker
+[INFO] 20:04:23:478 Team/(5455:5464): Localized recibido de Broker
+[INFO] 20:04:23:478 Team/(5455:5464): pokemon flareon llego por primera vez
+[INFO] 20:04:23:478 Team/(5455:5457): Planificando un nuevo pokemon
+[INFO] 20:04:23:478 Team/(5455:5457): El pokemon flareon ubicado en (4,6) no se puede planificar
+[INFO] 20:04:23:496 Team/(5455:5463): Recibiendo mensaje Caught
+[INFO] 20:04:23:496 Team/(5455:5463): Recibiendo tamanio total
+[INFO] 20:04:23:496 Team/(5455:5463): Tamanio total recibido: 20
+[INFO] 20:04:23:496 Team/(5455:5463): Id recibido: 37
+[INFO] 20:04:23:497 Team/(5455:5463): Id correlativo recibido: 33
+[INFO] 20:04:23:497 Team/(5455:5463): Flag atrapado recibido: 1
+[INFO] 20:04:23:497 Team/(5455:5463): Acknowledgement enviado al modulo Broker
+[INFO] 20:04:23:497 Team/(5455:5463): Caught recibido del Broker en socket 8
+[INFO] 20:04:23:497 Team/(5455:5458): Planificando mensaje caught con id correlativo 33 y flag de recibido 1
+[INFO] 20:04:23:497 Team/(5455:5458): Entrenador 2 adquiriendo pokemon squirtle
+[INFO] 20:04:23:497 Team/(5455:5458): El entrenador 2 ha adquirido al pokemon squirtle
+[INFO] 20:04:23:497 Team/(5455:5458): Entrenador 2 ha obtenido el pokemon squirtle
+[INFO] 20:04:23:497 Team/(5455:5458): Cambiando tarea de entrenador 2 de Atrapar pokemon a No hacer nada
+[INFO] 20:04:23:497 Team/(5455:5458): Tarea de entrenador 2 cambiada a No hacer nada
+[INFO] 20:04:23:520 Team/(5455:5464): Recibiendo mensaje Localized
+[INFO] 20:04:23:520 Team/(5455:5464): Recibiendo tamanio total
+[INFO] 20:04:23:520 Team/(5455:5464): Tamanio total recibido: 40
+[INFO] 20:04:23:520 Team/(5455:5464): Id recibido: 38
+[INFO] 20:04:23:520 Team/(5455:5464): Id correlativo recibido: 27
+[INFO] 20:04:23:520 Team/(5455:5464): Tamanio del pokemon recibido: 8
+[INFO] 20:04:23:520 Team/(5455:5464): Nombre del pokemon recibido: jolteon
+[INFO] 20:04:23:521 Team/(5455:5464): Cantidad de coordenadas recibida: 1
+[INFO] 20:04:23:521 Team/(5455:5464): Unidad de coordenada recibida: 2
+[INFO] 20:04:23:521 Team/(5455:5464): Unidad de coordenada recibida: 2
+[INFO] 20:04:23:521 Team/(5455:5464): Acknowledgement enviado al modulo Broker
+[INFO] 20:04:23:521 Team/(5455:5464): Localized recibido de Broker
+[INFO] 20:04:23:521 Team/(5455:5464): pokemon jolteon llego por primera vez
+[INFO] 20:04:23:521 Team/(5455:5457): Planificando un nuevo pokemon
+[INFO] 20:04:23:521 Team/(5455:5457): El pokemon jolteon ubicado en (2,2) no se puede planificar
+[INFO] 20:04:28:236 Team/(5455:5468): El entrenador 1 se encuentra en (2,6)
+[INFO] 20:04:28:489 Team/(5455:5463): Recibiendo mensaje Caught
+[INFO] 20:04:28:489 Team/(5455:5463): Recibiendo tamanio total
+[INFO] 20:04:28:489 Team/(5455:5463): Tamanio total recibido: 20
+[INFO] 20:04:28:489 Team/(5455:5463): Id recibido: 39
+[INFO] 20:04:28:489 Team/(5455:5463): Id correlativo recibido: 34
+[INFO] 20:04:28:490 Team/(5455:5463): Flag atrapado recibido: 1
+[INFO] 20:04:28:490 Team/(5455:5463): Acknowledgement enviado al modulo Broker
+[INFO] 20:04:28:490 Team/(5455:5463): Caught recibido del Broker en socket 8
+[INFO] 20:04:33:131 Team/(5455:5465): Iniciando verificacion de conexion con Broker...
+[INFO] 20:04:33:131 Team/(5455:5465): Conexion con Broker en buen estado, verificando nuevamente en 30 segundos
+[INFO] 20:04:33:237 Team/(5455:5468): El entrenador 1 se encuentra en (2,7)
+[INFO] 20:04:38:239 Team/(5455:5468): El entrenador 1 se encuentra en (2,8)
+[INFO] 20:04:43:132 Team/(5455:5466): Buscando deadlock...
+[INFO] 20:04:43:132 Team/(5455:5466): Obtengo entrenadores bloqueados
+[INFO] 20:04:43:133 Team/(5455:5466): Entrenadores bloqueados obtenidos
+[INFO] 20:04:43:133 Team/(5455:5466): No se han encontrado deadlocks
+[INFO] 20:04:43:241 Team/(5455:5468): El entrenador 1 se encuentra en (2,9)
+[INFO] 20:04:48:242 Team/(5455:5468): El entrenador 1 se encuentra en (3,9)
+[INFO] 20:04:48:570 Team/(5455:5463): Recibiendo mensaje Caught
+[INFO] 20:04:48:570 Team/(5455:5463): Recibiendo tamanio total
+[INFO] 20:04:48:570 Team/(5455:5463): Tamanio total recibido: 20
+[INFO] 20:04:48:570 Team/(5455:5463): Id recibido: 41
+[INFO] 20:04:48:570 Team/(5455:5463): Id correlativo recibido: 40
+[INFO] 20:04:48:570 Team/(5455:5463): Flag atrapado recibido: 1
+[INFO] 20:04:48:570 Team/(5455:5463): Acknowledgement enviado al modulo Broker
+[INFO] 20:04:48:570 Team/(5455:5463): Caught recibido del Broker en socket 8
+[INFO] 20:04:53:244 Team/(5455:5468): El entrenador 1 se encuentra en (4,9)
+[INFO] 20:04:58:246 Team/(5455:5468): El entrenador 1 se encuentra en (5,9)
+[INFO] 20:05:03:132 Team/(5455:5465): Iniciando verificacion de conexion con Broker...
+[INFO] 20:05:03:132 Team/(5455:5465): Conexion con Broker en buen estado, verificando nuevamente en 30 segundos
+[INFO] 20:05:03:133 Team/(5455:5466): Buscando deadlock...
+[INFO] 20:05:03:133 Team/(5455:5466): Obtengo entrenadores bloqueados
+[INFO] 20:05:03:134 Team/(5455:5466): Entrenadores bloqueados obtenidos
+[INFO] 20:05:03:134 Team/(5455:5466): No se han encontrado deadlocks
+[INFO] 20:05:03:248 Team/(5455:5468): El entrenador 1 se encuentra en (6,9)
+[INFO] 20:05:08:249 Team/(5455:5468): El entrenador 1 se encuentra en (7,9)
+[INFO] 20:05:13:251 Team/(5455:5468): El entrenador 1 se encuentra en (8,9)
+[INFO] 20:05:18:252 Team/(5455:5468): El entrenador 1 se encuentra en (9,9)
+[INFO] 20:05:23:134 Team/(5455:5466): Buscando deadlock...
+[INFO] 20:05:23:135 Team/(5455:5466): Obtengo entrenadores bloqueados
+[INFO] 20:05:23:136 Team/(5455:5466): Entrenadores bloqueados obtenidos
+[INFO] 20:05:23:136 Team/(5455:5466): No se han encontrado deadlocks
+[INFO] 20:05:23:254 Team/(5455:5468): El entrenador 1 ha llegado a (9,9)
+[INFO] 20:05:23:255 Team/(5455:5468): Cambiando estado de entrenador 1 de Estado executing a Estado blocked
+[INFO] 20:05:23:255 Team/(5455:5468): Estado de entrenador 1 cambiado a Estado blocked. Razon del cambio: Se ha enviado un catch
+[INFO] 20:05:23:255 Team/(5455:5468): Entrenador 1 enviando catch para el pokemon pikachu en (9,9)
+[INFO] 20:05:28:258 Team/(5455:5468): El entrenador 1 ha enviado el catch para el pokemon pikachu en (9,9) correctamente por el socket 10
+[INFO] 20:05:28:260 Team/(5455:5468): Recibiendo ID del CATCH enviado al Broker
+[INFO] 20:05:28:281 Team/(5455:5468): El id recibido es: 42
+[INFO] 20:05:28:281 Team/(5455:5468): Id del catch enviado por el entrenador 1 para el pokemon pikachu en (9,9) recibido correctamente por el socket 10 y es igual a 42
+[INFO] 20:05:33:133 Team/(5455:5465): Iniciando verificacion de conexion con Broker...
+[INFO] 20:05:33:133 Team/(5455:5465): Conexion con Broker en buen estado, verificando nuevamente en 30 segundos
+[INFO] 20:05:33:348 Team/(5455:5463): Recibiendo mensaje Caught
+[INFO] 20:05:33:348 Team/(5455:5463): Recibiendo tamanio total
+[INFO] 20:05:33:348 Team/(5455:5463): Tamanio total recibido: 20
+[INFO] 20:05:33:348 Team/(5455:5463): Id recibido: 43
+[INFO] 20:05:33:349 Team/(5455:5463): Id correlativo recibido: 42
+[INFO] 20:05:33:349 Team/(5455:5463): Flag atrapado recibido: 1
+[INFO] 20:05:33:349 Team/(5455:5463): Acknowledgement enviado al modulo Broker
+[INFO] 20:05:33:349 Team/(5455:5463): Caught recibido del Broker en socket 8
+[INFO] 20:05:33:349 Team/(5455:5458): Planificando mensaje caught con id correlativo 42 y flag de recibido 1
+[INFO] 20:05:33:349 Team/(5455:5458): Entrenador 1 adquiriendo pokemon pikachu
+[INFO] 20:05:33:349 Team/(5455:5458): El entrenador 1 ha adquirido al pokemon pikachu
+[INFO] 20:05:33:349 Team/(5455:5458): Entrenador 1 ha obtenido el pokemon pikachu
+[INFO] 20:05:33:349 Team/(5455:5458): Cambiando tarea de entrenador 1 de Atrapar pokemon a No hacer nada
+[INFO] 20:05:33:349 Team/(5455:5458): Tarea de entrenador 1 cambiada a No hacer nada
+[INFO] 20:05:43:137 Team/(5455:5466): Buscando deadlock...
+[INFO] 20:05:43:137 Team/(5455:5466): Obtengo entrenadores bloqueados
+[INFO] 20:05:43:137 Team/(5455:5466): Entrenadores bloqueados obtenidos
+[INFO] 20:05:43:138 Team/(5455:5466): No se han encontrado deadlocks
+[INFO] 20:06:03:134 Team/(5455:5465): Iniciando verificacion de conexion con Broker...
+[INFO] 20:06:03:134 Team/(5455:5465): Conexion con Broker en buen estado, verificando nuevamente en 30 segundos
+[INFO] 20:06:03:138 Team/(5455:5466): Buscando deadlock...
+[INFO] 20:06:03:138 Team/(5455:5466): Obtengo entrenadores bloqueados
+[INFO] 20:06:03:138 Team/(5455:5466): Entrenadores bloqueados obtenidos
+[INFO] 20:06:03:138 Team/(5455:5466): No se han encontrado deadlocks
+[INFO] 20:06:23:139 Team/(5455:5466): Buscando deadlock...
+[INFO] 20:06:23:139 Team/(5455:5466): Obtengo entrenadores bloqueados
+[INFO] 20:06:23:140 Team/(5455:5466): Entrenadores bloqueados obtenidos
+[INFO] 20:06:23:140 Team/(5455:5466): No se han encontrado deadlocks
+[INFO] 20:06:33:135 Team/(5455:5465): Iniciando verificacion de conexion con Broker...
+[INFO] 20:06:33:135 Team/(5455:5465): Conexion con Broker en buen estado, verificando nuevamente en 30 segundos
+[INFO] 20:06:43:140 Team/(5455:5466): Buscando deadlock...
+[INFO] 20:06:43:141 Team/(5455:5466): Obtengo entrenadores bloqueados
+[INFO] 20:06:43:141 Team/(5455:5466): Entrenadores bloqueados obtenidos
+[INFO] 20:06:43:141 Team/(5455:5466): No se han encontrado deadlocks
+[INFO] 20:06:54:650 Team/(5455:5462): Recibiendo mensaje Appeared
+[INFO] 20:06:54:650 Team/(5455:5462): Recibiendo tamanio total
+[INFO] 20:06:54:650 Team/(5455:5462): Tamanio total recibido: 33
+[INFO] 20:06:54:650 Team/(5455:5462): Id recibido: 50
+[INFO] 20:06:54:650 Team/(5455:5462): Id correlativo recibido: 44
+[INFO] 20:06:54:650 Team/(5455:5462): Tamanio del pokemon recibido: 5
+[INFO] 20:06:54:650 Team/(5455:5462): Nombre del pokemon recibido: onix
+[INFO] 20:06:54:650 Team/(5455:5462): Posicion X recibida: 2
+[INFO] 20:06:54:650 Team/(5455:5462): Posicion Y recibida: 8
+[INFO] 20:06:54:650 Team/(5455:5462): Acknowledgement enviado al modulo Broker
+[INFO] 20:06:54:650 Team/(5455:5462): Appeared recibido de BROKER
+[INFO] 20:06:54:650 Team/(5455:5462): pokemon onix esta en el objetivo global
+[INFO] 20:06:54:650 Team/(5455:5462): Agregando pokemon onix en (2,8) a los pokemones del mapa
+[INFO] 20:06:54:650 Team/(5455:5462): Pokemon onix en (2,8) agregado a los pokemones del mapa
+[INFO] 20:06:54:650 Team/(5455:5457): Planificando un nuevo pokemon
+[INFO] 20:06:54:650 Team/(5455:5457): El pokemon onix ubicado en (2,8) se puede planificar
+[INFO] 20:06:54:651 Team/(5455:5457): Nueva cantidad de planificaciones disponibles para pokemon onix: 0
+[INFO] 20:06:54:651 Team/(5455:5457): Eliminando pokemon onix en (2,8) del mapa
+[INFO] 20:06:54:651 Team/(5455:5457): Cambiando tarea de entrenador 0 de No hacer nada a Atrapar pokemon
+[INFO] 20:06:54:651 Team/(5455:5457): Tarea de entrenador 0 cambiada a Atrapar pokemon
+[INFO] 20:06:54:651 Team/(5455:5457): Cambiando estado de entrenador 0 de Estado new a Estado ready
+[INFO] 20:06:54:651 Team/(5455:5457): Estado de entrenador 0 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 20:06:54:651 Team/(5455:5467): Cambiando estado de entrenador 0 de Estado ready a Estado executing
+[INFO] 20:06:54:651 Team/(5455:5467): Estado de entrenador 0 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de atrapar pokemon onix
+[INFO] 20:06:54:651 Team/(5455:5467): Entrenador 0 esta atrapando pokemon onix ubicado en (2,8)
+[INFO] 20:06:54:651 Team/(5455:5467): El entrenador 0 se esta moviendo de (1,3) a (2,8)
+[INFO] 20:06:54:651 Team/(5455:5467): El entrenador 0 se encuentra en (1,4)
+[INFO] 20:06:59:654 Team/(5455:5467): El entrenador 0 se encuentra en (1,5)
+[INFO] 20:06:59:680 Team/(5455:5462): Recibiendo mensaje Appeared
+[INFO] 20:06:59:680 Team/(5455:5462): Recibiendo tamanio total
+[INFO] 20:06:59:680 Team/(5455:5462): Tamanio total recibido: 35
+[INFO] 20:06:59:680 Team/(5455:5462): Id recibido: 51
+[INFO] 20:06:59:680 Team/(5455:5462): Id correlativo recibido: 45
+[INFO] 20:06:59:680 Team/(5455:5462): Tamanio del pokemon recibido: 7
+[INFO] 20:06:59:680 Team/(5455:5462): Nombre del pokemon recibido: gengar
+[INFO] 20:06:59:680 Team/(5455:5462): Posicion X recibida: 6
+[INFO] 20:06:59:680 Team/(5455:5462): Posicion Y recibida: 6
+[INFO] 20:06:59:680 Team/(5455:5462): Acknowledgement enviado al modulo Broker
+[INFO] 20:06:59:680 Team/(5455:5462): Appeared recibido de BROKER
+[INFO] 20:06:59:680 Team/(5455:5462): pokemon gengar esta en el objetivo global
+[INFO] 20:06:59:680 Team/(5455:5462): Agregando pokemon gengar en (6,6) a los pokemones del mapa
+[INFO] 20:06:59:680 Team/(5455:5462): Pokemon gengar en (6,6) agregado a los pokemones del mapa
+[INFO] 20:06:59:680 Team/(5455:5457): Planificando un nuevo pokemon
+[INFO] 20:06:59:680 Team/(5455:5457): El pokemon gengar ubicado en (6,6) se puede planificar
+[INFO] 20:06:59:680 Team/(5455:5457): Nueva cantidad de planificaciones disponibles para pokemon gengar: 0
+[INFO] 20:06:59:680 Team/(5455:5457): Eliminando pokemon gengar en (6,6) del mapa
+[INFO] 20:06:59:680 Team/(5455:5457): Cambiando tarea de entrenador 2 de No hacer nada a Atrapar pokemon
+[INFO] 20:06:59:680 Team/(5455:5457): Tarea de entrenador 2 cambiada a Atrapar pokemon
+[INFO] 20:06:59:680 Team/(5455:5457): Cambiando estado de entrenador 2 de Estado blocked a Estado ready
+[INFO] 20:06:59:680 Team/(5455:5457): Estado de entrenador 2 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 20:07:03:136 Team/(5455:5465): Iniciando verificacion de conexion con Broker...
+[INFO] 20:07:03:137 Team/(5455:5465): Conexion con Broker en buen estado, verificando nuevamente en 30 segundos
+[INFO] 20:07:03:142 Team/(5455:5466): Buscando deadlock...
+[INFO] 20:07:03:142 Team/(5455:5466): Obtengo entrenadores bloqueados
+[INFO] 20:07:03:143 Team/(5455:5466): Entrenadores bloqueados obtenidos
+[INFO] 20:07:03:143 Team/(5455:5466): No se han encontrado deadlocks
+[INFO] 20:07:04:655 Team/(5455:5467): El entrenador 0 se encuentra en (1,6)
+[INFO] 20:07:04:716 Team/(5455:5462): Recibiendo mensaje Appeared
+[INFO] 20:07:04:716 Team/(5455:5462): Recibiendo tamanio total
+[INFO] 20:07:04:716 Team/(5455:5462): Tamanio total recibido: 37
+[INFO] 20:07:04:716 Team/(5455:5462): Id recibido: 52
+[INFO] 20:07:04:716 Team/(5455:5462): Id correlativo recibido: 46
+[INFO] 20:07:04:716 Team/(5455:5462): Tamanio del pokemon recibido: 9
+[INFO] 20:07:04:716 Team/(5455:5462): Nombre del pokemon recibido: squirtle
+[INFO] 20:07:04:716 Team/(5455:5462): Posicion X recibida: 5
+[INFO] 20:07:04:716 Team/(5455:5462): Posicion Y recibida: 5
+[INFO] 20:07:04:716 Team/(5455:5462): Acknowledgement enviado al modulo Broker
+[INFO] 20:07:04:716 Team/(5455:5462): Appeared recibido de BROKER
+[INFO] 20:07:04:716 Team/(5455:5462): pokemon squirtle esta en el objetivo global
+[INFO] 20:07:04:716 Team/(5455:5462): Agregando pokemon squirtle en (5,5) a los pokemones del mapa
+[INFO] 20:07:04:716 Team/(5455:5462): Pokemon squirtle en (5,5) agregado a los pokemones del mapa
+[INFO] 20:07:04:716 Team/(5455:5457): Planificando un nuevo pokemon
+[INFO] 20:07:04:716 Team/(5455:5457): El pokemon squirtle ubicado en (5,5) se puede planificar
+[INFO] 20:07:04:716 Team/(5455:5457): Nueva cantidad de planificaciones disponibles para pokemon squirtle: 0
+[INFO] 20:07:04:716 Team/(5455:5457): Eliminando pokemon squirtle en (5,5) del mapa
+[INFO] 20:07:04:716 Team/(5455:5457): Cambiando tarea de entrenador 1 de No hacer nada a Atrapar pokemon
+[INFO] 20:07:04:716 Team/(5455:5457): Tarea de entrenador 1 cambiada a Atrapar pokemon
+[INFO] 20:07:04:716 Team/(5455:5457): Cambiando estado de entrenador 1 de Estado blocked a Estado ready
+[INFO] 20:07:04:716 Team/(5455:5457): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 20:07:09:657 Team/(5455:5467): El entrenador 0 se encuentra en (1,7)
+[INFO] 20:07:09:749 Team/(5455:5462): Recibiendo mensaje Appeared
+[INFO] 20:07:09:749 Team/(5455:5462): Recibiendo tamanio total
+[INFO] 20:07:09:750 Team/(5455:5462): Tamanio total recibido: 36
+[INFO] 20:07:09:750 Team/(5455:5462): Id recibido: 53
+[INFO] 20:07:09:750 Team/(5455:5462): Id correlativo recibido: 47
+[INFO] 20:07:09:750 Team/(5455:5462): Tamanio del pokemon recibido: 8
+[INFO] 20:07:09:750 Team/(5455:5462): Nombre del pokemon recibido: umbreon
+[INFO] 20:07:09:750 Team/(5455:5462): Posicion X recibida: 10
+[INFO] 20:07:09:750 Team/(5455:5462): Posicion Y recibida: 6
+[INFO] 20:07:09:750 Team/(5455:5462): Acknowledgement enviado al modulo Broker
+[INFO] 20:07:09:750 Team/(5455:5462): Appeared recibido de BROKER
+[INFO] 20:07:09:750 Team/(5455:5462): El pokemon recibido umbreon no forma parte del objetivo global, se desestima el mensaje
+[INFO] 20:07:09:759 Team/(5455:5462): Recibiendo mensaje Appeared
+[INFO] 20:07:09:759 Team/(5455:5462): Recibiendo tamanio total
+[INFO] 20:07:09:759 Team/(5455:5462): Tamanio total recibido: 35
+[INFO] 20:07:09:759 Team/(5455:5462): Id recibido: 54
+[INFO] 20:07:09:759 Team/(5455:5462): Id correlativo recibido: 48
+[INFO] 20:07:09:759 Team/(5455:5462): Tamanio del pokemon recibido: 7
+[INFO] 20:07:09:759 Team/(5455:5462): Nombre del pokemon recibido: espeon
+[INFO] 20:07:09:759 Team/(5455:5462): Posicion X recibida: 7
+[INFO] 20:07:09:759 Team/(5455:5462): Posicion Y recibida: 1
+[INFO] 20:07:09:759 Team/(5455:5462): Acknowledgement enviado al modulo Broker
+[INFO] 20:07:09:761 Team/(5455:5462): Appeared recibido de BROKER
+[INFO] 20:07:09:761 Team/(5455:5462): El pokemon recibido espeon no forma parte del objetivo global, se desestima el mensaje
+[INFO] 20:07:14:659 Team/(5455:5467): El entrenador 0 se encuentra en (1,8)
+[INFO] 20:07:14:790 Team/(5455:5462): Recibiendo mensaje Appeared
+[INFO] 20:07:14:790 Team/(5455:5462): Recibiendo tamanio total
+[INFO] 20:07:14:790 Team/(5455:5462): Tamanio total recibido: 37
+[INFO] 20:07:14:790 Team/(5455:5462): Id recibido: 55
+[INFO] 20:07:14:790 Team/(5455:5462): Id correlativo recibido: 49
+[INFO] 20:07:14:790 Team/(5455:5462): Tamanio del pokemon recibido: 9
+[INFO] 20:07:14:790 Team/(5455:5462): Nombre del pokemon recibido: vaporeon
+[INFO] 20:07:14:790 Team/(5455:5462): Posicion X recibida: 4
+[INFO] 20:07:14:790 Team/(5455:5462): Posicion Y recibida: 10
+[INFO] 20:07:14:790 Team/(5455:5462): Acknowledgement enviado al modulo Broker
+[INFO] 20:07:14:790 Team/(5455:5462): Appeared recibido de BROKER
+[INFO] 20:07:14:790 Team/(5455:5462): El pokemon recibido vaporeon no forma parte del objetivo global, se desestima el mensaje
+[INFO] 20:07:19:661 Team/(5455:5467): El entrenador 0 se encuentra en (2,8)
+[INFO] 20:07:23:144 Team/(5455:5466): Buscando deadlock...
+[INFO] 20:07:23:144 Team/(5455:5466): Obtengo entrenadores bloqueados
+[INFO] 20:07:23:144 Team/(5455:5466): Entrenadores bloqueados obtenidos
+[INFO] 20:07:23:144 Team/(5455:5466): No se han encontrado deadlocks
+[INFO] 20:07:24:662 Team/(5455:5467): El entrenador 0 ha llegado a (2,8)
+[INFO] 20:07:24:665 Team/(5455:5467): Cambiando estado de entrenador 0 de Estado executing a Estado blocked
+[INFO] 20:07:24:665 Team/(5455:5467): Estado de entrenador 0 cambiado a Estado blocked. Razon del cambio: Se ha enviado un catch
+[INFO] 20:07:24:665 Team/(5455:5467): Entrenador 0 enviando catch para el pokemon onix en (2,8)
+[INFO] 20:07:29:668 Team/(5455:5467): El entrenador 0 ha enviado el catch para el pokemon onix en (2,8) correctamente por el socket 10
+[INFO] 20:07:29:669 Team/(5455:5467): Recibiendo ID del CATCH enviado al Broker
+[INFO] 20:07:29:690 Team/(5455:5467): El id recibido es: 56
+[INFO] 20:07:29:690 Team/(5455:5467): Id del catch enviado por el entrenador 0 para el pokemon onix en (2,8) recibido correctamente por el socket 10 y es igual a 56
+[INFO] 20:07:29:690 Team/(5455:5469): Cambiando estado de entrenador 2 de Estado ready a Estado executing
+[INFO] 20:07:29:690 Team/(5455:5469): Estado de entrenador 2 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de atrapar pokemon gengar
+[INFO] 20:07:29:690 Team/(5455:5469): Entrenador 2 esta atrapando pokemon gengar ubicado en (6,6)
+[INFO] 20:07:29:690 Team/(5455:5469): El entrenador 2 se esta moviendo de (5,2) a (6,6)
+[INFO] 20:07:29:691 Team/(5455:5469): El entrenador 2 se encuentra en (5,3)
+[INFO] 20:07:33:137 Team/(5455:5465): Iniciando verificacion de conexion con Broker...
+[INFO] 20:07:33:138 Team/(5455:5465): Conexion con Broker en buen estado, verificando nuevamente en 30 segundos
+[INFO] 20:07:34:691 Team/(5455:5469): El entrenador 2 se encuentra en (5,4)
+[INFO] 20:07:34:738 Team/(5455:5463): Recibiendo mensaje Caught
+[INFO] 20:07:34:738 Team/(5455:5463): Recibiendo tamanio total
+[INFO] 20:07:34:738 Team/(5455:5463): Tamanio total recibido: 20
+[INFO] 20:07:34:738 Team/(5455:5463): Id recibido: 57
+[INFO] 20:07:34:738 Team/(5455:5463): Id correlativo recibido: 56
+[INFO] 20:07:34:738 Team/(5455:5463): Flag atrapado recibido: 1
+[INFO] 20:07:34:738 Team/(5455:5463): Acknowledgement enviado al modulo Broker
+[INFO] 20:07:34:739 Team/(5455:5463): Caught recibido del Broker en socket 8
+[INFO] 20:07:34:739 Team/(5455:5458): Planificando mensaje caught con id correlativo 56 y flag de recibido 1
+[INFO] 20:07:34:739 Team/(5455:5458): Entrenador 0 adquiriendo pokemon onix
+[INFO] 20:07:34:739 Team/(5455:5458): El entrenador 0 ha adquirido al pokemon onix
+[INFO] 20:07:34:739 Team/(5455:5458): no hago nada porque el entrenador tiene objetivos pero no pokebolas
+[INFO] 20:07:34:739 Team/(5455:5458): Cambiando tarea de entrenador 0 de Atrapar pokemon a No hacer nada
+[INFO] 20:07:34:739 Team/(5455:5458): Tarea de entrenador 0 cambiada a No hacer nada
+[INFO] 20:07:39:693 Team/(5455:5469): El entrenador 2 se encuentra en (5,5)
+[INFO] 20:07:43:145 Team/(5455:5466): Buscando deadlock...
+[INFO] 20:07:43:145 Team/(5455:5466): Obtengo entrenadores bloqueados
+[INFO] 20:07:43:146 Team/(5455:5466): Entrenador 0 agregado a la lista de bloqueados
+[INFO] 20:07:43:146 Team/(5455:5466): Entrenadores bloqueados obtenidos
+[INFO] 20:07:43:146 Team/(5455:5466): Cantidad de entrenadores bloqueados para buscar deadlocks: 1
+[INFO] 20:07:43:146 Team/(5455:5466): Agregando hijos para entrenador 0
+[INFO] 20:07:43:146 Team/(5455:5466): Liberando arbol luego de no encontrar deadlock
+[INFO] 20:07:43:147 Team/(5455:5466): No se han encontrado deadlocks
+[INFO] 20:07:44:695 Team/(5455:5469): El entrenador 2 se encuentra en (5,6)
+[INFO] 20:07:49:697 Team/(5455:5469): El entrenador 2 se encuentra en (6,6)
+[INFO] 20:07:54:698 Team/(5455:5469): El entrenador 2 ha llegado a (6,6)
+[INFO] 20:07:54:700 Team/(5455:5469): Cambiando estado de entrenador 2 de Estado executing a Estado blocked
+[INFO] 20:07:54:700 Team/(5455:5469): Estado de entrenador 2 cambiado a Estado blocked. Razon del cambio: Se ha enviado un catch
+[INFO] 20:07:54:700 Team/(5455:5469): Entrenador 2 enviando catch para el pokemon gengar en (6,6)
+[INFO] 20:07:59:702 Team/(5455:5469): El entrenador 2 ha enviado el catch para el pokemon gengar en (6,6) correctamente por el socket 10
+[INFO] 20:07:59:704 Team/(5455:5469): Recibiendo ID del CATCH enviado al Broker
+[INFO] 20:07:59:720 Team/(5455:5469): El id recibido es: 58
+[INFO] 20:07:59:724 Team/(5455:5469): Id del catch enviado por el entrenador 2 para el pokemon gengar en (6,6) recibido correctamente por el socket 10 y es igual a 58
+[INFO] 20:07:59:724 Team/(5455:5468): Cambiando estado de entrenador 1 de Estado ready a Estado executing
+[INFO] 20:07:59:724 Team/(5455:5468): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de atrapar pokemon squirtle
+[INFO] 20:07:59:724 Team/(5455:5468): Entrenador 1 esta atrapando pokemon squirtle ubicado en (5,5)
+[INFO] 20:07:59:724 Team/(5455:5468): El entrenador 1 se esta moviendo de (9,9) a (5,5)
+[INFO] 20:07:59:724 Team/(5455:5468): El entrenador 1 se encuentra en (9,8)
+[INFO] 20:08:03:139 Team/(5455:5465): Iniciando verificacion de conexion con Broker...
+[INFO] 20:08:03:139 Team/(5455:5465): Conexion con Broker en buen estado, verificando nuevamente en 30 segundos
+[INFO] 20:08:03:147 Team/(5455:5466): Buscando deadlock...
+[INFO] 20:08:03:147 Team/(5455:5466): Obtengo entrenadores bloqueados
+[INFO] 20:08:03:147 Team/(5455:5466): Entrenador 0 agregado a la lista de bloqueados
+[INFO] 20:08:03:148 Team/(5455:5466): Entrenadores bloqueados obtenidos
+[INFO] 20:08:03:148 Team/(5455:5466): Cantidad de entrenadores bloqueados para buscar deadlocks: 1
+[INFO] 20:08:03:148 Team/(5455:5466): Agregando hijos para entrenador 0
+[INFO] 20:08:03:148 Team/(5455:5466): Liberando arbol luego de no encontrar deadlock
+[INFO] 20:08:03:148 Team/(5455:5466): No se han encontrado deadlocks
+[INFO] 20:08:04:725 Team/(5455:5468): El entrenador 1 se encuentra en (9,7)
+[INFO] 20:08:04:794 Team/(5455:5463): Recibiendo mensaje Caught
+[INFO] 20:08:04:794 Team/(5455:5463): Recibiendo tamanio total
+[INFO] 20:08:04:795 Team/(5455:5463): Tamanio total recibido: 20
+[INFO] 20:08:04:795 Team/(5455:5463): Id recibido: 59
+[INFO] 20:08:04:795 Team/(5455:5463): Id correlativo recibido: 58
+[INFO] 20:08:04:795 Team/(5455:5463): Flag atrapado recibido: 1
+[INFO] 20:08:04:795 Team/(5455:5463): Acknowledgement enviado al modulo Broker
+[INFO] 20:08:04:795 Team/(5455:5463): Caught recibido del Broker en socket 8
+[INFO] 20:08:04:795 Team/(5455:5458): Planificando mensaje caught con id correlativo 58 y flag de recibido 1
+[INFO] 20:08:04:795 Team/(5455:5458): Entrenador 2 adquiriendo pokemon gengar
+[INFO] 20:08:04:795 Team/(5455:5458): El entrenador 2 ha adquirido al pokemon gengar
+[INFO] 20:08:04:795 Team/(5455:5458): no hago nada porque el entrenador tiene objetivos pero no pokebolas
+[INFO] 20:08:04:795 Team/(5455:5458): Cambiando tarea de entrenador 2 de Atrapar pokemon a No hacer nada
+[INFO] 20:08:04:795 Team/(5455:5458): Tarea de entrenador 2 cambiada a No hacer nada
+[INFO] 20:08:09:727 Team/(5455:5468): El entrenador 1 se encuentra en (9,6)
+[INFO] 20:08:09:848 Team/(5455:5463): Recibiendo mensaje Caught
+[INFO] 20:08:09:848 Team/(5455:5463): Recibiendo tamanio total
+[INFO] 20:08:09:848 Team/(5455:5463): Tamanio total recibido: 20
+[INFO] 20:08:09:848 Team/(5455:5463): Id recibido: 62
+[INFO] 20:08:09:848 Team/(5455:5463): Id correlativo recibido: 60
+[INFO] 20:08:09:848 Team/(5455:5463): Flag atrapado recibido: 1
+[INFO] 20:08:09:848 Team/(5455:5463): Acknowledgement enviado al modulo Broker
+[INFO] 20:08:09:848 Team/(5455:5463): Caught recibido del Broker en socket 8
+[INFO] 20:08:14:729 Team/(5455:5468): El entrenador 1 se encuentra en (9,5)
+[INFO] 20:08:14:883 Team/(5455:5463): Recibiendo mensaje Caught
+[INFO] 20:08:14:883 Team/(5455:5463): Recibiendo tamanio total
+[INFO] 20:08:14:883 Team/(5455:5463): Tamanio total recibido: 20
+[INFO] 20:08:14:883 Team/(5455:5463): Id recibido: 64
+[INFO] 20:08:14:883 Team/(5455:5463): Id correlativo recibido: 61
+[INFO] 20:08:14:883 Team/(5455:5463): Flag atrapado recibido: 1
+[INFO] 20:08:14:883 Team/(5455:5463): Acknowledgement enviado al modulo Broker
+[INFO] 20:08:14:883 Team/(5455:5463): Caught recibido del Broker en socket 8
+[INFO] 20:08:19:731 Team/(5455:5468): El entrenador 1 se encuentra en (8,5)
+[INFO] 20:08:19:921 Team/(5455:5463): Recibiendo mensaje Caught
+[INFO] 20:08:19:921 Team/(5455:5463): Recibiendo tamanio total
+[INFO] 20:08:19:921 Team/(5455:5463): Tamanio total recibido: 20
+[INFO] 20:08:19:921 Team/(5455:5463): Id recibido: 65
+[INFO] 20:08:19:921 Team/(5455:5463): Id correlativo recibido: 63
+[INFO] 20:08:19:921 Team/(5455:5463): Flag atrapado recibido: 1
+[INFO] 20:08:19:921 Team/(5455:5463): Acknowledgement enviado al modulo Broker
+[INFO] 20:08:19:921 Team/(5455:5463): Caught recibido del Broker en socket 8
+[INFO] 20:08:23:149 Team/(5455:5466): Buscando deadlock...
+[INFO] 20:08:23:149 Team/(5455:5466): Obtengo entrenadores bloqueados
+[INFO] 20:08:23:149 Team/(5455:5466): Entrenador 0 agregado a la lista de bloqueados
+[INFO] 20:08:23:150 Team/(5455:5466): Entrenador 2 agregado a la lista de bloqueados
+[INFO] 20:08:23:150 Team/(5455:5466): Entrenadores bloqueados obtenidos
+[INFO] 20:08:23:150 Team/(5455:5466): Cantidad de entrenadores bloqueados para buscar deadlocks: 2
+[INFO] 20:08:23:150 Team/(5455:5466): Agregando hijos para entrenador 0
+[INFO] 20:08:23:150 Team/(5455:5466): Entrenador 2 necesita el pokemon onix
+[INFO] 20:08:23:150 Team/(5455:5466): Agregando hijos para entrenador 2
+[INFO] 20:08:23:150 Team/(5455:5466): Liberando arbol luego de no encontrar deadlock
+[INFO] 20:08:23:150 Team/(5455:5466): Cantidad de entrenadores bloqueados para buscar deadlocks: 2
+[INFO] 20:08:23:151 Team/(5455:5466): Agregando hijos para entrenador 2
+[INFO] 20:08:23:151 Team/(5455:5466): Liberando arbol luego de no encontrar deadlock
+[INFO] 20:08:23:151 Team/(5455:5466): No se han encontrado deadlocks
+[INFO] 20:08:24:732 Team/(5455:5468): El entrenador 1 se encuentra en (7,5)
+[INFO] 20:08:29:734 Team/(5455:5468): El entrenador 1 se encuentra en (6,5)
+[INFO] 20:08:33:140 Team/(5455:5465): Iniciando verificacion de conexion con Broker...
+[INFO] 20:08:33:140 Team/(5455:5465): Conexion con Broker en buen estado, verificando nuevamente en 30 segundos
+[INFO] 20:08:34:736 Team/(5455:5468): El entrenador 1 se encuentra en (5,5)
+[INFO] 20:08:39:738 Team/(5455:5468): El entrenador 1 ha llegado a (5,5)
+[INFO] 20:08:39:739 Team/(5455:5468): Cambiando estado de entrenador 1 de Estado executing a Estado blocked
+[INFO] 20:08:39:739 Team/(5455:5468): Estado de entrenador 1 cambiado a Estado blocked. Razon del cambio: Se ha enviado un catch
+[INFO] 20:08:39:740 Team/(5455:5468): Entrenador 1 enviando catch para el pokemon squirtle en (5,5)
+[INFO] 20:08:43:151 Team/(5455:5466): Buscando deadlock...
+[INFO] 20:08:43:152 Team/(5455:5466): Obtengo entrenadores bloqueados
+[INFO] 20:08:43:152 Team/(5455:5466): Entrenador 0 agregado a la lista de bloqueados
+[INFO] 20:08:43:152 Team/(5455:5466): Entrenador 2 agregado a la lista de bloqueados
+[INFO] 20:08:43:152 Team/(5455:5466): Entrenadores bloqueados obtenidos
+[INFO] 20:08:43:152 Team/(5455:5466): Cantidad de entrenadores bloqueados para buscar deadlocks: 2
+[INFO] 20:08:43:153 Team/(5455:5466): Agregando hijos para entrenador 0
+[INFO] 20:08:43:153 Team/(5455:5466): Entrenador 2 necesita el pokemon onix
+[INFO] 20:08:43:153 Team/(5455:5466): Agregando hijos para entrenador 2
+[INFO] 20:08:43:153 Team/(5455:5466): Liberando arbol luego de no encontrar deadlock
+[INFO] 20:08:43:153 Team/(5455:5466): Cantidad de entrenadores bloqueados para buscar deadlocks: 2
+[INFO] 20:08:43:153 Team/(5455:5466): Agregando hijos para entrenador 2
+[INFO] 20:08:43:153 Team/(5455:5466): Liberando arbol luego de no encontrar deadlock
+[INFO] 20:08:43:154 Team/(5455:5466): No se han encontrado deadlocks
+[INFO] 20:08:44:742 Team/(5455:5468): El entrenador 1 ha enviado el catch para el pokemon squirtle en (5,5) correctamente por el socket 10
+[INFO] 20:08:44:744 Team/(5455:5468): Recibiendo ID del CATCH enviado al Broker
+[INFO] 20:08:44:762 Team/(5455:5468): El id recibido es: 66
+[INFO] 20:08:44:765 Team/(5455:5468): Id del catch enviado por el entrenador 1 para el pokemon squirtle en (5,5) recibido correctamente por el socket 10 y es igual a 66
+[INFO] 20:08:49:835 Team/(5455:5463): Recibiendo mensaje Caught
+[INFO] 20:08:49:835 Team/(5455:5463): Recibiendo tamanio total
+[INFO] 20:08:49:835 Team/(5455:5463): Tamanio total recibido: 20
+[INFO] 20:08:49:835 Team/(5455:5463): Id recibido: 67
+[INFO] 20:08:49:835 Team/(5455:5463): Id correlativo recibido: 66
+[INFO] 20:08:49:835 Team/(5455:5463): Flag atrapado recibido: 1
+[INFO] 20:08:49:835 Team/(5455:5463): Acknowledgement enviado al modulo Broker
+[INFO] 20:08:49:835 Team/(5455:5463): Caught recibido del Broker en socket 8
+[INFO] 20:08:49:835 Team/(5455:5458): Planificando mensaje caught con id correlativo 66 y flag de recibido 1
+[INFO] 20:08:49:835 Team/(5455:5458): Entrenador 1 adquiriendo pokemon squirtle
+[INFO] 20:08:49:835 Team/(5455:5458): El entrenador 1 ha adquirido al pokemon squirtle
+[INFO] 20:08:49:836 Team/(5455:5458): no hago nada porque el entrenador tiene objetivos pero no pokebolas
+[INFO] 20:08:49:836 Team/(5455:5458): Cambiando tarea de entrenador 1 de Atrapar pokemon a No hacer nada
+[INFO] 20:08:49:836 Team/(5455:5458): Tarea de entrenador 1 cambiada a No hacer nada
+[INFO] 20:09:03:141 Team/(5455:5465): Iniciando verificacion de conexion con Broker...
+[INFO] 20:09:03:141 Team/(5455:5465): Conexion con Broker en buen estado, verificando nuevamente en 30 segundos
+[INFO] 20:09:03:155 Team/(5455:5466): Buscando deadlock...
+[INFO] 20:09:03:156 Team/(5455:5466): Obtengo entrenadores bloqueados
+[INFO] 20:09:03:156 Team/(5455:5466): Entrenador 0 agregado a la lista de bloqueados
+[INFO] 20:09:03:156 Team/(5455:5466): Entrenador 1 agregado a la lista de bloqueados
+[INFO] 20:09:03:156 Team/(5455:5466): Entrenador 2 agregado a la lista de bloqueados
+[INFO] 20:09:03:156 Team/(5455:5466): Entrenadores bloqueados obtenidos
+[INFO] 20:09:03:156 Team/(5455:5466): Cantidad de entrenadores bloqueados para buscar deadlocks: 3
+[INFO] 20:09:03:156 Team/(5455:5466): Agregando hijos para entrenador 0
+[INFO] 20:09:03:156 Team/(5455:5466): Entrenador 2 necesita el pokemon onix
+[INFO] 20:09:03:156 Team/(5455:5466): Agregando hijos para entrenador 2
+[INFO] 20:09:03:156 Team/(5455:5466): Entrenador 1 necesita el pokemon gengar
+[INFO] 20:09:03:156 Team/(5455:5466): Agregando hijos para entrenador 1
+[INFO] 20:09:03:156 Team/(5455:5466): Entrenador 0 necesita el pokemon squirtle
+[INFO] 20:09:03:156 Team/(5455:5466): Armando deadlock
+[INFO] 20:09:03:156 Team/(5455:5466): Agregando entrenador 0 al deadlock
+[INFO] 20:09:03:156 Team/(5455:5466): Entrenador 0 agregado al deadlock
+[INFO] 20:09:03:156 Team/(5455:5466): Agregando entrenador 1 al deadlock
+[INFO] 20:09:03:156 Team/(5455:5466): Entrenador 1 agregado al deadlock
+[INFO] 20:09:03:157 Team/(5455:5466): Agregando entrenador 2 al deadlock
+[INFO] 20:09:03:157 Team/(5455:5466): Entrenador 2 agregado al deadlock
+[INFO] 20:09:03:157 Team/(5455:5466): Agregando pokemon squirtle al deadlock
+[INFO] 20:09:03:157 Team/(5455:5466): Pokemon squirtle agregado al deadlock
+[INFO] 20:09:03:157 Team/(5455:5466): Agregando pokemon gengar al deadlock
+[INFO] 20:09:03:157 Team/(5455:5466): Pokemon gengar agregado al deadlock
+[INFO] 20:09:03:157 Team/(5455:5466): Agregando pokemon onix al deadlock
+[INFO] 20:09:03:157 Team/(5455:5466): Pokemon onix agregado al deadlock
+[INFO] 20:09:03:157 Team/(5455:5466): Liberando arbol luego de encontrar deadlock
+[INFO] 20:09:03:157 Team/(5455:5466): Deadlock obtenido involucrando a 3 entrenadores
+[INFO] 20:09:03:157 Team/(5455:5459): Planificando tratamiento de deadlock
+[INFO] 20:09:03:157 Team/(5455:5459): Cambiando tarea de entrenador 0 de No hacer nada a Intercambiar pokemon
+[INFO] 20:09:03:157 Team/(5455:5459): Tarea de entrenador 0 cambiada a Intercambiar pokemon
+[INFO] 20:09:03:157 Team/(5455:5459): Cambiando estado de entrenador 0 de Estado blocked a Estado ready
+[INFO] 20:09:03:157 Team/(5455:5459): Estado de entrenador 0 cambiado a Estado ready. Razon del cambio: Entrenador planificado para intercambiar pokemones
+[INFO] 20:09:03:158 Team/(5455:5467): Entrenador 0 entro por Intercambiar Pokemon
+[INFO] 20:09:03:158 Team/(5455:5467): Cambiando estado de entrenador 0 de Estado ready a Estado executing
+[INFO] 20:09:03:158 Team/(5455:5467): Estado de entrenador 0 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de intercambiar pokemon
+[INFO] 20:09:03:158 Team/(5455:5467): entrenador 0 cambia su estado a EXECUTING
+[INFO] 20:09:03:158 Team/(5455:5467): Parametros del deadlock cargados
+[INFO] 20:09:03:158 Team/(5455:5467): El entrenador 0 se esta moviendo de (2,8) a (5,5)
+[INFO] 20:09:03:158 Team/(5455:5467): El entrenador 0 se encuentra en (2,7)
+[INFO] 20:09:08:158 Team/(5455:5467): El entrenador 0 se encuentra en (2,6)
+[INFO] 20:09:13:159 Team/(5455:5467): El entrenador 0 se encuentra en (2,5)
+[INFO] 20:09:18:160 Team/(5455:5467): El entrenador 0 se encuentra en (3,5)
+[INFO] 20:09:23:158 Team/(5455:5466): Buscando deadlock...
+[INFO] 20:09:23:159 Team/(5455:5466): Obtengo entrenadores bloqueados
+[INFO] 20:09:23:159 Team/(5455:5466): Entrenador 1 agregado a la lista de bloqueados
+[INFO] 20:09:23:159 Team/(5455:5466): Entrenador 2 agregado a la lista de bloqueados
+[INFO] 20:09:23:159 Team/(5455:5466): Entrenadores bloqueados obtenidos
+[INFO] 20:09:23:159 Team/(5455:5466): Cantidad de entrenadores bloqueados para buscar deadlocks: 2
+[INFO] 20:09:23:159 Team/(5455:5466): Agregando hijos para entrenador 1
+[INFO] 20:09:23:160 Team/(5455:5466): Liberando arbol luego de no encontrar deadlock
+[INFO] 20:09:23:160 Team/(5455:5466): Cantidad de entrenadores bloqueados para buscar deadlocks: 2
+[INFO] 20:09:23:160 Team/(5455:5466): Agregando hijos para entrenador 2
+[INFO] 20:09:23:160 Team/(5455:5466): Entrenador 1 necesita el pokemon gengar
+[INFO] 20:09:23:161 Team/(5455:5467): El entrenador 0 se encuentra en (4,5)
+[INFO] 20:09:23:161 Team/(5455:5466): Agregando hijos para entrenador 1
+[INFO] 20:09:23:161 Team/(5455:5466): Liberando arbol luego de no encontrar deadlock
+[INFO] 20:09:23:161 Team/(5455:5466): No se han encontrado deadlocks
+[INFO] 20:09:28:161 Team/(5455:5467): El entrenador 0 se encuentra en (5,5)
+[INFO] 20:09:33:142 Team/(5455:5465): Iniciando verificacion de conexion con Broker...
+[INFO] 20:09:33:142 Team/(5455:5465): Conexion con Broker en buen estado, verificando nuevamente en 30 segundos
+[INFO] 20:09:33:162 Team/(5455:5467): El entrenador 0 ha llegado a (5,5)
+[INFO] 20:09:33:162 Team/(5455:5467): Empezando el intercambio de pokemon onix y pokemon squirtle entre entrenador 0 y entrenador 1
+[INFO] 20:09:33:162 Team/(5455:5467): Entrenadores 0 y 1 intercambiando pokemones onix y squirtle
+[INFO] 20:09:43:162 Team/(5455:5466): Buscando deadlock...
+[INFO] 20:09:43:162 Team/(5455:5466): Obtengo entrenadores bloqueados
+[INFO] 20:09:43:162 Team/(5455:5466): Entrenador 1 agregado a la lista de bloqueados
+[INFO] 20:09:43:163 Team/(5455:5466): Entrenador 2 agregado a la lista de bloqueados
+[INFO] 20:09:43:163 Team/(5455:5466): Entrenadores bloqueados obtenidos
+[INFO] 20:09:43:163 Team/(5455:5466): Cantidad de entrenadores bloqueados para buscar deadlocks: 2
+[INFO] 20:09:43:163 Team/(5455:5466): Agregando hijos para entrenador 1
+[INFO] 20:09:43:163 Team/(5455:5466): Liberando arbol luego de no encontrar deadlock
+[INFO] 20:09:43:163 Team/(5455:5466): Cantidad de entrenadores bloqueados para buscar deadlocks: 2
+[INFO] 20:09:43:164 Team/(5455:5466): Agregando hijos para entrenador 2
+[INFO] 20:09:43:164 Team/(5455:5466): Entrenador 1 necesita el pokemon gengar
+[INFO] 20:09:43:164 Team/(5455:5466): Agregando hijos para entrenador 1
+[INFO] 20:09:43:164 Team/(5455:5466): Liberando arbol luego de no encontrar deadlock
+[INFO] 20:09:43:164 Team/(5455:5466): No se han encontrado deadlocks
+[INFO] 20:09:58:166 Team/(5455:5467): Entrenador 0 eliminando pokemon onix
+[INFO] 20:09:58:166 Team/(5455:5467): El entrenador 0 ha eliminado al pokemon onix
+[INFO] 20:09:58:167 Team/(5455:5467): Entrenador 1 eliminando pokemon squirtle
+[INFO] 20:09:58:167 Team/(5455:5467): El entrenador 1 ha eliminado al pokemon squirtle
+[INFO] 20:09:58:168 Team/(5455:5467): Entrenador 0 adquiriendo pokemon squirtle
+[INFO] 20:09:58:168 Team/(5455:5467): El entrenador 0 ha adquirido al pokemon squirtle
+[INFO] 20:09:58:168 Team/(5455:5467): Entrenador 1 adquiriendo pokemon onix
+[INFO] 20:09:58:168 Team/(5455:5467): El entrenador 1 ha adquirido al pokemon onix
+[INFO] 20:09:58:168 Team/(5455:5467): Entrenadores 0 y 1 han intercambiado pokemones onix y squirtle
+[INFO] 20:09:58:168 Team/(5455:5467): Intercambio realizado
+[INFO] 20:09:58:168 Team/(5455:5459): Planificando tratamiento de deadlock
+[INFO] 20:09:58:168 Team/(5455:5459): Cambiando tarea de entrenador 1 de No hacer nada a Intercambiar pokemon
+[INFO] 20:09:58:169 Team/(5455:5459): Tarea de entrenador 1 cambiada a Intercambiar pokemon
+[INFO] 20:09:58:169 Team/(5455:5459): Cambiando estado de entrenador 1 de Estado blocked a Estado ready
+[INFO] 20:09:58:169 Team/(5455:5459): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Entrenador planificado para intercambiar pokemones
+[INFO] 20:09:58:169 Team/(5455:5467): Cambiando estado de entrenador 0 de Estado executing a Estado exit
+[INFO] 20:09:58:169 Team/(5455:5467): Estado de entrenador 0 cambiado a Estado exit. Razon del cambio: Ha terminado su objetivo
+[INFO] 20:09:58:169 Team/(5455:5467): Cambiando tarea de entrenador 0 de Intercambiar pokemon a No hacer nada
+[INFO] 20:09:58:169 Team/(5455:5467): Tarea de entrenador 0 cambiada a No hacer nada
+[INFO] 20:09:58:170 Team/(5455:5468): Entrenador 1 entro por Intercambiar Pokemon
+[INFO] 20:09:58:170 Team/(5455:5468): Cambiando estado de entrenador 1 de Estado ready a Estado executing
+[INFO] 20:09:58:170 Team/(5455:5468): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de intercambiar pokemon
+[INFO] 20:09:58:170 Team/(5455:5468): entrenador 1 cambia su estado a EXECUTING
+[INFO] 20:09:58:170 Team/(5455:5468): Parametros del deadlock cargados
+[INFO] 20:09:58:170 Team/(5455:5468): El entrenador 1 se esta moviendo de (5,5) a (6,6)
+[INFO] 20:09:58:170 Team/(5455:5468): El entrenador 1 se encuentra en (5,6)
+[INFO] 20:09:58:170 Team/(5455:5467): Entrenador 0 ha terminado
+[INFO] 20:10:03:143 Team/(5455:5465): Iniciando verificacion de conexion con Broker...
+[INFO] 20:10:03:144 Team/(5455:5465): Conexion con Broker en buen estado, verificando nuevamente en 30 segundos
+[INFO] 20:10:03:165 Team/(5455:5466): Buscando deadlock...
+[INFO] 20:10:03:165 Team/(5455:5466): Obtengo entrenadores bloqueados
+[INFO] 20:10:03:165 Team/(5455:5466): Entrenador 2 agregado a la lista de bloqueados
+[INFO] 20:10:03:165 Team/(5455:5466): Entrenadores bloqueados obtenidos
+[INFO] 20:10:03:165 Team/(5455:5466): Cantidad de entrenadores bloqueados para buscar deadlocks: 1
+[INFO] 20:10:03:165 Team/(5455:5466): Agregando hijos para entrenador 2
+[INFO] 20:10:03:165 Team/(5455:5466): Liberando arbol luego de no encontrar deadlock
+[INFO] 20:10:03:165 Team/(5455:5466): No se han encontrado deadlocks
+[INFO] 20:10:03:171 Team/(5455:5468): El entrenador 1 se encuentra en (6,6)
+[INFO] 20:10:08:171 Team/(5455:5468): El entrenador 1 ha llegado a (6,6)
+[INFO] 20:10:08:172 Team/(5455:5468): Empezando el intercambio de pokemon onix y pokemon gengar entre entrenador 1 y entrenador 2
+[INFO] 20:10:08:172 Team/(5455:5468): Entrenadores 1 y 2 intercambiando pokemones onix y gengar
+[INFO] 20:10:23:166 Team/(5455:5466): Buscando deadlock...
+[INFO] 20:10:23:166 Team/(5455:5466): Obtengo entrenadores bloqueados
+[INFO] 20:10:23:166 Team/(5455:5466): Entrenador 2 agregado a la lista de bloqueados
+[INFO] 20:10:23:166 Team/(5455:5466): Entrenadores bloqueados obtenidos
+[INFO] 20:10:23:167 Team/(5455:5466): Cantidad de entrenadores bloqueados para buscar deadlocks: 1
+[INFO] 20:10:23:167 Team/(5455:5466): Agregando hijos para entrenador 2
+[INFO] 20:10:23:167 Team/(5455:5466): Liberando arbol luego de no encontrar deadlock
+[INFO] 20:10:23:167 Team/(5455:5466): No se han encontrado deadlocks
+[INFO] 20:10:33:144 Team/(5455:5465): Iniciando verificacion de conexion con Broker...
+[INFO] 20:10:33:145 Team/(5455:5465): Conexion con Broker en buen estado, verificando nuevamente en 30 segundos
+[INFO] 20:10:33:176 Team/(5455:5468): Entrenador 1 eliminando pokemon onix
+[INFO] 20:10:33:176 Team/(5455:5468): El entrenador 1 ha eliminado al pokemon onix
+[INFO] 20:10:33:176 Team/(5455:5468): Entrenador 2 eliminando pokemon gengar
+[INFO] 20:10:33:176 Team/(5455:5468): El entrenador 2 ha eliminado al pokemon gengar
+[INFO] 20:10:33:176 Team/(5455:5468): Entrenador 1 adquiriendo pokemon gengar
+[INFO] 20:10:33:176 Team/(5455:5468): El entrenador 1 ha adquirido al pokemon gengar
+[INFO] 20:10:33:176 Team/(5455:5468): Entrenador 2 adquiriendo pokemon onix
+[INFO] 20:10:33:176 Team/(5455:5468): El entrenador 2 ha adquirido al pokemon onix
+[INFO] 20:10:33:176 Team/(5455:5468): Entrenadores 1 y 2 han intercambiado pokemones onix y gengar
+[INFO] 20:10:33:176 Team/(5455:5468): Intercambio realizado
+[INFO] 20:10:33:176 Team/(5455:5468): Cambiando estado de entrenador 2 de Estado blocked a Estado exit
+[INFO] 20:10:33:176 Team/(5455:5468): Estado de entrenador 2 cambiado a Estado exit. Razon del cambio: Ha terminado su objetivo
+[INFO] 20:10:33:177 Team/(5455:5468): Cambiando tarea de entrenador 2 de No hacer nada a No hacer nada
+[INFO] 20:10:33:177 Team/(5455:5468): Tarea de entrenador 2 cambiada a No hacer nada
+[INFO] 20:10:33:177 Team/(5455:5469): Entrenador 2 ha terminado
+[INFO] 20:10:33:177 Team/(5455:5468): Cambiando estado de entrenador 1 de Estado executing a Estado exit
+[INFO] 20:10:33:177 Team/(5455:5468): Estado de entrenador 1 cambiado a Estado exit. Razon del cambio: Ha terminado su objetivo
+[INFO] 20:10:33:177 Team/(5455:5468): Cambiando tarea de entrenador 1 de Intercambiar pokemon a No hacer nada
+[INFO] 20:10:33:177 Team/(5455:5468): Tarea de entrenador 1 cambiada a No hacer nada
+[INFO] 20:10:33:177 Team/(5455:5468): Entrenador 1 ha terminado
+[INFO] 20:10:33:177 Team/(5455:5455): Proceso Team terminado. Cantidad de ciclos de CPU totales: 57
+[INFO] 20:10:33:178 Team/(5455:5455): Proceso Team terminado. Cantidad de ciclos de CPU del entrenador 0: 18
+[INFO] 20:10:33:178 Team/(5455:5455): Proceso Team terminado. Cantidad de ciclos de CPU del entrenador 1: 30
+[INFO] 20:10:33:178 Team/(5455:5455): Proceso Team terminado. Cantidad de ciclos de CPU del entrenador 2: 9
+[INFO] 20:10:33:178 Team/(5455:5455): Proceso Team terminado. Cantidad de cambios de contexto realizados: 22
+[INFO] 20:10:33:178 Team/(5455:5455): Proceso Team terminado. Cantidad de deadlocks encontrados y tratados: 1
+[INFO] 20:20:52:829 Team/(5879:5879): logger extenso iniciado
+[INFO] 20:20:52:830 Team/(5879:5879): logger de la catedra iniciado
+[INFO] 20:20:52:830 Team/(5879:5879): La IP es: 127.0.0.1
+[INFO] 20:20:52:830 Team/(5879:5879): El puerto es: 4445
+[INFO] 20:20:52:831 Team/(5879:5879): La IP del Broker es: 127.0.0.1
+[INFO] 20:20:52:831 Team/(5879:5879): El puerto del Broker es: 4444
+[INFO] 20:20:52:832 Team/(5879:5879): El Id de Team es: 5
+[INFO] 20:20:52:836 Team/(5879:5879): La busqueda de deadlocks se corre cada 20 segundos
+[INFO] 20:20:52:836 Team/(5879:5879): La conexion al Broker se verifica cada 30 segundos
+[INFO] 20:20:52:836 Team/(5879:5879): EL tiempo de retardo de CPU es cada 5 segundos
+[INFO] 20:20:52:836 Team/(5879:5879): EL algoritmo de planificacion es FIFO
+[INFO] 20:20:52:836 Team/(5879:5879): El id del modulo es 1780132405
+[INFO] 20:20:52:837 Team/(5879:5879): Objetivos para el entrenador 0: Pikachu|Squirtle
+[INFO] 20:20:52:837 Team/(5879:5879): Posiciones para el entrenador 0: 1|3
+[INFO] 20:20:52:837 Team/(5879:5879): Pokemones para el entrenador 0: Pikachu
+[INFO] 20:20:52:837 Team/(5879:5879): Llego token objetivo pikachu para el entrenador 0
+[INFO] 20:20:52:837 Team/(5879:5879): Llego token objetivo squirtle para el entrenador 0
+[INFO] 20:20:52:837 Team/(5879:5879): Llego token pokemon pikachu
+[INFO] 20:20:52:837 Team/(5879:5879): Posicion X del entrenador 0: 1
+[INFO] 20:20:52:837 Team/(5879:5879): Posicion Y del entrenador 0: 3
+[INFO] 20:20:52:838 Team/(5879:5879): Estado del entrenador 0: 1111
+[INFO] 20:20:52:838 Team/(5879:5879): Objetivo del entrenador 0: pikachu
+[INFO] 20:20:52:838 Team/(5879:5879): Objetivo del entrenador 0: squirtle
+[INFO] 20:20:52:838 Team/(5879:5879): Objetivo actual del entrenador 0: squirtle
+[INFO] 20:20:52:838 Team/(5879:5879): Pokemon del entrenador 0: pikachu
+[INFO] 20:20:52:838 Team/(5879:5879): Objetivos para el entrenador 1: Pikachu|Gengar
+[INFO] 20:20:52:838 Team/(5879:5879): Posiciones para el entrenador 1: 2|3
+[INFO] 20:20:52:838 Team/(5879:5879): Pokemones para el entrenador 1: 
+[INFO] 20:20:52:839 Team/(5879:5879): Llego token objetivo pikachu para el entrenador 1
+[INFO] 20:20:52:839 Team/(5879:5879): Llego token objetivo gengar para el entrenador 1
+[INFO] 20:20:52:839 Team/(5879:5879): No existen pokemones para el entrenador 1
+[INFO] 20:20:52:839 Team/(5879:5879): Posicion X del entrenador 1: 2
+[INFO] 20:20:52:839 Team/(5879:5879): Posicion Y del entrenador 1: 3
+[INFO] 20:20:52:839 Team/(5879:5879): Estado del entrenador 1: 1111
+[INFO] 20:20:52:839 Team/(5879:5879): Objetivo del entrenador 1: pikachu
+[INFO] 20:20:52:839 Team/(5879:5879): Objetivo del entrenador 1: gengar
+[INFO] 20:20:52:840 Team/(5879:5879): Objetivo actual del entrenador 1: pikachu
+[INFO] 20:20:52:840 Team/(5879:5879): Objetivo actual del entrenador 1: gengar
+[INFO] 20:20:52:840 Team/(5879:5879): Objetivos para el entrenador 2: Squirtle|Onix
+[INFO] 20:20:52:840 Team/(5879:5879): Posiciones para el entrenador 2: 3|2
+[INFO] 20:20:52:840 Team/(5879:5879): Pokemones para el entrenador 2: 
+[INFO] 20:20:52:840 Team/(5879:5879): Llego token objetivo squirtle para el entrenador 2
+[INFO] 20:20:52:840 Team/(5879:5879): Llego token objetivo onix para el entrenador 2
+[INFO] 20:20:52:840 Team/(5879:5879): No existen pokemones para el entrenador 2
+[INFO] 20:20:52:840 Team/(5879:5879): Posicion X del entrenador 2: 3
+[INFO] 20:20:52:841 Team/(5879:5879): Posicion Y del entrenador 2: 2
+[INFO] 20:20:52:841 Team/(5879:5879): Estado del entrenador 2: 1111
+[INFO] 20:20:52:841 Team/(5879:5879): Objetivo del entrenador 2: squirtle
+[INFO] 20:20:52:841 Team/(5879:5879): Objetivo del entrenador 2: onix
+[INFO] 20:20:52:841 Team/(5879:5879): Objetivo actual del entrenador 2: squirtle
+[INFO] 20:20:52:841 Team/(5879:5879): Objetivo actual del entrenador 2: onix
+[INFO] 20:20:52:841 Team/(5879:5879): Obteniendo objetivo global
+[INFO] 20:20:52:841 Team/(5879:5879): Objetivo global: squirtle
+[INFO] 20:20:52:841 Team/(5879:5879): Objetivo global: pikachu
+[INFO] 20:20:52:842 Team/(5879:5879): Objetivo global: gengar
+[INFO] 20:20:52:842 Team/(5879:5879): Objetivo global: squirtle
+[INFO] 20:20:52:842 Team/(5879:5879): Objetivo global: onix
+[INFO] 20:20:52:842 Team/(5879:5879): Objetivo global obtenido
+[INFO] 20:20:52:842 Team/(5879:5879): Obteniendo cantidad de cada pokemon a planificar
+[INFO] 20:20:52:842 Team/(5879:5879): Cantidad a planificar de squirtle: 1
+[INFO] 20:20:52:842 Team/(5879:5879): Cantidad a planificar de pikachu: 1
+[INFO] 20:20:52:842 Team/(5879:5879): Cantidad a planificar de gengar: 1
+[INFO] 20:20:52:842 Team/(5879:5879): Cantidad a planificar de squirtle: 2
+[INFO] 20:20:52:842 Team/(5879:5879): Cantidad a planificar de onix: 1
+[INFO] 20:20:52:842 Team/(5879:5879): Cantidad de cada pokemon a planificar obtenida
+[INFO] 20:20:52:843 Team/(5879:5879): Inicializando colas
+[INFO] 20:20:52:843 Team/(5879:5879): Iniciando semaforo de entrenadores libres en 3
+[INFO] 20:20:52:843 Team/(5879:5879): Colas inicializadas
+[INFO] 20:20:52:846 Team/(5879:5879): Mandando gets
+[INFO] 20:20:52:848 Team/(5879:5885): Escucho appeared de BROKER
+[INFO] 20:20:52:849 Team/(5879:5886): Escucho caught de BROKER
+[INFO] 20:20:52:849 Team/(5879:5890): Trabajo de entrenador 0 comenzado
+[INFO] 20:20:52:849 Team/(5879:5887): Escucho localized de BROKER
+[INFO] 20:20:52:849 Team/(5879:5888): Hilo de verificacion periodica de conexion con Broker iniciado
+[INFO] 20:20:52:849 Team/(5879:5889): Hilo de busqueda de deadlocks iniciado
+[INFO] 20:20:52:849 Team/(5879:5891): Trabajo de entrenador 1 comenzado
+[INFO] 20:20:52:849 Team/(5879:5892): Trabajo de entrenador 2 comenzado
+[INFO] 20:20:52:850 Team/(5879:5883): Hilo planificador de tratamiento de deadlocks iniciado
+[INFO] 20:20:52:850 Team/(5879:5894): Enviando get correspondiente al pokemon squirtle
+[INFO] 20:20:52:850 Team/(5879:5882): Hilo planificador de mensajes caught iniciado
+[INFO] 20:20:52:850 Team/(5879:5895): Enviando get correspondiente al pokemon pikachu
+[INFO] 20:20:52:850 Team/(5879:5896): Enviando get correspondiente al pokemon gengar
+[INFO] 20:20:52:851 Team/(5879:5897): Enviando get correspondiente al pokemon onix
+[INFO] 20:20:52:851 Team/(5879:5895): Mensaje GET correspondiente al pokemon pikachu enviado correctamente al BROKER a traves del socket 11
+[INFO] 20:20:52:852 Team/(5879:5896): Mensaje GET correspondiente al pokemon gengar enviado correctamente al BROKER a traves del socket 13
+[INFO] 20:20:52:852 Team/(5879:5894): Mensaje GET correspondiente al pokemon squirtle enviado correctamente al BROKER a traves del socket 10
+[INFO] 20:20:52:852 Team/(5879:5897): Mensaje GET correspondiente al pokemon onix enviado correctamente al BROKER a traves del socket 12
+[INFO] 20:20:52:852 Team/(5879:5895): Recibiendo ID del GET enviado por el Broker
+[INFO] 20:20:52:852 Team/(5879:5896): Recibiendo ID del GET enviado por el Broker
+[INFO] 20:20:52:852 Team/(5879:5894): Recibiendo ID del GET enviado por el Broker
+[INFO] 20:20:52:852 Team/(5879:5897): Recibiendo ID del GET enviado por el Broker
+[INFO] 20:20:52:852 Team/(5879:5881): Hilo planificador de pokemones iniciado
+[INFO] 20:20:52:861 Team/(5879:5880): Esperando mensajes de game boy en socket 5
+[INFO] 20:20:52:890 Team/(5879:5895): El id recibido es: 15
+[INFO] 20:20:52:892 Team/(5879:5895): Id del mensaje GET correspondiente al pokemon pikachu es 15
+[INFO] 20:20:52:895 Team/(5879:5894): El id recibido es: 16
+[INFO] 20:20:52:895 Team/(5879:5894): Id del mensaje GET correspondiente al pokemon squirtle es 16
+[INFO] 20:20:52:903 Team/(5879:5897): El id recibido es: 18
+[INFO] 20:20:52:903 Team/(5879:5897): Id del mensaje GET correspondiente al pokemon onix es 18
+[INFO] 20:20:52:903 Team/(5879:5896): El id recibido es: 17
+[INFO] 20:20:52:903 Team/(5879:5896): Id del mensaje GET correspondiente al pokemon gengar es 17
+[INFO] 20:20:52:903 Team/(5879:5879): Gets mandados
+[INFO] 20:20:52:913 Team/(5879:5885): Recibiendo mensaje Appeared
+[INFO] 20:20:52:915 Team/(5879:5885): Recibiendo tamanio total
+[INFO] 20:20:52:915 Team/(5879:5885): Tamanio total recibido: 36
+[INFO] 20:20:52:915 Team/(5879:5885): Id recibido: 11
+[INFO] 20:20:52:916 Team/(5879:5885): Id correlativo recibido: 5
+[INFO] 20:20:52:916 Team/(5879:5885): Tamanio del pokemon recibido: 8
+[INFO] 20:20:52:916 Team/(5879:5885): Nombre del pokemon recibido: jolteon
+[INFO] 20:20:52:916 Team/(5879:5885): Posicion X recibida: 2
+[INFO] 20:20:52:916 Team/(5879:5885): Posicion Y recibida: 2
+[INFO] 20:20:52:916 Team/(5879:5885): Acknowledgement enviado al modulo Broker
+[INFO] 20:20:52:916 Team/(5879:5885): Appeared recibido de BROKER
+[INFO] 20:20:52:916 Team/(5879:5885): El pokemon recibido jolteon no forma parte del objetivo global, se desestima el mensaje
+[INFO] 20:20:52:918 Team/(5879:5885): Recibiendo mensaje Appeared
+[INFO] 20:20:52:918 Team/(5879:5885): Recibiendo tamanio total
+[INFO] 20:20:52:918 Team/(5879:5885): Tamanio total recibido: 36
+[INFO] 20:20:52:918 Team/(5879:5885): Id recibido: 10
+[INFO] 20:20:52:918 Team/(5879:5885): Id correlativo recibido: 7
+[INFO] 20:20:52:918 Team/(5879:5885): Tamanio del pokemon recibido: 8
+[INFO] 20:20:52:918 Team/(5879:5885): Nombre del pokemon recibido: flareon
+[INFO] 20:20:52:918 Team/(5879:5885): Posicion X recibida: 4
+[INFO] 20:20:52:918 Team/(5879:5885): Posicion Y recibida: 6
+[INFO] 20:20:52:918 Team/(5879:5885): Acknowledgement enviado al modulo Broker
+[INFO] 20:20:52:918 Team/(5879:5885): Appeared recibido de BROKER
+[INFO] 20:20:52:918 Team/(5879:5885): El pokemon recibido flareon no forma parte del objetivo global, se desestima el mensaje
+[INFO] 20:20:52:920 Team/(5879:5885): Recibiendo mensaje Appeared
+[INFO] 20:20:52:920 Team/(5879:5885): Recibiendo tamanio total
+[INFO] 20:20:52:920 Team/(5879:5885): Tamanio total recibido: 36
+[INFO] 20:20:52:922 Team/(5879:5885): Id recibido: 9
+[INFO] 20:20:52:922 Team/(5879:5885): Id correlativo recibido: 4
+[INFO] 20:20:52:922 Team/(5879:5885): Tamanio del pokemon recibido: 8
+[INFO] 20:20:52:922 Team/(5879:5885): Nombre del pokemon recibido: pikachu
+[INFO] 20:20:52:922 Team/(5879:5885): Posicion X recibida: 9
+[INFO] 20:20:52:922 Team/(5879:5885): Posicion Y recibida: 9
+[INFO] 20:20:52:922 Team/(5879:5885): Acknowledgement enviado al modulo Broker
+[INFO] 20:20:52:922 Team/(5879:5885): Appeared recibido de BROKER
+[INFO] 20:20:52:922 Team/(5879:5885): pokemon pikachu esta en el objetivo global
+[INFO] 20:20:52:922 Team/(5879:5885): Agregando pokemon pikachu en (9,9) a los pokemones del mapa
+[INFO] 20:20:52:922 Team/(5879:5885): Pokemon pikachu en (9,9) agregado a los pokemones del mapa
+[INFO] 20:20:52:922 Team/(5879:5885): Pokemon pikachu llego por primera vez
+[INFO] 20:20:52:922 Team/(5879:5881): Planificando un nuevo pokemon
+[INFO] 20:20:52:922 Team/(5879:5881): El pokemon pikachu ubicado en (9,9) se puede planificar
+[INFO] 20:20:52:922 Team/(5879:5881): Nueva cantidad de planificaciones disponibles para pokemon pikachu: 0
+[INFO] 20:20:52:922 Team/(5879:5881): Eliminando pokemon pikachu en (9,9) del mapa
+[INFO] 20:20:52:922 Team/(5879:5881): Cambiando tarea de entrenador 1 de No hacer nada a Atrapar pokemon
+[INFO] 20:20:52:922 Team/(5879:5881): Tarea de entrenador 1 cambiada a Atrapar pokemon
+[INFO] 20:20:52:922 Team/(5879:5881): Cambiando estado de entrenador 1 de Estado new a Estado ready
+[INFO] 20:20:52:922 Team/(5879:5881): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 20:20:52:922 Team/(5879:5891): Cambiando estado de entrenador 1 de Estado ready a Estado executing
+[INFO] 20:20:52:922 Team/(5879:5891): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de atrapar pokemon pikachu
+[INFO] 20:20:52:922 Team/(5879:5891): Entrenador 1 esta atrapando pokemon pikachu ubicado en (9,9)
+[INFO] 20:20:52:922 Team/(5879:5891): El entrenador 1 se esta moviendo de (2,3) a (9,9)
+[INFO] 20:20:52:922 Team/(5879:5891): El entrenador 1 se encuentra en (2,4)
+[INFO] 20:20:57:923 Team/(5879:5891): El entrenador 1 se encuentra en (2,5)
+[INFO] 20:21:02:924 Team/(5879:5891): El entrenador 1 se encuentra en (2,6)
+[INFO] 20:21:03:16 Team/(5879:5887): Recibiendo mensaje Localized
+[INFO] 20:21:03:16 Team/(5879:5887): Recibiendo tamanio total
+[INFO] 20:21:03:16 Team/(5879:5887): Tamanio total recibido: 41
+[INFO] 20:21:03:16 Team/(5879:5887): Id recibido: 27
+[INFO] 20:21:03:16 Team/(5879:5887): Id correlativo recibido: 16
+[INFO] 20:21:03:17 Team/(5879:5887): Tamanio del pokemon recibido: 9
+[INFO] 20:21:03:17 Team/(5879:5887): Nombre del pokemon recibido: squirtle
+[INFO] 20:21:03:17 Team/(5879:5887): Cantidad de coordenadas recibida: 1
+[INFO] 20:21:03:17 Team/(5879:5887): Unidad de coordenada recibida: 5
+[INFO] 20:21:03:17 Team/(5879:5887): Unidad de coordenada recibida: 2
+[INFO] 20:21:03:17 Team/(5879:5887): Acknowledgement enviado al modulo Broker
+[INFO] 20:21:03:17 Team/(5879:5887): Localized recibido de Broker
+[INFO] 20:21:03:17 Team/(5879:5887): pokemon squirtle llego por primera vez
+[INFO] 20:21:03:17 Team/(5879:5881): Planificando un nuevo pokemon
+[INFO] 20:21:03:17 Team/(5879:5881): El pokemon squirtle ubicado en (5,2) se puede planificar
+[INFO] 20:21:03:17 Team/(5879:5881): Nueva cantidad de planificaciones disponibles para pokemon squirtle: 1
+[INFO] 20:21:03:17 Team/(5879:5881): Eliminando pokemon squirtle en (5,2) del mapa
+[INFO] 20:21:03:17 Team/(5879:5881): Cambiando tarea de entrenador 2 de No hacer nada a Atrapar pokemon
+[INFO] 20:21:03:17 Team/(5879:5881): Tarea de entrenador 2 cambiada a Atrapar pokemon
+[INFO] 20:21:03:17 Team/(5879:5881): Cambiando estado de entrenador 2 de Estado new a Estado ready
+[INFO] 20:21:03:17 Team/(5879:5881): Estado de entrenador 2 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 20:21:03:55 Team/(5879:5887): Recibiendo mensaje Localized
+[INFO] 20:21:03:55 Team/(5879:5887): Recibiendo tamanio total
+[INFO] 20:21:03:55 Team/(5879:5887): Tamanio total recibido: 31
+[INFO] 20:21:03:55 Team/(5879:5887): Id recibido: 29
+[INFO] 20:21:03:55 Team/(5879:5887): Id correlativo recibido: 17
+[INFO] 20:21:03:55 Team/(5879:5887): Tamanio del pokemon recibido: 7
+[INFO] 20:21:03:55 Team/(5879:5887): Nombre del pokemon recibido: gengar
+[INFO] 20:21:03:55 Team/(5879:5887): Cantidad de coordenadas recibida: 0
+[INFO] 20:21:03:55 Team/(5879:5887): Acknowledgement enviado al modulo Broker
+[INFO] 20:21:03:55 Team/(5879:5887): Localized recibido de Broker
+[INFO] 20:21:03:55 Team/(5879:5887): pokemon gengar llego por primera vez
+[INFO] 20:21:07:926 Team/(5879:5891): El entrenador 1 se encuentra en (2,7)
+[INFO] 20:21:08:96 Team/(5879:5887): Recibiendo mensaje Localized
+[INFO] 20:21:08:96 Team/(5879:5887): Recibiendo tamanio total
+[INFO] 20:21:08:96 Team/(5879:5887): Tamanio total recibido: 40
+[INFO] 20:21:08:96 Team/(5879:5887): Id recibido: 28
+[INFO] 20:21:08:96 Team/(5879:5887): Id correlativo recibido: 15
+[INFO] 20:21:08:96 Team/(5879:5887): Tamanio del pokemon recibido: 8
+[INFO] 20:21:08:96 Team/(5879:5887): Nombre del pokemon recibido: pikachu
+[INFO] 20:21:08:96 Team/(5879:5887): Cantidad de coordenadas recibida: 1
+[INFO] 20:21:08:97 Team/(5879:5887): Unidad de coordenada recibida: 9
+[INFO] 20:21:08:97 Team/(5879:5887): Unidad de coordenada recibida: 9
+[INFO] 20:21:08:97 Team/(5879:5887): Acknowledgement enviado al modulo Broker
+[INFO] 20:21:08:97 Team/(5879:5887): Localized recibido de Broker
+[INFO] 20:21:08:126 Team/(5879:5887): Recibiendo mensaje Localized
+[INFO] 20:21:08:126 Team/(5879:5887): Recibiendo tamanio total
+[INFO] 20:21:08:126 Team/(5879:5887): Tamanio total recibido: 29
+[INFO] 20:21:08:126 Team/(5879:5887): Id recibido: 30
+[INFO] 20:21:08:126 Team/(5879:5887): Id correlativo recibido: 18
+[INFO] 20:21:08:126 Team/(5879:5887): Tamanio del pokemon recibido: 5
+[INFO] 20:21:08:126 Team/(5879:5887): Nombre del pokemon recibido: onix
+[INFO] 20:21:08:126 Team/(5879:5887): Cantidad de coordenadas recibida: 0
+[INFO] 20:21:08:126 Team/(5879:5887): Acknowledgement enviado al modulo Broker
+[INFO] 20:21:08:126 Team/(5879:5887): Localized recibido de Broker
+[INFO] 20:21:08:126 Team/(5879:5887): pokemon onix llego por primera vez
+[INFO] 20:21:08:154 Team/(5879:5887): Recibiendo mensaje Localized
+[INFO] 20:21:08:154 Team/(5879:5887): Recibiendo tamanio total
+[INFO] 20:21:08:154 Team/(5879:5887): Tamanio total recibido: 31
+[INFO] 20:21:08:154 Team/(5879:5887): Id recibido: 31
+[INFO] 20:21:08:154 Team/(5879:5887): Id correlativo recibido: 24
+[INFO] 20:21:08:154 Team/(5879:5887): Tamanio del pokemon recibido: 7
+[INFO] 20:21:08:154 Team/(5879:5887): Nombre del pokemon recibido: espeon
+[INFO] 20:21:08:154 Team/(5879:5887): Cantidad de coordenadas recibida: 0
+[INFO] 20:21:08:154 Team/(5879:5887): Acknowledgement enviado al modulo Broker
+[INFO] 20:21:08:154 Team/(5879:5887): Localized recibido de Broker
+[INFO] 20:21:08:154 Team/(5879:5887): pokemon espeon llego por primera vez
+[INFO] 20:21:08:175 Team/(5879:5887): Recibiendo mensaje Localized
+[INFO] 20:21:08:175 Team/(5879:5887): Recibiendo tamanio total
+[INFO] 20:21:08:176 Team/(5879:5887): Tamanio total recibido: 40
+[INFO] 20:21:08:176 Team/(5879:5887): Id recibido: 32
+[INFO] 20:21:08:176 Team/(5879:5887): Id correlativo recibido: 22
+[INFO] 20:21:08:176 Team/(5879:5887): Tamanio del pokemon recibido: 8
+[INFO] 20:21:08:176 Team/(5879:5887): Nombre del pokemon recibido: flareon
+[INFO] 20:21:08:176 Team/(5879:5887): Cantidad de coordenadas recibida: 1
+[INFO] 20:21:08:176 Team/(5879:5887): Unidad de coordenada recibida: 4
+[INFO] 20:21:08:176 Team/(5879:5887): Unidad de coordenada recibida: 6
+[INFO] 20:21:08:176 Team/(5879:5887): Acknowledgement enviado al modulo Broker
+[INFO] 20:21:08:176 Team/(5879:5887): Localized recibido de Broker
+[INFO] 20:21:08:176 Team/(5879:5887): pokemon flareon llego por primera vez
+[INFO] 20:21:08:176 Team/(5879:5881): Planificando un nuevo pokemon
+[INFO] 20:21:08:176 Team/(5879:5881): El pokemon flareon ubicado en (4,6) no se puede planificar
+[INFO] 20:21:08:193 Team/(5879:5887): Recibiendo mensaje Localized
+[INFO] 20:21:08:193 Team/(5879:5887): Recibiendo tamanio total
+[INFO] 20:21:08:193 Team/(5879:5887): Tamanio total recibido: 33
+[INFO] 20:21:08:193 Team/(5879:5887): Id recibido: 33
+[INFO] 20:21:08:193 Team/(5879:5887): Id correlativo recibido: 25
+[INFO] 20:21:08:193 Team/(5879:5887): Tamanio del pokemon recibido: 9
+[INFO] 20:21:08:193 Team/(5879:5887): Nombre del pokemon recibido: vaporeon
+[INFO] 20:21:08:193 Team/(5879:5887): Cantidad de coordenadas recibida: 0
+[INFO] 20:21:08:193 Team/(5879:5887): Acknowledgement enviado al modulo Broker
+[INFO] 20:21:08:193 Team/(5879:5887): Localized recibido de Broker
+[INFO] 20:21:08:193 Team/(5879:5887): pokemon vaporeon llego por primera vez
+[INFO] 20:21:08:209 Team/(5879:5887): Recibiendo mensaje Localized
+[INFO] 20:21:08:209 Team/(5879:5887): Recibiendo tamanio total
+[INFO] 20:21:08:209 Team/(5879:5887): Tamanio total recibido: 32
+[INFO] 20:21:08:209 Team/(5879:5887): Id recibido: 34
+[INFO] 20:21:08:209 Team/(5879:5887): Id correlativo recibido: 23
+[INFO] 20:21:08:209 Team/(5879:5887): Tamanio del pokemon recibido: 8
+[INFO] 20:21:08:209 Team/(5879:5887): Nombre del pokemon recibido: umbreon
+[INFO] 20:21:08:209 Team/(5879:5887): Cantidad de coordenadas recibida: 0
+[INFO] 20:21:08:209 Team/(5879:5887): Acknowledgement enviado al modulo Broker
+[INFO] 20:21:08:209 Team/(5879:5887): Localized recibido de Broker
+[INFO] 20:21:08:209 Team/(5879:5887): pokemon umbreon llego por primera vez
+[INFO] 20:21:12:849 Team/(5879:5889): Buscando deadlock...
+[INFO] 20:21:12:850 Team/(5879:5889): Obtengo entrenadores bloqueados
+[INFO] 20:21:12:850 Team/(5879:5889): Entrenadores bloqueados obtenidos
+[INFO] 20:21:12:850 Team/(5879:5889): No se han encontrado deadlocks
+[INFO] 20:21:12:928 Team/(5879:5891): El entrenador 1 se encuentra en (2,8)
+[INFO] 20:21:13:210 Team/(5879:5887): Recibiendo mensaje Localized
+[INFO] 20:21:13:210 Team/(5879:5887): Recibiendo tamanio total
+[INFO] 20:21:13:210 Team/(5879:5887): Tamanio total recibido: 40
+[INFO] 20:21:13:210 Team/(5879:5887): Id recibido: 36
+[INFO] 20:21:13:210 Team/(5879:5887): Id correlativo recibido: 26
+[INFO] 20:21:13:210 Team/(5879:5887): Tamanio del pokemon recibido: 8
+[INFO] 20:21:13:210 Team/(5879:5887): Nombre del pokemon recibido: jolteon
+[INFO] 20:21:13:210 Team/(5879:5887): Cantidad de coordenadas recibida: 1
+[INFO] 20:21:13:210 Team/(5879:5887): Unidad de coordenada recibida: 2
+[INFO] 20:21:13:210 Team/(5879:5887): Unidad de coordenada recibida: 2
+[INFO] 20:21:13:210 Team/(5879:5887): Acknowledgement enviado al modulo Broker
+[INFO] 20:21:13:210 Team/(5879:5887): Localized recibido de Broker
+[INFO] 20:21:13:210 Team/(5879:5887): pokemon jolteon llego por primera vez
+[INFO] 20:21:13:210 Team/(5879:5881): Planificando un nuevo pokemon
+[INFO] 20:21:13:210 Team/(5879:5881): El pokemon jolteon ubicado en (2,2) no se puede planificar
+[INFO] 20:21:17:930 Team/(5879:5891): El entrenador 1 se encuentra en (2,9)
+[INFO] 20:21:18:87 Team/(5879:5886): Recibiendo mensaje Caught
+[INFO] 20:21:18:87 Team/(5879:5886): Recibiendo tamanio total
+[INFO] 20:21:18:87 Team/(5879:5886): Tamanio total recibido: 20
+[INFO] 20:21:18:87 Team/(5879:5886): Id recibido: 37
+[INFO] 20:21:18:87 Team/(5879:5886): Id correlativo recibido: 35
+[INFO] 20:21:18:87 Team/(5879:5886): Flag atrapado recibido: 1
+[INFO] 20:21:18:87 Team/(5879:5886): Acknowledgement enviado al modulo Broker
+[INFO] 20:21:18:87 Team/(5879:5886): Caught recibido del Broker en socket 8
+[INFO] 20:21:22:849 Team/(5879:5888): Iniciando verificacion de conexion con Broker...
+[INFO] 20:21:22:850 Team/(5879:5888): Conexion con Broker en buen estado, verificando nuevamente en 30 segundos
+[INFO] 20:21:22:931 Team/(5879:5891): El entrenador 1 se encuentra en (3,9)
+[INFO] 20:21:27:932 Team/(5879:5891): El entrenador 1 se encuentra en (4,9)
+[INFO] 20:21:32:851 Team/(5879:5889): Buscando deadlock...
+[INFO] 20:21:32:851 Team/(5879:5889): Obtengo entrenadores bloqueados
+[INFO] 20:21:32:852 Team/(5879:5889): Entrenadores bloqueados obtenidos
+[INFO] 20:21:32:852 Team/(5879:5889): No se han encontrado deadlocks
+[INFO] 20:21:32:935 Team/(5879:5891): El entrenador 1 se encuentra en (5,9)
+[INFO] 20:21:33:101 Team/(5879:5886): Recibiendo mensaje Caught
+[INFO] 20:21:33:101 Team/(5879:5886): Recibiendo tamanio total
+[INFO] 20:21:33:102 Team/(5879:5886): Tamanio total recibido: 20
+[INFO] 20:21:33:102 Team/(5879:5886): Id recibido: 39
+[INFO] 20:21:33:102 Team/(5879:5886): Id correlativo recibido: 38
+[INFO] 20:21:33:102 Team/(5879:5886): Flag atrapado recibido: 1
+[INFO] 20:21:33:102 Team/(5879:5886): Acknowledgement enviado al modulo Broker
+[INFO] 20:21:33:102 Team/(5879:5886): Caught recibido del Broker en socket 8
+[INFO] 20:21:37:936 Team/(5879:5891): El entrenador 1 se encuentra en (6,9)
+[INFO] 20:21:42:938 Team/(5879:5891): El entrenador 1 se encuentra en (7,9)
+[INFO] 20:21:47:940 Team/(5879:5891): El entrenador 1 se encuentra en (8,9)
+[INFO] 20:21:52:850 Team/(5879:5888): Iniciando verificacion de conexion con Broker...
+[INFO] 20:21:52:851 Team/(5879:5888): Conexion con Broker en buen estado, verificando nuevamente en 30 segundos
+[INFO] 20:21:52:852 Team/(5879:5889): Buscando deadlock...
+[INFO] 20:21:52:852 Team/(5879:5889): Obtengo entrenadores bloqueados
+[INFO] 20:21:52:852 Team/(5879:5889): Entrenadores bloqueados obtenidos
+[INFO] 20:21:52:852 Team/(5879:5889): No se han encontrado deadlocks
+[INFO] 20:21:52:942 Team/(5879:5891): El entrenador 1 se encuentra en (9,9)
+[INFO] 20:21:57:943 Team/(5879:5891): El entrenador 1 ha llegado a (9,9)
+[INFO] 20:21:57:945 Team/(5879:5891): Cambiando estado de entrenador 1 de Estado executing a Estado blocked
+[INFO] 20:21:57:945 Team/(5879:5891): Estado de entrenador 1 cambiado a Estado blocked. Razon del cambio: Se ha enviado un catch
+[INFO] 20:21:57:945 Team/(5879:5891): Entrenador 1 enviando catch para el pokemon pikachu en (9,9)
+[INFO] 20:22:02:948 Team/(5879:5891): El entrenador 1 ha enviado el catch para el pokemon pikachu en (9,9) correctamente por el socket 10
+[INFO] 20:22:02:950 Team/(5879:5891): Recibiendo ID del CATCH enviado al Broker
+[INFO] 20:22:02:974 Team/(5879:5891): El id recibido es: 40
+[INFO] 20:22:02:974 Team/(5879:5891): Id del catch enviado por el entrenador 1 para el pokemon pikachu en (9,9) recibido correctamente por el socket 10 y es igual a 40
+[INFO] 20:22:02:974 Team/(5879:5892): Cambiando estado de entrenador 2 de Estado ready a Estado executing
+[INFO] 20:22:02:974 Team/(5879:5892): Estado de entrenador 2 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de atrapar pokemon squirtle
+[INFO] 20:22:02:974 Team/(5879:5892): Entrenador 2 esta atrapando pokemon squirtle ubicado en (5,2)
+[INFO] 20:22:02:974 Team/(5879:5892): El entrenador 2 se esta moviendo de (3,2) a (5,2)
+[INFO] 20:22:02:974 Team/(5879:5892): El entrenador 2 se encuentra en (4,2)
+[INFO] 20:22:07:975 Team/(5879:5892): El entrenador 2 se encuentra en (5,2)
+[INFO] 20:22:08:12 Team/(5879:5886): Recibiendo mensaje Caught
+[INFO] 20:22:08:12 Team/(5879:5886): Recibiendo tamanio total
+[INFO] 20:22:08:12 Team/(5879:5886): Tamanio total recibido: 20
+[INFO] 20:22:08:13 Team/(5879:5886): Id recibido: 41
+[INFO] 20:22:08:13 Team/(5879:5886): Id correlativo recibido: 40
+[INFO] 20:22:08:13 Team/(5879:5886): Flag atrapado recibido: 1
+[INFO] 20:22:08:13 Team/(5879:5886): Acknowledgement enviado al modulo Broker
+[INFO] 20:22:08:13 Team/(5879:5886): Caught recibido del Broker en socket 8
+[INFO] 20:22:08:13 Team/(5879:5882): Planificando mensaje caught con id correlativo 40 y flag de recibido 1
+[INFO] 20:22:08:13 Team/(5879:5882): Entrenador 1 adquiriendo pokemon pikachu
+[INFO] 20:22:08:13 Team/(5879:5882): El entrenador 1 ha adquirido al pokemon pikachu
+[INFO] 20:22:08:13 Team/(5879:5882): Entrenador 1 ha obtenido el pokemon pikachu
+[INFO] 20:22:08:13 Team/(5879:5882): Cambiando tarea de entrenador 1 de Atrapar pokemon a No hacer nada
+[INFO] 20:22:08:13 Team/(5879:5882): Tarea de entrenador 1 cambiada a No hacer nada
+[INFO] 20:22:12:853 Team/(5879:5889): Buscando deadlock...
+[INFO] 20:22:12:853 Team/(5879:5889): Obtengo entrenadores bloqueados
+[INFO] 20:22:12:854 Team/(5879:5889): Entrenadores bloqueados obtenidos
+[INFO] 20:22:12:854 Team/(5879:5889): No se han encontrado deadlocks
+[INFO] 20:22:12:975 Team/(5879:5892): El entrenador 2 ha llegado a (5,2)
+[INFO] 20:22:12:976 Team/(5879:5892): Cambiando estado de entrenador 2 de Estado executing a Estado blocked
+[INFO] 20:22:12:976 Team/(5879:5892): Estado de entrenador 2 cambiado a Estado blocked. Razon del cambio: Se ha enviado un catch
+[INFO] 20:22:12:976 Team/(5879:5892): Entrenador 2 enviando catch para el pokemon squirtle en (5,2)
+[INFO] 20:22:17:976 Team/(5879:5892): El entrenador 2 ha enviado el catch para el pokemon squirtle en (5,2) correctamente por el socket 10
+[INFO] 20:22:17:978 Team/(5879:5892): Recibiendo ID del CATCH enviado al Broker
+[INFO] 20:22:17:983 Team/(5879:5892): El id recibido es: 42
+[INFO] 20:22:17:984 Team/(5879:5892): Id del catch enviado por el entrenador 2 para el pokemon squirtle en (5,2) recibido correctamente por el socket 10 y es igual a 42
+[INFO] 20:22:22:851 Team/(5879:5888): Iniciando verificacion de conexion con Broker...
+[INFO] 20:22:22:851 Team/(5879:5888): Conexion con Broker en buen estado, verificando nuevamente en 30 segundos
+[INFO] 20:22:23:47 Team/(5879:5886): Recibiendo mensaje Caught
+[INFO] 20:22:23:47 Team/(5879:5886): Recibiendo tamanio total
+[INFO] 20:22:23:47 Team/(5879:5886): Tamanio total recibido: 20
+[INFO] 20:22:23:47 Team/(5879:5886): Id recibido: 43
+[INFO] 20:22:23:47 Team/(5879:5886): Id correlativo recibido: 42
+[INFO] 20:22:23:47 Team/(5879:5886): Flag atrapado recibido: 1
+[INFO] 20:22:23:47 Team/(5879:5886): Acknowledgement enviado al modulo Broker
+[INFO] 20:22:23:47 Team/(5879:5886): Caught recibido del Broker en socket 8
+[INFO] 20:22:23:47 Team/(5879:5882): Planificando mensaje caught con id correlativo 42 y flag de recibido 1
+[INFO] 20:22:23:47 Team/(5879:5882): Entrenador 2 adquiriendo pokemon squirtle
+[INFO] 20:22:23:47 Team/(5879:5882): El entrenador 2 ha adquirido al pokemon squirtle
+[INFO] 20:22:23:47 Team/(5879:5882): Entrenador 2 ha obtenido el pokemon squirtle
+[INFO] 20:22:23:47 Team/(5879:5882): Cambiando tarea de entrenador 2 de Atrapar pokemon a No hacer nada
+[INFO] 20:22:23:47 Team/(5879:5882): Tarea de entrenador 2 cambiada a No hacer nada
+[INFO] 20:22:32:854 Team/(5879:5889): Buscando deadlock...
+[INFO] 20:22:32:855 Team/(5879:5889): Obtengo entrenadores bloqueados
+[INFO] 20:22:32:855 Team/(5879:5889): Entrenadores bloqueados obtenidos
+[INFO] 20:22:32:855 Team/(5879:5889): No se han encontrado deadlocks
+[INFO] 20:22:52:852 Team/(5879:5888): Iniciando verificacion de conexion con Broker...
+[INFO] 20:22:52:852 Team/(5879:5888): Conexion con Broker en buen estado, verificando nuevamente en 30 segundos
+[INFO] 20:22:52:855 Team/(5879:5889): Buscando deadlock...
+[INFO] 20:22:52:856 Team/(5879:5889): Obtengo entrenadores bloqueados
+[INFO] 20:22:52:856 Team/(5879:5889): Entrenadores bloqueados obtenidos
+[INFO] 20:22:52:856 Team/(5879:5889): No se han encontrado deadlocks
+[INFO] 20:23:12:856 Team/(5879:5889): Buscando deadlock...
+[INFO] 20:23:12:856 Team/(5879:5889): Obtengo entrenadores bloqueados
+[INFO] 20:23:12:857 Team/(5879:5889): Entrenadores bloqueados obtenidos
+[INFO] 20:23:12:857 Team/(5879:5889): No se han encontrado deadlocks
+[INFO] 20:23:22:852 Team/(5879:5888): Iniciando verificacion de conexion con Broker...
+[INFO] 20:23:22:853 Team/(5879:5888): Conexion con Broker en buen estado, verificando nuevamente en 30 segundos
+[INFO] 20:23:32:857 Team/(5879:5889): Buscando deadlock...
+[INFO] 20:23:32:857 Team/(5879:5889): Obtengo entrenadores bloqueados
+[INFO] 20:23:32:857 Team/(5879:5889): Entrenadores bloqueados obtenidos
+[INFO] 20:23:32:857 Team/(5879:5889): No se han encontrado deadlocks
+[INFO] 20:23:52:853 Team/(5879:5888): Iniciando verificacion de conexion con Broker...
+[INFO] 20:23:52:854 Team/(5879:5888): Conexion con Broker en buen estado, verificando nuevamente en 30 segundos
+[INFO] 20:23:52:858 Team/(5879:5889): Buscando deadlock...
+[INFO] 20:23:52:858 Team/(5879:5889): Obtengo entrenadores bloqueados
+[INFO] 20:23:52:858 Team/(5879:5889): Entrenadores bloqueados obtenidos
+[INFO] 20:23:52:858 Team/(5879:5889): No se han encontrado deadlocks
+[INFO] 20:24:12:858 Team/(5879:5889): Buscando deadlock...
+[INFO] 20:24:12:859 Team/(5879:5889): Obtengo entrenadores bloqueados
+[INFO] 20:24:12:859 Team/(5879:5889): Entrenadores bloqueados obtenidos
+[INFO] 20:24:12:859 Team/(5879:5889): No se han encontrado deadlocks
+[INFO] 20:24:22:854 Team/(5879:5888): Iniciando verificacion de conexion con Broker...
+[INFO] 20:24:22:855 Team/(5879:5888): Conexion con Broker en buen estado, verificando nuevamente en 30 segundos
+[INFO] 20:24:32:859 Team/(5879:5889): Buscando deadlock...
+[INFO] 20:24:32:859 Team/(5879:5889): Obtengo entrenadores bloqueados
+[INFO] 20:24:32:859 Team/(5879:5889): Entrenadores bloqueados obtenidos
+[INFO] 20:24:32:859 Team/(5879:5889): No se han encontrado deadlocks
+[INFO] 20:24:35:843 Team/(5879:5885): Recibiendo mensaje Appeared
+[INFO] 20:24:35:843 Team/(5879:5885): Recibiendo tamanio total
+[INFO] 20:24:35:843 Team/(5879:5885): Tamanio total recibido: 33
+[INFO] 20:24:35:843 Team/(5879:5885): Id recibido: 50
+[INFO] 20:24:35:843 Team/(5879:5885): Id correlativo recibido: 44
+[INFO] 20:24:35:843 Team/(5879:5885): Tamanio del pokemon recibido: 5
+[INFO] 20:24:35:843 Team/(5879:5885): Nombre del pokemon recibido: onix
+[INFO] 20:24:35:843 Team/(5879:5885): Posicion X recibida: 2
+[INFO] 20:24:35:843 Team/(5879:5885): Posicion Y recibida: 8
+[INFO] 20:24:35:843 Team/(5879:5885): Acknowledgement enviado al modulo Broker
+[INFO] 20:24:35:843 Team/(5879:5885): Appeared recibido de BROKER
+[INFO] 20:24:35:843 Team/(5879:5885): pokemon onix esta en el objetivo global
+[INFO] 20:24:35:843 Team/(5879:5885): Agregando pokemon onix en (2,8) a los pokemones del mapa
+[INFO] 20:24:35:843 Team/(5879:5885): Pokemon onix en (2,8) agregado a los pokemones del mapa
+[INFO] 20:24:35:843 Team/(5879:5881): Planificando un nuevo pokemon
+[INFO] 20:24:35:843 Team/(5879:5881): El pokemon onix ubicado en (2,8) se puede planificar
+[INFO] 20:24:35:843 Team/(5879:5881): Nueva cantidad de planificaciones disponibles para pokemon onix: 0
+[INFO] 20:24:35:843 Team/(5879:5881): Eliminando pokemon onix en (2,8) del mapa
+[INFO] 20:24:35:843 Team/(5879:5881): Cambiando tarea de entrenador 0 de No hacer nada a Atrapar pokemon
+[INFO] 20:24:35:843 Team/(5879:5881): Tarea de entrenador 0 cambiada a Atrapar pokemon
+[INFO] 20:24:35:843 Team/(5879:5881): Cambiando estado de entrenador 0 de Estado new a Estado ready
+[INFO] 20:24:35:844 Team/(5879:5881): Estado de entrenador 0 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 20:24:35:844 Team/(5879:5890): Cambiando estado de entrenador 0 de Estado ready a Estado executing
+[INFO] 20:24:35:844 Team/(5879:5890): Estado de entrenador 0 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de atrapar pokemon onix
+[INFO] 20:24:35:844 Team/(5879:5890): Entrenador 0 esta atrapando pokemon onix ubicado en (2,8)
+[INFO] 20:24:35:844 Team/(5879:5890): El entrenador 0 se esta moviendo de (1,3) a (2,8)
+[INFO] 20:24:35:844 Team/(5879:5890): El entrenador 0 se encuentra en (1,4)
+[INFO] 20:24:40:838 Team/(5879:5885): Recibiendo mensaje Appeared
+[INFO] 20:24:40:839 Team/(5879:5885): Recibiendo tamanio total
+[INFO] 20:24:40:839 Team/(5879:5885): Tamanio total recibido: 35
+[INFO] 20:24:40:839 Team/(5879:5885): Id recibido: 51
+[INFO] 20:24:40:839 Team/(5879:5885): Id correlativo recibido: 45
+[INFO] 20:24:40:839 Team/(5879:5885): Tamanio del pokemon recibido: 7
+[INFO] 20:24:40:839 Team/(5879:5885): Nombre del pokemon recibido: gengar
+[INFO] 20:24:40:839 Team/(5879:5885): Posicion X recibida: 6
+[INFO] 20:24:40:839 Team/(5879:5885): Posicion Y recibida: 6
+[INFO] 20:24:40:839 Team/(5879:5885): Acknowledgement enviado al modulo Broker
+[INFO] 20:24:40:839 Team/(5879:5885): Appeared recibido de BROKER
+[INFO] 20:24:40:840 Team/(5879:5885): pokemon gengar esta en el objetivo global
+[INFO] 20:24:40:840 Team/(5879:5885): Agregando pokemon gengar en (6,6) a los pokemones del mapa
+[INFO] 20:24:40:840 Team/(5879:5885): Pokemon gengar en (6,6) agregado a los pokemones del mapa
+[INFO] 20:24:40:840 Team/(5879:5881): Planificando un nuevo pokemon
+[INFO] 20:24:40:840 Team/(5879:5881): El pokemon gengar ubicado en (6,6) se puede planificar
+[INFO] 20:24:40:840 Team/(5879:5881): Nueva cantidad de planificaciones disponibles para pokemon gengar: 0
+[INFO] 20:24:40:840 Team/(5879:5881): Eliminando pokemon gengar en (6,6) del mapa
+[INFO] 20:24:40:840 Team/(5879:5881): Cambiando tarea de entrenador 2 de No hacer nada a Atrapar pokemon
+[INFO] 20:24:40:840 Team/(5879:5881): Tarea de entrenador 2 cambiada a Atrapar pokemon
+[INFO] 20:24:40:840 Team/(5879:5881): Cambiando estado de entrenador 2 de Estado blocked a Estado ready
+[INFO] 20:24:40:840 Team/(5879:5881): Estado de entrenador 2 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 20:24:40:846 Team/(5879:5890): El entrenador 0 se encuentra en (1,5)
+[INFO] 20:24:45:853 Team/(5879:5890): El entrenador 0 se encuentra en (1,6)
+[INFO] 20:24:45:854 Team/(5879:5885): Recibiendo mensaje Appeared
+[INFO] 20:24:45:855 Team/(5879:5885): Recibiendo tamanio total
+[INFO] 20:24:45:855 Team/(5879:5885): Tamanio total recibido: 37
+[INFO] 20:24:45:855 Team/(5879:5885): Id recibido: 52
+[INFO] 20:24:45:855 Team/(5879:5885): Id correlativo recibido: 46
+[INFO] 20:24:45:855 Team/(5879:5885): Tamanio del pokemon recibido: 9
+[INFO] 20:24:45:855 Team/(5879:5885): Nombre del pokemon recibido: squirtle
+[INFO] 20:24:45:855 Team/(5879:5885): Posicion X recibida: 5
+[INFO] 20:24:45:855 Team/(5879:5885): Posicion Y recibida: 5
+[INFO] 20:24:45:855 Team/(5879:5885): Acknowledgement enviado al modulo Broker
+[INFO] 20:24:45:855 Team/(5879:5885): Appeared recibido de BROKER
+[INFO] 20:24:45:855 Team/(5879:5885): pokemon squirtle esta en el objetivo global
+[INFO] 20:24:45:855 Team/(5879:5885): Agregando pokemon squirtle en (5,5) a los pokemones del mapa
+[INFO] 20:24:45:855 Team/(5879:5885): Pokemon squirtle en (5,5) agregado a los pokemones del mapa
+[INFO] 20:24:45:855 Team/(5879:5881): Planificando un nuevo pokemon
+[INFO] 20:24:45:855 Team/(5879:5881): El pokemon squirtle ubicado en (5,5) se puede planificar
+[INFO] 20:24:45:855 Team/(5879:5881): Nueva cantidad de planificaciones disponibles para pokemon squirtle: 0
+[INFO] 20:24:45:856 Team/(5879:5881): Eliminando pokemon squirtle en (5,5) del mapa
+[INFO] 20:24:45:856 Team/(5879:5881): Cambiando tarea de entrenador 1 de No hacer nada a Atrapar pokemon
+[INFO] 20:24:45:856 Team/(5879:5881): Tarea de entrenador 1 cambiada a Atrapar pokemon
+[INFO] 20:24:45:856 Team/(5879:5881): Cambiando estado de entrenador 1 de Estado blocked a Estado ready
+[INFO] 20:24:45:856 Team/(5879:5881): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 20:24:50:854 Team/(5879:5890): El entrenador 0 se encuentra en (1,7)
+[INFO] 20:24:50:860 Team/(5879:5885): Recibiendo mensaje Appeared
+[INFO] 20:24:50:860 Team/(5879:5885): Recibiendo tamanio total
+[INFO] 20:24:50:860 Team/(5879:5885): Tamanio total recibido: 36
+[INFO] 20:24:50:860 Team/(5879:5885): Id recibido: 53
+[INFO] 20:24:50:861 Team/(5879:5885): Id correlativo recibido: 47
+[INFO] 20:24:50:861 Team/(5879:5885): Tamanio del pokemon recibido: 8
+[INFO] 20:24:50:861 Team/(5879:5885): Nombre del pokemon recibido: umbreon
+[INFO] 20:24:50:861 Team/(5879:5885): Posicion X recibida: 10
+[INFO] 20:24:50:861 Team/(5879:5885): Posicion Y recibida: 6
+[INFO] 20:24:50:861 Team/(5879:5885): Acknowledgement enviado al modulo Broker
+[INFO] 20:24:50:861 Team/(5879:5885): Appeared recibido de BROKER
+[INFO] 20:24:50:861 Team/(5879:5885): El pokemon recibido umbreon no forma parte del objetivo global, se desestima el mensaje
+[INFO] 20:24:50:878 Team/(5879:5885): Recibiendo mensaje Appeared
+[INFO] 20:24:50:878 Team/(5879:5885): Recibiendo tamanio total
+[INFO] 20:24:50:878 Team/(5879:5885): Tamanio total recibido: 35
+[INFO] 20:24:50:878 Team/(5879:5885): Id recibido: 54
+[INFO] 20:24:50:878 Team/(5879:5885): Id correlativo recibido: 48
+[INFO] 20:24:50:878 Team/(5879:5885): Tamanio del pokemon recibido: 7
+[INFO] 20:24:50:878 Team/(5879:5885): Nombre del pokemon recibido: espeon
+[INFO] 20:24:50:878 Team/(5879:5885): Posicion X recibida: 7
+[INFO] 20:24:50:878 Team/(5879:5885): Posicion Y recibida: 1
+[INFO] 20:24:50:878 Team/(5879:5885): Acknowledgement enviado al modulo Broker
+[INFO] 20:24:50:878 Team/(5879:5885): Appeared recibido de BROKER
+[INFO] 20:24:50:878 Team/(5879:5885): El pokemon recibido espeon no forma parte del objetivo global, se desestima el mensaje
+[INFO] 20:24:52:855 Team/(5879:5888): Iniciando verificacion de conexion con Broker...
+[INFO] 20:24:52:855 Team/(5879:5888): Conexion con Broker en buen estado, verificando nuevamente en 30 segundos
+[INFO] 20:24:52:860 Team/(5879:5889): Buscando deadlock...
+[INFO] 20:24:52:860 Team/(5879:5889): Obtengo entrenadores bloqueados
+[INFO] 20:24:52:860 Team/(5879:5889): Entrenadores bloqueados obtenidos
+[INFO] 20:24:52:860 Team/(5879:5889): No se han encontrado deadlocks
+[INFO] 20:24:55:854 Team/(5879:5890): El entrenador 0 se encuentra en (1,8)
+[INFO] 20:24:55:899 Team/(5879:5885): Recibiendo mensaje Appeared
+[INFO] 20:24:55:899 Team/(5879:5885): Recibiendo tamanio total
+[INFO] 20:24:55:899 Team/(5879:5885): Tamanio total recibido: 37
+[INFO] 20:24:55:899 Team/(5879:5885): Id recibido: 55
+[INFO] 20:24:55:899 Team/(5879:5885): Id correlativo recibido: 49
+[INFO] 20:24:55:899 Team/(5879:5885): Tamanio del pokemon recibido: 9
+[INFO] 20:24:55:899 Team/(5879:5885): Nombre del pokemon recibido: vaporeon
+[INFO] 20:24:55:899 Team/(5879:5885): Posicion X recibida: 4
+[INFO] 20:24:55:899 Team/(5879:5885): Posicion Y recibida: 10
+[INFO] 20:24:55:899 Team/(5879:5885): Acknowledgement enviado al modulo Broker
+[INFO] 20:24:55:899 Team/(5879:5885): Appeared recibido de BROKER
+[INFO] 20:24:55:899 Team/(5879:5885): El pokemon recibido vaporeon no forma parte del objetivo global, se desestima el mensaje
+[INFO] 20:25:00:857 Team/(5879:5890): El entrenador 0 se encuentra en (2,8)
+[INFO] 20:25:05:858 Team/(5879:5890): El entrenador 0 ha llegado a (2,8)
+[INFO] 20:25:05:858 Team/(5879:5890): Cambiando estado de entrenador 0 de Estado executing a Estado blocked
+[INFO] 20:25:05:858 Team/(5879:5890): Estado de entrenador 0 cambiado a Estado blocked. Razon del cambio: Se ha enviado un catch
+[INFO] 20:25:05:858 Team/(5879:5890): Entrenador 0 enviando catch para el pokemon onix en (2,8)
+[INFO] 20:25:10:859 Team/(5879:5890): El entrenador 0 ha enviado el catch para el pokemon onix en (2,8) correctamente por el socket 10
+[INFO] 20:25:10:862 Team/(5879:5890): Recibiendo ID del CATCH enviado al Broker
+[INFO] 20:25:10:881 Team/(5879:5890): El id recibido es: 56
+[INFO] 20:25:10:881 Team/(5879:5890): Id del catch enviado por el entrenador 0 para el pokemon onix en (2,8) recibido correctamente por el socket 10 y es igual a 56
+[INFO] 20:25:10:882 Team/(5879:5892): Cambiando estado de entrenador 2 de Estado ready a Estado executing
+[INFO] 20:25:10:882 Team/(5879:5892): Estado de entrenador 2 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de atrapar pokemon gengar
+[INFO] 20:25:10:882 Team/(5879:5892): Entrenador 2 esta atrapando pokemon gengar ubicado en (6,6)
+[INFO] 20:25:10:882 Team/(5879:5892): El entrenador 2 se esta moviendo de (5,2) a (6,6)
+[INFO] 20:25:10:882 Team/(5879:5892): El entrenador 2 se encuentra en (5,3)
+[INFO] 20:25:12:861 Team/(5879:5889): Buscando deadlock...
+[INFO] 20:25:12:861 Team/(5879:5889): Obtengo entrenadores bloqueados
+[INFO] 20:25:12:861 Team/(5879:5889): Entrenadores bloqueados obtenidos
+[INFO] 20:25:12:861 Team/(5879:5889): No se han encontrado deadlocks
+[INFO] 20:25:15:882 Team/(5879:5892): El entrenador 2 se encuentra en (5,4)
+[INFO] 20:25:15:936 Team/(5879:5886): Recibiendo mensaje Caught
+[INFO] 20:25:15:936 Team/(5879:5886): Recibiendo tamanio total
+[INFO] 20:25:15:936 Team/(5879:5886): Tamanio total recibido: 20
+[INFO] 20:25:15:936 Team/(5879:5886): Id recibido: 57
+[INFO] 20:25:15:937 Team/(5879:5886): Id correlativo recibido: 56
+[INFO] 20:25:15:937 Team/(5879:5886): Flag atrapado recibido: 1
+[INFO] 20:25:15:937 Team/(5879:5886): Acknowledgement enviado al modulo Broker
+[INFO] 20:25:15:937 Team/(5879:5886): Caught recibido del Broker en socket 8
+[INFO] 20:25:15:937 Team/(5879:5882): Planificando mensaje caught con id correlativo 56 y flag de recibido 1
+[INFO] 20:25:15:937 Team/(5879:5882): Entrenador 0 adquiriendo pokemon onix
+[INFO] 20:25:15:937 Team/(5879:5882): El entrenador 0 ha adquirido al pokemon onix
+[INFO] 20:25:15:937 Team/(5879:5882): no hago nada porque el entrenador tiene objetivos pero no pokebolas
+[INFO] 20:25:15:937 Team/(5879:5882): Cambiando tarea de entrenador 0 de Atrapar pokemon a No hacer nada
+[INFO] 20:25:15:937 Team/(5879:5882): Tarea de entrenador 0 cambiada a No hacer nada
+[INFO] 20:25:20:883 Team/(5879:5892): El entrenador 2 se encuentra en (5,5)
+[INFO] 20:25:22:855 Team/(5879:5888): Iniciando verificacion de conexion con Broker...
+[INFO] 20:25:22:856 Team/(5879:5888): Conexion con Broker en buen estado, verificando nuevamente en 30 segundos
+[INFO] 20:25:25:884 Team/(5879:5892): El entrenador 2 se encuentra en (5,6)
+[INFO] 20:25:30:884 Team/(5879:5892): El entrenador 2 se encuentra en (6,6)
+[INFO] 20:25:32:861 Team/(5879:5889): Buscando deadlock...
+[INFO] 20:25:32:862 Team/(5879:5889): Obtengo entrenadores bloqueados
+[INFO] 20:25:32:862 Team/(5879:5889): Entrenador 0 agregado a la lista de bloqueados
+[INFO] 20:25:32:862 Team/(5879:5889): Entrenadores bloqueados obtenidos
+[INFO] 20:25:32:862 Team/(5879:5889): Cantidad de entrenadores bloqueados para buscar deadlocks: 1
+[INFO] 20:25:32:862 Team/(5879:5889): Agregando hijos para entrenador 0
+[INFO] 20:25:32:862 Team/(5879:5889): Liberando arbol luego de no encontrar deadlock
+[INFO] 20:25:32:863 Team/(5879:5889): No se han encontrado deadlocks
+[INFO] 20:25:35:886 Team/(5879:5892): El entrenador 2 ha llegado a (6,6)
+[INFO] 20:25:35:887 Team/(5879:5892): Cambiando estado de entrenador 2 de Estado executing a Estado blocked
+[INFO] 20:25:35:888 Team/(5879:5892): Estado de entrenador 2 cambiado a Estado blocked. Razon del cambio: Se ha enviado un catch
+[INFO] 20:25:35:888 Team/(5879:5892): Entrenador 2 enviando catch para el pokemon gengar en (6,6)
+[INFO] 20:25:40:890 Team/(5879:5892): El entrenador 2 ha enviado el catch para el pokemon gengar en (6,6) correctamente por el socket 10
+[INFO] 20:25:40:891 Team/(5879:5892): Recibiendo ID del CATCH enviado al Broker
+[INFO] 20:25:40:897 Team/(5879:5892): El id recibido es: 58
+[INFO] 20:25:40:897 Team/(5879:5892): Id del catch enviado por el entrenador 2 para el pokemon gengar en (6,6) recibido correctamente por el socket 10 y es igual a 58
+[INFO] 20:25:40:897 Team/(5879:5891): Cambiando estado de entrenador 1 de Estado ready a Estado executing
+[INFO] 20:25:40:897 Team/(5879:5891): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de atrapar pokemon squirtle
+[INFO] 20:25:40:897 Team/(5879:5891): Entrenador 1 esta atrapando pokemon squirtle ubicado en (5,5)
+[INFO] 20:25:40:897 Team/(5879:5891): El entrenador 1 se esta moviendo de (9,9) a (5,5)
+[INFO] 20:25:40:897 Team/(5879:5891): El entrenador 1 se encuentra en (9,8)
+[INFO] 20:25:45:898 Team/(5879:5891): El entrenador 1 se encuentra en (9,7)
+[INFO] 20:25:45:942 Team/(5879:5886): Recibiendo mensaje Caught
+[INFO] 20:25:45:942 Team/(5879:5886): Recibiendo tamanio total
+[INFO] 20:25:45:942 Team/(5879:5886): Tamanio total recibido: 20
+[INFO] 20:25:45:942 Team/(5879:5886): Id recibido: 60
+[INFO] 20:25:45:942 Team/(5879:5886): Id correlativo recibido: 58
+[INFO] 20:25:45:942 Team/(5879:5886): Flag atrapado recibido: 1
+[INFO] 20:25:45:942 Team/(5879:5886): Acknowledgement enviado al modulo Broker
+[INFO] 20:25:45:942 Team/(5879:5886): Caught recibido del Broker en socket 8
+[INFO] 20:25:45:942 Team/(5879:5882): Planificando mensaje caught con id correlativo 58 y flag de recibido 1
+[INFO] 20:25:45:942 Team/(5879:5882): Entrenador 2 adquiriendo pokemon gengar
+[INFO] 20:25:45:942 Team/(5879:5882): El entrenador 2 ha adquirido al pokemon gengar
+[INFO] 20:25:45:942 Team/(5879:5882): no hago nada porque el entrenador tiene objetivos pero no pokebolas
+[INFO] 20:25:45:942 Team/(5879:5882): Cambiando tarea de entrenador 2 de Atrapar pokemon a No hacer nada
+[INFO] 20:25:45:942 Team/(5879:5882): Tarea de entrenador 2 cambiada a No hacer nada
+[INFO] 20:25:50:898 Team/(5879:5891): El entrenador 1 se encuentra en (9,6)
+[INFO] 20:25:50:961 Team/(5879:5886): Recibiendo mensaje Caught
+[INFO] 20:25:50:963 Team/(5879:5886): Recibiendo tamanio total
+[INFO] 20:25:50:963 Team/(5879:5886): Tamanio total recibido: 20
+[INFO] 20:25:50:963 Team/(5879:5886): Id recibido: 62
+[INFO] 20:25:50:963 Team/(5879:5886): Id correlativo recibido: 59
+[INFO] 20:25:50:963 Team/(5879:5886): Flag atrapado recibido: 1
+[INFO] 20:25:50:963 Team/(5879:5886): Acknowledgement enviado al modulo Broker
+[INFO] 20:25:50:963 Team/(5879:5886): Caught recibido del Broker en socket 8
+[INFO] 20:25:52:856 Team/(5879:5888): Iniciando verificacion de conexion con Broker...
+[INFO] 20:25:52:857 Team/(5879:5888): Conexion con Broker en buen estado, verificando nuevamente en 30 segundos
+[INFO] 20:25:52:863 Team/(5879:5889): Buscando deadlock...
+[INFO] 20:25:52:863 Team/(5879:5889): Obtengo entrenadores bloqueados
+[INFO] 20:25:52:863 Team/(5879:5889): Entrenador 0 agregado a la lista de bloqueados
+[INFO] 20:25:52:863 Team/(5879:5889): Entrenador 2 agregado a la lista de bloqueados
+[INFO] 20:25:52:863 Team/(5879:5889): Entrenadores bloqueados obtenidos
+[INFO] 20:25:52:864 Team/(5879:5889): Cantidad de entrenadores bloqueados para buscar deadlocks: 2
+[INFO] 20:25:52:864 Team/(5879:5889): Agregando hijos para entrenador 0
+[INFO] 20:25:52:864 Team/(5879:5889): Entrenador 2 necesita el pokemon onix
+[INFO] 20:25:52:864 Team/(5879:5889): Agregando hijos para entrenador 2
+[INFO] 20:25:52:864 Team/(5879:5889): Liberando arbol luego de no encontrar deadlock
+[INFO] 20:25:52:864 Team/(5879:5889): Cantidad de entrenadores bloqueados para buscar deadlocks: 2
+[INFO] 20:25:52:864 Team/(5879:5889): Agregando hijos para entrenador 2
+[INFO] 20:25:52:865 Team/(5879:5889): Liberando arbol luego de no encontrar deadlock
+[INFO] 20:25:52:865 Team/(5879:5889): No se han encontrado deadlocks
+[INFO] 20:25:55:900 Team/(5879:5891): El entrenador 1 se encuentra en (9,5)
+[INFO] 20:25:55:989 Team/(5879:5886): Recibiendo mensaje Caught
+[INFO] 20:25:55:989 Team/(5879:5886): Recibiendo tamanio total
+[INFO] 20:25:55:990 Team/(5879:5886): Tamanio total recibido: 20
+[INFO] 20:25:55:990 Team/(5879:5886): Id recibido: 64
+[INFO] 20:25:55:990 Team/(5879:5886): Id correlativo recibido: 61
+[INFO] 20:25:55:990 Team/(5879:5886): Flag atrapado recibido: 1
+[INFO] 20:25:55:990 Team/(5879:5886): Acknowledgement enviado al modulo Broker
+[INFO] 20:25:55:990 Team/(5879:5886): Caught recibido del Broker en socket 8
+[INFO] 20:26:00:901 Team/(5879:5891): El entrenador 1 se encuentra en (8,5)
+[INFO] 20:26:01:7 Team/(5879:5886): Recibiendo mensaje Caught
+[INFO] 20:26:01:7 Team/(5879:5886): Recibiendo tamanio total
+[INFO] 20:26:01:7 Team/(5879:5886): Tamanio total recibido: 20
+[INFO] 20:26:01:7 Team/(5879:5886): Id recibido: 65
+[INFO] 20:26:01:7 Team/(5879:5886): Id correlativo recibido: 63
+[INFO] 20:26:01:7 Team/(5879:5886): Flag atrapado recibido: 1
+[INFO] 20:26:01:8 Team/(5879:5886): Acknowledgement enviado al modulo Broker
+[INFO] 20:26:01:8 Team/(5879:5886): Caught recibido del Broker en socket 8
+[INFO] 20:26:05:903 Team/(5879:5891): El entrenador 1 se encuentra en (7,5)
+[INFO] 20:26:10:904 Team/(5879:5891): El entrenador 1 se encuentra en (6,5)
+[INFO] 20:26:12:865 Team/(5879:5889): Buscando deadlock...
+[INFO] 20:26:12:866 Team/(5879:5889): Obtengo entrenadores bloqueados
+[INFO] 20:26:12:866 Team/(5879:5889): Entrenador 0 agregado a la lista de bloqueados
+[INFO] 20:26:12:866 Team/(5879:5889): Entrenador 2 agregado a la lista de bloqueados
+[INFO] 20:26:12:866 Team/(5879:5889): Entrenadores bloqueados obtenidos
+[INFO] 20:26:12:866 Team/(5879:5889): Cantidad de entrenadores bloqueados para buscar deadlocks: 2
+[INFO] 20:26:12:866 Team/(5879:5889): Agregando hijos para entrenador 0
+[INFO] 20:26:12:867 Team/(5879:5889): Entrenador 2 necesita el pokemon onix
+[INFO] 20:26:12:867 Team/(5879:5889): Agregando hijos para entrenador 2
+[INFO] 20:26:12:867 Team/(5879:5889): Liberando arbol luego de no encontrar deadlock
+[INFO] 20:26:12:867 Team/(5879:5889): Cantidad de entrenadores bloqueados para buscar deadlocks: 2
+[INFO] 20:26:12:867 Team/(5879:5889): Agregando hijos para entrenador 2
+[INFO] 20:26:12:867 Team/(5879:5889): Liberando arbol luego de no encontrar deadlock
+[INFO] 20:26:12:868 Team/(5879:5889): No se han encontrado deadlocks
+[INFO] 20:26:15:906 Team/(5879:5891): El entrenador 1 se encuentra en (5,5)
+[INFO] 20:26:20:907 Team/(5879:5891): El entrenador 1 ha llegado a (5,5)
+[INFO] 20:26:20:908 Team/(5879:5891): Cambiando estado de entrenador 1 de Estado executing a Estado blocked
+[INFO] 20:26:20:909 Team/(5879:5891): Estado de entrenador 1 cambiado a Estado blocked. Razon del cambio: Se ha enviado un catch
+[INFO] 20:26:20:909 Team/(5879:5891): Entrenador 1 enviando catch para el pokemon squirtle en (5,5)
+[INFO] 20:26:22:857 Team/(5879:5888): Iniciando verificacion de conexion con Broker...
+[INFO] 20:26:22:858 Team/(5879:5888): Conexion con Broker en buen estado, verificando nuevamente en 30 segundos
+[INFO] 20:26:25:911 Team/(5879:5891): El entrenador 1 ha enviado el catch para el pokemon squirtle en (5,5) correctamente por el socket 10
+[INFO] 20:26:25:913 Team/(5879:5891): Recibiendo ID del CATCH enviado al Broker
+[INFO] 20:26:25:920 Team/(5879:5891): El id recibido es: 66
+[INFO] 20:26:25:920 Team/(5879:5891): Id del catch enviado por el entrenador 1 para el pokemon squirtle en (5,5) recibido correctamente por el socket 10 y es igual a 66
+[INFO] 20:26:30:987 Team/(5879:5886): Recibiendo mensaje Caught
+[INFO] 20:26:30:987 Team/(5879:5886): Recibiendo tamanio total
+[INFO] 20:26:30:988 Team/(5879:5886): Tamanio total recibido: 20
+[INFO] 20:26:30:988 Team/(5879:5886): Id recibido: 67
+[INFO] 20:26:30:988 Team/(5879:5886): Id correlativo recibido: 66
+[INFO] 20:26:30:988 Team/(5879:5886): Flag atrapado recibido: 1
+[INFO] 20:26:30:988 Team/(5879:5886): Acknowledgement enviado al modulo Broker
+[INFO] 20:26:30:988 Team/(5879:5886): Caught recibido del Broker en socket 8
+[INFO] 20:26:30:988 Team/(5879:5882): Planificando mensaje caught con id correlativo 66 y flag de recibido 1
+[INFO] 20:26:30:988 Team/(5879:5882): Entrenador 1 adquiriendo pokemon squirtle
+[INFO] 20:26:30:988 Team/(5879:5882): El entrenador 1 ha adquirido al pokemon squirtle
+[INFO] 20:26:30:988 Team/(5879:5882): no hago nada porque el entrenador tiene objetivos pero no pokebolas
+[INFO] 20:26:30:988 Team/(5879:5882): Cambiando tarea de entrenador 1 de Atrapar pokemon a No hacer nada
+[INFO] 20:26:30:988 Team/(5879:5882): Tarea de entrenador 1 cambiada a No hacer nada
+[INFO] 20:26:32:868 Team/(5879:5889): Buscando deadlock...
+[INFO] 20:26:32:868 Team/(5879:5889): Obtengo entrenadores bloqueados
+[INFO] 20:26:32:868 Team/(5879:5889): Entrenador 0 agregado a la lista de bloqueados
+[INFO] 20:26:32:868 Team/(5879:5889): Entrenador 1 agregado a la lista de bloqueados
+[INFO] 20:26:32:868 Team/(5879:5889): Entrenador 2 agregado a la lista de bloqueados
+[INFO] 20:26:32:868 Team/(5879:5889): Entrenadores bloqueados obtenidos
+[INFO] 20:26:32:868 Team/(5879:5889): Cantidad de entrenadores bloqueados para buscar deadlocks: 3
+[INFO] 20:26:32:868 Team/(5879:5889): Agregando hijos para entrenador 0
+[INFO] 20:26:32:868 Team/(5879:5889): Entrenador 2 necesita el pokemon onix
+[INFO] 20:26:32:869 Team/(5879:5889): Agregando hijos para entrenador 2
+[INFO] 20:26:32:869 Team/(5879:5889): Entrenador 1 necesita el pokemon gengar
+[INFO] 20:26:32:869 Team/(5879:5889): Agregando hijos para entrenador 1
+[INFO] 20:26:32:869 Team/(5879:5889): Entrenador 0 necesita el pokemon squirtle
+[INFO] 20:26:32:869 Team/(5879:5889): Armando deadlock
+[INFO] 20:26:32:869 Team/(5879:5889): Agregando entrenador 0 al deadlock
+[INFO] 20:26:32:869 Team/(5879:5889): Entrenador 0 agregado al deadlock
+[INFO] 20:26:32:869 Team/(5879:5889): Agregando entrenador 1 al deadlock
+[INFO] 20:26:32:869 Team/(5879:5889): Entrenador 1 agregado al deadlock
+[INFO] 20:26:32:869 Team/(5879:5889): Agregando entrenador 2 al deadlock
+[INFO] 20:26:32:869 Team/(5879:5889): Entrenador 2 agregado al deadlock
+[INFO] 20:26:32:869 Team/(5879:5889): Agregando pokemon squirtle al deadlock
+[INFO] 20:26:32:869 Team/(5879:5889): Pokemon squirtle agregado al deadlock
+[INFO] 20:26:32:869 Team/(5879:5889): Agregando pokemon gengar al deadlock
+[INFO] 20:26:32:869 Team/(5879:5889): Pokemon gengar agregado al deadlock
+[INFO] 20:26:32:869 Team/(5879:5889): Agregando pokemon onix al deadlock
+[INFO] 20:26:32:870 Team/(5879:5889): Pokemon onix agregado al deadlock
+[INFO] 20:26:32:870 Team/(5879:5889): Liberando arbol luego de encontrar deadlock
+[INFO] 20:26:32:870 Team/(5879:5889): Deadlock obtenido involucrando a 3 entrenadores
+[INFO] 20:26:32:870 Team/(5879:5883): Planificando tratamiento de deadlock
+[INFO] 20:26:32:870 Team/(5879:5883): Cambiando tarea de entrenador 0 de No hacer nada a Intercambiar pokemon
+[INFO] 20:26:32:870 Team/(5879:5883): Tarea de entrenador 0 cambiada a Intercambiar pokemon
+[INFO] 20:26:32:870 Team/(5879:5883): Cambiando estado de entrenador 0 de Estado blocked a Estado ready
+[INFO] 20:26:32:870 Team/(5879:5883): Estado de entrenador 0 cambiado a Estado ready. Razon del cambio: Entrenador planificado para intercambiar pokemones
+[INFO] 20:26:32:870 Team/(5879:5890): Entrenador 0 entro por Intercambiar Pokemon
+[INFO] 20:26:32:870 Team/(5879:5890): Cambiando estado de entrenador 0 de Estado ready a Estado executing
+[INFO] 20:26:32:870 Team/(5879:5890): Estado de entrenador 0 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de intercambiar pokemon
+[INFO] 20:26:32:870 Team/(5879:5890): entrenador 0 cambia su estado a EXECUTING
+[INFO] 20:26:32:870 Team/(5879:5890): Parametros del deadlock cargados
+[INFO] 20:26:32:870 Team/(5879:5890): El entrenador 0 se esta moviendo de (2,8) a (5,5)
+[INFO] 20:26:32:870 Team/(5879:5890): El entrenador 0 se encuentra en (2,7)
+[INFO] 20:26:37:871 Team/(5879:5890): El entrenador 0 se encuentra en (2,6)
+[INFO] 20:26:42:871 Team/(5879:5890): El entrenador 0 se encuentra en (2,5)
+[INFO] 20:26:47:872 Team/(5879:5890): El entrenador 0 se encuentra en (3,5)
+[INFO] 20:26:52:858 Team/(5879:5888): Iniciando verificacion de conexion con Broker...
+[INFO] 20:26:52:859 Team/(5879:5888): Conexion con Broker en buen estado, verificando nuevamente en 30 segundos
+[INFO] 20:26:52:871 Team/(5879:5889): Buscando deadlock...
+[INFO] 20:26:52:871 Team/(5879:5889): Obtengo entrenadores bloqueados
+[INFO] 20:26:52:871 Team/(5879:5889): Entrenador 1 agregado a la lista de bloqueados
+[INFO] 20:26:52:871 Team/(5879:5889): Entrenador 2 agregado a la lista de bloqueados
+[INFO] 20:26:52:871 Team/(5879:5889): Entrenadores bloqueados obtenidos
+[INFO] 20:26:52:872 Team/(5879:5889): Cantidad de entrenadores bloqueados para buscar deadlocks: 2
+[INFO] 20:26:52:872 Team/(5879:5889): Agregando hijos para entrenador 1
+[INFO] 20:26:52:872 Team/(5879:5889): Liberando arbol luego de no encontrar deadlock
+[INFO] 20:26:52:872 Team/(5879:5889): Cantidad de entrenadores bloqueados para buscar deadlocks: 2
+[INFO] 20:26:52:872 Team/(5879:5889): Agregando hijos para entrenador 2
+[INFO] 20:26:52:872 Team/(5879:5889): Entrenador 1 necesita el pokemon gengar
+[INFO] 20:26:52:872 Team/(5879:5889): Agregando hijos para entrenador 1
+[INFO] 20:26:52:872 Team/(5879:5889): Liberando arbol luego de no encontrar deadlock
+[INFO] 20:26:52:872 Team/(5879:5889): No se han encontrado deadlocks
+[INFO] 20:26:52:874 Team/(5879:5890): El entrenador 0 se encuentra en (4,5)
+[INFO] 20:26:57:874 Team/(5879:5890): El entrenador 0 se encuentra en (5,5)
+[INFO] 20:27:02:875 Team/(5879:5890): El entrenador 0 ha llegado a (5,5)
+[INFO] 20:27:02:877 Team/(5879:5890): Empezando el intercambio de pokemon onix y pokemon squirtle entre entrenador 0 y entrenador 1
+[INFO] 20:27:02:877 Team/(5879:5890): Entrenadores 0 y 1 intercambiando pokemones onix y squirtle
+[INFO] 20:27:12:872 Team/(5879:5889): Buscando deadlock...
+[INFO] 20:27:12:873 Team/(5879:5889): Obtengo entrenadores bloqueados
+[INFO] 20:27:12:873 Team/(5879:5889): Entrenador 1 agregado a la lista de bloqueados
+[INFO] 20:27:12:873 Team/(5879:5889): Entrenador 2 agregado a la lista de bloqueados
+[INFO] 20:27:12:873 Team/(5879:5889): Entrenadores bloqueados obtenidos
+[INFO] 20:27:12:873 Team/(5879:5889): Cantidad de entrenadores bloqueados para buscar deadlocks: 2
+[INFO] 20:27:12:873 Team/(5879:5889): Agregando hijos para entrenador 1
+[INFO] 20:27:12:873 Team/(5879:5889): Liberando arbol luego de no encontrar deadlock
+[INFO] 20:27:12:873 Team/(5879:5889): Cantidad de entrenadores bloqueados para buscar deadlocks: 2
+[INFO] 20:27:12:873 Team/(5879:5889): Agregando hijos para entrenador 2
+[INFO] 20:27:12:873 Team/(5879:5889): Entrenador 1 necesita el pokemon gengar
+[INFO] 20:27:12:874 Team/(5879:5889): Agregando hijos para entrenador 1
+[INFO] 20:27:12:874 Team/(5879:5889): Liberando arbol luego de no encontrar deadlock
+[INFO] 20:27:12:874 Team/(5879:5889): No se han encontrado deadlocks
+[INFO] 20:27:22:859 Team/(5879:5888): Iniciando verificacion de conexion con Broker...
+[INFO] 20:27:22:860 Team/(5879:5888): Conexion con Broker en buen estado, verificando nuevamente en 30 segundos
+[INFO] 20:27:27:878 Team/(5879:5890): Entrenador 0 eliminando pokemon onix
+[INFO] 20:27:27:879 Team/(5879:5890): El entrenador 0 ha eliminado al pokemon onix
+[INFO] 20:27:27:879 Team/(5879:5890): Entrenador 1 eliminando pokemon squirtle
+[INFO] 20:27:27:879 Team/(5879:5890): El entrenador 1 ha eliminado al pokemon squirtle
+[INFO] 20:27:27:879 Team/(5879:5890): Entrenador 0 adquiriendo pokemon squirtle
+[INFO] 20:27:27:879 Team/(5879:5890): El entrenador 0 ha adquirido al pokemon squirtle
+[INFO] 20:27:27:879 Team/(5879:5890): Entrenador 1 adquiriendo pokemon onix
+[INFO] 20:27:27:879 Team/(5879:5890): El entrenador 1 ha adquirido al pokemon onix
+[INFO] 20:27:27:879 Team/(5879:5890): Entrenadores 0 y 1 han intercambiado pokemones onix y squirtle
+[INFO] 20:27:27:879 Team/(5879:5890): Intercambio realizado
+[INFO] 20:27:27:880 Team/(5879:5890): Cambiando estado de entrenador 0 de Estado executing a Estado exit
+[INFO] 20:27:27:880 Team/(5879:5883): Planificando tratamiento de deadlock
+[INFO] 20:27:27:880 Team/(5879:5890): Estado de entrenador 0 cambiado a Estado exit. Razon del cambio: Ha terminado su objetivo
+[INFO] 20:27:27:880 Team/(5879:5890): Cambiando tarea de entrenador 0 de Intercambiar pokemon a No hacer nada
+[INFO] 20:27:27:880 Team/(5879:5890): Tarea de entrenador 0 cambiada a No hacer nada
+[INFO] 20:27:27:880 Team/(5879:5890): Entrenador 0 ha terminado
+[INFO] 20:27:27:881 Team/(5879:5883): Cambiando tarea de entrenador 1 de No hacer nada a Intercambiar pokemon
+[INFO] 20:27:27:881 Team/(5879:5883): Tarea de entrenador 1 cambiada a Intercambiar pokemon
+[INFO] 20:27:27:881 Team/(5879:5883): Cambiando estado de entrenador 1 de Estado blocked a Estado ready
+[INFO] 20:27:27:881 Team/(5879:5883): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Entrenador planificado para intercambiar pokemones
+[INFO] 20:27:27:881 Team/(5879:5891): Entrenador 1 entro por Intercambiar Pokemon
+[INFO] 20:27:27:881 Team/(5879:5891): Cambiando estado de entrenador 1 de Estado ready a Estado executing
+[INFO] 20:27:27:881 Team/(5879:5891): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de intercambiar pokemon
+[INFO] 20:27:27:881 Team/(5879:5891): entrenador 1 cambia su estado a EXECUTING
+[INFO] 20:27:27:881 Team/(5879:5891): Parametros del deadlock cargados
+[INFO] 20:27:27:881 Team/(5879:5891): El entrenador 1 se esta moviendo de (5,5) a (6,6)
+[INFO] 20:27:27:881 Team/(5879:5891): El entrenador 1 se encuentra en (5,6)
+[INFO] 20:27:32:874 Team/(5879:5889): Buscando deadlock...
+[INFO] 20:27:32:874 Team/(5879:5889): Obtengo entrenadores bloqueados
+[INFO] 20:27:32:874 Team/(5879:5889): Entrenador 2 agregado a la lista de bloqueados
+[INFO] 20:27:32:875 Team/(5879:5889): Entrenadores bloqueados obtenidos
+[INFO] 20:27:32:875 Team/(5879:5889): Cantidad de entrenadores bloqueados para buscar deadlocks: 1
+[INFO] 20:27:32:875 Team/(5879:5889): Agregando hijos para entrenador 2
+[INFO] 20:27:32:875 Team/(5879:5889): Liberando arbol luego de no encontrar deadlock
+[INFO] 20:27:32:875 Team/(5879:5889): No se han encontrado deadlocks
+[INFO] 20:27:32:882 Team/(5879:5891): El entrenador 1 se encuentra en (6,6)
+[INFO] 20:27:37:882 Team/(5879:5891): El entrenador 1 ha llegado a (6,6)
+[INFO] 20:27:37:882 Team/(5879:5891): Empezando el intercambio de pokemon onix y pokemon gengar entre entrenador 1 y entrenador 2
+[INFO] 20:27:37:882 Team/(5879:5891): Entrenadores 1 y 2 intercambiando pokemones onix y gengar
+[INFO] 20:27:52:860 Team/(5879:5888): Iniciando verificacion de conexion con Broker...
+[INFO] 20:27:52:860 Team/(5879:5888): Conexion con Broker en buen estado, verificando nuevamente en 30 segundos
+[INFO] 20:27:52:875 Team/(5879:5889): Buscando deadlock...
+[INFO] 20:27:52:875 Team/(5879:5889): Obtengo entrenadores bloqueados
+[INFO] 20:27:52:875 Team/(5879:5889): Entrenador 2 agregado a la lista de bloqueados
+[INFO] 20:27:52:875 Team/(5879:5889): Entrenadores bloqueados obtenidos
+[INFO] 20:27:52:875 Team/(5879:5889): Cantidad de entrenadores bloqueados para buscar deadlocks: 1
+[INFO] 20:27:52:875 Team/(5879:5889): Agregando hijos para entrenador 2
+[INFO] 20:27:52:875 Team/(5879:5889): Liberando arbol luego de no encontrar deadlock
+[INFO] 20:27:52:875 Team/(5879:5889): No se han encontrado deadlocks
+[INFO] 20:28:02:884 Team/(5879:5891): Entrenador 1 eliminando pokemon onix
+[INFO] 20:28:02:885 Team/(5879:5891): El entrenador 1 ha eliminado al pokemon onix
+[INFO] 20:28:02:885 Team/(5879:5891): Entrenador 2 eliminando pokemon gengar
+[INFO] 20:28:02:885 Team/(5879:5891): El entrenador 2 ha eliminado al pokemon gengar
+[INFO] 20:28:02:885 Team/(5879:5891): Entrenador 1 adquiriendo pokemon gengar
+[INFO] 20:28:02:885 Team/(5879:5891): El entrenador 1 ha adquirido al pokemon gengar
+[INFO] 20:28:02:885 Team/(5879:5891): Entrenador 2 adquiriendo pokemon onix
+[INFO] 20:28:02:885 Team/(5879:5891): El entrenador 2 ha adquirido al pokemon onix
+[INFO] 20:28:02:885 Team/(5879:5891): Entrenadores 1 y 2 han intercambiado pokemones onix y gengar
+[INFO] 20:28:02:885 Team/(5879:5891): Intercambio realizado
+[INFO] 20:28:02:885 Team/(5879:5891): Cambiando estado de entrenador 2 de Estado blocked a Estado exit
+[INFO] 20:28:02:886 Team/(5879:5891): Estado de entrenador 2 cambiado a Estado exit. Razon del cambio: Ha terminado su objetivo
+[INFO] 20:28:02:886 Team/(5879:5891): Cambiando tarea de entrenador 2 de No hacer nada a No hacer nada
+[INFO] 20:28:02:886 Team/(5879:5891): Tarea de entrenador 2 cambiada a No hacer nada
+[INFO] 20:28:02:886 Team/(5879:5891): Cambiando estado de entrenador 1 de Estado executing a Estado exit
+[INFO] 20:28:02:886 Team/(5879:5892): Entrenador 2 ha terminado
+[INFO] 20:28:02:886 Team/(5879:5891): Estado de entrenador 1 cambiado a Estado exit. Razon del cambio: Ha terminado su objetivo
+[INFO] 20:28:02:886 Team/(5879:5891): Cambiando tarea de entrenador 1 de Intercambiar pokemon a No hacer nada
+[INFO] 20:28:02:886 Team/(5879:5891): Tarea de entrenador 1 cambiada a No hacer nada
+[INFO] 20:28:02:886 Team/(5879:5891): Entrenador 1 ha terminado
+[INFO] 20:28:02:887 Team/(5879:5879): Proceso Team terminado. Cantidad de ciclos de CPU totales: 57
+[INFO] 20:28:02:887 Team/(5879:5879): Proceso Team terminado. Cantidad de ciclos de CPU del entrenador 0: 18
+[INFO] 20:28:02:887 Team/(5879:5879): Proceso Team terminado. Cantidad de ciclos de CPU del entrenador 1: 30
+[INFO] 20:28:02:887 Team/(5879:5879): Proceso Team terminado. Cantidad de ciclos de CPU del entrenador 2: 9
+[INFO] 20:28:02:887 Team/(5879:5879): Proceso Team terminado. Cantidad de cambios de contexto realizados: 22
+[INFO] 20:28:02:887 Team/(5879:5879): Proceso Team terminado. Cantidad de deadlocks encontrados y tratados: 1

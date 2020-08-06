@@ -266,8 +266,8 @@ void procesar_request(int cod_op, int cliente_fd) {
 	}
 }
 
-void atender_cliente(int* socket) {
-	int socket_cliente = *socket;
+void atender_cliente(int* socket_arg) {
+	int socket_cliente = *socket_arg;
 	uint32_t cod_op;
 	log_info(extense_logger, "Recibiendo codigo de operacion de socket %i", socket_cliente);
 	int status_recv = recv(socket_cliente, &cod_op, sizeof(uint32_t), MSG_WAITALL);
@@ -283,6 +283,7 @@ void atender_cliente(int* socket) {
 	}
 	log_info(extense_logger, "Codigo de operacion de socket %i recibido: %i", socket_cliente, cod_op);
 	procesar_request(cod_op, socket_cliente);
+	free(socket_arg);
 }
 
 void esperar_cliente(int socket_servidor) {
@@ -516,6 +517,10 @@ void* atender_localized(void* args) {
 		log_info(extense_logger, "Eliminado mensaje LOCALIZED con id %i", primer_elemento->id);
 
 		free(mensaje_a_eliminar->pokemon);
+		for(int i = 0; i < mensaje_a_eliminar->l_coordenadas->elements_count; i++) {
+			uint32_t* elemento_a_eliminar = list_get(mensaje_a_eliminar->l_coordenadas, i);
+			free(elemento_a_eliminar);
+		}
 		list_destroy(mensaje_a_eliminar->l_coordenadas);
 		free(mensaje_a_eliminar);
 		free(elemento_a_eliminar);
@@ -580,6 +585,11 @@ void atender_mensaje_new(mensaje_queue* mensaje) {
 	}
 
 	guardar_info_envios(mensaje->id, mandados, acks);
+
+	for (int i = 0; i < suscriptores_para_enviar->elements_count; i++) {
+		status_envio* status_para_eliminar = struct_para_enviar[i].status;
+		free(status_para_eliminar);
+	}
 
 	free(threads);
 	free(struct_para_enviar);
@@ -647,6 +657,11 @@ void atender_mensaje_appeared(mensaje_queue* mensaje) {
 
 	guardar_info_envios(mensaje->id, mandados, acks);
 
+	for (int i = 0; i < suscriptores_para_enviar->elements_count; i++) {
+		status_envio* status_para_eliminar = struct_para_enviar[i].status;
+		free(status_para_eliminar);
+	}
+
 	free(threads);
 	free(struct_para_enviar);
 	list_clean(suscriptores_para_enviar);
@@ -711,6 +726,11 @@ void atender_mensaje_catch(mensaje_queue* mensaje) {
 	}
 
 	guardar_info_envios(mensaje->id, mandados, acks);
+
+	for (int i = 0; i < suscriptores_para_enviar->elements_count; i++) {
+		status_envio* status_para_eliminar = struct_para_enviar[i].status;
+		free(status_para_eliminar);
+	}
 
 	free(threads);
 	free(struct_para_enviar);
@@ -778,6 +798,11 @@ void atender_mensaje_caught(mensaje_queue* mensaje) {
 
 	guardar_info_envios(mensaje->id, mandados, acks);
 
+	for (int i = 0; i < suscriptores_para_enviar->elements_count; i++) {
+		status_envio* status_para_eliminar = struct_para_enviar[i].status;
+		free(status_para_eliminar);
+	}
+
 	free(threads);
 	free(struct_para_enviar);
 	list_clean(suscriptores_para_enviar);
@@ -842,6 +867,11 @@ void atender_mensaje_get(mensaje_queue* mensaje) {
 	}
 
 	guardar_info_envios(mensaje->id, mandados, acks);
+
+	for (int i = 0; i < suscriptores_para_enviar->elements_count; i++) {
+		status_envio* status_para_eliminar = struct_para_enviar[i].status;
+		free(status_para_eliminar);
+	}
 
 	free(threads);
 	free(struct_para_enviar);
@@ -908,6 +938,11 @@ void atender_mensaje_localized(mensaje_queue* mensaje) {
 	}
 
 	guardar_info_envios(mensaje->id, mandados, acks);
+
+	for (int i = 0; i < suscriptores_para_enviar->elements_count; i++) {
+		status_envio* status_para_eliminar = struct_para_enviar[i].status;
+		free(status_para_eliminar);
+	}
 
 	free(threads);
 	free(struct_para_enviar);
@@ -1479,6 +1514,7 @@ void enviar_mensaje_new_de_memoria(void* new_mandable_memoria) {
 	}
 
 	free(status);
+	free(flujo);
 }
 
 void enviar_mensaje_appeared_de_memoria(void* appeared_mandable_memoria) {
@@ -1534,6 +1570,7 @@ void enviar_mensaje_appeared_de_memoria(void* appeared_mandable_memoria) {
 	}
 
 	free(status);
+	free(flujo);
 }
 
 void enviar_mensaje_catch_de_memoria(void* catch_mandable_memoria) {
@@ -1589,6 +1626,7 @@ void enviar_mensaje_catch_de_memoria(void* catch_mandable_memoria) {
 	}
 
 	free(status);
+	free(flujo);
 }
 
 void enviar_mensaje_caught_de_memoria(void* caught_mandable_memoria) {
@@ -1644,6 +1682,7 @@ void enviar_mensaje_caught_de_memoria(void* caught_mandable_memoria) {
 	}
 
 	free(status);
+	free(flujo);
 }
 
 void enviar_mensaje_get_de_memoria(void* get_mandable_memoria) {
@@ -1699,6 +1738,7 @@ void enviar_mensaje_get_de_memoria(void* get_mandable_memoria) {
 	}
 
 	free(status);
+	free(flujo);
 }
 
 void enviar_mensaje_localized_de_memoria(void* localized_mandable_memoria) {
@@ -1754,6 +1794,7 @@ void enviar_mensaje_localized_de_memoria(void* localized_mandable_memoria) {
 	}
 
 	free(status);
+	free(flujo);
 }
 
 void* serializar_new(mensaje_queue* new, uint32_t* bytes) {
