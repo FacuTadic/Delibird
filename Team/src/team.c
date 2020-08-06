@@ -2319,7 +2319,7 @@ void terminar_programa() {
 
 	queue_destroy(cola_pokemones);
 
-	config_destroy(config);
+	//config_destroy(config);
 
 	for (int i = 0; i < objetivo_global->elements_count; i++) {
 		free((char*) list_get(objetivo_global, i));
