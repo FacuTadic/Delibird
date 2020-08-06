@@ -1765,7 +1765,7 @@ void* serializar_new(mensaje_queue* new, uint32_t* bytes) {
 	void* flujo = malloc(*bytes);
 	int desplazamiento = 0;
 
-	memcpy(flujo + desplazamiento, &cod_op, sizeof(uint32_t));
+	memcpy(flujo + desplazamiento, cod_op, sizeof(uint32_t));
 	desplazamiento += sizeof(uint32_t);
 	memcpy(flujo + desplazamiento, bytes, sizeof(uint32_t));
 	desplazamiento += sizeof(uint32_t);
