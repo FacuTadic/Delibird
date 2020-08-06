@@ -2060,11 +2060,13 @@ void liberar_planificacion(t_pokemon* pokemon) {
 void borrar_pokemon_del_mapa(t_pokemon* pokemon) {
 	log_info(extense_logger, "Eliminando pokemon %s en (%i,%i) del mapa", pokemon->nombre, pokemon->pos_X, pokemon->pos_Y);
 	t_list* pokemones = dictionary_get(pokemones_conocidos_que_no_se_intentan_atrapar, pokemon->nombre);
-	for (int i = 0; i < pokemones->elements_count; i++) {
-		t_pokemon* pokemon_lista = list_get(pokemones, i);
-		if (pokemon_lista->pos_X == pokemon->pos_X && pokemon_lista->pos_Y == pokemon->pos_Y) {
-			list_remove(pokemones, i);
-			i = pokemones->elements_count;
+	if (pokemones != NULL) {
+		for (int i = 0; i < pokemones->elements_count; i++) {
+			t_pokemon* pokemon_lista = list_get(pokemones, i);
+			if (pokemon_lista->pos_X == pokemon->pos_X && pokemon_lista->pos_Y == pokemon->pos_Y) {
+				list_remove(pokemones, i);
+				i = pokemones->elements_count;
+			}
 		}
 	}
 }
