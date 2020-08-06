@@ -538,9 +538,9 @@ t_localized* recibir_localized(int socket_cliente, uint32_t* size, t_log* logger
 	localized->l_coordenadas = list_create();
 
 	for (int i = 0; i < (localized->lugares)*2; i++) {
-		uint32_t unidad_coord;
+		uint32_t* unidad_coord = malloc(sizeof(uint32_t));
 
-		status_recv = recv(socket_cliente, &unidad_coord, sizeof(uint32_t), MSG_WAITALL);
+		status_recv = recv(socket_cliente, unidad_coord, sizeof(uint32_t), MSG_WAITALL);
 		if (status_recv == -1) {
 			close(socket_cliente);
 			log_error(logger, "Hubo un problema recibiendo la unidad de coordenada");
@@ -560,9 +560,9 @@ t_localized* recibir_localized(int socket_cliente, uint32_t* size, t_log* logger
 			return NULL;
 		}
 
-		log_info(logger, "Unidad de coordenada recibida: %i", unidad_coord);
+		log_info(logger, "Unidad de coordenada recibida: %i", *unidad_coord);
 
-		list_add(localized->l_coordenadas, &unidad_coord);
+		list_add(localized->l_coordenadas, unidad_coord);
 	}
 
 	return localized;

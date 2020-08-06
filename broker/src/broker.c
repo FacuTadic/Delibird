@@ -160,6 +160,10 @@ void procesar_request(int cod_op, int cliente_fd) {
 		free(mensaje_a_guardar);
 		pthread_exit(NULL);
 	} else {
+//		for (int i = 0; i < localized_msg->l_coordenadas->elements_count; i++) {
+//			uint32_t* numerito = list_get(localized_msg->l_coordenadas, i);
+//			log_info(extense_logger, "Coordenada de localized en el case: %i", *numerito);
+//		}
 		pthread_mutex_lock(&gl_localized_ids_lock);
 		int ya_fue_respondido = contiene_al_id_respondido(gl_localized_ids_respondidos, localized_msg->id_correlativo);
 		pthread_mutex_unlock(&gl_localized_ids_lock);
@@ -516,6 +520,11 @@ void* atender_localized(void* args) {
 		log_info(extense_logger, "Eliminado mensaje LOCALIZED con id %i", primer_elemento->id);
 
 		free(mensaje_a_eliminar->pokemon);
+
+		for(int i = 0; i < mensaje_a_eliminar->l_coordenadas->elements_count; i++) {
+			uint32_t* elemento_coordenada = list_get(mensaje_a_eliminar->l_coordenadas, i);
+			free(elemento_coordenada);
+		}
 		list_destroy(mensaje_a_eliminar->l_coordenadas);
 		free(mensaje_a_eliminar);
 		free(elemento_a_eliminar);
@@ -2004,7 +2013,6 @@ void* serializar_localized_para_memoria(t_localized* localized, uint32_t* bytes)
 	desplazamiento += tamanio_pokemon;
 	memcpy(flujo + desplazamiento, &(localized->lugares), sizeof(uint32_t));
 	desplazamiento += sizeof(uint32_t);
-
 
 	for (int i = 0; i < localized->l_coordenadas->elements_count; i++) {
 		uint32_t* elemento_de_lista = (uint32_t*) list_get(localized->l_coordenadas, i);
