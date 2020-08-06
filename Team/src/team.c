@@ -106,7 +106,7 @@ void escuchar_appeared_de_broker(void) {
 				log_info(extense_logger, "Appeared recibido de BROKER");
 
 				if(es_pokemon_global(appeared_msg->pokemon)) {
-					log_info(extense_logger, "pokemon %s esta en el objetivo global");
+					log_info(extense_logger, "pokemon %s esta en el objetivo global", appeared_msg->pokemon);
 
 					t_pokemon* pokemon_a_agregar = generar_pokemon_de_appeared(appeared_msg);
 
@@ -197,8 +197,9 @@ void escuchar_localized_de_broker(void) {
 
 				if (pokemon_ya_fue_recibido(localized_msg->pokemon) == 0) {
 					log_info(extense_logger, "pokemon %s llego por primera vez",localized_msg->pokemon);
+					char* pokemon_nuevo = string_duplicate(localized_msg->pokemon);
 					pthread_mutex_lock(&pokemones_llegados_mutex);
-					list_add(pokemones_llegados, (void*) localized_msg->pokemon);
+					list_add(pokemones_llegados, (void*) pokemon_nuevo);
 					pthread_mutex_unlock(&pokemones_llegados_mutex);
 					t_list* pokemones = generar_pokemones_de_localized(localized_msg);
 
