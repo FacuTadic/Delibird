@@ -1135,11 +1135,40 @@ void reconectar_al_broker() {
 		socket_escucha_localized = crear_conexion(ip_broker, puerto_broker);
 		log_info(extense_logger, "Socket de reconexion appeared: %i",socket_escucha_localized);
 
-		log_info(logger, "conexion establecida con BROKER, ip: %s puerto : %s", ip_broker, puerto_broker);
-		estoy_conectado_al_broker = 1;
-
-		log_info(extense_logger, "Reconexion con Broker exitosa, verificando nuevamente en %i segundos", tiempo_reconexion);
-		log_info(logger, "Reconexion con Broker exitosa, verificando nuevamente en %i segundos", tiempo_reconexion);
+		uint32_t id_cola_appeared = 12;
+		int status_envio = mandar_suscripcion(socket_escucha_appeared, id_cola_appeared);
+		if (status_envio == -1) {
+			pthread_mutex_lock(&estoy_conectado_al_broker_mutex);
+			estoy_conectado_al_broker = 0;
+			pthread_mutex_unlock(&estoy_conectado_al_broker_mutex);
+			log_error(extense_logger, "Reconexion con Broker fallida, intentando nuevamente en %i segundos", tiempo_reconexion);
+			log_error(logger, "Reconexion con Broker fallida, intentando nuevamente en %i segundos", tiempo_reconexion);
+		} else {
+			uint32_t id_cola_caught = 14;
+			status_envio = mandar_suscripcion(socket_escucha_caught, id_cola_caught);
+			if (status_envio == -1) {
+				pthread_mutex_lock(&estoy_conectado_al_broker_mutex);
+				estoy_conectado_al_broker = 0;
+				pthread_mutex_unlock(&estoy_conectado_al_broker_mutex);
+				log_error(extense_logger, "Reconexion con Broker fallida, intentando nuevamente en %i segundos", tiempo_reconexion);
+				log_error(logger, "Reconexion con Broker fallida, intentando nuevamente en %i segundos", tiempo_reconexion);
+			} else {
+				uint32_t id_cola_localized = 16;
+				int status_envio = mandar_suscripcion(socket_escucha_localized, id_cola_localized);
+				if (status_envio == -1) {
+					pthread_mutex_lock(&estoy_conectado_al_broker_mutex);
+					estoy_conectado_al_broker = 0;
+					pthread_mutex_unlock(&estoy_conectado_al_broker_mutex);
+					log_error(extense_logger, "Reconexion con Broker fallida, intentando nuevamente en %i segundos", tiempo_reconexion);
+					log_error(logger, "Reconexion con Broker fallida, intentando nuevamente en %i segundos", tiempo_reconexion);
+				} else {
+					log_info(logger, "conexion establecida con BROKER, ip: %s puerto : %s", ip_broker, puerto_broker);
+					estoy_conectado_al_broker = 1;
+					log_info(extense_logger, "Reconexion con Broker exitosa, verificando nuevamente en %i segundos", tiempo_reconexion);
+					log_info(logger, "Reconexion con Broker exitosa, verificando nuevamente en %i segundos", tiempo_reconexion);
+				}
+			}
+		}
 	} else {
 		log_error(extense_logger, "Reconexion con Broker fallida, intentando nuevamente en %i segundos", tiempo_reconexion);
 		log_error(logger, "Reconexion con Broker fallida, intentando nuevamente en %i segundos", tiempo_reconexion);
@@ -2308,18 +2337,18 @@ void terminar_programa() {
 
 		// ESTO TIRA INVALID FREE
 
-//		for (int k = 0; k < entrenador_lista->objetivos->elements_count; k++) {
-//			free(list_get(entrenador_lista->objetivos, k));
-//		}
-//		for (int k = 0; k < entrenador_lista->objetivos_actuales->elements_count; k++) {
-//			free(list_get(entrenador_lista->objetivos_actuales, k));
-//		}
-//		for (int k = 0; k < entrenador_lista->pokemones->elements_count; k++) {
-//			free(list_get(entrenador_lista->pokemones, k));
-//		}
-//		for (int k = 0; k < entrenador_lista->pokemones_innecesarios->elements_count; k++) {
-//			free(list_get(entrenador_lista->pokemones_innecesarios, k));
-//		}
+		//		for (int k = 0; k < entrenador_lista->objetivos->elements_count; k++) {
+		//			free(list_get(entrenador_lista->objetivos, k));
+		//		}
+		//		for (int k = 0; k < entrenador_lista->objetivos_actuales->elements_count; k++) {
+		//			free(list_get(entrenador_lista->objetivos_actuales, k));
+		//		}
+		//		for (int k = 0; k < entrenador_lista->pokemones->elements_count; k++) {
+		//			free(list_get(entrenador_lista->pokemones, k));
+		//		}
+		//		for (int k = 0; k < entrenador_lista->pokemones_innecesarios->elements_count; k++) {
+		//			free(list_get(entrenador_lista->pokemones_innecesarios, k));
+		//		}
 
 		list_destroy(entrenador_lista->objetivos);
 		list_destroy(entrenador_lista->objetivos_actuales);
