@@ -536,3 +536,705 @@
 [ERROR] 00:57:37:529 Team/(10328:10342): Error: No se pudo enviar el GET correspondiente al pokemon pikachu, iniciando el comportamiento default
 [ERROR] 00:57:37:529 Team/(10328:10343): Error: No se pudo enviar el GET correspondiente al pokemon gengar, iniciando el comportamiento default
 [ERROR] 00:57:37:529 Team/(10328:10344): Error: No se pudo enviar el GET correspondiente al pokemon onix, iniciando el comportamiento default
+[INFO] 16:05:02:160 Team/(17860:17862): Estado de entrenador 2 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 16:05:02:160 Team/(17860:17875): Estado de entrenador 2 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de atrapar pokemon squirtle
+[INFO] 16:05:02:160 Team/(17860:17875): Entrenador 2 esta atrapando pokemon squirtle ubicado en (5,2)
+[INFO] 16:05:02:160 Team/(17860:17875): El entrenador 2 se esta moviendo de (3,2) a (5,2)
+[INFO] 16:05:02:160 Team/(17860:17875): El entrenador 2 se encuentra en (4,2)
+[INFO] 16:05:07:160 Team/(17860:17875): El entrenador 2 se encuentra en (5,2)
+[INFO] 16:07:13:260 Team/(18215:18217): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 16:07:13:260 Team/(18215:18229): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de atrapar pokemon pikachu
+[INFO] 16:07:13:260 Team/(18215:18229): Entrenador 1 esta atrapando pokemon pikachu ubicado en (9,9)
+[INFO] 16:07:13:261 Team/(18215:18229): El entrenador 1 se esta moviendo de (2,3) a (9,9)
+[INFO] 16:07:13:261 Team/(18215:18229): El entrenador 1 se encuentra en (2,4)
+[INFO] 16:07:13:272 Team/(18215:18224): el ID correlativo 32 de caught no corresponde a ningun catch, mensaje ignorado
+[INFO] 16:07:13:298 Team/(18215:18217): Estado de entrenador 2 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 16:07:14:371 Team/(18215:18227): Buscando deadlock...
+[INFO] 16:07:14:371 Team/(18215:18227): No se han encontrado deadlocks
+[INFO] 16:07:18:261 Team/(18215:18229): El entrenador 1 se encuentra en (2,5)
+[INFO] 16:07:23:262 Team/(18215:18229): El entrenador 1 se encuentra en (2,6)
+[INFO] 16:07:24:371 Team/(18215:18226): Iniciando verificacion de conexion con Broker...
+[INFO] 16:07:28:244 Team/(18215:18224): el ID correlativo 38 de caught no corresponde a ningun catch, mensaje ignorado
+[INFO] 16:07:28:262 Team/(18215:18229): El entrenador 1 se encuentra en (2,7)
+[INFO] 16:07:33:263 Team/(18215:18229): El entrenador 1 se encuentra en (2,8)
+[INFO] 16:07:34:372 Team/(18215:18227): Buscando deadlock...
+[INFO] 16:07:34:372 Team/(18215:18227): No se han encontrado deadlocks
+[INFO] 16:07:38:264 Team/(18215:18229): El entrenador 1 se encuentra en (2,9)
+[INFO] 16:07:43:264 Team/(18215:18229): El entrenador 1 se encuentra en (3,9)
+[INFO] 16:07:48:265 Team/(18215:18229): El entrenador 1 se encuentra en (4,9)
+[INFO] 16:07:53:267 Team/(18215:18229): El entrenador 1 se encuentra en (5,9)
+[INFO] 16:07:54:372 Team/(18215:18226): Iniciando verificacion de conexion con Broker...
+[INFO] 16:07:54:372 Team/(18215:18227): Buscando deadlock...
+[INFO] 16:07:54:372 Team/(18215:18227): No se han encontrado deadlocks
+[INFO] 16:07:58:268 Team/(18215:18229): El entrenador 1 se encuentra en (6,9)
+[INFO] 16:08:03:268 Team/(18215:18229): El entrenador 1 se encuentra en (7,9)
+[INFO] 16:08:08:268 Team/(18215:18229): El entrenador 1 se encuentra en (8,9)
+[INFO] 16:08:13:269 Team/(18215:18229): El entrenador 1 se encuentra en (9,9)
+[INFO] 16:08:14:373 Team/(18215:18227): Buscando deadlock...
+[INFO] 16:08:14:373 Team/(18215:18227): No se han encontrado deadlocks
+[INFO] 16:08:18:270 Team/(18215:18229): Estado de entrenador 1 cambiado a Estado blocked. Razon del cambio: Se ha enviado un catch
+[INFO] 16:08:23:272 Team/(18215:18230): Estado de entrenador 2 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de atrapar pokemon squirtle
+[INFO] 16:08:23:272 Team/(18215:18230): Entrenador 2 esta atrapando pokemon squirtle ubicado en (5,2)
+[INFO] 16:08:23:272 Team/(18215:18230): El entrenador 2 se esta moviendo de (3,2) a (5,2)
+[INFO] 16:08:23:272 Team/(18215:18230): El entrenador 2 se encuentra en (4,2)
+[INFO] 16:08:24:373 Team/(18215:18226): Iniciando verificacion de conexion con Broker...
+[INFO] 16:08:28:272 Team/(18215:18230): El entrenador 2 se encuentra en (5,2)
+[INFO] 16:08:33:273 Team/(18215:18230): Estado de entrenador 2 cambiado a Estado blocked. Razon del cambio: Se ha enviado un catch
+[INFO] 16:08:34:374 Team/(18215:18227): Buscando deadlock...
+[INFO] 16:08:34:374 Team/(18215:18227): No se han encontrado deadlocks
+[INFO] 16:08:54:374 Team/(18215:18226): Iniciando verificacion de conexion con Broker...
+[INFO] 16:08:54:374 Team/(18215:18227): Buscando deadlock...
+[INFO] 16:08:54:374 Team/(18215:18227): No se han encontrado deadlocks
+[INFO] 16:09:14:375 Team/(18215:18227): Buscando deadlock...
+[INFO] 16:09:14:375 Team/(18215:18227): No se han encontrado deadlocks
+[INFO] 16:09:24:375 Team/(18215:18226): Iniciando verificacion de conexion con Broker...
+[INFO] 16:09:34:376 Team/(18215:18227): Buscando deadlock...
+[INFO] 16:09:34:376 Team/(18215:18227): No se han encontrado deadlocks
+[INFO] 16:09:38:222 Team/(18215:18217): Estado de entrenador 0 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 16:09:38:222 Team/(18215:18228): Estado de entrenador 0 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de atrapar pokemon onix
+[INFO] 16:09:38:222 Team/(18215:18228): Entrenador 0 esta atrapando pokemon onix ubicado en (2,8)
+[INFO] 16:09:38:222 Team/(18215:18228): El entrenador 0 se esta moviendo de (1,3) a (2,8)
+[INFO] 16:09:38:222 Team/(18215:18228): El entrenador 0 se encuentra en (1,4)
+[INFO] 16:09:43:222 Team/(18215:18228): El entrenador 0 se encuentra en (1,5)
+[INFO] 16:09:43:235 Team/(18215:18217): Estado de entrenador 2 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 16:09:48:222 Team/(18215:18228): El entrenador 0 se encuentra en (1,6)
+[INFO] 16:09:48:239 Team/(18215:18217): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 16:09:53:223 Team/(18215:18228): El entrenador 0 se encuentra en (1,7)
+[INFO] 16:09:54:375 Team/(18215:18226): Iniciando verificacion de conexion con Broker...
+[INFO] 16:09:54:376 Team/(18215:18227): Buscando deadlock...
+[INFO] 16:09:54:376 Team/(18215:18227): No se han encontrado deadlocks
+[INFO] 16:09:58:224 Team/(18215:18228): El entrenador 0 se encuentra en (1,8)
+[INFO] 16:10:03:225 Team/(18215:18228): El entrenador 0 se encuentra en (2,8)
+[INFO] 16:10:08:226 Team/(18215:18228): Estado de entrenador 0 cambiado a Estado blocked. Razon del cambio: Se ha enviado un catch
+[INFO] 16:10:13:228 Team/(18215:18230): Estado de entrenador 2 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de atrapar pokemon gengar
+[INFO] 16:10:13:228 Team/(18215:18230): Entrenador 2 esta atrapando pokemon gengar ubicado en (6,6)
+[INFO] 16:10:13:228 Team/(18215:18230): El entrenador 2 se esta moviendo de (5,2) a (6,6)
+[INFO] 16:10:13:228 Team/(18215:18230): El entrenador 2 se encuentra en (5,3)
+[INFO] 16:10:14:376 Team/(18215:18227): Buscando deadlock...
+[INFO] 16:10:14:376 Team/(18215:18227): No se han encontrado deadlocks
+[INFO] 16:10:18:229 Team/(18215:18230): El entrenador 2 se encuentra en (5,4)
+[INFO] 16:10:23:229 Team/(18215:18230): El entrenador 2 se encuentra en (5,5)
+[INFO] 16:10:24:376 Team/(18215:18226): Iniciando verificacion de conexion con Broker...
+[INFO] 16:10:28:231 Team/(18215:18230): El entrenador 2 se encuentra en (5,6)
+[INFO] 16:10:33:231 Team/(18215:18230): El entrenador 2 se encuentra en (6,6)
+[INFO] 16:10:34:377 Team/(18215:18227): Buscando deadlock...
+[INFO] 16:10:34:378 Team/(18215:18227): No se han encontrado deadlocks
+[INFO] 16:10:38:232 Team/(18215:18230): Estado de entrenador 2 cambiado a Estado blocked. Razon del cambio: Se ha enviado un catch
+[INFO] 16:10:43:234 Team/(18215:18229): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de atrapar pokemon squirtle
+[INFO] 16:10:43:234 Team/(18215:18229): Entrenador 1 esta atrapando pokemon squirtle ubicado en (5,5)
+[INFO] 16:10:43:234 Team/(18215:18229): El entrenador 1 se esta moviendo de (9,9) a (5,5)
+[INFO] 16:10:43:234 Team/(18215:18229): El entrenador 1 se encuentra en (9,8)
+[INFO] 16:10:48:234 Team/(18215:18229): El entrenador 1 se encuentra en (9,7)
+[INFO] 16:10:53:234 Team/(18215:18229): El entrenador 1 se encuentra en (9,6)
+[INFO] 16:10:53:257 Team/(18215:18224): el ID correlativo 60 de caught no corresponde a ningun catch, mensaje ignorado
+[INFO] 16:10:54:376 Team/(18215:18226): Iniciando verificacion de conexion con Broker...
+[INFO] 16:10:54:378 Team/(18215:18227): Buscando deadlock...
+[INFO] 16:10:54:378 Team/(18215:18227): No se han encontrado deadlocks
+[INFO] 16:10:58:236 Team/(18215:18229): El entrenador 1 se encuentra en (9,5)
+[INFO] 16:10:58:260 Team/(18215:18224): el ID correlativo 61 de caught no corresponde a ningun catch, mensaje ignorado
+[INFO] 16:11:03:236 Team/(18215:18229): El entrenador 1 se encuentra en (8,5)
+[INFO] 16:11:03:261 Team/(18215:18224): el ID correlativo 63 de caught no corresponde a ningun catch, mensaje ignorado
+[INFO] 16:11:08:237 Team/(18215:18229): El entrenador 1 se encuentra en (7,5)
+[INFO] 16:11:13:238 Team/(18215:18229): El entrenador 1 se encuentra en (6,5)
+[INFO] 16:11:14:378 Team/(18215:18227): Buscando deadlock...
+[INFO] 16:11:14:379 Team/(18215:18227): No se han encontrado deadlocks
+[INFO] 16:11:18:238 Team/(18215:18229): El entrenador 1 se encuentra en (5,5)
+[INFO] 16:11:23:239 Team/(18215:18229): Estado de entrenador 1 cambiado a Estado blocked. Razon del cambio: Se ha enviado un catch
+[INFO] 16:11:24:376 Team/(18215:18226): Iniciando verificacion de conexion con Broker...
+[INFO] 16:11:34:379 Team/(18215:18227): Buscando deadlock...
+[INFO] 16:11:34:380 Team/(18215:18227): Deadlock obtenido involucrando a 3 entrenadores
+[INFO] 16:11:34:380 Team/(18215:18219): Estado de entrenador 0 cambiado a Estado ready. Razon del cambio: Entrenador planificado para intercambiar pokemones
+[INFO] 16:11:34:380 Team/(18215:18228): Estado de entrenador 0 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de intercambiar pokemon
+[INFO] 16:11:34:380 Team/(18215:18228): El entrenador 0 se esta moviendo de (2,8) a (5,5)
+[INFO] 16:11:34:380 Team/(18215:18228): El entrenador 0 se encuentra en (2,7)
+[INFO] 16:11:39:381 Team/(18215:18228): El entrenador 0 se encuentra en (2,6)
+[INFO] 16:11:44:382 Team/(18215:18228): El entrenador 0 se encuentra en (2,5)
+[INFO] 16:11:49:383 Team/(18215:18228): El entrenador 0 se encuentra en (3,5)
+[INFO] 16:11:54:377 Team/(18215:18226): Iniciando verificacion de conexion con Broker...
+[INFO] 16:11:54:380 Team/(18215:18227): Buscando deadlock...
+[INFO] 16:11:54:381 Team/(18215:18227): No se han encontrado deadlocks
+[INFO] 16:11:54:383 Team/(18215:18228): El entrenador 0 se encuentra en (4,5)
+[INFO] 16:11:59:384 Team/(18215:18228): El entrenador 0 se encuentra en (5,5)
+[INFO] 16:12:04:384 Team/(18215:18228): Entrenadores 0 y 1 intercambiando pokemones onix y squirtle
+[INFO] 16:12:14:381 Team/(18215:18227): Buscando deadlock...
+[INFO] 16:12:14:381 Team/(18215:18227): No se han encontrado deadlocks
+[INFO] 16:12:24:379 Team/(18215:18226): Iniciando verificacion de conexion con Broker...
+[INFO] 16:12:29:388 Team/(18215:18228): Estado de entrenador 0 cambiado a Estado exit. Razon del cambio: Ha terminado su objetivo
+[INFO] 16:12:29:389 Team/(18215:18219): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Entrenador planificado para intercambiar pokemones
+[INFO] 16:12:29:389 Team/(18215:18229): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de intercambiar pokemon
+[INFO] 16:12:29:389 Team/(18215:18229): El entrenador 1 se esta moviendo de (5,5) a (6,6)
+[INFO] 16:12:29:389 Team/(18215:18229): El entrenador 1 se encuentra en (5,6)
+[INFO] 16:12:34:382 Team/(18215:18227): Buscando deadlock...
+[INFO] 16:12:34:382 Team/(18215:18227): No se han encontrado deadlocks
+[INFO] 16:12:34:390 Team/(18215:18229): El entrenador 1 se encuentra en (6,6)
+[INFO] 16:12:39:391 Team/(18215:18229): Entrenadores 1 y 2 intercambiando pokemones onix y gengar
+[INFO] 16:12:54:379 Team/(18215:18226): Iniciando verificacion de conexion con Broker...
+[INFO] 16:12:54:382 Team/(18215:18227): Buscando deadlock...
+[INFO] 16:12:54:382 Team/(18215:18227): No se han encontrado deadlocks
+[INFO] 16:13:04:392 Team/(18215:18229): Estado de entrenador 2 cambiado a Estado exit. Razon del cambio: Ha terminado su objetivo
+[INFO] 16:13:04:393 Team/(18215:18229): Estado de entrenador 1 cambiado a Estado exit. Razon del cambio: Ha terminado su objetivo
+[INFO] 16:13:04:393 Team/(18215:18215): Proceso Team terminado. Cantidad de ciclos de CPU totales: 57
+[INFO] 16:13:04:393 Team/(18215:18215): Cantidad de ciclos de CPU del entrenador 0: 18
+[INFO] 16:13:04:393 Team/(18215:18215): Cantidad de ciclos de CPU del entrenador 1: 30
+[INFO] 16:13:04:393 Team/(18215:18215): Cantidad de ciclos de CPU del entrenador 2: 9
+[INFO] 16:13:04:393 Team/(18215:18215): Proceso Team terminado. Cantidad de cambios de contexto realizados: 22
+[INFO] 16:13:04:393 Team/(18215:18215): Proceso Team terminado. Cantidad de deadlocks encontrados y tratados: 1
+[INFO] 16:23:11:711 Team/(20141:20143): Estado de entrenador 2 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 16:23:11:711 Team/(20141:20156): Estado de entrenador 2 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de atrapar pokemon squirtle
+[INFO] 16:23:11:711 Team/(20141:20156): Entrenador 2 esta atrapando pokemon squirtle ubicado en (5,2)
+[INFO] 16:23:11:711 Team/(20141:20156): El entrenador 2 se esta moviendo de (3,2) a (5,2)
+[INFO] 16:23:11:711 Team/(20141:20156): El entrenador 2 se encuentra en (4,2)
+[INFO] 16:23:11:758 Team/(20141:20143): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 16:23:12:229 Team/(20141:20153): Buscando deadlock...
+[INFO] 16:23:12:230 Team/(20141:20153): No se han encontrado deadlocks
+[INFO] 16:23:16:712 Team/(20141:20156): El entrenador 2 se encuentra en (5,2)
+[INFO] 16:23:16:732 Team/(20141:20150): el ID correlativo 33 de caught no corresponde a ningun catch, mensaje ignorado
+[INFO] 16:23:21:712 Team/(20141:20156): Estado de entrenador 2 cambiado a Estado blocked. Razon del cambio: Se ha enviado un catch
+[INFO] 16:23:22:229 Team/(20141:20152): Iniciando verificacion de conexion con Broker...
+[INFO] 16:23:26:688 Team/(20141:20150): el ID correlativo 38 de caught no corresponde a ningun catch, mensaje ignorado
+[INFO] 16:23:26:714 Team/(20141:20155): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de atrapar pokemon pikachu
+[INFO] 16:23:26:714 Team/(20141:20155): Entrenador 1 esta atrapando pokemon pikachu ubicado en (9,9)
+[INFO] 16:23:26:714 Team/(20141:20155): El entrenador 1 se esta moviendo de (2,3) a (9,9)
+[INFO] 16:23:26:714 Team/(20141:20155): El entrenador 1 se encuentra en (2,4)
+[INFO] 16:23:31:715 Team/(20141:20155): El entrenador 1 se encuentra en (2,5)
+[INFO] 16:23:32:230 Team/(20141:20153): Buscando deadlock...
+[INFO] 16:23:32:231 Team/(20141:20153): No se han encontrado deadlocks
+[INFO] 16:23:36:715 Team/(20141:20155): El entrenador 1 se encuentra en (2,6)
+[INFO] 16:23:41:715 Team/(20141:20155): El entrenador 1 se encuentra en (2,7)
+[INFO] 16:23:46:716 Team/(20141:20155): El entrenador 1 se encuentra en (2,8)
+[INFO] 16:23:51:716 Team/(20141:20155): El entrenador 1 se encuentra en (2,9)
+[INFO] 16:23:52:229 Team/(20141:20152): Iniciando verificacion de conexion con Broker...
+[INFO] 16:23:52:231 Team/(20141:20153): Buscando deadlock...
+[INFO] 16:23:52:231 Team/(20141:20153): No se han encontrado deadlocks
+[INFO] 16:23:56:717 Team/(20141:20155): El entrenador 1 se encuentra en (3,9)
+[INFO] 16:24:01:718 Team/(20141:20155): El entrenador 1 se encuentra en (4,9)
+[INFO] 16:24:06:718 Team/(20141:20155): El entrenador 1 se encuentra en (5,9)
+[INFO] 16:24:11:719 Team/(20141:20155): El entrenador 1 se encuentra en (6,9)
+[INFO] 16:24:12:232 Team/(20141:20153): Buscando deadlock...
+[INFO] 16:24:12:232 Team/(20141:20153): No se han encontrado deadlocks
+[INFO] 16:24:16:719 Team/(20141:20155): El entrenador 1 se encuentra en (7,9)
+[INFO] 16:24:21:720 Team/(20141:20155): El entrenador 1 se encuentra en (8,9)
+[INFO] 16:24:22:230 Team/(20141:20152): Iniciando verificacion de conexion con Broker...
+[INFO] 16:24:26:720 Team/(20141:20155): El entrenador 1 se encuentra en (9,9)
+[INFO] 16:24:31:721 Team/(20141:20155): Estado de entrenador 1 cambiado a Estado blocked. Razon del cambio: Se ha enviado un catch
+[INFO] 16:24:32:232 Team/(20141:20153): Buscando deadlock...
+[INFO] 16:24:32:232 Team/(20141:20153): No se han encontrado deadlocks
+[INFO] 16:24:52:231 Team/(20141:20152): Iniciando verificacion de conexion con Broker...
+[INFO] 16:24:52:233 Team/(20141:20153): Buscando deadlock...
+[INFO] 16:24:52:233 Team/(20141:20153): No se han encontrado deadlocks
+[INFO] 16:25:10:717 Team/(20141:20143): Estado de entrenador 0 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 16:25:10:717 Team/(20141:20154): Estado de entrenador 0 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de atrapar pokemon onix
+[INFO] 16:25:10:717 Team/(20141:20154): Entrenador 0 esta atrapando pokemon onix ubicado en (2,8)
+[INFO] 16:25:10:717 Team/(20141:20154): El entrenador 0 se esta moviendo de (1,3) a (2,8)
+[INFO] 16:25:10:717 Team/(20141:20154): El entrenador 0 se encuentra en (1,4)
+[INFO] 16:25:12:233 Team/(20141:20153): Buscando deadlock...
+[INFO] 16:25:12:233 Team/(20141:20153): No se han encontrado deadlocks
+[INFO] 16:25:15:718 Team/(20141:20154): El entrenador 0 se encuentra en (1,5)
+[INFO] 16:25:15:725 Team/(20141:20143): Estado de entrenador 2 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 16:25:20:718 Team/(20141:20154): El entrenador 0 se encuentra en (1,6)
+[INFO] 16:25:20:729 Team/(20141:20143): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 16:25:22:232 Team/(20141:20152): Iniciando verificacion de conexion con Broker...
+[INFO] 16:25:25:719 Team/(20141:20154): El entrenador 0 se encuentra en (1,7)
+[INFO] 16:25:30:720 Team/(20141:20154): El entrenador 0 se encuentra en (1,8)
+[INFO] 16:25:32:233 Team/(20141:20153): Buscando deadlock...
+[INFO] 16:25:32:233 Team/(20141:20153): No se han encontrado deadlocks
+[INFO] 16:25:35:720 Team/(20141:20154): El entrenador 0 se encuentra en (2,8)
+[INFO] 16:25:40:721 Team/(20141:20154): Estado de entrenador 0 cambiado a Estado blocked. Razon del cambio: Se ha enviado un catch
+[INFO] 16:25:45:723 Team/(20141:20156): Estado de entrenador 2 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de atrapar pokemon gengar
+[INFO] 16:25:45:723 Team/(20141:20156): Entrenador 2 esta atrapando pokemon gengar ubicado en (6,6)
+[INFO] 16:25:45:723 Team/(20141:20156): El entrenador 2 se esta moviendo de (5,2) a (6,6)
+[INFO] 16:25:45:723 Team/(20141:20156): El entrenador 2 se encuentra en (5,3)
+[INFO] 16:25:50:723 Team/(20141:20156): El entrenador 2 se encuentra en (5,4)
+[INFO] 16:25:52:232 Team/(20141:20152): Iniciando verificacion de conexion con Broker...
+[INFO] 16:25:52:234 Team/(20141:20153): Buscando deadlock...
+[INFO] 16:25:52:234 Team/(20141:20153): No se han encontrado deadlocks
+[INFO] 16:25:55:723 Team/(20141:20156): El entrenador 2 se encuentra en (5,5)
+[INFO] 16:26:00:723 Team/(20141:20156): El entrenador 2 se encuentra en (5,6)
+[INFO] 16:26:05:724 Team/(20141:20156): El entrenador 2 se encuentra en (6,6)
+[INFO] 16:26:10:724 Team/(20141:20156): Estado de entrenador 2 cambiado a Estado blocked. Razon del cambio: Se ha enviado un catch
+[INFO] 16:26:12:234 Team/(20141:20153): Buscando deadlock...
+[INFO] 16:26:12:235 Team/(20141:20153): No se han encontrado deadlocks
+[INFO] 16:26:15:731 Team/(20141:20155): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de atrapar pokemon squirtle
+[INFO] 16:26:15:731 Team/(20141:20155): Entrenador 1 esta atrapando pokemon squirtle ubicado en (5,5)
+[INFO] 16:26:15:731 Team/(20141:20155): El entrenador 1 se esta moviendo de (9,9) a (5,5)
+[INFO] 16:26:15:731 Team/(20141:20155): El entrenador 1 se encuentra en (9,8)
+[INFO] 16:26:20:732 Team/(20141:20155): El entrenador 1 se encuentra en (9,7)
+[INFO] 16:26:22:233 Team/(20141:20152): Iniciando verificacion de conexion con Broker...
+[INFO] 16:26:25:732 Team/(20141:20155): El entrenador 1 se encuentra en (9,6)
+[INFO] 16:26:25:741 Team/(20141:20150): el ID correlativo 59 de caught no corresponde a ningun catch, mensaje ignorado
+[INFO] 16:26:30:733 Team/(20141:20155): El entrenador 1 se encuentra en (9,5)
+[INFO] 16:26:30:744 Team/(20141:20150): el ID correlativo 61 de caught no corresponde a ningun catch, mensaje ignorado
+[INFO] 16:26:32:235 Team/(20141:20153): Buscando deadlock...
+[INFO] 16:26:32:236 Team/(20141:20153): No se han encontrado deadlocks
+[INFO] 16:26:35:733 Team/(20141:20155): El entrenador 1 se encuentra en (8,5)
+[INFO] 16:26:35:766 Team/(20141:20150): el ID correlativo 64 de caught no corresponde a ningun catch, mensaje ignorado
+[INFO] 16:26:40:733 Team/(20141:20155): El entrenador 1 se encuentra en (7,5)
+[INFO] 16:26:45:734 Team/(20141:20155): El entrenador 1 se encuentra en (6,5)
+[INFO] 16:26:50:734 Team/(20141:20155): El entrenador 1 se encuentra en (5,5)
+[INFO] 16:26:52:233 Team/(20141:20152): Iniciando verificacion de conexion con Broker...
+[INFO] 16:26:52:236 Team/(20141:20153): Buscando deadlock...
+[INFO] 16:26:52:237 Team/(20141:20153): No se han encontrado deadlocks
+[INFO] 16:26:55:735 Team/(20141:20155): Estado de entrenador 1 cambiado a Estado blocked. Razon del cambio: Se ha enviado un catch
+[INFO] 16:27:12:237 Team/(20141:20153): Buscando deadlock...
+[INFO] 16:27:12:238 Team/(20141:20153): Deadlock obtenido involucrando a 3 entrenadores
+[INFO] 16:27:12:238 Team/(20141:20145): Estado de entrenador 0 cambiado a Estado ready. Razon del cambio: Entrenador planificado para intercambiar pokemones
+[INFO] 16:27:12:238 Team/(20141:20154): Estado de entrenador 0 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de intercambiar pokemon
+[INFO] 16:27:12:238 Team/(20141:20154): El entrenador 0 se esta moviendo de (2,8) a (5,5)
+[INFO] 16:27:12:238 Team/(20141:20154): El entrenador 0 se encuentra en (2,7)
+[INFO] 16:27:17:239 Team/(20141:20154): El entrenador 0 se encuentra en (2,6)
+[INFO] 16:27:22:234 Team/(20141:20152): Iniciando verificacion de conexion con Broker...
+[INFO] 16:27:22:239 Team/(20141:20154): El entrenador 0 se encuentra en (2,5)
+[INFO] 16:27:27:239 Team/(20141:20154): El entrenador 0 se encuentra en (3,5)
+[INFO] 16:27:32:238 Team/(20141:20153): Buscando deadlock...
+[INFO] 16:27:32:239 Team/(20141:20153): No se han encontrado deadlocks
+[INFO] 16:27:32:239 Team/(20141:20154): El entrenador 0 se encuentra en (4,5)
+[INFO] 16:27:37:239 Team/(20141:20154): El entrenador 0 se encuentra en (5,5)
+[INFO] 16:27:42:240 Team/(20141:20154): Entrenadores 0 y 1 intercambiando pokemones onix y squirtle
+[INFO] 16:27:52:234 Team/(20141:20152): Iniciando verificacion de conexion con Broker...
+[INFO] 16:27:52:239 Team/(20141:20153): Buscando deadlock...
+[INFO] 16:27:52:239 Team/(20141:20153): No se han encontrado deadlocks
+[INFO] 16:28:07:242 Team/(20141:20154): Estado de entrenador 0 cambiado a Estado exit. Razon del cambio: Ha terminado su objetivo
+[INFO] 16:28:07:242 Team/(20141:20145): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Entrenador planificado para intercambiar pokemones
+[INFO] 16:28:07:242 Team/(20141:20155): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de intercambiar pokemon
+[INFO] 16:28:07:242 Team/(20141:20155): El entrenador 1 se esta moviendo de (5,5) a (6,6)
+[INFO] 16:28:07:242 Team/(20141:20155): El entrenador 1 se encuentra en (5,6)
+[INFO] 16:28:12:240 Team/(20141:20153): Buscando deadlock...
+[INFO] 16:28:12:240 Team/(20141:20153): No se han encontrado deadlocks
+[INFO] 16:28:12:243 Team/(20141:20155): El entrenador 1 se encuentra en (6,6)
+[INFO] 16:28:17:243 Team/(20141:20155): Entrenadores 1 y 2 intercambiando pokemones onix y gengar
+[INFO] 16:28:22:235 Team/(20141:20152): Iniciando verificacion de conexion con Broker...
+[INFO] 16:28:32:241 Team/(20141:20153): Buscando deadlock...
+[INFO] 16:28:32:241 Team/(20141:20153): No se han encontrado deadlocks
+[INFO] 16:28:42:246 Team/(20141:20155): Estado de entrenador 2 cambiado a Estado exit. Razon del cambio: Ha terminado su objetivo
+[INFO] 16:28:42:246 Team/(20141:20155): Estado de entrenador 1 cambiado a Estado exit. Razon del cambio: Ha terminado su objetivo
+[INFO] 16:28:42:246 Team/(20141:20141): Proceso Team terminado. Cantidad de ciclos de CPU totales: 57
+[INFO] 16:28:42:246 Team/(20141:20141): Cantidad de ciclos de CPU del entrenador 0: 18
+[INFO] 16:28:42:246 Team/(20141:20141): Cantidad de ciclos de CPU del entrenador 1: 30
+[INFO] 16:28:42:246 Team/(20141:20141): Cantidad de ciclos de CPU del entrenador 2: 9
+[INFO] 16:28:42:246 Team/(20141:20141): Proceso Team terminado. Cantidad de cambios de contexto realizados: 22
+[INFO] 16:28:42:246 Team/(20141:20141): Proceso Team terminado. Cantidad de deadlocks encontrados y tratados: 1
+[INFO] 16:37:09:231 Team/(22340:22349): el ID correlativo 29 de caught no corresponde a ningun catch, mensaje ignorado
+[INFO] 16:37:14:234 Team/(22340:22342): Estado de entrenador 2 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 16:37:14:234 Team/(22340:22355): Estado de entrenador 2 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de atrapar pokemon squirtle
+[INFO] 16:37:14:234 Team/(22340:22355): Entrenador 2 esta atrapando pokemon squirtle ubicado en (5,2)
+[INFO] 16:37:14:234 Team/(22340:22355): El entrenador 2 se esta moviendo de (3,2) a (5,2)
+[INFO] 16:37:14:234 Team/(22340:22355): El entrenador 2 se encuentra en (4,2)
+[INFO] 16:37:14:245 Team/(22340:22342): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 16:37:14:863 Team/(22340:22352): Buscando deadlock...
+[INFO] 16:37:14:863 Team/(22340:22352): No se han encontrado deadlocks
+[INFO] 16:37:19:234 Team/(22340:22355): El entrenador 2 se encuentra en (5,2)
+[INFO] 16:37:24:234 Team/(22340:22355): Estado de entrenador 2 cambiado a Estado blocked. Razon del cambio: Se ha enviado un catch
+[INFO] 16:37:24:863 Team/(22340:22351): Iniciando verificacion de conexion con Broker...
+[INFO] 16:37:29:148 Team/(22340:22349): el ID correlativo 38 de caught no corresponde a ningun catch, mensaje ignorado
+[INFO] 16:37:29:236 Team/(22340:22354): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de atrapar pokemon pikachu
+[INFO] 16:37:29:236 Team/(22340:22354): Entrenador 1 esta atrapando pokemon pikachu ubicado en (9,9)
+[INFO] 16:37:29:236 Team/(22340:22354): El entrenador 1 se esta moviendo de (2,3) a (9,9)
+[INFO] 16:37:29:236 Team/(22340:22354): El entrenador 1 se encuentra en (2,4)
+[INFO] 16:37:29:237 Team/(22340:22355): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ejecutando tarea
+[INFO] 16:37:34:236 Team/(22340:22354): El entrenador 1 se encuentra en (2,5)
+[INFO] 16:37:34:863 Team/(22340:22352): Buscando deadlock...
+[INFO] 16:37:34:863 Team/(22340:22352): No se han encontrado deadlocks
+[INFO] 16:37:39:236 Team/(22340:22354): El entrenador 1 se encuentra en (2,6)
+[INFO] 16:37:44:237 Team/(22340:22354): El entrenador 1 se encuentra en (2,7)
+[INFO] 16:37:49:238 Team/(22340:22354): El entrenador 1 se encuentra en (2,8)
+[INFO] 16:37:54:239 Team/(22340:22354): El entrenador 1 se encuentra en (2,9)
+[INFO] 16:37:54:863 Team/(22340:22351): Iniciando verificacion de conexion con Broker...
+[INFO] 16:37:54:863 Team/(22340:22352): Buscando deadlock...
+[INFO] 16:37:54:863 Team/(22340:22352): No se han encontrado deadlocks
+[INFO] 16:37:59:239 Team/(22340:22354): El entrenador 1 se encuentra en (3,9)
+[INFO] 16:38:04:240 Team/(22340:22354): El entrenador 1 se encuentra en (4,9)
+[INFO] 16:38:09:241 Team/(22340:22354): El entrenador 1 se encuentra en (5,9)
+[INFO] 16:38:14:241 Team/(22340:22354): El entrenador 1 se encuentra en (6,9)
+[INFO] 16:38:14:863 Team/(22340:22352): Buscando deadlock...
+[INFO] 16:38:14:864 Team/(22340:22352): No se han encontrado deadlocks
+[INFO] 16:38:19:242 Team/(22340:22354): El entrenador 1 se encuentra en (7,9)
+[INFO] 16:38:24:243 Team/(22340:22354): El entrenador 1 se encuentra en (8,9)
+[INFO] 16:38:24:864 Team/(22340:22351): Iniciando verificacion de conexion con Broker...
+[INFO] 16:38:29:245 Team/(22340:22354): El entrenador 1 se encuentra en (9,9)
+[INFO] 16:38:34:246 Team/(22340:22354): Estado de entrenador 1 cambiado a Estado blocked. Razon del cambio: Se ha enviado un catch
+[INFO] 16:38:34:864 Team/(22340:22352): Buscando deadlock...
+[INFO] 16:38:34:864 Team/(22340:22352): No se han encontrado deadlocks
+[INFO] 16:38:54:864 Team/(22340:22351): Iniciando verificacion de conexion con Broker...
+[INFO] 16:38:54:864 Team/(22340:22352): Buscando deadlock...
+[INFO] 16:38:54:864 Team/(22340:22352): No se han encontrado deadlocks
+[INFO] 16:39:14:865 Team/(22340:22352): Buscando deadlock...
+[INFO] 16:39:14:865 Team/(22340:22352): No se han encontrado deadlocks
+[INFO] 16:39:24:865 Team/(22340:22351): Iniciando verificacion de conexion con Broker...
+[INFO] 16:39:34:865 Team/(22340:22352): Buscando deadlock...
+[INFO] 16:39:34:865 Team/(22340:22352): No se han encontrado deadlocks
+[INFO] 16:39:38:915 Team/(22340:22342): Estado de entrenador 0 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 16:39:38:915 Team/(22340:22353): Estado de entrenador 0 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de atrapar pokemon onix
+[INFO] 16:39:38:915 Team/(22340:22353): Entrenador 0 esta atrapando pokemon onix ubicado en (2,8)
+[INFO] 16:39:38:915 Team/(22340:22353): El entrenador 0 se esta moviendo de (1,3) a (2,8)
+[INFO] 16:39:38:915 Team/(22340:22353): El entrenador 0 se encuentra en (1,4)
+[INFO] 16:39:43:916 Team/(22340:22353): El entrenador 0 se encuentra en (1,5)
+[INFO] 16:39:43:919 Team/(22340:22342): Estado de entrenador 2 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 16:39:48:916 Team/(22340:22353): El entrenador 0 se encuentra en (1,6)
+[INFO] 16:39:48:923 Team/(22340:22342): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 16:39:53:917 Team/(22340:22353): El entrenador 0 se encuentra en (1,7)
+[INFO] 16:39:54:866 Team/(22340:22352): Buscando deadlock...
+[INFO] 16:39:54:866 Team/(22340:22352): No se han encontrado deadlocks
+[INFO] 16:39:54:866 Team/(22340:22351): Iniciando verificacion de conexion con Broker...
+[INFO] 16:39:58:917 Team/(22340:22353): El entrenador 0 se encuentra en (1,8)
+[INFO] 16:40:03:918 Team/(22340:22353): El entrenador 0 se encuentra en (2,8)
+[INFO] 16:40:08:918 Team/(22340:22353): Estado de entrenador 0 cambiado a Estado blocked. Razon del cambio: Se ha enviado un catch
+[INFO] 16:40:13:920 Team/(22340:22353): Estado de entrenador 2 cambiado a Estado executing. Razon del cambio: Ejecutando tarea
+[INFO] 16:40:13:920 Team/(22340:22355): Estado de entrenador 2 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de atrapar pokemon gengar
+[INFO] 16:40:13:920 Team/(22340:22355): Entrenador 2 esta atrapando pokemon gengar ubicado en (6,6)
+[INFO] 16:40:13:920 Team/(22340:22355): El entrenador 2 se esta moviendo de (5,2) a (6,6)
+[INFO] 16:40:13:920 Team/(22340:22355): El entrenador 2 se encuentra en (5,3)
+[INFO] 16:40:14:866 Team/(22340:22352): Buscando deadlock...
+[INFO] 16:40:14:866 Team/(22340:22352): No se han encontrado deadlocks
+[INFO] 16:40:18:920 Team/(22340:22355): El entrenador 2 se encuentra en (5,4)
+[INFO] 16:40:23:920 Team/(22340:22355): El entrenador 2 se encuentra en (5,5)
+[INFO] 16:40:23:965 Team/(22340:22349): el ID correlativo 58 de caught no corresponde a ningun catch, mensaje ignorado
+[INFO] 16:40:24:867 Team/(22340:22351): Iniciando verificacion de conexion con Broker...
+[INFO] 16:40:28:920 Team/(22340:22355): El entrenador 2 se encuentra en (5,6)
+[INFO] 16:40:33:921 Team/(22340:22355): El entrenador 2 se encuentra en (6,6)
+[INFO] 16:40:34:867 Team/(22340:22352): Buscando deadlock...
+[INFO] 16:40:34:867 Team/(22340:22352): No se han encontrado deadlocks
+[INFO] 16:40:38:922 Team/(22340:22355): Estado de entrenador 2 cambiado a Estado blocked. Razon del cambio: Se ha enviado un catch
+[INFO] 16:40:43:926 Team/(22340:22355): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ejecutando tarea
+[INFO] 16:40:43:927 Team/(22340:22354): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de atrapar pokemon squirtle
+[INFO] 16:40:43:927 Team/(22340:22354): Entrenador 1 esta atrapando pokemon squirtle ubicado en (5,5)
+[INFO] 16:40:43:927 Team/(22340:22354): El entrenador 1 se esta moviendo de (9,9) a (5,5)
+[INFO] 16:40:43:927 Team/(22340:22354): El entrenador 1 se encuentra en (9,8)
+[INFO] 16:40:43:985 Team/(22340:22349): el ID correlativo 60 de caught no corresponde a ningun catch, mensaje ignorado
+[INFO] 16:40:48:929 Team/(22340:22354): El entrenador 1 se encuentra en (9,7)
+[INFO] 16:40:53:929 Team/(22340:22354): El entrenador 1 se encuentra en (9,6)
+[INFO] 16:40:54:867 Team/(22340:22352): Buscando deadlock...
+[INFO] 16:40:54:867 Team/(22340:22352): No se han encontrado deadlocks
+[INFO] 16:40:54:868 Team/(22340:22351): Iniciando verificacion de conexion con Broker...
+[INFO] 16:40:58:930 Team/(22340:22354): El entrenador 1 se encuentra en (9,5)
+[INFO] 16:41:03:934 Team/(22340:22354): El entrenador 1 se encuentra en (8,5)
+[INFO] 16:41:03:954 Team/(22340:22349): el ID correlativo 64 de caught no corresponde a ningun catch, mensaje ignorado
+[INFO] 16:41:08:935 Team/(22340:22354): El entrenador 1 se encuentra en (7,5)
+[INFO] 16:41:13:936 Team/(22340:22354): El entrenador 1 se encuentra en (6,5)
+[INFO] 16:41:14:867 Team/(22340:22352): Buscando deadlock...
+[INFO] 16:41:14:868 Team/(22340:22352): No se han encontrado deadlocks
+[INFO] 16:41:18:936 Team/(22340:22354): El entrenador 1 se encuentra en (5,5)
+[INFO] 16:41:23:938 Team/(22340:22354): Estado de entrenador 1 cambiado a Estado blocked. Razon del cambio: Se ha enviado un catch
+[INFO] 16:41:24:868 Team/(22340:22351): Iniciando verificacion de conexion con Broker...
+[INFO] 16:41:34:868 Team/(22340:22352): Buscando deadlock...
+[INFO] 16:41:34:869 Team/(22340:22352): Deadlock obtenido involucrando a 3 entrenadores
+[INFO] 16:41:34:869 Team/(22340:22344): Estado de entrenador 0 cambiado a Estado ready. Razon del cambio: Entrenador planificado para intercambiar pokemones
+[INFO] 16:41:34:869 Team/(22340:22353): Estado de entrenador 0 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de intercambiar pokemon
+[INFO] 16:41:34:869 Team/(22340:22353): El entrenador 0 se esta moviendo de (2,8) a (5,5)
+[INFO] 16:41:34:869 Team/(22340:22353): El entrenador 0 se encuentra en (2,7)
+[INFO] 16:41:39:870 Team/(22340:22353): El entrenador 0 se encuentra en (2,6)
+[INFO] 16:41:44:871 Team/(22340:22353): El entrenador 0 se encuentra en (2,5)
+[INFO] 16:41:49:872 Team/(22340:22353): El entrenador 0 se encuentra en (3,5)
+[INFO] 16:41:54:869 Team/(22340:22351): Iniciando verificacion de conexion con Broker...
+[INFO] 16:41:54:869 Team/(22340:22352): Buscando deadlock...
+[INFO] 16:41:54:870 Team/(22340:22352): No se han encontrado deadlocks
+[INFO] 16:41:54:872 Team/(22340:22353): El entrenador 0 se encuentra en (4,5)
+[INFO] 16:41:59:872 Team/(22340:22353): El entrenador 0 se encuentra en (5,5)
+[INFO] 16:42:04:872 Team/(22340:22353): Entrenadores 0 y 1 intercambiando pokemones onix y squirtle
+[INFO] 16:42:14:870 Team/(22340:22352): Buscando deadlock...
+[INFO] 16:42:14:870 Team/(22340:22352): No se han encontrado deadlocks
+[INFO] 16:42:24:869 Team/(22340:22351): Iniciando verificacion de conexion con Broker...
+[INFO] 16:42:29:874 Team/(22340:22353): Estado de entrenador 0 cambiado a Estado exit. Razon del cambio: Ha terminado su objetivo
+[INFO] 16:42:29:874 Team/(22340:22344): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Entrenador planificado para intercambiar pokemones
+[INFO] 16:42:29:874 Team/(22340:22354): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de intercambiar pokemon
+[INFO] 16:42:29:874 Team/(22340:22354): El entrenador 1 se esta moviendo de (5,5) a (6,6)
+[INFO] 16:42:29:875 Team/(22340:22354): El entrenador 1 se encuentra en (5,6)
+[INFO] 16:42:34:871 Team/(22340:22352): Buscando deadlock...
+[INFO] 16:42:34:872 Team/(22340:22352): No se han encontrado deadlocks
+[INFO] 16:42:34:875 Team/(22340:22354): El entrenador 1 se encuentra en (6,6)
+[INFO] 16:42:39:876 Team/(22340:22354): Entrenadores 1 y 2 intercambiando pokemones onix y gengar
+[INFO] 16:42:54:870 Team/(22340:22351): Iniciando verificacion de conexion con Broker...
+[INFO] 16:42:54:872 Team/(22340:22352): Buscando deadlock...
+[INFO] 16:42:54:873 Team/(22340:22352): No se han encontrado deadlocks
+[INFO] 16:43:04:879 Team/(22340:22354): Estado de entrenador 2 cambiado a Estado exit. Razon del cambio: Ha terminado su objetivo
+[INFO] 16:43:04:879 Team/(22340:22354): Estado de entrenador 1 cambiado a Estado exit. Razon del cambio: Ha terminado su objetivo
+[INFO] 16:43:04:879 Team/(22340:22340): Proceso Team terminado. Cantidad de ciclos de CPU totales: 57
+[INFO] 16:43:04:879 Team/(22340:22340): Cantidad de ciclos de CPU del entrenador 0: 18
+[INFO] 16:43:04:879 Team/(22340:22340): Cantidad de ciclos de CPU del entrenador 1: 30
+[INFO] 16:43:04:879 Team/(22340:22340): Cantidad de ciclos de CPU del entrenador 2: 9
+[INFO] 16:43:04:879 Team/(22340:22340): Proceso Team terminado. Cantidad de cambios de contexto realizados: 22
+[INFO] 16:43:04:879 Team/(22340:22340): Proceso Team terminado. Cantidad de deadlocks encontrados y tratados: 1
+[INFO] 22:30:51:227 Team/(29183:29185): Estado de entrenador 2 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 22:30:51:227 Team/(29183:29198): Estado de entrenador 2 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de atrapar pokemon squirtle
+[INFO] 22:30:51:227 Team/(29183:29198): Entrenador 2 esta atrapando pokemon squirtle ubicado en (5,2)
+[INFO] 22:30:51:227 Team/(29183:29198): El entrenador 2 se esta moviendo de (3,2) a (5,2)
+[INFO] 22:30:51:227 Team/(29183:29198): El entrenador 2 se encuentra en (4,2)
+[INFO] 22:32:41:501 Team/(29444:29446): Estado de entrenador 2 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 22:32:41:502 Team/(29444:29459): Estado de entrenador 2 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de atrapar pokemon squirtle
+[INFO] 22:32:41:502 Team/(29444:29459): Entrenador 2 esta atrapando pokemon squirtle ubicado en (5,2)
+[INFO] 22:32:41:502 Team/(29444:29459): El entrenador 2 se esta moviendo de (3,2) a (5,2)
+[INFO] 22:32:41:502 Team/(29444:29459): El entrenador 2 se encuentra en (4,2)
+[INFO] 22:32:46:502 Team/(29444:29459): El entrenador 2 se encuentra en (5,2)
+[INFO] 22:32:46:551 Team/(29444:29446): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 22:32:51:503 Team/(29444:29459): Estado de entrenador 2 cambiado a Estado blocked. Razon del cambio: Se ha enviado un catch
+[INFO] 22:32:56:393 Team/(29444:29456): Buscando deadlock...
+[INFO] 22:32:56:393 Team/(29444:29456): No se han encontrado deadlocks
+[INFO] 22:32:56:505 Team/(29444:29459): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ejecutando tarea
+[INFO] 22:32:56:505 Team/(29444:29458): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de atrapar pokemon pikachu
+[INFO] 22:32:56:505 Team/(29444:29458): Entrenador 1 esta atrapando pokemon pikachu ubicado en (9,9)
+[INFO] 22:32:56:505 Team/(29444:29458): El entrenador 1 se esta moviendo de (2,3) a (9,9)
+[INFO] 22:32:56:505 Team/(29444:29458): El entrenador 1 se encuentra en (2,4)
+[INFO] 22:33:01:506 Team/(29444:29458): El entrenador 1 se encuentra en (2,5)
+[INFO] 22:33:06:393 Team/(29444:29455): Iniciando verificacion de conexion con Broker...
+[INFO] 22:33:06:506 Team/(29444:29458): El entrenador 1 se encuentra en (2,6)
+[INFO] 22:33:06:737 Team/(29444:29453): el ID correlativo 37 de caught no corresponde a ningun catch, mensaje ignorado
+[INFO] 22:33:11:510 Team/(29444:29458): El entrenador 1 se encuentra en (2,7)
+[INFO] 22:33:16:394 Team/(29444:29456): Buscando deadlock...
+[INFO] 22:33:16:394 Team/(29444:29456): No se han encontrado deadlocks
+[INFO] 22:33:16:510 Team/(29444:29458): El entrenador 1 se encuentra en (2,8)
+[INFO] 22:33:16:529 Team/(29444:29453): el ID correlativo 40 de caught no corresponde a ningun catch, mensaje ignorado
+[INFO] 22:33:21:511 Team/(29444:29458): El entrenador 1 se encuentra en (2,9)
+[INFO] 22:33:26:511 Team/(29444:29458): El entrenador 1 se encuentra en (3,9)
+[INFO] 22:33:31:512 Team/(29444:29458): El entrenador 1 se encuentra en (4,9)
+[INFO] 22:33:36:393 Team/(29444:29455): Iniciando verificacion de conexion con Broker...
+[INFO] 22:33:36:394 Team/(29444:29456): Buscando deadlock...
+[INFO] 22:33:36:394 Team/(29444:29456): No se han encontrado deadlocks
+[INFO] 22:33:36:513 Team/(29444:29458): El entrenador 1 se encuentra en (5,9)
+[INFO] 22:33:41:514 Team/(29444:29458): El entrenador 1 se encuentra en (6,9)
+[INFO] 22:33:46:515 Team/(29444:29458): El entrenador 1 se encuentra en (7,9)
+[INFO] 22:33:51:515 Team/(29444:29458): El entrenador 1 se encuentra en (8,9)
+[INFO] 22:33:56:394 Team/(29444:29456): Buscando deadlock...
+[INFO] 22:33:56:395 Team/(29444:29456): No se han encontrado deadlocks
+[INFO] 22:33:56:515 Team/(29444:29458): El entrenador 1 se encuentra en (9,9)
+[INFO] 22:34:01:516 Team/(29444:29458): Estado de entrenador 1 cambiado a Estado blocked. Razon del cambio: Se ha enviado un catch
+[INFO] 22:34:06:394 Team/(29444:29455): Iniciando verificacion de conexion con Broker...
+[INFO] 22:34:16:395 Team/(29444:29456): Buscando deadlock...
+[INFO] 22:34:16:395 Team/(29444:29456): No se han encontrado deadlocks
+[INFO] 22:34:36:394 Team/(29444:29455): Iniciando verificacion de conexion con Broker...
+[INFO] 22:34:36:396 Team/(29444:29456): Buscando deadlock...
+[INFO] 22:34:36:396 Team/(29444:29456): No se han encontrado deadlocks
+[INFO] 22:34:56:396 Team/(29444:29456): Buscando deadlock...
+[INFO] 22:34:56:396 Team/(29444:29456): No se han encontrado deadlocks
+[INFO] 22:35:05:527 Team/(29444:29446): Estado de entrenador 0 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 22:35:05:527 Team/(29444:29457): Estado de entrenador 0 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de atrapar pokemon onix
+[INFO] 22:35:05:527 Team/(29444:29457): Entrenador 0 esta atrapando pokemon onix ubicado en (2,8)
+[INFO] 22:35:05:527 Team/(29444:29457): El entrenador 0 se esta moviendo de (1,3) a (2,8)
+[INFO] 22:35:05:527 Team/(29444:29457): El entrenador 0 se encuentra en (1,4)
+[INFO] 22:35:06:394 Team/(29444:29455): Iniciando verificacion de conexion con Broker...
+[INFO] 22:35:10:527 Team/(29444:29457): El entrenador 0 se encuentra en (1,5)
+[INFO] 22:35:10:556 Team/(29444:29446): Estado de entrenador 2 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 22:35:15:528 Team/(29444:29457): El entrenador 0 se encuentra en (1,6)
+[INFO] 22:35:15:609 Team/(29444:29446): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 22:35:16:396 Team/(29444:29456): Buscando deadlock...
+[INFO] 22:35:16:396 Team/(29444:29456): No se han encontrado deadlocks
+[INFO] 22:35:20:528 Team/(29444:29457): El entrenador 0 se encuentra en (1,7)
+[INFO] 22:35:25:528 Team/(29444:29457): El entrenador 0 se encuentra en (1,8)
+[INFO] 22:35:30:529 Team/(29444:29457): El entrenador 0 se encuentra en (2,8)
+[INFO] 22:35:35:530 Team/(29444:29457): Estado de entrenador 0 cambiado a Estado blocked. Razon del cambio: Se ha enviado un catch
+[INFO] 22:35:36:395 Team/(29444:29455): Iniciando verificacion de conexion con Broker...
+[INFO] 22:35:36:397 Team/(29444:29456): Buscando deadlock...
+[INFO] 22:35:36:397 Team/(29444:29456): No se han encontrado deadlocks
+[INFO] 22:35:40:532 Team/(29444:29457): Estado de entrenador 2 cambiado a Estado executing. Razon del cambio: Ejecutando tarea
+[INFO] 22:35:40:532 Team/(29444:29459): Estado de entrenador 2 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de atrapar pokemon gengar
+[INFO] 22:35:40:532 Team/(29444:29459): Entrenador 2 esta atrapando pokemon gengar ubicado en (6,6)
+[INFO] 22:35:40:532 Team/(29444:29459): El entrenador 2 se esta moviendo de (5,2) a (6,6)
+[INFO] 22:35:40:532 Team/(29444:29459): El entrenador 2 se encuentra en (5,3)
+[INFO] 22:35:45:533 Team/(29444:29459): El entrenador 2 se encuentra en (5,4)
+[INFO] 22:35:50:534 Team/(29444:29459): El entrenador 2 se encuentra en (5,5)
+[INFO] 22:35:50:682 Team/(29444:29453): el ID correlativo 58 de caught no corresponde a ningun catch, mensaje ignorado
+[INFO] 22:35:55:535 Team/(29444:29459): El entrenador 2 se encuentra en (5,6)
+[INFO] 22:35:56:398 Team/(29444:29456): Buscando deadlock...
+[INFO] 22:35:56:398 Team/(29444:29456): No se han encontrado deadlocks
+[INFO] 22:36:00:536 Team/(29444:29459): El entrenador 2 se encuentra en (6,6)
+[INFO] 22:36:05:536 Team/(29444:29459): Estado de entrenador 2 cambiado a Estado blocked. Razon del cambio: Se ha enviado un catch
+[INFO] 22:36:06:396 Team/(29444:29455): Iniciando verificacion de conexion con Broker...
+[INFO] 22:36:10:539 Team/(29444:29459): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ejecutando tarea
+[INFO] 22:36:10:539 Team/(29444:29458): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de atrapar pokemon squirtle
+[INFO] 22:36:10:539 Team/(29444:29458): Entrenador 1 esta atrapando pokemon squirtle ubicado en (5,5)
+[INFO] 22:36:10:539 Team/(29444:29458): El entrenador 1 se esta moviendo de (9,9) a (5,5)
+[INFO] 22:36:10:540 Team/(29444:29458): El entrenador 1 se encuentra en (9,8)
+[INFO] 22:36:10:674 Team/(29444:29453): el ID correlativo 60 de caught no corresponde a ningun catch, mensaje ignorado
+[INFO] 22:36:15:540 Team/(29444:29458): El entrenador 1 se encuentra en (9,7)
+[INFO] 22:36:16:398 Team/(29444:29456): Buscando deadlock...
+[INFO] 22:36:16:399 Team/(29444:29456): No se han encontrado deadlocks
+[INFO] 22:36:20:541 Team/(29444:29458): El entrenador 1 se encuentra en (9,6)
+[INFO] 22:36:25:542 Team/(29444:29458): El entrenador 1 se encuentra en (9,5)
+[INFO] 22:36:30:542 Team/(29444:29458): El entrenador 1 se encuentra en (8,5)
+[INFO] 22:36:30:674 Team/(29444:29453): el ID correlativo 64 de caught no corresponde a ningun catch, mensaje ignorado
+[INFO] 22:36:35:543 Team/(29444:29458): El entrenador 1 se encuentra en (7,5)
+[INFO] 22:36:36:397 Team/(29444:29455): Iniciando verificacion de conexion con Broker...
+[INFO] 22:36:36:399 Team/(29444:29456): Buscando deadlock...
+[INFO] 22:36:36:400 Team/(29444:29456): No se han encontrado deadlocks
+[INFO] 22:36:40:545 Team/(29444:29458): El entrenador 1 se encuentra en (6,5)
+[INFO] 22:36:45:547 Team/(29444:29458): El entrenador 1 se encuentra en (5,5)
+[INFO] 22:36:50:548 Team/(29444:29458): Estado de entrenador 1 cambiado a Estado blocked. Razon del cambio: Se ha enviado un catch
+[INFO] 22:36:56:401 Team/(29444:29456): Buscando deadlock...
+[INFO] 22:36:56:401 Team/(29444:29456): No se han encontrado deadlocks
+[INFO] 22:37:06:397 Team/(29444:29455): Iniciando verificacion de conexion con Broker...
+[INFO] 22:37:16:402 Team/(29444:29456): Buscando deadlock...
+[INFO] 22:37:16:405 Team/(29444:29456): Deadlock obtenido involucrando a 3 entrenadores
+[INFO] 22:37:16:405 Team/(29444:29448): Estado de entrenador 0 cambiado a Estado ready. Razon del cambio: Entrenador planificado para intercambiar pokemones
+[INFO] 22:37:16:406 Team/(29444:29457): Estado de entrenador 0 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de intercambiar pokemon
+[INFO] 22:37:16:406 Team/(29444:29457): El entrenador 0 se esta moviendo de (2,8) a (5,5)
+[INFO] 22:37:16:406 Team/(29444:29457): El entrenador 0 se encuentra en (2,7)
+[INFO] 22:37:21:407 Team/(29444:29457): El entrenador 0 se encuentra en (2,6)
+[INFO] 22:37:26:408 Team/(29444:29457): El entrenador 0 se encuentra en (2,5)
+[INFO] 22:37:31:409 Team/(29444:29457): El entrenador 0 se encuentra en (3,5)
+[INFO] 22:37:36:398 Team/(29444:29455): Iniciando verificacion de conexion con Broker...
+[INFO] 22:37:36:407 Team/(29444:29456): Buscando deadlock...
+[INFO] 22:37:36:407 Team/(29444:29456): No se han encontrado deadlocks
+[INFO] 22:37:36:409 Team/(29444:29457): El entrenador 0 se encuentra en (4,5)
+[INFO] 22:37:41:410 Team/(29444:29457): El entrenador 0 se encuentra en (5,5)
+[INFO] 22:37:46:411 Team/(29444:29457): Entrenadores 0 y 1 intercambiando pokemones onix y squirtle
+[INFO] 22:37:56:408 Team/(29444:29456): Buscando deadlock...
+[INFO] 22:37:56:409 Team/(29444:29456): No se han encontrado deadlocks
+[INFO] 22:38:06:399 Team/(29444:29455): Iniciando verificacion de conexion con Broker...
+[INFO] 22:38:11:415 Team/(29444:29457): Estado de entrenador 0 cambiado a Estado exit. Razon del cambio: Ha terminado su objetivo
+[INFO] 22:38:11:416 Team/(29444:29448): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Entrenador planificado para intercambiar pokemones
+[INFO] 22:38:11:416 Team/(29444:29458): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de intercambiar pokemon
+[INFO] 22:38:11:416 Team/(29444:29458): El entrenador 1 se esta moviendo de (5,5) a (6,6)
+[INFO] 22:38:11:416 Team/(29444:29458): El entrenador 1 se encuentra en (5,6)
+[INFO] 22:38:16:409 Team/(29444:29456): Buscando deadlock...
+[INFO] 22:38:16:409 Team/(29444:29456): No se han encontrado deadlocks
+[INFO] 22:38:16:416 Team/(29444:29458): El entrenador 1 se encuentra en (6,6)
+[INFO] 22:38:21:417 Team/(29444:29458): Entrenadores 1 y 2 intercambiando pokemones onix y gengar
+[INFO] 22:38:36:399 Team/(29444:29455): Iniciando verificacion de conexion con Broker...
+[INFO] 22:38:36:413 Team/(29444:29456): Buscando deadlock...
+[INFO] 22:38:36:413 Team/(29444:29456): No se han encontrado deadlocks
+[INFO] 22:38:46:422 Team/(29444:29458): Estado de entrenador 2 cambiado a Estado exit. Razon del cambio: Ha terminado su objetivo
+[INFO] 22:38:46:423 Team/(29444:29458): Estado de entrenador 1 cambiado a Estado exit. Razon del cambio: Ha terminado su objetivo
+[INFO] 22:38:46:424 Team/(29444:29444): Proceso Team terminado. Cantidad de ciclos de CPU totales: 57
+[INFO] 22:38:46:424 Team/(29444:29444): Cantidad de ciclos de CPU del entrenador 0: 18
+[INFO] 22:38:46:424 Team/(29444:29444): Cantidad de ciclos de CPU del entrenador 1: 30
+[INFO] 22:38:46:424 Team/(29444:29444): Cantidad de ciclos de CPU del entrenador 2: 9
+[INFO] 22:38:46:424 Team/(29444:29444): Proceso Team terminado. Cantidad de cambios de contexto realizados: 22
+[INFO] 22:38:46:424 Team/(29444:29444): Proceso Team terminado. Cantidad de deadlocks encontrados y tratados: 1
+[INFO] 23:09:34:204 Team/(32007:32009): Estado de entrenador 2 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 23:09:34:204 Team/(32007:32022): Estado de entrenador 2 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de atrapar pokemon squirtle
+[INFO] 23:09:34:204 Team/(32007:32022): Entrenador 2 esta atrapando pokemon squirtle ubicado en (5,2)
+[INFO] 23:09:34:204 Team/(32007:32022): El entrenador 2 se esta moviendo de (3,2) a (5,2)
+[INFO] 23:09:34:204 Team/(32007:32022): El entrenador 2 se encuentra en (4,2)
+[INFO] 23:09:39:205 Team/(32007:32022): El entrenador 2 se encuentra en (5,2)
+[INFO] 23:09:44:205 Team/(32007:32022): Estado de entrenador 2 cambiado a Estado blocked. Razon del cambio: Se ha enviado un catch
+[INFO] 23:09:44:355 Team/(32007:32009): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 23:09:44:355 Team/(32007:32021): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de atrapar pokemon pikachu
+[INFO] 23:09:44:355 Team/(32007:32021): Entrenador 1 esta atrapando pokemon pikachu ubicado en (9,9)
+[INFO] 23:09:44:355 Team/(32007:32021): El entrenador 1 se esta moviendo de (2,3) a (9,9)
+[INFO] 23:09:44:355 Team/(32007:32021): El entrenador 1 se encuentra en (2,4)
+[INFO] 23:09:49:355 Team/(32007:32021): El entrenador 1 se encuentra en (2,5)
+[INFO] 23:09:54:191 Team/(32007:32019): Buscando deadlock...
+[INFO] 23:09:54:192 Team/(32007:32019): No se han encontrado deadlocks
+[INFO] 23:09:54:356 Team/(32007:32021): El entrenador 1 se encuentra en (2,6)
+[INFO] 23:09:59:356 Team/(32007:32021): El entrenador 1 se encuentra en (2,7)
+[INFO] 23:10:04:192 Team/(32007:32018): Iniciando verificacion de conexion con Broker...
+[INFO] 23:10:04:357 Team/(32007:32021): El entrenador 1 se encuentra en (2,8)
+[INFO] 23:10:04:483 Team/(32007:32016): el ID correlativo 38 de caught no corresponde a ningun catch, mensaje ignorado
+[INFO] 23:10:09:357 Team/(32007:32021): El entrenador 1 se encuentra en (2,9)
+[INFO] 23:10:14:192 Team/(32007:32019): Buscando deadlock...
+[INFO] 23:10:14:192 Team/(32007:32019): No se han encontrado deadlocks
+[INFO] 23:10:14:358 Team/(32007:32021): El entrenador 1 se encuentra en (3,9)
+[INFO] 23:10:19:358 Team/(32007:32021): El entrenador 1 se encuentra en (4,9)
+[INFO] 23:10:24:358 Team/(32007:32021): El entrenador 1 se encuentra en (5,9)
+[INFO] 23:10:24:488 Team/(32007:32016): el ID correlativo 40 de caught no corresponde a ningun catch, mensaje ignorado
+[INFO] 23:10:29:359 Team/(32007:32021): El entrenador 1 se encuentra en (6,9)
+[INFO] 23:10:34:192 Team/(32007:32018): Iniciando verificacion de conexion con Broker...
+[INFO] 23:10:34:192 Team/(32007:32019): Buscando deadlock...
+[INFO] 23:10:34:192 Team/(32007:32019): No se han encontrado deadlocks
+[INFO] 23:10:34:359 Team/(32007:32021): El entrenador 1 se encuentra en (7,9)
+[INFO] 23:10:39:360 Team/(32007:32021): El entrenador 1 se encuentra en (8,9)
+[INFO] 23:10:44:361 Team/(32007:32021): El entrenador 1 se encuentra en (9,9)
+[INFO] 23:10:49:362 Team/(32007:32021): Estado de entrenador 1 cambiado a Estado blocked. Razon del cambio: Se ha enviado un catch
+[INFO] 23:10:54:193 Team/(32007:32019): Buscando deadlock...
+[INFO] 23:10:54:193 Team/(32007:32019): No se han encontrado deadlocks
+[INFO] 23:11:04:193 Team/(32007:32018): Iniciando verificacion de conexion con Broker...
+[INFO] 23:11:14:195 Team/(32007:32019): Buscando deadlock...
+[INFO] 23:11:14:195 Team/(32007:32019): No se han encontrado deadlocks
+[INFO] 23:11:34:194 Team/(32007:32018): Iniciando verificacion de conexion con Broker...
+[INFO] 23:11:34:195 Team/(32007:32019): Buscando deadlock...
+[INFO] 23:11:34:195 Team/(32007:32019): No se han encontrado deadlocks
+[INFO] 23:11:54:198 Team/(32007:32019): Buscando deadlock...
+[INFO] 23:11:54:199 Team/(32007:32019): No se han encontrado deadlocks
+[INFO] 23:12:02:195 Team/(32007:32009): Estado de entrenador 0 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 23:12:02:195 Team/(32007:32020): Estado de entrenador 0 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de atrapar pokemon onix
+[INFO] 23:12:02:195 Team/(32007:32020): Entrenador 0 esta atrapando pokemon onix ubicado en (2,8)
+[INFO] 23:12:02:195 Team/(32007:32020): El entrenador 0 se esta moviendo de (1,3) a (2,8)
+[INFO] 23:12:02:195 Team/(32007:32020): El entrenador 0 se encuentra en (1,4)
+[INFO] 23:12:04:195 Team/(32007:32018): Iniciando verificacion de conexion con Broker...
+[INFO] 23:12:07:195 Team/(32007:32020): El entrenador 0 se encuentra en (1,5)
+[INFO] 23:12:07:237 Team/(32007:32009): Estado de entrenador 2 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 23:12:12:195 Team/(32007:32020): El entrenador 0 se encuentra en (1,6)
+[INFO] 23:12:12:272 Team/(32007:32009): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 23:12:14:199 Team/(32007:32019): Buscando deadlock...
+[INFO] 23:12:14:199 Team/(32007:32019): No se han encontrado deadlocks
+[INFO] 23:12:17:196 Team/(32007:32020): El entrenador 0 se encuentra en (1,7)
+[INFO] 23:12:22:196 Team/(32007:32020): El entrenador 0 se encuentra en (1,8)
+[INFO] 23:12:27:197 Team/(32007:32020): El entrenador 0 se encuentra en (2,8)
+[INFO] 23:12:32:198 Team/(32007:32020): Estado de entrenador 0 cambiado a Estado blocked. Razon del cambio: Se ha enviado un catch
+[INFO] 23:12:34:195 Team/(32007:32018): Iniciando verificacion de conexion con Broker...
+[INFO] 23:12:34:200 Team/(32007:32019): Buscando deadlock...
+[INFO] 23:12:34:200 Team/(32007:32019): No se han encontrado deadlocks
+[INFO] 23:12:37:202 Team/(32007:32020): Estado de entrenador 2 cambiado a Estado executing. Razon del cambio: Ejecutando tarea
+[INFO] 23:12:37:202 Team/(32007:32022): Estado de entrenador 2 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de atrapar pokemon gengar
+[INFO] 23:12:37:202 Team/(32007:32022): Entrenador 2 esta atrapando pokemon gengar ubicado en (6,6)
+[INFO] 23:12:37:202 Team/(32007:32022): El entrenador 2 se esta moviendo de (5,2) a (6,6)
+[INFO] 23:12:37:202 Team/(32007:32022): El entrenador 2 se encuentra en (5,3)
+[INFO] 23:12:42:203 Team/(32007:32022): El entrenador 2 se encuentra en (5,4)
+[INFO] 23:12:47:203 Team/(32007:32022): El entrenador 2 se encuentra en (5,5)
+[INFO] 23:12:47:342 Team/(32007:32016): el ID correlativo 58 de caught no corresponde a ningun catch, mensaje ignorado
+[INFO] 23:12:52:204 Team/(32007:32022): El entrenador 2 se encuentra en (5,6)
+[INFO] 23:12:54:201 Team/(32007:32019): Buscando deadlock...
+[INFO] 23:12:54:201 Team/(32007:32019): No se han encontrado deadlocks
+[INFO] 23:12:57:204 Team/(32007:32022): El entrenador 2 se encuentra en (6,6)
+[INFO] 23:13:02:205 Team/(32007:32022): Estado de entrenador 2 cambiado a Estado blocked. Razon del cambio: Se ha enviado un catch
+[INFO] 23:13:04:196 Team/(32007:32018): Iniciando verificacion de conexion con Broker...
+[INFO] 23:13:07:208 Team/(32007:32022): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ejecutando tarea
+[INFO] 23:13:07:208 Team/(32007:32021): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de atrapar pokemon squirtle
+[INFO] 23:13:07:208 Team/(32007:32021): Entrenador 1 esta atrapando pokemon squirtle ubicado en (5,5)
+[INFO] 23:13:07:208 Team/(32007:32021): El entrenador 1 se esta moviendo de (9,9) a (5,5)
+[INFO] 23:13:07:208 Team/(32007:32021): El entrenador 1 se encuentra en (9,8)
+[INFO] 23:13:07:348 Team/(32007:32016): el ID correlativo 60 de caught no corresponde a ningun catch, mensaje ignorado
+[INFO] 23:13:12:208 Team/(32007:32021): El entrenador 1 se encuentra en (9,7)
+[INFO] 23:13:14:201 Team/(32007:32019): Buscando deadlock...
+[INFO] 23:13:14:204 Team/(32007:32019): No se han encontrado deadlocks
+[INFO] 23:13:17:209 Team/(32007:32021): El entrenador 1 se encuentra en (9,6)
+[INFO] 23:13:22:209 Team/(32007:32021): El entrenador 1 se encuentra en (9,5)
+[INFO] 23:13:27:210 Team/(32007:32021): El entrenador 1 se encuentra en (8,5)
+[INFO] 23:13:27:350 Team/(32007:32016): el ID correlativo 64 de caught no corresponde a ningun catch, mensaje ignorado
+[INFO] 23:13:32:211 Team/(32007:32021): El entrenador 1 se encuentra en (7,5)
+[INFO] 23:13:34:197 Team/(32007:32018): Iniciando verificacion de conexion con Broker...
+[INFO] 23:13:34:205 Team/(32007:32019): Buscando deadlock...
+[INFO] 23:13:34:205 Team/(32007:32019): No se han encontrado deadlocks
+[INFO] 23:13:37:213 Team/(32007:32021): El entrenador 1 se encuentra en (6,5)
+[INFO] 23:13:42:215 Team/(32007:32021): El entrenador 1 se encuentra en (5,5)
+[INFO] 23:13:47:216 Team/(32007:32021): Estado de entrenador 1 cambiado a Estado blocked. Razon del cambio: Se ha enviado un catch
+[INFO] 23:13:54:205 Team/(32007:32019): Buscando deadlock...
+[INFO] 23:13:54:206 Team/(32007:32019): No se han encontrado deadlocks
+[INFO] 23:14:04:198 Team/(32007:32018): Iniciando verificacion de conexion con Broker...
+[INFO] 23:14:14:206 Team/(32007:32019): Buscando deadlock...
+[INFO] 23:14:14:207 Team/(32007:32019): Deadlock obtenido involucrando a 3 entrenadores
+[INFO] 23:14:14:207 Team/(32007:32011): Estado de entrenador 0 cambiado a Estado ready. Razon del cambio: Entrenador planificado para intercambiar pokemones
+[INFO] 23:14:14:207 Team/(32007:32020): Estado de entrenador 0 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de intercambiar pokemon
+[INFO] 23:14:14:207 Team/(32007:32020): El entrenador 0 se esta moviendo de (2,8) a (5,5)
+[INFO] 23:14:14:208 Team/(32007:32020): El entrenador 0 se encuentra en (2,7)
+[INFO] 23:14:19:208 Team/(32007:32020): El entrenador 0 se encuentra en (2,6)
+[INFO] 23:14:24:208 Team/(32007:32020): El entrenador 0 se encuentra en (2,5)
+[INFO] 23:14:29:209 Team/(32007:32020): El entrenador 0 se encuentra en (3,5)
+[INFO] 23:14:34:199 Team/(32007:32018): Iniciando verificacion de conexion con Broker...
+[INFO] 23:14:34:207 Team/(32007:32019): Buscando deadlock...
+[INFO] 23:14:34:209 Team/(32007:32019): No se han encontrado deadlocks
+[INFO] 23:14:34:209 Team/(32007:32020): El entrenador 0 se encuentra en (4,5)
+[INFO] 23:14:39:209 Team/(32007:32020): El entrenador 0 se encuentra en (5,5)
+[INFO] 23:14:44:210 Team/(32007:32020): Entrenadores 0 y 1 intercambiando pokemones onix y squirtle
+[INFO] 23:14:54:209 Team/(32007:32019): Buscando deadlock...
+[INFO] 23:14:54:210 Team/(32007:32019): No se han encontrado deadlocks
+[INFO] 23:15:04:200 Team/(32007:32018): Iniciando verificacion de conexion con Broker...
+[INFO] 23:15:09:214 Team/(32007:32011): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Entrenador planificado para intercambiar pokemones
+[INFO] 23:15:09:215 Team/(32007:32020): Estado de entrenador 0 cambiado a Estado exit. Razon del cambio: Ha terminado su objetivo
+[INFO] 23:15:09:215 Team/(32007:32021): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de intercambiar pokemon
+[INFO] 23:15:09:216 Team/(32007:32021): El entrenador 1 se esta moviendo de (5,5) a (6,6)
+[INFO] 23:15:09:216 Team/(32007:32021): El entrenador 1 se encuentra en (5,6)
+[INFO] 23:15:09:216 Team/(32007:32020): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ejecutando tarea
+[INFO] 23:15:14:210 Team/(32007:32019): Buscando deadlock...
+[INFO] 23:15:14:211 Team/(32007:32019): No se han encontrado deadlocks
+[INFO] 23:15:14:216 Team/(32007:32021): El entrenador 1 se encuentra en (6,6)
+[INFO] 23:15:19:217 Team/(32007:32021): Entrenadores 1 y 2 intercambiando pokemones onix y gengar
+[INFO] 23:15:34:200 Team/(32007:32018): Iniciando verificacion de conexion con Broker...
+[INFO] 23:15:34:211 Team/(32007:32019): Buscando deadlock...
+[INFO] 23:15:34:211 Team/(32007:32019): No se han encontrado deadlocks
+[INFO] 23:15:44:220 Team/(32007:32021): Estado de entrenador 2 cambiado a Estado exit. Razon del cambio: Ha terminado su objetivo
+[INFO] 23:15:44:220 Team/(32007:32021): Estado de entrenador 1 cambiado a Estado exit. Razon del cambio: Ha terminado su objetivo
+[INFO] 23:15:44:220 Team/(32007:32007): Proceso Team terminado. Cantidad de ciclos de CPU totales: 57
+[INFO] 23:15:44:220 Team/(32007:32007): Cantidad de ciclos de CPU del entrenador 0: 18
+[INFO] 23:15:44:220 Team/(32007:32007): Cantidad de ciclos de CPU del entrenador 1: 30
+[INFO] 23:15:44:220 Team/(32007:32007): Cantidad de ciclos de CPU del entrenador 2: 9
+[INFO] 23:15:44:220 Team/(32007:32007): Proceso Team terminado. Cantidad de cambios de contexto realizados: 22
+[INFO] 23:15:44:220 Team/(32007:32007): Proceso Team terminado. Cantidad de deadlocks encontrados y tratados: 1

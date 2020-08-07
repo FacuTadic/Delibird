@@ -3,12 +3,12 @@
 #include "utilsGameCard.h"
 
 t_log* iniciar_loggerDEV(){
-	return log_create("gameCardDEV.log", "GameCard", 1, LOG_LEVEL_INFO);
+	return log_create("gameCardDEV.log", "GameCard", 0, LOG_LEVEL_INFO);
 }
 
 
 t_log* iniciar_loggerGameCard(){
-	return log_create("gameCard.log", "GameCard", 0, LOG_LEVEL_INFO);
+	return log_create("gameCard.log", "GameCard", 1, LOG_LEVEL_INFO);
 }
 
 t_config* leer_config(){
@@ -30,11 +30,11 @@ int main(void) {
 
 	// ################################################# 	SETTER Y SARAZA 	####################################################
 
-	loggerGameCard = iniciar_loggerGameCard();
-	log_info(loggerGameCard, "logger iniciado.");
-
 	loggerDev = iniciar_loggerDEV();
 	log_info(loggerDev, "logger iniciado.");
+
+	loggerGameCard = iniciar_loggerGameCard();
+	log_info(loggerDev, "logger de catedra iniciado.");
 
 	config = leer_config();
 	log_info(loggerDev, "Config cargada.");

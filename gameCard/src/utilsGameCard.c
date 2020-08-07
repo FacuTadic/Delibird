@@ -213,9 +213,7 @@ char** generarVectorDePaths(char** blocksOcupados){
 
 		char** blockUnico = string_split(pathsDeBlocks,",");
 
-		log_info(loggerDev, "El puto array es: %s", blockUnico[0]);
-		log_info(loggerDev, "El puto array es: %s", blockUnico[1]);
-
+		log_info(loggerDev, "La posicion 0 del array de path es: %s", blockUnico[0]);
 		return blockUnico;
 	}
 
@@ -324,12 +322,17 @@ t_list* evaluarRegistroNew(char** registro, t_list* registros){
 		char** registroActual = list_get(registros,i);
 		if(!strcmp(registro[0],registroActual[0])){
 			uint32_t sumaTotal = 0;
+			log_info(loggerGameCard, "La coordenada %s fue encontrada",registro[0]);
 
 			sumaTotal += atoi(registroActual[1]);
 			log_info(loggerDev, "La vieja cantidad es: %i",sumaTotal);
 
+			log_info(loggerGameCard, "La coordenada %s tenia %s pokemons en dicha localizacion",registroActual[0],registroActual[1]);
+
 			sumaTotal += atoi(registro[1]);
 			log_info(loggerDev, "La nueva cantidad es: %i",sumaTotal);
+
+			log_info(loggerGameCard, "La coordenada %s ahora tiene %i pokemons en dicha localizacion",registroActual[0],sumaTotal);
 
 			free(registroActual[1]);
 			registroActual[1] = string_itoa(sumaTotal);
@@ -340,6 +343,7 @@ t_list* evaluarRegistroNew(char** registro, t_list* registros){
 
 
 	log_info(loggerDev, "La coordenada %s es nueva. Se agrega al los registros",registro[0]);
+	log_info(loggerGameCard, "La coordenada %s es nueva. Se agrega al los registros",registro[0]);
 	list_add(registros,registro);
 	return registros;
 }
@@ -351,17 +355,26 @@ bool evaluarRegistroCatch(char* registro, t_list* registros){
 		char** registroActual = list_get(registros,i);
 		uint32_t cantidadReg = atoi(registroActual[1]);
 		if(!strcmp(registro,registroActual[0])){
+			log_info(loggerGameCard, "La coordenada %s fue encontrada",registro);
+
 			if( cantidadReg > 1){
 				uint32_t cantActualizada = atoi(registroActual[1]);
+				log_info(loggerGameCard, "La coordenada %s tenia %s pokemons en dicha localizacion",registroActual[0],registroActual[1]);
+
 				cantActualizada --;
+				log_info(loggerGameCard, "La coordenada %s ahora tiene %i pokemons en dicha localizacion",registroActual[0],cantActualizada);
+
 				free(registroActual[1]);
 				registroActual[1] = string_itoa(cantActualizada);
 			} else {
+				log_info(loggerGameCard, "La coordenada %s tiene unicamente %s posicion", registro,registroActual[1]);
+				log_info(loggerGameCard, "La coordenada %s se borra", registro);
 				list_remove_and_destroy_element(registros,i,(void*) elDestroyerDeCorchetazos);
 			}
 			return true;
 		}
 	}
+	log_error(loggerGameCard, "La coordenada %s no fue encontrada",registro);
 	return false;
 }
 
@@ -410,6 +423,7 @@ void vaciarBloques(char** blocksOcupados){
 void escribirEnBloques(t_list* registros, t_config* archivoMetadata) {
 
 	if(list_is_empty(registros)){
+		log_info(loggerGameCard, "El metadata del pokemon no tiene mas registros. SIZE = 0 y BLOCKS = [] ");
 		config_set_value(archivoMetadata,"SIZE","0");
 		config_set_value(archivoMetadata,"BLOCKS","[]");
 		config_save(archivoMetadata);
@@ -471,6 +485,9 @@ void escribirEnBloques(t_list* registros, t_config* archivoMetadata) {
 	config_set_value(archivoMetadata,"BLOCKS",arrayBloquesFinalizado);
 	config_save(archivoMetadata);
 
+	log_info(loggerGameCard, "El metadata del pokemon fue actualizado");
+	log_info(loggerGameCard, "SIZE = %s",sizeTotal);
+	log_info(loggerGameCard, "BLOCKS = %s",arrayBloquesFinalizado);
 
 	free(block);
 	free(pathBlock);
@@ -962,6 +979,7 @@ bool validarPosicionesDeCatch(t_config* archivoMetadataPokemon, char** blocksOcu
 
 	if(blocksOcupados[0] == NULL){
 		log_info(loggerDev, "No hay bloques perri");
+		log_error(loggerGameCard, "No hay bloques");
 		return false;
 	}
 
@@ -986,6 +1004,7 @@ void validarPosicionesDeGetAntiInvalidFree(char** blocksOcupados,t_list** regist
 
 	if(blocksOcupados[0] == NULL){
 		log_info(loggerDev, "No hay coordenadas bro te equivocaste, suerte para la proxima");
+		log_error(loggerGameCard, "No hay bloques");
 	}else{
 		char** pathsDeBlocks = generarVectorDePaths(blocksOcupados);
 
@@ -996,10 +1015,10 @@ void validarPosicionesDeGetAntiInvalidFree(char** blocksOcupados,t_list** regist
 
 	for(int j=0; j<(*registros)->elements_count;j++){
 		char* saraza2 = list_get((*registros),j);
-		log_info(loggerDev, "LA COORDENADA MAPEADA ES: %s", saraza2);
+		log_info(loggerDev, "Las coordenadas encontradas son: %s", saraza2);
+		log_info(loggerGameCard, "Las coordenadas encontradas son: %s", saraza2);
 	}
 }
-
 
 
 
@@ -1007,6 +1026,12 @@ t_list* validarPosicionesDeGet(char** blocksOcupados){
 
 	log_info(loggerGameCard, "Obteniendo las posiciones en las que se encuentra el pokemon");
 	t_list* posicionesPokemon = obtenerTodasLasPosiciones(blocksOcupados);
+
+	for(int j=0; j<posicionesPokemon->elements_count;j++){
+			char* saraza2 = list_get(posicionesPokemon,j);
+			log_info(loggerDev, "Las coordenadas encontradas son: %s", saraza2);
+			log_info(loggerGameCard, "Las coordenadas encontradas son: %s", saraza2);
+	}
 
 	return posicionesPokemon;
 }
@@ -1078,7 +1103,9 @@ void newPokemon(int socketCliente,t_newLlegada* new){
 
 	int socket_envio = crear_conexion(ipBroker, puertoBroker);
 
+	log_info(loggerGameCard, "Enviando APPEARED por socket: %i",socket_envio);
 	enviar_appeared(socket_envio, appearedGenerado);
+	log_info(loggerGameCard, "APPEARED enviado");
 
 	config_destroy(archivoMetadataPokemon);
 
@@ -1152,10 +1179,12 @@ void catchPokemon(int socketCliente,t_catchLlegada* catch){
 
 	int socket_envio = crear_conexion(ipBroker, puertoBroker);
 
+	log_info(loggerGameCard, "Enviando CAUGHT por socket: %i",socket_envio);
 	enviar_caught(socket_envio, caughtAEnviar);
+	log_info(loggerGameCard, "CAUGHT enviado");
+
 
 	config_destroy(archivoMetadataPokemon);
-
 
 	free(caughtAEnviar);
 	free(rutaDeDirectorio);
@@ -1182,9 +1211,13 @@ void getPokemon(int socketCliente,t_getLlegada* getLlegada){
 	char* rutaDeDirectorio = generadorDeRutaDeCreacionDeDirectorios(rutaFiles,pokemon);
 
 	if(noExisteDirectorio(rutaDeDirectorio)){
+		log_info(loggerGameCard,"El pokemon %s no existe en el FS, enviando Localized sin posiciones", pokemon);
 		t_localized* localizedAEnviar = crearLocalizedDePokemonInexistente(getLlegada);
+
 		int socketLocalizedFrula = crear_conexion(ipBroker, puertoBroker);
+		log_info(loggerGameCard, "Enviando LOCALIZED por socket: %i",socketLocalizedFrula);
 		enviar_localized(socketLocalizedFrula, localizedAEnviar);
+		log_info(loggerGameCard, "LOCALIZED enviado");
 
 		free(localizedAEnviar->pokemon);
 
@@ -1229,7 +1262,9 @@ void getPokemon(int socketCliente,t_getLlegada* getLlegada){
 
 	int socket_envio = crear_conexion(ipBroker, puertoBroker);
 
+	log_info(loggerGameCard, "Enviando LOCALIZED por socket: %i",socket_envio);
 	enviar_localized(socket_envio, localizedAEnviar);
+	log_info(loggerGameCard, "LOCALIZED enviado");
 
 	config_destroy(archivoMetadataPokemon);
 
