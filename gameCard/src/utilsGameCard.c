@@ -271,7 +271,9 @@ char* aplanarVectorDeKeyValue(char** vector){
 }
 
 char* getCoordenadaDeRegistro(char** vector){
-	return vector[0];
+	char* coordenadaSaca = string_new();
+	string_append(&coordenadaSaca,vector[0]);
+	return coordenadaSaca;
 }
 
 // recibe array de paths bloques y devuelve lista de registros [pos,cant]
@@ -394,11 +396,13 @@ t_list* obtenerTodasLasPosiciones(char** blocks){
 		t_list* registros = traerRegistrosBloques(pathsDeBlocks);
 		coordenadas = list_map(registros, (void*) getCoordenadaDeRegistro);
 
+
+		list_destroy_and_destroy_elements(registros,(void*) elDestroyerDeCorchetazos);
+
 		uint32_t indexPaths = 0;
 		while(pathsDeBlocks[indexPaths] != NULL){
 			free(pathsDeBlocks[indexPaths]);
 			indexPaths++;
-
 		}
 		free(pathsDeBlocks);
 	}
@@ -1257,7 +1261,6 @@ void getPokemon(int socketCliente,t_getLlegada* getLlegada){
 	t_list* coordenadas;
 
 	string_to_lower(pokemon);
-
 	char* rutaDeDirectorio = generadorDeRutaDeCreacionDeDirectorios(rutaFiles,pokemon);
 
 	if(noExisteDirectorio(rutaDeDirectorio)){
@@ -1301,11 +1304,6 @@ void getPokemon(int socketCliente,t_getLlegada* getLlegada){
 
 	desactivarFlagDeLectura(archivoMetadataPokemon);
 
-	for(int j=0; j<coordenadas->elements_count;j++){
-		char* saraza2 = list_get(coordenadas,j);
-		log_info(loggerDev, "LA COORDENADA ANTES DEL CREAR ES: %s", saraza2);
-	}
-
 	t_localized* localizedAEnviar = crearLocalized(getLlegada, coordenadas);
 
 	sleep(tiempoRetardoOperacion);
@@ -1319,19 +1317,6 @@ void getPokemon(int socketCliente,t_getLlegada* getLlegada){
 	config_destroy(archivoMetadataPokemon);
 
 	list_destroy_and_destroy_elements(coordenadas,(void *) elLimpiaCharDinamicos);
-/*
-	log_info(loggerDev, "PINDONGA");
-	for(int w=0; w<coordenadas->elements_count;w++){
-		log_info(loggerDev, "CANTIDAD DE ELEMENTOS DEL ORTO: %i", coordenadas->elements_count);
-		char* quePIjazo = list_get(coordenadas,w);
-		if(quePIjazo != NULL){
-			log_info(loggerDev, "LA CONCHA DE TU MADRE ESTOY BORRANDO: %s", quePIjazo);
-			free(quePIjazo);
-		}
-
-	}
-*/
-//	list_destroy(coordenadas);
 
 	free(rutaDeDirectorio);
 	free(rutaDeArchivo);
@@ -1341,6 +1326,7 @@ void getPokemon(int socketCliente,t_getLlegada* getLlegada){
 		free(blocksOcupados[indexParaBorrar]);
 		indexParaBorrar++;
 	}
+
 	free(blocksOcupados);
 	free(localizedAEnviar->pokemon);
 
@@ -1351,7 +1337,6 @@ void getPokemon(int socketCliente,t_getLlegada* getLlegada){
 	list_destroy(localizedAEnviar->l_coordenadas);
 	free(localizedAEnviar);
 
-	free(getLlegada->pokemon);
 	free(getLlegada);
 
 }
