@@ -1,0 +1,5 @@
+Partición 1: 0x8fc2730 - 0x8fc2741.      [X]      Size: 17 b      LRU: 16      Cola: 3      ID: 7
+Partición 2: 0x8fc2741 - 0x8fc2748.      [L]      Size: 7 b
+Partición 3: 0x8fc2748 - 0x8fc2759.      [X]      Size: 17 b      LRU: 8      Cola: 3      ID: 4
+Partición 4: 0x8fc2759 - 0x8fc2766.      [X]      Size: 13 b      LRU: 10      Cola: 3      ID: 5
+Partición 5: 0x8fc2766 - 0x8fc2770.      [L]      Size: 10 b

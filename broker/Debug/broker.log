@@ -8753,3 +8753,203 @@
 [INFO] 20:26:30:987 Broker/(5837:6128): ACK de cliente 870164658 socket 27 recibido
 [INFO] 20:26:30:988 Broker/(5837:6127): Mensaje CAUGHT con id 67 al cliente 1780132405 socket 20 enviado correctamente
 [INFO] 20:26:30:989 Broker/(5837:6127): ACK de cliente 1780132405 socket 20 recibido
+[INFO] 21:07:07:65 Broker/(6894:6895): Nueva conexion de un proceso con socket cliente 7
+[INFO] 21:07:07:68 Broker/(6894:7017): Mensaje CAUGHT con id 1 encolado
+[INFO] 21:07:07:68 Broker/(6894:6899): Guardando mensaje con id 1 en particion 0x918a730
+[INFO] 21:07:07:71 Broker/(6894:6895): Nueva conexion de un proceso con socket cliente 8
+[INFO] 21:07:07:78 Broker/(6894:7019): Mensaje CAUGHT con id 2 encolado
+[INFO] 21:07:07:78 Broker/(6894:6899): Guardando mensaje con id 2 en particion 0x918a734
+[INFO] 21:07:07:79 Broker/(6894:6895): Nueva conexion de un proceso con socket cliente 9
+[INFO] 21:07:07:83 Broker/(6894:7021): Mensaje CATCH con id 3 encolado
+[INFO] 21:07:07:83 Broker/(6894:6898): Guardando mensaje con id 3 en particion 0x918a738
+[INFO] 21:07:07:85 Broker/(6894:6895): Nueva conexion de un proceso con socket cliente 10
+[INFO] 21:07:07:88 Broker/(6894:7023): Mensaje CATCH con id 4 encolado
+[INFO] 21:07:07:88 Broker/(6894:6898): Guardando mensaje con id 4 en particion 0x918a748
+[INFO] 21:07:07:97 Broker/(6894:6895): Nueva conexion de un proceso con socket cliente 11
+[INFO] 21:07:07:100 Broker/(6894:7025): Mensaje CATCH con id 5 encolado
+[INFO] 21:07:07:100 Broker/(6894:6898): Guardando mensaje con id 5 en particion 0x918a759
+[INFO] 21:07:07:102 Broker/(6894:6895): Nueva conexion de un proceso con socket cliente 12
+[INFO] 21:07:07:104 Broker/(6894:7030): Mensaje CAUGHT de memoria con id 2 al cliente 6 socket 12 enviado correctamente
+[INFO] 21:07:07:104 Broker/(6894:7030): ACK de cliente 6 socket 12 recibido
+[INFO] 21:07:07:105 Broker/(6894:7029): Mensaje CAUGHT de memoria con id 1 al cliente 6 socket 12 enviado correctamente
+[INFO] 21:07:07:105 Broker/(6894:7029): ACK de cliente 6 socket 12 recibido
+[INFO] 21:07:07:105 Broker/(6894:7027): Modulo con id 6 agregado correctamente en la cola de CAUGHT
+[INFO] 21:07:17:107 Broker/(6894:6895): Nueva conexion de un proceso con socket cliente 13
+[INFO] 21:07:17:114 Broker/(6894:7032): Mensaje CATCH con id 7 encolado
+[INFO] 21:07:17:114 Broker/(6894:6898): Se ha eliminado el registro con id 1 ubicado en 0x918a730 de la tabla de segmentos
+[INFO] 21:07:17:114 Broker/(6894:6898): Se ha eliminado el registro con id 2 ubicado en 0x918a734 de la tabla de segmentos
+[INFO] 21:07:17:114 Broker/(6894:6898): Se ha eliminado el registro con id 3 ubicado en 0x918a738 de la tabla de segmentos
+[INFO] 21:07:17:114 Broker/(6894:6898): Guardando mensaje con id 7 en particion 0x918a730
+[INFO] 21:09:53:74 Broker/(7193:7194): Nueva conexion de un proceso con socket cliente 7
+[INFO] 21:09:53:76 Broker/(7193:7203): Mensaje CAUGHT con id 1 encolado
+[INFO] 21:09:53:77 Broker/(7193:7198): Guardando mensaje con id 1 en particion 0x9a7d730
+[INFO] 21:09:53:78 Broker/(7193:7194): Nueva conexion de un proceso con socket cliente 8
+[INFO] 21:09:53:82 Broker/(7193:7205): Mensaje CAUGHT con id 2 encolado
+[INFO] 21:09:53:82 Broker/(7193:7198): Guardando mensaje con id 2 en particion 0x9a7d734
+[INFO] 21:09:53:84 Broker/(7193:7194): Nueva conexion de un proceso con socket cliente 9
+[INFO] 21:09:53:94 Broker/(7193:7207): Mensaje CATCH con id 3 encolado
+[INFO] 21:09:53:94 Broker/(7193:7197): Guardando mensaje con id 3 en particion 0x9a7d738
+[INFO] 21:09:53:101 Broker/(7193:7194): Nueva conexion de un proceso con socket cliente 10
+[INFO] 21:09:53:109 Broker/(7193:7209): Mensaje CATCH con id 4 encolado
+[INFO] 21:09:53:109 Broker/(7193:7197): Guardando mensaje con id 4 en particion 0x9a7d748
+[INFO] 21:09:53:112 Broker/(7193:7194): Nueva conexion de un proceso con socket cliente 11
+[INFO] 21:09:53:118 Broker/(7193:7211): Mensaje CATCH con id 5 encolado
+[INFO] 21:09:53:118 Broker/(7193:7197): Guardando mensaje con id 5 en particion 0x9a7d759
+[INFO] 21:09:53:120 Broker/(7193:7194): Nueva conexion de un proceso con socket cliente 12
+[INFO] 21:09:53:122 Broker/(7193:7216): Mensaje CAUGHT de memoria con id 2 al cliente 6 socket 12 enviado correctamente
+[INFO] 21:09:53:122 Broker/(7193:7216): ACK de cliente 6 socket 12 recibido
+[INFO] 21:09:53:123 Broker/(7193:7215): Mensaje CAUGHT de memoria con id 1 al cliente 6 socket 12 enviado correctamente
+[INFO] 21:09:53:123 Broker/(7193:7215): ACK de cliente 6 socket 12 recibido
+[INFO] 21:09:53:123 Broker/(7193:7213): Modulo con id 6 agregado correctamente en la cola de CAUGHT
+[INFO] 21:10:03:126 Broker/(7193:7194): Nueva conexion de un proceso con socket cliente 13
+[INFO] 21:10:03:132 Broker/(7193:7220): Mensaje CATCH con id 7 encolado
+[INFO] 21:10:03:132 Broker/(7193:7197): Se ha eliminado el registro con id 3 ubicado en 0x9a7d738 de la tabla de segmentos
+[INFO] 21:10:03:132 Broker/(7193:7197): Se ha eliminado el registro con id 4 ubicado en 0x9a7d748 de la tabla de segmentos
+[INFO] 21:10:03:132 Broker/(7193:7197): Guardando mensaje con id 7 en particion 0x9a7d738
+[INFO] 21:13:02:952 Broker/(7385:7386): Nueva conexion de un proceso con socket cliente 8
+[INFO] 21:13:02:976 Broker/(7385:7386): Nueva conexion de un proceso con socket cliente 9
+[INFO] 21:13:02:987 Broker/(7385:7386): Nueva conexion de un proceso con socket cliente 10
+[INFO] 21:13:02:994 Broker/(7385:7386): Nueva conexion de un proceso con socket cliente 11
+[INFO] 21:13:02:4 Broker/(7385:7386): Nueva conexion de un proceso con socket cliente 12
+[INFO] 21:13:03:22 Broker/(7385:7395): Mensaje CAUGHT con id 1 encolado
+[INFO] 21:13:03:52 Broker/(7385:7386): Nueva conexion de un proceso con socket cliente 13
+[INFO] 21:13:03:54 Broker/(7385:7398): Mensaje CAUGHT con id 2 encolado
+[INFO] 21:13:03:59 Broker/(7385:7400): Mensaje CATCH con id 3 encolado
+[INFO] 21:13:03:64 Broker/(7385:7402): Mensaje CATCH con id 4 encolado
+[INFO] 21:13:03:66 Broker/(7385:7404): Mensaje CATCH con id 5 encolado
+[INFO] 21:13:03:67 Broker/(7385:7390): Guardando mensaje con id 1 en particion 0x4239320
+[INFO] 21:13:03:73 Broker/(7385:7389): Guardando mensaje con id 4 en particion 0x4239324
+[INFO] 21:13:03:92 Broker/(7385:7390): Guardando mensaje con id 2 en particion 0x4239335
+[INFO] 21:13:03:93 Broker/(7385:7389): Guardando mensaje con id 3 en particion 0x4239339
+[INFO] 21:14:20:68 Broker/(7430:7431): Nueva conexion de un proceso con socket cliente 7
+[INFO] 21:14:20:71 Broker/(7430:7442): Mensaje CAUGHT con id 1 encolado
+[INFO] 21:14:20:71 Broker/(7430:7435): Guardando mensaje con id 1 en particion 0x9e1a730
+[INFO] 21:14:20:74 Broker/(7430:7431): Nueva conexion de un proceso con socket cliente 8
+[INFO] 21:14:20:76 Broker/(7430:7444): Mensaje CAUGHT con id 2 encolado
+[INFO] 21:14:20:76 Broker/(7430:7435): Guardando mensaje con id 2 en particion 0x9e1a734
+[INFO] 21:14:20:84 Broker/(7430:7431): Nueva conexion de un proceso con socket cliente 9
+[INFO] 21:14:20:86 Broker/(7430:7446): Mensaje CATCH con id 3 encolado
+[INFO] 21:14:20:86 Broker/(7430:7434): Guardando mensaje con id 3 en particion 0x9e1a738
+[INFO] 21:14:20:87 Broker/(7430:7431): Nueva conexion de un proceso con socket cliente 10
+[INFO] 21:14:20:93 Broker/(7430:7448): Mensaje CATCH con id 4 encolado
+[INFO] 21:14:20:93 Broker/(7430:7434): Guardando mensaje con id 4 en particion 0x9e1a748
+[INFO] 21:14:20:94 Broker/(7430:7431): Nueva conexion de un proceso con socket cliente 11
+[INFO] 21:14:20:106 Broker/(7430:7450): Mensaje CATCH con id 5 encolado
+[INFO] 21:14:20:106 Broker/(7430:7434): Guardando mensaje con id 5 en particion 0x9e1a759
+[INFO] 21:14:20:107 Broker/(7430:7431): Nueva conexion de un proceso con socket cliente 12
+[INFO] 21:14:20:110 Broker/(7430:7455): Mensaje CAUGHT de memoria con id 2 al cliente 6 socket 12 enviado correctamente
+[INFO] 21:14:20:110 Broker/(7430:7455): ACK de cliente 6 socket 12 recibido
+[INFO] 21:14:20:110 Broker/(7430:7454): Mensaje CAUGHT de memoria con id 1 al cliente 6 socket 12 enviado correctamente
+[INFO] 21:14:20:110 Broker/(7430:7454): ACK de cliente 6 socket 12 recibido
+[INFO] 21:14:20:110 Broker/(7430:7452): Modulo con id 6 agregado correctamente en la cola de CAUGHT
+[INFO] 21:14:30:111 Broker/(7430:7431): Nueva conexion de un proceso con socket cliente 13
+[INFO] 21:14:30:117 Broker/(7430:7459): Mensaje CATCH con id 7 encolado
+[INFO] 21:14:30:117 Broker/(7430:7434): Se ha eliminado el registro con id 3 ubicado en 0x9e1a738 de la tabla de segmentos
+[INFO] 21:14:30:117 Broker/(7430:7434): Se ha eliminado el registro con id 4 ubicado en 0x9e1a748 de la tabla de segmentos
+[INFO] 21:14:30:117 Broker/(7430:7434): Guardando mensaje con id 7 en particion 0x9e1a738
+[INFO] 21:17:19:908 Broker/(7513:7514): Nueva conexion de un proceso con socket cliente 7
+[INFO] 21:17:19:910 Broker/(7513:7526): Mensaje CAUGHT con id 1 encolado
+[INFO] 21:17:19:910 Broker/(7513:7518): Guardando mensaje con id 1 en particion 0x915e730
+[INFO] 21:17:19:912 Broker/(7513:7514): Nueva conexion de un proceso con socket cliente 8
+[INFO] 21:17:19:914 Broker/(7513:7528): Mensaje CAUGHT con id 2 encolado
+[INFO] 21:17:19:914 Broker/(7513:7518): Guardando mensaje con id 2 en particion 0x915e734
+[INFO] 21:17:19:917 Broker/(7513:7514): Nueva conexion de un proceso con socket cliente 9
+[INFO] 21:17:19:921 Broker/(7513:7530): Mensaje CATCH con id 3 encolado
+[INFO] 21:17:19:921 Broker/(7513:7517): Guardando mensaje con id 3 en particion 0x915e738
+[INFO] 21:17:19:923 Broker/(7513:7514): Nueva conexion de un proceso con socket cliente 10
+[INFO] 21:17:19:925 Broker/(7513:7532): Mensaje CATCH con id 4 encolado
+[INFO] 21:17:19:925 Broker/(7513:7517): Guardando mensaje con id 4 en particion 0x915e748
+[INFO] 21:17:19:927 Broker/(7513:7514): Nueva conexion de un proceso con socket cliente 11
+[INFO] 21:17:19:929 Broker/(7513:7534): Mensaje CATCH con id 5 encolado
+[INFO] 21:17:19:929 Broker/(7513:7517): Guardando mensaje con id 5 en particion 0x915e759
+[INFO] 21:17:19:930 Broker/(7513:7514): Nueva conexion de un proceso con socket cliente 12
+[INFO] 21:17:19:931 Broker/(7513:7539): Mensaje CAUGHT de memoria con id 2 al cliente 6 socket 12 enviado correctamente
+[INFO] 21:17:19:931 Broker/(7513:7539): ACK de cliente 6 socket 12 recibido
+[INFO] 21:17:19:931 Broker/(7513:7538): Mensaje CAUGHT de memoria con id 1 al cliente 6 socket 12 enviado correctamente
+[INFO] 21:17:19:931 Broker/(7513:7538): ACK de cliente 6 socket 12 recibido
+[INFO] 21:17:19:931 Broker/(7513:7536): Modulo con id 6 agregado correctamente en la cola de CAUGHT
+[INFO] 21:17:29:935 Broker/(7513:7514): Nueva conexion de un proceso con socket cliente 13
+[INFO] 21:17:29:943 Broker/(7513:7543): Mensaje CATCH con id 7 encolado
+[INFO] 21:17:29:943 Broker/(7513:7517): Se ha eliminado el registro con id 1 ubicado en 0x915e730 de la tabla de segmentos
+[INFO] 21:17:29:943 Broker/(7513:7517): Se ha eliminado el registro con id 2 ubicado en 0x915e734 de la tabla de segmentos
+[INFO] 21:17:29:943 Broker/(7513:7517): Se ha eliminado el registro con id 3 ubicado en 0x915e738 de la tabla de segmentos
+[INFO] 21:17:29:943 Broker/(7513:7517): Guardando mensaje con id 7 en particion 0x915e730
+[INFO] 21:19:11:908 Broker/(7701:7702): Nueva conexion de un proceso con socket cliente 7
+[INFO] 21:19:11:913 Broker/(7701:7711): Mensaje CAUGHT con id 1 encolado
+[INFO] 21:19:11:913 Broker/(7701:7706): Guardando mensaje con id 1 en particion 0x89e0730
+[INFO] 21:19:11:918 Broker/(7701:7702): Nueva conexion de un proceso con socket cliente 8
+[INFO] 21:19:11:924 Broker/(7701:7713): Mensaje CAUGHT con id 2 encolado
+[INFO] 21:19:11:924 Broker/(7701:7706): Guardando mensaje con id 2 en particion 0x89e0734
+[INFO] 21:19:11:926 Broker/(7701:7702): Nueva conexion de un proceso con socket cliente 9
+[INFO] 21:19:11:929 Broker/(7701:7715): Mensaje CATCH con id 3 encolado
+[INFO] 21:19:11:930 Broker/(7701:7705): Guardando mensaje con id 3 en particion 0x89e0738
+[INFO] 21:19:11:935 Broker/(7701:7702): Nueva conexion de un proceso con socket cliente 10
+[INFO] 21:19:11:941 Broker/(7701:7717): Mensaje CATCH con id 4 encolado
+[INFO] 21:19:11:941 Broker/(7701:7705): Guardando mensaje con id 4 en particion 0x89e0748
+[INFO] 21:19:11:942 Broker/(7701:7702): Nueva conexion de un proceso con socket cliente 11
+[INFO] 21:19:11:945 Broker/(7701:7719): Mensaje CATCH con id 5 encolado
+[INFO] 21:19:11:945 Broker/(7701:7705): Guardando mensaje con id 5 en particion 0x89e0759
+[INFO] 21:19:11:946 Broker/(7701:7702): Nueva conexion de un proceso con socket cliente 12
+[INFO] 21:19:11:947 Broker/(7701:7724): Mensaje CAUGHT de memoria con id 2 al cliente 6 socket 12 enviado correctamente
+[INFO] 21:19:11:947 Broker/(7701:7724): ACK de cliente 6 socket 12 recibido
+[INFO] 21:19:11:948 Broker/(7701:7723): Mensaje CAUGHT de memoria con id 1 al cliente 6 socket 12 enviado correctamente
+[INFO] 21:19:11:948 Broker/(7701:7723): ACK de cliente 6 socket 12 recibido
+[INFO] 21:19:11:948 Broker/(7701:7721): Modulo con id 6 agregado correctamente en la cola de CAUGHT
+[INFO] 21:19:21:950 Broker/(7701:7702): Nueva conexion de un proceso con socket cliente 13
+[INFO] 21:19:21:956 Broker/(7701:7728): Mensaje CATCH con id 7 encolado
+[INFO] 21:19:21:956 Broker/(7701:7705): Se ha eliminado el registro con id 3 ubicado en 0x89e0738 de la tabla de segmentos
+[INFO] 21:19:21:956 Broker/(7701:7705): Se ha eliminado el registro con id 4 ubicado en 0x89e0748 de la tabla de segmentos
+[INFO] 21:19:21:957 Broker/(7701:7705): Guardando mensaje con id 7 en particion 0x89e0738
+[INFO] 21:21:14:741 Broker/(7987:7989): Nueva conexion de un proceso con socket cliente 7
+[INFO] 21:21:14:745 Broker/(7987:7999): Mensaje CAUGHT con id 1 encolado
+[INFO] 21:21:14:745 Broker/(7987:7993): Guardando mensaje con id 1 en particion 0x8972730
+[INFO] 21:21:14:750 Broker/(7987:7989): Nueva conexion de un proceso con socket cliente 8
+[INFO] 21:21:14:758 Broker/(7987:8001): Mensaje CAUGHT con id 2 encolado
+[INFO] 21:21:14:758 Broker/(7987:7993): Guardando mensaje con id 2 en particion 0x8972734
+[INFO] 21:21:14:760 Broker/(7987:7989): Nueva conexion de un proceso con socket cliente 9
+[INFO] 21:21:14:763 Broker/(7987:8003): Mensaje CATCH con id 3 encolado
+[INFO] 21:21:14:763 Broker/(7987:7992): Guardando mensaje con id 3 en particion 0x8972738
+[INFO] 21:21:14:769 Broker/(7987:7989): Nueva conexion de un proceso con socket cliente 10
+[INFO] 21:21:14:775 Broker/(7987:8005): Mensaje CATCH con id 4 encolado
+[INFO] 21:21:14:775 Broker/(7987:7992): Guardando mensaje con id 4 en particion 0x8972748
+[INFO] 21:21:14:777 Broker/(7987:7989): Nueva conexion de un proceso con socket cliente 11
+[INFO] 21:21:14:779 Broker/(7987:8007): Mensaje CATCH con id 5 encolado
+[INFO] 21:21:14:779 Broker/(7987:7992): Guardando mensaje con id 5 en particion 0x8972759
+[INFO] 21:21:14:781 Broker/(7987:7989): Nueva conexion de un proceso con socket cliente 12
+[INFO] 21:21:14:782 Broker/(7987:8012): Mensaje CAUGHT de memoria con id 2 al cliente 6 socket 12 enviado correctamente
+[INFO] 21:21:14:782 Broker/(7987:8012): ACK de cliente 6 socket 12 recibido
+[INFO] 21:21:14:782 Broker/(7987:8011): Mensaje CAUGHT de memoria con id 1 al cliente 6 socket 12 enviado correctamente
+[INFO] 21:21:14:782 Broker/(7987:8011): ACK de cliente 6 socket 12 recibido
+[INFO] 21:21:14:782 Broker/(7987:8009): Modulo con id 6 agregado correctamente en la cola de CAUGHT
+[INFO] 21:21:24:783 Broker/(7987:7989): Nueva conexion de un proceso con socket cliente 13
+[INFO] 21:21:24:794 Broker/(7987:8019): Mensaje CATCH con id 7 encolado
+[INFO] 21:21:24:794 Broker/(7987:7992): Se ha eliminado el registro con id 3 ubicado en 0x8972738 de la tabla de segmentos
+[INFO] 21:21:24:794 Broker/(7987:7992): Se ha eliminado el registro con id 4 ubicado en 0x8972748 de la tabla de segmentos
+[INFO] 21:21:24:794 Broker/(7987:7992): Guardando mensaje con id 7 en particion 0x8972738
+[INFO] 21:23:13:47 Broker/(8158:8160): Nueva conexion de un proceso con socket cliente 7
+[INFO] 21:23:13:63 Broker/(8158:8170): Mensaje CAUGHT con id 1 encolado
+[INFO] 21:23:13:63 Broker/(8158:8164): Guardando mensaje con id 1 en particion 0x8fc2730
+[INFO] 21:23:13:66 Broker/(8158:8160): Nueva conexion de un proceso con socket cliente 8
+[INFO] 21:23:13:69 Broker/(8158:8174): Mensaje CAUGHT con id 2 encolado
+[INFO] 21:23:13:69 Broker/(8158:8164): Guardando mensaje con id 2 en particion 0x8fc2734
+[INFO] 21:23:13:80 Broker/(8158:8160): Nueva conexion de un proceso con socket cliente 9
+[INFO] 21:23:13:84 Broker/(8158:8176): Mensaje CATCH con id 3 encolado
+[INFO] 21:23:13:84 Broker/(8158:8163): Guardando mensaje con id 3 en particion 0x8fc2738
+[INFO] 21:23:13:85 Broker/(8158:8160): Nueva conexion de un proceso con socket cliente 10
+[INFO] 21:23:13:88 Broker/(8158:8178): Mensaje CATCH con id 4 encolado
+[INFO] 21:23:13:88 Broker/(8158:8163): Guardando mensaje con id 4 en particion 0x8fc2748
+[INFO] 21:23:13:89 Broker/(8158:8160): Nueva conexion de un proceso con socket cliente 11
+[INFO] 21:23:13:91 Broker/(8158:8180): Mensaje CATCH con id 5 encolado
+[INFO] 21:23:13:91 Broker/(8158:8163): Guardando mensaje con id 5 en particion 0x8fc2759
+[INFO] 21:23:13:92 Broker/(8158:8160): Nueva conexion de un proceso con socket cliente 12
+[INFO] 21:23:13:92 Broker/(8158:8185): Mensaje CAUGHT de memoria con id 2 al cliente 6 socket 12 enviado correctamente
+[INFO] 21:23:13:93 Broker/(8158:8185): ACK de cliente 6 socket 12 recibido
+[INFO] 21:23:13:93 Broker/(8158:8184): Mensaje CAUGHT de memoria con id 1 al cliente 6 socket 12 enviado correctamente
+[INFO] 21:23:13:93 Broker/(8158:8184): ACK de cliente 6 socket 12 recibido
+[INFO] 21:23:13:93 Broker/(8158:8182): Modulo con id 6 agregado correctamente en la cola de CAUGHT
+[INFO] 21:23:23:94 Broker/(8158:8160): Nueva conexion de un proceso con socket cliente 13
+[INFO] 21:23:23:104 Broker/(8158:8190): Mensaje CATCH con id 7 encolado
+[INFO] 21:23:23:104 Broker/(8158:8163): Se ha eliminado el registro con id 1 ubicado en 0x8fc2730 de la tabla de segmentos
+[INFO] 21:23:23:104 Broker/(8158:8163): Se ha eliminado el registro con id 2 ubicado en 0x8fc2734 de la tabla de segmentos
+[INFO] 21:23:23:104 Broker/(8158:8163): Se ha eliminado el registro con id 3 ubicado en 0x8fc2738 de la tabla de segmentos
+[INFO] 21:23:23:104 Broker/(8158:8163): Guardando mensaje con id 7 en particion 0x8fc2730

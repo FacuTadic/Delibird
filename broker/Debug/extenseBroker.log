@@ -31861,3 +31861,1444 @@
 [INFO] 20:26:30:989 Broker/(5837:6127): ACK de cliente 1780132405 socket 20 recibido
 [INFO] 20:26:30:989 Broker/(5837:5842): Eliminando mensaje CAUGHT con id 67
 [INFO] 20:26:30:990 Broker/(5837:5842): Eliminado mensaje CAUGHT con id 67
+[INFO] 21:06:45:532 Broker/(6886:6886): logger extenso iniciado
+[INFO] 21:06:45:532 Broker/(6886:6886): logger de la catedra iniciado
+[INFO] 21:06:45:532 Broker/(6886:6886): La IP es: 127.0.0.1
+[INFO] 21:06:45:533 Broker/(6886:6886): El puerto es: 4444
+[INFO] 21:06:45:533 Broker/(6886:6886): El tamanio de la memoria es 64
+[INFO] 21:06:45:533 Broker/(6886:6886): La frecuencia de la compactacion es 10
+[INFO] 21:06:45:533 Broker/(6886:6886): El tamanio minimo de la particion es 4
+[INFO] 21:06:45:534 Broker/(6886:6886): El algoritmo de busqueda de particiones libres es FF
+[INFO] 21:06:45:534 Broker/(6886:6886): El algoritmo de reemplazo de particiones es FIFO
+[INFO] 21:06:45:534 Broker/(6886:6886): Iniciando colas
+[INFO] 21:06:45:534 Broker/(6886:6886): Colas iniciadas
+[INFO] 21:06:45:535 Broker/(6886:6886): Iniciando listas de suscriptores
+[INFO] 21:06:45:535 Broker/(6886:6886): Listas de suscriptores iniciadas
+[INFO] 21:06:45:535 Broker/(6886:6886): Iniciando listas de ids respondidos
+[INFO] 21:06:45:535 Broker/(6886:6886): Listas de ids respondidos iniciadas
+[INFO] 21:06:45:536 Broker/(6886:6886): Iniciando estructuras de colas
+[INFO] 21:06:45:536 Broker/(6886:6886): Estructuras de colas iniciadas
+[INFO] 21:06:45:536 Broker/(6886:6886): Iniciando limites de colas
+[INFO] 21:06:45:537 Broker/(6886:6886): Limites de colas iniciadas
+[INFO] 21:06:45:537 Broker/(6886:6886): Iniciando semaforos de limite
+[INFO] 21:06:45:537 Broker/(6886:6886): Semaforos de limite iniciados
+[INFO] 21:06:45:537 Broker/(6886:6886): Iniciando semaforos de mensajes
+[INFO] 21:06:45:537 Broker/(6886:6886): Semaforos de mensajes iniciados
+[INFO] 21:06:45:538 Broker/(6886:6886): Iniciando semaforos de colas
+[INFO] 21:06:45:538 Broker/(6886:6886): Semaforos de colas iniciados
+[INFO] 21:06:45:538 Broker/(6886:6886): Iniciando semaforos de listas
+[INFO] 21:06:45:538 Broker/(6886:6886): Semaforos de listas iniciados
+[INFO] 21:06:45:539 Broker/(6886:6886): Iniciando semaforos de ids respondidos
+[INFO] 21:06:45:539 Broker/(6886:6886): Semaforos de ids respondidos iniciados
+[INFO] 21:06:45:539 Broker/(6886:6886): Creando generador id
+[INFO] 21:06:45:539 Broker/(6886:6886): Generador id creado
+[INFO] 21:06:45:539 Broker/(6886:6886): Levantando servidor
+[INFO] 21:06:45:539 Broker/(6886:6886): Servidor levantado
+[INFO] 21:06:45:543 Broker/(6886:6892): Atendiendo cola GET
+[INFO] 21:06:45:543 Broker/(6886:6893): Atendiendo cola LOCALIZED
+[INFO] 21:06:45:543 Broker/(6886:6891): Atendiendo cola CAUGHT
+[INFO] 21:06:45:543 Broker/(6886:6890): Atendiendo cola CATCH
+[INFO] 21:06:45:543 Broker/(6886:6889): Atendiendo cola APPEARED
+[INFO] 21:06:45:543 Broker/(6886:6888): Atendiendo cola NEW
+[INFO] 21:06:45:543 Broker/(6886:6887): Esperando clientes en socket 5
+[INFO] 21:06:49:804 Broker/(6894:6894): logger extenso iniciado
+[INFO] 21:06:49:805 Broker/(6894:6894): logger de la catedra iniciado
+[INFO] 21:06:49:805 Broker/(6894:6894): La IP es: 127.0.0.1
+[INFO] 21:06:49:805 Broker/(6894:6894): El puerto es: 4444
+[INFO] 21:06:49:805 Broker/(6894:6894): El tamanio de la memoria es 64
+[INFO] 21:06:49:805 Broker/(6894:6894): La frecuencia de la compactacion es 10
+[INFO] 21:06:49:805 Broker/(6894:6894): El tamanio minimo de la particion es 4
+[INFO] 21:06:49:805 Broker/(6894:6894): El algoritmo de busqueda de particiones libres es FF
+[INFO] 21:06:49:805 Broker/(6894:6894): El algoritmo de reemplazo de particiones es FIFO
+[INFO] 21:06:49:805 Broker/(6894:6894): Iniciando colas
+[INFO] 21:06:49:805 Broker/(6894:6894): Colas iniciadas
+[INFO] 21:06:49:805 Broker/(6894:6894): Iniciando listas de suscriptores
+[INFO] 21:06:49:805 Broker/(6894:6894): Listas de suscriptores iniciadas
+[INFO] 21:06:49:805 Broker/(6894:6894): Iniciando listas de ids respondidos
+[INFO] 21:06:49:806 Broker/(6894:6894): Listas de ids respondidos iniciadas
+[INFO] 21:06:49:806 Broker/(6894:6894): Iniciando estructuras de colas
+[INFO] 21:06:49:806 Broker/(6894:6894): Estructuras de colas iniciadas
+[INFO] 21:06:49:806 Broker/(6894:6894): Iniciando limites de colas
+[INFO] 21:06:49:806 Broker/(6894:6894): Limites de colas iniciadas
+[INFO] 21:06:49:806 Broker/(6894:6894): Iniciando semaforos de limite
+[INFO] 21:06:49:806 Broker/(6894:6894): Semaforos de limite iniciados
+[INFO] 21:06:49:806 Broker/(6894:6894): Iniciando semaforos de mensajes
+[INFO] 21:06:49:806 Broker/(6894:6894): Semaforos de mensajes iniciados
+[INFO] 21:06:49:806 Broker/(6894:6894): Iniciando semaforos de colas
+[INFO] 21:06:49:806 Broker/(6894:6894): Semaforos de colas iniciados
+[INFO] 21:06:49:806 Broker/(6894:6894): Iniciando semaforos de listas
+[INFO] 21:06:49:806 Broker/(6894:6894): Semaforos de listas iniciados
+[INFO] 21:06:49:806 Broker/(6894:6894): Iniciando semaforos de ids respondidos
+[INFO] 21:06:49:807 Broker/(6894:6894): Semaforos de ids respondidos iniciados
+[INFO] 21:06:49:807 Broker/(6894:6894): Creando generador id
+[INFO] 21:06:49:807 Broker/(6894:6894): Generador id creado
+[INFO] 21:06:49:807 Broker/(6894:6894): Levantando servidor
+[INFO] 21:06:49:807 Broker/(6894:6894): Servidor levantado
+[INFO] 21:06:49:807 Broker/(6894:6901): Atendiendo cola LOCALIZED
+[INFO] 21:06:49:807 Broker/(6894:6900): Atendiendo cola GET
+[INFO] 21:06:49:807 Broker/(6894:6895): Esperando clientes en socket 5
+[INFO] 21:06:49:807 Broker/(6894:6899): Atendiendo cola CAUGHT
+[INFO] 21:06:49:807 Broker/(6894:6898): Atendiendo cola CATCH
+[INFO] 21:06:49:807 Broker/(6894:6897): Atendiendo cola APPEARED
+[INFO] 21:06:49:808 Broker/(6894:6896): Atendiendo cola NEW
+[INFO] 21:07:07:65 Broker/(6894:6895): Socket cliente 7 aceptado
+[INFO] 21:07:07:67 Broker/(6894:7017): Recibiendo codigo de operacion de socket 7
+[INFO] 21:07:07:67 Broker/(6894:7017): Codigo de operacion de socket 7 recibido: 4
+[INFO] 21:07:07:67 Broker/(6894:7017): Generando id para el mensaje del socket 7
+[INFO] 21:07:07:67 Broker/(6894:7017): El id generado es 1
+[INFO] 21:07:07:67 Broker/(6894:7017): Codigo de operacion recibido del socket cliente 7 corresponde a un CAUGHT
+[INFO] 21:07:07:67 Broker/(6894:7017): Recibiendo tamanio total
+[INFO] 21:07:07:68 Broker/(6894:7017): Tamanio total recibido: 8
+[INFO] 21:07:07:68 Broker/(6894:7017): Id correlativo recibido: 1
+[INFO] 21:07:07:68 Broker/(6894:7017): Flag de caught recibido: 1
+[INFO] 21:07:07:68 Broker/(6894:7017): Retornando id 1 al socket 7
+[INFO] 21:07:07:68 Broker/(6894:7017): Encolando el mensaje CAUGHT con id 1
+[INFO] 21:07:07:68 Broker/(6894:7017): Mensaje CAUGHT con id 1 encolado
+[INFO] 21:07:07:68 Broker/(6894:6899): Atendiendo mensaje CAUGHT con id 1
+[INFO] 21:07:07:68 Broker/(6894:6899): Guardando mensaje con id 1 en particion 0x918a730
+[INFO] 21:07:07:69 Broker/(6894:6899): Eliminando mensaje CAUGHT con id 1
+[INFO] 21:07:07:69 Broker/(6894:6899): Eliminado mensaje CAUGHT con id 1
+[INFO] 21:07:07:70 Broker/(6894:6895): Socket cliente 8 aceptado
+[INFO] 21:07:07:74 Broker/(6894:7019): Recibiendo codigo de operacion de socket 8
+[INFO] 21:07:07:75 Broker/(6894:7019): Codigo de operacion de socket 8 recibido: 4
+[INFO] 21:07:07:75 Broker/(6894:7019): Generando id para el mensaje del socket 8
+[INFO] 21:07:07:76 Broker/(6894:7019): El id generado es 2
+[INFO] 21:07:07:76 Broker/(6894:7019): Codigo de operacion recibido del socket cliente 8 corresponde a un CAUGHT
+[INFO] 21:07:07:77 Broker/(6894:7019): Recibiendo tamanio total
+[INFO] 21:07:07:77 Broker/(6894:7019): Tamanio total recibido: 8
+[INFO] 21:07:07:77 Broker/(6894:7019): Id correlativo recibido: 2
+[INFO] 21:07:07:77 Broker/(6894:7019): Flag de caught recibido: 0
+[INFO] 21:07:07:77 Broker/(6894:7019): Retornando id 2 al socket 8
+[INFO] 21:07:07:77 Broker/(6894:7019): Encolando el mensaje CAUGHT con id 2
+[INFO] 21:07:07:77 Broker/(6894:7019): Mensaje CAUGHT con id 2 encolado
+[INFO] 21:07:07:78 Broker/(6894:6899): Atendiendo mensaje CAUGHT con id 2
+[INFO] 21:07:07:78 Broker/(6894:6899): Guardando mensaje con id 2 en particion 0x918a734
+[INFO] 21:07:07:78 Broker/(6894:6899): Eliminando mensaje CAUGHT con id 2
+[INFO] 21:07:07:78 Broker/(6894:6899): Eliminado mensaje CAUGHT con id 2
+[INFO] 21:07:07:79 Broker/(6894:6895): Socket cliente 9 aceptado
+[INFO] 21:07:07:81 Broker/(6894:7021): Recibiendo codigo de operacion de socket 9
+[INFO] 21:07:07:81 Broker/(6894:7021): Codigo de operacion de socket 9 recibido: 3
+[INFO] 21:07:07:82 Broker/(6894:7021): Generando id para el mensaje del socket 9
+[INFO] 21:07:07:82 Broker/(6894:7021): El id generado es 3
+[INFO] 21:07:07:82 Broker/(6894:7021): Codigo de operacion recibido del socket cliente 9 corresponde a un CATCH
+[INFO] 21:07:07:82 Broker/(6894:7021): Recibiendo tamanio total
+[INFO] 21:07:07:82 Broker/(6894:7021): Tamanio total recibido: 20
+[INFO] 21:07:07:82 Broker/(6894:7021): Tamanio del pokemon: 8
+[INFO] 21:07:07:82 Broker/(6894:7021): Nombre del pokemon recibido: Pikachu
+[INFO] 21:07:07:82 Broker/(6894:7021): Posicion X recibida: 2
+[INFO] 21:07:07:82 Broker/(6894:7021): Posicion Y recibida: 3
+[INFO] 21:07:07:82 Broker/(6894:7021): Retornando id 3 al socket 9
+[INFO] 21:07:07:83 Broker/(6894:7021): Encolando el mensaje CATCH con id 3
+[INFO] 21:07:07:83 Broker/(6894:7021): Mensaje CATCH con id 3 encolado
+[INFO] 21:07:07:83 Broker/(6894:6898): Atendiendo mensaje CATCH con id 3
+[INFO] 21:07:07:83 Broker/(6894:6898): Guardando mensaje con id 3 en particion 0x918a738
+[INFO] 21:07:07:83 Broker/(6894:6898): Eliminando mensaje CATCH con id 3
+[INFO] 21:07:07:83 Broker/(6894:6898): Eliminado mensaje CATCH con id 3
+[INFO] 21:07:07:84 Broker/(6894:6895): Socket cliente 10 aceptado
+[INFO] 21:07:07:87 Broker/(6894:7023): Recibiendo codigo de operacion de socket 10
+[INFO] 21:07:07:87 Broker/(6894:7023): Codigo de operacion de socket 10 recibido: 3
+[INFO] 21:07:07:87 Broker/(6894:7023): Generando id para el mensaje del socket 10
+[INFO] 21:07:07:87 Broker/(6894:7023): El id generado es 4
+[INFO] 21:07:07:87 Broker/(6894:7023): Codigo de operacion recibido del socket cliente 10 corresponde a un CATCH
+[INFO] 21:07:07:87 Broker/(6894:7023): Recibiendo tamanio total
+[INFO] 21:07:07:87 Broker/(6894:7023): Tamanio total recibido: 21
+[INFO] 21:07:07:87 Broker/(6894:7023): Tamanio del pokemon: 9
+[INFO] 21:07:07:88 Broker/(6894:7023): Nombre del pokemon recibido: Squirtle
+[INFO] 21:07:07:88 Broker/(6894:7023): Posicion X recibida: 5
+[INFO] 21:07:07:88 Broker/(6894:7023): Posicion Y recibida: 2
+[INFO] 21:07:07:88 Broker/(6894:7023): Retornando id 4 al socket 10
+[INFO] 21:07:07:88 Broker/(6894:7023): Encolando el mensaje CATCH con id 4
+[INFO] 21:07:07:88 Broker/(6894:7023): Mensaje CATCH con id 4 encolado
+[INFO] 21:07:07:88 Broker/(6894:6898): Atendiendo mensaje CATCH con id 4
+[INFO] 21:07:07:88 Broker/(6894:6898): Guardando mensaje con id 4 en particion 0x918a748
+[INFO] 21:07:07:88 Broker/(6894:6898): Eliminando mensaje CATCH con id 4
+[INFO] 21:07:07:88 Broker/(6894:6898): Eliminado mensaje CATCH con id 4
+[INFO] 21:07:07:94 Broker/(6894:6895): Socket cliente 11 aceptado
+[INFO] 21:07:07:99 Broker/(6894:7025): Recibiendo codigo de operacion de socket 11
+[INFO] 21:07:07:99 Broker/(6894:7025): Codigo de operacion de socket 11 recibido: 3
+[INFO] 21:07:07:99 Broker/(6894:7025): Generando id para el mensaje del socket 11
+[INFO] 21:07:07:100 Broker/(6894:7025): El id generado es 5
+[INFO] 21:07:07:100 Broker/(6894:7025): Codigo de operacion recibido del socket cliente 11 corresponde a un CATCH
+[INFO] 21:07:07:100 Broker/(6894:7025): Recibiendo tamanio total
+[INFO] 21:07:07:100 Broker/(6894:7025): Tamanio total recibido: 17
+[INFO] 21:07:07:100 Broker/(6894:7025): Tamanio del pokemon: 5
+[INFO] 21:07:07:100 Broker/(6894:7025): Nombre del pokemon recibido: Onyx
+[INFO] 21:07:07:100 Broker/(6894:7025): Posicion X recibida: 4
+[INFO] 21:07:07:100 Broker/(6894:7025): Posicion Y recibida: 5
+[INFO] 21:07:07:100 Broker/(6894:7025): Retornando id 5 al socket 11
+[INFO] 21:07:07:100 Broker/(6894:7025): Encolando el mensaje CATCH con id 5
+[INFO] 21:07:07:100 Broker/(6894:7025): Mensaje CATCH con id 5 encolado
+[INFO] 21:07:07:100 Broker/(6894:6898): Atendiendo mensaje CATCH con id 5
+[INFO] 21:07:07:100 Broker/(6894:6898): Guardando mensaje con id 5 en particion 0x918a759
+[INFO] 21:07:07:100 Broker/(6894:6898): Eliminando mensaje CATCH con id 5
+[INFO] 21:07:07:100 Broker/(6894:6898): Eliminado mensaje CATCH con id 5
+[INFO] 21:07:07:102 Broker/(6894:6895): Socket cliente 12 aceptado
+[INFO] 21:07:07:103 Broker/(6894:7027): Recibiendo codigo de operacion de socket 12
+[INFO] 21:07:07:103 Broker/(6894:7027): Codigo de operacion de socket 12 recibido: 7
+[INFO] 21:07:07:103 Broker/(6894:7027): Generando id para el mensaje del socket 12
+[INFO] 21:07:07:103 Broker/(6894:7027): El id generado es 6
+[INFO] 21:07:07:103 Broker/(6894:7027): Codigo de operacion recibido del socket cliente 12 corresponde a un SUSCRIPCION
+[INFO] 21:07:07:103 Broker/(6894:7027): Recibiendo tamanio total
+[INFO] 21:07:07:103 Broker/(6894:7027): Tamanio total recibido: 8
+[INFO] 21:07:07:103 Broker/(6894:7027): Recibiendo id de cliente
+[INFO] 21:07:07:103 Broker/(6894:7027): Id de cliente recibido: 6
+[INFO] 21:07:07:103 Broker/(6894:7027): Recibiendo id de cola
+[INFO] 21:07:07:103 Broker/(6894:7027): Id de cola recibido: 14
+[INFO] 21:07:07:104 Broker/(6894:7027): Id de cola recibido del socket cliente 12 corresponde a la cola de CAUGHT
+[INFO] 21:07:07:104 Broker/(6894:7027): Tamanio tabla de segmentos: 5
+[INFO] 21:07:07:104 Broker/(6894:7027): Segmentos CAUGHT a enviar al cliente 6 socket 12: 2
+[INFO] 21:07:07:104 Broker/(6894:7030): Enviando mensaje CAUGHT 2 de memoria con cliente 6 socket 12
+[INFO] 21:07:07:104 Broker/(6894:7030): Mensaje CAUGHT de memoria con id 2 al cliente 6 socket 12 enviado correctamente
+[INFO] 21:07:07:104 Broker/(6894:7030): ACK de cliente 6 socket 12 recibido
+[INFO] 21:07:07:104 Broker/(6894:7029): Enviando mensaje CAUGHT 1 de memoria con cliente 6 socket 12
+[INFO] 21:07:07:105 Broker/(6894:7029): Mensaje CAUGHT de memoria con id 1 al cliente 6 socket 12 enviado correctamente
+[INFO] 21:07:07:105 Broker/(6894:7029): ACK de cliente 6 socket 12 recibido
+[INFO] 21:07:07:105 Broker/(6894:7027): Modulo con id 6 agregado correctamente en la cola de CAUGHT
+[INFO] 21:07:17:107 Broker/(6894:6895): Socket cliente 13 aceptado
+[INFO] 21:07:17:111 Broker/(6894:7032): Recibiendo codigo de operacion de socket 13
+[INFO] 21:07:17:111 Broker/(6894:7032): Codigo de operacion de socket 13 recibido: 3
+[INFO] 21:07:17:111 Broker/(6894:7032): Generando id para el mensaje del socket 13
+[INFO] 21:07:17:111 Broker/(6894:7032): El id generado es 7
+[INFO] 21:07:17:112 Broker/(6894:7032): Codigo de operacion recibido del socket cliente 13 corresponde a un CATCH
+[INFO] 21:07:17:112 Broker/(6894:7032): Recibiendo tamanio total
+[INFO] 21:07:17:112 Broker/(6894:7032): Tamanio total recibido: 23
+[INFO] 21:07:17:112 Broker/(6894:7032): Tamanio del pokemon: 11
+[INFO] 21:07:17:112 Broker/(6894:7032): Nombre del pokemon recibido: Charmander
+[INFO] 21:07:17:112 Broker/(6894:7032): Posicion X recibida: 4
+[INFO] 21:07:17:113 Broker/(6894:7032): Posicion Y recibida: 5
+[INFO] 21:07:17:113 Broker/(6894:7032): Retornando id 7 al socket 13
+[INFO] 21:07:17:113 Broker/(6894:7032): Encolando el mensaje CATCH con id 7
+[INFO] 21:07:17:113 Broker/(6894:7032): Mensaje CATCH con id 7 encolado
+[INFO] 21:07:17:114 Broker/(6894:6898): Atendiendo mensaje CATCH con id 7
+[INFO] 21:07:17:114 Broker/(6894:6898): Se ha eliminado el registro con id 1 ubicado en 0x918a730 de la tabla de segmentos
+[INFO] 21:07:17:114 Broker/(6894:6898): Se ha eliminado el registro con id 2 ubicado en 0x918a734 de la tabla de segmentos
+[INFO] 21:07:17:114 Broker/(6894:6898): Se ha eliminado el registro con id 3 ubicado en 0x918a738 de la tabla de segmentos
+[INFO] 21:07:17:114 Broker/(6894:6898): Guardando mensaje con id 7 en particion 0x918a730
+[INFO] 21:07:17:114 Broker/(6894:6898): Eliminando mensaje CATCH con id 7
+[INFO] 21:07:17:114 Broker/(6894:6898): Eliminado mensaje CATCH con id 7
+[INFO] 21:09:49:603 Broker/(7193:7193): logger extenso iniciado
+[INFO] 21:09:49:603 Broker/(7193:7193): logger de la catedra iniciado
+[INFO] 21:09:49:603 Broker/(7193:7193): La IP es: 127.0.0.1
+[INFO] 21:09:49:604 Broker/(7193:7193): El puerto es: 4444
+[INFO] 21:09:49:604 Broker/(7193:7193): El tamanio de la memoria es 64
+[INFO] 21:09:49:604 Broker/(7193:7193): La frecuencia de la compactacion es 10
+[INFO] 21:09:49:605 Broker/(7193:7193): El tamanio minimo de la particion es 4
+[INFO] 21:09:49:605 Broker/(7193:7193): El algoritmo de busqueda de particiones libres es FF
+[INFO] 21:09:49:605 Broker/(7193:7193): El algoritmo de reemplazo de particiones es LRU
+[INFO] 21:09:49:606 Broker/(7193:7193): Iniciando colas
+[INFO] 21:09:49:606 Broker/(7193:7193): Colas iniciadas
+[INFO] 21:09:49:606 Broker/(7193:7193): Iniciando listas de suscriptores
+[INFO] 21:09:49:606 Broker/(7193:7193): Listas de suscriptores iniciadas
+[INFO] 21:09:49:607 Broker/(7193:7193): Iniciando listas de ids respondidos
+[INFO] 21:09:49:607 Broker/(7193:7193): Listas de ids respondidos iniciadas
+[INFO] 21:09:49:607 Broker/(7193:7193): Iniciando estructuras de colas
+[INFO] 21:09:49:608 Broker/(7193:7193): Estructuras de colas iniciadas
+[INFO] 21:09:49:608 Broker/(7193:7193): Iniciando limites de colas
+[INFO] 21:09:49:608 Broker/(7193:7193): Limites de colas iniciadas
+[INFO] 21:09:49:609 Broker/(7193:7193): Iniciando semaforos de limite
+[INFO] 21:09:49:609 Broker/(7193:7193): Semaforos de limite iniciados
+[INFO] 21:09:49:609 Broker/(7193:7193): Iniciando semaforos de mensajes
+[INFO] 21:09:49:614 Broker/(7193:7193): Semaforos de mensajes iniciados
+[INFO] 21:09:49:614 Broker/(7193:7193): Iniciando semaforos de colas
+[INFO] 21:09:49:614 Broker/(7193:7193): Semaforos de colas iniciados
+[INFO] 21:09:49:614 Broker/(7193:7193): Iniciando semaforos de listas
+[INFO] 21:09:49:614 Broker/(7193:7193): Semaforos de listas iniciados
+[INFO] 21:09:49:615 Broker/(7193:7193): Iniciando semaforos de ids respondidos
+[INFO] 21:09:49:615 Broker/(7193:7193): Semaforos de ids respondidos iniciados
+[INFO] 21:09:49:615 Broker/(7193:7193): Creando generador id
+[INFO] 21:09:49:615 Broker/(7193:7193): Generador id creado
+[INFO] 21:09:49:615 Broker/(7193:7193): Levantando servidor
+[INFO] 21:09:49:615 Broker/(7193:7193): Servidor levantado
+[INFO] 21:09:49:616 Broker/(7193:7199): Atendiendo cola GET
+[INFO] 21:09:49:616 Broker/(7193:7200): Atendiendo cola LOCALIZED
+[INFO] 21:09:49:616 Broker/(7193:7198): Atendiendo cola CAUGHT
+[INFO] 21:09:49:616 Broker/(7193:7197): Atendiendo cola CATCH
+[INFO] 21:09:49:616 Broker/(7193:7196): Atendiendo cola APPEARED
+[INFO] 21:09:49:617 Broker/(7193:7195): Atendiendo cola NEW
+[INFO] 21:09:49:617 Broker/(7193:7194): Esperando clientes en socket 5
+[INFO] 21:09:53:74 Broker/(7193:7194): Socket cliente 7 aceptado
+[INFO] 21:09:53:76 Broker/(7193:7203): Recibiendo codigo de operacion de socket 7
+[INFO] 21:09:53:76 Broker/(7193:7203): Codigo de operacion de socket 7 recibido: 4
+[INFO] 21:09:53:76 Broker/(7193:7203): Generando id para el mensaje del socket 7
+[INFO] 21:09:53:76 Broker/(7193:7203): El id generado es 1
+[INFO] 21:09:53:76 Broker/(7193:7203): Codigo de operacion recibido del socket cliente 7 corresponde a un CAUGHT
+[INFO] 21:09:53:76 Broker/(7193:7203): Recibiendo tamanio total
+[INFO] 21:09:53:76 Broker/(7193:7203): Tamanio total recibido: 8
+[INFO] 21:09:53:76 Broker/(7193:7203): Id correlativo recibido: 1
+[INFO] 21:09:53:76 Broker/(7193:7203): Flag de caught recibido: 1
+[INFO] 21:09:53:76 Broker/(7193:7203): Retornando id 1 al socket 7
+[INFO] 21:09:53:76 Broker/(7193:7203): Encolando el mensaje CAUGHT con id 1
+[INFO] 21:09:53:76 Broker/(7193:7203): Mensaje CAUGHT con id 1 encolado
+[INFO] 21:09:53:76 Broker/(7193:7198): Atendiendo mensaje CAUGHT con id 1
+[INFO] 21:09:53:77 Broker/(7193:7198): Guardando mensaje con id 1 en particion 0x9a7d730
+[INFO] 21:09:53:77 Broker/(7193:7198): Eliminando mensaje CAUGHT con id 1
+[INFO] 21:09:53:77 Broker/(7193:7198): Eliminado mensaje CAUGHT con id 1
+[INFO] 21:09:53:78 Broker/(7193:7194): Socket cliente 8 aceptado
+[INFO] 21:09:53:81 Broker/(7193:7205): Recibiendo codigo de operacion de socket 8
+[INFO] 21:09:53:81 Broker/(7193:7205): Codigo de operacion de socket 8 recibido: 4
+[INFO] 21:09:53:81 Broker/(7193:7205): Generando id para el mensaje del socket 8
+[INFO] 21:09:53:81 Broker/(7193:7205): El id generado es 2
+[INFO] 21:09:53:81 Broker/(7193:7205): Codigo de operacion recibido del socket cliente 8 corresponde a un CAUGHT
+[INFO] 21:09:53:81 Broker/(7193:7205): Recibiendo tamanio total
+[INFO] 21:09:53:81 Broker/(7193:7205): Tamanio total recibido: 8
+[INFO] 21:09:53:82 Broker/(7193:7205): Id correlativo recibido: 2
+[INFO] 21:09:53:82 Broker/(7193:7205): Flag de caught recibido: 0
+[INFO] 21:09:53:82 Broker/(7193:7205): Retornando id 2 al socket 8
+[INFO] 21:09:53:82 Broker/(7193:7205): Encolando el mensaje CAUGHT con id 2
+[INFO] 21:09:53:82 Broker/(7193:7205): Mensaje CAUGHT con id 2 encolado
+[INFO] 21:09:53:82 Broker/(7193:7198): Atendiendo mensaje CAUGHT con id 2
+[INFO] 21:09:53:82 Broker/(7193:7198): Guardando mensaje con id 2 en particion 0x9a7d734
+[INFO] 21:09:53:82 Broker/(7193:7198): Eliminando mensaje CAUGHT con id 2
+[INFO] 21:09:53:82 Broker/(7193:7198): Eliminado mensaje CAUGHT con id 2
+[INFO] 21:09:53:84 Broker/(7193:7194): Socket cliente 9 aceptado
+[INFO] 21:09:53:86 Broker/(7193:7207): Recibiendo codigo de operacion de socket 9
+[INFO] 21:09:53:93 Broker/(7193:7207): Codigo de operacion de socket 9 recibido: 3
+[INFO] 21:09:53:93 Broker/(7193:7207): Generando id para el mensaje del socket 9
+[INFO] 21:09:53:93 Broker/(7193:7207): El id generado es 3
+[INFO] 21:09:53:93 Broker/(7193:7207): Codigo de operacion recibido del socket cliente 9 corresponde a un CATCH
+[INFO] 21:09:53:93 Broker/(7193:7207): Recibiendo tamanio total
+[INFO] 21:09:53:94 Broker/(7193:7207): Tamanio total recibido: 20
+[INFO] 21:09:53:94 Broker/(7193:7207): Tamanio del pokemon: 8
+[INFO] 21:09:53:94 Broker/(7193:7207): Nombre del pokemon recibido: Pikachu
+[INFO] 21:09:53:94 Broker/(7193:7207): Posicion X recibida: 2
+[INFO] 21:09:53:94 Broker/(7193:7207): Posicion Y recibida: 3
+[INFO] 21:09:53:94 Broker/(7193:7207): Retornando id 3 al socket 9
+[INFO] 21:09:53:94 Broker/(7193:7207): Encolando el mensaje CATCH con id 3
+[INFO] 21:09:53:94 Broker/(7193:7207): Mensaje CATCH con id 3 encolado
+[INFO] 21:09:53:94 Broker/(7193:7197): Atendiendo mensaje CATCH con id 3
+[INFO] 21:09:53:94 Broker/(7193:7197): Guardando mensaje con id 3 en particion 0x9a7d738
+[INFO] 21:09:53:94 Broker/(7193:7197): Eliminando mensaje CATCH con id 3
+[INFO] 21:09:53:94 Broker/(7193:7197): Eliminado mensaje CATCH con id 3
+[INFO] 21:09:53:101 Broker/(7193:7194): Socket cliente 10 aceptado
+[INFO] 21:09:53:108 Broker/(7193:7209): Recibiendo codigo de operacion de socket 10
+[INFO] 21:09:53:108 Broker/(7193:7209): Codigo de operacion de socket 10 recibido: 3
+[INFO] 21:09:53:108 Broker/(7193:7209): Generando id para el mensaje del socket 10
+[INFO] 21:09:53:108 Broker/(7193:7209): El id generado es 4
+[INFO] 21:09:53:108 Broker/(7193:7209): Codigo de operacion recibido del socket cliente 10 corresponde a un CATCH
+[INFO] 21:09:53:108 Broker/(7193:7209): Recibiendo tamanio total
+[INFO] 21:09:53:108 Broker/(7193:7209): Tamanio total recibido: 21
+[INFO] 21:09:53:108 Broker/(7193:7209): Tamanio del pokemon: 9
+[INFO] 21:09:53:108 Broker/(7193:7209): Nombre del pokemon recibido: Squirtle
+[INFO] 21:09:53:108 Broker/(7193:7209): Posicion X recibida: 5
+[INFO] 21:09:53:108 Broker/(7193:7209): Posicion Y recibida: 2
+[INFO] 21:09:53:108 Broker/(7193:7209): Retornando id 4 al socket 10
+[INFO] 21:09:53:109 Broker/(7193:7209): Encolando el mensaje CATCH con id 4
+[INFO] 21:09:53:109 Broker/(7193:7209): Mensaje CATCH con id 4 encolado
+[INFO] 21:09:53:109 Broker/(7193:7197): Atendiendo mensaje CATCH con id 4
+[INFO] 21:09:53:109 Broker/(7193:7197): Guardando mensaje con id 4 en particion 0x9a7d748
+[INFO] 21:09:53:109 Broker/(7193:7197): Eliminando mensaje CATCH con id 4
+[INFO] 21:09:53:109 Broker/(7193:7197): Eliminado mensaje CATCH con id 4
+[INFO] 21:09:53:112 Broker/(7193:7194): Socket cliente 11 aceptado
+[INFO] 21:09:53:116 Broker/(7193:7211): Recibiendo codigo de operacion de socket 11
+[INFO] 21:09:53:116 Broker/(7193:7211): Codigo de operacion de socket 11 recibido: 3
+[INFO] 21:09:53:116 Broker/(7193:7211): Generando id para el mensaje del socket 11
+[INFO] 21:09:53:116 Broker/(7193:7211): El id generado es 5
+[INFO] 21:09:53:116 Broker/(7193:7211): Codigo de operacion recibido del socket cliente 11 corresponde a un CATCH
+[INFO] 21:09:53:116 Broker/(7193:7211): Recibiendo tamanio total
+[INFO] 21:09:53:117 Broker/(7193:7211): Tamanio total recibido: 17
+[INFO] 21:09:53:117 Broker/(7193:7211): Tamanio del pokemon: 5
+[INFO] 21:09:53:117 Broker/(7193:7211): Nombre del pokemon recibido: Onyx
+[INFO] 21:09:53:117 Broker/(7193:7211): Posicion X recibida: 4
+[INFO] 21:09:53:117 Broker/(7193:7211): Posicion Y recibida: 5
+[INFO] 21:09:53:117 Broker/(7193:7211): Retornando id 5 al socket 11
+[INFO] 21:09:53:117 Broker/(7193:7211): Encolando el mensaje CATCH con id 5
+[INFO] 21:09:53:118 Broker/(7193:7211): Mensaje CATCH con id 5 encolado
+[INFO] 21:09:53:118 Broker/(7193:7197): Atendiendo mensaje CATCH con id 5
+[INFO] 21:09:53:118 Broker/(7193:7197): Guardando mensaje con id 5 en particion 0x9a7d759
+[INFO] 21:09:53:118 Broker/(7193:7197): Eliminando mensaje CATCH con id 5
+[INFO] 21:09:53:118 Broker/(7193:7197): Eliminado mensaje CATCH con id 5
+[INFO] 21:09:53:120 Broker/(7193:7194): Socket cliente 12 aceptado
+[INFO] 21:09:53:120 Broker/(7193:7213): Recibiendo codigo de operacion de socket 12
+[INFO] 21:09:53:121 Broker/(7193:7213): Codigo de operacion de socket 12 recibido: 7
+[INFO] 21:09:53:121 Broker/(7193:7213): Generando id para el mensaje del socket 12
+[INFO] 21:09:53:121 Broker/(7193:7213): El id generado es 6
+[INFO] 21:09:53:121 Broker/(7193:7213): Codigo de operacion recibido del socket cliente 12 corresponde a un SUSCRIPCION
+[INFO] 21:09:53:121 Broker/(7193:7213): Recibiendo tamanio total
+[INFO] 21:09:53:121 Broker/(7193:7213): Tamanio total recibido: 8
+[INFO] 21:09:53:121 Broker/(7193:7213): Recibiendo id de cliente
+[INFO] 21:09:53:121 Broker/(7193:7213): Id de cliente recibido: 6
+[INFO] 21:09:53:122 Broker/(7193:7213): Recibiendo id de cola
+[INFO] 21:09:53:122 Broker/(7193:7213): Id de cola recibido: 14
+[INFO] 21:09:53:122 Broker/(7193:7213): Id de cola recibido del socket cliente 12 corresponde a la cola de CAUGHT
+[INFO] 21:09:53:122 Broker/(7193:7213): Tamanio tabla de segmentos: 5
+[INFO] 21:09:53:122 Broker/(7193:7213): Segmentos CAUGHT a enviar al cliente 6 socket 12: 2
+[INFO] 21:09:53:122 Broker/(7193:7216): Enviando mensaje CAUGHT 2 de memoria con cliente 6 socket 12
+[INFO] 21:09:53:122 Broker/(7193:7216): Mensaje CAUGHT de memoria con id 2 al cliente 6 socket 12 enviado correctamente
+[INFO] 21:09:53:122 Broker/(7193:7216): ACK de cliente 6 socket 12 recibido
+[INFO] 21:09:53:122 Broker/(7193:7215): Enviando mensaje CAUGHT 1 de memoria con cliente 6 socket 12
+[INFO] 21:09:53:123 Broker/(7193:7215): Mensaje CAUGHT de memoria con id 1 al cliente 6 socket 12 enviado correctamente
+[INFO] 21:09:53:123 Broker/(7193:7215): ACK de cliente 6 socket 12 recibido
+[INFO] 21:09:53:123 Broker/(7193:7213): Modulo con id 6 agregado correctamente en la cola de CAUGHT
+[INFO] 21:10:03:125 Broker/(7193:7194): Socket cliente 13 aceptado
+[INFO] 21:10:03:130 Broker/(7193:7220): Recibiendo codigo de operacion de socket 13
+[INFO] 21:10:03:130 Broker/(7193:7220): Codigo de operacion de socket 13 recibido: 3
+[INFO] 21:10:03:130 Broker/(7193:7220): Generando id para el mensaje del socket 13
+[INFO] 21:10:03:131 Broker/(7193:7220): El id generado es 7
+[INFO] 21:10:03:131 Broker/(7193:7220): Codigo de operacion recibido del socket cliente 13 corresponde a un CATCH
+[INFO] 21:10:03:131 Broker/(7193:7220): Recibiendo tamanio total
+[INFO] 21:10:03:131 Broker/(7193:7220): Tamanio total recibido: 23
+[INFO] 21:10:03:131 Broker/(7193:7220): Tamanio del pokemon: 11
+[INFO] 21:10:03:131 Broker/(7193:7220): Nombre del pokemon recibido: Charmander
+[INFO] 21:10:03:131 Broker/(7193:7220): Posicion X recibida: 4
+[INFO] 21:10:03:131 Broker/(7193:7220): Posicion Y recibida: 5
+[INFO] 21:10:03:132 Broker/(7193:7220): Retornando id 7 al socket 13
+[INFO] 21:10:03:132 Broker/(7193:7220): Encolando el mensaje CATCH con id 7
+[INFO] 21:10:03:132 Broker/(7193:7220): Mensaje CATCH con id 7 encolado
+[INFO] 21:10:03:132 Broker/(7193:7197): Atendiendo mensaje CATCH con id 7
+[INFO] 21:10:03:132 Broker/(7193:7197): Se ha eliminado el registro con id 3 ubicado en 0x9a7d738 de la tabla de segmentos
+[INFO] 21:10:03:132 Broker/(7193:7197): Se ha eliminado el registro con id 4 ubicado en 0x9a7d748 de la tabla de segmentos
+[INFO] 21:10:03:132 Broker/(7193:7197): Guardando mensaje con id 7 en particion 0x9a7d738
+[INFO] 21:10:03:132 Broker/(7193:7197): Eliminando mensaje CATCH con id 7
+[INFO] 21:10:03:132 Broker/(7193:7197): Eliminado mensaje CATCH con id 7
+[INFO] 21:13:00:78 Broker/(7385:7385): logger extenso iniciado
+[INFO] 21:13:00:102 Broker/(7385:7385): logger de la catedra iniciado
+[INFO] 21:13:00:103 Broker/(7385:7385): La IP es: 127.0.0.1
+[INFO] 21:13:00:104 Broker/(7385:7385): El puerto es: 4444
+[INFO] 21:13:00:106 Broker/(7385:7385): El tamanio de la memoria es 64
+[INFO] 21:13:00:107 Broker/(7385:7385): La frecuencia de la compactacion es 10
+[INFO] 21:13:00:108 Broker/(7385:7385): El tamanio minimo de la particion es 4
+[INFO] 21:13:00:108 Broker/(7385:7385): El algoritmo de busqueda de particiones libres es FF
+[INFO] 21:13:00:108 Broker/(7385:7385): El algoritmo de reemplazo de particiones es LRU
+[INFO] 21:13:00:115 Broker/(7385:7385): Iniciando colas
+[INFO] 21:13:00:117 Broker/(7385:7385): Colas iniciadas
+[INFO] 21:13:00:117 Broker/(7385:7385): Iniciando listas de suscriptores
+[INFO] 21:13:00:118 Broker/(7385:7385): Listas de suscriptores iniciadas
+[INFO] 21:13:00:118 Broker/(7385:7385): Iniciando listas de ids respondidos
+[INFO] 21:13:00:119 Broker/(7385:7385): Listas de ids respondidos iniciadas
+[INFO] 21:13:00:119 Broker/(7385:7385): Iniciando estructuras de colas
+[INFO] 21:13:00:120 Broker/(7385:7385): Estructuras de colas iniciadas
+[INFO] 21:13:00:120 Broker/(7385:7385): Iniciando limites de colas
+[INFO] 21:13:00:121 Broker/(7385:7385): Limites de colas iniciadas
+[INFO] 21:13:00:122 Broker/(7385:7385): Iniciando semaforos de limite
+[INFO] 21:13:00:123 Broker/(7385:7385): Semaforos de limite iniciados
+[INFO] 21:13:00:123 Broker/(7385:7385): Iniciando semaforos de mensajes
+[INFO] 21:13:00:124 Broker/(7385:7385): Semaforos de mensajes iniciados
+[INFO] 21:13:00:124 Broker/(7385:7385): Iniciando semaforos de colas
+[INFO] 21:13:00:125 Broker/(7385:7385): Semaforos de colas iniciados
+[INFO] 21:13:00:125 Broker/(7385:7385): Iniciando semaforos de listas
+[INFO] 21:13:00:126 Broker/(7385:7385): Semaforos de listas iniciados
+[INFO] 21:13:00:126 Broker/(7385:7385): Iniciando semaforos de ids respondidos
+[INFO] 21:13:00:127 Broker/(7385:7385): Semaforos de ids respondidos iniciados
+[INFO] 21:13:00:128 Broker/(7385:7385): Creando generador id
+[INFO] 21:13:00:128 Broker/(7385:7385): Generador id creado
+[INFO] 21:13:00:129 Broker/(7385:7385): Levantando servidor
+[INFO] 21:13:00:141 Broker/(7385:7385): Servidor levantado
+[INFO] 21:13:00:151 Broker/(7385:7386): Esperando clientes en socket 7
+[INFO] 21:13:00:153 Broker/(7385:7387): Atendiendo cola NEW
+[INFO] 21:13:00:154 Broker/(7385:7388): Atendiendo cola APPEARED
+[INFO] 21:13:00:155 Broker/(7385:7389): Atendiendo cola CATCH
+[INFO] 21:13:00:156 Broker/(7385:7390): Atendiendo cola CAUGHT
+[INFO] 21:13:00:156 Broker/(7385:7391): Atendiendo cola GET
+[INFO] 21:13:00:158 Broker/(7385:7392): Atendiendo cola LOCALIZED
+[INFO] 21:13:02:951 Broker/(7385:7386): Socket cliente 8 aceptado
+[INFO] 21:13:02:961 Broker/(7385:7395): Recibiendo codigo de operacion de socket 8
+[INFO] 21:13:02:968 Broker/(7385:7386): Socket cliente 9 aceptado
+[INFO] 21:13:02:969 Broker/(7385:7395): Codigo de operacion de socket 8 recibido: 4
+[INFO] 21:13:02:977 Broker/(7385:7395): Generando id para el mensaje del socket 8
+[INFO] 21:13:02:980 Broker/(7385:7395): El id generado es 1
+[INFO] 21:13:02:985 Broker/(7385:7386): Socket cliente 10 aceptado
+[INFO] 21:13:02:986 Broker/(7385:7398): Recibiendo codigo de operacion de socket 9
+[INFO] 21:13:02:988 Broker/(7385:7398): Codigo de operacion de socket 9 recibido: 4
+[INFO] 21:13:02:988 Broker/(7385:7398): Generando id para el mensaje del socket 9
+[INFO] 21:13:02:989 Broker/(7385:7398): El id generado es 2
+[INFO] 21:13:02:989 Broker/(7385:7398): Codigo de operacion recibido del socket cliente 9 corresponde a un CAUGHT
+[INFO] 21:13:02:990 Broker/(7385:7398): Recibiendo tamanio total
+[INFO] 21:13:02:991 Broker/(7385:7398): Tamanio total recibido: 8
+[INFO] 21:13:02:992 Broker/(7385:7386): Socket cliente 11 aceptado
+[INFO] 21:13:02:995 Broker/(7385:7395): Codigo de operacion recibido del socket cliente 8 corresponde a un CAUGHT
+[INFO] 21:13:02:995 Broker/(7385:7395): Recibiendo tamanio total
+[INFO] 21:13:02:995 Broker/(7385:7395): Tamanio total recibido: 8
+[INFO] 21:13:02:996 Broker/(7385:7400): Recibiendo codigo de operacion de socket 10
+[INFO] 21:13:02:996 Broker/(7385:7395): Id correlativo recibido: 1
+[INFO] 21:13:02:996 Broker/(7385:7402): Recibiendo codigo de operacion de socket 11
+[INFO] 21:13:02:997 Broker/(7385:7395): Flag de caught recibido: 1
+[INFO] 21:13:02:998 Broker/(7385:7400): Codigo de operacion de socket 10 recibido: 3
+[INFO] 21:13:02:998 Broker/(7385:7398): Id correlativo recibido: 2
+[INFO] 21:13:02:998 Broker/(7385:7402): Codigo de operacion de socket 11 recibido: 3
+[INFO] 21:13:02:0 Broker/(7385:7398): Flag de caught recibido: 0
+[INFO] 21:13:02:1 Broker/(7385:7398): Retornando id 2 al socket 9
+[INFO] 21:13:02:1 Broker/(7385:7395): Retornando id 1 al socket 8
+[INFO] 21:13:02:2 Broker/(7385:7386): Socket cliente 12 aceptado
+[INFO] 21:13:02:2 Broker/(7385:7400): Generando id para el mensaje del socket 10
+[INFO] 21:13:02:2 Broker/(7385:7400): El id generado es 3
+[INFO] 21:13:02:3 Broker/(7385:7400): Codigo de operacion recibido del socket cliente 10 corresponde a un CATCH
+[INFO] 21:13:02:4 Broker/(7385:7400): Recibiendo tamanio total
+[INFO] 21:13:02:5 Broker/(7385:7402): Generando id para el mensaje del socket 11
+[INFO] 21:13:02:6 Broker/(7385:7402): El id generado es 4
+[INFO] 21:13:02:6 Broker/(7385:7402): Codigo de operacion recibido del socket cliente 11 corresponde a un CATCH
+[INFO] 21:13:02:6 Broker/(7385:7402): Recibiendo tamanio total
+[INFO] 21:13:03:11 Broker/(7385:7402): Tamanio total recibido: 21
+[INFO] 21:13:03:18 Broker/(7385:7402): Tamanio del pokemon: 9
+[INFO] 21:13:03:18 Broker/(7385:7404): Recibiendo codigo de operacion de socket 12
+[INFO] 21:13:03:19 Broker/(7385:7402): Nombre del pokemon recibido: Squirtle
+[INFO] 21:13:03:13 Broker/(7385:7398): Encolando el mensaje CAUGHT con id 2
+[INFO] 21:13:03:14 Broker/(7385:7395): Encolando el mensaje CAUGHT con id 1
+[INFO] 21:13:03:14 Broker/(7385:7400): Tamanio total recibido: 20
+[INFO] 21:13:03:21 Broker/(7385:7395): Mensaje CAUGHT con id 1 encolado
+[INFO] 21:13:03:25 Broker/(7385:7390): Atendiendo mensaje CAUGHT con id 1
+[INFO] 21:13:03:25 Broker/(7385:7400): Tamanio del pokemon: 8
+[INFO] 21:13:03:26 Broker/(7385:7400): Nombre del pokemon recibido: Pikachu
+[INFO] 21:13:03:26 Broker/(7385:7400): Posicion X recibida: 2
+[INFO] 21:13:03:27 Broker/(7385:7400): Posicion Y recibida: 3
+[INFO] 21:13:03:28 Broker/(7385:7400): Retornando id 3 al socket 10
+[INFO] 21:13:03:36 Broker/(7385:7390): Guardando mensaje con id 1 en particion 0x4239320
+[INFO] 21:13:03:36 Broker/(7385:7386): Socket cliente 13 aceptado
+[INFO] 21:13:03:45 Broker/(7385:7400): Encolando el mensaje CATCH con id 3
+[INFO] 21:13:03:49 Broker/(7385:7398): Mensaje CAUGHT con id 2 encolado
+[INFO] 21:13:03:49 Broker/(7385:7404): Codigo de operacion de socket 12 recibido: 3
+[INFO] 21:13:03:49 Broker/(7385:7402): Posicion X recibida: 5
+[INFO] 21:13:03:55 Broker/(7385:7402): Posicion Y recibida: 2
+[INFO] 21:13:03:55 Broker/(7385:7402): Retornando id 4 al socket 11
+[INFO] 21:13:03:55 Broker/(7385:7402): Encolando el mensaje CATCH con id 4
+[INFO] 21:13:03:56 Broker/(7385:7402): Mensaje CATCH con id 4 encolado
+[INFO] 21:13:03:56 Broker/(7385:7404): Generando id para el mensaje del socket 12
+[INFO] 21:13:03:57 Broker/(7385:7400): Mensaje CATCH con id 3 encolado
+[INFO] 21:13:03:57 Broker/(7385:7404): El id generado es 5
+[INFO] 21:13:03:57 Broker/(7385:7404): Codigo de operacion recibido del socket cliente 12 corresponde a un CATCH
+[INFO] 21:13:03:58 Broker/(7385:7404): Recibiendo tamanio total
+[INFO] 21:13:03:58 Broker/(7385:7404): Tamanio total recibido: 17
+[INFO] 21:13:03:58 Broker/(7385:7404): Tamanio del pokemon: 5
+[INFO] 21:13:03:60 Broker/(7385:7389): Atendiendo mensaje CATCH con id 4
+[INFO] 21:13:03:64 Broker/(7385:7404): Nombre del pokemon recibido: Onyx
+[INFO] 21:13:03:64 Broker/(7385:7404): Posicion X recibida: 4
+[INFO] 21:13:03:65 Broker/(7385:7404): Posicion Y recibida: 5
+[INFO] 21:13:03:65 Broker/(7385:7404): Retornando id 5 al socket 12
+[INFO] 21:13:03:65 Broker/(7385:7404): Encolando el mensaje CATCH con id 5
+[INFO] 21:13:03:66 Broker/(7385:7404): Mensaje CATCH con id 5 encolado
+[INFO] 21:13:03:69 Broker/(7385:7406): Recibiendo codigo de operacion de socket 13
+[INFO] 21:13:03:70 Broker/(7385:7406): Codigo de operacion de socket 13 recibido: 7
+[INFO] 21:13:03:70 Broker/(7385:7406): Generando id para el mensaje del socket 13
+[INFO] 21:13:03:70 Broker/(7385:7406): El id generado es 6
+[INFO] 21:13:03:71 Broker/(7385:7406): Codigo de operacion recibido del socket cliente 13 corresponde a un SUSCRIPCION
+[INFO] 21:13:03:71 Broker/(7385:7406): Recibiendo tamanio total
+[INFO] 21:13:03:72 Broker/(7385:7389): Guardando mensaje con id 4 en particion 0x4239324
+[INFO] 21:13:03:76 Broker/(7385:7389): Eliminando mensaje CATCH con id 4
+[INFO] 21:13:03:83 Broker/(7385:7390): Eliminando mensaje CAUGHT con id 1
+[INFO] 21:13:03:84 Broker/(7385:7406): Tamanio total recibido: 8
+[INFO] 21:13:03:84 Broker/(7385:7406): Recibiendo id de cliente
+[INFO] 21:13:03:85 Broker/(7385:7406): Id de cliente recibido: 6
+[INFO] 21:13:03:85 Broker/(7385:7406): Recibiendo id de cola
+[INFO] 21:13:03:86 Broker/(7385:7406): Id de cola recibido: 14
+[INFO] 21:13:03:88 Broker/(7385:7390): Eliminado mensaje CAUGHT con id 1
+[INFO] 21:13:03:89 Broker/(7385:7389): Eliminado mensaje CATCH con id 4
+[INFO] 21:13:03:90 Broker/(7385:7390): Atendiendo mensaje CAUGHT con id 2
+[INFO] 21:13:03:89 Broker/(7385:7406): Id de cola recibido del socket cliente 13 corresponde a la cola de CAUGHT
+[INFO] 21:13:03:91 Broker/(7385:7390): Guardando mensaje con id 2 en particion 0x4239335
+[INFO] 21:13:03:91 Broker/(7385:7389): Atendiendo mensaje CATCH con id 3
+[INFO] 21:13:03:93 Broker/(7385:7389): Guardando mensaje con id 3 en particion 0x4239339
+[INFO] 21:13:03:93 Broker/(7385:7389): Eliminando mensaje CATCH con id 3
+[INFO] 21:13:03:94 Broker/(7385:7406): Tamanio tabla de segmentos: 4
+[INFO] 21:13:03:94 Broker/(7385:7389): Eliminado mensaje CATCH con id 3
+[INFO] 21:13:03:94 Broker/(7385:7389): Atendiendo mensaje CATCH con id 5
+[INFO] 21:14:16:616 Broker/(7430:7430): logger extenso iniciado
+[INFO] 21:14:16:616 Broker/(7430:7430): logger de la catedra iniciado
+[INFO] 21:14:16:616 Broker/(7430:7430): La IP es: 127.0.0.1
+[INFO] 21:14:16:616 Broker/(7430:7430): El puerto es: 4444
+[INFO] 21:14:16:616 Broker/(7430:7430): El tamanio de la memoria es 64
+[INFO] 21:14:16:616 Broker/(7430:7430): La frecuencia de la compactacion es 10
+[INFO] 21:14:16:617 Broker/(7430:7430): El tamanio minimo de la particion es 4
+[INFO] 21:14:16:617 Broker/(7430:7430): El algoritmo de busqueda de particiones libres es FF
+[INFO] 21:14:16:617 Broker/(7430:7430): El algoritmo de reemplazo de particiones es LRU
+[INFO] 21:14:16:617 Broker/(7430:7430): Iniciando colas
+[INFO] 21:14:16:617 Broker/(7430:7430): Colas iniciadas
+[INFO] 21:14:16:617 Broker/(7430:7430): Iniciando listas de suscriptores
+[INFO] 21:14:16:617 Broker/(7430:7430): Listas de suscriptores iniciadas
+[INFO] 21:14:16:617 Broker/(7430:7430): Iniciando listas de ids respondidos
+[INFO] 21:14:16:617 Broker/(7430:7430): Listas de ids respondidos iniciadas
+[INFO] 21:14:16:617 Broker/(7430:7430): Iniciando estructuras de colas
+[INFO] 21:14:16:617 Broker/(7430:7430): Estructuras de colas iniciadas
+[INFO] 21:14:16:618 Broker/(7430:7430): Iniciando limites de colas
+[INFO] 21:14:16:618 Broker/(7430:7430): Limites de colas iniciadas
+[INFO] 21:14:16:618 Broker/(7430:7430): Iniciando semaforos de limite
+[INFO] 21:14:16:618 Broker/(7430:7430): Semaforos de limite iniciados
+[INFO] 21:14:16:618 Broker/(7430:7430): Iniciando semaforos de mensajes
+[INFO] 21:14:16:619 Broker/(7430:7430): Semaforos de mensajes iniciados
+[INFO] 21:14:16:619 Broker/(7430:7430): Iniciando semaforos de colas
+[INFO] 21:14:16:619 Broker/(7430:7430): Semaforos de colas iniciados
+[INFO] 21:14:16:619 Broker/(7430:7430): Iniciando semaforos de listas
+[INFO] 21:14:16:619 Broker/(7430:7430): Semaforos de listas iniciados
+[INFO] 21:14:16:619 Broker/(7430:7430): Iniciando semaforos de ids respondidos
+[INFO] 21:14:16:619 Broker/(7430:7430): Semaforos de ids respondidos iniciados
+[INFO] 21:14:16:620 Broker/(7430:7430): Creando generador id
+[INFO] 21:14:16:620 Broker/(7430:7430): Generador id creado
+[INFO] 21:14:16:620 Broker/(7430:7430): Levantando servidor
+[INFO] 21:14:16:620 Broker/(7430:7430): Servidor levantado
+[INFO] 21:14:16:620 Broker/(7430:7437): Atendiendo cola LOCALIZED
+[INFO] 21:14:16:620 Broker/(7430:7436): Atendiendo cola GET
+[INFO] 21:14:16:620 Broker/(7430:7435): Atendiendo cola CAUGHT
+[INFO] 21:14:16:620 Broker/(7430:7434): Atendiendo cola CATCH
+[INFO] 21:14:16:620 Broker/(7430:7433): Atendiendo cola APPEARED
+[INFO] 21:14:16:621 Broker/(7430:7432): Atendiendo cola NEW
+[INFO] 21:14:16:621 Broker/(7430:7431): Esperando clientes en socket 5
+[INFO] 21:14:20:68 Broker/(7430:7431): Socket cliente 7 aceptado
+[INFO] 21:14:20:70 Broker/(7430:7442): Recibiendo codigo de operacion de socket 7
+[INFO] 21:14:20:70 Broker/(7430:7442): Codigo de operacion de socket 7 recibido: 4
+[INFO] 21:14:20:70 Broker/(7430:7442): Generando id para el mensaje del socket 7
+[INFO] 21:14:20:70 Broker/(7430:7442): El id generado es 1
+[INFO] 21:14:20:70 Broker/(7430:7442): Codigo de operacion recibido del socket cliente 7 corresponde a un CAUGHT
+[INFO] 21:14:20:71 Broker/(7430:7442): Recibiendo tamanio total
+[INFO] 21:14:20:71 Broker/(7430:7442): Tamanio total recibido: 8
+[INFO] 21:14:20:71 Broker/(7430:7442): Id correlativo recibido: 1
+[INFO] 21:14:20:71 Broker/(7430:7442): Flag de caught recibido: 1
+[INFO] 21:14:20:71 Broker/(7430:7442): Retornando id 1 al socket 7
+[INFO] 21:14:20:71 Broker/(7430:7442): Encolando el mensaje CAUGHT con id 1
+[INFO] 21:14:20:71 Broker/(7430:7442): Mensaje CAUGHT con id 1 encolado
+[INFO] 21:14:20:71 Broker/(7430:7435): Atendiendo mensaje CAUGHT con id 1
+[INFO] 21:14:20:71 Broker/(7430:7435): Guardando mensaje con id 1 en particion 0x9e1a730
+[INFO] 21:14:20:71 Broker/(7430:7435): Eliminando mensaje CAUGHT con id 1
+[INFO] 21:14:20:71 Broker/(7430:7435): Eliminado mensaje CAUGHT con id 1
+[INFO] 21:14:20:74 Broker/(7430:7431): Socket cliente 8 aceptado
+[INFO] 21:14:20:75 Broker/(7430:7444): Recibiendo codigo de operacion de socket 8
+[INFO] 21:14:20:75 Broker/(7430:7444): Codigo de operacion de socket 8 recibido: 4
+[INFO] 21:14:20:76 Broker/(7430:7444): Generando id para el mensaje del socket 8
+[INFO] 21:14:20:76 Broker/(7430:7444): El id generado es 2
+[INFO] 21:14:20:76 Broker/(7430:7444): Codigo de operacion recibido del socket cliente 8 corresponde a un CAUGHT
+[INFO] 21:14:20:76 Broker/(7430:7444): Recibiendo tamanio total
+[INFO] 21:14:20:76 Broker/(7430:7444): Tamanio total recibido: 8
+[INFO] 21:14:20:76 Broker/(7430:7444): Id correlativo recibido: 2
+[INFO] 21:14:20:76 Broker/(7430:7444): Flag de caught recibido: 0
+[INFO] 21:14:20:76 Broker/(7430:7444): Retornando id 2 al socket 8
+[INFO] 21:14:20:76 Broker/(7430:7444): Encolando el mensaje CAUGHT con id 2
+[INFO] 21:14:20:76 Broker/(7430:7444): Mensaje CAUGHT con id 2 encolado
+[INFO] 21:14:20:76 Broker/(7430:7435): Atendiendo mensaje CAUGHT con id 2
+[INFO] 21:14:20:76 Broker/(7430:7435): Guardando mensaje con id 2 en particion 0x9e1a734
+[INFO] 21:14:20:76 Broker/(7430:7435): Eliminando mensaje CAUGHT con id 2
+[INFO] 21:14:20:76 Broker/(7430:7435): Eliminado mensaje CAUGHT con id 2
+[INFO] 21:14:20:82 Broker/(7430:7431): Socket cliente 9 aceptado
+[INFO] 21:14:20:85 Broker/(7430:7446): Recibiendo codigo de operacion de socket 9
+[INFO] 21:14:20:85 Broker/(7430:7446): Codigo de operacion de socket 9 recibido: 3
+[INFO] 21:14:20:85 Broker/(7430:7446): Generando id para el mensaje del socket 9
+[INFO] 21:14:20:85 Broker/(7430:7446): El id generado es 3
+[INFO] 21:14:20:85 Broker/(7430:7446): Codigo de operacion recibido del socket cliente 9 corresponde a un CATCH
+[INFO] 21:14:20:85 Broker/(7430:7446): Recibiendo tamanio total
+[INFO] 21:14:20:85 Broker/(7430:7446): Tamanio total recibido: 20
+[INFO] 21:14:20:86 Broker/(7430:7446): Tamanio del pokemon: 8
+[INFO] 21:14:20:86 Broker/(7430:7446): Nombre del pokemon recibido: Pikachu
+[INFO] 21:14:20:86 Broker/(7430:7446): Posicion X recibida: 2
+[INFO] 21:14:20:86 Broker/(7430:7446): Posicion Y recibida: 3
+[INFO] 21:14:20:86 Broker/(7430:7446): Retornando id 3 al socket 9
+[INFO] 21:14:20:86 Broker/(7430:7446): Encolando el mensaje CATCH con id 3
+[INFO] 21:14:20:86 Broker/(7430:7446): Mensaje CATCH con id 3 encolado
+[INFO] 21:14:20:86 Broker/(7430:7434): Atendiendo mensaje CATCH con id 3
+[INFO] 21:14:20:86 Broker/(7430:7434): Guardando mensaje con id 3 en particion 0x9e1a738
+[INFO] 21:14:20:86 Broker/(7430:7434): Eliminando mensaje CATCH con id 3
+[INFO] 21:14:20:86 Broker/(7430:7434): Eliminado mensaje CATCH con id 3
+[INFO] 21:14:20:87 Broker/(7430:7431): Socket cliente 10 aceptado
+[INFO] 21:14:20:92 Broker/(7430:7448): Recibiendo codigo de operacion de socket 10
+[INFO] 21:14:20:92 Broker/(7430:7448): Codigo de operacion de socket 10 recibido: 3
+[INFO] 21:14:20:92 Broker/(7430:7448): Generando id para el mensaje del socket 10
+[INFO] 21:14:20:92 Broker/(7430:7448): El id generado es 4
+[INFO] 21:14:20:92 Broker/(7430:7448): Codigo de operacion recibido del socket cliente 10 corresponde a un CATCH
+[INFO] 21:14:20:92 Broker/(7430:7448): Recibiendo tamanio total
+[INFO] 21:14:20:92 Broker/(7430:7448): Tamanio total recibido: 21
+[INFO] 21:14:20:92 Broker/(7430:7448): Tamanio del pokemon: 9
+[INFO] 21:14:20:92 Broker/(7430:7448): Nombre del pokemon recibido: Squirtle
+[INFO] 21:14:20:92 Broker/(7430:7448): Posicion X recibida: 5
+[INFO] 21:14:20:92 Broker/(7430:7448): Posicion Y recibida: 2
+[INFO] 21:14:20:93 Broker/(7430:7448): Retornando id 4 al socket 10
+[INFO] 21:14:20:93 Broker/(7430:7448): Encolando el mensaje CATCH con id 4
+[INFO] 21:14:20:93 Broker/(7430:7448): Mensaje CATCH con id 4 encolado
+[INFO] 21:14:20:93 Broker/(7430:7434): Atendiendo mensaje CATCH con id 4
+[INFO] 21:14:20:93 Broker/(7430:7434): Guardando mensaje con id 4 en particion 0x9e1a748
+[INFO] 21:14:20:93 Broker/(7430:7434): Eliminando mensaje CATCH con id 4
+[INFO] 21:14:20:93 Broker/(7430:7434): Eliminado mensaje CATCH con id 4
+[INFO] 21:14:20:94 Broker/(7430:7431): Socket cliente 11 aceptado
+[INFO] 21:14:20:105 Broker/(7430:7450): Recibiendo codigo de operacion de socket 11
+[INFO] 21:14:20:105 Broker/(7430:7450): Codigo de operacion de socket 11 recibido: 3
+[INFO] 21:14:20:105 Broker/(7430:7450): Generando id para el mensaje del socket 11
+[INFO] 21:14:20:105 Broker/(7430:7450): El id generado es 5
+[INFO] 21:14:20:105 Broker/(7430:7450): Codigo de operacion recibido del socket cliente 11 corresponde a un CATCH
+[INFO] 21:14:20:105 Broker/(7430:7450): Recibiendo tamanio total
+[INFO] 21:14:20:105 Broker/(7430:7450): Tamanio total recibido: 17
+[INFO] 21:14:20:106 Broker/(7430:7450): Tamanio del pokemon: 5
+[INFO] 21:14:20:106 Broker/(7430:7450): Nombre del pokemon recibido: Onyx
+[INFO] 21:14:20:106 Broker/(7430:7450): Posicion X recibida: 4
+[INFO] 21:14:20:106 Broker/(7430:7450): Posicion Y recibida: 5
+[INFO] 21:14:20:106 Broker/(7430:7450): Retornando id 5 al socket 11
+[INFO] 21:14:20:106 Broker/(7430:7450): Encolando el mensaje CATCH con id 5
+[INFO] 21:14:20:106 Broker/(7430:7450): Mensaje CATCH con id 5 encolado
+[INFO] 21:14:20:106 Broker/(7430:7434): Atendiendo mensaje CATCH con id 5
+[INFO] 21:14:20:106 Broker/(7430:7434): Guardando mensaje con id 5 en particion 0x9e1a759
+[INFO] 21:14:20:106 Broker/(7430:7434): Eliminando mensaje CATCH con id 5
+[INFO] 21:14:20:106 Broker/(7430:7434): Eliminado mensaje CATCH con id 5
+[INFO] 21:14:20:107 Broker/(7430:7431): Socket cliente 12 aceptado
+[INFO] 21:14:20:108 Broker/(7430:7452): Recibiendo codigo de operacion de socket 12
+[INFO] 21:14:20:108 Broker/(7430:7452): Codigo de operacion de socket 12 recibido: 7
+[INFO] 21:14:20:108 Broker/(7430:7452): Generando id para el mensaje del socket 12
+[INFO] 21:14:20:108 Broker/(7430:7452): El id generado es 6
+[INFO] 21:14:20:108 Broker/(7430:7452): Codigo de operacion recibido del socket cliente 12 corresponde a un SUSCRIPCION
+[INFO] 21:14:20:109 Broker/(7430:7452): Recibiendo tamanio total
+[INFO] 21:14:20:109 Broker/(7430:7452): Tamanio total recibido: 8
+[INFO] 21:14:20:109 Broker/(7430:7452): Recibiendo id de cliente
+[INFO] 21:14:20:109 Broker/(7430:7452): Id de cliente recibido: 6
+[INFO] 21:14:20:109 Broker/(7430:7452): Recibiendo id de cola
+[INFO] 21:14:20:109 Broker/(7430:7452): Id de cola recibido: 14
+[INFO] 21:14:20:109 Broker/(7430:7452): Id de cola recibido del socket cliente 12 corresponde a la cola de CAUGHT
+[INFO] 21:14:20:109 Broker/(7430:7452): Tamanio tabla de segmentos: 5
+[INFO] 21:14:20:109 Broker/(7430:7452): Segmentos CAUGHT a enviar al cliente 6 socket 12: 2
+[INFO] 21:14:20:109 Broker/(7430:7455): Enviando mensaje CAUGHT 2 de memoria con cliente 6 socket 12
+[INFO] 21:14:20:109 Broker/(7430:7455): Mensaje CAUGHT de memoria con id 2 al cliente 6 socket 12 enviado correctamente
+[INFO] 21:14:20:110 Broker/(7430:7455): ACK de cliente 6 socket 12 recibido
+[INFO] 21:14:20:110 Broker/(7430:7454): Enviando mensaje CAUGHT 1 de memoria con cliente 6 socket 12
+[INFO] 21:14:20:110 Broker/(7430:7454): Mensaje CAUGHT de memoria con id 1 al cliente 6 socket 12 enviado correctamente
+[INFO] 21:14:20:110 Broker/(7430:7454): ACK de cliente 6 socket 12 recibido
+[INFO] 21:14:20:110 Broker/(7430:7452): Modulo con id 6 agregado correctamente en la cola de CAUGHT
+[INFO] 21:14:30:111 Broker/(7430:7431): Socket cliente 13 aceptado
+[INFO] 21:14:30:115 Broker/(7430:7459): Recibiendo codigo de operacion de socket 13
+[INFO] 21:14:30:115 Broker/(7430:7459): Codigo de operacion de socket 13 recibido: 3
+[INFO] 21:14:30:116 Broker/(7430:7459): Generando id para el mensaje del socket 13
+[INFO] 21:14:30:116 Broker/(7430:7459): El id generado es 7
+[INFO] 21:14:30:116 Broker/(7430:7459): Codigo de operacion recibido del socket cliente 13 corresponde a un CATCH
+[INFO] 21:14:30:116 Broker/(7430:7459): Recibiendo tamanio total
+[INFO] 21:14:30:116 Broker/(7430:7459): Tamanio total recibido: 23
+[INFO] 21:14:30:116 Broker/(7430:7459): Tamanio del pokemon: 11
+[INFO] 21:14:30:116 Broker/(7430:7459): Nombre del pokemon recibido: Charmander
+[INFO] 21:14:30:116 Broker/(7430:7459): Posicion X recibida: 4
+[INFO] 21:14:30:117 Broker/(7430:7459): Posicion Y recibida: 5
+[INFO] 21:14:30:117 Broker/(7430:7459): Retornando id 7 al socket 13
+[INFO] 21:14:30:117 Broker/(7430:7459): Encolando el mensaje CATCH con id 7
+[INFO] 21:14:30:117 Broker/(7430:7459): Mensaje CATCH con id 7 encolado
+[INFO] 21:14:30:117 Broker/(7430:7434): Atendiendo mensaje CATCH con id 7
+[INFO] 21:14:30:117 Broker/(7430:7434): Se ha eliminado el registro con id 3 ubicado en 0x9e1a738 de la tabla de segmentos
+[INFO] 21:14:30:117 Broker/(7430:7434): Se ha eliminado el registro con id 4 ubicado en 0x9e1a748 de la tabla de segmentos
+[INFO] 21:14:30:117 Broker/(7430:7434): Guardando mensaje con id 7 en particion 0x9e1a738
+[INFO] 21:14:30:117 Broker/(7430:7434): Eliminando mensaje CATCH con id 7
+[INFO] 21:14:30:118 Broker/(7430:7434): Eliminado mensaje CATCH con id 7
+[INFO] 21:17:11:983 Broker/(7513:7513): logger extenso iniciado
+[INFO] 21:17:11:983 Broker/(7513:7513): logger de la catedra iniciado
+[INFO] 21:17:11:983 Broker/(7513:7513): La IP es: 127.0.0.1
+[INFO] 21:17:11:983 Broker/(7513:7513): El puerto es: 4444
+[INFO] 21:17:11:983 Broker/(7513:7513): El tamanio de la memoria es 64
+[INFO] 21:17:11:984 Broker/(7513:7513): La frecuencia de la compactacion es 10
+[INFO] 21:17:11:984 Broker/(7513:7513): El tamanio minimo de la particion es 4
+[INFO] 21:17:11:984 Broker/(7513:7513): El algoritmo de busqueda de particiones libres es FF
+[INFO] 21:17:11:984 Broker/(7513:7513): El algoritmo de reemplazo de particiones es FIFO
+[INFO] 21:17:11:984 Broker/(7513:7513): Iniciando colas
+[INFO] 21:17:11:984 Broker/(7513:7513): Colas iniciadas
+[INFO] 21:17:11:984 Broker/(7513:7513): Iniciando listas de suscriptores
+[INFO] 21:17:11:985 Broker/(7513:7513): Listas de suscriptores iniciadas
+[INFO] 21:17:11:985 Broker/(7513:7513): Iniciando listas de ids respondidos
+[INFO] 21:17:11:985 Broker/(7513:7513): Listas de ids respondidos iniciadas
+[INFO] 21:17:11:985 Broker/(7513:7513): Iniciando estructuras de colas
+[INFO] 21:17:11:985 Broker/(7513:7513): Estructuras de colas iniciadas
+[INFO] 21:17:11:985 Broker/(7513:7513): Iniciando limites de colas
+[INFO] 21:17:11:985 Broker/(7513:7513): Limites de colas iniciadas
+[INFO] 21:17:11:985 Broker/(7513:7513): Iniciando semaforos de limite
+[INFO] 21:17:11:985 Broker/(7513:7513): Semaforos de limite iniciados
+[INFO] 21:17:11:986 Broker/(7513:7513): Iniciando semaforos de mensajes
+[INFO] 21:17:11:986 Broker/(7513:7513): Semaforos de mensajes iniciados
+[INFO] 21:17:11:986 Broker/(7513:7513): Iniciando semaforos de colas
+[INFO] 21:17:11:986 Broker/(7513:7513): Semaforos de colas iniciados
+[INFO] 21:17:11:986 Broker/(7513:7513): Iniciando semaforos de listas
+[INFO] 21:17:11:986 Broker/(7513:7513): Semaforos de listas iniciados
+[INFO] 21:17:11:986 Broker/(7513:7513): Iniciando semaforos de ids respondidos
+[INFO] 21:17:11:986 Broker/(7513:7513): Semaforos de ids respondidos iniciados
+[INFO] 21:17:11:986 Broker/(7513:7513): Creando generador id
+[INFO] 21:17:11:986 Broker/(7513:7513): Generador id creado
+[INFO] 21:17:11:987 Broker/(7513:7513): Levantando servidor
+[INFO] 21:17:11:987 Broker/(7513:7513): Servidor levantado
+[INFO] 21:17:11:987 Broker/(7513:7520): Atendiendo cola LOCALIZED
+[INFO] 21:17:11:987 Broker/(7513:7519): Atendiendo cola GET
+[INFO] 21:17:11:987 Broker/(7513:7518): Atendiendo cola CAUGHT
+[INFO] 21:17:11:987 Broker/(7513:7517): Atendiendo cola CATCH
+[INFO] 21:17:11:988 Broker/(7513:7516): Atendiendo cola APPEARED
+[INFO] 21:17:11:988 Broker/(7513:7515): Atendiendo cola NEW
+[INFO] 21:17:11:988 Broker/(7513:7514): Esperando clientes en socket 5
+[INFO] 21:17:19:908 Broker/(7513:7514): Socket cliente 7 aceptado
+[INFO] 21:17:19:909 Broker/(7513:7526): Recibiendo codigo de operacion de socket 7
+[INFO] 21:17:19:909 Broker/(7513:7526): Codigo de operacion de socket 7 recibido: 4
+[INFO] 21:17:19:909 Broker/(7513:7526): Generando id para el mensaje del socket 7
+[INFO] 21:17:19:909 Broker/(7513:7526): El id generado es 1
+[INFO] 21:17:19:909 Broker/(7513:7526): Codigo de operacion recibido del socket cliente 7 corresponde a un CAUGHT
+[INFO] 21:17:19:910 Broker/(7513:7526): Recibiendo tamanio total
+[INFO] 21:17:19:910 Broker/(7513:7526): Tamanio total recibido: 8
+[INFO] 21:17:19:910 Broker/(7513:7526): Id correlativo recibido: 1
+[INFO] 21:17:19:910 Broker/(7513:7526): Flag de caught recibido: 1
+[INFO] 21:17:19:910 Broker/(7513:7526): Retornando id 1 al socket 7
+[INFO] 21:17:19:910 Broker/(7513:7526): Encolando el mensaje CAUGHT con id 1
+[INFO] 21:17:19:910 Broker/(7513:7526): Mensaje CAUGHT con id 1 encolado
+[INFO] 21:17:19:910 Broker/(7513:7518): Atendiendo mensaje CAUGHT con id 1
+[INFO] 21:17:19:910 Broker/(7513:7518): Guardando mensaje con id 1 en particion 0x915e730
+[INFO] 21:17:19:910 Broker/(7513:7518): Eliminando mensaje CAUGHT con id 1
+[INFO] 21:17:19:910 Broker/(7513:7518): Eliminado mensaje CAUGHT con id 1
+[INFO] 21:17:19:912 Broker/(7513:7514): Socket cliente 8 aceptado
+[INFO] 21:17:19:913 Broker/(7513:7528): Recibiendo codigo de operacion de socket 8
+[INFO] 21:17:19:913 Broker/(7513:7528): Codigo de operacion de socket 8 recibido: 4
+[INFO] 21:17:19:913 Broker/(7513:7528): Generando id para el mensaje del socket 8
+[INFO] 21:17:19:913 Broker/(7513:7528): El id generado es 2
+[INFO] 21:17:19:913 Broker/(7513:7528): Codigo de operacion recibido del socket cliente 8 corresponde a un CAUGHT
+[INFO] 21:17:19:913 Broker/(7513:7528): Recibiendo tamanio total
+[INFO] 21:17:19:913 Broker/(7513:7528): Tamanio total recibido: 8
+[INFO] 21:17:19:914 Broker/(7513:7528): Id correlativo recibido: 2
+[INFO] 21:17:19:914 Broker/(7513:7528): Flag de caught recibido: 0
+[INFO] 21:17:19:914 Broker/(7513:7528): Retornando id 2 al socket 8
+[INFO] 21:17:19:914 Broker/(7513:7528): Encolando el mensaje CAUGHT con id 2
+[INFO] 21:17:19:914 Broker/(7513:7528): Mensaje CAUGHT con id 2 encolado
+[INFO] 21:17:19:914 Broker/(7513:7518): Atendiendo mensaje CAUGHT con id 2
+[INFO] 21:17:19:914 Broker/(7513:7518): Guardando mensaje con id 2 en particion 0x915e734
+[INFO] 21:17:19:914 Broker/(7513:7518): Eliminando mensaje CAUGHT con id 2
+[INFO] 21:17:19:914 Broker/(7513:7518): Eliminado mensaje CAUGHT con id 2
+[INFO] 21:17:19:917 Broker/(7513:7514): Socket cliente 9 aceptado
+[INFO] 21:17:19:919 Broker/(7513:7530): Recibiendo codigo de operacion de socket 9
+[INFO] 21:17:19:920 Broker/(7513:7530): Codigo de operacion de socket 9 recibido: 3
+[INFO] 21:17:19:920 Broker/(7513:7530): Generando id para el mensaje del socket 9
+[INFO] 21:17:19:920 Broker/(7513:7530): El id generado es 3
+[INFO] 21:17:19:920 Broker/(7513:7530): Codigo de operacion recibido del socket cliente 9 corresponde a un CATCH
+[INFO] 21:17:19:921 Broker/(7513:7530): Recibiendo tamanio total
+[INFO] 21:17:19:921 Broker/(7513:7530): Tamanio total recibido: 20
+[INFO] 21:17:19:921 Broker/(7513:7530): Tamanio del pokemon: 8
+[INFO] 21:17:19:921 Broker/(7513:7530): Nombre del pokemon recibido: Pikachu
+[INFO] 21:17:19:921 Broker/(7513:7530): Posicion X recibida: 2
+[INFO] 21:17:19:921 Broker/(7513:7530): Posicion Y recibida: 3
+[INFO] 21:17:19:921 Broker/(7513:7530): Retornando id 3 al socket 9
+[INFO] 21:17:19:921 Broker/(7513:7530): Encolando el mensaje CATCH con id 3
+[INFO] 21:17:19:921 Broker/(7513:7530): Mensaje CATCH con id 3 encolado
+[INFO] 21:17:19:921 Broker/(7513:7517): Atendiendo mensaje CATCH con id 3
+[INFO] 21:17:19:921 Broker/(7513:7517): Guardando mensaje con id 3 en particion 0x915e738
+[INFO] 21:17:19:921 Broker/(7513:7517): Eliminando mensaje CATCH con id 3
+[INFO] 21:17:19:921 Broker/(7513:7517): Eliminado mensaje CATCH con id 3
+[INFO] 21:17:19:922 Broker/(7513:7514): Socket cliente 10 aceptado
+[INFO] 21:17:19:924 Broker/(7513:7532): Recibiendo codigo de operacion de socket 10
+[INFO] 21:17:19:924 Broker/(7513:7532): Codigo de operacion de socket 10 recibido: 3
+[INFO] 21:17:19:924 Broker/(7513:7532): Generando id para el mensaje del socket 10
+[INFO] 21:17:19:924 Broker/(7513:7532): El id generado es 4
+[INFO] 21:17:19:924 Broker/(7513:7532): Codigo de operacion recibido del socket cliente 10 corresponde a un CATCH
+[INFO] 21:17:19:925 Broker/(7513:7532): Recibiendo tamanio total
+[INFO] 21:17:19:925 Broker/(7513:7532): Tamanio total recibido: 21
+[INFO] 21:17:19:925 Broker/(7513:7532): Tamanio del pokemon: 9
+[INFO] 21:17:19:925 Broker/(7513:7532): Nombre del pokemon recibido: Squirtle
+[INFO] 21:17:19:925 Broker/(7513:7532): Posicion X recibida: 5
+[INFO] 21:17:19:925 Broker/(7513:7532): Posicion Y recibida: 2
+[INFO] 21:17:19:925 Broker/(7513:7532): Retornando id 4 al socket 10
+[INFO] 21:17:19:925 Broker/(7513:7532): Encolando el mensaje CATCH con id 4
+[INFO] 21:17:19:925 Broker/(7513:7532): Mensaje CATCH con id 4 encolado
+[INFO] 21:17:19:925 Broker/(7513:7517): Atendiendo mensaje CATCH con id 4
+[INFO] 21:17:19:925 Broker/(7513:7517): Guardando mensaje con id 4 en particion 0x915e748
+[INFO] 21:17:19:925 Broker/(7513:7517): Eliminando mensaje CATCH con id 4
+[INFO] 21:17:19:925 Broker/(7513:7517): Eliminado mensaje CATCH con id 4
+[INFO] 21:17:19:927 Broker/(7513:7514): Socket cliente 11 aceptado
+[INFO] 21:17:19:928 Broker/(7513:7534): Recibiendo codigo de operacion de socket 11
+[INFO] 21:17:19:928 Broker/(7513:7534): Codigo de operacion de socket 11 recibido: 3
+[INFO] 21:17:19:928 Broker/(7513:7534): Generando id para el mensaje del socket 11
+[INFO] 21:17:19:928 Broker/(7513:7534): El id generado es 5
+[INFO] 21:17:19:928 Broker/(7513:7534): Codigo de operacion recibido del socket cliente 11 corresponde a un CATCH
+[INFO] 21:17:19:929 Broker/(7513:7534): Recibiendo tamanio total
+[INFO] 21:17:19:929 Broker/(7513:7534): Tamanio total recibido: 17
+[INFO] 21:17:19:929 Broker/(7513:7534): Tamanio del pokemon: 5
+[INFO] 21:17:19:929 Broker/(7513:7534): Nombre del pokemon recibido: Onyx
+[INFO] 21:17:19:929 Broker/(7513:7534): Posicion X recibida: 4
+[INFO] 21:17:19:929 Broker/(7513:7534): Posicion Y recibida: 5
+[INFO] 21:17:19:929 Broker/(7513:7534): Retornando id 5 al socket 11
+[INFO] 21:17:19:929 Broker/(7513:7534): Encolando el mensaje CATCH con id 5
+[INFO] 21:17:19:929 Broker/(7513:7534): Mensaje CATCH con id 5 encolado
+[INFO] 21:17:19:929 Broker/(7513:7517): Atendiendo mensaje CATCH con id 5
+[INFO] 21:17:19:929 Broker/(7513:7517): Guardando mensaje con id 5 en particion 0x915e759
+[INFO] 21:17:19:929 Broker/(7513:7517): Eliminando mensaje CATCH con id 5
+[INFO] 21:17:19:929 Broker/(7513:7517): Eliminado mensaje CATCH con id 5
+[INFO] 21:17:19:930 Broker/(7513:7514): Socket cliente 12 aceptado
+[INFO] 21:17:19:930 Broker/(7513:7536): Recibiendo codigo de operacion de socket 12
+[INFO] 21:17:19:930 Broker/(7513:7536): Codigo de operacion de socket 12 recibido: 7
+[INFO] 21:17:19:930 Broker/(7513:7536): Generando id para el mensaje del socket 12
+[INFO] 21:17:19:930 Broker/(7513:7536): El id generado es 6
+[INFO] 21:17:19:930 Broker/(7513:7536): Codigo de operacion recibido del socket cliente 12 corresponde a un SUSCRIPCION
+[INFO] 21:17:19:930 Broker/(7513:7536): Recibiendo tamanio total
+[INFO] 21:17:19:930 Broker/(7513:7536): Tamanio total recibido: 8
+[INFO] 21:17:19:931 Broker/(7513:7536): Recibiendo id de cliente
+[INFO] 21:17:19:931 Broker/(7513:7536): Id de cliente recibido: 6
+[INFO] 21:17:19:931 Broker/(7513:7536): Recibiendo id de cola
+[INFO] 21:17:19:931 Broker/(7513:7536): Id de cola recibido: 14
+[INFO] 21:17:19:931 Broker/(7513:7536): Id de cola recibido del socket cliente 12 corresponde a la cola de CAUGHT
+[INFO] 21:17:19:931 Broker/(7513:7536): Tamanio tabla de segmentos: 5
+[INFO] 21:17:19:931 Broker/(7513:7536): Segmentos CAUGHT a enviar al cliente 6 socket 12: 2
+[INFO] 21:17:19:931 Broker/(7513:7539): Enviando mensaje CAUGHT 2 de memoria con cliente 6 socket 12
+[INFO] 21:17:19:931 Broker/(7513:7539): Mensaje CAUGHT de memoria con id 2 al cliente 6 socket 12 enviado correctamente
+[INFO] 21:17:19:931 Broker/(7513:7539): ACK de cliente 6 socket 12 recibido
+[INFO] 21:17:19:931 Broker/(7513:7538): Enviando mensaje CAUGHT 1 de memoria con cliente 6 socket 12
+[INFO] 21:17:19:931 Broker/(7513:7538): Mensaje CAUGHT de memoria con id 1 al cliente 6 socket 12 enviado correctamente
+[INFO] 21:17:19:931 Broker/(7513:7538): ACK de cliente 6 socket 12 recibido
+[INFO] 21:17:19:931 Broker/(7513:7536): Modulo con id 6 agregado correctamente en la cola de CAUGHT
+[INFO] 21:17:29:935 Broker/(7513:7514): Socket cliente 13 aceptado
+[INFO] 21:17:29:939 Broker/(7513:7543): Recibiendo codigo de operacion de socket 13
+[INFO] 21:17:29:940 Broker/(7513:7543): Codigo de operacion de socket 13 recibido: 3
+[INFO] 21:17:29:940 Broker/(7513:7543): Generando id para el mensaje del socket 13
+[INFO] 21:17:29:940 Broker/(7513:7543): El id generado es 7
+[INFO] 21:17:29:940 Broker/(7513:7543): Codigo de operacion recibido del socket cliente 13 corresponde a un CATCH
+[INFO] 21:17:29:940 Broker/(7513:7543): Recibiendo tamanio total
+[INFO] 21:17:29:941 Broker/(7513:7543): Tamanio total recibido: 21
+[INFO] 21:17:29:941 Broker/(7513:7543): Tamanio del pokemon: 9
+[INFO] 21:17:29:941 Broker/(7513:7543): Nombre del pokemon recibido: Vaporeon
+[INFO] 21:17:29:941 Broker/(7513:7543): Posicion X recibida: 4
+[INFO] 21:17:29:942 Broker/(7513:7543): Posicion Y recibida: 5
+[INFO] 21:17:29:942 Broker/(7513:7543): Retornando id 7 al socket 13
+[INFO] 21:17:29:942 Broker/(7513:7543): Encolando el mensaje CATCH con id 7
+[INFO] 21:17:29:942 Broker/(7513:7543): Mensaje CATCH con id 7 encolado
+[INFO] 21:17:29:943 Broker/(7513:7517): Atendiendo mensaje CATCH con id 7
+[INFO] 21:17:29:943 Broker/(7513:7517): Se ha eliminado el registro con id 1 ubicado en 0x915e730 de la tabla de segmentos
+[INFO] 21:17:29:943 Broker/(7513:7517): Se ha eliminado el registro con id 2 ubicado en 0x915e734 de la tabla de segmentos
+[INFO] 21:17:29:943 Broker/(7513:7517): Se ha eliminado el registro con id 3 ubicado en 0x915e738 de la tabla de segmentos
+[INFO] 21:17:29:943 Broker/(7513:7517): Guardando mensaje con id 7 en particion 0x915e730
+[INFO] 21:17:29:943 Broker/(7513:7517): Eliminando mensaje CATCH con id 7
+[INFO] 21:17:29:943 Broker/(7513:7517): Eliminado mensaje CATCH con id 7
+[INFO] 21:19:09:996 Broker/(7701:7701): logger extenso iniciado
+[INFO] 21:19:09:996 Broker/(7701:7701): logger de la catedra iniciado
+[INFO] 21:19:09:996 Broker/(7701:7701): La IP es: 127.0.0.1
+[INFO] 21:19:09:996 Broker/(7701:7701): El puerto es: 4444
+[INFO] 21:19:09:997 Broker/(7701:7701): El tamanio de la memoria es 64
+[INFO] 21:19:09:997 Broker/(7701:7701): La frecuencia de la compactacion es 10
+[INFO] 21:19:09:997 Broker/(7701:7701): El tamanio minimo de la particion es 4
+[INFO] 21:19:09:997 Broker/(7701:7701): El algoritmo de busqueda de particiones libres es FF
+[INFO] 21:19:09:997 Broker/(7701:7701): El algoritmo de reemplazo de particiones es LRU
+[INFO] 21:19:09:997 Broker/(7701:7701): Iniciando colas
+[INFO] 21:19:09:997 Broker/(7701:7701): Colas iniciadas
+[INFO] 21:19:09:997 Broker/(7701:7701): Iniciando listas de suscriptores
+[INFO] 21:19:09:998 Broker/(7701:7701): Listas de suscriptores iniciadas
+[INFO] 21:19:09:998 Broker/(7701:7701): Iniciando listas de ids respondidos
+[INFO] 21:19:09:998 Broker/(7701:7701): Listas de ids respondidos iniciadas
+[INFO] 21:19:09:998 Broker/(7701:7701): Iniciando estructuras de colas
+[INFO] 21:19:09:998 Broker/(7701:7701): Estructuras de colas iniciadas
+[INFO] 21:19:09:998 Broker/(7701:7701): Iniciando limites de colas
+[INFO] 21:19:09:998 Broker/(7701:7701): Limites de colas iniciadas
+[INFO] 21:19:09:998 Broker/(7701:7701): Iniciando semaforos de limite
+[INFO] 21:19:09:999 Broker/(7701:7701): Semaforos de limite iniciados
+[INFO] 21:19:09:999 Broker/(7701:7701): Iniciando semaforos de mensajes
+[INFO] 21:19:09:999 Broker/(7701:7701): Semaforos de mensajes iniciados
+[INFO] 21:19:09:999 Broker/(7701:7701): Iniciando semaforos de colas
+[INFO] 21:19:09:999 Broker/(7701:7701): Semaforos de colas iniciados
+[INFO] 21:19:09:999 Broker/(7701:7701): Iniciando semaforos de listas
+[INFO] 21:19:09:999 Broker/(7701:7701): Semaforos de listas iniciados
+[INFO] 21:19:09:999 Broker/(7701:7701): Iniciando semaforos de ids respondidos
+[INFO] 21:19:09:999 Broker/(7701:7701): Semaforos de ids respondidos iniciados
+[INFO] 21:19:09:0 Broker/(7701:7701): Creando generador id
+[INFO] 21:19:09:0 Broker/(7701:7701): Generador id creado
+[INFO] 21:19:09:0 Broker/(7701:7701): Levantando servidor
+[INFO] 21:19:09:0 Broker/(7701:7701): Servidor levantado
+[INFO] 21:19:09:0 Broker/(7701:7708): Atendiendo cola LOCALIZED
+[INFO] 21:19:09:0 Broker/(7701:7707): Atendiendo cola GET
+[INFO] 21:19:09:1 Broker/(7701:7706): Atendiendo cola CAUGHT
+[INFO] 21:19:09:1 Broker/(7701:7705): Atendiendo cola CATCH
+[INFO] 21:19:09:1 Broker/(7701:7704): Atendiendo cola APPEARED
+[INFO] 21:19:09:1 Broker/(7701:7703): Atendiendo cola NEW
+[INFO] 21:19:09:1 Broker/(7701:7702): Esperando clientes en socket 5
+[INFO] 21:19:11:908 Broker/(7701:7702): Socket cliente 7 aceptado
+[INFO] 21:19:11:911 Broker/(7701:7711): Recibiendo codigo de operacion de socket 7
+[INFO] 21:19:11:911 Broker/(7701:7711): Codigo de operacion de socket 7 recibido: 4
+[INFO] 21:19:11:911 Broker/(7701:7711): Generando id para el mensaje del socket 7
+[INFO] 21:19:11:911 Broker/(7701:7711): El id generado es 1
+[INFO] 21:19:11:912 Broker/(7701:7711): Codigo de operacion recibido del socket cliente 7 corresponde a un CAUGHT
+[INFO] 21:19:11:912 Broker/(7701:7711): Recibiendo tamanio total
+[INFO] 21:19:11:912 Broker/(7701:7711): Tamanio total recibido: 8
+[INFO] 21:19:11:912 Broker/(7701:7711): Id correlativo recibido: 1
+[INFO] 21:19:11:912 Broker/(7701:7711): Flag de caught recibido: 1
+[INFO] 21:19:11:912 Broker/(7701:7711): Retornando id 1 al socket 7
+[INFO] 21:19:11:912 Broker/(7701:7711): Encolando el mensaje CAUGHT con id 1
+[INFO] 21:19:11:912 Broker/(7701:7711): Mensaje CAUGHT con id 1 encolado
+[INFO] 21:19:11:913 Broker/(7701:7706): Atendiendo mensaje CAUGHT con id 1
+[INFO] 21:19:11:913 Broker/(7701:7706): Guardando mensaje con id 1 en particion 0x89e0730
+[INFO] 21:19:11:913 Broker/(7701:7706): Eliminando mensaje CAUGHT con id 1
+[INFO] 21:19:11:913 Broker/(7701:7706): Eliminado mensaje CAUGHT con id 1
+[INFO] 21:19:11:918 Broker/(7701:7702): Socket cliente 8 aceptado
+[INFO] 21:19:11:921 Broker/(7701:7713): Recibiendo codigo de operacion de socket 8
+[INFO] 21:19:11:923 Broker/(7701:7713): Codigo de operacion de socket 8 recibido: 4
+[INFO] 21:19:11:923 Broker/(7701:7713): Generando id para el mensaje del socket 8
+[INFO] 21:19:11:923 Broker/(7701:7713): El id generado es 2
+[INFO] 21:19:11:923 Broker/(7701:7713): Codigo de operacion recibido del socket cliente 8 corresponde a un CAUGHT
+[INFO] 21:19:11:923 Broker/(7701:7713): Recibiendo tamanio total
+[INFO] 21:19:11:923 Broker/(7701:7713): Tamanio total recibido: 8
+[INFO] 21:19:11:923 Broker/(7701:7713): Id correlativo recibido: 2
+[INFO] 21:19:11:923 Broker/(7701:7713): Flag de caught recibido: 0
+[INFO] 21:19:11:924 Broker/(7701:7713): Retornando id 2 al socket 8
+[INFO] 21:19:11:924 Broker/(7701:7713): Encolando el mensaje CAUGHT con id 2
+[INFO] 21:19:11:924 Broker/(7701:7713): Mensaje CAUGHT con id 2 encolado
+[INFO] 21:19:11:924 Broker/(7701:7706): Atendiendo mensaje CAUGHT con id 2
+[INFO] 21:19:11:924 Broker/(7701:7706): Guardando mensaje con id 2 en particion 0x89e0734
+[INFO] 21:19:11:924 Broker/(7701:7706): Eliminando mensaje CAUGHT con id 2
+[INFO] 21:19:11:924 Broker/(7701:7706): Eliminado mensaje CAUGHT con id 2
+[INFO] 21:19:11:926 Broker/(7701:7702): Socket cliente 9 aceptado
+[INFO] 21:19:11:928 Broker/(7701:7715): Recibiendo codigo de operacion de socket 9
+[INFO] 21:19:11:928 Broker/(7701:7715): Codigo de operacion de socket 9 recibido: 3
+[INFO] 21:19:11:928 Broker/(7701:7715): Generando id para el mensaje del socket 9
+[INFO] 21:19:11:929 Broker/(7701:7715): El id generado es 3
+[INFO] 21:19:11:929 Broker/(7701:7715): Codigo de operacion recibido del socket cliente 9 corresponde a un CATCH
+[INFO] 21:19:11:929 Broker/(7701:7715): Recibiendo tamanio total
+[INFO] 21:19:11:929 Broker/(7701:7715): Tamanio total recibido: 20
+[INFO] 21:19:11:929 Broker/(7701:7715): Tamanio del pokemon: 8
+[INFO] 21:19:11:929 Broker/(7701:7715): Nombre del pokemon recibido: Pikachu
+[INFO] 21:19:11:929 Broker/(7701:7715): Posicion X recibida: 2
+[INFO] 21:19:11:929 Broker/(7701:7715): Posicion Y recibida: 3
+[INFO] 21:19:11:929 Broker/(7701:7715): Retornando id 3 al socket 9
+[INFO] 21:19:11:929 Broker/(7701:7715): Encolando el mensaje CATCH con id 3
+[INFO] 21:19:11:929 Broker/(7701:7715): Mensaje CATCH con id 3 encolado
+[INFO] 21:19:11:929 Broker/(7701:7705): Atendiendo mensaje CATCH con id 3
+[INFO] 21:19:11:930 Broker/(7701:7705): Guardando mensaje con id 3 en particion 0x89e0738
+[INFO] 21:19:11:930 Broker/(7701:7705): Eliminando mensaje CATCH con id 3
+[INFO] 21:19:11:930 Broker/(7701:7705): Eliminado mensaje CATCH con id 3
+[INFO] 21:19:11:935 Broker/(7701:7702): Socket cliente 10 aceptado
+[INFO] 21:19:11:936 Broker/(7701:7717): Recibiendo codigo de operacion de socket 10
+[INFO] 21:19:11:940 Broker/(7701:7717): Codigo de operacion de socket 10 recibido: 3
+[INFO] 21:19:11:940 Broker/(7701:7717): Generando id para el mensaje del socket 10
+[INFO] 21:19:11:940 Broker/(7701:7717): El id generado es 4
+[INFO] 21:19:11:940 Broker/(7701:7717): Codigo de operacion recibido del socket cliente 10 corresponde a un CATCH
+[INFO] 21:19:11:940 Broker/(7701:7717): Recibiendo tamanio total
+[INFO] 21:19:11:940 Broker/(7701:7717): Tamanio total recibido: 21
+[INFO] 21:19:11:941 Broker/(7701:7717): Tamanio del pokemon: 9
+[INFO] 21:19:11:941 Broker/(7701:7717): Nombre del pokemon recibido: Squirtle
+[INFO] 21:19:11:941 Broker/(7701:7717): Posicion X recibida: 5
+[INFO] 21:19:11:941 Broker/(7701:7717): Posicion Y recibida: 2
+[INFO] 21:19:11:941 Broker/(7701:7717): Retornando id 4 al socket 10
+[INFO] 21:19:11:941 Broker/(7701:7717): Encolando el mensaje CATCH con id 4
+[INFO] 21:19:11:941 Broker/(7701:7717): Mensaje CATCH con id 4 encolado
+[INFO] 21:19:11:941 Broker/(7701:7705): Atendiendo mensaje CATCH con id 4
+[INFO] 21:19:11:941 Broker/(7701:7705): Guardando mensaje con id 4 en particion 0x89e0748
+[INFO] 21:19:11:941 Broker/(7701:7705): Eliminando mensaje CATCH con id 4
+[INFO] 21:19:11:941 Broker/(7701:7705): Eliminado mensaje CATCH con id 4
+[INFO] 21:19:11:942 Broker/(7701:7702): Socket cliente 11 aceptado
+[INFO] 21:19:11:944 Broker/(7701:7719): Recibiendo codigo de operacion de socket 11
+[INFO] 21:19:11:944 Broker/(7701:7719): Codigo de operacion de socket 11 recibido: 3
+[INFO] 21:19:11:944 Broker/(7701:7719): Generando id para el mensaje del socket 11
+[INFO] 21:19:11:944 Broker/(7701:7719): El id generado es 5
+[INFO] 21:19:11:944 Broker/(7701:7719): Codigo de operacion recibido del socket cliente 11 corresponde a un CATCH
+[INFO] 21:19:11:944 Broker/(7701:7719): Recibiendo tamanio total
+[INFO] 21:19:11:944 Broker/(7701:7719): Tamanio total recibido: 17
+[INFO] 21:19:11:944 Broker/(7701:7719): Tamanio del pokemon: 5
+[INFO] 21:19:11:944 Broker/(7701:7719): Nombre del pokemon recibido: Onyx
+[INFO] 21:19:11:944 Broker/(7701:7719): Posicion X recibida: 4
+[INFO] 21:19:11:944 Broker/(7701:7719): Posicion Y recibida: 5
+[INFO] 21:19:11:944 Broker/(7701:7719): Retornando id 5 al socket 11
+[INFO] 21:19:11:945 Broker/(7701:7719): Encolando el mensaje CATCH con id 5
+[INFO] 21:19:11:945 Broker/(7701:7719): Mensaje CATCH con id 5 encolado
+[INFO] 21:19:11:945 Broker/(7701:7705): Atendiendo mensaje CATCH con id 5
+[INFO] 21:19:11:945 Broker/(7701:7705): Guardando mensaje con id 5 en particion 0x89e0759
+[INFO] 21:19:11:945 Broker/(7701:7705): Eliminando mensaje CATCH con id 5
+[INFO] 21:19:11:945 Broker/(7701:7705): Eliminado mensaje CATCH con id 5
+[INFO] 21:19:11:946 Broker/(7701:7702): Socket cliente 12 aceptado
+[INFO] 21:19:11:946 Broker/(7701:7721): Recibiendo codigo de operacion de socket 12
+[INFO] 21:19:11:946 Broker/(7701:7721): Codigo de operacion de socket 12 recibido: 7
+[INFO] 21:19:11:946 Broker/(7701:7721): Generando id para el mensaje del socket 12
+[INFO] 21:19:11:946 Broker/(7701:7721): El id generado es 6
+[INFO] 21:19:11:946 Broker/(7701:7721): Codigo de operacion recibido del socket cliente 12 corresponde a un SUSCRIPCION
+[INFO] 21:19:11:946 Broker/(7701:7721): Recibiendo tamanio total
+[INFO] 21:19:11:947 Broker/(7701:7721): Tamanio total recibido: 8
+[INFO] 21:19:11:947 Broker/(7701:7721): Recibiendo id de cliente
+[INFO] 21:19:11:947 Broker/(7701:7721): Id de cliente recibido: 6
+[INFO] 21:19:11:947 Broker/(7701:7721): Recibiendo id de cola
+[INFO] 21:19:11:947 Broker/(7701:7721): Id de cola recibido: 14
+[INFO] 21:19:11:947 Broker/(7701:7721): Id de cola recibido del socket cliente 12 corresponde a la cola de CAUGHT
+[INFO] 21:19:11:947 Broker/(7701:7721): Tamanio tabla de segmentos: 5
+[INFO] 21:19:11:947 Broker/(7701:7721): Segmentos CAUGHT a enviar al cliente 6 socket 12: 2
+[INFO] 21:19:11:947 Broker/(7701:7724): Enviando mensaje CAUGHT 2 de memoria con cliente 6 socket 12
+[INFO] 21:19:11:947 Broker/(7701:7724): Mensaje CAUGHT de memoria con id 2 al cliente 6 socket 12 enviado correctamente
+[INFO] 21:19:11:947 Broker/(7701:7724): ACK de cliente 6 socket 12 recibido
+[INFO] 21:19:11:947 Broker/(7701:7723): Enviando mensaje CAUGHT 1 de memoria con cliente 6 socket 12
+[INFO] 21:19:11:948 Broker/(7701:7723): Mensaje CAUGHT de memoria con id 1 al cliente 6 socket 12 enviado correctamente
+[INFO] 21:19:11:948 Broker/(7701:7723): ACK de cliente 6 socket 12 recibido
+[INFO] 21:19:11:948 Broker/(7701:7721): Modulo con id 6 agregado correctamente en la cola de CAUGHT
+[INFO] 21:19:21:949 Broker/(7701:7702): Socket cliente 13 aceptado
+[INFO] 21:19:21:953 Broker/(7701:7728): Recibiendo codigo de operacion de socket 13
+[INFO] 21:19:21:954 Broker/(7701:7728): Codigo de operacion de socket 13 recibido: 3
+[INFO] 21:19:21:954 Broker/(7701:7728): Generando id para el mensaje del socket 13
+[INFO] 21:19:21:954 Broker/(7701:7728): El id generado es 7
+[INFO] 21:19:21:954 Broker/(7701:7728): Codigo de operacion recibido del socket cliente 13 corresponde a un CATCH
+[INFO] 21:19:21:954 Broker/(7701:7728): Recibiendo tamanio total
+[INFO] 21:19:21:954 Broker/(7701:7728): Tamanio total recibido: 21
+[INFO] 21:19:21:955 Broker/(7701:7728): Tamanio del pokemon: 9
+[INFO] 21:19:21:955 Broker/(7701:7728): Nombre del pokemon recibido: Vaporeon
+[INFO] 21:19:21:955 Broker/(7701:7728): Posicion X recibida: 4
+[INFO] 21:19:21:955 Broker/(7701:7728): Posicion Y recibida: 5
+[INFO] 21:19:21:955 Broker/(7701:7728): Retornando id 7 al socket 13
+[INFO] 21:19:21:956 Broker/(7701:7728): Encolando el mensaje CATCH con id 7
+[INFO] 21:19:21:956 Broker/(7701:7728): Mensaje CATCH con id 7 encolado
+[INFO] 21:19:21:956 Broker/(7701:7705): Atendiendo mensaje CATCH con id 7
+[INFO] 21:19:21:956 Broker/(7701:7705): Se ha eliminado el registro con id 3 ubicado en 0x89e0738 de la tabla de segmentos
+[INFO] 21:19:21:956 Broker/(7701:7705): Se ha eliminado el registro con id 4 ubicado en 0x89e0748 de la tabla de segmentos
+[INFO] 21:19:21:956 Broker/(7701:7705): Guardando mensaje con id 7 en particion 0x89e0738
+[INFO] 21:19:21:957 Broker/(7701:7705): Eliminando mensaje CATCH con id 7
+[INFO] 21:19:21:957 Broker/(7701:7705): Eliminado mensaje CATCH con id 7
+[INFO] 21:20:44:91 Broker/(7863:7863): logger extenso iniciado
+[INFO] 21:20:44:95 Broker/(7863:7863): logger de la catedra iniciado
+[INFO] 21:20:44:95 Broker/(7863:7863): La IP es: 127.0.0.1
+[INFO] 21:20:44:95 Broker/(7863:7863): El puerto es: 4444
+[INFO] 21:20:44:95 Broker/(7863:7863): El tamanio de la memoria es 64
+[INFO] 21:20:44:95 Broker/(7863:7863): La frecuencia de la compactacion es 10
+[INFO] 21:20:44:95 Broker/(7863:7863): El tamanio minimo de la particion es 4
+[INFO] 21:20:44:95 Broker/(7863:7863): El algoritmo de busqueda de particiones libres es FF
+[INFO] 21:20:44:95 Broker/(7863:7863): El algoritmo de reemplazo de particiones es LRU
+[INFO] 21:20:44:95 Broker/(7863:7863): Iniciando colas
+[INFO] 21:20:44:96 Broker/(7863:7863): Colas iniciadas
+[INFO] 21:20:44:96 Broker/(7863:7863): Iniciando listas de suscriptores
+[INFO] 21:20:44:96 Broker/(7863:7863): Listas de suscriptores iniciadas
+[INFO] 21:20:44:96 Broker/(7863:7863): Iniciando listas de ids respondidos
+[INFO] 21:20:44:96 Broker/(7863:7863): Listas de ids respondidos iniciadas
+[INFO] 21:20:44:96 Broker/(7863:7863): Iniciando estructuras de colas
+[INFO] 21:20:44:96 Broker/(7863:7863): Estructuras de colas iniciadas
+[INFO] 21:20:44:96 Broker/(7863:7863): Iniciando limites de colas
+[INFO] 21:20:44:96 Broker/(7863:7863): Limites de colas iniciadas
+[INFO] 21:20:44:96 Broker/(7863:7863): Iniciando semaforos de limite
+[INFO] 21:20:44:96 Broker/(7863:7863): Semaforos de limite iniciados
+[INFO] 21:20:44:96 Broker/(7863:7863): Iniciando semaforos de mensajes
+[INFO] 21:20:44:96 Broker/(7863:7863): Semaforos de mensajes iniciados
+[INFO] 21:20:44:96 Broker/(7863:7863): Iniciando semaforos de colas
+[INFO] 21:20:44:97 Broker/(7863:7863): Semaforos de colas iniciados
+[INFO] 21:20:44:97 Broker/(7863:7863): Iniciando semaforos de listas
+[INFO] 21:20:44:97 Broker/(7863:7863): Semaforos de listas iniciados
+[INFO] 21:20:44:97 Broker/(7863:7863): Iniciando semaforos de ids respondidos
+[INFO] 21:20:44:97 Broker/(7863:7863): Semaforos de ids respondidos iniciados
+[INFO] 21:20:44:97 Broker/(7863:7863): Creando generador id
+[INFO] 21:20:44:97 Broker/(7863:7863): Generador id creado
+[INFO] 21:20:44:97 Broker/(7863:7863): Levantando servidor
+[INFO] 21:20:44:97 Broker/(7863:7863): Servidor levantado
+[INFO] 21:20:44:98 Broker/(7863:7870): Atendiendo cola GET
+[INFO] 21:20:44:98 Broker/(7863:7871): Atendiendo cola LOCALIZED
+[INFO] 21:20:44:98 Broker/(7863:7869): Atendiendo cola CAUGHT
+[INFO] 21:20:44:98 Broker/(7863:7868): Atendiendo cola CATCH
+[INFO] 21:20:44:99 Broker/(7863:7867): Atendiendo cola APPEARED
+[INFO] 21:20:44:99 Broker/(7863:7866): Atendiendo cola NEW
+[INFO] 21:20:44:99 Broker/(7863:7865): Esperando clientes en socket 5
+[INFO] 21:21:11:184 Broker/(7987:7987): logger extenso iniciado
+[INFO] 21:21:11:185 Broker/(7987:7987): logger de la catedra iniciado
+[INFO] 21:21:11:185 Broker/(7987:7987): La IP es: 127.0.0.1
+[INFO] 21:21:11:185 Broker/(7987:7987): El puerto es: 4444
+[INFO] 21:21:11:186 Broker/(7987:7987): El tamanio de la memoria es 64
+[INFO] 21:21:11:186 Broker/(7987:7987): La frecuencia de la compactacion es 10
+[INFO] 21:21:11:186 Broker/(7987:7987): El tamanio minimo de la particion es 4
+[INFO] 21:21:11:187 Broker/(7987:7987): El algoritmo de busqueda de particiones libres es FF
+[INFO] 21:21:11:187 Broker/(7987:7987): El algoritmo de reemplazo de particiones es LRU
+[INFO] 21:21:11:187 Broker/(7987:7987): Iniciando colas
+[INFO] 21:21:11:187 Broker/(7987:7987): Colas iniciadas
+[INFO] 21:21:11:187 Broker/(7987:7987): Iniciando listas de suscriptores
+[INFO] 21:21:11:188 Broker/(7987:7987): Listas de suscriptores iniciadas
+[INFO] 21:21:11:188 Broker/(7987:7987): Iniciando listas de ids respondidos
+[INFO] 21:21:11:188 Broker/(7987:7987): Listas de ids respondidos iniciadas
+[INFO] 21:21:11:188 Broker/(7987:7987): Iniciando estructuras de colas
+[INFO] 21:21:11:188 Broker/(7987:7987): Estructuras de colas iniciadas
+[INFO] 21:21:11:189 Broker/(7987:7987): Iniciando limites de colas
+[INFO] 21:21:11:189 Broker/(7987:7987): Limites de colas iniciadas
+[INFO] 21:21:11:189 Broker/(7987:7987): Iniciando semaforos de limite
+[INFO] 21:21:11:189 Broker/(7987:7987): Semaforos de limite iniciados
+[INFO] 21:21:11:189 Broker/(7987:7987): Iniciando semaforos de mensajes
+[INFO] 21:21:11:190 Broker/(7987:7987): Semaforos de mensajes iniciados
+[INFO] 21:21:11:190 Broker/(7987:7987): Iniciando semaforos de colas
+[INFO] 21:21:11:190 Broker/(7987:7987): Semaforos de colas iniciados
+[INFO] 21:21:11:190 Broker/(7987:7987): Iniciando semaforos de listas
+[INFO] 21:21:11:190 Broker/(7987:7987): Semaforos de listas iniciados
+[INFO] 21:21:11:194 Broker/(7987:7987): Iniciando semaforos de ids respondidos
+[INFO] 21:21:11:194 Broker/(7987:7987): Semaforos de ids respondidos iniciados
+[INFO] 21:21:11:194 Broker/(7987:7987): Creando generador id
+[INFO] 21:21:11:194 Broker/(7987:7987): Generador id creado
+[INFO] 21:21:11:194 Broker/(7987:7987): Levantando servidor
+[INFO] 21:21:11:194 Broker/(7987:7987): Servidor levantado
+[INFO] 21:21:11:202 Broker/(7987:7993): Atendiendo cola CAUGHT
+[INFO] 21:21:11:202 Broker/(7987:7994): Atendiendo cola GET
+[INFO] 21:21:11:202 Broker/(7987:7995): Atendiendo cola LOCALIZED
+[INFO] 21:21:11:202 Broker/(7987:7992): Atendiendo cola CATCH
+[INFO] 21:21:11:203 Broker/(7987:7991): Atendiendo cola APPEARED
+[INFO] 21:21:11:203 Broker/(7987:7990): Atendiendo cola NEW
+[INFO] 21:21:11:203 Broker/(7987:7989): Esperando clientes en socket 5
+[INFO] 21:21:14:741 Broker/(7987:7989): Socket cliente 7 aceptado
+[INFO] 21:21:14:744 Broker/(7987:7999): Recibiendo codigo de operacion de socket 7
+[INFO] 21:21:14:744 Broker/(7987:7999): Codigo de operacion de socket 7 recibido: 4
+[INFO] 21:21:14:744 Broker/(7987:7999): Generando id para el mensaje del socket 7
+[INFO] 21:21:14:744 Broker/(7987:7999): El id generado es 1
+[INFO] 21:21:14:744 Broker/(7987:7999): Codigo de operacion recibido del socket cliente 7 corresponde a un CAUGHT
+[INFO] 21:21:14:744 Broker/(7987:7999): Recibiendo tamanio total
+[INFO] 21:21:14:744 Broker/(7987:7999): Tamanio total recibido: 8
+[INFO] 21:21:14:745 Broker/(7987:7999): Id correlativo recibido: 1
+[INFO] 21:21:14:745 Broker/(7987:7999): Flag de caught recibido: 1
+[INFO] 21:21:14:745 Broker/(7987:7999): Retornando id 1 al socket 7
+[INFO] 21:21:14:745 Broker/(7987:7999): Encolando el mensaje CAUGHT con id 1
+[INFO] 21:21:14:745 Broker/(7987:7999): Mensaje CAUGHT con id 1 encolado
+[INFO] 21:21:14:745 Broker/(7987:7993): Atendiendo mensaje CAUGHT con id 1
+[INFO] 21:21:14:745 Broker/(7987:7993): Guardando mensaje con id 1 en particion 0x8972730
+[INFO] 21:21:14:745 Broker/(7987:7993): Eliminando mensaje CAUGHT con id 1
+[INFO] 21:21:14:746 Broker/(7987:7993): Eliminado mensaje CAUGHT con id 1
+[INFO] 21:21:14:750 Broker/(7987:7989): Socket cliente 8 aceptado
+[INFO] 21:21:14:754 Broker/(7987:8001): Recibiendo codigo de operacion de socket 8
+[INFO] 21:21:14:756 Broker/(7987:8001): Codigo de operacion de socket 8 recibido: 4
+[INFO] 21:21:14:756 Broker/(7987:8001): Generando id para el mensaje del socket 8
+[INFO] 21:21:14:756 Broker/(7987:8001): El id generado es 2
+[INFO] 21:21:14:756 Broker/(7987:8001): Codigo de operacion recibido del socket cliente 8 corresponde a un CAUGHT
+[INFO] 21:21:14:756 Broker/(7987:8001): Recibiendo tamanio total
+[INFO] 21:21:14:757 Broker/(7987:8001): Tamanio total recibido: 8
+[INFO] 21:21:14:757 Broker/(7987:8001): Id correlativo recibido: 2
+[INFO] 21:21:14:757 Broker/(7987:8001): Flag de caught recibido: 0
+[INFO] 21:21:14:757 Broker/(7987:8001): Retornando id 2 al socket 8
+[INFO] 21:21:14:757 Broker/(7987:8001): Encolando el mensaje CAUGHT con id 2
+[INFO] 21:21:14:757 Broker/(7987:8001): Mensaje CAUGHT con id 2 encolado
+[INFO] 21:21:14:758 Broker/(7987:7993): Atendiendo mensaje CAUGHT con id 2
+[INFO] 21:21:14:758 Broker/(7987:7993): Guardando mensaje con id 2 en particion 0x8972734
+[INFO] 21:21:14:758 Broker/(7987:7993): Eliminando mensaje CAUGHT con id 2
+[INFO] 21:21:14:758 Broker/(7987:7993): Eliminado mensaje CAUGHT con id 2
+[INFO] 21:21:14:759 Broker/(7987:7989): Socket cliente 9 aceptado
+[INFO] 21:21:14:761 Broker/(7987:8003): Recibiendo codigo de operacion de socket 9
+[INFO] 21:21:14:761 Broker/(7987:8003): Codigo de operacion de socket 9 recibido: 3
+[INFO] 21:21:14:762 Broker/(7987:8003): Generando id para el mensaje del socket 9
+[INFO] 21:21:14:762 Broker/(7987:8003): El id generado es 3
+[INFO] 21:21:14:762 Broker/(7987:8003): Codigo de operacion recibido del socket cliente 9 corresponde a un CATCH
+[INFO] 21:21:14:762 Broker/(7987:8003): Recibiendo tamanio total
+[INFO] 21:21:14:762 Broker/(7987:8003): Tamanio total recibido: 20
+[INFO] 21:21:14:762 Broker/(7987:8003): Tamanio del pokemon: 8
+[INFO] 21:21:14:762 Broker/(7987:8003): Nombre del pokemon recibido: Pikachu
+[INFO] 21:21:14:762 Broker/(7987:8003): Posicion X recibida: 2
+[INFO] 21:21:14:762 Broker/(7987:8003): Posicion Y recibida: 3
+[INFO] 21:21:14:762 Broker/(7987:8003): Retornando id 3 al socket 9
+[INFO] 21:21:14:762 Broker/(7987:8003): Encolando el mensaje CATCH con id 3
+[INFO] 21:21:14:763 Broker/(7987:8003): Mensaje CATCH con id 3 encolado
+[INFO] 21:21:14:763 Broker/(7987:7992): Atendiendo mensaje CATCH con id 3
+[INFO] 21:21:14:763 Broker/(7987:7992): Guardando mensaje con id 3 en particion 0x8972738
+[INFO] 21:21:14:763 Broker/(7987:7992): Eliminando mensaje CATCH con id 3
+[INFO] 21:21:14:763 Broker/(7987:7992): Eliminado mensaje CATCH con id 3
+[INFO] 21:21:14:769 Broker/(7987:7989): Socket cliente 10 aceptado
+[INFO] 21:21:14:771 Broker/(7987:8005): Recibiendo codigo de operacion de socket 10
+[INFO] 21:21:14:774 Broker/(7987:8005): Codigo de operacion de socket 10 recibido: 3
+[INFO] 21:21:14:774 Broker/(7987:8005): Generando id para el mensaje del socket 10
+[INFO] 21:21:14:774 Broker/(7987:8005): El id generado es 4
+[INFO] 21:21:14:774 Broker/(7987:8005): Codigo de operacion recibido del socket cliente 10 corresponde a un CATCH
+[INFO] 21:21:14:775 Broker/(7987:8005): Recibiendo tamanio total
+[INFO] 21:21:14:775 Broker/(7987:8005): Tamanio total recibido: 21
+[INFO] 21:21:14:775 Broker/(7987:8005): Tamanio del pokemon: 9
+[INFO] 21:21:14:775 Broker/(7987:8005): Nombre del pokemon recibido: Squirtle
+[INFO] 21:21:14:775 Broker/(7987:8005): Posicion X recibida: 5
+[INFO] 21:21:14:775 Broker/(7987:8005): Posicion Y recibida: 2
+[INFO] 21:21:14:775 Broker/(7987:8005): Retornando id 4 al socket 10
+[INFO] 21:21:14:775 Broker/(7987:8005): Encolando el mensaje CATCH con id 4
+[INFO] 21:21:14:775 Broker/(7987:8005): Mensaje CATCH con id 4 encolado
+[INFO] 21:21:14:775 Broker/(7987:7992): Atendiendo mensaje CATCH con id 4
+[INFO] 21:21:14:775 Broker/(7987:7992): Guardando mensaje con id 4 en particion 0x8972748
+[INFO] 21:21:14:775 Broker/(7987:7992): Eliminando mensaje CATCH con id 4
+[INFO] 21:21:14:775 Broker/(7987:7992): Eliminado mensaje CATCH con id 4
+[INFO] 21:21:14:777 Broker/(7987:7989): Socket cliente 11 aceptado
+[INFO] 21:21:14:778 Broker/(7987:8007): Recibiendo codigo de operacion de socket 11
+[INFO] 21:21:14:778 Broker/(7987:8007): Codigo de operacion de socket 11 recibido: 3
+[INFO] 21:21:14:778 Broker/(7987:8007): Generando id para el mensaje del socket 11
+[INFO] 21:21:14:779 Broker/(7987:8007): El id generado es 5
+[INFO] 21:21:14:779 Broker/(7987:8007): Codigo de operacion recibido del socket cliente 11 corresponde a un CATCH
+[INFO] 21:21:14:779 Broker/(7987:8007): Recibiendo tamanio total
+[INFO] 21:21:14:779 Broker/(7987:8007): Tamanio total recibido: 17
+[INFO] 21:21:14:779 Broker/(7987:8007): Tamanio del pokemon: 5
+[INFO] 21:21:14:779 Broker/(7987:8007): Nombre del pokemon recibido: Onyx
+[INFO] 21:21:14:779 Broker/(7987:8007): Posicion X recibida: 4
+[INFO] 21:21:14:779 Broker/(7987:8007): Posicion Y recibida: 5
+[INFO] 21:21:14:779 Broker/(7987:8007): Retornando id 5 al socket 11
+[INFO] 21:21:14:779 Broker/(7987:8007): Encolando el mensaje CATCH con id 5
+[INFO] 21:21:14:779 Broker/(7987:8007): Mensaje CATCH con id 5 encolado
+[INFO] 21:21:14:779 Broker/(7987:7992): Atendiendo mensaje CATCH con id 5
+[INFO] 21:21:14:779 Broker/(7987:7992): Guardando mensaje con id 5 en particion 0x8972759
+[INFO] 21:21:14:779 Broker/(7987:7992): Eliminando mensaje CATCH con id 5
+[INFO] 21:21:14:779 Broker/(7987:7992): Eliminado mensaje CATCH con id 5
+[INFO] 21:21:14:781 Broker/(7987:7989): Socket cliente 12 aceptado
+[INFO] 21:21:14:781 Broker/(7987:8009): Recibiendo codigo de operacion de socket 12
+[INFO] 21:21:14:781 Broker/(7987:8009): Codigo de operacion de socket 12 recibido: 7
+[INFO] 21:21:14:781 Broker/(7987:8009): Generando id para el mensaje del socket 12
+[INFO] 21:21:14:781 Broker/(7987:8009): El id generado es 6
+[INFO] 21:21:14:781 Broker/(7987:8009): Codigo de operacion recibido del socket cliente 12 corresponde a un SUSCRIPCION
+[INFO] 21:21:14:781 Broker/(7987:8009): Recibiendo tamanio total
+[INFO] 21:21:14:781 Broker/(7987:8009): Tamanio total recibido: 8
+[INFO] 21:21:14:781 Broker/(7987:8009): Recibiendo id de cliente
+[INFO] 21:21:14:781 Broker/(7987:8009): Id de cliente recibido: 6
+[INFO] 21:21:14:782 Broker/(7987:8009): Recibiendo id de cola
+[INFO] 21:21:14:782 Broker/(7987:8009): Id de cola recibido: 14
+[INFO] 21:21:14:782 Broker/(7987:8009): Id de cola recibido del socket cliente 12 corresponde a la cola de CAUGHT
+[INFO] 21:21:14:782 Broker/(7987:8009): Tamanio tabla de segmentos: 5
+[INFO] 21:21:14:782 Broker/(7987:8009): Segmentos CAUGHT a enviar al cliente 6 socket 12: 2
+[INFO] 21:21:14:782 Broker/(7987:8012): Enviando mensaje CAUGHT 2 de memoria con cliente 6 socket 12
+[INFO] 21:21:14:782 Broker/(7987:8012): Mensaje CAUGHT de memoria con id 2 al cliente 6 socket 12 enviado correctamente
+[INFO] 21:21:14:782 Broker/(7987:8012): ACK de cliente 6 socket 12 recibido
+[INFO] 21:21:14:782 Broker/(7987:8011): Enviando mensaje CAUGHT 1 de memoria con cliente 6 socket 12
+[INFO] 21:21:14:782 Broker/(7987:8011): Mensaje CAUGHT de memoria con id 1 al cliente 6 socket 12 enviado correctamente
+[INFO] 21:21:14:782 Broker/(7987:8011): ACK de cliente 6 socket 12 recibido
+[INFO] 21:21:14:782 Broker/(7987:8009): Modulo con id 6 agregado correctamente en la cola de CAUGHT
+[INFO] 21:21:24:783 Broker/(7987:7989): Socket cliente 13 aceptado
+[INFO] 21:21:24:791 Broker/(7987:8019): Recibiendo codigo de operacion de socket 13
+[INFO] 21:21:24:791 Broker/(7987:8019): Codigo de operacion de socket 13 recibido: 3
+[INFO] 21:21:24:791 Broker/(7987:8019): Generando id para el mensaje del socket 13
+[INFO] 21:21:24:791 Broker/(7987:8019): El id generado es 7
+[INFO] 21:21:24:792 Broker/(7987:8019): Codigo de operacion recibido del socket cliente 13 corresponde a un CATCH
+[INFO] 21:21:24:792 Broker/(7987:8019): Recibiendo tamanio total
+[INFO] 21:21:24:792 Broker/(7987:8019): Tamanio total recibido: 21
+[INFO] 21:21:24:792 Broker/(7987:8019): Tamanio del pokemon: 9
+[INFO] 21:21:24:792 Broker/(7987:8019): Nombre del pokemon recibido: Vaporeon
+[INFO] 21:21:24:792 Broker/(7987:8019): Posicion X recibida: 4
+[INFO] 21:21:24:792 Broker/(7987:8019): Posicion Y recibida: 5
+[INFO] 21:21:24:792 Broker/(7987:8019): Retornando id 7 al socket 13
+[INFO] 21:21:24:792 Broker/(7987:8019): Encolando el mensaje CATCH con id 7
+[INFO] 21:21:24:792 Broker/(7987:8019): Mensaje CATCH con id 7 encolado
+[INFO] 21:21:24:794 Broker/(7987:7992): Atendiendo mensaje CATCH con id 7
+[INFO] 21:21:24:794 Broker/(7987:7992): Se ha eliminado el registro con id 3 ubicado en 0x8972738 de la tabla de segmentos
+[INFO] 21:21:24:794 Broker/(7987:7992): Se ha eliminado el registro con id 4 ubicado en 0x8972748 de la tabla de segmentos
+[INFO] 21:21:24:794 Broker/(7987:7992): Guardando mensaje con id 7 en particion 0x8972738
+[INFO] 21:21:24:794 Broker/(7987:7992): Eliminando mensaje CATCH con id 7
+[INFO] 21:21:24:794 Broker/(7987:7992): Eliminado mensaje CATCH con id 7
+[INFO] 21:23:02:525 Broker/(8158:8158): logger extenso iniciado
+[INFO] 21:23:02:530 Broker/(8158:8158): logger de la catedra iniciado
+[INFO] 21:23:02:531 Broker/(8158:8158): La IP es: 127.0.0.1
+[INFO] 21:23:02:531 Broker/(8158:8158): El puerto es: 4444
+[INFO] 21:23:02:531 Broker/(8158:8158): El tamanio de la memoria es 64
+[INFO] 21:23:02:531 Broker/(8158:8158): La frecuencia de la compactacion es 10
+[INFO] 21:23:02:531 Broker/(8158:8158): El tamanio minimo de la particion es 4
+[INFO] 21:23:02:531 Broker/(8158:8158): El algoritmo de busqueda de particiones libres es FF
+[INFO] 21:23:02:531 Broker/(8158:8158): El algoritmo de reemplazo de particiones es FIFO
+[INFO] 21:23:02:531 Broker/(8158:8158): Iniciando colas
+[INFO] 21:23:02:532 Broker/(8158:8158): Colas iniciadas
+[INFO] 21:23:02:532 Broker/(8158:8158): Iniciando listas de suscriptores
+[INFO] 21:23:02:532 Broker/(8158:8158): Listas de suscriptores iniciadas
+[INFO] 21:23:02:532 Broker/(8158:8158): Iniciando listas de ids respondidos
+[INFO] 21:23:02:532 Broker/(8158:8158): Listas de ids respondidos iniciadas
+[INFO] 21:23:02:532 Broker/(8158:8158): Iniciando estructuras de colas
+[INFO] 21:23:02:532 Broker/(8158:8158): Estructuras de colas iniciadas
+[INFO] 21:23:02:532 Broker/(8158:8158): Iniciando limites de colas
+[INFO] 21:23:02:533 Broker/(8158:8158): Limites de colas iniciadas
+[INFO] 21:23:02:533 Broker/(8158:8158): Iniciando semaforos de limite
+[INFO] 21:23:02:533 Broker/(8158:8158): Semaforos de limite iniciados
+[INFO] 21:23:02:533 Broker/(8158:8158): Iniciando semaforos de mensajes
+[INFO] 21:23:02:533 Broker/(8158:8158): Semaforos de mensajes iniciados
+[INFO] 21:23:02:533 Broker/(8158:8158): Iniciando semaforos de colas
+[INFO] 21:23:02:533 Broker/(8158:8158): Semaforos de colas iniciados
+[INFO] 21:23:02:533 Broker/(8158:8158): Iniciando semaforos de listas
+[INFO] 21:23:02:534 Broker/(8158:8158): Semaforos de listas iniciados
+[INFO] 21:23:02:536 Broker/(8158:8158): Iniciando semaforos de ids respondidos
+[INFO] 21:23:02:536 Broker/(8158:8158): Semaforos de ids respondidos iniciados
+[INFO] 21:23:02:536 Broker/(8158:8158): Creando generador id
+[INFO] 21:23:02:536 Broker/(8158:8158): Generador id creado
+[INFO] 21:23:02:536 Broker/(8158:8158): Levantando servidor
+[INFO] 21:23:02:537 Broker/(8158:8158): Servidor levantado
+[INFO] 21:23:02:539 Broker/(8158:8165): Atendiendo cola GET
+[INFO] 21:23:02:539 Broker/(8158:8166): Atendiendo cola LOCALIZED
+[INFO] 21:23:02:539 Broker/(8158:8164): Atendiendo cola CAUGHT
+[INFO] 21:23:02:539 Broker/(8158:8163): Atendiendo cola CATCH
+[INFO] 21:23:02:539 Broker/(8158:8162): Atendiendo cola APPEARED
+[INFO] 21:23:02:539 Broker/(8158:8161): Atendiendo cola NEW
+[INFO] 21:23:02:540 Broker/(8158:8160): Esperando clientes en socket 5
+[INFO] 21:23:13:47 Broker/(8158:8160): Socket cliente 7 aceptado
+[INFO] 21:23:13:62 Broker/(8158:8170): Recibiendo codigo de operacion de socket 7
+[INFO] 21:23:13:62 Broker/(8158:8170): Codigo de operacion de socket 7 recibido: 4
+[INFO] 21:23:13:62 Broker/(8158:8170): Generando id para el mensaje del socket 7
+[INFO] 21:23:13:62 Broker/(8158:8170): El id generado es 1
+[INFO] 21:23:13:62 Broker/(8158:8170): Codigo de operacion recibido del socket cliente 7 corresponde a un CAUGHT
+[INFO] 21:23:13:62 Broker/(8158:8170): Recibiendo tamanio total
+[INFO] 21:23:13:62 Broker/(8158:8170): Tamanio total recibido: 8
+[INFO] 21:23:13:63 Broker/(8158:8170): Id correlativo recibido: 1
+[INFO] 21:23:13:63 Broker/(8158:8170): Flag de caught recibido: 1
+[INFO] 21:23:13:63 Broker/(8158:8170): Retornando id 1 al socket 7
+[INFO] 21:23:13:63 Broker/(8158:8170): Encolando el mensaje CAUGHT con id 1
+[INFO] 21:23:13:63 Broker/(8158:8170): Mensaje CAUGHT con id 1 encolado
+[INFO] 21:23:13:63 Broker/(8158:8164): Atendiendo mensaje CAUGHT con id 1
+[INFO] 21:23:13:63 Broker/(8158:8164): Guardando mensaje con id 1 en particion 0x8fc2730
+[INFO] 21:23:13:63 Broker/(8158:8164): Eliminando mensaje CAUGHT con id 1
+[INFO] 21:23:13:63 Broker/(8158:8164): Eliminado mensaje CAUGHT con id 1
+[INFO] 21:23:13:66 Broker/(8158:8160): Socket cliente 8 aceptado
+[INFO] 21:23:13:68 Broker/(8158:8174): Recibiendo codigo de operacion de socket 8
+[INFO] 21:23:13:68 Broker/(8158:8174): Codigo de operacion de socket 8 recibido: 4
+[INFO] 21:23:13:68 Broker/(8158:8174): Generando id para el mensaje del socket 8
+[INFO] 21:23:13:68 Broker/(8158:8174): El id generado es 2
+[INFO] 21:23:13:68 Broker/(8158:8174): Codigo de operacion recibido del socket cliente 8 corresponde a un CAUGHT
+[INFO] 21:23:13:68 Broker/(8158:8174): Recibiendo tamanio total
+[INFO] 21:23:13:68 Broker/(8158:8174): Tamanio total recibido: 8
+[INFO] 21:23:13:68 Broker/(8158:8174): Id correlativo recibido: 2
+[INFO] 21:23:13:69 Broker/(8158:8174): Flag de caught recibido: 0
+[INFO] 21:23:13:69 Broker/(8158:8174): Retornando id 2 al socket 8
+[INFO] 21:23:13:69 Broker/(8158:8174): Encolando el mensaje CAUGHT con id 2
+[INFO] 21:23:13:69 Broker/(8158:8174): Mensaje CAUGHT con id 2 encolado
+[INFO] 21:23:13:69 Broker/(8158:8164): Atendiendo mensaje CAUGHT con id 2
+[INFO] 21:23:13:69 Broker/(8158:8164): Guardando mensaje con id 2 en particion 0x8fc2734
+[INFO] 21:23:13:69 Broker/(8158:8164): Eliminando mensaje CAUGHT con id 2
+[INFO] 21:23:13:69 Broker/(8158:8164): Eliminado mensaje CAUGHT con id 2
+[INFO] 21:23:13:80 Broker/(8158:8160): Socket cliente 9 aceptado
+[INFO] 21:23:13:82 Broker/(8158:8176): Recibiendo codigo de operacion de socket 9
+[INFO] 21:23:13:82 Broker/(8158:8176): Codigo de operacion de socket 9 recibido: 3
+[INFO] 21:23:13:82 Broker/(8158:8176): Generando id para el mensaje del socket 9
+[INFO] 21:23:13:83 Broker/(8158:8176): El id generado es 3
+[INFO] 21:23:13:83 Broker/(8158:8176): Codigo de operacion recibido del socket cliente 9 corresponde a un CATCH
+[INFO] 21:23:13:83 Broker/(8158:8176): Recibiendo tamanio total
+[INFO] 21:23:13:83 Broker/(8158:8176): Tamanio total recibido: 20
+[INFO] 21:23:13:83 Broker/(8158:8176): Tamanio del pokemon: 8
+[INFO] 21:23:13:83 Broker/(8158:8176): Nombre del pokemon recibido: Pikachu
+[INFO] 21:23:13:83 Broker/(8158:8176): Posicion X recibida: 2
+[INFO] 21:23:13:83 Broker/(8158:8176): Posicion Y recibida: 3
+[INFO] 21:23:13:83 Broker/(8158:8176): Retornando id 3 al socket 9
+[INFO] 21:23:13:83 Broker/(8158:8176): Encolando el mensaje CATCH con id 3
+[INFO] 21:23:13:83 Broker/(8158:8176): Mensaje CATCH con id 3 encolado
+[INFO] 21:23:13:84 Broker/(8158:8163): Atendiendo mensaje CATCH con id 3
+[INFO] 21:23:13:84 Broker/(8158:8163): Guardando mensaje con id 3 en particion 0x8fc2738
+[INFO] 21:23:13:84 Broker/(8158:8163): Eliminando mensaje CATCH con id 3
+[INFO] 21:23:13:84 Broker/(8158:8163): Eliminado mensaje CATCH con id 3
+[INFO] 21:23:13:85 Broker/(8158:8160): Socket cliente 10 aceptado
+[INFO] 21:23:13:86 Broker/(8158:8178): Recibiendo codigo de operacion de socket 10
+[INFO] 21:23:13:87 Broker/(8158:8178): Codigo de operacion de socket 10 recibido: 3
+[INFO] 21:23:13:87 Broker/(8158:8178): Generando id para el mensaje del socket 10
+[INFO] 21:23:13:87 Broker/(8158:8178): El id generado es 4
+[INFO] 21:23:13:87 Broker/(8158:8178): Codigo de operacion recibido del socket cliente 10 corresponde a un CATCH
+[INFO] 21:23:13:87 Broker/(8158:8178): Recibiendo tamanio total
+[INFO] 21:23:13:87 Broker/(8158:8178): Tamanio total recibido: 21
+[INFO] 21:23:13:87 Broker/(8158:8178): Tamanio del pokemon: 9
+[INFO] 21:23:13:87 Broker/(8158:8178): Nombre del pokemon recibido: Squirtle
+[INFO] 21:23:13:87 Broker/(8158:8178): Posicion X recibida: 5
+[INFO] 21:23:13:87 Broker/(8158:8178): Posicion Y recibida: 2
+[INFO] 21:23:13:87 Broker/(8158:8178): Retornando id 4 al socket 10
+[INFO] 21:23:13:87 Broker/(8158:8178): Encolando el mensaje CATCH con id 4
+[INFO] 21:23:13:88 Broker/(8158:8178): Mensaje CATCH con id 4 encolado
+[INFO] 21:23:13:88 Broker/(8158:8163): Atendiendo mensaje CATCH con id 4
+[INFO] 21:23:13:88 Broker/(8158:8163): Guardando mensaje con id 4 en particion 0x8fc2748
+[INFO] 21:23:13:88 Broker/(8158:8163): Eliminando mensaje CATCH con id 4
+[INFO] 21:23:13:88 Broker/(8158:8163): Eliminado mensaje CATCH con id 4
+[INFO] 21:23:13:89 Broker/(8158:8160): Socket cliente 11 aceptado
+[INFO] 21:23:13:90 Broker/(8158:8180): Recibiendo codigo de operacion de socket 11
+[INFO] 21:23:13:90 Broker/(8158:8180): Codigo de operacion de socket 11 recibido: 3
+[INFO] 21:23:13:90 Broker/(8158:8180): Generando id para el mensaje del socket 11
+[INFO] 21:23:13:90 Broker/(8158:8180): El id generado es 5
+[INFO] 21:23:13:90 Broker/(8158:8180): Codigo de operacion recibido del socket cliente 11 corresponde a un CATCH
+[INFO] 21:23:13:90 Broker/(8158:8180): Recibiendo tamanio total
+[INFO] 21:23:13:90 Broker/(8158:8180): Tamanio total recibido: 17
+[INFO] 21:23:13:90 Broker/(8158:8180): Tamanio del pokemon: 5
+[INFO] 21:23:13:90 Broker/(8158:8180): Nombre del pokemon recibido: Onyx
+[INFO] 21:23:13:90 Broker/(8158:8180): Posicion X recibida: 4
+[INFO] 21:23:13:90 Broker/(8158:8180): Posicion Y recibida: 5
+[INFO] 21:23:13:90 Broker/(8158:8180): Retornando id 5 al socket 11
+[INFO] 21:23:13:91 Broker/(8158:8180): Encolando el mensaje CATCH con id 5
+[INFO] 21:23:13:91 Broker/(8158:8180): Mensaje CATCH con id 5 encolado
+[INFO] 21:23:13:91 Broker/(8158:8163): Atendiendo mensaje CATCH con id 5
+[INFO] 21:23:13:91 Broker/(8158:8163): Guardando mensaje con id 5 en particion 0x8fc2759
+[INFO] 21:23:13:91 Broker/(8158:8163): Eliminando mensaje CATCH con id 5
+[INFO] 21:23:13:91 Broker/(8158:8163): Eliminado mensaje CATCH con id 5
+[INFO] 21:23:13:92 Broker/(8158:8160): Socket cliente 12 aceptado
+[INFO] 21:23:13:92 Broker/(8158:8182): Recibiendo codigo de operacion de socket 12
+[INFO] 21:23:13:92 Broker/(8158:8182): Codigo de operacion de socket 12 recibido: 7
+[INFO] 21:23:13:92 Broker/(8158:8182): Generando id para el mensaje del socket 12
+[INFO] 21:23:13:92 Broker/(8158:8182): El id generado es 6
+[INFO] 21:23:13:92 Broker/(8158:8182): Codigo de operacion recibido del socket cliente 12 corresponde a un SUSCRIPCION
+[INFO] 21:23:13:92 Broker/(8158:8182): Recibiendo tamanio total
+[INFO] 21:23:13:92 Broker/(8158:8182): Tamanio total recibido: 8
+[INFO] 21:23:13:92 Broker/(8158:8182): Recibiendo id de cliente
+[INFO] 21:23:13:92 Broker/(8158:8182): Id de cliente recibido: 6
+[INFO] 21:23:13:92 Broker/(8158:8182): Recibiendo id de cola
+[INFO] 21:23:13:92 Broker/(8158:8182): Id de cola recibido: 14
+[INFO] 21:23:13:92 Broker/(8158:8182): Id de cola recibido del socket cliente 12 corresponde a la cola de CAUGHT
+[INFO] 21:23:13:92 Broker/(8158:8182): Tamanio tabla de segmentos: 5
+[INFO] 21:23:13:92 Broker/(8158:8182): Segmentos CAUGHT a enviar al cliente 6 socket 12: 2
+[INFO] 21:23:13:92 Broker/(8158:8185): Enviando mensaje CAUGHT 2 de memoria con cliente 6 socket 12
+[INFO] 21:23:13:92 Broker/(8158:8185): Mensaje CAUGHT de memoria con id 2 al cliente 6 socket 12 enviado correctamente
+[INFO] 21:23:13:93 Broker/(8158:8185): ACK de cliente 6 socket 12 recibido
+[INFO] 21:23:13:93 Broker/(8158:8184): Enviando mensaje CAUGHT 1 de memoria con cliente 6 socket 12
+[INFO] 21:23:13:93 Broker/(8158:8184): Mensaje CAUGHT de memoria con id 1 al cliente 6 socket 12 enviado correctamente
+[INFO] 21:23:13:93 Broker/(8158:8184): ACK de cliente 6 socket 12 recibido
+[INFO] 21:23:13:93 Broker/(8158:8182): Modulo con id 6 agregado correctamente en la cola de CAUGHT
+[INFO] 21:23:23:94 Broker/(8158:8160): Socket cliente 13 aceptado
+[INFO] 21:23:23:101 Broker/(8158:8190): Recibiendo codigo de operacion de socket 13
+[INFO] 21:23:23:102 Broker/(8158:8190): Codigo de operacion de socket 13 recibido: 3
+[INFO] 21:23:23:102 Broker/(8158:8190): Generando id para el mensaje del socket 13
+[INFO] 21:23:23:102 Broker/(8158:8190): El id generado es 7
+[INFO] 21:23:23:102 Broker/(8158:8190): Codigo de operacion recibido del socket cliente 13 corresponde a un CATCH
+[INFO] 21:23:23:102 Broker/(8158:8190): Recibiendo tamanio total
+[INFO] 21:23:23:102 Broker/(8158:8190): Tamanio total recibido: 21
+[INFO] 21:23:23:102 Broker/(8158:8190): Tamanio del pokemon: 9
+[INFO] 21:23:23:102 Broker/(8158:8190): Nombre del pokemon recibido: Vaporeon
+[INFO] 21:23:23:102 Broker/(8158:8190): Posicion X recibida: 4
+[INFO] 21:23:23:103 Broker/(8158:8190): Posicion Y recibida: 5
+[INFO] 21:23:23:103 Broker/(8158:8190): Retornando id 7 al socket 13
+[INFO] 21:23:23:104 Broker/(8158:8190): Encolando el mensaje CATCH con id 7
+[INFO] 21:23:23:104 Broker/(8158:8190): Mensaje CATCH con id 7 encolado
+[INFO] 21:23:23:104 Broker/(8158:8163): Atendiendo mensaje CATCH con id 7
+[INFO] 21:23:23:104 Broker/(8158:8163): Se ha eliminado el registro con id 1 ubicado en 0x8fc2730 de la tabla de segmentos
+[INFO] 21:23:23:104 Broker/(8158:8163): Se ha eliminado el registro con id 2 ubicado en 0x8fc2734 de la tabla de segmentos
+[INFO] 21:23:23:104 Broker/(8158:8163): Se ha eliminado el registro con id 3 ubicado en 0x8fc2738 de la tabla de segmentos
+[INFO] 21:23:23:104 Broker/(8158:8163): Guardando mensaje con id 7 en particion 0x8fc2730
+[INFO] 21:23:23:104 Broker/(8158:8163): Eliminando mensaje CATCH con id 7
+[INFO] 21:23:23:104 Broker/(8158:8163): Eliminado mensaje CATCH con id 7

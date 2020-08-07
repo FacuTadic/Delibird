@@ -1,0 +1,6 @@
+Partición 1: 0x8972730 - 0x8972734.      [X]      Size: 4 b      LRU: 14      Cola: 4      ID: 1
+Partición 2: 0x8972734 - 0x8972738.      [X]      Size: 4 b      LRU: 12      Cola: 4      ID: 2
+Partición 3: 0x8972738 - 0x8972749.      [X]      Size: 17 b      LRU: 16      Cola: 3      ID: 7
+Partición 4: 0x8972749 - 0x8972759.      [L]      Size: 16 b
+Partición 5: 0x8972759 - 0x8972766.      [X]      Size: 13 b      LRU: 10      Cola: 3      ID: 5
+Partición 6: 0x8972766 - 0x8972770.      [L]      Size: 10 b
