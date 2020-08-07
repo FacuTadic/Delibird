@@ -111,7 +111,9 @@ char** generadorDeRegistros(char* posicion, uint32_t cantidad){
 
 	log_info(loggerDevArchDir, "La posicion del registro generado es: %s", registro[0]);
 	log_info(loggerDevArchDir, "La cantidad del registro generado es: %s", registro[1]);
+
 	free(cantidadString);
+	free(posicion);
 
 	return registro;
 }

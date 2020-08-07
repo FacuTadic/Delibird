@@ -57,5 +57,4 @@ bool noExisteDirectorio(char* ruta);
 void elDestroyerDeCorchetazos(char** array);
 void elLimpiaCharDinamicos(char* string);
 
-
 #endif /* ARCHIVOSYDIRECTORIOS_H_ */

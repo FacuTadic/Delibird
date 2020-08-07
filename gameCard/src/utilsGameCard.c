@@ -976,11 +976,13 @@ void validarPosicionesDeNew(t_config* archivoMetadataPokemon, char** blocksOcupa
 		vaciarBloques(blocksOcupados);
 		escribirEnBloques(registrosAEscribir,archivoMetadataPokemon);
 
+		list_destroy_and_destroy_elements(registrosAEscribir,(void*) elLimpiaCharDinamicos);
+		list_destroy_and_destroy_elements(registros,(void*) elDestroyerDeCorchetazos);
+
 		uint32_t indexPaths = 0;
 		while(pathsDeBlocks[indexPaths] != NULL){
 			free(pathsDeBlocks[indexPaths]);
 			indexPaths++;
-
 		}
 
 	} else {
@@ -988,6 +990,12 @@ void validarPosicionesDeNew(t_config* archivoMetadataPokemon, char** blocksOcupa
 		t_list* registroNuevo = list_create();
 		list_add(registroNuevo, aplanarVectorDeKeyValue(keyValue));
 		escribirEnBloques(registroNuevo,archivoMetadataPokemon);
+
+		free(keyValue[0]);
+		free(keyValue[1]);
+		free(keyValue);
+
+		list_destroy_and_destroy_elements(registroNuevo,(void*) elLimpiaCharDinamicos);
 	}
 }
 
@@ -1161,13 +1169,8 @@ void newPokemon(int socketCliente,t_newLlegada* new){
 		indexParaBorrar++;
 	}
 	free(blocksOcupados);
-
-	/*uint32_t w = 0;
-	while(registroPokemon[w] !=NULL){
-		free(registroPokemon[w]);
-	}
-	free(registroPokemon);*/
 }
+
 
 void catchPokemon(int socketCliente,t_catchLlegada* catch){
 
