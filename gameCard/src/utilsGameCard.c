@@ -400,6 +400,7 @@ t_list* obtenerTodasLasPosiciones(char** blocks){
 			indexPaths++;
 
 		}
+		free(pathsDeBlocks);
 	}
 
 	return coordenadas;
@@ -519,7 +520,7 @@ void procesarRequestDeGameBoy(int cod_op, int socketGameBoy) {
 		t_newLlegada* newGameBoy = recibir_new(socketGameBoy,&size,loggerDev);
 		log_info(loggerDev, "NEW recibido del modulo Game Boy socket %i", socketGameBoy);
 		newPokemon(socketEscuchaNew,newGameBoy);
-		free(newGameBoy);
+		//free(newGameBoy);
 		break;
 
 	case CATCH:
@@ -527,7 +528,6 @@ void procesarRequestDeGameBoy(int cod_op, int socketGameBoy) {
 		t_catchLlegada* catchGameBoy = recibir_catch(socketGameBoy,&size,loggerDev);
 		log_info(loggerDev, "CATCH recibido del modulo Game Boy socket %i", socketGameBoy);
 		catchPokemon(socketEscuchaCatch,catchGameBoy);
-		free(catchGameBoy);
 		break;
 
 	case GET:
@@ -535,7 +535,7 @@ void procesarRequestDeGameBoy(int cod_op, int socketGameBoy) {
 		t_getLlegada* getGameBoy = recibir_get(socketGameBoy,&size,loggerDev);
 		log_info(loggerDev, "GET recibido del modulo Game Boy socket %i", socketGameBoy);
 		getPokemon(socketEscuchaGet,getGameBoy);
-		free(getGameBoy);
+		//free(getGameBoy);
 		break;
 
 	default:
@@ -984,6 +984,7 @@ void validarPosicionesDeNew(t_config* archivoMetadataPokemon, char** blocksOcupa
 			free(pathsDeBlocks[indexPaths]);
 			indexPaths++;
 		}
+		free(pathsDeBlocks);
 
 	} else {
 		log_info(loggerDev, "No tiene blocks asignados. Primera vez");
@@ -1019,12 +1020,18 @@ bool validarPosicionesDeCatch(t_config* archivoMetadataPokemon, char** blocksOcu
 	vaciarBloques(blocksOcupados);
 	escribirEnBloques(registrosAEscribir,archivoMetadataPokemon);
 
+	list_destroy_and_destroy_elements(registrosAEscribir,(void*) elLimpiaCharDinamicos);
+	list_destroy_and_destroy_elements(registros,(void*) elDestroyerDeCorchetazos);
+
+
+
 	uint32_t indexPaths = 0;
 	while(pathsDeBlocks[indexPaths] != NULL){
 		free(pathsDeBlocks[indexPaths]);
 		indexPaths++;
 
 	}
+	free(pathsDeBlocks);
 
 	return flagAtrapado;
 }
@@ -1051,6 +1058,7 @@ void validarPosicionesDeGetAntiInvalidFree(char** blocksOcupados,t_list** regist
 			indexPaths++;
 
 		}
+		free(pathsDeBlocks);
 
 	}
 
@@ -1169,6 +1177,9 @@ void newPokemon(int socketCliente,t_newLlegada* new){
 		indexParaBorrar++;
 	}
 	free(blocksOcupados);
+
+	free(new);
+
 }
 
 
@@ -1232,6 +1243,9 @@ void catchPokemon(int socketCliente,t_catchLlegada* catch){
 		indexParaBorrar++;
 	}
 	free(blocksOcupados);
+
+	free(catch->pokemon);
+	free(catch);
 
 }
 
@@ -1336,6 +1350,9 @@ void getPokemon(int socketCliente,t_getLlegada* getLlegada){
 
 	list_destroy(localizedAEnviar->l_coordenadas);
 	free(localizedAEnviar);
+
+	free(getLlegada->pokemon);
+	free(getLlegada);
 
 }
 
