@@ -103,6 +103,8 @@ int main(void) {
 
 	if(socketEscuchaNew != -1){
 		estoy_conectado_al_broker = 1;
+	}else{
+		estoy_conectado_al_broker = 0;
 	}
 
 	socketEscuchaCatch = crear_conexion(ipBroker, puertoBroker);

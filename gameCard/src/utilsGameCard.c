@@ -604,7 +604,6 @@ void escucharNewDeBroker(void) {
 	log_info(loggerDev, "Escuchando NEW de BROKER" );
 	log_info(loggerDev, "Socker de NEW: %i", socketEscuchaNew);
 	int status_envio = mandar_suscripcion(socketEscuchaNew, id_cola);
-
 	if (status_envio == -1) {
 		pthread_mutex_lock(&estoy_conectado_al_broker_mutex);
 		estoy_conectado_al_broker = 0;
@@ -613,7 +612,11 @@ void escucharNewDeBroker(void) {
 	}
 
 	while (1) {
-		if (estoy_conectado_al_broker == 1) {
+		pthread_mutex_lock(&estoy_conectado_al_broker_mutex);
+		int pindonga = estoy_conectado_al_broker;
+		pthread_mutex_unlock(&estoy_conectado_al_broker_mutex);
+
+		if (pindonga == 1) {
 
 			uint32_t cod_op;
 			log_info(loggerDev, "Recibiendo codigo de operacion de BROKER en socket %i", socketEscuchaNew);
@@ -623,33 +626,34 @@ void escucharNewDeBroker(void) {
 			if (status_recv == -1) {
 				liberar_conexion(socketEscuchaNew);
 				log_error(loggerDev, "Hubo un problema recibiendo codigo de operacion de BROKER en socket %i", socketEscuchaNew);
-				pthread_exit(NULL);
-			}
-			if (status_recv == 0) {
+				//pthread_exit(NULL);
+			}else if (status_recv == 0) {
 				liberar_conexion(socketEscuchaNew);
 				log_warning(loggerDev, "BROKER acaba de cerrar la conexion correspondiente al socket %i", socketEscuchaNew);
-				estoy_conectado_al_broker = 0;
-				pthread_exit(NULL);
-			}
-
-			log_info(loggerDev, "Se recibio el opcode %i", cod_op);
-
-
-			uint32_t size;
-			log_info(loggerDev, "Codigo de operacion recibido del socket cliente %i corresponde a un NEW", socketEscuchaNew);
-			t_newLlegada* newBroker = recibir_new(socketEscuchaNew,&size,loggerDev);
-			devolver_ack(socketEscuchaNew);
-			log_info(loggerDev, "NEW recibido del modulo BROKER socket %i", socketEscuchaNew);
-
-			if (newBroker == NULL) {
 				pthread_mutex_lock(&estoy_conectado_al_broker_mutex);
-				log_warning(loggerDev, "No se recibe conexion del modulo BROKER");
 				estoy_conectado_al_broker = 0;
 				pthread_mutex_unlock(&estoy_conectado_al_broker_mutex);
+				//pthread_exit(NULL);
 			} else {
-				log_info(loggerDev, "NEW recibido");
-				newPokemon(socketEscuchaNew,newBroker);
+				log_info(loggerDev, "Se recibio el opcode %i", cod_op);
 
+
+				uint32_t size;
+				log_info(loggerDev, "Codigo de operacion recibido del socket cliente %i corresponde a un NEW", socketEscuchaNew);
+				t_newLlegada* newBroker = recibir_new(socketEscuchaNew,&size,loggerDev);
+				devolver_ack(socketEscuchaNew);
+				log_info(loggerDev, "NEW recibido del modulo BROKER socket %i", socketEscuchaNew);
+
+				if (newBroker == NULL) {
+					pthread_mutex_lock(&estoy_conectado_al_broker_mutex);
+					log_warning(loggerDev, "No se recibe conexion del modulo BROKER");
+					estoy_conectado_al_broker = 0;
+					pthread_mutex_unlock(&estoy_conectado_al_broker_mutex);
+				} else {
+					log_info(loggerDev, "NEW recibido");
+					newPokemon(socketEscuchaNew,newBroker);
+
+				}
 			}
 			//free(newBroker);
 		}
@@ -670,7 +674,11 @@ void escucharCatchDeBroker(void) {
 	}
 
 	while (1) {
-		if (estoy_conectado_al_broker == 1) {
+		pthread_mutex_lock(&estoy_conectado_al_broker_mutex);
+		int pindonga = estoy_conectado_al_broker;
+		pthread_mutex_unlock(&estoy_conectado_al_broker_mutex);
+
+		if (pindonga == 1) {
 
 			uint32_t cod_op;
 			log_info(loggerDev, "Recibiendo codigo de operacion de BROKER en socket %i", socketEscuchaCatch);
@@ -680,14 +688,15 @@ void escucharCatchDeBroker(void) {
 			if (status_recv == -1) {
 				liberar_conexion(socketEscuchaCatch);
 				log_error(loggerDev, "Hubo un problema recibiendo codigo de operacion de BROKER en socket %i", socketEscuchaCatch);
-				pthread_exit(NULL);
-			}
-			if (status_recv == 0) {
+				//pthread_exit(NULL);
+			} else if (status_recv == 0) {
 				liberar_conexion(socketEscuchaCatch);
 				log_warning(loggerDev, "BROKER acaba de cerrar la conexion correspondiente al socket %i", socketEscuchaCatch);
+				pthread_mutex_lock(&estoy_conectado_al_broker_mutex);
 				estoy_conectado_al_broker = 0;
-				pthread_exit(NULL);
-			}
+				pthread_mutex_unlock(&estoy_conectado_al_broker_mutex);
+				//pthread_exit(NULL);
+			} else{
 
 			log_info(loggerDev, "Se recibio el opcode %i", cod_op);
 
@@ -705,6 +714,7 @@ void escucharCatchDeBroker(void) {
 			} else {
 				log_info(loggerDev, "CATCH recibido");
 				catchPokemon(socketEscuchaCatch,catchGameBoy);
+			}
 			}
 
 			//free(catchGameBoy);
@@ -727,7 +737,11 @@ void escucharGetDeBroker(void) {
 	}
 
 	while (1) {
-		if (estoy_conectado_al_broker == 1) {
+		pthread_mutex_lock(&estoy_conectado_al_broker_mutex);
+		int pindonga = estoy_conectado_al_broker;
+		pthread_mutex_unlock(&estoy_conectado_al_broker_mutex);
+
+		if (pindonga == 1) {
 
 			uint32_t cod_op;
 			log_info(loggerDev, "Recibiendo codigo de operacion de BROKER en socket %i", socketEscuchaGet);
@@ -737,14 +751,15 @@ void escucharGetDeBroker(void) {
 			if (status_recv == -1) {
 				liberar_conexion(socketEscuchaGet);
 				log_error(loggerDev, "Hubo un problema recibiendo codigo de operacion de BROKER en socket %i", socketEscuchaGet);
-				pthread_exit(NULL);
-			}
-			if (status_recv == 0) {
+				//pthread_exit(NULL);
+			} else if (status_recv == 0) {
 				liberar_conexion(socketEscuchaGet);
 				log_warning(loggerDev, "BROKER acaba de cerrar la conexion correspondiente al socket %i", socketEscuchaGet);
+				pthread_mutex_lock(&estoy_conectado_al_broker_mutex);
 				estoy_conectado_al_broker = 0;
-				pthread_exit(NULL);
-			}
+				pthread_mutex_unlock(&estoy_conectado_al_broker_mutex);
+				//pthread_exit(NULL);
+			} else {
 
 			log_info(loggerDev, "Se recibio el opcode %i", cod_op);
 
@@ -763,6 +778,7 @@ void escucharGetDeBroker(void) {
 			} else {
 				log_info(loggerDev, "GET recibido");
 				getPokemon(socketEscuchaGet,getGameBoy);
+			}
 			}
 
 			//free(getGameBoy);
@@ -819,7 +835,9 @@ void reconectarAlBroker() {
 		log_info(loggerDev, "Socket de reconexion GET: %i",socketEscuchaGet);
 
 		log_info(loggerDev, "Conexion establecida con BROKER, IP: %s PUERTO : %s", ipBroker, puertoBroker);
+		pthread_mutex_lock(&estoy_conectado_al_broker_mutex);
 		estoy_conectado_al_broker = 1;
+		pthread_mutex_unlock(&estoy_conectado_al_broker_mutex);
 		log_info(loggerDev, "Reconexion con BROKER exitosa, verificando nuevamente en %i segundos", tiempoReintentoConexion);
 	}else{
 		log_error(loggerDev, "Reconexion con BROKER fallida, intentando nuevamente en %i segundos", tiempoReintentoConexion);
@@ -1119,9 +1137,9 @@ t_list* validarPosicionesDeGet(char** blocksOcupados){
 	t_list* posicionesPokemon = obtenerTodasLasPosiciones(blocksOcupados);
 
 	for(int j=0; j<posicionesPokemon->elements_count;j++){
-			char* saraza2 = list_get(posicionesPokemon,j);
-			log_info(loggerDev, "Las coordenadas encontradas son: %s", saraza2);
-			log_info(loggerGameCard, "Las coordenadas encontradas son: %s", saraza2);
+		char* saraza2 = list_get(posicionesPokemon,j);
+		log_info(loggerDev, "Las coordenadas encontradas son: %s", saraza2);
+		log_info(loggerGameCard, "Las coordenadas encontradas son: %s", saraza2);
 	}
 
 	return posicionesPokemon;
