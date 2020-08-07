@@ -1,12 +1,180 @@
-[INFO] 14:35:52:702 Broker/(3916:3917): Nueva conexion de un proceso con socket cliente 7
-[INFO] 14:35:52:702 Broker/(3916:3917): Nueva conexion de un proceso con socket cliente 8
-[INFO] 14:35:52:703 Broker/(3916:3917): Nueva conexion de un proceso con socket cliente 9
-[INFO] 14:35:52:707 Broker/(3916:4031): Modulo con id 1885334863 agregado correctamente en la cola de GET
-[INFO] 14:35:52:709 Broker/(3916:4030): Modulo con id 1885334863 agregado correctamente en la cola de CATCH
-[INFO] 14:35:52:711 Broker/(3916:4029): Modulo con id 1885334863 agregado correctamente en la cola de NEW
-[INFO] 14:36:03:145 Broker/(4042:4043): Nueva conexion de un proceso con socket cliente 7
-[INFO] 14:36:03:146 Broker/(4042:4043): Nueva conexion de un proceso con socket cliente 8
-[INFO] 14:36:03:146 Broker/(4042:4043): Nueva conexion de un proceso con socket cliente 9
-[INFO] 14:36:03:147 Broker/(4042:4057): Modulo con id 682889318 agregado correctamente en la cola de GET
-[INFO] 14:36:03:149 Broker/(4042:4056): Modulo con id 682889318 agregado correctamente en la cola de CATCH
-[INFO] 14:36:03:150 Broker/(4042:4055): Modulo con id 682889318 agregado correctamente en la cola de NEW
+[INFO] 14:41:59:610 Broker/(11285:11286): Nueva conexion de un proceso con socket cliente 7
+[INFO] 14:41:59:610 Broker/(11285:11286): Nueva conexion de un proceso con socket cliente 8
+[INFO] 14:41:59:610 Broker/(11285:11286): Nueva conexion de un proceso con socket cliente 9
+[INFO] 14:41:59:612 Broker/(11285:11300): Modulo con id 1933005164 agregado correctamente en la cola de GET
+[INFO] 14:41:59:613 Broker/(11285:11298): Modulo con id 1933005164 agregado correctamente en la cola de NEW
+[INFO] 14:41:59:614 Broker/(11285:11299): Modulo con id 1933005164 agregado correctamente en la cola de CATCH
+[INFO] 14:42:04:32 Broker/(11285:11286): Nueva conexion de un proceso con socket cliente 10
+[INFO] 14:42:04:35 Broker/(11285:11311): Mensaje NEW con id 4 encolado
+[INFO] 14:42:04:35 Broker/(11285:11287): Guardando mensaje con id 4 en particion 0x82965d0
+[INFO] 14:42:04:38 Broker/(11285:11312): Mensaje NEW con id 4 al cliente 1933005164 socket 7 enviado correctamente
+[INFO] 14:42:04:38 Broker/(11285:11312): ACK de cliente 1933005164 socket 7 recibido
+[INFO] 14:42:09:39 Broker/(11285:11286): Nueva conexion de un proceso con socket cliente 11
+[INFO] 14:42:09:41 Broker/(11285:11321): Mensaje APPEARED con id 5 encolado
+[INFO] 14:42:09:41 Broker/(11285:11288): Guardando mensaje con id 5 en particion 0x82965e4
+[INFO] 14:42:29:612 Broker/(11352:11353): Nueva conexion de un proceso con socket cliente 7
+[INFO] 14:42:29:613 Broker/(11352:11353): Nueva conexion de un proceso con socket cliente 8
+[INFO] 14:42:29:613 Broker/(11352:11353): Nueva conexion de un proceso con socket cliente 9
+[INFO] 14:42:29:614 Broker/(11352:11375): Modulo con id 1933005164 agregado correctamente en la cola de NEW
+[INFO] 14:42:29:615 Broker/(11352:11376): Modulo con id 1933005164 agregado correctamente en la cola de CATCH
+[INFO] 14:42:29:616 Broker/(11352:11377): Modulo con id 1933005164 agregado correctamente en la cola de GET
+[INFO] 14:42:45:572 Broker/(11352:11353): Nueva conexion de un proceso con socket cliente 10
+[INFO] 14:42:45:575 Broker/(11352:11403): Mensaje NEW con id 4 encolado
+[INFO] 14:42:45:575 Broker/(11352:11354): Guardando mensaje con id 4 en particion 0x90c75d0
+[INFO] 14:42:45:576 Broker/(11352:11404): Mensaje NEW con id 4 al cliente 1933005164 socket 7 enviado correctamente
+[INFO] 14:43:15:641 Broker/(11352:11353): Nueva conexion de un proceso con socket cliente 11
+[INFO] 14:43:15:643 Broker/(11352:11455): Mensaje APPEARED con id 5 encolado
+[INFO] 14:43:23:804 Broker/(11352:11353): Nueva conexion de un proceso con socket cliente 12
+[INFO] 14:43:23:808 Broker/(11352:11474): Mensaje NEW con id 6 encolado
+[INFO] 14:44:17:770 Broker/(11562:11563): Nueva conexion de un proceso con socket cliente 7
+[INFO] 14:44:17:770 Broker/(11562:11563): Nueva conexion de un proceso con socket cliente 8
+[INFO] 14:44:17:770 Broker/(11562:11563): Nueva conexion de un proceso con socket cliente 9
+[INFO] 14:44:17:772 Broker/(11562:11577): Modulo con id 1838040055 agregado correctamente en la cola de GET
+[INFO] 14:44:17:774 Broker/(11562:11576): Modulo con id 1838040055 agregado correctamente en la cola de CATCH
+[INFO] 14:44:17:775 Broker/(11562:11575): Modulo con id 1838040055 agregado correctamente en la cola de NEW
+[INFO] 14:44:37:772 Broker/(11613:11614): Nueva conexion de un proceso con socket cliente 7
+[INFO] 14:44:37:773 Broker/(11613:11614): Nueva conexion de un proceso con socket cliente 8
+[INFO] 14:44:37:773 Broker/(11613:11614): Nueva conexion de un proceso con socket cliente 9
+[INFO] 14:44:37:778 Broker/(11613:11626): Modulo con id 1838040055 agregado correctamente en la cola de CATCH
+[INFO] 14:44:37:778 Broker/(11613:11627): Modulo con id 1838040055 agregado correctamente en la cola de GET
+[INFO] 14:44:37:778 Broker/(11613:11625): Modulo con id 1838040055 agregado correctamente en la cola de NEW
+[INFO] 14:45:47:506 Broker/(11794:11795): Nueva conexion de un proceso con socket cliente 7
+[INFO] 14:45:47:506 Broker/(11794:11795): Nueva conexion de un proceso con socket cliente 8
+[INFO] 14:45:47:506 Broker/(11794:11795): Nueva conexion de un proceso con socket cliente 9
+[INFO] 14:45:47:508 Broker/(11794:11809): Modulo con id 1317261937 agregado correctamente en la cola de GET
+[INFO] 14:45:47:509 Broker/(11794:11807): Modulo con id 1317261937 agregado correctamente en la cola de NEW
+[INFO] 14:45:47:510 Broker/(11794:11808): Modulo con id 1317261937 agregado correctamente en la cola de CATCH
+[INFO] 14:45:52:350 Broker/(11794:11795): Nueva conexion de un proceso con socket cliente 10
+[INFO] 14:45:52:353 Broker/(11794:11824): Mensaje NEW con id 4 encolado
+[INFO] 14:45:52:353 Broker/(11794:11796): Guardando mensaje con id 4 en particion 0x9e3b5d0
+[INFO] 14:45:52:356 Broker/(11794:11825): Mensaje NEW con id 4 al cliente 1317261937 socket 7 enviado correctamente
+[INFO] 14:45:52:356 Broker/(11794:11825): ACK de cliente 1317261937 socket 7 recibido
+[INFO] 14:45:57:356 Broker/(11794:11795): Nueva conexion de un proceso con socket cliente 11
+[INFO] 14:45:57:356 Broker/(11794:11834): Mensaje APPEARED con id 5 encolado
+[INFO] 14:45:57:356 Broker/(11794:11797): Guardando mensaje con id 5 en particion 0x9e3b5e4
+[INFO] 14:46:27:508 Broker/(11871:11872): Nueva conexion de un proceso con socket cliente 7
+[INFO] 14:46:27:509 Broker/(11871:11872): Nueva conexion de un proceso con socket cliente 8
+[INFO] 14:46:27:509 Broker/(11871:11872): Nueva conexion de un proceso con socket cliente 9
+[INFO] 14:46:27:511 Broker/(11871:11891): Modulo con id 1317261937 agregado correctamente en la cola de GET
+[INFO] 14:46:27:512 Broker/(11871:11890): Modulo con id 1317261937 agregado correctamente en la cola de CATCH
+[INFO] 14:46:27:513 Broker/(11871:11889): Modulo con id 1317261937 agregado correctamente en la cola de NEW
+[INFO] 14:46:37:202 Broker/(11871:11872): Nueva conexion de un proceso con socket cliente 10
+[INFO] 14:46:37:206 Broker/(11871:11914): Mensaje NEW con id 4 encolado
+[INFO] 14:46:37:206 Broker/(11871:11873): Guardando mensaje con id 4 en particion 0x8e8c730
+[INFO] 14:46:37:206 Broker/(11871:11915): Mensaje NEW con id 4 al cliente 1317261937 socket 7 enviado correctamente
+[INFO] 14:50:04:380 Broker/(12377:12378): Nueva conexion de un proceso con socket cliente 7
+[INFO] 14:50:04:380 Broker/(12377:12378): Nueva conexion de un proceso con socket cliente 8
+[INFO] 14:50:04:380 Broker/(12377:12378): Nueva conexion de un proceso con socket cliente 9
+[INFO] 14:50:04:382 Broker/(12377:12392): Modulo con id 467252738 agregado correctamente en la cola de GET
+[INFO] 14:50:04:383 Broker/(12377:12390): Modulo con id 467252738 agregado correctamente en la cola de NEW
+[INFO] 14:50:04:384 Broker/(12377:12391): Modulo con id 467252738 agregado correctamente en la cola de CATCH
+[INFO] 14:50:11:972 Broker/(12377:12378): Nueva conexion de un proceso con socket cliente 10
+[INFO] 14:50:11:975 Broker/(12377:12421): Mensaje NEW con id 4 encolado
+[INFO] 14:50:11:975 Broker/(12377:12379): Guardando mensaje con id 4 en particion 0x8551730
+[INFO] 14:50:11:978 Broker/(12377:12422): Mensaje NEW con id 4 al cliente 467252738 socket 7 enviado correctamente
+[INFO] 14:50:11:979 Broker/(12377:12422): ACK de cliente 467252738 socket 7 recibido
+[INFO] 14:50:16:979 Broker/(12377:12378): Nueva conexion de un proceso con socket cliente 11
+[INFO] 14:50:16:982 Broker/(12377:12431): Mensaje APPEARED con id 5 encolado
+[INFO] 14:50:16:982 Broker/(12377:12380): Guardando mensaje con id 5 en particion 0x8551744
+[INFO] 14:50:44:384 Broker/(12476:12477): Nueva conexion de un proceso con socket cliente 7
+[INFO] 14:50:44:384 Broker/(12476:12477): Nueva conexion de un proceso con socket cliente 8
+[INFO] 14:50:44:385 Broker/(12476:12477): Nueva conexion de un proceso con socket cliente 9
+[INFO] 14:50:44:386 Broker/(12476:12494): Modulo con id 467252738 agregado correctamente en la cola de GET
+[INFO] 14:50:44:389 Broker/(12476:12492): Modulo con id 467252738 agregado correctamente en la cola de NEW
+[INFO] 14:50:44:391 Broker/(12476:12493): Modulo con id 467252738 agregado correctamente en la cola de CATCH
+[INFO] 14:50:56:58 Broker/(12476:12477): Nueva conexion de un proceso con socket cliente 10
+[INFO] 14:50:56:62 Broker/(12476:12516): Mensaje NEW con id 4 encolado
+[INFO] 14:50:56:62 Broker/(12476:12478): Guardando mensaje con id 4 en particion 0x95b95d0
+[INFO] 14:50:56:62 Broker/(12476:12517): Mensaje NEW con id 4 al cliente 467252738 socket 7 enviado correctamente
+[INFO] 14:54:19:164 Broker/(12953:12954): Nueva conexion de un proceso con socket cliente 7
+[INFO] 14:54:19:164 Broker/(12953:12954): Nueva conexion de un proceso con socket cliente 8
+[INFO] 14:54:19:164 Broker/(12953:12954): Nueva conexion de un proceso con socket cliente 9
+[INFO] 14:54:19:167 Broker/(12953:12964): Modulo con id 1288396413 agregado correctamente en la cola de GET
+[INFO] 14:54:19:169 Broker/(12953:12963): Modulo con id 1288396413 agregado correctamente en la cola de CATCH
+[INFO] 14:54:19:172 Broker/(12953:12962): Modulo con id 1288396413 agregado correctamente en la cola de NEW
+[INFO] 14:54:24:756 Broker/(12953:12954): Nueva conexion de un proceso con socket cliente 10
+[INFO] 14:54:24:760 Broker/(12953:12979): Mensaje NEW con id 4 encolado
+[INFO] 14:54:24:760 Broker/(12953:12955): Guardando mensaje con id 4 en particion 0x97685d0
+[INFO] 14:54:24:764 Broker/(12953:12980): Mensaje NEW con id 4 al cliente 1288396413 socket 7 enviado correctamente
+[INFO] 14:54:24:764 Broker/(12953:12980): ACK de cliente 1288396413 socket 7 recibido
+[INFO] 14:54:29:765 Broker/(12953:12954): Nueva conexion de un proceso con socket cliente 11
+[INFO] 14:54:29:769 Broker/(12953:12991): Mensaje APPEARED con id 5 encolado
+[INFO] 14:54:29:769 Broker/(12953:12956): Guardando mensaje con id 5 en particion 0x97685e4
+[INFO] 14:58:03:600 Broker/(13663:13664): Nueva conexion de un proceso con socket cliente 7
+[INFO] 14:58:03:600 Broker/(13663:13664): Nueva conexion de un proceso con socket cliente 8
+[INFO] 14:58:03:600 Broker/(13663:13664): Nueva conexion de un proceso con socket cliente 9
+[INFO] 14:58:03:613 Broker/(13663:13683): Modulo con id 1890415064 agregado correctamente en la cola de GET
+[INFO] 14:58:03:614 Broker/(13663:13682): Modulo con id 1890415064 agregado correctamente en la cola de CATCH
+[INFO] 14:58:03:621 Broker/(13663:13681): Modulo con id 1890415064 agregado correctamente en la cola de NEW
+[INFO] 14:58:09:410 Broker/(13663:13664): Nueva conexion de un proceso con socket cliente 10
+[INFO] 14:58:09:413 Broker/(13663:13698): Mensaje NEW con id 4 encolado
+[INFO] 14:58:09:413 Broker/(13663:13665): Guardando mensaje con id 4 en particion 0x9ff65d0
+[INFO] 14:58:09:416 Broker/(13663:13699): Mensaje NEW con id 4 al cliente 1890415064 socket 7 enviado correctamente
+[INFO] 14:58:09:416 Broker/(13663:13699): ACK de cliente 1890415064 socket 7 recibido
+[INFO] 14:58:14:417 Broker/(13663:13664): Nueva conexion de un proceso con socket cliente 11
+[INFO] 14:58:14:418 Broker/(13663:13708): Mensaje APPEARED con id 5 encolado
+[INFO] 14:58:14:419 Broker/(13663:13666): Guardando mensaje con id 5 en particion 0x9ff65e4
+[INFO] 14:58:43:606 Broker/(13739:13740): Nueva conexion de un proceso con socket cliente 7
+[INFO] 14:58:43:606 Broker/(13739:13740): Nueva conexion de un proceso con socket cliente 8
+[INFO] 14:58:43:607 Broker/(13739:13740): Nueva conexion de un proceso con socket cliente 9
+[INFO] 14:58:43:608 Broker/(13739:13765): Modulo con id 1890415064 agregado correctamente en la cola de GET
+[INFO] 14:58:43:609 Broker/(13739:13763): Modulo con id 1890415064 agregado correctamente en la cola de NEW
+[INFO] 14:58:43:610 Broker/(13739:13764): Modulo con id 1890415064 agregado correctamente en la cola de CATCH
+[INFO] 14:58:49:246 Broker/(13739:13740): Nueva conexion de un proceso con socket cliente 10
+[INFO] 14:58:49:250 Broker/(13739:13775): Mensaje NEW con id 4 encolado
+[INFO] 14:58:49:250 Broker/(13739:13741): Guardando mensaje con id 4 en particion 0x8e8c5d0
+[INFO] 14:58:49:253 Broker/(13739:13776): Mensaje NEW con id 4 al cliente 1890415064 socket 7 enviado correctamente
+[INFO] 14:58:49:253 Broker/(13739:13776): ACK de cliente 1890415064 socket 7 recibido
+[INFO] 14:58:54:253 Broker/(13739:13740): Nueva conexion de un proceso con socket cliente 11
+[INFO] 14:58:54:255 Broker/(13739:13785): Mensaje APPEARED con id 5 encolado
+[INFO] 14:58:54:255 Broker/(13739:13742): Guardando mensaje con id 5 en particion 0x8e8c5e4
+[INFO] 15:02:25:428 Broker/(14262:14263): Nueva conexion de un proceso con socket cliente 7
+[INFO] 15:02:25:428 Broker/(14262:14263): Nueva conexion de un proceso con socket cliente 8
+[INFO] 15:02:25:429 Broker/(14262:14263): Nueva conexion de un proceso con socket cliente 9
+[INFO] 15:02:25:431 Broker/(14262:14278): Modulo con id 593144732 agregado correctamente en la cola de GET
+[INFO] 15:02:25:432 Broker/(14262:14276): Modulo con id 593144732 agregado correctamente en la cola de NEW
+[INFO] 15:02:25:433 Broker/(14262:14277): Modulo con id 593144732 agregado correctamente en la cola de CATCH
+[INFO] 15:02:31:552 Broker/(14262:14263): Nueva conexion de un proceso con socket cliente 10
+[INFO] 15:02:31:556 Broker/(14262:14299): Mensaje NEW con id 4 encolado
+[INFO] 15:02:31:556 Broker/(14262:14264): Guardando mensaje con id 4 en particion 0x94385d0
+[INFO] 15:02:31:559 Broker/(14262:14300): Mensaje NEW con id 4 al cliente 593144732 socket 7 enviado correctamente
+[INFO] 15:02:31:559 Broker/(14262:14300): ACK de cliente 593144732 socket 7 recibido
+[INFO] 15:02:36:560 Broker/(14262:14263): Nueva conexion de un proceso con socket cliente 11
+[INFO] 15:02:36:562 Broker/(14262:14309): Mensaje APPEARED con id 5 encolado
+[INFO] 15:02:36:562 Broker/(14262:14265): Guardando mensaje con id 5 en particion 0x94385e4
+[INFO] 15:03:15:436 Broker/(14362:14363): Nueva conexion de un proceso con socket cliente 7
+[INFO] 15:03:15:436 Broker/(14362:14363): Nueva conexion de un proceso con socket cliente 8
+[INFO] 15:03:15:437 Broker/(14362:14363): Nueva conexion de un proceso con socket cliente 9
+[INFO] 15:03:15:438 Broker/(14362:14374): Modulo con id 593144732 agregado correctamente en la cola de NEW
+[INFO] 15:03:15:439 Broker/(14362:14375): Modulo con id 593144732 agregado correctamente en la cola de CATCH
+[INFO] 15:03:15:440 Broker/(14362:14376): Modulo con id 593144732 agregado correctamente en la cola de GET
+[INFO] 15:03:19:181 Broker/(14362:14363): Nueva conexion de un proceso con socket cliente 10
+[INFO] 15:03:19:184 Broker/(14362:14386): Mensaje NEW con id 4 encolado
+[INFO] 15:03:19:184 Broker/(14362:14364): Guardando mensaje con id 4 en particion 0x95135d0
+[INFO] 15:03:19:187 Broker/(14362:14387): Mensaje NEW con id 4 al cliente 593144732 socket 7 enviado correctamente
+[INFO] 15:03:19:187 Broker/(14362:14387): ACK de cliente 593144732 socket 7 recibido
+[INFO] 15:03:24:188 Broker/(14362:14363): Nueva conexion de un proceso con socket cliente 11
+[INFO] 15:03:24:191 Broker/(14362:14396): Mensaje APPEARED con id 5 encolado
+[INFO] 15:03:24:191 Broker/(14362:14365): Guardando mensaje con id 5 en particion 0x95135e4
+[INFO] 15:03:33:210 Broker/(14362:14363): Nueva conexion de un proceso con socket cliente 12
+[INFO] 15:03:33:213 Broker/(14362:14422): Mensaje CATCH con id 6 encolado
+[INFO] 15:03:33:213 Broker/(14362:14366): Guardando mensaje con id 6 en particion 0x95135f4
+[INFO] 15:03:33:216 Broker/(14362:14423): Mensaje CATCH con id 6 al cliente 593144732 socket 8 enviado correctamente
+[INFO] 15:03:33:216 Broker/(14362:14423): ACK de cliente 593144732 socket 8 recibido
+[INFO] 15:03:38:217 Broker/(14362:14363): Nueva conexion de un proceso con socket cliente 13
+[INFO] 15:03:38:218 Broker/(14362:14432): Mensaje CAUGHT con id 7 encolado
+[INFO] 15:03:38:218 Broker/(14362:14367): Guardando mensaje con id 7 en particion 0x9513604
+[INFO] 15:03:48:661 Broker/(14362:14363): Nueva conexion de un proceso con socket cliente 14
+[INFO] 15:03:48:664 Broker/(14362:14456): Mensaje GET con id 8 encolado
+[INFO] 15:03:48:664 Broker/(14362:14368): Se ha eliminado el registro con id 4 ubicado en 0x95135d0 de la tabla de segmentos
+[INFO] 15:03:48:664 Broker/(14362:14368): Guardando mensaje con id 8 en particion 0x95135d0
+[INFO] 15:03:48:666 Broker/(14362:14457): Mensaje GET con id 8 al cliente 593144732 socket 9 enviado correctamente
+[INFO] 15:03:48:666 Broker/(14362:14457): ACK de cliente 593144732 socket 9 recibido
+[INFO] 15:03:53:667 Broker/(14362:14363): Nueva conexion de un proceso con socket cliente 15
+[INFO] 15:03:53:670 Broker/(14362:14466): Mensaje LOCALIZED con id 9 encolado
+[INFO] 15:03:53:670 Broker/(14362:14369): Compactando memoria
+[INFO] 15:03:53:670 Broker/(14362:14369): Se ha eliminado el registro con id 5 ubicado en 0x95135d8 de la tabla de segmentos
+[INFO] 15:03:53:670 Broker/(14362:14369): Compactando memoria
+[INFO] 15:03:53:670 Broker/(14362:14369): Se ha eliminado el registro con id 6 ubicado en 0x95135d8 de la tabla de segmentos
+[INFO] 15:03:53:670 Broker/(14362:14369): Compactando memoria
+[INFO] 15:03:53:670 Broker/(14362:14369): Guardando mensaje con id 9 en particion 0x95135dc

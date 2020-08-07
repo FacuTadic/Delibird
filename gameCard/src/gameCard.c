@@ -3,7 +3,7 @@
 #include "utilsGameCard.h"
 
 t_log* iniciar_loggerDEV(){
-	return log_create("gameCardDEV.log", "GameCard", 0, LOG_LEVEL_INFO);
+	return log_create("gameCardDEV.log", "GameCard", 1, LOG_LEVEL_INFO);
 }
 
 
@@ -103,6 +103,8 @@ int main(void) {
 
 	if(socketEscuchaNew != -1){
 		estoy_conectado_al_broker = 1;
+	}else{
+		estoy_conectado_al_broker = 0;
 	}
 
 	socketEscuchaCatch = crear_conexion(ipBroker, puertoBroker);
