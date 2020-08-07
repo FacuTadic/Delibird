@@ -113,3 +113,27 @@
 [INFO] 15:03:48:666 GameCard/(14275:14282): Las coordenadas encontradas son: 1-3
 [INFO] 15:03:53:667 GameCard/(14275:14282): Enviando LOCALIZED por socket: 11
 [INFO] 15:03:53:668 GameCard/(14275:14282): LOCALIZED enviado
+[INFO] 15:11:26:308 GameCard/(15710:15710): Lenavando el Tall Grass
+[ERROR] 15:11:26:308 GameCard/(15710:15710): Ya existe el BitMap
+[INFO] 15:11:26:309 GameCard/(15710:15710): Punto de montaje del directorio Metadata es: /home/utnso/Escritorio/tall-grass/Metadata
+[INFO] 15:11:26:309 GameCard/(15710:15710): El BitMap se encuentra en: /home/utnso/Escritorio/tall-grass/Metadata/BitMap.bin
+[INFO] 15:11:26:309 GameCard/(15710:15710): Punto de montaje del directorio Files es: /home/utnso/Escritorio/tall-grass/Files
+[INFO] 15:11:26:309 GameCard/(15710:15710): Punto de montaje del directorio Blocks es: /home/utnso/Escritorio/tall-grass/Blocks
+[INFO] 15:11:26:309 GameCard/(15710:15717): Escuchando GET de BROKER en socket: 9
+[INFO] 15:11:26:309 GameCard/(15710:15716): Escuchando CATCH de BROKER en socket: 8
+[INFO] 15:11:26:310 GameCard/(15710:15715): Escuchando NEW de BROKER en socket: 7
+[INFO] 15:11:36:310 GameCard/(15710:15718): Conexion con BROKER en buen estado, verificando nuevamente en 10 segundos
+[INFO] 15:11:46:310 GameCard/(15710:15718): Conexion con BROKER en buen estado, verificando nuevamente en 10 segundos
+[INFO] 15:11:56:310 GameCard/(15710:15718): Conexion con BROKER en buen estado, verificando nuevamente en 10 segundos
+[INFO] 15:12:06:310 GameCard/(15710:15718): Conexion con BROKER en buen estado, verificando nuevamente en 10 segundos
+[INFO] 15:12:16:311 GameCard/(15710:15718): Conexion con BROKER en buen estado, verificando nuevamente en 10 segundos
+[INFO] 15:12:24:189 GameCard/(15710:15715): La coordenada 1-3 fue encontrada
+[INFO] 15:12:24:189 GameCard/(15710:15715): La coordenada 1-3 tenia 2 pokemons en dicha localizacion
+[INFO] 15:12:24:189 GameCard/(15710:15715): La coordenada 1-3 ahora tiene 3 pokemons en dicha localizacion
+[INFO] 15:12:24:190 GameCard/(15710:15715): El metadata del pokemon fue actualizado
+[INFO] 15:12:24:190 GameCard/(15710:15715): SIZE = 18
+[INFO] 15:12:24:190 GameCard/(15710:15715): BLOCKS = [0]
+[INFO] 15:12:26:312 GameCard/(15710:15718): Conexion con BROKER en buen estado, verificando nuevamente en 10 segundos
+[INFO] 15:12:29:191 GameCard/(15710:15715): Enviando APPEARED por socket: 11
+[INFO] 15:12:29:191 GameCard/(15710:15715): APPEARED enviado
+[INFO] 15:12:36:312 GameCard/(15710:15718): Conexion con BROKER en buen estado, verificando nuevamente en 10 segundos

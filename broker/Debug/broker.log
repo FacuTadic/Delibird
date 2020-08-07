@@ -178,3 +178,17 @@
 [INFO] 15:03:53:670 Broker/(14362:14369): Se ha eliminado el registro con id 6 ubicado en 0x95135d8 de la tabla de segmentos
 [INFO] 15:03:53:670 Broker/(14362:14369): Compactando memoria
 [INFO] 15:03:53:670 Broker/(14362:14369): Guardando mensaje con id 9 en particion 0x95135dc
+[INFO] 15:11:26:309 Broker/(15642:15643): Nueva conexion de un proceso con socket cliente 7
+[INFO] 15:11:26:309 Broker/(15642:15643): Nueva conexion de un proceso con socket cliente 8
+[INFO] 15:11:26:309 Broker/(15642:15643): Nueva conexion de un proceso con socket cliente 9
+[INFO] 15:11:26:311 Broker/(15642:15713): Modulo con id 340937076 agregado correctamente en la cola de GET
+[INFO] 15:11:26:312 Broker/(15642:15712): Modulo con id 340937076 agregado correctamente en la cola de CATCH
+[INFO] 15:11:26:313 Broker/(15642:15711): Modulo con id 340937076 agregado correctamente en la cola de NEW
+[INFO] 15:12:24:185 Broker/(15642:15643): Nueva conexion de un proceso con socket cliente 10
+[INFO] 15:12:24:188 Broker/(15642:15935): Mensaje NEW con id 4 encolado
+[INFO] 15:12:24:188 Broker/(15642:15644): Guardando mensaje con id 4 en particion 0x813b5d0
+[INFO] 15:12:24:190 Broker/(15642:15936): Mensaje NEW con id 4 al cliente 340937076 socket 7 enviado correctamente
+[INFO] 15:12:24:190 Broker/(15642:15936): ACK de cliente 340937076 socket 7 recibido
+[INFO] 15:12:29:191 Broker/(15642:15643): Nueva conexion de un proceso con socket cliente 11
+[INFO] 15:12:29:194 Broker/(15642:15953): Mensaje APPEARED con id 5 encolado
+[INFO] 15:12:29:194 Broker/(15642:15645): Guardando mensaje con id 5 en particion 0x813b5e4

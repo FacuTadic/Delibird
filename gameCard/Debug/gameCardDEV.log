@@ -1181,3 +1181,131 @@
 [INFO] 15:03:55:438 GameCard/(14275:14283): Conexion con BROKER en buen estado, verificando nuevamente en 10 segundos
 [INFO] 15:04:05:439 GameCard/(14275:14283): Iniciando verificacion de conexion con BROKER...
 [INFO] 15:04:05:439 GameCard/(14275:14283): Conexion con BROKER en buen estado, verificando nuevamente en 10 segundos
+[INFO] 15:11:26:308 GameCard/(15710:15710): logger iniciado.
+[INFO] 15:11:26:308 GameCard/(15710:15710): logger de catedra iniciado.
+[INFO] 15:11:26:308 GameCard/(15710:15710): Config cargada.
+[INFO] 15:11:26:308 GameCard/(15710:15710): La IP del Broker: 127.0.0.1
+[INFO] 15:11:26:308 GameCard/(15710:15710): El Puerto es: 4444
+[INFO] 15:11:26:308 GameCard/(15710:15710): El tiempo de reintento de conexion es: 10
+[INFO] 15:11:26:308 GameCard/(15710:15710): El tiempo de reintento de operacion es: 5
+[INFO] 15:11:26:308 GameCard/(15710:15710): El tiempo de retardo de conexion es: 5
+[INFO] 15:11:26:308 GameCard/(15710:15710): El punto de montaje es: /home/utnso/Escritorio/tall-grass
+[INFO] 15:11:26:308 GameCard/(15710:15710): La IP es: 127.0.0.1
+[INFO] 15:11:26:308 GameCard/(15710:15710): El puerto es: 4447
+[INFO] 15:11:26:308 GameCard/(15710:15710): El id del modulo es 340937076
+[INFO] 15:11:26:308 GameCard/(15710:15710): El punto de montaje es: /home/utnso/Escritorio/tall-grass
+[INFO] 15:11:26:308 GameCard/(15710:15710): La ruta del metadataes: /home/utnso/Escritorio/tall-grass/Metadata
+[INFO] 15:11:26:308 GameCard/(15710:15710): Se creo el config de MetaData
+[INFO] 15:11:26:308 GameCard/(15710:15710): El Block Size es: 64
+[INFO] 15:11:26:308 GameCard/(15710:15710): La cantidad de Bloques es: 1024
+[INFO] 15:11:26:308 GameCard/(15710:15710): El Magic Number es: TALL_GRASS
+[INFO] 15:11:26:308 GameCard/(15710:15710): Bitmap ya seteado
+[ERROR] 15:11:26:308 GameCard/(15710:15710): Ya existe el BitMap
+[INFO] 15:11:26:309 GameCard/(15710:15710): SETEO DE VARIABLES PARA ARCHIVOSYDIRECTORIOS.H
+[INFO] 15:11:26:309 GameCard/(15710:15710): El ID de modulo es: 340937076
+[INFO] 15:11:26:309 GameCard/(15710:15717): Escucho GET de BROKER
+[INFO] 15:11:26:309 GameCard/(15710:15718): Hilo de verificacion periodica de conexion con BROKER iniciado
+[INFO] 15:11:26:309 GameCard/(15710:15717): Recibiendo codigo de operacion de BROKER en socket 9
+[INFO] 15:11:26:309 GameCard/(15710:15716): Escucho CATCH de BROKER
+[INFO] 15:11:26:309 GameCard/(15710:15716): Recibiendo codigo de operacion de BROKER en socket 8
+[INFO] 15:11:26:310 GameCard/(15710:15715): Escuchando NEW de BROKER
+[INFO] 15:11:26:310 GameCard/(15710:15715): Socket de NEW: 7
+[INFO] 15:11:26:310 GameCard/(15710:15715): Recibiendo codigo de operacion de BROKER en socket 7
+[INFO] 15:11:26:310 GameCard/(15710:15714): Esperando mensajes de game boy en socket 5
+[INFO] 15:11:36:310 GameCard/(15710:15718): Iniciando verificacion de conexion con BROKER...
+[INFO] 15:11:36:310 GameCard/(15710:15718): Conexion con BROKER en buen estado, verificando nuevamente en 10 segundos
+[INFO] 15:11:46:310 GameCard/(15710:15718): Iniciando verificacion de conexion con BROKER...
+[INFO] 15:11:46:310 GameCard/(15710:15718): Conexion con BROKER en buen estado, verificando nuevamente en 10 segundos
+[INFO] 15:11:56:310 GameCard/(15710:15718): Iniciando verificacion de conexion con BROKER...
+[INFO] 15:11:56:310 GameCard/(15710:15718): Conexion con BROKER en buen estado, verificando nuevamente en 10 segundos
+[INFO] 15:12:06:310 GameCard/(15710:15718): Iniciando verificacion de conexion con BROKER...
+[INFO] 15:12:06:310 GameCard/(15710:15718): Conexion con BROKER en buen estado, verificando nuevamente en 10 segundos
+[INFO] 15:12:16:311 GameCard/(15710:15718): Iniciando verificacion de conexion con BROKER...
+[INFO] 15:12:16:311 GameCard/(15710:15718): Conexion con BROKER en buen estado, verificando nuevamente en 10 segundos
+[INFO] 15:12:24:189 GameCard/(15710:15715): Se recibio el opcode 1
+[INFO] 15:12:24:189 GameCard/(15710:15715): Codigo de operacion recibido del socket cliente 7 corresponde a un NEW
+[INFO] 15:12:24:189 GameCard/(15710:15715): Recibiendo tamanio total
+[INFO] 15:12:24:189 GameCard/(15710:15715): Tamanio total recibido: 36
+[INFO] 15:12:24:189 GameCard/(15710:15715): EL ID recibido: 4
+[INFO] 15:12:24:189 GameCard/(15710:15715): Tamanio del pokemon recibido: 8
+[INFO] 15:12:24:189 GameCard/(15710:15715): Nombre del pokemon recibido: pikachu
+[INFO] 15:12:24:189 GameCard/(15710:15715): Posicion X recibida: 1
+[INFO] 15:12:24:189 GameCard/(15710:15715): Posicion Y recibida: 3
+[INFO] 15:12:24:189 GameCard/(15710:15715): Cantidad recibida: 1
+[INFO] 15:12:24:189 GameCard/(15710:15715): Acknowledgement enviado al modulo Broker
+[INFO] 15:12:24:189 GameCard/(15710:15715): NEW recibido del modulo BROKER socket 7
+[INFO] 15:12:24:189 GameCard/(15710:15715): NEW recibido
+[INFO] 15:12:24:189 GameCard/(15710:15715): Llegamo
+[INFO] 15:12:24:189 GameCard/(15710:15715): Pokemon: pikachu
+[INFO] 15:12:24:189 GameCard/(15710:15715): PosX: 1
+[INFO] 15:12:24:189 GameCard/(15710:15715): PosY: 3
+[INFO] 15:12:24:189 GameCard/(15710:15715): Cantidad: 1
+[INFO] 15:12:24:189 GameCard/(15710:15715): Ruta de Directorio: /home/utnso/Escritorio/tall-grass/Files/pikachu
+[INFO] 15:12:24:189 GameCard/(15710:15715): La coordenada generada es: 1-3
+[INFO] 15:12:24:189 GameCard/(15710:15715): La posicion que me llega es: 1-3
+[INFO] 15:12:24:189 GameCard/(15710:15715): El valor del KEY-VALUE cargado completamente es: 1-3=1
+[INFO] 15:12:24:189 GameCard/(15710:15715): La posicion del registro generado es: 1-3
+[INFO] 15:12:24:189 GameCard/(15710:15715): La cantidad del registro generado es: 1
+[INFO] 15:12:24:189 GameCard/(15710:15715): Ruta del directorio pokemon pikachu es: /home/utnso/Escritorio/tall-grass/Files/pikachu
+[INFO] 15:12:24:189 GameCard/(15710:15715): Ruta del Archivo: /home/utnso/Escritorio/tall-grass/Files/pikachu/pikachu.bin
+[INFO] 15:12:24:189 GameCard/(15710:15715): Se creo el archivo config
+[INFO] 15:12:24:189 GameCard/(15710:15715): EL array de blocks es: 0
+[INFO] 15:12:24:189 GameCard/(15710:15715): Retorno el estado: N
+[INFO] 15:12:24:189 GameCard/(15710:15715): Pokemon ya conocido
+[INFO] 15:12:24:189 GameCard/(15710:15715): Generando los paths de los bloques
+[INFO] 15:12:24:189 GameCard/(15710:15715): Unico bloque
+[INFO] 15:12:24:189 GameCard/(15710:15715): Se genera la ruta para: 0
+[INFO] 15:12:24:189 GameCard/(15710:15715): El path del block es: /home/utnso/Escritorio/tall-grass/Blocks/0.bin
+[INFO] 15:12:24:189 GameCard/(15710:15715): La posicion 0 del array de path es: /home/utnso/Escritorio/tall-grass/Blocks/0.bin
+[INFO] 15:12:24:189 GameCard/(15710:15715): La vieja cantidad es: 2
+[INFO] 15:12:24:189 GameCard/(15710:15715): La nueva cantidad es: 3
+[INFO] 15:12:24:189 GameCard/(15710:15715): El registro aplanado quedo como: 9-1=9
+
+[INFO] 15:12:24:189 GameCard/(15710:15715): El registro aplanado quedo como: 1-2=1
+
+[INFO] 15:12:24:189 GameCard/(15710:15715): El registro aplanado quedo como: 1-3=3
+
+[INFO] 15:12:24:189 GameCard/(15710:15715): Vaciando blocks
+[INFO] 15:12:24:189 GameCard/(15710:15715): El valor del block 0 es de: 1
+[INFO] 15:12:24:189 GameCard/(15710:15715): El block 0 fue desmarcado con el valor de: 0
+[INFO] 15:12:24:189 GameCard/(15710:15715): Guardando el bitarray
+[INFO] 15:12:24:189 GameCard/(15710:15715): Termino el guardado
+[INFO] 15:12:24:189 GameCard/(15710:15715): Entro a buscar posiciones
+[INFO] 15:12:24:189 GameCard/(15710:15715): Bloqueo
+[INFO] 15:12:24:189 GameCard/(15710:15715): EL valor de i es de : 0
+[INFO] 15:12:24:189 GameCard/(15710:15715): EL valor de cant de bloques es de : 1024
+[INFO] 15:12:24:189 GameCard/(15710:15715): EL valor de i es de : 0
+[INFO] 15:12:24:189 GameCard/(15710:15715): EL valor de cant de bloques es de : 1024
+[INFO] 15:12:24:189 GameCard/(15710:15715): Entro primer IF
+[INFO] 15:12:24:189 GameCard/(15710:15715): Entro segundo IF
+[INFO] 15:12:24:189 GameCard/(15710:15715): Guardando el bitarray
+[INFO] 15:12:24:189 GameCard/(15710:15715): Termino el guardado
+[INFO] 15:12:24:189 GameCard/(15710:15715): EL block 0 esta libre
+[INFO] 15:12:24:189 GameCard/(15710:15715): EL block 0 esta libre, vuelvo a chequear
+[INFO] 15:12:24:189 GameCard/(15710:15715): El block libre seleccionado es: 0
+[INFO] 15:12:24:189 GameCard/(15710:15715): La ruta del block es: /home/utnso/Escritorio/tall-grass/Blocks/0.bin
+[INFO] 15:12:24:190 GameCard/(15710:15715): Iterando la lista
+[INFO] 15:12:24:190 GameCard/(15710:15715): El ID de mensaje cargado en el appeared es: 4
+[INFO] 15:12:24:190 GameCard/(15710:15715): El pokemoncargado en el appeared es: pikachu
+[INFO] 15:12:24:190 GameCard/(15710:15715): El tamanio del nombre del pokemon cargado en el appeared es: 8
+[INFO] 15:12:24:190 GameCard/(15710:15715): La coordenada del pokemon cargado en el appeared es: 1 - 3
+[INFO] 15:12:26:312 GameCard/(15710:15718): Iniciando verificacion de conexion con BROKER...
+[INFO] 15:12:26:312 GameCard/(15710:15718): Conexion con BROKER en buen estado, verificando nuevamente en 10 segundos
+[INFO] 15:12:29:191 GameCard/(15710:15715): El ID cargado es 4
+[INFO] 15:12:29:191 GameCard/(15710:15715): Tamanio nombre pokemon 8
+[INFO] 15:12:29:191 GameCard/(15710:15715): Nombre pokemon pikachu
+[INFO] 15:12:29:191 GameCard/(15710:15715): Posicion X 1
+[INFO] 15:12:29:191 GameCard/(15710:15715): Posicion Y 3
+[INFO] 15:12:29:191 GameCard/(15710:15715): Creando paquete
+[INFO] 15:12:29:191 GameCard/(15710:15715): CODIGO DE OPERACION: 2
+[INFO] 15:12:29:191 GameCard/(15710:15715): Paquete Creado
+[INFO] 15:12:29:191 GameCard/(15710:15715): la operacion a realizar es 2
+[INFO] 15:12:29:191 GameCard/(15710:15715): Serializando...
+[INFO] 15:12:29:191 GameCard/(15710:15715): Serializacion completa
+[INFO] 15:12:29:191 GameCard/(15710:15715): El peso total es: 24
+[INFO] 15:12:29:191 GameCard/(15710:15715): Recibiendo codigo de operacion de BROKER en socket 7
+[INFO] 15:12:36:312 GameCard/(15710:15718): Iniciando verificacion de conexion con BROKER...
+[INFO] 15:12:36:312 GameCard/(15710:15718): Conexion con BROKER en buen estado, verificando nuevamente en 10 segundos
+[WARNING] 15:12:38:548 GameCard/(15710:15717): BROKER acaba de cerrar la conexion correspondiente al socket 9
+[WARNING] 15:12:38:551 GameCard/(15710:15716): BROKER acaba de cerrar la conexion correspondiente al socket 8
+[WARNING] 15:12:38:551 GameCard/(15710:15715): BROKER acaba de cerrar la conexion correspondiente al socket 7
