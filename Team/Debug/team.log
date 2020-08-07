@@ -1,0 +1,64 @@
+[INFO] 16:44:43:857 Team/(6918:6927): Buscando deadlock...
+[INFO] 16:44:43:857 Team/(6918:6927): No se han encontrado deadlocks
+[INFO] 16:44:53:858 Team/(6918:6926): Iniciando verificacion de conexion con Broker...
+[INFO] 16:44:53:859 Team/(6918:6926): Conexion con Broker en buen estado, verificando nuevamente en 30 segundos
+[INFO] 16:45:03:858 Team/(6918:6927): Buscando deadlock...
+[INFO] 16:45:03:858 Team/(6918:6927): No se han encontrado deadlocks
+[INFO] 16:45:23:860 Team/(6918:6927): Buscando deadlock...
+[INFO] 16:45:23:861 Team/(6918:6927): No se han encontrado deadlocks
+[INFO] 16:45:23:861 Team/(6918:6926): Iniciando verificacion de conexion con Broker...
+[INFO] 16:45:23:861 Team/(6918:6926): Conexion con Broker en buen estado, verificando nuevamente en 30 segundos
+[INFO] 16:45:40:476 Team/(6918:6925): Localized recibido de BROKER, pokemon squirtle en coordenadas 
+[INFO] 16:45:40:479 Team/(6918:6925): Localized recibido de BROKER, pokemon pikachu en coordenadas 
+[INFO] 16:45:40:480 Team/(6918:6925): Localized recibido de BROKER, pokemon onix en coordenadas 
+[INFO] 16:45:43:862 Team/(6918:6927): Buscando deadlock...
+[INFO] 16:45:43:862 Team/(6918:6927): No se han encontrado deadlocks
+[INFO] 16:45:45:481 Team/(6918:6925): Localized recibido de BROKER, pokemon gengar en coordenadas 
+[INFO] 16:45:53:862 Team/(6918:6926): Iniciando verificacion de conexion con Broker...
+[INFO] 16:45:53:862 Team/(6918:6926): Conexion con Broker en buen estado, verificando nuevamente en 30 segundos
+[INFO] 16:46:03:863 Team/(6918:6927): Buscando deadlock...
+[INFO] 16:46:03:863 Team/(6918:6927): No se han encontrado deadlocks
+[INFO] 16:46:23:863 Team/(6918:6926): Iniciando verificacion de conexion con Broker...
+[INFO] 16:46:23:863 Team/(6918:6926): Conexion con Broker en buen estado, verificando nuevamente en 30 segundos
+[INFO] 16:46:23:863 Team/(6918:6927): Buscando deadlock...
+[INFO] 16:46:23:863 Team/(6918:6927): No se han encontrado deadlocks
+[INFO] 16:47:07:658 Team/(7209:7219): Localized recibido de BROKER, pokemon gengar en coordenadas 
+[INFO] 16:47:07:659 Team/(7209:7219): Localized recibido de BROKER, pokemon pikachu en coordenadas 
+[INFO] 16:47:07:660 Team/(7209:7219): Localized recibido de BROKER, pokemon squirtle en coordenadas 
+[INFO] 16:47:07:660 Team/(7209:7219): Localized recibido de BROKER, pokemon onix en coordenadas 
+[INFO] 16:47:07:661 Team/(7209:7217): Appeared recibido de BROKER, pokemon pikachu en (3,4)
+[INFO] 16:47:07:662 Team/(7209:7211): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 16:47:07:662 Team/(7209:7223): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de atrapar pokemon pikachu
+[INFO] 16:47:07:662 Team/(7209:7223): Entrenador 1 esta atrapando pokemon pikachu ubicado en (3,4)
+[INFO] 16:47:07:662 Team/(7209:7223): El entrenador 1 se esta moviendo de (2,3) a (3,4)
+[INFO] 16:47:07:662 Team/(7209:7223): El entrenador 1 se encuentra en (2,4)
+[INFO] 16:47:12:663 Team/(7209:7223): El entrenador 1 se encuentra en (3,4)
+[INFO] 16:47:17:664 Team/(7209:7223): Estado de entrenador 1 cambiado a Estado blocked. Razon del cambio: Se ha enviado un catch
+[INFO] 16:47:17:689 Team/(7209:7219): Localized recibido de BROKER, pokemon squirtle en coordenadas 
+[INFO] 16:47:22:693 Team/(7209:7219): Localized recibido de BROKER, pokemon gengar en coordenadas 
+[INFO] 16:47:22:713 Team/(7209:7219): Localized recibido de BROKER, pokemon onix en coordenadas 
+[INFO] 16:47:27:650 Team/(7209:7221): Buscando deadlock...
+[INFO] 16:47:27:651 Team/(7209:7221): No se han encontrado deadlocks
+[INFO] 16:47:27:699 Team/(7209:7219): Localized recibido de BROKER, pokemon pikachu en coordenadas 34
+[INFO] 16:47:27:723 Team/(7209:7218): Caught recibido de BROKER con id correlativo 25 y flag 1
+[INFO] 16:47:37:650 Team/(7209:7220): Iniciando verificacion de conexion con Broker...
+[INFO] 16:47:37:650 Team/(7209:7220): Conexion con Broker en buen estado, verificando nuevamente en 30 segundos
+[INFO] 16:47:47:651 Team/(7209:7221): Buscando deadlock...
+[INFO] 16:47:47:652 Team/(7209:7221): No se han encontrado deadlocks
+[INFO] 16:49:58:832 Team/(7457:7465): Appeared recibido de BROKER, pokemon pikachu en (3,8)
+[INFO] 16:49:58:832 Team/(7457:7459): Estado de entrenador 1 cambiado a Estado ready. Razon del cambio: Entrenador planificado para ir a atrapar pokemon
+[INFO] 16:49:58:832 Team/(7457:7471): Estado de entrenador 1 cambiado a Estado executing. Razon del cambio: Ha comenzado a ejecutar la tarea de atrapar pokemon pikachu
+[INFO] 16:49:58:832 Team/(7457:7471): Entrenador 1 esta atrapando pokemon pikachu ubicado en (3,8)
+[INFO] 16:49:58:832 Team/(7457:7471): El entrenador 1 se esta moviendo de (2,3) a (3,8)
+[INFO] 16:49:58:832 Team/(7457:7471): El entrenador 1 se encuentra en (2,4)
+[INFO] 16:50:03:833 Team/(7457:7471): El entrenador 1 se encuentra en (2,5)
+[INFO] 16:50:08:834 Team/(7457:7471): El entrenador 1 se encuentra en (2,6)
+[INFO] 16:50:08:847 Team/(7457:7467): Localized recibido de BROKER, pokemon onix en coordenadas
+[INFO] 16:50:13:835 Team/(7457:7471): El entrenador 1 se encuentra en (2,7)
+[INFO] 16:50:13:853 Team/(7457:7467): Localized recibido de BROKER, pokemon squirtle en coordenadas
+[INFO] 16:50:13:863 Team/(7457:7467): Localized recibido de BROKER, pokemon gengar en coordenadas
+[INFO] 16:50:18:817 Team/(7457:7469): Buscando deadlock...
+[INFO] 16:50:18:817 Team/(7457:7469): No se han encontrado deadlocks
+[INFO] 16:50:18:835 Team/(7457:7471): El entrenador 1 se encuentra en (2,8)
+[INFO] 16:50:18:860 Team/(7457:7467): Localized recibido de BROKER, pokemon pikachu en coordenadas 3 4 3 8
+[INFO] 16:50:23:836 Team/(7457:7471): El entrenador 1 se encuentra en (3,8)

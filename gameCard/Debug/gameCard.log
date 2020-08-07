@@ -113,3 +113,71 @@
 [INFO] 15:03:48:666 GameCard/(14275:14282): Las coordenadas encontradas son: 1-3
 [INFO] 15:03:53:667 GameCard/(14275:14282): Enviando LOCALIZED por socket: 11
 [INFO] 15:03:53:668 GameCard/(14275:14282): LOCALIZED enviado
+[INFO] 16:45:25:434 GameCard/(7165:7165): Lenavando el Tall Grass
+[INFO] 16:45:25:439 GameCard/(7165:7165): Punto de montaje del directorio Metadata es: /home/utnso/Escritorio/tall-grass/Metadata
+[INFO] 16:45:25:439 GameCard/(7165:7165): El BitMap se encuentra en: /home/utnso/Escritorio/tall-grass/Metadata/BitMap.bin
+[INFO] 16:45:25:439 GameCard/(7165:7165): Punto de montaje del directorio Files es: /home/utnso/Escritorio/tall-grass/Files
+[INFO] 16:45:25:439 GameCard/(7165:7165): Punto de montaje del directorio Blocks es: /home/utnso/Escritorio/tall-grass/Blocks
+[INFO] 16:45:25:461 GameCard/(7165:7172): Obteniendo las posiciones en las que se encuentra el pokemon
+[INFO] 16:45:30:462 GameCard/(7165:7172): Enviando LOCALIZED por socket: 11
+[INFO] 16:45:30:463 GameCard/(7165:7172): LOCALIZED enviado
+[INFO] 16:45:30:465 GameCard/(7165:7172): Obteniendo las posiciones en las que se encuentra el pokemon
+[INFO] 16:45:35:467 GameCard/(7165:7172): Enviando LOCALIZED por socket: 11
+[INFO] 16:45:35:468 GameCard/(7165:7172): LOCALIZED enviado
+[INFO] 16:45:35:469 GameCard/(7165:7172): Obteniendo las posiciones en las que se encuentra el pokemon
+[INFO] 16:45:40:470 GameCard/(7165:7172): Enviando LOCALIZED por socket: 11
+[INFO] 16:45:40:472 GameCard/(7165:7172): LOCALIZED enviado
+[INFO] 16:45:40:474 GameCard/(7165:7172): Obteniendo las posiciones en las que se encuentra el pokemon
+[INFO] 16:45:45:475 GameCard/(7165:7172): Enviando LOCALIZED por socket: 11
+[INFO] 16:45:45:476 GameCard/(7165:7172): LOCALIZED enviado
+[INFO] 16:46:56:571 GameCard/(7165:7206): El metadata del pokemon fue actualizado
+[INFO] 16:46:56:572 GameCard/(7165:7206): SIZE = 6
+[INFO] 16:46:56:572 GameCard/(7165:7206): BLOCKS = [0]
+[INFO] 16:47:01:573 GameCard/(7165:7206): Enviando APPEARED por socket: 12
+[INFO] 16:47:01:574 GameCard/(7165:7206): APPEARED enviado
+[INFO] 16:47:07:663 GameCard/(7165:7172): Obteniendo las posiciones en las que se encuentra el pokemon
+[INFO] 16:47:12:665 GameCard/(7165:7172): Enviando LOCALIZED por socket: 10
+[INFO] 16:47:12:666 GameCard/(7165:7172): LOCALIZED enviado
+[INFO] 16:47:12:668 GameCard/(7165:7172): Obteniendo las posiciones en las que se encuentra el pokemon
+[INFO] 16:47:17:671 GameCard/(7165:7172): Enviando LOCALIZED por socket: 10
+[INFO] 16:47:17:673 GameCard/(7165:7172): LOCALIZED enviado
+[INFO] 16:47:17:684 GameCard/(7165:7172): Obteniendo las posiciones en las que se encuentra el pokemon
+[INFO] 16:47:22:685 GameCard/(7165:7172): Enviando LOCALIZED por socket: 10
+[INFO] 16:47:22:687 GameCard/(7165:7172): LOCALIZED enviado
+[INFO] 16:47:22:689 GameCard/(7165:7172): Obteniendo las posiciones en las que se encuentra el pokemon
+[INFO] 16:47:22:690 GameCard/(7165:7172): Las coordenadas encontradas son: 3-4
+[INFO] 16:47:22:710 GameCard/(7165:7171): La coordenada 3-4 fue encontrada
+[INFO] 16:47:22:710 GameCard/(7165:7171): La coordenada 3-4 tenia 9 pokemons en dicha localizacion
+[INFO] 16:47:22:710 GameCard/(7165:7171): La coordenada 3-4 ahora tiene 8 pokemons en dicha localizacion
+[INFO] 16:47:22:711 GameCard/(7165:7171): El metadata del pokemon fue actualizado
+[INFO] 16:47:22:711 GameCard/(7165:7171): SIZE = 6
+[INFO] 16:47:22:711 GameCard/(7165:7171): BLOCKS = [0]
+[INFO] 16:47:27:691 GameCard/(7165:7172): Enviando LOCALIZED por socket: 10
+[INFO] 16:47:27:693 GameCard/(7165:7172): LOCALIZED enviado
+[INFO] 16:47:27:715 GameCard/(7165:7171): Enviando CAUGHT por socket: 10
+[INFO] 16:47:27:715 GameCard/(7165:7171): CAUGHT enviado
+[INFO] 16:49:32:421 GameCard/(7445:7445): Lenavando el Tall Grass
+[INFO] 16:49:32:423 GameCard/(7445:7445): Punto de montaje del directorio Metadata es: /home/utnso/Escritorio/tall-grass/Metadata
+[INFO] 16:49:32:423 GameCard/(7445:7445): El BitMap se encuentra en: /home/utnso/Escritorio/tall-grass/Metadata/BitMap.bin
+[INFO] 16:49:32:423 GameCard/(7445:7445): Punto de montaje del directorio Files es: /home/utnso/Escritorio/tall-grass/Files
+[INFO] 16:49:32:423 GameCard/(7445:7445): Punto de montaje del directorio Blocks es: /home/utnso/Escritorio/tall-grass/Blocks
+[INFO] 16:49:46:279 GameCard/(7445:7455): La coordenada 3-8 es nueva. Se agrega al los registros
+[INFO] 16:49:46:281 GameCard/(7445:7455): El metadata del pokemon fue actualizado
+[INFO] 16:49:46:281 GameCard/(7445:7455): SIZE = 12
+[INFO] 16:49:46:281 GameCard/(7445:7455): BLOCKS = [0]
+[INFO] 16:49:51:282 GameCard/(7445:7455): Enviando APPEARED por socket: 12
+[INFO] 16:49:51:284 GameCard/(7445:7455): APPEARED enviado
+[INFO] 16:49:58:835 GameCard/(7445:7452): Obteniendo las posiciones en las que se encuentra el pokemon
+[INFO] 16:50:03:836 GameCard/(7445:7452): Enviando LOCALIZED por socket: 10
+[INFO] 16:50:03:837 GameCard/(7445:7452): LOCALIZED enviado
+[INFO] 16:50:03:839 GameCard/(7445:7452): Obteniendo las posiciones en las que se encuentra el pokemon
+[INFO] 16:50:08:840 GameCard/(7445:7452): Enviando LOCALIZED por socket: 10
+[INFO] 16:50:08:841 GameCard/(7445:7452): LOCALIZED enviado
+[INFO] 16:50:08:843 GameCard/(7445:7452): Obteniendo las posiciones en las que se encuentra el pokemon
+[INFO] 16:50:13:845 GameCard/(7445:7452): Enviando LOCALIZED por socket: 10
+[INFO] 16:50:13:848 GameCard/(7445:7452): LOCALIZED enviado
+[INFO] 16:50:13:849 GameCard/(7445:7452): Obteniendo las posiciones en las que se encuentra el pokemon
+[INFO] 16:50:13:850 GameCard/(7445:7452): Las coordenadas encontradas son: 3-4
+[INFO] 16:50:13:850 GameCard/(7445:7452): Las coordenadas encontradas son: 3-8
+[INFO] 16:50:18:852 GameCard/(7445:7452): Enviando LOCALIZED por socket: 10
+[INFO] 16:50:18:853 GameCard/(7445:7452): LOCALIZED enviado

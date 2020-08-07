@@ -1181,3 +1181,699 @@
 [INFO] 15:03:55:438 GameCard/(14275:14283): Conexion con BROKER en buen estado, verificando nuevamente en 10 segundos
 [INFO] 15:04:05:439 GameCard/(14275:14283): Iniciando verificacion de conexion con BROKER...
 [INFO] 15:04:05:439 GameCard/(14275:14283): Conexion con BROKER en buen estado, verificando nuevamente en 10 segundos
+[INFO] 16:45:25:432 GameCard/(7165:7165): logger iniciado.
+[INFO] 16:45:25:433 GameCard/(7165:7165): logger de catedra iniciado.
+[INFO] 16:45:25:433 GameCard/(7165:7165): Config cargada.
+[INFO] 16:45:25:433 GameCard/(7165:7165): La IP del Broker: 127.0.0.1
+[INFO] 16:45:25:433 GameCard/(7165:7165): El Puerto es: 4444
+[INFO] 16:45:25:433 GameCard/(7165:7165): El tiempo de reintento de conexion es: 10
+[INFO] 16:45:25:433 GameCard/(7165:7165): El tiempo de reintento de operacion es: 5
+[INFO] 16:45:25:434 GameCard/(7165:7165): El tiempo de retardo de conexion es: 5
+[INFO] 16:45:25:434 GameCard/(7165:7165): El punto de montaje es: /home/utnso/Escritorio/tall-grass
+[INFO] 16:45:25:434 GameCard/(7165:7165): La IP es: 127.0.0.1
+[INFO] 16:45:25:434 GameCard/(7165:7165): El puerto es: 4447
+[INFO] 16:45:25:434 GameCard/(7165:7165): El id del modulo es 138993190
+[INFO] 16:45:25:435 GameCard/(7165:7165): El punto de montaje es: /home/utnso/Escritorio/tall-grass
+[INFO] 16:45:25:435 GameCard/(7165:7165): La ruta del metadataes: /home/utnso/Escritorio/tall-grass/Metadata
+[INFO] 16:45:25:437 GameCard/(7165:7165): Se creo el config de MetaData
+[INFO] 16:45:25:437 GameCard/(7165:7165): El Block Size es: 64
+[INFO] 16:45:25:438 GameCard/(7165:7165): La cantidad de Bloques es: 1024
+[INFO] 16:45:25:438 GameCard/(7165:7165): El Magic Number es: TALL_GRASS
+[INFO] 16:45:25:439 GameCard/(7165:7165): Bitmap ya seteado
+[ERROR] 16:45:25:439 GameCard/(7165:7165): Ya existe el BitMap
+[INFO] 16:45:25:440 GameCard/(7165:7165): SETEO DE VARIABLES PARA ARCHIVOSYDIRECTORIOS.H
+[INFO] 16:45:25:440 GameCard/(7165:7165): El ID de modulo es: 138993190
+[INFO] 16:45:25:441 GameCard/(7165:7172): Escucho GET de BROKER
+[INFO] 16:45:25:443 GameCard/(7165:7173): Hilo de verificacion periodica de conexion con BROKER iniciado
+[INFO] 16:45:25:444 GameCard/(7165:7172): Recibiendo codigo de operacion de BROKER en socket 9
+[INFO] 16:45:25:444 GameCard/(7165:7171): Escucho CATCH de BROKER
+[INFO] 16:45:25:444 GameCard/(7165:7171): Recibiendo codigo de operacion de BROKER en socket 8
+[INFO] 16:45:25:444 GameCard/(7165:7170): Escuchando NEW de BROKER
+[INFO] 16:45:25:444 GameCard/(7165:7170): Socker de NEW: 7
+[INFO] 16:45:25:444 GameCard/(7165:7170): Recibiendo codigo de operacion de BROKER en socket 7
+[INFO] 16:45:25:445 GameCard/(7165:7169): Esperando mensajes de game boy en socket 5
+[INFO] 16:45:25:454 GameCard/(7165:7172): Se recibio el opcode 5
+[INFO] 16:45:25:454 GameCard/(7165:7172): Codigo de operacion recibido del socket cliente 9 corresponde a un GET
+[INFO] 16:45:25:454 GameCard/(7165:7172): Recibiendo tamanio total
+[INFO] 16:45:25:454 GameCard/(7165:7172): Tamanio total recibido: 25
+[INFO] 16:45:25:454 GameCard/(7165:7172): EL ID recibido: 6
+[INFO] 16:45:25:454 GameCard/(7165:7172): Tamanio del pokemon recibido: 9
+[INFO] 16:45:25:455 GameCard/(7165:7172): Nombre del pokemon recibido: squirtle
+[INFO] 16:45:25:455 GameCard/(7165:7172): Acknowledgement enviado al modulo Broker
+[INFO] 16:45:25:455 GameCard/(7165:7172): GET recibido del modulo BROKER socket 9
+[INFO] 16:45:25:455 GameCard/(7165:7172): GET recibido
+[INFO] 16:45:25:457 GameCard/(7165:7172): EL array de blocks es: (null)
+[INFO] 16:45:25:461 GameCard/(7165:7172): Retorno el estado: N
+[INFO] 16:45:25:461 GameCard/(7165:7172): No hay coordenadas bro te equivocaste, suerte para la proxima
+[INFO] 16:45:25:461 GameCard/(7165:7172): El ID mensaje cargado en el localized es: 6
+[INFO] 16:45:25:461 GameCard/(7165:7172): El Pokemon cargado en el localized es: squirtle
+[INFO] 16:45:25:461 GameCard/(7165:7172): El tamanio del nombre del pokemon cargado en el localized es: 9
+[INFO] 16:45:25:461 GameCard/(7165:7172): La cantidad de lugares donde apareche el pokemon cargado en el localized es: 0
+[INFO] 16:45:30:462 GameCard/(7165:7172): El ID cargado es 6
+[INFO] 16:45:30:462 GameCard/(7165:7172): Tamanio nombre pokemon 9
+[INFO] 16:45:30:462 GameCard/(7165:7172): Nombre pokemon squirtle
+[INFO] 16:45:30:462 GameCard/(7165:7172): Cantidad de coordenadas donde aparece:  0
+[INFO] 16:45:30:462 GameCard/(7165:7172): Saliendo
+[INFO] 16:45:30:463 GameCard/(7165:7172): Creando paquete
+[INFO] 16:45:30:463 GameCard/(7165:7172): CODIGO DE OPERACION: 6
+[INFO] 16:45:30:463 GameCard/(7165:7172): Paquete Creado
+[INFO] 16:45:30:463 GameCard/(7165:7172): la operacion a realizar es 6
+[INFO] 16:45:30:463 GameCard/(7165:7172): Serializando...
+[INFO] 16:45:30:463 GameCard/(7165:7172): Serializacion completa
+[INFO] 16:45:30:463 GameCard/(7165:7172): El peso total es: 21
+[INFO] 16:45:30:463 GameCard/(7165:7172): Recibiendo codigo de operacion de BROKER en socket 9
+[INFO] 16:45:30:463 GameCard/(7165:7172): Se recibio el opcode 5
+[INFO] 16:45:30:463 GameCard/(7165:7172): Codigo de operacion recibido del socket cliente 9 corresponde a un GET
+[INFO] 16:45:30:463 GameCard/(7165:7172): Recibiendo tamanio total
+[INFO] 16:45:30:463 GameCard/(7165:7172): Tamanio total recibido: 24
+[INFO] 16:45:30:463 GameCard/(7165:7172): EL ID recibido: 4
+[INFO] 16:45:30:463 GameCard/(7165:7172): Tamanio del pokemon recibido: 8
+[INFO] 16:45:30:463 GameCard/(7165:7172): Nombre del pokemon recibido: pikachu
+[INFO] 16:45:30:464 GameCard/(7165:7172): Acknowledgement enviado al modulo Broker
+[INFO] 16:45:30:464 GameCard/(7165:7172): GET recibido del modulo BROKER socket 9
+[INFO] 16:45:30:464 GameCard/(7165:7172): GET recibido
+[INFO] 16:45:30:465 GameCard/(7165:7172): EL array de blocks es: (null)
+[INFO] 16:45:30:465 GameCard/(7165:7172): Retorno el estado: N
+[INFO] 16:45:30:466 GameCard/(7165:7172): No hay coordenadas bro te equivocaste, suerte para la proxima
+[INFO] 16:45:30:466 GameCard/(7165:7172): El ID mensaje cargado en el localized es: 4
+[INFO] 16:45:30:466 GameCard/(7165:7172): El Pokemon cargado en el localized es: pikachu
+[INFO] 16:45:30:466 GameCard/(7165:7172): El tamanio del nombre del pokemon cargado en el localized es: 8
+[INFO] 16:45:30:466 GameCard/(7165:7172): La cantidad de lugares donde apareche el pokemon cargado en el localized es: 0
+[INFO] 16:45:35:445 GameCard/(7165:7173): Iniciando verificacion de conexion con BROKER...
+[INFO] 16:45:35:445 GameCard/(7165:7173): Conexion con BROKER en buen estado, verificando nuevamente en 10 segundos
+[INFO] 16:45:35:467 GameCard/(7165:7172): El ID cargado es 4
+[INFO] 16:45:35:467 GameCard/(7165:7172): Tamanio nombre pokemon 8
+[INFO] 16:45:35:467 GameCard/(7165:7172): Nombre pokemon pikachu
+[INFO] 16:45:35:467 GameCard/(7165:7172): Cantidad de coordenadas donde aparece:  0
+[INFO] 16:45:35:467 GameCard/(7165:7172): Saliendo
+[INFO] 16:45:35:468 GameCard/(7165:7172): Creando paquete
+[INFO] 16:45:35:468 GameCard/(7165:7172): CODIGO DE OPERACION: 6
+[INFO] 16:45:35:468 GameCard/(7165:7172): Paquete Creado
+[INFO] 16:45:35:468 GameCard/(7165:7172): la operacion a realizar es 6
+[INFO] 16:45:35:468 GameCard/(7165:7172): Serializando...
+[INFO] 16:45:35:468 GameCard/(7165:7172): Serializacion completa
+[INFO] 16:45:35:468 GameCard/(7165:7172): El peso total es: 20
+[INFO] 16:45:35:468 GameCard/(7165:7172): Recibiendo codigo de operacion de BROKER en socket 9
+[INFO] 16:45:35:468 GameCard/(7165:7172): Se recibio el opcode 5
+[INFO] 16:45:35:468 GameCard/(7165:7172): Codigo de operacion recibido del socket cliente 9 corresponde a un GET
+[INFO] 16:45:35:468 GameCard/(7165:7172): Recibiendo tamanio total
+[INFO] 16:45:35:468 GameCard/(7165:7172): Tamanio total recibido: 21
+[INFO] 16:45:35:468 GameCard/(7165:7172): EL ID recibido: 3
+[INFO] 16:45:35:468 GameCard/(7165:7172): Tamanio del pokemon recibido: 5
+[INFO] 16:45:35:468 GameCard/(7165:7172): Nombre del pokemon recibido: onix
+[INFO] 16:45:35:468 GameCard/(7165:7172): Acknowledgement enviado al modulo Broker
+[INFO] 16:45:35:468 GameCard/(7165:7172): GET recibido del modulo BROKER socket 9
+[INFO] 16:45:35:468 GameCard/(7165:7172): GET recibido
+[INFO] 16:45:35:469 GameCard/(7165:7172): EL array de blocks es: (null)
+[INFO] 16:45:35:469 GameCard/(7165:7172): Retorno el estado: N
+[INFO] 16:45:35:469 GameCard/(7165:7172): No hay coordenadas bro te equivocaste, suerte para la proxima
+[INFO] 16:45:35:469 GameCard/(7165:7172): El ID mensaje cargado en el localized es: 3
+[INFO] 16:45:35:469 GameCard/(7165:7172): El Pokemon cargado en el localized es: onix
+[INFO] 16:45:35:470 GameCard/(7165:7172): El tamanio del nombre del pokemon cargado en el localized es: 5
+[INFO] 16:45:35:470 GameCard/(7165:7172): La cantidad de lugares donde apareche el pokemon cargado en el localized es: 0
+[INFO] 16:45:40:471 GameCard/(7165:7172): El ID cargado es 3
+[INFO] 16:45:40:471 GameCard/(7165:7172): Tamanio nombre pokemon 5
+[INFO] 16:45:40:471 GameCard/(7165:7172): Nombre pokemon onix
+[INFO] 16:45:40:471 GameCard/(7165:7172): Cantidad de coordenadas donde aparece:  0
+[INFO] 16:45:40:471 GameCard/(7165:7172): Saliendo
+[INFO] 16:45:40:471 GameCard/(7165:7172): Creando paquete
+[INFO] 16:45:40:471 GameCard/(7165:7172): CODIGO DE OPERACION: 6
+[INFO] 16:45:40:471 GameCard/(7165:7172): Paquete Creado
+[INFO] 16:45:40:471 GameCard/(7165:7172): la operacion a realizar es 6
+[INFO] 16:45:40:471 GameCard/(7165:7172): Serializando...
+[INFO] 16:45:40:471 GameCard/(7165:7172): Serializacion completa
+[INFO] 16:45:40:471 GameCard/(7165:7172): El peso total es: 17
+[INFO] 16:45:40:472 GameCard/(7165:7172): Recibiendo codigo de operacion de BROKER en socket 9
+[INFO] 16:45:40:472 GameCard/(7165:7172): Se recibio el opcode 5
+[INFO] 16:45:40:472 GameCard/(7165:7172): Codigo de operacion recibido del socket cliente 9 corresponde a un GET
+[INFO] 16:45:40:472 GameCard/(7165:7172): Recibiendo tamanio total
+[INFO] 16:45:40:472 GameCard/(7165:7172): Tamanio total recibido: 23
+[INFO] 16:45:40:472 GameCard/(7165:7172): EL ID recibido: 2
+[INFO] 16:45:40:472 GameCard/(7165:7172): Tamanio del pokemon recibido: 7
+[INFO] 16:45:40:472 GameCard/(7165:7172): Nombre del pokemon recibido: gengar
+[INFO] 16:45:40:472 GameCard/(7165:7172): Acknowledgement enviado al modulo Broker
+[INFO] 16:45:40:473 GameCard/(7165:7172): GET recibido del modulo BROKER socket 9
+[INFO] 16:45:40:473 GameCard/(7165:7172): GET recibido
+[INFO] 16:45:40:474 GameCard/(7165:7172): EL array de blocks es: (null)
+[INFO] 16:45:40:474 GameCard/(7165:7172): Retorno el estado: N
+[INFO] 16:45:40:474 GameCard/(7165:7172): No hay coordenadas bro te equivocaste, suerte para la proxima
+[INFO] 16:45:40:474 GameCard/(7165:7172): El ID mensaje cargado en el localized es: 2
+[INFO] 16:45:40:474 GameCard/(7165:7172): El Pokemon cargado en el localized es: gengar
+[INFO] 16:45:40:474 GameCard/(7165:7172): El tamanio del nombre del pokemon cargado en el localized es: 7
+[INFO] 16:45:40:475 GameCard/(7165:7172): La cantidad de lugares donde apareche el pokemon cargado en el localized es: 0
+[INFO] 16:45:45:446 GameCard/(7165:7173): Iniciando verificacion de conexion con BROKER...
+[INFO] 16:45:45:446 GameCard/(7165:7173): Conexion con BROKER en buen estado, verificando nuevamente en 10 segundos
+[INFO] 16:45:45:476 GameCard/(7165:7172): El ID cargado es 2
+[INFO] 16:45:45:476 GameCard/(7165:7172): Tamanio nombre pokemon 7
+[INFO] 16:45:45:476 GameCard/(7165:7172): Nombre pokemon gengar
+[INFO] 16:45:45:476 GameCard/(7165:7172): Cantidad de coordenadas donde aparece:  0
+[INFO] 16:45:45:476 GameCard/(7165:7172): Saliendo
+[INFO] 16:45:45:476 GameCard/(7165:7172): Creando paquete
+[INFO] 16:45:45:476 GameCard/(7165:7172): CODIGO DE OPERACION: 6
+[INFO] 16:45:45:476 GameCard/(7165:7172): Paquete Creado
+[INFO] 16:45:45:476 GameCard/(7165:7172): la operacion a realizar es 6
+[INFO] 16:45:45:476 GameCard/(7165:7172): Serializando...
+[INFO] 16:45:45:476 GameCard/(7165:7172): Serializacion completa
+[INFO] 16:45:45:476 GameCard/(7165:7172): El peso total es: 19
+[INFO] 16:45:45:476 GameCard/(7165:7172): Recibiendo codigo de operacion de BROKER en socket 9
+[INFO] 16:45:55:446 GameCard/(7165:7173): Iniciando verificacion de conexion con BROKER...
+[INFO] 16:45:55:446 GameCard/(7165:7173): Conexion con BROKER en buen estado, verificando nuevamente en 10 segundos
+[INFO] 16:46:05:447 GameCard/(7165:7173): Iniciando verificacion de conexion con BROKER...
+[INFO] 16:46:05:447 GameCard/(7165:7173): Conexion con BROKER en buen estado, verificando nuevamente en 10 segundos
+[INFO] 16:46:15:447 GameCard/(7165:7173): Iniciando verificacion de conexion con BROKER...
+[INFO] 16:46:15:447 GameCard/(7165:7173): Conexion con BROKER en buen estado, verificando nuevamente en 10 segundos
+[INFO] 16:46:25:448 GameCard/(7165:7173): Iniciando verificacion de conexion con BROKER...
+[INFO] 16:46:25:448 GameCard/(7165:7173): Conexion con BROKER en buen estado, verificando nuevamente en 10 segundos
+[INFO] 16:46:35:448 GameCard/(7165:7173): Iniciando verificacion de conexion con BROKER...
+[INFO] 16:46:35:449 GameCard/(7165:7173): Conexion con BROKER en buen estado, verificando nuevamente en 10 segundos
+[INFO] 16:46:45:449 GameCard/(7165:7173): Iniciando verificacion de conexion con BROKER...
+[INFO] 16:46:45:450 GameCard/(7165:7173): Conexion con BROKER en buen estado, verificando nuevamente en 10 segundos
+[INFO] 16:46:55:451 GameCard/(7165:7173): Iniciando verificacion de conexion con BROKER...
+[INFO] 16:46:55:451 GameCard/(7165:7173): Conexion con BROKER en buen estado, verificando nuevamente en 10 segundos
+[INFO] 16:46:56:554 GameCard/(7165:7169): Socket 10 de gameBoy aceptado
+[INFO] 16:46:56:558 GameCard/(7165:7206): Recibiendo codigo de operacion de GameBoy en socket 10
+[INFO] 16:46:56:558 GameCard/(7165:7206): Codigo de operacion de socket 10 recibido: 1
+[INFO] 16:46:56:558 GameCard/(7165:7206): Procesando request de GameBoy
+[INFO] 16:46:56:558 GameCard/(7165:7206): Codigo de operacion recibido del socket cliente 10 corresponde a un NEW
+[INFO] 16:46:56:558 GameCard/(7165:7206): Recibiendo tamanio total
+[INFO] 16:46:56:558 GameCard/(7165:7206): Tamanio total recibido: 28
+[INFO] 16:46:56:558 GameCard/(7165:7206): EL ID recibido: 4
+[INFO] 16:46:56:558 GameCard/(7165:7206): Tamanio del pokemon recibido: 8
+[INFO] 16:46:56:558 GameCard/(7165:7206): Nombre del pokemon recibido: pikachu
+[INFO] 16:46:56:558 GameCard/(7165:7206): Posicion X recibida: 3
+[INFO] 16:46:56:558 GameCard/(7165:7206): Posicion Y recibida: 4
+[INFO] 16:46:56:558 GameCard/(7165:7206): Cantidad recibida: 9
+[INFO] 16:46:56:559 GameCard/(7165:7206): NEW recibido del modulo Game Boy socket 10
+[INFO] 16:46:56:559 GameCard/(7165:7206): Llegamo
+[INFO] 16:46:56:559 GameCard/(7165:7206): Pokemon: pikachu
+[INFO] 16:46:56:559 GameCard/(7165:7206): PosX: 3
+[INFO] 16:46:56:559 GameCard/(7165:7206): PosY: 4
+[INFO] 16:46:56:559 GameCard/(7165:7206): Cantidad: 9
+[INFO] 16:46:56:559 GameCard/(7165:7206): Ruta de Directorio: /home/utnso/Escritorio/tall-grass/Files/pikachu
+[INFO] 16:46:56:559 GameCard/(7165:7206): La coordenada generada es: 3-4
+[INFO] 16:46:56:559 GameCard/(7165:7206): La posicion que me llega es: 3-4
+[INFO] 16:46:56:559 GameCard/(7165:7206): El valor del KEY-VALUE cargado completamente es: 3-4=9
+[INFO] 16:46:56:559 GameCard/(7165:7206): La posicion del registro generado es: 3-4
+[INFO] 16:46:56:559 GameCard/(7165:7206): La cantidad del registro generado es: 9
+[INFO] 16:46:56:559 GameCard/(7165:7206): Ruta del directorio pokemon pikachu es: /home/utnso/Escritorio/tall-grass/Files/pikachu
+[INFO] 16:46:56:560 GameCard/(7165:7206): Ruta del Archivo: /home/utnso/Escritorio/tall-grass/Files/pikachu/pikachu.bin
+[INFO] 16:46:56:560 GameCard/(7165:7206): Se creo el archivo config
+[INFO] 16:46:56:560 GameCard/(7165:7206): EL array de blocks es: (null)
+[INFO] 16:46:56:560 GameCard/(7165:7206): Retorno el estado: N
+[INFO] 16:46:56:560 GameCard/(7165:7206): No tiene blocks asignados. Primera vez
+[INFO] 16:46:56:560 GameCard/(7165:7206): El registro aplanado quedo como: 3-4=9
+
+[INFO] 16:46:56:560 GameCard/(7165:7206): Entro a buscar posiciones
+[INFO] 16:46:56:560 GameCard/(7165:7206): Bloqueo
+[INFO] 16:46:56:560 GameCard/(7165:7206): EL valor de i es de : 0
+[INFO] 16:46:56:560 GameCard/(7165:7206): EL valor de cant de bloques es de : 1024
+[INFO] 16:46:56:560 GameCard/(7165:7206): EL valor de i es de : 0
+[INFO] 16:46:56:561 GameCard/(7165:7206): EL valor de cant de bloques es de : 1024
+[INFO] 16:46:56:561 GameCard/(7165:7206): Entro primer IF
+[INFO] 16:46:56:561 GameCard/(7165:7206): Entro segundo IF
+[INFO] 16:46:56:561 GameCard/(7165:7206): Guardando el bitarray
+[INFO] 16:46:56:561 GameCard/(7165:7206): Termino el guardado
+[INFO] 16:46:56:561 GameCard/(7165:7206): EL block 0 esta libre
+[INFO] 16:46:56:561 GameCard/(7165:7206): EL block 0 esta libre, vuelvo a chequear
+[INFO] 16:46:56:561 GameCard/(7165:7206): El block libre seleccionado es: 0
+[INFO] 16:46:56:561 GameCard/(7165:7206): La ruta del block es: /home/utnso/Escritorio/tall-grass/Blocks/0.bin
+[INFO] 16:46:56:571 GameCard/(7165:7206): Iterando la lista
+[INFO] 16:46:56:572 GameCard/(7165:7206): El ID de mensaje cargado en el appeared es: 4
+[INFO] 16:46:56:572 GameCard/(7165:7206): El pokemoncargado en el appeared es: pikachu
+[INFO] 16:46:56:572 GameCard/(7165:7206): El tamanio del nombre del pokemon cargado en el appeared es: 8
+[INFO] 16:46:56:572 GameCard/(7165:7206): La coordenada del pokemon cargado en el appeared es: 3 - 4
+[INFO] 16:47:01:573 GameCard/(7165:7206): El ID cargado es 4
+[INFO] 16:47:01:574 GameCard/(7165:7206): Tamanio nombre pokemon 8
+[INFO] 16:47:01:574 GameCard/(7165:7206): Nombre pokemon pikachu
+[INFO] 16:47:01:574 GameCard/(7165:7206): Posicion X 3
+[INFO] 16:47:01:574 GameCard/(7165:7206): Posicion Y 4
+[INFO] 16:47:01:574 GameCard/(7165:7206): Creando paquete
+[INFO] 16:47:01:574 GameCard/(7165:7206): CODIGO DE OPERACION: 2
+[INFO] 16:47:01:574 GameCard/(7165:7206): Paquete Creado
+[INFO] 16:47:01:574 GameCard/(7165:7206): la operacion a realizar es 2
+[INFO] 16:47:01:574 GameCard/(7165:7206): Serializando...
+[INFO] 16:47:01:574 GameCard/(7165:7206): Serializacion completa
+[INFO] 16:47:01:574 GameCard/(7165:7206): El peso total es: 24
+[INFO] 16:47:05:451 GameCard/(7165:7173): Iniciando verificacion de conexion con BROKER...
+[INFO] 16:47:05:452 GameCard/(7165:7173): Conexion con BROKER en buen estado, verificando nuevamente en 10 segundos
+[INFO] 16:47:07:662 GameCard/(7165:7172): Se recibio el opcode 5
+[INFO] 16:47:07:663 GameCard/(7165:7172): Codigo de operacion recibido del socket cliente 9 corresponde a un GET
+[INFO] 16:47:07:663 GameCard/(7165:7172): Recibiendo tamanio total
+[INFO] 16:47:07:663 GameCard/(7165:7172): Tamanio total recibido: 25
+[INFO] 16:47:07:663 GameCard/(7165:7172): EL ID recibido: 19
+[INFO] 16:47:07:663 GameCard/(7165:7172): Tamanio del pokemon recibido: 9
+[INFO] 16:47:07:663 GameCard/(7165:7172): Nombre del pokemon recibido: squirtle
+[INFO] 16:47:07:663 GameCard/(7165:7172): Acknowledgement enviado al modulo Broker
+[INFO] 16:47:07:663 GameCard/(7165:7172): GET recibido del modulo BROKER socket 9
+[INFO] 16:47:07:663 GameCard/(7165:7172): GET recibido
+[INFO] 16:47:07:663 GameCard/(7165:7172): EL array de blocks es: (null)
+[INFO] 16:47:07:663 GameCard/(7165:7172): Retorno el estado: N
+[INFO] 16:47:07:663 GameCard/(7165:7172): No hay coordenadas bro te equivocaste, suerte para la proxima
+[INFO] 16:47:07:664 GameCard/(7165:7172): El ID mensaje cargado en el localized es: 19
+[INFO] 16:47:07:664 GameCard/(7165:7172): El Pokemon cargado en el localized es: squirtle
+[INFO] 16:47:07:664 GameCard/(7165:7172): El tamanio del nombre del pokemon cargado en el localized es: 9
+[INFO] 16:47:07:664 GameCard/(7165:7172): La cantidad de lugares donde apareche el pokemon cargado en el localized es: 0
+[INFO] 16:47:12:665 GameCard/(7165:7172): El ID cargado es 19
+[INFO] 16:47:12:665 GameCard/(7165:7172): Tamanio nombre pokemon 9
+[INFO] 16:47:12:665 GameCard/(7165:7172): Nombre pokemon squirtle
+[INFO] 16:47:12:665 GameCard/(7165:7172): Cantidad de coordenadas donde aparece:  0
+[INFO] 16:47:12:665 GameCard/(7165:7172): Saliendo
+[INFO] 16:47:12:665 GameCard/(7165:7172): Creando paquete
+[INFO] 16:47:12:666 GameCard/(7165:7172): CODIGO DE OPERACION: 6
+[INFO] 16:47:12:666 GameCard/(7165:7172): Paquete Creado
+[INFO] 16:47:12:666 GameCard/(7165:7172): la operacion a realizar es 6
+[INFO] 16:47:12:666 GameCard/(7165:7172): Serializando...
+[INFO] 16:47:12:666 GameCard/(7165:7172): Serializacion completa
+[INFO] 16:47:12:666 GameCard/(7165:7172): El peso total es: 21
+[INFO] 16:47:12:666 GameCard/(7165:7172): Recibiendo codigo de operacion de BROKER en socket 9
+[INFO] 16:47:12:666 GameCard/(7165:7172): Se recibio el opcode 5
+[INFO] 16:47:12:666 GameCard/(7165:7172): Codigo de operacion recibido del socket cliente 9 corresponde a un GET
+[INFO] 16:47:12:666 GameCard/(7165:7172): Recibiendo tamanio total
+[INFO] 16:47:12:667 GameCard/(7165:7172): Tamanio total recibido: 23
+[INFO] 16:47:12:667 GameCard/(7165:7172): EL ID recibido: 20
+[INFO] 16:47:12:667 GameCard/(7165:7172): Tamanio del pokemon recibido: 7
+[INFO] 16:47:12:667 GameCard/(7165:7172): Nombre del pokemon recibido: gengar
+[INFO] 16:47:12:667 GameCard/(7165:7172): Acknowledgement enviado al modulo Broker
+[INFO] 16:47:12:668 GameCard/(7165:7172): GET recibido del modulo BROKER socket 9
+[INFO] 16:47:12:668 GameCard/(7165:7172): GET recibido
+[INFO] 16:47:12:668 GameCard/(7165:7172): EL array de blocks es: (null)
+[INFO] 16:47:12:668 GameCard/(7165:7172): Retorno el estado: N
+[INFO] 16:47:12:669 GameCard/(7165:7172): No hay coordenadas bro te equivocaste, suerte para la proxima
+[INFO] 16:47:12:669 GameCard/(7165:7172): El ID mensaje cargado en el localized es: 20
+[INFO] 16:47:12:669 GameCard/(7165:7172): El Pokemon cargado en el localized es: gengar
+[INFO] 16:47:12:670 GameCard/(7165:7172): El tamanio del nombre del pokemon cargado en el localized es: 7
+[INFO] 16:47:12:670 GameCard/(7165:7172): La cantidad de lugares donde apareche el pokemon cargado en el localized es: 0
+[INFO] 16:47:15:452 GameCard/(7165:7173): Iniciando verificacion de conexion con BROKER...
+[INFO] 16:47:15:452 GameCard/(7165:7173): Conexion con BROKER en buen estado, verificando nuevamente en 10 segundos
+[INFO] 16:47:17:671 GameCard/(7165:7172): El ID cargado es 20
+[INFO] 16:47:17:671 GameCard/(7165:7172): Tamanio nombre pokemon 7
+[INFO] 16:47:17:672 GameCard/(7165:7172): Nombre pokemon gengar
+[INFO] 16:47:17:672 GameCard/(7165:7172): Cantidad de coordenadas donde aparece:  0
+[INFO] 16:47:17:672 GameCard/(7165:7172): Saliendo
+[INFO] 16:47:17:672 GameCard/(7165:7172): Creando paquete
+[INFO] 16:47:17:672 GameCard/(7165:7172): CODIGO DE OPERACION: 6
+[INFO] 16:47:17:672 GameCard/(7165:7172): Paquete Creado
+[INFO] 16:47:17:673 GameCard/(7165:7172): la operacion a realizar es 6
+[INFO] 16:47:17:673 GameCard/(7165:7172): Serializando...
+[INFO] 16:47:17:673 GameCard/(7165:7172): Serializacion completa
+[INFO] 16:47:17:673 GameCard/(7165:7172): El peso total es: 19
+[INFO] 16:47:17:674 GameCard/(7165:7172): Recibiendo codigo de operacion de BROKER en socket 9
+[INFO] 16:47:17:674 GameCard/(7165:7172): Se recibio el opcode 5
+[INFO] 16:47:17:674 GameCard/(7165:7172): Codigo de operacion recibido del socket cliente 9 corresponde a un GET
+[INFO] 16:47:17:674 GameCard/(7165:7172): Recibiendo tamanio total
+[INFO] 16:47:17:674 GameCard/(7165:7172): Tamanio total recibido: 21
+[INFO] 16:47:17:674 GameCard/(7165:7172): EL ID recibido: 21
+[INFO] 16:47:17:675 GameCard/(7165:7172): Tamanio del pokemon recibido: 5
+[INFO] 16:47:17:675 GameCard/(7165:7172): Nombre del pokemon recibido: onix
+[INFO] 16:47:17:681 GameCard/(7165:7172): Acknowledgement enviado al modulo Broker
+[INFO] 16:47:17:681 GameCard/(7165:7172): GET recibido del modulo BROKER socket 9
+[INFO] 16:47:17:684 GameCard/(7165:7172): GET recibido
+[INFO] 16:47:17:684 GameCard/(7165:7172): EL array de blocks es: (null)
+[INFO] 16:47:17:684 GameCard/(7165:7172): Retorno el estado: N
+[INFO] 16:47:17:684 GameCard/(7165:7172): No hay coordenadas bro te equivocaste, suerte para la proxima
+[INFO] 16:47:17:685 GameCard/(7165:7172): El ID mensaje cargado en el localized es: 21
+[INFO] 16:47:17:685 GameCard/(7165:7172): El Pokemon cargado en el localized es: onix
+[INFO] 16:47:17:685 GameCard/(7165:7172): El tamanio del nombre del pokemon cargado en el localized es: 5
+[INFO] 16:47:17:685 GameCard/(7165:7172): La cantidad de lugares donde apareche el pokemon cargado en el localized es: 0
+[INFO] 16:47:22:685 GameCard/(7165:7172): El ID cargado es 21
+[INFO] 16:47:22:686 GameCard/(7165:7172): Tamanio nombre pokemon 5
+[INFO] 16:47:22:686 GameCard/(7165:7172): Nombre pokemon onix
+[INFO] 16:47:22:686 GameCard/(7165:7172): Cantidad de coordenadas donde aparece:  0
+[INFO] 16:47:22:686 GameCard/(7165:7172): Saliendo
+[INFO] 16:47:22:686 GameCard/(7165:7172): Creando paquete
+[INFO] 16:47:22:686 GameCard/(7165:7172): CODIGO DE OPERACION: 6
+[INFO] 16:47:22:686 GameCard/(7165:7172): Paquete Creado
+[INFO] 16:47:22:686 GameCard/(7165:7172): la operacion a realizar es 6
+[INFO] 16:47:22:686 GameCard/(7165:7172): Serializando...
+[INFO] 16:47:22:686 GameCard/(7165:7172): Serializacion completa
+[INFO] 16:47:22:686 GameCard/(7165:7172): El peso total es: 17
+[INFO] 16:47:22:687 GameCard/(7165:7172): Recibiendo codigo de operacion de BROKER en socket 9
+[INFO] 16:47:22:687 GameCard/(7165:7172): Se recibio el opcode 5
+[INFO] 16:47:22:687 GameCard/(7165:7172): Codigo de operacion recibido del socket cliente 9 corresponde a un GET
+[INFO] 16:47:22:687 GameCard/(7165:7172): Recibiendo tamanio total
+[INFO] 16:47:22:687 GameCard/(7165:7172): Tamanio total recibido: 24
+[INFO] 16:47:22:687 GameCard/(7165:7172): EL ID recibido: 22
+[INFO] 16:47:22:687 GameCard/(7165:7172): Tamanio del pokemon recibido: 8
+[INFO] 16:47:22:687 GameCard/(7165:7172): Nombre del pokemon recibido: pikachu
+[INFO] 16:47:22:688 GameCard/(7165:7172): Acknowledgement enviado al modulo Broker
+[INFO] 16:47:22:688 GameCard/(7165:7172): GET recibido del modulo BROKER socket 9
+[INFO] 16:47:22:688 GameCard/(7165:7172): GET recibido
+[INFO] 16:47:22:689 GameCard/(7165:7172): EL array de blocks es: 0
+[INFO] 16:47:22:689 GameCard/(7165:7172): Retorno el estado: N
+[INFO] 16:47:22:689 GameCard/(7165:7172): Generando los paths de los bloques
+[INFO] 16:47:22:689 GameCard/(7165:7172): Unico bloque
+[INFO] 16:47:22:689 GameCard/(7165:7172): Se genera la ruta para: 0
+[INFO] 16:47:22:690 GameCard/(7165:7172): El path del block es: /home/utnso/Escritorio/tall-grass/Blocks/0.bin
+[INFO] 16:47:22:690 GameCard/(7165:7172): La posicion 0 del array de path es: /home/utnso/Escritorio/tall-grass/Blocks/0.bin
+[INFO] 16:47:22:690 GameCard/(7165:7172): Las coordenadas encontradas son: 3-4
+[INFO] 16:47:22:690 GameCard/(7165:7172): El ID mensaje cargado en el localized es: 22
+[INFO] 16:47:22:690 GameCard/(7165:7172): El Pokemon cargado en el localized es: pikachu
+[INFO] 16:47:22:691 GameCard/(7165:7172): El tamanio del nombre del pokemon cargado en el localized es: 8
+[INFO] 16:47:22:691 GameCard/(7165:7172): La cantidad de lugares donde apareche el pokemon cargado en el localized es: 1
+[INFO] 16:47:22:691 GameCard/(7165:7172): La coordenada sacada de la cola es: 3-4
+[INFO] 16:47:22:691 GameCard/(7165:7172): La coordenada cargada es (3 ; 4)
+[INFO] 16:47:22:691 GameCard/(7165:7172): El valor de index 0 es: 3
+[INFO] 16:47:22:691 GameCard/(7165:7172): El valor de index 1 es: 4
+[INFO] 16:47:22:709 GameCard/(7165:7171): Se recibio el opcode 3
+[INFO] 16:47:22:709 GameCard/(7165:7171): Codigo de operacion recibido del socket cliente 8 corresponde a un CATCH
+[INFO] 16:47:22:709 GameCard/(7165:7171): Recibiendo tamanio total
+[INFO] 16:47:22:709 GameCard/(7165:7171): Tamanio total recibido: 32
+[INFO] 16:47:22:709 GameCard/(7165:7171): EL ID recibido: 25
+[INFO] 16:47:22:709 GameCard/(7165:7171): Tamanio del pokemon: 8
+[INFO] 16:47:22:709 GameCard/(7165:7171): Nombre del pokemon recibido: pikachu
+[INFO] 16:47:22:710 GameCard/(7165:7171): Posicion X recibida: 3
+[INFO] 16:47:22:710 GameCard/(7165:7171): Posicion Y recibida: 4
+[INFO] 16:47:22:710 GameCard/(7165:7171): Acknowledgement enviado al modulo Broker
+[INFO] 16:47:22:710 GameCard/(7165:7171): CATCH recibido del modulo BROKER socket 8
+[INFO] 16:47:22:710 GameCard/(7165:7171): CATCH recibido
+[INFO] 16:47:22:710 GameCard/(7165:7171): La coordenada generada es: 3-4
+[INFO] 16:47:22:710 GameCard/(7165:7171): EL array de blocks es: 0
+[INFO] 16:47:22:710 GameCard/(7165:7171): Retorno el estado: N
+[INFO] 16:47:22:710 GameCard/(7165:7171): Generando los paths de los bloques
+[INFO] 16:47:22:710 GameCard/(7165:7171): Unico bloque
+[INFO] 16:47:22:710 GameCard/(7165:7171): Se genera la ruta para: 0
+[INFO] 16:47:22:710 GameCard/(7165:7171): El path del block es: /home/utnso/Escritorio/tall-grass/Blocks/0.bin
+[INFO] 16:47:22:710 GameCard/(7165:7171): La posicion 0 del array de path es: /home/utnso/Escritorio/tall-grass/Blocks/0.bin
+[INFO] 16:47:22:710 GameCard/(7165:7171): EL FLAG DEL CATCH ES: 1
+[INFO] 16:47:22:710 GameCard/(7165:7171): El registro aplanado quedo como: 3-4=8
+
+[INFO] 16:47:22:710 GameCard/(7165:7171): Vaciando blocks
+[INFO] 16:47:22:710 GameCard/(7165:7171): El valor del block 0 es de: 1
+[INFO] 16:47:22:710 GameCard/(7165:7171): El block 0 fue desmarcado con el valor de: 0
+[INFO] 16:47:22:710 GameCard/(7165:7171): Guardando el bitarray
+[INFO] 16:47:22:710 GameCard/(7165:7171): Termino el guardado
+[INFO] 16:47:22:710 GameCard/(7165:7171): Entro a buscar posiciones
+[INFO] 16:47:22:710 GameCard/(7165:7171): Bloqueo
+[INFO] 16:47:22:710 GameCard/(7165:7171): EL valor de i es de : 0
+[INFO] 16:47:22:710 GameCard/(7165:7171): EL valor de cant de bloques es de : 1024
+[INFO] 16:47:22:710 GameCard/(7165:7171): EL valor de i es de : 0
+[INFO] 16:47:22:710 GameCard/(7165:7171): EL valor de cant de bloques es de : 1024
+[INFO] 16:47:22:710 GameCard/(7165:7171): Entro primer IF
+[INFO] 16:47:22:710 GameCard/(7165:7171): Entro segundo IF
+[INFO] 16:47:22:710 GameCard/(7165:7171): Guardando el bitarray
+[INFO] 16:47:22:710 GameCard/(7165:7171): Termino el guardado
+[INFO] 16:47:22:710 GameCard/(7165:7171): EL block 0 esta libre
+[INFO] 16:47:22:711 GameCard/(7165:7171): EL block 0 esta libre, vuelvo a chequear
+[INFO] 16:47:22:711 GameCard/(7165:7171): El block libre seleccionado es: 0
+[INFO] 16:47:22:711 GameCard/(7165:7171): La ruta del block es: /home/utnso/Escritorio/tall-grass/Blocks/0.bin
+[INFO] 16:47:22:711 GameCard/(7165:7171): Iterando la lista
+[INFO] 16:47:22:711 GameCard/(7165:7171): El ID de mensaje cargado en el caught es: 25
+[INFO] 16:47:22:711 GameCard/(7165:7171): El Flag cargado en el caught es: 1
+[INFO] 16:47:25:452 GameCard/(7165:7173): Iniciando verificacion de conexion con BROKER...
+[INFO] 16:47:25:452 GameCard/(7165:7173): Conexion con BROKER en buen estado, verificando nuevamente en 10 segundos
+[INFO] 16:47:27:692 GameCard/(7165:7172): El ID cargado es 22
+[INFO] 16:47:27:692 GameCard/(7165:7172): Tamanio nombre pokemon 8
+[INFO] 16:47:27:692 GameCard/(7165:7172): Nombre pokemon pikachu
+[INFO] 16:47:27:692 GameCard/(7165:7172): Cantidad de coordenadas donde aparece:  1
+[INFO] 16:47:27:692 GameCard/(7165:7172): Posicion X previa al mem 3
+[INFO] 16:47:27:692 GameCard/(7165:7172): Posicion Y previa al mem 4
+[INFO] 16:47:27:692 GameCard/(7165:7172): Posicion X 3
+[INFO] 16:47:27:692 GameCard/(7165:7172): Posicion Y 4
+[INFO] 16:47:27:693 GameCard/(7165:7172): Saliendo
+[INFO] 16:47:27:693 GameCard/(7165:7172): Creando paquete
+[INFO] 16:47:27:693 GameCard/(7165:7172): CODIGO DE OPERACION: 6
+[INFO] 16:47:27:693 GameCard/(7165:7172): Paquete Creado
+[INFO] 16:47:27:693 GameCard/(7165:7172): la operacion a realizar es 6
+[INFO] 16:47:27:693 GameCard/(7165:7172): Serializando...
+[INFO] 16:47:27:693 GameCard/(7165:7172): Serializacion completa
+[INFO] 16:47:27:693 GameCard/(7165:7172): El peso total es: 28
+[INFO] 16:47:27:693 GameCard/(7165:7172): Recibiendo codigo de operacion de BROKER en socket 9
+[INFO] 16:47:27:715 GameCard/(7165:7171): El ID cargado es 25
+[INFO] 16:47:27:715 GameCard/(7165:7171): El flag cargado es 1
+[INFO] 16:47:27:715 GameCard/(7165:7171): Creando paquete
+[INFO] 16:47:27:715 GameCard/(7165:7171): CODIGO DE OPERACION: 4
+[INFO] 16:47:27:715 GameCard/(7165:7171): Paquete Creado
+[INFO] 16:47:27:715 GameCard/(7165:7171): la operacion a realizar es 4
+[INFO] 16:47:27:715 GameCard/(7165:7171): Serializando...
+[INFO] 16:47:27:715 GameCard/(7165:7171): Serializacion completa
+[INFO] 16:47:27:715 GameCard/(7165:7171): El peso total es: 8
+[INFO] 16:47:27:715 GameCard/(7165:7171): Recibiendo codigo de operacion de BROKER en socket 8
+[INFO] 16:47:35:454 GameCard/(7165:7173): Iniciando verificacion de conexion con BROKER...
+[INFO] 16:47:35:455 GameCard/(7165:7173): Conexion con BROKER en buen estado, verificando nuevamente en 10 segundos
+[INFO] 16:47:45:455 GameCard/(7165:7173): Iniciando verificacion de conexion con BROKER...
+[INFO] 16:47:45:455 GameCard/(7165:7173): Conexion con BROKER en buen estado, verificando nuevamente en 10 segundos
+[WARNING] 16:47:55:298 GameCard/(7165:7172): BROKER acaba de cerrar la conexion correspondiente al socket 9
+[WARNING] 16:47:55:298 GameCard/(7165:7171): BROKER acaba de cerrar la conexion correspondiente al socket 8
+[WARNING] 16:47:55:298 GameCard/(7165:7170): BROKER acaba de cerrar la conexion correspondiente al socket 7
+[INFO] 16:47:55:457 GameCard/(7165:7173): Iniciando verificacion de conexion con BROKER...
+[ERROR] 16:47:55:457 GameCard/(7165:7173): Reconexion con BROKER fallida, intentando nuevamente en 10 segundos
+[INFO] 16:49:32:420 GameCard/(7445:7445): logger iniciado.
+[INFO] 16:49:32:420 GameCard/(7445:7445): logger de catedra iniciado.
+[INFO] 16:49:32:420 GameCard/(7445:7445): Config cargada.
+[INFO] 16:49:32:421 GameCard/(7445:7445): La IP del Broker: 127.0.0.1
+[INFO] 16:49:32:421 GameCard/(7445:7445): El Puerto es: 4444
+[INFO] 16:49:32:421 GameCard/(7445:7445): El tiempo de reintento de conexion es: 10
+[INFO] 16:49:32:421 GameCard/(7445:7445): El tiempo de reintento de operacion es: 5
+[INFO] 16:49:32:421 GameCard/(7445:7445): El tiempo de retardo de conexion es: 5
+[INFO] 16:49:32:421 GameCard/(7445:7445): El punto de montaje es: /home/utnso/Escritorio/tall-grass
+[INFO] 16:49:32:421 GameCard/(7445:7445): La IP es: 127.0.0.1
+[INFO] 16:49:32:421 GameCard/(7445:7445): El puerto es: 4447
+[INFO] 16:49:32:421 GameCard/(7445:7445): El id del modulo es 171805099
+[INFO] 16:49:32:421 GameCard/(7445:7445): El punto de montaje es: /home/utnso/Escritorio/tall-grass
+[INFO] 16:49:32:422 GameCard/(7445:7445): La ruta del metadataes: /home/utnso/Escritorio/tall-grass/Metadata
+[INFO] 16:49:32:422 GameCard/(7445:7445): Se creo el config de MetaData
+[INFO] 16:49:32:422 GameCard/(7445:7445): El Block Size es: 64
+[INFO] 16:49:32:422 GameCard/(7445:7445): La cantidad de Bloques es: 1024
+[INFO] 16:49:32:422 GameCard/(7445:7445): El Magic Number es: TALL_GRASS
+[INFO] 16:49:32:423 GameCard/(7445:7445): Bitmap ya seteado
+[ERROR] 16:49:32:423 GameCard/(7445:7445): Ya existe el BitMap
+[INFO] 16:49:32:423 GameCard/(7445:7445): SETEO DE VARIABLES PARA ARCHIVOSYDIRECTORIOS.H
+[INFO] 16:49:32:423 GameCard/(7445:7445): El ID de modulo es: 171805099
+[INFO] 16:49:32:424 GameCard/(7445:7452): Escucho GET de BROKER
+[INFO] 16:49:32:424 GameCard/(7445:7453): Hilo de verificacion periodica de conexion con BROKER iniciado
+[INFO] 16:49:32:424 GameCard/(7445:7452): Recibiendo codigo de operacion de BROKER en socket 9
+[INFO] 16:49:32:425 GameCard/(7445:7451): Escucho CATCH de BROKER
+[INFO] 16:49:32:425 GameCard/(7445:7451): Recibiendo codigo de operacion de BROKER en socket 8
+[INFO] 16:49:32:425 GameCard/(7445:7450): Escuchando NEW de BROKER
+[INFO] 16:49:32:425 GameCard/(7445:7450): Socker de NEW: 7
+[INFO] 16:49:32:425 GameCard/(7445:7450): Recibiendo codigo de operacion de BROKER en socket 7
+[INFO] 16:49:32:425 GameCard/(7445:7449): Esperando mensajes de game boy en socket 5
+[INFO] 16:49:42:425 GameCard/(7445:7453): Iniciando verificacion de conexion con BROKER...
+[INFO] 16:49:42:425 GameCard/(7445:7453): Conexion con BROKER en buen estado, verificando nuevamente en 10 segundos
+[INFO] 16:49:46:273 GameCard/(7445:7449): Socket 10 de gameBoy aceptado
+[INFO] 16:49:46:276 GameCard/(7445:7455): Recibiendo codigo de operacion de GameBoy en socket 10
+[INFO] 16:49:46:276 GameCard/(7445:7455): Codigo de operacion de socket 10 recibido: 1
+[INFO] 16:49:46:276 GameCard/(7445:7455): Procesando request de GameBoy
+[INFO] 16:49:46:276 GameCard/(7445:7455): Codigo de operacion recibido del socket cliente 10 corresponde a un NEW
+[INFO] 16:49:46:276 GameCard/(7445:7455): Recibiendo tamanio total
+[INFO] 16:49:46:276 GameCard/(7445:7455): Tamanio total recibido: 28
+[INFO] 16:49:46:276 GameCard/(7445:7455): EL ID recibido: 9
+[INFO] 16:49:46:276 GameCard/(7445:7455): Tamanio del pokemon recibido: 8
+[INFO] 16:49:46:276 GameCard/(7445:7455): Nombre del pokemon recibido: pikachu
+[INFO] 16:49:46:276 GameCard/(7445:7455): Posicion X recibida: 3
+[INFO] 16:49:46:276 GameCard/(7445:7455): Posicion Y recibida: 8
+[INFO] 16:49:46:276 GameCard/(7445:7455): Cantidad recibida: 9
+[INFO] 16:49:46:277 GameCard/(7445:7455): NEW recibido del modulo Game Boy socket 10
+[INFO] 16:49:46:277 GameCard/(7445:7455): Llegamo
+[INFO] 16:49:46:277 GameCard/(7445:7455): Pokemon: pikachu
+[INFO] 16:49:46:277 GameCard/(7445:7455): PosX: 3
+[INFO] 16:49:46:277 GameCard/(7445:7455): PosY: 8
+[INFO] 16:49:46:277 GameCard/(7445:7455): Cantidad: 9
+[INFO] 16:49:46:277 GameCard/(7445:7455): Ruta de Directorio: /home/utnso/Escritorio/tall-grass/Files/pikachu
+[INFO] 16:49:46:277 GameCard/(7445:7455): La coordenada generada es: 3-8
+[INFO] 16:49:46:277 GameCard/(7445:7455): La posicion que me llega es: 3-8
+[INFO] 16:49:46:277 GameCard/(7445:7455): El valor del KEY-VALUE cargado completamente es: 3-8=9
+[INFO] 16:49:46:277 GameCard/(7445:7455): La posicion del registro generado es: 3-8
+[INFO] 16:49:46:277 GameCard/(7445:7455): La cantidad del registro generado es: 9
+[INFO] 16:49:46:277 GameCard/(7445:7455): Ruta del directorio pokemon pikachu es: /home/utnso/Escritorio/tall-grass/Files/pikachu
+[INFO] 16:49:46:277 GameCard/(7445:7455): Ruta del Archivo: /home/utnso/Escritorio/tall-grass/Files/pikachu/pikachu.bin
+[INFO] 16:49:46:278 GameCard/(7445:7455): Se creo el archivo config
+[INFO] 16:49:46:278 GameCard/(7445:7455): EL array de blocks es: 0
+[INFO] 16:49:46:278 GameCard/(7445:7455): Retorno el estado: N
+[INFO] 16:49:46:278 GameCard/(7445:7455): Pokemon ya conocido
+[INFO] 16:49:46:278 GameCard/(7445:7455): Generando los paths de los bloques
+[INFO] 16:49:46:278 GameCard/(7445:7455): Unico bloque
+[INFO] 16:49:46:278 GameCard/(7445:7455): Se genera la ruta para: 0
+[INFO] 16:49:46:278 GameCard/(7445:7455): El path del block es: /home/utnso/Escritorio/tall-grass/Blocks/0.bin
+[INFO] 16:49:46:279 GameCard/(7445:7455): La posicion 0 del array de path es: /home/utnso/Escritorio/tall-grass/Blocks/0.bin
+[INFO] 16:49:46:279 GameCard/(7445:7455): La coordenada 3-8 es nueva. Se agrega al los registros
+[INFO] 16:49:46:280 GameCard/(7445:7455): El registro aplanado quedo como: 3-4=8
+
+[INFO] 16:49:46:280 GameCard/(7445:7455): El registro aplanado quedo como: 3-8=9
+
+[INFO] 16:49:46:280 GameCard/(7445:7455): Vaciando blocks
+[INFO] 16:49:46:280 GameCard/(7445:7455): El valor del block 0 es de: 1
+[INFO] 16:49:46:280 GameCard/(7445:7455): El block 0 fue desmarcado con el valor de: 0
+[INFO] 16:49:46:280 GameCard/(7445:7455): Guardando el bitarray
+[INFO] 16:49:46:280 GameCard/(7445:7455): Termino el guardado
+[INFO] 16:49:46:280 GameCard/(7445:7455): Entro a buscar posiciones
+[INFO] 16:49:46:280 GameCard/(7445:7455): Bloqueo
+[INFO] 16:49:46:280 GameCard/(7445:7455): EL valor de i es de : 0
+[INFO] 16:49:46:280 GameCard/(7445:7455): EL valor de cant de bloques es de : 1024
+[INFO] 16:49:46:280 GameCard/(7445:7455): EL valor de i es de : 0
+[INFO] 16:49:46:281 GameCard/(7445:7455): EL valor de cant de bloques es de : 1024
+[INFO] 16:49:46:281 GameCard/(7445:7455): Entro primer IF
+[INFO] 16:49:46:281 GameCard/(7445:7455): Entro segundo IF
+[INFO] 16:49:46:281 GameCard/(7445:7455): Guardando el bitarray
+[INFO] 16:49:46:281 GameCard/(7445:7455): Termino el guardado
+[INFO] 16:49:46:281 GameCard/(7445:7455): EL block 0 esta libre
+[INFO] 16:49:46:281 GameCard/(7445:7455): EL block 0 esta libre, vuelvo a chequear
+[INFO] 16:49:46:281 GameCard/(7445:7455): El block libre seleccionado es: 0
+[INFO] 16:49:46:281 GameCard/(7445:7455): La ruta del block es: /home/utnso/Escritorio/tall-grass/Blocks/0.bin
+[INFO] 16:49:46:281 GameCard/(7445:7455): Iterando la lista
+[INFO] 16:49:46:281 GameCard/(7445:7455): El ID de mensaje cargado en el appeared es: 9
+[INFO] 16:49:46:281 GameCard/(7445:7455): El pokemoncargado en el appeared es: pikachu
+[INFO] 16:49:46:281 GameCard/(7445:7455): El tamanio del nombre del pokemon cargado en el appeared es: 8
+[INFO] 16:49:46:281 GameCard/(7445:7455): La coordenada del pokemon cargado en el appeared es: 3 - 8
+[INFO] 16:49:51:282 GameCard/(7445:7455): El ID cargado es 9
+[INFO] 16:49:51:283 GameCard/(7445:7455): Tamanio nombre pokemon 8
+[INFO] 16:49:51:283 GameCard/(7445:7455): Nombre pokemon pikachu
+[INFO] 16:49:51:283 GameCard/(7445:7455): Posicion X 3
+[INFO] 16:49:51:283 GameCard/(7445:7455): Posicion Y 8
+[INFO] 16:49:51:283 GameCard/(7445:7455): Creando paquete
+[INFO] 16:49:51:283 GameCard/(7445:7455): CODIGO DE OPERACION: 2
+[INFO] 16:49:51:283 GameCard/(7445:7455): Paquete Creado
+[INFO] 16:49:51:283 GameCard/(7445:7455): la operacion a realizar es 2
+[INFO] 16:49:51:283 GameCard/(7445:7455): Serializando...
+[INFO] 16:49:51:283 GameCard/(7445:7455): Serializacion completa
+[INFO] 16:49:51:283 GameCard/(7445:7455): El peso total es: 24
+[INFO] 16:49:52:426 GameCard/(7445:7453): Iniciando verificacion de conexion con BROKER...
+[INFO] 16:49:52:426 GameCard/(7445:7453): Conexion con BROKER en buen estado, verificando nuevamente en 10 segundos
+[INFO] 16:49:58:834 GameCard/(7445:7452): Se recibio el opcode 5
+[INFO] 16:49:58:834 GameCard/(7445:7452): Codigo de operacion recibido del socket cliente 9 corresponde a un GET
+[INFO] 16:49:58:834 GameCard/(7445:7452): Recibiendo tamanio total
+[INFO] 16:49:58:834 GameCard/(7445:7452): Tamanio total recibido: 21
+[INFO] 16:49:58:834 GameCard/(7445:7452): EL ID recibido: 8
+[INFO] 16:49:58:834 GameCard/(7445:7452): Tamanio del pokemon recibido: 5
+[INFO] 16:49:58:834 GameCard/(7445:7452): Nombre del pokemon recibido: onix
+[INFO] 16:49:58:834 GameCard/(7445:7452): Acknowledgement enviado al modulo Broker
+[INFO] 16:49:58:834 GameCard/(7445:7452): GET recibido del modulo BROKER socket 9
+[INFO] 16:49:58:834 GameCard/(7445:7452): GET recibido
+[INFO] 16:49:58:835 GameCard/(7445:7452): EL array de blocks es: (null)
+[INFO] 16:49:58:835 GameCard/(7445:7452): Retorno el estado: N
+[INFO] 16:49:58:835 GameCard/(7445:7452): No hay coordenadas bro te equivocaste, suerte para la proxima
+[INFO] 16:49:58:835 GameCard/(7445:7452): El ID mensaje cargado en el localized es: 8
+[INFO] 16:49:58:836 GameCard/(7445:7452): El Pokemon cargado en el localized es: onix
+[INFO] 16:49:58:836 GameCard/(7445:7452): El tamanio del nombre del pokemon cargado en el localized es: 5
+[INFO] 16:49:58:836 GameCard/(7445:7452): La cantidad de lugares donde apareche el pokemon cargado en el localized es: 0
+[INFO] 16:50:02:426 GameCard/(7445:7453): Iniciando verificacion de conexion con BROKER...
+[INFO] 16:50:02:426 GameCard/(7445:7453): Conexion con BROKER en buen estado, verificando nuevamente en 10 segundos
+[INFO] 16:50:03:836 GameCard/(7445:7452): El ID cargado es 8
+[INFO] 16:50:03:837 GameCard/(7445:7452): Tamanio nombre pokemon 5
+[INFO] 16:50:03:837 GameCard/(7445:7452): Nombre pokemon onix
+[INFO] 16:50:03:837 GameCard/(7445:7452): Cantidad de coordenadas donde aparece:  0
+[INFO] 16:50:03:837 GameCard/(7445:7452): Saliendo
+[INFO] 16:50:03:837 GameCard/(7445:7452): Creando paquete
+[INFO] 16:50:03:837 GameCard/(7445:7452): CODIGO DE OPERACION: 6
+[INFO] 16:50:03:837 GameCard/(7445:7452): Paquete Creado
+[INFO] 16:50:03:837 GameCard/(7445:7452): la operacion a realizar es 6
+[INFO] 16:50:03:837 GameCard/(7445:7452): Serializando...
+[INFO] 16:50:03:837 GameCard/(7445:7452): Serializacion completa
+[INFO] 16:50:03:837 GameCard/(7445:7452): El peso total es: 17
+[INFO] 16:50:03:837 GameCard/(7445:7452): Recibiendo codigo de operacion de BROKER en socket 9
+[INFO] 16:50:03:837 GameCard/(7445:7452): Se recibio el opcode 5
+[INFO] 16:50:03:837 GameCard/(7445:7452): Codigo de operacion recibido del socket cliente 9 corresponde a un GET
+[INFO] 16:50:03:837 GameCard/(7445:7452): Recibiendo tamanio total
+[INFO] 16:50:03:837 GameCard/(7445:7452): Tamanio total recibido: 25
+[INFO] 16:50:03:837 GameCard/(7445:7452): EL ID recibido: 9
+[INFO] 16:50:03:837 GameCard/(7445:7452): Tamanio del pokemon recibido: 9
+[INFO] 16:50:03:837 GameCard/(7445:7452): Nombre del pokemon recibido: squirtle
+[INFO] 16:50:03:838 GameCard/(7445:7452): Acknowledgement enviado al modulo Broker
+[INFO] 16:50:03:838 GameCard/(7445:7452): GET recibido del modulo BROKER socket 9
+[INFO] 16:50:03:838 GameCard/(7445:7452): GET recibido
+[INFO] 16:50:03:838 GameCard/(7445:7452): EL array de blocks es: (null)
+[INFO] 16:50:03:838 GameCard/(7445:7452): Retorno el estado: N
+[INFO] 16:50:03:839 GameCard/(7445:7452): No hay coordenadas bro te equivocaste, suerte para la proxima
+[INFO] 16:50:03:839 GameCard/(7445:7452): El ID mensaje cargado en el localized es: 9
+[INFO] 16:50:03:839 GameCard/(7445:7452): El Pokemon cargado en el localized es: squirtle
+[INFO] 16:50:03:839 GameCard/(7445:7452): El tamanio del nombre del pokemon cargado en el localized es: 9
+[INFO] 16:50:03:839 GameCard/(7445:7452): La cantidad de lugares donde apareche el pokemon cargado en el localized es: 0
+[INFO] 16:50:08:840 GameCard/(7445:7452): El ID cargado es 9
+[INFO] 16:50:08:840 GameCard/(7445:7452): Tamanio nombre pokemon 9
+[INFO] 16:50:08:840 GameCard/(7445:7452): Nombre pokemon squirtle
+[INFO] 16:50:08:840 GameCard/(7445:7452): Cantidad de coordenadas donde aparece:  0
+[INFO] 16:50:08:840 GameCard/(7445:7452): Saliendo
+[INFO] 16:50:08:840 GameCard/(7445:7452): Creando paquete
+[INFO] 16:50:08:840 GameCard/(7445:7452): CODIGO DE OPERACION: 6
+[INFO] 16:50:08:841 GameCard/(7445:7452): Paquete Creado
+[INFO] 16:50:08:841 GameCard/(7445:7452): la operacion a realizar es 6
+[INFO] 16:50:08:841 GameCard/(7445:7452): Serializando...
+[INFO] 16:50:08:841 GameCard/(7445:7452): Serializacion completa
+[INFO] 16:50:08:841 GameCard/(7445:7452): El peso total es: 21
+[INFO] 16:50:08:841 GameCard/(7445:7452): Recibiendo codigo de operacion de BROKER en socket 9
+[INFO] 16:50:08:841 GameCard/(7445:7452): Se recibio el opcode 5
+[INFO] 16:50:08:841 GameCard/(7445:7452): Codigo de operacion recibido del socket cliente 9 corresponde a un GET
+[INFO] 16:50:08:841 GameCard/(7445:7452): Recibiendo tamanio total
+[INFO] 16:50:08:841 GameCard/(7445:7452): Tamanio total recibido: 23
+[INFO] 16:50:08:841 GameCard/(7445:7452): EL ID recibido: 10
+[INFO] 16:50:08:842 GameCard/(7445:7452): Tamanio del pokemon recibido: 7
+[INFO] 16:50:08:842 GameCard/(7445:7452): Nombre del pokemon recibido: gengar
+[INFO] 16:50:08:842 GameCard/(7445:7452): Acknowledgement enviado al modulo Broker
+[INFO] 16:50:08:842 GameCard/(7445:7452): GET recibido del modulo BROKER socket 9
+[INFO] 16:50:08:842 GameCard/(7445:7452): GET recibido
+[INFO] 16:50:08:843 GameCard/(7445:7452): EL array de blocks es: (null)
+[INFO] 16:50:08:843 GameCard/(7445:7452): Retorno el estado: N
+[INFO] 16:50:08:844 GameCard/(7445:7452): No hay coordenadas bro te equivocaste, suerte para la proxima
+[INFO] 16:50:08:844 GameCard/(7445:7452): El ID mensaje cargado en el localized es: 10
+[INFO] 16:50:08:844 GameCard/(7445:7452): El Pokemon cargado en el localized es: gengar
+[INFO] 16:50:08:844 GameCard/(7445:7452): El tamanio del nombre del pokemon cargado en el localized es: 7
+[INFO] 16:50:08:844 GameCard/(7445:7452): La cantidad de lugares donde apareche el pokemon cargado en el localized es: 0
+[INFO] 16:50:12:426 GameCard/(7445:7453): Iniciando verificacion de conexion con BROKER...
+[INFO] 16:50:12:427 GameCard/(7445:7453): Conexion con BROKER en buen estado, verificando nuevamente en 10 segundos
+[INFO] 16:50:13:845 GameCard/(7445:7452): El ID cargado es 10
+[INFO] 16:50:13:845 GameCard/(7445:7452): Tamanio nombre pokemon 7
+[INFO] 16:50:13:847 GameCard/(7445:7452): Nombre pokemon gengar
+[INFO] 16:50:13:847 GameCard/(7445:7452): Cantidad de coordenadas donde aparece:  0
+[INFO] 16:50:13:847 GameCard/(7445:7452): Saliendo
+[INFO] 16:50:13:847 GameCard/(7445:7452): Creando paquete
+[INFO] 16:50:13:847 GameCard/(7445:7452): CODIGO DE OPERACION: 6
+[INFO] 16:50:13:847 GameCard/(7445:7452): Paquete Creado
+[INFO] 16:50:13:847 GameCard/(7445:7452): la operacion a realizar es 6
+[INFO] 16:50:13:847 GameCard/(7445:7452): Serializando...
+[INFO] 16:50:13:847 GameCard/(7445:7452): Serializacion completa
+[INFO] 16:50:13:847 GameCard/(7445:7452): El peso total es: 19
+[INFO] 16:50:13:848 GameCard/(7445:7452): Recibiendo codigo de operacion de BROKER en socket 9
+[INFO] 16:50:13:848 GameCard/(7445:7452): Se recibio el opcode 5
+[INFO] 16:50:13:848 GameCard/(7445:7452): Codigo de operacion recibido del socket cliente 9 corresponde a un GET
+[INFO] 16:50:13:848 GameCard/(7445:7452): Recibiendo tamanio total
+[INFO] 16:50:13:848 GameCard/(7445:7452): Tamanio total recibido: 24
+[INFO] 16:50:13:848 GameCard/(7445:7452): EL ID recibido: 11
+[INFO] 16:50:13:848 GameCard/(7445:7452): Tamanio del pokemon recibido: 8
+[INFO] 16:50:13:848 GameCard/(7445:7452): Nombre del pokemon recibido: pikachu
+[INFO] 16:50:13:848 GameCard/(7445:7452): Acknowledgement enviado al modulo Broker
+[INFO] 16:50:13:849 GameCard/(7445:7452): GET recibido del modulo BROKER socket 9
+[INFO] 16:50:13:849 GameCard/(7445:7452): GET recibido
+[INFO] 16:50:13:849 GameCard/(7445:7452): EL array de blocks es: 0
+[INFO] 16:50:13:849 GameCard/(7445:7452): Retorno el estado: N
+[INFO] 16:50:13:849 GameCard/(7445:7452): Generando los paths de los bloques
+[INFO] 16:50:13:850 GameCard/(7445:7452): Unico bloque
+[INFO] 16:50:13:850 GameCard/(7445:7452): Se genera la ruta para: 0
+[INFO] 16:50:13:850 GameCard/(7445:7452): El path del block es: /home/utnso/Escritorio/tall-grass/Blocks/0.bin
+[INFO] 16:50:13:850 GameCard/(7445:7452): La posicion 0 del array de path es: /home/utnso/Escritorio/tall-grass/Blocks/0.bin
+[INFO] 16:50:13:850 GameCard/(7445:7452): Las coordenadas encontradas son: 3-4
+[INFO] 16:50:13:850 GameCard/(7445:7452): Las coordenadas encontradas son: 3-8
+[INFO] 16:50:13:850 GameCard/(7445:7452): El ID mensaje cargado en el localized es: 11
+[INFO] 16:50:13:850 GameCard/(7445:7452): El Pokemon cargado en el localized es: pikachu
+[INFO] 16:50:13:850 GameCard/(7445:7452): El tamanio del nombre del pokemon cargado en el localized es: 8
+[INFO] 16:50:13:851 GameCard/(7445:7452): La cantidad de lugares donde apareche el pokemon cargado en el localized es: 2
+[INFO] 16:50:13:851 GameCard/(7445:7452): La coordenada sacada de la cola es: 3-4
+[INFO] 16:50:13:851 GameCard/(7445:7452): La coordenada cargada es (3 ; 4)
+[INFO] 16:50:13:851 GameCard/(7445:7452): La coordenada sacada de la cola es: 3-8
+[INFO] 16:50:13:851 GameCard/(7445:7452): La coordenada cargada es (3 ; 8)
+[INFO] 16:50:13:851 GameCard/(7445:7452): El valor de index 0 es: 3
+[INFO] 16:50:13:851 GameCard/(7445:7452): El valor de index 1 es: 4
+[INFO] 16:50:13:851 GameCard/(7445:7452): El valor de index 2 es: 3
+[INFO] 16:50:13:851 GameCard/(7445:7452): El valor de index 3 es: 8
+[INFO] 16:50:18:852 GameCard/(7445:7452): El ID cargado es 11
+[INFO] 16:50:18:852 GameCard/(7445:7452): Tamanio nombre pokemon 8
+[INFO] 16:50:18:852 GameCard/(7445:7452): Nombre pokemon pikachu
+[INFO] 16:50:18:852 GameCard/(7445:7452): Cantidad de coordenadas donde aparece:  2
+[INFO] 16:50:18:852 GameCard/(7445:7452): Posicion X previa al mem 3
+[INFO] 16:50:18:852 GameCard/(7445:7452): Posicion Y previa al mem 4
+[INFO] 16:50:18:852 GameCard/(7445:7452): Posicion X 3
+[INFO] 16:50:18:853 GameCard/(7445:7452): Posicion Y 4
+[INFO] 16:50:18:853 GameCard/(7445:7452): Posicion X previa al mem 3
+[INFO] 16:50:18:853 GameCard/(7445:7452): Posicion Y previa al mem 8
+[INFO] 16:50:18:853 GameCard/(7445:7452): Posicion X 3
+[INFO] 16:50:18:853 GameCard/(7445:7452): Posicion Y 8
+[INFO] 16:50:18:853 GameCard/(7445:7452): Saliendo
+[INFO] 16:50:18:853 GameCard/(7445:7452): Creando paquete
+[INFO] 16:50:18:853 GameCard/(7445:7452): CODIGO DE OPERACION: 6
+[INFO] 16:50:18:853 GameCard/(7445:7452): Paquete Creado
+[INFO] 16:50:18:853 GameCard/(7445:7452): la operacion a realizar es 6
+[INFO] 16:50:18:853 GameCard/(7445:7452): Serializando...
+[INFO] 16:50:18:853 GameCard/(7445:7452): Serializacion completa
+[INFO] 16:50:18:853 GameCard/(7445:7452): El peso total es: 36
+[INFO] 16:50:18:854 GameCard/(7445:7452): Recibiendo codigo de operacion de BROKER en socket 9
+[INFO] 16:50:22:427 GameCard/(7445:7453): Iniciando verificacion de conexion con BROKER...
+[INFO] 16:50:22:427 GameCard/(7445:7453): Conexion con BROKER en buen estado, verificando nuevamente en 10 segundos

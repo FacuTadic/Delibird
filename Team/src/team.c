@@ -7,7 +7,8 @@ void procesar_request_de_game_boy(int cod_op, int socket_game_boy) {
 		log_info(extense_logger, "Codigo de operacion recibido del socket cliente %i corresponde a un APPEARED", socket_game_boy);
 		t_appeared* appeared_msg = recibir_appeared_de_game_boy(socket_game_boy, &size);
 		if (appeared_msg != NULL) {
-			log_info(extense_logger, "Appeared recibido del modulo Game Boy socket %i", socket_game_boy);
+			log_info(extense_logger, "Appeared recibido de GAME BOY, pokemon %s en (%i,%i)", appeared_msg->pokemon, appeared_msg->pos_X, appeared_msg->pos_Y);
+			log_info(logger, "Appeared recibido de GAME BOY, pokemon %s en (%i,%i)", appeared_msg->pokemon, appeared_msg->pos_X, appeared_msg->pos_Y);
 			if (es_pokemon_global(appeared_msg->pokemon)) {
 				t_pokemon* pokemon_a_agregar = generar_pokemon_de_appeared(appeared_msg);
 				agrego_pokemon_a_dictionary(pokemon_a_agregar);
@@ -104,7 +105,8 @@ void escuchar_appeared_de_broker(void) {
 				estoy_conectado_al_broker = 0;
 				pthread_mutex_unlock(&estoy_conectado_al_broker_mutex);
 			} else {
-				log_info(extense_logger, "Appeared recibido de BROKER");
+				log_info(extense_logger, "Appeared recibido de BROKER, pokemon %s en (%i,%i)", appeared_msg->pokemon, appeared_msg->pos_X, appeared_msg->pos_Y);
+				log_info(logger, "Appeared recibido de BROKER, pokemon %s en (%i,%i)", appeared_msg->pokemon, appeared_msg->pos_X, appeared_msg->pos_Y);
 
 				if(es_pokemon_global(appeared_msg->pokemon)) {
 					log_info(extense_logger, "pokemon %s esta en el objetivo global", appeared_msg->pokemon);
@@ -158,7 +160,8 @@ void escuchar_caught_de_broker(void) {
 				estoy_conectado_al_broker = 0;
 				pthread_mutex_unlock(&estoy_conectado_al_broker_mutex);
 			} else {
-				log_info(extense_logger, "Caught recibido del Broker en socket %i",socket_escucha_caught);
+				log_info(extense_logger, "Caught recibido de BROKER con id correlativo %i y flag %i", caught_msg->idCorrelativo, caught_msg->flag);
+				log_info(logger, "Caught recibido de BROKER con id correlativo %i y flag %i", caught_msg->idCorrelativo, caught_msg->flag);
 				if (es_id_catch(caught_msg->idCorrelativo) == 1) {
 					pthread_mutex_lock(&cola_caught_mutex);
 					queue_push(cola_caught, (void*) caught_msg);
@@ -194,7 +197,19 @@ void escuchar_localized_de_broker(void) {
 				estoy_conectado_al_broker = 0;
 				pthread_mutex_unlock(&estoy_conectado_al_broker_mutex);
 			} else {
-				log_info(extense_logger, "Localized recibido de Broker");
+				char* coordenadas_log = string_new();
+				for (int k = 0; k < localized_msg->l_coordenadas->elements_count; k++) {
+					uint32_t* coord = list_get(localized_msg->l_coordenadas, k);
+					char* coord_str = string_itoa(*coord);
+					string_append(&coordenadas_log, " ");
+					string_append(&coordenadas_log, coord_str);
+					free(coord_str);
+				}
+
+				log_info(extense_logger, "Localized recibido de BROKER, pokemon %s en coordenadas%s", localized_msg->pokemon, coordenadas_log);
+				log_info(logger, "Localized recibido de BROKER, pokemon %s en coordenadas%s", localized_msg->pokemon, coordenadas_log);
+
+				free(coordenadas_log);
 
 				if (pokemon_ya_fue_recibido(localized_msg->pokemon) == 0) {
 					log_info(extense_logger, "pokemon %s llego por primera vez",localized_msg->pokemon);
@@ -1118,6 +1133,7 @@ void verificar_conexion(void) {
 			reconectar_al_broker();
 		} else {
 			log_info(extense_logger, "Conexion con Broker en buen estado, verificando nuevamente en %i segundos", tiempo_reconexion);
+			log_info(logger, "Conexion con Broker en buen estado, verificando nuevamente en %i segundos", tiempo_reconexion);
 		}
 	}
 }
@@ -1705,8 +1721,8 @@ void enviar_get_a_broker(char* nombre_pokemon) {
 	int status_send = send(socket_broker, flujo, bytes, 0);
 
 	if (status_send == -1 || status_send == 0) {
-		log_error(extense_logger, "Error: No se pudo enviar el GET correspondiente al pokemon %s, iniciando el comportamiento default", nombre_pokemon);
-		log_error(logger, "Error: No se pudo enviar el GET correspondiente al pokemon %s, iniciando el comportamiento default", nombre_pokemon);
+		log_warning(extense_logger, "Error: No se pudo enviar el GET correspondiente al pokemon %s, iniciando el comportamiento default", nombre_pokemon);
+		log_warning(logger, "Error: No se pudo enviar el GET correspondiente al pokemon %s, iniciando el comportamiento default", nombre_pokemon);
 		pthread_mutex_lock(&estoy_conectado_al_broker_mutex);
 		estoy_conectado_al_broker = 0;
 		pthread_mutex_unlock(&estoy_conectado_al_broker_mutex);
@@ -1755,8 +1771,8 @@ void enviar_catch_a_broker(t_pokemon* pokemon, t_entrenador* entrenador) {
 	sleep(retardo_de_CPU);
 
 	if (send(socket_broker, flujo, bytes, 0) == -1) {
-		log_error(extense_logger, "Error: No se pudo enviar el mensaje catch del entrenador %i para el pokemon %s en (%i,%i), obteniendo pokemon por comportamiento default", entrenador->index, pokemon->nombre, pokemon->pos_X, pokemon->pos_Y);
-		log_error(logger, "Error: No se pudo enviar el mensaje catch del entrenador %i para el pokemon %s en (%i,%i), obteniendo pokemon por comportamiento default", entrenador->index, pokemon->nombre, pokemon->pos_X, pokemon->pos_Y);
+		log_warning(extense_logger, "Error: No se pudo enviar el mensaje catch del entrenador %i para el pokemon %s en (%i,%i), obteniendo pokemon por comportamiento default", entrenador->index, pokemon->nombre, pokemon->pos_X, pokemon->pos_Y);
+		log_warning(logger, "Error: No se pudo enviar el mensaje catch del entrenador %i para el pokemon %s en (%i,%i), obteniendo pokemon por comportamiento default", entrenador->index, pokemon->nombre, pokemon->pos_X, pokemon->pos_Y);
 		adquirir_pokemon(entrenador, pokemon->nombre);
 		if (entrenador->pokebolas == 0 && entrenador->objetivos_actuales->elements_count == 0) {
 			cambiar_estado_de_entrenador(entrenador, ESTADO_EXIT, "Ha completado su objetivo");
@@ -1781,7 +1797,8 @@ void enviar_catch_a_broker(t_pokemon* pokemon, t_entrenador* entrenador) {
 		log_info(extense_logger, "El entrenador %i ha enviado el catch para el pokemon %s en (%i,%i) correctamente por el socket %i", entrenador->index, pokemon->nombre, pokemon->pos_X, pokemon->pos_Y, socket_broker);
 		uint32_t id_catch = recibir_ID_Catch(socket_broker);
 		if (id_catch == 0) {
-			log_error(extense_logger, "Error: Se pudo enviar el mensaje catch del entrenador %i para el pokemon %s en (%i,%i) pero no se ha podido obtener la respuesta del broker con el id, obteniendo pokemon por comportamiento default", entrenador->index, pokemon->nombre, pokemon->pos_X, pokemon->pos_Y);
+			log_warning(extense_logger, "Error: Se pudo enviar el mensaje catch del entrenador %i para el pokemon %s en (%i,%i) pero no se ha podido obtener la respuesta del broker con el id, obteniendo pokemon por comportamiento default", entrenador->index, pokemon->nombre, pokemon->pos_X, pokemon->pos_Y);
+			log_warning(logger, "Error: Se pudo enviar el mensaje catch del entrenador %i para el pokemon %s en (%i,%i) pero no se ha podido obtener la respuesta del broker con el id, obteniendo pokemon por comportamiento default", entrenador->index, pokemon->nombre, pokemon->pos_X, pokemon->pos_Y);
 			adquirir_pokemon(entrenador, pokemon->nombre);
 			if (entrenador->pokebolas == 0 && entrenador->objetivos_actuales->elements_count == 0) {
 				cambiar_estado_de_entrenador(entrenador, ESTADO_EXIT, "Ha completado su objetivo");
