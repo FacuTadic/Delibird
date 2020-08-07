@@ -111,7 +111,9 @@ char** generadorDeRegistros(char* posicion, uint32_t cantidad){
 
 	log_info(loggerDevArchDir, "La posicion del registro generado es: %s", registro[0]);
 	log_info(loggerDevArchDir, "La cantidad del registro generado es: %s", registro[1]);
+
 	free(cantidadString);
+	free(posicion);
 
 	return registro;
 }
@@ -514,15 +516,20 @@ bool noExisteDirectorio(char* ruta){
 }
 
 void elDestroyerDeCorchetazos(char** array){
-	uint32_t i = 0;
-	while(array[i]!= NULL){
-		free(array[i]);
-		i++;
+	if(array != NULL){
+		uint32_t i = 0;
+		while(array[i]!= NULL){
+			free(array[i]);
+			i++;
+		}
+		free(array);
 	}
-	free(array);
+
 }
 
 
 void elLimpiaCharDinamicos(char* string){
-	free(string);
+	if(string != NULL){
+		free(string);
+	}
 }

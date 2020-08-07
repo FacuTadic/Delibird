@@ -121,13 +121,10 @@ t_buffer* crearBufferLocalized(t_localized* localizedAEnviar){
 
 		uint32_t posX = *((uint32_t*) list_get(localizedAEnviar->l_coordenadas, i));
 		log_info(loggerDevEstructuras, "Posicion X previa al mem %i", posX);
-
 		i++;
 
 		uint32_t posY = *((uint32_t*) list_get(localizedAEnviar->l_coordenadas, i));
 		log_info(loggerDevEstructuras, "Posicion Y previa al mem %i", posY);
-
-
 
 
 		memcpy(bufferLocalized->stream + offset,&posX, sizeof(uint32_t));
@@ -137,11 +134,10 @@ t_buffer* crearBufferLocalized(t_localized* localizedAEnviar){
 		memcpy(bufferLocalized->stream + offset,&posY, sizeof(uint32_t));
 		offset += sizeof(uint32_t);
 		log_info(loggerDevEstructuras, "Posicion Y %i", posY);
-
 	}
 
 
-	log_info(loggerDevEstructuras, "SAliendo");
+	log_info(loggerDevEstructuras, "Saliendo");
 
 	return bufferLocalized;
 }
