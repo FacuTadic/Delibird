@@ -213,6 +213,9 @@ char** generarVectorDePaths(char** blocksOcupados){
 
 		char** blockUnico = string_split(pathsDeBlocks,",");
 
+		free(rutaDelUltimoBlock);
+		free(pathsDeBlocks);
+
 		log_info(loggerDev, "La posicion 0 del array de path es: %s", blockUnico[0]);
 		return blockUnico;
 	}
@@ -390,6 +393,13 @@ t_list* obtenerTodasLasPosiciones(char** blocks){
 		char** pathsDeBlocks = generarVectorDePaths(blocks);
 		t_list* registros = traerRegistrosBloques(pathsDeBlocks);
 		coordenadas = list_map(registros, (void*) getCoordenadaDeRegistro);
+
+		uint32_t indexPaths = 0;
+		while(pathsDeBlocks[indexPaths] != NULL){
+			free(pathsDeBlocks[indexPaths]);
+			indexPaths++;
+
+		}
 	}
 
 	return coordenadas;
@@ -965,6 +975,14 @@ void validarPosicionesDeNew(t_config* archivoMetadataPokemon, char** blocksOcupa
 		t_list* registrosAEscribir = list_map(registros, (void*) aplanarVectorDeKeyValue);
 		vaciarBloques(blocksOcupados);
 		escribirEnBloques(registrosAEscribir,archivoMetadataPokemon);
+
+		uint32_t indexPaths = 0;
+		while(pathsDeBlocks[indexPaths] != NULL){
+			free(pathsDeBlocks[indexPaths]);
+			indexPaths++;
+
+		}
+
 	} else {
 		log_info(loggerDev, "No tiene blocks asignados. Primera vez");
 		t_list* registroNuevo = list_create();
@@ -993,6 +1011,13 @@ bool validarPosicionesDeCatch(t_config* archivoMetadataPokemon, char** blocksOcu
 	vaciarBloques(blocksOcupados);
 	escribirEnBloques(registrosAEscribir,archivoMetadataPokemon);
 
+	uint32_t indexPaths = 0;
+	while(pathsDeBlocks[indexPaths] != NULL){
+		free(pathsDeBlocks[indexPaths]);
+		indexPaths++;
+
+	}
+
 	return flagAtrapado;
 }
 
@@ -1011,6 +1036,14 @@ void validarPosicionesDeGetAntiInvalidFree(char** blocksOcupados,t_list** regist
 		t_list* registrosDeBLoques = traerRegistrosBloques(pathsDeBlocks);
 
 		*registros = list_map(registrosDeBLoques, (void*) getCoordenadaDeRegistro);
+
+		uint32_t indexPaths = 0;
+		while(pathsDeBlocks[indexPaths] != NULL){
+			free(pathsDeBlocks[indexPaths]);
+			indexPaths++;
+
+		}
+
 	}
 
 	for(int j=0; j<(*registros)->elements_count;j++){

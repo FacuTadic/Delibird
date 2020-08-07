@@ -1,2 +1,5 @@
 /.metadata/
 /Default/
+*.log
+*.o
+dump*.txt
