@@ -23,3 +23,7 @@ cd tall-grass
 mkdir Metadata
 cd Metadata
 touch Metadata.bin
+echo "BLOCK_SIZE=64" | tee -a Metadata.bin
+echo "BLOCKS=1024" | tee -a Metadata.bin
+echo "MAGIC_NUMBER=TALL_GRASS" | tee -a Metadata.bin
+
