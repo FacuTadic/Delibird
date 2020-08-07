@@ -628,6 +628,7 @@ void escucharNewDeBroker(void) {
 			if (status_recv == 0) {
 				liberar_conexion(socketEscuchaNew);
 				log_warning(loggerDev, "BROKER acaba de cerrar la conexion correspondiente al socket %i", socketEscuchaNew);
+				estoy_conectado_al_broker = 0;
 				pthread_exit(NULL);
 			}
 
@@ -684,6 +685,7 @@ void escucharCatchDeBroker(void) {
 			if (status_recv == 0) {
 				liberar_conexion(socketEscuchaCatch);
 				log_warning(loggerDev, "BROKER acaba de cerrar la conexion correspondiente al socket %i", socketEscuchaCatch);
+				estoy_conectado_al_broker = 0;
 				pthread_exit(NULL);
 			}
 
@@ -740,6 +742,7 @@ void escucharGetDeBroker(void) {
 			if (status_recv == 0) {
 				liberar_conexion(socketEscuchaGet);
 				log_warning(loggerDev, "BROKER acaba de cerrar la conexion correspondiente al socket %i", socketEscuchaGet);
+				estoy_conectado_al_broker = 0;
 				pthread_exit(NULL);
 			}
 
@@ -771,13 +774,48 @@ void reconectarAlBroker() {
 	int conexion_al_broker = crear_conexion(ipBroker, puertoBroker);
 	if (conexion_al_broker != -1) {
 
+		uint32_t id_colaNew = 11;
+		uint32_t id_colaCatch = 13;
+		uint32_t id_colaGet = 15;
+
 		socketEscuchaNew = conexion_al_broker;
+		int status_envioNew = mandar_suscripcion(socketEscuchaNew, id_colaNew);
+
+		if (status_envioNew == -1) {
+			pthread_mutex_lock(&estoy_conectado_al_broker_mutex);
+			estoy_conectado_al_broker = 0;
+			pthread_mutex_unlock(&estoy_conectado_al_broker_mutex);
+			log_error(loggerDev, "Hubo un problema enviando la suscripcion a la cola NEW del BROKER");
+			return;
+		}
 		log_info(loggerDev, "Socket de reconexion NEW: %i",socketEscuchaNew);
 
+
+
 		socketEscuchaCatch = crear_conexion(ipBroker, puertoBroker);
+		int status_envioCatch = mandar_suscripcion(socketEscuchaCatch, id_colaCatch);
+
+		if (status_envioCatch == -1) {
+			pthread_mutex_lock(&estoy_conectado_al_broker_mutex);
+			estoy_conectado_al_broker = 0;
+			pthread_mutex_unlock(&estoy_conectado_al_broker_mutex);
+			log_error(loggerDev, "Hubo un problema enviando la suscripcion a la cola NEW del BROKER");
+			return;
+		}
 		log_info(loggerDev, "Socket de reconexion CATCH: %i",socketEscuchaCatch);
 
+
+
 		socketEscuchaGet = crear_conexion(ipBroker, puertoBroker);
+		int status_envioGet = mandar_suscripcion(socketEscuchaGet, id_colaGet);
+
+		if (status_envioGet == -1) {
+			pthread_mutex_lock(&estoy_conectado_al_broker_mutex);
+			estoy_conectado_al_broker = 0;
+			pthread_mutex_unlock(&estoy_conectado_al_broker_mutex);
+			log_error(loggerDev, "Hubo un problema enviando la suscripcion a la cola NEW del BROKER");
+			return;
+		}
 		log_info(loggerDev, "Socket de reconexion GET: %i",socketEscuchaGet);
 
 		log_info(loggerDev, "Conexion establecida con BROKER, IP: %s PUERTO : %s", ipBroker, puertoBroker);

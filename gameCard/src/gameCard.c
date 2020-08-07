@@ -3,7 +3,7 @@
 #include "utilsGameCard.h"
 
 t_log* iniciar_loggerDEV(){
-	return log_create("gameCardDEV.log", "GameCard", 0, LOG_LEVEL_INFO);
+	return log_create("gameCardDEV.log", "GameCard", 1, LOG_LEVEL_INFO);
 }
 
 
