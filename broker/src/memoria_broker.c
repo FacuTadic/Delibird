@@ -49,6 +49,7 @@ void guardar_mensaje_en_memoria(data_tabla* registro, void* mensaje) {
 		char* id_char = string_itoa(registro->id);
 		registro->base = lugar_en_memoria->desde;
 		dictionary_put(tabla_segmentos, id_char, (void *) registro);
+		free(id_char);
 
 		memcpy(lugar_en_memoria->desde, mensaje, registro->limit);
 
@@ -112,14 +113,13 @@ int eliminar_particion() {
 		log_info(logger_memoria, "Se ha eliminado el registro con id %s ubicado en %06p de la tabla de segmentos", id_char, registro->base);
 		free(id_char);
 		liberar_registro_en_particiones_libres(registro);
+		list_clean(registro->acknowledgements);
+		list_destroy(registro->acknowledgements);
+		list_clean(registro->envios);
+		list_destroy(registro->envios);
+		free(registro);
 		return 1;
 	}
-
-	list_clean(registro->acknowledgements);
-	list_destroy(registro->acknowledgements);
-	list_clean(registro->envios);
-	list_destroy(registro->envios);
-	free(registro);
 }
 
 void liberar_registro_en_particiones_libres(data_tabla* registro) {
@@ -166,8 +166,9 @@ void corregir_particiones_libres() {
 			size_t final_anterior = (size_t) particion_anterior->hasta;
 			if (comienzo_actual == final_anterior) {
 				particion_anterior->hasta = particion_actual->hasta;
-				list_remove(particiones_libres, j);
+				particion_libre* particion_a_eliminar = list_remove(particiones_libres, j);
 				j = -1;
+				free(particion_a_eliminar);
 			}
 		}
 	}
