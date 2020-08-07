@@ -72,6 +72,7 @@ pthread_mutex_t estoy_conectado_al_broker_mutex;
 pthread_mutex_t planificacion_ready;
 pthread_mutex_t planificacion_sjf;
 pthread_mutex_t llegada_mutex;
+pthread_mutex_t dictionary_intentan_atrapar_mutex;
 
 sem_t sem_cola_pokemones;
 sem_t sem_cola_caught;

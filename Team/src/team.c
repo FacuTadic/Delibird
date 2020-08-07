@@ -12,7 +12,7 @@ void procesar_request_de_game_boy(int cod_op, int socket_game_boy) {
 				t_pokemon* pokemon_a_agregar = generar_pokemon_de_appeared(appeared_msg);
 				agrego_pokemon_a_dictionary(pokemon_a_agregar);
 				if (pokemon_ya_fue_recibido(appeared_msg->pokemon) == 0) {
-					log_info(extense_logger, "Pokemon %s llego por primera vez");
+					log_info(extense_logger, "Pokemon %s llego por primera vez", appeared_msg->pokemon);
 					char* pokemon_nuevo = string_duplicate(appeared_msg->pokemon);
 					pthread_mutex_lock(&pokemones_llegados_mutex);
 					list_add(pokemones_llegados, pokemon_nuevo);
@@ -52,6 +52,7 @@ void atender_game_boy(int* socket_game_boy) {
 	}
 	log_info(extense_logger, "Codigo de operacion de socket %i recibido: %i", socket_cliente, cod_op);
 	procesar_request_de_game_boy(cod_op, socket_cliente);
+	free(socket_game_boy);
 }
 
 void esperar_game_boy(int socket_escucha_game_boy) {
@@ -113,7 +114,7 @@ void escuchar_appeared_de_broker(void) {
 					agrego_pokemon_a_dictionary(pokemon_a_agregar);
 
 					if (pokemon_ya_fue_recibido(appeared_msg->pokemon) == 0) {
-						log_info(extense_logger, "Pokemon %s llego por primera vez");
+						log_info(extense_logger, "Pokemon %s llego por primera vez", appeared_msg->pokemon);
 						char* pokemon_nuevo = string_duplicate(appeared_msg->pokemon);
 						pthread_mutex_lock(&pokemones_llegados_mutex);
 						list_add(pokemones_llegados, pokemon_nuevo);
@@ -213,6 +214,9 @@ void escuchar_localized_de_broker(void) {
 					list_destroy(pokemones);
 				}
 				free(localized_msg->pokemon);
+				for (int i = 0; i < localized_msg->l_coordenadas->elements_count; i++) {
+					free(list_get(localized_msg->l_coordenadas, i));
+				}
 				list_destroy(localized_msg->l_coordenadas);
 				free(localized_msg);
 			}
@@ -746,6 +750,8 @@ void planificar_pokemon(void) {
 				sem_post(&(entrenador_a_planificar->semaforo));
 			}
 
+			list_destroy(entrenador_disponible);
+
 		} else {
 			sem_post(&sem_entrenadores_disponibles);
 		}
@@ -775,7 +781,6 @@ void planificar_caught(void) {
 				i = catch_IDs->elements_count;
 			}
 		}
-		pthread_mutex_unlock(&catch_IDs_mutex);
 
 		if (catch_id != NULL) {
 			if (mensaje_caught->flag == 1) {
@@ -816,14 +821,13 @@ void planificar_caught(void) {
 					sem_post(&sem_entrenadores_disponibles);
 				}
 			}
-			pthread_mutex_lock(&catch_IDs_mutex);
-			list_remove(catch_IDs, index_catch); // guarda con que haya cambiado de lugar, corresponderia bloquear la lista
-			pthread_mutex_unlock(&catch_IDs_mutex);
+			list_remove(catch_IDs, index_catch);
 			free(catch_id);
 		} else {
 			// ???
 		}
 
+		pthread_mutex_unlock(&catch_IDs_mutex);
 		free(mensaje_caught);
 	}
 }
@@ -1231,6 +1235,7 @@ int main(void) {
 	pthread_mutex_init(&cantidad_deadlocks_mutex, NULL);
 	pthread_mutex_init(&planificacion_sjf, NULL);
 	pthread_mutex_init(&llegada_mutex, NULL);
+	pthread_mutex_init(&dictionary_intentan_atrapar_mutex, NULL);
 
 	socket_escucha_game_boy = iniciar_escucha_game_boy(ip, puerto);
 	pthread_t hilo_escucha_de_game_boy;
@@ -1303,6 +1308,8 @@ int main(void) {
 	for (int i = 0; i < entrenadores->elements_count; i++) {
 		pthread_join(threads_entrenadores[i], NULL);
 	}
+
+	free(threads_entrenadores);
 
 	log_destroy(logger);
 	logger = iniciar_logger(log_file);
@@ -1886,8 +1893,7 @@ void eliminar_pokemon(t_entrenador* entrenador, char* pokemon) {
 	log_info(extense_logger, "Entrenador %i eliminando pokemon %s", entrenador->index, pokemon);
 	for (int i = 0; i < entrenador->pokemones->elements_count; i++) {
 		char* pokemon_lista = (char*) list_get(entrenador->pokemones, i);
-		int es_igual = string_equals_ignore_case(pokemon, pokemon_lista);
-		if (es_igual == 1) {
+		if (string_equals_ignore_case(pokemon, pokemon_lista) == 1) {
 			list_remove(entrenador->pokemones, i);
 			i = entrenador->pokemones->elements_count;
 		}
@@ -1895,8 +1901,7 @@ void eliminar_pokemon(t_entrenador* entrenador, char* pokemon) {
 
 	for (int i = 0; i < entrenador->pokemones_innecesarios->elements_count; i++) {
 		char* pokemon_lista = (char*) list_get(entrenador->pokemones_innecesarios, i);
-		int es_igual = string_equals_ignore_case(pokemon, pokemon_lista);
-		if (es_igual == 1) {
+		if (string_equals_ignore_case(pokemon, pokemon_lista) == 1) {
 			list_remove(entrenador->pokemones_innecesarios, i);
 			i = entrenador->pokemones_innecesarios->elements_count;
 		}
@@ -1982,6 +1987,7 @@ t_entrenador* entrenador_mas_cercano(t_list* entrenadores_disponibles_para_ir_a_
 }
 
 void agrego_pokemon_a_dictionary(t_pokemon* pokemon_a_agregar) {
+	pthread_mutex_lock(&dictionary_intentan_atrapar_mutex);
 	log_info(extense_logger, "Agregando pokemon %s en (%i,%i) a los pokemones del mapa", pokemon_a_agregar->nombre, pokemon_a_agregar->pos_X, pokemon_a_agregar->pos_Y);
 	if(dictionary_has_key(pokemones_conocidos_que_no_se_intentan_atrapar, pokemon_a_agregar->nombre)) {
 		t_list* lista_pokemon = dictionary_get(pokemones_conocidos_que_no_se_intentan_atrapar,pokemon_a_agregar->nombre);
@@ -1992,6 +1998,7 @@ void agrego_pokemon_a_dictionary(t_pokemon* pokemon_a_agregar) {
 		dictionary_put(pokemones_conocidos_que_no_se_intentan_atrapar, pokemon_a_agregar->nombre, lista_pokemon_nuevo);
 	}
 	log_info(extense_logger, "Pokemon %s en (%i,%i) agregado a los pokemones del mapa", pokemon_a_agregar->nombre, pokemon_a_agregar->pos_X, pokemon_a_agregar->pos_Y);
+	pthread_mutex_unlock(&dictionary_intentan_atrapar_mutex);
 }
 
 t_pokemon* generar_pokemon_de_appeared(t_appeared* mensaje_appeared) {
@@ -2043,17 +2050,16 @@ void contar_planificacion(t_pokemon* pokemon) {
 }
 
 int tengo_en_el_mapa(char* pokemon) {
+	pthread_mutex_lock(&dictionary_intentan_atrapar_mutex);
 	t_list* pokemones_en_el_mapa = (t_list*) dictionary_get(pokemones_conocidos_que_no_se_intentan_atrapar, pokemon);
 
-	// si ya se, es horrible esto
-	// pero no confio en los true y false de c
-	// y no es momento de investigar
-	// entonces prefiero comparar numeros
 	if (list_is_empty(pokemones_en_el_mapa) == 1) {
 		return 1;
 	} else {
 		return 0;
 	}
+
+	pthread_mutex_unlock(&dictionary_intentan_atrapar_mutex);
 }
 
 void liberar_planificacion(t_pokemon* pokemon) {
@@ -2063,6 +2069,7 @@ void liberar_planificacion(t_pokemon* pokemon) {
 }
 
 void borrar_pokemon_del_mapa(t_pokemon* pokemon) {
+	pthread_mutex_lock(&dictionary_intentan_atrapar_mutex);
 	log_info(extense_logger, "Eliminando pokemon %s en (%i,%i) del mapa", pokemon->nombre, pokemon->pos_X, pokemon->pos_Y);
 	t_list* pokemones = dictionary_get(pokemones_conocidos_que_no_se_intentan_atrapar, pokemon->nombre);
 	if (pokemones != NULL) {
@@ -2074,9 +2081,11 @@ void borrar_pokemon_del_mapa(t_pokemon* pokemon) {
 			}
 		}
 	}
+	pthread_mutex_unlock(&dictionary_intentan_atrapar_mutex);
 }
 
 t_pokemon* mejor_pokemon_para_reintentar(t_entrenador* entrenador, char* pokemon) {
+	pthread_mutex_lock(&dictionary_intentan_atrapar_mutex);
 	t_list* pokemones = dictionary_get(pokemones_conocidos_que_no_se_intentan_atrapar, pokemon);
 
 	int distancia_minima = 500000;
@@ -2089,6 +2098,7 @@ t_pokemon* mejor_pokemon_para_reintentar(t_entrenador* entrenador, char* pokemon
 			pokemon_a_retornizar = pokemon_lista;
 		}
 	}
+	pthread_mutex_unlock(&dictionary_intentan_atrapar_mutex);
 
 	return pokemon_a_retornizar;
 }
@@ -2291,6 +2301,36 @@ void terminar_programa() {
 		cerrar_conexion(socket_escucha_localized);
 	}
 
+	// liberar entrenadores?
+
+	for (int i = 0; i < entrenadores->elements_count; i++) {
+		t_entrenador* entrenador_lista = list_get(entrenadores, i);
+
+		// ESTO TIRA INVALID FREE
+
+//		for (int k = 0; k < entrenador_lista->objetivos->elements_count; k++) {
+//			free(list_get(entrenador_lista->objetivos, k));
+//		}
+//		for (int k = 0; k < entrenador_lista->objetivos_actuales->elements_count; k++) {
+//			free(list_get(entrenador_lista->objetivos_actuales, k));
+//		}
+//		for (int k = 0; k < entrenador_lista->pokemones->elements_count; k++) {
+//			free(list_get(entrenador_lista->pokemones, k));
+//		}
+//		for (int k = 0; k < entrenador_lista->pokemones_innecesarios->elements_count; k++) {
+//			free(list_get(entrenador_lista->pokemones_innecesarios, k));
+//		}
+
+		list_destroy(entrenador_lista->objetivos);
+		list_destroy(entrenador_lista->objetivos_actuales);
+		list_destroy(entrenador_lista->pokemones);
+		list_destroy(entrenador_lista->pokemones_innecesarios);
+
+		sem_destroy(&(entrenador_lista->semaforo));
+		free(entrenador_lista->tarea_actual);
+		free(entrenador_lista);
+	}
+
 	list_destroy(entrenadores);
 	dictionary_destroy(pokemones_conocidos_que_no_se_intentan_atrapar);
 	dictionary_destroy(cantidad_de_pokemones_que_puedo_planificar);
@@ -2311,6 +2351,7 @@ void terminar_programa() {
 	pthread_mutex_destroy(&cantidad_deadlocks_mutex);
 	pthread_mutex_destroy(&planificacion_ready);
 	pthread_mutex_destroy(&planificacion_sjf);
+	pthread_mutex_destroy(&dictionary_intentan_atrapar_mutex);
 
 	log_destroy(logger);
 	log_destroy(extense_logger);
