@@ -516,17 +516,12 @@ bool noExisteDirectorio(char* ruta){
 }
 
 void elDestroyerDeCorchetazos(char** array){
-	log_info(loggerGameCardArchDir, "Antes del IF");
 	if(array != NULL){
-		log_info(loggerGameCardArchDir, "A los tiros");
 		uint32_t i = 0;
 		while(array[i]!= NULL){
-			log_info(loggerGameCardArchDir, "El valor de la i es: %i",i);
-			log_info(loggerGameCardArchDir, "El valor del array es: %s",array[i]);
 			free(array[i]);
 			i++;
 		}
-		log_info(loggerGameCardArchDir, "Vamos terminando");
 		free(array);
 	}
 

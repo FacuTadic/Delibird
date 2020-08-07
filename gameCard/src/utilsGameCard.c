@@ -650,7 +650,7 @@ void escucharNewDeBroker(void) {
 				newPokemon(socketEscuchaNew,newBroker);
 
 			}
-			free(newBroker);
+			//free(newBroker);
 		}
 	}
 }
@@ -705,7 +705,7 @@ void escucharCatchDeBroker(void) {
 				catchPokemon(socketEscuchaCatch,catchGameBoy);
 			}
 
-			free(catchGameBoy);
+			//free(catchGameBoy);
 
 		}
 	}
@@ -762,7 +762,7 @@ void escucharGetDeBroker(void) {
 				getPokemon(socketEscuchaGet,getGameBoy);
 			}
 
-			free(getGameBoy);
+			//free(getGameBoy);
 		}
 	}
 }
