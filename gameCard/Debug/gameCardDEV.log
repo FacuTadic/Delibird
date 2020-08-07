@@ -1,0 +1,62 @@
+[INFO] 14:35:52:697 GameCard/(4028:4028): logger iniciado.
+[INFO] 14:35:52:697 GameCard/(4028:4028): logger de catedra iniciado.
+[INFO] 14:35:52:697 GameCard/(4028:4028): Config cargada.
+[INFO] 14:35:52:697 GameCard/(4028:4028): La IP del Broker: 127.0.0.1
+[INFO] 14:35:52:697 GameCard/(4028:4028): El Puerto es: 4444
+[INFO] 14:35:52:697 GameCard/(4028:4028): El tiempo de reintento de conexion es: 10
+[INFO] 14:35:52:697 GameCard/(4028:4028): El tiempo de reintento de operacion es: 5
+[INFO] 14:35:52:697 GameCard/(4028:4028): El tiempo de retardo de conexion es: 5
+[INFO] 14:35:52:697 GameCard/(4028:4028): El punto de montaje es: /home/utnso/Escritorio/tall-grass
+[INFO] 14:35:52:697 GameCard/(4028:4028): La IP es: 127.0.0.1
+[INFO] 14:35:52:697 GameCard/(4028:4028): El puerto es: 4447
+[INFO] 14:35:52:697 GameCard/(4028:4028): El id del modulo es 1885334863
+[INFO] 14:35:52:697 GameCard/(4028:4028): El punto de montaje es: /home/utnso/Escritorio/tall-grass
+[INFO] 14:35:52:697 GameCard/(4028:4028): La ruta del metadataes: /home/utnso/Escritorio/tall-grass/Metadata
+[INFO] 14:35:52:700 GameCard/(4028:4028): Se creo el config de MetaData
+[INFO] 14:35:52:700 GameCard/(4028:4028): El Block Size es: 64
+[INFO] 14:35:52:700 GameCard/(4028:4028): La cantidad de Bloques es: 1024
+[INFO] 14:35:52:700 GameCard/(4028:4028): El Magic Number es: TALL_GRASS
+[INFO] 14:35:52:700 GameCard/(4028:4028): Bitmap ya seteado
+[ERROR] 14:35:52:700 GameCard/(4028:4028): Ya existe el BitMap
+[INFO] 14:35:52:701 GameCard/(4028:4028): SETEO DE VARIABLES PARA ARCHIVOSYDIRECTORIOS.H
+[INFO] 14:35:52:701 GameCard/(4028:4028): El ID de modulo es: 1885334863
+[INFO] 14:35:52:703 GameCard/(4028:4035): Escucho GET de BROKER
+[INFO] 14:35:52:703 GameCard/(4028:4035): Recibiendo codigo de operacion de BROKER en socket 9
+[INFO] 14:35:52:703 GameCard/(4028:4036): Hilo de verificacion periodica de conexion con BROKER iniciado
+[INFO] 14:35:52:703 GameCard/(4028:4034): Escucho CATCH de BROKER
+[INFO] 14:35:52:703 GameCard/(4028:4034): Recibiendo codigo de operacion de BROKER en socket 8
+[INFO] 14:35:52:703 GameCard/(4028:4033): Escuchando NEW de BROKER
+[INFO] 14:35:52:703 GameCard/(4028:4033): Socker de NEW: 7
+[INFO] 14:35:52:703 GameCard/(4028:4033): Recibiendo codigo de operacion de BROKER en socket 7
+[INFO] 14:35:52:703 GameCard/(4028:4032): Esperando mensajes de game boy en socket 5
+[INFO] 14:36:03:145 GameCard/(4054:4054): logger iniciado.
+[INFO] 14:36:03:145 GameCard/(4054:4054): logger de catedra iniciado.
+[INFO] 14:36:03:145 GameCard/(4054:4054): Config cargada.
+[INFO] 14:36:03:145 GameCard/(4054:4054): La IP del Broker: 127.0.0.1
+[INFO] 14:36:03:145 GameCard/(4054:4054): El Puerto es: 4444
+[INFO] 14:36:03:145 GameCard/(4054:4054): El tiempo de reintento de conexion es: 10
+[INFO] 14:36:03:145 GameCard/(4054:4054): El tiempo de reintento de operacion es: 5
+[INFO] 14:36:03:145 GameCard/(4054:4054): El tiempo de retardo de conexion es: 5
+[INFO] 14:36:03:145 GameCard/(4054:4054): El punto de montaje es: /home/utnso/Escritorio/tall-grass
+[INFO] 14:36:03:145 GameCard/(4054:4054): La IP es: 127.0.0.1
+[INFO] 14:36:03:145 GameCard/(4054:4054): El puerto es: 4447
+[INFO] 14:36:03:145 GameCard/(4054:4054): El id del modulo es 682889318
+[INFO] 14:36:03:145 GameCard/(4054:4054): El punto de montaje es: /home/utnso/Escritorio/tall-grass
+[INFO] 14:36:03:145 GameCard/(4054:4054): La ruta del metadataes: /home/utnso/Escritorio/tall-grass/Metadata
+[INFO] 14:36:03:145 GameCard/(4054:4054): Se creo el config de MetaData
+[INFO] 14:36:03:145 GameCard/(4054:4054): El Block Size es: 64
+[INFO] 14:36:03:145 GameCard/(4054:4054): La cantidad de Bloques es: 1024
+[INFO] 14:36:03:145 GameCard/(4054:4054): El Magic Number es: TALL_GRASS
+[INFO] 14:36:03:145 GameCard/(4054:4054): Bitmap ya seteado
+[ERROR] 14:36:03:145 GameCard/(4054:4054): Ya existe el BitMap
+[INFO] 14:36:03:145 GameCard/(4054:4054): SETEO DE VARIABLES PARA ARCHIVOSYDIRECTORIOS.H
+[INFO] 14:36:03:145 GameCard/(4054:4054): El ID de modulo es: 682889318
+[INFO] 14:36:03:146 GameCard/(4054:4060): Escucho CATCH de BROKER
+[INFO] 14:36:03:146 GameCard/(4054:4060): Recibiendo codigo de operacion de BROKER en socket 8
+[INFO] 14:36:03:146 GameCard/(4054:4061): Escucho GET de BROKER
+[INFO] 14:36:03:146 GameCard/(4054:4061): Recibiendo codigo de operacion de BROKER en socket 9
+[INFO] 14:36:03:146 GameCard/(4054:4062): Hilo de verificacion periodica de conexion con BROKER iniciado
+[INFO] 14:36:03:146 GameCard/(4054:4059): Escuchando NEW de BROKER
+[INFO] 14:36:03:146 GameCard/(4054:4059): Socker de NEW: 7
+[INFO] 14:36:03:146 GameCard/(4054:4059): Recibiendo codigo de operacion de BROKER en socket 7
+[INFO] 14:36:03:146 GameCard/(4054:4058): Esperando mensajes de game boy en socket 5

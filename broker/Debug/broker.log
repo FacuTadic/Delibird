@@ -1,0 +1,12 @@
+[INFO] 14:35:52:702 Broker/(3916:3917): Nueva conexion de un proceso con socket cliente 7
+[INFO] 14:35:52:702 Broker/(3916:3917): Nueva conexion de un proceso con socket cliente 8
+[INFO] 14:35:52:703 Broker/(3916:3917): Nueva conexion de un proceso con socket cliente 9
+[INFO] 14:35:52:707 Broker/(3916:4031): Modulo con id 1885334863 agregado correctamente en la cola de GET
+[INFO] 14:35:52:709 Broker/(3916:4030): Modulo con id 1885334863 agregado correctamente en la cola de CATCH
+[INFO] 14:35:52:711 Broker/(3916:4029): Modulo con id 1885334863 agregado correctamente en la cola de NEW
+[INFO] 14:36:03:145 Broker/(4042:4043): Nueva conexion de un proceso con socket cliente 7
+[INFO] 14:36:03:146 Broker/(4042:4043): Nueva conexion de un proceso con socket cliente 8
+[INFO] 14:36:03:146 Broker/(4042:4043): Nueva conexion de un proceso con socket cliente 9
+[INFO] 14:36:03:147 Broker/(4042:4057): Modulo con id 682889318 agregado correctamente en la cola de GET
+[INFO] 14:36:03:149 Broker/(4042:4056): Modulo con id 682889318 agregado correctamente en la cola de CATCH
+[INFO] 14:36:03:150 Broker/(4042:4055): Modulo con id 682889318 agregado correctamente en la cola de NEW

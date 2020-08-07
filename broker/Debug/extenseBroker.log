@@ -1,0 +1,216 @@
+[INFO] 14:35:40:851 Broker/(3916:3916): logger extenso iniciado
+[INFO] 14:35:40:851 Broker/(3916:3916): logger de la catedra iniciado
+[INFO] 14:35:40:851 Broker/(3916:3916): La IP es: 127.0.0.1
+[INFO] 14:35:40:851 Broker/(3916:3916): El puerto es: 4444
+[INFO] 14:35:40:851 Broker/(3916:3916): El tamanio de la memoria es 64
+[INFO] 14:35:40:851 Broker/(3916:3916): La frecuencia de la compactacion es 1
+[INFO] 14:35:40:852 Broker/(3916:3916): El tamanio minimo de la particion es 4
+[INFO] 14:35:40:852 Broker/(3916:3916): El algoritmo de busqueda de particiones libres es FF
+[INFO] 14:35:40:852 Broker/(3916:3916): El algoritmo de reemplazo de particiones es FIFO
+[INFO] 14:35:40:852 Broker/(3916:3916): Iniciando colas
+[INFO] 14:35:40:852 Broker/(3916:3916): Colas iniciadas
+[INFO] 14:35:40:852 Broker/(3916:3916): Iniciando listas de suscriptores
+[INFO] 14:35:40:852 Broker/(3916:3916): Listas de suscriptores iniciadas
+[INFO] 14:35:40:852 Broker/(3916:3916): Iniciando listas de ids respondidos
+[INFO] 14:35:40:852 Broker/(3916:3916): Listas de ids respondidos iniciadas
+[INFO] 14:35:40:852 Broker/(3916:3916): Iniciando estructuras de colas
+[INFO] 14:35:40:852 Broker/(3916:3916): Estructuras de colas iniciadas
+[INFO] 14:35:40:852 Broker/(3916:3916): Iniciando limites de colas
+[INFO] 14:35:40:852 Broker/(3916:3916): Limites de colas iniciadas
+[INFO] 14:35:40:852 Broker/(3916:3916): Iniciando semaforos de limite
+[INFO] 14:35:40:853 Broker/(3916:3916): Semaforos de limite iniciados
+[INFO] 14:35:40:853 Broker/(3916:3916): Iniciando semaforos de mensajes
+[INFO] 14:35:40:853 Broker/(3916:3916): Semaforos de mensajes iniciados
+[INFO] 14:35:40:853 Broker/(3916:3916): Iniciando semaforos de colas
+[INFO] 14:35:40:853 Broker/(3916:3916): Semaforos de colas iniciados
+[INFO] 14:35:40:853 Broker/(3916:3916): Iniciando semaforos de listas
+[INFO] 14:35:40:853 Broker/(3916:3916): Semaforos de listas iniciados
+[INFO] 14:35:40:853 Broker/(3916:3916): Iniciando semaforos de ids respondidos
+[INFO] 14:35:40:853 Broker/(3916:3916): Semaforos de ids respondidos iniciados
+[INFO] 14:35:40:853 Broker/(3916:3916): Creando generador id
+[INFO] 14:35:40:853 Broker/(3916:3916): Generador id creado
+[INFO] 14:35:40:853 Broker/(3916:3916): Levantando servidor
+[INFO] 14:35:40:853 Broker/(3916:3916): Servidor levantado
+[INFO] 14:35:40:853 Broker/(3916:3923): Atendiendo cola LOCALIZED
+[INFO] 14:35:40:854 Broker/(3916:3922): Atendiendo cola GET
+[INFO] 14:35:40:854 Broker/(3916:3921): Atendiendo cola CAUGHT
+[INFO] 14:35:40:854 Broker/(3916:3920): Atendiendo cola CATCH
+[INFO] 14:35:40:854 Broker/(3916:3919): Atendiendo cola APPEARED
+[INFO] 14:35:40:854 Broker/(3916:3918): Atendiendo cola NEW
+[INFO] 14:35:40:854 Broker/(3916:3917): Esperando clientes en socket 5
+[INFO] 14:35:52:702 Broker/(3916:3917): Socket cliente 7 aceptado
+[INFO] 14:35:52:702 Broker/(3916:3917): Socket cliente 8 aceptado
+[INFO] 14:35:52:702 Broker/(3916:3917): Socket cliente 9 aceptado
+[INFO] 14:35:52:703 Broker/(3916:4031): Recibiendo codigo de operacion de socket 9
+[INFO] 14:35:52:703 Broker/(3916:4031): Codigo de operacion de socket 9 recibido: 7
+[INFO] 14:35:52:703 Broker/(3916:4031): Generando id para el mensaje del socket 9
+[INFO] 14:35:52:703 Broker/(3916:4031): El id generado es 1
+[INFO] 14:35:52:704 Broker/(3916:4031): Codigo de operacion recibido del socket cliente 9 corresponde a un SUSCRIPCION
+[INFO] 14:35:52:704 Broker/(3916:4029): Recibiendo codigo de operacion de socket 7
+[INFO] 14:35:52:704 Broker/(3916:4031): Recibiendo tamanio total
+[INFO] 14:35:52:704 Broker/(3916:4031): Tamanio total recibido: 16
+[INFO] 14:35:52:704 Broker/(3916:4030): Recibiendo codigo de operacion de socket 8
+[INFO] 14:35:52:704 Broker/(3916:4031): Recibiendo id de cliente
+[INFO] 14:35:52:704 Broker/(3916:4031): Id de cliente recibido: 1885334863
+[INFO] 14:35:52:705 Broker/(3916:4031): Recibiendo id de cola
+[INFO] 14:35:52:705 Broker/(3916:4031): Id de cola recibido: 15
+[INFO] 14:35:52:705 Broker/(3916:4031): Id de cola recibido del socket cliente 9 corresponde a la cola de GET
+[INFO] 14:35:52:705 Broker/(3916:4031): Tamanio tabla de segmentos: 0
+[INFO] 14:35:52:706 Broker/(3916:4031): No existen segmentos GET a enviar al cliente 1885334863 socket 9
+[INFO] 14:35:52:706 Broker/(3916:4031): Modulo con id 1885334863 agregado correctamente en la cola de GET
+[INFO] 14:35:52:707 Broker/(3916:4030): Codigo de operacion de socket 8 recibido: 7
+[INFO] 14:35:52:707 Broker/(3916:4030): Generando id para el mensaje del socket 8
+[INFO] 14:35:52:707 Broker/(3916:4030): El id generado es 2
+[INFO] 14:35:52:707 Broker/(3916:4030): Codigo de operacion recibido del socket cliente 8 corresponde a un SUSCRIPCION
+[INFO] 14:35:52:707 Broker/(3916:4030): Recibiendo tamanio total
+[INFO] 14:35:52:708 Broker/(3916:4030): Tamanio total recibido: 16
+[INFO] 14:35:52:708 Broker/(3916:4030): Recibiendo id de cliente
+[INFO] 14:35:52:708 Broker/(3916:4030): Id de cliente recibido: 1885334863
+[INFO] 14:35:52:708 Broker/(3916:4030): Recibiendo id de cola
+[INFO] 14:35:52:708 Broker/(3916:4030): Id de cola recibido: 13
+[INFO] 14:35:52:708 Broker/(3916:4030): Id de cola recibido del socket cliente 8 corresponde a la cola de CATCH
+[INFO] 14:35:52:708 Broker/(3916:4030): Tamanio tabla de segmentos: 0
+[INFO] 14:35:52:709 Broker/(3916:4029): Codigo de operacion de socket 7 recibido: 7
+[INFO] 14:35:52:709 Broker/(3916:4030): No existen segmentos CATCH a enviar al cliente 1885334863 socket 8
+[INFO] 14:35:52:709 Broker/(3916:4030): Modulo con id 1885334863 agregado correctamente en la cola de CATCH
+[INFO] 14:35:52:710 Broker/(3916:4029): Generando id para el mensaje del socket 7
+[INFO] 14:35:52:710 Broker/(3916:4029): El id generado es 3
+[INFO] 14:35:52:710 Broker/(3916:4029): Codigo de operacion recibido del socket cliente 7 corresponde a un SUSCRIPCION
+[INFO] 14:35:52:710 Broker/(3916:4029): Recibiendo tamanio total
+[INFO] 14:35:52:710 Broker/(3916:4029): Tamanio total recibido: 16
+[INFO] 14:35:52:710 Broker/(3916:4029): Recibiendo id de cliente
+[INFO] 14:35:52:710 Broker/(3916:4029): Id de cliente recibido: 1885334863
+[INFO] 14:35:52:710 Broker/(3916:4029): Recibiendo id de cola
+[INFO] 14:35:52:710 Broker/(3916:4029): Id de cola recibido: 11
+[INFO] 14:35:52:710 Broker/(3916:4029): Id de cola recibido del socket cliente 7 corresponde a la cola de NEW
+[INFO] 14:35:52:711 Broker/(3916:4029): Tamanio tabla de segmentos: 0
+[INFO] 14:35:52:711 Broker/(3916:4029): No existen segmentos NEW a enviar al cliente 1885334863 socket 7
+[INFO] 14:35:52:711 Broker/(3916:4029): Modulo con id 1885334863 agregado correctamente en la cola de NEW
+[INFO] 14:35:57:940 Broker/(4042:4042): logger extenso iniciado
+[INFO] 14:35:57:940 Broker/(4042:4042): logger de la catedra iniciado
+[INFO] 14:35:57:940 Broker/(4042:4042): La IP es: 127.0.0.1
+[INFO] 14:35:57:941 Broker/(4042:4042): El puerto es: 4444
+[INFO] 14:35:57:941 Broker/(4042:4042): El tamanio de la memoria es 64
+[INFO] 14:35:57:941 Broker/(4042:4042): La frecuencia de la compactacion es 1
+[INFO] 14:35:57:942 Broker/(4042:4042): El tamanio minimo de la particion es 4
+[INFO] 14:35:57:942 Broker/(4042:4042): El algoritmo de busqueda de particiones libres es FF
+[INFO] 14:35:57:942 Broker/(4042:4042): El algoritmo de reemplazo de particiones es FIFO
+[INFO] 14:35:57:942 Broker/(4042:4042): Iniciando colas
+[INFO] 14:35:57:943 Broker/(4042:4042): Colas iniciadas
+[INFO] 14:35:57:943 Broker/(4042:4042): Iniciando listas de suscriptores
+[INFO] 14:35:57:943 Broker/(4042:4042): Listas de suscriptores iniciadas
+[INFO] 14:35:57:943 Broker/(4042:4042): Iniciando listas de ids respondidos
+[INFO] 14:35:57:944 Broker/(4042:4042): Listas de ids respondidos iniciadas
+[INFO] 14:35:57:944 Broker/(4042:4042): Iniciando estructuras de colas
+[INFO] 14:35:57:944 Broker/(4042:4042): Estructuras de colas iniciadas
+[INFO] 14:35:57:945 Broker/(4042:4042): Iniciando limites de colas
+[INFO] 14:35:57:945 Broker/(4042:4042): Limites de colas iniciadas
+[INFO] 14:35:57:945 Broker/(4042:4042): Iniciando semaforos de limite
+[INFO] 14:35:57:946 Broker/(4042:4042): Semaforos de limite iniciados
+[INFO] 14:35:57:946 Broker/(4042:4042): Iniciando semaforos de mensajes
+[INFO] 14:35:57:948 Broker/(4042:4042): Semaforos de mensajes iniciados
+[INFO] 14:35:57:949 Broker/(4042:4042): Iniciando semaforos de colas
+[INFO] 14:35:57:949 Broker/(4042:4042): Semaforos de colas iniciados
+[INFO] 14:35:57:949 Broker/(4042:4042): Iniciando semaforos de listas
+[INFO] 14:35:57:949 Broker/(4042:4042): Semaforos de listas iniciados
+[INFO] 14:35:57:949 Broker/(4042:4042): Iniciando semaforos de ids respondidos
+[INFO] 14:35:57:949 Broker/(4042:4042): Semaforos de ids respondidos iniciados
+[INFO] 14:35:57:949 Broker/(4042:4042): Creando generador id
+[INFO] 14:35:57:949 Broker/(4042:4042): Generador id creado
+[INFO] 14:35:57:949 Broker/(4042:4042): Levantando servidor
+[INFO] 14:35:57:949 Broker/(4042:4042): Servidor levantado
+[INFO] 14:35:57:950 Broker/(4042:4048): Atendiendo cola GET
+[INFO] 14:35:57:950 Broker/(4042:4049): Atendiendo cola LOCALIZED
+[INFO] 14:35:57:950 Broker/(4042:4047): Atendiendo cola CAUGHT
+[INFO] 14:35:57:952 Broker/(4042:4046): Atendiendo cola CATCH
+[INFO] 14:35:57:952 Broker/(4042:4045): Atendiendo cola APPEARED
+[INFO] 14:35:57:953 Broker/(4042:4044): Atendiendo cola NEW
+[INFO] 14:35:57:953 Broker/(4042:4043): Esperando clientes en socket 5
+[INFO] 14:36:03:145 Broker/(4042:4043): Socket cliente 7 aceptado
+[INFO] 14:36:03:146 Broker/(4042:4043): Socket cliente 8 aceptado
+[INFO] 14:36:03:146 Broker/(4042:4043): Socket cliente 9 aceptado
+[INFO] 14:36:03:146 Broker/(4042:4057): Recibiendo codigo de operacion de socket 9
+[INFO] 14:36:03:146 Broker/(4042:4057): Codigo de operacion de socket 9 recibido: 7
+[INFO] 14:36:03:146 Broker/(4042:4057): Generando id para el mensaje del socket 9
+[INFO] 14:36:03:146 Broker/(4042:4057): El id generado es 1
+[INFO] 14:36:03:146 Broker/(4042:4057): Codigo de operacion recibido del socket cliente 9 corresponde a un SUSCRIPCION
+[INFO] 14:36:03:146 Broker/(4042:4057): Recibiendo tamanio total
+[INFO] 14:36:03:147 Broker/(4042:4057): Tamanio total recibido: 16
+[INFO] 14:36:03:147 Broker/(4042:4057): Recibiendo id de cliente
+[INFO] 14:36:03:147 Broker/(4042:4057): Id de cliente recibido: 682889318
+[INFO] 14:36:03:147 Broker/(4042:4055): Recibiendo codigo de operacion de socket 7
+[INFO] 14:36:03:147 Broker/(4042:4057): Recibiendo id de cola
+[INFO] 14:36:03:147 Broker/(4042:4056): Recibiendo codigo de operacion de socket 8
+[INFO] 14:36:03:147 Broker/(4042:4057): Id de cola recibido: 15
+[INFO] 14:36:03:147 Broker/(4042:4057): Id de cola recibido del socket cliente 9 corresponde a la cola de GET
+[INFO] 14:36:03:147 Broker/(4042:4057): Tamanio tabla de segmentos: 0
+[INFO] 14:36:03:147 Broker/(4042:4057): No existen segmentos GET a enviar al cliente 682889318 socket 9
+[INFO] 14:36:03:147 Broker/(4042:4057): Modulo con id 682889318 agregado correctamente en la cola de GET
+[INFO] 14:36:03:147 Broker/(4042:4056): Codigo de operacion de socket 8 recibido: 7
+[INFO] 14:36:03:148 Broker/(4042:4056): Generando id para el mensaje del socket 8
+[INFO] 14:36:03:148 Broker/(4042:4056): El id generado es 2
+[INFO] 14:36:03:148 Broker/(4042:4056): Codigo de operacion recibido del socket cliente 8 corresponde a un SUSCRIPCION
+[INFO] 14:36:03:148 Broker/(4042:4056): Recibiendo tamanio total
+[INFO] 14:36:03:148 Broker/(4042:4056): Tamanio total recibido: 16
+[INFO] 14:36:03:148 Broker/(4042:4056): Recibiendo id de cliente
+[INFO] 14:36:03:148 Broker/(4042:4056): Id de cliente recibido: 682889318
+[INFO] 14:36:03:148 Broker/(4042:4056): Recibiendo id de cola
+[INFO] 14:36:03:148 Broker/(4042:4056): Id de cola recibido: 13
+[INFO] 14:36:03:148 Broker/(4042:4056): Id de cola recibido del socket cliente 8 corresponde a la cola de CATCH
+[INFO] 14:36:03:148 Broker/(4042:4056): Tamanio tabla de segmentos: 0
+[INFO] 14:36:03:148 Broker/(4042:4056): No existen segmentos CATCH a enviar al cliente 682889318 socket 8
+[INFO] 14:36:03:148 Broker/(4042:4056): Modulo con id 682889318 agregado correctamente en la cola de CATCH
+[INFO] 14:36:03:149 Broker/(4042:4055): Codigo de operacion de socket 7 recibido: 7
+[INFO] 14:36:03:149 Broker/(4042:4055): Generando id para el mensaje del socket 7
+[INFO] 14:36:03:149 Broker/(4042:4055): El id generado es 3
+[INFO] 14:36:03:149 Broker/(4042:4055): Codigo de operacion recibido del socket cliente 7 corresponde a un SUSCRIPCION
+[INFO] 14:36:03:149 Broker/(4042:4055): Recibiendo tamanio total
+[INFO] 14:36:03:149 Broker/(4042:4055): Tamanio total recibido: 16
+[INFO] 14:36:03:149 Broker/(4042:4055): Recibiendo id de cliente
+[INFO] 14:36:03:149 Broker/(4042:4055): Id de cliente recibido: 682889318
+[INFO] 14:36:03:149 Broker/(4042:4055): Recibiendo id de cola
+[INFO] 14:36:03:149 Broker/(4042:4055): Id de cola recibido: 11
+[INFO] 14:36:03:149 Broker/(4042:4055): Id de cola recibido del socket cliente 7 corresponde a la cola de NEW
+[INFO] 14:36:03:150 Broker/(4042:4055): Tamanio tabla de segmentos: 0
+[INFO] 14:36:03:150 Broker/(4042:4055): No existen segmentos NEW a enviar al cliente 682889318 socket 7
+[INFO] 14:36:03:150 Broker/(4042:4055): Modulo con id 682889318 agregado correctamente en la cola de NEW
+[INFO] 14:36:07:980 Broker/(4063:4063): logger extenso iniciado
+[INFO] 14:36:07:980 Broker/(4063:4063): logger de la catedra iniciado
+[INFO] 14:36:07:980 Broker/(4063:4063): La IP es: 127.0.0.1
+[INFO] 14:36:07:980 Broker/(4063:4063): El puerto es: 4444
+[INFO] 14:36:07:980 Broker/(4063:4063): El tamanio de la memoria es 64
+[INFO] 14:36:07:981 Broker/(4063:4063): La frecuencia de la compactacion es 1
+[INFO] 14:36:07:981 Broker/(4063:4063): El tamanio minimo de la particion es 4
+[INFO] 14:36:07:981 Broker/(4063:4063): El algoritmo de busqueda de particiones libres es FF
+[INFO] 14:36:07:981 Broker/(4063:4063): El algoritmo de reemplazo de particiones es FIFO
+[INFO] 14:36:07:981 Broker/(4063:4063): Iniciando colas
+[INFO] 14:36:07:981 Broker/(4063:4063): Colas iniciadas
+[INFO] 14:36:07:981 Broker/(4063:4063): Iniciando listas de suscriptores
+[INFO] 14:36:07:981 Broker/(4063:4063): Listas de suscriptores iniciadas
+[INFO] 14:36:07:981 Broker/(4063:4063): Iniciando listas de ids respondidos
+[INFO] 14:36:07:981 Broker/(4063:4063): Listas de ids respondidos iniciadas
+[INFO] 14:36:07:982 Broker/(4063:4063): Iniciando estructuras de colas
+[INFO] 14:36:07:982 Broker/(4063:4063): Estructuras de colas iniciadas
+[INFO] 14:36:07:982 Broker/(4063:4063): Iniciando limites de colas
+[INFO] 14:36:07:982 Broker/(4063:4063): Limites de colas iniciadas
+[INFO] 14:36:07:982 Broker/(4063:4063): Iniciando semaforos de limite
+[INFO] 14:36:07:982 Broker/(4063:4063): Semaforos de limite iniciados
+[INFO] 14:36:07:982 Broker/(4063:4063): Iniciando semaforos de mensajes
+[INFO] 14:36:07:982 Broker/(4063:4063): Semaforos de mensajes iniciados
+[INFO] 14:36:07:982 Broker/(4063:4063): Iniciando semaforos de colas
+[INFO] 14:36:07:982 Broker/(4063:4063): Semaforos de colas iniciados
+[INFO] 14:36:07:982 Broker/(4063:4063): Iniciando semaforos de listas
+[INFO] 14:36:07:982 Broker/(4063:4063): Semaforos de listas iniciados
+[INFO] 14:36:07:983 Broker/(4063:4063): Iniciando semaforos de ids respondidos
+[INFO] 14:36:07:983 Broker/(4063:4063): Semaforos de ids respondidos iniciados
+[INFO] 14:36:07:983 Broker/(4063:4063): Creando generador id
+[INFO] 14:36:07:983 Broker/(4063:4063): Generador id creado
+[INFO] 14:36:07:983 Broker/(4063:4063): Levantando servidor
+[INFO] 14:36:07:983 Broker/(4063:4063): Servidor levantado
+[INFO] 14:36:07:983 Broker/(4063:4070): Atendiendo cola LOCALIZED
+[INFO] 14:36:07:983 Broker/(4063:4069): Atendiendo cola GET
+[INFO] 14:36:07:983 Broker/(4063:4068): Atendiendo cola CAUGHT
+[INFO] 14:36:07:984 Broker/(4063:4067): Atendiendo cola CATCH
+[INFO] 14:36:07:984 Broker/(4063:4066): Atendiendo cola APPEARED
+[INFO] 14:36:07:984 Broker/(4063:4065): Atendiendo cola NEW
+[INFO] 14:36:07:984 Broker/(4063:4064): Esperando clientes en socket 5
