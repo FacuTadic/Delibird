@@ -429,7 +429,7 @@ t_list* obtener_segmentos_new(uint32_t id_cliente) {
 		data_tabla* registro = (data_tabla*) dictionary_get(tabla_segmentos, id_char);
 
 		if (registro == NULL) {
-			log_warning(extense_logger_memoria, "Registro NULL leido");
+			log_info(extense_logger_memoria, "Registro NULL leido");
 		} else {
 			k++;
 			if (1 == registro->tipo) {
