@@ -8,7 +8,7 @@ t_log* iniciar_loggerDEV(){
 
 
 t_log* iniciar_loggerGameCard(){
-	return log_create("gameCard.log", "GameCard", 1, LOG_LEVEL_INFO);
+	return log_create("gameCard.log", "GameCard", 0, LOG_LEVEL_INFO);
 }
 
 t_config* leer_config(){
