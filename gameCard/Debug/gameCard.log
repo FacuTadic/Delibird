@@ -1,0 +1,79 @@
+[INFO] 16:36:33:903 GameCard/(9138:9138): Lenavando el Tall Grass
+[INFO] 16:36:33:904 GameCard/(9138:9138): Punto de montaje del directorio Metadata es: /home/utnso/Escritorio/tall-grass/Metadata
+[INFO] 16:36:33:904 GameCard/(9138:9138): El BitMap se encuentra en: /home/utnso/Escritorio/tall-grass/Metadata/BitMap.bin
+[INFO] 16:36:33:904 GameCard/(9138:9138): Punto de montaje del directorio Files es: /home/utnso/Escritorio/tall-grass/Files
+[INFO] 16:36:33:904 GameCard/(9138:9138): Punto de montaje del directorio Blocks es: /home/utnso/Escritorio/tall-grass/Blocks
+[INFO] 16:36:33:904 GameCard/(9138:9143): Escuchando GET de BROKER en socket: -1
+[INFO] 16:36:33:904 GameCard/(9138:9142): Escuchando CATCH de BROKER en socket: -1
+[INFO] 16:36:33:907 GameCard/(9138:9141): Escuchando NEW de BROKER en socket: -1
+[INFO] 16:36:35:788 GameCard/(9138:9148): El pokemon pikachu no existe en el FS, se pasa a crear su directorio
+[INFO] 16:36:35:791 GameCard/(9138:9148): El metadata del pokemon fue actualizado
+[INFO] 16:36:35:791 GameCard/(9138:9148): SIZE = 7
+[INFO] 16:36:35:791 GameCard/(9138:9148): BLOCKS = [0]
+[INFO] 16:36:40:792 GameCard/(9138:9148): Enviando APPEARED por socket: -1
+[INFO] 16:36:40:792 GameCard/(9138:9148): APPEARED enviado
+[INFO] 16:36:43:905 GameCard/(9138:9144): Iniciando verificacion de conexion con BROKER...
+[INFO] 16:36:43:905 GameCard/(9138:9144): Reconexion con broker necesaria
+[ERROR] 16:36:43:905 GameCard/(9138:9144): Reconexion con BROKER fallida, intentando nuevamente en 10 segundos
+[INFO] 16:36:45:318 GameCard/(9138:9168): La coordenada 1-9 es nueva. Se agrega al los registros
+[INFO] 16:36:45:322 GameCard/(9138:9168): El metadata del pokemon fue actualizado
+[INFO] 16:36:45:322 GameCard/(9138:9168): SIZE = 13
+[INFO] 16:36:45:322 GameCard/(9138:9168): BLOCKS = [0]
+[INFO] 16:36:45:323 GameCard/(9138:9170): El pokemon charmander no existe en el FS, se pasa a crear su directorio
+[INFO] 16:36:45:325 GameCard/(9138:9170): El metadata del pokemon fue actualizado
+[INFO] 16:36:45:325 GameCard/(9138:9170): SIZE = 8
+[INFO] 16:36:45:325 GameCard/(9138:9170): BLOCKS = [1]
+[INFO] 16:36:45:326 GameCard/(9138:9173): La coordenada 517-2046 es nueva. Se agrega al los registros
+[INFO] 16:36:45:330 GameCard/(9138:9173): El metadata del pokemon fue actualizado
+[INFO] 16:36:45:330 GameCard/(9138:9173): SIZE = 20
+[INFO] 16:36:45:330 GameCard/(9138:9173): BLOCKS = [1]
+[INFO] 16:36:45:331 GameCard/(9138:9175): La coordenada 413-17 es nueva. Se agrega al los registros
+[INFO] 16:36:45:335 GameCard/(9138:9175): El metadata del pokemon fue actualizado
+[INFO] 16:36:45:335 GameCard/(9138:9175): SIZE = 29
+[INFO] 16:36:45:336 GameCard/(9138:9175): BLOCKS = [1]
+[INFO] 16:36:45:336 GameCard/(9138:9177): La coordenada 723-97 es nueva. Se agrega al los registros
+[INFO] 16:36:45:341 GameCard/(9138:9177): El metadata del pokemon fue actualizado
+[INFO] 16:36:45:341 GameCard/(9138:9177): SIZE = 39
+[INFO] 16:36:45:341 GameCard/(9138:9177): BLOCKS = [1]
+[INFO] 16:36:45:343 GameCard/(9138:9179): La coordenada 65-93 es nueva. Se agrega al los registros
+[INFO] 16:36:45:350 GameCard/(9138:9179): El metadata del pokemon fue actualizado
+[INFO] 16:36:45:350 GameCard/(9138:9179): SIZE = 50
+[INFO] 16:36:45:350 GameCard/(9138:9179): BLOCKS = [1]
+[INFO] 16:36:45:351 GameCard/(9138:9181): La coordenada 12-17 es nueva. Se agrega al los registros
+[INFO] 16:36:45:354 GameCard/(9138:9181): El metadata del pokemon fue actualizado
+[INFO] 16:36:45:354 GameCard/(9138:9181): SIZE = 59
+[INFO] 16:36:45:354 GameCard/(9138:9181): BLOCKS = [1]
+[INFO] 16:36:45:356 GameCard/(9138:9183): La coordenada 129-547 es nueva. Se agrega al los registros
+[INFO] 16:36:45:360 GameCard/(9138:9183): El metadata del pokemon fue actualizado
+[INFO] 16:36:45:360 GameCard/(9138:9183): SIZE = 70
+[INFO] 16:36:45:361 GameCard/(9138:9183): BLOCKS = [1,2]
+[INFO] 16:36:50:323 GameCard/(9138:9168): Enviando APPEARED por socket: -1
+[INFO] 16:36:50:323 GameCard/(9138:9168): APPEARED enviado
+[INFO] 16:36:50:326 GameCard/(9138:9170): Enviando APPEARED por socket: -1
+[INFO] 16:36:50:326 GameCard/(9138:9170): APPEARED enviado
+[INFO] 16:36:50:331 GameCard/(9138:9173): Enviando APPEARED por socket: -1
+[INFO] 16:36:50:331 GameCard/(9138:9173): APPEARED enviado
+[INFO] 16:36:50:336 GameCard/(9138:9175): Enviando APPEARED por socket: -1
+[INFO] 16:36:50:336 GameCard/(9138:9175): APPEARED enviado
+[INFO] 16:36:50:342 GameCard/(9138:9177): Enviando APPEARED por socket: -1
+[INFO] 16:36:50:342 GameCard/(9138:9177): APPEARED enviado
+[INFO] 16:36:50:353 GameCard/(9138:9179): Enviando APPEARED por socket: -1
+[INFO] 16:36:50:353 GameCard/(9138:9179): APPEARED enviado
+[INFO] 16:36:50:354 GameCard/(9138:9181): Enviando APPEARED por socket: -1
+[INFO] 16:36:50:354 GameCard/(9138:9181): APPEARED enviado
+[INFO] 16:36:50:361 GameCard/(9138:9183): Enviando APPEARED por socket: -1
+[INFO] 16:36:50:361 GameCard/(9138:9183): APPEARED enviado
+[INFO] 16:36:53:906 GameCard/(9138:9144): Iniciando verificacion de conexion con BROKER...
+[INFO] 16:36:53:906 GameCard/(9138:9144): Reconexion con broker necesaria
+[ERROR] 16:36:53:906 GameCard/(9138:9144): Reconexion con BROKER fallida, intentando nuevamente en 10 segundos
+[INFO] 16:36:59:512 GameCard/(9138:9216): La coordenada 413-17 fue encontrada
+[INFO] 16:36:59:512 GameCard/(9138:9216): La coordenada 413-17 tiene unicamente 1 posicion
+[INFO] 16:36:59:512 GameCard/(9138:9216): La coordenada 413-17 se borra
+[INFO] 16:36:59:513 GameCard/(9138:9216): El metadata del pokemon fue actualizado
+[INFO] 16:36:59:516 GameCard/(9138:9216): SIZE = 61
+[INFO] 16:36:59:516 GameCard/(9138:9216): BLOCKS = [1]
+[INFO] 16:37:03:906 GameCard/(9138:9144): Iniciando verificacion de conexion con BROKER...
+[INFO] 16:37:03:906 GameCard/(9138:9144): Reconexion con broker necesaria
+[ERROR] 16:37:03:906 GameCard/(9138:9144): Reconexion con BROKER fallida, intentando nuevamente en 10 segundos
+[INFO] 16:37:04:516 GameCard/(9138:9216): Enviando CAUGHT por socket: -1
+[INFO] 16:37:04:516 GameCard/(9138:9216): CAUGHT enviado
