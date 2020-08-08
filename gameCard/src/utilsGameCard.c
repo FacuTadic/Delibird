@@ -1152,7 +1152,11 @@ void newPokemon(int socketCliente,t_newLlegada* new){
 	char* posicion = generadorDePosiciones(posX,posY);
 	char** registroPokemon = generadorDeRegistros(posicion,cantidad);
 
-	if(noExisteDirectorio(rutaDeDirectorio)){
+	pthread_mutex_lock(&estoy_chequeando_existencia_de_bloque_mutex);
+
+	bool no_existe_directorio = noExisteDirectorio(rutaDeDirectorio);
+
+	if(no_existe_directorio){
 		log_info(loggerGameCard,"El pokemon %s no existe en el FS, se pasa a crear su directorio", pokemon);
 		crearDirectorio(pokemon,rutaFiles);
 		crearArchivoEnDirectorio(pokemon,rutaDeDirectorio);
@@ -1168,15 +1172,20 @@ void newPokemon(int socketCliente,t_newLlegada* new){
 	t_config* archivoMetadataPokemon = config_create(rutaDeArchivo);
 	log_info(loggerDev,"Se creo el archivo config");
 
+	if (archivoMetadataPokemon == NULL) {
+		log_info(loggerDev, "ARCHIVO METADATA ES NULL");
+	}
+
 	char** blocksOcupados = config_get_array_value(archivoMetadataPokemon,"BLOCKS");
 	log_info(loggerDev, "EL array de blocks es: %s", blocksOcupados[0]);
 
 	pthread_mutex_lock(&estoy_leyendo_metadata_mutex);
 	if(puedeAbrirseArchivo(archivoMetadataPokemon)){
 		activarFlagDeLectura(archivoMetadataPokemon);
-		pthread_mutex_unlock(&estoy_leyendo_metadata_mutex);
 
 		validarPosicionesDeNew(archivoMetadataPokemon, blocksOcupados, registroPokemon);
+
+		pthread_mutex_unlock(&estoy_leyendo_metadata_mutex);
 
 	} else{
 		pthread_mutex_unlock(&estoy_leyendo_metadata_mutex);
@@ -1187,6 +1196,8 @@ void newPokemon(int socketCliente,t_newLlegada* new){
 	}
 
 	desactivarFlagDeLectura(archivoMetadataPokemon);
+
+	pthread_mutex_unlock(&estoy_chequeando_existencia_de_bloque_mutex);
 
 	t_appeared* appearedGenerado = crearAppeared(new);
 	sleep(tiempoRetardoOperacion);

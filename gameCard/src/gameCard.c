@@ -92,6 +92,7 @@ int main(void) {
 
 	pthread_mutex_init(&estoy_conectado_al_broker_mutex, NULL);
 	pthread_mutex_init(&estoy_leyendo_metadata_mutex,NULL);
+	pthread_mutex_init(&estoy_chequeando_existencia_de_bloque_mutex, NULL);
 
 	sem_init(&bloques_bitmap,0,1);
 	sem_init(&sem_conexion_new,0,1);
@@ -150,6 +151,7 @@ void terminar_programa(){
 	liberar_conexion(socketEscuchaGet);
 	liberar_conexion(socketEscuchaGameBoy);
 	pthread_mutex_destroy(&estoy_conectado_al_broker_mutex);
+	pthread_mutex_destroy(&estoy_chequeando_existencia_de_bloque_mutex);
 	free(rutaMetaData);
 	free(rutaFiles);
 	free(rutaBlocks);

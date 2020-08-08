@@ -70,6 +70,7 @@ char* bitMap;
 
 
 pthread_mutex_t estoy_conectado_al_broker_mutex;
+pthread_mutex_t estoy_chequeando_existencia_de_bloque_mutex;
 pthread_mutex_t estoy_leyendo_metadata_mutex;
 sem_t bloques_bitmap;
 
