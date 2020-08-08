@@ -1,7 +1,7 @@
 #include"utilsGameBoy.h"
 
 t_log* iniciar_logger() {
-	return log_create("gameBoyDEV.log", "GameBoy", 0, LOG_LEVEL_INFO);
+	return log_create("gameBoyDEV.log", "GameBoy", 1, LOG_LEVEL_INFO);
 }
 
 t_log* iniciar_loggerGameBoy() {

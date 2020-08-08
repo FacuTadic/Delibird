@@ -8,7 +8,7 @@ t_log* iniciar_loggerDEV(){
 
 
 t_log* iniciar_loggerGameCard(){
-	return log_create("gameCard.log", "GameCard", 0, LOG_LEVEL_INFO);
+	return log_create("gameCard.log", "GameCard", 1, LOG_LEVEL_INFO);
 }
 
 t_config* leer_config(){
@@ -94,6 +94,9 @@ int main(void) {
 	pthread_mutex_init(&estoy_leyendo_metadata_mutex,NULL);
 
 	sem_init(&bloques_bitmap,0,1);
+	sem_init(&sem_conexion_new,0,1);
+	sem_init(&sem_conexion_catch,0,1);
+	sem_init(&sem_conexion_get,0,1);
 
 
 	//################################################## 	CONEXION 	###############################################################################
@@ -101,10 +104,15 @@ int main(void) {
 	socketEscuchaGameBoy = iniciarEscuchaGameBoy(ip, puerto);
 	socketEscuchaNew = crear_conexion(ipBroker, puertoBroker);
 
-	if(socketEscuchaNew != -1){
+	if (socketEscuchaNew != -1) {
 		estoy_conectado_al_broker = 1;
-	}else{
+		estoy_conectado_al_broker_ultimo_chequeo = 1;
+	} else {
 		estoy_conectado_al_broker = 0;
+		estoy_conectado_al_broker_ultimo_chequeo = 0;
+		sem_wait(&sem_conexion_new);
+		sem_wait(&sem_conexion_catch);
+		sem_wait(&sem_conexion_get);
 	}
 
 	socketEscuchaCatch = crear_conexion(ipBroker, puertoBroker);

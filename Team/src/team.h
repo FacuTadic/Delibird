@@ -48,6 +48,7 @@ int socket_escucha_caught;
 int socket_escucha_localized;
 
 int estoy_conectado_al_broker; // 1 true 0 false
+int estoy_conectado_al_broker_ultimo_chequeo;
 
 int id_llegada;
 
@@ -77,6 +78,10 @@ pthread_mutex_t dictionary_intentan_atrapar_mutex;
 sem_t sem_cola_pokemones;
 sem_t sem_cola_caught;
 sem_t sem_cola_deadlock;
+
+sem_t sem_conexion_appeared;
+sem_t sem_conexion_caught;
+sem_t sem_conexion_localized;
 
 sem_t sem_entrenadores_disponibles;
 
@@ -246,3 +251,4 @@ void desalojar_si_es_necesario(t_entrenador* entrenador_planificado);
 int cantidad_de_entrenadores_en_ready_o_exec(void);
 int obtener_id_llegada(void);
 void generar_ID_Modulo();
+void desconectar_broker();

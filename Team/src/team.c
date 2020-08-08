@@ -97,13 +97,12 @@ void escuchar_appeared_de_broker(void) {
 		log_error(logger, "Hubo un problema enviando la suscripcion a la cola APPEARED del broker");
 	}
 	while (1) {
+		sem_wait(&sem_conexion_appeared);
 		if (estoy_conectado_al_broker == 1) {
 			uint32_t size;
 			t_appeared* appeared_msg = recibir_appeared(socket_escucha_appeared, &size);
 			if (appeared_msg == NULL) {
-				pthread_mutex_lock(&estoy_conectado_al_broker_mutex);
-				estoy_conectado_al_broker = 0;
-				pthread_mutex_unlock(&estoy_conectado_al_broker_mutex);
+				desconectar_broker();
 			} else {
 				log_info(extense_logger, "Appeared recibido de BROKER, pokemon %s en (%i,%i)", appeared_msg->pokemon, appeared_msg->pos_X, appeared_msg->pos_Y);
 				log_info(logger, "Appeared recibido de BROKER, pokemon %s en (%i,%i)", appeared_msg->pokemon, appeared_msg->pos_X, appeared_msg->pos_Y);
@@ -134,6 +133,7 @@ void escuchar_appeared_de_broker(void) {
 				free(appeared_msg);
 			}
 		}
+		sem_post(&sem_conexion_appeared);
 	}
 }
 
@@ -151,14 +151,13 @@ void escuchar_caught_de_broker(void) {
 		log_error(logger, "Hubo un problema enviando la suscripcion a la cola CAUGHT del broker");
 	}
 	while (1) {
+		sem_wait(&sem_conexion_caught);
 		if (estoy_conectado_al_broker == 1) {
 			uint32_t size;
 			t_caught* caught_msg = recibir_caught(socket_escucha_caught, &size);
 
 			if (caught_msg == NULL) {
-				pthread_mutex_lock(&estoy_conectado_al_broker_mutex);
-				estoy_conectado_al_broker = 0;
-				pthread_mutex_unlock(&estoy_conectado_al_broker_mutex);
+				desconectar_broker();
 			} else {
 				log_info(extense_logger, "Caught recibido de BROKER con id correlativo %i y flag %i", caught_msg->idCorrelativo, caught_msg->flag);
 				log_info(logger, "Caught recibido de BROKER con id correlativo %i y flag %i", caught_msg->idCorrelativo, caught_msg->flag);
@@ -172,6 +171,7 @@ void escuchar_caught_de_broker(void) {
 				}
 			}
 		}
+		sem_post(&sem_conexion_caught);
 	}
 }
 
@@ -189,13 +189,12 @@ void escuchar_localized_de_broker(void) {
 		log_error(logger, "Hubo un problema enviando la suscripcion a la cola LOCALIZED del broker");
 	}
 	while (1) {
+		sem_wait(&sem_conexion_localized);
 		if (estoy_conectado_al_broker == 1) {
 			uint32_t size;
 			t_localized* localized_msg = recibir_localized(socket_escucha_localized, &size);
 			if (localized_msg == NULL) {
-				pthread_mutex_lock(&estoy_conectado_al_broker_mutex);
-				estoy_conectado_al_broker = 0;
-				pthread_mutex_unlock(&estoy_conectado_al_broker_mutex);
+				desconectar_broker();
 			} else {
 				char* coordenadas_log = string_new();
 				for (int k = 0; k < localized_msg->l_coordenadas->elements_count; k++) {
@@ -236,6 +235,7 @@ void escuchar_localized_de_broker(void) {
 				free(localized_msg);
 			}
 		}
+		sem_post(&sem_conexion_localized);
 	}
 }
 
@@ -1189,6 +1189,13 @@ void reconectar_al_broker() {
 		log_error(extense_logger, "Reconexion con Broker fallida, intentando nuevamente en %i segundos", tiempo_reconexion);
 		log_error(logger, "Reconexion con Broker fallida, intentando nuevamente en %i segundos", tiempo_reconexion);
 	}
+
+	if (estoy_conectado_al_broker_ultimo_chequeo == 0 && estoy_conectado_al_broker == 1) {
+		sem_post(&sem_conexion_appeared);
+		sem_post(&sem_conexion_caught);
+		sem_post(&sem_conexion_localized);
+	}
+	estoy_conectado_al_broker_ultimo_chequeo = estoy_conectado_al_broker;
 }
 
 int main(void) {
@@ -1203,7 +1210,7 @@ int main(void) {
 	config = leer_config();
 	log_file = config_get_string_value(config, "LOG_FILE");
 	extense_log_file = config_get_string_value(config, "EXTENSE_LOG_FILE");
-	extense_logger = iniciar_logger_sin_consola(extense_log_file);
+	extense_logger = iniciar_logger(extense_log_file);
 	extense_logger_protocol = extense_logger;
 	log_info(extense_logger, "logger extenso iniciado");
 	logger = iniciar_logger_sin_consola(log_file);
@@ -1268,6 +1275,10 @@ int main(void) {
 	// crear cola de mensajes recibidos
 	inicializar_cola();
 
+	sem_init(&sem_conexion_appeared, 0, 1);
+	sem_init(&sem_conexion_caught, 0, 1);
+	sem_init(&sem_conexion_localized, 0, 1);
+
 	pthread_mutex_init(&planificacion_ready, NULL);
 	pthread_mutex_init(&cola_pokemones_mutex, NULL);
 	pthread_mutex_init(&cola_caught_mutex, NULL);
@@ -1305,6 +1316,13 @@ int main(void) {
 
 	if (socket_escucha_appeared != -1) {
 		estoy_conectado_al_broker = 1;
+		estoy_conectado_al_broker_ultimo_chequeo = 1;
+	} else {
+		estoy_conectado_al_broker = 0;
+		estoy_conectado_al_broker_ultimo_chequeo = 0;
+		sem_wait(&sem_conexion_appeared);
+		sem_wait(&sem_conexion_caught);
+		sem_wait(&sem_conexion_localized);
 	}
 
 	socket_escucha_caught = crear_conexion(ip_broker, puerto_broker);
@@ -2330,6 +2348,17 @@ void generar_ID_Modulo() {
 	id_modulo_protocol = id_modulo;
 }
 
+void desconectar_broker() {
+	pthread_mutex_lock(&estoy_conectado_al_broker_mutex);
+	if (estoy_conectado_al_broker == 1) {
+		estoy_conectado_al_broker = 0;
+		sem_wait(&sem_conexion_appeared);
+		sem_wait(&sem_conexion_caught);
+		sem_wait(&sem_conexion_localized);
+	}
+	pthread_mutex_unlock(&estoy_conectado_al_broker_mutex);
+}
+
 void terminar_programa() {
 	free(ip_broker);
 	free(puerto_broker);
@@ -2384,6 +2413,10 @@ void terminar_programa() {
 	sem_destroy(&sem_cola_pokemones);
 	sem_destroy(&sem_cola_caught);
 	sem_destroy(&sem_cola_deadlock);
+
+	sem_destroy(&sem_conexion_appeared);
+	sem_destroy(&sem_conexion_caught);
+	sem_destroy(&sem_conexion_localized);
 
 	pthread_mutex_destroy(&cola_pokemones_mutex);
 	pthread_mutex_destroy(&cola_caught_mutex);

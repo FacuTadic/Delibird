@@ -56,6 +56,7 @@ t_bitarray *bitarray;
 char* magicNumber;
 
 int estoy_conectado_al_broker; // 1 true 0 false
+int estoy_conectado_al_broker_ultimo_chequeo;
 
 
 t_log* loggerDev;
@@ -71,6 +72,10 @@ char* bitMap;
 pthread_mutex_t estoy_conectado_al_broker_mutex;
 pthread_mutex_t estoy_leyendo_metadata_mutex;
 sem_t bloques_bitmap;
+
+sem_t sem_conexion_new;
+sem_t sem_conexion_catch;
+sem_t sem_conexion_get;
 
 
 
@@ -104,6 +109,8 @@ void escribirEnBloques(t_list* registros, t_config* archivoMetadata);
 bool evaluarRegistroCatch(char* registro, t_list* registros);
 t_list* obtenerTodasLasPosiciones(char** blocks);
 char* getCoordenadaDeRegistro(char** vector);
+
+void desconectar_broker();
 
 
 #endif /* UTILSGAMECARD_H_ */
