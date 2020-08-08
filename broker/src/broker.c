@@ -538,7 +538,7 @@ void atender_mensaje_new(mensaje_queue* mensaje) {
 	registro->tipo = NEW;
 	registro->id_temporal = generar_id_temporal();
 	registro->id_modificacion = generar_id_modificacion();
-	registro->tamanio_nombre_pokemon = (strlen(((t_new*) mensaje->mensaje)->pokemon) + 1) * sizeof(char);
+	registro->tamanio_nombre_pokemon = (strlen(((t_new*) mensaje->mensaje)->pokemon)) * sizeof(char);
 	registro->tamanio_lista_coordenadas = 0;
 
 	uint32_t bytes;
@@ -609,7 +609,7 @@ void atender_mensaje_appeared(mensaje_queue* mensaje) {
 	registro->tipo = APPEARED;
 	registro->id_temporal = generar_id_temporal();
 	registro->id_modificacion = generar_id_modificacion();
-	registro->tamanio_nombre_pokemon = (strlen(((t_appeared*) mensaje->mensaje)->pokemon) + 1) * sizeof(char);
+	registro->tamanio_nombre_pokemon = (strlen(((t_appeared*) mensaje->mensaje)->pokemon)) * sizeof(char);
 	registro->tamanio_lista_coordenadas = 0;
 
 	uint32_t bytes;
@@ -679,7 +679,7 @@ void atender_mensaje_catch(mensaje_queue* mensaje) {
 	registro->tipo = CATCH;
 	registro->id_temporal = generar_id_temporal();
 	registro->id_modificacion = generar_id_modificacion();
-	registro->tamanio_nombre_pokemon = (strlen(((t_catch*) mensaje->mensaje)->pokemon) + 1) * sizeof(char);
+	registro->tamanio_nombre_pokemon = (strlen(((t_catch*) mensaje->mensaje)->pokemon)) * sizeof(char);
 	registro->tamanio_lista_coordenadas = 0;
 
 	uint32_t bytes;
@@ -820,7 +820,7 @@ void atender_mensaje_get(mensaje_queue* mensaje) {
 	registro->tipo = GET;
 	registro->id_temporal = generar_id_temporal();
 	registro->id_modificacion = generar_id_modificacion();
-	registro->tamanio_nombre_pokemon = (strlen(((t_get*) mensaje->mensaje)->pokemon) + 1) * sizeof(char);
+	registro->tamanio_nombre_pokemon = (strlen(((t_get*) mensaje->mensaje)->pokemon)) * sizeof(char);
 	registro->tamanio_lista_coordenadas = 0;
 
 	uint32_t bytes;
@@ -891,7 +891,7 @@ void atender_mensaje_localized(mensaje_queue* mensaje) {
 	registro->tipo = LOCALIZED;
 	registro->id_temporal = generar_id_temporal();
 	registro->id_modificacion = generar_id_modificacion();
-	registro->tamanio_nombre_pokemon = (strlen(((t_localized*) mensaje->mensaje)->pokemon) + 1) * sizeof(char);
+	registro->tamanio_nombre_pokemon = (strlen(((t_localized*) mensaje->mensaje)->pokemon)) * sizeof(char);
 	registro->tamanio_lista_coordenadas = ((t_localized*) mensaje->mensaje)->lugares;
 
 	uint32_t bytes;
@@ -1937,11 +1937,8 @@ void* serializar_get(mensaje_queue* get, uint32_t* bytes) {
 }
 
 void* serializar_localized(mensaje_queue* localized, uint32_t* bytes) {
-	log_info(extense_logger, "A");
 	uint32_t tamanio_pokemon = (strlen(((t_localized*) localized->mensaje)->pokemon) + 1) * sizeof(char);
-	log_info(extense_logger, "B");
 	uint32_t elementos_lista = ((t_localized*) localized->mensaje)->l_coordenadas->elements_count;
-	log_info(extense_logger, "C");
 	uint32_t tamanio_lista = elementos_lista * sizeof(uint32_t);
 
 	*bytes = sizeof(uint32_t) + sizeof(uint32_t) +
@@ -1949,13 +1946,9 @@ void* serializar_localized(mensaje_queue* localized, uint32_t* bytes) {
 			sizeof(uint32_t) + tamanio_pokemon +
 			sizeof(uint32_t) + tamanio_lista;
 
-	log_info(extense_logger, "D");
-
 	uint32_t cod_op = 6;
 	void* flujo = malloc(*bytes);
 	int desplazamiento = 0;
-
-	log_info(extense_logger, "E");
 
 	memcpy(flujo + desplazamiento, &cod_op, sizeof(uint32_t));
 	desplazamiento += sizeof(uint32_t);
@@ -1972,27 +1965,29 @@ void* serializar_localized(mensaje_queue* localized, uint32_t* bytes) {
 	memcpy(flujo + desplazamiento, &(((t_localized*) localized->mensaje)->lugares), sizeof(uint32_t));
 	desplazamiento += sizeof(uint32_t);
 
-	log_info(extense_logger, "F");
-
 	for (int i = 0; i < elementos_lista; i++) {
 		uint32_t* elemento_de_lista = (uint32_t*) list_get(((t_localized*) localized->mensaje)->l_coordenadas, i);
 		memcpy(flujo + desplazamiento, elemento_de_lista, sizeof(uint32_t));
 		desplazamiento += sizeof(uint32_t);
 	}
 
-	log_info(extense_logger, "G");
-
 	return flujo;
 }
 
 void* serializar_new_para_memoria(t_new* new, uint32_t* bytes) {
-	int tamanio_pokemon = (strlen(new->pokemon) + 1) * sizeof(char);
+	uint32_t tamanio_pokemon = (strlen(new->pokemon)) * sizeof(char);
 
-	*bytes = tamanio_pokemon + sizeof(uint32_t) + sizeof(uint32_t) + sizeof(uint32_t);
+	*bytes = sizeof(uint32_t) + // tamanio nombre pokemon
+			tamanio_pokemon + // nombre pokemon
+			sizeof(uint32_t) + // pos X
+			sizeof(uint32_t) + // pos Y
+			sizeof(uint32_t); // cantidad
 
 	void* flujo = malloc(*bytes);
 	int desplazamiento = 0;
 
+	memcpy(flujo + desplazamiento, &tamanio_pokemon, sizeof(uint32_t));
+	desplazamiento += sizeof(uint32_t);
 	memcpy(flujo + desplazamiento, new->pokemon, tamanio_pokemon);
 	desplazamiento += tamanio_pokemon;
 	memcpy(flujo + desplazamiento, &(new->pos_X), sizeof(uint32_t));
@@ -2006,13 +2001,18 @@ void* serializar_new_para_memoria(t_new* new, uint32_t* bytes) {
 }
 
 void* serializar_appeared_para_memoria(t_appeared* appeared, uint32_t* bytes) {
-	int tamanio_pokemon = (strlen(appeared->pokemon) + 1) * sizeof(char);
+	uint32_t tamanio_pokemon = (strlen(appeared->pokemon)) * sizeof(char);
 
-	*bytes = tamanio_pokemon + sizeof(uint32_t) + sizeof(uint32_t);
+	*bytes = sizeof(uint32_t) + // tamanio nombre pokemon
+			tamanio_pokemon + // nombre pokemon
+			sizeof(uint32_t) + // pos X
+			sizeof(uint32_t); // pos Y
 
 	void* flujo = malloc(*bytes);
 	int desplazamiento = 0;
 
+	memcpy(flujo + desplazamiento, &tamanio_pokemon, sizeof(uint32_t));
+	desplazamiento += sizeof(uint32_t);
 	memcpy(flujo + desplazamiento, appeared->pokemon, tamanio_pokemon);
 	desplazamiento += tamanio_pokemon;
 	memcpy(flujo + desplazamiento, &(appeared->pos_X), sizeof(uint32_t));
@@ -2024,13 +2024,18 @@ void* serializar_appeared_para_memoria(t_appeared* appeared, uint32_t* bytes) {
 }
 
 void* serializar_catch_para_memoria(t_catch* catch, uint32_t* bytes) {
-	int tamanio_pokemon = (strlen(catch->pokemon) + 1) * sizeof(char);
+	uint32_t tamanio_pokemon = (strlen(catch->pokemon)) * sizeof(char);
 
-	*bytes = tamanio_pokemon + sizeof(uint32_t) + sizeof(uint32_t);
+	*bytes = sizeof(uint32_t) + // tamanio nombre pokemon
+			tamanio_pokemon + // nombre pokemon
+			sizeof(uint32_t) + // pos X
+			sizeof(uint32_t); // pos Y
 
 	void* flujo = malloc(*bytes);
 	int desplazamiento = 0;
 
+	memcpy(flujo + desplazamiento, &tamanio_pokemon, sizeof(uint32_t));
+	desplazamiento += sizeof(uint32_t);
 	memcpy(flujo + desplazamiento, catch->pokemon, tamanio_pokemon);
 	desplazamiento += tamanio_pokemon;
 	memcpy(flujo + desplazamiento, &(catch->pos_X), sizeof(uint32_t));
@@ -2043,7 +2048,7 @@ void* serializar_catch_para_memoria(t_catch* catch, uint32_t* bytes) {
 
 void* serializar_caught_para_memoria(t_caught* caught, uint32_t* bytes) {
 
-	*bytes = sizeof(uint32_t);
+	*bytes = sizeof(uint32_t); // flag
 
 	void* flujo = malloc(*bytes);
 	int desplazamiento = 0;
@@ -2055,13 +2060,16 @@ void* serializar_caught_para_memoria(t_caught* caught, uint32_t* bytes) {
 }
 
 void* serializar_get_para_memoria(t_get* get, uint32_t* bytes) {
-	int tamanio_pokemon = (strlen(get->pokemon) + 1) * sizeof(char);
+	uint32_t tamanio_pokemon = (strlen(get->pokemon)) * sizeof(char);
 
-	*bytes = tamanio_pokemon;
+	*bytes = sizeof(uint32_t) + // tamanio nombre pokemon
+			tamanio_pokemon; // nombre pokemon
 
 	void* flujo = malloc(*bytes);
 	int desplazamiento = 0;
 
+	memcpy(flujo + desplazamiento, &tamanio_pokemon, sizeof(uint32_t));
+	desplazamiento += sizeof(uint32_t);
 	memcpy(flujo + desplazamiento, get->pokemon, tamanio_pokemon);
 	desplazamiento += tamanio_pokemon;
 
@@ -2069,23 +2077,26 @@ void* serializar_get_para_memoria(t_get* get, uint32_t* bytes) {
 }
 
 void* serializar_localized_para_memoria(t_localized* localized, uint32_t* bytes) {
-	int tamanio_pokemon = (strlen(localized->pokemon) + 1) * sizeof(char);
+	uint32_t tamanio_pokemon = (strlen(localized->pokemon)) * sizeof(char);
 
-	*bytes = tamanio_pokemon + sizeof(uint32_t)
-						+ (localized->lugares * 2 * sizeof(uint32_t));
+	*bytes = sizeof(uint32_t) + // tamanio nombre pokemon
+			(strlen(localized->pokemon)) + // nombre pokemon
+			sizeof(uint32_t) + // cantidad de coordenadas
+			(localized->lugares * 2 * sizeof(uint32_t)); // coordenadas
 
 	void* flujo = malloc(*bytes);
 	int desplazamiento = 0;
 
+	memcpy(flujo + desplazamiento, &tamanio_pokemon, sizeof(uint32_t));
+	desplazamiento += sizeof(uint32_t);
 	memcpy(flujo + desplazamiento, localized->pokemon, tamanio_pokemon);
 	desplazamiento += tamanio_pokemon;
 	memcpy(flujo + desplazamiento, &(localized->lugares), sizeof(uint32_t));
 	desplazamiento += sizeof(uint32_t);
 
-
 	for (int i = 0; i < localized->l_coordenadas->elements_count; i++) {
 		uint32_t* elemento_de_lista = (uint32_t*) list_get(localized->l_coordenadas, i);
-		memcpy(flujo + desplazamiento, &elemento_de_lista, sizeof(uint32_t));
+		memcpy(flujo + desplazamiento, elemento_de_lista, sizeof(uint32_t));
 		desplazamiento += sizeof(uint32_t);
 	}
 
@@ -2093,42 +2104,83 @@ void* serializar_localized_para_memoria(t_localized* localized, uint32_t* bytes)
 }
 
 void* serializar_new_desde_memoria(segmento_memoria* new, int* bytes) {
-	*bytes = sizeof(uint32_t) + sizeof(uint32_t) +
-			sizeof(uint32_t) + sizeof(uint32_t) +
-			new->registro->tamanio_nombre_pokemon + sizeof(uint32_t) +
-			sizeof(uint32_t) + sizeof(uint32_t);
+	*bytes = sizeof(uint32_t) + // op code
+			sizeof(uint32_t) + // bytes
+			sizeof(uint32_t) + // id
+			sizeof(uint32_t) + // tamanio nombre pokemon
+			((new->registro->tamanio_nombre_pokemon + 1) * sizeof(char)) + // nombre pokemon
+			sizeof(uint32_t) + // pos X
+			sizeof(uint32_t) + // pos Y
+			sizeof(uint32_t); // cantidad
 
 	uint32_t cod_op = 1;
 	void* flujo = malloc(*bytes);
 	int desplazamiento = 0;
 
-	log_info(extense_logger, "Serializando new de memoria, codigo de operacion: %i", cod_op);
+	uint32_t tamanio_nombre_pokemon_real = new->registro->tamanio_nombre_pokemon + 1;
+	char* nombre_pokemon_en_memoria = malloc(new->registro->tamanio_nombre_pokemon);
+	memcpy(nombre_pokemon_en_memoria, new->mensaje + sizeof(uint32_t), new->registro->tamanio_nombre_pokemon);
+	char* nombre_pokemon_real = malloc(tamanio_nombre_pokemon_real);
+	memcpy(nombre_pokemon_real, nombre_pokemon_en_memoria, new->registro->tamanio_nombre_pokemon);
+	nombre_pokemon_real[tamanio_nombre_pokemon_real - 1] = '\0';
+	log_info(extense_logger, "Nombre pokemon real %s", nombre_pokemon_real);
+	int cantidad_ya_leida = sizeof(uint32_t) + new->registro->tamanio_nombre_pokemon;
+	int cantidad_a_leer = (new->registro->limit) - cantidad_ya_leida;
+	void* todo_lo_demas = malloc(cantidad_a_leer); // para enviar
+	memcpy(todo_lo_demas, new->mensaje + cantidad_ya_leida, cantidad_a_leer);
+
 	memcpy(flujo + desplazamiento, &cod_op, sizeof(uint32_t));
 	desplazamiento += sizeof(uint32_t);
-	log_info(extense_logger, "Serializando new de memoria, bytes: %i", *bytes);
 	memcpy(flujo + desplazamiento, bytes, sizeof(uint32_t));
 	desplazamiento += sizeof(uint32_t);
-	log_info(extense_logger, "Serializando new de memoria, id: %i", new->registro->id);
 	memcpy(flujo + desplazamiento, &(new->registro->id), sizeof(uint32_t));
 	desplazamiento += sizeof(uint32_t);
-	log_info(extense_logger, "Serializando new de memoria, tamanio del pokemon: %i", new->registro->tamanio_nombre_pokemon);
-	memcpy(flujo + desplazamiento, &(new->registro->tamanio_nombre_pokemon), sizeof(uint32_t));
+	memcpy(flujo + desplazamiento, &tamanio_nombre_pokemon_real, sizeof(uint32_t));
 	desplazamiento += sizeof(uint32_t);
-	memcpy(flujo + desplazamiento, new->mensaje, new->registro->limit);
-	desplazamiento += new->registro->limit;
+	memcpy(flujo + desplazamiento, nombre_pokemon_real, tamanio_nombre_pokemon_real);
+	desplazamiento += tamanio_nombre_pokemon_real;
+	memcpy(flujo + desplazamiento, todo_lo_demas, cantidad_a_leer);
+	desplazamiento += cantidad_a_leer;
+
+	free(nombre_pokemon_en_memoria);
+	free(nombre_pokemon_real);
+	free(todo_lo_demas);
 
 	return flujo;
 }
 
 void* serializar_appeared_desde_memoria(segmento_memoria* appeared, int* bytes) {
-	*bytes = sizeof(uint32_t) + sizeof(uint32_t) +
-			sizeof(uint32_t) + sizeof(uint32_t) +
-			appeared->registro->tamanio_nombre_pokemon + sizeof(uint32_t) +
-			sizeof(uint32_t) + sizeof(uint32_t);
+	*bytes = sizeof(uint32_t) + // op code
+			sizeof(uint32_t) + // bytes
+			sizeof(uint32_t) + // id
+			sizeof(uint32_t) + // id correlativo
+			sizeof(uint32_t) + // tamanio nombre pokemon
+			((appeared->registro->tamanio_nombre_pokemon + 1) * sizeof(char)) + // nombre pokemon
+			sizeof(uint32_t) + // pos X
+			sizeof(uint32_t); // pos Y
 
 	uint32_t cod_op = 2;
 	void* flujo = malloc(*bytes);
 	int desplazamiento = 0;
+
+	uint32_t tamanio_nombre_pokemon_real = appeared->registro->tamanio_nombre_pokemon + 1;
+	char* nombre_pokemon_en_memoria = malloc(appeared->registro->tamanio_nombre_pokemon);
+	memcpy(nombre_pokemon_en_memoria, appeared->mensaje + sizeof(uint32_t), appeared->registro->tamanio_nombre_pokemon);
+	//	char* nombre_pokemon_real = string_new(); // para enviar
+	//	string_append(&nombre_pokemon_real, nombre_pokemon_en_memoria);
+	//	char contrabarra[1];
+	//	contrabarra[0]='\0';
+	//string_append(&nombre_pokemon_real, contrabarra);
+
+	char* nombre_pokemon_real = malloc(tamanio_nombre_pokemon_real);
+	memcpy(nombre_pokemon_real, nombre_pokemon_en_memoria, appeared->registro->tamanio_nombre_pokemon);
+	nombre_pokemon_real[tamanio_nombre_pokemon_real - 1] = '\0';
+
+	log_info(extense_logger, "Nombre pokemon real %s", nombre_pokemon_real);
+	int cantidad_ya_leida = sizeof(uint32_t) + appeared->registro->tamanio_nombre_pokemon;
+	int cantidad_a_leer = (appeared->registro->limit) - cantidad_ya_leida;
+	void* todo_lo_demas = malloc(cantidad_a_leer); // para enviar
+	memcpy(todo_lo_demas, appeared->mensaje + cantidad_ya_leida, cantidad_a_leer);
 
 	memcpy(flujo + desplazamiento, &cod_op, sizeof(uint32_t));
 	desplazamiento += sizeof(uint32_t);
@@ -2138,23 +2190,44 @@ void* serializar_appeared_desde_memoria(segmento_memoria* appeared, int* bytes) 
 	desplazamiento += sizeof(uint32_t);
 	memcpy(flujo + desplazamiento, &(appeared->registro->id_correlativo), sizeof(uint32_t));
 	desplazamiento += sizeof(uint32_t);
-	memcpy(flujo + desplazamiento, &(appeared->registro->tamanio_nombre_pokemon), sizeof(uint32_t));
+	memcpy(flujo + desplazamiento, &tamanio_nombre_pokemon_real, sizeof(uint32_t));
 	desplazamiento += sizeof(uint32_t);
-	memcpy(flujo + desplazamiento, appeared->mensaje, appeared->registro->limit);
-	desplazamiento += appeared->registro->limit;
+	memcpy(flujo + desplazamiento, nombre_pokemon_real, tamanio_nombre_pokemon_real);
+	desplazamiento += tamanio_nombre_pokemon_real;
+	memcpy(flujo + desplazamiento, todo_lo_demas, cantidad_a_leer);
+	desplazamiento += cantidad_a_leer;
+
+	free(nombre_pokemon_en_memoria);
+	free(nombre_pokemon_real);
+	free(todo_lo_demas);
 
 	return flujo;
 }
 
 void* serializar_catch_desde_memoria(segmento_memoria* catch, int* bytes) {
-	*bytes = sizeof(uint32_t) + sizeof(uint32_t) +
-			sizeof(uint32_t) + sizeof(uint32_t) +
-			catch->registro->tamanio_nombre_pokemon +
-			sizeof(uint32_t) + sizeof(uint32_t);
+	*bytes = sizeof(uint32_t) + // op code
+			sizeof(uint32_t) + // bytes
+			sizeof(uint32_t) + // id
+			sizeof(uint32_t) + // tamanio nombre pokemon
+			((catch->registro->tamanio_nombre_pokemon + 1) * sizeof(char)) + // nombre pokemon
+			sizeof(uint32_t) + // pos X
+			sizeof(uint32_t); // pos Y
 
 	uint32_t cod_op = 3;
 	void* flujo = malloc(*bytes);
 	int desplazamiento = 0;
+
+	uint32_t tamanio_nombre_pokemon_real = catch->registro->tamanio_nombre_pokemon + 1;
+	char* nombre_pokemon_en_memoria = malloc(catch->registro->tamanio_nombre_pokemon);
+	memcpy(nombre_pokemon_en_memoria, catch->mensaje + sizeof(uint32_t), catch->registro->tamanio_nombre_pokemon);
+	char* nombre_pokemon_real = malloc(tamanio_nombre_pokemon_real);
+	memcpy(nombre_pokemon_real, nombre_pokemon_en_memoria, catch->registro->tamanio_nombre_pokemon);
+	nombre_pokemon_real[tamanio_nombre_pokemon_real - 1] = '\0';
+	log_info(extense_logger, "Nombre pokemon real %s", nombre_pokemon_real);
+	int cantidad_ya_leida = sizeof(uint32_t) + catch->registro->tamanio_nombre_pokemon;
+	int cantidad_a_leer = (catch->registro->limit) - cantidad_ya_leida;
+	void* todo_lo_demas = malloc(cantidad_a_leer); // para enviar
+	memcpy(todo_lo_demas, catch->mensaje + cantidad_ya_leida, cantidad_a_leer);
 
 	memcpy(flujo + desplazamiento, &cod_op, sizeof(uint32_t));
 	desplazamiento += sizeof(uint32_t);
@@ -2162,19 +2235,27 @@ void* serializar_catch_desde_memoria(segmento_memoria* catch, int* bytes) {
 	desplazamiento += sizeof(uint32_t);
 	memcpy(flujo + desplazamiento, &(catch->registro->id), sizeof(uint32_t));
 	desplazamiento += sizeof(uint32_t);
-	memcpy(flujo + desplazamiento, &(catch->registro->tamanio_nombre_pokemon), sizeof(uint32_t));
+	memcpy(flujo + desplazamiento, &tamanio_nombre_pokemon_real, sizeof(uint32_t));
 	desplazamiento += sizeof(uint32_t);
-	memcpy(flujo + desplazamiento, catch->mensaje, catch->registro->limit);
-	desplazamiento += catch->registro->limit;
+	memcpy(flujo + desplazamiento, nombre_pokemon_real, tamanio_nombre_pokemon_real);
+	desplazamiento += tamanio_nombre_pokemon_real;
+	memcpy(flujo + desplazamiento, todo_lo_demas, cantidad_a_leer);
+	desplazamiento += cantidad_a_leer;
+
+	free(nombre_pokemon_en_memoria);
+	free(nombre_pokemon_real);
+	free(todo_lo_demas);
 
 	return flujo;
 }
 
 void* serializar_caught_desde_memoria(segmento_memoria* caught, int* bytes) {
 
-	*bytes = sizeof(uint32_t) + sizeof(uint32_t) +
-			sizeof(uint32_t) + sizeof(uint32_t) +
-			sizeof(uint32_t);
+	*bytes = sizeof(uint32_t) + //op code
+			sizeof(uint32_t) + // bytes
+			sizeof(uint32_t) + // id
+			sizeof(uint32_t) + // id correlativo
+			sizeof(uint32_t); // flag
 
 	uint32_t cod_op = 4;
 	void* flujo = malloc(*bytes);
@@ -2195,13 +2276,27 @@ void* serializar_caught_desde_memoria(segmento_memoria* caught, int* bytes) {
 }
 
 void* serializar_get_desde_memoria(segmento_memoria* get, int* bytes) {
-	*bytes = sizeof(uint32_t) + sizeof(uint32_t) +
-			sizeof(uint32_t) + sizeof(uint32_t) +
-			get->registro->tamanio_nombre_pokemon;
+	*bytes = sizeof(uint32_t) + // op code
+			sizeof(uint32_t) + // bytes
+			sizeof(uint32_t) + // id
+			sizeof(uint32_t) + // tamanio nombre pokemon
+			((get->registro->tamanio_nombre_pokemon + 1) * sizeof(char)); // nombre pokemon
 
 	uint32_t cod_op = 5;
 	void* flujo = malloc(*bytes);
 	int desplazamiento = 0;
+
+	uint32_t tamanio_nombre_pokemon_real = get->registro->tamanio_nombre_pokemon + 1;
+	char* nombre_pokemon_en_memoria = malloc(get->registro->tamanio_nombre_pokemon);
+	memcpy(nombre_pokemon_en_memoria, get->mensaje + sizeof(uint32_t), get->registro->tamanio_nombre_pokemon);
+	char* nombre_pokemon_real = malloc(tamanio_nombre_pokemon_real);
+	memcpy(nombre_pokemon_real, nombre_pokemon_en_memoria, get->registro->tamanio_nombre_pokemon);
+	nombre_pokemon_real[tamanio_nombre_pokemon_real - 1] = '\0';
+	log_info(extense_logger, "Nombre pokemon real %s", nombre_pokemon_real);
+	int cantidad_ya_leida = sizeof(uint32_t) + get->registro->tamanio_nombre_pokemon;
+	int cantidad_a_leer = (get->registro->limit) - cantidad_ya_leida;
+	void* todo_lo_demas = malloc(cantidad_a_leer); // para enviar
+	memcpy(todo_lo_demas, get->mensaje + cantidad_ya_leida, cantidad_a_leer);
 
 	memcpy(flujo + desplazamiento, &cod_op, sizeof(uint32_t));
 	desplazamiento += sizeof(uint32_t);
@@ -2209,10 +2304,16 @@ void* serializar_get_desde_memoria(segmento_memoria* get, int* bytes) {
 	desplazamiento += sizeof(uint32_t);
 	memcpy(flujo + desplazamiento, &(get->registro->id), sizeof(uint32_t));
 	desplazamiento += sizeof(uint32_t);
-	memcpy(flujo + desplazamiento, &(get->registro->tamanio_nombre_pokemon), sizeof(uint32_t));
+	memcpy(flujo + desplazamiento, &tamanio_nombre_pokemon_real, sizeof(uint32_t));
 	desplazamiento += sizeof(uint32_t);
-	memcpy(flujo + desplazamiento, get->mensaje, get->registro->limit);
-	desplazamiento += get->registro->limit;
+	memcpy(flujo + desplazamiento, nombre_pokemon_real, tamanio_nombre_pokemon_real);
+	desplazamiento += tamanio_nombre_pokemon_real;
+	memcpy(flujo + desplazamiento, todo_lo_demas, cantidad_a_leer);
+	desplazamiento += cantidad_a_leer;
+
+	free(nombre_pokemon_en_memoria);
+	free(nombre_pokemon_real);
+	free(todo_lo_demas);
 
 	return flujo;
 }
@@ -2220,14 +2321,30 @@ void* serializar_get_desde_memoria(segmento_memoria* get, int* bytes) {
 void* serializar_localized_desde_memoria(segmento_memoria* localized, int* bytes) {
 	uint32_t tamanio_lista = localized->registro->tamanio_lista_coordenadas * sizeof(uint32_t);
 
-	*bytes = sizeof(uint32_t) + sizeof(uint32_t) +
-			sizeof(uint32_t) + sizeof(uint32_t) +
-			sizeof(uint32_t) + localized->registro->tamanio_nombre_pokemon +
-			sizeof(uint32_t) + tamanio_lista;
+	*bytes = sizeof(uint32_t) + // op code
+			sizeof(uint32_t) + // bytes
+			sizeof(uint32_t) + // id
+			sizeof(uint32_t) + // id correlativo
+			sizeof(uint32_t) + // tamanio nombre pokemon
+			((localized->registro->tamanio_nombre_pokemon + 1) * sizeof(char)) + // nombre pokemon
+			sizeof(uint32_t) + // cantidad coordenadas
+			tamanio_lista; // coordenadas
 
 	uint32_t cod_op = 6;
 	void* flujo = malloc(*bytes);
 	int desplazamiento = 0;
+
+	uint32_t tamanio_nombre_pokemon_real = localized->registro->tamanio_nombre_pokemon + 1;
+	char* nombre_pokemon_en_memoria = malloc(localized->registro->tamanio_nombre_pokemon);
+	memcpy(nombre_pokemon_en_memoria, localized->mensaje + sizeof(uint32_t), localized->registro->tamanio_nombre_pokemon);
+	char* nombre_pokemon_real = malloc(tamanio_nombre_pokemon_real);
+	memcpy(nombre_pokemon_real, nombre_pokemon_en_memoria, localized->registro->tamanio_nombre_pokemon);
+	nombre_pokemon_real[tamanio_nombre_pokemon_real - 1] = '\0';
+	log_info(extense_logger, "Nombre pokemon real %s", nombre_pokemon_real);
+	int cantidad_ya_leida = sizeof(uint32_t) + localized->registro->tamanio_nombre_pokemon;
+	int cantidad_a_leer = (localized->registro->limit) - cantidad_ya_leida;
+	void* todo_lo_demas = malloc(cantidad_a_leer); // para enviar
+	memcpy(todo_lo_demas, localized->mensaje + cantidad_ya_leida, cantidad_a_leer);
 
 	memcpy(flujo + desplazamiento, &cod_op, sizeof(uint32_t));
 	desplazamiento += sizeof(uint32_t);
@@ -2237,10 +2354,16 @@ void* serializar_localized_desde_memoria(segmento_memoria* localized, int* bytes
 	desplazamiento += sizeof(uint32_t);
 	memcpy(flujo + desplazamiento, &(localized->registro->id_correlativo), sizeof(uint32_t));
 	desplazamiento += sizeof(uint32_t);
-	memcpy(flujo + desplazamiento, &(localized->registro->tamanio_nombre_pokemon), sizeof(uint32_t));
+	memcpy(flujo + desplazamiento, &tamanio_nombre_pokemon_real, sizeof(uint32_t));
 	desplazamiento += sizeof(uint32_t);
-	memcpy(flujo + desplazamiento, localized->mensaje, localized->registro->limit);
-	desplazamiento += localized->registro->limit;
+	memcpy(flujo + desplazamiento, nombre_pokemon_real, tamanio_nombre_pokemon_real);
+	desplazamiento += tamanio_nombre_pokemon_real;
+	memcpy(flujo + desplazamiento, todo_lo_demas, cantidad_a_leer);
+	desplazamiento += cantidad_a_leer;
+
+	free(nombre_pokemon_en_memoria);
+	free(nombre_pokemon_real);
+	free(todo_lo_demas);
 
 	return flujo;
 }
