@@ -1,1794 +1,889 @@
-[INFO] 17:16:24:998 GameCard/(3164:3164): logger iniciado.
-[INFO] 17:16:24:998 GameCard/(3164:3164): logger de catedra iniciado.
-[INFO] 17:16:24:998 GameCard/(3164:3164): Config cargada.
-[INFO] 17:16:24:998 GameCard/(3164:3164): La IP del Broker: 127.0.0.1
-[INFO] 17:16:24:998 GameCard/(3164:3164): El Puerto es: 4444
-[INFO] 17:16:24:998 GameCard/(3164:3164): El tiempo de reintento de conexion es: 10
-[INFO] 17:16:24:998 GameCard/(3164:3164): El tiempo de reintento de operacion es: 5
-[INFO] 17:16:24:998 GameCard/(3164:3164): El tiempo de retardo de conexion es: 5
-[INFO] 17:16:24:998 GameCard/(3164:3164): El punto de montaje es: /home/utnso/Escritorio/tall-grass
-[INFO] 17:16:24:998 GameCard/(3164:3164): La IP es: 127.0.0.1
-[INFO] 17:16:24:998 GameCard/(3164:3164): El puerto es: 4447
-[INFO] 17:16:24:998 GameCard/(3164:3164): El id del modulo es 1722120275
-[INFO] 17:16:24:998 GameCard/(3164:3164): El punto de montaje es: /home/utnso/Escritorio/tall-grass
-[INFO] 17:16:24:998 GameCard/(3164:3164): La ruta del metadataes: /home/utnso/Escritorio/tall-grass/Metadata
-[INFO] 17:16:24:998 GameCard/(3164:3164): Se creo el config de MetaData
-[INFO] 17:16:24:998 GameCard/(3164:3164): El Block Size es: 64
-[INFO] 17:16:24:998 GameCard/(3164:3164): La cantidad de Bloques es: 1024
-[INFO] 17:16:24:998 GameCard/(3164:3164): El Magic Number es: TALL_GRASS
-[INFO] 17:16:24:999 GameCard/(3164:3164): Ya existe el directorioo: /home/utnso/Escritorio/tall-grass/Metadata
-[INFO] 17:16:24:999 GameCard/(3164:3164): Se creo el directorio Files ubicado en: /home/utnso/Escritorio/tall-grass/Files
-[INFO] 17:16:24:999 GameCard/(3164:3164): Creando directorio FILES
-[INFO] 17:16:24:999 GameCard/(3164:3164): Se creo el directorio: Files
-[INFO] 17:16:24:999 GameCard/(3164:3164): Se creo el archivo METADATA de Files
-[INFO] 17:16:24:999 GameCard/(3164:3164): Se completo el tamplate de directorio File
-[INFO] 17:16:24:999 GameCard/(3164:3164): Se creo el directorio: Blocks
-[INFO] 17:16:24:999 GameCard/(3164:3164): Se creo el directorio Blocks ubicado en: /home/utnso/Escritorio/tall-grass/Blocks
-[INFO] 17:16:24:999 GameCard/(3164:3164): SETEO DE VARIABLES PARA ARCHIVOSYDIRECTORIOS.H
-[INFO] 17:16:24:0 GameCard/(3164:3164): El ID de modulo es: 1722120275
-[INFO] 17:16:24:0 GameCard/(3164:3169): Hilo de verificacion periodica de conexion con BROKER iniciado
-[INFO] 17:16:24:0 GameCard/(3164:3168): Escucho GET de BROKER
-[ERROR] 17:16:24:0 GameCard/(3164:3168): Hubo un problema enviando la suscripcion a la cola GET del broker
-[INFO] 17:16:24:0 GameCard/(3164:3167): Escucho CATCH de BROKER
-[ERROR] 17:16:24:0 GameCard/(3164:3167): Hubo un problema enviando la suscripcion a la cola CATCH del BROKER
-[INFO] 17:16:24:0 GameCard/(3164:3166): Escuchando NEW de BROKER
-[INFO] 17:16:24:0 GameCard/(3164:3166): Socket de NEW: -1
-[ERROR] 17:16:24:0 GameCard/(3164:3166): Hubo un problema enviando la suscripcion a la cola NEW del BROKER
-[INFO] 17:16:24:0 GameCard/(3164:3165): Esperando mensajes de game boy en socket 5
-[INFO] 17:16:32:297 GameCard/(3164:3165): Socket 7 de gameBoy aceptado
-[INFO] 17:16:32:312 GameCard/(3164:3174): Recibiendo codigo de operacion de GameBoy en socket 7
-[INFO] 17:16:32:312 GameCard/(3164:3174): Codigo de operacion de socket 7 recibido: 1
-[INFO] 17:16:32:312 GameCard/(3164:3174): Procesando request de GameBoy
-[INFO] 17:16:32:312 GameCard/(3164:3174): Codigo de operacion recibido del socket cliente 7 corresponde a un NEW
-[INFO] 17:16:32:312 GameCard/(3164:3174): Recibiendo tamanio total
-[INFO] 17:16:32:312 GameCard/(3164:3174): Tamanio total recibido: 28
-[INFO] 17:16:32:312 GameCard/(3164:3174): EL ID recibido: 9
-[INFO] 17:16:32:312 GameCard/(3164:3174): Tamanio del pokemon recibido: 8
-[INFO] 17:16:32:312 GameCard/(3164:3174): Nombre del pokemon recibido: Pikachu
-[INFO] 17:16:32:312 GameCard/(3164:3174): Posicion X recibida: 2
-[INFO] 17:16:32:312 GameCard/(3164:3174): Posicion Y recibida: 5
-[INFO] 17:16:32:312 GameCard/(3164:3174): Cantidad recibida: 10
-[INFO] 17:16:32:312 GameCard/(3164:3174): NEW recibido del modulo Game Boy socket 7
-[INFO] 17:16:32:312 GameCard/(3164:3174): Llegamo
-[INFO] 17:16:32:312 GameCard/(3164:3174): Pokemon: pikachu
-[INFO] 17:16:32:312 GameCard/(3164:3174): PosX: 2
-[INFO] 17:16:32:312 GameCard/(3164:3174): PosY: 5
-[INFO] 17:16:32:312 GameCard/(3164:3174): Cantidad: 10
-[INFO] 17:16:32:312 GameCard/(3164:3174): Ruta de Directorio: /home/utnso/Escritorio/tall-grass/Files/pikachu
-[INFO] 17:16:32:312 GameCard/(3164:3174): La coordenada generada es: 2-5
-[INFO] 17:16:32:312 GameCard/(3164:3174): La posicion que me llega es: 2-5
-[INFO] 17:16:32:312 GameCard/(3164:3174): El valor del KEY-VALUE cargado completamente es: 2-5=10
-[INFO] 17:16:32:312 GameCard/(3164:3174): La posicion del registro generado es: 2-5
-[INFO] 17:16:32:312 GameCard/(3164:3174): La cantidad del registro generado es: 10
-[INFO] 17:16:32:312 GameCard/(3164:3174): Se creo el directorio: pikachu
-[INFO] 17:16:32:313 GameCard/(3164:3174): Ruta del directorio pokemon pikachu es: /home/utnso/Escritorio/tall-grass/Files/pikachu
-[INFO] 17:16:32:313 GameCard/(3164:3174): Ruta del Archivo: /home/utnso/Escritorio/tall-grass/Files/pikachu/pikachu.bin
-[INFO] 17:16:32:313 GameCard/(3164:3174): Se creo el archivo config
-[INFO] 17:16:32:313 GameCard/(3164:3174): EL array de blocks es: (null)
-[INFO] 17:16:32:313 GameCard/(3164:3174): Retorno el estado: N
-[INFO] 17:16:32:313 GameCard/(3164:3174): No tiene blocks asignados. Primera vez
-[INFO] 17:16:32:313 GameCard/(3164:3174): El registro aplanado quedo como: 2-5=10
-
-[INFO] 17:16:32:313 GameCard/(3164:3174): Entro a buscar posiciones
-[INFO] 17:16:32:313 GameCard/(3164:3174): Bloqueo
-[INFO] 17:16:32:313 GameCard/(3164:3174): EL valor de i es de : 0
-[INFO] 17:16:32:313 GameCard/(3164:3174): EL valor de cant de bloques es de : 1024
-[INFO] 17:16:32:313 GameCard/(3164:3174): EL valor de i es de : 0
-[INFO] 17:16:32:313 GameCard/(3164:3174): EL valor de cant de bloques es de : 1024
-[INFO] 17:16:32:313 GameCard/(3164:3174): Entro primer IF
-[INFO] 17:16:32:313 GameCard/(3164:3174): Entro segundo IF
-[INFO] 17:16:32:313 GameCard/(3164:3174): Guardando el bitarray
-[INFO] 17:16:32:313 GameCard/(3164:3174): Termino el guardado
-[INFO] 17:16:32:313 GameCard/(3164:3174): EL block 0 esta libre
-[INFO] 17:16:32:314 GameCard/(3164:3174): EL block 0 esta libre, vuelvo a chequear
-[INFO] 17:16:32:314 GameCard/(3164:3174): El block libre seleccionado es: 0
-[INFO] 17:16:32:314 GameCard/(3164:3174): La ruta del block es: /home/utnso/Escritorio/tall-grass/Blocks/0.bin
-[INFO] 17:16:32:314 GameCard/(3164:3174): Iterando la lista
-[INFO] 17:16:32:315 GameCard/(3164:3174): El ID de mensaje cargado en el appeared es: 9
-[INFO] 17:16:32:315 GameCard/(3164:3174): El pokemoncargado en el appeared es: pikachu
-[INFO] 17:16:32:315 GameCard/(3164:3174): El tamanio del nombre del pokemon cargado en el appeared es: 8
-[INFO] 17:16:32:315 GameCard/(3164:3174): La coordenada del pokemon cargado en el appeared es: 2 - 5
-[INFO] 17:16:34:0 GameCard/(3164:3169): Iniciando verificacion de conexion con BROKER...
-[ERROR] 17:16:34:0 GameCard/(3164:3169): Reconexion con BROKER fallida, intentando nuevamente en 10 segundos
-[INFO] 17:16:37:317 GameCard/(3164:3174): El ID cargado es 9
-[INFO] 17:16:37:317 GameCard/(3164:3174): Tamanio nombre pokemon 8
-[INFO] 17:16:37:317 GameCard/(3164:3174): Nombre pokemon pikachu
-[INFO] 17:16:37:317 GameCard/(3164:3174): Posicion X 2
-[INFO] 17:16:37:317 GameCard/(3164:3174): Posicion Y 5
-[INFO] 17:16:37:317 GameCard/(3164:3174): Creando paquete
-[INFO] 17:16:37:317 GameCard/(3164:3174): CODIGO DE OPERACION: 2
-[INFO] 17:16:37:317 GameCard/(3164:3174): Paquete Creado
-[INFO] 17:16:37:317 GameCard/(3164:3174): la operacion a realizar es 2
-[INFO] 17:16:37:317 GameCard/(3164:3174): Serializando...
-[INFO] 17:16:37:317 GameCard/(3164:3174): Serializacion completa
-[INFO] 17:16:37:317 GameCard/(3164:3174): El peso total es: 24
-[ERROR] 17:16:37:317 GameCard/(3164:3174): Error: No se pudo enviar el mensaje
-[INFO] 17:16:41:755 GameCard/(3164:3165): Socket 8 de gameBoy aceptado
-[INFO] 17:16:41:756 GameCard/(3164:3182): Recibiendo codigo de operacion de GameBoy en socket 8
-[INFO] 17:16:41:756 GameCard/(3164:3182): Codigo de operacion de socket 8 recibido: 1
-[INFO] 17:16:41:756 GameCard/(3164:3182): Procesando request de GameBoy
-[INFO] 17:16:41:756 GameCard/(3164:3182): Codigo de operacion recibido del socket cliente 8 corresponde a un NEW
-[INFO] 17:16:41:756 GameCard/(3164:3182): Recibiendo tamanio total
-[INFO] 17:16:41:756 GameCard/(3164:3182): Tamanio total recibido: 28
-[INFO] 17:16:41:756 GameCard/(3164:3182): EL ID recibido: 1
-[INFO] 17:16:41:756 GameCard/(3164:3182): Tamanio del pokemon recibido: 8
-[INFO] 17:16:41:756 GameCard/(3164:3182): Nombre del pokemon recibido: Pikachu
-[INFO] 17:16:41:756 GameCard/(3164:3182): Posicion X recibida: 1
-[INFO] 17:16:41:756 GameCard/(3164:3182): Posicion Y recibida: 9
-[INFO] 17:16:41:756 GameCard/(3164:3182): Cantidad recibida: 3
-[INFO] 17:16:41:756 GameCard/(3164:3182): NEW recibido del modulo Game Boy socket 8
-[INFO] 17:16:41:756 GameCard/(3164:3182): Llegamo
-[INFO] 17:16:41:756 GameCard/(3164:3182): Pokemon: pikachu
-[INFO] 17:16:41:756 GameCard/(3164:3182): PosX: 1
-[INFO] 17:16:41:756 GameCard/(3164:3182): PosY: 9
-[INFO] 17:16:41:757 GameCard/(3164:3182): Cantidad: 3
-[INFO] 17:16:41:757 GameCard/(3164:3182): Ruta de Directorio: /home/utnso/Escritorio/tall-grass/Files/pikachu
-[INFO] 17:16:41:757 GameCard/(3164:3182): La coordenada generada es: 1-9
-[INFO] 17:16:41:757 GameCard/(3164:3182): La posicion que me llega es: 1-9
-[INFO] 17:16:41:757 GameCard/(3164:3182): El valor del KEY-VALUE cargado completamente es: 1-9=3
-[INFO] 17:16:41:757 GameCard/(3164:3182): La posicion del registro generado es: 1-9
-[INFO] 17:16:41:757 GameCard/(3164:3182): La cantidad del registro generado es: 3
-[INFO] 17:16:41:757 GameCard/(3164:3182): Ruta del directorio pokemon pikachu es: /home/utnso/Escritorio/tall-grass/Files/pikachu
-[INFO] 17:16:41:759 GameCard/(3164:3165): Socket 7 de gameBoy aceptado
-[INFO] 17:16:41:759 GameCard/(3164:3182): Ruta del Archivo: /home/utnso/Escritorio/tall-grass/Files/pikachu/pikachu.bin
-[INFO] 17:16:41:760 GameCard/(3164:3182): Se creo el archivo config
-[INFO] 17:16:41:760 GameCard/(3164:3182): EL array de blocks es: 0
-[INFO] 17:16:41:760 GameCard/(3164:3182): Retorno el estado: N
-[INFO] 17:16:41:760 GameCard/(3164:3182): Pokemon ya conocido
-[INFO] 17:16:41:760 GameCard/(3164:3182): Generando los paths de los bloques
-[INFO] 17:16:41:760 GameCard/(3164:3182): Unico bloque
-[INFO] 17:16:41:760 GameCard/(3164:3182): Se genera la ruta para: 0
-[INFO] 17:16:41:760 GameCard/(3164:3182): El path del block es: /home/utnso/Escritorio/tall-grass/Blocks/0.bin
-[INFO] 17:16:41:760 GameCard/(3164:3182): La posicion 0 del array de path es: /home/utnso/Escritorio/tall-grass/Blocks/0.bin
-[INFO] 17:16:41:760 GameCard/(3164:3182): La coordenada 1-9 es nueva. Se agrega al los registros
-[INFO] 17:16:41:760 GameCard/(3164:3182): El registro aplanado quedo como: 2-5=10
-
-[INFO] 17:16:41:760 GameCard/(3164:3182): El registro aplanado quedo como: 1-9=3
-
-[INFO] 17:16:41:760 GameCard/(3164:3182): Vaciando blocks
-[INFO] 17:16:41:760 GameCard/(3164:3182): El valor del block 0 es de: 1
-[INFO] 17:16:41:760 GameCard/(3164:3182): El block 0 fue desmarcado con el valor de: 0
-[INFO] 17:16:41:760 GameCard/(3164:3182): Guardando el bitarray
-[INFO] 17:16:41:761 GameCard/(3164:3182): Termino el guardado
-[INFO] 17:16:41:761 GameCard/(3164:3182): Entro a buscar posiciones
-[INFO] 17:16:41:761 GameCard/(3164:3182): Bloqueo
-[INFO] 17:16:41:761 GameCard/(3164:3182): EL valor de i es de : 0
-[INFO] 17:16:41:761 GameCard/(3164:3182): EL valor de cant de bloques es de : 1024
-[INFO] 17:16:41:761 GameCard/(3164:3182): EL valor de i es de : 0
-[INFO] 17:16:41:761 GameCard/(3164:3182): EL valor de cant de bloques es de : 1024
-[INFO] 17:16:41:761 GameCard/(3164:3182): Entro primer IF
-[INFO] 17:16:41:761 GameCard/(3164:3182): Entro segundo IF
-[INFO] 17:16:41:761 GameCard/(3164:3182): Guardando el bitarray
-[INFO] 17:16:41:761 GameCard/(3164:3182): Termino el guardado
-[INFO] 17:16:41:761 GameCard/(3164:3182): EL block 0 esta libre
-[INFO] 17:16:41:761 GameCard/(3164:3182): EL block 0 esta libre, vuelvo a chequear
-[INFO] 17:16:41:761 GameCard/(3164:3182): El block libre seleccionado es: 0
-[INFO] 17:16:41:761 GameCard/(3164:3182): La ruta del block es: /home/utnso/Escritorio/tall-grass/Blocks/0.bin
-[INFO] 17:16:41:761 GameCard/(3164:3182): Iterando la lista
-[INFO] 17:16:41:762 GameCard/(3164:3182): El ID de mensaje cargado en el appeared es: 1
-[INFO] 17:16:41:762 GameCard/(3164:3182): El pokemoncargado en el appeared es: pikachu
-[INFO] 17:16:41:762 GameCard/(3164:3182): El tamanio del nombre del pokemon cargado en el appeared es: 8
-[INFO] 17:16:41:762 GameCard/(3164:3182): La coordenada del pokemon cargado en el appeared es: 1 - 9
-[INFO] 17:16:41:762 GameCard/(3164:3184): Recibiendo codigo de operacion de GameBoy en socket 7
-[INFO] 17:16:41:763 GameCard/(3164:3184): Codigo de operacion de socket 7 recibido: 1
-[INFO] 17:16:41:763 GameCard/(3164:3184): Procesando request de GameBoy
-[INFO] 17:16:41:763 GameCard/(3164:3184): Codigo de operacion recibido del socket cliente 7 corresponde a un NEW
-[INFO] 17:16:41:763 GameCard/(3164:3184): Recibiendo tamanio total
-[INFO] 17:16:41:763 GameCard/(3164:3184): Tamanio total recibido: 31
-[INFO] 17:16:41:763 GameCard/(3164:3184): EL ID recibido: 2
-[INFO] 17:16:41:763 GameCard/(3164:3184): Tamanio del pokemon recibido: 11
-[INFO] 17:16:41:763 GameCard/(3164:3184): Nombre del pokemon recibido: Charmander
-[INFO] 17:16:41:763 GameCard/(3164:3184): Posicion X recibida: 4
-[INFO] 17:16:41:763 GameCard/(3164:3184): Posicion Y recibida: 1
-[INFO] 17:16:41:763 GameCard/(3164:3184): Cantidad recibida: 101
-[INFO] 17:16:41:763 GameCard/(3164:3184): NEW recibido del modulo Game Boy socket 7
-[INFO] 17:16:41:763 GameCard/(3164:3184): Llegamo
-[INFO] 17:16:41:763 GameCard/(3164:3184): Pokemon: charmander
-[INFO] 17:16:41:763 GameCard/(3164:3184): PosX: 4
-[INFO] 17:16:41:763 GameCard/(3164:3184): PosY: 1
-[INFO] 17:16:41:763 GameCard/(3164:3184): Cantidad: 101
-[INFO] 17:16:41:763 GameCard/(3164:3184): Ruta de Directorio: /home/utnso/Escritorio/tall-grass/Files/charmander
-[INFO] 17:16:41:763 GameCard/(3164:3184): La coordenada generada es: 4-1
-[INFO] 17:16:41:763 GameCard/(3164:3184): La posicion que me llega es: 4-1
-[INFO] 17:16:41:763 GameCard/(3164:3184): El valor del KEY-VALUE cargado completamente es: 4-1=101
-[INFO] 17:16:41:763 GameCard/(3164:3184): La posicion del registro generado es: 4-1
-[INFO] 17:16:41:763 GameCard/(3164:3184): La cantidad del registro generado es: 101
-[INFO] 17:16:41:763 GameCard/(3164:3184): Se creo el directorio: charmander
-[INFO] 17:16:41:764 GameCard/(3164:3184): Ruta del directorio pokemon charmander es: /home/utnso/Escritorio/tall-grass/Files/charmander
-[INFO] 17:16:41:764 GameCard/(3164:3184): Ruta del Archivo: /home/utnso/Escritorio/tall-grass/Files/charmander/charmander.bin
-[INFO] 17:16:41:764 GameCard/(3164:3184): Se creo el archivo config
-[INFO] 17:16:41:764 GameCard/(3164:3184): EL array de blocks es: (null)
-[INFO] 17:16:41:764 GameCard/(3164:3184): Retorno el estado: N
-[INFO] 17:16:41:764 GameCard/(3164:3184): No tiene blocks asignados. Primera vez
-[INFO] 17:16:41:764 GameCard/(3164:3184): El registro aplanado quedo como: 4-1=101
-
-[INFO] 17:16:41:764 GameCard/(3164:3184): Entro a buscar posiciones
-[INFO] 17:16:41:764 GameCard/(3164:3184): Bloqueo
-[INFO] 17:16:41:764 GameCard/(3164:3184): EL valor de i es de : 0
-[INFO] 17:16:41:764 GameCard/(3164:3184): EL valor de cant de bloques es de : 1024
-[INFO] 17:16:41:764 GameCard/(3164:3184): EL valor de i es de : 0
-[INFO] 17:16:41:764 GameCard/(3164:3184): EL valor de cant de bloques es de : 1024
-[INFO] 17:16:41:764 GameCard/(3164:3184): Entro primer IF
-[INFO] 17:16:41:764 GameCard/(3164:3184): EL valor FINAL de i es de : 0
-[INFO] 17:16:41:764 GameCard/(3164:3184): EL valor FINAL de cant de bloques es de : 1024
-[INFO] 17:16:41:764 GameCard/(3164:3184): EL valor de i es de : 1
-[INFO] 17:16:41:764 GameCard/(3164:3184): EL valor de cant de bloques es de : 1024
-[INFO] 17:16:41:764 GameCard/(3164:3184): Entro primer IF
-[INFO] 17:16:41:764 GameCard/(3164:3184): Entro segundo IF
-[INFO] 17:16:41:765 GameCard/(3164:3184): Guardando el bitarray
-[INFO] 17:16:41:765 GameCard/(3164:3184): Termino el guardado
-[INFO] 17:16:41:765 GameCard/(3164:3184): EL block 1 esta libre
-[INFO] 17:16:41:765 GameCard/(3164:3184): EL block 1 esta libre, vuelvo a chequear
-[INFO] 17:16:41:765 GameCard/(3164:3184): El block libre seleccionado es: 1
-[INFO] 17:16:41:765 GameCard/(3164:3184): La ruta del block es: /home/utnso/Escritorio/tall-grass/Blocks/1.bin
-[INFO] 17:16:41:765 GameCard/(3164:3184): Iterando la lista
-[INFO] 17:16:41:766 GameCard/(3164:3184): El ID de mensaje cargado en el appeared es: 2
-[INFO] 17:16:41:766 GameCard/(3164:3184): El pokemoncargado en el appeared es: charmander
-[INFO] 17:16:41:766 GameCard/(3164:3184): El tamanio del nombre del pokemon cargado en el appeared es: 11
-[INFO] 17:16:41:766 GameCard/(3164:3184): La coordenada del pokemon cargado en el appeared es: 4 - 1
-[INFO] 17:16:41:768 GameCard/(3164:3165): Socket 9 de gameBoy aceptado
-[INFO] 17:16:41:769 GameCard/(3164:3186): Recibiendo codigo de operacion de GameBoy en socket 9
-[INFO] 17:16:41:769 GameCard/(3164:3186): Codigo de operacion de socket 9 recibido: 1
-[INFO] 17:16:41:769 GameCard/(3164:3186): Procesando request de GameBoy
-[INFO] 17:16:41:769 GameCard/(3164:3186): Codigo de operacion recibido del socket cliente 9 corresponde a un NEW
-[INFO] 17:16:41:769 GameCard/(3164:3186): Recibiendo tamanio total
-[INFO] 17:16:41:769 GameCard/(3164:3186): Tamanio total recibido: 31
-[INFO] 17:16:41:769 GameCard/(3164:3186): EL ID recibido: 3
-[INFO] 17:16:41:769 GameCard/(3164:3186): Tamanio del pokemon recibido: 11
-[INFO] 17:16:41:769 GameCard/(3164:3186): Nombre del pokemon recibido: Charmander
-[INFO] 17:16:41:769 GameCard/(3164:3186): Posicion X recibida: 517
-[INFO] 17:16:41:769 GameCard/(3164:3186): Posicion Y recibida: 2046
-[INFO] 17:16:41:769 GameCard/(3164:3186): Cantidad recibida: 15
-[INFO] 17:16:41:769 GameCard/(3164:3186): NEW recibido del modulo Game Boy socket 9
-[INFO] 17:16:41:769 GameCard/(3164:3186): Llegamo
-[INFO] 17:16:41:769 GameCard/(3164:3186): Pokemon: charmander
-[INFO] 17:16:41:769 GameCard/(3164:3186): PosX: 517
-[INFO] 17:16:41:769 GameCard/(3164:3186): PosY: 2046
-[INFO] 17:16:41:769 GameCard/(3164:3186): Cantidad: 15
-[INFO] 17:16:41:769 GameCard/(3164:3186): Ruta de Directorio: /home/utnso/Escritorio/tall-grass/Files/charmander
-[INFO] 17:16:41:769 GameCard/(3164:3186): La coordenada generada es: 517-2046
-[INFO] 17:16:41:769 GameCard/(3164:3186): La posicion que me llega es: 517-2046
-[INFO] 17:16:41:769 GameCard/(3164:3186): El valor del KEY-VALUE cargado completamente es: 517-2046=15
-[INFO] 17:16:41:769 GameCard/(3164:3186): La posicion del registro generado es: 517-2046
-[INFO] 17:16:41:769 GameCard/(3164:3186): La cantidad del registro generado es: 15
-[INFO] 17:16:41:769 GameCard/(3164:3186): Ruta del directorio pokemon charmander es: /home/utnso/Escritorio/tall-grass/Files/charmander
-[INFO] 17:16:41:769 GameCard/(3164:3186): Ruta del Archivo: /home/utnso/Escritorio/tall-grass/Files/charmander/charmander.bin
-[INFO] 17:16:41:769 GameCard/(3164:3186): Se creo el archivo config
-[INFO] 17:16:41:769 GameCard/(3164:3186): EL array de blocks es: 1
-[INFO] 17:16:41:769 GameCard/(3164:3186): Retorno el estado: N
-[INFO] 17:16:41:770 GameCard/(3164:3186): Pokemon ya conocido
-[INFO] 17:16:41:770 GameCard/(3164:3186): Generando los paths de los bloques
-[INFO] 17:16:41:770 GameCard/(3164:3186): Unico bloque
-[INFO] 17:16:41:770 GameCard/(3164:3186): Se genera la ruta para: 1
-[INFO] 17:16:41:770 GameCard/(3164:3186): El path del block es: /home/utnso/Escritorio/tall-grass/Blocks/1.bin
-[INFO] 17:16:41:770 GameCard/(3164:3186): La posicion 0 del array de path es: /home/utnso/Escritorio/tall-grass/Blocks/1.bin
-[INFO] 17:16:41:770 GameCard/(3164:3186): La coordenada 517-2046 es nueva. Se agrega al los registros
-[INFO] 17:16:41:770 GameCard/(3164:3186): El registro aplanado quedo como: 4-1=101
-
-[INFO] 17:16:41:770 GameCard/(3164:3186): El registro aplanado quedo como: 517-2046=15
-
-[INFO] 17:16:41:770 GameCard/(3164:3186): Vaciando blocks
-[INFO] 17:16:41:770 GameCard/(3164:3186): El valor del block 1 es de: 1
-[INFO] 17:16:41:770 GameCard/(3164:3186): El block 1 fue desmarcado con el valor de: 0
-[INFO] 17:16:41:770 GameCard/(3164:3186): Guardando el bitarray
-[INFO] 17:16:41:770 GameCard/(3164:3186): Termino el guardado
-[INFO] 17:16:41:770 GameCard/(3164:3186): Entro a buscar posiciones
-[INFO] 17:16:41:770 GameCard/(3164:3186): Bloqueo
-[INFO] 17:16:41:770 GameCard/(3164:3186): EL valor de i es de : 0
-[INFO] 17:16:41:770 GameCard/(3164:3186): EL valor de cant de bloques es de : 1024
-[INFO] 17:16:41:770 GameCard/(3164:3186): EL valor de i es de : 0
-[INFO] 17:16:41:770 GameCard/(3164:3186): EL valor de cant de bloques es de : 1024
-[INFO] 17:16:41:770 GameCard/(3164:3186): Entro primer IF
-[INFO] 17:16:41:770 GameCard/(3164:3186): EL valor FINAL de i es de : 0
-[INFO] 17:16:41:770 GameCard/(3164:3186): EL valor FINAL de cant de bloques es de : 1024
-[INFO] 17:16:41:770 GameCard/(3164:3186): EL valor de i es de : 1
-[INFO] 17:16:41:770 GameCard/(3164:3186): EL valor de cant de bloques es de : 1024
-[INFO] 17:16:41:770 GameCard/(3164:3186): Entro primer IF
-[INFO] 17:16:41:770 GameCard/(3164:3186): Entro segundo IF
-[INFO] 17:16:41:770 GameCard/(3164:3186): Guardando el bitarray
-[INFO] 17:16:41:770 GameCard/(3164:3186): Termino el guardado
-[INFO] 17:16:41:770 GameCard/(3164:3186): EL block 1 esta libre
-[INFO] 17:16:41:770 GameCard/(3164:3186): EL block 1 esta libre, vuelvo a chequear
-[INFO] 17:16:41:770 GameCard/(3164:3186): El block libre seleccionado es: 1
-[INFO] 17:16:41:770 GameCard/(3164:3186): La ruta del block es: /home/utnso/Escritorio/tall-grass/Blocks/1.bin
-[INFO] 17:16:41:770 GameCard/(3164:3186): Iterando la lista
-[INFO] 17:16:41:771 GameCard/(3164:3186): El ID de mensaje cargado en el appeared es: 3
-[INFO] 17:16:41:771 GameCard/(3164:3186): El pokemoncargado en el appeared es: charmander
-[INFO] 17:16:41:771 GameCard/(3164:3186): El tamanio del nombre del pokemon cargado en el appeared es: 11
-[INFO] 17:16:41:771 GameCard/(3164:3186): La coordenada del pokemon cargado en el appeared es: 517 - 2046
-[INFO] 17:16:41:772 GameCard/(3164:3165): Socket 10 de gameBoy aceptado
-[INFO] 17:16:41:773 GameCard/(3164:3188): Recibiendo codigo de operacion de GameBoy en socket 10
-[INFO] 17:16:41:773 GameCard/(3164:3188): Codigo de operacion de socket 10 recibido: 1
-[INFO] 17:16:41:773 GameCard/(3164:3188): Procesando request de GameBoy
-[INFO] 17:16:41:773 GameCard/(3164:3188): Codigo de operacion recibido del socket cliente 10 corresponde a un NEW
-[INFO] 17:16:41:773 GameCard/(3164:3188): Recibiendo tamanio total
-[INFO] 17:16:41:773 GameCard/(3164:3188): Tamanio total recibido: 31
-[INFO] 17:16:41:773 GameCard/(3164:3188): EL ID recibido: 4
-[INFO] 17:16:41:773 GameCard/(3164:3188): Tamanio del pokemon recibido: 11
-[INFO] 17:16:41:773 GameCard/(3164:3188): Nombre del pokemon recibido: Charmander
-[INFO] 17:16:41:773 GameCard/(3164:3188): Posicion X recibida: 413
-[INFO] 17:16:41:773 GameCard/(3164:3188): Posicion Y recibida: 17
-[INFO] 17:16:41:773 GameCard/(3164:3188): Cantidad recibida: 1
-[INFO] 17:16:41:773 GameCard/(3164:3188): NEW recibido del modulo Game Boy socket 10
-[INFO] 17:16:41:773 GameCard/(3164:3188): Llegamo
-[INFO] 17:16:41:773 GameCard/(3164:3188): Pokemon: charmander
-[INFO] 17:16:41:773 GameCard/(3164:3188): PosX: 413
-[INFO] 17:16:41:773 GameCard/(3164:3188): PosY: 17
-[INFO] 17:16:41:773 GameCard/(3164:3188): Cantidad: 1
-[INFO] 17:16:41:773 GameCard/(3164:3188): Ruta de Directorio: /home/utnso/Escritorio/tall-grass/Files/charmander
-[INFO] 17:16:41:773 GameCard/(3164:3188): La coordenada generada es: 413-17
-[INFO] 17:16:41:773 GameCard/(3164:3188): La posicion que me llega es: 413-17
-[INFO] 17:16:41:773 GameCard/(3164:3188): El valor del KEY-VALUE cargado completamente es: 413-17=1
-[INFO] 17:16:41:773 GameCard/(3164:3188): La posicion del registro generado es: 413-17
-[INFO] 17:16:41:773 GameCard/(3164:3188): La cantidad del registro generado es: 1
-[INFO] 17:16:41:773 GameCard/(3164:3188): Ruta del directorio pokemon charmander es: /home/utnso/Escritorio/tall-grass/Files/charmander
-[INFO] 17:16:41:773 GameCard/(3164:3188): Ruta del Archivo: /home/utnso/Escritorio/tall-grass/Files/charmander/charmander.bin
-[INFO] 17:16:41:773 GameCard/(3164:3188): Se creo el archivo config
-[INFO] 17:16:41:773 GameCard/(3164:3188): EL array de blocks es: 1
-[INFO] 17:16:41:773 GameCard/(3164:3188): Retorno el estado: N
-[INFO] 17:16:41:773 GameCard/(3164:3188): Pokemon ya conocido
-[INFO] 17:16:41:773 GameCard/(3164:3188): Generando los paths de los bloques
-[INFO] 17:16:41:773 GameCard/(3164:3188): Unico bloque
-[INFO] 17:16:41:773 GameCard/(3164:3188): Se genera la ruta para: 1
-[INFO] 17:16:41:773 GameCard/(3164:3188): El path del block es: /home/utnso/Escritorio/tall-grass/Blocks/1.bin
-[INFO] 17:16:41:774 GameCard/(3164:3188): La posicion 0 del array de path es: /home/utnso/Escritorio/tall-grass/Blocks/1.bin
-[INFO] 17:16:41:774 GameCard/(3164:3188): La coordenada 413-17 es nueva. Se agrega al los registros
-[INFO] 17:16:41:774 GameCard/(3164:3188): El registro aplanado quedo como: 4-1=101
-
-[INFO] 17:16:41:774 GameCard/(3164:3188): El registro aplanado quedo como: 517-2046=15
-
-[INFO] 17:16:41:774 GameCard/(3164:3188): El registro aplanado quedo como: 413-17=1
-
-[INFO] 17:16:41:774 GameCard/(3164:3188): Vaciando blocks
-[INFO] 17:16:41:774 GameCard/(3164:3188): El valor del block 1 es de: 1
-[INFO] 17:16:41:774 GameCard/(3164:3188): El block 1 fue desmarcado con el valor de: 0
-[INFO] 17:16:41:774 GameCard/(3164:3188): Guardando el bitarray
-[INFO] 17:16:41:774 GameCard/(3164:3188): Termino el guardado
-[INFO] 17:16:41:774 GameCard/(3164:3188): Entro a buscar posiciones
-[INFO] 17:16:41:774 GameCard/(3164:3188): Bloqueo
-[INFO] 17:16:41:774 GameCard/(3164:3188): EL valor de i es de : 0
-[INFO] 17:16:41:774 GameCard/(3164:3188): EL valor de cant de bloques es de : 1024
-[INFO] 17:16:41:774 GameCard/(3164:3188): EL valor de i es de : 0
-[INFO] 17:16:41:774 GameCard/(3164:3188): EL valor de cant de bloques es de : 1024
-[INFO] 17:16:41:774 GameCard/(3164:3188): Entro primer IF
-[INFO] 17:16:41:774 GameCard/(3164:3188): EL valor FINAL de i es de : 0
-[INFO] 17:16:41:774 GameCard/(3164:3188): EL valor FINAL de cant de bloques es de : 1024
-[INFO] 17:16:41:774 GameCard/(3164:3188): EL valor de i es de : 1
-[INFO] 17:16:41:774 GameCard/(3164:3188): EL valor de cant de bloques es de : 1024
-[INFO] 17:16:41:774 GameCard/(3164:3188): Entro primer IF
-[INFO] 17:16:41:774 GameCard/(3164:3188): Entro segundo IF
-[INFO] 17:16:41:774 GameCard/(3164:3188): Guardando el bitarray
-[INFO] 17:16:41:774 GameCard/(3164:3188): Termino el guardado
-[INFO] 17:16:41:774 GameCard/(3164:3188): EL block 1 esta libre
-[INFO] 17:16:41:774 GameCard/(3164:3188): EL block 1 esta libre, vuelvo a chequear
-[INFO] 17:16:41:774 GameCard/(3164:3188): El block libre seleccionado es: 1
-[INFO] 17:16:41:774 GameCard/(3164:3188): La ruta del block es: /home/utnso/Escritorio/tall-grass/Blocks/1.bin
-[INFO] 17:16:41:774 GameCard/(3164:3188): Iterando la lista
-[INFO] 17:16:41:776 GameCard/(3164:3165): Socket 11 de gameBoy aceptado
-[INFO] 17:16:41:777 GameCard/(3164:3188): El ID de mensaje cargado en el appeared es: 4
-[INFO] 17:16:41:777 GameCard/(3164:3188): El pokemoncargado en el appeared es: charmander
-[INFO] 17:16:41:777 GameCard/(3164:3188): El tamanio del nombre del pokemon cargado en el appeared es: 11
-[INFO] 17:16:41:777 GameCard/(3164:3188): La coordenada del pokemon cargado en el appeared es: 413 - 17
-[INFO] 17:16:41:777 GameCard/(3164:3190): Recibiendo codigo de operacion de GameBoy en socket 11
-[INFO] 17:16:41:777 GameCard/(3164:3190): Codigo de operacion de socket 11 recibido: 1
-[INFO] 17:16:41:777 GameCard/(3164:3190): Procesando request de GameBoy
-[INFO] 17:16:41:777 GameCard/(3164:3190): Codigo de operacion recibido del socket cliente 11 corresponde a un NEW
-[INFO] 17:16:41:777 GameCard/(3164:3190): Recibiendo tamanio total
-[INFO] 17:16:41:778 GameCard/(3164:3190): Tamanio total recibido: 31
-[INFO] 17:16:41:778 GameCard/(3164:3190): EL ID recibido: 5
-[INFO] 17:16:41:778 GameCard/(3164:3190): Tamanio del pokemon recibido: 11
-[INFO] 17:16:41:778 GameCard/(3164:3190): Nombre del pokemon recibido: Charmander
-[INFO] 17:16:41:778 GameCard/(3164:3190): Posicion X recibida: 723
-[INFO] 17:16:41:778 GameCard/(3164:3190): Posicion Y recibida: 97
-[INFO] 17:16:41:778 GameCard/(3164:3190): Cantidad recibida: 29
-[INFO] 17:16:41:778 GameCard/(3164:3190): NEW recibido del modulo Game Boy socket 11
-[INFO] 17:16:41:778 GameCard/(3164:3190): Llegamo
-[INFO] 17:16:41:778 GameCard/(3164:3190): Pokemon: charmander
-[INFO] 17:16:41:778 GameCard/(3164:3190): PosX: 723
-[INFO] 17:16:41:778 GameCard/(3164:3190): PosY: 97
-[INFO] 17:16:41:778 GameCard/(3164:3190): Cantidad: 29
-[INFO] 17:16:41:778 GameCard/(3164:3190): Ruta de Directorio: /home/utnso/Escritorio/tall-grass/Files/charmander
-[INFO] 17:16:41:778 GameCard/(3164:3190): La coordenada generada es: 723-97
-[INFO] 17:16:41:778 GameCard/(3164:3190): La posicion que me llega es: 723-97
-[INFO] 17:16:41:778 GameCard/(3164:3190): El valor del KEY-VALUE cargado completamente es: 723-97=29
-[INFO] 17:16:41:778 GameCard/(3164:3190): La posicion del registro generado es: 723-97
-[INFO] 17:16:41:778 GameCard/(3164:3190): La cantidad del registro generado es: 29
-[INFO] 17:16:41:778 GameCard/(3164:3190): Ruta del directorio pokemon charmander es: /home/utnso/Escritorio/tall-grass/Files/charmander
-[INFO] 17:16:41:778 GameCard/(3164:3190): Ruta del Archivo: /home/utnso/Escritorio/tall-grass/Files/charmander/charmander.bin
-[INFO] 17:16:41:778 GameCard/(3164:3190): Se creo el archivo config
-[INFO] 17:16:41:778 GameCard/(3164:3190): EL array de blocks es: 1
-[INFO] 17:16:41:778 GameCard/(3164:3190): Retorno el estado: N
-[INFO] 17:16:41:778 GameCard/(3164:3190): Pokemon ya conocido
-[INFO] 17:16:41:778 GameCard/(3164:3190): Generando los paths de los bloques
-[INFO] 17:16:41:778 GameCard/(3164:3190): Unico bloque
-[INFO] 17:16:41:778 GameCard/(3164:3190): Se genera la ruta para: 1
-[INFO] 17:16:41:778 GameCard/(3164:3190): El path del block es: /home/utnso/Escritorio/tall-grass/Blocks/1.bin
-[INFO] 17:16:41:778 GameCard/(3164:3190): La posicion 0 del array de path es: /home/utnso/Escritorio/tall-grass/Blocks/1.bin
-[INFO] 17:16:41:778 GameCard/(3164:3190): La coordenada 723-97 es nueva. Se agrega al los registros
-[INFO] 17:16:41:778 GameCard/(3164:3190): El registro aplanado quedo como: 4-1=101
-
-[INFO] 17:16:41:778 GameCard/(3164:3190): El registro aplanado quedo como: 517-2046=15
-
-[INFO] 17:16:41:778 GameCard/(3164:3190): El registro aplanado quedo como: 413-17=1
-
-[INFO] 17:16:41:778 GameCard/(3164:3190): El registro aplanado quedo como: 723-97=29
-
-[INFO] 17:16:41:778 GameCard/(3164:3190): Vaciando blocks
-[INFO] 17:16:41:778 GameCard/(3164:3190): El valor del block 1 es de: 1
-[INFO] 17:16:41:778 GameCard/(3164:3190): El block 1 fue desmarcado con el valor de: 0
-[INFO] 17:16:41:778 GameCard/(3164:3190): Guardando el bitarray
-[INFO] 17:16:41:778 GameCard/(3164:3190): Termino el guardado
-[INFO] 17:16:41:778 GameCard/(3164:3190): Entro a buscar posiciones
-[INFO] 17:16:41:778 GameCard/(3164:3190): Bloqueo
-[INFO] 17:16:41:778 GameCard/(3164:3190): EL valor de i es de : 0
-[INFO] 17:16:41:778 GameCard/(3164:3190): EL valor de cant de bloques es de : 1024
-[INFO] 17:16:41:778 GameCard/(3164:3190): EL valor de i es de : 0
-[INFO] 17:16:41:778 GameCard/(3164:3190): EL valor de cant de bloques es de : 1024
-[INFO] 17:16:41:778 GameCard/(3164:3190): Entro primer IF
-[INFO] 17:16:41:778 GameCard/(3164:3190): EL valor FINAL de i es de : 0
-[INFO] 17:16:41:778 GameCard/(3164:3190): EL valor FINAL de cant de bloques es de : 1024
-[INFO] 17:16:41:778 GameCard/(3164:3190): EL valor de i es de : 1
-[INFO] 17:16:41:778 GameCard/(3164:3190): EL valor de cant de bloques es de : 1024
-[INFO] 17:16:41:778 GameCard/(3164:3190): Entro primer IF
-[INFO] 17:16:41:778 GameCard/(3164:3190): Entro segundo IF
-[INFO] 17:16:41:778 GameCard/(3164:3190): Guardando el bitarray
-[INFO] 17:16:41:778 GameCard/(3164:3190): Termino el guardado
-[INFO] 17:16:41:778 GameCard/(3164:3190): EL block 1 esta libre
-[INFO] 17:16:41:778 GameCard/(3164:3190): EL block 1 esta libre, vuelvo a chequear
-[INFO] 17:16:41:778 GameCard/(3164:3190): El block libre seleccionado es: 1
-[INFO] 17:16:41:778 GameCard/(3164:3190): La ruta del block es: /home/utnso/Escritorio/tall-grass/Blocks/1.bin
-[INFO] 17:16:41:778 GameCard/(3164:3190): Iterando la lista
-[INFO] 17:16:41:779 GameCard/(3164:3190): El ID de mensaje cargado en el appeared es: 5
-[INFO] 17:16:41:779 GameCard/(3164:3190): El pokemoncargado en el appeared es: charmander
-[INFO] 17:16:41:779 GameCard/(3164:3190): El tamanio del nombre del pokemon cargado en el appeared es: 11
-[INFO] 17:16:41:779 GameCard/(3164:3190): La coordenada del pokemon cargado en el appeared es: 723 - 97
-[INFO] 17:16:41:780 GameCard/(3164:3165): Socket 13 de gameBoy aceptado
-[INFO] 17:16:41:780 GameCard/(3164:3192): Recibiendo codigo de operacion de GameBoy en socket 13
-[INFO] 17:16:41:780 GameCard/(3164:3192): Codigo de operacion de socket 13 recibido: 1
-[INFO] 17:16:41:780 GameCard/(3164:3192): Procesando request de GameBoy
-[INFO] 17:16:41:780 GameCard/(3164:3192): Codigo de operacion recibido del socket cliente 13 corresponde a un NEW
-[INFO] 17:16:41:780 GameCard/(3164:3192): Recibiendo tamanio total
-[INFO] 17:16:41:780 GameCard/(3164:3192): Tamanio total recibido: 31
-[INFO] 17:16:41:780 GameCard/(3164:3192): EL ID recibido: 6
-[INFO] 17:16:41:780 GameCard/(3164:3192): Tamanio del pokemon recibido: 11
-[INFO] 17:16:41:780 GameCard/(3164:3192): Nombre del pokemon recibido: Charmander
-[INFO] 17:16:41:780 GameCard/(3164:3192): Posicion X recibida: 65
-[INFO] 17:16:41:780 GameCard/(3164:3192): Posicion Y recibida: 93
-[INFO] 17:16:41:780 GameCard/(3164:3192): Cantidad recibida: 3001
-[INFO] 17:16:41:780 GameCard/(3164:3192): NEW recibido del modulo Game Boy socket 13
-[INFO] 17:16:41:780 GameCard/(3164:3192): Llegamo
-[INFO] 17:16:41:780 GameCard/(3164:3192): Pokemon: charmander
-[INFO] 17:16:41:780 GameCard/(3164:3192): PosX: 65
-[INFO] 17:16:41:780 GameCard/(3164:3192): PosY: 93
-[INFO] 17:16:41:780 GameCard/(3164:3192): Cantidad: 3001
-[INFO] 17:16:41:780 GameCard/(3164:3192): Ruta de Directorio: /home/utnso/Escritorio/tall-grass/Files/charmander
-[INFO] 17:16:41:780 GameCard/(3164:3192): La coordenada generada es: 65-93
-[INFO] 17:16:41:780 GameCard/(3164:3192): La posicion que me llega es: 65-93
-[INFO] 17:16:41:780 GameCard/(3164:3192): El valor del KEY-VALUE cargado completamente es: 65-93=3001
-[INFO] 17:16:41:780 GameCard/(3164:3192): La posicion del registro generado es: 65-93
-[INFO] 17:16:41:780 GameCard/(3164:3192): La cantidad del registro generado es: 3001
-[INFO] 17:16:41:780 GameCard/(3164:3192): Ruta del directorio pokemon charmander es: /home/utnso/Escritorio/tall-grass/Files/charmander
-[INFO] 17:16:41:780 GameCard/(3164:3192): Ruta del Archivo: /home/utnso/Escritorio/tall-grass/Files/charmander/charmander.bin
-[INFO] 17:16:41:781 GameCard/(3164:3192): Se creo el archivo config
-[INFO] 17:16:41:781 GameCard/(3164:3192): EL array de blocks es: 1
-[INFO] 17:16:41:781 GameCard/(3164:3192): Retorno el estado: N
-[INFO] 17:16:41:781 GameCard/(3164:3192): Pokemon ya conocido
-[INFO] 17:16:41:781 GameCard/(3164:3192): Generando los paths de los bloques
-[INFO] 17:16:41:781 GameCard/(3164:3192): Unico bloque
-[INFO] 17:16:41:781 GameCard/(3164:3192): Se genera la ruta para: 1
-[INFO] 17:16:41:781 GameCard/(3164:3192): El path del block es: /home/utnso/Escritorio/tall-grass/Blocks/1.bin
-[INFO] 17:16:41:781 GameCard/(3164:3192): La posicion 0 del array de path es: /home/utnso/Escritorio/tall-grass/Blocks/1.bin
-[INFO] 17:16:41:781 GameCard/(3164:3192): La coordenada 65-93 es nueva. Se agrega al los registros
-[INFO] 17:16:41:781 GameCard/(3164:3192): El registro aplanado quedo como: 4-1=101
-
-[INFO] 17:16:41:781 GameCard/(3164:3192): El registro aplanado quedo como: 517-2046=15
-
-[INFO] 17:16:41:781 GameCard/(3164:3192): El registro aplanado quedo como: 413-17=1
-
-[INFO] 17:16:41:781 GameCard/(3164:3192): El registro aplanado quedo como: 723-97=29
-
-[INFO] 17:16:41:781 GameCard/(3164:3192): El registro aplanado quedo como: 65-93=3001
-
-[INFO] 17:16:41:781 GameCard/(3164:3192): Vaciando blocks
-[INFO] 17:16:41:781 GameCard/(3164:3192): El valor del block 1 es de: 1
-[INFO] 17:16:41:781 GameCard/(3164:3192): El block 1 fue desmarcado con el valor de: 0
-[INFO] 17:16:41:781 GameCard/(3164:3192): Guardando el bitarray
-[INFO] 17:16:41:781 GameCard/(3164:3192): Termino el guardado
-[INFO] 17:16:41:781 GameCard/(3164:3192): Entro a buscar posiciones
-[INFO] 17:16:41:781 GameCard/(3164:3192): Bloqueo
-[INFO] 17:16:41:781 GameCard/(3164:3192): EL valor de i es de : 0
-[INFO] 17:16:41:781 GameCard/(3164:3192): EL valor de cant de bloques es de : 1024
-[INFO] 17:16:41:781 GameCard/(3164:3192): EL valor de i es de : 0
-[INFO] 17:16:41:781 GameCard/(3164:3192): EL valor de cant de bloques es de : 1024
-[INFO] 17:16:41:781 GameCard/(3164:3192): Entro primer IF
-[INFO] 17:16:41:781 GameCard/(3164:3192): EL valor FINAL de i es de : 0
-[INFO] 17:16:41:781 GameCard/(3164:3192): EL valor FINAL de cant de bloques es de : 1024
-[INFO] 17:16:41:781 GameCard/(3164:3192): EL valor de i es de : 1
-[INFO] 17:16:41:781 GameCard/(3164:3192): EL valor de cant de bloques es de : 1024
-[INFO] 17:16:41:781 GameCard/(3164:3192): Entro primer IF
-[INFO] 17:16:41:781 GameCard/(3164:3192): Entro segundo IF
-[INFO] 17:16:41:781 GameCard/(3164:3192): Guardando el bitarray
-[INFO] 17:16:41:781 GameCard/(3164:3192): Termino el guardado
-[INFO] 17:16:41:781 GameCard/(3164:3192): EL block 1 esta libre
-[INFO] 17:16:41:781 GameCard/(3164:3192): EL block 1 esta libre, vuelvo a chequear
-[INFO] 17:16:41:781 GameCard/(3164:3192): El block libre seleccionado es: 1
-[INFO] 17:16:41:781 GameCard/(3164:3192): La ruta del block es: /home/utnso/Escritorio/tall-grass/Blocks/1.bin
-[INFO] 17:16:41:781 GameCard/(3164:3192): Iterando la lista
-[INFO] 17:16:41:781 GameCard/(3164:3192): El ID de mensaje cargado en el appeared es: 6
-[INFO] 17:16:41:781 GameCard/(3164:3192): El pokemoncargado en el appeared es: charmander
-[INFO] 17:16:41:781 GameCard/(3164:3192): El tamanio del nombre del pokemon cargado en el appeared es: 11
-[INFO] 17:16:41:782 GameCard/(3164:3192): La coordenada del pokemon cargado en el appeared es: 65 - 93
-[INFO] 17:16:41:782 GameCard/(3164:3165): Socket 12 de gameBoy aceptado
-[INFO] 17:16:41:783 GameCard/(3164:3194): Recibiendo codigo de operacion de GameBoy en socket 12
-[INFO] 17:16:41:783 GameCard/(3164:3194): Codigo de operacion de socket 12 recibido: 1
-[INFO] 17:16:41:783 GameCard/(3164:3194): Procesando request de GameBoy
-[INFO] 17:16:41:783 GameCard/(3164:3194): Codigo de operacion recibido del socket cliente 12 corresponde a un NEW
-[INFO] 17:16:41:783 GameCard/(3164:3194): Recibiendo tamanio total
-[INFO] 17:16:41:783 GameCard/(3164:3194): Tamanio total recibido: 31
-[INFO] 17:16:41:783 GameCard/(3164:3194): EL ID recibido: 7
-[INFO] 17:16:41:783 GameCard/(3164:3194): Tamanio del pokemon recibido: 11
-[INFO] 17:16:41:783 GameCard/(3164:3194): Nombre del pokemon recibido: Charmander
-[INFO] 17:16:41:783 GameCard/(3164:3194): Posicion X recibida: 12
-[INFO] 17:16:41:783 GameCard/(3164:3194): Posicion Y recibida: 17
-[INFO] 17:16:41:783 GameCard/(3164:3194): Cantidad recibida: 34
-[INFO] 17:16:41:783 GameCard/(3164:3194): NEW recibido del modulo Game Boy socket 12
-[INFO] 17:16:41:783 GameCard/(3164:3194): Llegamo
-[INFO] 17:16:41:783 GameCard/(3164:3194): Pokemon: charmander
-[INFO] 17:16:41:783 GameCard/(3164:3194): PosX: 12
-[INFO] 17:16:41:783 GameCard/(3164:3194): PosY: 17
-[INFO] 17:16:41:783 GameCard/(3164:3194): Cantidad: 34
-[INFO] 17:16:41:783 GameCard/(3164:3194): Ruta de Directorio: /home/utnso/Escritorio/tall-grass/Files/charmander
-[INFO] 17:16:41:783 GameCard/(3164:3194): La coordenada generada es: 12-17
-[INFO] 17:16:41:783 GameCard/(3164:3194): La posicion que me llega es: 12-17
-[INFO] 17:16:41:783 GameCard/(3164:3194): El valor del KEY-VALUE cargado completamente es: 12-17=34
-[INFO] 17:16:41:783 GameCard/(3164:3194): La posicion del registro generado es: 12-17
-[INFO] 17:16:41:783 GameCard/(3164:3194): La cantidad del registro generado es: 34
-[INFO] 17:16:41:783 GameCard/(3164:3194): Ruta del directorio pokemon charmander es: /home/utnso/Escritorio/tall-grass/Files/charmander
-[INFO] 17:16:41:783 GameCard/(3164:3194): Ruta del Archivo: /home/utnso/Escritorio/tall-grass/Files/charmander/charmander.bin
-[INFO] 17:16:41:783 GameCard/(3164:3194): Se creo el archivo config
-[INFO] 17:16:41:783 GameCard/(3164:3194): EL array de blocks es: 1
-[INFO] 17:16:41:783 GameCard/(3164:3194): Retorno el estado: N
-[INFO] 17:16:41:783 GameCard/(3164:3194): Pokemon ya conocido
-[INFO] 17:16:41:783 GameCard/(3164:3194): Generando los paths de los bloques
-[INFO] 17:16:41:783 GameCard/(3164:3194): Unico bloque
-[INFO] 17:16:41:783 GameCard/(3164:3194): Se genera la ruta para: 1
-[INFO] 17:16:41:783 GameCard/(3164:3194): El path del block es: /home/utnso/Escritorio/tall-grass/Blocks/1.bin
-[INFO] 17:16:41:783 GameCard/(3164:3194): La posicion 0 del array de path es: /home/utnso/Escritorio/tall-grass/Blocks/1.bin
-[INFO] 17:16:41:783 GameCard/(3164:3194): La coordenada 12-17 es nueva. Se agrega al los registros
-[INFO] 17:16:41:783 GameCard/(3164:3194): El registro aplanado quedo como: 4-1=101
-
-[INFO] 17:16:41:783 GameCard/(3164:3194): El registro aplanado quedo como: 517-2046=15
-
-[INFO] 17:16:41:783 GameCard/(3164:3194): El registro aplanado quedo como: 413-17=1
-
-[INFO] 17:16:41:783 GameCard/(3164:3194): El registro aplanado quedo como: 723-97=29
-
-[INFO] 17:16:41:783 GameCard/(3164:3194): El registro aplanado quedo como: 65-93=3001
-
-[INFO] 17:16:41:783 GameCard/(3164:3194): El registro aplanado quedo como: 12-17=34
-
-[INFO] 17:16:41:783 GameCard/(3164:3194): Vaciando blocks
-[INFO] 17:16:41:783 GameCard/(3164:3194): El valor del block 1 es de: 1
-[INFO] 17:16:41:783 GameCard/(3164:3194): El block 1 fue desmarcado con el valor de: 0
-[INFO] 17:16:41:783 GameCard/(3164:3194): Guardando el bitarray
-[INFO] 17:16:41:783 GameCard/(3164:3194): Termino el guardado
-[INFO] 17:16:41:783 GameCard/(3164:3194): Entro a buscar posiciones
-[INFO] 17:16:41:783 GameCard/(3164:3194): Bloqueo
-[INFO] 17:16:41:783 GameCard/(3164:3194): EL valor de i es de : 0
-[INFO] 17:16:41:783 GameCard/(3164:3194): EL valor de cant de bloques es de : 1024
-[INFO] 17:16:41:783 GameCard/(3164:3194): EL valor de i es de : 0
-[INFO] 17:16:41:783 GameCard/(3164:3194): EL valor de cant de bloques es de : 1024
-[INFO] 17:16:41:783 GameCard/(3164:3194): Entro primer IF
-[INFO] 17:16:41:783 GameCard/(3164:3194): EL valor FINAL de i es de : 0
-[INFO] 17:16:41:783 GameCard/(3164:3194): EL valor FINAL de cant de bloques es de : 1024
-[INFO] 17:16:41:784 GameCard/(3164:3194): EL valor de i es de : 1
-[INFO] 17:16:41:784 GameCard/(3164:3194): EL valor de cant de bloques es de : 1024
-[INFO] 17:16:41:784 GameCard/(3164:3194): Entro primer IF
-[INFO] 17:16:41:784 GameCard/(3164:3194): Entro segundo IF
-[INFO] 17:16:41:784 GameCard/(3164:3194): Guardando el bitarray
-[INFO] 17:16:41:784 GameCard/(3164:3194): Termino el guardado
-[INFO] 17:16:41:784 GameCard/(3164:3194): EL block 1 esta libre
-[INFO] 17:16:41:784 GameCard/(3164:3194): EL block 1 esta libre, vuelvo a chequear
-[INFO] 17:16:41:784 GameCard/(3164:3194): El block libre seleccionado es: 1
-[INFO] 17:16:41:784 GameCard/(3164:3194): La ruta del block es: /home/utnso/Escritorio/tall-grass/Blocks/1.bin
-[INFO] 17:16:41:784 GameCard/(3164:3194): Iterando la lista
-[INFO] 17:16:41:784 GameCard/(3164:3194): El ID de mensaje cargado en el appeared es: 7
-[INFO] 17:16:41:784 GameCard/(3164:3194): El pokemoncargado en el appeared es: charmander
-[INFO] 17:16:41:784 GameCard/(3164:3194): El tamanio del nombre del pokemon cargado en el appeared es: 11
-[INFO] 17:16:41:784 GameCard/(3164:3194): La coordenada del pokemon cargado en el appeared es: 12 - 17
-[INFO] 17:16:41:785 GameCard/(3164:3165): Socket 14 de gameBoy aceptado
-[INFO] 17:16:41:786 GameCard/(3164:3196): Recibiendo codigo de operacion de GameBoy en socket 14
-[INFO] 17:16:41:786 GameCard/(3164:3196): Codigo de operacion de socket 14 recibido: 1
-[INFO] 17:16:41:786 GameCard/(3164:3196): Procesando request de GameBoy
-[INFO] 17:16:41:786 GameCard/(3164:3196): Codigo de operacion recibido del socket cliente 14 corresponde a un NEW
-[INFO] 17:16:41:786 GameCard/(3164:3196): Recibiendo tamanio total
-[INFO] 17:16:41:786 GameCard/(3164:3196): Tamanio total recibido: 31
-[INFO] 17:16:41:786 GameCard/(3164:3196): EL ID recibido: 8
-[INFO] 17:16:41:786 GameCard/(3164:3196): Tamanio del pokemon recibido: 11
-[INFO] 17:16:41:786 GameCard/(3164:3196): Nombre del pokemon recibido: Charmander
-[INFO] 17:16:41:786 GameCard/(3164:3196): Posicion X recibida: 129
-[INFO] 17:16:41:786 GameCard/(3164:3196): Posicion Y recibida: 547
-[INFO] 17:16:41:786 GameCard/(3164:3196): Cantidad recibida: 11
-[INFO] 17:16:41:786 GameCard/(3164:3196): NEW recibido del modulo Game Boy socket 14
-[INFO] 17:16:41:786 GameCard/(3164:3196): Llegamo
-[INFO] 17:16:41:786 GameCard/(3164:3196): Pokemon: charmander
-[INFO] 17:16:41:786 GameCard/(3164:3196): PosX: 129
-[INFO] 17:16:41:786 GameCard/(3164:3196): PosY: 547
-[INFO] 17:16:41:786 GameCard/(3164:3196): Cantidad: 11
-[INFO] 17:16:41:786 GameCard/(3164:3196): Ruta de Directorio: /home/utnso/Escritorio/tall-grass/Files/charmander
-[INFO] 17:16:41:786 GameCard/(3164:3196): La coordenada generada es: 129-547
-[INFO] 17:16:41:786 GameCard/(3164:3196): La posicion que me llega es: 129-547
-[INFO] 17:16:41:786 GameCard/(3164:3196): El valor del KEY-VALUE cargado completamente es: 129-547=11
-[INFO] 17:16:41:786 GameCard/(3164:3196): La posicion del registro generado es: 129-547
-[INFO] 17:16:41:786 GameCard/(3164:3196): La cantidad del registro generado es: 11
-[INFO] 17:16:41:786 GameCard/(3164:3196): Ruta del directorio pokemon charmander es: /home/utnso/Escritorio/tall-grass/Files/charmander
-[INFO] 17:16:41:786 GameCard/(3164:3196): Ruta del Archivo: /home/utnso/Escritorio/tall-grass/Files/charmander/charmander.bin
-[INFO] 17:16:41:786 GameCard/(3164:3196): Se creo el archivo config
-[INFO] 17:16:41:786 GameCard/(3164:3196): EL array de blocks es: 1
-[INFO] 17:16:41:786 GameCard/(3164:3196): Retorno el estado: N
-[INFO] 17:16:41:786 GameCard/(3164:3196): Pokemon ya conocido
-[INFO] 17:16:41:786 GameCard/(3164:3196): Generando los paths de los bloques
-[INFO] 17:16:41:787 GameCard/(3164:3196): Unico bloque
-[INFO] 17:16:41:787 GameCard/(3164:3196): Se genera la ruta para: 1
-[INFO] 17:16:41:787 GameCard/(3164:3196): El path del block es: /home/utnso/Escritorio/tall-grass/Blocks/1.bin
-[INFO] 17:16:41:787 GameCard/(3164:3196): La posicion 0 del array de path es: /home/utnso/Escritorio/tall-grass/Blocks/1.bin
-[INFO] 17:16:41:787 GameCard/(3164:3196): La coordenada 129-547 es nueva. Se agrega al los registros
-[INFO] 17:16:41:787 GameCard/(3164:3196): El registro aplanado quedo como: 4-1=101
-
-[INFO] 17:16:41:787 GameCard/(3164:3196): El registro aplanado quedo como: 517-2046=15
-
-[INFO] 17:16:41:787 GameCard/(3164:3196): El registro aplanado quedo como: 413-17=1
-
-[INFO] 17:16:41:787 GameCard/(3164:3196): El registro aplanado quedo como: 723-97=29
-
-[INFO] 17:16:41:787 GameCard/(3164:3196): El registro aplanado quedo como: 65-93=3001
-
-[INFO] 17:16:41:787 GameCard/(3164:3196): El registro aplanado quedo como: 12-17=34
-
-[INFO] 17:16:41:787 GameCard/(3164:3196): El registro aplanado quedo como: 129-547=11
-
-[INFO] 17:16:41:787 GameCard/(3164:3196): Vaciando blocks
-[INFO] 17:16:41:787 GameCard/(3164:3196): El valor del block 1 es de: 1
-[INFO] 17:16:41:787 GameCard/(3164:3196): El block 1 fue desmarcado con el valor de: 0
-[INFO] 17:16:41:787 GameCard/(3164:3196): Guardando el bitarray
-[INFO] 17:16:41:787 GameCard/(3164:3196): Termino el guardado
-[INFO] 17:16:41:787 GameCard/(3164:3196): Entro a buscar posiciones
-[INFO] 17:16:41:787 GameCard/(3164:3196): Bloqueo
-[INFO] 17:16:41:787 GameCard/(3164:3196): EL valor de i es de : 0
-[INFO] 17:16:41:787 GameCard/(3164:3196): EL valor de cant de bloques es de : 1024
-[INFO] 17:16:41:787 GameCard/(3164:3196): EL valor de i es de : 0
-[INFO] 17:16:41:787 GameCard/(3164:3196): EL valor de cant de bloques es de : 1024
-[INFO] 17:16:41:787 GameCard/(3164:3196): Entro primer IF
-[INFO] 17:16:41:787 GameCard/(3164:3196): EL valor FINAL de i es de : 0
-[INFO] 17:16:41:787 GameCard/(3164:3196): EL valor FINAL de cant de bloques es de : 1024
-[INFO] 17:16:41:787 GameCard/(3164:3196): EL valor de i es de : 1
-[INFO] 17:16:41:787 GameCard/(3164:3196): EL valor de cant de bloques es de : 1024
-[INFO] 17:16:41:787 GameCard/(3164:3196): Entro primer IF
-[INFO] 17:16:41:787 GameCard/(3164:3196): Entro segundo IF
-[INFO] 17:16:41:787 GameCard/(3164:3196): Guardando el bitarray
-[INFO] 17:16:41:787 GameCard/(3164:3196): Termino el guardado
-[INFO] 17:16:41:787 GameCard/(3164:3196): EL block 1 esta libre
-[INFO] 17:16:41:787 GameCard/(3164:3196): EL block 1 esta libre, vuelvo a chequear
-[INFO] 17:16:41:787 GameCard/(3164:3196): El block libre seleccionado es: 1
-[INFO] 17:16:41:787 GameCard/(3164:3196): La ruta del block es: /home/utnso/Escritorio/tall-grass/Blocks/1.bin
-[INFO] 17:16:41:787 GameCard/(3164:3196): Iterando la lista
-[INFO] 17:16:41:787 GameCard/(3164:3196): Entro a buscar posiciones
-[INFO] 17:16:41:787 GameCard/(3164:3196): Bloqueo
-[INFO] 17:16:41:787 GameCard/(3164:3196): EL valor de i es de : 0
-[INFO] 17:16:41:787 GameCard/(3164:3196): EL valor de cant de bloques es de : 1024
-[INFO] 17:16:41:787 GameCard/(3164:3196): EL valor de i es de : 0
-[INFO] 17:16:41:787 GameCard/(3164:3196): EL valor de cant de bloques es de : 1024
-[INFO] 17:16:41:787 GameCard/(3164:3196): Entro primer IF
-[INFO] 17:16:41:787 GameCard/(3164:3196): EL valor FINAL de i es de : 0
-[INFO] 17:16:41:787 GameCard/(3164:3196): EL valor FINAL de cant de bloques es de : 1024
-[INFO] 17:16:41:787 GameCard/(3164:3196): EL valor de i es de : 1
-[INFO] 17:16:41:787 GameCard/(3164:3196): EL valor de cant de bloques es de : 1024
-[INFO] 17:16:41:787 GameCard/(3164:3196): Entro primer IF
-[INFO] 17:16:41:787 GameCard/(3164:3196): EL valor FINAL de i es de : 1
-[INFO] 17:16:41:787 GameCard/(3164:3196): EL valor FINAL de cant de bloques es de : 1024
-[INFO] 17:16:41:787 GameCard/(3164:3196): EL valor de i es de : 2
-[INFO] 17:16:41:787 GameCard/(3164:3196): EL valor de cant de bloques es de : 1024
-[INFO] 17:16:41:787 GameCard/(3164:3196): Entro primer IF
-[INFO] 17:16:41:787 GameCard/(3164:3196): Entro segundo IF
-[INFO] 17:16:41:787 GameCard/(3164:3196): Guardando el bitarray
-[INFO] 17:16:41:787 GameCard/(3164:3196): Termino el guardado
-[INFO] 17:16:41:787 GameCard/(3164:3196): EL block 2 esta libre
-[INFO] 17:16:41:787 GameCard/(3164:3196): EL block 2 esta libre, vuelvo a chequear
-[INFO] 17:16:41:787 GameCard/(3164:3196): El block libre seleccionado FUNCION ESCRIBIR_REGISTRO es: 1
-[INFO] 17:16:41:787 GameCard/(3164:3196): La ruta del block FUNCION ESCRIBIR_REGISTRO es: /home/utnso/Escritorio/tall-grass/Blocks/2.bin
-[INFO] 17:16:41:788 GameCard/(3164:3196): El ID de mensaje cargado en el appeared es: 8
-[INFO] 17:16:41:788 GameCard/(3164:3196): El pokemoncargado en el appeared es: charmander
-[INFO] 17:16:41:788 GameCard/(3164:3196): El tamanio del nombre del pokemon cargado en el appeared es: 11
-[INFO] 17:16:41:788 GameCard/(3164:3196): La coordenada del pokemon cargado en el appeared es: 129 - 547
-[INFO] 17:16:45:1 GameCard/(3164:3169): Iniciando verificacion de conexion con BROKER...
-[ERROR] 17:16:45:1 GameCard/(3164:3169): Reconexion con BROKER fallida, intentando nuevamente en 10 segundos
-[INFO] 17:16:46:763 GameCard/(3164:3182): El ID cargado es 1
-[INFO] 17:16:46:763 GameCard/(3164:3182): Tamanio nombre pokemon 8
-[INFO] 17:16:46:763 GameCard/(3164:3182): Nombre pokemon pikachu
-[INFO] 17:16:46:763 GameCard/(3164:3182): Posicion X 1
-[INFO] 17:16:46:763 GameCard/(3164:3182): Posicion Y 9
-[INFO] 17:16:46:763 GameCard/(3164:3182): Creando paquete
-[INFO] 17:16:46:763 GameCard/(3164:3182): CODIGO DE OPERACION: 2
-[INFO] 17:16:46:763 GameCard/(3164:3182): Paquete Creado
-[INFO] 17:16:46:763 GameCard/(3164:3182): la operacion a realizar es 2
-[INFO] 17:16:46:763 GameCard/(3164:3182): Serializando...
-[INFO] 17:16:46:763 GameCard/(3164:3182): Serializacion completa
-[INFO] 17:16:46:763 GameCard/(3164:3182): El peso total es: 24
-[ERROR] 17:16:46:763 GameCard/(3164:3182): Error: No se pudo enviar el mensaje
-[INFO] 17:16:46:767 GameCard/(3164:3184): El ID cargado es 2
-[INFO] 17:16:46:767 GameCard/(3164:3184): Tamanio nombre pokemon 11
-[INFO] 17:16:46:767 GameCard/(3164:3184): Nombre pokemon charmander
-[INFO] 17:16:46:767 GameCard/(3164:3184): Posicion X 4
-[INFO] 17:16:46:767 GameCard/(3164:3184): Posicion Y 1
-[INFO] 17:16:46:767 GameCard/(3164:3184): Creando paquete
-[INFO] 17:16:46:767 GameCard/(3164:3184): CODIGO DE OPERACION: 2
-[INFO] 17:16:46:767 GameCard/(3164:3184): Paquete Creado
-[INFO] 17:16:46:767 GameCard/(3164:3184): la operacion a realizar es 2
-[INFO] 17:16:46:767 GameCard/(3164:3184): Serializando...
-[INFO] 17:16:46:767 GameCard/(3164:3184): Serializacion completa
-[INFO] 17:16:46:767 GameCard/(3164:3184): El peso total es: 27
-[ERROR] 17:16:46:767 GameCard/(3164:3184): Error: No se pudo enviar el mensaje
-[INFO] 17:16:46:771 GameCard/(3164:3186): El ID cargado es 3
-[INFO] 17:16:46:771 GameCard/(3164:3186): Tamanio nombre pokemon 11
-[INFO] 17:16:46:771 GameCard/(3164:3186): Nombre pokemon charmander
-[INFO] 17:16:46:771 GameCard/(3164:3186): Posicion X 517
-[INFO] 17:16:46:771 GameCard/(3164:3186): Posicion Y 2046
-[INFO] 17:16:46:771 GameCard/(3164:3186): Creando paquete
-[INFO] 17:16:46:771 GameCard/(3164:3186): CODIGO DE OPERACION: 2
-[INFO] 17:16:46:771 GameCard/(3164:3186): Paquete Creado
-[INFO] 17:16:46:771 GameCard/(3164:3186): la operacion a realizar es 2
-[INFO] 17:16:46:771 GameCard/(3164:3186): Serializando...
-[INFO] 17:16:46:771 GameCard/(3164:3186): Serializacion completa
-[INFO] 17:16:46:772 GameCard/(3164:3186): El peso total es: 27
-[ERROR] 17:16:46:772 GameCard/(3164:3186): Error: No se pudo enviar el mensaje
-[INFO] 17:16:46:778 GameCard/(3164:3188): El ID cargado es 4
-[INFO] 17:16:46:778 GameCard/(3164:3188): Tamanio nombre pokemon 11
-[INFO] 17:16:46:778 GameCard/(3164:3188): Nombre pokemon charmander
-[INFO] 17:16:46:778 GameCard/(3164:3188): Posicion X 413
-[INFO] 17:16:46:778 GameCard/(3164:3188): Posicion Y 17
-[INFO] 17:16:46:778 GameCard/(3164:3188): Creando paquete
-[INFO] 17:16:46:778 GameCard/(3164:3188): CODIGO DE OPERACION: 2
-[INFO] 17:16:46:778 GameCard/(3164:3188): Paquete Creado
-[INFO] 17:16:46:778 GameCard/(3164:3188): la operacion a realizar es 2
-[INFO] 17:16:46:778 GameCard/(3164:3188): Serializando...
-[INFO] 17:16:46:778 GameCard/(3164:3188): Serializacion completa
-[INFO] 17:16:46:778 GameCard/(3164:3188): El peso total es: 27
-[ERROR] 17:16:46:778 GameCard/(3164:3188): Error: No se pudo enviar el mensaje
-[INFO] 17:16:46:779 GameCard/(3164:3190): El ID cargado es 5
-[INFO] 17:16:46:779 GameCard/(3164:3190): Tamanio nombre pokemon 11
-[INFO] 17:16:46:779 GameCard/(3164:3190): Nombre pokemon charmander
-[INFO] 17:16:46:779 GameCard/(3164:3190): Posicion X 723
-[INFO] 17:16:46:779 GameCard/(3164:3190): Posicion Y 97
-[INFO] 17:16:46:779 GameCard/(3164:3190): Creando paquete
-[INFO] 17:16:46:779 GameCard/(3164:3190): CODIGO DE OPERACION: 2
-[INFO] 17:16:46:779 GameCard/(3164:3190): Paquete Creado
-[INFO] 17:16:46:779 GameCard/(3164:3190): la operacion a realizar es 2
-[INFO] 17:16:46:779 GameCard/(3164:3190): Serializando...
-[INFO] 17:16:46:779 GameCard/(3164:3190): Serializacion completa
-[INFO] 17:16:46:779 GameCard/(3164:3190): El peso total es: 27
-[ERROR] 17:16:46:779 GameCard/(3164:3190): Error: No se pudo enviar el mensaje
-[INFO] 17:16:46:782 GameCard/(3164:3192): El ID cargado es 6
-[INFO] 17:16:46:782 GameCard/(3164:3192): Tamanio nombre pokemon 11
-[INFO] 17:16:46:782 GameCard/(3164:3192): Nombre pokemon charmander
-[INFO] 17:16:46:782 GameCard/(3164:3192): Posicion X 65
-[INFO] 17:16:46:782 GameCard/(3164:3192): Posicion Y 93
-[INFO] 17:16:46:782 GameCard/(3164:3192): Creando paquete
-[INFO] 17:16:46:782 GameCard/(3164:3192): CODIGO DE OPERACION: 2
-[INFO] 17:16:46:782 GameCard/(3164:3192): Paquete Creado
-[INFO] 17:16:46:782 GameCard/(3164:3192): la operacion a realizar es 2
-[INFO] 17:16:46:782 GameCard/(3164:3192): Serializando...
-[INFO] 17:16:46:782 GameCard/(3164:3192): Serializacion completa
-[INFO] 17:16:46:782 GameCard/(3164:3192): El peso total es: 27
-[ERROR] 17:16:46:782 GameCard/(3164:3192): Error: No se pudo enviar el mensaje
-[INFO] 17:16:46:784 GameCard/(3164:3194): El ID cargado es 7
-[INFO] 17:16:46:784 GameCard/(3164:3194): Tamanio nombre pokemon 11
-[INFO] 17:16:46:784 GameCard/(3164:3194): Nombre pokemon charmander
-[INFO] 17:16:46:784 GameCard/(3164:3194): Posicion X 12
-[INFO] 17:16:46:784 GameCard/(3164:3194): Posicion Y 17
-[INFO] 17:16:46:784 GameCard/(3164:3194): Creando paquete
-[INFO] 17:16:46:784 GameCard/(3164:3194): CODIGO DE OPERACION: 2
-[INFO] 17:16:46:784 GameCard/(3164:3194): Paquete Creado
-[INFO] 17:16:46:784 GameCard/(3164:3194): la operacion a realizar es 2
-[INFO] 17:16:46:784 GameCard/(3164:3194): Serializando...
-[INFO] 17:16:46:784 GameCard/(3164:3194): Serializacion completa
-[INFO] 17:16:46:784 GameCard/(3164:3194): El peso total es: 27
-[ERROR] 17:16:46:785 GameCard/(3164:3194): Error: No se pudo enviar el mensaje
-[INFO] 17:16:46:788 GameCard/(3164:3196): El ID cargado es 8
-[INFO] 17:16:46:788 GameCard/(3164:3196): Tamanio nombre pokemon 11
-[INFO] 17:16:46:788 GameCard/(3164:3196): Nombre pokemon charmander
-[INFO] 17:16:46:788 GameCard/(3164:3196): Posicion X 129
-[INFO] 17:16:46:788 GameCard/(3164:3196): Posicion Y 547
-[INFO] 17:16:46:788 GameCard/(3164:3196): Creando paquete
-[INFO] 17:16:46:788 GameCard/(3164:3196): CODIGO DE OPERACION: 2
-[INFO] 17:16:46:788 GameCard/(3164:3196): Paquete Creado
-[INFO] 17:16:46:788 GameCard/(3164:3196): la operacion a realizar es 2
-[INFO] 17:16:46:788 GameCard/(3164:3196): Serializando...
-[INFO] 17:16:46:788 GameCard/(3164:3196): Serializacion completa
-[INFO] 17:16:46:788 GameCard/(3164:3196): El peso total es: 27
-[ERROR] 17:16:46:788 GameCard/(3164:3196): Error: No se pudo enviar el mensaje
-[INFO] 17:16:55:3 GameCard/(3164:3169): Iniciando verificacion de conexion con BROKER...
-[ERROR] 17:16:55:3 GameCard/(3164:3169): Reconexion con BROKER fallida, intentando nuevamente en 10 segundos
-[INFO] 17:17:04:3 GameCard/(3164:3169): Iniciando verificacion de conexion con BROKER...
-[ERROR] 17:17:04:3 GameCard/(3164:3169): Reconexion con BROKER fallida, intentando nuevamente en 10 segundos
-[INFO] 17:17:08:338 GameCard/(3164:3165): Socket 15 de gameBoy aceptado
-[INFO] 17:17:08:355 GameCard/(3164:3213): Recibiendo codigo de operacion de GameBoy en socket 15
-[INFO] 17:17:08:355 GameCard/(3164:3213): Codigo de operacion de socket 15 recibido: 3
-[INFO] 17:17:08:355 GameCard/(3164:3213): Procesando request de GameBoy
-[INFO] 17:17:08:355 GameCard/(3164:3213): Codigo de operacion recibido del socket cliente 15 corresponde a un CATCH
-[INFO] 17:17:08:355 GameCard/(3164:3213): Recibiendo tamanio total
-[INFO] 17:17:08:355 GameCard/(3164:3213): Tamanio total recibido: 27
-[INFO] 17:17:08:355 GameCard/(3164:3213): EL ID recibido: 1
-[INFO] 17:17:08:355 GameCard/(3164:3213): Tamanio del pokemon: 11
-[INFO] 17:17:08:355 GameCard/(3164:3213): Nombre del pokemon recibido: Charmander
-[INFO] 17:17:08:356 GameCard/(3164:3213): Posicion X recibida: 413
-[INFO] 17:17:08:356 GameCard/(3164:3213): Posicion Y recibida: 17
-[INFO] 17:17:08:356 GameCard/(3164:3213): CATCH recibido del modulo Game Boy socket 15
-[INFO] 17:17:08:356 GameCard/(3164:3213): La coordenada generada es: 413-17
-[INFO] 17:17:08:356 GameCard/(3164:3213): EL array de blocks es: 1
-[INFO] 17:17:08:356 GameCard/(3164:3213): Retorno el estado: N
-[INFO] 17:17:08:356 GameCard/(3164:3213): Generando los paths de los bloques
-[INFO] 17:17:08:356 GameCard/(3164:3213): Se genera la ruta para: 1
-[INFO] 17:17:08:356 GameCard/(3164:3213): El path del block es: /home/utnso/Escritorio/tall-grass/Blocks/1.bin
-[INFO] 17:17:08:356 GameCard/(3164:3213): Se genera la ruta para: 2
-[INFO] 17:17:08:356 GameCard/(3164:3213): El path del block es: /home/utnso/Escritorio/tall-grass/Blocks/2.bin
-[INFO] 17:17:08:356 GameCard/(3164:3213): Ultimo bloque
-[INFO] 17:17:08:356 GameCard/(3164:3213): Devolviendo el char**
-[INFO] 17:17:08:356 GameCard/(3164:3213): EL FLAG DEL CATCH ES: 1
-[INFO] 17:17:08:356 GameCard/(3164:3213): El registro aplanado quedo como: 4-1=101
-
-[INFO] 17:17:08:356 GameCard/(3164:3213): El registro aplanado quedo como: 517-2046=15
-
-[INFO] 17:17:08:356 GameCard/(3164:3213): El registro aplanado quedo como: 723-97=29
-
-[INFO] 17:17:08:356 GameCard/(3164:3213): El registro aplanado quedo como: 65-93=3001
-
-[INFO] 17:17:08:356 GameCard/(3164:3213): El registro aplanado quedo como: 12-17=34
-
-[INFO] 17:17:08:356 GameCard/(3164:3213): El registro aplanado quedo como: 129-547=11
-
-[INFO] 17:17:08:356 GameCard/(3164:3213): Vaciando blocks
-[INFO] 17:17:08:356 GameCard/(3164:3213): El valor del block 1 es de: 1
-[INFO] 17:17:08:356 GameCard/(3164:3213): El block 1 fue desmarcado con el valor de: 0
-[INFO] 17:17:08:356 GameCard/(3164:3213): Guardando el bitarray
-[INFO] 17:17:08:356 GameCard/(3164:3213): Termino el guardado
-[INFO] 17:17:08:356 GameCard/(3164:3213): El valor del block 2 es de: 1
-[INFO] 17:17:08:356 GameCard/(3164:3213): El block 2 fue desmarcado con el valor de: 0
-[INFO] 17:17:08:356 GameCard/(3164:3213): Guardando el bitarray
-[INFO] 17:17:08:356 GameCard/(3164:3213): Termino el guardado
-[INFO] 17:17:08:357 GameCard/(3164:3213): Entro a buscar posiciones
-[INFO] 17:17:08:357 GameCard/(3164:3213): Bloqueo
-[INFO] 17:17:08:357 GameCard/(3164:3213): EL valor de i es de : 0
-[INFO] 17:17:08:357 GameCard/(3164:3213): EL valor de cant de bloques es de : 1024
-[INFO] 17:17:08:357 GameCard/(3164:3213): EL valor de i es de : 0
-[INFO] 17:17:08:357 GameCard/(3164:3213): EL valor de cant de bloques es de : 1024
-[INFO] 17:17:08:357 GameCard/(3164:3213): Entro primer IF
-[INFO] 17:17:08:357 GameCard/(3164:3213): EL valor FINAL de i es de : 0
-[INFO] 17:17:08:357 GameCard/(3164:3213): EL valor FINAL de cant de bloques es de : 1024
-[INFO] 17:17:08:357 GameCard/(3164:3213): EL valor de i es de : 1
-[INFO] 17:17:08:357 GameCard/(3164:3213): EL valor de cant de bloques es de : 1024
-[INFO] 17:17:08:357 GameCard/(3164:3213): Entro primer IF
-[INFO] 17:17:08:357 GameCard/(3164:3213): Entro segundo IF
-[INFO] 17:17:08:358 GameCard/(3164:3213): Guardando el bitarray
-[INFO] 17:17:08:358 GameCard/(3164:3213): Termino el guardado
-[INFO] 17:17:08:358 GameCard/(3164:3213): EL block 1 esta libre
-[INFO] 17:17:08:358 GameCard/(3164:3213): EL block 1 esta libre, vuelvo a chequear
-[INFO] 17:17:08:358 GameCard/(3164:3213): El block libre seleccionado es: 1
-[INFO] 17:17:08:358 GameCard/(3164:3213): La ruta del block es: /home/utnso/Escritorio/tall-grass/Blocks/1.bin
-[INFO] 17:17:08:358 GameCard/(3164:3213): Iterando la lista
-[INFO] 17:17:08:358 GameCard/(3164:3213): El ID de mensaje cargado en el caught es: 1
-[INFO] 17:17:08:358 GameCard/(3164:3213): El Flag cargado en el caught es: 1
-[INFO] 17:17:13:368 GameCard/(3164:3213): El ID cargado es 1
-[INFO] 17:17:13:368 GameCard/(3164:3213): El flag cargado es 1
-[INFO] 17:17:13:368 GameCard/(3164:3213): Creando paquete
-[INFO] 17:17:13:368 GameCard/(3164:3213): CODIGO DE OPERACION: 4
-[INFO] 17:17:13:368 GameCard/(3164:3213): Paquete Creado
-[INFO] 17:17:13:368 GameCard/(3164:3213): la operacion a realizar es 4
-[INFO] 17:17:13:368 GameCard/(3164:3213): Serializando...
-[INFO] 17:17:13:368 GameCard/(3164:3213): Serializacion completa
-[INFO] 17:17:13:368 GameCard/(3164:3213): El peso total es: 8
-[ERROR] 17:17:13:368 GameCard/(3164:3213): Error: No se pudo enviar el mensaje
-[INFO] 17:17:14:3 GameCard/(3164:3169): Iniciando verificacion de conexion con BROKER...
-[ERROR] 17:17:14:3 GameCard/(3164:3169): Reconexion con BROKER fallida, intentando nuevamente en 10 segundos
-[INFO] 17:17:25:4 GameCard/(3164:3169): Iniciando verificacion de conexion con BROKER...
-[ERROR] 17:17:25:4 GameCard/(3164:3169): Reconexion con BROKER fallida, intentando nuevamente en 10 segundos
-[INFO] 17:17:35:4 GameCard/(3164:3169): Iniciando verificacion de conexion con BROKER...
-[ERROR] 17:17:35:4 GameCard/(3164:3169): Reconexion con BROKER fallida, intentando nuevamente en 10 segundos
-[INFO] 17:17:45:5 GameCard/(3164:3169): Iniciando verificacion de conexion con BROKER...
-[ERROR] 17:17:45:5 GameCard/(3164:3169): Reconexion con BROKER fallida, intentando nuevamente en 10 segundos
-[INFO] 17:18:21:203 GameCard/(3342:3342): logger iniciado.
-[INFO] 17:18:21:203 GameCard/(3342:3342): logger de catedra iniciado.
-[INFO] 17:18:21:203 GameCard/(3342:3342): Config cargada.
-[INFO] 17:18:21:203 GameCard/(3342:3342): La IP del Broker: 127.0.0.1
-[INFO] 17:18:21:203 GameCard/(3342:3342): El Puerto es: 4444
-[INFO] 17:18:21:203 GameCard/(3342:3342): El tiempo de reintento de conexion es: 10
-[INFO] 17:18:21:203 GameCard/(3342:3342): El tiempo de reintento de operacion es: 5
-[INFO] 17:18:21:203 GameCard/(3342:3342): El tiempo de retardo de conexion es: 5
-[INFO] 17:18:21:203 GameCard/(3342:3342): El punto de montaje es: /home/utnso/Escritorio/tall-grass
-[INFO] 17:18:21:203 GameCard/(3342:3342): La IP es: 127.0.0.1
-[INFO] 17:18:21:203 GameCard/(3342:3342): El puerto es: 4447
-[INFO] 17:18:21:203 GameCard/(3342:3342): El id del modulo es 1568910204
-[INFO] 17:18:21:203 GameCard/(3342:3342): El punto de montaje es: /home/utnso/Escritorio/tall-grass
-[INFO] 17:18:21:203 GameCard/(3342:3342): La ruta del metadataes: /home/utnso/Escritorio/tall-grass/Metadata
-[INFO] 17:18:21:203 GameCard/(3342:3342): Se creo el config de MetaData
-[INFO] 17:18:21:203 GameCard/(3342:3342): El Block Size es: 64
-[INFO] 17:18:21:203 GameCard/(3342:3342): La cantidad de Bloques es: 1024
-[INFO] 17:18:21:203 GameCard/(3342:3342): El Magic Number es: TALL_GRASS
-[INFO] 17:18:21:204 GameCard/(3342:3342): Ya existe el directorioo: /home/utnso/Escritorio/tall-grass/Metadata
-[INFO] 17:18:21:204 GameCard/(3342:3342): Se creo el directorio Files ubicado en: /home/utnso/Escritorio/tall-grass/Files
-[INFO] 17:18:21:204 GameCard/(3342:3342): Creando directorio FILES
-[INFO] 17:18:21:204 GameCard/(3342:3342): Se creo el directorio: Files
-[INFO] 17:18:21:204 GameCard/(3342:3342): Se creo el archivo METADATA de Files
-[INFO] 17:18:21:204 GameCard/(3342:3342): Se completo el tamplate de directorio File
-[INFO] 17:18:21:204 GameCard/(3342:3342): Se creo el directorio: Blocks
-[INFO] 17:18:21:205 GameCard/(3342:3342): Se creo el directorio Blocks ubicado en: /home/utnso/Escritorio/tall-grass/Blocks
-[INFO] 17:18:21:205 GameCard/(3342:3342): SETEO DE VARIABLES PARA ARCHIVOSYDIRECTORIOS.H
-[INFO] 17:18:21:205 GameCard/(3342:3342): El ID de modulo es: 1568910204
-[INFO] 17:18:21:206 GameCard/(3342:3347): Hilo de verificacion periodica de conexion con BROKER iniciado
-[INFO] 17:18:21:206 GameCard/(3342:3346): Escucho GET de BROKER
-[ERROR] 17:18:21:206 GameCard/(3342:3346): Hubo un problema enviando la suscripcion a la cola GET del broker
-[INFO] 17:18:21:206 GameCard/(3342:3345): Escucho CATCH de BROKER
-[ERROR] 17:18:21:206 GameCard/(3342:3345): Hubo un problema enviando la suscripcion a la cola CATCH del BROKER
-[INFO] 17:18:21:206 GameCard/(3342:3344): Escuchando NEW de BROKER
-[INFO] 17:18:21:206 GameCard/(3342:3344): Socket de NEW: -1
-[ERROR] 17:18:21:206 GameCard/(3342:3344): Hubo un problema enviando la suscripcion a la cola NEW del BROKER
-[INFO] 17:18:21:206 GameCard/(3342:3343): Esperando mensajes de game boy en socket 5
-[INFO] 17:18:27:587 GameCard/(3342:3343): Socket 7 de gameBoy aceptado
-[INFO] 17:18:27:589 GameCard/(3342:3352): Recibiendo codigo de operacion de GameBoy en socket 7
-[INFO] 17:18:27:589 GameCard/(3342:3352): Codigo de operacion de socket 7 recibido: 1
-[INFO] 17:18:27:589 GameCard/(3342:3352): Procesando request de GameBoy
-[INFO] 17:18:27:589 GameCard/(3342:3352): Codigo de operacion recibido del socket cliente 7 corresponde a un NEW
-[INFO] 17:18:27:589 GameCard/(3342:3352): Recibiendo tamanio total
-[INFO] 17:18:27:589 GameCard/(3342:3352): Tamanio total recibido: 28
-[INFO] 17:18:27:589 GameCard/(3342:3352): EL ID recibido: 9
-[INFO] 17:18:27:589 GameCard/(3342:3352): Tamanio del pokemon recibido: 8
-[INFO] 17:18:27:589 GameCard/(3342:3352): Nombre del pokemon recibido: Pikachu
-[INFO] 17:18:27:589 GameCard/(3342:3352): Posicion X recibida: 2
-[INFO] 17:18:27:589 GameCard/(3342:3352): Posicion Y recibida: 5
-[INFO] 17:18:27:589 GameCard/(3342:3352): Cantidad recibida: 10
-[INFO] 17:18:27:589 GameCard/(3342:3352): NEW recibido del modulo Game Boy socket 7
-[INFO] 17:18:27:589 GameCard/(3342:3352): Llegamo
-[INFO] 17:18:27:589 GameCard/(3342:3352): Pokemon: pikachu
-[INFO] 17:18:27:589 GameCard/(3342:3352): PosX: 2
-[INFO] 17:18:27:589 GameCard/(3342:3352): PosY: 5
-[INFO] 17:18:27:589 GameCard/(3342:3352): Cantidad: 10
-[INFO] 17:18:27:589 GameCard/(3342:3352): Ruta de Directorio: /home/utnso/Escritorio/tall-grass/Files/pikachu
-[INFO] 17:18:27:589 GameCard/(3342:3352): La coordenada generada es: 2-5
-[INFO] 17:18:27:589 GameCard/(3342:3352): La posicion que me llega es: 2-5
-[INFO] 17:18:27:589 GameCard/(3342:3352): El valor del KEY-VALUE cargado completamente es: 2-5=10
-[INFO] 17:18:27:589 GameCard/(3342:3352): La posicion del registro generado es: 2-5
-[INFO] 17:18:27:589 GameCard/(3342:3352): La cantidad del registro generado es: 10
-[INFO] 17:18:27:589 GameCard/(3342:3352): Se creo el directorio: pikachu
-[INFO] 17:18:27:590 GameCard/(3342:3352): Ruta del directorio pokemon pikachu es: /home/utnso/Escritorio/tall-grass/Files/pikachu
-[INFO] 17:18:27:590 GameCard/(3342:3352): Ruta del Archivo: /home/utnso/Escritorio/tall-grass/Files/pikachu/pikachu.bin
-[INFO] 17:18:27:590 GameCard/(3342:3352): Se creo el archivo config
-[INFO] 17:18:27:590 GameCard/(3342:3352): EL array de blocks es: (null)
-[INFO] 17:18:27:590 GameCard/(3342:3352): Retorno el estado: N
-[INFO] 17:18:27:590 GameCard/(3342:3352): No tiene blocks asignados. Primera vez
-[INFO] 17:18:27:590 GameCard/(3342:3352): El registro aplanado quedo como: 2-5=10
-
-[INFO] 17:18:27:590 GameCard/(3342:3352): Entro a buscar posiciones
-[INFO] 17:18:27:590 GameCard/(3342:3352): Bloqueo
-[INFO] 17:18:27:590 GameCard/(3342:3352): EL valor de i es de : 0
-[INFO] 17:18:27:590 GameCard/(3342:3352): EL valor de cant de bloques es de : 1024
-[INFO] 17:18:27:590 GameCard/(3342:3352): EL valor de i es de : 0
-[INFO] 17:18:27:590 GameCard/(3342:3352): EL valor de cant de bloques es de : 1024
-[INFO] 17:18:27:590 GameCard/(3342:3352): Entro primer IF
-[INFO] 17:18:27:590 GameCard/(3342:3352): Entro segundo IF
-[INFO] 17:18:27:590 GameCard/(3342:3352): Guardando el bitarray
-[INFO] 17:18:27:590 GameCard/(3342:3352): Termino el guardado
-[INFO] 17:18:27:590 GameCard/(3342:3352): EL block 0 esta libre
-[INFO] 17:18:27:590 GameCard/(3342:3352): EL block 0 esta libre, vuelvo a chequear
-[INFO] 17:18:27:590 GameCard/(3342:3352): El block libre seleccionado es: 0
-[INFO] 17:18:27:590 GameCard/(3342:3352): La ruta del block es: /home/utnso/Escritorio/tall-grass/Blocks/0.bin
-[INFO] 17:18:27:590 GameCard/(3342:3352): Iterando la lista
-[INFO] 17:18:27:591 GameCard/(3342:3352): El ID de mensaje cargado en el appeared es: 9
-[INFO] 17:18:27:591 GameCard/(3342:3352): El pokemoncargado en el appeared es: pikachu
-[INFO] 17:18:27:591 GameCard/(3342:3352): El tamanio del nombre del pokemon cargado en el appeared es: 8
-[INFO] 17:18:27:591 GameCard/(3342:3352): La coordenada del pokemon cargado en el appeared es: 2 - 5
-[INFO] 17:18:31:206 GameCard/(3342:3347): Iniciando verificacion de conexion con BROKER...
-[ERROR] 17:18:31:206 GameCard/(3342:3347): Reconexion con BROKER fallida, intentando nuevamente en 10 segundos
-[INFO] 17:18:32:592 GameCard/(3342:3352): El ID cargado es 9
-[INFO] 17:18:32:592 GameCard/(3342:3352): Tamanio nombre pokemon 8
-[INFO] 17:18:32:592 GameCard/(3342:3352): Nombre pokemon pikachu
-[INFO] 17:18:32:592 GameCard/(3342:3352): Posicion X 2
-[INFO] 17:18:32:592 GameCard/(3342:3352): Posicion Y 5
-[INFO] 17:18:32:592 GameCard/(3342:3352): Creando paquete
-[INFO] 17:18:32:592 GameCard/(3342:3352): CODIGO DE OPERACION: 2
-[INFO] 17:18:32:592 GameCard/(3342:3352): Paquete Creado
-[INFO] 17:18:32:593 GameCard/(3342:3352): la operacion a realizar es 2
-[INFO] 17:18:32:593 GameCard/(3342:3352): Serializando...
-[INFO] 17:18:32:593 GameCard/(3342:3352): Serializacion completa
-[INFO] 17:18:32:593 GameCard/(3342:3352): El peso total es: 24
-[ERROR] 17:18:32:593 GameCard/(3342:3352): Error: No se pudo enviar el mensaje
-[INFO] 17:18:39:571 GameCard/(3342:3343): Socket 8 de gameBoy aceptado
-[INFO] 17:18:39:572 GameCard/(3342:3356): Recibiendo codigo de operacion de GameBoy en socket 8
-[INFO] 17:18:39:572 GameCard/(3342:3356): Codigo de operacion de socket 8 recibido: 1
-[INFO] 17:18:39:572 GameCard/(3342:3356): Procesando request de GameBoy
-[INFO] 17:18:39:572 GameCard/(3342:3356): Codigo de operacion recibido del socket cliente 8 corresponde a un NEW
-[INFO] 17:18:39:572 GameCard/(3342:3356): Recibiendo tamanio total
-[INFO] 17:18:39:572 GameCard/(3342:3356): Tamanio total recibido: 28
-[INFO] 17:18:39:572 GameCard/(3342:3356): EL ID recibido: 1
-[INFO] 17:18:39:572 GameCard/(3342:3356): Tamanio del pokemon recibido: 8
-[INFO] 17:18:39:572 GameCard/(3342:3356): Nombre del pokemon recibido: Pikachu
-[INFO] 17:18:39:572 GameCard/(3342:3356): Posicion X recibida: 1
-[INFO] 17:18:39:572 GameCard/(3342:3356): Posicion Y recibida: 9
-[INFO] 17:18:39:572 GameCard/(3342:3356): Cantidad recibida: 3
-[INFO] 17:18:39:572 GameCard/(3342:3356): NEW recibido del modulo Game Boy socket 8
-[INFO] 17:18:39:572 GameCard/(3342:3356): Llegamo
-[INFO] 17:18:39:572 GameCard/(3342:3356): Pokemon: pikachu
-[INFO] 17:18:39:572 GameCard/(3342:3356): PosX: 1
-[INFO] 17:18:39:572 GameCard/(3342:3356): PosY: 9
-[INFO] 17:18:39:572 GameCard/(3342:3356): Cantidad: 3
-[INFO] 17:18:39:572 GameCard/(3342:3356): Ruta de Directorio: /home/utnso/Escritorio/tall-grass/Files/pikachu
-[INFO] 17:18:39:572 GameCard/(3342:3356): La coordenada generada es: 1-9
-[INFO] 17:18:39:572 GameCard/(3342:3356): La posicion que me llega es: 1-9
-[INFO] 17:18:39:573 GameCard/(3342:3356): El valor del KEY-VALUE cargado completamente es: 1-9=3
-[INFO] 17:18:39:573 GameCard/(3342:3356): La posicion del registro generado es: 1-9
-[INFO] 17:18:39:573 GameCard/(3342:3356): La cantidad del registro generado es: 3
-[INFO] 17:18:39:573 GameCard/(3342:3356): Ruta del directorio pokemon pikachu es: /home/utnso/Escritorio/tall-grass/Files/pikachu
-[INFO] 17:18:39:573 GameCard/(3342:3356): Ruta del Archivo: /home/utnso/Escritorio/tall-grass/Files/pikachu/pikachu.bin
-[INFO] 17:18:39:573 GameCard/(3342:3356): Se creo el archivo config
-[INFO] 17:18:39:573 GameCard/(3342:3356): EL array de blocks es: 0
-[INFO] 17:18:39:573 GameCard/(3342:3356): Retorno el estado: N
-[INFO] 17:18:39:573 GameCard/(3342:3356): Pokemon ya conocido
-[INFO] 17:18:39:573 GameCard/(3342:3356): Generando los paths de los bloques
-[INFO] 17:18:39:573 GameCard/(3342:3356): Unico bloque
-[INFO] 17:18:39:573 GameCard/(3342:3356): Se genera la ruta para: 0
-[INFO] 17:18:39:573 GameCard/(3342:3356): El path del block es: /home/utnso/Escritorio/tall-grass/Blocks/0.bin
-[INFO] 17:18:39:573 GameCard/(3342:3356): La posicion 0 del array de path es: /home/utnso/Escritorio/tall-grass/Blocks/0.bin
-[INFO] 17:18:39:573 GameCard/(3342:3356): La coordenada 1-9 es nueva. Se agrega al los registros
-[INFO] 17:18:39:575 GameCard/(3342:3343): Socket 7 de gameBoy aceptado
-[INFO] 17:18:39:575 GameCard/(3342:3356): El registro aplanado quedo como: 2-5=10
-
-[INFO] 17:18:39:575 GameCard/(3342:3356): El registro aplanado quedo como: 1-9=3
-
-[INFO] 17:18:39:575 GameCard/(3342:3356): Vaciando blocks
-[INFO] 17:18:39:575 GameCard/(3342:3356): El valor del block 0 es de: 1
-[INFO] 17:18:39:575 GameCard/(3342:3356): El block 0 fue desmarcado con el valor de: 0
-[INFO] 17:18:39:575 GameCard/(3342:3356): Guardando el bitarray
-[INFO] 17:18:39:575 GameCard/(3342:3356): Termino el guardado
-[INFO] 17:18:39:575 GameCard/(3342:3356): Entro a buscar posiciones
-[INFO] 17:18:39:575 GameCard/(3342:3356): Bloqueo
-[INFO] 17:18:39:575 GameCard/(3342:3356): EL valor de i es de : 0
-[INFO] 17:18:39:575 GameCard/(3342:3356): EL valor de cant de bloques es de : 1024
-[INFO] 17:18:39:575 GameCard/(3342:3356): EL valor de i es de : 0
-[INFO] 17:18:39:575 GameCard/(3342:3356): EL valor de cant de bloques es de : 1024
-[INFO] 17:18:39:575 GameCard/(3342:3356): Entro primer IF
-[INFO] 17:18:39:575 GameCard/(3342:3356): Entro segundo IF
-[INFO] 17:18:39:575 GameCard/(3342:3356): Guardando el bitarray
-[INFO] 17:18:39:575 GameCard/(3342:3356): Termino el guardado
-[INFO] 17:18:39:575 GameCard/(3342:3356): EL block 0 esta libre
-[INFO] 17:18:39:575 GameCard/(3342:3356): EL block 0 esta libre, vuelvo a chequear
-[INFO] 17:18:39:575 GameCard/(3342:3356): El block libre seleccionado es: 0
-[INFO] 17:18:39:575 GameCard/(3342:3356): La ruta del block es: /home/utnso/Escritorio/tall-grass/Blocks/0.bin
-[INFO] 17:18:39:576 GameCard/(3342:3356): Iterando la lista
-[INFO] 17:18:39:577 GameCard/(3342:3356): El ID de mensaje cargado en el appeared es: 1
-[INFO] 17:18:39:577 GameCard/(3342:3356): El pokemoncargado en el appeared es: pikachu
-[INFO] 17:18:39:577 GameCard/(3342:3356): El tamanio del nombre del pokemon cargado en el appeared es: 8
-[INFO] 17:18:39:577 GameCard/(3342:3356): La coordenada del pokemon cargado en el appeared es: 1 - 9
-[INFO] 17:18:39:578 GameCard/(3342:3358): Recibiendo codigo de operacion de GameBoy en socket 7
-[INFO] 17:18:39:578 GameCard/(3342:3358): Codigo de operacion de socket 7 recibido: 1
-[INFO] 17:18:39:578 GameCard/(3342:3358): Procesando request de GameBoy
-[INFO] 17:18:39:578 GameCard/(3342:3358): Codigo de operacion recibido del socket cliente 7 corresponde a un NEW
-[INFO] 17:18:39:578 GameCard/(3342:3358): Recibiendo tamanio total
-[INFO] 17:18:39:578 GameCard/(3342:3358): Tamanio total recibido: 31
-[INFO] 17:18:39:578 GameCard/(3342:3358): EL ID recibido: 2
-[INFO] 17:18:39:578 GameCard/(3342:3358): Tamanio del pokemon recibido: 11
-[INFO] 17:18:39:578 GameCard/(3342:3358): Nombre del pokemon recibido: Charmander
-[INFO] 17:18:39:578 GameCard/(3342:3358): Posicion X recibida: 4
-[INFO] 17:18:39:578 GameCard/(3342:3358): Posicion Y recibida: 1
-[INFO] 17:18:39:578 GameCard/(3342:3358): Cantidad recibida: 101
-[INFO] 17:18:39:578 GameCard/(3342:3358): NEW recibido del modulo Game Boy socket 7
-[INFO] 17:18:39:578 GameCard/(3342:3358): Llegamo
-[INFO] 17:18:39:578 GameCard/(3342:3358): Pokemon: charmander
-[INFO] 17:18:39:578 GameCard/(3342:3358): PosX: 4
-[INFO] 17:18:39:578 GameCard/(3342:3358): PosY: 1
-[INFO] 17:18:39:578 GameCard/(3342:3358): Cantidad: 101
-[INFO] 17:18:39:578 GameCard/(3342:3358): Ruta de Directorio: /home/utnso/Escritorio/tall-grass/Files/charmander
-[INFO] 17:18:39:578 GameCard/(3342:3358): La coordenada generada es: 4-1
-[INFO] 17:18:39:578 GameCard/(3342:3358): La posicion que me llega es: 4-1
-[INFO] 17:18:39:578 GameCard/(3342:3358): El valor del KEY-VALUE cargado completamente es: 4-1=101
-[INFO] 17:18:39:578 GameCard/(3342:3358): La posicion del registro generado es: 4-1
-[INFO] 17:18:39:578 GameCard/(3342:3358): La cantidad del registro generado es: 101
-[INFO] 17:18:39:578 GameCard/(3342:3358): Se creo el directorio: charmander
-[INFO] 17:18:39:579 GameCard/(3342:3358): Ruta del directorio pokemon charmander es: /home/utnso/Escritorio/tall-grass/Files/charmander
-[INFO] 17:18:39:579 GameCard/(3342:3358): Ruta del Archivo: /home/utnso/Escritorio/tall-grass/Files/charmander/charmander.bin
-[INFO] 17:18:39:579 GameCard/(3342:3358): Se creo el archivo config
-[INFO] 17:18:39:579 GameCard/(3342:3358): EL array de blocks es: (null)
-[INFO] 17:18:39:579 GameCard/(3342:3358): Retorno el estado: N
-[INFO] 17:18:39:579 GameCard/(3342:3358): No tiene blocks asignados. Primera vez
-[INFO] 17:18:39:579 GameCard/(3342:3358): El registro aplanado quedo como: 4-1=101
-
-[INFO] 17:18:39:579 GameCard/(3342:3358): Entro a buscar posiciones
-[INFO] 17:18:39:579 GameCard/(3342:3358): Bloqueo
-[INFO] 17:18:39:579 GameCard/(3342:3358): EL valor de i es de : 0
-[INFO] 17:18:39:579 GameCard/(3342:3358): EL valor de cant de bloques es de : 1024
-[INFO] 17:18:39:579 GameCard/(3342:3358): EL valor de i es de : 0
-[INFO] 17:18:39:579 GameCard/(3342:3358): EL valor de cant de bloques es de : 1024
-[INFO] 17:18:39:579 GameCard/(3342:3358): Entro primer IF
-[INFO] 17:18:39:579 GameCard/(3342:3358): EL valor FINAL de i es de : 0
-[INFO] 17:18:39:579 GameCard/(3342:3358): EL valor FINAL de cant de bloques es de : 1024
-[INFO] 17:18:39:579 GameCard/(3342:3358): EL valor de i es de : 1
-[INFO] 17:18:39:579 GameCard/(3342:3358): EL valor de cant de bloques es de : 1024
-[INFO] 17:18:39:579 GameCard/(3342:3358): Entro primer IF
-[INFO] 17:18:39:579 GameCard/(3342:3358): Entro segundo IF
-[INFO] 17:18:39:579 GameCard/(3342:3358): Guardando el bitarray
-[INFO] 17:18:39:579 GameCard/(3342:3358): Termino el guardado
-[INFO] 17:18:39:579 GameCard/(3342:3358): EL block 1 esta libre
-[INFO] 17:18:39:579 GameCard/(3342:3358): EL block 1 esta libre, vuelvo a chequear
-[INFO] 17:18:39:579 GameCard/(3342:3358): El block libre seleccionado es: 1
-[INFO] 17:18:39:579 GameCard/(3342:3358): La ruta del block es: /home/utnso/Escritorio/tall-grass/Blocks/1.bin
-[INFO] 17:18:39:579 GameCard/(3342:3358): Iterando la lista
-[INFO] 17:18:39:580 GameCard/(3342:3358): El ID de mensaje cargado en el appeared es: 2
-[INFO] 17:18:39:581 GameCard/(3342:3358): El pokemoncargado en el appeared es: charmander
-[INFO] 17:18:39:581 GameCard/(3342:3358): El tamanio del nombre del pokemon cargado en el appeared es: 11
-[INFO] 17:18:39:581 GameCard/(3342:3358): La coordenada del pokemon cargado en el appeared es: 4 - 1
-[INFO] 17:18:39:582 GameCard/(3342:3343): Socket 9 de gameBoy aceptado
-[INFO] 17:18:39:583 GameCard/(3342:3360): Recibiendo codigo de operacion de GameBoy en socket 9
-[INFO] 17:18:39:583 GameCard/(3342:3360): Codigo de operacion de socket 9 recibido: 1
-[INFO] 17:18:39:583 GameCard/(3342:3360): Procesando request de GameBoy
-[INFO] 17:18:39:583 GameCard/(3342:3360): Codigo de operacion recibido del socket cliente 9 corresponde a un NEW
-[INFO] 17:18:39:583 GameCard/(3342:3360): Recibiendo tamanio total
-[INFO] 17:18:39:583 GameCard/(3342:3360): Tamanio total recibido: 31
-[INFO] 17:18:39:583 GameCard/(3342:3360): EL ID recibido: 3
-[INFO] 17:18:39:583 GameCard/(3342:3360): Tamanio del pokemon recibido: 11
-[INFO] 17:18:39:583 GameCard/(3342:3360): Nombre del pokemon recibido: Charmander
-[INFO] 17:18:39:583 GameCard/(3342:3360): Posicion X recibida: 517
-[INFO] 17:18:39:583 GameCard/(3342:3360): Posicion Y recibida: 2046
-[INFO] 17:18:39:583 GameCard/(3342:3360): Cantidad recibida: 15
-[INFO] 17:18:39:583 GameCard/(3342:3360): NEW recibido del modulo Game Boy socket 9
-[INFO] 17:18:39:583 GameCard/(3342:3360): Llegamo
-[INFO] 17:18:39:583 GameCard/(3342:3360): Pokemon: charmander
-[INFO] 17:18:39:583 GameCard/(3342:3360): PosX: 517
-[INFO] 17:18:39:583 GameCard/(3342:3360): PosY: 2046
-[INFO] 17:18:39:583 GameCard/(3342:3360): Cantidad: 15
-[INFO] 17:18:39:583 GameCard/(3342:3360): Ruta de Directorio: /home/utnso/Escritorio/tall-grass/Files/charmander
-[INFO] 17:18:39:583 GameCard/(3342:3360): La coordenada generada es: 517-2046
-[INFO] 17:18:39:583 GameCard/(3342:3360): La posicion que me llega es: 517-2046
-[INFO] 17:18:39:583 GameCard/(3342:3360): El valor del KEY-VALUE cargado completamente es: 517-2046=15
-[INFO] 17:18:39:583 GameCard/(3342:3360): La posicion del registro generado es: 517-2046
-[INFO] 17:18:39:583 GameCard/(3342:3360): La cantidad del registro generado es: 15
-[INFO] 17:18:39:583 GameCard/(3342:3360): Ruta del directorio pokemon charmander es: /home/utnso/Escritorio/tall-grass/Files/charmander
-[INFO] 17:18:39:583 GameCard/(3342:3360): Ruta del Archivo: /home/utnso/Escritorio/tall-grass/Files/charmander/charmander.bin
-[INFO] 17:18:39:583 GameCard/(3342:3360): Se creo el archivo config
-[INFO] 17:18:39:583 GameCard/(3342:3360): EL array de blocks es: 1
-[INFO] 17:18:39:583 GameCard/(3342:3360): Retorno el estado: N
-[INFO] 17:18:39:583 GameCard/(3342:3360): Pokemon ya conocido
-[INFO] 17:18:39:584 GameCard/(3342:3360): Generando los paths de los bloques
-[INFO] 17:18:39:584 GameCard/(3342:3360): Unico bloque
-[INFO] 17:18:39:584 GameCard/(3342:3360): Se genera la ruta para: 1
-[INFO] 17:18:39:584 GameCard/(3342:3360): El path del block es: /home/utnso/Escritorio/tall-grass/Blocks/1.bin
-[INFO] 17:18:39:584 GameCard/(3342:3360): La posicion 0 del array de path es: /home/utnso/Escritorio/tall-grass/Blocks/1.bin
-[INFO] 17:18:39:584 GameCard/(3342:3360): La coordenada 517-2046 es nueva. Se agrega al los registros
-[INFO] 17:18:39:589 GameCard/(3342:3343): Socket 10 de gameBoy aceptado
-[INFO] 17:18:39:589 GameCard/(3342:3360): El registro aplanado quedo como: 4-1=101
-
-[INFO] 17:18:39:589 GameCard/(3342:3360): El registro aplanado quedo como: 517-2046=15
-
-[INFO] 17:18:39:589 GameCard/(3342:3360): Vaciando blocks
-[INFO] 17:18:39:589 GameCard/(3342:3360): El valor del block 1 es de: 1
-[INFO] 17:18:39:589 GameCard/(3342:3360): El block 1 fue desmarcado con el valor de: 0
-[INFO] 17:18:39:589 GameCard/(3342:3360): Guardando el bitarray
-[INFO] 17:18:39:589 GameCard/(3342:3360): Termino el guardado
-[INFO] 17:18:39:589 GameCard/(3342:3360): Entro a buscar posiciones
-[INFO] 17:18:39:589 GameCard/(3342:3360): Bloqueo
-[INFO] 17:18:39:589 GameCard/(3342:3360): EL valor de i es de : 0
-[INFO] 17:18:39:589 GameCard/(3342:3360): EL valor de cant de bloques es de : 1024
-[INFO] 17:18:39:589 GameCard/(3342:3360): EL valor de i es de : 0
-[INFO] 17:18:39:589 GameCard/(3342:3360): EL valor de cant de bloques es de : 1024
-[INFO] 17:18:39:589 GameCard/(3342:3360): Entro primer IF
-[INFO] 17:18:39:589 GameCard/(3342:3360): EL valor FINAL de i es de : 0
-[INFO] 17:18:39:589 GameCard/(3342:3360): EL valor FINAL de cant de bloques es de : 1024
-[INFO] 17:18:39:589 GameCard/(3342:3360): EL valor de i es de : 1
-[INFO] 17:18:39:590 GameCard/(3342:3360): EL valor de cant de bloques es de : 1024
-[INFO] 17:18:39:590 GameCard/(3342:3360): Entro primer IF
-[INFO] 17:18:39:590 GameCard/(3342:3360): Entro segundo IF
-[INFO] 17:18:39:590 GameCard/(3342:3360): Guardando el bitarray
-[INFO] 17:18:39:590 GameCard/(3342:3360): Termino el guardado
-[INFO] 17:18:39:590 GameCard/(3342:3360): EL block 1 esta libre
-[INFO] 17:18:39:590 GameCard/(3342:3360): EL block 1 esta libre, vuelvo a chequear
-[INFO] 17:18:39:590 GameCard/(3342:3360): El block libre seleccionado es: 1
-[INFO] 17:18:39:590 GameCard/(3342:3360): La ruta del block es: /home/utnso/Escritorio/tall-grass/Blocks/1.bin
-[INFO] 17:18:39:590 GameCard/(3342:3360): Iterando la lista
-[INFO] 17:18:39:591 GameCard/(3342:3360): El ID de mensaje cargado en el appeared es: 3
-[INFO] 17:18:39:591 GameCard/(3342:3360): El pokemoncargado en el appeared es: charmander
-[INFO] 17:18:39:591 GameCard/(3342:3360): El tamanio del nombre del pokemon cargado en el appeared es: 11
-[INFO] 17:18:39:591 GameCard/(3342:3360): La coordenada del pokemon cargado en el appeared es: 517 - 2046
-[INFO] 17:18:39:592 GameCard/(3342:3362): Recibiendo codigo de operacion de GameBoy en socket 10
-[INFO] 17:18:39:592 GameCard/(3342:3362): Codigo de operacion de socket 10 recibido: 1
-[INFO] 17:18:39:592 GameCard/(3342:3362): Procesando request de GameBoy
-[INFO] 17:18:39:592 GameCard/(3342:3362): Codigo de operacion recibido del socket cliente 10 corresponde a un NEW
-[INFO] 17:18:39:592 GameCard/(3342:3362): Recibiendo tamanio total
-[INFO] 17:18:39:592 GameCard/(3342:3362): Tamanio total recibido: 31
-[INFO] 17:18:39:592 GameCard/(3342:3362): EL ID recibido: 4
-[INFO] 17:18:39:592 GameCard/(3342:3362): Tamanio del pokemon recibido: 11
-[INFO] 17:18:39:592 GameCard/(3342:3362): Nombre del pokemon recibido: Charmander
-[INFO] 17:18:39:592 GameCard/(3342:3362): Posicion X recibida: 413
-[INFO] 17:18:39:592 GameCard/(3342:3362): Posicion Y recibida: 17
-[INFO] 17:18:39:592 GameCard/(3342:3362): Cantidad recibida: 1
-[INFO] 17:18:39:592 GameCard/(3342:3362): NEW recibido del modulo Game Boy socket 10
-[INFO] 17:18:39:592 GameCard/(3342:3362): Llegamo
-[INFO] 17:18:39:592 GameCard/(3342:3362): Pokemon: charmander
-[INFO] 17:18:39:592 GameCard/(3342:3362): PosX: 413
-[INFO] 17:18:39:592 GameCard/(3342:3362): PosY: 17
-[INFO] 17:18:39:592 GameCard/(3342:3362): Cantidad: 1
-[INFO] 17:18:39:592 GameCard/(3342:3362): Ruta de Directorio: /home/utnso/Escritorio/tall-grass/Files/charmander
-[INFO] 17:18:39:592 GameCard/(3342:3362): La coordenada generada es: 413-17
-[INFO] 17:18:39:592 GameCard/(3342:3362): La posicion que me llega es: 413-17
-[INFO] 17:18:39:592 GameCard/(3342:3362): El valor del KEY-VALUE cargado completamente es: 413-17=1
-[INFO] 17:18:39:592 GameCard/(3342:3362): La posicion del registro generado es: 413-17
-[INFO] 17:18:39:592 GameCard/(3342:3362): La cantidad del registro generado es: 1
-[INFO] 17:18:39:592 GameCard/(3342:3362): Ruta del directorio pokemon charmander es: /home/utnso/Escritorio/tall-grass/Files/charmander
-[INFO] 17:18:39:592 GameCard/(3342:3362): Ruta del Archivo: /home/utnso/Escritorio/tall-grass/Files/charmander/charmander.bin
-[INFO] 17:18:39:592 GameCard/(3342:3362): Se creo el archivo config
-[INFO] 17:18:39:592 GameCard/(3342:3362): EL array de blocks es: 1
-[INFO] 17:18:39:592 GameCard/(3342:3362): Retorno el estado: N
-[INFO] 17:18:39:593 GameCard/(3342:3362): Pokemon ya conocido
-[INFO] 17:18:39:593 GameCard/(3342:3362): Generando los paths de los bloques
-[INFO] 17:18:39:593 GameCard/(3342:3362): Unico bloque
-[INFO] 17:18:39:593 GameCard/(3342:3362): Se genera la ruta para: 1
-[INFO] 17:18:39:593 GameCard/(3342:3362): El path del block es: /home/utnso/Escritorio/tall-grass/Blocks/1.bin
-[INFO] 17:18:39:593 GameCard/(3342:3362): La posicion 0 del array de path es: /home/utnso/Escritorio/tall-grass/Blocks/1.bin
-[INFO] 17:18:39:593 GameCard/(3342:3362): La coordenada 413-17 es nueva. Se agrega al los registros
-[INFO] 17:18:39:593 GameCard/(3342:3362): El registro aplanado quedo como: 4-1=101
-
-[INFO] 17:18:39:593 GameCard/(3342:3362): El registro aplanado quedo como: 517-2046=15
-
-[INFO] 17:18:39:593 GameCard/(3342:3362): El registro aplanado quedo como: 413-17=1
-
-[INFO] 17:18:39:593 GameCard/(3342:3362): Vaciando blocks
-[INFO] 17:18:39:593 GameCard/(3342:3362): El valor del block 1 es de: 1
-[INFO] 17:18:39:593 GameCard/(3342:3362): El block 1 fue desmarcado con el valor de: 0
-[INFO] 17:18:39:593 GameCard/(3342:3362): Guardando el bitarray
-[INFO] 17:18:39:593 GameCard/(3342:3362): Termino el guardado
-[INFO] 17:18:39:593 GameCard/(3342:3362): Entro a buscar posiciones
-[INFO] 17:18:39:593 GameCard/(3342:3362): Bloqueo
-[INFO] 17:18:39:593 GameCard/(3342:3362): EL valor de i es de : 0
-[INFO] 17:18:39:593 GameCard/(3342:3362): EL valor de cant de bloques es de : 1024
-[INFO] 17:18:39:593 GameCard/(3342:3362): EL valor de i es de : 0
-[INFO] 17:18:39:593 GameCard/(3342:3362): EL valor de cant de bloques es de : 1024
-[INFO] 17:18:39:593 GameCard/(3342:3362): Entro primer IF
-[INFO] 17:18:39:593 GameCard/(3342:3362): EL valor FINAL de i es de : 0
-[INFO] 17:18:39:593 GameCard/(3342:3362): EL valor FINAL de cant de bloques es de : 1024
-[INFO] 17:18:39:593 GameCard/(3342:3362): EL valor de i es de : 1
-[INFO] 17:18:39:593 GameCard/(3342:3362): EL valor de cant de bloques es de : 1024
-[INFO] 17:18:39:593 GameCard/(3342:3362): Entro primer IF
-[INFO] 17:18:39:593 GameCard/(3342:3362): Entro segundo IF
-[INFO] 17:18:39:593 GameCard/(3342:3362): Guardando el bitarray
-[INFO] 17:18:39:593 GameCard/(3342:3362): Termino el guardado
-[INFO] 17:18:39:593 GameCard/(3342:3362): EL block 1 esta libre
-[INFO] 17:18:39:593 GameCard/(3342:3362): EL block 1 esta libre, vuelvo a chequear
-[INFO] 17:18:39:593 GameCard/(3342:3362): El block libre seleccionado es: 1
-[INFO] 17:18:39:593 GameCard/(3342:3362): La ruta del block es: /home/utnso/Escritorio/tall-grass/Blocks/1.bin
-[INFO] 17:18:39:593 GameCard/(3342:3362): Iterando la lista
-[INFO] 17:18:39:597 GameCard/(3342:3343): Socket 11 de gameBoy aceptado
-[INFO] 17:18:39:597 GameCard/(3342:3362): El ID de mensaje cargado en el appeared es: 4
-[INFO] 17:18:39:597 GameCard/(3342:3362): El pokemoncargado en el appeared es: charmander
-[INFO] 17:18:39:597 GameCard/(3342:3362): El tamanio del nombre del pokemon cargado en el appeared es: 11
-[INFO] 17:18:39:597 GameCard/(3342:3362): La coordenada del pokemon cargado en el appeared es: 413 - 17
-[INFO] 17:18:39:598 GameCard/(3342:3364): Recibiendo codigo de operacion de GameBoy en socket 11
-[INFO] 17:18:39:598 GameCard/(3342:3364): Codigo de operacion de socket 11 recibido: 1
-[INFO] 17:18:39:598 GameCard/(3342:3364): Procesando request de GameBoy
-[INFO] 17:18:39:598 GameCard/(3342:3364): Codigo de operacion recibido del socket cliente 11 corresponde a un NEW
-[INFO] 17:18:39:598 GameCard/(3342:3364): Recibiendo tamanio total
-[INFO] 17:18:39:598 GameCard/(3342:3364): Tamanio total recibido: 31
-[INFO] 17:18:39:598 GameCard/(3342:3364): EL ID recibido: 5
-[INFO] 17:18:39:598 GameCard/(3342:3364): Tamanio del pokemon recibido: 11
-[INFO] 17:18:39:598 GameCard/(3342:3364): Nombre del pokemon recibido: Charmander
-[INFO] 17:18:39:598 GameCard/(3342:3364): Posicion X recibida: 723
-[INFO] 17:18:39:598 GameCard/(3342:3364): Posicion Y recibida: 97
-[INFO] 17:18:39:598 GameCard/(3342:3364): Cantidad recibida: 29
-[INFO] 17:18:39:598 GameCard/(3342:3364): NEW recibido del modulo Game Boy socket 11
-[INFO] 17:18:39:598 GameCard/(3342:3364): Llegamo
-[INFO] 17:18:39:598 GameCard/(3342:3364): Pokemon: charmander
-[INFO] 17:18:39:598 GameCard/(3342:3364): PosX: 723
-[INFO] 17:18:39:598 GameCard/(3342:3364): PosY: 97
-[INFO] 17:18:39:598 GameCard/(3342:3364): Cantidad: 29
-[INFO] 17:18:39:598 GameCard/(3342:3364): Ruta de Directorio: /home/utnso/Escritorio/tall-grass/Files/charmander
-[INFO] 17:18:39:598 GameCard/(3342:3364): La coordenada generada es: 723-97
-[INFO] 17:18:39:598 GameCard/(3342:3364): La posicion que me llega es: 723-97
-[INFO] 17:18:39:598 GameCard/(3342:3364): El valor del KEY-VALUE cargado completamente es: 723-97=29
-[INFO] 17:18:39:598 GameCard/(3342:3364): La posicion del registro generado es: 723-97
-[INFO] 17:18:39:598 GameCard/(3342:3364): La cantidad del registro generado es: 29
-[INFO] 17:18:39:598 GameCard/(3342:3364): Ruta del directorio pokemon charmander es: /home/utnso/Escritorio/tall-grass/Files/charmander
-[INFO] 17:18:39:598 GameCard/(3342:3364): Ruta del Archivo: /home/utnso/Escritorio/tall-grass/Files/charmander/charmander.bin
-[INFO] 17:18:39:598 GameCard/(3342:3364): Se creo el archivo config
-[INFO] 17:18:39:598 GameCard/(3342:3364): EL array de blocks es: 1
-[INFO] 17:18:39:598 GameCard/(3342:3364): Retorno el estado: N
-[INFO] 17:18:39:598 GameCard/(3342:3364): Pokemon ya conocido
-[INFO] 17:18:39:599 GameCard/(3342:3364): Generando los paths de los bloques
-[INFO] 17:18:39:599 GameCard/(3342:3364): Unico bloque
-[INFO] 17:18:39:599 GameCard/(3342:3364): Se genera la ruta para: 1
-[INFO] 17:18:39:599 GameCard/(3342:3364): El path del block es: /home/utnso/Escritorio/tall-grass/Blocks/1.bin
-[INFO] 17:18:39:599 GameCard/(3342:3364): La posicion 0 del array de path es: /home/utnso/Escritorio/tall-grass/Blocks/1.bin
-[INFO] 17:18:39:599 GameCard/(3342:3364): La coordenada 723-97 es nueva. Se agrega al los registros
-[INFO] 17:18:39:599 GameCard/(3342:3364): El registro aplanado quedo como: 4-1=101
-
-[INFO] 17:18:39:599 GameCard/(3342:3364): El registro aplanado quedo como: 517-2046=15
-
-[INFO] 17:18:39:599 GameCard/(3342:3364): El registro aplanado quedo como: 413-17=1
-
-[INFO] 17:18:39:599 GameCard/(3342:3364): El registro aplanado quedo como: 723-97=29
-
-[INFO] 17:18:39:599 GameCard/(3342:3364): Vaciando blocks
-[INFO] 17:18:39:599 GameCard/(3342:3364): El valor del block 1 es de: 1
-[INFO] 17:18:39:599 GameCard/(3342:3364): El block 1 fue desmarcado con el valor de: 0
-[INFO] 17:18:39:599 GameCard/(3342:3364): Guardando el bitarray
-[INFO] 17:18:39:599 GameCard/(3342:3364): Termino el guardado
-[INFO] 17:18:39:599 GameCard/(3342:3364): Entro a buscar posiciones
-[INFO] 17:18:39:599 GameCard/(3342:3364): Bloqueo
-[INFO] 17:18:39:599 GameCard/(3342:3364): EL valor de i es de : 0
-[INFO] 17:18:39:599 GameCard/(3342:3364): EL valor de cant de bloques es de : 1024
-[INFO] 17:18:39:599 GameCard/(3342:3364): EL valor de i es de : 0
-[INFO] 17:18:39:599 GameCard/(3342:3364): EL valor de cant de bloques es de : 1024
-[INFO] 17:18:39:599 GameCard/(3342:3364): Entro primer IF
-[INFO] 17:18:39:599 GameCard/(3342:3364): EL valor FINAL de i es de : 0
-[INFO] 17:18:39:599 GameCard/(3342:3364): EL valor FINAL de cant de bloques es de : 1024
-[INFO] 17:18:39:599 GameCard/(3342:3364): EL valor de i es de : 1
-[INFO] 17:18:39:599 GameCard/(3342:3364): EL valor de cant de bloques es de : 1024
-[INFO] 17:18:39:599 GameCard/(3342:3364): Entro primer IF
-[INFO] 17:18:39:599 GameCard/(3342:3364): Entro segundo IF
-[INFO] 17:18:39:599 GameCard/(3342:3364): Guardando el bitarray
-[INFO] 17:18:39:599 GameCard/(3342:3364): Termino el guardado
-[INFO] 17:18:39:599 GameCard/(3342:3364): EL block 1 esta libre
-[INFO] 17:18:39:599 GameCard/(3342:3364): EL block 1 esta libre, vuelvo a chequear
-[INFO] 17:18:39:599 GameCard/(3342:3364): El block libre seleccionado es: 1
-[INFO] 17:18:39:599 GameCard/(3342:3364): La ruta del block es: /home/utnso/Escritorio/tall-grass/Blocks/1.bin
-[INFO] 17:18:39:599 GameCard/(3342:3364): Iterando la lista
-[INFO] 17:18:39:605 GameCard/(3342:3364): El ID de mensaje cargado en el appeared es: 5
-[INFO] 17:18:39:605 GameCard/(3342:3364): El pokemoncargado en el appeared es: charmander
-[INFO] 17:18:39:605 GameCard/(3342:3364): El tamanio del nombre del pokemon cargado en el appeared es: 11
-[INFO] 17:18:39:605 GameCard/(3342:3364): La coordenada del pokemon cargado en el appeared es: 723 - 97
-[INFO] 17:18:39:606 GameCard/(3342:3343): Socket 12 de gameBoy aceptado
-[INFO] 17:18:39:606 GameCard/(3342:3366): Recibiendo codigo de operacion de GameBoy en socket 12
-[INFO] 17:18:39:606 GameCard/(3342:3366): Codigo de operacion de socket 12 recibido: 1
-[INFO] 17:18:39:606 GameCard/(3342:3366): Procesando request de GameBoy
-[INFO] 17:18:39:606 GameCard/(3342:3366): Codigo de operacion recibido del socket cliente 12 corresponde a un NEW
-[INFO] 17:18:39:606 GameCard/(3342:3366): Recibiendo tamanio total
-[INFO] 17:18:39:606 GameCard/(3342:3366): Tamanio total recibido: 31
-[INFO] 17:18:39:606 GameCard/(3342:3366): EL ID recibido: 6
-[INFO] 17:18:39:606 GameCard/(3342:3366): Tamanio del pokemon recibido: 11
-[INFO] 17:18:39:606 GameCard/(3342:3366): Nombre del pokemon recibido: Charmander
-[INFO] 17:18:39:606 GameCard/(3342:3366): Posicion X recibida: 65
-[INFO] 17:18:39:606 GameCard/(3342:3366): Posicion Y recibida: 93
-[INFO] 17:18:39:606 GameCard/(3342:3366): Cantidad recibida: 3001
-[INFO] 17:18:39:606 GameCard/(3342:3366): NEW recibido del modulo Game Boy socket 12
-[INFO] 17:18:39:606 GameCard/(3342:3366): Llegamo
-[INFO] 17:18:39:606 GameCard/(3342:3366): Pokemon: charmander
-[INFO] 17:18:39:606 GameCard/(3342:3366): PosX: 65
-[INFO] 17:18:39:606 GameCard/(3342:3366): PosY: 93
-[INFO] 17:18:39:606 GameCard/(3342:3366): Cantidad: 3001
-[INFO] 17:18:39:606 GameCard/(3342:3366): Ruta de Directorio: /home/utnso/Escritorio/tall-grass/Files/charmander
-[INFO] 17:18:39:606 GameCard/(3342:3366): La coordenada generada es: 65-93
-[INFO] 17:18:39:606 GameCard/(3342:3366): La posicion que me llega es: 65-93
-[INFO] 17:18:39:606 GameCard/(3342:3366): El valor del KEY-VALUE cargado completamente es: 65-93=3001
-[INFO] 17:18:39:606 GameCard/(3342:3366): La posicion del registro generado es: 65-93
-[INFO] 17:18:39:606 GameCard/(3342:3366): La cantidad del registro generado es: 3001
-[INFO] 17:18:39:606 GameCard/(3342:3366): Ruta del directorio pokemon charmander es: /home/utnso/Escritorio/tall-grass/Files/charmander
-[INFO] 17:18:39:606 GameCard/(3342:3366): Ruta del Archivo: /home/utnso/Escritorio/tall-grass/Files/charmander/charmander.bin
-[INFO] 17:18:39:606 GameCard/(3342:3366): Se creo el archivo config
-[INFO] 17:18:39:606 GameCard/(3342:3366): EL array de blocks es: 1
-[INFO] 17:18:39:607 GameCard/(3342:3366): Retorno el estado: N
-[INFO] 17:18:39:607 GameCard/(3342:3366): Pokemon ya conocido
-[INFO] 17:18:39:607 GameCard/(3342:3366): Generando los paths de los bloques
-[INFO] 17:18:39:607 GameCard/(3342:3366): Unico bloque
-[INFO] 17:18:39:607 GameCard/(3342:3366): Se genera la ruta para: 1
-[INFO] 17:18:39:607 GameCard/(3342:3366): El path del block es: /home/utnso/Escritorio/tall-grass/Blocks/1.bin
-[INFO] 17:18:39:607 GameCard/(3342:3366): La posicion 0 del array de path es: /home/utnso/Escritorio/tall-grass/Blocks/1.bin
-[INFO] 17:18:39:607 GameCard/(3342:3366): La coordenada 65-93 es nueva. Se agrega al los registros
-[INFO] 17:18:39:608 GameCard/(3342:3343): Socket 13 de gameBoy aceptado
-[INFO] 17:18:39:609 GameCard/(3342:3366): El registro aplanado quedo como: 4-1=101
-
-[INFO] 17:18:39:609 GameCard/(3342:3366): El registro aplanado quedo como: 517-2046=15
-
-[INFO] 17:18:39:609 GameCard/(3342:3366): El registro aplanado quedo como: 413-17=1
-
-[INFO] 17:18:39:609 GameCard/(3342:3366): El registro aplanado quedo como: 723-97=29
-
-[INFO] 17:18:39:609 GameCard/(3342:3366): El registro aplanado quedo como: 65-93=3001
-
-[INFO] 17:18:39:609 GameCard/(3342:3366): Vaciando blocks
-[INFO] 17:18:39:609 GameCard/(3342:3366): El valor del block 1 es de: 1
-[INFO] 17:18:39:609 GameCard/(3342:3366): El block 1 fue desmarcado con el valor de: 0
-[INFO] 17:18:39:609 GameCard/(3342:3366): Guardando el bitarray
-[INFO] 17:18:39:609 GameCard/(3342:3366): Termino el guardado
-[INFO] 17:18:39:609 GameCard/(3342:3366): Entro a buscar posiciones
-[INFO] 17:18:39:609 GameCard/(3342:3366): Bloqueo
-[INFO] 17:18:39:609 GameCard/(3342:3366): EL valor de i es de : 0
-[INFO] 17:18:39:609 GameCard/(3342:3366): EL valor de cant de bloques es de : 1024
-[INFO] 17:18:39:609 GameCard/(3342:3366): EL valor de i es de : 0
-[INFO] 17:18:39:609 GameCard/(3342:3366): EL valor de cant de bloques es de : 1024
-[INFO] 17:18:39:609 GameCard/(3342:3366): Entro primer IF
-[INFO] 17:18:39:609 GameCard/(3342:3366): EL valor FINAL de i es de : 0
-[INFO] 17:18:39:609 GameCard/(3342:3366): EL valor FINAL de cant de bloques es de : 1024
-[INFO] 17:18:39:609 GameCard/(3342:3366): EL valor de i es de : 1
-[INFO] 17:18:39:609 GameCard/(3342:3366): EL valor de cant de bloques es de : 1024
-[INFO] 17:18:39:609 GameCard/(3342:3366): Entro primer IF
-[INFO] 17:18:39:609 GameCard/(3342:3366): Entro segundo IF
-[INFO] 17:18:39:609 GameCard/(3342:3366): Guardando el bitarray
-[INFO] 17:18:39:609 GameCard/(3342:3366): Termino el guardado
-[INFO] 17:18:39:609 GameCard/(3342:3366): EL block 1 esta libre
-[INFO] 17:18:39:609 GameCard/(3342:3366): EL block 1 esta libre, vuelvo a chequear
-[INFO] 17:18:39:609 GameCard/(3342:3366): El block libre seleccionado es: 1
-[INFO] 17:18:39:609 GameCard/(3342:3366): La ruta del block es: /home/utnso/Escritorio/tall-grass/Blocks/1.bin
-[INFO] 17:18:39:609 GameCard/(3342:3366): Iterando la lista
-[INFO] 17:18:39:610 GameCard/(3342:3366): El ID de mensaje cargado en el appeared es: 6
-[INFO] 17:18:39:610 GameCard/(3342:3366): El pokemoncargado en el appeared es: charmander
-[INFO] 17:18:39:610 GameCard/(3342:3366): El tamanio del nombre del pokemon cargado en el appeared es: 11
-[INFO] 17:18:39:610 GameCard/(3342:3366): La coordenada del pokemon cargado en el appeared es: 65 - 93
-[INFO] 17:18:39:610 GameCard/(3342:3368): Recibiendo codigo de operacion de GameBoy en socket 13
-[INFO] 17:18:39:610 GameCard/(3342:3368): Codigo de operacion de socket 13 recibido: 1
-[INFO] 17:18:39:610 GameCard/(3342:3368): Procesando request de GameBoy
-[INFO] 17:18:39:610 GameCard/(3342:3368): Codigo de operacion recibido del socket cliente 13 corresponde a un NEW
-[INFO] 17:18:39:610 GameCard/(3342:3368): Recibiendo tamanio total
-[INFO] 17:18:39:610 GameCard/(3342:3368): Tamanio total recibido: 31
-[INFO] 17:18:39:610 GameCard/(3342:3368): EL ID recibido: 7
-[INFO] 17:18:39:610 GameCard/(3342:3368): Tamanio del pokemon recibido: 11
-[INFO] 17:18:39:610 GameCard/(3342:3368): Nombre del pokemon recibido: Charmander
-[INFO] 17:18:39:610 GameCard/(3342:3368): Posicion X recibida: 12
-[INFO] 17:18:39:610 GameCard/(3342:3368): Posicion Y recibida: 17
-[INFO] 17:18:39:610 GameCard/(3342:3368): Cantidad recibida: 34
-[INFO] 17:18:39:610 GameCard/(3342:3368): NEW recibido del modulo Game Boy socket 13
-[INFO] 17:18:39:610 GameCard/(3342:3368): Llegamo
-[INFO] 17:18:39:610 GameCard/(3342:3368): Pokemon: charmander
-[INFO] 17:18:39:610 GameCard/(3342:3368): PosX: 12
-[INFO] 17:18:39:610 GameCard/(3342:3368): PosY: 17
-[INFO] 17:18:39:610 GameCard/(3342:3368): Cantidad: 34
-[INFO] 17:18:39:610 GameCard/(3342:3368): Ruta de Directorio: /home/utnso/Escritorio/tall-grass/Files/charmander
-[INFO] 17:18:39:610 GameCard/(3342:3368): La coordenada generada es: 12-17
-[INFO] 17:18:39:610 GameCard/(3342:3368): La posicion que me llega es: 12-17
-[INFO] 17:18:39:610 GameCard/(3342:3368): El valor del KEY-VALUE cargado completamente es: 12-17=34
-[INFO] 17:18:39:610 GameCard/(3342:3368): La posicion del registro generado es: 12-17
-[INFO] 17:18:39:610 GameCard/(3342:3368): La cantidad del registro generado es: 34
-[INFO] 17:18:39:610 GameCard/(3342:3368): Ruta del directorio pokemon charmander es: /home/utnso/Escritorio/tall-grass/Files/charmander
-[INFO] 17:18:39:610 GameCard/(3342:3368): Ruta del Archivo: /home/utnso/Escritorio/tall-grass/Files/charmander/charmander.bin
-[INFO] 17:18:39:610 GameCard/(3342:3368): Se creo el archivo config
-[INFO] 17:18:39:610 GameCard/(3342:3368): EL array de blocks es: 1
-[INFO] 17:18:39:610 GameCard/(3342:3368): Retorno el estado: N
-[INFO] 17:18:39:610 GameCard/(3342:3368): Pokemon ya conocido
-[INFO] 17:18:39:610 GameCard/(3342:3368): Generando los paths de los bloques
-[INFO] 17:18:39:610 GameCard/(3342:3368): Unico bloque
-[INFO] 17:18:39:610 GameCard/(3342:3368): Se genera la ruta para: 1
-[INFO] 17:18:39:610 GameCard/(3342:3368): El path del block es: /home/utnso/Escritorio/tall-grass/Blocks/1.bin
-[INFO] 17:18:39:610 GameCard/(3342:3368): La posicion 0 del array de path es: /home/utnso/Escritorio/tall-grass/Blocks/1.bin
-[INFO] 17:18:39:610 GameCard/(3342:3368): La coordenada 12-17 es nueva. Se agrega al los registros
-[INFO] 17:18:39:610 GameCard/(3342:3368): El registro aplanado quedo como: 4-1=101
-
-[INFO] 17:18:39:610 GameCard/(3342:3368): El registro aplanado quedo como: 517-2046=15
-
-[INFO] 17:18:39:610 GameCard/(3342:3368): El registro aplanado quedo como: 413-17=1
-
-[INFO] 17:18:39:610 GameCard/(3342:3368): El registro aplanado quedo como: 723-97=29
-
-[INFO] 17:18:39:610 GameCard/(3342:3368): El registro aplanado quedo como: 65-93=3001
-
-[INFO] 17:18:39:610 GameCard/(3342:3368): El registro aplanado quedo como: 12-17=34
-
-[INFO] 17:18:39:610 GameCard/(3342:3368): Vaciando blocks
-[INFO] 17:18:39:610 GameCard/(3342:3368): El valor del block 1 es de: 1
-[INFO] 17:18:39:610 GameCard/(3342:3368): El block 1 fue desmarcado con el valor de: 0
-[INFO] 17:18:39:610 GameCard/(3342:3368): Guardando el bitarray
-[INFO] 17:18:39:610 GameCard/(3342:3368): Termino el guardado
-[INFO] 17:18:39:610 GameCard/(3342:3368): Entro a buscar posiciones
-[INFO] 17:18:39:610 GameCard/(3342:3368): Bloqueo
-[INFO] 17:18:39:610 GameCard/(3342:3368): EL valor de i es de : 0
-[INFO] 17:18:39:610 GameCard/(3342:3368): EL valor de cant de bloques es de : 1024
-[INFO] 17:18:39:610 GameCard/(3342:3368): EL valor de i es de : 0
-[INFO] 17:18:39:610 GameCard/(3342:3368): EL valor de cant de bloques es de : 1024
-[INFO] 17:18:39:611 GameCard/(3342:3368): Entro primer IF
-[INFO] 17:18:39:611 GameCard/(3342:3368): EL valor FINAL de i es de : 0
-[INFO] 17:18:39:611 GameCard/(3342:3368): EL valor FINAL de cant de bloques es de : 1024
-[INFO] 17:18:39:611 GameCard/(3342:3368): EL valor de i es de : 1
-[INFO] 17:18:39:611 GameCard/(3342:3368): EL valor de cant de bloques es de : 1024
-[INFO] 17:18:39:611 GameCard/(3342:3368): Entro primer IF
-[INFO] 17:18:39:611 GameCard/(3342:3368): Entro segundo IF
-[INFO] 17:18:39:611 GameCard/(3342:3368): Guardando el bitarray
-[INFO] 17:18:39:611 GameCard/(3342:3368): Termino el guardado
-[INFO] 17:18:39:611 GameCard/(3342:3368): EL block 1 esta libre
-[INFO] 17:18:39:611 GameCard/(3342:3368): EL block 1 esta libre, vuelvo a chequear
-[INFO] 17:18:39:611 GameCard/(3342:3368): El block libre seleccionado es: 1
-[INFO] 17:18:39:611 GameCard/(3342:3368): La ruta del block es: /home/utnso/Escritorio/tall-grass/Blocks/1.bin
-[INFO] 17:18:39:611 GameCard/(3342:3368): Iterando la lista
-[INFO] 17:18:39:612 GameCard/(3342:3343): Socket 14 de gameBoy aceptado
-[INFO] 17:18:39:612 GameCard/(3342:3368): El ID de mensaje cargado en el appeared es: 7
-[INFO] 17:18:39:612 GameCard/(3342:3368): El pokemoncargado en el appeared es: charmander
-[INFO] 17:18:39:612 GameCard/(3342:3368): El tamanio del nombre del pokemon cargado en el appeared es: 11
-[INFO] 17:18:39:612 GameCard/(3342:3368): La coordenada del pokemon cargado en el appeared es: 12 - 17
-[INFO] 17:18:39:613 GameCard/(3342:3370): Recibiendo codigo de operacion de GameBoy en socket 14
-[INFO] 17:18:39:613 GameCard/(3342:3370): Codigo de operacion de socket 14 recibido: 1
-[INFO] 17:18:39:613 GameCard/(3342:3370): Procesando request de GameBoy
-[INFO] 17:18:39:613 GameCard/(3342:3370): Codigo de operacion recibido del socket cliente 14 corresponde a un NEW
-[INFO] 17:18:39:613 GameCard/(3342:3370): Recibiendo tamanio total
-[INFO] 17:18:39:613 GameCard/(3342:3370): Tamanio total recibido: 31
-[INFO] 17:18:39:613 GameCard/(3342:3370): EL ID recibido: 8
-[INFO] 17:18:39:613 GameCard/(3342:3370): Tamanio del pokemon recibido: 11
-[INFO] 17:18:39:613 GameCard/(3342:3370): Nombre del pokemon recibido: Charmander
-[INFO] 17:18:39:613 GameCard/(3342:3370): Posicion X recibida: 129
-[INFO] 17:18:39:613 GameCard/(3342:3370): Posicion Y recibida: 547
-[INFO] 17:18:39:613 GameCard/(3342:3370): Cantidad recibida: 11
-[INFO] 17:18:39:613 GameCard/(3342:3370): NEW recibido del modulo Game Boy socket 14
-[INFO] 17:18:39:613 GameCard/(3342:3370): Llegamo
-[INFO] 17:18:39:613 GameCard/(3342:3370): Pokemon: charmander
-[INFO] 17:18:39:613 GameCard/(3342:3370): PosX: 129
-[INFO] 17:18:39:613 GameCard/(3342:3370): PosY: 547
-[INFO] 17:18:39:613 GameCard/(3342:3370): Cantidad: 11
-[INFO] 17:18:39:613 GameCard/(3342:3370): Ruta de Directorio: /home/utnso/Escritorio/tall-grass/Files/charmander
-[INFO] 17:18:39:613 GameCard/(3342:3370): La coordenada generada es: 129-547
-[INFO] 17:18:39:613 GameCard/(3342:3370): La posicion que me llega es: 129-547
-[INFO] 17:18:39:613 GameCard/(3342:3370): El valor del KEY-VALUE cargado completamente es: 129-547=11
-[INFO] 17:18:39:613 GameCard/(3342:3370): La posicion del registro generado es: 129-547
-[INFO] 17:18:39:613 GameCard/(3342:3370): La cantidad del registro generado es: 11
-[INFO] 17:18:39:613 GameCard/(3342:3370): Ruta del directorio pokemon charmander es: /home/utnso/Escritorio/tall-grass/Files/charmander
-[INFO] 17:18:39:613 GameCard/(3342:3370): Ruta del Archivo: /home/utnso/Escritorio/tall-grass/Files/charmander/charmander.bin
-[INFO] 17:18:39:613 GameCard/(3342:3370): Se creo el archivo config
-[INFO] 17:18:39:613 GameCard/(3342:3370): EL array de blocks es: 1
-[INFO] 17:18:39:613 GameCard/(3342:3370): Retorno el estado: N
-[INFO] 17:18:39:613 GameCard/(3342:3370): Pokemon ya conocido
-[INFO] 17:18:39:613 GameCard/(3342:3370): Generando los paths de los bloques
-[INFO] 17:18:39:613 GameCard/(3342:3370): Unico bloque
-[INFO] 17:18:39:613 GameCard/(3342:3370): Se genera la ruta para: 1
-[INFO] 17:18:39:613 GameCard/(3342:3370): El path del block es: /home/utnso/Escritorio/tall-grass/Blocks/1.bin
-[INFO] 17:18:39:613 GameCard/(3342:3370): La posicion 0 del array de path es: /home/utnso/Escritorio/tall-grass/Blocks/1.bin
-[INFO] 17:18:39:613 GameCard/(3342:3370): La coordenada 129-547 es nueva. Se agrega al los registros
-[INFO] 17:18:39:614 GameCard/(3342:3370): El registro aplanado quedo como: 4-1=101
-
-[INFO] 17:18:39:614 GameCard/(3342:3370): El registro aplanado quedo como: 517-2046=15
-
-[INFO] 17:18:39:614 GameCard/(3342:3370): El registro aplanado quedo como: 413-17=1
-
-[INFO] 17:18:39:614 GameCard/(3342:3370): El registro aplanado quedo como: 723-97=29
-
-[INFO] 17:18:39:614 GameCard/(3342:3370): El registro aplanado quedo como: 65-93=3001
-
-[INFO] 17:18:39:614 GameCard/(3342:3370): El registro aplanado quedo como: 12-17=34
-
-[INFO] 17:18:39:614 GameCard/(3342:3370): El registro aplanado quedo como: 129-547=11
-
-[INFO] 17:18:39:614 GameCard/(3342:3370): Vaciando blocks
-[INFO] 17:18:39:614 GameCard/(3342:3370): El valor del block 1 es de: 1
-[INFO] 17:18:39:614 GameCard/(3342:3370): El block 1 fue desmarcado con el valor de: 0
-[INFO] 17:18:39:614 GameCard/(3342:3370): Guardando el bitarray
-[INFO] 17:18:39:614 GameCard/(3342:3370): Termino el guardado
-[INFO] 17:18:39:614 GameCard/(3342:3370): Entro a buscar posiciones
-[INFO] 17:18:39:614 GameCard/(3342:3370): Bloqueo
-[INFO] 17:18:39:614 GameCard/(3342:3370): EL valor de i es de : 0
-[INFO] 17:18:39:614 GameCard/(3342:3370): EL valor de cant de bloques es de : 1024
-[INFO] 17:18:39:614 GameCard/(3342:3370): EL valor de i es de : 0
-[INFO] 17:18:39:614 GameCard/(3342:3370): EL valor de cant de bloques es de : 1024
-[INFO] 17:18:39:614 GameCard/(3342:3370): Entro primer IF
-[INFO] 17:18:39:614 GameCard/(3342:3370): EL valor FINAL de i es de : 0
-[INFO] 17:18:39:614 GameCard/(3342:3370): EL valor FINAL de cant de bloques es de : 1024
-[INFO] 17:18:39:614 GameCard/(3342:3370): EL valor de i es de : 1
-[INFO] 17:18:39:614 GameCard/(3342:3370): EL valor de cant de bloques es de : 1024
-[INFO] 17:18:39:614 GameCard/(3342:3370): Entro primer IF
-[INFO] 17:18:39:614 GameCard/(3342:3370): Entro segundo IF
-[INFO] 17:18:39:614 GameCard/(3342:3370): Guardando el bitarray
-[INFO] 17:18:39:614 GameCard/(3342:3370): Termino el guardado
-[INFO] 17:18:39:614 GameCard/(3342:3370): EL block 1 esta libre
-[INFO] 17:18:39:614 GameCard/(3342:3370): EL block 1 esta libre, vuelvo a chequear
-[INFO] 17:18:39:614 GameCard/(3342:3370): El block libre seleccionado es: 1
-[INFO] 17:18:39:614 GameCard/(3342:3370): La ruta del block es: /home/utnso/Escritorio/tall-grass/Blocks/1.bin
-[INFO] 17:18:39:614 GameCard/(3342:3370): Iterando la lista
-[INFO] 17:18:39:614 GameCard/(3342:3370): Entro a buscar posiciones
-[INFO] 17:18:39:614 GameCard/(3342:3370): Bloqueo
-[INFO] 17:18:39:614 GameCard/(3342:3370): EL valor de i es de : 0
-[INFO] 17:18:39:614 GameCard/(3342:3370): EL valor de cant de bloques es de : 1024
-[INFO] 17:18:39:614 GameCard/(3342:3370): EL valor de i es de : 0
-[INFO] 17:18:39:614 GameCard/(3342:3370): EL valor de cant de bloques es de : 1024
-[INFO] 17:18:39:614 GameCard/(3342:3370): Entro primer IF
-[INFO] 17:18:39:614 GameCard/(3342:3370): EL valor FINAL de i es de : 0
-[INFO] 17:18:39:614 GameCard/(3342:3370): EL valor FINAL de cant de bloques es de : 1024
-[INFO] 17:18:39:614 GameCard/(3342:3370): EL valor de i es de : 1
-[INFO] 17:18:39:614 GameCard/(3342:3370): EL valor de cant de bloques es de : 1024
-[INFO] 17:18:39:614 GameCard/(3342:3370): Entro primer IF
-[INFO] 17:18:39:614 GameCard/(3342:3370): EL valor FINAL de i es de : 1
-[INFO] 17:18:39:614 GameCard/(3342:3370): EL valor FINAL de cant de bloques es de : 1024
-[INFO] 17:18:39:614 GameCard/(3342:3370): EL valor de i es de : 2
-[INFO] 17:18:39:614 GameCard/(3342:3370): EL valor de cant de bloques es de : 1024
-[INFO] 17:18:39:614 GameCard/(3342:3370): Entro primer IF
-[INFO] 17:18:39:614 GameCard/(3342:3370): Entro segundo IF
-[INFO] 17:18:39:614 GameCard/(3342:3370): Guardando el bitarray
-[INFO] 17:18:39:614 GameCard/(3342:3370): Termino el guardado
-[INFO] 17:18:39:614 GameCard/(3342:3370): EL block 2 esta libre
-[INFO] 17:18:39:614 GameCard/(3342:3370): EL block 2 esta libre, vuelvo a chequear
-[INFO] 17:18:39:614 GameCard/(3342:3370): El block libre seleccionado FUNCION ESCRIBIR_REGISTRO es: 1
-[INFO] 17:18:39:614 GameCard/(3342:3370): La ruta del block FUNCION ESCRIBIR_REGISTRO es: /home/utnso/Escritorio/tall-grass/Blocks/2.bin
-[INFO] 17:18:39:614 GameCard/(3342:3370): El ID de mensaje cargado en el appeared es: 8
-[INFO] 17:18:39:614 GameCard/(3342:3370): El pokemoncargado en el appeared es: charmander
-[INFO] 17:18:39:614 GameCard/(3342:3370): El tamanio del nombre del pokemon cargado en el appeared es: 11
-[INFO] 17:18:39:614 GameCard/(3342:3370): La coordenada del pokemon cargado en el appeared es: 129 - 547
-[INFO] 17:18:41:207 GameCard/(3342:3347): Iniciando verificacion de conexion con BROKER...
-[ERROR] 17:18:41:208 GameCard/(3342:3347): Reconexion con BROKER fallida, intentando nuevamente en 10 segundos
-[INFO] 17:18:44:580 GameCard/(3342:3356): El ID cargado es 1
-[INFO] 17:18:44:580 GameCard/(3342:3356): Tamanio nombre pokemon 8
-[INFO] 17:18:44:580 GameCard/(3342:3356): Nombre pokemon pikachu
-[INFO] 17:18:44:580 GameCard/(3342:3356): Posicion X 1
-[INFO] 17:18:44:580 GameCard/(3342:3356): Posicion Y 9
-[INFO] 17:18:44:580 GameCard/(3342:3356): Creando paquete
-[INFO] 17:18:44:580 GameCard/(3342:3356): CODIGO DE OPERACION: 2
-[INFO] 17:18:44:580 GameCard/(3342:3356): Paquete Creado
-[INFO] 17:18:44:580 GameCard/(3342:3356): la operacion a realizar es 2
-[INFO] 17:18:44:580 GameCard/(3342:3356): Serializando...
-[INFO] 17:18:44:580 GameCard/(3342:3356): Serializacion completa
-[INFO] 17:18:44:580 GameCard/(3342:3356): El peso total es: 24
-[ERROR] 17:18:44:580 GameCard/(3342:3356): Error: No se pudo enviar el mensaje
-[INFO] 17:18:44:581 GameCard/(3342:3358): El ID cargado es 2
-[INFO] 17:18:44:581 GameCard/(3342:3358): Tamanio nombre pokemon 11
-[INFO] 17:18:44:581 GameCard/(3342:3358): Nombre pokemon charmander
-[INFO] 17:18:44:581 GameCard/(3342:3358): Posicion X 4
-[INFO] 17:18:44:581 GameCard/(3342:3358): Posicion Y 1
-[INFO] 17:18:44:581 GameCard/(3342:3358): Creando paquete
-[INFO] 17:18:44:581 GameCard/(3342:3358): CODIGO DE OPERACION: 2
-[INFO] 17:18:44:581 GameCard/(3342:3358): Paquete Creado
-[INFO] 17:18:44:581 GameCard/(3342:3358): la operacion a realizar es 2
-[INFO] 17:18:44:581 GameCard/(3342:3358): Serializando...
-[INFO] 17:18:44:582 GameCard/(3342:3358): Serializacion completa
-[INFO] 17:18:44:582 GameCard/(3342:3358): El peso total es: 27
-[ERROR] 17:18:44:582 GameCard/(3342:3358): Error: No se pudo enviar el mensaje
-[INFO] 17:18:44:592 GameCard/(3342:3360): El ID cargado es 3
-[INFO] 17:18:44:592 GameCard/(3342:3360): Tamanio nombre pokemon 11
-[INFO] 17:18:44:592 GameCard/(3342:3360): Nombre pokemon charmander
-[INFO] 17:18:44:592 GameCard/(3342:3360): Posicion X 517
-[INFO] 17:18:44:592 GameCard/(3342:3360): Posicion Y 2046
-[INFO] 17:18:44:592 GameCard/(3342:3360): Creando paquete
-[INFO] 17:18:44:592 GameCard/(3342:3360): CODIGO DE OPERACION: 2
-[INFO] 17:18:44:592 GameCard/(3342:3360): Paquete Creado
-[INFO] 17:18:44:592 GameCard/(3342:3360): la operacion a realizar es 2
-[INFO] 17:18:44:592 GameCard/(3342:3360): Serializando...
-[INFO] 17:18:44:592 GameCard/(3342:3360): Serializacion completa
-[INFO] 17:18:44:592 GameCard/(3342:3360): El peso total es: 27
-[ERROR] 17:18:44:592 GameCard/(3342:3360): Error: No se pudo enviar el mensaje
-[INFO] 17:18:44:598 GameCard/(3342:3362): El ID cargado es 4
-[INFO] 17:18:44:598 GameCard/(3342:3362): Tamanio nombre pokemon 11
-[INFO] 17:18:44:598 GameCard/(3342:3362): Nombre pokemon charmander
-[INFO] 17:18:44:598 GameCard/(3342:3362): Posicion X 413
-[INFO] 17:18:44:598 GameCard/(3342:3362): Posicion Y 17
-[INFO] 17:18:44:598 GameCard/(3342:3362): Creando paquete
-[INFO] 17:18:44:598 GameCard/(3342:3362): CODIGO DE OPERACION: 2
-[INFO] 17:18:44:598 GameCard/(3342:3362): Paquete Creado
-[INFO] 17:18:44:598 GameCard/(3342:3362): la operacion a realizar es 2
-[INFO] 17:18:44:598 GameCard/(3342:3362): Serializando...
-[INFO] 17:18:44:598 GameCard/(3342:3362): Serializacion completa
-[INFO] 17:18:44:598 GameCard/(3342:3362): El peso total es: 27
-[ERROR] 17:18:44:598 GameCard/(3342:3362): Error: No se pudo enviar el mensaje
-[INFO] 17:18:44:605 GameCard/(3342:3364): El ID cargado es 5
-[INFO] 17:18:44:605 GameCard/(3342:3364): Tamanio nombre pokemon 11
-[INFO] 17:18:44:605 GameCard/(3342:3364): Nombre pokemon charmander
-[INFO] 17:18:44:605 GameCard/(3342:3364): Posicion X 723
-[INFO] 17:18:44:605 GameCard/(3342:3364): Posicion Y 97
-[INFO] 17:18:44:605 GameCard/(3342:3364): Creando paquete
-[INFO] 17:18:44:605 GameCard/(3342:3364): CODIGO DE OPERACION: 2
-[INFO] 17:18:44:605 GameCard/(3342:3364): Paquete Creado
-[INFO] 17:18:44:605 GameCard/(3342:3364): la operacion a realizar es 2
-[INFO] 17:18:44:605 GameCard/(3342:3364): Serializando...
-[INFO] 17:18:44:605 GameCard/(3342:3364): Serializacion completa
-[INFO] 17:18:44:605 GameCard/(3342:3364): El peso total es: 27
-[ERROR] 17:18:44:605 GameCard/(3342:3364): Error: No se pudo enviar el mensaje
-[INFO] 17:18:44:612 GameCard/(3342:3366): El ID cargado es 6
-[INFO] 17:18:44:612 GameCard/(3342:3366): Tamanio nombre pokemon 11
-[INFO] 17:18:44:612 GameCard/(3342:3366): Nombre pokemon charmander
-[INFO] 17:18:44:612 GameCard/(3342:3366): Posicion X 65
-[INFO] 17:18:44:612 GameCard/(3342:3366): Posicion Y 93
-[INFO] 17:18:44:612 GameCard/(3342:3366): Creando paquete
-[INFO] 17:18:44:612 GameCard/(3342:3366): CODIGO DE OPERACION: 2
-[INFO] 17:18:44:612 GameCard/(3342:3366): Paquete Creado
-[INFO] 17:18:44:612 GameCard/(3342:3366): la operacion a realizar es 2
-[INFO] 17:18:44:612 GameCard/(3342:3366): Serializando...
-[INFO] 17:18:44:612 GameCard/(3342:3366): Serializacion completa
-[INFO] 17:18:44:612 GameCard/(3342:3366): El peso total es: 27
-[ERROR] 17:18:44:612 GameCard/(3342:3366): Error: No se pudo enviar el mensaje
-[INFO] 17:18:44:612 GameCard/(3342:3368): El ID cargado es 7
-[INFO] 17:18:44:612 GameCard/(3342:3368): Tamanio nombre pokemon 11
-[INFO] 17:18:44:612 GameCard/(3342:3368): Nombre pokemon charmander
-[INFO] 17:18:44:612 GameCard/(3342:3368): Posicion X 12
-[INFO] 17:18:44:612 GameCard/(3342:3368): Posicion Y 17
-[INFO] 17:18:44:612 GameCard/(3342:3368): Creando paquete
-[INFO] 17:18:44:613 GameCard/(3342:3368): CODIGO DE OPERACION: 2
-[INFO] 17:18:44:613 GameCard/(3342:3368): Paquete Creado
-[INFO] 17:18:44:613 GameCard/(3342:3368): la operacion a realizar es 2
-[INFO] 17:18:44:613 GameCard/(3342:3368): Serializando...
-[INFO] 17:18:44:613 GameCard/(3342:3368): Serializacion completa
-[INFO] 17:18:44:613 GameCard/(3342:3368): El peso total es: 27
-[ERROR] 17:18:44:613 GameCard/(3342:3368): Error: No se pudo enviar el mensaje
-[INFO] 17:18:44:615 GameCard/(3342:3370): El ID cargado es 8
-[INFO] 17:18:44:615 GameCard/(3342:3370): Tamanio nombre pokemon 11
-[INFO] 17:18:44:615 GameCard/(3342:3370): Nombre pokemon charmander
-[INFO] 17:18:44:615 GameCard/(3342:3370): Posicion X 129
-[INFO] 17:18:44:615 GameCard/(3342:3370): Posicion Y 547
-[INFO] 17:18:44:615 GameCard/(3342:3370): Creando paquete
-[INFO] 17:18:44:615 GameCard/(3342:3370): CODIGO DE OPERACION: 2
-[INFO] 17:18:44:615 GameCard/(3342:3370): Paquete Creado
-[INFO] 17:18:44:615 GameCard/(3342:3370): la operacion a realizar es 2
-[INFO] 17:18:44:615 GameCard/(3342:3370): Serializando...
-[INFO] 17:18:44:615 GameCard/(3342:3370): Serializacion completa
-[INFO] 17:18:44:615 GameCard/(3342:3370): El peso total es: 27
-[ERROR] 17:18:44:615 GameCard/(3342:3370): Error: No se pudo enviar el mensaje
-[INFO] 17:18:51:208 GameCard/(3342:3347): Iniciando verificacion de conexion con BROKER...
-[ERROR] 17:18:51:209 GameCard/(3342:3347): Reconexion con BROKER fallida, intentando nuevamente en 10 segundos
-[INFO] 17:19:01:210 GameCard/(3342:3347): Iniciando verificacion de conexion con BROKER...
-[ERROR] 17:19:01:210 GameCard/(3342:3347): Reconexion con BROKER fallida, intentando nuevamente en 10 segundos
-[INFO] 17:19:03:968 GameCard/(3342:3343): Socket 15 de gameBoy aceptado
-[INFO] 17:19:03:969 GameCard/(3342:3376): Recibiendo codigo de operacion de GameBoy en socket 15
-[INFO] 17:19:03:969 GameCard/(3342:3376): Codigo de operacion de socket 15 recibido: 3
-[INFO] 17:19:03:969 GameCard/(3342:3376): Procesando request de GameBoy
-[INFO] 17:19:03:969 GameCard/(3342:3376): Codigo de operacion recibido del socket cliente 15 corresponde a un CATCH
-[INFO] 17:19:03:969 GameCard/(3342:3376): Recibiendo tamanio total
-[INFO] 17:19:03:969 GameCard/(3342:3376): Tamanio total recibido: 27
-[INFO] 17:19:03:969 GameCard/(3342:3376): EL ID recibido: 1
-[INFO] 17:19:03:969 GameCard/(3342:3376): Tamanio del pokemon: 11
-[INFO] 17:19:03:969 GameCard/(3342:3376): Nombre del pokemon recibido: Charmander
-[INFO] 17:19:03:969 GameCard/(3342:3376): Posicion X recibida: 413
-[INFO] 17:19:03:969 GameCard/(3342:3376): Posicion Y recibida: 17
-[INFO] 17:19:03:969 GameCard/(3342:3376): CATCH recibido del modulo Game Boy socket 15
-[INFO] 17:19:03:969 GameCard/(3342:3376): La coordenada generada es: 413-17
-[INFO] 17:19:03:969 GameCard/(3342:3376): EL array de blocks es: 1
-[INFO] 17:19:03:969 GameCard/(3342:3376): Retorno el estado: N
-[INFO] 17:19:03:969 GameCard/(3342:3376): Generando los paths de los bloques
-[INFO] 17:19:03:969 GameCard/(3342:3376): Se genera la ruta para: 1
-[INFO] 17:19:03:969 GameCard/(3342:3376): El path del block es: /home/utnso/Escritorio/tall-grass/Blocks/1.bin
-[INFO] 17:19:03:969 GameCard/(3342:3376): Se genera la ruta para: 2
-[INFO] 17:19:03:969 GameCard/(3342:3376): El path del block es: /home/utnso/Escritorio/tall-grass/Blocks/2.bin
-[INFO] 17:19:03:969 GameCard/(3342:3376): Ultimo bloque
-[INFO] 17:19:03:969 GameCard/(3342:3376): Devolviendo el char**
-[INFO] 17:19:03:970 GameCard/(3342:3376): EL FLAG DEL CATCH ES: 1
-[INFO] 17:19:03:970 GameCard/(3342:3376): El registro aplanado quedo como: 4-1=101
-
-[INFO] 17:19:03:970 GameCard/(3342:3376): El registro aplanado quedo como: 517-2046=15
-
-[INFO] 17:19:03:970 GameCard/(3342:3376): El registro aplanado quedo como: 723-97=29
-
-[INFO] 17:19:03:970 GameCard/(3342:3376): El registro aplanado quedo como: 65-93=3001
-
-[INFO] 17:19:03:970 GameCard/(3342:3376): El registro aplanado quedo como: 12-17=34
-
-[INFO] 17:19:03:970 GameCard/(3342:3376): El registro aplanado quedo como: 129-547=11
-
-[INFO] 17:19:03:970 GameCard/(3342:3376): Vaciando blocks
-[INFO] 17:19:03:970 GameCard/(3342:3376): El valor del block 1 es de: 1
-[INFO] 17:19:03:970 GameCard/(3342:3376): El block 1 fue desmarcado con el valor de: 0
-[INFO] 17:19:03:970 GameCard/(3342:3376): Guardando el bitarray
-[INFO] 17:19:03:970 GameCard/(3342:3376): Termino el guardado
-[INFO] 17:19:03:970 GameCard/(3342:3376): El valor del block 2 es de: 1
-[INFO] 17:19:03:970 GameCard/(3342:3376): El block 2 fue desmarcado con el valor de: 0
-[INFO] 17:19:03:970 GameCard/(3342:3376): Guardando el bitarray
-[INFO] 17:19:03:970 GameCard/(3342:3376): Termino el guardado
-[INFO] 17:19:03:970 GameCard/(3342:3376): Entro a buscar posiciones
-[INFO] 17:19:03:970 GameCard/(3342:3376): Bloqueo
-[INFO] 17:19:03:970 GameCard/(3342:3376): EL valor de i es de : 0
-[INFO] 17:19:03:970 GameCard/(3342:3376): EL valor de cant de bloques es de : 1024
-[INFO] 17:19:03:970 GameCard/(3342:3376): EL valor de i es de : 0
-[INFO] 17:19:03:970 GameCard/(3342:3376): EL valor de cant de bloques es de : 1024
-[INFO] 17:19:03:970 GameCard/(3342:3376): Entro primer IF
-[INFO] 17:19:03:970 GameCard/(3342:3376): EL valor FINAL de i es de : 0
-[INFO] 17:19:03:970 GameCard/(3342:3376): EL valor FINAL de cant de bloques es de : 1024
-[INFO] 17:19:03:970 GameCard/(3342:3376): EL valor de i es de : 1
-[INFO] 17:19:03:970 GameCard/(3342:3376): EL valor de cant de bloques es de : 1024
-[INFO] 17:19:03:970 GameCard/(3342:3376): Entro primer IF
-[INFO] 17:19:03:970 GameCard/(3342:3376): Entro segundo IF
-[INFO] 17:19:03:970 GameCard/(3342:3376): Guardando el bitarray
-[INFO] 17:19:03:970 GameCard/(3342:3376): Termino el guardado
-[INFO] 17:19:03:970 GameCard/(3342:3376): EL block 1 esta libre
-[INFO] 17:19:03:970 GameCard/(3342:3376): EL block 1 esta libre, vuelvo a chequear
-[INFO] 17:19:03:970 GameCard/(3342:3376): El block libre seleccionado es: 1
-[INFO] 17:19:03:970 GameCard/(3342:3376): La ruta del block es: /home/utnso/Escritorio/tall-grass/Blocks/1.bin
-[INFO] 17:19:03:970 GameCard/(3342:3376): Iterando la lista
-[INFO] 17:19:03:971 GameCard/(3342:3376): El ID de mensaje cargado en el caught es: 1
-[INFO] 17:19:03:971 GameCard/(3342:3376): El Flag cargado en el caught es: 1
-[INFO] 17:19:08:972 GameCard/(3342:3376): El ID cargado es 1
-[INFO] 17:19:08:972 GameCard/(3342:3376): El flag cargado es 1
-[INFO] 17:19:08:972 GameCard/(3342:3376): Creando paquete
-[INFO] 17:19:08:972 GameCard/(3342:3376): CODIGO DE OPERACION: 4
-[INFO] 17:19:08:972 GameCard/(3342:3376): Paquete Creado
-[INFO] 17:19:08:972 GameCard/(3342:3376): la operacion a realizar es 4
-[INFO] 17:19:08:972 GameCard/(3342:3376): Serializando...
-[INFO] 17:19:08:972 GameCard/(3342:3376): Serializacion completa
-[INFO] 17:19:08:972 GameCard/(3342:3376): El peso total es: 8
-[ERROR] 17:19:08:972 GameCard/(3342:3376): Error: No se pudo enviar el mensaje
-[INFO] 17:19:11:211 GameCard/(3342:3347): Iniciando verificacion de conexion con BROKER...
-[ERROR] 17:19:11:212 GameCard/(3342:3347): Reconexion con BROKER fallida, intentando nuevamente en 10 segundos
-[INFO] 17:19:21:212 GameCard/(3342:3347): Iniciando verificacion de conexion con BROKER...
-[ERROR] 17:19:21:213 GameCard/(3342:3347): Reconexion con BROKER fallida, intentando nuevamente en 10 segundos
-[INFO] 17:19:31:213 GameCard/(3342:3347): Iniciando verificacion de conexion con BROKER...
-[ERROR] 17:19:31:213 GameCard/(3342:3347): Reconexion con BROKER fallida, intentando nuevamente en 10 segundos
-[INFO] 17:19:41:214 GameCard/(3342:3347): Iniciando verificacion de conexion con BROKER...
-[ERROR] 17:19:41:214 GameCard/(3342:3347): Reconexion con BROKER fallida, intentando nuevamente en 10 segundos
+[INFO] 17:22:00:697 GameCard/(4290:4290): logger iniciado.
+[INFO] 17:22:00:697 GameCard/(4290:4290): logger de catedra iniciado.
+[INFO] 17:22:00:697 GameCard/(4290:4290): Config cargada.
+[INFO] 17:22:00:697 GameCard/(4290:4290): La IP del Broker: 127.0.0.1
+[INFO] 17:22:00:697 GameCard/(4290:4290): El Puerto es: 4444
+[INFO] 17:22:00:698 GameCard/(4290:4290): El tiempo de reintento de conexion es: 10
+[INFO] 17:22:00:698 GameCard/(4290:4290): El tiempo de reintento de operacion es: 5
+[INFO] 17:22:00:698 GameCard/(4290:4290): El tiempo de retardo de conexion es: 5
+[INFO] 17:22:00:698 GameCard/(4290:4290): El punto de montaje es: /home/utnso/Escritorio/tall-grass
+[INFO] 17:22:00:698 GameCard/(4290:4290): La IP es: 127.0.0.1
+[INFO] 17:22:00:698 GameCard/(4290:4290): El puerto es: 4447
+[INFO] 17:22:00:698 GameCard/(4290:4290): El id del modulo es 465914445
+[INFO] 17:22:00:698 GameCard/(4290:4290): El punto de montaje es: /home/utnso/Escritorio/tall-grass
+[INFO] 17:22:00:698 GameCard/(4290:4290): La ruta del metadataes: /home/utnso/Escritorio/tall-grass/Metadata
+[INFO] 17:22:00:698 GameCard/(4290:4290): Se creo el config de MetaData
+[INFO] 17:22:00:698 GameCard/(4290:4290): El Block Size es: 64
+[INFO] 17:22:00:698 GameCard/(4290:4290): La cantidad de Bloques es: 1024
+[INFO] 17:22:00:698 GameCard/(4290:4290): El Magic Number es: TALL_GRASS
+[INFO] 17:22:00:698 GameCard/(4290:4290): Ya existe el directorioo: /home/utnso/Escritorio/tall-grass/Metadata
+[INFO] 17:22:00:698 GameCard/(4290:4290): Se creo el directorio Files ubicado en: /home/utnso/Escritorio/tall-grass/Files
+[INFO] 17:22:00:698 GameCard/(4290:4290): Creando directorio FILES
+[INFO] 17:22:00:700 GameCard/(4290:4290): Se creo el directorio: Files
+[INFO] 17:22:00:700 GameCard/(4290:4290): Se creo el archivo METADATA de Files
+[INFO] 17:22:00:700 GameCard/(4290:4290): Se completo el tamplate de directorio File
+[INFO] 17:22:00:700 GameCard/(4290:4290): Se creo el directorio: Blocks
+[INFO] 17:22:00:700 GameCard/(4290:4290): Se creo el directorio Blocks ubicado en: /home/utnso/Escritorio/tall-grass/Blocks
+[INFO] 17:22:00:701 GameCard/(4290:4290): SETEO DE VARIABLES PARA ARCHIVOSYDIRECTORIOS.H
+[INFO] 17:22:00:701 GameCard/(4290:4290): El ID de modulo es: 465914445
+[INFO] 17:22:00:701 GameCard/(4290:4295): Hilo de verificacion periodica de conexion con BROKER iniciado
+[INFO] 17:22:00:701 GameCard/(4290:4294): Escucho GET de BROKER
+[ERROR] 17:22:00:701 GameCard/(4290:4294): Hubo un problema enviando la suscripcion a la cola GET del broker
+[INFO] 17:22:00:701 GameCard/(4290:4293): Escucho CATCH de BROKER
+[ERROR] 17:22:00:702 GameCard/(4290:4293): Hubo un problema enviando la suscripcion a la cola CATCH del BROKER
+[INFO] 17:22:00:702 GameCard/(4290:4292): Escuchando NEW de BROKER
+[INFO] 17:22:00:702 GameCard/(4290:4292): Socket de NEW: -1
+[ERROR] 17:22:00:702 GameCard/(4290:4292): Hubo un problema enviando la suscripcion a la cola NEW del BROKER
+[INFO] 17:22:00:702 GameCard/(4290:4291): Esperando mensajes de game boy en socket 5
+[INFO] 17:22:08:506 GameCard/(4290:4291): Socket 7 de gameBoy aceptado
+[INFO] 17:22:08:522 GameCard/(4290:4300): Recibiendo codigo de operacion de GameBoy en socket 7
+[INFO] 17:22:08:522 GameCard/(4290:4300): Codigo de operacion de socket 7 recibido: 1
+[INFO] 17:22:08:522 GameCard/(4290:4300): Procesando request de GameBoy
+[INFO] 17:22:08:522 GameCard/(4290:4300): Codigo de operacion recibido del socket cliente 7 corresponde a un NEW
+[INFO] 17:22:08:522 GameCard/(4290:4300): Recibiendo tamanio total
+[INFO] 17:22:08:522 GameCard/(4290:4300): Tamanio total recibido: 28
+[INFO] 17:22:08:522 GameCard/(4290:4300): EL ID recibido: 9
+[INFO] 17:22:08:522 GameCard/(4290:4300): Tamanio del pokemon recibido: 8
+[INFO] 17:22:08:523 GameCard/(4290:4300): Nombre del pokemon recibido: Pikachu
+[INFO] 17:22:08:523 GameCard/(4290:4300): Posicion X recibida: 2
+[INFO] 17:22:08:523 GameCard/(4290:4300): Posicion Y recibida: 5
+[INFO] 17:22:08:523 GameCard/(4290:4300): Cantidad recibida: 10
+[INFO] 17:22:08:523 GameCard/(4290:4300): NEW recibido del modulo Game Boy socket 7
+[INFO] 17:22:08:523 GameCard/(4290:4300): Llegamo
+[INFO] 17:22:08:523 GameCard/(4290:4300): Pokemon: pikachu
+[INFO] 17:22:08:523 GameCard/(4290:4300): PosX: 2
+[INFO] 17:22:08:523 GameCard/(4290:4300): PosY: 5
+[INFO] 17:22:08:523 GameCard/(4290:4300): Cantidad: 10
+[INFO] 17:22:08:523 GameCard/(4290:4300): Ruta de Directorio: /home/utnso/Escritorio/tall-grass/Files/pikachu
+[INFO] 17:22:08:523 GameCard/(4290:4300): La coordenada generada es: 2-5
+[INFO] 17:22:08:523 GameCard/(4290:4300): La posicion que me llega es: 2-5
+[INFO] 17:22:08:523 GameCard/(4290:4300): El valor del KEY-VALUE cargado completamente es: 2-5=10
+[INFO] 17:22:08:523 GameCard/(4290:4300): La posicion del registro generado es: 2-5
+[INFO] 17:22:08:523 GameCard/(4290:4300): La cantidad del registro generado es: 10
+[INFO] 17:22:08:523 GameCard/(4290:4300): Se creo el directorio: pikachu
+[INFO] 17:22:08:523 GameCard/(4290:4300): Ruta del directorio pokemon pikachu es: /home/utnso/Escritorio/tall-grass/Files/pikachu
+[INFO] 17:22:08:523 GameCard/(4290:4300): Ruta del Archivo: /home/utnso/Escritorio/tall-grass/Files/pikachu/pikachu.bin
+[INFO] 17:22:08:523 GameCard/(4290:4300): Se creo el archivo config
+[INFO] 17:22:08:523 GameCard/(4290:4300): EL array de blocks es: (null)
+[INFO] 17:22:08:523 GameCard/(4290:4300): Retorno el estado: N
+[INFO] 17:22:08:524 GameCard/(4290:4300): No tiene blocks asignados. Primera vez
+[INFO] 17:22:08:524 GameCard/(4290:4300): El registro aplanado quedo como: 2-5=10
+
+[INFO] 17:22:08:524 GameCard/(4290:4300): Entro a buscar posiciones
+[INFO] 17:22:08:524 GameCard/(4290:4300): Bloqueo
+[INFO] 17:22:08:524 GameCard/(4290:4300): EL valor de i es de : 0
+[INFO] 17:22:08:524 GameCard/(4290:4300): EL valor de cant de bloques es de : 1024
+[INFO] 17:22:08:524 GameCard/(4290:4300): EL valor de i es de : 0
+[INFO] 17:22:08:524 GameCard/(4290:4300): EL valor de cant de bloques es de : 1024
+[INFO] 17:22:08:524 GameCard/(4290:4300): Entro primer IF
+[INFO] 17:22:08:524 GameCard/(4290:4300): Entro segundo IF
+[INFO] 17:22:08:524 GameCard/(4290:4300): Guardando el bitarray
+[INFO] 17:22:08:524 GameCard/(4290:4300): Termino el guardado
+[INFO] 17:22:08:524 GameCard/(4290:4300): EL block 0 esta libre
+[INFO] 17:22:08:524 GameCard/(4290:4300): EL block 0 esta libre, vuelvo a chequear
+[INFO] 17:22:08:524 GameCard/(4290:4300): El block libre seleccionado es: 0
+[INFO] 17:22:08:524 GameCard/(4290:4300): La ruta del block es: /home/utnso/Escritorio/tall-grass/Blocks/0.bin
+[INFO] 17:22:08:524 GameCard/(4290:4300): Iterando la lista
+[INFO] 17:22:08:525 GameCard/(4290:4300): El ID de mensaje cargado en el appeared es: 9
+[INFO] 17:22:08:525 GameCard/(4290:4300): El pokemoncargado en el appeared es: pikachu
+[INFO] 17:22:08:525 GameCard/(4290:4300): El tamanio del nombre del pokemon cargado en el appeared es: 8
+[INFO] 17:22:08:525 GameCard/(4290:4300): La coordenada del pokemon cargado en el appeared es: 2 - 5
+[INFO] 17:22:10:702 GameCard/(4290:4295): Iniciando verificacion de conexion con BROKER...
+[ERROR] 17:22:10:702 GameCard/(4290:4295): Reconexion con BROKER fallida, intentando nuevamente en 10 segundos
+[INFO] 17:22:13:526 GameCard/(4290:4300): El ID cargado es 9
+[INFO] 17:22:13:526 GameCard/(4290:4300): Tamanio nombre pokemon 8
+[INFO] 17:22:13:526 GameCard/(4290:4300): Nombre pokemon pikachu
+[INFO] 17:22:13:526 GameCard/(4290:4300): Posicion X 2
+[INFO] 17:22:13:526 GameCard/(4290:4300): Posicion Y 5
+[INFO] 17:22:13:526 GameCard/(4290:4300): Creando paquete
+[INFO] 17:22:13:526 GameCard/(4290:4300): CODIGO DE OPERACION: 2
+[INFO] 17:22:13:526 GameCard/(4290:4300): Paquete Creado
+[INFO] 17:22:13:526 GameCard/(4290:4300): la operacion a realizar es 2
+[INFO] 17:22:13:526 GameCard/(4290:4300): Serializando...
+[INFO] 17:22:13:526 GameCard/(4290:4300): Serializacion completa
+[INFO] 17:22:13:526 GameCard/(4290:4300): El peso total es: 24
+[ERROR] 17:22:13:526 GameCard/(4290:4300): Error: No se pudo enviar el mensaje
+[INFO] 17:22:18:209 GameCard/(4290:4291): Socket 8 de gameBoy aceptado
+[INFO] 17:22:18:210 GameCard/(4290:4308): Recibiendo codigo de operacion de GameBoy en socket 8
+[INFO] 17:22:18:210 GameCard/(4290:4308): Codigo de operacion de socket 8 recibido: 1
+[INFO] 17:22:18:210 GameCard/(4290:4308): Procesando request de GameBoy
+[INFO] 17:22:18:210 GameCard/(4290:4308): Codigo de operacion recibido del socket cliente 8 corresponde a un NEW
+[INFO] 17:22:18:210 GameCard/(4290:4308): Recibiendo tamanio total
+[INFO] 17:22:18:210 GameCard/(4290:4308): Tamanio total recibido: 28
+[INFO] 17:22:18:210 GameCard/(4290:4308): EL ID recibido: 1
+[INFO] 17:22:18:210 GameCard/(4290:4308): Tamanio del pokemon recibido: 8
+[INFO] 17:22:18:210 GameCard/(4290:4308): Nombre del pokemon recibido: Pikachu
+[INFO] 17:22:18:210 GameCard/(4290:4308): Posicion X recibida: 1
+[INFO] 17:22:18:210 GameCard/(4290:4308): Posicion Y recibida: 9
+[INFO] 17:22:18:210 GameCard/(4290:4308): Cantidad recibida: 3
+[INFO] 17:22:18:210 GameCard/(4290:4308): NEW recibido del modulo Game Boy socket 8
+[INFO] 17:22:18:210 GameCard/(4290:4308): Llegamo
+[INFO] 17:22:18:210 GameCard/(4290:4308): Pokemon: pikachu
+[INFO] 17:22:18:210 GameCard/(4290:4308): PosX: 1
+[INFO] 17:22:18:210 GameCard/(4290:4308): PosY: 9
+[INFO] 17:22:18:210 GameCard/(4290:4308): Cantidad: 3
+[INFO] 17:22:18:210 GameCard/(4290:4308): Ruta de Directorio: /home/utnso/Escritorio/tall-grass/Files/pikachu
+[INFO] 17:22:18:210 GameCard/(4290:4308): La coordenada generada es: 1-9
+[INFO] 17:22:18:210 GameCard/(4290:4308): La posicion que me llega es: 1-9
+[INFO] 17:22:18:210 GameCard/(4290:4308): El valor del KEY-VALUE cargado completamente es: 1-9=3
+[INFO] 17:22:18:210 GameCard/(4290:4308): La posicion del registro generado es: 1-9
+[INFO] 17:22:18:210 GameCard/(4290:4308): La cantidad del registro generado es: 3
+[INFO] 17:22:18:210 GameCard/(4290:4308): Ruta del directorio pokemon pikachu es: /home/utnso/Escritorio/tall-grass/Files/pikachu
+[INFO] 17:22:18:211 GameCard/(4290:4308): Ruta del Archivo: /home/utnso/Escritorio/tall-grass/Files/pikachu/pikachu.bin
+[INFO] 17:22:18:211 GameCard/(4290:4308): Se creo el archivo config
+[INFO] 17:22:18:211 GameCard/(4290:4308): EL array de blocks es: 0
+[INFO] 17:22:18:211 GameCard/(4290:4308): Retorno el estado: N
+[INFO] 17:22:18:211 GameCard/(4290:4308): Pokemon ya conocido
+[INFO] 17:22:18:211 GameCard/(4290:4308): Generando los paths de los bloques
+[INFO] 17:22:18:211 GameCard/(4290:4308): Unico bloque
+[INFO] 17:22:18:211 GameCard/(4290:4308): Se genera la ruta para: 0
+[INFO] 17:22:18:211 GameCard/(4290:4308): El path del block es: /home/utnso/Escritorio/tall-grass/Blocks/0.bin
+[INFO] 17:22:18:211 GameCard/(4290:4308): La posicion 0 del array de path es: /home/utnso/Escritorio/tall-grass/Blocks/0.bin
+[INFO] 17:22:18:211 GameCard/(4290:4308): La coordenada 1-9 es nueva. Se agrega al los registros
+[INFO] 17:22:18:213 GameCard/(4290:4291): Socket 7 de gameBoy aceptado
+[INFO] 17:22:18:214 GameCard/(4290:4308): El registro aplanado quedo como: 2-5=10
+
+[INFO] 17:22:18:214 GameCard/(4290:4308): El registro aplanado quedo como: 1-9=3
+
+[INFO] 17:22:18:214 GameCard/(4290:4308): Vaciando blocks
+[INFO] 17:22:18:214 GameCard/(4290:4308): El valor del block 0 es de: 1
+[INFO] 17:22:18:214 GameCard/(4290:4308): El block 0 fue desmarcado con el valor de: 0
+[INFO] 17:22:18:214 GameCard/(4290:4308): Guardando el bitarray
+[INFO] 17:22:18:214 GameCard/(4290:4308): Termino el guardado
+[INFO] 17:22:18:214 GameCard/(4290:4308): Entro a buscar posiciones
+[INFO] 17:22:18:214 GameCard/(4290:4308): Bloqueo
+[INFO] 17:22:18:214 GameCard/(4290:4308): EL valor de i es de : 0
+[INFO] 17:22:18:214 GameCard/(4290:4308): EL valor de cant de bloques es de : 1024
+[INFO] 17:22:18:214 GameCard/(4290:4308): EL valor de i es de : 0
+[INFO] 17:22:18:214 GameCard/(4290:4308): EL valor de cant de bloques es de : 1024
+[INFO] 17:22:18:214 GameCard/(4290:4308): Entro primer IF
+[INFO] 17:22:18:214 GameCard/(4290:4308): Entro segundo IF
+[INFO] 17:22:18:214 GameCard/(4290:4308): Guardando el bitarray
+[INFO] 17:22:18:214 GameCard/(4290:4308): Termino el guardado
+[INFO] 17:22:18:214 GameCard/(4290:4308): EL block 0 esta libre
+[INFO] 17:22:18:214 GameCard/(4290:4308): EL block 0 esta libre, vuelvo a chequear
+[INFO] 17:22:18:214 GameCard/(4290:4308): El block libre seleccionado es: 0
+[INFO] 17:22:18:214 GameCard/(4290:4308): La ruta del block es: /home/utnso/Escritorio/tall-grass/Blocks/0.bin
+[INFO] 17:22:18:214 GameCard/(4290:4308): Iterando la lista
+[INFO] 17:22:18:216 GameCard/(4290:4308): El ID de mensaje cargado en el appeared es: 1
+[INFO] 17:22:18:216 GameCard/(4290:4308): El pokemoncargado en el appeared es: pikachu
+[INFO] 17:22:18:216 GameCard/(4290:4308): El tamanio del nombre del pokemon cargado en el appeared es: 8
+[INFO] 17:22:18:216 GameCard/(4290:4308): La coordenada del pokemon cargado en el appeared es: 1 - 9
+[INFO] 17:22:18:216 GameCard/(4290:4310): Recibiendo codigo de operacion de GameBoy en socket 7
+[INFO] 17:22:18:216 GameCard/(4290:4310): Codigo de operacion de socket 7 recibido: 1
+[INFO] 17:22:18:217 GameCard/(4290:4310): Procesando request de GameBoy
+[INFO] 17:22:18:217 GameCard/(4290:4310): Codigo de operacion recibido del socket cliente 7 corresponde a un NEW
+[INFO] 17:22:18:217 GameCard/(4290:4310): Recibiendo tamanio total
+[INFO] 17:22:18:217 GameCard/(4290:4310): Tamanio total recibido: 31
+[INFO] 17:22:18:217 GameCard/(4290:4310): EL ID recibido: 2
+[INFO] 17:22:18:217 GameCard/(4290:4310): Tamanio del pokemon recibido: 11
+[INFO] 17:22:18:217 GameCard/(4290:4310): Nombre del pokemon recibido: Charmander
+[INFO] 17:22:18:217 GameCard/(4290:4310): Posicion X recibida: 4
+[INFO] 17:22:18:217 GameCard/(4290:4310): Posicion Y recibida: 1
+[INFO] 17:22:18:217 GameCard/(4290:4310): Cantidad recibida: 101
+[INFO] 17:22:18:217 GameCard/(4290:4310): NEW recibido del modulo Game Boy socket 7
+[INFO] 17:22:18:217 GameCard/(4290:4310): Llegamo
+[INFO] 17:22:18:217 GameCard/(4290:4310): Pokemon: charmander
+[INFO] 17:22:18:217 GameCard/(4290:4310): PosX: 4
+[INFO] 17:22:18:217 GameCard/(4290:4310): PosY: 1
+[INFO] 17:22:18:217 GameCard/(4290:4310): Cantidad: 101
+[INFO] 17:22:18:217 GameCard/(4290:4310): Ruta de Directorio: /home/utnso/Escritorio/tall-grass/Files/charmander
+[INFO] 17:22:18:217 GameCard/(4290:4310): La coordenada generada es: 4-1
+[INFO] 17:22:18:218 GameCard/(4290:4310): La posicion que me llega es: 4-1
+[INFO] 17:22:18:218 GameCard/(4290:4310): El valor del KEY-VALUE cargado completamente es: 4-1=101
+[INFO] 17:22:18:218 GameCard/(4290:4310): La posicion del registro generado es: 4-1
+[INFO] 17:22:18:218 GameCard/(4290:4310): La cantidad del registro generado es: 101
+[INFO] 17:22:18:218 GameCard/(4290:4310): Se creo el directorio: charmander
+[INFO] 17:22:18:219 GameCard/(4290:4310): Ruta del directorio pokemon charmander es: /home/utnso/Escritorio/tall-grass/Files/charmander
+[INFO] 17:22:18:219 GameCard/(4290:4310): Ruta del Archivo: /home/utnso/Escritorio/tall-grass/Files/charmander/charmander.bin
+[INFO] 17:22:18:219 GameCard/(4290:4310): Se creo el archivo config
+[INFO] 17:22:18:219 GameCard/(4290:4310): EL array de blocks es: (null)
+[INFO] 17:22:18:219 GameCard/(4290:4310): Retorno el estado: N
+[INFO] 17:22:18:219 GameCard/(4290:4310): No tiene blocks asignados. Primera vez
+[INFO] 17:22:18:219 GameCard/(4290:4310): El registro aplanado quedo como: 4-1=101
+
+[INFO] 17:22:18:219 GameCard/(4290:4310): Entro a buscar posiciones
+[INFO] 17:22:18:219 GameCard/(4290:4310): Bloqueo
+[INFO] 17:22:18:219 GameCard/(4290:4310): EL valor de i es de : 0
+[INFO] 17:22:18:219 GameCard/(4290:4310): EL valor de cant de bloques es de : 1024
+[INFO] 17:22:18:219 GameCard/(4290:4310): EL valor de i es de : 0
+[INFO] 17:22:18:219 GameCard/(4290:4310): EL valor de cant de bloques es de : 1024
+[INFO] 17:22:18:219 GameCard/(4290:4310): Entro primer IF
+[INFO] 17:22:18:219 GameCard/(4290:4310): EL valor FINAL de i es de : 0
+[INFO] 17:22:18:219 GameCard/(4290:4310): EL valor FINAL de cant de bloques es de : 1024
+[INFO] 17:22:18:219 GameCard/(4290:4310): EL valor de i es de : 1
+[INFO] 17:22:18:219 GameCard/(4290:4310): EL valor de cant de bloques es de : 1024
+[INFO] 17:22:18:219 GameCard/(4290:4310): Entro primer IF
+[INFO] 17:22:18:219 GameCard/(4290:4310): Entro segundo IF
+[INFO] 17:22:18:219 GameCard/(4290:4310): Guardando el bitarray
+[INFO] 17:22:18:219 GameCard/(4290:4310): Termino el guardado
+[INFO] 17:22:18:219 GameCard/(4290:4310): EL block 1 esta libre
+[INFO] 17:22:18:219 GameCard/(4290:4310): EL block 1 esta libre, vuelvo a chequear
+[INFO] 17:22:18:220 GameCard/(4290:4310): El block libre seleccionado es: 1
+[INFO] 17:22:18:220 GameCard/(4290:4310): La ruta del block es: /home/utnso/Escritorio/tall-grass/Blocks/1.bin
+[INFO] 17:22:18:220 GameCard/(4290:4310): Iterando la lista
+[INFO] 17:22:18:222 GameCard/(4290:4291): Socket 9 de gameBoy aceptado
+[INFO] 17:22:18:227 GameCard/(4290:4310): El ID de mensaje cargado en el appeared es: 2
+[INFO] 17:22:18:227 GameCard/(4290:4310): El pokemoncargado en el appeared es: charmander
+[INFO] 17:22:18:227 GameCard/(4290:4310): El tamanio del nombre del pokemon cargado en el appeared es: 11
+[INFO] 17:22:18:227 GameCard/(4290:4310): La coordenada del pokemon cargado en el appeared es: 4 - 1
+[INFO] 17:22:18:228 GameCard/(4290:4312): Recibiendo codigo de operacion de GameBoy en socket 9
+[INFO] 17:22:18:228 GameCard/(4290:4312): Codigo de operacion de socket 9 recibido: 1
+[INFO] 17:22:18:228 GameCard/(4290:4312): Procesando request de GameBoy
+[INFO] 17:22:18:228 GameCard/(4290:4312): Codigo de operacion recibido del socket cliente 9 corresponde a un NEW
+[INFO] 17:22:18:228 GameCard/(4290:4312): Recibiendo tamanio total
+[INFO] 17:22:18:228 GameCard/(4290:4312): Tamanio total recibido: 31
+[INFO] 17:22:18:228 GameCard/(4290:4312): EL ID recibido: 3
+[INFO] 17:22:18:228 GameCard/(4290:4312): Tamanio del pokemon recibido: 11
+[INFO] 17:22:18:228 GameCard/(4290:4312): Nombre del pokemon recibido: Charmander
+[INFO] 17:22:18:228 GameCard/(4290:4312): Posicion X recibida: 517
+[INFO] 17:22:18:228 GameCard/(4290:4312): Posicion Y recibida: 2046
+[INFO] 17:22:18:228 GameCard/(4290:4312): Cantidad recibida: 15
+[INFO] 17:22:18:228 GameCard/(4290:4312): NEW recibido del modulo Game Boy socket 9
+[INFO] 17:22:18:228 GameCard/(4290:4312): Llegamo
+[INFO] 17:22:18:228 GameCard/(4290:4312): Pokemon: charmander
+[INFO] 17:22:18:228 GameCard/(4290:4312): PosX: 517
+[INFO] 17:22:18:228 GameCard/(4290:4312): PosY: 2046
+[INFO] 17:22:18:228 GameCard/(4290:4312): Cantidad: 15
+[INFO] 17:22:18:228 GameCard/(4290:4312): Ruta de Directorio: /home/utnso/Escritorio/tall-grass/Files/charmander
+[INFO] 17:22:18:228 GameCard/(4290:4312): La coordenada generada es: 517-2046
+[INFO] 17:22:18:228 GameCard/(4290:4312): La posicion que me llega es: 517-2046
+[INFO] 17:22:18:228 GameCard/(4290:4312): El valor del KEY-VALUE cargado completamente es: 517-2046=15
+[INFO] 17:22:18:228 GameCard/(4290:4312): La posicion del registro generado es: 517-2046
+[INFO] 17:22:18:228 GameCard/(4290:4312): La cantidad del registro generado es: 15
+[INFO] 17:22:18:228 GameCard/(4290:4312): Ruta del directorio pokemon charmander es: /home/utnso/Escritorio/tall-grass/Files/charmander
+[INFO] 17:22:18:228 GameCard/(4290:4312): Ruta del Archivo: /home/utnso/Escritorio/tall-grass/Files/charmander/charmander.bin
+[INFO] 17:22:18:229 GameCard/(4290:4312): Se creo el archivo config
+[INFO] 17:22:18:229 GameCard/(4290:4312): EL array de blocks es: 1
+[INFO] 17:22:18:229 GameCard/(4290:4312): Retorno el estado: N
+[INFO] 17:22:18:229 GameCard/(4290:4312): Pokemon ya conocido
+[INFO] 17:22:18:229 GameCard/(4290:4312): Generando los paths de los bloques
+[INFO] 17:22:18:229 GameCard/(4290:4312): Unico bloque
+[INFO] 17:22:18:229 GameCard/(4290:4312): Se genera la ruta para: 1
+[INFO] 17:22:18:229 GameCard/(4290:4312): El path del block es: /home/utnso/Escritorio/tall-grass/Blocks/1.bin
+[INFO] 17:22:18:229 GameCard/(4290:4312): La posicion 0 del array de path es: /home/utnso/Escritorio/tall-grass/Blocks/1.bin
+[INFO] 17:22:18:229 GameCard/(4290:4312): La coordenada 517-2046 es nueva. Se agrega al los registros
+[INFO] 17:22:18:230 GameCard/(4290:4312): El registro aplanado quedo como: 4-1=101
+
+[INFO] 17:22:18:230 GameCard/(4290:4312): El registro aplanado quedo como: 517-2046=15
+
+[INFO] 17:22:18:230 GameCard/(4290:4312): Vaciando blocks
+[INFO] 17:22:18:230 GameCard/(4290:4312): El valor del block 1 es de: 1
+[INFO] 17:22:18:230 GameCard/(4290:4312): El block 1 fue desmarcado con el valor de: 0
+[INFO] 17:22:18:230 GameCard/(4290:4312): Guardando el bitarray
+[INFO] 17:22:18:230 GameCard/(4290:4312): Termino el guardado
+[INFO] 17:22:18:230 GameCard/(4290:4312): Entro a buscar posiciones
+[INFO] 17:22:18:230 GameCard/(4290:4312): Bloqueo
+[INFO] 17:22:18:230 GameCard/(4290:4312): EL valor de i es de : 0
+[INFO] 17:22:18:230 GameCard/(4290:4312): EL valor de cant de bloques es de : 1024
+[INFO] 17:22:18:230 GameCard/(4290:4312): EL valor de i es de : 0
+[INFO] 17:22:18:230 GameCard/(4290:4312): EL valor de cant de bloques es de : 1024
+[INFO] 17:22:18:230 GameCard/(4290:4312): Entro primer IF
+[INFO] 17:22:18:230 GameCard/(4290:4312): EL valor FINAL de i es de : 0
+[INFO] 17:22:18:230 GameCard/(4290:4312): EL valor FINAL de cant de bloques es de : 1024
+[INFO] 17:22:18:230 GameCard/(4290:4312): EL valor de i es de : 1
+[INFO] 17:22:18:230 GameCard/(4290:4312): EL valor de cant de bloques es de : 1024
+[INFO] 17:22:18:230 GameCard/(4290:4312): Entro primer IF
+[INFO] 17:22:18:230 GameCard/(4290:4312): Entro segundo IF
+[INFO] 17:22:18:230 GameCard/(4290:4312): Guardando el bitarray
+[INFO] 17:22:18:230 GameCard/(4290:4312): Termino el guardado
+[INFO] 17:22:18:230 GameCard/(4290:4312): EL block 1 esta libre
+[INFO] 17:22:18:230 GameCard/(4290:4312): EL block 1 esta libre, vuelvo a chequear
+[INFO] 17:22:18:230 GameCard/(4290:4312): El block libre seleccionado es: 1
+[INFO] 17:22:18:230 GameCard/(4290:4312): La ruta del block es: /home/utnso/Escritorio/tall-grass/Blocks/1.bin
+[INFO] 17:22:18:230 GameCard/(4290:4312): Iterando la lista
+[INFO] 17:22:18:233 GameCard/(4290:4291): Socket 10 de gameBoy aceptado
+[INFO] 17:22:18:233 GameCard/(4290:4312): El ID de mensaje cargado en el appeared es: 3
+[INFO] 17:22:18:233 GameCard/(4290:4312): El pokemoncargado en el appeared es: charmander
+[INFO] 17:22:18:234 GameCard/(4290:4312): El tamanio del nombre del pokemon cargado en el appeared es: 11
+[INFO] 17:22:18:234 GameCard/(4290:4312): La coordenada del pokemon cargado en el appeared es: 517 - 2046
+[INFO] 17:22:18:234 GameCard/(4290:4314): Recibiendo codigo de operacion de GameBoy en socket 10
+[INFO] 17:22:18:234 GameCard/(4290:4314): Codigo de operacion de socket 10 recibido: 1
+[INFO] 17:22:18:234 GameCard/(4290:4314): Procesando request de GameBoy
+[INFO] 17:22:18:234 GameCard/(4290:4314): Codigo de operacion recibido del socket cliente 10 corresponde a un NEW
+[INFO] 17:22:18:235 GameCard/(4290:4314): Recibiendo tamanio total
+[INFO] 17:22:18:235 GameCard/(4290:4314): Tamanio total recibido: 31
+[INFO] 17:22:18:235 GameCard/(4290:4314): EL ID recibido: 4
+[INFO] 17:22:18:235 GameCard/(4290:4314): Tamanio del pokemon recibido: 11
+[INFO] 17:22:18:235 GameCard/(4290:4314): Nombre del pokemon recibido: Charmander
+[INFO] 17:22:18:235 GameCard/(4290:4314): Posicion X recibida: 413
+[INFO] 17:22:18:235 GameCard/(4290:4314): Posicion Y recibida: 17
+[INFO] 17:22:18:235 GameCard/(4290:4314): Cantidad recibida: 1
+[INFO] 17:22:18:235 GameCard/(4290:4314): NEW recibido del modulo Game Boy socket 10
+[INFO] 17:22:18:235 GameCard/(4290:4314): Llegamo
+[INFO] 17:22:18:235 GameCard/(4290:4314): Pokemon: charmander
+[INFO] 17:22:18:235 GameCard/(4290:4314): PosX: 413
+[INFO] 17:22:18:235 GameCard/(4290:4314): PosY: 17
+[INFO] 17:22:18:235 GameCard/(4290:4314): Cantidad: 1
+[INFO] 17:22:18:235 GameCard/(4290:4314): Ruta de Directorio: /home/utnso/Escritorio/tall-grass/Files/charmander
+[INFO] 17:22:18:235 GameCard/(4290:4314): La coordenada generada es: 413-17
+[INFO] 17:22:18:235 GameCard/(4290:4314): La posicion que me llega es: 413-17
+[INFO] 17:22:18:235 GameCard/(4290:4314): El valor del KEY-VALUE cargado completamente es: 413-17=1
+[INFO] 17:22:18:235 GameCard/(4290:4314): La posicion del registro generado es: 413-17
+[INFO] 17:22:18:235 GameCard/(4290:4314): La cantidad del registro generado es: 1
+[INFO] 17:22:18:235 GameCard/(4290:4314): Ruta del directorio pokemon charmander es: /home/utnso/Escritorio/tall-grass/Files/charmander
+[INFO] 17:22:18:235 GameCard/(4290:4314): Ruta del Archivo: /home/utnso/Escritorio/tall-grass/Files/charmander/charmander.bin
+[INFO] 17:22:18:235 GameCard/(4290:4314): Se creo el archivo config
+[INFO] 17:22:18:235 GameCard/(4290:4314): EL array de blocks es: 1
+[INFO] 17:22:18:235 GameCard/(4290:4314): Retorno el estado: N
+[INFO] 17:22:18:235 GameCard/(4290:4314): Pokemon ya conocido
+[INFO] 17:22:18:235 GameCard/(4290:4314): Generando los paths de los bloques
+[INFO] 17:22:18:235 GameCard/(4290:4314): Unico bloque
+[INFO] 17:22:18:235 GameCard/(4290:4314): Se genera la ruta para: 1
+[INFO] 17:22:18:235 GameCard/(4290:4314): El path del block es: /home/utnso/Escritorio/tall-grass/Blocks/1.bin
+[INFO] 17:22:18:235 GameCard/(4290:4314): La posicion 0 del array de path es: /home/utnso/Escritorio/tall-grass/Blocks/1.bin
+[INFO] 17:22:18:235 GameCard/(4290:4314): La coordenada 413-17 es nueva. Se agrega al los registros
+[INFO] 17:22:18:235 GameCard/(4290:4314): El registro aplanado quedo como: 4-1=101
+
+[INFO] 17:22:18:235 GameCard/(4290:4314): El registro aplanado quedo como: 517-2046=15
+
+[INFO] 17:22:18:235 GameCard/(4290:4314): El registro aplanado quedo como: 413-17=1
+
+[INFO] 17:22:18:235 GameCard/(4290:4314): Vaciando blocks
+[INFO] 17:22:18:236 GameCard/(4290:4314): El valor del block 1 es de: 1
+[INFO] 17:22:18:236 GameCard/(4290:4314): El block 1 fue desmarcado con el valor de: 0
+[INFO] 17:22:18:236 GameCard/(4290:4314): Guardando el bitarray
+[INFO] 17:22:18:236 GameCard/(4290:4314): Termino el guardado
+[INFO] 17:22:18:236 GameCard/(4290:4314): Entro a buscar posiciones
+[INFO] 17:22:18:236 GameCard/(4290:4314): Bloqueo
+[INFO] 17:22:18:236 GameCard/(4290:4314): EL valor de i es de : 0
+[INFO] 17:22:18:236 GameCard/(4290:4314): EL valor de cant de bloques es de : 1024
+[INFO] 17:22:18:236 GameCard/(4290:4314): EL valor de i es de : 0
+[INFO] 17:22:18:236 GameCard/(4290:4314): EL valor de cant de bloques es de : 1024
+[INFO] 17:22:18:236 GameCard/(4290:4314): Entro primer IF
+[INFO] 17:22:18:236 GameCard/(4290:4314): EL valor FINAL de i es de : 0
+[INFO] 17:22:18:236 GameCard/(4290:4314): EL valor FINAL de cant de bloques es de : 1024
+[INFO] 17:22:18:236 GameCard/(4290:4314): EL valor de i es de : 1
+[INFO] 17:22:18:236 GameCard/(4290:4314): EL valor de cant de bloques es de : 1024
+[INFO] 17:22:18:236 GameCard/(4290:4314): Entro primer IF
+[INFO] 17:22:18:236 GameCard/(4290:4314): Entro segundo IF
+[INFO] 17:22:18:236 GameCard/(4290:4314): Guardando el bitarray
+[INFO] 17:22:18:236 GameCard/(4290:4314): Termino el guardado
+[INFO] 17:22:18:236 GameCard/(4290:4314): EL block 1 esta libre
+[INFO] 17:22:18:236 GameCard/(4290:4314): EL block 1 esta libre, vuelvo a chequear
+[INFO] 17:22:18:236 GameCard/(4290:4314): El block libre seleccionado es: 1
+[INFO] 17:22:18:236 GameCard/(4290:4314): La ruta del block es: /home/utnso/Escritorio/tall-grass/Blocks/1.bin
+[INFO] 17:22:18:236 GameCard/(4290:4314): Iterando la lista
+[INFO] 17:22:18:243 GameCard/(4290:4314): El ID de mensaje cargado en el appeared es: 4
+[INFO] 17:22:18:243 GameCard/(4290:4314): El pokemoncargado en el appeared es: charmander
+[INFO] 17:22:18:243 GameCard/(4290:4314): El tamanio del nombre del pokemon cargado en el appeared es: 11
+[INFO] 17:22:18:243 GameCard/(4290:4314): La coordenada del pokemon cargado en el appeared es: 413 - 17
+[INFO] 17:22:18:243 GameCard/(4290:4291): Socket 11 de gameBoy aceptado
+[INFO] 17:22:18:243 GameCard/(4290:4316): Recibiendo codigo de operacion de GameBoy en socket 11
+[INFO] 17:22:18:243 GameCard/(4290:4316): Codigo de operacion de socket 11 recibido: 1
+[INFO] 17:22:18:243 GameCard/(4290:4316): Procesando request de GameBoy
+[INFO] 17:22:18:244 GameCard/(4290:4316): Codigo de operacion recibido del socket cliente 11 corresponde a un NEW
+[INFO] 17:22:18:244 GameCard/(4290:4316): Recibiendo tamanio total
+[INFO] 17:22:18:244 GameCard/(4290:4316): Tamanio total recibido: 31
+[INFO] 17:22:18:244 GameCard/(4290:4316): EL ID recibido: 5
+[INFO] 17:22:18:244 GameCard/(4290:4316): Tamanio del pokemon recibido: 11
+[INFO] 17:22:18:244 GameCard/(4290:4316): Nombre del pokemon recibido: Charmander
+[INFO] 17:22:18:244 GameCard/(4290:4316): Posicion X recibida: 723
+[INFO] 17:22:18:244 GameCard/(4290:4316): Posicion Y recibida: 97
+[INFO] 17:22:18:244 GameCard/(4290:4316): Cantidad recibida: 29
+[INFO] 17:22:18:244 GameCard/(4290:4316): NEW recibido del modulo Game Boy socket 11
+[INFO] 17:22:18:244 GameCard/(4290:4316): Llegamo
+[INFO] 17:22:18:244 GameCard/(4290:4316): Pokemon: charmander
+[INFO] 17:22:18:244 GameCard/(4290:4316): PosX: 723
+[INFO] 17:22:18:244 GameCard/(4290:4316): PosY: 97
+[INFO] 17:22:18:244 GameCard/(4290:4316): Cantidad: 29
+[INFO] 17:22:18:244 GameCard/(4290:4316): Ruta de Directorio: /home/utnso/Escritorio/tall-grass/Files/charmander
+[INFO] 17:22:18:244 GameCard/(4290:4316): La coordenada generada es: 723-97
+[INFO] 17:22:18:244 GameCard/(4290:4316): La posicion que me llega es: 723-97
+[INFO] 17:22:18:244 GameCard/(4290:4316): El valor del KEY-VALUE cargado completamente es: 723-97=29
+[INFO] 17:22:18:244 GameCard/(4290:4316): La posicion del registro generado es: 723-97
+[INFO] 17:22:18:244 GameCard/(4290:4316): La cantidad del registro generado es: 29
+[INFO] 17:22:18:244 GameCard/(4290:4316): Ruta del directorio pokemon charmander es: /home/utnso/Escritorio/tall-grass/Files/charmander
+[INFO] 17:22:18:244 GameCard/(4290:4316): Ruta del Archivo: /home/utnso/Escritorio/tall-grass/Files/charmander/charmander.bin
+[INFO] 17:22:18:244 GameCard/(4290:4316): Se creo el archivo config
+[INFO] 17:22:18:244 GameCard/(4290:4316): EL array de blocks es: 1
+[INFO] 17:22:18:244 GameCard/(4290:4316): Retorno el estado: N
+[INFO] 17:22:18:244 GameCard/(4290:4316): Pokemon ya conocido
+[INFO] 17:22:18:244 GameCard/(4290:4316): Generando los paths de los bloques
+[INFO] 17:22:18:244 GameCard/(4290:4316): Unico bloque
+[INFO] 17:22:18:244 GameCard/(4290:4316): Se genera la ruta para: 1
+[INFO] 17:22:18:244 GameCard/(4290:4316): El path del block es: /home/utnso/Escritorio/tall-grass/Blocks/1.bin
+[INFO] 17:22:18:244 GameCard/(4290:4316): La posicion 0 del array de path es: /home/utnso/Escritorio/tall-grass/Blocks/1.bin
+[INFO] 17:22:18:244 GameCard/(4290:4316): La coordenada 723-97 es nueva. Se agrega al los registros
+[INFO] 17:22:18:245 GameCard/(4290:4291): Socket 12 de gameBoy aceptado
+[INFO] 17:22:18:245 GameCard/(4290:4316): El registro aplanado quedo como: 4-1=101
+
+[INFO] 17:22:18:245 GameCard/(4290:4316): El registro aplanado quedo como: 517-2046=15
+
+[INFO] 17:22:18:245 GameCard/(4290:4316): El registro aplanado quedo como: 413-17=1
+
+[INFO] 17:22:18:245 GameCard/(4290:4316): El registro aplanado quedo como: 723-97=29
+
+[INFO] 17:22:18:245 GameCard/(4290:4316): Vaciando blocks
+[INFO] 17:22:18:245 GameCard/(4290:4316): El valor del block 1 es de: 1
+[INFO] 17:22:18:245 GameCard/(4290:4316): El block 1 fue desmarcado con el valor de: 0
+[INFO] 17:22:18:245 GameCard/(4290:4316): Guardando el bitarray
+[INFO] 17:22:18:245 GameCard/(4290:4316): Termino el guardado
+[INFO] 17:22:18:245 GameCard/(4290:4316): Entro a buscar posiciones
+[INFO] 17:22:18:245 GameCard/(4290:4316): Bloqueo
+[INFO] 17:22:18:245 GameCard/(4290:4316): EL valor de i es de : 0
+[INFO] 17:22:18:245 GameCard/(4290:4316): EL valor de cant de bloques es de : 1024
+[INFO] 17:22:18:245 GameCard/(4290:4316): EL valor de i es de : 0
+[INFO] 17:22:18:245 GameCard/(4290:4316): EL valor de cant de bloques es de : 1024
+[INFO] 17:22:18:245 GameCard/(4290:4316): Entro primer IF
+[INFO] 17:22:18:245 GameCard/(4290:4316): EL valor FINAL de i es de : 0
+[INFO] 17:22:18:245 GameCard/(4290:4316): EL valor FINAL de cant de bloques es de : 1024
+[INFO] 17:22:18:245 GameCard/(4290:4316): EL valor de i es de : 1
+[INFO] 17:22:18:245 GameCard/(4290:4316): EL valor de cant de bloques es de : 1024
+[INFO] 17:22:18:245 GameCard/(4290:4316): Entro primer IF
+[INFO] 17:22:18:245 GameCard/(4290:4316): Entro segundo IF
+[INFO] 17:22:18:245 GameCard/(4290:4316): Guardando el bitarray
+[INFO] 17:22:18:245 GameCard/(4290:4316): Termino el guardado
+[INFO] 17:22:18:245 GameCard/(4290:4316): EL block 1 esta libre
+[INFO] 17:22:18:245 GameCard/(4290:4316): EL block 1 esta libre, vuelvo a chequear
+[INFO] 17:22:18:245 GameCard/(4290:4316): El block libre seleccionado es: 1
+[INFO] 17:22:18:245 GameCard/(4290:4316): La ruta del block es: /home/utnso/Escritorio/tall-grass/Blocks/1.bin
+[INFO] 17:22:18:245 GameCard/(4290:4316): Iterando la lista
+[INFO] 17:22:18:246 GameCard/(4290:4316): El ID de mensaje cargado en el appeared es: 5
+[INFO] 17:22:18:246 GameCard/(4290:4316): El pokemoncargado en el appeared es: charmander
+[INFO] 17:22:18:246 GameCard/(4290:4316): El tamanio del nombre del pokemon cargado en el appeared es: 11
+[INFO] 17:22:18:246 GameCard/(4290:4316): La coordenada del pokemon cargado en el appeared es: 723 - 97
+[INFO] 17:22:18:246 GameCard/(4290:4318): Recibiendo codigo de operacion de GameBoy en socket 12
+[INFO] 17:22:18:246 GameCard/(4290:4318): Codigo de operacion de socket 12 recibido: 1
+[INFO] 17:22:18:246 GameCard/(4290:4318): Procesando request de GameBoy
+[INFO] 17:22:18:246 GameCard/(4290:4318): Codigo de operacion recibido del socket cliente 12 corresponde a un NEW
+[INFO] 17:22:18:246 GameCard/(4290:4318): Recibiendo tamanio total
+[INFO] 17:22:18:246 GameCard/(4290:4318): Tamanio total recibido: 31
+[INFO] 17:22:18:246 GameCard/(4290:4318): EL ID recibido: 6
+[INFO] 17:22:18:246 GameCard/(4290:4318): Tamanio del pokemon recibido: 11
+[INFO] 17:22:18:246 GameCard/(4290:4318): Nombre del pokemon recibido: Charmander
+[INFO] 17:22:18:246 GameCard/(4290:4318): Posicion X recibida: 65
+[INFO] 17:22:18:246 GameCard/(4290:4318): Posicion Y recibida: 93
+[INFO] 17:22:18:246 GameCard/(4290:4318): Cantidad recibida: 3001
+[INFO] 17:22:18:246 GameCard/(4290:4318): NEW recibido del modulo Game Boy socket 12
+[INFO] 17:22:18:246 GameCard/(4290:4318): Llegamo
+[INFO] 17:22:18:247 GameCard/(4290:4318): Pokemon: charmander
+[INFO] 17:22:18:247 GameCard/(4290:4318): PosX: 65
+[INFO] 17:22:18:247 GameCard/(4290:4318): PosY: 93
+[INFO] 17:22:18:247 GameCard/(4290:4318): Cantidad: 3001
+[INFO] 17:22:18:247 GameCard/(4290:4318): Ruta de Directorio: /home/utnso/Escritorio/tall-grass/Files/charmander
+[INFO] 17:22:18:247 GameCard/(4290:4318): La coordenada generada es: 65-93
+[INFO] 17:22:18:247 GameCard/(4290:4318): La posicion que me llega es: 65-93
+[INFO] 17:22:18:247 GameCard/(4290:4318): El valor del KEY-VALUE cargado completamente es: 65-93=3001
+[INFO] 17:22:18:247 GameCard/(4290:4318): La posicion del registro generado es: 65-93
+[INFO] 17:22:18:247 GameCard/(4290:4318): La cantidad del registro generado es: 3001
+[INFO] 17:22:18:247 GameCard/(4290:4318): Ruta del directorio pokemon charmander es: /home/utnso/Escritorio/tall-grass/Files/charmander
+[INFO] 17:22:18:247 GameCard/(4290:4318): Ruta del Archivo: /home/utnso/Escritorio/tall-grass/Files/charmander/charmander.bin
+[INFO] 17:22:18:247 GameCard/(4290:4318): Se creo el archivo config
+[INFO] 17:22:18:247 GameCard/(4290:4318): EL array de blocks es: 1
+[INFO] 17:22:18:247 GameCard/(4290:4318): Retorno el estado: N
+[INFO] 17:22:18:247 GameCard/(4290:4318): Pokemon ya conocido
+[INFO] 17:22:18:247 GameCard/(4290:4318): Generando los paths de los bloques
+[INFO] 17:22:18:247 GameCard/(4290:4318): Unico bloque
+[INFO] 17:22:18:247 GameCard/(4290:4318): Se genera la ruta para: 1
+[INFO] 17:22:18:247 GameCard/(4290:4318): El path del block es: /home/utnso/Escritorio/tall-grass/Blocks/1.bin
+[INFO] 17:22:18:247 GameCard/(4290:4318): La posicion 0 del array de path es: /home/utnso/Escritorio/tall-grass/Blocks/1.bin
+[INFO] 17:22:18:247 GameCard/(4290:4318): La coordenada 65-93 es nueva. Se agrega al los registros
+[INFO] 17:22:18:247 GameCard/(4290:4318): El registro aplanado quedo como: 4-1=101
+
+[INFO] 17:22:18:247 GameCard/(4290:4318): El registro aplanado quedo como: 517-2046=15
+
+[INFO] 17:22:18:247 GameCard/(4290:4318): El registro aplanado quedo como: 413-17=1
+
+[INFO] 17:22:18:247 GameCard/(4290:4318): El registro aplanado quedo como: 723-97=29
+
+[INFO] 17:22:18:247 GameCard/(4290:4318): El registro aplanado quedo como: 65-93=3001
+
+[INFO] 17:22:18:247 GameCard/(4290:4318): Vaciando blocks
+[INFO] 17:22:18:247 GameCard/(4290:4318): El valor del block 1 es de: 1
+[INFO] 17:22:18:247 GameCard/(4290:4318): El block 1 fue desmarcado con el valor de: 0
+[INFO] 17:22:18:247 GameCard/(4290:4318): Guardando el bitarray
+[INFO] 17:22:18:247 GameCard/(4290:4318): Termino el guardado
+[INFO] 17:22:18:247 GameCard/(4290:4318): Entro a buscar posiciones
+[INFO] 17:22:18:247 GameCard/(4290:4318): Bloqueo
+[INFO] 17:22:18:247 GameCard/(4290:4318): EL valor de i es de : 0
+[INFO] 17:22:18:247 GameCard/(4290:4318): EL valor de cant de bloques es de : 1024
+[INFO] 17:22:18:247 GameCard/(4290:4318): EL valor de i es de : 0
+[INFO] 17:22:18:247 GameCard/(4290:4318): EL valor de cant de bloques es de : 1024
+[INFO] 17:22:18:247 GameCard/(4290:4318): Entro primer IF
+[INFO] 17:22:18:247 GameCard/(4290:4318): EL valor FINAL de i es de : 0
+[INFO] 17:22:18:247 GameCard/(4290:4318): EL valor FINAL de cant de bloques es de : 1024
+[INFO] 17:22:18:247 GameCard/(4290:4318): EL valor de i es de : 1
+[INFO] 17:22:18:247 GameCard/(4290:4318): EL valor de cant de bloques es de : 1024
+[INFO] 17:22:18:247 GameCard/(4290:4318): Entro primer IF
+[INFO] 17:22:18:247 GameCard/(4290:4318): Entro segundo IF
+[INFO] 17:22:18:247 GameCard/(4290:4318): Guardando el bitarray
+[INFO] 17:22:18:247 GameCard/(4290:4318): Termino el guardado
+[INFO] 17:22:18:247 GameCard/(4290:4318): EL block 1 esta libre
+[INFO] 17:22:18:247 GameCard/(4290:4318): EL block 1 esta libre, vuelvo a chequear
+[INFO] 17:22:18:247 GameCard/(4290:4318): El block libre seleccionado es: 1
+[INFO] 17:22:18:247 GameCard/(4290:4318): La ruta del block es: /home/utnso/Escritorio/tall-grass/Blocks/1.bin
+[INFO] 17:22:18:247 GameCard/(4290:4318): Iterando la lista
+[INFO] 17:22:18:248 GameCard/(4290:4318): El ID de mensaje cargado en el appeared es: 6
+[INFO] 17:22:18:248 GameCard/(4290:4318): El pokemoncargado en el appeared es: charmander
+[INFO] 17:22:18:248 GameCard/(4290:4318): El tamanio del nombre del pokemon cargado en el appeared es: 11
+[INFO] 17:22:18:248 GameCard/(4290:4318): La coordenada del pokemon cargado en el appeared es: 65 - 93
+[INFO] 17:22:18:249 GameCard/(4290:4291): Socket 13 de gameBoy aceptado
+[INFO] 17:22:18:250 GameCard/(4290:4320): Recibiendo codigo de operacion de GameBoy en socket 13
+[INFO] 17:22:18:250 GameCard/(4290:4320): Codigo de operacion de socket 13 recibido: 1
+[INFO] 17:22:18:250 GameCard/(4290:4320): Procesando request de GameBoy
+[INFO] 17:22:18:250 GameCard/(4290:4320): Codigo de operacion recibido del socket cliente 13 corresponde a un NEW
+[INFO] 17:22:18:250 GameCard/(4290:4320): Recibiendo tamanio total
+[INFO] 17:22:18:250 GameCard/(4290:4320): Tamanio total recibido: 31
+[INFO] 17:22:18:250 GameCard/(4290:4320): EL ID recibido: 7
+[INFO] 17:22:18:250 GameCard/(4290:4320): Tamanio del pokemon recibido: 11
+[INFO] 17:22:18:250 GameCard/(4290:4320): Nombre del pokemon recibido: Charmander
+[INFO] 17:22:18:250 GameCard/(4290:4320): Posicion X recibida: 12
+[INFO] 17:22:18:250 GameCard/(4290:4320): Posicion Y recibida: 17
+[INFO] 17:22:18:250 GameCard/(4290:4320): Cantidad recibida: 34
+[INFO] 17:22:18:250 GameCard/(4290:4320): NEW recibido del modulo Game Boy socket 13
+[INFO] 17:22:18:250 GameCard/(4290:4320): Llegamo
+[INFO] 17:22:18:250 GameCard/(4290:4320): Pokemon: charmander
+[INFO] 17:22:18:250 GameCard/(4290:4320): PosX: 12
+[INFO] 17:22:18:250 GameCard/(4290:4320): PosY: 17
+[INFO] 17:22:18:250 GameCard/(4290:4320): Cantidad: 34
+[INFO] 17:22:18:250 GameCard/(4290:4320): Ruta de Directorio: /home/utnso/Escritorio/tall-grass/Files/charmander
+[INFO] 17:22:18:250 GameCard/(4290:4320): La coordenada generada es: 12-17
+[INFO] 17:22:18:250 GameCard/(4290:4320): La posicion que me llega es: 12-17
+[INFO] 17:22:18:250 GameCard/(4290:4320): El valor del KEY-VALUE cargado completamente es: 12-17=34
+[INFO] 17:22:18:250 GameCard/(4290:4320): La posicion del registro generado es: 12-17
+[INFO] 17:22:18:250 GameCard/(4290:4320): La cantidad del registro generado es: 34
+[INFO] 17:22:18:250 GameCard/(4290:4320): Ruta del directorio pokemon charmander es: /home/utnso/Escritorio/tall-grass/Files/charmander
+[INFO] 17:22:18:250 GameCard/(4290:4320): Ruta del Archivo: /home/utnso/Escritorio/tall-grass/Files/charmander/charmander.bin
+[INFO] 17:22:18:250 GameCard/(4290:4320): Se creo el archivo config
+[INFO] 17:22:18:250 GameCard/(4290:4320): EL array de blocks es: 1
+[INFO] 17:22:18:250 GameCard/(4290:4320): Retorno el estado: N
+[INFO] 17:22:18:250 GameCard/(4290:4320): Pokemon ya conocido
+[INFO] 17:22:18:250 GameCard/(4290:4320): Generando los paths de los bloques
+[INFO] 17:22:18:250 GameCard/(4290:4320): Unico bloque
+[INFO] 17:22:18:250 GameCard/(4290:4320): Se genera la ruta para: 1
+[INFO] 17:22:18:250 GameCard/(4290:4320): El path del block es: /home/utnso/Escritorio/tall-grass/Blocks/1.bin
+[INFO] 17:22:18:250 GameCard/(4290:4320): La posicion 0 del array de path es: /home/utnso/Escritorio/tall-grass/Blocks/1.bin
+[INFO] 17:22:18:250 GameCard/(4290:4320): La coordenada 12-17 es nueva. Se agrega al los registros
+[INFO] 17:22:18:251 GameCard/(4290:4291): Socket 14 de gameBoy aceptado
+[INFO] 17:22:18:251 GameCard/(4290:4320): El registro aplanado quedo como: 4-1=101
+
+[INFO] 17:22:18:251 GameCard/(4290:4320): El registro aplanado quedo como: 517-2046=15
+
+[INFO] 17:22:18:251 GameCard/(4290:4320): El registro aplanado quedo como: 413-17=1
+
+[INFO] 17:22:18:251 GameCard/(4290:4320): El registro aplanado quedo como: 723-97=29
+
+[INFO] 17:22:18:251 GameCard/(4290:4320): El registro aplanado quedo como: 65-93=3001
+
+[INFO] 17:22:18:251 GameCard/(4290:4320): El registro aplanado quedo como: 12-17=34
+
+[INFO] 17:22:18:251 GameCard/(4290:4320): Vaciando blocks
+[INFO] 17:22:18:251 GameCard/(4290:4320): El valor del block 1 es de: 1
+[INFO] 17:22:18:251 GameCard/(4290:4320): El block 1 fue desmarcado con el valor de: 0
+[INFO] 17:22:18:251 GameCard/(4290:4320): Guardando el bitarray
+[INFO] 17:22:18:251 GameCard/(4290:4320): Termino el guardado
+[INFO] 17:22:18:252 GameCard/(4290:4320): Entro a buscar posiciones
+[INFO] 17:22:18:252 GameCard/(4290:4320): Bloqueo
+[INFO] 17:22:18:252 GameCard/(4290:4320): EL valor de i es de : 0
+[INFO] 17:22:18:252 GameCard/(4290:4320): EL valor de cant de bloques es de : 1024
+[INFO] 17:22:18:252 GameCard/(4290:4320): EL valor de i es de : 0
+[INFO] 17:22:18:252 GameCard/(4290:4320): EL valor de cant de bloques es de : 1024
+[INFO] 17:22:18:252 GameCard/(4290:4320): Entro primer IF
+[INFO] 17:22:18:252 GameCard/(4290:4320): EL valor FINAL de i es de : 0
+[INFO] 17:22:18:252 GameCard/(4290:4320): EL valor FINAL de cant de bloques es de : 1024
+[INFO] 17:22:18:252 GameCard/(4290:4320): EL valor de i es de : 1
+[INFO] 17:22:18:252 GameCard/(4290:4320): EL valor de cant de bloques es de : 1024
+[INFO] 17:22:18:252 GameCard/(4290:4320): Entro primer IF
+[INFO] 17:22:18:252 GameCard/(4290:4320): Entro segundo IF
+[INFO] 17:22:18:252 GameCard/(4290:4320): Guardando el bitarray
+[INFO] 17:22:18:252 GameCard/(4290:4320): Termino el guardado
+[INFO] 17:22:18:252 GameCard/(4290:4320): EL block 1 esta libre
+[INFO] 17:22:18:252 GameCard/(4290:4320): EL block 1 esta libre, vuelvo a chequear
+[INFO] 17:22:18:252 GameCard/(4290:4320): El block libre seleccionado es: 1
+[INFO] 17:22:18:252 GameCard/(4290:4320): La ruta del block es: /home/utnso/Escritorio/tall-grass/Blocks/1.bin
+[INFO] 17:22:18:252 GameCard/(4290:4320): Iterando la lista
+[INFO] 17:22:18:253 GameCard/(4290:4320): El ID de mensaje cargado en el appeared es: 7
+[INFO] 17:22:18:253 GameCard/(4290:4320): El pokemoncargado en el appeared es: charmander
+[INFO] 17:22:18:253 GameCard/(4290:4320): El tamanio del nombre del pokemon cargado en el appeared es: 11
+[INFO] 17:22:18:253 GameCard/(4290:4320): La coordenada del pokemon cargado en el appeared es: 12 - 17
+[INFO] 17:22:18:253 GameCard/(4290:4322): Recibiendo codigo de operacion de GameBoy en socket 14
+[INFO] 17:22:18:253 GameCard/(4290:4322): Codigo de operacion de socket 14 recibido: 1
+[INFO] 17:22:18:253 GameCard/(4290:4322): Procesando request de GameBoy
+[INFO] 17:22:18:253 GameCard/(4290:4322): Codigo de operacion recibido del socket cliente 14 corresponde a un NEW
+[INFO] 17:22:18:253 GameCard/(4290:4322): Recibiendo tamanio total
+[INFO] 17:22:18:253 GameCard/(4290:4322): Tamanio total recibido: 31
+[INFO] 17:22:18:253 GameCard/(4290:4322): EL ID recibido: 8
+[INFO] 17:22:18:253 GameCard/(4290:4322): Tamanio del pokemon recibido: 11
+[INFO] 17:22:18:253 GameCard/(4290:4322): Nombre del pokemon recibido: Charmander
+[INFO] 17:22:18:253 GameCard/(4290:4322): Posicion X recibida: 129
+[INFO] 17:22:18:253 GameCard/(4290:4322): Posicion Y recibida: 547
+[INFO] 17:22:18:253 GameCard/(4290:4322): Cantidad recibida: 11
+[INFO] 17:22:18:253 GameCard/(4290:4322): NEW recibido del modulo Game Boy socket 14
+[INFO] 17:22:18:253 GameCard/(4290:4322): Llegamo
+[INFO] 17:22:18:253 GameCard/(4290:4322): Pokemon: charmander
+[INFO] 17:22:18:253 GameCard/(4290:4322): PosX: 129
+[INFO] 17:22:18:253 GameCard/(4290:4322): PosY: 547
+[INFO] 17:22:18:253 GameCard/(4290:4322): Cantidad: 11
+[INFO] 17:22:18:253 GameCard/(4290:4322): Ruta de Directorio: /home/utnso/Escritorio/tall-grass/Files/charmander
+[INFO] 17:22:18:253 GameCard/(4290:4322): La coordenada generada es: 129-547
+[INFO] 17:22:18:253 GameCard/(4290:4322): La posicion que me llega es: 129-547
+[INFO] 17:22:18:253 GameCard/(4290:4322): El valor del KEY-VALUE cargado completamente es: 129-547=11
+[INFO] 17:22:18:253 GameCard/(4290:4322): La posicion del registro generado es: 129-547
+[INFO] 17:22:18:253 GameCard/(4290:4322): La cantidad del registro generado es: 11
+[INFO] 17:22:18:253 GameCard/(4290:4322): Ruta del directorio pokemon charmander es: /home/utnso/Escritorio/tall-grass/Files/charmander
+[INFO] 17:22:18:253 GameCard/(4290:4322): Ruta del Archivo: /home/utnso/Escritorio/tall-grass/Files/charmander/charmander.bin
+[INFO] 17:22:18:254 GameCard/(4290:4322): Se creo el archivo config
+[INFO] 17:22:18:254 GameCard/(4290:4322): EL array de blocks es: 1
+[INFO] 17:22:18:254 GameCard/(4290:4322): Retorno el estado: N
+[INFO] 17:22:18:254 GameCard/(4290:4322): Pokemon ya conocido
+[INFO] 17:22:18:254 GameCard/(4290:4322): Generando los paths de los bloques
+[INFO] 17:22:18:254 GameCard/(4290:4322): Unico bloque
+[INFO] 17:22:18:254 GameCard/(4290:4322): Se genera la ruta para: 1
+[INFO] 17:22:18:254 GameCard/(4290:4322): El path del block es: /home/utnso/Escritorio/tall-grass/Blocks/1.bin
+[INFO] 17:22:18:254 GameCard/(4290:4322): La posicion 0 del array de path es: /home/utnso/Escritorio/tall-grass/Blocks/1.bin
+[INFO] 17:22:18:254 GameCard/(4290:4322): La coordenada 129-547 es nueva. Se agrega al los registros
+[INFO] 17:22:18:254 GameCard/(4290:4322): El registro aplanado quedo como: 4-1=101
+
+[INFO] 17:22:18:254 GameCard/(4290:4322): El registro aplanado quedo como: 517-2046=15
+
+[INFO] 17:22:18:254 GameCard/(4290:4322): El registro aplanado quedo como: 413-17=1
+
+[INFO] 17:22:18:254 GameCard/(4290:4322): El registro aplanado quedo como: 723-97=29
+
+[INFO] 17:22:18:254 GameCard/(4290:4322): El registro aplanado quedo como: 65-93=3001
+
+[INFO] 17:22:18:254 GameCard/(4290:4322): El registro aplanado quedo como: 12-17=34
+
+[INFO] 17:22:18:254 GameCard/(4290:4322): El registro aplanado quedo como: 129-547=11
+
+[INFO] 17:22:18:254 GameCard/(4290:4322): Vaciando blocks
+[INFO] 17:22:18:254 GameCard/(4290:4322): El valor del block 1 es de: 1
+[INFO] 17:22:18:254 GameCard/(4290:4322): El block 1 fue desmarcado con el valor de: 0
+[INFO] 17:22:18:254 GameCard/(4290:4322): Guardando el bitarray
+[INFO] 17:22:18:254 GameCard/(4290:4322): Termino el guardado
+[INFO] 17:22:18:254 GameCard/(4290:4322): Entro a buscar posiciones
+[INFO] 17:22:18:254 GameCard/(4290:4322): Bloqueo
+[INFO] 17:22:18:254 GameCard/(4290:4322): EL valor de i es de : 0
+[INFO] 17:22:18:254 GameCard/(4290:4322): EL valor de cant de bloques es de : 1024
+[INFO] 17:22:18:254 GameCard/(4290:4322): EL valor de i es de : 0
+[INFO] 17:22:18:254 GameCard/(4290:4322): EL valor de cant de bloques es de : 1024
+[INFO] 17:22:18:254 GameCard/(4290:4322): Entro primer IF
+[INFO] 17:22:18:254 GameCard/(4290:4322): EL valor FINAL de i es de : 0
+[INFO] 17:22:18:254 GameCard/(4290:4322): EL valor FINAL de cant de bloques es de : 1024
+[INFO] 17:22:18:254 GameCard/(4290:4322): EL valor de i es de : 1
+[INFO] 17:22:18:254 GameCard/(4290:4322): EL valor de cant de bloques es de : 1024
+[INFO] 17:22:18:254 GameCard/(4290:4322): Entro primer IF
+[INFO] 17:22:18:254 GameCard/(4290:4322): Entro segundo IF
+[INFO] 17:22:18:254 GameCard/(4290:4322): Guardando el bitarray
+[INFO] 17:22:18:254 GameCard/(4290:4322): Termino el guardado
+[INFO] 17:22:18:254 GameCard/(4290:4322): EL block 1 esta libre
+[INFO] 17:22:18:254 GameCard/(4290:4322): EL block 1 esta libre, vuelvo a chequear
+[INFO] 17:22:18:254 GameCard/(4290:4322): El block libre seleccionado es: 1
+[INFO] 17:22:18:254 GameCard/(4290:4322): La ruta del block es: /home/utnso/Escritorio/tall-grass/Blocks/1.bin
+[INFO] 17:22:18:254 GameCard/(4290:4322): Iterando la lista
+[INFO] 17:22:18:254 GameCard/(4290:4322): Entro a buscar posiciones
+[INFO] 17:22:18:254 GameCard/(4290:4322): Bloqueo
+[INFO] 17:22:18:254 GameCard/(4290:4322): EL valor de i es de : 0
+[INFO] 17:22:18:254 GameCard/(4290:4322): EL valor de cant de bloques es de : 1024
+[INFO] 17:22:18:254 GameCard/(4290:4322): EL valor de i es de : 0
+[INFO] 17:22:18:254 GameCard/(4290:4322): EL valor de cant de bloques es de : 1024
+[INFO] 17:22:18:254 GameCard/(4290:4322): Entro primer IF
+[INFO] 17:22:18:254 GameCard/(4290:4322): EL valor FINAL de i es de : 0
+[INFO] 17:22:18:254 GameCard/(4290:4322): EL valor FINAL de cant de bloques es de : 1024
+[INFO] 17:22:18:254 GameCard/(4290:4322): EL valor de i es de : 1
+[INFO] 17:22:18:254 GameCard/(4290:4322): EL valor de cant de bloques es de : 1024
+[INFO] 17:22:18:254 GameCard/(4290:4322): Entro primer IF
+[INFO] 17:22:18:254 GameCard/(4290:4322): EL valor FINAL de i es de : 1
+[INFO] 17:22:18:254 GameCard/(4290:4322): EL valor FINAL de cant de bloques es de : 1024
+[INFO] 17:22:18:254 GameCard/(4290:4322): EL valor de i es de : 2
+[INFO] 17:22:18:254 GameCard/(4290:4322): EL valor de cant de bloques es de : 1024
+[INFO] 17:22:18:254 GameCard/(4290:4322): Entro primer IF
+[INFO] 17:22:18:254 GameCard/(4290:4322): Entro segundo IF
+[INFO] 17:22:18:254 GameCard/(4290:4322): Guardando el bitarray
+[INFO] 17:22:18:254 GameCard/(4290:4322): Termino el guardado
+[INFO] 17:22:18:254 GameCard/(4290:4322): EL block 2 esta libre
+[INFO] 17:22:18:254 GameCard/(4290:4322): EL block 2 esta libre, vuelvo a chequear
+[INFO] 17:22:18:254 GameCard/(4290:4322): El block libre seleccionado FUNCION ESCRIBIR_REGISTRO es: 1
+[INFO] 17:22:18:254 GameCard/(4290:4322): La ruta del block FUNCION ESCRIBIR_REGISTRO es: /home/utnso/Escritorio/tall-grass/Blocks/2.bin
+[INFO] 17:22:18:255 GameCard/(4290:4322): El ID de mensaje cargado en el appeared es: 8
+[INFO] 17:22:18:255 GameCard/(4290:4322): El pokemoncargado en el appeared es: charmander
+[INFO] 17:22:18:255 GameCard/(4290:4322): El tamanio del nombre del pokemon cargado en el appeared es: 11
+[INFO] 17:22:18:255 GameCard/(4290:4322): La coordenada del pokemon cargado en el appeared es: 129 - 547
+[INFO] 17:22:20:703 GameCard/(4290:4295): Iniciando verificacion de conexion con BROKER...
+[ERROR] 17:22:20:704 GameCard/(4290:4295): Reconexion con BROKER fallida, intentando nuevamente en 10 segundos
+[INFO] 17:22:23:218 GameCard/(4290:4308): El ID cargado es 1
+[INFO] 17:22:23:218 GameCard/(4290:4308): Tamanio nombre pokemon 8
+[INFO] 17:22:23:218 GameCard/(4290:4308): Nombre pokemon pikachu
+[INFO] 17:22:23:218 GameCard/(4290:4308): Posicion X 1
+[INFO] 17:22:23:218 GameCard/(4290:4308): Posicion Y 9
+[INFO] 17:22:23:218 GameCard/(4290:4308): Creando paquete
+[INFO] 17:22:23:218 GameCard/(4290:4308): CODIGO DE OPERACION: 2
+[INFO] 17:22:23:218 GameCard/(4290:4308): Paquete Creado
+[INFO] 17:22:23:218 GameCard/(4290:4308): la operacion a realizar es 2
+[INFO] 17:22:23:218 GameCard/(4290:4308): Serializando...
+[INFO] 17:22:23:218 GameCard/(4290:4308): Serializacion completa
+[INFO] 17:22:23:218 GameCard/(4290:4308): El peso total es: 24
+[ERROR] 17:22:23:218 GameCard/(4290:4308): Error: No se pudo enviar el mensaje
+[INFO] 17:22:23:227 GameCard/(4290:4310): El ID cargado es 2
+[INFO] 17:22:23:227 GameCard/(4290:4310): Tamanio nombre pokemon 11
+[INFO] 17:22:23:227 GameCard/(4290:4310): Nombre pokemon charmander
+[INFO] 17:22:23:227 GameCard/(4290:4310): Posicion X 4
+[INFO] 17:22:23:227 GameCard/(4290:4310): Posicion Y 1
+[INFO] 17:22:23:227 GameCard/(4290:4310): Creando paquete
+[INFO] 17:22:23:227 GameCard/(4290:4310): CODIGO DE OPERACION: 2
+[INFO] 17:22:23:227 GameCard/(4290:4310): Paquete Creado
+[INFO] 17:22:23:228 GameCard/(4290:4310): la operacion a realizar es 2
+[INFO] 17:22:23:228 GameCard/(4290:4310): Serializando...
+[INFO] 17:22:23:228 GameCard/(4290:4310): Serializacion completa
+[INFO] 17:22:23:228 GameCard/(4290:4310): El peso total es: 27
+[ERROR] 17:22:23:228 GameCard/(4290:4310): Error: No se pudo enviar el mensaje
+[INFO] 17:22:23:234 GameCard/(4290:4312): El ID cargado es 3
+[INFO] 17:22:23:234 GameCard/(4290:4312): Tamanio nombre pokemon 11
+[INFO] 17:22:23:234 GameCard/(4290:4312): Nombre pokemon charmander
+[INFO] 17:22:23:234 GameCard/(4290:4312): Posicion X 517
+[INFO] 17:22:23:234 GameCard/(4290:4312): Posicion Y 2046
+[INFO] 17:22:23:234 GameCard/(4290:4312): Creando paquete
+[INFO] 17:22:23:234 GameCard/(4290:4312): CODIGO DE OPERACION: 2
+[INFO] 17:22:23:234 GameCard/(4290:4312): Paquete Creado
+[INFO] 17:22:23:234 GameCard/(4290:4312): la operacion a realizar es 2
+[INFO] 17:22:23:234 GameCard/(4290:4312): Serializando...
+[INFO] 17:22:23:234 GameCard/(4290:4312): Serializacion completa
+[INFO] 17:22:23:234 GameCard/(4290:4312): El peso total es: 27
+[ERROR] 17:22:23:234 GameCard/(4290:4312): Error: No se pudo enviar el mensaje
+[INFO] 17:22:23:243 GameCard/(4290:4314): El ID cargado es 4
+[INFO] 17:22:23:243 GameCard/(4290:4314): Tamanio nombre pokemon 11
+[INFO] 17:22:23:243 GameCard/(4290:4314): Nombre pokemon charmander
+[INFO] 17:22:23:243 GameCard/(4290:4314): Posicion X 413
+[INFO] 17:22:23:243 GameCard/(4290:4314): Posicion Y 17
+[INFO] 17:22:23:243 GameCard/(4290:4314): Creando paquete
+[INFO] 17:22:23:243 GameCard/(4290:4314): CODIGO DE OPERACION: 2
+[INFO] 17:22:23:243 GameCard/(4290:4314): Paquete Creado
+[INFO] 17:22:23:243 GameCard/(4290:4314): la operacion a realizar es 2
+[INFO] 17:22:23:243 GameCard/(4290:4314): Serializando...
+[INFO] 17:22:23:243 GameCard/(4290:4314): Serializacion completa
+[INFO] 17:22:23:243 GameCard/(4290:4314): El peso total es: 27
+[ERROR] 17:22:23:243 GameCard/(4290:4314): Error: No se pudo enviar el mensaje
+[INFO] 17:22:23:248 GameCard/(4290:4316): El ID cargado es 5
+[INFO] 17:22:23:248 GameCard/(4290:4316): Tamanio nombre pokemon 11
+[INFO] 17:22:23:248 GameCard/(4290:4316): Nombre pokemon charmander
+[INFO] 17:22:23:248 GameCard/(4290:4316): Posicion X 723
+[INFO] 17:22:23:248 GameCard/(4290:4316): Posicion Y 97
+[INFO] 17:22:23:248 GameCard/(4290:4316): Creando paquete
+[INFO] 17:22:23:248 GameCard/(4290:4316): CODIGO DE OPERACION: 2
+[INFO] 17:22:23:248 GameCard/(4290:4316): Paquete Creado
+[INFO] 17:22:23:248 GameCard/(4290:4316): la operacion a realizar es 2
+[INFO] 17:22:23:248 GameCard/(4290:4316): Serializando...
+[INFO] 17:22:23:248 GameCard/(4290:4316): Serializacion completa
+[INFO] 17:22:23:248 GameCard/(4290:4316): El peso total es: 27
+[ERROR] 17:22:23:248 GameCard/(4290:4316): Error: No se pudo enviar el mensaje
+[INFO] 17:22:23:249 GameCard/(4290:4318): El ID cargado es 6
+[INFO] 17:22:23:249 GameCard/(4290:4318): Tamanio nombre pokemon 11
+[INFO] 17:22:23:249 GameCard/(4290:4318): Nombre pokemon charmander
+[INFO] 17:22:23:249 GameCard/(4290:4318): Posicion X 65
+[INFO] 17:22:23:249 GameCard/(4290:4318): Posicion Y 93
+[INFO] 17:22:23:249 GameCard/(4290:4318): Creando paquete
+[INFO] 17:22:23:249 GameCard/(4290:4318): CODIGO DE OPERACION: 2
+[INFO] 17:22:23:249 GameCard/(4290:4318): Paquete Creado
+[INFO] 17:22:23:249 GameCard/(4290:4318): la operacion a realizar es 2
+[INFO] 17:22:23:249 GameCard/(4290:4318): Serializando...
+[INFO] 17:22:23:249 GameCard/(4290:4318): Serializacion completa
+[INFO] 17:22:23:249 GameCard/(4290:4318): El peso total es: 27
+[ERROR] 17:22:23:249 GameCard/(4290:4318): Error: No se pudo enviar el mensaje
+[INFO] 17:22:23:254 GameCard/(4290:4320): El ID cargado es 7
+[INFO] 17:22:23:254 GameCard/(4290:4320): Tamanio nombre pokemon 11
+[INFO] 17:22:23:254 GameCard/(4290:4320): Nombre pokemon charmander
+[INFO] 17:22:23:254 GameCard/(4290:4320): Posicion X 12
+[INFO] 17:22:23:254 GameCard/(4290:4320): Posicion Y 17
+[INFO] 17:22:23:254 GameCard/(4290:4320): Creando paquete
+[INFO] 17:22:23:254 GameCard/(4290:4320): CODIGO DE OPERACION: 2
+[INFO] 17:22:23:254 GameCard/(4290:4320): Paquete Creado
+[INFO] 17:22:23:254 GameCard/(4290:4320): la operacion a realizar es 2
+[INFO] 17:22:23:254 GameCard/(4290:4320): Serializando...
+[INFO] 17:22:23:254 GameCard/(4290:4320): Serializacion completa
+[INFO] 17:22:23:254 GameCard/(4290:4320): El peso total es: 27
+[ERROR] 17:22:23:254 GameCard/(4290:4320): Error: No se pudo enviar el mensaje
+[INFO] 17:22:23:255 GameCard/(4290:4322): El ID cargado es 8
+[INFO] 17:22:23:255 GameCard/(4290:4322): Tamanio nombre pokemon 11
+[INFO] 17:22:23:255 GameCard/(4290:4322): Nombre pokemon charmander
+[INFO] 17:22:23:255 GameCard/(4290:4322): Posicion X 129
+[INFO] 17:22:23:255 GameCard/(4290:4322): Posicion Y 547
+[INFO] 17:22:23:255 GameCard/(4290:4322): Creando paquete
+[INFO] 17:22:23:255 GameCard/(4290:4322): CODIGO DE OPERACION: 2
+[INFO] 17:22:23:255 GameCard/(4290:4322): Paquete Creado
+[INFO] 17:22:23:255 GameCard/(4290:4322): la operacion a realizar es 2
+[INFO] 17:22:23:255 GameCard/(4290:4322): Serializando...
+[INFO] 17:22:23:255 GameCard/(4290:4322): Serializacion completa
+[INFO] 17:22:23:255 GameCard/(4290:4322): El peso total es: 27
+[ERROR] 17:22:23:255 GameCard/(4290:4322): Error: No se pudo enviar el mensaje
+[INFO] 17:22:28:797 GameCard/(4290:4291): Socket 15 de gameBoy aceptado
+[INFO] 17:22:28:799 GameCard/(4290:4328): Recibiendo codigo de operacion de GameBoy en socket 15
+[INFO] 17:22:28:799 GameCard/(4290:4328): Codigo de operacion de socket 15 recibido: 3
+[INFO] 17:22:28:799 GameCard/(4290:4328): Procesando request de GameBoy
+[INFO] 17:22:28:799 GameCard/(4290:4328): Codigo de operacion recibido del socket cliente 15 corresponde a un CATCH
+[INFO] 17:22:28:799 GameCard/(4290:4328): Recibiendo tamanio total
+[INFO] 17:22:28:799 GameCard/(4290:4328): Tamanio total recibido: 27
+[INFO] 17:22:28:799 GameCard/(4290:4328): EL ID recibido: 1
+[INFO] 17:22:28:799 GameCard/(4290:4328): Tamanio del pokemon: 11
+[INFO] 17:22:28:799 GameCard/(4290:4328): Nombre del pokemon recibido: Charmander
+[INFO] 17:22:28:799 GameCard/(4290:4328): Posicion X recibida: 413
+[INFO] 17:22:28:799 GameCard/(4290:4328): Posicion Y recibida: 17
+[INFO] 17:22:28:799 GameCard/(4290:4328): CATCH recibido del modulo Game Boy socket 15
+[INFO] 17:22:28:799 GameCard/(4290:4328): La coordenada generada es: 413-17
+[INFO] 17:22:28:799 GameCard/(4290:4328): EL array de blocks es: 1
+[INFO] 17:22:28:799 GameCard/(4290:4328): Retorno el estado: N
+[INFO] 17:22:28:799 GameCard/(4290:4328): Generando los paths de los bloques
+[INFO] 17:22:28:799 GameCard/(4290:4328): Se genera la ruta para: 1
+[INFO] 17:22:28:799 GameCard/(4290:4328): El path del block es: /home/utnso/Escritorio/tall-grass/Blocks/1.bin
+[INFO] 17:22:28:799 GameCard/(4290:4328): Se genera la ruta para: 2
+[INFO] 17:22:28:799 GameCard/(4290:4328): El path del block es: /home/utnso/Escritorio/tall-grass/Blocks/2.bin
+[INFO] 17:22:28:799 GameCard/(4290:4328): Ultimo bloque
+[INFO] 17:22:28:799 GameCard/(4290:4328): Devolviendo el char**
+[INFO] 17:22:28:800 GameCard/(4290:4328): EL FLAG DEL CATCH ES: 1
+[INFO] 17:22:28:800 GameCard/(4290:4328): El registro aplanado quedo como: 4-1=101
+
+[INFO] 17:22:28:800 GameCard/(4290:4328): El registro aplanado quedo como: 517-2046=15
+
+[INFO] 17:22:28:800 GameCard/(4290:4328): El registro aplanado quedo como: 723-97=29
+
+[INFO] 17:22:28:800 GameCard/(4290:4328): El registro aplanado quedo como: 65-93=3001
+
+[INFO] 17:22:28:800 GameCard/(4290:4328): El registro aplanado quedo como: 12-17=34
+
+[INFO] 17:22:28:800 GameCard/(4290:4328): El registro aplanado quedo como: 129-547=11
+
+[INFO] 17:22:28:800 GameCard/(4290:4328): Vaciando blocks
+[INFO] 17:22:28:800 GameCard/(4290:4328): El valor del block 1 es de: 1
+[INFO] 17:22:28:800 GameCard/(4290:4328): El block 1 fue desmarcado con el valor de: 0
+[INFO] 17:22:28:800 GameCard/(4290:4328): Guardando el bitarray
+[INFO] 17:22:28:800 GameCard/(4290:4328): Termino el guardado
+[INFO] 17:22:28:800 GameCard/(4290:4328): El valor del block 2 es de: 1
+[INFO] 17:22:28:800 GameCard/(4290:4328): El block 2 fue desmarcado con el valor de: 0
+[INFO] 17:22:28:800 GameCard/(4290:4328): Guardando el bitarray
+[INFO] 17:22:28:800 GameCard/(4290:4328): Termino el guardado
+[INFO] 17:22:28:801 GameCard/(4290:4328): Entro a buscar posiciones
+[INFO] 17:22:28:801 GameCard/(4290:4328): Bloqueo
+[INFO] 17:22:28:801 GameCard/(4290:4328): EL valor de i es de : 0
+[INFO] 17:22:28:801 GameCard/(4290:4328): EL valor de cant de bloques es de : 1024
+[INFO] 17:22:28:801 GameCard/(4290:4328): EL valor de i es de : 0
+[INFO] 17:22:28:801 GameCard/(4290:4328): EL valor de cant de bloques es de : 1024
+[INFO] 17:22:28:801 GameCard/(4290:4328): Entro primer IF
+[INFO] 17:22:28:801 GameCard/(4290:4328): EL valor FINAL de i es de : 0
+[INFO] 17:22:28:801 GameCard/(4290:4328): EL valor FINAL de cant de bloques es de : 1024
+[INFO] 17:22:28:801 GameCard/(4290:4328): EL valor de i es de : 1
+[INFO] 17:22:28:801 GameCard/(4290:4328): EL valor de cant de bloques es de : 1024
+[INFO] 17:22:28:801 GameCard/(4290:4328): Entro primer IF
+[INFO] 17:22:28:801 GameCard/(4290:4328): Entro segundo IF
+[INFO] 17:22:28:801 GameCard/(4290:4328): Guardando el bitarray
+[INFO] 17:22:28:801 GameCard/(4290:4328): Termino el guardado
+[INFO] 17:22:28:801 GameCard/(4290:4328): EL block 1 esta libre
+[INFO] 17:22:28:801 GameCard/(4290:4328): EL block 1 esta libre, vuelvo a chequear
+[INFO] 17:22:28:801 GameCard/(4290:4328): El block libre seleccionado es: 1
+[INFO] 17:22:28:801 GameCard/(4290:4328): La ruta del block es: /home/utnso/Escritorio/tall-grass/Blocks/1.bin
+[INFO] 17:22:28:801 GameCard/(4290:4328): Iterando la lista
+[INFO] 17:22:28:802 GameCard/(4290:4328): El ID de mensaje cargado en el caught es: 1
+[INFO] 17:22:28:802 GameCard/(4290:4328): El Flag cargado en el caught es: 1
+[INFO] 17:22:30:705 GameCard/(4290:4295): Iniciando verificacion de conexion con BROKER...
+[ERROR] 17:22:30:705 GameCard/(4290:4295): Reconexion con BROKER fallida, intentando nuevamente en 10 segundos
+[INFO] 17:22:33:803 GameCard/(4290:4328): El ID cargado es 1
+[INFO] 17:22:33:803 GameCard/(4290:4328): El flag cargado es 1
+[INFO] 17:22:33:803 GameCard/(4290:4328): Creando paquete
+[INFO] 17:22:33:803 GameCard/(4290:4328): CODIGO DE OPERACION: 4
+[INFO] 17:22:33:803 GameCard/(4290:4328): Paquete Creado
+[INFO] 17:22:33:803 GameCard/(4290:4328): la operacion a realizar es 4
+[INFO] 17:22:33:803 GameCard/(4290:4328): Serializando...
+[INFO] 17:22:33:803 GameCard/(4290:4328): Serializacion completa
+[INFO] 17:22:33:803 GameCard/(4290:4328): El peso total es: 8
+[ERROR] 17:22:33:803 GameCard/(4290:4328): Error: No se pudo enviar el mensaje
+[INFO] 17:22:40:706 GameCard/(4290:4295): Iniciando verificacion de conexion con BROKER...
+[ERROR] 17:22:40:706 GameCard/(4290:4295): Reconexion con BROKER fallida, intentando nuevamente en 10 segundos

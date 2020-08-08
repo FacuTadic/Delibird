@@ -608,9 +608,7 @@ void escucharNewDeBroker(void) {
 
 	int status_envio = mandar_suscripcion(socketEscuchaNew, id_cola);
 	if (status_envio == -1) {
-		pthread_mutex_lock(&estoy_conectado_al_broker_mutex);
 		estoy_conectado_al_broker = 0;
-		pthread_mutex_unlock(&estoy_conectado_al_broker_mutex);
 		log_error(loggerDev, "Hubo un problema enviando la suscripcion a la cola NEW del BROKER");
 	}
 
@@ -667,9 +665,7 @@ void escucharCatchDeBroker(void) {
 	int status_envio = mandar_suscripcion(socketEscuchaCatch, id_cola);
 
 	if (status_envio == -1) {
-		pthread_mutex_lock(&estoy_conectado_al_broker_mutex);
 		estoy_conectado_al_broker = 0;
-		pthread_mutex_unlock(&estoy_conectado_al_broker_mutex);
 		log_error(loggerDev, "Hubo un problema enviando la suscripcion a la cola CATCH del BROKER");
 	}
 
@@ -727,9 +723,7 @@ void escucharGetDeBroker(void) {
 	int status_envio = mandar_suscripcion(socketEscuchaGet, id_cola);
 
 	if (status_envio == -1) {
-		pthread_mutex_lock(&estoy_conectado_al_broker_mutex);
 		estoy_conectado_al_broker = 0;
-		pthread_mutex_unlock(&estoy_conectado_al_broker_mutex);
 		log_error(loggerDev, "Hubo un problema enviando la suscripcion a la cola GET del broker");
 	}
 
@@ -790,9 +784,7 @@ void reconectarAlBroker() {
 		int status_envioNew = mandar_suscripcion(socketEscuchaNew, id_colaNew);
 
 		if (status_envioNew == -1) {
-			pthread_mutex_lock(&estoy_conectado_al_broker_mutex);
 			estoy_conectado_al_broker = 0;
-			pthread_mutex_unlock(&estoy_conectado_al_broker_mutex);
 			log_error(loggerDev, "Hubo un problema enviando la suscripcion a la cola NEW del BROKER");
 			return;
 		}
@@ -802,9 +794,7 @@ void reconectarAlBroker() {
 		int status_envioCatch = mandar_suscripcion(socketEscuchaCatch, id_colaCatch);
 
 		if (status_envioCatch == -1) {
-			pthread_mutex_lock(&estoy_conectado_al_broker_mutex);
 			estoy_conectado_al_broker = 0;
-			pthread_mutex_unlock(&estoy_conectado_al_broker_mutex);
 			log_error(loggerDev, "Hubo un problema enviando la suscripcion a la cola NEW del BROKER");
 			return;
 		}
@@ -814,9 +804,7 @@ void reconectarAlBroker() {
 		int status_envioGet = mandar_suscripcion(socketEscuchaGet, id_colaGet);
 
 		if (status_envioGet == -1) {
-			pthread_mutex_lock(&estoy_conectado_al_broker_mutex);
 			estoy_conectado_al_broker = 0;
-			pthread_mutex_unlock(&estoy_conectado_al_broker_mutex);
 			log_error(loggerDev, "Hubo un problema enviando la suscripcion a la cola NEW del BROKER");
 			return;
 		}
@@ -1428,7 +1416,6 @@ int iniciarEscuchaGameBoy(char* IP, char* PUERTO) {
 }
 
 void desconectar_broker() {
-	pthread_mutex_lock(&estoy_conectado_al_broker_mutex);
 	if (estoy_conectado_al_broker == 1) {
 		estoy_conectado_al_broker = 0;
 		pthread_mutex_unlock(&estoy_conectado_al_broker_mutex);
