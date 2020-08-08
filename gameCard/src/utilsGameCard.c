@@ -1431,9 +1431,11 @@ void desconectar_broker() {
 	pthread_mutex_lock(&estoy_conectado_al_broker_mutex);
 	if (estoy_conectado_al_broker == 1) {
 		estoy_conectado_al_broker = 0;
+		pthread_mutex_unlock(&estoy_conectado_al_broker_mutex);
 		sem_wait(&sem_conexion_new);
 		sem_wait(&sem_conexion_catch);
 		sem_wait(&sem_conexion_get);
+	} else {
+		pthread_mutex_unlock(&estoy_conectado_al_broker_mutex);
 	}
-	pthread_mutex_unlock(&estoy_conectado_al_broker_mutex);
 }

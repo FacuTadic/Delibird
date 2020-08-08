@@ -1,0 +1,188 @@
+[INFO] 17:16:24:998 GameCard/(3164:3164): Lenavando el Tall Grass
+[INFO] 17:16:24:999 GameCard/(3164:3164): Punto de montaje del directorio Metadata es: /home/utnso/Escritorio/tall-grass/Metadata
+[INFO] 17:16:24:999 GameCard/(3164:3164): El BitMap se encuentra en: /home/utnso/Escritorio/tall-grass/Metadata/BitMap.bin
+[INFO] 17:16:24:999 GameCard/(3164:3164): Punto de montaje del directorio Files es: /home/utnso/Escritorio/tall-grass/Files
+[INFO] 17:16:24:999 GameCard/(3164:3164): Punto de montaje del directorio Blocks es: /home/utnso/Escritorio/tall-grass/Blocks
+[INFO] 17:16:24:0 GameCard/(3164:3168): Escuchando GET de BROKER en socket: -1
+[INFO] 17:16:24:0 GameCard/(3164:3167): Escuchando CATCH de BROKER en socket: -1
+[INFO] 17:16:24:0 GameCard/(3164:3166): Escuchando NEW de BROKER en socket: -1
+[INFO] 17:16:32:312 GameCard/(3164:3174): El pokemon pikachu no existe en el FS, se pasa a crear su directorio
+[INFO] 17:16:32:315 GameCard/(3164:3174): El metadata del pokemon fue actualizado
+[INFO] 17:16:32:315 GameCard/(3164:3174): SIZE = 7
+[INFO] 17:16:32:315 GameCard/(3164:3174): BLOCKS = [0]
+[INFO] 17:16:34:0 GameCard/(3164:3169): Iniciando verificacion de conexion con BROKER...
+[INFO] 17:16:34:0 GameCard/(3164:3169): Reconexion con broker necesaria
+[ERROR] 17:16:34:0 GameCard/(3164:3169): Reconexion con BROKER fallida, intentando nuevamente en 10 segundos
+[INFO] 17:16:37:316 GameCard/(3164:3174): Enviando APPEARED por socket: -1
+[INFO] 17:16:37:317 GameCard/(3164:3174): APPEARED enviado
+[INFO] 17:16:41:760 GameCard/(3164:3182): La coordenada 1-9 es nueva. Se agrega al los registros
+[INFO] 17:16:41:761 GameCard/(3164:3182): El metadata del pokemon fue actualizado
+[INFO] 17:16:41:761 GameCard/(3164:3182): SIZE = 13
+[INFO] 17:16:41:762 GameCard/(3164:3182): BLOCKS = [0]
+[INFO] 17:16:41:763 GameCard/(3164:3184): El pokemon charmander no existe en el FS, se pasa a crear su directorio
+[INFO] 17:16:41:765 GameCard/(3164:3184): El metadata del pokemon fue actualizado
+[INFO] 17:16:41:765 GameCard/(3164:3184): SIZE = 8
+[INFO] 17:16:41:765 GameCard/(3164:3184): BLOCKS = [1]
+[INFO] 17:16:41:770 GameCard/(3164:3186): La coordenada 517-2046 es nueva. Se agrega al los registros
+[INFO] 17:16:41:770 GameCard/(3164:3186): El metadata del pokemon fue actualizado
+[INFO] 17:16:41:771 GameCard/(3164:3186): SIZE = 20
+[INFO] 17:16:41:771 GameCard/(3164:3186): BLOCKS = [1]
+[INFO] 17:16:41:774 GameCard/(3164:3188): La coordenada 413-17 es nueva. Se agrega al los registros
+[INFO] 17:16:41:775 GameCard/(3164:3188): El metadata del pokemon fue actualizado
+[INFO] 17:16:41:775 GameCard/(3164:3188): SIZE = 29
+[INFO] 17:16:41:775 GameCard/(3164:3188): BLOCKS = [1]
+[INFO] 17:16:41:778 GameCard/(3164:3190): La coordenada 723-97 es nueva. Se agrega al los registros
+[INFO] 17:16:41:779 GameCard/(3164:3190): El metadata del pokemon fue actualizado
+[INFO] 17:16:41:779 GameCard/(3164:3190): SIZE = 39
+[INFO] 17:16:41:779 GameCard/(3164:3190): BLOCKS = [1]
+[INFO] 17:16:41:781 GameCard/(3164:3192): La coordenada 65-93 es nueva. Se agrega al los registros
+[INFO] 17:16:41:781 GameCard/(3164:3192): El metadata del pokemon fue actualizado
+[INFO] 17:16:41:781 GameCard/(3164:3192): SIZE = 50
+[INFO] 17:16:41:781 GameCard/(3164:3192): BLOCKS = [1]
+[INFO] 17:16:41:783 GameCard/(3164:3194): La coordenada 12-17 es nueva. Se agrega al los registros
+[INFO] 17:16:41:784 GameCard/(3164:3194): El metadata del pokemon fue actualizado
+[INFO] 17:16:41:784 GameCard/(3164:3194): SIZE = 59
+[INFO] 17:16:41:784 GameCard/(3164:3194): BLOCKS = [1]
+[INFO] 17:16:41:787 GameCard/(3164:3196): La coordenada 129-547 es nueva. Se agrega al los registros
+[INFO] 17:16:41:787 GameCard/(3164:3196): El metadata del pokemon fue actualizado
+[INFO] 17:16:41:787 GameCard/(3164:3196): SIZE = 70
+[INFO] 17:16:41:787 GameCard/(3164:3196): BLOCKS = [1,2]
+[INFO] 17:16:45:1 GameCard/(3164:3169): Iniciando verificacion de conexion con BROKER...
+[INFO] 17:16:45:1 GameCard/(3164:3169): Reconexion con broker necesaria
+[ERROR] 17:16:45:1 GameCard/(3164:3169): Reconexion con BROKER fallida, intentando nuevamente en 10 segundos
+[INFO] 17:16:46:763 GameCard/(3164:3182): Enviando APPEARED por socket: -1
+[INFO] 17:16:46:763 GameCard/(3164:3182): APPEARED enviado
+[INFO] 17:16:46:766 GameCard/(3164:3184): Enviando APPEARED por socket: -1
+[INFO] 17:16:46:767 GameCard/(3164:3184): APPEARED enviado
+[INFO] 17:16:46:771 GameCard/(3164:3186): Enviando APPEARED por socket: -1
+[INFO] 17:16:46:772 GameCard/(3164:3186): APPEARED enviado
+[INFO] 17:16:46:778 GameCard/(3164:3188): Enviando APPEARED por socket: -1
+[INFO] 17:16:46:778 GameCard/(3164:3188): APPEARED enviado
+[INFO] 17:16:46:779 GameCard/(3164:3190): Enviando APPEARED por socket: -1
+[INFO] 17:16:46:780 GameCard/(3164:3190): APPEARED enviado
+[INFO] 17:16:46:782 GameCard/(3164:3192): Enviando APPEARED por socket: -1
+[INFO] 17:16:46:782 GameCard/(3164:3192): APPEARED enviado
+[INFO] 17:16:46:784 GameCard/(3164:3194): Enviando APPEARED por socket: -1
+[INFO] 17:16:46:785 GameCard/(3164:3194): APPEARED enviado
+[INFO] 17:16:46:788 GameCard/(3164:3196): Enviando APPEARED por socket: -1
+[INFO] 17:16:46:788 GameCard/(3164:3196): APPEARED enviado
+[INFO] 17:16:55:3 GameCard/(3164:3169): Iniciando verificacion de conexion con BROKER...
+[INFO] 17:16:55:3 GameCard/(3164:3169): Reconexion con broker necesaria
+[ERROR] 17:16:55:3 GameCard/(3164:3169): Reconexion con BROKER fallida, intentando nuevamente en 10 segundos
+[INFO] 17:17:04:3 GameCard/(3164:3169): Iniciando verificacion de conexion con BROKER...
+[INFO] 17:17:04:3 GameCard/(3164:3169): Reconexion con broker necesaria
+[ERROR] 17:17:04:3 GameCard/(3164:3169): Reconexion con BROKER fallida, intentando nuevamente en 10 segundos
+[INFO] 17:17:08:356 GameCard/(3164:3213): La coordenada 413-17 fue encontrada
+[INFO] 17:17:08:356 GameCard/(3164:3213): La coordenada 413-17 tiene unicamente 1 posicion
+[INFO] 17:17:08:356 GameCard/(3164:3213): La coordenada 413-17 se borra
+[INFO] 17:17:08:358 GameCard/(3164:3213): El metadata del pokemon fue actualizado
+[INFO] 17:17:08:358 GameCard/(3164:3213): SIZE = 61
+[INFO] 17:17:08:358 GameCard/(3164:3213): BLOCKS = [1]
+[INFO] 17:17:13:367 GameCard/(3164:3213): Enviando CAUGHT por socket: -1
+[INFO] 17:17:13:368 GameCard/(3164:3213): CAUGHT enviado
+[INFO] 17:17:14:3 GameCard/(3164:3169): Iniciando verificacion de conexion con BROKER...
+[INFO] 17:17:14:3 GameCard/(3164:3169): Reconexion con broker necesaria
+[ERROR] 17:17:14:4 GameCard/(3164:3169): Reconexion con BROKER fallida, intentando nuevamente en 10 segundos
+[INFO] 17:17:25:4 GameCard/(3164:3169): Iniciando verificacion de conexion con BROKER...
+[INFO] 17:17:25:4 GameCard/(3164:3169): Reconexion con broker necesaria
+[ERROR] 17:17:25:4 GameCard/(3164:3169): Reconexion con BROKER fallida, intentando nuevamente en 10 segundos
+[INFO] 17:17:35:4 GameCard/(3164:3169): Iniciando verificacion de conexion con BROKER...
+[INFO] 17:17:35:4 GameCard/(3164:3169): Reconexion con broker necesaria
+[ERROR] 17:17:35:4 GameCard/(3164:3169): Reconexion con BROKER fallida, intentando nuevamente en 10 segundos
+[INFO] 17:17:45:5 GameCard/(3164:3169): Iniciando verificacion de conexion con BROKER...
+[INFO] 17:17:45:5 GameCard/(3164:3169): Reconexion con broker necesaria
+[ERROR] 17:17:45:5 GameCard/(3164:3169): Reconexion con BROKER fallida, intentando nuevamente en 10 segundos
+[INFO] 17:18:21:203 GameCard/(3342:3342): Lenavando el Tall Grass
+[INFO] 17:18:21:205 GameCard/(3342:3342): Punto de montaje del directorio Metadata es: /home/utnso/Escritorio/tall-grass/Metadata
+[INFO] 17:18:21:205 GameCard/(3342:3342): El BitMap se encuentra en: /home/utnso/Escritorio/tall-grass/Metadata/BitMap.bin
+[INFO] 17:18:21:205 GameCard/(3342:3342): Punto de montaje del directorio Files es: /home/utnso/Escritorio/tall-grass/Files
+[INFO] 17:18:21:205 GameCard/(3342:3342): Punto de montaje del directorio Blocks es: /home/utnso/Escritorio/tall-grass/Blocks
+[INFO] 17:18:21:206 GameCard/(3342:3346): Escuchando GET de BROKER en socket: -1
+[INFO] 17:18:21:206 GameCard/(3342:3345): Escuchando CATCH de BROKER en socket: -1
+[INFO] 17:18:21:206 GameCard/(3342:3344): Escuchando NEW de BROKER en socket: -1
+[INFO] 17:18:27:589 GameCard/(3342:3352): El pokemon pikachu no existe en el FS, se pasa a crear su directorio
+[INFO] 17:18:27:590 GameCard/(3342:3352): El metadata del pokemon fue actualizado
+[INFO] 17:18:27:591 GameCard/(3342:3352): SIZE = 7
+[INFO] 17:18:27:591 GameCard/(3342:3352): BLOCKS = [0]
+[INFO] 17:18:31:206 GameCard/(3342:3347): Iniciando verificacion de conexion con BROKER...
+[INFO] 17:18:31:206 GameCard/(3342:3347): Reconexion con broker necesaria
+[ERROR] 17:18:31:206 GameCard/(3342:3347): Reconexion con BROKER fallida, intentando nuevamente en 10 segundos
+[INFO] 17:18:32:592 GameCard/(3342:3352): Enviando APPEARED por socket: -1
+[INFO] 17:18:32:593 GameCard/(3342:3352): APPEARED enviado
+[INFO] 17:18:39:573 GameCard/(3342:3356): La coordenada 1-9 es nueva. Se agrega al los registros
+[INFO] 17:18:39:576 GameCard/(3342:3356): El metadata del pokemon fue actualizado
+[INFO] 17:18:39:576 GameCard/(3342:3356): SIZE = 13
+[INFO] 17:18:39:576 GameCard/(3342:3356): BLOCKS = [0]
+[INFO] 17:18:39:578 GameCard/(3342:3358): El pokemon charmander no existe en el FS, se pasa a crear su directorio
+[INFO] 17:18:39:580 GameCard/(3342:3358): El metadata del pokemon fue actualizado
+[INFO] 17:18:39:580 GameCard/(3342:3358): SIZE = 8
+[INFO] 17:18:39:580 GameCard/(3342:3358): BLOCKS = [1]
+[INFO] 17:18:39:584 GameCard/(3342:3360): La coordenada 517-2046 es nueva. Se agrega al los registros
+[INFO] 17:18:39:590 GameCard/(3342:3360): El metadata del pokemon fue actualizado
+[INFO] 17:18:39:590 GameCard/(3342:3360): SIZE = 20
+[INFO] 17:18:39:591 GameCard/(3342:3360): BLOCKS = [1]
+[INFO] 17:18:39:593 GameCard/(3342:3362): La coordenada 413-17 es nueva. Se agrega al los registros
+[INFO] 17:18:39:594 GameCard/(3342:3362): El metadata del pokemon fue actualizado
+[INFO] 17:18:39:594 GameCard/(3342:3362): SIZE = 29
+[INFO] 17:18:39:595 GameCard/(3342:3362): BLOCKS = [1]
+[INFO] 17:18:39:599 GameCard/(3342:3364): La coordenada 723-97 es nueva. Se agrega al los registros
+[INFO] 17:18:39:599 GameCard/(3342:3364): El metadata del pokemon fue actualizado
+[INFO] 17:18:39:604 GameCard/(3342:3364): SIZE = 39
+[INFO] 17:18:39:605 GameCard/(3342:3364): BLOCKS = [1]
+[INFO] 17:18:39:607 GameCard/(3342:3366): La coordenada 65-93 es nueva. Se agrega al los registros
+[INFO] 17:18:39:609 GameCard/(3342:3366): El metadata del pokemon fue actualizado
+[INFO] 17:18:39:609 GameCard/(3342:3366): SIZE = 50
+[INFO] 17:18:39:609 GameCard/(3342:3366): BLOCKS = [1]
+[INFO] 17:18:39:610 GameCard/(3342:3368): La coordenada 12-17 es nueva. Se agrega al los registros
+[INFO] 17:18:39:611 GameCard/(3342:3368): El metadata del pokemon fue actualizado
+[INFO] 17:18:39:612 GameCard/(3342:3368): SIZE = 59
+[INFO] 17:18:39:612 GameCard/(3342:3368): BLOCKS = [1]
+[INFO] 17:18:39:613 GameCard/(3342:3370): La coordenada 129-547 es nueva. Se agrega al los registros
+[INFO] 17:18:39:614 GameCard/(3342:3370): El metadata del pokemon fue actualizado
+[INFO] 17:18:39:614 GameCard/(3342:3370): SIZE = 70
+[INFO] 17:18:39:614 GameCard/(3342:3370): BLOCKS = [1,2]
+[INFO] 17:18:41:207 GameCard/(3342:3347): Iniciando verificacion de conexion con BROKER...
+[INFO] 17:18:41:207 GameCard/(3342:3347): Reconexion con broker necesaria
+[ERROR] 17:18:41:208 GameCard/(3342:3347): Reconexion con BROKER fallida, intentando nuevamente en 10 segundos
+[INFO] 17:18:44:578 GameCard/(3342:3356): Enviando APPEARED por socket: -1
+[INFO] 17:18:44:580 GameCard/(3342:3356): APPEARED enviado
+[INFO] 17:18:44:581 GameCard/(3342:3358): Enviando APPEARED por socket: -1
+[INFO] 17:18:44:582 GameCard/(3342:3358): APPEARED enviado
+[INFO] 17:18:44:592 GameCard/(3342:3360): Enviando APPEARED por socket: -1
+[INFO] 17:18:44:592 GameCard/(3342:3360): APPEARED enviado
+[INFO] 17:18:44:598 GameCard/(3342:3362): Enviando APPEARED por socket: -1
+[INFO] 17:18:44:598 GameCard/(3342:3362): APPEARED enviado
+[INFO] 17:18:44:605 GameCard/(3342:3364): Enviando APPEARED por socket: -1
+[INFO] 17:18:44:605 GameCard/(3342:3364): APPEARED enviado
+[INFO] 17:18:44:612 GameCard/(3342:3366): Enviando APPEARED por socket: -1
+[INFO] 17:18:44:612 GameCard/(3342:3366): APPEARED enviado
+[INFO] 17:18:44:612 GameCard/(3342:3368): Enviando APPEARED por socket: -1
+[INFO] 17:18:44:613 GameCard/(3342:3368): APPEARED enviado
+[INFO] 17:18:44:615 GameCard/(3342:3370): Enviando APPEARED por socket: -1
+[INFO] 17:18:44:615 GameCard/(3342:3370): APPEARED enviado
+[INFO] 17:18:51:209 GameCard/(3342:3347): Iniciando verificacion de conexion con BROKER...
+[INFO] 17:18:51:209 GameCard/(3342:3347): Reconexion con broker necesaria
+[ERROR] 17:18:51:209 GameCard/(3342:3347): Reconexion con BROKER fallida, intentando nuevamente en 10 segundos
+[INFO] 17:19:01:210 GameCard/(3342:3347): Iniciando verificacion de conexion con BROKER...
+[INFO] 17:19:01:210 GameCard/(3342:3347): Reconexion con broker necesaria
+[ERROR] 17:19:01:210 GameCard/(3342:3347): Reconexion con BROKER fallida, intentando nuevamente en 10 segundos
+[INFO] 17:19:03:970 GameCard/(3342:3376): La coordenada 413-17 fue encontrada
+[INFO] 17:19:03:970 GameCard/(3342:3376): La coordenada 413-17 tiene unicamente 1 posicion
+[INFO] 17:19:03:970 GameCard/(3342:3376): La coordenada 413-17 se borra
+[INFO] 17:19:03:970 GameCard/(3342:3376): El metadata del pokemon fue actualizado
+[INFO] 17:19:03:970 GameCard/(3342:3376): SIZE = 61
+[INFO] 17:19:03:970 GameCard/(3342:3376): BLOCKS = [1]
+[INFO] 17:19:08:971 GameCard/(3342:3376): Enviando CAUGHT por socket: -1
+[INFO] 17:19:08:972 GameCard/(3342:3376): CAUGHT enviado
+[INFO] 17:19:11:211 GameCard/(3342:3347): Iniciando verificacion de conexion con BROKER...
+[INFO] 17:19:11:211 GameCard/(3342:3347): Reconexion con broker necesaria
+[ERROR] 17:19:11:212 GameCard/(3342:3347): Reconexion con BROKER fallida, intentando nuevamente en 10 segundos
+[INFO] 17:19:21:212 GameCard/(3342:3347): Iniciando verificacion de conexion con BROKER...
+[INFO] 17:19:21:213 GameCard/(3342:3347): Reconexion con broker necesaria
+[ERROR] 17:19:21:213 GameCard/(3342:3347): Reconexion con BROKER fallida, intentando nuevamente en 10 segundos
+[INFO] 17:19:31:213 GameCard/(3342:3347): Iniciando verificacion de conexion con BROKER...
+[INFO] 17:19:31:213 GameCard/(3342:3347): Reconexion con broker necesaria
+[ERROR] 17:19:31:213 GameCard/(3342:3347): Reconexion con BROKER fallida, intentando nuevamente en 10 segundos
+[INFO] 17:19:41:214 GameCard/(3342:3347): Iniciando verificacion de conexion con BROKER...
+[INFO] 17:19:41:214 GameCard/(3342:3347): Reconexion con broker necesaria
+[ERROR] 17:19:41:214 GameCard/(3342:3347): Reconexion con BROKER fallida, intentando nuevamente en 10 segundos
