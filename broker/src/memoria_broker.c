@@ -348,8 +348,8 @@ void ocupar_lugar_en_particiones_libres(particion_libre* lugar_en_memoria, int l
 			// la manqueamos
 		} else {
 			particion_libre* particion = list_get(particiones_libres, j);
-			free(particion->desde);
-			free(particion->hasta);
+//			free(particion->desde);
+//			free(particion->hasta);
 			free(particion);
 			list_remove(particiones_libres, j);
 		}
@@ -381,7 +381,9 @@ int encontrar_lugar_a_ubicar(int limit) {
 particion_libre* encontrar_lugar_con_ff(int lugar_a_ubicar) {
 	for (int i = 0; i < particiones_libres->elements_count; i++) {
 		particion_libre* particion = list_get(particiones_libres, i);
-		if (tamanio_particion_libre(particion) > lugar_a_ubicar) {
+		log_info(extense_logger_memoria, "Tamanio de particion libre %i", tamanio_particion_libre(particion));
+		log_info(logger_memoria, "Tamanio de particion libre %i", tamanio_particion_libre(particion));
+		if (tamanio_particion_libre(particion) > lugar_a_ubicar || tamanio_particion_libre(particion) == lugar_a_ubicar) {
 			return particion;
 		}
 	}
@@ -396,7 +398,7 @@ particion_libre* encontrar_lugar_con_bf(int lugar_a_ubicar) {
 	for (int i = 0; i < particiones_libres->elements_count; i++) {
 		particion_libre* particion = list_get(particiones_libres, i);
 		int tamanio = tamanio_particion_libre(particion);
-		if (tamanio > lugar_a_ubicar && tamanio < menor_tamanio_presente) {
+		if (tamanio >= lugar_a_ubicar && tamanio < menor_tamanio_presente) {
 			menor_tamanio_presente = tamanio;
 			menor_particion_presente = particion;
 		}
@@ -705,6 +707,7 @@ void dump_cache(int signal) {
 			}
 			numero_particion++;
 			txt_write_in_file(archivo_dump, dump);
+			free(dump);
 		}
 	}
 
